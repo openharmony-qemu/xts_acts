@@ -34,7 +34,7 @@ class Temp1 {
 
 export default function HashMapTest2() {
   describe('hashMapTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -251,44 +251,6 @@ export default function HashMapTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0200
-    //  * @tc.name      : testHashMapHasKey0002
-    //  * @tc.desc      : Testing HashMap is empty and check if null has
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapHasKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapHasKey0002';
-    //   try {
-    //     const hashMap = new HashMap<string, number>();
-    //     expect(hashMap.hasKey(null).toString()).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0300
-    //  * @tc.name      : testHashMapHasKey0003
-    //  * @tc.desc      : Testing HashMap is empty and check if undefined has
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapHasKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapHasKey0003';
-    //   try {
-    //     const hashMap = new HashMap<string, number>();
-    //     expect(hashMap.hasKey(undefined)).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testHashMapHasKey0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0400
@@ -415,44 +377,6 @@ export default function HashMapTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_VALUE_0200
-    //  * @tc.name      : testHashMapHasValue0002
-    //  * @tc.desc      : Testing HashMap is empty and check if null has
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapHasValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapHasValue0002';
-    //   try {
-    //     const hashMap = new HashMap<string, number>();
-    //     expect(hashMap.hasValue(null)).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_VALUE_0300
-    //  * @tc.name      : testHashMapHasValue0003
-    //  * @tc.desc      : Testing HashMap is empty and check if undefined has
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapHasValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapHasValue0003';
-    //   try {
-    //     const hashMap = new HashMap<string, number>();
-    //     expect(hashMap.hasValue(undefined)).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testHashMapHasValue0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_VALUE_0400
@@ -556,44 +480,6 @@ export default function HashMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_GET_0200
-    //  * @tc.name      : testHashMapGet0002
-    //  * @tc.desc      : Testing HashMap is empty and check if get null
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapGet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapGet0002';
-    //   try {
-    //     const hashMap = new HashMap<string, number>();
-    //     expect(hashMap.get(null)).assertEqual(undefined);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_GET_0300
-    //  * @tc.name      : testHashMapGet0003
-    //  * @tc.desc      : Testing HashMap is empty and check if get undefined
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapGet0003';
-    //   try {
-    //     const hashMap = new HashMap<string, number>();
-    //     expect(hashMap.get(undefined)).assertEqual(undefined);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testHashMapGet0004
@@ -866,47 +752,6 @@ export default function HashMapTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0300
-    //  * @tc.name      : testHashMapSet0003
-    //  * @tc.desc      : Testing HashMap set null check length and get null
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapSet0003';
-    //   try {
-    //     const hashMap: HashMap<string, number> = new HashMap<string, number>();
-    //     hashMap.set(null, 356);
-    //     expect(String(hashMap.length)).assertEqual('1');
-    //     expect(String(hashMap.get(null))).assertEqual('356');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0400
-    //  * @tc.name      : testHashMapSet0004
-    //  * @tc.desc      : Testing HashMap set key is undefined and not support key is undefined
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapSet0004';
-    //   try {
-    //     const hashMap: HashMap<string, number> = new HashMap<string, number>();
-    //     hashMap.set(undefined, 356);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
     /**
      * @tc.name   testHashMapSet0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0500
@@ -930,27 +775,6 @@ export default function HashMapTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0600
-    //  * @tc.name      : testHashMapSet0006
-    //  * @tc.desc      : Testing HashMap set value is null check hashMap length and get value
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapSet0006';
-    //   try {
-    //     const hashMap: HashMap<string, number> = new HashMap<string, number>();
-    //     hashMap.set("ji", null);
-    //     expect(String(hashMap.length)).assertEqual('1');
-    //     expect(String(hashMap.get("ji"))).assertEqual('null');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testHashMapSet0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0700
@@ -972,27 +796,6 @@ export default function HashMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0800
-    //  * @tc.name      : testHashMapSet0008
-    //  * @tc.desc      : Testing HashMap set value is undefined check hashMap length and get value
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapSet0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapSet0008';
-    //   try {
-    //     const hashMap: HashMap<string, number> = new HashMap<string, number>();
-    //     hashMap.set("ji", undefined);
-    //     expect(String(hashMap.length)).assertEqual('1');
-    //     expect(String(hashMap.get("ji"))).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testHashMapSet0009
@@ -1063,44 +866,6 @@ export default function HashMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REMOVE_0200
-    //  * @tc.name      : testHashMapRemove0002
-    //  * @tc.desc      : Testing HashMap is empty and check if remove null
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapRemove0002';
-    //   try {
-    //     const hashMap = new HashMap<string, number>();
-    //     expect(String(hashMap.remove(null))).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REMOVE_0300
-    //  * @tc.name      : testHashMapRemove0003
-    //  * @tc.desc      : Testing HashMap is empty and check if remove undefined
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapRemove0003';
-    //   try {
-    //     const hashMap = new HashMap<string, number>();
-    //     expect(String(hashMap.remove(undefined))).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testHashMapRemove0004
@@ -1382,43 +1147,6 @@ export default function HashMapTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REPLACE_0200
-    //  * @tc.name      : testHashMapReplace0002
-    //  * @tc.desc      : Testing HashMap is empty and check if key is null
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapReplace0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapReplace0002';
-    //   try {
-    //     const hashMap = new HashMap<string, number>();
-    //     expect(String(hashMap.replace(null, 1))).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REPLACE_0300
-    //  * @tc.name      : testHashMapReplace0003
-    //  * @tc.desc      : Testing HashMap is empty and check if ke is undefined
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashMapReplace0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashMapReplace0003';
-    //   try {
-    //     const hashMap = new HashMap<string, number>();
-    //     expect(String(hashMap.replace(undefined, 1))).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testHashMapReplace0004

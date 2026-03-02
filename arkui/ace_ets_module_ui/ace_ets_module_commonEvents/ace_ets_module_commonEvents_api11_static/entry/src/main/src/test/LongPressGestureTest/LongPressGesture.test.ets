@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -37,7 +38,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function longPressGestureJsunit() {
   describe('longPressGestureJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -94,7 +95,7 @@ it('testLongPressGesture_static_01', Level.LEVEL0, async (done: () => void): Pro
       try {
         console.info("testLongPressGesture01 on emitter on");
         emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testLongPressGesture01 on emitter err : " + JSON.stringify(err));
       }
       console.info("testLongPressGesture01 sendEventByKey result: " +
@@ -117,8 +118,8 @@ it('testLongPressGesture_static_02', Level.LEVEL0, async (done: () => void): Pro
       await CommonFunc.sleep(1000);
       let callback = (eventData: emitter.EventData) => {
         console.info("testLongPressGesture02 get event state result is: " + JSON.stringify(eventData));
-        const data: Record<String, undefined | null | Object> =
-          eventData.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> =
+          eventData.data as Record<String,RecordData>
         expect(data['ACTION']).assertEqual('onActionEnd')
         done();
       }
@@ -129,7 +130,7 @@ it('testLongPressGesture_static_02', Level.LEVEL0, async (done: () => void): Pro
       try {
         console.info("testLongPressGesture02 on emitter on");
         emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testLongPressGesture02 on emitter err : " + JSON.stringify(err));
       }
       const strJson = inspector.sendEventByKey('flex', 11, "")

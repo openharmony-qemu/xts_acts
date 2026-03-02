@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function clearStyles() {
   describe('clearStyles', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("clearStyles beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function clearStyles() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get clearStyles state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("clearStyles" == pages.name)) {
           console.info("get clearStyles pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

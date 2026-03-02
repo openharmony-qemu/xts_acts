@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,6 +53,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { AnimationStatus } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 
 let domain: Int = 0x0000;
@@ -85,7 +86,7 @@ export default function imageAnimatorJsunitt() {
           // console.info("push imageAnimator page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push imageAnimator page error: " + err);
       }
 
@@ -117,7 +118,7 @@ it('imageAnimatorTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("imageAnimatorTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button_0', 10, "")));
@@ -148,7 +149,7 @@ it('imageAnimatorTest_static_0200', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("imageAnimatorTest_static_0200 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
@@ -179,7 +180,7 @@ it('imageAnimatorTest_static_0300', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("imageAnimatorTest_static_0300 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
@@ -209,7 +210,7 @@ it('imageAnimatorTest_static_0400', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("imageAnimatorTest_static_0400 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0400 click result is: " + JSON.stringify(inspector.sendEventByKey('button3', 10, "")));
@@ -239,7 +240,7 @@ it('imageAnimatorTest_static_0500', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("imageAnimatorTest_static_0500 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0500 click result is: " + JSON.stringify(inspector.sendEventByKey('button4', 10, "")));
@@ -268,7 +269,7 @@ it('imageAnimatorTest_static_0600', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("imageAnimatorTest_static_0600 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0600 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
@@ -290,7 +291,7 @@ it('imageAnimatorTest_static_0700', Level.LEVEL1, async (done: () => void): Prom
         let eventData: events_emitter.EventData = {
           data: {
             "preDecode": 2,
-          }as Record<string, undefined|null|Object>
+          }as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 121,
@@ -298,7 +299,7 @@ it('imageAnimatorTest_static_0700', Level.LEVEL1, async (done: () => void): Prom
         }
         console.info("imageAnimatorTest_static_0700 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("imageAnimatorTest_static_0700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1500);
@@ -313,7 +314,7 @@ it('imageAnimatorTest_static_0700', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEventOne, callbackOne);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("imageAnimatorTest_static_0700 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0700 click result is: " + JSON.stringify(inspector.sendEventByKey('button5', 10, "")));

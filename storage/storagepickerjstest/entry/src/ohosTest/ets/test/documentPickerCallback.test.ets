@@ -137,26 +137,27 @@ export default function documentPickerCallback(abilityContext: Context) {
       option.fileSuffixFilters = ['.mp3'];
       await selectWithOption(testNum, done, option);
     });
+
     /**
      * @tc.name   test_Documentpicker_Select_Callback_008
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0800
-     * @tc.desc   select with option file parameter
+     * @tc.desc   select with option multiAuthMode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_008", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_008";
-      let option: picker.DocumentSelectOptions = new picker.DocumentSelectOptions();
-      console.log('test_Documentpicker_Select_Callback_008::::::');
-      option.selectMode = picker.DocumentSelectMode.FILE;
-      //console.log('test_Documentpicker_Select_Callback_008::::::' + option.selectMode);
+      let option = new picker.DocumentSelectOptions();
+      option.multiAuthMode = true;
+      option.multiUriArray = [];
       await selectWithOption(testNum, done, option);
     });
+
     /**
      * @tc.name   test_Documentpicker_Select_Callback_009
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_0900
-     * @tc.desc   select with option folder parameter
+     * @tc.desc   select with option MergeTypeMode.DEFAULT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -164,13 +165,14 @@ export default function documentPickerCallback(abilityContext: Context) {
     it("test_Documentpicker_Select_Callback_009", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_009";
       let option = new picker.DocumentSelectOptions();
-      option.selectMode = picker.DocumentSelectMode.FOLDER;
+      option.mergeMode = picker.MergeTypeMode.DEFAULT;
       await selectWithOption(testNum, done, option);
     });
+
     /**
      * @tc.name   test_Documentpicker_Select_Callback_010
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1000
-     * @tc.desc   select with option mixed parameter
+     * @tc.desc   select with option MergeTypeMode.AUDIO
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -178,14 +180,14 @@ export default function documentPickerCallback(abilityContext: Context) {
     it("test_Documentpicker_Select_Callback_010", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_010";
       let option = new picker.DocumentSelectOptions();
-      option.selectMode = picker.DocumentSelectMode.MIXED;
+      option.mergeMode = picker.MergeTypeMode.AUDIO;
       await selectWithOption(testNum, done, option);
     });
 
     /**
      * @tc.name   test_Documentpicker_Select_Callback_011
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1100
-     * @tc.desc   select with option authMode
+     * @tc.desc   select with option MergeTypeMode.VIDEO
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -193,14 +195,14 @@ export default function documentPickerCallback(abilityContext: Context) {
     it("test_Documentpicker_Select_Callback_011", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_011";
       let option = new picker.DocumentSelectOptions();
-      option.authMode = false;
+      option.mergeMode = picker.MergeTypeMode.VIDEO;
       await selectWithOption(testNum, done, option);
     });
 
     /**
      * @tc.name   test_Documentpicker_Select_Callback_012
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1200
-     * @tc.desc   select with option authMode
+     * @tc.desc   select with option MergeTypeMode.DOCUMENT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -208,23 +210,23 @@ export default function documentPickerCallback(abilityContext: Context) {
     it("test_Documentpicker_Select_Callback_012", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_012";
       let option = new picker.DocumentSelectOptions();
+      option.mergeMode = picker.MergeTypeMode.DOCUMENT;
       await selectWithOption(testNum, done, option);
     });
 
     /**
      * @tc.name   test_Documentpicker_Select_Callback_013
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1300
-     * @tc.desc   select with option authMode
+     * @tc.desc   select with option MergeTypeMode.PICTURE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_013", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_013";
-      let option1 = new picker.DocumentSelectOptions();
-      option1.defaultFilePathUri = "file://docs/storage/Users/currentUser/test/test1";
-      option1.authMode = false;
-      await selectWithOption(testNum, done, option1);
+      let option = new picker.DocumentSelectOptions();
+      option.mergeMode = picker.MergeTypeMode.PICTURE;
+      await selectWithOption(testNum, done, option);
     });
 
     /**
@@ -238,111 +240,20 @@ export default function documentPickerCallback(abilityContext: Context) {
     it("test_Documentpicker_Select_Callback_014", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_014";
       let option = new picker.DocumentSelectOptions();
-      option.multiAuthMode = true;
-      option.multiUriArray = [];
+      option.isEncryptionSupported = true;
       await selectWithOption(testNum, done, option);
     });
 
     /**
      * @tc.name   test_Documentpicker_Select_Callback_015
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1500
-     * @tc.desc   select with option MergeTypeMode.DEFAULT
+     * @tc.desc   select with option multiAuthMode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Select_Callback_015", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Select_Callback_015";
-      let option = new picker.DocumentSelectOptions();
-      option.mergeMode = picker.MergeTypeMode.DEFAULT;
-      await selectWithOption(testNum, done, option);
-    });
-
-    /**
-     * @tc.name   test_Documentpicker_Select_Callback_016
-     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1600
-     * @tc.desc   select with option MergeTypeMode.AUDIO
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("test_Documentpicker_Select_Callback_016", Level.LEVEL1, async (done: Function) => {
-      let testNum = "test_Documentpicker_Select_Callback_016";
-      let option = new picker.DocumentSelectOptions();
-      option.mergeMode = picker.MergeTypeMode.AUDIO;
-      await selectWithOption(testNum, done, option);
-    });
-
-    /**
-     * @tc.name   test_Documentpicker_Select_Callback_017
-     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1700
-     * @tc.desc   select with option MergeTypeMode.VIDEO
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("test_Documentpicker_Select_Callback_017", Level.LEVEL1, async (done: Function) => {
-      let testNum = "test_Documentpicker_Select_Callback_017";
-      let option = new picker.DocumentSelectOptions();
-      option.mergeMode = picker.MergeTypeMode.VIDEO;
-      await selectWithOption(testNum, done, option);
-    });
-
-    /**
-     * @tc.name   test_Documentpicker_Select_Callback_018
-     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1800
-     * @tc.desc   select with option MergeTypeMode.DOCUMENT
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("test_Documentpicker_Select_Callback_018", Level.LEVEL1, async (done: Function) => {
-      let testNum = "test_Documentpicker_Select_Callback_018";
-      let option = new picker.DocumentSelectOptions();
-      option.mergeMode = picker.MergeTypeMode.DOCUMENT;
-      await selectWithOption(testNum, done, option);
-    });
-
-    /**
-     * @tc.name   test_Documentpicker_Select_Callback_019
-     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1900
-     * @tc.desc   select with option MergeTypeMode.PICTURE
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("test_Documentpicker_Select_Callback_019", Level.LEVEL1, async (done: Function) => {
-      let testNum = "test_Documentpicker_Select_Callback_019";
-      let option = new picker.DocumentSelectOptions();
-      option.mergeMode = picker.MergeTypeMode.PICTURE;
-      await selectWithOption(testNum, done, option);
-    });
-
-    /**
-     * @tc.name   test_Documentpicker_Select_Callback_020
-     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_2000
-     * @tc.desc   select with option multiAuthMode
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("test_Documentpicker_Select_Callback_020", Level.LEVEL1, async (done: Function) => {
-      let testNum = "test_Documentpicker_Select_Callback_020";
-      let option = new picker.DocumentSelectOptions();
-      option.isEncryptionSupported = true;
-      await selectWithOption(testNum, done, option);
-    });
-
-    /**
-     * @tc.name   test_Documentpicker_Select_Callback_021
-     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_2100
-     * @tc.desc   select with option multiAuthMode
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("test_Documentpicker_Select_Callback_021", Level.LEVEL1, async (done: Function) => {
-      let testNum = "test_Documentpicker_Select_Callback_021";
       let option = new picker.DocumentSelectOptions();
       option.isEncryptionSupported = false;
       await selectWithOption(testNum, done, option);
@@ -516,34 +427,108 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.name   test_Documentpicker_Save_Callback_012
-     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1200
-     * @tc.desc   test getSelectdIndex
+     * @tc.name   DocumentViewPicker_select_callback_000
+     * @tc.number SUB_DF_DocumentViewPicker_select_callback_0000
+     * @tc.desc   Test DocumentViewPicker.elect() interfaces with null parameter and callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it("test_Documentpicker_Save_Callback_012", Level.LEVEL1, async (done: Function) => {
+    it('DocumentViewPicker_select_callback_000', Level.LEVEL3, async (done: Function) => {
       try {
-        let documentPicker = new picker.DocumentViewPicker();
-        let option = new picker.DocumentSaveOptions();
-        documentPicker.save(option, (err, result) => {
-          let index = documentPicker.getSelectedIndex();
-          console.info('test_Documentpicker_Save_Callback_012 getSelectedIndex:' + index);
-          if (option.fileSuffixChoices != undefined) {
-            if (option.fileSuffixChoices?.length || index == -1){
-              console.error('test_Documentpicker_Save_Callback_012 getSelectdIndex:' + index);
-            } else {
-              let suffix = option.fileSuffixChoices[index];
-              console.info('test_Documentpicker_Save_Callback_012 suffix:' + suffix);
-            }
+        new picker.DocumentViewPicker().select(null, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_select_callback_000 err: ${JSON.stringify(err)}`);
+            done();
           }
+          console.info(`DocumentViewPicker_select_callback_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
         });
-        expect(true).assertTrue();
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_select_callback_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
         done();
       }
-      catch (error) {
-        console.info(`documentpicker_save_callback_012::saveWithOption error: ${JSON.stringify(error)}`);
+    });
+
+    /**
+     * @tc.name   DocumentViewPicker_select_callback_001
+     * @tc.number SUB_DF_DocumentViewPicker_select_callback_0010
+     * @tc.desc   Test DocumentViewPicker.select() interfaces with undefined parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_select_callback_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().select(undefined, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_select_callback_001 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_select_callback_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_sDocumentViewPicker_select_callback_001ave_callback_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   DocumentViewPicker_save_callback_000
+     * @tc.number SUB_DF_DocumentViewPicker_save_callback_0000
+     * @tc.desc   Test DocumentViewPicker.save() interfaces with null parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_save_callback_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().save(null, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_save_callback_000 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_save_callback_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_save_callback_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   DocumentViewPicker_save_callback_001
+     * @tc.number SUB_DF_DocumentViewPicker_save_callback_0010
+     * @tc.desc   Test DocumentViewPicker.save() interfaces with undefined parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_save_callback_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().save(undefined, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_save_callback_001 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_save_callback_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_save_callback_001 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
         done();
       }

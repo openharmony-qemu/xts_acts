@@ -86,81 +86,83 @@ import textInputJsunit from './TextInput.test';
 import gridNestedScrollJsunit from './GridNestedScroll.test';
 import listNestedScrollJsunit from './ListNestedScroll.test';
 import scrollEnablePagingJsunit from "./ScrollEnablePaging.test"
-//529
+
 export default function testsuite() {
 
-  gridNestedScrollJsunit(); // pass 1
-  common9Jsunit(); // pass 51 fail 1
-  common1Jsunit(); //pass 37 fail 6
-  shortcutKeyJsunit(); // pass 1
-  geometryTransitionJsunit(); // pass 1
-  motionPathJsunit(); // pass 1
-  sharedTransitionJsunit(); // pass 1
-  transitionJsunit(); // pass 1
-  columnJsunit(); // pass 3
-  rowJsunit(); // pass 3
-  blankJsunit(); // pass 2 fail 1 (onchange 未修改)
-  dividerJsunit(); // pass 5
-  gridColJsunit(); // pass 5
-  gridRowJsunit(); // pass 2
-  navDestinationJsunit(); // pass 2
-  navigationJsunit() // pass 12 fail 1 (onchange 未修改)
-  stackJsunit(); // pass 2
-  tabsFirstJsunit(); // fail 5  master
-  gridJsunit(); // pass 19
-  gridItemJsunit(); // pass 7
-  listJsunit(); // pass 17
-  listNestedScrollJsunit();  // pass 1
-  listItemJsunit();  // pass 3
+  gridNestedScrollJsunit();
+  // common9Jsunit();
+  common1Jsunit();
+
+  shortcutKeyJsunit(); 
+  geometryTransitionJsunit(); 
+  motionPathJsunit(); 
+  sharedTransitionJsunit(); 
+  transitionJsunit(); 
+  columnJsunit(); 
+  rowJsunit(); 
+  blankJsunit(); 
+  dividerJsunit(); 
+  gridColJsunit(); 
+  gridRowJsunit(); 
+  navDestinationJsunit();
+  navigationJsunit() 
+  stackJsunit();
+  tabsFirstJsunit(); 
+  gridJsunit();
+  gridItemJsunit(); 
+  listJsunit(); 
+  listNestedScrollJsunit();  
+  listItemJsunit();
 
 
 
-  listItemGroupJsunit(); // pass 2
-  scrollNestedScrollJsunit(); // pass 1
-  scrollJsunit(); // pass 10
-  swiperJsunit(); // pass 18
-  buttonJsunit();// pass 17
-  checkboxJsunit(); // pass 5
-  checkBoxGroupJsunit(); // pass 5
-  counterJsunit(); // pass 3
-  datePickerJsunit(); // pass 5
-  radioJsunit(); // pass 2 // fail 1 (onchange 未修改)
-  ratingJsunit(); // pass 4
-  sliderJsunit(); // pass 13 // fail 1 (onchange 未修改)
-  textpickerJsunit(); // pass 7
-  timepickerJsunit(); // pass 5
-  toggleJsunit();  // pass 3
-  imageSpanJsunit();// pass 3
-  patternLockJsunit(); // pass 9
-  richEditorJsunit(); //fail 2 master
-  searchJsunit();// pass 12 // fail 1 (onchange 未修改)
-  spanJsunit(); //pass 11，
-  textJsunit(); // pass 22 // fail 1 (onchange 未修改)
-  textAreaJsunit(); //pass 17 // fail 1 (onchange 未修改)
-  textInputJsunit();//pass 25 // fail 1 (onchange 未修改)
-  //
-  imageJsunit();  // pass 15
-  imageAnimatorJsunit(); // pass 8
-  videoJsunit(); // pass 6
-  dataPanelJsunit(); // pass 6
-  gaugeJsunit();  //pass 9
-  loadingProgressJsunit(); // pass 3
-  marqueeJsunit(); // pass 6
-  progressJsunit(); // pass 4 fail 1
-  qrCodeJsunitJsunit(); // pass 3
-  textClockJsunit(); // pass 7
-  textTimerJsunit(); // pass 7
+  listItemGroupJsunit();
+  scrollNestedScrollJsunit();
 
-  lineJsunit(); // pass 3
-  pathJsunit(); // pass 2
-  polygonJsunit(); // pass 2
-  polyLineJsunit(); // pass 2
+  scrollJsunit();
+  swiperJsunit();
+  buttonJsunit();
+  checkboxJsunit();
+  checkBoxGroupJsunit();
+  counterJsunit();
+  datePickerJsunit();
+  radioJsunit();
+  ratingJsunit();
+  sliderJsunit();
+  textpickerJsunit();
+  timepickerJsunit();
+  toggleJsunit();
+  imageSpanJsunit();
+  patternLockJsunit();
+  richEditorJsunit();
+  searchJsunit();
+  spanJsunit();
+  textJsunit();
+  textAreaJsunit();
+  textInputJsunit();
+  gaugeJsunit();
+  imageJsunit(); 
+  imageAnimatorJsunit(); 
+  videoJsunit(); 
+  dataPanelJsunit(); 
 
-  rectJsunit(); // pass 4
-  shapeJsunit(); // pass 14
+  loadingProgressJsunit(); 
+  marqueeJsunit();
+  progressJsunit();
+  qrCodeJsunitJsunit(); 
+  textClockJsunit(); 
+  textTimerJsunit(); 
+
+  lineJsunit(); 
+  pathJsunit();
+  polygonJsunit();
+  polyLineJsunit();
+
+  rectJsunit();
+  shapeJsunit();
   alphabetIndexerJsunit();
-  hyperLinkJsunit(); // pass 2
-  menuItemJsunit(); // pass 7
-  menuJsunit(); // pass 4
-  scrollEnablePagingJsunit() // pass 1
+  hyperLinkJsunit();
+  menuItemJsunit();
+  menuJsunit();
+  scrollEnablePagingJsunit()
 }

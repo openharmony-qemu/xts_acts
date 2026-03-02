@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function grid_RowCol_ItemRowStartEndTest() {
   describe('Grid_RowCol_ItemRowStartEndTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("grid_RowCol_ItemRowStartEndTest beforeAll start");
            
       await UtilsTest.msSleep(4000)
@@ -78,11 +78,11 @@ export default function grid_RowCol_ItemRowStartEndTest() {
      */
 it('testGridRowColItemRowStartToZeroEndToThree_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridRowColItemRowStartToZeroEndToThree_static_01] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'RowStart', value: 0
+      AppStorage.get<MessageManager<Int>>('messageManager')?.notify({
+        name: 'RowStart', value: 0 as Int
       });
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'RowEnd', value: 3
+      AppStorage.get<MessageManager<Int>>('messageManager')?.notify({
+        name: 'RowEnd', value: 3 as Int
       });
       await CommonFunc.sleep(3000);
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd1');

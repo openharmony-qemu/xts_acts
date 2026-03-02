@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,6 +47,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -116,7 +117,7 @@ struct PanGestureExample {
           data: {
             "ACTION": this.isTouched,
             "EVENT_TYPE": this.eventType
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let backEvent: emitter.InnerEvent = {
           eventId: 24,
@@ -124,7 +125,7 @@ struct PanGestureExample {
         }
         console.info("[PanGesture] start to emit action state")
         emitter.emit(backEvent, backData)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[PanGesture] emit action state err: " + JSON.stringify((err as Error)?.message))
       }
     })
@@ -133,7 +134,7 @@ struct PanGestureExample {
   private ChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[PanGesture] ChangCallBack stateChangCallBack");
     if (eventData != null) {
-      const data = eventData.data as Record<String, undefined | null | Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info("[PanGesture] ChangCallBack state change called:" + JSON.stringify(eventData));
       if (data['touchable'] != null) {
         this.touchableValue = data['touchable'] as boolean;

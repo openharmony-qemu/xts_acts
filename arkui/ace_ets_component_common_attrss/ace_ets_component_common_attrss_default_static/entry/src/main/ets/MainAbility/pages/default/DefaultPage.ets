@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,10 +18,10 @@ import { State } from '@ohos.arkui.stateManagement';
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router';
 import { AlphabetIndexer, Blank, Button, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator, LoadingProgress, Marquee,
-  Menu, Navigation, Progress, QRCode, Radio, Rating, RichText, ScrollBar, Search, Select, Slider, Stepper, Text,
+  Menu, Navigation, Progress, QRCode, Radio, Rating, RichText, ScrollBar, Search, Select, Slider, Text,
   TextArea, TextClock, TextInput, TextPicker, TextTimer, TimePicker, Toggle, Web, Badge, ColumnSplit, Counter, Flex, WaterFlow, GridRow,
   Grid, List, Refresh, RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, Circle,
-  Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, Color, $r, MenuItem, MenuItemGroup, StepperItem, ToggleType, TextAlign, FlowItem, GridCol, GridItem,
+  Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, Color, $r, MenuItem, MenuItemGroup, ToggleType, TextAlign, FlowItem, GridCol, GridItem,
   ListItem, ListItemGroup, SideBarContainerType, NavPathStack, TabContent, MenuItemOptions, BadgeParam, BadgeStyle, BadgeParamWithString,
   CommonMethod,applyStyles, WebviewController, Builder } from '@ohos.arkui.component'
 import { RouterParams } from '../../common/Utils';
@@ -52,14 +52,13 @@ struct DefaultPage {
 
   onPageShow() {
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey ?? ""
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
       this.targetGroupView = routerParamOptions.view.targetGroupView  ?? ""
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -142,14 +141,6 @@ struct DefaultPage {
         Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }]).applyStyles(this.globalFancy)
       } else if (this.targetView == 'Slider') {
         Slider().applyStyles(this.globalFancy)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem()
-        }.applyStyles(this.globalFancy)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem().applyStyles(this.globalFancy)
-        }
       } else if (this.targetView == 'Text') {
         Text('text').applyStyles(this.globalFancy)
       } else if (this.targetView == 'TextArea') {

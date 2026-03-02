@@ -142,6 +142,272 @@ export default {
                 
               });
           }
+        } else if (want.action === 'PageStartService_StartAbility_Null_1600') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_StartAbility_Null_1600');
+            try {
+                particleAbility.startAbility(null).then(()=>{
+                  console.info('PageStartService_StartAbility_Null_1600 success=====');
+
+                }).catch((err)=>{
+                  console.info('PageStartService_StartAbility_Null_1600 err=====' + err?.code + ' ' + err?.message);
+                  commonEvent.publish('ACTS_JsServiceAbility_1800_Result', {
+                    parameters:{
+                      'result': err?.code
+                    }
+                  }, (err) => {
+                    console.info('ACTS_JsServiceAbility_1800_Result publish err=====>' + err?.code);
+                  });
+                });
+            } catch (err) {
+                console.info('PageStartService_StartAbility_Null_1600 catch err=====' + err?.code + ' ' + err?.message);
+            }
+        } else if (want.action === 'PageStartService_StartAbility_Undefined_1700') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_StartAbility_Undefined_1700');
+            try {
+                particleAbility.startAbility(undefined).then(()=>{
+                  console.info('PageStartService_StartAbility_Undefined_1700 success=====');
+                }).catch((err)=>{
+                  console.info('PageStartService_StartAbility_Undefined_1700 err=====' + err?.code + ' ' + err?.message);
+                  commonEvent.publish('ACTS_JsServiceAbility_1900_Result', {
+                    parameters:{
+                      'result': err?.code
+                    }
+                  }, (err) => {
+                    console.info('ACTS_JsServiceAbility_1800_Result publish err=====>' + err?.code);
+                  });
+                });
+            } catch (err) {
+                console.info('PageStartService_StartAbility_Undefined_1700 err=====' + err?.code + ' ' + err?.message);
+            }
+        } else if (want.action === 'PageStartService_StartAbility_EmptyString_1800') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_StartAbility_EmptyString_1800');
+            try {
+                particleAbility.startAbility({ want: { bundleName: '', abilityName: '' } }).then(()=>{
+                  console.info('PageStartService_StartAbility_Undefined_1700 success=====');
+                }).catch((err)=>{
+                  console.info('PageStartService_StartAbility_Undefined_1700 err=====' + err?.code + ' ' + err?.message);
+                  commonEvent.publish('ACTS_JsServiceAbility_2000_Result', {
+                    parameters:{
+                      'result': err?.code
+                    }
+                  }, (err) => {
+                      console.info('ACTS_JsServiceAbility_2000_Result publish err=====>' + err?.code);
+                  });
+                });
+            } catch (err) {
+                console.info('PageStartService_StartAbility_EmptyString_1800 err=====' + err?.code + ' ' + err?.message);
+            }
+        } else if (want.action === 'PageStartService_ConnectAbility_Null_1900') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_ConnectAbility_Null_1900');
+            try {
+                let num = particleAbility.connectAbility(null, {
+                    onConnect: (elementName, proxy) => {
+                        console.info('PageStartService_ConnectAbility_Null_1900 onConnect');
+                    },
+                    onDisconnect: (elementName) => {
+                        console.info('PageStartService_ConnectAbility_Null_1900 onDisconnect');
+                    },
+                    onFailed: (code) => {
+                        console.info('PageStartService_ConnectAbility_Null_1900 onFailed, code = ' + code);
+                    }
+                });
+                console.info('PageStartService_ConnectAbility_Null_1900 connectionId = ' + num);
+                commonEvent.publish('ACTS_JsServiceAbility_2200_Result', {
+                  parameters:{
+                    'result': num
+                  }
+                }, (err) => {
+                    console.info('ACTS_JsServiceAbility_2200_Result publish err=====>' + err?.code);
+                });
+            } catch (err) {
+                console.info('PageStartService_ConnectAbility_Null_1900 err=====' + err?.code + ' ' + err?.message);
+                commonEvent.publish('ACTS_JsServiceAbility_2200_Result', {
+                  parameters:{
+                    'result': err?.code
+                  }
+                }, (err) => {
+                    console.info('ACTS_JsServiceAbility_2200_Result publish catch err=====>' + err?.code);
+                });
+            }
+        } else if (want.action === 'PageStartService_ConnectAbility_Undefined_2000') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_ConnectAbility_Undefined_2000');
+            try {
+                let num = particleAbility.connectAbility(undefined, {
+                    onConnect: (elementName, proxy) => {
+                        console.info('PageStartService_ConnectAbility_Undefined_2000 onConnect');
+                    },
+                    onDisconnect: (elementName) => {
+                        console.info('PageStartService_ConnectAbility_Undefined_2000 onDisconnect');
+                    },
+                    onFailed: (code) => {
+                        console.info('PageStartService_ConnectAbility_Undefined_2000 onFailed, code = ' + code);
+                    }
+                });
+                console.info('PageStartService_ConnectAbility_Undefined_2000 connectionId = ' + num);
+                commonEvent.publish('ACTS_JsServiceAbility_2300_Result', {
+                  parameters:{
+                    'result': num
+                  }
+                }, (err) => {
+                    console.info('ACTS_JsServiceAbility_2300_Result publish err=====>' + err?.code);
+                });
+            } catch (err) {
+                console.info('PageStartService_ConnectAbility_Undefined_2000 catch err=====' + err?.code + ' ' + err?.message);
+                commonEvent.publish('ACTS_JsServiceAbility_2300_Result', {
+                  parameters:{
+                    'result': err?.code
+                  }
+                }, (err) => {
+                    console.info('ACTS_JsServiceAbility_2300_Result publish err=====>' + err?.code);
+                });
+            }
+        } else if (want.action === 'PageStartService_ConnectAbility_EmptyString_2100') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_ConnectAbility_EmptyString_2100');
+            try {
+                let num = particleAbility.connectAbility({ bundleName: '', abilityName: '' }, {
+                    onConnect: (elementName, proxy) => {
+                        console.info('PageStartService_ConnectAbility_EmptyString_2100 onConnect');
+                    },
+                    onDisconnect: (elementName) => {
+                        console.info('PageStartService_ConnectAbility_EmptyString_2100 onDisconnect');
+                    },
+                    onFailed: (code) => {
+                        console.info('PageStartService_ConnectAbility_EmptyString_2100 onFailed, code = ' + code);
+                        commonEvent.publish('ACTS_JsServiceAbility_2400_Result', {
+                          parameters:{
+                            'result': code
+                          }
+                        }, (err) => {
+                            console.info('ACTS_JsServiceAbility_2400_Result publish catch err=====>' + err?.code);
+                        });
+                    }
+                });
+                console.info('PageStartService_ConnectAbility_EmptyString_2100 connectionId = ' + num);
+
+            } catch (err) {
+                console.info('PageStartService_ConnectAbility_EmptyString_2100 catch err=====' + err?.code + ' ' + err?.message);
+                commonEvent.publish('ACTS_JsServiceAbility_2400_Result', {
+                  parameters:{
+                    'result': err?.code
+                  }
+                }, (err) => {
+                    console.info('ACTS_JsServiceAbility_2400_Result publish catch err=====>' + err?.code);
+                });
+            }
+        } else if (want.action === 'PageStartService_AcquireDataAbilityHelper_Null_2400') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_AcquireDataAbilityHelper_Null_2400');
+            try {
+                let helper = particleAbility.acquireDataAbilityHelper(null);
+                console.info('PageStartService_AcquireDataAbilityHelper_Null_2400 helper = ' + JSON.stringify(helper));
+                if (helper == null) {
+                  commonEvent.publish('ACTS_JsServiceAbility_2700_Result', (err) => {
+                      console.info('ACTS_JsServiceAbility_2700_Result publish err=====>' + err?.code);
+                  });
+                }
+            } catch (err) {
+                console.info('PageStartService_AcquireDataAbilityHelper_Null_2400 catch err=====' + err?.code + ' ' + err?.message);
+            }
+        } else if (want.action === 'PageStartService_AcquireDataAbilityHelper_Undefined_2500') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_AcquireDataAbilityHelper_Undefined_2500');
+            try {
+                let helper = particleAbility.acquireDataAbilityHelper(undefined);
+                console.info('PageStartService_AcquireDataAbilityHelper_Undefined_2500 helper = ' + JSON.stringify(helper));
+                if (helper == null) {
+                  commonEvent.publish('ACTS_JsServiceAbility_2800_Result', (err) => {
+                      console.info('ACTS_JsServiceAbility_2800_Result publish err=====>' + err?.code);
+                  });
+                }
+            } catch (err) {
+                console.info('PageStartService_AcquireDataAbilityHelper_Undefined_2500 catch err=====' + err?.code + ' ' + err?.message);
+            }
+        } else if (want.action === 'PageStartService_AcquireDataAbilityHelper_EmptyString_2600') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_AcquireDataAbilityHelper_EmptyString_2600');
+            try {
+                let helper = particleAbility.acquireDataAbilityHelper('');
+                console.info('PageStartService_AcquireDataAbilityHelper_EmptyString_2600 helper = ' + JSON.stringify(helper));
+                if (helper == null) {
+                  commonEvent.publish('ACTS_JsServiceAbility_2900_Result', (err) => {
+                      console.info('ACTS_JsServiceAbility_2900_Result publish err=====>' + err?.code);
+                  });
+                }
+            } catch (err) {
+                console.info('PageStartService_AcquireDataAbilityHelper_EmptyString_2600 catch err=====' + err?.code + ' ' + err?.message);
+            }
+        } else if (want.action === 'PageStartService_StartAbility_Null_Callback_2700') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_StartAbility_Null_Callback_2700');
+            try {
+                particleAbility.startAbility(null, (err, data) => {
+                    if (err) {
+                        console.info('PageStartService_StartAbility_Null_Callback_2700 err=====' + err?.code + ' ' + err?.message);
+                    }
+                    commonEvent.publish('ACTS_JsServiceAbility_3000_Result', {
+                      parameters:{
+                        'result': err.code
+                      }
+                    }, (err) => {
+                        console.info('ACTS_JsServiceAbility_3000_Result publish err=====>' + err?.code);
+                    });
+                });
+            } catch (err) {
+                console.info('PageStartService_StartAbility_Null_Callback_2700 catch err=====' + err?.code + ' ' + err?.message);
+                commonEvent.publish('ACTS_JsServiceAbility_3000_Result', {
+                  parameters:{
+                    'result': err.code
+                  }
+                }, (err) => {
+                    console.info('ACTS_JsServiceAbility_3000_Result publish catch err=====>' + err?.code);
+                });
+            }
+        } else if (want.action === 'PageStartService_StartAbility_Undefined_Callback_2800') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_StartAbility_Undefined_Callback_2800');
+            try {
+                particleAbility.startAbility(undefined, (err, data) => {
+                    if (err) {
+                        console.info('PageStartService_StartAbility_Undefined_Callback_2800 err=====' + err?.code + ' ' + err?.message);
+                    }
+                    commonEvent.publish('ACTS_JsServiceAbility_3100_Result', {
+                      parameters:{
+                        'result': err.code
+                      }
+                    }, (err) => {
+                        console.info('ACTS_JsServiceAbility_3100_Result publish err=====>' + err?.code);
+                    });
+                });
+            } catch (err) {
+                console.info('PageStartService_StartAbility_Undefined_Callback_2800 catch err=====' + err?.code + ' ' + err?.message);
+                commonEvent.publish('ACTS_JsServiceAbility_3100_Result', {
+                  parameters:{
+                    'result': err.code
+                  }
+                }, (err) => {
+                    console.info('ACTS_JsServiceAbility_3100_Result publish catch err=====>' + err?.code);
+                });
+            }
+        } else if (want.action === 'PageStartService_StartAbility_EmptyString_Callback_2900') {
+            console.info('ACTS_SerivceAbilityServer ====> PageStartService_StartAbility_EmptyString_Callback_2900');
+            try {
+                particleAbility.startAbility({ want: { bundleName: '', abilityName: '' } }, (err, data) => {
+                    if (err) {
+                        console.info('PageStartService_StartAbility_EmptyString_Callback_2900 err=====' + err?.code + ' ' + err?.message);
+                    }
+                    commonEvent.publish('ACTS_JsServiceAbility_3200_Result', {
+                      parameters:{
+                        'result': err.code
+                      }
+                    }, (err) => {
+                        console.info('ACTS_JsServiceAbility_3200_Result publish err=====>' + err?.code);
+                    });
+                });
+            } catch (err) {
+                console.info('PageStartService_StartAbility_EmptyString_Callback_2900 catch err=====' + err?.code + ' ' + err?.message);
+                commonEvent.publish('ACTS_JsServiceAbility_3200_Result', {
+                  parameters:{
+                    'result': err.code
+                  }
+                }, (err) => {
+                    console.info('ACTS_JsServiceAbility_3200_Result publish catch err=====>' + err?.code);
+                });
+            }
         } else {
             commonEvent.publish('ACTS_SerivceAbilityServer_onCommand' + '_' + want.action, (err) => {
                 if (!err.code) {

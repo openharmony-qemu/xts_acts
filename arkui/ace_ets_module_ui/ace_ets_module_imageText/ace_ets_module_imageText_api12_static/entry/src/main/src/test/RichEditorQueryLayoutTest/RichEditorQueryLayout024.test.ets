@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorQueryLayout024() {
   describe('RichEditorQueryLayout024', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorQueryLayout024 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -98,8 +98,10 @@ export default function RichEditorQueryLayout024() {
       let selectValue = await (driver.findComponent(ON.id('selectValue')) as Promise<Component>);
       let selectValueText = await selectValue.getText();
       await CommonFunc.sleep(500);
-      expect(selectValueText.indexOf('"paragraphStyle":{"textAlign":0,"leadingMargin":["16.00vp","0.00vp"]') > 0).assertEqual(true);
-      expect(selectValueText.indexOf('"layoutStyle":{"borderRadius":"20.00px","margin":"[30.00px,30.00px,30.00px,30.00px]"') > 0).assertEqual(true);
+      expect(selectValueText.indexOf('"textAlign":0') > 0).assertEqual(true);
+      expect(selectValueText.indexOf('"leadingMargin":{"size":["16.00vp","0.00vp"]}') > 0).assertEqual(true);
+      expect(selectValueText.indexOf('"borderRadius":"20.00px"') > 0).assertEqual(true);
+      expect(selectValueText.indexOf('"margin":{"top":"30.00px","left":"30.00px","right":"30.00px","bottom":"30.00px"}') > 0).assertEqual(true);
       done();
     });
 

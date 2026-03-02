@@ -31,7 +31,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function list() {
   describe('listTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 
@@ -249,8 +249,8 @@ it('ListJsunit_static_0110', Level.LEVEL0, async (done: () => void): Promise<voi
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('color')).assertEqual("#FF00FFFF");
       console.info('[ListJsunit_static_0110] END');
       done();
-    });
-        
+    });    
+    
     /**
      * @tc.number   ListJsunit_static_0112
      * @tc.name     ListJsunit_static_0112

@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function flexPadding_StartJsunit() {
   describe('flexItemAlignStartTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexItemAlignStartTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

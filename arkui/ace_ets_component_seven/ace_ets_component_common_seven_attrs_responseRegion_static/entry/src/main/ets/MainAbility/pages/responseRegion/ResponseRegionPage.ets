@@ -159,10 +159,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -1001,32 +997,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mResponseRegion: Array<Rectangle> = [{
-    x: 13,
-    y: 17,
-    width: '19%',
-    height: '23%'
-  }]
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.responseRegion(this.mResponseRegion)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mResponseRegion: Array<Rectangle> = [{
-    x: 13,
-    y: 17,
-    width: '19%',
-    height: '23%'
-  }]
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.responseRegion(this.mResponseRegion)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mResponseRegion: Array<Rectangle> = [{
     x: 13,
@@ -1518,16 +1488,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1704,8 +1664,6 @@ struct ResponseRegionPage {
   @State _responseRegionSliderModifier: SliderModifier = new SliderModifier()
   @State _responseRegionSpanModifier: SpanModifier = new SpanModifier()
   @State _responseRegionStackModifier: StackModifier = new StackModifier()
-  @State _responseRegionStepperModifier: StepperModifier = new StepperModifier()
-  @State _responseRegionStepperItemModifier: StepperItemModifier = new StepperItemModifier()
   @State _responseRegionSwiperModifier: SwiperModifier = new SwiperModifier()
   @State _responseRegionTabContentModifier: TabContentModifier = new TabContentModifier()
   @State _responseRegionTabsModifier: TabsModifier = new TabsModifier()
@@ -1738,13 +1696,12 @@ struct ResponseRegionPage {
   } as Rectangle]
 
   onPageShow() {
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     console.info(' setValue112 : ' + JSON.stringify(routerParamOptions.view.testValue.setValue));
     AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion',
       routerParamOptions.view.testValue.setValue.responseRegion)
     console.info('responseRegion translate page show called ')
-    const viewElement = JSON.parseJsonElement(JSON.stringify(routerParamOptions))
+    const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
       .getElement("view")
     this.targetView = viewElement.getString("targetView")
     this.componentKey = viewElement.getString("componentKey")
@@ -1899,32 +1856,6 @@ struct ResponseRegionPage {
           .showTips(true)
           .commonStyle(this.componentKey)
           .attributeModifier(this._responseRegionSliderModifier)
-      }
-      if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._responseRegionStepperModifier)
-      }
-      if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-          .commonStyle(this.componentKey)
-          .attributeModifier(this._responseRegionStepperItemModifier)
-        }
-        .backgroundColor(Color.Yellow)
-        .width('100%')
-        .height('100%')
       }
       if (this.targetView == 'Text') {
         Text('text1')

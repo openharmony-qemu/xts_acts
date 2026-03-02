@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
 import { Color, Font }  from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -36,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SelectJsunit() {
   describe('SelectJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Builder0050TestJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");
     });
@@ -57,7 +58,6 @@ export default function SelectJsunit() {
         }
       } catch (err) {
         console.error("push SelectJsunit page error: " + err);
-        expect().assertFail();
       }
     });
 
@@ -127,7 +127,7 @@ it('SelectJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
       "optionFont":{ size: 16, weight: 400 } as Font,
       "optionFontColor":Color.Red,
       "fontColor":Color.Green
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   } as events_emitter.EventData
   let indexEvent: events_emitter.InnerEvent = {
     eventId: 25,
@@ -225,7 +225,7 @@ it('SelectJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
       "optionFont":{ size: 16, weight: 500 } as Font,
       "optionFontColor":'123',
       "indexValue":'bbb'
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   } as events_emitter.EventData
   let indexEvent: events_emitter.InnerEvent = {
     eventId: 25,

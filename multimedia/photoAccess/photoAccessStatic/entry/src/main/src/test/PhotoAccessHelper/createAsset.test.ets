@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,7 +28,7 @@ export default function createAssetTest() {
 
     let appContext: Context = Hypium.get("context") as Context;
     let helper = photoAccessHelper.getPhotoAccessHelper(appContext);
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll case');
       await getPermission();
       await driveFn();
@@ -40,7 +40,7 @@ export default function createAssetTest() {
     const createAssetCallback1 = async (done: () => void, testNum: string, type: photoAccessHelper.PhotoType,
       extension: string, options: photoAccessHelper.CreateOptions): Promise<void> => {
       try {
-        helper.createAsset(type, extension, options,
+        (helper as photoAccessHelper.PhotoAccessHelper).createAsset(type, extension, options,
           (err: BusinessError<void> | null, uri: string | undefined): void => {
             try {
               if (err?.code !== 0) {
@@ -50,13 +50,13 @@ export default function createAssetTest() {
               } else {
                 hilog.info(domain, tag, testNum + ' uri: ' + uri);
               }
-            } catch (error: Error) {
+            } catch (error) {
               hilog.info(domain, tag,
                 testNum + ' createAsset failed' + ", error.name:" + error.name + ", error.message:" + error.message);
             }
             done();
           });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' test failed' + ", error.name:" + error.name + ", error.message:" + error.message);
         expect(false).assertTrue();
@@ -67,7 +67,7 @@ export default function createAssetTest() {
     const createAssetCallback2 = async (done: () => void, testNum: string, type: photoAccessHelper.PhotoType,
       extension: string): Promise<void> => {
       try {
-        helper.createAsset(type, extension, (err: BusinessError<void> | null, uri: string | undefined): void => {
+        (helper as photoAccessHelper.PhotoAccessHelper).createAsset(type, extension, (err: BusinessError<void> | null, uri: string | undefined): void => {
           try {
             if (err?.code !== 0) {
               hilog.info(domain, tag, testNum + " err.code: " + err?.code + ", err.message: " + err?.message)
@@ -75,12 +75,12 @@ export default function createAssetTest() {
             } else {
               hilog.info(domain, tag, testNum + " uri: " + uri)
             }
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(domain, tag, testNum + " error.name: " + error.name + ", error.message: " + error.message)
           }
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.message: " + error.message)
         expect(false).assertTrue();
         done();
@@ -91,7 +91,7 @@ export default function createAssetTest() {
       type: photoAccessHelper.PhotoType | undefined, extension: string | undefined,
       options: photoAccessHelper.CreateOptions | undefined): Promise<void> => {
       try {
-        helper.createAsset(type as photoAccessHelper.PhotoType, extension as string,
+        (helper as photoAccessHelper.PhotoAccessHelper).createAsset(type as photoAccessHelper.PhotoType, extension as string,
           options as photoAccessHelper.CreateOptions, (err: BusinessError<void> | null, uri: string | undefined) => {
             try {
               if (err?.code !== 0) {
@@ -99,12 +99,12 @@ export default function createAssetTest() {
               } else {
                 expect(false).assertTrue();
               }
-            } catch (error: Error) {
+            } catch (error) {
               hilog.info(domain, tag, testNum + " error.name: " + error.name + ", error.message: " + error.message)
             }
             done();
           });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.message: " + error.message)
         done();
       }
@@ -113,9 +113,9 @@ export default function createAssetTest() {
     const createAssetPromise1 = async (done: () => void, testNum: string, type: photoAccessHelper.PhotoType,
       extension: string, options: photoAccessHelper.CreateOptions): Promise<void> => {
       try {
-        await helper.createAsset(type, extension, options);
+        await (helper as photoAccessHelper.PhotoAccessHelper).createAsset(type, extension, options);
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.message: " + error.message)
         expect(false).assertTrue();
         done();
@@ -125,9 +125,9 @@ export default function createAssetTest() {
     const createAssetPromise2 = async (done: () => void, testNum: string, type: photoAccessHelper.PhotoType,
       extension: string): Promise<void> => {
       try {
-        await helper.createAsset(type, extension);
+        await (helper as photoAccessHelper.PhotoAccessHelper).createAsset(type, extension);
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.message: " + error.message)
         expect(false).assertTrue();
         done();
@@ -138,11 +138,11 @@ export default function createAssetTest() {
       type: photoAccessHelper.PhotoType | undefined, extension: string | undefined,
       options: photoAccessHelper.CreateOptions | undefined): Promise<void> => {
       try {
-        await helper.createAsset(type as photoAccessHelper.PhotoType, extension as string,
+        await (helper as photoAccessHelper.PhotoAccessHelper).createAsset(type as photoAccessHelper.PhotoType, extension as string,
           options as photoAccessHelper.CreateOptions);
         expect(false).assertTrue();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.message: " + error.message)
         done();
       }

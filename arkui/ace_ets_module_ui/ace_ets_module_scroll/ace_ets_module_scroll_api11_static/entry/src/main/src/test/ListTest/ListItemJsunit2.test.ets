@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
 import events_emitter from '@ohos.events.emitter';
 import { StickyStyle } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -46,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listItemJsunit2() {
   describe('listItemJsunit2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       
@@ -68,7 +69,7 @@ export default function listItemJsunit2() {
           await CommonFunc.sleep(2000);
           // console.info("push listItem page result:" + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push listItem page error:" + err);
       }
     });
@@ -111,7 +112,7 @@ it('testListItem_static_02', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "sticky": StickyStyle.None
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 122,
@@ -119,7 +120,7 @@ it('testListItem_static_02', Level.LEVEL1, async (done: () => void): Promise<voi
         }
         console.info("[testListItem_static_02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testListItem_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -164,7 +165,7 @@ it('testListItem_static_04', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "editMode": false
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 123,
@@ -172,7 +173,7 @@ it('testListItem_static_04', Level.LEVEL1, async (done: () => void): Promise<voi
         }
         console.info("[testListItem_static_04] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testListItem_static_04] change component data error: " + err.message);
       }
       console.info("[testListItem_static_04] xyb000");

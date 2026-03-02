@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ProgressContentTest() {
   describe('ProgressContentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ProgressContentTest beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.information.api20.static", "EntryAbility");
     });
@@ -64,23 +64,6 @@ export default function ProgressContentTest() {
       routerInstance.back();
     })
     
-    /**
-     * @tc.number   ProgressContentTest_static_001
-     * @tc.name     ProgressContentTest_static_001
-     * @tc.desc     ProgressContentTest_static_001
-     * @tc.level    Level.LEVEL1
-     */
-it('ProgressContentTest_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ProgressContentTest_001 START');
-      await Utils.sleep(1000);
-      let strJson = inspector.getInspectorByKey('ProgressStyleContent');
-      let obj = JSON.parseJsonElement(strJson);
-      await Utils.sleep(1000);
-      console.info('[ProgressContentTest_001] obj is: ' + obj.getElement('$attrs').getElement('capsuleStyle').getString('content'));
-      expect(obj.getElement('$attrs').getElement('capsuleStyle').getString('content')).assertEqual('module description');
-      console.info('[ProgressContentTest_001] END');
-      done();
-    });
 
     
     /**

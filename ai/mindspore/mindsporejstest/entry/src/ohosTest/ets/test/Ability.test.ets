@@ -4897,14 +4897,24 @@ export default function abilityTest() {
       let context: mindSporeLite.Context = {};
       context.target = ["nnrt"];
       context.nnrt = {};
+      let flag: number = 99;
       for (let i:number = 0; i<all_devices.length; i++){
         console.log('=========print NNRT Device==========');
         console.log(await all_devices[i].deviceID().toString());
         console.log(await all_devices[i].deviceType().toString());
         console.log(await all_devices[i].deviceName().toString());
         console.log('=========print NNRT Device end============');
+        let prefix: string = "NPU_";
+        if (await all_devices[i].deviceName().toString().startsWith(prefix)) {
+          flag = i
+        }
       }
-      let device = all_devices[0];
+      if (flag == 99) {
+        console.log('=========no NPU device,skip testcase==========');
+        return
+      }
+      let device = all_devices[flag];
+      console.log(await device.deviceID().toString());
       context.nnrt.deviceID = device.deviceID();
       context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_NONE;
       context.nnrt.priority = mindSporeLite.Priority.PRIORITY_NONE;
@@ -4976,14 +4986,24 @@ export default function abilityTest() {
       let context: mindSporeLite.Context = {};
       context.target = ["nnrt"];
       context.nnrt = {};
+      let flag: number = 99;
       for (let i:number = 0; i<all_devices.length; i++){
         console.log('=========print NNRT Device==========');
         console.log(await all_devices[i].deviceID().toString());
         console.log(await all_devices[i].deviceType().toString());
         console.log(await all_devices[i].deviceName().toString());
         console.log('=========print NNRT Device end============');
+        let prefix: string = "NPU_";
+        if (await all_devices[i].deviceName().toString().startsWith(prefix)) {
+          flag = i
+        }
       }
-      let device = all_devices[0];
+      if (flag == 99) {
+        console.log('=========no NPU device,skip testcase==========');
+        return
+      }
+      let device = all_devices[flag];
+      console.log(await device.deviceID().toString());
       context.nnrt.deviceID = device.deviceID();
       context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_LOW;
       context.nnrt.priority = mindSporeLite.Priority.PRIORITY_LOW;
@@ -5055,14 +5075,24 @@ export default function abilityTest() {
       let context: mindSporeLite.Context = {};
       context.target = ["nnrt"];
       context.nnrt = {};
+      let flag: number = 99;
       for (let i:number = 0; i<all_devices.length; i++){
         console.log('=========print NNRT Device==========');
         console.log(await all_devices[i].deviceID().toString());
         console.log(await all_devices[i].deviceType().toString());
         console.log(await all_devices[i].deviceName().toString());
         console.log('=========print NNRT Device end============');
+        let prefix: string = "NPU_";
+        if (await all_devices[i].deviceName().toString().startsWith(prefix)) {
+          flag = i
+        }
       }
-      let device = all_devices[0];
+      if (flag == 99) {
+        console.log('=========no NPU device,skip testcase==========');
+        return
+      }
+      let device = all_devices[flag];
+      console.log(await device.deviceID().toString());
       context.nnrt.deviceID = device.deviceID();
       context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_MEDIUM;
       context.nnrt.priority = mindSporeLite.Priority.PRIORITY_MEDIUM;
@@ -5134,14 +5164,24 @@ export default function abilityTest() {
       let context: mindSporeLite.Context = {};
       context.target = ["nnrt"];
       context.nnrt = {};
+      let flag: number = 99;
       for (let i:number = 0; i<all_devices.length; i++){
         console.log('=========print NNRT Device==========');
         console.log(await all_devices[i].deviceID().toString());
         console.log(await all_devices[i].deviceType().toString());
         console.log(await all_devices[i].deviceName().toString());
         console.log('=========print NNRT Device end============');
+        let prefix: string = "NPU_";
+        if (await all_devices[i].deviceName().toString().startsWith(prefix)) {
+          flag = i
+        }
       }
-      let device = all_devices[0];
+      if (flag == 99) {
+        console.log('=========no NPU device,skip testcase==========');
+        return
+      }
+      let device = all_devices[flag];
+      console.log(await device.deviceID().toString());
       context.nnrt.deviceID = device.deviceID();
       context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_HIGH;
       context.nnrt.priority = mindSporeLite.Priority.PRIORITY_HIGH;
@@ -5213,14 +5253,24 @@ export default function abilityTest() {
       let context: mindSporeLite.Context = {};
       context.target = ["nnrt"];
       context.nnrt = {};
+      let flag: number = 99;
       for (let i:number = 0; i<all_devices.length; i++){
         console.log('=========print NNRT Device==========');
         console.log(await all_devices[i].deviceID().toString());
         console.log(await all_devices[i].deviceType().toString());
         console.log(await all_devices[i].deviceName().toString());
         console.log('=========print NNRT Device end============');
+        let prefix: string = "NPU_";
+        if (await all_devices[i].deviceName().toString().startsWith(prefix)) {
+          flag = i
+        }
       }
-      let device = all_devices[0];
+      if (flag == 99) {
+        console.log('=========no NPU device,skip testcase==========');
+        return
+      }
+      let device = all_devices[flag];
+      console.log(await device.deviceID().toString());
       context.nnrt.deviceID = device.deviceID();
       context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_EXTREME;
       context.nnrt.priority = mindSporeLite.Priority.PRIORITY_HIGH;
@@ -5285,13 +5335,19 @@ export default function abilityTest() {
         console.log('=========getAllNNRTDeviceDescriptions is NULL==========');
         return
       }
+      let flag: number = 99;
       for (let i:number = 0; i<all_devices.length; i++){
         console.log('=========print NNRT Device==========');
         console.log(await all_devices[i].deviceID().toString());
         console.log(await all_devices[i].deviceType().toString());
         console.log(await all_devices[i].deviceName().toString());
         console.log('=========print NNRT Device end============');
+        let prefix: string = "NPU_";
+        if (await all_devices[i].deviceName().toString().startsWith(prefix)) {
+          flag = i
+        }
       }
+      
       let syscontext: common.Context = globalThis.context
       let inputBuffer: Uint8Array= await syscontext.resourceManager.getRawFileContent(inputName);
       console.log('=========MSLITE success, input bin bytelength: ' + inputBuffer.byteLength);
@@ -5306,7 +5362,12 @@ export default function abilityTest() {
       context.cpu.threadAffinityCoreList = [0, 1, 2, 3];
 
       context.nnrt = {};
-      let device = all_devices[0];
+      if (flag == 99) {
+        console.log('=========no NPU device,skip testcase==========');
+        return
+      }
+      let device = all_devices[flag];
+      console.log(await device.deviceID().toString());
       context.nnrt.deviceID = device.deviceID();
       context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_EXTREME;
       context.nnrt.priority = mindSporeLite.Priority.PRIORITY_HIGH;
@@ -5379,14 +5440,24 @@ export default function abilityTest() {
       let context: mindSporeLite.Context = {};
       context.target = ["nnrt"];
       context.nnrt = {};
+      let flag: number = 99;
       for (let i:number = 0; i<all_devices.length; i++){
         console.log('=========print NNRT Device==========');
         console.log(await all_devices[i].deviceID().toString());
         console.log(await all_devices[i].deviceType().toString());
         console.log(await all_devices[i].deviceName().toString());
         console.log('=========print NNRT Device end============');
+        let prefix: string = "NPU_";
+        if (await all_devices[i].deviceName().toString().startsWith(prefix)) {
+          flag = i
+        }
       }
-      let device = all_devices[0];
+      if (flag == 99) {
+        console.log('=========no NPU device,skip testcase==========');
+        return
+      }
+      let device = all_devices[flag];
+      console.log(await device.deviceID().toString());
       context.nnrt.deviceID = device.deviceID();
       context.nnrt.performanceMode = 5;
       context.nnrt.priority = 5;

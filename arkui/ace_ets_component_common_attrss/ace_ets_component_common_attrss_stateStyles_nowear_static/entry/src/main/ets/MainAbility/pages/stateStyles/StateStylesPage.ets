@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,6 @@
  */
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
-import { StepperView } from '../../view/alignRules/StepperView';
 import {
   MenuItemGroup,
   MenuItemGroupOptions,
@@ -24,7 +23,6 @@ import {
   TabContent,
   ListItemGroup,
   ListItem,
-  StepperItem,
   SliderStyle,
   BadgeParamWithNumber,
   Blank,
@@ -115,7 +113,6 @@ import {
   DatePickerOptions,
   ProgressOptions,
   RadioOptions,
-  Stepper,
   applyStyles
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
@@ -148,11 +145,10 @@ struct StateStylesPage {
   onPageShow() {
     console.info('StateStylesPage show called ', this._isEnable)
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -273,14 +269,6 @@ struct StateStylesPage {
           })
             .showTips(true)
             .applyStyles(this.commonStyle)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -554,19 +542,6 @@ struct StateStylesPage {
               }
             }
           }.applyStyles(this.commonStyle)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .applyStyles(this.commonStyle)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

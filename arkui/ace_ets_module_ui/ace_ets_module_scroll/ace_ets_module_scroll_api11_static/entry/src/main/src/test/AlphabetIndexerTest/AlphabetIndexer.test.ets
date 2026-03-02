@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { GlobalContext } from '../../../ets/MainAbility/common/GlobalContext.ets'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -51,7 +52,7 @@ function alphabetDefaultPopupSize(sysWidth: Resource) {
 
 export default function ActsAlphabetIndexerUxTest() {
   describe('ActsAlphabetIndexerUxTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       
@@ -71,7 +72,8 @@ export default function ActsAlphabetIndexerUxTest() {
           routerAlp.pushUrl(options)
           await CommonFunc.sleep(2000);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push AlphabetIndexer page error " + JSON.stringify(err));
       }
     });
@@ -107,7 +109,7 @@ export default function ActsAlphabetIndexerUxTest() {
             "nullFlag3": false,
             "nullFlag4": false,
             "nullFlag5": false
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -115,7 +117,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -193,7 +196,7 @@ it('ArkUI_AlphabetIndexer_static_0800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -201,7 +204,8 @@ it('ArkUI_AlphabetIndexer_static_0800', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -227,7 +231,7 @@ it('ArkUI_AlphabetIndexer_static_0900', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -235,7 +239,8 @@ it('ArkUI_AlphabetIndexer_static_0900', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -261,7 +266,7 @@ it('ArkUI_AlphabetIndexer_static_1000', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -269,7 +274,8 @@ it('ArkUI_AlphabetIndexer_static_1000', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -294,7 +300,7 @@ it('ArkUI_AlphabetIndexer_static_1100', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -302,7 +308,8 @@ it('ArkUI_AlphabetIndexer_static_1100', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -328,7 +335,7 @@ it('ArkUI_AlphabetIndexer_static_1200', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -336,7 +343,8 @@ it('ArkUI_AlphabetIndexer_static_1200', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -361,7 +369,7 @@ it('ArkUI_AlphabetIndexer_static_1300', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -369,7 +377,8 @@ it('ArkUI_AlphabetIndexer_static_1300', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -394,7 +403,7 @@ it('ArkUI_AlphabetIndexer_static_1400', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -402,7 +411,8 @@ it('ArkUI_AlphabetIndexer_static_1400', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -428,7 +438,7 @@ it('ArkUI_AlphabetIndexer_static_1500', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -436,7 +446,8 @@ it('ArkUI_AlphabetIndexer_static_1500', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -462,7 +473,7 @@ it('ArkUI_AlphabetIndexer_static_1600', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -470,7 +481,8 @@ it('ArkUI_AlphabetIndexer_static_1600', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -495,7 +507,7 @@ it('ArkUI_AlphabetIndexer_static_1700', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -503,7 +515,8 @@ it('ArkUI_AlphabetIndexer_static_1700', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -529,7 +542,7 @@ it('ArkUI_AlphabetIndexer_static_1800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -537,7 +550,8 @@ it('ArkUI_AlphabetIndexer_static_1800', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -562,7 +576,7 @@ it('ArkUI_AlphabetIndexer_static_1900', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -570,7 +584,8 @@ it('ArkUI_AlphabetIndexer_static_1900', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -595,7 +610,7 @@ it('ArkUI_AlphabetIndexer_static_2600', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -603,7 +618,8 @@ it('ArkUI_AlphabetIndexer_static_2600', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_2600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -629,7 +645,7 @@ it('ArkUI_AlphabetIndexer_static_2700', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -637,7 +653,8 @@ it('ArkUI_AlphabetIndexer_static_2700', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_2700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -663,7 +680,7 @@ it('ArkUI_AlphabetIndexer_static_2800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -671,7 +688,8 @@ it('ArkUI_AlphabetIndexer_static_2800', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_2800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_2800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -696,7 +714,7 @@ it('ArkUI_AlphabetIndexer_static_2900', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -704,7 +722,8 @@ it('ArkUI_AlphabetIndexer_static_2900', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_2900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_2900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -730,7 +749,7 @@ it('ArkUI_AlphabetIndexer_static_3000', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -738,7 +757,8 @@ it('ArkUI_AlphabetIndexer_static_3000', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_3000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_3000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -763,7 +783,7 @@ it('ArkUI_AlphabetIndexer_static_3100', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -771,7 +791,8 @@ it('ArkUI_AlphabetIndexer_static_3100', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_AlphabetIndexer_static_3100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_3100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

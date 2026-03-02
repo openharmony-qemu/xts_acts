@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +21,7 @@ import {
   Flex, FlexDirection, ItemAlign, FlexAlign,
   Text, Button, FontWeight, ClickEvent, Margin, Color, Row,
 } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -41,7 +42,7 @@ struct promptExample {
               data: {
                 "COUNTRY": localeInfo.countryOrRegion,
                 "DIR": localeInfo.dir
-              }  as Record<String, undefined|null|Object>
+              }  as Record<String,RecordData>
             }
             console.log("backData is" + JSON.stringify(backData.data));
             let backEvent: emitter.InnerEvent = {
@@ -50,7 +51,7 @@ struct promptExample {
             }
             console.info("confituration start to emit action state");
             emitter.emit(backEvent, backData);
-          } catch (error:Error){
+          } catch (error){
             console.info("confituration emit action state err: ");
           }
         })

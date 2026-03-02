@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, AlignRuleOption } from '@ohos.arkui.component'
@@ -562,22 +562,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-	mFocusable: boolean = false
-
-	applyNormalAttribute(instance: StepperAttribute): void {
-		instance.focusable(this.mFocusable)
-	}
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-	mFocusable: boolean = false
-
-	applyNormalAttribute(instance: StepperItemAttribute): void {
-		instance.focusable(this.mFocusable)
-	}
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mFocusable: boolean = false
 
@@ -774,8 +758,6 @@ struct FocusablePage {
 	@State _focusableSliderModifier: SliderModifier = new SliderModifier()
 	@State _focusableSpanModifier: SpanModifier = new SpanModifier()
 	@State _focusableStackModifier: StackModifier = new StackModifier()
-	@State _focusableStepperModifier: StepperModifier = new StepperModifier()
-	@State _focusableStepperItemModifier: StepperItemModifier = new StepperItemModifier()
 	@State _focusableSwiperModifier: SwiperModifier = new SwiperModifier()
 	@State _focusableTabContentModifier: TabContentModifier = new TabContentModifier()
 	@State _focusableTabsModifier: TabsModifier = new TabsModifier()
@@ -803,17 +785,15 @@ struct FocusablePage {
 
 	onPageShow() {
 		console.info('focusable translate page show called ')
-		let routerParamOptions = new RouterParams()
-		routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-		this.targetView = routerParamOptions.view.targetView;
-		this.componentKey = routerParamOptions.view.componentKey as string;
-		this.parentWidth = routerParamOptions.view.parentWidth;
-		this.parentHeight = routerParamOptions.view.parentHeight;
-		this.columns = (routerParamOptions.view.columns as int)
-		this.gutter = (routerParamOptions.view.gutter as int)
-		this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
-		this.parentComponentKey = routerParamOptions.view.parentComponentKey;
-		this._focusableButtonModifier.mFocusable = routerParamOptions.view.testValue.setValue.focusable
+		this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
+		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+		this._focusableButtonModifier.mFocusable = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.focusable
     attrsManager.registerDataChange((value: SetValue) => {
 			console.info('focusable [registerDataChange] ' + JSON.stringify(value.focusable))
 			this._focusableAlphabetIndexerModifier.mFocusable = value.focusable
@@ -881,8 +861,6 @@ struct FocusablePage {
 			this._focusableSliderModifier.mFocusable = value.focusable
 			this._focusableSpanModifier.mFocusable = value.focusable
 			this._focusableStackModifier.mFocusable = value.focusable
-			this._focusableStepperModifier.mFocusable = value.focusable
-			this._focusableStepperItemModifier.mFocusable = value.focusable
 			this._focusableSwiperModifier.mFocusable = value.focusable
 			this._focusableTabContentModifier.mFocusable = value.focusable
 			this._focusableTabsModifier.mFocusable = value.focusable
@@ -1057,32 +1035,6 @@ struct FocusablePage {
 					.showTips(true)
 					
 					.attributeModifier(this._focusableSliderModifier)
-			}
-			if (this.targetView == 'Stepper') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-				}
-					
-					
-			}
-			if (this.targetView == 'StepperItem') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-						.backgroundColor(Color.Red)
-						
-						
-				}
-					.backgroundColor(Color.Yellow)
-					.width('100%')
-					.height('100%')
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')

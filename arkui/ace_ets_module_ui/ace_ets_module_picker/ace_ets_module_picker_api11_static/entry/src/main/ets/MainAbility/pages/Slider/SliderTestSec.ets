@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ import {
   FontWeight,
   Axis,
   Margin,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Slider,SliderChangeMode,SliderStyle,
+  PickerTextStyle, CalendarAlign, CalendarPicker,Slider,SliderChangeMode,SliderStyle,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,FlexAlign,Rating
 } from '@ohos.arkui.component';
 import {
@@ -42,6 +42,7 @@ import {
   Link,
   PropRef,
 } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct Index {
@@ -57,7 +58,7 @@ struct Index {
     console.info("key==> page valueChangeCallBack");
     if (eventData != null && eventData.data != null) {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, Object | null | undefined>
+      const data = eventData.data as Record<String,RecordData>
       if(data!['value'] =="true"){
         if( data!['content'] =="no") {
           this.valueNo = true;

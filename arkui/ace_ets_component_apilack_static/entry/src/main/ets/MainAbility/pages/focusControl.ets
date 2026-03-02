@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,6 +30,7 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -59,7 +60,7 @@ struct FocusControlExample {
                   let eventData: events_emitter.EventData = {
                     data: {
                       "value": this.touchOnFocusName,
-                    } as Record<String,undefined|null|Object>
+                    } as Record<String,RecordData>
                   }
                   let event: events_emitter.InnerEvent = {
                     eventId: 60232,
@@ -67,7 +68,7 @@ struct FocusControlExample {
                   }
                   console.info("OnTouchGrpBtn start to emit action state")
                   events_emitter.emit(event, eventData)
-                } catch (err: Error) {
+                } catch (err) {
                   console.info("OnTouchGrpBtn emit action state err: " + JSON.stringify((err as Error)?.message))
                 }
               })
@@ -86,7 +87,7 @@ struct FocusControlExample {
                     let eventData: events_emitter.EventData = {
                       data: {
                         "value": this.touchOnFocusName1,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let event: events_emitter.InnerEvent = {
                       eventId: 60233,
@@ -94,7 +95,7 @@ struct FocusControlExample {
                     }
                     console.info("OnTouchBtn1 start to emit action state")
                     events_emitter.emit(event, eventData)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("OnTouchBtn1 emit action state err: " + JSON.stringify((err as Error)?.message))
                   }
                 })
@@ -112,7 +113,7 @@ struct FocusControlExample {
                     let eventData: events_emitter.EventData = {
                       data: {
                         "value": this.touchOnFocusName2,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let event: events_emitter.InnerEvent = {
                       eventId: 60234,
@@ -120,7 +121,7 @@ struct FocusControlExample {
                     }
                     console.info("OnTouchBtn2 start to emit action state")
                     events_emitter.emit(event, eventData)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("OnTouchBtn2 emit action state err: " + JSON.stringify((err as Error)?.message))
                   }
                 })
@@ -143,7 +144,7 @@ struct FocusControlExample {
                     let eventData: events_emitter.EventData = {
                       data: {
                         "value": this.touchOnFocusName3,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let event: events_emitter.InnerEvent = {
                       eventId: 60235,
@@ -151,7 +152,7 @@ struct FocusControlExample {
                     }
                     console.info("OnTouchBtn3 start to emit action state")
                     events_emitter.emit(event, eventData)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("OnTouchBtn3 emit action state err: " + JSON.stringify((err as Error)?.message))
                   }
                 })
@@ -172,7 +173,7 @@ struct FocusControlExample {
                     let eventData: events_emitter.EventData = {
                       data: {
                         "value": this.touchOnFocusName4,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let event: events_emitter.InnerEvent = {
                       eventId: 60236,
@@ -180,7 +181,7 @@ struct FocusControlExample {
                     }
                     console.info("OnTouchBtn4 start to emit action state")
                     events_emitter.emit(event, eventData)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("OnTouchBtn4 emit action state err: " + JSON.stringify((err as Error)?.message))
                   }
                 })
@@ -233,7 +234,7 @@ struct FocusControlExample {
                 let eventData: events_emitter.EventData = {
                   data: {
                     "value": this.inputValue,
-                  } as Record<String,undefined|null|Object>
+                  } as Record<String,RecordData>
                 }
                 let event: events_emitter.InnerEvent = {
                   eventId: 60237,
@@ -241,7 +242,7 @@ struct FocusControlExample {
                 }
                 console.info("defaultFocus test start to emit action start")
                 events_emitter.emit(event, eventData)
-              } catch (err: Error) {
+              } catch (err) {
                 console.info("defaultFocus test emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })

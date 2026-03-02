@@ -34,7 +34,7 @@ export default function textMinFontSizeJsunit() {
   describe('textMinFontSizeTest', () => {
 
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textMinFontSizeTest beforeEach start");
 
 

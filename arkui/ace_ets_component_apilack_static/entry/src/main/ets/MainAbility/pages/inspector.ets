@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,6 +36,7 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -82,7 +83,7 @@ struct Inspector {
                   data: {
                     // "getInspectorNodes": getInspectorNodesObj,
                     "result": "success"
-                  } as Record<String,undefined|null|Object>
+                  } as Record<String,RecordData>
                 }
                 let backEvent: events_emitter.InnerEvent = {
                   eventId: 60208,
@@ -90,7 +91,7 @@ struct Inspector {
                 }
                 console.info("inspector_101 onClick start to emit action state")
                 events_emitter.emit(backEvent, backData)
-              } catch (err: Error) {
+              } catch (err) {
                 console.info("inspector_101 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })
@@ -107,7 +108,7 @@ struct Inspector {
                 let backData1: events_emitter.EventData = {
                   data: {
                     "result": "success",
-                  } as Record<String,undefined|null|Object>
+                  } as Record<String,RecordData>
                 }
                 let backEvent1: events_emitter.InnerEvent = {
                   eventId: 60209,
@@ -115,7 +116,7 @@ struct Inspector {
                 }
                 console.info("inspector_102 onClick start to emit action state")
                 events_emitter.emit(backEvent1, backData1)
-              } catch (err: Error) {
+              } catch (err) {
                 console.info("inspector_102 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })
@@ -139,7 +140,7 @@ struct Inspector {
                 });
                 Profiler.unregisterVsyncCallback();
                 this.catchStatus = "callBackSuccess"
-              } catch (err: Error) {
+              } catch (err) {
                 console.info("inspector_103 onClick err: " + JSON.stringify((err as Error)?.message))
                 this.catchStatus = "callBackFail"
               }
@@ -147,7 +148,7 @@ struct Inspector {
                 let backData2: events_emitter.EventData = {
                   data: {
                     "catchStatus": this.catchStatus,
-                  } as Record<String,undefined|null|Object>
+                  } as Record<String,RecordData>
                 }
                 let backEvent2: events_emitter.InnerEvent = {
                   eventId: 60210,
@@ -155,7 +156,7 @@ struct Inspector {
                 }
                 console.info("inspector_103 onClick start to emit action state")
                 events_emitter.emit(backEvent2, backData2)
-              } catch (err: Error) {
+              } catch (err) {
                 console.info("inspector_103 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })
@@ -171,7 +172,7 @@ struct Inspector {
     console.info("[inspector] page stateChangCallBack");
     if (eventData != null && eventData.data != null) {
       console.info("[inspector] page state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       if (data['setColor'] != null) {
         this.setColor = data['setColor'] as string;
       }

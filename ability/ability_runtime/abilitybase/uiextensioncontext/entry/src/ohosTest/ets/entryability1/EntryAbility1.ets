@@ -17,6 +17,7 @@ import { AbilityConstant, AtomicServiceOptions, common, UIAbility, Want } from '
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+import eventBusPlue from '../lib/EventBusPlus';
 
 const DOMAIN = 0x0000;
 let timeout : number = 1000;
@@ -49,10 +50,17 @@ export default class EntryAbility1 extends UIAbility {
         });
       }
     };
+    if(want?.action == 'result'){
+      commonEventManager.publish('AbilityRuntime_OptionResult', (result) => {
+        hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_5500: ${JSON.stringify(result)}`);
+        this.context.terminateSelf()
+      });
+    }
   }
 
-  onDestroy(): void {
+  async onDestroy(): Promise<void>{
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'EntryAbility1 onDestroy');
+    await eventBusPlue.emit('EntryAbility1_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {

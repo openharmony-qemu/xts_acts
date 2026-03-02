@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,11 +33,11 @@ export default function SymmetricCryptographyJsunit() {
      * @tc.desc   Use the Callback Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_crypto_framework_Symmetric_Encryption_AES_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await symCallback
           .encryptAndDecryptNormalProcess(
@@ -426,16 +426,16 @@ export default function SymmetricCryptographyJsunit() {
         try {
           cryptoFramework.createSymKeyGenerator("AES257");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("err is :" + err.code);
-          expect(err.code).assertEqual(801);
+          expect((err as BusinessError).code).assertEqual(801);
         }
         try {
           cryptoFramework.createSymKeyGenerator("AESNULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("err is :" + err.code);
-          expect(err.code).assertEqual(801);
+          expect((err as BusinessError).code).assertEqual(801);
         }
         done();
       }
@@ -456,16 +456,16 @@ export default function SymmetricCryptographyJsunit() {
         try {
           cryptoFramework.createCipher("AES128|NULL|PKCS7");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("err is :" + err.code);
-          expect(err.code).assertEqual(801);
+          expect((err as BusinessError).code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("AES128|ADF|PKCS7");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("err is :" + err.code);
-          expect(err.code).assertEqual(801);
+          expect((err as BusinessError).code).assertEqual(801);
         }
         done();
       }
@@ -486,16 +486,16 @@ export default function SymmetricCryptographyJsunit() {
         try {
           cryptoFramework.createCipher("AES128|GCM|NULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("err is :" + err.code);
-          expect(err.code).assertEqual(801);
+          expect((err as BusinessError).code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("AES128|GCM|CCCC");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("err is :" + err.code);
-          expect(err.code).assertEqual(801);
+          expect((err as BusinessError).code).assertEqual(801);
         }
         done();
       }
@@ -707,14 +707,14 @@ export default function SymmetricCryptographyJsunit() {
         try {
           cryptoFramework.createCipher("3DES192|null|PKCS7");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(801);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("3DES192|DDD|PKCS7");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(801);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(801);
         }
         done();
       }
@@ -735,14 +735,14 @@ export default function SymmetricCryptographyJsunit() {
         try {
           cryptoFramework.createCipher("3DES192|ECB|null");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(801);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("3DES192|ECB|CCCCC");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(801);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(801);
         }
         done();
       }

@@ -68,10 +68,11 @@ export default function ActsAceWebViewSdkSchemeHandler() {
     it('testWebViewSdkSchemeHandler_getHeader', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_getHeader"
       Utils.emitEvent(emitKey, 142301);
-      let isReturn = false;
-      Utils.registerEvent("testWebViewSdkSchemeHandler_getHeader", true, 142110, ()=>{isReturn = true});
-      await waitForExist(()=>isReturn, emitKey, true,1000);
-      done();
+      Utils.registerBaseEvent("testWebViewSdkSchemeHandler_getHeader", true, 142110, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.waitAndClickComponent('webViewSdkSchemeHandler',driver);
     })
 
     /**

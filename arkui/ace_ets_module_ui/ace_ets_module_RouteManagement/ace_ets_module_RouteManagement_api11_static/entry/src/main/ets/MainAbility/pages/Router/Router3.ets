@@ -15,7 +15,6 @@
  */
 import router from '@ohos.router'
 import { Entry,Component,Column,Text, Button, ClickEvent, Row, FontWeight } from '@ohos.arkui.component';
-import { JsonObj2 } from '../../common/Utils';
 
 @Entry
 @Component
@@ -31,7 +30,7 @@ struct Index3 {
         Button('跳转路由').onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'MainAbility/pages/Router/Router4',
-            params: (new JsonObj2('message', [1,2,3,4,5])).toJSON()
+            params: {data1: 'message', data2: [1,2,3,4,5]} as JsonObj
           });
         }).id('router3Button')
       }
@@ -39,4 +38,9 @@ struct Index3 {
     }
     .height('100%')
   }
+}
+
+class JsonObj {
+  data1: string = '';
+  data2: int[] = [0];
 }

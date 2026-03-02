@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function onScrollStopTest(){
   describe('onScrollStopTest',  () =>{
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerTextStyle beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -59,6 +59,14 @@ export default function onScrollStopTest(){
       }
     });
 
+    afterEach(async () => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.clear();
+      let options:router.RouterOptions = {
+        url: 'MainAbility/pages/index/index',
+      }
+      routerInstance.replaceUrl(options);
+    });
     
     
     

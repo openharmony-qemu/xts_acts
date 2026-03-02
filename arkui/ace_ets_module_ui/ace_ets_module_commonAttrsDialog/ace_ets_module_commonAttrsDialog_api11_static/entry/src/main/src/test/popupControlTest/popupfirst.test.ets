@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function abilityTest() {
   describe('ActsAbilityTest',  () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
     });
 
@@ -89,18 +89,10 @@ export default function abilityTest() {
      */
 it('ArkUX_Stage_Popup_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Popup_0100 START');
-      setTimeout(() => {
-        try {
-          console.info("ArkUX_Stage_Popup_0100 component obj is: " + JSON.stringify(JSON.parseJsonElement(inspector.getInspectorByKey('forPopup'))));
-          expect(JSON.parseJsonElement(inspector.getInspectorByKey('forPopup')).getElement('$attrs').getString('bindPopup')).assertEqual(undefined);
-          console.info('ArkUX_Stage_Popup_0100 END ');
-          done();
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Stage_Popup_0100 ERR  ' + JSON.stringify(err));
-          done();
-        }
-      }, 500)
+      console.info("ArkUX_Stage_Popup_0100 component obj is: " + JSON.stringify(JSON.parseJsonElement(inspector.getInspectorByKey('forPopup'))));
+      expect(JSON.parseJsonElement(inspector.getInspectorByKey('forPopup')).getElement('$attrs').tryGetElement('bindPopup')).assertEqual(undefined);
+      console.info('ArkUX_Stage_Popup_0100 END ');
+      done();
     });
 
   })

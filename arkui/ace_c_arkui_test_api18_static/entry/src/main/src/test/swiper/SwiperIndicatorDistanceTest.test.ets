@@ -26,7 +26,7 @@ const libUtil: LibUtil = new LibUtil();
 export default function swiperIndicatorDistanceTest() {
   console.info('push page export');
   describe('SwiperIndicatorDistanceTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api18.static", "EntryAbility")
     });
     console.info('push page trying');
@@ -49,6 +49,7 @@ export default function swiperIndicatorDistanceTest() {
 
       console.info('Swiper_DigitIndicator START');
       let driverDigit: Driver = Driver.create();
+      await Utils.sleep(1000)
       let BottomButton: Component | null = await driverDigit.findComponent(ON.id('bottom'));
       let IgnoreSizeButton: Component | null = await driverDigit.findComponent(ON.id('ignoreSize'));
       let driverDot: Driver = Driver.create();

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,74 +45,13 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-class ParamsData implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+interface ParamsData {
   data3: number[];
-
-  constructor() {
-    this.data3 = [0];
-  }
-
-  constructor(arr: number[]) {
-    this.data3 = arr;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    let arr = new Array<jsonx.JsonElement>();
-    for (let i = 0; i < this.data3.length; ++i) {
-      arr.push(jsonx.JsonElement.createDouble(this.data3[i]));
-    }
-    let arrJson = jsonx.JsonElement.createArray(arr);
-    root.set('data3', arrJson);
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    let arrJson = jsonElem.tryAsArray();
-    if (!arrJson) {
-      this.data3 = new Array<number>();
-      return;
-    }
-    let arr = new Array<number>();
-    for (let i = 0; i < arrJson!.length; i++) {
-      let val = arrJson![i].tryAsDouble();
-      if (val) {
-        arr.push(val);
-      }
-    }
-    this.data3 = arr;
-  }
 }
 
-class MyParams implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+interface MyParams {
   data1: string;
   data2: ParamsData;
-
-  constructor() {
-    this.data1 = "";
-    this.data2 = new ParamsData();
-  }
-
-  constructor(data1: string, data2: ParamsData) {
-    this.data1 = data1;
-    this.data2 = data2;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    root.set('data1', jsonx.JsonElement.createString(this.data1))
-    root.set('data2', this.data2.toJSON());
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.data1 = jsonElem.tryGetString('data1');
-    let data2 = jsonElem.tryGetElement('data2');
-    if (data2) {
-      this.data2 = new ParamsData();
-      this.data2.fromJSON(data2!);
-    }
-  }
 }
 
 export default function circleNewJsunit() {
@@ -244,7 +183,12 @@ it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
       const ohosrouter = AppStorage.get<Router>("router") as Router
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/common',
-        params: (new MyParams('message', new ParamsData([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       } as router.RouterOptions, (err) => {
         if (err) {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -270,7 +214,12 @@ it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
       const ohosrouter = AppStorage.get<Router>("router") as Router
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Ellipse/ellipse1',
-        params: (new MyParams('message', new ParamsData([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         expect(true).assertTrue();
       })
@@ -296,7 +245,8 @@ it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
           message: 'Message Info'
         });
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ACE_showAlertBeforeBackPage_static_0100 failed, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -317,7 +267,8 @@ it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
           message: 'undefined'
         });
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ACE_showAlertBeforeBackPage_static_0200, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
       }
@@ -336,7 +287,8 @@ it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
       try {
         ohosrouter.hideAlertBeforeBackPage();
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ACE_hideAlertBeforeBackPage_static_0100, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -371,7 +323,7 @@ it('testGlobal_attribute_static_0100', Level.LEVEL0, async (): Promise<void> => 
               expect(value).assertEqual('ohosProject');
             }
           });
-      } catch (error: BusinessError) {
+      } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         console.error(`callback getStringValue failed, error code: ${code}, message: ${message}.`);

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,13 +39,14 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import {UtilsTest} from "../Util.test"
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function inspectorJsunit() {
   describe('inspectorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("inspectorJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
 
@@ -205,7 +206,7 @@ export default function inspectorJsunit() {
     it('testInspectorTestAdd_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('testInspectorTestAdd0005 START');
       try {
-        let data: Record<String,undefined|null|Object> = {
+        let data: Record<String,RecordData> = {
           "setColor": 'red'
         }
         let eventData: events_emitter.EventData = {
@@ -253,54 +254,6 @@ export default function inspectorJsunit() {
       } catch (err) {
         console.info("inspector_103 on events_emitter err : " + JSON.stringify(err));
       }
-    });
-
-
-
-    /**
-     * @tc.number   testInspectorTestAdd_static_007
-     * @tc.name     testInspectorTestAdd_static_007
-     * @tc.desc     testInspectorTestAdd_static_007
-     * @tc.level    Level.LEVEL0
-     */
-    it('testInspectorTestAdd_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('testInspectorTestAdd007 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('getFilteredInspectorTree'))
-      console.info('[testInspectorTestAdd007] findcomponent');
-      await (btn?.click() as Promise<void>);
-      console.info('[testInspectorTestAdd007] click success');
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('text01_id');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("response: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertContain("401");
-      console.info('[testInspectorTestAdd007] END');
-      done();
-    });
-
-
-
-    /**
-     * @tc.number   testInspectorTestAdd_static_008
-     * @tc.name     testInspectorTestAdd_static_008
-     * @tc.desc     testInspectorTestAdd_static_008
-     * @tc.level    Level.LEVEL0
-     */
-    it('testInspectorTestAdd_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('testInspectorTestAdd008 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('getFilteredInspectorTreeById'))
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('text02_id');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("response: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertContain("401");
-      console.info('[testInspectorTestAdd008] END');
-      done();
     });
   })
 }

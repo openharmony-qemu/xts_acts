@@ -114,13 +114,11 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_READ_SESSION_ID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            if (session.sessionId.length === 64 && controller.sessionId.length === 64) {
-                console.info('TestLog: Read AVSession & Controler sessionId successfully');
-                expect(true).assertTrue();
-            } else {
-                console.info('TestLog: Read sessionId failed');
-                expect(false).assertTrue();
-            }
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_READ_SESSION_ID_0100]";
+            console.info(`{TAG}TestLog:length1 = ${session.sessionId.length},length2 = ${controller.sessionId.length}`);
+            expect(session.sessionId.length).assertEqual(64);
+            expect(controller.sessionId.length).assertEqual(64);
+            console.info(`${TAG}TestLog: Read AVSession & Controler sessionId successfully`);
             done();
         })
 
@@ -133,27 +131,23 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0100]";
             let metadata0 = {
                 assetId: '121278',
             };
             await session.setAVMetadata(metadata0).then(() => {
-                console.info('TestLog: Set assetId successfully');
+                console.info(`${TAG}TestLog: Set assetId successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.assetId === '121278') {
-                    console.info('TestLog: Get assetId Successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get assetId failed');
-                    console.info(`TestLog: assetId is: ${data.assetId}`);
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:assetId = ${data.assetId}`);
+                expect(data.assetId).assertEqual('121278');
+                console.info(`${TAG}TestLog: Get assetId Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -168,26 +162,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0200]";
             let metadata1 = {
                 assetId: '121278',
                 artist: 'Eminem',
             };
             await session.setAVMetadata(metadata1).then(() => {
-                console.info('TestLog: Set artist successfully');
+                console.info(`${TAG}TestLog: Set artist successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set artist error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set artist error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.artist === metadata1.artist) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get artist failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:artist = ${data.artist}`);
+                expect(data.artist).assertEqual(metadata1.artist);
+                console.info(`${TAG}TestLog: Get artist Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get artist error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get artist error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -202,26 +194,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0300]";
             let metadata2 = {
                 assetId: '121278',
                 author: 'ST',
             };
             await session.setAVMetadata(metadata2).then(() => {
-                console.info('TestLog: Set author successfully');
+                console.info(`${TAG}TestLog: Set author successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set author error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set author error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.author === metadata2.author) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get author failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:author = ${data.author}`);
+                expect(data.author).assertEqual(metadata2.author);
+                console.info(`${TAG}TestLog: Get author Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get author error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get author error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -236,26 +226,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0400]";
             let metadata3 = {
                 assetId: '121278',
                 album: 'Slim shady',
             };
             await session.setAVMetadata(metadata3).then(() => {
-                console.info('TestLog: Set album successfully');
+                console.info(`${TAG}TestLog: Set album successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set album error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set album error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.album === metadata3.album) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get album failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:album = ${data.album}`);
+                expect(data.album).assertEqual(metadata3.album);
+                console.info(`${TAG}TestLog: Get album Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get album error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get album error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -270,26 +258,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0500]";
             let metadata4 = {
                 assetId: '121278',
                 writer: 'ST',
             };
             await session.setAVMetadata(metadata4).then(() => {
-                console.info('TestLog: Set writer successfully');
+                console.info(`${TAG}TestLog: Set writer successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set writer error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set writer error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.writer === metadata4.writer) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get writer failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:writer = ${data.writer}`);
+                expect(data.writer).assertEqual(metadata4.writer);
+                console.info(`${TAG}TestLog: Get writer Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get writer error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get writer error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -304,26 +290,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0600]";
             let metadata5 = {
                 assetId: '121278',
                 composer: 'ST',
             };
             await session.setAVMetadata(metadata5).then(() => {
-                console.info('TestLog: Set composer successfully');
+                console.info(`${TAG}TestLog: Set composer successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set composer error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set composer error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.composer === metadata5.composer) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get composer failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:composer = ${data.composer}`);
+                expect(data.composer).assertEqual(metadata5.composer);
+                console.info(`${TAG}TestLog: Get composer Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get composer error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get composer error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -338,27 +322,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0700]";
             let metadata6 = {
                 assetId: '121278',
                 duration: 2222,
             };
             await session.setAVMetadata(metadata6).then(() => {
-                console.info('TestLog: Set duration successfully');
+                console.info(`${TAG}TestLog: Set duration successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set duration error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set duration error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.duration === metadata6.duration) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get duration failed');
-                    console.info(`TestLog: Get duration is: ${data.duration}`);
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:duration = ${data.duration}`);
+                expect(data.duration).assertEqual(metadata6.duration);
+                console.info(`${TAG}TestLog: Get duration Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get duration error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get duration error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -373,26 +354,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0800]";
             let metadata7 = {
                 assetId: '121278',
                 mediaImage: 'https://img2.baidu.com/it/u=3583435814,2833583486&fm=253&fmt=auto&app=138&f=JPEG?w=526&h=500',
             };
             await session.setAVMetadata(metadata7).then(() => {
-                console.info('TestLog: Set mediaImage successfully');
+                console.info(`${TAG}TestLog: Set mediaImage successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set mediaImage error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set mediaImage error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.mediaImage === metadata7.mediaImage) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get mediaImage failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:mediaImage = ${data.mediaImage}`);
+                expect(data.mediaImage).assertEqual(metadata7.mediaImage);
+                console.info(`${TAG}TestLog: Get mediaImage Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get mediaImage error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get mediaImage error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -407,7 +386,8 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('TestLog: Creat pixelmap');
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_0900]";
+            console.info(`${TAG}TestLog: Creat pixelmap`);
             let pixelMap = await getPixelMap();
             let readBuffer0 = new ArrayBuffer(96);
             await pixelMap.readPixelsToBuffer(readBuffer0);
@@ -417,9 +397,9 @@ export default function AVSession() {
                 mediaImage: pixelMap,
             };
             await session.setAVMetadata(metadata8).then(() => {
-                console.info('TestLog: Set pixelMap successfully');
+                console.info(`${TAG}TestLog: Set pixelMap successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set pixelMap error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set pixelMap error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             let pixMap;
@@ -427,24 +407,21 @@ export default function AVSession() {
                 if (data.assetId === '121278') {
                     pixMap = data.mediaImage;
                 } else {
-                    console.info('TestLog: Get pixelMap failed');
+                    console.info(`${TAG}TestLog: Get pixelMap failed`);
                     expect(false).assertTrue();
                 }
             }).catch((err) => {
-                console.info(`TestLog: Get pixelMap error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get pixelMap error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             let pixelSize = pixMap.getPixelBytesNumber();
-            console.info(`TestLog: pixelSize is: ${pixelSize}`);
+            console.info(`${TAG}TestLog: pixelSize is: ${pixelSize}`);
             let readBuffer = new ArrayBuffer(pixelSize);
             await pixMap.readPixelsToBuffer(readBuffer);
             let bufferArr2 = new Uint8Array(readBuffer);
             for (let i = 0; i < bufferArr2.length; i++) {
-                if (bufferArr0[i] !== bufferArr2[i]) {
-                    expect(false).assertTrue();
-                } else {
-                    expect(true).assertTrue();
-                }
+                console.info(`${TAG}TestLog:bufferArr0 = ${bufferArr0[i]}`);
+                expect(bufferArr0[i]).assertEqual(bufferArr2[i]);
             }
             done();
         })
@@ -458,26 +435,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1000]";
             let metadata9 = {
                 assetId: '121278',
                 publishDate: new Date(1994, 1, 1, 1),
             };
             await session.setAVMetadata(metadata9).then(() => {
-                console.info('TestLog: Set publishDate successfully');
+                console.info(`${TAG}TestLog: Set publishDate successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set publishDate error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set publishDate error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.publishDate.getTime() === metadata9.publishDate.getTime()) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get publishDate failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:getTime = ${data.publishDate.getTime()}`);
+                expect(data.publishDate.getTime()).assertEqual(metadata9.publishDate.getTime());
+                console.info(`${TAG}TestLog: Get publishDate Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get publishDate error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get publishDate error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -492,26 +467,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1100]";
             let metadata10 = {
                 assetId: '121278',
                 subtitle: '8 Mile',
             };
             await session.setAVMetadata(metadata10).then(() => {
-                console.info('TestLog: Set subtitle successfully');
+                console.info(`${TAG}TestLog: Set subtitle successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set subtitle error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set subtitle error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.subtitle === metadata10.subtitle) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get subtitle failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:subtitle = ${data.subtitle}`);
+                expect(data.subtitle).assertEqual(metadata10.subtitle);
+                console.info(`${TAG}TestLog: Get subtitle Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get subtitle error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get subtitle error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -526,6 +499,7 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1200]";
             let metadata11 = {
                 assetId: '121278',
                 description: 'Rap',
@@ -538,12 +512,9 @@ export default function AVSession() {
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.description === metadata11.description) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get description failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:description = ${data.description}`);
+                expect(data.description).assertEqual(metadata11.description);
+                console.info(`${TAG}TestLog: Get description Successfully`);
             }).catch((err) => {
                 console.info(`TestLog: Get description error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -560,26 +531,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1300]";
             let metadata12 = {
                 assetId: '121278',
                 lyric: 'https://lyric.tingmall.com/lyric/58/970/589710004-LRC-LRC.lrc?t=1649918948000',
             };
             await session.setAVMetadata(metadata12).then(() => {
-                console.info('TestLog: Set lyric successfully');
+                console.info(`${TAG}TestLog: Set lyric successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set lyric error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set lyric error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.lyric === metadata12.lyric) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get lyric failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:lyric = ${data.lyric}`);
+                expect(data.lyric).assertEqual(metadata12.lyric);
+                console.info(`${TAG}TestLog: Get lyric Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get lyric error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get lyric error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -594,28 +563,27 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1400]";
             let metadata13 = {
                 assetId: '121278',
                 previousAssetId: '121277',
                 nextAssetId: '121279',
             };
             await session.setAVMetadata(metadata13).then(() => {
-                console.info('TestLog: Set assetId successfully');
+                console.info(`${TAG}TestLog: Set assetId successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.previousAssetId === metadata13.previousAssetId
-                    && data.nextAssetId === metadata13.nextAssetId) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get assetId failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:previousAssetId = ${data.previousAssetId}`);
+                expect(data.previousAssetId).assertEqual(metadata13.previousAssetId);
+                console.info(`${TAG}TestLog:nextAssetId = ${data.nextAssetId}`);
+                expect(data.nextAssetId).assertEqual(metadata13.nextAssetId);
+                console.info(`${TAG}TestLog: Get AssetId Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -630,26 +598,24 @@ export default function AVSession() {
           * @tc.level  LEVEL0
           */
          it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1500]";
             let metadata = {
                 assetId: '121278',
                 filter: avSession.ProtocolType.TYPE_CAST_PLUS_STREAM
             };
             await session.setAVMetadata(metadata).then(() => {
-                console.info('TestLog: Set filter successfully');
+                console.info(`${TAG}TestLog: Set filter successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.filter === metadata.filter) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get filter failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:filter = ${data.filter}`);
+                expect(data.filter).assertEqual(metadata.filter);
+                console.info(`${TAG}TestLog: Get filter Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -664,26 +630,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1600]";
             let metadata = {
                 assetId: '121278',
                 filter: avSession.ProtocolType.TYPE_LOCAL
             };
             await session.setAVMetadata(metadata).then(() => {
-                console.info('TestLog: Set filter successfully');
+                console.info(`${TAG}TestLog: Set filter successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.filter === metadata.filter) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get filter failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:filter = ${data.filter}`);
+                expect(data.filter).assertEqual(metadata.filter);
+                console.info(`${TAG}TestLog: Get filter Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -698,26 +662,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1700]";
             let metadata = {
                 assetId: '121278',
                 filter: avSession.ProtocolType.TYPE_CAST_PLUS_MIRROR
             };
             await session.setAVMetadata(metadata).then(() => {
-                console.info('TestLog: Set filter successfully');
+                console.info(`${TAG}TestLog: Set filter successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.filter === metadata.filter) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get filter failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:filter = ${data.filter}`);
+                expect(data.filter).assertEqual(metadata.filter);
+                console.info(`${TAG}TestLog: Get filter Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -732,26 +694,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1800]";
             let metadata = {
                 assetId: '121278',
                 skipIntervals: avSession.SkipIntervals.SECONDS_10
             };
             await session.setAVMetadata(metadata).then(() => {
-                console.info('TestLog: Set skipIntervals successfully');
+                console.info(`${TAG}TestLog: Set skipIntervals successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set skipIntervals error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set skipIntervals error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.skipIntervals === metadata.skipIntervals) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get skipIntervals failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:skipIntervals = ${data.skipIntervals}`);
+                expect(data.skipIntervals).assertEqual(metadata.skipIntervals);
+                console.info(`${TAG}TestLog: Get skipIntervals Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get skipIntervals error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get skipIntervals error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -766,7 +726,8 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('TestLog: Creat pixelmap');
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_1900]";
+            console.info(`${TAG}TestLog: Creat pixelmap`);
             let pixelMap = await getPixelMap();
             let readBuffer0 = new ArrayBuffer(96);
             await pixelMap.readPixelsToBuffer(readBuffer0);
@@ -778,9 +739,9 @@ export default function AVSession() {
                 avQueueImage: pixelMap
             };
             await session.setAVMetadata(metadata).then(() => {
-                console.info('TestLog: Set avQueueName、avQueueId、avQueueImage successfully');
+                console.info(`${TAG}TestLog: Set avQueueName、avQueueId、avQueueImage successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set avQueueName、avQueueId、avQueueImage error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set avQueueName、avQueueId、avQueueImage error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             let pixMap;
@@ -788,25 +749,22 @@ export default function AVSession() {
                 if (data.assetId === '121278' && data.avQueueName === '121278' && data.avQueueId === '121278') {
                     pixMap = data.avQueueImage;
                 } else {
-                    console.info('TestLog: getAVMetadata value error.');
+                    console.info(`${TAG}TestLog: getAVMetadata value error.`);
                     expect(false).assertTrue();
                 }
             }).catch((err) => {
-                console.info(`TestLog: getAVMetadata error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: getAVMetadata error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             if (pixMap) {
                 let pixelSize = pixMap.getPixelBytesNumber();
-                console.info(`TestLog: pixelSize is: ${pixelSize}`);
+                console.info(`${TAG}TestLog: pixelSize is: ${pixelSize}`);
                 let readBuffer = new ArrayBuffer(pixelSize);
                 await pixMap.readPixelsToBuffer(readBuffer);
                 let bufferArr2 = new Uint8Array(readBuffer);
                 for (let i = 0; i < bufferArr2.length; i++) {
-                    if (bufferArr0[i] !== bufferArr2[i]) {
-                        expect(false).assertTrue();
-                    } else {
-                        expect(true).assertTrue();
-                    }
+                    console.info(`${TAG}TestLog:bufferArr0 = ${bufferArr0[i]}`);
+                    expect(bufferArr0[i]).assertEqual(bufferArr2[i]);
                 }
             }
             done();
@@ -893,27 +851,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0100]";
             let PlaybackState1 = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_PLAY,
                 activeItemId: 0,
             };
             await session.setAVPlaybackState(PlaybackState1).then(() => {
-                console.info('TestLog: Set State successfully');
+                console.info(`${TAG}TestLog: Set State successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set State error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.state === 2) {
-                    console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(2);
+                console.info(`${TAG}TestLog: Get state Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -928,27 +883,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0200]";
             let PlaybackState2 = {
                 speed: 2.6,
             };
 
             await session.setAVPlaybackState(PlaybackState2).then(() => {
-                console.info('TestLog: Set speed successfully');
+                console.info(`${TAG}TestLog: Set speed successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set speed error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set speed error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.speed === 2.6) {
-                    console.info('TestLog: Get speed successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get speed failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:speed = ${data.speed}`);
+                expect(data.speed).assertEqual(2.6);
+                console.info(`${TAG}TestLog: Get speed Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get speed error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get speed error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -963,6 +915,7 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0300]";
             let PlaybackState3 = {
                 position: { elapsedTime: 10, updateTime: (new Date()).getTime() },
             };
@@ -975,13 +928,9 @@ export default function AVSession() {
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.position.elapsedTime === 10) {
-                    console.info('TestLog: Get position successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get position failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:position = ${data.position.elapsedTime}`);
+                expect(data.position.elapsedTime).assertEqual(10);
+                console.info(`${TAG}TestLog: Get position Successfully`);
             }).catch((err) => {
                 console.info(`TestLog: Get position error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -998,27 +947,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0400]";
             let PlaybackState4 = {
                 bufferedTime: 1000,
             };
 
             await session.setAVPlaybackState(PlaybackState4).then(() => {
-                console.info('TestLog: Set bufferedTime successfully');
+                console.info(`${TAG}TestLog: Set bufferedTime successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set bufferedTime error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set bufferedTime error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.bufferedTime === 1000) {
-                    console.info('TestLog: Get bufferedTime successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get bufferedTime failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:bufferedTime = ${data.bufferedTime}`);
+                expect(data.bufferedTime).assertEqual(1000);
+                console.info(`${TAG}TestLog: Get bufferedTime Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get bufferedTime error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get bufferedTime error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1033,27 +979,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0500]";
             let PlaybackState5 = {
                 loopMode: avSession.LoopMode.LOOP_MODE_SEQUENCE,
             };
 
             await session.setAVPlaybackState(PlaybackState5).then(() => {
-                console.info('TestLog: Set loopMode successfully');
+                console.info(`${TAG}TestLog: Set loopMode successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.loopMode === 0) {
-                    console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get loopMode failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:loopMode = ${data.loopMode}`);
+                expect(data.loopMode).assertEqual(0);
+                console.info(`${TAG}TestLog: Get loopMode Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1068,27 +1011,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0600]";
             let PlaybackState6 = {
                 loopMode: avSession.LoopMode.LOOP_MODE_SINGLE,
             };
 
             await session.setAVPlaybackState(PlaybackState6).then(() => {
-                console.info('TestLog: Set loopMode successfully');
+                console.info(`${TAG}TestLog: Set loopMode successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.loopMode === 1) {
-                    console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get loopMode failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:loopMode = ${data.loopMode}`);
+                expect(data.loopMode).assertEqual(1);
+                console.info(`${TAG}TestLog: Get loopMode Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1103,27 +1043,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0700]";
             let PlaybackState7 = {
                 loopMode: avSession.LoopMode.LOOP_MODE_LIST,
             };
 
             await session.setAVPlaybackState(PlaybackState7).then(() => {
-                console.info('TestLog: Set loopMode successfully');
+                console.info(`${TAG}TestLog: Set loopMode successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.loopMode === 2) {
-                    console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get loopMode failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:loopMode = ${data.loopMode}`);
+                expect(data.loopMode).assertEqual(2);
+                console.info(`${TAG}TestLog: Get loopMode Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1138,27 +1075,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0800]";
             let PlaybackState8 = {
                 loopMode: avSession.LoopMode.LOOP_MODE_SHUFFLE,
             };
 
             await session.setAVPlaybackState(PlaybackState8).then(() => {
-                console.info('TestLog: Set loopMode successfully');
+                console.info(`${TAG}TestLog: Set loopMode successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.loopMode === 3) {
-                    console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get loopMode failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:loopMode = ${data.loopMode}`);
+                expect(data.loopMode).assertEqual(3);
+                console.info(`${TAG}TestLog: Get loopMode Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1173,27 +1107,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_0900]";
             let PlaybackState9 = {
                 isFavorite: true,
             };
 
             await session.setAVPlaybackState(PlaybackState9).then(() => {
-                console.info('TestLog: Set isFavorite successfully');
+                console.info(`${TAG}TestLog: Set isFavorite successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set isFavorite error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set isFavorite error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.isFavorite === true) {
-                    console.info('TestLog: Get isFavorite successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get isFavorite failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:isFavorite = ${data.isFavorite}`);
+                expect(data.isFavorite).assertEqual(true);
+                console.info(`${TAG}TestLog: Get isFavorite Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get isFavorite error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get isFavorite error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1208,27 +1139,23 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1000]";
             let PlaybackState12 = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_INITIAL,
             };
             await session.setAVPlaybackState(PlaybackState12).then(() => {
-                console.info('TestLog: Set playbackState successfully');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Set playbackState successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.state === 0) {
-                    console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(0);
+                console.info(`${TAG}TestLog: Get state Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1243,27 +1170,23 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1100]";
             let PlaybackState13 = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_PREPARE,
             };
             await session.setAVPlaybackState(PlaybackState13).then(() => {
-                console.info('TestLog: Set playbackState successfully');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Set playbackState successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.state === 1) {
-                    console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(1);
+                console.info(`${TAG}TestLog: Get state Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1278,25 +1201,21 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1200]";
             let PlaybackState14 = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_PAUSE,
             };
             await session.setAVPlaybackState(PlaybackState14).then(() => {
                 console.info('TestLog: Set playbackState successfully');
-                expect(true).assertTrue();
             }).catch((err) => {
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.state === 3) {
-                    console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(3);
+                console.info(`${TAG}TestLog: Get state Successfully`);
             }).catch((err) => {
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1313,27 +1232,23 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1300]";
             let PlaybackState15 = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_FAST_FORWARD,
             };
             await session.setAVPlaybackState(PlaybackState15).then(() => {
-                console.info('TestLog: Set playbackState successfully');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Set playbackState successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.state === 4) {
-                    console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(4);
+                console.info(`${TAG}TestLog: Get state Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1348,27 +1263,23 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1400]";
             let PlaybackState16 = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_REWIND,
             };
             await session.setAVPlaybackState(PlaybackState16).then(() => {
-                console.info('TestLog: Set playbackState successfully');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Set playbackState successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.state === 5) {
-                    console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(5);
+                console.info(`${TAG}TestLog: Get state Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1383,27 +1294,23 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1500]";
             let PlaybackState17 = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_STOP,
             };
             await session.setAVPlaybackState(PlaybackState17).then(() => {
-                console.info('TestLog: Set playbackState successfully');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Set playbackState successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.state === 6) {
-                    console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(6);
+                console.info(`${TAG}TestLog: Get state Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1418,26 +1325,22 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1600]";
             let PlaybackState18 = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_IDLE,
             };
             await session.setAVPlaybackState(PlaybackState18).then(() => {
-                console.info('TestLog: Set playbackState successfully');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Set playbackState successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await controller.getAVPlaybackState().then((data) => {
-                if (data.state === 10) {
-                    console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(10);
+                console.info(`${TAG}TestLog: Get state Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1452,26 +1355,22 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1700]";
             let playbackState = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_BUFFERING,
             };
             await session.setAVPlaybackState(playbackState).then(() => {
-                console.info('TestLog: Set playbackState successfully');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Set playbackState successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await controller.getAVPlaybackState().then((data) => {
-                if (data.state === 11) {
-                    console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(11);
+                console.info(`${TAG}TestLog: Get state Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1486,27 +1385,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1800]";
             let PlaybackState5 = {
                 loopMode: avSession.LoopMode.LOOP_MODE_CUSTOM,
             };
 
             await session.setAVPlaybackState(PlaybackState5).then(() => {
-                console.info('TestLog: Set loopMode successfully');
+                console.info(`${TAG}TestLog: Set loopMode successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.loopMode === 4) {
-                    console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get loopMode failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:loopMode = ${data.loopMode}`);
+                expect(data.loopMode).assertEqual(4);
+                console.info(`${TAG}TestLog: Get loopMode Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1521,27 +1417,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_1900]";
             let PlaybackState = {
                 maxVolume: 6
             };
 
             await session.setAVPlaybackState(PlaybackState).then(() => {
-                console.info('TestLog: Set maxVolume successfully');
+                console.info(`${TAG}TestLog: Set maxVolume successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set maxVolume error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set maxVolume error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.maxVolume === PlaybackState.maxVolume) {
-                    console.info('TestLog: Get maxVolume successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get maxVolume failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:maxVolume = ${data.maxVolume}`);
+                expect(data.maxVolume).assertEqual(PlaybackState.maxVolume);
+                console.info(`${TAG}TestLog: Get maxVolume Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get maxVolume error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get maxVolume error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1556,27 +1449,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_2000]";
             let PlaybackState = {
                 muted: false
             };
 
             await session.setAVPlaybackState(PlaybackState).then(() => {
-                console.info('TestLog: Set muted successfully');
+                console.info(`${TAG}TestLog: Set muted successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set muted error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set muted error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.muted === PlaybackState.muted) {
-                    console.info('TestLog: Get muted successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get muted failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:muted = ${data.muted}`);
+                expect(data.muted).assertEqual(PlaybackState.muted);
+                console.info(`${TAG}TestLog: Get muted Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get muted error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get muted error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1591,28 +1481,27 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_2100]";
             let PlaybackState = {
                 videoWidth: 1920,
                 videoHeight: 1080
             };
 
             await session.setAVPlaybackState(PlaybackState).then(() => {
-                console.info('TestLog: Set videoWidth & videoHeight successfully');
+                console.info(`${TAG}TestLog: Set videoWidth & videoHeight successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set videoWidth & videoHeight error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set videoWidth & videoHeight error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.videoWidth === PlaybackState.videoWidth && data.videoHeight === PlaybackState.videoHeight) {
-                    console.info('TestLog: Get videoWidth & videoHeight successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get videoWidth & videoHeight failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:videoWidth = ${data.videoWidth}`);
+                expect(data.videoWidth).assertEqual(PlaybackState.videoWidth);
+                console.info(`${TAG}TestLog:videoHeight = ${data.videoHeight}`);
+                expect(data.videoHeight).assertEqual(PlaybackState.videoHeight);
+                console.info(`${TAG}TestLog: Get videoWidth & videoHeight Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get videoWidth & videoHeight error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get videoWidth & videoHeight error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1627,27 +1516,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_2200]";
             let PlaybackState = {
                 duration: 100
             };
 
             await session.setAVPlaybackState(PlaybackState).then(() => {
-                console.info('TestLog: Set duration successfully');
+                console.info(`${TAG}TestLog: Set duration successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set duration error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set duration error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVPlaybackState().then((data) => {
-                if (data.duration === PlaybackState.duration) {
-                    console.info('TestLog: Get duration successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get duration failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog:duration = ${data.duration}`);
+                expect(data.duration).assertEqual(PlaybackState.duration);
+                console.info(`${TAG}TestLog: Get duration Successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Get duration error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get duration error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1662,6 +1548,7 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_PROMISE_0100]";
             let wantAgentInfo = {
                 wants: [
                     {
@@ -1679,28 +1566,25 @@ export default function AVSession() {
             });
 
             await session.setLaunchAbility(agent).then(() => {
-                console.info('TestLog: AVSessionTest : Set LaunchAbility');
+                console.info(`${TAG}TestLog: AVSessionTest : Set LaunchAbility`);
             }).catch((err) => {
-                console.info(`TestLog: Set LaunchAbility error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set LaunchAbility error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             let wantagent;
             await controller.getLaunchAbility().then((data) => {
                 wantagent = data;
-                console.info('TestLog: Get launchAbility');
+                console.info(`${TAG}TestLog: Get launchAbility`);
             }).catch((err) => {
-                console.info(`TestLog: Get LaunchAbility error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Get LaunchAbility error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             let agentBundleName = await WantAgent.getBundleName(agent);
             let wantagentBundleName = await WantAgent.getBundleName(wantagent);
-            if (agentBundleName == wantagentBundleName) {
-                console.info('TestLog: AVSessionTest : Set LaunchAbility successfully');
-                expect(true).assertTrue();
-            } else {
-                console.info('TestLog: AVSessionTest : Set LaunchAbility failed');
-                expect(false).assertTrue();
-            }
+            console.info(`${TAG}TestLog:agentBundleName = ${agentBundleName}`);
+            console.info(`${TAG}TestLog:wantagentBundleName = ${wantagentBundleName}`);
+            expect(agentBundleName).assertEqual(wantagentBundleName);
+            console.info(`${TAG}TestLog: AVSessionTest : Set LaunchAbility successfully`);
             done();
         })
 
@@ -1713,23 +1597,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_PROMISE_0100]";
             await session.activate().then(() => {
-                console.info('TestLog: Set session active successfully');
+                console.info(`${TAG}TestLog: Set session active successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             
             await controller.isActive().then((data) => {
                 if (data) {
-                    console.info('TestLog: session is active');
+                    console.info(`${TAG}TestLog: session is active`);
                     expect(true).assertTrue();
                 } else {
                     console.info('TestLog: session is directive');
                     expect(false).assertTrue();
                 }
             }).catch((err) => {
-                console.info(`TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -3563,26 +3448,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2200]";
             let metadata0 = {
                 assetId: '121278',
                 filter: avSession.ProtocolType.TYPE_DLNA
             };
             await session.setAVMetadata(metadata0).then(() => {
-                console.info('TestLog: Set assetId successfully');
+                console.info(`${TAG}TestLog: Set assetId successfully`);
             }).catch((err) => {
-                console.error(`TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
+                console.error(`${TAG}TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (data.filter === avSession.ProtocolType.TYPE_DLNA) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get filter failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: filter = ${data.filter}`);
+                expect(data.filter).assertEqual(avSession.ProtocolType.TYPE_DLNA);
+                console.info(`${TAG}TestLog: Get filter successfully`);
             }).catch((err) => {
-                console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
+                console.error(`${TAG}TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -3597,26 +3480,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2300]";
             let metadata = {
                 assetId: '121278',
                 drmSchemes: ["abcdefghjkl","asdfghjklqw"]
             };
             await session.setAVMetadata(metadata).then(() => {
-                console.info('TestLog: Set assetId successfully');
+                console.info(`${TAG}TestLog: Set assetId successfully`);
             }).catch((err) => {
-                console.error(`TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
+                console.error(`${TAG}TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (JSON.stringify(data.drmSchemes) === JSON.stringify(metadata.drmSchemes)) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get filter failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: drmSchemes = ${JSON.stringify(data.drmSchemes)}`);
+                expect(JSON.stringify(data.drmSchemes)).assertEqual(JSON.stringify(metadata.drmSchemes));
+                console.info(`${TAG}TestLog: Get drmSchemes successfully`);
             }).catch((err) => {
-                console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
+                console.error(`${TAG}TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -3631,26 +3512,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2400]";
             let metadata = {
                 assetId: '121278',
                 singleLyricText: 'dream it possible'
             };
             await session.setAVMetadata(metadata).then(() => {
-                console.info('TestLog: Set singleLyricText successfully');
+                console.info(`${TAG}TestLog: Set singleLyricText successfully`);
             }).catch((err) => {
-                console.error(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
+                console.error(`${TAG}TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.getAVMetadata().then((data) => {
-                if (JSON.stringify(data.singleLyricText) === JSON.stringify(metadata.singleLyricText)) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get filter failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: singleLyricText = ${JSON.stringify(data.singleLyricText)}`);
+                expect(JSON.stringify(data.singleLyricText)).assertEqual(JSON.stringify(metadata.singleLyricText));
+                console.info(`${TAG}TestLog: Get singleLyricText successfully`);
             }).catch((err) => {
-                console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
+                console.error(`${TAG}TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();

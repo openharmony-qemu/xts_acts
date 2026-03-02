@@ -81,9 +81,9 @@ export default function WebInitTest() {
      * @tc.desc   Save current page
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('ContextMenuEditStateFlagsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('ContextMenuEditStateFlagsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags', 10)
         await Utils.msSleep(1000)
@@ -156,7 +156,7 @@ export default function WebInitTest() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags3', 10)
         await Utils.msSleep(2000)
-        Utils.registerEvent('ContextMenuEditStateFlags', 3, 40, done);
+        Utils.registerEvent('ContextMenuEditStateFlags', 4, 40, done);
         await Utils.msSleep(2000)
         let driver: Driver = Driver.create();
         await Utils.msSleep(2000);
@@ -180,7 +180,7 @@ export default function WebInitTest() {
         await Utils.msSleep(2000)
         Utils.emitEvent('emitContextMenuEditStateFlags4', 10)
         await Utils.msSleep(2000)
-        Utils.registerEvent('ContextMenuEditStateFlags', 4, 41, done);
+        Utils.registerEvent('ContextMenuEditStateFlags', 8, 41, done);
         await Utils.msSleep(2000)
         let driver: Driver = Driver.create();
         await Utils.msSleep(2000);

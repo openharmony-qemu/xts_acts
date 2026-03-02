@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,13 +29,14 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function colorGradientJsunit() {
   describe('borderTest_five_2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("borderTest_five_2 beforeAll start");
            
       await UtilsTest.msSleep(4000)
@@ -112,7 +113,7 @@ it('testColorGradient002_static_02', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "linearGradientValue": linearGradientValue as LinearGradientOptions
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 5,
@@ -180,7 +181,7 @@ it('testColorGradient004_static_04', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "sweepGradientValue": sweepGradientValue as SweepGradientOptions
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6,
@@ -248,7 +249,7 @@ it('testColorGradient006_static_06', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "radialGradientValue": radialGradientValue as RadialGradientOptions
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 7,

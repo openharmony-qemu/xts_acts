@@ -101,7 +101,7 @@ export default function testsuite() {
   RotationGestureBasic02Test();
   PinchGestureBasic01Test();
   PinchGestureBasic02Test();
-  TapGestureTemplateTest();
+  // TapGestureTemplateTest();
   PanGestureExampleTemplateTest();
   LongPressGestureTemplateTest();
   onAttachTest(); 

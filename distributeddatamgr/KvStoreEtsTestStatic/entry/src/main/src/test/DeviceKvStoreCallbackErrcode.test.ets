@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -86,7 +86,7 @@ async function CreateCorruptDb() {
     fs.fsyncSync(file.fd);
     fs.closeSync(file);
     console.info(TAG + "CreateCorruptDb succeed");
-  }catch (err: Error) {
+  }catch (err) {
     console.error(TAG + "CreateCorruptDb failed, errCode:" + err.code + "errMessage" + err.message);
     expect().assertFail();
   }
@@ -231,7 +231,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           });
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error('afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
         done();
       }
@@ -258,7 +258,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -290,7 +290,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -318,7 +318,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -347,7 +347,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -377,7 +377,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' SUB_DDM_DKV_Get_ErrCode_0200 catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -405,7 +405,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' SUB_DDM_DKV_Get_ErrCode_0300 catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -434,7 +434,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' SUB_DDM_DKV_Get_ErrCode_0400 catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -469,7 +469,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -500,7 +500,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -531,7 +531,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -562,7 +562,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -593,7 +593,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -631,7 +631,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -666,7 +666,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -701,7 +701,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -735,7 +735,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -770,7 +770,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -806,7 +806,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -844,7 +844,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
                       console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
                     }
                   })
-                }catch(er: Error){
+                }catch(er){
                   console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
                 }
               }
@@ -854,7 +854,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           });
         }
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -886,7 +886,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -924,7 +924,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
                       console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
                     }
                   })
-                }catch(er: Error){
+                }catch(er){
                   console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
                 }
 
@@ -935,7 +935,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           });
         }
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -967,7 +967,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1007,7 +1007,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1048,7 +1048,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
                       console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
                     }
                   })
-                }catch(er: Error){
+                }catch(er){
                   console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
                 }
 
@@ -1059,7 +1059,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           });
         }
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1095,7 +1095,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1136,7 +1136,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
                       console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
                     }
                   })
-                }catch(er: Error){
+                }catch(er){
                   console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
                 }
 
@@ -1147,7 +1147,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           });
         }
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1183,7 +1183,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           }
 
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1214,7 +1214,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
             expect().assertFail();
           }
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         done();
         expect().assertFail();
@@ -1272,7 +1272,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
             expect().assertFail();
           }
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_getResultSize_Query_ErrCode_0300 Failed to catch is ${err.code},message is ${err.message}`);
         done();
         expect().assertFail();

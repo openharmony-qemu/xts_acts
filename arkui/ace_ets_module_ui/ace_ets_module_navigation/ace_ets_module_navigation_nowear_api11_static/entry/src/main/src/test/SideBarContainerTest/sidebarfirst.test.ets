@@ -33,7 +33,7 @@ let tag: string = 'testTag';
 
 export default function sidebarIconsJsunit() {
   describe('sidebarIconsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("sidebarIconsTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
 

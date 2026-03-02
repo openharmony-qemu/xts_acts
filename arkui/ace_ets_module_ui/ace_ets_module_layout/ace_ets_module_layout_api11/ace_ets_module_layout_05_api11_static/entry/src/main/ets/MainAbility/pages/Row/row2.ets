@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,6 +32,7 @@ import {
   RowOptions
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -42,7 +43,7 @@ struct RowTest2 {
   private stateChangCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("row page stateChangCallBack");
     if (eventData != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info("row page state change called:" + JSON.stringify(eventData));
       if(data['alignItems'] != null) {
         this.alignItems = data['alignItems'] as VerticalAlign;

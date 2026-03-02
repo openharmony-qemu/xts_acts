@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_RowCol_GridSize() {
   describe('Grid_RowCol_GridSizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Grid_RowCol_GridSizeTest beforeAll start");
            
       await UtilsTest.msSleep(4000)

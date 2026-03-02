@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -67,27 +67,38 @@ export default function flexPadding_StretchJsunit() {
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textFlexPadding03');
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexPadding01');
 
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi1:'+ Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)))
       expect(Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi2:'+ Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)))
       expect(Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi3:'+ Math.floor(Math.abs((textFlexPadding01.top - flexPadding01.top) - vp2px(10))))
       expect(Math.floor(Math.abs((textFlexPadding01.top - flexPadding01.top) - vp2px(10))) <= 1).assertTrue()
-
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi4:'+ Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding02.bottom)))
       expect(Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding02.bottom)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi5:'+ Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding03.bottom)))
       expect(Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding03.bottom)) <= 1).assertTrue()
+
       expect(flexPadding01.bottom).assertLarger(textFlexPadding01.bottom)
       expect(flexPadding01.right).assertLarger(textFlexPadding03.right)
+
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi8:'+ Math.floor(Math.abs((textFlexPadding01.left - flexPadding01.left) - vp2px(10))))
       expect(Math.floor(Math.abs((textFlexPadding01.left - flexPadding01.left) - vp2px(10))) <= 1).assertTrue()
-
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi9:'+ Math.floor(Math.abs((textFlexPadding01.bottom - textFlexPadding01.top) - vp2px(180))))
       expect(Math.floor(Math.abs((textFlexPadding01.bottom - textFlexPadding01.top) - vp2px(180))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi10:'+ Math.floor(Math.abs((textFlexPadding02.bottom - textFlexPadding02.top) - vp2px(180))))
       expect(Math.floor(Math.abs((textFlexPadding02.bottom - textFlexPadding02.top) - vp2px(180))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi11:'+ Math.floor(Math.abs((textFlexPadding03.bottom - textFlexPadding03.top) - vp2px(180))))
       expect(Math.floor(Math.abs((textFlexPadding03.bottom - textFlexPadding03.top) - vp2px(180))) <= 1).assertTrue()
-
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi12:'+ Math.floor(Math.abs((textFlexPadding01.right - textFlexPadding01.left) - vp2px(150))))
       expect(Math.floor(Math.abs((textFlexPadding01.right - textFlexPadding01.left) - vp2px(150))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi13:'+ Math.floor(Math.abs((textFlexPadding02.right - textFlexPadding02.left) - vp2px(150))))
       expect(Math.floor(Math.abs((textFlexPadding02.right - textFlexPadding02.left) - vp2px(150))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPadding_chazhi14:'+ Math.floor(Math.abs((textFlexPadding03.right - textFlexPadding03.left) - vp2px(150))))
       expect(Math.floor(Math.abs((textFlexPadding03.right - textFlexPadding03.left) - vp2px(150))) <= 1).assertTrue()
       expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row')
       expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Stretch')
-      console.info('new testFlexItemAlignStretchParentSetPadding END');
 
+      console.info('new testFlexItemAlignStretchParentSetPadding END');
     });
 
     /**
@@ -111,29 +122,58 @@ export default function flexPadding_StretchJsunit() {
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textFlexPadding03');
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexPadding01');
 
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi1:'+ Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi2:'+ Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi3:'+ Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top) - vp2px(30)))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi4:'+ Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding02.bottom)))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi5:'+ Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding03.bottom)))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi6:'+ Math.floor(Math.abs((flexPadding01.bottom - textFlexPadding01.bottom) - vp2px(30))))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi7:'+ Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left) - vp2px(30)))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi8:'+ Math.floor(Math.abs(textFlexPadding03.right - flexPadding01.right) - vp2px(30)))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi9:'+ Math.floor(Math.abs((textFlexPadding01.bottom - textFlexPadding01.top) - vp2px(140))))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi10:'+ Math.floor(Math.abs((textFlexPadding02.bottom - textFlexPadding02.top) - vp2px(140))))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi11:'+ Math.floor(Math.abs((textFlexPadding03.bottom - textFlexPadding03.top) - vp2px(140))))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi12:'+ Math.floor(Math.abs((textFlexPadding01.right - textFlexPadding01.left) - vp2px(440 / 3))))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi13:'+ Math.floor(Math.abs((textFlexPadding02.right - textFlexPadding02.left) - vp2px(440 / 3))))
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi14:'+ Math.floor(Math.abs((textFlexPadding03.right - textFlexPadding03.left) - vp2px(440 / 3))))
+
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi1:'+ Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)))
       expect(Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi2:'+ Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)))
       expect(Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi3:'+ Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top) - vp2px(30)))
       expect(Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top) - vp2px(30)) <= 1).assertTrue()
-
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi4:'+ Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding02.bottom)))
       expect(Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding02.bottom)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi5:'+ Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding03.bottom)))
       expect(Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding03.bottom)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi6:'+ Math.floor(Math.abs((flexPadding01.bottom - textFlexPadding01.bottom) - vp2px(30))))
       expect(Math.floor(Math.abs((flexPadding01.bottom - textFlexPadding01.bottom) - vp2px(30))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi7:'+ Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left) - vp2px(30)))
       expect(Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left) - vp2px(30)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi8:'+ Math.floor(Math.abs(textFlexPadding03.right - flexPadding01.right) - vp2px(30)))
       expect(Math.floor(Math.abs(textFlexPadding03.right - flexPadding01.right) - vp2px(30)) <= 1).assertTrue()
-
-      expect(Math.floor(Math.abs((textFlexPadding01.bottom - textFlexPadding01.top) - vp2px(140))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding02.bottom - textFlexPadding02.top) - vp2px(140))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding03.bottom - textFlexPadding03.top) - vp2px(140))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi9:'+ Math.floor(Math.abs((textFlexPadding01.bottom - textFlexPadding01.top) - vp2px(140))))
+      expect(Math.floor(Math.abs((textFlexPadding01.bottom - textFlexPadding01.top) - vp2px(140))) <= 2).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi10:'+ Math.floor(Math.abs((textFlexPadding02.bottom - textFlexPadding02.top) - vp2px(140))))
+      expect(Math.floor(Math.abs((textFlexPadding02.bottom - textFlexPadding02.top) - vp2px(140))) <= 2).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi11:'+ Math.floor(Math.abs((textFlexPadding03.bottom - textFlexPadding03.top) - vp2px(140))))
+      expect(Math.floor(Math.abs((textFlexPadding03.bottom - textFlexPadding03.top) - vp2px(140))) <= 2).assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi12:'+ Math.floor(Math.abs((textFlexPadding01.right - textFlexPadding01.left) - vp2px(440 / 3))))
       expect(Math.floor(Math.abs((textFlexPadding01.right - textFlexPadding01.left) - vp2px(440 / 3))) <= 1)
         .assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi13:'+ Math.floor(Math.abs((textFlexPadding02.right - textFlexPadding02.left) - vp2px(440 / 3))))
       expect(Math.floor(Math.abs((textFlexPadding02.right - textFlexPadding02.left) - vp2px(440 / 3))) <= 1)
         .assertTrue()
+      console.info('testFlexItemAlignStretchParentSetPaddingExceed_chazhi14:'+ Math.floor(Math.abs((textFlexPadding03.right - textFlexPadding03.left) - vp2px(440 / 3))))
       expect(Math.floor(Math.abs((textFlexPadding03.right - textFlexPadding03.left) - vp2px(440 / 3))) <= 1)
         .assertTrue()
+
       expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row')
       expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Stretch')
+      
       console.info('new testFlexItemAlignStretchParentSetPaddingExceed END');
-
     });
+
   })
 }

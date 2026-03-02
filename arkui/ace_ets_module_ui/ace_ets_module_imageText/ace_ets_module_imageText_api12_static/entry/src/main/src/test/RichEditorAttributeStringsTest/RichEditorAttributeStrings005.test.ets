@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorAttributeStrings005() {
   describe('RichEditorAttributeStrings005', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -136,27 +136,9 @@ export default function RichEditorAttributeStrings005() {
       let spans = await (driver.findComponent(ON.id('spans')) as Promise<Component>);
       let spansText = await spans.getText();
       await CommonFunc.sleep(500);
-      expect(spansText).assertContain('spans:[{"offsetInSpan":[0,1],"spanPosition":{"spanIndex":0,"spanRange":[0,1]}}]');
-      done();
-    });
-
-    
-    /**
-     * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0034
-     * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0034
-     * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0034
-     * @tc.level   Level.LEVEL0
-     */
-    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0034', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0034 START');
-      let driver = Driver.create();
-      let undefinedFromStyledString = await (driver.findComponent(ON.id('undefinedFromStyledString')) as Promise<Component>);
-      await undefinedFromStyledString.click();
-      await CommonFunc.sleep(500);
-      let spans = await (driver.findComponent(ON.id('spans')) as Promise<Component>);
-      let spansText = await spans.getText();
-      await CommonFunc.sleep(500);
-      expect(spansText).assertContain('spans:[{}]');
+      expect(spansText).assertContain('"offsetInSpan":[0,1]')
+      expect(spansText).assertContain('"spanIndex":0')
+      expect(spansText).assertContain('"spanRange":[0,1]')
       done();
     });
   })

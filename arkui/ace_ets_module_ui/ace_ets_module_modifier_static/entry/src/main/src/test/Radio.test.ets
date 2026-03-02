@@ -30,7 +30,7 @@ import { UtilsTest, startAbility } from './Util.test';
 
 export default function radioGroupJsunit() {
   describe('radioTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 
@@ -64,15 +64,14 @@ export default function radioGroupJsunit() {
      * @tc.desc     testRadioGroupStatic001
      * @tc.level    Level.LEVEL0
      */
-it('testRadioGroupStatic001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testRadioGroupStatic001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[testRadioGroupStatic001] START");
       let strJson = inspector.getInspectorByKey('RadioOne');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testRadioGroupStatic001] obj  is: " + JSON.stringifyJsonElement(obj.getElement('$attrs')));
-
-      expect(obj.getElement('$attrs').getElement('radioStyle').getString('checkedBackgroundColor')).assertEqual('#FF147258');
-      expect(obj.getElement('$attrs').getElement('radioStyle').getString('indicatorColor')).assertEqual('#FF123456');
-      expect(obj.getElement('$attrs').getElement('radioStyle').getString('uncheckedBorderColor')).assertEqual('#FF963852');
+      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('radioStyle')).getString('checkedBackgroundColor')).assertEqual('#FF147258');
+      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('radioStyle')).getString('indicatorColor')).assertEqual('#FF123456');
+      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('radioStyle')).getString('uncheckedBorderColor')).assertEqual('#FF963852');
 
       console.info("[testRadioGroupStatic001] END");
       done();

@@ -524,6 +524,24 @@ bool CheckOutput(const float* output, const float* expect)
     return true;
 }
 
+bool IsNPU()
+{
+    OH_NN_ReturnCode ret = OH_NN_FAILED;
+    const size_t* devicesID{ nullptr };
+    uint32_t devicesCount{ 0 };
+    ret = OH_NNDevice_GetAllDevicesID(&devicesID, &devicesCount);
+    if (ret != OH_NN_SUCCESS) {
+        LOGE("[NNRtTest] OH_NNDevice_GetAllDevicesID failed! ret=%d\n", ret);
+        return false;
+    }
+    if (devicesCount <= NO_DEVICE_COUNT) {
+        LOGE("[NNRtTest] devicesCount <= 0  devicesCount=%d\n", devicesCount);
+        return false;
+    }
+
+    return true;
+}
+
 } // namespace Test
 } // namespace NeuralNetworkRuntime
 } // namespace OHOS

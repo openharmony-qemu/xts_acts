@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorOnSelectionChange005() {
   describe('RichEditorOnSelectionChange005', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -105,7 +105,9 @@ export default function RichEditorOnSelectionChange005() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":0,"end":5}');
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":5') > 0).assertEqual(true);
       done();
     });
 

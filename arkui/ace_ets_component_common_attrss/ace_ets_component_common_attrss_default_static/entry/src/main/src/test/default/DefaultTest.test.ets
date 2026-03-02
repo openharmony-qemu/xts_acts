@@ -60,7 +60,7 @@ export default function defaultTest() {
     'Radio',
     'Rating',
 
-    'RichText',
+    // 'RichText',
     'ScrollBar',
     'Search',
     'Slider',
@@ -82,7 +82,6 @@ export default function defaultTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Panel',
     'RelativeContainer',
     'Row',
     'Scroll',
@@ -158,7 +157,7 @@ export default function defaultTest() {
     }
   }, {
     describe: 'Visibility',
-    exceptView: ['RichText', 'Web', 'StepperItem', 'TabContent'],
+    exceptView: ['RichText', 'Web', 'TabContent'],
     expectValue: {
       visibility: 'Visibility.Visible'
     }
@@ -185,7 +184,7 @@ export default function defaultTest() {
   ]
 
   describe('DefaultTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("defaultTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

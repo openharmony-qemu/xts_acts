@@ -43,7 +43,7 @@ interface ComplexKey {
 
 export default function LightWeightMapTest2() {
   describe('lightWeightMapTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -130,50 +130,6 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.name   testLightWeightMapIsEmpty0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0400
-     * @tc.desc   Testing LightWeightMap has large data and remove
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapIsEmpty0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapIsEmpty0004';
-    //   let data: Array<Number> = Array(10000).map((_: undefined, index: Number): Number => index);
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     data.forEach((i: Number): void => lightWeightMap.set('key' + i, i));
-    //     data.forEach((i: Number): void => lightWeightMap.remove('key' + i));
-    //     expect(lightWeightMap.isEmpty()).assertTrue();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightMapIsEmpty0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0500
-     * @tc.desc   Testing LightWeightMap has large data and clear
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapIsEmpty0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapIsEmpty0005';
-    //   let data: Array<Number> = Array(10000).map((_: undefined, index: Number): Number => index);
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     data.forEach((i: Number): void => lightWeightMap.set('key' + i, i));
-    //     lightWeightMap.clear();
-    //     expect(lightWeightMap.isEmpty()).assertTrue();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
      * @tc.name   testLightWeightMapHasAll0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0100
      * @tc.desc   Testing LightWeightMap contain other LightWeightMap data
@@ -196,50 +152,6 @@ export default function LightWeightMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMapHasAll0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0200
-     * @tc.desc   Testing LightWeightMap contain null data
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapHasAll0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapHasAll0002';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     lightWeightMap.set("sparrow", 356);
-    //     lightWeightMap.hasAll(null);
-    //     expect(false).assertFail();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightMapHasAll0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0300
-     * @tc.desc   Testing LightWeightMap contain undefined data
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapHasAll0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapHasAll0003';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     lightWeightMap.set("sparrow", 356);
-    //     lightWeightMap.hasAll(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightMapHasKey0001
@@ -305,27 +217,6 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.name   testLightWeightMapHasKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0400
-     * @tc.desc   Testing LightWeightMap has null or undefined key
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapHasKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapHasKey0004';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     expect(lightWeightMap.hasKey(null)).assertFalse();
-    //     expect(lightWeightMap.hasKey(undefined)).assertFalse();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
      * @tc.name   testLightWeightMapHasValue0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0100
      * @tc.desc   Testing LightWeightMap has value
@@ -387,27 +278,6 @@ export default function LightWeightMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMapHasValue0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0400
-     * @tc.desc   Testing LightWeightMap has null or undefined value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapHasValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapHasValue0004';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     expect(lightWeightMap.hasValue(null)).assertFalse();
-    //     expect(lightWeightMap.hasValue(undefined)).assertFalse();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightMapHasValue0005
@@ -583,27 +453,6 @@ export default function LightWeightMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMapGet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0400
-     * @tc.desc   Testing LightWeightMap get value by null or undefined key
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapGet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapGet0004';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     expect(lightWeightMap.get(null)).assertUndefined();
-    //     expect(lightWeightMap.get(undefined)).assertUndefined();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightMapGet0005
@@ -841,28 +690,6 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.name   testLightWeightMapGetIndexOfKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0400
-     * @tc.desc   Testing LightWeightMap get index by null or undefined key
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapGetIndexOfKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapGetIndexOfKey0004';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     lightWeightMap.set("sparrow", 356);
-    //     expect(lightWeightMap.getIndexOfKey(null)).assertEqual(-1);
-    //     expect(lightWeightMap.getIndexOfKey(undefined)).assertEqual(-1);
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
      * @tc.name   testLightWeightMapGetIndexOfKey0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0500
      * @tc.desc   Testing LightWeightMap get index by key
@@ -911,27 +738,6 @@ export default function LightWeightMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMapGetIndexOfValue0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0200
-     * @tc.desc   Testing LightWeightMap get index by null or undefined value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapGetIndexOfValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapGetIndexOfValue0002';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     expect(lightWeightMap.getIndexOfValue(null)).assertEqual(-1);
-    //     expect(lightWeightMap.getIndexOfValue(undefined)).assertEqual(-1);
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightMapGetIndexOfValue0003
@@ -999,28 +805,6 @@ export default function LightWeightMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMapGetKeyAt0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETKEYAT_0200
-     * @tc.desc   Testing LightWeightMap get key by null or undefined index
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapGetKeyAt0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapGetKeyAt0002';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     lightWeightMap.getKeyAt(null);
-    //     lightWeightMap.getKeyAt(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightMapGetKeyAt0003
@@ -1092,28 +876,6 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.name   testLightWeightMapSetAll0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETALL_0300
-     * @tc.desc   Testing LightWeightMap set data from null or undefined LightWeightMap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapSetAll0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapSetAll0003';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     lightWeightMap.setAll(null);
-    //     lightWeightMap.setAll(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
-    /**
      * @tc.name   testLightWeightMapSet0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0100
      * @tc.desc   Testing LightWeightMap set string key and larger number value
@@ -1155,28 +917,6 @@ export default function LightWeightMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMapSet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0300
-     * @tc.desc   Testing LightWeightMap set string key and null or undefined value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapSet0003';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", null);
-    //     expect(lightWeightMap.get("squirrel")).assertNull();
-    //     lightWeightMap.set("squirrel", undefined);
-    //     expect(lightWeightMap.get("squirrel")).assertUndefined();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightMapSet0004
@@ -1221,28 +961,6 @@ export default function LightWeightMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMapRemove0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0200
-     * @tc.desc   Testing LightWeightMap remove data by null or undefined key
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapRemove0002';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     lightWeightMap.set("sparrow", 356);
-    //     expect(lightWeightMap.remove(null)).assertUndefined();
-    //     expect(lightWeightMap.remove(undefined)).assertUndefined();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightMapRemove0003
@@ -1405,27 +1123,6 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.name   testLightWeightMapSetValueAt0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0200
-     * @tc.desc   Testing LightWeightMap set null or undefined value by index
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapSetValueAt0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapSetValueAt0002';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     expect(lightWeightMap.setValueAt(0, null)).assertTrue();
-    //     expect(lightWeightMap.setValueAt(0, undefined)).assertTrue();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
      * @tc.name   testLightWeightMapSetValueAt0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0300
      * @tc.desc   Testing LightWeightMap set value by negative number index
@@ -1446,28 +1143,6 @@ export default function LightWeightMapTest2() {
         expect(err.code).assertEqual(10200001);
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMapSetValueAt0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0400
-     * @tc.desc   Testing LightWeightMap set value by null or undefined index
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapSetValueAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapSetValueAt0004';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     lightWeightMap.setValueAt(null, 356);
-    //     lightWeightMap.setValueAt(undefined, 356);
-    //     expect(false).assertFail();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightMapSetValueAt0005
@@ -1537,29 +1212,6 @@ export default function LightWeightMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMapGetValueAt0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETVALUEAT_0200
-     * @tc.desc   Testing LightWeightMap get value by null or undefined index
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapGetValueAt0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapGetValueAt0002';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.set("squirrel", 123);
-    //     lightWeightMap.set("sparrow", 356);
-    //     lightWeightMap.getValueAt(null);
-    //     lightWeightMap.getValueAt(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightMapGetValueAt0003
@@ -1943,36 +1595,6 @@ export default function LightWeightMapTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMapForeach0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0600
-     * @tc.desc   Testing LightWeightMap use forEach to check ArgThis
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightMapForeach0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapForeach0006';
-    //   const VALUE = 100;
-    //   try {
-    //     let lightWeightMap: LightWeightMap<number, number> = new LightWeightMap<number, number>();
-    //     let str = 0
-    //     for (let i = 0; i < 10; i++) {
-    //       lightWeightMap.set(i, VALUE);
-    //     }
-    //     expect(lightWeightMap.length).assertEqual(10);
-    //     lightWeightMap.forEach((value: number, index, lightWeightMap: LightWeightMap<number, number>) => {
-    //       expect(value).assertEqual(VALUE);
-    //       expect(lightWeightMap.length).assertEqual(10);
-    //     }, str);
-    //     expect(str).assertEqual(0);
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
 
     /**
      * @tc.name   testLightWeightMapEntries0001

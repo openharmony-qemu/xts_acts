@@ -1410,7 +1410,7 @@ export default function ffrtTest() {
 
     /**
      * @tc.name   sharedMutexAbnormalParamTest001
-     * @tc.number SUB_KERNEL_DISPATCH_entry_10600
+     * @tc.number SUB_KERNEL_DISPATCH_entry_9900
      * @tc.desc   Test sharedMutexAbnormalParamTest api
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1424,7 +1424,7 @@ export default function ffrtTest() {
 
     /**
      * @tc.name   ffrtStorageSizeCheck
-     * @tc.number SUB_KERNEL_DISPATCH_entry_10700
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10000
      * @tc.desc   Test ffrtStorageSizeCheck api
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1438,7 +1438,7 @@ export default function ffrtTest() {
 
     /**
      * @tc.name   ffrtQueueQosCheck
-     * @tc.number SUB_KERNEL_DISPATCH_entry_10800
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10100
      * @tc.desc   Test ffrtQueueQosCheck api
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1447,6 +1447,20 @@ export default function ffrtTest() {
     it('ffrtQueueQosCheck', Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       let flag = entry.ffrtQueueQosCheck();
+      expect(flag).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   conditionVariableTest005
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10200
+     * @tc.desc   Test ffrt condition variable api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('conditionVariableTest005', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag = entry.conditionVariableTest005();
       expect(flag).assertEqual(0);
     })
   })

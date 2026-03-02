@@ -64,12 +64,12 @@ async function exclusiveMultiJob(lockName: string, timeout: number, tidBuf: Int3
   tid: number): Promise<void> {
   let lock = AsyncLock.request(lockName);
   lock.lockAsync<void>(async (): Promise<void> => {
-    let old = Atomics.compareExchange(tidBuf, 0, 0, tid);
+    let old = Atomics.compareExchange(tidBuf, 0, 0, tid.toInt());
     if (old != 0) {
       throw new Error("Expected 0, but was: " + old);
     }
     await Promise.resolve(1);
-    old = Atomics.compareExchange(tidBuf, 0, tid, 0);
+    old = Atomics.compareExchange(tidBuf, 0, tid.toInt(), 0);
     if (old != tid) {
       throw new Error("Expected old=" + tid + ", but was: " + old);
     }
@@ -333,7 +333,7 @@ export function abortTest(): Promise<string> {
       throw new Error('Test failed. Promise is fulfilled.')
     },
     (err: Error) => {
-      if (err.message !== "Aborted") {
+      if (!err.message.includes('AsyncLock:: Operation aborted by signal')) {
         throw new Error('Test failed. Wrong error value.');
       }
     });
@@ -980,12 +980,12 @@ async function exclusiveMultiWorkerJob(lockName: string, timeout: number,
   tidBuf: Int32Array, tid: number): Promise<void> {
   let lock = AsyncLock.request(lockName);
   return lock.lockAsync<void>(async () => {
-    let old = Atomics.compareExchange(tidBuf, 0, 0, tid);
+    let old = Atomics.compareExchange(tidBuf, 0, 0, tid.toInt());
     if (old != 0) {
       throw new Error('Expected 0, but was: ' + old);
     }
     await Promise.resolve(1);
-    old = Atomics.compareExchange(tidBuf, 0, tid, 0);
+    old = Atomics.compareExchange(tidBuf, 0, tid.toInt(), 0);
     if (old != tid) {
       throw new Error('Expected old=' + tid + ', but was: ' + old);
     }

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,6 +40,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import emitter from '@ohos.events.emitter';
 import { BlurStyle, SheetSize, SheetType } from '@ohos.arkui.component'
 import { UtilsTest } from '../Util.test'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -47,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ModelSheetTest() {
   describe('ModelSheetTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
     });
 
@@ -91,8 +92,8 @@ it('ArkUX_Model_Visual_static_0150', Level.LEVEL0, async (done: () => void): Pro
           priority: emitter.EventPriority.LOW
         }
         let callback = (indexData: emitter.EventData) => {
-          const event: Record<string, undefined | null | Object> =
-            indexData.data as Record<string, undefined | null | Object>
+          const event: Record<String,RecordData> =
+            indexData.data as Record<String,RecordData>
           console.info("ArkUX_Model_Visual_0150 get state result is: " + JSON.stringify(indexData));
           expect(event['detents'])
             .assertEqual([SheetSize.LARGE, SheetSize.MEDIUM, SheetSize.MEDIUM]);
@@ -136,8 +137,8 @@ it('ArkUX_Model_Visual_static_0160', Level.LEVEL0, async (done: () => void): Pro
           priority: emitter.EventPriority.LOW
         }
         let callback = (indexData: emitter.EventData) => {
-          const event: Record<string, undefined | null | Object> =
-            indexData.data as Record<string, undefined | null | Object>
+          const event: Record<String,RecordData> =
+            indexData.data as Record<String,RecordData>
           console.info("ArkUX_Model_Visual_0160 get state result is: " + JSON.stringify(indexData));
           expect(event['detents'])
             .assertEqual([SheetSize.MEDIUM, SheetSize.LARGE, 100]);
@@ -181,8 +182,8 @@ it('ArkUX_Model_Visual_static_0170', Level.LEVEL0, async (done: () => void): Pro
           priority: emitter.EventPriority.LOW
         }
         let callback = (indexData: emitter.EventData) => {
-          const event: Record<string, undefined | null | Object> =
-            indexData.data as Record<string, undefined | null | Object>
+          const event: Record<String,RecordData> =
+            indexData.data as Record<String,RecordData>
           console.info("ArkUX_Model_Visual_0170 get state result is: " + JSON.stringify(indexData));
           expect(event['detents']).assertEqual([100, 100, SheetSize.LARGE]);
           expect(event['blurStyle']).assertEqual(BlurStyle.Regular);
@@ -225,8 +226,8 @@ it('ArkUX_Model_Visual_static_0180', Level.LEVEL0, async (done: () => void): Pro
           priority: emitter.EventPriority.LOW
         }
         let callback = (indexData: emitter.EventData) => {
-          const event: Record<string, undefined | null | Object> =
-            indexData.data as Record<string, undefined | null | Object>
+          const event: Record<String,RecordData> =
+            indexData.data as Record<String,RecordData>
           console.info("ArkUX_Model_Visual_0180 get state result is: " + JSON.stringify(indexData));
           expect(event['detents']).assertEqual([0, 0, 0]);
           expect(event['blurStyle']).assertEqual(BlurStyle.BACKGROUND_REGULAR);
@@ -268,8 +269,8 @@ it('ArkUX_Model_Visual_static_0190', Level.LEVEL0, async (done: () => void): Pro
           priority: emitter.EventPriority.LOW
         }
         let callback = (indexData: emitter.EventData) => {
-          const event: Record<string, undefined | null | Object> =
-            indexData.data as Record<string, undefined | null | Object>
+          const event: Record<String,RecordData> =
+            indexData.data as Record<String,RecordData>
           console.info("ArkUX_Model_Visual_0190 get state result is: " + JSON.stringify(indexData));
           // expect(event['detents']).assertEqual([, ,]);
           expect(event['blurStyle']).assertEqual(" ");
@@ -313,8 +314,8 @@ it('ArkUX_Model_Visual_static_0200', Level.LEVEL0, async (done: () => void): Pro
           priority: emitter.EventPriority.LOW
         }
         let callback = (indexData: emitter.EventData) => {
-          const event: Record<string, undefined | null | Object> =
-            indexData.data as Record<string, undefined | null | Object>
+          const event: Record<String,RecordData> =
+            indexData.data as Record<String,RecordData>
           console.info("ArkUX_Model_Visual_0200 get state result is: " + JSON.stringify(indexData));
           expect(event['detents'])
             .assertEqual([SheetSize.LARGE, 10000, SheetSize.MEDIUM]);
@@ -357,8 +358,8 @@ it('ArkUX_Model_Visual_static_0210', Level.LEVEL0, async (done: () => void): Pro
           priority: emitter.EventPriority.LOW
         }
         let callback = (indexData: emitter.EventData) => {
-          const event: Record<string, undefined | null | Object> =
-            indexData.data as Record<string, undefined | null | Object>
+          const event: Record<String,RecordData> =
+            indexData.data as Record<String,RecordData>
           console.info("ArkUX_Model_Visual_0210 get state result is: " + JSON.stringify(indexData));
           expect(event['detents']).assertEqual([0, 100, 12345]);
           expect(event['blurStyle'])
@@ -401,8 +402,8 @@ it('ArkUX_Model_Visual_static_0220', Level.LEVEL0, async (done: () => void): Pro
           priority: emitter.EventPriority.LOW
         }
         let callback = (indexData: emitter.EventData) => {
-          const event: Record<string, undefined | null | Object> =
-            indexData.data as Record<string, undefined | null | Object>
+          const event: Record<String,RecordData> =
+            indexData.data as Record<String,RecordData>
           console.info("ArkUX_Model_Visual_0220 get state result is: " + JSON.stringify(indexData));
           expect(event['detents']).assertEqual([54321, 11111, 123456]);
           expect(event['blurStyle']).assertEqual(BlurStyle.NONE);

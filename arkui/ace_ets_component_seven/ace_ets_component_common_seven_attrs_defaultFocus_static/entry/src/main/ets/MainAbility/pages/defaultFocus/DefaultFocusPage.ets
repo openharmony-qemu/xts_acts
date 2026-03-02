@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
@@ -390,18 +390,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mDefaultFocus: boolean = true
-  applyNormalAttribute(instance: StepperAttribute): void {
-   instance.defaultFocus(this.mDefaultFocus)
-  }
-}
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mDefaultFocus: boolean = true
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-   instance.defaultFocus(this.mDefaultFocus)
-  }
-}
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: SwiperAttribute): void {
@@ -555,8 +543,6 @@ struct defaultFocusPage {
   @State _defaultFocusSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _defaultFocusSliderMod: SliderModifier = new SliderModifier()
   @State _defaultFocusStackMod: StackModifier = new StackModifier()
-  @State _defaultFocusStepperMod: StepperModifier = new StepperModifier()
-  @State _defaultFocusStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _defaultFocusSwiperMod: SwiperModifier = new SwiperModifier()
   @State _defaultFocusTabContentMod: TabContentModifier = new TabContentModifier()
   @State _defaultFocusTabsMod: TabsModifier = new TabsModifier()
@@ -582,16 +568,14 @@ struct defaultFocusPage {
 
   onPageShow() {
     console.info('defaultFocus page show called ')
-    let routerParamOptions = new RouterParams()
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-    this.targetView = routerParamOptions.view.targetView;
-    this.componentKey = routerParamOptions.view.componentKey as string;
-    this.parentWidth = routerParamOptions.view.parentWidth;
-    this.parentHeight = routerParamOptions.view.parentHeight;
-    this.columns = (routerParamOptions.view.columns as int)
-    this.gutter = (routerParamOptions.view.gutter as int)
-    this.parentComponentKey = routerParamOptions.view.parentComponentKey;
-    this._defaultFocusButtonMod.mDefaultFocus = routerParamOptions.view.testValue.setValue.defaultFocus
+    this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+    this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+    this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+    this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+    this._defaultFocusButtonMod.mDefaultFocus = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.defaultFocus
     attrsManager.registerDataChange((value: SetValue) => {
       
       console.info('[registerDataChange] ' + value.defaultFocus)
@@ -653,8 +637,6 @@ struct defaultFocusPage {
       this._defaultFocusSideBarContainerMod.mDefaultFocus = value.defaultFocus
       this._defaultFocusSliderMod.mDefaultFocus = value.defaultFocus
       this._defaultFocusStackMod.mDefaultFocus = value.defaultFocus
-      this._defaultFocusStepperMod.mDefaultFocus = value.defaultFocus
-      this._defaultFocusStepperItemMod.mDefaultFocus = value.defaultFocus
       this._defaultFocusSwiperMod.mDefaultFocus = value.defaultFocus
       this._defaultFocusTabContentMod.mDefaultFocus = value.defaultFocus
       this._defaultFocusTabsMod.mDefaultFocus = value.defaultFocus
@@ -777,14 +759,6 @@ struct defaultFocusPage {
           })
             .showTips(true)
             .attributeModifier(this._defaultFocusSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1002,19 +976,6 @@ struct defaultFocusPage {
               }
             }, (item: int) => item.toString())
           }.attributeModifier(this._defaultFocusWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

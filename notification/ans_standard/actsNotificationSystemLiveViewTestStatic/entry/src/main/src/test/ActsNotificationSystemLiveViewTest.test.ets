@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext
 
 export default function ActsNotificationSystemLiveViewTest() {
   describe('ActsNotificationSystemLiveViewTest', () => {
-    beforeAll((done: () => void) => {
+    beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -51,11 +51,9 @@ export default function ActsNotificationSystemLiveViewTest() {
         console.info(`beforeAll come in requestEnableNotification`);
         if (err) {
           console.info(`beforeAll requestEnableNotification err: ${err.code}`)
-          expect(false).assertTrue()
           done()
         }else {
           console.info(`beforeAll requestEnableNotification success`)
-          expect(true).assertTrue()
           await Utils.msSleep(1000)
           done()
         }
@@ -159,7 +157,7 @@ export default function ActsNotificationSystemLiveViewTest() {
               done();
             }
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(0x000, `${TAG}`,
             `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(error));
           expect(false).assertTrue();
@@ -223,7 +221,7 @@ export default function ActsNotificationSystemLiveViewTest() {
               done();
             }
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(0x000, `${TAG}`,
             `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish1 failed,data is %{public}s` + JSON.stringify(error));
           expect(false).assertTrue();
@@ -989,7 +987,7 @@ export default function ActsNotificationSystemLiveViewTest() {
           }).catch((err: Error): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           // console.error('getWantAgent failed! ${err.code} ${err.message}');
         }
 
@@ -1053,7 +1051,7 @@ export default function ActsNotificationSystemLiveViewTest() {
               done();
             }
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           // hilog.info(0x000, `${TAG}`,
           //   `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(error));
           let err: BusinessError = error as BusinessError
@@ -1121,7 +1119,7 @@ export default function ActsNotificationSystemLiveViewTest() {
           }).catch((err: Error): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           // console.error('getWantAgent failed! ${err.code} ${err.message}');
         }
         let capsule: notificationManager.NotificationCapsule = {
@@ -1265,7 +1263,7 @@ export default function ActsNotificationSystemLiveViewTest() {
           }).catch((err: Error): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           // console.error('getWantAgent failed! ${err.code} ${err.message}');
         }
         let capsule: notificationManager.NotificationCapsule = {

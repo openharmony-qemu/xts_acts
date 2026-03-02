@@ -33,7 +33,6 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeightTest() {
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
   
   let supportView = [
     'AlphabetIndexer',
@@ -56,7 +55,6 @@ export default function layoutWeightTest() {
     'QRCode',
     'Radio',
     'Rating',
-    'RichText',
     'ScrollBar',
     'Search',
     'Slider',
@@ -75,8 +73,6 @@ export default function layoutWeightTest() {
     //'GridRow',
     'Grid',
     'List',
-    'Navigator',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',
@@ -115,7 +111,7 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 2,
-      height: UIContext.getFocusedUIContext()!.vp2px(400)
+      height: 400
     }
   }, {
     describe: 'SetNumberDecimal',
@@ -124,7 +120,7 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 1.5,
-      height: UIContext.getFocusedUIContext()!.vp2px(360)
+      height: 360
     }
   }, {
     describe: 'SetString',
@@ -133,16 +129,26 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 2,
-      height: UIContext.getFocusedUIContext()!.vp2px(400)
+      height: 400
     }
   }]
 
   describe('LayoutWeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("layoutWeightTest beforeAll start");
-      
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void> => {
+      if(data.testValue.describe == "SetNumber"){
+        data.testValue.expectValue.height =  UIContext.resolveUIContext()!.vp2px(400)
+      }
+      if(data.testValue.describe == "SetNumberDecimal"){
+        data.testValue.expectValue.height =  UIContext.resolveUIContext()!.vp2px(360)
+      }
+      if(data.testValue.describe == "SetString"){
+        data.testValue.expectValue.height =  UIContext.resolveUIContext()!.vp2px(400)
+      }
+
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       //Component width and height calculation
       let height = rect.bottom - rect.top;

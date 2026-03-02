@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,6 +16,7 @@
 import { Entry, Component, Column, AttributeModifier, ButtonAttribute, Button, ClickEvent, HorizontalAlign, Curve } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 
 class MotionPathModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
@@ -47,7 +48,7 @@ struct MotionPath7Example {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.rotatable,
-              } as Record<string,undefined|null|object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 132,
@@ -71,7 +72,7 @@ struct MotionPath7Example {
               data: {
                 "fromX": this.fromX,
                 "toY": this.toY
-              } as Record<string,undefined|null|object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 133,
@@ -100,7 +101,7 @@ struct MotionPath7Example {
   private stateChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('motionPath page state change called:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       if (data['fromX'] != null) {
         this.fromX == parseInt(data['fromX'] as string);
       }

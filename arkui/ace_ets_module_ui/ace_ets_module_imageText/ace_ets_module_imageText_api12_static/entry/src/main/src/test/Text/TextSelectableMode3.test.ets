@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function typeNodeTextSelectableMode3Test() {
   describe('typeNodeTextSelectableMode3Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("typeNodeTextSelectableMode3Test beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -49,7 +49,7 @@ export default function typeNodeTextSelectableMode3Test() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get MarqueeDynamicSyncSceneTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextSelectableMode3" == pages.name)) {
           console.info("get MarqueeDynamicSyncSceneTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

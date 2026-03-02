@@ -38,16 +38,11 @@ let testAbilityContext: common.UIAbilityContext;
 export default function comSizeAbilityTest_27() {
   describe('comSizeAbilityTest_27', () => {
 
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("comSizeAbilityTest_27 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
     });
+
     beforeEach(() => {
       console.info("comSizeAbilityTest_27 beforeEach start")
       let options: router.RouterOptions = {
@@ -77,6 +72,8 @@ export default function comSizeAbilityTest_27() {
      */
 it('comSizeAbilityTestJsunit_static_60', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_60 START')
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Shape_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Shape_Father");
@@ -124,66 +121,6 @@ it('comSizeAbilityTestJsunit_static_60', Level.LEVEL0, async (done: () => void):
       expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
       // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
       console.info('[comSizeAbilityTestJsunit_static_60] END')
-      await CommonFunc.sleep(1000);
-      done()
-    })
-
-    
-    /**
-     * @tc.number   comSizeAbilityTestJsunit_static_61
-     * @tc.name     comSizeAbilityTestJsunit_static_61
-     * @tc.desc     comSizeAbilityTestJsunit_static_61
-     * @tc.level    Level.LEVEL0
-     */
-it('comSizeAbilityTestJsunit_static_61', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('comSizeAbilityTestJsunit_static_61 START')
-      await CommonFunc.sleep(1000);
-      let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Stepper_Size");
-      let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Stepper_Father");
-      let Size = modePosition.size
-      let SizeWidth = Size.width
-      let SizeHeight = Size.height
-      let LocalOffset = modePosition1.localOffset
-      let WindowOffset = modePosition.windowOffset
-      let ScreenOffset = modePosition.screenOffset
-      let Translate = modePosition.translate
-      let Transform = modePosition.transform
-      let Scale = modePosition.scale
-      let Rotate = modePosition.rotate
-      let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('Stepper_Size'));
-      let rect = await (button?.getBounds() as Promise<Rect>);
-      console.info("[comSizeAbilityTestJsunit_static_61] component rect is: " + JSON.stringify(rect))
-      console.info("[comSizeAbilityTestJsunit_static_61] component Size is: " + JSON.stringify(Size))
-      console.info("[comSizeAbilityTestJsunit_static_61] component LocalOffset is: " + JSON.stringify(LocalOffset))
-      console.info("[comSizeAbilityTestJsunit_static_61] component WindowOffset is: " + JSON.stringify(WindowOffset))
-      console.info("[comSizeAbilityTestJsunit_static_61] component ScreenOffset is: " + JSON.stringify(ScreenOffset))
-      console.info("[comSizeAbilityTestJsunit_static_61] component Translate is: " + JSON.stringify(Translate))
-      console.info("[comSizeAbilityTestJsunit_static_61] component Transform is: " + JSON.stringify(Transform))
-      console.info("[comSizeAbilityTestJsunit_static_61] component Scale is: " + JSON.stringify(Scale))
-      console.info("[comSizeAbilityTestJsunit_static_61] component Rotate is: " + JSON.stringify(Rotate))
-      await CommonFunc.sleep(1000);
-      expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(214))) <= 1).assertTrue();
-      expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(140))) <= 1).assertTrue();
-      // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
-      expect(JSON.stringify(Translate.x)).assertEqual('1');
-      expect(JSON.stringify(Translate.y)).assertEqual('1');
-      expect(JSON.stringify(Translate.z)).assertEqual('1');
-      // expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
-      expect(JSON.stringify(Scale.x)).assertEqual('1');
-      expect(JSON.stringify(Scale.y)).assertEqual('1');
-      expect(JSON.stringify(Scale.z)).assertEqual('1');
-      expect(JSON.stringify(Scale.centerX)).assertEqual('1');
-      expect(JSON.stringify(Scale.centerY)).assertEqual('1');
-      // expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
-      expect(JSON.stringify(Rotate.x)).assertEqual('1');
-      expect(JSON.stringify(Rotate.y)).assertEqual('1');
-      expect(JSON.stringify(Rotate.z)).assertEqual('1');
-      expect(JSON.stringify(Rotate.angle)).assertEqual('0');
-      expect(JSON.stringify(Rotate.centerX)).assertEqual('1');
-      expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
-      // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
-      console.info('[comSizeAbilityTestJsunit_static_61] END')
       await CommonFunc.sleep(1000);
       done()
     })

@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Image_QRCode_Api() {
   describe('Image_QRCode_Api', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Image_QRCode_Api beforeEach start");
 
 
@@ -51,7 +51,7 @@ export default function Image_QRCode_Api() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get Image_QRCode_Api state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("Image_QRCode_Api" == pages.name)) {
           console.info("get Image_QRCode_Api pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

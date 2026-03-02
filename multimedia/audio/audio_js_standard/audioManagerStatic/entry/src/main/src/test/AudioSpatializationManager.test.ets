@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -88,7 +88,7 @@ export default function audioSpatializationManager() {
         console.info(`SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001 SUCCESS.`);
         expect(false == ret).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001 ERROR: ${err.message}`);
         expect().assertFail();
         done();
@@ -113,8 +113,32 @@ export default function audioSpatializationManager() {
         console.info(`SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001 SUCCESS.`);
         expect(false == ret).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001 ERROR: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_002
+     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_002
+     * @tc.desc   off(spatializationEnabledChangeForCurrentDevice)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let audioManager = audio.getAudioManager();
+      let audioSpatializationManager = audioManager.getSpatializationManager();
+      let ret = audioSpatializationManager.isSpatializationEnabledForCurrentDevice();
+      try {
+        audioSpatializationManager.offSpatializationEnabledChangeForCurrentDevice();
+        console.info(`SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_002 SUCCESS.`);
+        expect(false == ret).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${TAG} SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_002 ERROR: ${err.message}`);
         expect().assertFail();
         done();
       }
@@ -136,7 +160,7 @@ export default function audioSpatializationManager() {
         let ret = audioSpatializationManager.isSpatializationEnabledForCurrentDevice();
         console.log("Sample_ret_isSpatializationEnabledForCurrentDevice_test = %s,",ret);
         expect(false == ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(false).assertTrue();
       }
       done();
@@ -160,7 +184,7 @@ export default function audioSpatializationManager() {
         let isSpaSupported = audioDeviceDescriptors[0].spatializationSupported as boolean;
         console.log("Sample_ret_isSpaSupported = %s",isSpaSupported);
         expect(false == isSpaSupported).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(false).assertTrue();
       }
       done();

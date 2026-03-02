@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,6 +35,7 @@ import {
   ScrollState
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -47,7 +48,7 @@ struct scrollCode {
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as number[]
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info("scrollCode page state change called:" + JSON.stringify(eventData));
       let scrollableValue = data['scrollable'];
       console.info("scrollableValue:" + scrollableValue);
@@ -173,7 +174,7 @@ struct scrollCode {
             let backData: events_emitter.EventData = {
               data: {
                 "scrollToIndex": 10,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 189,

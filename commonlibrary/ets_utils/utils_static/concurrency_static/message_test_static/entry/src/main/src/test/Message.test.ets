@@ -618,7 +618,7 @@ export default function MessageTest() {
             console.log("worker one message");
             let currentWorkerId = EAWorker.current()!.getWorkerId();
             expect(currentWorkerId).assertEqual(workerId);
-          }, EAWorker.main());
+          });
           let message = new concurrency.Message(1, "handler workerID", handler)
           handler.sendMessage(message);
         } catch (error) {
@@ -1136,14 +1136,29 @@ export default function MessageTest() {
         const TAG: string = 'RemoveMessages004';
         console.info(`${TAG} test start`);
         let flag = false;
+        let blockerStarted = false;
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            if (msg.getWhat() == 0) {
+              blockerStarted = true;
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+              return;
+            }
+            if (msg.getWhat() == 1) {
+              await Sleep(1000);
+              flag = true;
+            }
           }, worker);
+          let blockMsg = new concurrency.Message(0, handler)
+          blockMsg.sendToTarget();
+          while (!blockerStarted) {
+            await Utils.msSleep(10);
+          }
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
           expect(handler.removeMessages(1)).assertEqual(true);
@@ -1252,12 +1267,27 @@ export default function MessageTest() {
         console.info(`${TAG} test start`);
         let messageObject = new MessageObject(10);
         let handler: concurrency.MessageHandler;
+        let blockerStarted = false;
         let worker = new EAWorker();
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(2000);
+            if (msg.getWhat() == 0) {
+              blockerStarted = true;
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+              return;
+            }
+            if (msg.getWhat() == 1) {
+              await Sleep(2000);
+            }
           }, worker);
+          let blockMsg = new concurrency.Message(0, handler)
+          blockMsg.sendToTarget();
+          while (!blockerStarted) {
+            await Utils.msSleep(10);
+          }
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
           expect(handler.removeMessages(1)).assertEqual(true);
@@ -1332,13 +1362,28 @@ export default function MessageTest() {
         const TAG: string = 'RemoveMessages009';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
+        let blockerStarted = false;
         let worker = new EAWorker();
         worker.start();
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(2000);
+            if (msg.getWhat() == 0) {
+              blockerStarted = true;
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+              return;
+            }
+            if (msg.getWhat() == 1) {
+              await Sleep(2000);
+            }
           }, worker);
+          let blockMsg = new concurrency.Message(0, handler)
+          blockMsg.sendToTarget();
+          while (!blockerStarted) {
+            await Utils.msSleep(10);
+          }
           let message = new concurrency.Message(1, messageObject, handler)
           message.sendToTarget();
           expect(handler.removeMessages(1)).assertEqual(true);
@@ -1661,15 +1706,30 @@ export default function MessageTest() {
         const TAG: string = 'RemoveMessages017';
         console.info(`${TAG} test start`);
         let flag = false;
+        let blockerStarted = false;
         let handler: concurrency.MessageHandler;
         let messageObject = new MessageObject(10);
         let worker = new EAWorker();
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            if (msg.getWhat() == 0) {
+              blockerStarted = true;
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+              return;
+            }
+            if (msg.getWhat() == 1) {
+              await Sleep(1000);
+              flag = true;
+            }
           }, worker);
+          let blockMsg = new concurrency.Message(0, handler)
+          blockMsg.sendToTarget();
+          while (!blockerStarted) {
+            await Utils.msSleep(10);
+          }
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
           expect(handler.removeMessages(1, messageObject)).assertEqual(true);
@@ -1739,15 +1799,30 @@ export default function MessageTest() {
         const TAG: string = 'RemoveMessages019';
         console.info(`${TAG} test start`);
         let flag = false;
+        let blockerStarted = false;
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
         worker.start();
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            if (msg.getWhat() == 0) {
+              blockerStarted = true;
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+              return;
+            }
+            if (msg.getWhat() == 1) {
+              await Sleep(1000);
+              flag = true;
+            }
           }, worker);
+          let blockMsg = new concurrency.Message(0, handler);
+          blockMsg.sendToTarget();
+          while (!blockerStarted) {
+            await Utils.msSleep(10);
+          }
           let message = new concurrency.Message(1, messageObject, handler);
           message.sendToTarget();
           expect(handler.removeMessages(1, messageObject)).assertEqual(true);
@@ -2424,7 +2499,7 @@ export default function MessageTest() {
             await Sleep(1000);
             flag = true;
           }, eaw);
-          let callback: CB;
+          let callback: CB = () => {};
           let message: concurrency.Message = new concurrency.Message(callback, handler);
           message.sendToTarget();
           while (!flag) {

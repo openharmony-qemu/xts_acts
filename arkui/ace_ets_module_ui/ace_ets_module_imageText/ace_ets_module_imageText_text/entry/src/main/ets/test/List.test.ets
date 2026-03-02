@@ -34,6 +34,7 @@ import ImageTextTest from './ImageSpanTest/ImageTextTest.test';
 import OnCompleteTest from './ImageSpanTest/OnCompleteTest.test';
 import ImageSpanSupportSvg2 from './ImageSpanTest/ImageSpanSupportSvg2.test';
 import spanExample from './ImageSpanTest/ImageSpanTest9.test';
+import ImageSpanPropertiesNullUndefinedTest from './ImageSpanTest/ImageSpanPropertiesNullUndefinedTest.test';
 
 import Span3JsunitTest from './SpanTest/Span3JsunitTest.test';
 import SpanApi1Test from './SpanTest/SpanApi1Test.test';
@@ -47,6 +48,7 @@ import SpanUIJsunitTest from './SpanTest/SpanUIJsunitTest.test';
 import SymbolSpanApi1Test from './SymbolSpanTest/SymbolSpanApi1Test.test';
 import SymbolSpanApi2Test from './SymbolSpanTest/SymbolSpanApi2Test.test';
 import SymbolSpanModifierTest from './SymbolSpanTest/SymbolSpanModifierTest.test';
+import SymbolSpanPropertiesNullUndefinedTest from './SymbolSpanTest/SymbolSpanPropertiesNullUndefinedTest.test';
 
 import EnablePreviewMenuTest from './TextTest/EnablePreviewMenu.test';
 import FontSettingOptions from './TextTest/FontSettingOptions.test';
@@ -104,6 +106,37 @@ import TextCompressLeadingPunctuation from './TextTest/TextCompressLeadingPunctu
 import TextCompressLeadingPunctuationModifier from './TextTest/TextCompressLeadingPunctuationModifier.test';
 import TextMenuItemIdTest from './TextTest/TextMenuItemId.test';
 import TextFontWeightTest from './TextTest/TextFontWeightTest.test';
+import TextDirectionTest from './TextTest/TextDirection.test';
+import TextTextDirectionTest from './TextTest/TextTextDirection.test';
+import SelectedDragPreviewStyle from './SelectedDragPreviewStyle/SelectedDragPreviewStyle.test';
+import TextMarqueeOptionsTest from './TextTest/TextMarqueeOptionsTest.test';
+import TextSpecialAttributesTest from './TextTest/TextSpecialAttributes.test';
+import TextDataDetectorDateTimeTest from './TextTest/TextDataDetectorDateTime.test';
+import TextFontNullTest from './TextTest/TextFontNull.test';
+import TextMinMaxFontSizeNullTest from './TextTest/TextMinMaxFontSizeNull.test';
+import TextMinFontScaleMaxFontScaleTest from './TextTest/TextMinFontScaleMaxFontScale.test';
+import TextFontStyleLineSpacingNullTest from './TextTest/TextFontStyleLineSpacingNull.test';
+import TextLineHeightMultipleLineSpacingTest from './TextTest/TextLineHeightMultipleLineSpacing.test';
+import TextMinMaxLineHeightTest from './TextTest/TextMinMaxLineHeight.test';
+import TextTextVerticalAlignContentAlignTest from './TextTest/TextTextVerticalAlignContentAlign.test';
+import TextTextOverflowTest from './TextTest/TextTextOverflow.test';
+import TextFontFamilyTest from './TextTest/TextFontFamily.test';
+import TextMaxLinesNullTest from './TextTest/TextMaxLinesNull.test';
+import TextMinLinesNullTest from './TextTest/TextMinLinesNull.test';
+import TextDecorationTest from './TextTest/TextDecoration.test';
+import TextLetterSpacingTest from './TextTest/TextLetterSpacing.test';
+import TextTextCaseNullTest from './TextTest/TextTextCaseNull.test';
+import TextBaselineOffsetTest from './TextTest/TextBaselineOffset.test';
+import TextCopyOptionNullTest from './TextTest/TextCopyOptionNull.test';
+import TextShadowNullTest from './TextTest/TextShadowNull.test';
+import TextHeightAdaptivePolicyNullTest from './TextTest/TextHeightAdaptivePolicyNull.test';
+import TextWordBreakNullTest from './TextTest/TextWordBreakNull.test';
+import TextLineBreakStrategyNullTest from './TextTest/TextLineBreakStrategyNull.test';
+import TextSelectionPropertiesTest from './TextTest/TextSelectionProperties.test';
+import TextSpecialOptionsNullTest from './TextTest/TextSpecialOptionsNull.test';
+import TextLayoutOptionsNullTest from './TextTest/TextLayoutOptionsNull.test';
+import TextSpecialAttrsNullTest from './TextTest/TextSpecialAttrsNull.test';
+
 
 export default function testsuite() {
   InputPresetTest()
@@ -127,6 +160,7 @@ export default function testsuite() {
   ImageTextTest()
   OnCompleteTest()
   ImageSpanSupportSvg2()
+  ImageSpanPropertiesNullUndefinedTest()
   // SpanTest
   Span3JsunitTest()
   SpanApi1Test()
@@ -140,6 +174,7 @@ export default function testsuite() {
   SymbolSpanApi1Test()
   SymbolSpanApi2Test()
   SymbolSpanModifierTest()
+  SymbolSpanPropertiesNullUndefinedTest()
   //TextTest
   EnablePreviewMenuTest()
   FontSettingOptions()
@@ -198,4 +233,34 @@ export default function testsuite() {
   TextCompressLeadingPunctuationModifier();
   TextMenuItemIdTest();
   TextFontWeightTest();
+  TextDirectionTest();
+  TextTextDirectionTest();
+  SelectedDragPreviewStyle();
+  TextMarqueeOptionsTest();
+  TextSpecialAttributesTest();
+  TextDataDetectorDateTimeTest();
+  TextFontNullTest();
+  TextMinMaxFontSizeNullTest();
+  TextMinFontScaleMaxFontScaleTest();
+  TextFontStyleLineSpacingNullTest();
+  TextLineHeightMultipleLineSpacingTest();
+  TextMinMaxLineHeightTest();
+  TextTextVerticalAlignContentAlignTest();
+  TextTextOverflowTest();
+  TextFontFamilyTest();
+  TextMaxLinesNullTest();
+  TextMinLinesNullTest();
+  TextDecorationTest();
+  TextLetterSpacingTest();
+  TextTextCaseNullTest();
+  TextBaselineOffsetTest();
+  TextCopyOptionNullTest();
+  TextShadowNullTest();
+  TextHeightAdaptivePolicyNullTest();
+  TextWordBreakNullTest();
+  TextLineBreakStrategyNullTest();
+  TextSelectionPropertiesTest();
+  TextSpecialOptionsNullTest();
+  TextLayoutOptionsNullTest();
+  TextSpecialAttrsNullTest();
 }

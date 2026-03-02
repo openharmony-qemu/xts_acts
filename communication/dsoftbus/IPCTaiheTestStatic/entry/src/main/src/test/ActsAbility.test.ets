@@ -12,7 +12,7 @@ import bundleManager from '@ohos.bundle.bundleManager';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let gIRemoteObject: rpc.IRemoteObject;
+let gIRemoteObject: rpc.IRemoteObject | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let bundleNameRpc: string = "com.example.actsipctaiheservicetest.static";
 let abilityNameRpc: string = "ServiceAbility";
@@ -125,17 +125,17 @@ class TestCallerInfo extends rpc.RemoteObject {
     hilog.info(domain, tag, '%{public}s', "TestCallerInfo onRemoteMessageRequest in code is: " + code);
     if (code === 1) {
       try {
-        let callingPid = rpc.IPCSkeleton.getCallingPid();
+        let callingPid: int = rpc.IPCSkeleton.getCallingPid();
         expect(callingPid).assertEqual(callingInfo?.callerPid);
-        let callingUid = rpc.IPCSkeleton.getCallingUid();
+        let callingUid: int = rpc.IPCSkeleton.getCallingUid();
         expect(callingUid).assertEqual(callingInfo?.callerUid);
-        let callingTokenId = rpc.IPCSkeleton.getCallingTokenId();
+        let callingTokenId: long = rpc.IPCSkeleton.getCallingTokenId();
         expect(callingTokenId).assertEqual(callingInfo?.callerTokenId);
-        let remoteDeviceId = rpc.IPCSkeleton.getCallingDeviceID();
+        let remoteDeviceId: string = rpc.IPCSkeleton.getCallingDeviceID();
         expect(remoteDeviceId).assertEqual(callingInfo?.remoteDeviceId);
-        let localDeviceId = rpc.IPCSkeleton.getLocalDeviceID();
+        let localDeviceId: string = rpc.IPCSkeleton.getLocalDeviceID();
         expect(localDeviceId).assertEqual(callingInfo?.localDeviceId);
-        let isLocalCalling = rpc.IPCSkeleton.isLocalCalling();
+        let isLocalCalling: boolean = rpc.IPCSkeleton.isLocalCalling();
         expect(isLocalCalling).assertEqual(callingInfo?.isLocalCalling);
       } catch (error) {
         error = error as BusinessError;
@@ -169,7 +169,8 @@ class TestRemoteStub extends rpc.RemoteObject {
       hilog.info(domain, tag, '%{public}s', ' TestRemoteStub broker: ' + broker);
       this.modifyLocalInterface(broker, descriptor);
       hilog.info(domain, tag, '%{public}s', ' modifyLocalInterface done');
-    } catch(err: BusinessError) {
+    } catch(err) {
+      err = err as BusinessError;
       hilog.info(domain, tag, '%{public}s', 'TestRemoteStub error is: ' + err);
       hilog.info(domain, tag, '%{public}s', 'TestRemoteStub error code is: ' + err.code);
       expect(err.code).assertEqual(0);
@@ -344,7 +345,9 @@ export default function abilityTest() {
       }
       hilog.info(domain, tag, '%{public}s', 'beforeAll done');
     })
-
+    afterEach(async() => {
+      testFlag = true;
+    })
     /**
      * @tc.name   SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
      * @tc.number SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
@@ -361,7 +364,7 @@ export default function abilityTest() {
       try {
         let input = 123;
         data.writeInt(input);
-        let res = data.readInt();
+        let res: int = data.readInt();
         expect(res == input).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInt_ReadInt_0100 error is: ' + error);
@@ -396,6 +399,34 @@ export default function abilityTest() {
         expect(error == null).assertTrue();
       } finally {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 reclaim done');
+        data.reclaim();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 --------------------');
+    });
+
+    /**
+     * @tc.name   SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0200
+     * @tc.number SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0200
+     * @tc.desc   test MessageSequence WriteInterfaceToken input "" and ReadInterfaceToken
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0200 --------------------');
+      let data =  rpc.MessageSequence.create();
+      try {
+        let input = "";
+        data.writeInterfaceToken(input);
+        let res = data.readInterfaceToken();
+        expect(res == input).assertTrue();
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0200 error is: ' + error);
+        expect(error == null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0200 reclaim done');
         data.reclaim();
       }
       done();
@@ -566,6 +597,34 @@ export default function abilityTest() {
       }
       done();
       hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeString_readString_0100 --------------------');
+    });
+
+    /**
+     * @tc.name   SUB_IPC_MessageSequence_writeString_readString_0200
+     * @tc.number SUB_IPC_MessageSequence_writeString_readString_0200
+     * @tc.desc   test MessageSequence writeString input "" and readString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_MessageSequence_writeString_readString_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeString_readString_0200 --------------------');
+      let data =  rpc.MessageSequence.create();
+      try {
+        let input = "";
+        data.writeString(input);
+        let res = data.readString();
+        expect(res == input).assertTrue();
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeString_readString_0200 error is: ' + error);
+        expect(error == null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeString_readString_0200 reclaim done');
+        data.reclaim();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeString_readString_0200 --------------------');
     });
 
     /**
@@ -1365,6 +1424,58 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_IPC_Ashmem_create_0200
+     * @tc.number SUB_IPC_Ashmem_create_0200
+     * @tc.desc   test create Ashmem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_Ashmem_create_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_create_0200 --------------------');
+
+      try {
+        let ashmem = rpc.Ashmem.create("ashmem", 0);
+        expect(ashmem != null).assertTrue();
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_0200 error is: ' + error);
+        expect(error == null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_0200 finally done');
+      }
+
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Ashmem_create_0200 --------------------');
+    });
+
+    /**
+     * @tc.name   SUB_IPC_Ashmem_create_0300
+     * @tc.number SUB_IPC_Ashmem_create_0300
+     * @tc.desc   test create Ashmem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_Ashmem_create_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_create_0300 --------------------');
+
+      try {
+        let ashmem = rpc.Ashmem.create("", 1024);
+        expect(ashmem != null).assertTrue();
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_0300 error is: ' + error);
+        expect(error == null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_0300 finally done');
+      }
+
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Ashmem_create_0300 --------------------');
+    });
+
+    /**
      * @tc.name   SUB_IPC_Ashmem_getAshmemSize_0100
      * @tc.number SUB_IPC_Ashmem_getAshmemSize_0100
      * @tc.desc   test Ashmem getAshmemSize
@@ -1881,7 +1992,7 @@ export default function abilityTest() {
         let filePath = pathDir + "/test1.txt";
         let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
         data.writeFileDescriptor(file.fd);
-        let res = data.readFileDescriptor();
+        let res: int = data.readFileDescriptor();
         expect(res >= file.fd).assertTrue();
       } catch (err) {
         err = err as BusinessError;
@@ -2337,6 +2448,49 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_0200
+     * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_0200
+     * @tc.desc   test RemoteProxy SendMessageRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_RemoteProxy_SendMessageRequest_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_0200 --------------------');
+
+      let data = rpc.MessageSequence.create();
+      let reply = rpc.MessageSequence.create();
+
+      let option = new TestOption2(rpc.MessageOption.TF_SYNC, rpc.MessageOption.TF_WAIT_TIME);
+      try {
+
+        data.writeInt(4700);
+        data.writeBoolean(true);
+
+        gIRemoteObject?.sendMessageRequest(1, data, reply, option)
+          .then((ret: rpc.RequestResult) => {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_0200 .then.errCode is: ' + ret.errCode);
+            let res = reply.readInt();
+            expect(res).assertEqual(4700);
+          }).catch((err) => {
+            expect(err == null).assertTrue();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_0200 err in catch is: ' + err);
+          })
+          .finally(() => {
+            data.reclaim();
+            reply.reclaim();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_0200 reclaim done');
+          })
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_0200 error is: ' + error);
+        expect(error == null).assertTrue();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_SendMessageRequest_0200 --------------------');
+    });
+
+    /**
      * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
      * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
      * @tc.desc   test RemoteProxy SendMessageRequest after write and read Proxy
@@ -2765,7 +2919,7 @@ export default function abilityTest() {
       try {
         let TestCallerInfoObject = new TestCallerInfo("TestCallerInfo")
         data.writeRemoteObject(TestCallerInfoObject)
-        await gIRemoteObject.sendMessageRequest(CODE_TESTCALLERINFO, data, reply, option)
+        await gIRemoteObject!.sendMessageRequest(CODE_TESTCALLERINFO, data, reply, option)
           .then((result) => {
             expect(result.errCode).assertEqual(0);
           }).catch((err: Error) => {
@@ -3500,7 +3654,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let input: Array<Boolean> = [false, true, false, true, false, true, false, true, false, true];
+        let input: Array<boolean> = [false, true, false, true, false, true, false, true, false, true];
         data.reclaim();
         data.writeBooleanArray(input);
       } catch (err) {
@@ -3529,9 +3683,9 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let input: Array<Boolean> = [false, true, false, true, false, true, false, true, false, true];
+        let input: Array<boolean> = [false, true, false, true, false, true, false, true, false, true];
         data.writeBooleanArray(input);
-        let res: Array<Boolean> = new Array<Boolean>(input.length);
+        let res: Array<boolean> = new Array<boolean>(input.length);
         data.reclaim();
         data.readBooleanArray(res);
       } catch (err) {
@@ -3560,7 +3714,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let input: Array<Boolean> = [false, true, false, true, false, true, false, true, false, true];
+        let input: Array<boolean> = [false, true, false, true, false, true, false, true, false, true];
         data.writeBooleanArray(input);
         data.reclaim();
         let res = data.readBooleanArray();
@@ -3591,7 +3745,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let input: Array<String> = ["this", "is", "a", "test", "stirng", "array"];
+        let input: Array<string> = ["this", "is", "a", "test", "stirng", "array"];
         data.reclaim();
         data.writeStringArray(input);
       } catch (err) {
@@ -3620,9 +3774,9 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let input: Array<String> = ["this", "is", "a", "test", "stirng", "array"];
+        let input: Array<string> = ["this", "is", "a", "test", "stirng", "array"];
         data.writeStringArray(input);
-        let res: Array<String> = new Array<String>(input.length);
+        let res: Array<string> = new Array<string>(input.length);
         data.reclaim();
         data.readStringArray(res);
       } catch (err) {
@@ -3651,7 +3805,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let input: Array<String> = ["this", "is", "a", "test", "stirng", "array"];
+        let input: Array<string> = ["this", "is", "a", "test", "stirng", "array"];
         data.writeStringArray(input);
         data.reclaim();
         let res = data.readStringArray();
@@ -4067,7 +4221,7 @@ export default function abilityTest() {
         let size1 = ashmem1.getAshmemSize();
         let size2 = ashmem2.getAshmemSize();
         expect(size1 == 1024 * 1024).assertTrue();
-        expect(size1 == 1024 * 1024).assertTrue();
+        expect(size2 == 1024 * 1024).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_0100 error is: ' + error);
         expect(error == null).assertTrue();
@@ -4117,9 +4271,9 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_ReadFloatArray_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let b: Double = 2;
-        let c: Double = 3;
-        let a: Array<Double> = [b, c];
+        let b: double = 2;
+        let c: double = 3;
+        let a: Array<double> = [b, c];
         data.writeFloatArray(a);
         let res = data.readFloatArray();
         expect(res.length > 0).assertTrue();
@@ -4148,11 +4302,11 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_ReadFloatArray_0200 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let b: Double = 2;
-        let c: Double = 3;
-        let a: Array<Double> = [b, c];
+        let b: double = 2;
+        let c: double = 3;
+        let a: Array<double> = [b, c];
         data.writeFloatArray(a);
-        let res: Array<Double> = new Array<Double>(a.length);
+        let res: Array<double> = new Array<double>(a.length);
         data.readFloatArray(res);
         expect(res).assertDeepEquals(a);
       } catch (error) {
@@ -4179,7 +4333,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_ReadFloatArray_0300 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let a: Array<Double> = [];
+        let a: Array<double> = [];
         data.writeFloatArray(a);
         let res = data.readFloatArray();
         expect(res.length == 0).assertTrue();
@@ -4743,6 +4897,39 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_IPC_MessageSequence_dupFileDescriptor_0200
+     * @tc.number SUB_IPC_MessageSequence_dupFileDescriptor_0200
+     * @tc.desc   test MessageSequence dupFileDescriptor return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_MessageSequence_dupFileDescriptor_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_dupFileDescriptor_0200 --------------------');
+      let data =  rpc.MessageSequence.create();
+      try {
+        let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
+        let pathDir = context.filesDir;
+        let filePath = pathDir + "/test4.txt";
+        let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+        data.writeFileDescriptor(file.fd);
+
+        let res = rpc.MessageSequence.dupFileDescriptor(file.fd);
+        expect(res >= file.fd).assertTrue();
+        rpc.MessageSequence.closeFileDescriptor(file.fd);
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_dupFileDescriptor_0200 error is: ' + err);
+        expect(err == null).assertTrue();
+      } finally {
+        data.reclaim();
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_dupFileDescriptor_0200 reclaim done');
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_dupFileDescriptor_0200 --------------------');
+    });
+
+    /**
      * @tc.name      SUB_IPC_MessageSequence_WriteRemoteObjectArray_0100
      * @tc.number    SUB_IPC_MessageSequence_WriteRemoteObjectArray_0100
      * @tc.desc      test SUB_IPC_MessageSequence_writeRemoteObjectArray
@@ -5007,7 +5194,7 @@ export default function abilityTest() {
       try {
         let size: int = 123;
         data.setSize(size);
-        let res: long = data.getSize();
+        let res: int = data.getSize();
         expect(res == 0).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_GetSize_0100 error is: ' + error);
@@ -5033,7 +5220,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_GetWritableBytes_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let size: long = data.getWritableBytes();
+        let size: int = data.getWritableBytes();
         expect(size == 0).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_GetWritableBytes_0100 error is: ' + error);
@@ -5060,7 +5247,7 @@ export default function abilityTest() {
       let data = rpc.MessageSequence.create();
       try {
         data.writeInt(10)
-        let size: long = data.getWritableBytes();
+        let size: int = data.getWritableBytes();
         expect(size == 60).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_GetWritableBytes_0200 error is: ' + error);
@@ -5086,7 +5273,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_GetReadableBytes_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let size: long = data.getReadableBytes();
+        let size: int = data.getReadableBytes();
         expect(size == 0).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_GetReadableBytes_0100 error is: ' + error);
@@ -5114,7 +5301,7 @@ export default function abilityTest() {
       try {
         data.writeInt(1);
         data.writeLong(2);
-        let size: long = data.getReadableBytes();
+        let size: int = data.getReadableBytes();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_GetReadableBytes_0200 size is: ' + size);
         expect(size == 12).assertTrue();
       } catch (error) {
@@ -5141,7 +5328,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_GetReadPosition_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let size: long = data.getReadPosition();
+        let size: int = data.getReadPosition();
         expect(size == 0).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_GetReadPosition_0100 error is: ' + error);
@@ -5170,7 +5357,7 @@ export default function abilityTest() {
         data.writeInt(10);
         data.writeLong(125);
         data.readInt();
-        let size: long = data.getReadPosition();
+        let size: int = data.getReadPosition();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_GetReadPosition_0200 size is: ' + size);
         expect(size == 4).assertTrue();
       } catch (error) {
@@ -5197,7 +5384,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_GetWritePosition_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let size: long = data.getWritePosition();
+        let size: int = data.getWritePosition();
         expect(size == 0).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_GetWritePosition_0100 error is: ' + error);
@@ -5224,7 +5411,7 @@ export default function abilityTest() {
       let data = rpc.MessageSequence.create();
       try {
         data.writeInt(10);
-        let size: long = data.getWritePosition();
+        let size: int = data.getWritePosition();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_GetWritePosition_0200 size ' + size)
         expect(size == 4).assertTrue();
       } catch (error) {
@@ -5308,7 +5495,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_GetRawDataCapacity_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let size: long = data.getRawDataCapacity();
+        let size: int = data.getRawDataCapacity();
         expect(size > 0).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_GetRawDataCapacity_0100 error is: ' + error);
@@ -5335,7 +5522,7 @@ export default function abilityTest() {
       let data = rpc.MessageSequence.create();
       try {
         data.writeByte(97);
-        let res = data.readByte();
+        let res: int = data.readByte();
         expect(res == 97).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readByte_0100 error is: ' + error);
@@ -5363,7 +5550,7 @@ export default function abilityTest() {
       let data = rpc.MessageSequence.create();
       try {
         data.writeShort(123);
-        let res = data.readShort();
+        let res: int = data.readShort();
         expect(res == 123).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readShort_0100 error is: ' + error);
@@ -5389,9 +5576,9 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_readFloat_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        data.writeFloat(123456);
-        let res = data.readFloat();
-        expect(res == 123456).assertTrue();
+        data.writeFloat(12345.6);
+        let res: double = data.readFloat();
+        expect(res == 12345.6).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFloat_0100 error is: ' + error);
         expect(error == null).assertTrue();
@@ -5416,7 +5603,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int8_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        console.println(`data gen`);
+        hilog.info(domain, tag, '%{public}s', `data gen`);
         let buffer = new ArrayBuffer(1 * 10);
         let int8View = new Int8Array(buffer);
         for (let i = 0; i < int8View.length; i++) {
@@ -5427,13 +5614,13 @@ export default function abilityTest() {
         }
 
         data.writeArrayBuffer(buffer, rpc.TypeCode.INT8_ARRAY);
-        console.println(`writeArrayBuffer success`);
-        console.println(`write ArrayBuffer is :` + int8View);
+        hilog.info(domain, tag, '%{public}s', `writeArrayBuffer success`);
+        hilog.info(domain, tag, '%{public}s', `write ArrayBuffer is :` + int8View);
 
         let result = data.readArrayBuffer(rpc.TypeCode.INT8_ARRAY);
         let readInt8View = new Int8Array(result);
-        console.println(`ArrayBuffer success`);
-        console.println(`read data is :` + readInt8View);
+        hilog.info(domain, tag, '%{public}s', `ArrayBuffer success`);
+        hilog.info(domain, tag, '%{public}s', `read data is :` + readInt8View);
       } catch (error) {
         hilog.info(domain, tag, '%{public}s',
           'SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int8_0100 error is: ' + error);
@@ -5460,7 +5647,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_WriteAndRead_ArrayBuffer_UInt8_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        console.println(`data gen`);
+        hilog.info(domain, tag, '%{public}s', `data gen`);
         let buffer = new ArrayBuffer(1 * 10);
         let uint8View = new Uint8Array(buffer);
         for (let i = 0; i < uint8View.length; i++) {
@@ -5469,21 +5656,21 @@ export default function abilityTest() {
 
         try {
           data.writeArrayBuffer(buffer, rpc.TypeCode.UINT8_ARRAY);
-          console.println(`writeArrayBuffer success`);
-          console.println(`write ArrayBuffer is :` + uint8View);
+          hilog.info(domain, tag, '%{public}s', `writeArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `write ArrayBuffer is :` + uint8View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
 
         try {
           let result = data.readArrayBuffer(rpc.TypeCode.UINT8_ARRAY);
           let readUInt8View = new Uint8Array(result);
-          console.println(`ArrayBuffer success`);
-          console.println(`read data is :` + readUInt8View);
+          hilog.info(domain, tag, '%{public}s', `ArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `read data is :` + readUInt8View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_WriteAndRead_ArrayBuffer_UInt8_0100 error is: ' + error);
@@ -5510,7 +5697,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_WriteAndRead_ArrayBuffer_Int16_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        console.println(`data gen`);
+        hilog.info(domain, tag, '%{public}s', `data gen`);
         let buffer = new ArrayBuffer(2 * 10);
         let int16View = new Int16Array(buffer);
         for (let i = 0; i < int16View.length; i++) {
@@ -5522,21 +5709,21 @@ export default function abilityTest() {
 
         try {
           data.writeArrayBuffer(buffer, rpc.TypeCode.INT16_ARRAY);
-          console.println(`writeArrayBuffer success`);
-          console.println(`write ArrayBuffer is :` + int16View);
+          hilog.info(domain, tag, '%{public}s', `writeArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `write ArrayBuffer is :` + int16View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
 
         try {
           let result = data.readArrayBuffer(rpc.TypeCode.INT16_ARRAY);
           let readInt16View = new Int16Array(result);
-          console.println(`ArrayBuffer success`);
-          console.println(`read data is :` + readInt16View);
+          hilog.info(domain, tag, '%{public}s', `ArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `read data is :` + readInt16View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_WriteAndRead_ArrayBuffer_Int16_0100 error is: ' + error);
@@ -5562,7 +5749,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_WriteAndRead_ArrayBuffer_UInt16_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        console.println(`data gen`);
+        hilog.info(domain, tag, '%{public}s', `data gen`);
         let buffer = new ArrayBuffer(2 * 10);
         let uint16View = new Uint16Array(buffer);
         for (let i = 0; i < uint16View.length; i++) {
@@ -5571,21 +5758,21 @@ export default function abilityTest() {
 
         try {
           data.writeArrayBuffer(buffer, rpc.TypeCode.UINT16_ARRAY);
-          console.println(`writeArrayBuffer success`);
-          console.println(`write ArrayBuffer is :` + uint16View);
+          hilog.info(domain, tag, '%{public}s', `writeArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `write ArrayBuffer is :` + uint16View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
 
         try {
           let result = data.readArrayBuffer(rpc.TypeCode.UINT16_ARRAY);
           let readUInt16View = new Uint16Array(result);
-          console.println(`ArrayBuffer success`);
-          console.println(`read data is :` + readUInt16View);
+          hilog.info(domain, tag, '%{public}s', `ArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `read data is :` + readUInt16View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_WriteAndRead_ArrayBuffer_UInt16_0100 error is: ' + error);
@@ -5611,7 +5798,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_WriteAndRead_ArrayBuffer_UInt32_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        console.println(`data gen`);
+        hilog.info(domain, tag, '%{public}s', `data gen`);
         let buffer = new ArrayBuffer(4 * 10);
         let uint32View = new Uint32Array(buffer);
         for (let i = 0; i < uint32View.length; i++) {
@@ -5620,21 +5807,21 @@ export default function abilityTest() {
 
         try {
           data.writeArrayBuffer(buffer, rpc.TypeCode.UINT32_ARRAY);
-          console.println(`writeArrayBuffer success`);
-          console.println(`write ArrayBuffer is :` + uint32View);
+          hilog.info(domain, tag, '%{public}s', `writeArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `write ArrayBuffer is :` + uint32View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
 
         try {
           let result = data.readArrayBuffer(rpc.TypeCode.UINT32_ARRAY);
           let readUInt32View = new Uint32Array(result);
-          console.println(`ArrayBuffer success`);
-          console.println(`read data is :` + readUInt32View);
+          hilog.info(domain, tag, '%{public}s', `ArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `read data is :` + readUInt32View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_WriteAndRead_ArrayBuffer_UInt32_0100 error is: ' + error);
@@ -5660,7 +5847,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_WriteAndRead_ArrayBuffer_Int32_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        console.println(`data gen`);
+        hilog.info(domain, tag, '%{public}s', `data gen`);
         let buffer = new ArrayBuffer(4 * 10);
         let int32View = new Int32Array(buffer);
         for (let i = 0; i < int32View.length; i++) {
@@ -5669,21 +5856,21 @@ export default function abilityTest() {
 
         try {
           data.writeArrayBuffer(buffer, rpc.TypeCode.INT32_ARRAY);
-          console.println(`writeArrayBuffer success`);
-          console.println(`write ArrayBuffer is :` + int32View);
+          hilog.info(domain, tag, '%{public}s', `writeArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `write ArrayBuffer is :` + int32View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
 
         try {
           let result = data.readArrayBuffer(rpc.TypeCode.INT32_ARRAY);
           let readInt32View = new Int32Array(result);
-          console.println(`ArrayBuffer success`);
-          console.println(`read data is :` + readInt32View);
+          hilog.info(domain, tag, '%{public}s', `ArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `read data is :` + readInt32View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_WriteAndRead_ArrayBuffer_Int32_0100 error is: ' + error);
@@ -5709,7 +5896,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_WriteAndRead_ArrayBuffer_Float32_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        console.println(`data gen`);
+        hilog.info(domain, tag, '%{public}s', `data gen`);
         let buffer = new ArrayBuffer(4 * 10);
         let float32View = new Float32Array(buffer);
         for (let i = 0; i < float32View.length; i++) {
@@ -5721,21 +5908,21 @@ export default function abilityTest() {
 
         try {
           data.writeArrayBuffer(buffer, rpc.TypeCode.FLOAT32_ARRAY);
-          console.println(`writeArrayBuffer success`);
-          console.println(`write data is :` + float32View);
+          hilog.info(domain, tag, '%{public}s', `writeArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `write data is :` + float32View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
 
         try {
           let result = data.readArrayBuffer(rpc.TypeCode.FLOAT32_ARRAY);
           let readFloat32View = new Float32Array(result);
-          console.println(`readFloat32View success`);
-          console.println(`ArrayBuffer is :` + readFloat32View);
+          hilog.info(domain, tag, '%{public}s', `readFloat32View success`);
+          hilog.info(domain, tag, '%{public}s', `ArrayBuffer is :` + readFloat32View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_WriteAndRead_ArrayBuffer_Float32_0100 error is: ' + error);
@@ -5762,7 +5949,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Float64_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        console.println(`data gen`);
+        hilog.info(domain, tag, '%{public}s', `data gen`);
         let buffer = new ArrayBuffer(8 * 10);
         let float64View = new Float64Array(buffer);
         for (let i = 0; i < float64View.length; i++) {
@@ -5774,21 +5961,21 @@ export default function abilityTest() {
 
         try {
           data.writeArrayBuffer(buffer, rpc.TypeCode.FLOAT64_ARRAY);
-          console.println(`writeArrayBuffer success`);
-          console.println(`write data is :` + float64View);
+          hilog.info(domain, tag, '%{public}s', `writeArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `write data is :` + float64View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
 
         try {
           let result = data.readArrayBuffer(rpc.TypeCode.FLOAT64_ARRAY);
           let readFloat64View = new Float64Array(result);
-          console.println(`readArrayBuffer success`);
-          console.println(`ArrayBuffer is :` + readFloat64View);
+          hilog.info(domain, tag, '%{public}s', `readArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `ArrayBuffer is :` + readFloat64View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
       } catch (error) {
         hilog.info(domain, tag, '%{public}s',
@@ -5816,7 +6003,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int64_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        console.println(`data gen`);
+        hilog.info(domain, tag, '%{public}s', `data gen`);
         let buffer = new ArrayBuffer(8 * 10);
         let bInt64View = new BigInt64Array(buffer);
         for (let i = 0; i < bInt64View.length; i++) {
@@ -5828,21 +6015,21 @@ export default function abilityTest() {
 
         try {
           data.writeArrayBuffer(buffer, rpc.TypeCode.BIGINT64_ARRAY);
-          console.println(`writeArrayBuffer success`);
-          console.println(`write data is :` + bInt64View);
+          hilog.info(domain, tag, '%{public}s', `writeArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `write data is :` + bInt64View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
 
         try {
           let result = data.readArrayBuffer(rpc.TypeCode.BIGINT64_ARRAY);
           let readInt64View = new BigInt64Array(result);
-          console.println(`readArrayBuffer success`);
-          console.println(`read data is :` + readInt64View);
+          hilog.info(domain, tag, '%{public}s', `readArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `read data is :` + readInt64View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
 
       } catch (error) {
@@ -5871,7 +6058,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_UInt64_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        console.println(`data gen`);
+        hilog.info(domain, tag, '%{public}s', `data gen`);
         let buffer = new ArrayBuffer(8 * 10);
         let bUInt64View = new BigInt64Array(buffer);
         for (let i = 0; i < bUInt64View.length; i++) {
@@ -5880,21 +6067,21 @@ export default function abilityTest() {
 
         try {
           data.writeArrayBuffer(buffer, rpc.TypeCode.BIGUINT64_ARRAY);
-          console.println(`writeArrayBuffer success`);
-          console.println(`write data is :` + bUInt64View);
+          hilog.info(domain, tag, '%{public}s', `writeArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `write data is :` + bUInt64View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
 
         try {
           let result = data.readArrayBuffer(rpc.TypeCode.BIGUINT64_ARRAY);
           let readUInt64View = new BigInt64Array(result);
-          console.println(`readArrayBuffer success`);
-          console.println(`read data is :` + readUInt64View);
+          hilog.info(domain, tag, '%{public}s', `readArrayBuffer success`);
+          hilog.info(domain, tag, '%{public}s', `read data is :` + readUInt64View);
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+          hilog.info(domain, tag, '%{public}s', `catch error, code is ${error.code}, msg is ${error.message}`);
         }
       } catch (error) {
         hilog.info(domain, tag, '%{public}s',
@@ -6094,9 +6281,9 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_readChar_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let a: byte = 97;
+        let a: int = 97;
         data.writeChar(a);
-        let res = data.readChar();
+        let res: int = data.readChar();
         expect(a == res).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readChar_0100 error is: ' + error);
@@ -6122,9 +6309,9 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_readDouble_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let a: double = 9.7;
+        let a: double = 9.71;
         data.writeDouble(a);
-        let res = data.readDouble();
+        let res: double = data.readDouble();
         expect(a == res).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDouble_0100 error is: ' + error);
@@ -6202,10 +6389,15 @@ export default function abilityTest() {
         }
         rpc.IPCSkeleton.restoreCallingIdentity(des);
       } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_Skeleton_restoreCallingIdentity_0200 error is: ' + err);
         expect(err.message == null).assertTrue();
+      } finally {
+        expect(testFlag).assertTrue();
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_0200 reclaim done');
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Skeleton_restoreCallingIdentity_0200 --------------------');
     });
 
@@ -6375,7 +6567,7 @@ export default function abilityTest() {
           }
         }
         hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
-        console.println(`write data is ${int8View}`);
+        hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
         let length: int = 10;
         let offset: int = 0;
         ashmem.writeDataToAshmem(buffer, length, offset);
@@ -6420,7 +6612,7 @@ export default function abilityTest() {
           }
         }
         hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
-        console.println(`write data is ${int8View}`);
+        hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
         let length: int = 10;
         let offset: int = 0;
         ashmem1.writeDataToAshmem(buffer, length, offset);
@@ -6466,7 +6658,7 @@ export default function abilityTest() {
           }
         }
         hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
-        console.println(`write data is ${int8View}`);
+        hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
         let length: int = 10;
         let offset: int = 0;
         ashmem2.writeDataToAshmem(buffer, length, offset);
@@ -6510,7 +6702,7 @@ export default function abilityTest() {
           }
         }
         hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
-        console.println(`write data is ${int8View}`);
+        hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
         let length: int = 10;
         let offset: int = 0;
         ashmem.writeDataToAshmem(buffer, length, offset);
@@ -6555,7 +6747,7 @@ export default function abilityTest() {
           }
         }
         hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
-        console.println(`write data is ${int8View}`);
+        hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
         let length: int = 10;
         let offset: int = 0;
         ashmem.writeDataToAshmem(buffer, length, offset);
@@ -6624,13 +6816,42 @@ export default function abilityTest() {
         let res = testRemoteObject.getLocalInterface(des);
       } catch (err) {
         err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0200 error is: ' + err);
         expect(err.message == null).assertTrue();
       } finally {
+        expect(testFlag).assertTrue();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0200 reclaim done');
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_RemoteObject_getLocalInterface_0200 --------------------');
+    });
+
+    /**
+     * @tc.name      SUB_IPC_RemoteObject_getLocalInterface_0300
+     * @tc.number    SUB_IPC_RemoteObject_getLocalInterface_0300
+     * @tc.desc      test getLocalInterface
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     * @tc.level     LEVEL1
+     */
+    it("SUB_IPC_RemoteObject_getLocalInterface_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_RemoteObject_getLocalInterface_0300 --------------------');
+      try {
+        let testRemoteObject = new TestRemoteObject('testObject');
+        let res = testRemoteObject.getLocalInterface('');
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0300 res is:' + res);
+        expect(res != null).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0300 error is:' + err);
+        expect(err == null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0300 reclaim done');
       }
       done();
-      hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_RemoteObject_getLocalInterface_0200 --------------------');
+      hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_RemoteObject_getLocalInterface_0300 --------------------');
     });
 
     /**
@@ -6703,9 +6924,12 @@ export default function abilityTest() {
         let testRemoteObject = new TestRemoteObject('testObject');
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), des)
       } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_0300 error is: ' + err);
         expect(err.message == null).assertTrue();
       } finally {
+        expect(testFlag).assertTrue();
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_0300 reclaim done');
         done();
       }
@@ -7306,7 +7530,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeFloatArray_ErrorCode_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let input: Array<Double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
+        let input: Array<double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
         data.reclaim();
         data.writeFloatArray(input);
       } catch (err) {
@@ -7335,9 +7559,9 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readFloatArray_ErrorCode_0100 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let input: Array<Double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
+        let input: Array<double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
         data.writeFloatArray(input);
-        let res: Array<Double> = new Array<Double>(input.length);
+        let res: Array<double> = new Array<double>(input.length);
         data.reclaim();
         data.readFloatArray(res);
       } catch (err) {
@@ -7366,7 +7590,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readFloatArray_ErrorCode_0200 --------------------');
       let data = rpc.MessageSequence.create();
       try {
-        let input: Array<Double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
+        let input: Array<double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
         data.writeFloatArray(input);
         data.reclaim();
         let res = data.readFloatArray();
@@ -7599,6 +7823,40 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0200
+     * @tc.number SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0200
+     * @tc.desc   test MessageSequence dupFileDescriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0200 --------------------');
+      let data =  rpc.MessageSequence.create();
+      try {
+        let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
+        let pathDir = context.filesDir;
+        let filePath = pathDir + "/test4.txt";
+        let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+        data.writeFileDescriptor(file.fd);
+        rpc.MessageSequence.closeFileDescriptor(file.fd);
+        let res = rpc.MessageSequence.dupFileDescriptor(file.fd);
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0200 error is: ' + err);
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0200 error code is: ' + err.code);
+        expect(err.code == 1900013).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        data.reclaim();
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0200 reclaim done');
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0200 --------------------');
+    });
+
+    /**
      * @tc.name      SUB_IPC_MessageSequence_WriteArrayBuffer_ErrorCode_0100
      * @tc.number    SUB_IPC_MessageSequence_WriteArrayBuffer_ErrorCode_0100
      * @tc.desc      test WriteArrayBuffer ErrorCode
@@ -7679,7 +7937,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 --------------------');
       try {
         let des ='';
-        const targetLength = strlen + 1;
+        const targetLength: int = strlen + 1;
         for (let i = 0; i < targetLength; i++) {
           des += 'a';
         }
@@ -7688,14 +7946,16 @@ export default function abilityTest() {
         let res = testRemoteObject.getLocalInterface(des);
       } catch (err) {
         err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
       } finally {
+        expect(testFlag).assertFalse();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 reclaim done');
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 --------------------');
     });
 
@@ -7720,8 +7980,8 @@ export default function abilityTest() {
         expect(err.message != null).assertTrue();
       } finally {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100 reclaim done');
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100 --------------------');
     });
 
@@ -7738,7 +7998,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0200 --------------------');
       try {
         let des = '';
-        const targetLength = strlen;
+        const targetLength: int = strlen;
         for (let i = 0; i < targetLength; i++) {
           des += 'a';
         }
@@ -7748,11 +8008,13 @@ export default function abilityTest() {
         expect(res).assertEqual(des);
       } catch (err) {
         err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
       } finally {
+        expect(testFlag).assertFalse();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0200 reclaim done');
         done();
       }
@@ -7772,7 +8034,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 --------------------');
       try {
         let des ='';
-        const targetLength = strlen + 1;
+        const targetLength: int = strlen + 1;
         for (let i = 0; i < targetLength; i++) {
           des += 'a';
         }
@@ -7780,11 +8042,13 @@ export default function abilityTest() {
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), des)
       } catch (err) {
         err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
       } finally {
+        expect(testFlag).assertFalse();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 reclaim done');
         done();
       }
@@ -7804,19 +8068,22 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 --------------------');
       try {
         let des = '';
-        const targetLength = strlen;
+        const targetLength: int = strlen;
         for (let i = 0; i < targetLength; i++) {
           des += 'a';
         }
         let testRemoteObject = new TestRemoteObject('testObject');
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), des)
       } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
       } finally {
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 reclaim done');
+        expect(testFlag).assertFalse();
         done();
       }
       hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 --------------------');
@@ -7835,19 +8102,23 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 --------------------');
       try {
         let des ='';
-        const targetLength = strlen + 1;
+        const targetLength: int = strlen + 1;
         for (let i = 0; i < targetLength; i++) {
           des += 'a';
         }
         rpc.IPCSkeleton.restoreCallingIdentity(des);
       } catch (err) {
         err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 reclaim done');
+        expect(testFlag).assertFalse();
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 --------------------');
     });
 
@@ -7864,18 +8135,23 @@ export default function abilityTest() {
       hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 --------------------');
       try {
         let des = '';
-        const targetLength = strlen;
+        const targetLength: int = strlen;
         for (let i = 0; i < targetLength; i++) {
           des += 'a';
         }
         rpc.IPCSkeleton.restoreCallingIdentity(des);
       } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 reclaim done');
+        expect(testFlag).assertFalse();
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 --------------------');
     });
 
@@ -7906,6 +8182,100 @@ export default function abilityTest() {
       }
       done();
       hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_Ashmen_MapTypedAshmem_ErrorCode_0100 --------------------');
+    });
+
+    /**
+     * @tc.name      SUB_IPC_Ashmen_ReadDataFromAshmem_ErrorCode_0100
+     * @tc.number    SUB_IPC_Ashmen_ReadDataFromAshmem_ErrorCode_0100
+     * @tc.desc      test SUB_IPC_Ashmen_readDataFromAshmem
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     * @tc.level     LEVEL1
+     */
+    it("SUB_IPC_Ashmen_ReadDataFromAshmem_ErrorCode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_Ashmen_ReadDataFromAshmem_ErrorCode_0100 --------------------');
+      let ashmem = rpc.Ashmem.create("ashmem", 1024 * 1024);
+      try {
+        ashmem.mapReadWriteAshmem();
+        ashmem.setProtectionType(3);
+        hilog.info(domain, tag, '%{public}s', `SetProtectionType finshed`);
+        let buffer = new ArrayBuffer(1 * 10);
+        let int8View = new Int8Array(buffer);
+        for (let i = 0; i < int8View.length; i++) {
+          int8View[i] = i * 2 + 1;
+          if (i % 2 != 0) {
+            int8View[i] = -int8View[i];
+          }
+        }
+        hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
+        hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
+        let length: int = 10;
+        let offset: int = 0;
+        ashmem.writeDataToAshmem(buffer, length, offset);
+        hilog.info(domain, tag, '%{public}s', `WriteDataToAshMem finshed`);
+        ashmem.unmapAshmem();
+        ashmem.closeAshmem();
+        let result = ashmem.readDataFromAshmem(length, offset);
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_ReadDataFromAshmem_ErrorCode_0100 error is: ' + err);
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_ReadDataFromAshmem_ErrorCode_0100 error code is: ' + err.code);
+        expect(err.code == 1900004).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_ReadDataFromAshmem_ErrorCode_0100 reclaim done');
+        ashmem.unmapAshmem();
+        ashmem.closeAshmem();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_Ashmen_ReadDataFromAshmem_ErrorCode_0100 --------------------');
+    });
+
+    /**
+     * @tc.name      SUB_IPC_Ashmen_readDataFromAshmem_ErrorCode_0200
+     * @tc.number    SUB_IPC_Ashmen_readDataFromAshmem_ErrorCode_0200
+     * @tc.desc      test SUB_IPC_Ashmen_readDataFromAshmem
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     * @tc.level     LEVEL1
+     */
+    it("SUB_IPC_Ashmen_readDataFromAshmem_ErrorCode_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_Ashmen_readDataFromAshmem_ErrorCode_0200 --------------------');
+      let ashmem = rpc.Ashmem.create("ashmem", 1024 * 1024);
+      try {
+        ashmem.mapReadWriteAshmem();
+        ashmem.setProtectionType(3);
+        hilog.info(domain, tag, '%{public}s', `SetProtectionType finshed`);
+        let buffer = new ArrayBuffer(1 * 10);
+        let int8View = new Int8Array(buffer);
+        for (let i = 0; i < int8View.length; i++) {
+          int8View[i] = i * 2 + 1;
+          if (i % 2 != 0) {
+            int8View[i] = -int8View[i];
+          }
+        }
+        hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
+        hilog.info(domain, tag, '%{public}s', `write data is ${int8View}`);
+        let length: int = 10;
+        let offset: int = 0;
+        ashmem.writeDataToAshmem(buffer, length, offset);
+        hilog.info(domain, tag, '%{public}s', `WriteDataToAshMem finshed`);
+        let result = ashmem.readDataFromAshmem(length, -1);
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_readDataFromAshmem_ErrorCode_0200 error is: ' + err);
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_readDataFromAshmem_ErrorCode_0200 error code is: ' + err.code);
+        expect(err.code == 1900004).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_readDataFromAshmem_ErrorCode_0200 reclaim done');
+        ashmem.unmapAshmem();
+        ashmem.closeAshmem();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_Ashmen_readDataFromAshmem_ErrorCode_0200 --------------------');
     });
 
     /**
@@ -7948,12 +8318,26 @@ export default function abilityTest() {
         expect(errCode1900012).assertEqual("1900012");
         let errCode1900013 = `${rpc.ErrorCode.OS_DUP_ERROR}`;
         expect(errCode1900013).assertEqual("1900013");
+        expect(rpc.RemoteProxy.PING_TRANSACTION).assertEqual(1599098439);
+        expect(rpc.RemoteProxy.DUMP_TRANSACTION).assertEqual(1598311760);
+        expect(rpc.RemoteProxy.INTERFACE_TRANSACTION).assertEqual(1598968902);
+        expect(rpc.RemoteProxy.MIN_TRANSACTION_ID).assertEqual(0X1);
+        expect(rpc.RemoteProxy.MAX_TRANSACTION_ID).assertEqual(0xFFFFFF);
+        expect(rpc.MessageOption.TF_SYNC).assertEqual(0);
+        expect(rpc.MessageOption.TF_ASYNC).assertEqual(1);
+        expect(rpc.MessageOption.TF_WAIT_TIME).assertEqual(8);
+        expect(rpc.MessageOption.TF_ACCEPT_FDS).assertEqual(0x10);
+        expect(rpc.Ashmem.PROT_EXEC).assertEqual(4);
+        expect(rpc.Ashmem.PROT_NONE).assertEqual(0);
+        expect(rpc.Ashmem.PROT_READ).assertEqual(1);
+        expect(rpc.Ashmem.PROT_WRITE).assertEqual(2);
       } catch (err) {
-        err = err as BusinessError;
+        //err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_ErrorCode_0100 error is: ' + err);
         expect(err.message == null).assertTrue();
       }
       done();
-      hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 --------------------');
+      hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_ErrorCode_0100 --------------------');
     });
 
     /**

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,6 @@ import {BadgeParamWithNumber,
   GridRowDirection,
   ToggleType,
   TimePicker,
-  StepperItem,
   SliderStyle,
   FlexDirection,
   ProgressType,
@@ -80,7 +79,6 @@ import {BadgeParamWithNumber,
   Search,
   Select,
   Slider,
-  Stepper,
   TextArea,
   TextClock,ImageFit,
   TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,
@@ -110,8 +108,7 @@ struct LayoutWeightPageRow {
     console.info('LayoutWeight page show called ')
     AppStorage.setOrCreate<number>('_layoutWeight',0)
     try {
-      let routerParamOptions = new RouterParams()
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
       AppStorage.setOrCreate<number | string>('_layoutWeight',routerParamOptions.view.testValue.setValue.layoutWeight)
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView
@@ -120,7 +117,7 @@ struct LayoutWeightPageRow {
       this.childHeight = routerParamOptions.view.childHeight
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -280,16 +277,6 @@ struct LayoutWeightPageRow {
           max: 100,
           style: SliderStyle.OutSet
         }).showTips(true)
-          .applyStyles(this.commonStyle)
-
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
           .applyStyles(this.commonStyle)
 
       } else if (this.targetView == 'TextArea') {

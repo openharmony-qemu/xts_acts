@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,9 +15,8 @@
  */
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
-import { StepperView } from '../../view/alignRules/StepperView';
 import {
-  MenuItemGroup,MenuItemGroupOptions,ImageFit,FlowItem,TabContent,ListItemGroup,ListItem,StepperItem,SliderStyle,BadgeParamWithNumber,Blank,Entry,Component,$r,
+  MenuItemGroup,MenuItemGroupOptions,ImageFit,FlowItem,TabContent,ListItemGroup,ListItem,SliderStyle,BadgeParamWithNumber,Blank,Entry,Component,$r,
   AlignRuleOption,Row,Button,Margin,IDataSource,DataChangeListener,SwiperController,Column,ColumnOptions,ClickEvent,RowOptions,LazyForEach,
   Text,FlexAlign,TextCase,TextDecorationType,Resource,VerticalAlign,HorizontalAlign,RelativeContainer,CommonMethod,applyStyles,Builder,
   Color,Scroller,Menu,ScrollBar,TextTimer,ColumnSplit,RowSplit,Refresh,Shape,Rect,Path,Polygon,Polyline,Line,Ellipse,
@@ -25,7 +24,7 @@ import {
   Search,Rating,QRCode,Progress,AlphabetIndexer,ImageAnimator,Image,Navigation,Marquee,LoadingProgress,Gauge,Divider,DatePicker,DataPanel,CheckboxGroup,Checkbox,
   Select,Radio,MenuItem,ProgressType,ToggleType,ForEach,GridRowDirection,BarState,SideBarContainerType,TextAlign,GridItem,BadgeStyle,BadgeParamWithString,
   GutterOption,BreakPoints,BreakpointsReference,GridCol,GridColOptions,GridColColumnOption,ColumnOptions,
-  MenuItemOptions,CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions,Stepper
+  MenuItemOptions,CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
 import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
@@ -42,11 +41,10 @@ struct StateStylesPageTwo {
     AppStorage.setOrCreate<boolean>('_isSelect', true)
     console.info('this._isSelect:' + this._isSelect)
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -81,17 +79,17 @@ struct StateStylesPageTwo {
     Row() {
       Stack() {
         if (this.targetView == 'Checkbox') {
-          Checkbox().select(this._isSelect).applyStyles(this.commonStyle)
+          Checkbox().applyStyles(this.commonStyle).select(this._isSelect)
         } else if (this.targetView == 'CheckboxGroup') {
-          CheckboxGroup({ group: 'checkboxGroup' }).selectAll(this._isSelect).applyStyles(this.commonStyle)
+          CheckboxGroup({ group: 'checkboxGroup' }).applyStyles(this.commonStyle).selectAll(this._isSelect)
         } else if (this.targetView == 'Radio') {
-          Radio({ value: 'Radio1', group: 'radioGroup' }).checked(this._isSelect).applyStyles(this.commonStyle)
+          Radio({ value: 'Radio1', group: 'radioGroup' }).applyStyles(this.commonStyle).checked(this._isSelect)
         } else if (this.targetView == 'Toggle') {
           Toggle({ type: ToggleType.Switch, isOn: this._isSelect }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'MenuItem') {
           Menu() {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-              .selected(this._isSelect).applyStyles(this.commonStyle)
+              .applyStyles(this.commonStyle).selected(this._isSelect)
           }.backgroundColor(Color.Yellow)
           .width('100%')
           .height('100%')

@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textDataDataDetectorConfig() {
   describe('textDataDataDetectorConfig', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textDataDataDetectorConfig beforeEach start");
 
 
@@ -50,7 +50,7 @@ export default function textDataDataDetectorConfig() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textDataDataDetectorConfig state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textDataDataDetectorConfig" == pages.name)) {
           console.info("get textDataDataDetectorConfig pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

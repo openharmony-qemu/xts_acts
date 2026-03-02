@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
@@ -449,20 +449,6 @@ import { SetValue, RouterParams } from '../../common/Utils';
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class StepperModifier implements AttributeModifier<StepperAttribute> {
-    mBorderRadius: Length = 30
-    applyNormalAttribute(instance: StepperAttribute): void {
-      console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
-     instance.borderRadius(this.mBorderRadius)
-    }
-  }
-  class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-    mBorderRadius: Length = 30
-    applyNormalAttribute(instance: StepperItemAttribute): void {
-      console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
-     instance.borderRadius(this.mBorderRadius)
-    }
-  }
   class SwiperModifier implements AttributeModifier<SwiperAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: SwiperAttribute): void {
@@ -631,8 +617,6 @@ struct borderRadiusPage {
   @State _borderRadiusSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _borderRadiusSliderMod: SliderModifier = new SliderModifier()
   @State _borderRadiusStackMod: StackModifier = new StackModifier()
-  @State _borderRadiusStepperMod: StepperModifier = new StepperModifier()
-  @State _borderRadiusStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _borderRadiusSwiperMod: SwiperModifier = new SwiperModifier()
   @State _borderRadiusTabContentMod: TabContentModifier = new TabContentModifier()
   @State _borderRadiusTabsMod: TabsModifier = new TabsModifier()
@@ -658,16 +642,14 @@ struct borderRadiusPage {
 
   onPageShow() {
     console.info('borderRadius page show called ')
-    let routerParamOptions = new RouterParams()
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-    this.targetView = routerParamOptions.view.targetView;
-    this.componentKey = routerParamOptions.view.componentKey as string;
-    this.parentWidth = routerParamOptions.view.parentWidth;
-    this.parentHeight = routerParamOptions.view.parentHeight;
-    this.columns = (routerParamOptions.view.columns as int)
-    this.gutter = (routerParamOptions.view.gutter as int)
-    this.parentComponentKey = routerParamOptions.view.parentComponentKey;
-    this._borderRadiusBlankMod.mBorderRadius = routerParamOptions.view.testValue.setValue.borderRadius
+    this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+    this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+    this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+    this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+    this._borderRadiusBlankMod.mBorderRadius = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.borderRadius
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('[registerDataChange 2 ] ' + JSON.stringify(value.borderRadius))
       this._borderRadiusAlphabetIndexerMod.mBorderRadius = value.borderRadius
@@ -728,8 +710,6 @@ struct borderRadiusPage {
       this._borderRadiusSideBarContainerMod.mBorderRadius = value.borderRadius
       this._borderRadiusSliderMod.mBorderRadius = value.borderRadius
       this._borderRadiusStackMod.mBorderRadius = value.borderRadius
-      this._borderRadiusStepperMod.mBorderRadius = value.borderRadius
-      this._borderRadiusStepperItemMod.mBorderRadius = value.borderRadius
       this._borderRadiusSwiperMod.mBorderRadius = value.borderRadius
       this._borderRadiusTabContentMod.mBorderRadius = value.borderRadius
       this._borderRadiusTabsMod.mBorderRadius = value.borderRadius
@@ -851,14 +831,6 @@ struct borderRadiusPage {
           })
             .showTips(true)
             .attributeModifier(this._borderRadiusSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1074,19 +1046,6 @@ struct borderRadiusPage {
               }
             }, (item: int) => item.toString())
           }.attributeModifier(this._borderRadiusWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

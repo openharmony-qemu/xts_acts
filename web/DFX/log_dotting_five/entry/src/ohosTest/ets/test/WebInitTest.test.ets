@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, describe, it , expect, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { waitForComponent } from './WaitTest';
+import wifiMg from '@ohos.wifiManager';
 
 export default function webInitTest() {
   describe('WebInitTest', () => {

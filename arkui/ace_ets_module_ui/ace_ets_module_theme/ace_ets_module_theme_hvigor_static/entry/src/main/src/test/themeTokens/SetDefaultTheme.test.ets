@@ -41,41 +41,40 @@ export default function setDefaultThemeTest() {
   const SUITE: string = 'SetDefaultTheme';
   let themeLocal: CustomTheme | undefined = undefined;
   let changeTheme: boolean = false;
+  const defaultThemeProperty: string = 'DefaultThemeProperty';
 
   describe('ActsSetDefaultThemeTest', () => {
     beforeAll(async () => {
       console.info('ActsSetDefaultThemeTest startAbility');
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       try {
         const options: router.RouterOptions = {
           url: "MainAbility/pages/themeTokensPages/SetDefaultThemeTestPage",
         };
         const routerInstance = AppStorage.get<Router>("router") as Router
         const pages: router.RouterState = routerInstance.getState();
-        if (pages?.name !== "MainAbility/pages/themeTokensPages/SetDefaultThemeTestPage") {
+        if (pages?.name !== "SetDefaultThemeTestPage") {
           routerInstance.pushUrl(options).then(() => {
-            themeLocal = AppStorage.get<CustomTheme>(defaultThemeProperty);
+            themeLocal = AppStorage.get<CustomTheme>('DefaultThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           });
-          
+          await UtilsTest.msSleep(4000)
         }
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
-
-      if (changeTheme) {
-        // if ((AppStorage.get<CustomTheme>(defaultThemeProperty))?.colors?.fontEmphasize
-        //   == redCustomTheme?.colors?.fontEmphasize) {
-        //   ThemeControl.setDefaultTheme(greenCustomTheme);
-        // } else {
-          ThemeControl.setDefaultTheme(redCustomTheme);
-        // }
-        // themeLocal = AppStorage.get<CustomTheme>(defaultThemeProperty);
-        // changeTheme = false;
+      if (!changeTheme) return;
+      if ((AppStorage.get<CustomTheme>('DefaultThemeProperty'))?.colors?.fontEmphasize
+        == redCustomTheme?.colors?.fontEmphasize) {
+        ThemeControl.setDefaultTheme(greenCustomTheme);
+      } else {
+        ThemeControl.setDefaultTheme(redCustomTheme);
       }
+      themeLocal = AppStorage.get<CustomTheme>('DefaultThemeProperty');
+      changeTheme = false;
     })
 
     afterAll(() => {
@@ -83,10 +82,6 @@ export default function setDefaultThemeTest() {
       router.back()
     });
 
-    
-        
-        
-    
 /**
      * @tc.number   ActsSetDefaultThemeColors_static_0100
      * @tc.name     ActsSetDefaultThemeColors_static_0100

@@ -13,8 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { StepperView } from '../../view/markAnchor/StepperView';
-import { StepperItemView } from '../../view/markAnchor/StepperItemView';
 import { ListItemGroupView } from '../../view/markAnchor/ListItemGroupView';
 import { NavRouterView } from '../../view/markAnchor/NavRouterView';
 import { attrsManager } from '../../common/AttrsManager';
@@ -111,11 +109,8 @@ import {
   SideBarContainerAttribute,
   SliderAttribute,
   StackAttribute,
-  StepperAttribute,
-  StepperItemAttribute,
   SwiperAttribute,
   TabContentAttribute,
-  Stepper,
   TabsAttribute,
   TextAttribute,
   TextAreaAttribute,
@@ -201,7 +196,6 @@ import {
   TabContent,
   Axis,
   ListItem,
-  StepperItem,
   FlowItem,
   FlexDirection,
   MenuItemGroup,
@@ -683,22 +677,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mAccessibilityGroup: boolean = true
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.accessibilityGroup(this.mAccessibilityGroup)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mAccessibilityGroup: boolean = true
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.accessibilityGroup(this.mAccessibilityGroup)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mAccessibilityGroup: boolean = true
 
@@ -883,8 +861,6 @@ struct accessibilityGroupTestDropPage {
   @State _accessibilityGroupSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _accessibilityGroupSliderMod: SliderModifier = new SliderModifier()
   @State _accessibilityGroupStackMod: StackModifier = new StackModifier()
-  @State _accessibilityGroupStepperMod: StepperModifier = new StepperModifier()
-  @State _accessibilityGroupStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _accessibilityGroupSwiperMod: SwiperModifier = new SwiperModifier()
   @State _accessibilityGroupTabContentMod: TabContentModifier = new TabContentModifier()
   @State _accessibilityGroupTabsMod: TabsModifier = new TabsModifier()
@@ -988,8 +964,6 @@ struct accessibilityGroupTestDropPage {
       this._accessibilityGroupSideBarContainerMod.mAccessibilityGroup = value.accessibilityGroup
       this._accessibilityGroupSliderMod.mAccessibilityGroup = value.accessibilityGroup
       this._accessibilityGroupStackMod.mAccessibilityGroup = value.accessibilityGroup
-      this._accessibilityGroupStepperMod.mAccessibilityGroup = value.accessibilityGroup
-      this._accessibilityGroupStepperItemMod.mAccessibilityGroup = value.accessibilityGroup
       this._accessibilityGroupSwiperMod.mAccessibilityGroup = value.accessibilityGroup
       this._accessibilityGroupTabContentMod.mAccessibilityGroup = value.accessibilityGroup
       this._accessibilityGroupTabsMod.mAccessibilityGroup = value.accessibilityGroup
@@ -1193,16 +1167,6 @@ struct accessibilityGroupTestDropPage {
           .applyStyles(this.fancy)
 
           .attributeModifier(this._accessibilityGroupSliderMod)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
-        .applyStyles(this.fancy)
-        .attributeModifier(this._accessibilityGroupStepperMod)
       } else if (this.targetView == 'TextArea') {
         TextArea({
           placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1534,20 +1498,6 @@ struct accessibilityGroupTestDropPage {
         .applyStyles(this.fancy)
 
         .attributeModifier(this._accessibilityGroupWaterFlowMod)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-          .applyStyles(this.fancy)
-          .attributeModifier(this._accessibilityGroupStepperItemMod)
-        }
-        .backgroundColor(Color.Yellow)
-        .width('100%')
-        .height('100%')
       } else if (this.targetView == 'GridCol') {
         GridRow({
           columns: 1,

@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function UIObserverObserver4Test() {
   describe('UIObserverObserver4Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
@@ -90,7 +90,7 @@ it('UIObserverObserver4Test_static_0100', Level.LEVEL2, async (done: () => void)
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      expect(AppStorage.get('UIObserverObserver4Page_callBackFuncOnCount')).assertEqual(2);
+      expect(AppStorage.get<int>('UIObserverObserver4Page_callBackFuncOnCount')).assertEqual(2);
       AppStorage.delete('UIObserverObserver4Page_callBackFuncOnCount')
 
       console.info('UIObserverObserver4Test_static_0100 END');

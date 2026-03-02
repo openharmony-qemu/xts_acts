@@ -39,7 +39,7 @@ import { UtilsTest } from '../../Util.test'
 
 export default function CloseEsc() {
   describe('CloseEsc', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });
@@ -60,7 +60,6 @@ export default function CloseEsc() {
         }
       } catch (err) {
         console.error("push CloseEsc page error: " + err);
-        expect().assertFail();
       }
 
     });

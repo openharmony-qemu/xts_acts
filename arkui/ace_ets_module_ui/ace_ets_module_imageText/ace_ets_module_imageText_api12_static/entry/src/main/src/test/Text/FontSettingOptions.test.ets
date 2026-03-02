@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function FontSettingOptions() {
   describe('FontSettingOptions', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FontSettingOptions beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function FontSettingOptions() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get FontSettingOptions state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("FontSettingOptions" == pages.name)) {
           console.info("get FontSettingOptions pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

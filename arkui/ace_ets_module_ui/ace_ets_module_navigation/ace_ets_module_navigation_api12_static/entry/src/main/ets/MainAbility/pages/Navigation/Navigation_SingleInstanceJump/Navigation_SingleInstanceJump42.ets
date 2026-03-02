@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -82,7 +82,7 @@ struct Navigation_SingleInstanceJump42{
       .navDestination(this.PageMap)
 
       Button('push page1').onClick((event: ClickEvent) => {
-        this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{launchMode:LaunchMode.MOVE_TO_TOP_SINGLETON})
+        this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{launchMode:LaunchMode.STANDARD})
       }).id('Navigation_SingleInstanceJump42_btn1')
       Button('push page2').onClick((event: ClickEvent) => {
         this.pathInfos.pushPath(new NavPathInfo('page2',this.count++),{launchMode:LaunchMode.MOVE_TO_TOP_SINGLETON})

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,6 +19,7 @@ import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
 export default class CommonTest {
@@ -97,7 +98,7 @@ export default class CommonTest {
             let eventData: events_emitter.EventData = {
               data: {
                 "mZIndex": data.testValue.setValue.zIndex as int
-              } as Record<string, Object | null | undefined>
+              } as Record<String,RecordData>
             }
             let innerEvent: events_emitter.InnerEvent = {
               eventId: 184,
@@ -109,13 +110,13 @@ export default class CommonTest {
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
               data.viewObj = JSON.parseJsonElement(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
-            } catch (err: Error) {
+            } catch (err) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);
               if (err.name != 'AssertException') {
                 await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-                expect(msg).assertTrue();
+                expect().assertFail();
               }
             }
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);

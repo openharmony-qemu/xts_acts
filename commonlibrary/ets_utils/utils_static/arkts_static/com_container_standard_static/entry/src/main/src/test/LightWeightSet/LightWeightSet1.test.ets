@@ -40,7 +40,7 @@ class InfoC {
 
 export default function LightWeightSetTest1() {
   describe("LightWeightSetTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -643,60 +643,12 @@ export default function LightWeightSetTest1() {
         lightWeightSet.increaseCapacityTo(3);
         expect(true).assertEqual(false);
       } catch (err) {
-        err = err as Error;
-        // expect(err.name).assertEqual("BusinessError");
-        // expect(err.code).assertEqual(10200001);
+        expect(err.name).assertEqual("BusinessError");
+        expect(err.code).assertEqual(10200001);
         expect(err.message)
           .assertEqual(`The value of "minimumCapacity" is out of range. It must be > 8. Received value is: 3`);
       }
     });
-
-    /**
-     * @tc.name   testLightWeightSet0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0310
-     * @tc.desc   Test the function By LightWeightSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightSet0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightSet = new LightWeightSet<number>();
-    //   lightWeightSet.add(1);
-    //   lightWeightSet.add(2);
-    //   lightWeightSet.add(3);
-    //   lightWeightSet.add(4);
-    //   lightWeightSet.add(5);
-    //   try {
-    //     let res = lightWeightSet.increaseCapacityTo("qwe");
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "minimumCapacity" must be small integer. Received value is: qwe`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0320
-     * @tc.desc   Test the function By LightWeightSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightSet0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightSet = new LightWeightSet<string>();
-    //   try {
-    //     let res = lightWeightSet.removeAt("a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //       expect(err.name).assertEqual("BusinessError");
-    //       expect(err.code).assertEqual(401);
-    //       expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
-    //     }
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightSet0033
@@ -706,42 +658,19 @@ export default function LightWeightSetTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testLightWeightSet0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightSet = new LightWeightSet<number>();
-    //   lightWeightSet.add(1);
-    //   lightWeightSet.add(2);
-    //   lightWeightSet.add(3);
-    //   lightWeightSet.add(4);
-    //   lightWeightSet.add(5);
-    //   lightWeightSet.increaseCapacityTo(20);
-    //   let res = lightWeightSet.length;
-    //   expect(String(res)).assertEqual('20');
-    // });
+    it("testLightWeightSet0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let lightWeightSet = new LightWeightSet<number>();
+      lightWeightSet.add(1);
+      lightWeightSet.add(2);
+      lightWeightSet.add(3);
+      lightWeightSet.add(4);
+      lightWeightSet.add(5);
+      lightWeightSet.increaseCapacityTo(20);
+      let res = lightWeightSet.length;
+      expect(res).assertEqual(5);
+    });
 
     /**
-     * @tc.name   testLightWeightSet0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0340
-     * @tc.desc   Test the function By LightWeightSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightSet0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightSet = new LightWeightSet<number>();
-    //   lightWeightSet.add(1);
-    //   lightWeightSet.add(2);
-    //   lightWeightSet.add(3);
-    //   lightWeightSet.add(4);
-    //   lightWeightSet.add(5);
-    //   try {
-    //     let res = lightWeightSet.getValueAt("a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightSet0035
@@ -881,90 +810,6 @@ export default function LightWeightSetTest1() {
         expect(arr[i]).assertEqual(arr1[i]);
       }
     });
-
-    /**
-     * @tc.name   testLightWeightSet0042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0420
-     * @tc.desc   Test the function By LightWeightSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightSet0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightSet = new LightWeightSet<number>();
-    //   lightWeightSet.add(1);
-    //   lightWeightSet.add(2);
-    //   lightWeightSet.add(3);
-    //   let obj = new Array<number>(1,2,3);
-    //   let res = lightWeightSet.equal(obj);
-    //   expect(String(res)).assertEqual('true');
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0430
-     * @tc.desc   Test the function By LightWeightSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    //   it("testLightWeightSet0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //     let lightWeightSet = new LightWeightSet();
-    //     lightWeightSet.add(1);
-    //     lightWeightSet.add(2);
-    //     lightWeightSet.add(3);
-    //     let obj = [1,2];
-    //     let res = lightWeightSet.equal(obj);
-    //     expect(String(res)).assertEqual(false);
-    //   });
-
-    /**
-     * @tc.name   testLightWeightSet0044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0440
-     * @tc.desc   Test the function By LightWeightSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightSet0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightSet = new LightWeightSet<number>();
-    //   lightWeightSet.add(1);
-    //   lightWeightSet.add(2);
-    //   lightWeightSet.add(3);
-    //   try {
-    //     lightWeightSet.addAll([1, 2, 3]);
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //       expect(err.name).assertEqual("BusinessError");
-    //       expect(err.code).assertEqual(401);
-    //       expect(err.message).assertEqual(`The type of "set" must be LightWeightSet. Received value is: 1,2,3`);
-    //     }
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0450
-     * @tc.desc   Test the function By LightWeightSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightSet0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightSet = new LightWeightSet();
-    //   lightWeightSet.add("a");
-    //   lightWeightSet.add("b");
-    //   lightWeightSet.add("c");
-    //   try {
-    //     lightWeightSet.hasAll([1, 2, 3]);
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "set" must be LightWeightSet. Received value is: 1,2,3`);
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightSet0046

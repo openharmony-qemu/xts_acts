@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function row_TextFlexShrinkTest() {
   describe('Row_TextFlexShrinkTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Row_TextFlexShrinkTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

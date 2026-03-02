@@ -43,9 +43,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function alignSelfGridRowTest() {
 
-  
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
-  
+  waitForCompletion(async ()=>{await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")})
 
   const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
 
@@ -141,7 +139,7 @@ export default function alignSelfGridRowTest() {
   ]
 
   describe('AlignSelfGridRowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alignSelfGridRowTest beforeAll start");
 
     });

@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
+* Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -28,7 +28,7 @@ let str3Decode = '!!""##$$%%&&\'\'((**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||
 
 export default function uriTest2() {
   describe('uriTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
 
@@ -2167,19 +2167,20 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testUserInfo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testUserInfo0001';
-    //   try {
-    //     const Uri = "https://username:password@@host:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     hilog.info(1, TAG, '%{public}s', 'lxl testUserInfo0001 describe start uriInstance is:' + JSON.stringify(uriInstance));
-    //     hilog.info(1, TAG, '%{public}s', 'lxl testUserInfo0001 describe start userInfo is:' + uriInstance.userInfo);
-    //     expect(uriInstance.userInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUserInfo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testUserInfo0001';
+      try {
+        const Uri = "https://username:password@@host:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        hilog.info(1, TAG, '%{public}s', 'lxl testUserInfo0001 describe start uriInstance is:' + JSON.stringify(uriInstance));
+        hilog.info(1, TAG, '%{public}s', 'lxl testUserInfo0001 describe start userInfo is:' + uriInstance.userInfo);
+        expect(uriInstance.userInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testUserInfo0002
@@ -2189,17 +2190,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testUserInfo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testUserInfo0002';
-    //   try {
-    //     const Uri = "https://username:@password@host:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.userInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUserInfo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testUserInfo0002';
+      try {
+        const Uri = "https://username:@password@host:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.userInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testUserInfo0003
@@ -2209,17 +2211,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testUserInfo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testUserInfo0003';
-    //   try {
-    //     const Uri = "https://username@:password@host:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.userInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUserInfo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testUserInfo0003';
+      try {
+        const Uri = "https://username@:password@host:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.userInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testUserInfo0004
@@ -2229,17 +2232,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testUserInfo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testUserInfo0004';
-    //   try {
-    //     const Uri = "https://user:name:password@host@:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.userInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUserInfo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testUserInfo0004';
+      try {
+        const Uri = "https://user:name:password@host@:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.userInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testUserInfo0005
@@ -2249,17 +2253,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testUserInfo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testUserInfo0005';
-    //   try {
-    //     const Uri = "https:////username:password@host:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.userInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUserInfo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testUserInfo0005';
+      try {
+        const Uri = "https:////username:password@host:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.userInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testUserInfo0006
@@ -2311,17 +2316,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testUserInfo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testUserInfo0008';
-    //   try {
-    //     const Uri = "https:ftp://username:password@host:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.userInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUserInfo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testUserInfo0008';
+      try {
+        const Uri = "https:ftp://username:password@host:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.userInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testUserInfo0009
@@ -2352,17 +2358,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testUserInfo0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testUserInfo0010';
-    //   try {
-    //     const Uri = "https://username%3Apassword%40host:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.userInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUserInfo0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testUserInfo0010';
+      try {
+        const Uri = "https://username%3Apassword%40host:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.userInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testHost0001
@@ -2372,17 +2379,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testHost0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHost0001';
-    //   try {
-    //     const Uri = "https://username:password@@host:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.host).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testHost0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testHost0001';
+      try {
+        const Uri = "https://username:password@@host:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.host).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testHost0002
@@ -2392,17 +2400,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testHost0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHost0002';
-    //   try {
-    //     const Uri = "https://username:@password@host:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.host).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testHost0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testHost0002';
+      try {
+        const Uri = "https://username:@password@host:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.host).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testHost0003
@@ -2412,17 +2421,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testHost0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHost0003';
-    //   try {
-    //     const Uri = "https://username@:password@host:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.host).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testHost0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testHost0003';
+      try {
+        const Uri = "https://username@:password@host:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.host).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testHost0004
@@ -2432,17 +2442,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testHost0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHost0004';
-    //   try {
-    //     const Uri = "https://username:password@host@:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.host).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testHost0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testHost0004';
+      try {
+        const Uri = "https://username:password@host@:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.host).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testHost0005
@@ -2452,17 +2463,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testHost0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHost0005';
-    //   try {
-    //     const Uri = "https://username:password@host:8080@/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.host).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testHost0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testHost0005';
+      try {
+        const Uri = "https://username:password@host:8080@/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.host).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testHost0006
@@ -2472,17 +2484,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testHost0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHost0006';
-    //   try {
-    //     const Uri = "https://username:password@ho@st:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.host).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testHost0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testHost0006';
+      try {
+        const Uri = "https://username:password@ho@st:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.host).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testHost0007
@@ -2492,17 +2505,17 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testHost0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHost0007';
-    //   try {
-    //     const Uri = "https://username:password@host::8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.host).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testHost0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testHost0007';
+      try {
+        const Uri = "https://username:password@host::8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.host).assertEqual(null);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testPort0001
@@ -2869,17 +2882,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testQuery0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testQuery0009';
-    //   try {
-    //     const Uri = "https://username:my+name@host:8080/directory/my+file%3Ffoo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.query).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testQuery0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testQuery0009';
+      try {
+        const Uri = "https://username:my+name@host:8080/directory/my+file%3Ffoo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.query).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testQuery0010
@@ -2994,17 +3008,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testFragment0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testFragment0005';
-    //   try {
-    //     const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2%23fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.fragment).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testFragment0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testFragment0005';
+      try {
+        const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2%23fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.fragment).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testFragment0006
@@ -3119,17 +3134,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testAuthority0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testAuthority0005';
-    //   try {
-    //     const Uri = "https:%2F%2Fusername%3Amy%2Bname%40host%2B8080%2Fdirectory/my+file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.authority).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testAuthority0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testAuthority0005';
+      try {
+        const Uri = "https:%2F%2Fusername%3Amy%2Bname%40host%2B8080%2Fdirectory/my+file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.authority).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testAuthority0006
@@ -3244,17 +3260,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testEncodedUserInfo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testEncodedUserInfo0002';
-    //   try {
-    //     const Uri = "https:///username:my+name@host:8080/directory/my+file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.encodedUserInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testEncodedUserInfo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testEncodedUserInfo0002';
+      try {
+        const Uri = "https:///username:my+name@host:8080/directory/my+file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.encodedUserInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testEncodedUserInfo0003
@@ -3264,17 +3281,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testEncodedUserInfo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testEncodedUserInfo0003';
-    //   try {
-    //     const Uri = "https://username:my+name@@host:8080/directory/my+file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.encodedUserInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testEncodedUserInfo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testEncodedUserInfo0003';
+      try {
+        const Uri = "https://username:my+name@@host:8080/directory/my+file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.encodedUserInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testEncodedUserInfo0004
@@ -3284,17 +3302,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testEncodedUserInfo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testEncodedUserInfo0004';
-    //   try {
-    //     const Uri = "https://username:@my+name@host:8080/directory/my+file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.encodedUserInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testEncodedUserInfo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testEncodedUserInfo0004';
+      try {
+        const Uri = "https://username:@my+name@host:8080/directory/my+file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.encodedUserInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testEncodedUserInfo0005
@@ -3304,17 +3323,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testEncodedUserInfo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testEncodedUserInfo0005';
-    //   try {
-    //     const Uri = "https://username:my+name@host@:8080/directory/my+file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.encodedUserInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testEncodedUserInfo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testEncodedUserInfo0005';
+      try {
+        const Uri = "https://username:my+name@host@:8080/directory/my+file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.encodedUserInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testEncodedUserInfo0006
@@ -3345,17 +3365,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testEncodedUserInfo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testEncodedUserInfo0007';
-    //   try {
-    //     const Uri = "https://username%3Apassword%40host:8080/directory/file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.encodedUserInfo).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testEncodedUserInfo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testEncodedUserInfo0007';
+      try {
+        const Uri = "https://username%3Apassword%40host:8080/directory/file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.encodedUserInfo).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testEncodedPath0001
@@ -3596,17 +3617,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testEncodedQuery0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testEncodedQuery0006';
-    //   try {
-    //     const Uri = "https://username:my+name@host:8080/directory/my+file%3Ffoo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.encodedQuery).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testEncodedQuery0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testEncodedQuery0006';
+      try {
+        const Uri = "https://username:my+name@host:8080/directory/my+file%3Ffoo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.encodedQuery).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testEncodedQuery0007
@@ -3721,17 +3743,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testEncodedFragment0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testEncodedFragment0005';
-    //   try {
-    //     const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2%23fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.encodedFragment).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testEncodedFragment0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testEncodedFragment0005';
+      try {
+        const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2%23fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.encodedFragment).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testEncodedFragment0006
@@ -3846,17 +3869,18 @@ export default function uriTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testEncodedAuthority0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testEncodedAuthority0005';
-    //   try {
-    //     const Uri = "https:%2F%2Fusername%3Amy%2Bname%40host%2B8080%2Fdirectory/my+file?foo=1&bar=2#fragment";
-    //     const uriInstance = new uri.URI(Uri);
-    //     expect(uriInstance.encodedAuthority).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testEncodedAuthority0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testEncodedAuthority0005';
+      try {
+        const Uri = "https:%2F%2Fusername%3Amy%2Bname%40host%2B8080%2Fdirectory/my+file?foo=1&bar=2#fragment";
+        const uriInstance = new uri.URI(Uri);
+        expect(uriInstance.encodedAuthority).assertEqual(null);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testEncodedAuthority0006

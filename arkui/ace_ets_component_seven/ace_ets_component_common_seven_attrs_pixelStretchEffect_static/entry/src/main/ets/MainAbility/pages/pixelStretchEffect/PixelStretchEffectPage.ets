@@ -169,10 +169,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -995,34 +991,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mPixelStretchEffect: PixelStretchEffectOptions = {
-    top: 10,
-    left: 10,
-    right: 10,
-    bottom: 10
-  }
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    console.info(`pixelStretchEffect page show ${JSON.stringify(this.mPixelStretchEffect)}`)
-    instance.pixelStretchEffect(this.mPixelStretchEffect)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mPixelStretchEffect: PixelStretchEffectOptions = {
-    top: 10,
-    left: 10,
-    right: 10,
-    bottom: 10
-  }
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    console.info(`pixelStretchEffect page show ${JSON.stringify(this.mPixelStretchEffect)}`)
-    instance.pixelStretchEffect(this.mPixelStretchEffect)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mPixelStretchEffect: PixelStretchEffectOptions = {
     top: 10,
@@ -1582,18 +1550,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1791,8 +1747,6 @@ struct pixelStretchEffectPage {
   @State _pixelStretchEffectSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _pixelStretchEffectSliderMod: SliderModifier = new SliderModifier()
   @State _pixelStretchEffectStackMod: StackModifier = new StackModifier()
-  @State _pixelStretchEffectStepperMod: StepperModifier = new StepperModifier()
-  @State _pixelStretchEffectStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _pixelStretchEffectSwiperMod: SwiperModifier = new SwiperModifier()
   @State _pixelStretchEffectTabContentMod: TabContentModifier = new TabContentModifier()
   @State _pixelStretchEffectTabsMod: TabsModifier = new TabsModifier()
@@ -1817,13 +1771,12 @@ struct pixelStretchEffectPage {
   @State parentComponentKey: string = '';
 
   onPageShow() {
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     AppStorage.setOrCreate<PixelStretchEffectOptions>('_pixelStretchEffect',
       routerParamOptions.view.testValue.setValue.pixelStretchEffect)
     console.info('xyb: pixelStretchEffect page show called ' +
     routerParamOptions.view.testValue.setValue.pixelStretchEffect.top)
-    const viewElement = JSON.parseJsonElement(JSON.stringify(routerParamOptions))
+    const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
       .getElement("view")
     this.targetView = viewElement.getString("targetView")
     this.componentKey = viewElement.getString("componentKey")
@@ -1942,14 +1895,6 @@ struct pixelStretchEffectPage {
           })
             .showTips(true)
             .commonStyle(this.componentKey).attributeModifier(this._pixelStretchEffectSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.commonStyle(this.componentKey).attributeModifier(this._pixelStretchEffectStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -2175,19 +2120,6 @@ struct pixelStretchEffectPage {
               }
             }, (item: int) => item.toString())
           }.commonStyle(this.componentKey).attributeModifier(this._pixelStretchEffectWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .commonStyle(this.componentKey).attributeModifier(this._pixelStretchEffectStepperItemMod)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

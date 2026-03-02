@@ -19,7 +19,6 @@ import hilog from '@ohos.hilog'
 import webView from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import { BusinessError, RecordData } from '@ohos.base';
-import { setTimeout } from '@internal.full.global';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'

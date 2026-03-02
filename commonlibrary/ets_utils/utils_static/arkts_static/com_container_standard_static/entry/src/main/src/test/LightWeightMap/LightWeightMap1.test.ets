@@ -48,7 +48,7 @@ class TestAbc {
 
 export default function LightWeightMapTest1() {
   describe("LightWeightMapTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
 
@@ -814,113 +814,17 @@ export default function LightWeightMapTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testLightWeightMap0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap<string, string>();
-    //   lightWeightMap.set("a", "A");
-    //   lightWeightMap.set("b", "B");
-    //   lightWeightMap.set("c", "C");
-    //   lightWeightMap.set("d", "D");
-    //   lightWeightMap.set("e", "E");
-    //   lightWeightMap.increaseCapacityTo(10)
-    //   let res = lightWeightMap.length;
-    //   expect(String(res)).assertEqual('10');
-    // });
-
-    /**
-     * @tc.name   testLightWeightMap0040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04000
-     * @tc.desc   Test the function By LightWeightMap.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightMap0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap<string, string>();
-    //   lightWeightMap.set("a", "A");
-    //   lightWeightMap.set("b", "B");
-    //   lightWeightMap.set("c", "C");
-    //   lightWeightMap.set("d", "D");
-    //   lightWeightMap.set("e", "E");
-    //   try {
-    //     lightWeightMap.increaseCapacityTo("qwe");
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "minimumCapacity" must be small integer. Received value is: qwe`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightMap0041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04100
-     * @tc.desc   Test the function By LightWeightMap.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightMap0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap<string, string>();
-    //   try {
-    //     let res = lightWeightMap.removeAt("a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightMap0042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04200
-     * @tc.desc   Test the function By LightWeightMap.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightMap0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap<number, string>();
-    //   lightWeightMap.set(1, "A");
-    //   lightWeightMap.set(2, "B");
-    //   lightWeightMap.set(3, "C");
-    //   lightWeightMap.set(4, "D");
-    //   lightWeightMap.set(5, "E");
-    //   try {
-    //     let res = lightWeightMap.getValueAt("a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightMap0043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04300
-     * @tc.desc   Test the function By LightWeightMap.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightMap0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap();
-    //   lightWeightMap.set(1, "A");
-    //   lightWeightMap.set(2, "B");
-    //   lightWeightMap.set(3, "C");
-    //   lightWeightMap.set(4, "D");
-    //   lightWeightMap.set(5, "E");
-    //   try {
-    //     let res = lightWeightMap.getKeyAt("a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
-    //   }
-    // });
-
+    it("testLightWeightMap0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let lightWeightMap = new LightWeightMap<string, string>();
+      lightWeightMap.set("a", "A");
+      lightWeightMap.set("b", "B");
+      lightWeightMap.set("c", "C");
+      lightWeightMap.set("d", "D");
+      lightWeightMap.set("e", "E");
+      lightWeightMap.increaseCapacityTo(10)
+      let res = lightWeightMap.length;
+      expect(res).assertEqual(5);
+    });
     /**
      * @tc.name   testLightWeightMap0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04400
@@ -973,62 +877,6 @@ export default function LightWeightMapTest1() {
       let res1 = lightWeightMap.length;
       expect(String(res1)).assertEqual('1');
     });
-
-    /**
-     * @tc.name   testLightWeightMap0047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04700
-     * @tc.desc   Test the function By LightWeightMap.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightMap0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   hilog.info(domain, tag,'testSet044')
-    //   let lightWeightMap = new LightWeightMap<number, number>();
-    //   for (let i = 0; i < 10000; i++) {
-    //     lightWeightMap.set(i, i);
-    //   }
-    //   let res1 = lightWeightMap.length;
-    //   expect(String(res1)).assertEqual('10000');
-    //   for (let index = 0; index < 10000; index++) {
-    //     let resKey = lightWeightMap.hasKey(index);
-    //     expect(String(resKey)).assertEqual('true');
-    //     let resValue = lightWeightMap.hasValue(index);
-    //     expect(String(resValue)).assertEqual('true');
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightMap0048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04800
-     * @tc.desc   Test the function By LightWeightMap.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightMap0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap<number, number>();
-    //   for (let i = 0; i < 5000; i++) {
-    //     lightWeightMap.set(i, i);
-    //   }
-    //   for (let i = -1; i > -5001; i--) {
-    //     lightWeightMap.set(i, i);
-    //   }
-    //   let res1 = lightWeightMap.length;
-    //   expect(String(res1)).assertEqual('10000');
-    //   for (let index = 0; index < 5000; index++) {
-    //     let resKey = lightWeightMap.hasKey(index);
-    //     expect(String(resKey)).assertEqual('true');
-    //     let resValue = lightWeightMap.hasValue(index);
-    //     expect(String(resValue)).assertEqual('true');
-    //   }
-    //   for (let i = -1; i > -5001; i--) {
-    //     let resKey = lightWeightMap.hasKey(i);
-    //     expect(String(resKey)).assertEqual('true');
-    //     let resValue = lightWeightMap.hasValue(i);
-    //     expect(String(resValue)).assertEqual('true');
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightMap0049
@@ -1125,26 +973,6 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.name   testLightWeightMap0054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0540
-     * @tc.desc   Test the function By LightWeightMap.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightMap0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap<number, Array<number>>();
-    //   try {
-    //     lightWeightMap.hasAll(new Array<number>(1,2,3));
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "map" must be LightWeightMap. Received value is: 1,2,3`);
-    //   }
-    // });
-
-    /**
      * @tc.name   testLightWeightMap0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0550
      * @tc.desc   Test the function By LightWeightMap.
@@ -1170,51 +998,6 @@ export default function LightWeightMapTest1() {
           .assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: 6`);
       }
     });
-
-    /**
-     * @tc.name   testLightWeightMap0056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0560
-     * @tc.desc   Test the function By LightWeightMap.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightMap0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap<number, string>();
-    //   lightWeightMap.set(1, "A");
-    //   lightWeightMap.set(2, "B");
-    //   try {
-    //     lightWeightMap.setAll(new Array<number>(1,2,3));
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "map" must be LightWeightMap. Received value is: 1,2,3`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightMap0057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0570
-     * @tc.desc   Test the function By LightWeightMap.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testLightWeightMap0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap<number, string>();
-    //   lightWeightMap.set(1, "A");
-    //   lightWeightMap.set(2, "B");
-    //   try {
-    //     lightWeightMap.setValueAt("a", "a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
-    //   }
-    // });
-
     /**
      * @tc.name   testLightWeightMap0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0580

@@ -71,28 +71,8 @@ export class ExpectValue {
   ExceedParent: boolean = false
 }
 
-export class RouterParams implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
+export class RouterParams {
   view: PageConfig = new PageConfig()
-
-  constructor() {}
-
-  constructor(view: PageConfig) {
-    this.view = view
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = {
-      "view": jsonx.JsonElement.createString(JSON.stringify(this.view))
-    }
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    let info = JSON.parse<PageConfig>(jsonElem.getString("view"), Type.of(new String() as Object))
-    if (info) {
-      this.view = info!
-    }
-  }
 }
 
 export class TestValue {
@@ -157,7 +137,7 @@ export default class Utils {
     });
   }
 
-  static getStringFromFile(fileName: string): Promise<string> {
+  static async getStringFromFile(fileName: string): Promise<string> {
     const abilityContext = AppStorage.get<common.Context>("abilityContext") as common.Context
     const fileData: Uint8Array = await abilityContext.resourceManager.getRawFileContent(fileName);
     return new Promise<string>((resolve, reject) => {
@@ -192,7 +172,9 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
-          params: (new RouterParams(obj)).toJSON()
+          params: {
+            view: obj
+          } as RouterParams
         });
         await Utils.sleep(1000);
       }
@@ -237,7 +219,7 @@ export default class Utils {
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
     console.info("======================================= " + componentKey);
-    await Utils.sleep(2000)
+    waitForCompletion(async ()=>{await Utils.sleep(2000)})
     console.info('[' + componentKey + '] obj is: ' + strJson);
     return JSON.parseJsonElement(strJson);
   }
@@ -260,7 +242,7 @@ export default class Utils {
   static performClick(id: string): boolean {
     console.info('performClick id : ' + id);
     let result = inspector.sendEventByKey(id, 10, '');
-    await Utils.sleep(1000);
+    waitForCompletion(async ()=>{await Utils.sleep(1000)})
     console.info('performClick result : ' + result);
     return result
   }

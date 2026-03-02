@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -80,7 +80,7 @@ class MySequence implements rpc.Parcelable {
 export default function imagePicture() {
   let filesDir: string|undefined;
   let cacheDir: string|undefined;
-  let context: common.UIAbilityContext;
+  let context: common.UIAbilityContext | undefined;
   const Unsupported_operation_CODE = 7600201;
   const UNSUPPORTED_ERROR_CODE = 7600202;
   const UNSUPPORTED_DECODE_CODE = 7700301;
@@ -102,7 +102,7 @@ export default function imagePicture() {
   let isSupportHdr: Boolean;
 
   describe('imagePicture', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined;
       cacheDir = Hypium.get('cacheDir') as string | undefined;
@@ -114,7 +114,7 @@ export default function imagePicture() {
 
       try {
         isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("access failed with error message: " + err.message + ", error code: " + err.code);
         isSupportHdr = false;
       }
@@ -143,7 +143,7 @@ export default function imagePicture() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath);
       } else if (type === "rawfile") {
-        const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+        const resourceMgr: resourceManager.ResourceManager = context!.resourceManager;
         const rawFileDescriptor = await resourceMgr.getRawFd(fileName);
         imageSourceApi = image.createImageSource(rawFileDescriptor);
       } else if (type === "incremental") {
@@ -277,7 +277,8 @@ export default function imagePicture() {
           expect(false).assertEqual(true);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         picture.release();
         logger.log(`getProperties error ` + JSON.stringify(error) + error.code);
         expect(error.code == UNSUPPORTED_ERROR_CODE).assertTrue();
@@ -307,7 +308,8 @@ export default function imagePicture() {
             await imagePackerApi.release();
             expect(false).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             logger.log(`packing picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             picture.release();
             await imagePackerApi.release();
@@ -322,7 +324,8 @@ export default function imagePicture() {
             await imagePackerApi.release();
             expect(false).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             logger.log(`packing picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             picture.release();
             await imagePackerApi.release();
@@ -505,7 +508,8 @@ export default function imagePicture() {
             await picture.getHdrComposedPixelmap();
             expect(false).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             logger.log(JSON.stringify(error) + ", error code: " + error.code);
             expect(error.code == Unsupported_operation_CODE).assertTrue();
             done();
@@ -658,7 +662,7 @@ export default function imagePicture() {
           await testMetadataClone(done, logger, metadata!);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         logger.log(`testPictureMetadataProperty failed: ${error}, error code: ${JSON.stringify(error.code)}`);
         expect(false).assertTrue();
         done();
@@ -703,7 +707,7 @@ export default function imagePicture() {
           await testMetadataClone(done, logger, metadata!);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         logger.log(`testAuxPictureMetadataProperty failed: ${error}, error code: ${JSON.stringify(error.code)}`);
         expect(false).assertTrue();
         done();
@@ -888,7 +892,7 @@ export default function imagePicture() {
               expect(ret).assertTrue();
               done(); 
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
             logger.log(`packing picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             done();
@@ -911,7 +915,7 @@ export default function imagePicture() {
               expect(ret).assertTrue();
               done();
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
             logger.log(`packToFile picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             done();
@@ -4996,7 +5000,8 @@ export default function imagePicture() {
         logger.log("gainMapAuxiliaryPicture: " + gainMapAuxiliaryPicture);
         expect(false).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         logger.log("error: " + JSON.stringify(error));
         expect(error.code == PARA_ERROR_CODE).assertTrue();
         done();
@@ -5024,7 +5029,8 @@ export default function imagePicture() {
           colorSpace: colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998)
         }
         gainMapAuxiliaryPicture!.setAuxiliaryPictureInfo(auxiliaryPictureInfoOrigin);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         logger.log("error: " + JSON.stringify(error));
         expect(error.code == PARA_ERROR_CODE).assertTrue();
         done();
@@ -5052,7 +5058,8 @@ export default function imagePicture() {
           colorSpace: colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998)
         }
         gainMapAuxiliaryPicture!.setAuxiliaryPictureInfo(auxiliaryPictureInfoOrigin);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         logger.log("error: " + JSON.stringify(error));
         expect(error.code == PARA_ERROR_CODE).assertTrue();
         done();
@@ -5158,7 +5165,8 @@ export default function imagePicture() {
           expect(false).assertEqual(true);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         logger.log("createPicture by imageSource is error: " + JSON.stringify(error) + ", error code is: " + error.code);
         expect(error.code == UNSUPPORTED_DECODE_CODE).assertTrue();
         done();

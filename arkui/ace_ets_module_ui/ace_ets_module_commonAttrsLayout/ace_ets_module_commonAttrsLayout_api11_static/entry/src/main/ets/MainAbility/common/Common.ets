@@ -39,7 +39,7 @@ export default class CommonFunc {
   static getComponentRect(key: string): RectValue {
     console.log('test getData ')
     let strJson = inspector.getInspectorByKey(key);
-    await CommonFunc.sleep(2000);
+    waitForCompletion(async ()=>{await CommonFunc.sleep(2000);})
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     console.info("test: getComponentRect: " + str);
@@ -61,10 +61,10 @@ export default class CommonFunc {
   static getComponentRectOnScreen(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+      JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+      JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
     AppStorage.get<number>("winTop"));

@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderOptions, ResourceStr, AlignRuleOption } from '@ohos.arkui.component'
@@ -561,22 +561,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-	mBackgroundImage: ResourceStr = 'resources/media/icon.png'
-
-	applyNormalAttribute(instance: StepperAttribute): void {
-		instance.backgroundImage(this.mBackgroundImage)
-	}
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-	mBackgroundImage: ResourceStr = 'resources/media/icon.png'
-
-	applyNormalAttribute(instance: StepperItemAttribute): void {
-		instance.backgroundImage(this.mBackgroundImage)
-	}
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mBackgroundImage: ResourceStr = 'resources/media/icon.png'
 
@@ -773,8 +757,6 @@ struct BackgroundImagePage {
 	@State _backgroundImageSliderModifier: SliderModifier = new SliderModifier()
 	@State _backgroundImageSpanModifier: SpanModifier = new SpanModifier()
 	@State _backgroundImageStackModifier: StackModifier = new StackModifier()
-	@State _backgroundImageStepperModifier: StepperModifier = new StepperModifier()
-	@State _backgroundImageStepperItemModifier: StepperItemModifier = new StepperItemModifier()
 	@State _backgroundImageSwiperModifier: SwiperModifier = new SwiperModifier()
 	@State _backgroundImageTabContentModifier: TabContentModifier = new TabContentModifier()
 	@State _backgroundImageTabsModifier: TabsModifier = new TabsModifier()
@@ -802,17 +784,15 @@ struct BackgroundImagePage {
 
 	onPageShow() {
 		console.info('backgroundImage translate page show called ')
-		let routerParamOptions = new RouterParams()
-		routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-		this.targetView = routerParamOptions.view.targetView;
-		this.componentKey = routerParamOptions.view.componentKey as string;
-		this.parentWidth = routerParamOptions.view.parentWidth;
-		this.parentHeight = routerParamOptions.view.parentHeight;
-		this.columns = (routerParamOptions.view.columns as int)
-		this.gutter = (routerParamOptions.view.gutter as int)
-		this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
-		this.parentComponentKey = routerParamOptions.view.parentComponentKey
-		this._backgroundImageButtonModifier.mBackgroundImage = routerParamOptions.view.testValue.setValue.backgroundImage
+		this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
+		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey
+		this._backgroundImageButtonModifier.mBackgroundImage = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.backgroundImage
     attrsManager.registerDataChange((value: SetValue) => {
 			console.info('backgroundImage [registerDataChange] ' + JSON.stringify(value.backgroundImage))
 			this._backgroundImageAlphabetIndexerModifier.mBackgroundImage = value.backgroundImage
@@ -880,8 +860,6 @@ struct BackgroundImagePage {
 			this._backgroundImageSliderModifier.mBackgroundImage = value.backgroundImage
 			this._backgroundImageSpanModifier.mBackgroundImage = value.backgroundImage
 			this._backgroundImageStackModifier.mBackgroundImage = value.backgroundImage
-			this._backgroundImageStepperModifier.mBackgroundImage = value.backgroundImage
-			this._backgroundImageStepperItemModifier.mBackgroundImage = value.backgroundImage
 			this._backgroundImageSwiperModifier.mBackgroundImage = value.backgroundImage
 			this._backgroundImageTabContentModifier.mBackgroundImage = value.backgroundImage
 			this._backgroundImageTabsModifier.mBackgroundImage = value.backgroundImage
@@ -1058,32 +1036,6 @@ struct BackgroundImagePage {
 					.showTips(true)
 					
 					.attributeModifier(this._backgroundImageSliderModifier)
-			}
-			if (this.targetView == 'Stepper') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-				}
-					
-					
-			}
-			if (this.targetView == 'StepperItem') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-						.backgroundColor(Color.Red)
-						
-						
-				}
-					.backgroundColor(Color.Yellow)
-					.width('100%')
-					.height('100%')
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')

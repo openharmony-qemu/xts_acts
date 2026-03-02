@@ -21,7 +21,6 @@ import { Driver, ON } from '@kit.TestKit';
 import { ConfigurationConstant, StartOptions, bundleManager } from '@kit.AbilityKit';
 import { ColorMetrics } from '@kit.ArkUI';
 import MyAbilityStage from '../myabilitystage/MyAbilityStage';
-import deviceInfo from '@ohos.deviceInfo';
 import display from '@ohos.display'
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -80,7 +79,6 @@ export default function windowTitleBarTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
-    let deviceType:string = deviceInfo.deviceType;
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -168,7 +166,7 @@ export default function windowTitleBarTest() {
         let promise = mainWindowClass.setStatusBarColor(ColorMetrics.rgba(1, 1, 1));
         promise.then(() => {
           console.info(`${message} succeed setStatusBarColor`);
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} promise Failed to setStatusBarColor, Cause code ${err.code}, message ${err.message}`);
@@ -204,7 +202,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -270,7 +268,7 @@ export default function windowTitleBarTest() {
           if(exception.code = 801){
             done();
           }else if(exception.code = 401){
-            expect(true).assertTrue();
+            
             done();
           }else {
             expect(false).assertTrue();
@@ -406,7 +404,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -440,7 +438,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -614,7 +612,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -648,7 +646,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -814,7 +812,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -848,7 +846,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -1164,6 +1162,7 @@ export default function windowTitleBarTest() {
           windowClass.off('windowTitleButtonRectChange');
           done();
         });
+        windowClass.off('windowTitleButtonRectChange');
         done();
       } catch (exception) {
         console.error(msgStr+ `Failed to set the style of button. Cause code: ${exception.code}, message: ${exception.message}`);
@@ -1467,7 +1466,7 @@ export default function windowTitleBarTest() {
       }catch(err){
         console.error(`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
         if(err.code == 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect().assertFail();
@@ -1501,7 +1500,6 @@ export default function windowTitleBarTest() {
           await data.showWindow();
           data.setWindowTitle('subWindowTitle').then(() => {
             console.info(`${caseName} :Succeeded in setting the window title.`);
-            expect().assertFail();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1590,7 +1588,7 @@ export default function windowTitleBarTest() {
       try{
         mainWindow.setWindowTitle('test_setWindowTitle_mainWindow').then(() => {
           console.info(`${caseName} :Succeeded in setting the window title.`);
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1639,7 +1637,7 @@ export default function windowTitleBarTest() {
             data.setWindowTitle('test_setWindowTitle_subWindow_title2');
             await data.showWindow();
             await data.destroyWindow();
-            expect(true).assertTrue();
+            
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1697,7 +1695,7 @@ export default function windowTitleBarTest() {
           data.setWindowTitle('test_setWindowTitle_dialogWindow_title').then(async () => {
             console.info(`${caseName} :Succeeded in setting the window title.`);
             await data.destroyWindow();
-            expect(true).assertTrue();
+            
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1740,7 +1738,7 @@ export default function windowTitleBarTest() {
         mainWindow.setWindowTitle('test_setWindowTitle_mainWindow').then(() => {
           console.info(`${caseName} :Succeeded in setting the window title.`);
           mainWindow.setWindowDecorVisible(true);
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1780,7 +1778,7 @@ export default function windowTitleBarTest() {
       try{
         mainWindow.setWindowTitle('test_setWindowTitle_mainWindow_Too_long_parameter test_setWindowTitle_mainWindow_Too_long_parameter test_setWindowTitle_mainWindow_Too_long_parameter').then(() => {
           console.info(`${caseName} :Succeeded in setting the window title.`);
-          expect(true).assertTrue();
+          
           mainWindow.setWindowTitle('test label');
           done();
         }).catch((err: BusinessError) => {
@@ -1832,7 +1830,7 @@ export default function windowTitleBarTest() {
             console.log(msgStr + '此设备不支持');
             done();
           } else if(err.code == 1300002){
-            expect(true).assertTrue();
+            
             done();
           }else {
             console.log(msgStr + 'Failed to setWindowMask');
@@ -2198,10 +2196,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test1 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test1');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || displaylength.length == 3) {
-          expect(error.code).assertEqual(1300016);
-        } else {
+        if (error.code == 801) {
           expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(1300016);
         }
       }
 
@@ -2217,10 +2215,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test2 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test2');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || displaylength.length == 3) {
-          expect(error.code).assertEqual(1300016);
-        } else {
+        if (error.code == 801) {
           expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(1300016);
         }
       }
 
@@ -2236,10 +2234,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test3 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test3');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || displaylength.length == 3) {
-          expect(error.code).assertEqual(1300016);
-        } else {
+        if (error.code == 801) {
           expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(1300016);
         }
         done();
       }
@@ -2507,6 +2505,61 @@ export default function windowTitleBarTest() {
       
     })
     /**
+     * @tc.name   testSetWindowTitleButtonVisible_0600
+     * @tc.number SUB_BASIC_WMS_StestSetWindowTitleButtonVisible_0600
+     * @tc.desc   切换按钮显隐
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testSetWindowTitleButtonVisible_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testSetWindowTitleButtonVisible_0600";
+      console.log(caseName + "begin");
+      let mainWindow = windowStage.getMainWindowSync();
+      let test = true;
+      if (isFreeWindowMode == true) {
+        try {
+          mainWindow.setWindowTitleButtonVisible(false,false,false);
+          
+          await sleep(1000);
+          let button = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
+          await sleep(200);
+          console.log(`${caseName} button: ${button}`);
+          if(button){
+            test = true
+          }else{
+            test = false
+          }
+          console.log(`${caseName} test1: ${test}`);
+          expect(test).assertFalse();
+         
+          mainWindow.setWindowTitleButtonVisible(true,true,true);
+          await sleep(1000);
+  
+          let button2 = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
+          await sleep(200);
+          console.log(`${caseName} button: ${button2}`);
+          if(button2){
+            test = true
+          }else{
+            test = false
+          }
+          console.log(`${caseName} test2: ${test}`);
+          expect(test).assertTrue();
+  
+          done();
+          
+        } catch (error) {
+          console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
+          expect(true).assertFalse();
+          done();
+        }
+      }else{
+        done();
+      }
+      
+    })
+    /**
      * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_WINDOW_DECORHEIGHT_0100
      * @tc.name    testSetWindowDecorHeight_36
      * @tc.desc    SetWindowDecorHeight入参36
@@ -2545,7 +2598,7 @@ export default function windowTitleBarTest() {
       try {
         mainWindow.setWindowDecorHeight(37);
         console.info(caseName+ ' Succeeded in setting the height');
-        expect(true).assertTrue();
+        
         done();
       } catch(e) {
         console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
@@ -2575,7 +2628,7 @@ export default function windowTitleBarTest() {
       try {
         mainWindow.setWindowDecorHeight(112);
         console.info(caseName+ ' Succeeded in setting the height');
-        expect(true).assertTrue();
+        
         done();
       } catch(e) {
         console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);

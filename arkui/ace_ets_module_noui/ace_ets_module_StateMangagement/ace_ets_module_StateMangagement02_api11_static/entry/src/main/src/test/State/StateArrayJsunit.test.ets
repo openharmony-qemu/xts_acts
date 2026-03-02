@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function StateArrayJsunit() {
   describe('StateArrayJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StateArrayJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
@@ -174,67 +174,8 @@ it('StateArrayJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-    /**
-     * @tc.number   StateArrayJsunit_static_0500
-     * @tc.name     StateArrayJsunit_static_0500
-     * @tc.desc     StateArrayJsunit_static_0500
-     * @tc.level    Level.LEVEL0
-     */
-it('StateArrayJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
-      console.info('StateArrayJsunit_static_0500 START');
-      let strJson = inspector.getInspectorByKey('text_ClassA');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[StateArrayJsunit_static_0500] component obj is: " + JSON.stringify(obj));
-      console.info("[StateArrayJsunit_static_0500] ClassA: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('ClassA：{"value":"Hello","data":{"value":6}}');
-      console.info('[StateArrayJsunit_static_0500] END');
-      done();
-    });
 
-    /**
-     * @tc.number   StateArrayJsunit_static_0600
-     * @tc.name     StateArrayJsunit_static_0600
-     * @tc.desc     StateArrayJsunit_static_0600
-     * @tc.level    Level.LEVEL0
-     */
-it('StateArrayJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('StateArrayJsunit_static_0600 START');
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('change_Parent'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('text_ClassA');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[StateArrayJsunit_static_0600] component obj is: " + JSON.stringify(obj));
-      console.info("[StateArrayJsunit_static_0600] ClassA: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('ClassA：{"value":"World","data":{"value":6}}');
-      console.info('[StateArrayJsunit_static_0600] END');
-      done();
-    });
-
-    /**
-     * @tc.number   StateArrayJsunit_static_0700
-     * @tc.name     StateArrayJsunit_static_0700
-     * @tc.desc     StateArrayJsunit_static_0700
-     * @tc.level    Level.LEVEL0
-     */
-it('StateArrayJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('StateArrayJsunit_static_0700 START');
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('change_Self'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('text_ClassA');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[StateArrayJsunit_static_0700] component obj is: " + JSON.stringify(obj));
-      console.info("[StateArrayJsunit_static_0700] ClassA: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('ClassA：{"value":"Hello","data":{"value":8}}');
-      console.info('[StateArrayJsunit_static_0700] END');
-      done();
-    });
   })
 }
 

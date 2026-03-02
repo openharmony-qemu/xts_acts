@@ -77,8 +77,6 @@ export default function zIndexTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Navigator',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',
@@ -121,7 +119,7 @@ export default function zIndexTest() {
   }]
 
   describe('ZIndexTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ZIndexTest beforeEach start");
       
       await UtilsTest.msSleep(4000)

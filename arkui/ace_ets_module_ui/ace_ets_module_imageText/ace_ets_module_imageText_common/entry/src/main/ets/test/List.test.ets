@@ -42,9 +42,11 @@ import ResourceNormalTest from './ResourceNormal.test';
 import TextAddApi1 from './TextAddApi1.test';
 import TextMenuItemIdEqualsTest from './TextMenuItemIdEqualsTest.test';
 import TextMenuType from './TextMenuType.test';
+import CustomKeyboardContinueTest from './CustomKeyboardContinueTest.test';
 
 import RichEditorDeleteTest from './RichEditorDeleteTest/RichEditorDelete.test';
 import TextDirectionTest from './TextDirectionTest.test';
+import ScrollToVisibleTest from './ScrollToVisibleTest.test';
 import IncludeFontPaddingTest from './RichEditorDisplayOptimizationTest/IncludeFontPadding.test';
 import FallbackLineSpacingTest from './RichEditorDisplayOptimizationTest/FallbackLineSpacing.test';
 import TextTest from './TextTest/TextTest.test';
@@ -55,8 +57,11 @@ import SearchDeleteTest from './TextDeleteTest/SearchDelete.test';
 import TextAreaDeleteTest from './TextDeleteTest/TextAreaDelete.test';
 import TextInputDelete from './TextDeleteTest/TextInputDelete.test';
 import TextControllerTest from './TextControllerTest/TextControllerTest.test';
+import SelectedDragPreviewStyleTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest.test';
+import SetTextSelectionTest from './SetTextSelectionTest/SetTextSelectionTest.test';
 
 export default function testsuite() {
+  TextControllerTest();
   InputPresetTest() 
   // FontTest 
   APIgetUIFontConfigJsunit() 
@@ -97,5 +102,7 @@ export default function testsuite() {
   SearchDeleteTest();
   TextAreaDeleteTest();
   TextInputDelete();
-  TextControllerTest()
+  SelectedDragPreviewStyleTest();
+  SetTextSelectionTest()
+  CustomKeyboardContinueTest();
 }

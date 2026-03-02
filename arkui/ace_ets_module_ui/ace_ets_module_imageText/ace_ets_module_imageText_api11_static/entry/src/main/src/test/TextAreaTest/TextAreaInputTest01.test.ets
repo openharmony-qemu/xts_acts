@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaInputTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -53,7 +53,7 @@ export default function textAreaInputTest() {
         routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
         console.info("get textAreaInputTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaInputTest" == pages.name)) {
           console.info("get textAreaInputTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

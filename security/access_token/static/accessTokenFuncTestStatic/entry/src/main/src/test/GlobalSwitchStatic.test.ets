@@ -28,7 +28,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 let tokenID: int;
 
 const ERR_PARAM_ILLEGAL = 401;
@@ -40,7 +40,7 @@ export default function GlobalSwitchStaticTest() {
   let atManager = abilityAccessCtrl.createAtManager();
   describe("GlobalSwitchStaticTest", (): void => {
     hilog.info(domain, 'testTag', '##########start GlobalSwitchStaticTest');
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       abilityDelegator.addAbilityMonitor({
         abilityName: "EntryAbility",
@@ -86,7 +86,7 @@ export default function GlobalSwitchStaticTest() {
       let type = abilityAccessCtrl.SwitchType.CAMERA;
       try {
         let flag = false;
-        atManager.requestGlobalSwitch(testAbilityContext, type).then((data: Boolean): void => {
+        atManager.requestGlobalSwitch(testAbilityContext!, type).then((data: Boolean): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_001 data");
         }).catch((err: Error): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_001 err.code:" + JSON.stringify(err));
@@ -119,7 +119,7 @@ export default function GlobalSwitchStaticTest() {
       let type = abilityAccessCtrl.SwitchType.MICROPHONE;
       try {
         let flag = false;
-        atManager.requestGlobalSwitch(testAbilityContext, type).then((data: Boolean): void => {
+        atManager.requestGlobalSwitch(testAbilityContext!, type).then((data: Boolean): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_002 data");
           expect(data).assertFalse();
         }).catch((err: Error): void => {
@@ -153,7 +153,7 @@ export default function GlobalSwitchStaticTest() {
       let type = abilityAccessCtrl.SwitchType.LOCATION;
       try {
         let flag = false;
-        atManager.requestGlobalSwitch(testAbilityContext, type).then((data: Boolean): void => {
+        atManager.requestGlobalSwitch(testAbilityContext!, type).then((data: Boolean): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_003 data");
           expect(data).assertTrue();
           done();

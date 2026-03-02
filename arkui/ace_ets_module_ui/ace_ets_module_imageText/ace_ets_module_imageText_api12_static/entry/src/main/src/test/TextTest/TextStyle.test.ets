@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextStyle() {
   describe('TextStyle', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextStyle beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function TextStyle() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextStyle state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextStyle" == pages.name)) {
           console.info("get TextStyle pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -114,7 +114,7 @@ export default function TextStyle() {
       console.info("[TextStyle_002] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
 
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{}');
+      expect(obj.getElement('$attrs').getString('content') != '{}').assertTrue();
       console.info('[TextStyle_002] END');
       done();
 

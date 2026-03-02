@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 import stateStylesTest from './stateStyles/StateStylesTest.test';
+import stateStylesTest_01 from './stateStyles/StateStylesTest_01.test';
 import stateStylesTestTwo from './stateStyles/StateStylesTestTwo.test';
 
 export default function testsuite() {
   stateStylesTest();
+  stateStylesTest_01();
   stateStylesTestTwo();
-
 }

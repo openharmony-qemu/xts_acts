@@ -44,7 +44,6 @@ import {
   Radio,
   Rating,
   ScrollBar,
-  Stepper,
   Search,
   Select,
   Slider,
@@ -92,7 +91,6 @@ import {
   MenuItem,
   ProgressType,
   BarState,
-  StepperItem,
   Scroller,
   Axis,
   ToggleType,
@@ -161,8 +159,7 @@ struct FlexShrinkPage {
 
   onPageShow() {
     console.info('[FlexShrink] page show called ')
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     AppStorage.setOrCreate<number>('_flexShrink',  routerParamOptions.view.testValue.setValue.flexShrink!)
     AppStorage.setOrCreate<number>('_parentWidth',  routerParamOptions.view.testValue.setValue.parentWidth!)
     AppStorage.setOrCreate<number>('_parentHeight',  routerParamOptions.view.testValue.setValue.parentHeight!)
@@ -251,14 +248,6 @@ struct FlexShrinkPage {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text().width(20).height(20).borderRadius(10)
       }.width(20).applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem() {
-          Column() {
-            Text('Page One')
-          }
-        }
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Search') {
       Search({ placeholder: 'Type to search...' })
         .searchButton('SEARCH')

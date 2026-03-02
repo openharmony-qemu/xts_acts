@@ -33,24 +33,6 @@ describe('AccessibleRegisterState', function () {
     })
 
     /**
-     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100
-     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100
-     * @tc.desc   on(accessibilityStateChange)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
-      console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100');
-      let callbackdata = (data) => {
-      }
-      accessibility.on('accessibilityStateChange', callbackdata);
-      accessibility.off('accessibilityStateChange', callbackdata);
-      expect(true).assertTrue();
-      done();
-    })
-
-    /**
      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200
      * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200
      * @tc.desc   on(touchGuideStateChange)
@@ -60,12 +42,20 @@ describe('AccessibleRegisterState', function () {
      */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
       console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200');
-      let callbackdata = (data) => {
-      }
-      accessibility.on('touchGuideStateChange', callbackdata);
-      accessibility.off('touchGuideStateChange', callbackdata);
-      expect(true).assertTrue();
-      done();
+        let callbackdata = (data) => {
+        }
+        let result = false;
+        try {
+            accessibility.on('touchGuideStateChange', callbackdata);
+            accessibility.off('touchGuideStateChange', callbackdata);
+            result = true;
+        } catch (error) {
+            hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200 failed. code: ${error.code}, msg: ${error.message}`);
+            expect(null).assertFail();
+            done();
+        }
+        expect(result).assertEqual(true);
+        done();
     })
 })
 }

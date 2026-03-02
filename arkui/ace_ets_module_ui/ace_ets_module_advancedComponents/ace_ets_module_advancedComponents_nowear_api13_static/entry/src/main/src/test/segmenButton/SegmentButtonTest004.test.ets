@@ -29,7 +29,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function SegmentButtonTest004() {
   describe('SegmentButton004', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SegmentButton004 beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.api13.static", "EntryAbility")
     });
@@ -80,7 +80,6 @@ it('SegmentButtonTest004_static_001', Level.LEVEL1, async (done: () => void): Pr
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
-        .getArray('$children')[0]
       console.info("[SegmentButtonTest004_static_001] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('accessibilityText')).assertEqual('notSelect');
       console.info('[SegmentButtonTest004_static_001] END');
@@ -105,7 +104,6 @@ it('SegmentButtonTest004_static_002', Level.LEVEL1, async (done: () => void): Pr
         .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[1]
-        .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
       console.info("[SegmentButtonTest004_static_002] component obj is: " + JSON.stringify(obj));

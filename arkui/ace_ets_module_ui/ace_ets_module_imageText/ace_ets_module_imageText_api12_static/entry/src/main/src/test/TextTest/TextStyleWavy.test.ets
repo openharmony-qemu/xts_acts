@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextStyleWavy() {
   describe('TextStyleWavy', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextStyleWavy beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -47,7 +47,7 @@ export default function TextStyleWavy() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextStyleWavy state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textPageWavy" == pages.name)) {
           console.info("get TextStyleWavy pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function listItem_InSertChange() {
 
   describe('ListItem_InSertChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_InSertChangeTest beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -133,7 +133,7 @@ it('testListItemInSertChangeFiftyPercent_static', Level.LEVEL0, async (done: () 
       expect(Math.abs(Math.round(TextTest1.right - TextTest1.left) - Math.round(UIContext.resolveUIContext()!.vp2px(150))) <= 1).assertTrue();
       expect(Math.abs(Math.round(TextTest1.bottom - TextTest1.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe(360, 690, 360, 30);
+      await driver.swipe(360, 690, 360, 30);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest74');
       expect(Math.abs(locationText4.top - locationText4Again.top) <= 1).assertTrue();
       console.info('new testListItemInSertChangeFiftyPercent END');
@@ -202,7 +202,7 @@ it('testListItemInSertChangeOneHundredAndTenPercent_static', Level.LEVEL0, async
       expect(Math.abs(Math.round(TextTest1.right - TextTest1.left) - Math.round(UIContext.resolveUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(TextTest1.bottom - TextTest1.top) - Math.round(UIContext.resolveUIContext()!.vp2px(110))) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe(360, 690, 360, 30);
+      await driver.swipe(360, 690, 360, 30);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest74');
       expect(Math.abs(locationText4.top - locationText4Again.top) <= 1).assertTrue();
       console.info('new testListItemInSertChangeOneHundredAndTenPercent END');

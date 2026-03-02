@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,10 +22,11 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { BarState } from '@ohos.arkui.component'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 export default function scrollBarJsunitt() {
   describe('scrollBarJsunitt', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -93,7 +94,7 @@ it('testScrollBar002_static_02', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "directionObject": JSON.stringify(objectT)
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -101,7 +102,7 @@ it('testScrollBar002_static_02', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testScrollBar002_static_02] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testScrollBar002_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -146,7 +147,7 @@ it('testScrollBar004_static_04', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "stateValue": BarState.On
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -154,7 +155,7 @@ it('testScrollBar004_static_04', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testScrollBar004_static_04] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testScrollBar004_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -180,7 +181,7 @@ it('testScrollBar005_static_05', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "stateValue": BarState.Auto
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -188,7 +189,7 @@ it('testScrollBar005_static_05', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testScrollBar005_static_05] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testScrollBar005_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);

@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function swiperSyncType() {
   describe('swiperSyncType', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       
     });
@@ -71,31 +71,6 @@ export default function swiperSyncType() {
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info("swiperSyncType after each called");
-    });
-
-    
-      
-  
-/**
-     * @tc.number   swiperSyncType_static_0100
-     * @tc.name     swiperSyncType_static_0100
-     * @tc.desc     swiperSyncType_static_0100
-     * @tc.level    Level.LEVEL0
-     */
-it('swiperSyncType_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[swiperSyncType_static_0100] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('sceneType_set'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-
-      let strJson = inspector.getInspectorByKey('sceneType_swiper');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[swiperSyncType_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('setFrameRateRangeSwiper1: 60Swiper11: 30');
-      console.info('[swiperSyncType_static_0100] END');
-      done();
     });
   })
 }

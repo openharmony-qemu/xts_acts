@@ -35,7 +35,7 @@ export default function stageFontTest() {
   describe('stageFontTest', () => {
 
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stageFontTest beforeEach start");
 
 
@@ -53,7 +53,7 @@ export default function stageFontTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get stageFontTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("stageFont" == pages.name)) {
           console.info("get stageFontTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

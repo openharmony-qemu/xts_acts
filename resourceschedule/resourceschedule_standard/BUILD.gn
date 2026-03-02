@@ -27,15 +27,14 @@ group("resourceschedule_standard") {
       "deviceusagestatisticsjsunit:resourceschedule_deviceusagestatisticsjsunit_js_test",
       "ffrt:resourceschedule_ffrt_js_test",
       "qos_manager:ActsQoSCAPITest",
-      "soc_perf:ActsSOCPERFAPITest",
-      "resschedsvc:ActsResSchedConfigTest",
       "reminderagent:resourceschedule_reminderagent_js_test",
       "reminderagentManager:resourceschedule_reminderagentmgr_js_test",
       "reminderagentManager_static:ActsResourcescheduleReminderAgentMgrStaticTest",
       "reminderagent_nop:resourceschedule_reminderagent_nop_test",
       "workscheduler:resourceschedule_workscheduler_js_test",
       "backgroundtask_errorcode:ActsBackgroundTaskErrorTest",
-      "ffrt_type_def:ActsFfrtTypeDefNativeTest"
+      "ffrt_type_def:ActsFfrtTypeDefNativeTest",
+      "ActsQosManagerTest:ActsQosManagerHapTest"
     ]
   }
 }

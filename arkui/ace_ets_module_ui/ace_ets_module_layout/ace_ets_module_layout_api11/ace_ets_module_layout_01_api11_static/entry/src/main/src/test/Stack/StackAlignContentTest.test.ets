@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -56,7 +57,8 @@ export default function StackAlignContentTest() {
           routerInstance?.pushUrl(options);
           await UtilsTest.msSleep(2000);
         }
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push stackAlignContent page error: " + err);
       }
     });
@@ -89,7 +91,7 @@ export default function StackAlignContentTest() {
         let eventData : events_emitter.EventData = {
           data: {
             'alignContentValue': Alignment.Top
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent : events_emitter.InnerEvent = {
           eventId: 181,
@@ -97,7 +99,8 @@ export default function StackAlignContentTest() {
         }
         console.info('[' + `${tagName}` + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData)
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + `${tagName}` + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -112,7 +115,7 @@ export default function StackAlignContentTest() {
         let eventData2 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.TopEnd
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent2 : events_emitter.InnerEvent = {
           eventId: 182,
@@ -120,7 +123,8 @@ export default function StackAlignContentTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent2,eventData2);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -134,7 +138,7 @@ export default function StackAlignContentTest() {
         let eventData3 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.Start
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent3 : events_emitter.InnerEvent = {
           eventId: 183,
@@ -142,7 +146,8 @@ export default function StackAlignContentTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent3, eventData3);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -156,7 +161,7 @@ export default function StackAlignContentTest() {
         let eventData4 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.Center
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent4 : events_emitter.InnerEvent = {
           eventId: 184,
@@ -164,7 +169,8 @@ export default function StackAlignContentTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent4, eventData4);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -178,7 +184,7 @@ export default function StackAlignContentTest() {
         let eventData5 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.End
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent5 : events_emitter.InnerEvent = {
           eventId: 185,
@@ -186,7 +192,8 @@ export default function StackAlignContentTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent5, eventData5);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -200,7 +207,7 @@ export default function StackAlignContentTest() {
         let eventData6 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.BottomStart
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent6 : events_emitter.InnerEvent = {
           eventId: 186,
@@ -208,7 +215,8 @@ export default function StackAlignContentTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent6, eventData6);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -222,7 +230,7 @@ export default function StackAlignContentTest() {
         let eventData7 : events_emitter.EventData = {
           data: {
             "alignContentValue":Alignment.Bottom
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent7 : events_emitter.InnerEvent = {
           eventId: 187,
@@ -230,7 +238,8 @@ export default function StackAlignContentTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent7, eventData7);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -244,7 +253,7 @@ export default function StackAlignContentTest() {
         let eventData8 : events_emitter.EventData = {
           data: {
             "alignContentValue":Alignment.BottomEnd
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent8 : events_emitter.InnerEvent = {
           eventId: 188,
@@ -252,7 +261,8 @@ export default function StackAlignContentTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent8, eventData8);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);

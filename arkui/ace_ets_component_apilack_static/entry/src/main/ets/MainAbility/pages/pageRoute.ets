@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -103,7 +104,7 @@ struct PageRouteExample {
       let eventData: events_emitter.EventData = {
         data: {
           "value": this.state,
-        } as Record<String,undefined|null|Object>
+        } as Record<String,RecordData>
       }
       let eventt: events_emitter.InnerEvent = {
         eventId: 10,
@@ -111,7 +112,7 @@ struct PageRouteExample {
       }
       console.info("page start to emit action state")
       events_emitter.emit(eventt, eventData)
-    } catch (err: Error) {
+    } catch (err) {
       console.info("page emit action state err: " + JSON.stringify((err as Error)?.message))
     }
   }

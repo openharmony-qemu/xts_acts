@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -35,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function alphabetIndexerOnSelectJsunit() {
   describe('alphabetIndexerOnSelectJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -300,7 +301,7 @@ it('testalphabetIndexerOnSelect0012_static_11', Level.LEVEL0, async () => {
       try {
         let callback: (indexEvent: events_emitter.EventData) => void = (indexEvent: events_emitter.EventData) => {
           console.info("onSelect_0012 get state result is: " + JSON.stringify(indexEvent));
-          const data = indexEvent.data as Record<String, undefined | null | Object>
+          const data = indexEvent.data as Record<String,RecordData>
           expect(data['STATUS']).assertEqual(true);
         }
         let indexEvent: events_emitter.InnerEvent = {
@@ -321,7 +322,7 @@ it('testalphabetIndexerOnSelect0012_static_11', Level.LEVEL0, async () => {
         }
         let callback1: (indexEvent: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
           console.info("onRequestPopupData_0012 get event state result is: " + JSON.stringify(eventData));
-          const data = eventData.data as Record<String, undefined | null | Object>
+          const data = eventData.data as Record<String,RecordData>
           expect(data['STATUS']).assertEqual(true);
         }
         console.info("onSelect_0012 click result is: " +

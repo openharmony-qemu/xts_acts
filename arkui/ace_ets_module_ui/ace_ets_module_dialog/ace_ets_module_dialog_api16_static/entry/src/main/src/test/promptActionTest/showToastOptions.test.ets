@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function showToastOptions() {
   describe('showToastOptions', () => {
     let currentDeviceIsPC = false
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
@@ -128,7 +128,9 @@ it('showToastOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         let button = await driver.findComponent(ON.id('shadowOption'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
+        console.info('showToastOptions_static_0200 getInspectorTree before');
         let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        console.info('showToastOptions_static_0200 START');
         await CommonFunc.sleep(1000);
 
         if (currentDeviceIsPC) {

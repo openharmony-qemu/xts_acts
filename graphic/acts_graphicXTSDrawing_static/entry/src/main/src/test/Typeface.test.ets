@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (C) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,8 +55,14 @@ export default function typefaceTest() {
         let font = new drawing.Font();
         let typeface = font.getTypeface();
         if(typeface){
-          typeface.getFamilyName();
-          console.info(msg + ' getFamilyName successed');
+          let familyName = typeface.getFamilyName();
+          if(familyName) {
+            console.info(msg + ' getFamilyName successed');
+          }
+          if(familyName == undefined) {
+            console.info(msg + ' getFamilyName failed');
+            expect().assertFail();
+          }
         }
       } catch (e) {
         e = e as BusinessError;
@@ -81,8 +87,12 @@ export default function typefaceTest() {
       if(typeface){
         for (let i = 0; i < 20; i++) {
           try {
-            typeface.getFamilyName();
+            let familyName =  typeface.getFamilyName();
             console.info(msg + ' getFamilyName successed');
+            if(familyName == undefined) {
+              console.info(msg + ' getFamilyName failed');
+              expect().assertFail();
+            }
           } catch (e) {
             e = e as BusinessError;
             console.info(msg + ` getFamilyName errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -105,9 +115,14 @@ export default function typefaceTest() {
       try {
         let str = FONT_PATH;
         let mytypeface = drawing.Typeface.makeFromFile(str);
+        if(mytypeface == undefined){
+          console.info(msg + ' 1 test failed.');
+          expect().assertFail();
+        }
         mytypeface = drawing.Typeface.makeFromFile("");
+        expect(mytypeface == undefined).assertTrue();
         console.info(msg + ' test succeeded.');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -129,7 +144,7 @@ export default function typefaceTest() {
           const mytypeface = drawing.Typeface.makeFromFile(str);
         }
         console.info(msg + ' test succeeded.');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -147,14 +162,14 @@ export default function typefaceTest() {
       try {
         const mytypeface = drawing.Typeface.makeFromFile("hello_world");
         console.info(msg + ' test failed.');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` test succeeded, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
       try {
         const mytypeface = drawing.Typeface.makeFromFile("/system/fonts/FakePath.ttf");
         console.info(msg + ' test failed.');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` test succeeded, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -197,6 +212,10 @@ export default function typefaceTest() {
           if (mytypeface) {
             expect(!!mytypeface).assertTrue();
           }
+          if(mytypeface == undefined){
+            console.info(msg + ' makeFromRawFile  failed' + JSON.stringify(mytypeface));
+            expect().assertFail();
+          }
         }
       } catch (e) {
         e = e as BusinessError;
@@ -222,6 +241,10 @@ export default function typefaceTest() {
         if (mytypeface) {
           expect(!!mytypeface).assertTrue();
         }
+        if(mytypeface == undefined){
+          console.info(msg + ' makeFromRawFile  mytypeface failed' + JSON.stringify(mytypeface));
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg +
@@ -233,6 +256,10 @@ export default function typefaceTest() {
         console.info(msg + ' makeFromRawFile ttf/HarmonyOS_Sans_Condensed.ttf success' + JSON.stringify(mytypeface2));
         if (mytypeface2) {
           expect(!!mytypeface2).assertTrue();
+        }
+        if(mytypeface2 == undefined){
+          console.info(msg + ' makeFromRawFile  mytypeface2 failed' + JSON.stringify(mytypeface2));
+          expect().assertFail();
         }
       } catch (e) {
         e = e as BusinessError;

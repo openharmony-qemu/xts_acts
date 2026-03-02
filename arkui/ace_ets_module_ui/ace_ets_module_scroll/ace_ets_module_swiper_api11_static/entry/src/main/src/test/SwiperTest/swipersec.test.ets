@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,6 +47,7 @@ import hilog from '@ohos.hilog';
 import { ArrowStyle, Color, Resource, Length, $r } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
 import { UtilsTest, startAbility } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -68,7 +69,7 @@ async function setArrowStyle(arrowStyle: ArrowStyle) {
     let backData: events_emitter.EventData = {
       data: {
         "arrowStyle": arrowStyle as ArrowStyle
-      } as Record<string, undefined|null|Object>
+      } as Record<String,RecordData>
     }
     let backEvent: events_emitter.InnerEvent = {
       eventId: 10,
@@ -77,7 +78,7 @@ async function setArrowStyle(arrowStyle: ArrowStyle) {
     console.info("setArrowStyle start send emitKey");
     console.info("setArrowStyle backData :" + JSON.stringify(backData));
     events_emitter.emit(backEvent, backData);
-  } catch (err: Error) {
+  } catch (err) {
     console.info("setArrowStyle emit emitKey  err: " + JSON.stringify(err));
   }
   await sleep(2000);
@@ -92,7 +93,7 @@ async function setBoolean(type: string, displayArrow: undefined | null | string 
       data: {
         "type": type,
         "displayArrow": displayArrow!
-      } as Record<string, undefined|null|Object>
+      } as Record<String,RecordData>
     }
     let backEvent: events_emitter.InnerEvent = {
       eventId: 10,
@@ -101,7 +102,7 @@ async function setBoolean(type: string, displayArrow: undefined | null | string 
     console.info("setBoolean start send emitKey");
     console.info("setBoolean backData :" + JSON.stringify(backData));
     events_emitter.emit(backEvent, backData);
-  } catch (err: Error) {
+  } catch (err) {
     console.info("setBoolean emit emitKey  err: " + JSON.stringify(err));
   }
   await sleep(2000);
@@ -113,7 +114,7 @@ const waitUiReadyMs: number = 500;
 export default function swiperSecTest() {
 
   describe('swiperSecTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperSecTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
@@ -133,7 +134,7 @@ export default function swiperSecTest() {
             console.error(`SwiperSec router.pushUrl failed, code is ${error.code}, message is ${error.message}`);
           })
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`SwiperSec beforeEach error:` + JSON.stringify(err));
       }
     });

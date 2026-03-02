@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function OverlayManagerTest_006() {
   describe('OverlayManagerTest_006', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api12.static", "EntryAbility")
       
@@ -66,7 +66,7 @@ export default function OverlayManagerTest_006() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get OverlayManagerTest_006 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("OverlayManager_006" == pages.name)) {
           console.info("get OverlayManagerTest_006 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

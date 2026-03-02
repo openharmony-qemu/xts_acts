@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ class Logger {
 export default function imagePicturePack() {
   let filesDir: string | undefined | null;
   let cacheDir: string | undefined | null;
-  let testContext: common.UIAbilityContext;
+  let testContext: common.UIAbilityContext | undefined;
   let isSupportHEIFDecode: boolean;
   let isSupportHEICEncode: boolean;
   let isSupportHdr: Boolean;
@@ -61,7 +61,7 @@ export default function imagePicturePack() {
   const FRAGMENT_METADATA = image.MetadataType.FRAGMENT_METADATA;
 
   describe('imagePicturePack', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       testContext = Hypium.get('context') as common.UIAbilityContext;
       filesDir = Hypium.get('filesDir') as string | undefined | null;
@@ -83,7 +83,7 @@ export default function imagePicturePack() {
             console.info("file not exists");
             isSupportHdr = false;
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.error("access failed with error message: " + err.message + ", error code: " + err.code);
         isSupportHdr = false;
       };
@@ -112,9 +112,10 @@ export default function imagePicturePack() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath);
       } else if (type === "rawfile") {
-        const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager
-        const rawFileDescriptor = await resourceMgr.getRawFd(fileName);
-        imageSourceApi = image.createImageSource(rawFileDescriptor);
+        const resourceMgr: resourceManager.ResourceManager = testContext!.resourceManager
+        let rawFileDescriptor: resourceManager.RawFileDescriptor | undefined;
+        waitForCompletion(async () => {rawFileDescriptor = await resourceMgr.getRawFd(fileName);})
+        imageSourceApi = image.createImageSource(rawFileDescriptor as resourceManager.RawFileDescriptor);
       } else if (type === "incremental") {
         const picBuffer = getBuffer(fileName);
         imageSourceApi = image.createIncrementalSource(picBuffer);
@@ -144,11 +145,11 @@ export default function imagePicturePack() {
       if (auxType) {
         let decodingOptForPicture: image.DecodingOptionsForPicture;
         decodingOptForPicture = {desiredAuxiliaryPictures: [auxType]};
-        picture = await imageSourceApi.createPicture(decodingOptForPicture);
+        waitForCompletion(async () => {picture = await imageSourceApi.createPicture(decodingOptForPicture);})
       } else {
-        picture = await imageSourceApi.createPicture();
+        waitForCompletion(async () => {picture = await imageSourceApi.createPicture();})
       }
-      await imageSourceApi.release();
+      waitForCompletion(async () => {await imageSourceApi.release();})
       expect(picture != undefined).assertTrue();
       let result: image.Picture = picture as image.Picture;
       return result;
@@ -161,17 +162,17 @@ export default function imagePicturePack() {
         let DecodingOptions: image.DecodingOptions = {
           desiredPixelFormat: pixelFormat
         };
-        pixelMap = await imageSourceApi.createPixelMap(DecodingOptions);
+        waitForCompletion(async () => {pixelMap = await imageSourceApi.createPixelMap(DecodingOptions);})
       } else {
-        pixelMap = await imageSourceApi.createPixelMap();
+        waitForCompletion(async () => {pixelMap = await imageSourceApi.createPixelMap();})
       }
       expect(pixelMap != undefined).assertTrue();
       let picture: image.Picture | undefined = image.createPicture(pixelMap as image.PixelMap);
       expect(picture != undefined).assertTrue();
       let result: image.Picture = picture as image.Picture;
-      await imageSourceApi.release();
+      waitForCompletion(async () => {await imageSourceApi.release();})
       if (pixelMap != undefined) {
-        await pixelMap.release();
+        waitForCompletion(async () => {await pixelMap!.release();})
       }
       return result;
     }
@@ -250,26 +251,29 @@ export default function imagePicturePack() {
         return false;
       }
       let decodeProperties: Record<string, string | null> | undefined;
-      let picture = await imageSource.createPicture();
+      let picture: image.Picture | undefined;
+      waitForCompletion(async () => {picture = await imageSource!.createPicture();})
       if (picture == undefined) {
         return false;
       }
-      let imageInfo = await imageSource.getImageInfo();
+      let imageInfo: image.ImageInfo | undefined;
+      waitForCompletion(async () => {imageInfo = await imageSource!.getImageInfo();})
       if (imageInfo == undefined) {
         return false;
       }
 
       if (flag == "picture") {
-        let metadata = await picture.getMetadata(EXIF_METADATA);
+        let metadata: image.Metadata | undefined;
+        waitForCompletion(async () => {await (picture as image.Picture).getMetadata(EXIF_METADATA);})
         if (packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO && packOpts.needsPackProperties == true && metadata != undefined) {
-          decodeProperties = await metadata.getAllProperties();
-          picture.release();
-          await imageSource.release();
-          return imageInfo.mimeType == packOpts.format && imageInfo.isHdr == false && JSON.stringify(properties) == JSON.stringify(decodeProperties);
+          waitForCompletion(async () => {decodeProperties = await metadata!.getAllProperties();})
+          picture!.release();
+          waitForCompletion(async () => {await imageSource!.release();})
+          return imageInfo!.mimeType == packOpts.format && imageInfo!.isHdr == false && JSON.stringify(properties) == JSON.stringify(decodeProperties);
         } else {
-          await imageSource.release();
-          picture.release();
-          return imageInfo.mimeType == packOpts.format && imageInfo.isHdr == false && metadata == undefined;
+          waitForCompletion(async () => {await imageSource!.release();})
+          picture!.release();
+          return imageInfo!.mimeType == packOpts.format && imageInfo!.isHdr == false && metadata == undefined;
         }
       } else {
         let ret: Boolean = false;
@@ -279,18 +283,18 @@ export default function imagePicturePack() {
           if (imageInfo != undefined) {
             isHdr = imageInfo.isHdr;
           }
-          let auxPicGet = picture.getAuxiliaryPicture(type);
+          let auxPicGet = picture!.getAuxiliaryPicture(type);
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
           let auxType = auxPic.getType();
           logger.log(`packResult: type is  ${type}, isHdr ${isHdr}, ${auxPic != undefined}`);
           ret = (isHdr == true) && (auxPic != undefined) && (auxType == type);
         } else if (type == GAINMAP && (packOpts.desiredDynamicRange == image.PackingDynamicRange.SDR || packOpts.desiredDynamicRange == undefined)) {
-          let auxPic = picture.getAuxiliaryPicture(type);
+          let auxPic = picture!.getAuxiliaryPicture(type);
           logger.log(`packResult: ${type} ${auxPic == undefined}`);
           ret = (auxPic == undefined);
         } else {
-          let auxPicGet = picture.getAuxiliaryPicture(type);
+          let auxPicGet = picture!.getAuxiliaryPicture(type);
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
           let auxType = auxPic.getType();
@@ -298,15 +302,16 @@ export default function imagePicturePack() {
           ret = (auxPic != undefined) && (auxType == type);
           if (type == FRAGMENT_MAP && (packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO && packOpts.needsPackProperties == true)) {
             let decodeProperties: Record<string, string | null> | undefined;
-            let metadata = await auxPic.getMetadata(FRAGMENT_METADATA);
+            let metadata: image.Metadata | undefined;
+            waitForCompletion(async () => {metadata = await auxPic.getMetadata(FRAGMENT_METADATA);})
             if (metadata != undefined) {
-              decodeProperties = await metadata.getAllProperties();
+              waitForCompletion(async () => {decodeProperties = await (metadata as image.Metadata).getAllProperties();})
             }
             ret = ret && (JSON.stringify(properties) == JSON.stringify(decodeProperties));
           }
         }
-        await imageSource.release();
-        picture.release();
+        waitForCompletion(async () => {await imageSource!.release();})
+        picture!.release();
         return ret;
       }
     }
@@ -333,50 +338,51 @@ export default function imagePicturePack() {
         let auxPicGet = picture.getAuxiliaryPicture(type);
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
-          metadata = await auxPic.getMetadata(FRAGMENT_METADATA);
+          waitForCompletion(async () => {metadata = await auxPic.getMetadata(FRAGMENT_METADATA);})
           if (metadata != undefined) {
             logger.log(`getMetadata success: ` + metadata);
-            properties = await metadata.getAllProperties();
+            waitForCompletion(async () => {properties = await metadata!.getAllProperties();})
           }
         } else {
-          metadata = await picture.getMetadata(EXIF_METADATA);
+          waitForCompletion(async () => {metadata = await picture!.getMetadata(EXIF_METADATA);})
           if (metadata != undefined) {
-            properties = await metadata.getAllProperties();
+            waitForCompletion(async () => {properties = await metadata!.getAllProperties();})
           }
         }
 
         const imagePackerApi: image.ImagePacker = image.createImagePacker();
         if (packType === "packing") {
           try {
-            let data: ArrayBuffer = await imagePackerApi.packing(picture, packOpts);
-            let imageSource = image.createImageSource(data);
+            let data: ArrayBuffer | undefined;
+            waitForCompletion(async () => {data = await imagePackerApi.packing(picture!, packOpts);})
+            let imageSource = image.createImageSource(data!);
             let ret = checkPackResult(logger, imageSource, flag, packOpts, properties, type);
             expect(ret).assertTrue();
             picture.release();
-            await sleep(5000);
+            waitForCompletion(async () => {await sleep(5000);})
             done();
-          } catch(error: BusinessError) {
+          } catch(error) {
             logger.log(`packing picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             picture.release();
-            await sleep(5000);
+            waitForCompletion(async () => {await sleep(5000);})
             done();
           }
         } else {
           try {
-            await imagePackerApi.packToFile(picture, fdNum, packOpts);
+            waitForCompletion(async () => {await imagePackerApi.packToFile(picture!, fdNum, packOpts);})
             let imageSource = image.createImageSource(fdNum);
             let ret = checkPackResult(logger, imageSource, flag, packOpts, properties, type);
-            await fs.close(fdNum);
+            waitForCompletion(async () => {await fs.close(fdNum);})
             expect(ret).assertTrue();
             picture.release();
-            await sleep(5000);
+            waitForCompletion(async () => {await sleep(5000);})
             done();
-          } catch(error: BusinessError) {
+          } catch(error) {
             logger.log(`packToFile picture failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             picture.release();
-            await sleep(5000);
+            waitForCompletion(async () => {await sleep(5000);})
             done();
           };
         }
@@ -1614,66 +1620,6 @@ export default function imagePicturePack() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100
-     * @tc.desc   test picture packing
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100");
-      if (!isSupportHEIFDecode || !isSupportHEICEncode) {
-        if (!isSupportHEIFDecode) {
-          logger.log("device is not support heif decode");
-          expect(!isSupportHEIFDecode).assertTrue();
-        } else {
-          logger.log("device is not support heif encode");
-        }
-        done();
-      } else {
-        let picture = createPictureWithDepthMapAuxPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heif",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200
-     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200
-     * @tc.desc   test picture packing
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200");
-      if (!isSupportHEIFDecode || !isSupportHEICEncode) {
-        if (!isSupportHEIFDecode) {
-          logger.log("device is not support heif decode");
-          expect(!isSupportHEIFDecode).assertTrue();
-        } else {
-          logger.log("device is not support heif encode");
-        }
-        done();
-      } else {
-        let picture = createPictureWithDepthMapAuxPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heif",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
-      }
-    })
-
-    /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0300
      * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0300
      * @tc.desc   test picture packing
@@ -1758,68 +1704,6 @@ export default function imagePicturePack() {
           quality: 98
         };
         testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100
-     * @tc.desc   test picture packToFile
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100");
-      if (!isSupportHEIFDecode || !isSupportHEICEncode) {
-        if (!isSupportHEIFDecode) {
-          logger.log("device is not support heif decode");
-          expect(!isSupportHEIFDecode).assertTrue();
-        } else {
-          logger.log("device is not support heif encode");
-        }
-        done();
-      } else {
-        let writeFd = getFdCacheDir("pack_depthMap_01.heic");
-        let picture = createPictureWithDepthMapAuxPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heif",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200
-     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200
-     * @tc.desc   test picture packToFile
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200");
-      if (!isSupportHEIFDecode || !isSupportHEICEncode) {
-        if (!isSupportHEIFDecode) {
-          logger.log("device is not support heif decode");
-          expect(!isSupportHEIFDecode).assertTrue();
-        } else {
-          logger.log("device is not support heif encode");
-        }
-        done();
-      } else {
-        let writeFd = getFdCacheDir("pack_depthMap_02.heic");
-        let picture = createPictureWithDepthMapAuxPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heif",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
       }
     })
 

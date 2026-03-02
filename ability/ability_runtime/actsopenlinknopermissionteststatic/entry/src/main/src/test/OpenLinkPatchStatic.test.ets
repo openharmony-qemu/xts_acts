@@ -25,7 +25,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 
 let parameters: Record<String, RecordData> = {"demo_key": "demo_value", "demo_num": 111}
 let paramOptions: OpenLinkOptions = {
@@ -50,8 +50,8 @@ export default function openLinkPatchStaticTest() {
       hilog.info(domain, tag, 'beforeAll abilityDelegator');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.openlinknopermissiontest.static")
       await Utils.msSleep(2000);
-      context= AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
-      hilog.info(domain, tag, "Context: " + context);
+      context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
+      hilog.info(domain, tag, "Context: " + context!);
       hilog.info(domain, tag, "beforeAll end");
     });
 
@@ -69,7 +69,7 @@ export default function openLinkPatchStaticTest() {
       await Utils.msSleep(1000);
       try {
         const link = 'example://www.example1.com';
-        context.openLink(link).then(() => {
+        context?.openLink(link).then(() => {
           hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1100 open link successful`);
           expect().assertFail();
           done();
@@ -99,7 +99,7 @@ export default function openLinkPatchStaticTest() {
       await Utils.msSleep(1000);
       try {
         const link = 'example://www.example1.com';
-        context.openLink(link, paramOptions).then(() => {
+        context?.openLink(link, paramOptions).then(() => {
           hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1200 open link successful`);
           expect().assertFail();
           done();
@@ -129,7 +129,7 @@ export default function openLinkPatchStaticTest() {
       await Utils.msSleep(1000);
       try {
         const link = 'example://www.example1.com';
-        context.openLink(link, paramOptions, (err: BusinessError | null, result: common.AbilityResult | undefined) => {
+        context?.openLink(link, paramOptions, (err: BusinessError | null, result: common.AbilityResult | undefined) => {
           hilog.info(domain, tag, `openLink callback result: ${JSON.stringify(result?.resultCode)}`);
           hilog.info(domain, tag, `openLink callback result data: ${JSON.stringify(result?.want)}`);
           expect(`${err?.code}`).assertEqual('16000005');
@@ -161,7 +161,7 @@ export default function openLinkPatchStaticTest() {
     it('AbilityRuntime_OpenLink_Static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1400`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1400 begin');
-      context.moveAbilityToBackground()
+      context?.moveAbilityToBackground()
         .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
@@ -171,7 +171,7 @@ export default function openLinkPatchStaticTest() {
       await Utils.msSleep(1000);
       try {
         const link = 'example://www.example.com';
-        context.openLink(link).then(() => {
+        context?.openLink(link).then(() => {
           hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1400 open link successful`);
           expect().assertFail();
           done();
@@ -198,7 +198,7 @@ export default function openLinkPatchStaticTest() {
     it('AbilityRuntime_OpenLink_Static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1500`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1500 begin');
-      context.moveAbilityToBackground()
+      context?.moveAbilityToBackground()
         .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
@@ -208,7 +208,7 @@ export default function openLinkPatchStaticTest() {
       await Utils.msSleep(1000);
       try {
         const link = 'example://www.example.com';
-        context.openLink(link, paramOptions).then(() => {
+        context?.openLink(link, paramOptions).then(() => {
           hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1500 open link successful`);
           expect().assertFail();
           done();
@@ -235,7 +235,7 @@ export default function openLinkPatchStaticTest() {
     it('AbilityRuntime_OpenLink_Static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1600`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1600 begin');
-      context.moveAbilityToBackground()
+      context?.moveAbilityToBackground()
         .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
@@ -245,7 +245,7 @@ export default function openLinkPatchStaticTest() {
       await Utils.msSleep(1000);
       try {
         const link = 'example://www.example.com';
-        context.openLink(link, paramOptions, (err: BusinessError | null, result: common.AbilityResult | undefined) => {
+        context?.openLink(link, paramOptions, (err: BusinessError | null, result: common.AbilityResult | undefined) => {
           hilog.info(domain, tag, `openLink callback result: ${JSON.stringify(result?.resultCode)}`);
           hilog.info(domain, tag, `openLink callback result data: ${JSON.stringify(result?.want)}`);
           expect(`${err?.code}`).assertEqual('201');
@@ -262,6 +262,43 @@ export default function openLinkPatchStaticTest() {
       } catch (err) {
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1600 open fail : ` + err.code + err.message);
         expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_Static_1700
+     * @tc.number AbilityRuntime_OpenLink_Static_1700
+     * @tc.desc   The input parameter 'link' is legal uri string and target app exist,Call the openLink interface through backgroud context, open target app failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AbilityRuntime_OpenLink_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      tag = `AbilityRuntime_OpenLink_Static_1700`;
+      hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1700 begin');
+      context?.moveAbilityToBackground()
+        .catch((err: Error): void => {
+          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
+      await Utils.msSleep(1000);
+      try {
+        const link = 'example://www.example.com';
+        context?.openLink('').then(() => {
+          hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1700 open link successful`);
+          expect().assertFail();
+          done();
+        }).catch((error: Error): void => {
+          hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1700 open link err: ` + error.code + error.message);
+          expect().assertFail();
+          done();
+        })
+      } catch (err) {
+        hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1700 open fail : ` + err.code + err.message);
+        expect(`${err.code}`).assertEqual('401');
         done();
       }
     });

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -108,7 +108,7 @@ export default function AddUsbManagerTest() {
 
   describe("AddUsbManagerTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -191,38 +191,40 @@ export default function AddUsbManagerTest() {
         if (!isDeviceConnected) {
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        let param: UsbMgr.USBDeviceRequestParams = {
-          bmRequestType: 0x80,
-          bRequest: 0x06,
-          wValue: (0x01 << 8) | 0x00,
-          wIndex: 0x00,
-          wLength: 18,
-          data: new Uint8Array(18),
-        };
-        try {
-          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-          if (devicesList.length == 0) {
-            hilog.info(domain, tag, 'device list is empty');
+        } else {
+          let param: UsbMgr.USBDeviceRequestParams = {
+            bmRequestType: 0x80,
+            bRequest: 0x06,
+            wValue: (0x01 << 8) | 0x00,
+            wIndex: 0x00,
+            wLength: 18,
+            data: new Uint8Array(18),
+          };
+          try {
+            let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+            if (devicesList.length == 0) {
+              hilog.info(domain, tag, 'device list is empty');
+            }
+  
+            UsbMgr.requestRight(devicesList[0].name);
+            hilog.info(domain, tag, `usbControlTransfer001 name = ${devicesList[0].name}`);
+            let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
+  
+            hilog.info(domain, tag, `usbControlTransfer001 device.name = ${devicesList[0].name}`);
+            let ret = UsbMgr.usbControlTransfer(devicePipe, param).then((ret: int) => {
+              hilog.info(domain, tag, `usbControlTransfer001 size= ${ret}`);
+              expect(ret == 18).assertEqual(true);
+            })
+            UsbMgr.closePipe(devicePipe);
+            done();
+          } catch (error) {
+            hilog.info(0, 'testTag ui', `closeAccessory error `)
+            hilog.info(domain, tag, 'usbControlTransfer001 end');
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, `usbControlTransfer001 err.code= ${err.code}`);
+            done();
           }
-
-          UsbMgr.requestRight(devicesList[0].name);
-          hilog.info(domain, tag, `usbControlTransfer001 name = ${devicesList[0].name}`);
-          let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
-
-          hilog.info(domain, tag, `usbControlTransfer001 device.name = ${devicesList[0].name}`);
-          let ret = UsbMgr.usbControlTransfer(devicePipe, param).then((ret: int) => {
-            hilog.info(domain, tag, `usbControlTransfer001 size= ${ret}`);
-            expect(ret == 18).assertEqual(true);
-          })
-          UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
-          hilog.info(0, 'testTag ui', `closeAccessory error `)
-          hilog.info(domain, tag, 'usbControlTransfer001 end');
-          let err: BusinessError = error as BusinessError;
-          hilog.info(domain, tag, `usbControlTransfer001 err.code= ${err.code}`);
         }
-        done();
       })
 
     /**
@@ -239,28 +241,30 @@ export default function AddUsbManagerTest() {
         if (!isDeviceConnected) {
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        try {
-          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-          let devices: UsbMgr.USBDevice = devicesList[0];
-          let deviceName = devices.name;
-          let isHasRight: boolean = await UsbMgr.requestRight(deviceName);
-          if (isHasRight) {
-            hilog.info(domain, tag, 'requestRight is true');
+        } else {
+          try {
+            let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+            let devices: UsbMgr.USBDevice = devicesList[0];
+            let deviceName = devices.name;
+            let isHasRight: boolean = await UsbMgr.requestRight(deviceName);
+            if (isHasRight) {
+              hilog.info(domain, tag, 'requestRight is true');
+            }
+            let gPipe = UsbMgr.connectDevice(devices);
+            hilog.info(domain, tag, 'test_connectDevice18 success  gPipe.busNum : ' + gPipe.busNum);
+            hilog.info(domain, tag, 'test_connectDevice18 success gPipe.devAddress : ' + gPipe.devAddress);
+            expect(gPipe.busNum > 0).assertTrue();
+            expect(gPipe.devAddress > 0).assertTrue();
+  
+            expect(gPipe.busNum < 256).assertTrue();
+            expect(gPipe.devAddress < 128).assertTrue();
+            done();
+          } catch (error) {
+            const err = error as BusinessError;
+            expect(err.code).assertEqual(401);
+            done();
           }
-          let gPipe = UsbMgr.connectDevice(devices);
-          hilog.info(domain, tag, 'test_connectDevice18 success  gPipe.busNum : ' + gPipe.busNum);
-          hilog.info(domain, tag, 'test_connectDevice18 success gPipe.devAddress : ' + gPipe.devAddress);
-          expect(gPipe.busNum > 0).assertTrue();
-          expect(gPipe.devAddress > 0).assertTrue();
-
-          expect(gPipe.busNum < 256).assertTrue();
-          expect(gPipe.devAddress < 128).assertTrue();
-        } catch (error) {
-          const err = error as BusinessError;
-          expect(err.code).assertEqual(401);
         }
-        done();
       })
 
     /**
@@ -277,28 +281,30 @@ export default function AddUsbManagerTest() {
         if (!isDeviceConnected) {
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        try {
-          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-          let devices: UsbMgr.USBDevice = devicesList[0];
-          let deviceName = devices.name;
-          let isHasRight: boolean = await UsbMgr.requestRight(deviceName);
-          if (isHasRight) {
-            hilog.info(domain, tag, 'requestRight is true');
+        } else {
+          try {
+            let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+            let devices: UsbMgr.USBDevice = devicesList[0];
+            let deviceName = devices.name;
+            let isHasRight: boolean = await UsbMgr.requestRight(deviceName);
+            if (isHasRight) {
+              hilog.info(domain, tag, 'requestRight is true');
+            }
+            let gPipe = UsbMgr.connectDevice(devices);
+            hilog.info(domain, tag, 'test_connectDevice18 success  gPipe.busNum : ' + gPipe.busNum);
+            hilog.info(domain, tag, 'test_connectDevice18 success gPipe.devAddress : ' + gPipe.devAddress);
+            expect(gPipe.busNum > 0).assertTrue();
+            expect(gPipe.devAddress > 0).assertTrue();
+  
+            expect(gPipe.busNum < 256).assertTrue();
+            expect(gPipe.devAddress < 128).assertTrue();
+            done();
+          } catch (error) {
+            const err = error as BusinessError;
+            expect(err.code).assertEqual(801);
+            done();
           }
-          let gPipe = UsbMgr.connectDevice(devices);
-          hilog.info(domain, tag, 'test_connectDevice18 success  gPipe.busNum : ' + gPipe.busNum);
-          hilog.info(domain, tag, 'test_connectDevice18 success gPipe.devAddress : ' + gPipe.devAddress);
-          expect(gPipe.busNum > 0).assertTrue();
-          expect(gPipe.devAddress > 0).assertTrue();
-
-          expect(gPipe.busNum < 256).assertTrue();
-          expect(gPipe.devAddress < 128).assertTrue();
-        } catch (error) {
-          const err = error as BusinessError;
-          expect(err.code).assertEqual(801);
         }
-        done();
       })
 
     /**
@@ -396,7 +402,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         expect(err.code).assertEqual(401);
@@ -420,7 +426,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight035 err : ', err);
@@ -445,7 +451,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight036 err : ', err);
@@ -470,7 +476,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight037 err : ', err);
@@ -495,7 +501,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight038 err : ', err);
@@ -520,7 +526,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -548,7 +554,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -576,7 +582,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -604,7 +610,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -632,7 +638,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -660,7 +666,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -688,7 +694,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -716,7 +722,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -744,7 +750,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -847,27 +853,30 @@ export default function AddUsbManagerTest() {
         if (!isDeviceConnected) {
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        try {
-          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-          let devices: UsbMgr.USBDevice = devicesList[0];
-          let deviceName = devices.name;
-          let isHasRight: boolean = await UsbMgr.requestRight(deviceName);
-          if (isHasRight) {
-            hilog.info(domain, tag, 'requestRight is true');
+        } else {
+          try {
+            let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+            let devices: UsbMgr.USBDevice = devicesList[0];
+            let deviceName = devices.name;
+            let isHasRight: boolean = await UsbMgr.requestRight(deviceName);
+            if (isHasRight) {
+              hilog.info(domain, tag, 'requestRight is true');
+            }
+            let gPipe = UsbMgr.connectDevice(devices);
+            hilog.info(domain, tag, 'test_connectDevice18 success  gPipe.busNum : ' + gPipe.busNum);
+            hilog.info(domain, tag, 'test_connectDevice18 success gPipe.devAddress : ' + gPipe.devAddress);
+            expect(gPipe.busNum > 0).assertTrue();
+            expect(gPipe.devAddress > 0).assertTrue();
+  
+            expect(gPipe.busNum < 256).assertTrue();
+            expect(gPipe.devAddress < 128).assertTrue();
+            done();
+          } catch (error) {
+            error = error as BusinessError;
+            expect(error.code).assertEqual(14400001);
+            done();
           }
-          let gPipe = UsbMgr.connectDevice(devices);
-          hilog.info(domain, tag, 'test_connectDevice18 success  gPipe.busNum : ' + gPipe.busNum);
-          hilog.info(domain, tag, 'test_connectDevice18 success gPipe.devAddress : ' + gPipe.devAddress);
-          expect(gPipe.busNum > 0).assertTrue();
-          expect(gPipe.devAddress > 0).assertTrue();
-
-          expect(gPipe.busNum < 256).assertTrue();
-          expect(gPipe.devAddress < 128).assertTrue();
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(14400001);
         }
-        done();
       })
 
     /**
@@ -885,38 +894,39 @@ export default function AddUsbManagerTest() {
           hilog.info(domain, tag, 'usb testUsbSubmitTransfer058 No device is connected');
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-        if (devicesList.length == 0) {
-          hilog.info(domain, tag, 'device list is empty');
-        }
-
-        let devices: UsbMgr.USBDevice = devicesList[0];
-        UsbMgr.requestRight(devices.name);
-        let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
-        let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
-        let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
-        let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
-        let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
-        UsbMgr.claimInterface(gPipe, tmpInterface, true);
-        try {
-          transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined) => {
-            hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
-            hilog.info(domain, tag,
-              'testUsbSubmitTransfer058 transfer success, result = ' + transferParams.buffer.toString());
-            hilog.info(domain, tag, 'status = ' + callBackData?.status);
-            expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+        } else {
+          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+          if (devicesList.length == 0) {
+            hilog.info(domain, tag, 'device list is empty');
+          }
+  
+          let devices: UsbMgr.USBDevice = devicesList[0];
+          UsbMgr.requestRight(devices.name);
+          let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
+          let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
+          let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
+          let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
+          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
+          UsbMgr.claimInterface(gPipe, tmpInterface, true);
+          try {
+            transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined) => {
+              hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
+              hilog.info(domain, tag,
+                'testUsbSubmitTransfer058 transfer success, result = ' + transferParams.buffer.toString());
+              hilog.info(domain, tag, 'status = ' + callBackData?.status);
+              expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+              UsbMgr.closePipe(gPipe);
+              hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer058 end');
+              done();
+            }
+            UsbMgr.usbSubmitTransfer(transferParams);
+          } catch (error) {
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, 'interrupt error:', err.code);
             UsbMgr.closePipe(gPipe);
-            hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer058 end');
+            expect(err.code).assertEqual(14400001);
             done();
           }
-          UsbMgr.usbSubmitTransfer(transferParams);
-        } catch (error) {
-          let err: BusinessError = error as BusinessError;
-          hilog.info(domain, tag, 'interrupt error:', err.code);
-          UsbMgr.closePipe(gPipe);
-          expect(err.code).assertEqual(14400001);
-          done();
         }
       })
 
@@ -935,38 +945,39 @@ export default function AddUsbManagerTest() {
           hilog.info(domain, tag, 'usb testUsbSubmitTransfer059 No device is connected');
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-        if (devicesList.length == 0) {
-          hilog.info(domain, tag, 'device list is empty');
-        }
-
-        let devices: UsbMgr.USBDevice = devicesList[0];
-        UsbMgr.requestRight(devices.name);
-        let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
-        let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
-        let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
-        let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
-        let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
-        UsbMgr.claimInterface(gPipe, tmpInterface, true);
-        try {
-          transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined) => {
-            hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
-            hilog.info(domain, tag,
-              'testUsbSubmitTransfer059 transfer success, result = ' + transferParams.buffer.toString());
-            hilog.info(domain, tag, 'status = ' + callBackData?.status);
-            expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+        } else {
+          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+          if (devicesList.length == 0) {
+            hilog.info(domain, tag, 'device list is empty');
+          }
+  
+          let devices: UsbMgr.USBDevice = devicesList[0];
+          UsbMgr.requestRight(devices.name);
+          let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
+          let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
+          let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
+          let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
+          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
+          UsbMgr.claimInterface(gPipe, tmpInterface, true);
+          try {
+            transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined) => {
+              hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
+              hilog.info(domain, tag,
+                'testUsbSubmitTransfer059 transfer success, result = ' + transferParams.buffer.toString());
+              hilog.info(domain, tag, 'status = ' + callBackData?.status);
+              expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+              UsbMgr.closePipe(gPipe);
+              hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer059 end');
+              done();
+            }
+            UsbMgr.usbSubmitTransfer(transferParams);
+          } catch (error) {
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, 'interrupt error:', err.code);
             UsbMgr.closePipe(gPipe);
-            hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer059 end');
+            expect(err.code).assertEqual(14400007);
             done();
           }
-          UsbMgr.usbSubmitTransfer(transferParams);
-        } catch (error) {
-          let err: BusinessError = error as BusinessError;
-          hilog.info(domain, tag, 'interrupt error:', err.code);
-          UsbMgr.closePipe(gPipe);
-          expect(err.code).assertEqual(14400007);
-          done();
         }
       })
 
@@ -985,38 +996,39 @@ export default function AddUsbManagerTest() {
           hilog.info(domain, tag, 'usb testUsbSubmitTransfer060 No device is connected');
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-        if (devicesList.length == 0) {
-          hilog.info(domain, tag, 'device list is empty');
-        }
-
-        let devices: UsbMgr.USBDevice = devicesList[0];
-        UsbMgr.requestRight(devices.name);
-        let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
-        let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
-        let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
-        let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
-        let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
-        UsbMgr.claimInterface(gPipe, tmpInterface, true);
-        try {
-          transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined)=> {
-            hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
-            hilog.info(domain, tag,
-              'testUsbSubmitTransfer060 transfer success, result = ' + transferParams.buffer.toString());
-            hilog.info(domain, tag, 'status = ' + callBackData?.status);
-            expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+        } else {
+          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+          if (devicesList.length == 0) {
+            hilog.info(domain, tag, 'device list is empty');
+          }
+  
+          let devices: UsbMgr.USBDevice = devicesList[0];
+          UsbMgr.requestRight(devices.name);
+          let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
+          let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
+          let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
+          let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
+          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
+          UsbMgr.claimInterface(gPipe, tmpInterface, true);
+          try {
+            transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined)=> {
+              hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
+              hilog.info(domain, tag,
+                'testUsbSubmitTransfer060 transfer success, result = ' + transferParams.buffer.toString());
+              hilog.info(domain, tag, 'status = ' + callBackData?.status);
+              expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+              UsbMgr.closePipe(gPipe);
+              hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer060 end');
+              done();
+            }
+            UsbMgr.usbSubmitTransfer(transferParams);
+          } catch (error) {
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, 'interrupt error:', err.code);
             UsbMgr.closePipe(gPipe);
-            hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer060 end');
+            expect(err.code).assertEqual(14400008);
             done();
           }
-          UsbMgr.usbSubmitTransfer(transferParams);
-        } catch (error) {
-          let err: BusinessError = error as BusinessError;
-          hilog.info(domain, tag, 'interrupt error:', err.code);
-          UsbMgr.closePipe(gPipe);
-          expect(err.code).assertEqual(14400008);
-          done();
         }
       })
 
@@ -1035,38 +1047,39 @@ export default function AddUsbManagerTest() {
           hilog.info(domain, tag, 'usb testUsbSubmitTransfer061 No device is connected');
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-        if (devicesList.length == 0) {
-          hilog.info(domain, tag, 'device list is empty');
-        }
-
-        let devices: UsbMgr.USBDevice = devicesList[0];
-        UsbMgr.requestRight(devices.name);
-        let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
-        let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
-        let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
-        let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
-        let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
-        UsbMgr.claimInterface(gPipe, tmpInterface, true);
-        try {
-          transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined) => {
-            hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
-            hilog.info(domain, tag,
-              'testUsbSubmitTransfer061 transfer success, result = ' + transferParams.buffer.toString());
-            hilog.info(domain, tag, 'status = ' + callBackData?.status);
-            expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+        } else {
+          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+          if (devicesList.length == 0) {
+            hilog.info(domain, tag, 'device list is empty');
+          }
+  
+          let devices: UsbMgr.USBDevice = devicesList[0];
+          UsbMgr.requestRight(devices.name);
+          let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
+          let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
+          let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
+          let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
+          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
+          UsbMgr.claimInterface(gPipe, tmpInterface, true);
+          try {
+            transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined) => {
+              hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
+              hilog.info(domain, tag,
+                'testUsbSubmitTransfer061 transfer success, result = ' + transferParams.buffer.toString());
+              hilog.info(domain, tag, 'status = ' + callBackData?.status);
+              expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+              UsbMgr.closePipe(gPipe);
+              hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer061 end');
+              done();
+            }
+            UsbMgr.usbSubmitTransfer(transferParams);
+          } catch (error) {
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, 'interrupt error:', err.code);
             UsbMgr.closePipe(gPipe);
-            hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer061 end');
+            expect(err.code).assertEqual(14400009);
             done();
           }
-          UsbMgr.usbSubmitTransfer(transferParams);
-        } catch (error) {
-          let err: BusinessError = error as BusinessError;
-          hilog.info(domain, tag, 'interrupt error:', err.code);
-          UsbMgr.closePipe(gPipe);
-          expect(err.code).assertEqual(14400009);
-          done();
         }
       })
 
@@ -1085,38 +1098,39 @@ export default function AddUsbManagerTest() {
           hilog.info(domain, tag, 'usb testUsbSubmitTransfer062 No device is connected');
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-        if (devicesList.length == 0) {
-          hilog.info(domain, tag, 'device list is empty');
-        }
-
-        let devices: UsbMgr.USBDevice = devicesList[0];
-        UsbMgr.requestRight(devices.name);
-        let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
-        let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
-        let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
-        let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
-        let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
-        UsbMgr.claimInterface(gPipe, tmpInterface, true);
-        try {
-          transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined)=> {
-            hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
-            hilog.info(domain, tag,
-              'testUsbSubmitTransfer062 transfer success, result = ' + transferParams.buffer.toString());
-            hilog.info(domain, tag, 'status = ' + callBackData?.status);
-            expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+        } else {
+          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+          if (devicesList.length == 0) {
+            hilog.info(domain, tag, 'device list is empty');
+          }
+  
+          let devices: UsbMgr.USBDevice = devicesList[0];
+          UsbMgr.requestRight(devices.name);
+          let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
+          let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
+          let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
+          let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
+          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
+          UsbMgr.claimInterface(gPipe, tmpInterface, true);
+          try {
+            transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined)=> {
+              hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
+              hilog.info(domain, tag,
+                'testUsbSubmitTransfer062 transfer success, result = ' + transferParams.buffer.toString());
+              hilog.info(domain, tag, 'status = ' + callBackData?.status);
+              expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+              UsbMgr.closePipe(gPipe);
+              hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer062 end');
+              done();
+            }
+            UsbMgr.usbSubmitTransfer(transferParams);
+          } catch (error) {
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, 'interrupt error:', err.code);
             UsbMgr.closePipe(gPipe);
-            hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer062 end');
+            expect(err.code).assertEqual(14400012);
             done();
           }
-          UsbMgr.usbSubmitTransfer(transferParams);
-        } catch (error) {
-          let err: BusinessError = error as BusinessError;
-          hilog.info(domain, tag, 'interrupt error:', err.code);
-          UsbMgr.closePipe(gPipe);
-          expect(err.code).assertEqual(14400012);
-          done();
         }
       })
 
@@ -1135,29 +1149,31 @@ export default function AddUsbManagerTest() {
           hilog.info(domain, tag, 'usb testUsbCancelTransfer063 No device is connected');
           expect(isDeviceConnected).assertFalse();
           done();
+        } else {
+          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+          if (devicesList.length == 0) {
+            hilog.info(domain, tag, 'device list is empty');
+          }
+          let devices: UsbMgr.USBDevice = devicesList[0];
+          UsbMgr.requestRight(devices.name);
+          let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
+          let endpoint = devices.configs[0].interfaces[0]?.endpoints.find((value) => {
+            return value.direction === 0 && value.type === 2
+          })
+          let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
+          let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
+          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
+          try {
+            UsbMgr.usbSubmitTransfer(transferParams);
+            UsbMgr.usbCancelTransfer(transferParams);
+            hilog.info(domain, tag, 'USB transfer request submitted.');
+          } catch (error) {
+            error = error as BusinessError;
+            hilog.info(domain, tag, 'testUsbCancelTransfer063 catch err code================: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(14400001);
+          }
+          done();
         }
-        let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-        if (devicesList.length == 0) {
-          hilog.info(domain, tag, 'device list is empty');
-        }
-        let devices: UsbMgr.USBDevice = devicesList[0];
-        UsbMgr.requestRight(devices.name);
-        let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
-        let endpoint = devices.configs[0].interfaces[0]?.endpoints.find((value) => {
-          return value.direction === 0 && value.type === 2
-        })
-        let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
-        let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
-        let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
-        try {
-          UsbMgr.usbSubmitTransfer(transferParams);
-          UsbMgr.usbCancelTransfer(transferParams);
-          hilog.info(domain, tag, 'USB transfer request submitted.');
-        } catch (error: BusinessError) {
-          hilog.info(domain, tag, 'testUsbCancelTransfer063 catch err code================: ' + JSON.stringify(error));
-          expect(error.code).assertEqual(14400001);
-        }
-        done();
       })
 
     /**
@@ -1175,29 +1191,31 @@ export default function AddUsbManagerTest() {
           hilog.info(domain, tag, 'usb testUsbCancelTransfer004 No device is connected');
           expect(isDeviceConnected).assertFalse();
           done();
+        } else {
+          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+          if (devicesList.length == 0) {
+            hilog.info(domain, tag, 'device list is empty');
+          }
+          let devices: UsbMgr.USBDevice = devicesList[0];
+          UsbMgr.requestRight(devices.name);
+          let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
+          let endpoint = devices.configs[0].interfaces[0]?.endpoints.find((value) => {
+            return value.direction === 0 && value.type === 2
+          })
+          let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
+          let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
+          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
+          try {
+            UsbMgr.usbSubmitTransfer(transferParams);
+            UsbMgr.usbCancelTransfer(transferParams);
+            hilog.info(domain, tag, 'USB transfer request submitted.');
+          } catch (error) {
+            error = error as BusinessError;
+            hilog.info(domain, tag, 'testUsbCancelTransfer064 catch err code================: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(14400008);
+          }
+          done();
         }
-        let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-        if (devicesList.length == 0) {
-          hilog.info(domain, tag, 'device list is empty');
-        }
-        let devices: UsbMgr.USBDevice = devicesList[0];
-        UsbMgr.requestRight(devices.name);
-        let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
-        let endpoint = devices.configs[0].interfaces[0]?.endpoints.find((value) => {
-          return value.direction === 0 && value.type === 2
-        })
-        let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
-        let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
-        let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
-        try {
-          UsbMgr.usbSubmitTransfer(transferParams);
-          UsbMgr.usbCancelTransfer(transferParams);
-          hilog.info(domain, tag, 'USB transfer request submitted.');
-        } catch (error: BusinessError) {
-          hilog.info(domain, tag, 'testUsbCancelTransfer064 catch err code================: ' + JSON.stringify(error));
-          expect(error.code).assertEqual(14400008);
-        }
-        done();
       })
 
     /**
@@ -1215,29 +1233,31 @@ export default function AddUsbManagerTest() {
           hilog.info(domain, tag, 'usb testUsbCancelTransfer065 No device is connected');
           expect(isDeviceConnected).assertFalse();
           done();
+        } else {
+          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+          if (devicesList.length == 0) {
+            hilog.info(domain, tag, 'device list is empty');
+          }
+          let devices: UsbMgr.USBDevice = devicesList[0];
+          UsbMgr.requestRight(devices.name);
+          let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
+          let endpoint = devices.configs[0].interfaces[0]?.endpoints.find((value) => {
+            return value.direction === 0 && value.type === 2
+          })
+          let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
+          let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
+          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
+          try {
+            UsbMgr.usbSubmitTransfer(transferParams);
+            UsbMgr.usbCancelTransfer(transferParams);
+            hilog.info(domain, tag, 'USB transfer request submitted.');
+          } catch (error) {
+            error = error as BusinessError;
+            hilog.info(domain, tag, 'testUsbCancelTransfer065 catch err code================: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(14400010);
+          }
+          done();
         }
-        let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-        if (devicesList.length == 0) {
-          hilog.info(domain, tag, 'device list is empty');
-        }
-        let devices: UsbMgr.USBDevice = devicesList[0];
-        UsbMgr.requestRight(devices.name);
-        let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
-        let endpoint = devices.configs[0].interfaces[0]?.endpoints.find((value) => {
-          return value.direction === 0 && value.type === 2
-        })
-        let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
-        let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT;
-        let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
-        try {
-          UsbMgr.usbSubmitTransfer(transferParams);
-          UsbMgr.usbCancelTransfer(transferParams);
-          hilog.info(domain, tag, 'USB transfer request submitted.');
-        } catch (error: BusinessError) {
-          hilog.info(domain, tag, 'testUsbCancelTransfer065 catch err code================: ' + JSON.stringify(error));
-          expect(error.code).assertEqual(14400010);
-        }
-        done();
       })
 
     /**
@@ -1255,38 +1275,39 @@ export default function AddUsbManagerTest() {
           hilog.info(domain, tag, 'usb testUsbSubmitTransfer066 No device is connected');
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-        if (devicesList.length == 0) {
-          hilog.info(domain, tag, 'device list is empty');
-        }
-
-        let devices: UsbMgr.USBDevice = devicesList[0];
-        UsbMgr.requestRight(devices.name);
-        let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
-        let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
-        let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
-        let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK;
-        let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
-        UsbMgr.claimInterface(gPipe, tmpInterface, true);
-        try {
-          transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined)=> {
-            hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
-            hilog.info(domain, tag,
-              'testUsbSubmitTransfer066 transfer success, result = ' + transferParams.buffer.toString());
-            hilog.info(domain, tag, 'status = ' + callBackData?.status);
-            expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+        } else {
+          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+          if (devicesList.length == 0) {
+            hilog.info(domain, tag, 'device list is empty');
+          }
+  
+          let devices: UsbMgr.USBDevice = devicesList[0];
+          UsbMgr.requestRight(devices.name);
+          let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
+          let tmpInterface: UsbMgr.USBInterface = devices.configs[0].interfaces[0];
+          let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
+          let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK;
+          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, 129, type, 2000);
+          UsbMgr.claimInterface(gPipe, tmpInterface, true);
+          try {
+            transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined)=> {
+              hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));
+              hilog.info(domain, tag,
+                'testUsbSubmitTransfer066 transfer success, result = ' + transferParams.buffer.toString());
+              hilog.info(domain, tag, 'status = ' + callBackData?.status);
+              expect(callBackData?.status == UsbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(true);
+              UsbMgr.closePipe(gPipe);
+              hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer066 end');
+              done();
+            }
+            UsbMgr.usbSubmitTransfer(transferParams);
+          } catch (error) {
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, 'interrupt error:', err.code);
             UsbMgr.closePipe(gPipe);
-            hilog.info(domain, tag, 'interrupt testUsbSubmitTransfer066 end');
+            expect(err.code).assertEqual(14400012);
             done();
           }
-          UsbMgr.usbSubmitTransfer(transferParams);
-        } catch (error) {
-          let err: BusinessError = error as BusinessError;
-          hilog.info(domain, tag, 'interrupt error:', err.code);
-          UsbMgr.closePipe(gPipe);
-          expect(err.code).assertEqual(14400012);
-          done();
         }
       })
 
@@ -1304,39 +1325,40 @@ export default function AddUsbManagerTest() {
         if (!isDeviceConnected) {
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        let param: UsbMgr.USBDeviceRequestParams = {
-          bmRequestType: 0x80,
-          bRequest: UsbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD,
-          wValue: (0x01 << 8) | 0x00,
-          wIndex: 0x00,
-          wLength: 18,
-          data: new Uint8Array(18),
-        };
-        try {
-          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-          if (devicesList.length == 0) {
-            hilog.info(domain, tag, 'device list is empty');
+        } else {
+          let param: UsbMgr.USBDeviceRequestParams = {
+            bmRequestType: 0x80,
+            bRequest: UsbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD,
+            wValue: (0x01 << 8) | 0x00,
+            wIndex: 0x00,
+            wLength: 18,
+            data: new Uint8Array(18),
+          };
+          try {
+            let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+            if (devicesList.length == 0) {
+              hilog.info(domain, tag, 'device list is empty');
+            }
+  
+            UsbMgr.requestRight(devicesList[0].name);
+            hilog.info(domain, tag, `usbControlTransfer name = ${devicesList[0].name}`);
+            let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
+            let timeout: int | undefined = 30;
+  
+            hilog.info(domain, tag, `usbControlTransfer device.name = ${devicesList[0].name}`);
+            let ret = UsbMgr.usbControlTransfer(devicePipe, param).then((ret: int) => {
+              hilog.info(domain, tag, `usbControlTransfer size= ${ret}`);
+              expect(ret == 18).assertEqual(true);
+            })
+            UsbMgr.closePipe(devicePipe);
+          } catch (error) {
+            hilog.info(0, 'testTag ui', `closeAccessory error `)
+            hilog.info(domain, tag, 'usbControlTransfer end');
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, `test_usbControlTransfer68 err.code= ${err.code}`);
           }
-
-          UsbMgr.requestRight(devicesList[0].name);
-          hilog.info(domain, tag, `usbControlTransfer name = ${devicesList[0].name}`);
-          let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
-          let timeout: int | undefined = 30;
-
-          hilog.info(domain, tag, `usbControlTransfer device.name = ${devicesList[0].name}`);
-          let ret = UsbMgr.usbControlTransfer(devicePipe, param).then((ret: int) => {
-            hilog.info(domain, tag, `usbControlTransfer size= ${ret}`);
-            expect(ret == 18).assertEqual(true);
-          })
-          UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
-          hilog.info(0, 'testTag ui', `closeAccessory error `)
-          hilog.info(domain, tag, 'usbControlTransfer end');
-          let err: BusinessError = error as BusinessError;
-          hilog.info(domain, tag, `test_usbControlTransfer68 err.code= ${err.code}`);
+          done();
         }
-        done();
       })
 
     /**
@@ -1353,39 +1375,40 @@ export default function AddUsbManagerTest() {
         if (!isDeviceConnected) {
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        let param: UsbMgr.USBDeviceRequestParams = {
-          bmRequestType: 0x80,
-          bRequest: UsbMgr.USBControlRequestType.USB_REQUEST_TYPE_CLASS,
-          wValue: (0x01 << 8) | 0x00,
-          wIndex: 0x00,
-          wLength: 18,
-          data: new Uint8Array(18),
-        };
-        try {
-          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-          if (devicesList.length == 0) {
-            hilog.info(domain, tag, 'device list is empty');
+        } else {
+          let param: UsbMgr.USBDeviceRequestParams = {
+            bmRequestType: 0x80,
+            bRequest: UsbMgr.USBControlRequestType.USB_REQUEST_TYPE_CLASS,
+            wValue: (0x01 << 8) | 0x00,
+            wIndex: 0x00,
+            wLength: 18,
+            data: new Uint8Array(18),
+          };
+          try {
+            let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+            if (devicesList.length == 0) {
+              hilog.info(domain, tag, 'device list is empty');
+            }
+  
+            UsbMgr.requestRight(devicesList[0].name);
+            hilog.info(domain, tag, `usbControlTransfer name = ${devicesList[0].name}`);
+            let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
+            let timeout: int | undefined = 30;
+  
+            hilog.info(domain, tag, `usbControlTransfer device.name = ${devicesList[0].name}`);
+            let ret = UsbMgr.usbControlTransfer(devicePipe, param).then((ret: int) => {
+              hilog.info(domain, tag, `usbControlTransfer size= ${ret}`);
+              expect(ret == 18).assertEqual(true);
+            })
+            UsbMgr.closePipe(devicePipe);
+          } catch (error) {
+            hilog.info(0, 'testTag ui', `closeAccessory error `)
+            hilog.info(domain, tag, 'usbControlTransfer end');
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, `test_usbControlTransfer69 err.code= ${err.code}`);
           }
-
-          UsbMgr.requestRight(devicesList[0].name);
-          hilog.info(domain, tag, `usbControlTransfer name = ${devicesList[0].name}`);
-          let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
-          let timeout: int | undefined = 30;
-
-          hilog.info(domain, tag, `usbControlTransfer device.name = ${devicesList[0].name}`);
-          let ret = UsbMgr.usbControlTransfer(devicePipe, param).then((ret: int) => {
-            hilog.info(domain, tag, `usbControlTransfer size= ${ret}`);
-            expect(ret == 18).assertEqual(true);
-          })
-          UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
-          hilog.info(0, 'testTag ui', `closeAccessory error `)
-          hilog.info(domain, tag, 'usbControlTransfer end');
-          let err: BusinessError = error as BusinessError;
-          hilog.info(domain, tag, `test_usbControlTransfer69 err.code= ${err.code}`);
+          done();
         }
-        done();
       })
 
     /**
@@ -1402,39 +1425,40 @@ export default function AddUsbManagerTest() {
         if (!isDeviceConnected) {
           expect(isDeviceConnected).assertFalse();
           done();
-        }
-        let param: UsbMgr.USBDeviceRequestParams = {
-          bmRequestType: 0x80,
-          bRequest: UsbMgr.USBControlRequestType.USB_REQUEST_TYPE_VENDOR,
-          wValue: (0x01 << 8) | 0x00,
-          wIndex: 0x00,
-          wLength: 18,
-          data: new Uint8Array(18),
-        };
-        try {
-          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
-          if (devicesList.length == 0) {
-            hilog.info(domain, tag, 'device list is empty');
+        } else {
+          let param: UsbMgr.USBDeviceRequestParams = {
+            bmRequestType: 0x80,
+            bRequest: UsbMgr.USBControlRequestType.USB_REQUEST_TYPE_VENDOR,
+            wValue: (0x01 << 8) | 0x00,
+            wIndex: 0x00,
+            wLength: 18,
+            data: new Uint8Array(18),
+          };
+          try {
+            let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+            if (devicesList.length == 0) {
+              hilog.info(domain, tag, 'device list is empty');
+            }
+  
+            UsbMgr.requestRight(devicesList[0].name);
+            hilog.info(domain, tag, `usbControlTransfer name = ${devicesList[0].name}`);
+            let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
+            let timeout: int | undefined = 30;
+  
+            hilog.info(domain, tag, `usbControlTransfer device.name = ${devicesList[0].name}`);
+            let ret = UsbMgr.usbControlTransfer(devicePipe, param).then((ret: int) => {
+              hilog.info(domain, tag, `usbControlTransfer size= ${ret}`);
+              expect(ret == 18).assertEqual(true);
+            })
+            UsbMgr.closePipe(devicePipe);
+          } catch (error) {
+            hilog.info(0, 'testTag ui', `closeAccessory error `)
+            hilog.info(domain, tag, 'usbControlTransfer end');
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, `usbControlTransferlnn0 err.code= ${err.code}`);
           }
-
-          UsbMgr.requestRight(devicesList[0].name);
-          hilog.info(domain, tag, `usbControlTransfer name = ${devicesList[0].name}`);
-          let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
-          let timeout: int | undefined = 30;
-
-          hilog.info(domain, tag, `usbControlTransfer device.name = ${devicesList[0].name}`);
-          let ret = UsbMgr.usbControlTransfer(devicePipe, param).then((ret: int) => {
-            hilog.info(domain, tag, `usbControlTransfer size= ${ret}`);
-            expect(ret == 18).assertEqual(true);
-          })
-          UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
-          hilog.info(0, 'testTag ui', `closeAccessory error `)
-          hilog.info(domain, tag, 'usbControlTransfer end');
-          let err: BusinessError = error as BusinessError;
-          hilog.info(domain, tag, `usbControlTransferlnn0 err.code= ${err.code}`);
+          done();
         }
-        done();
       })
   })
 }

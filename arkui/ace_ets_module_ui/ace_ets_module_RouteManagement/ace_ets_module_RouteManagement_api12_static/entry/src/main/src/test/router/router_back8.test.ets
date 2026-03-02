@@ -24,7 +24,7 @@ import { UtilsTest, startAbility } from '../Util.test'
 
 export default function router_back8() {
   describe('router_back8', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("router_back8 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });

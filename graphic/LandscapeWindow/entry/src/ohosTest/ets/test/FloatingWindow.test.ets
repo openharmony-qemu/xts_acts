@@ -59,7 +59,6 @@ export default function FloatingWindowTest() {
           console.info(tag+'Succeeded in obtaining the top window. Data: ' + JSON.stringify(data));
           await windowClass.disableLandscapeMultiWindow().then(() => {
             console.info(tag+'Succeeded in making multi-window become not landscape.');
-            expect(true).assertTrue();
             done();
           }).catch((err:BusinessError) => {
             console.error(tag+'Failed to make multi-window become not landscape. Cause: ' + JSON.stringify(err));

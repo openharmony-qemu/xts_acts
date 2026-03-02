@@ -38,16 +38,17 @@ import {
   XComponent,
   XComponentController,
   XComponentParameters,
-  XComponentType
-} from '@ohos.arkui.component';
+  XComponentType,
+  XComponentOptions
+} from '@kit.ArkUI';
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 
-// let para: Record<string,string> = {
-//   'onSurfaceCreated': 'Init',
-//   'onSurfaceChanged': 'Init',
-//   'onSurfaceDestroyed': 'Init',
-//   } as Record<string,string>;
-// let storage: LocalStorage = new LocalStorage(para);
+let para: Record<string,string> = {
+  'onSurfaceCreated': 'Init',
+  'onSurfaceChanged': 'Init',
+  'onSurfaceDestroyed': 'Init',
+  } as Record<string,string>;
+let storage: LocalStorage = new LocalStorage(para);
 
 
 class CustomXComponentController extends XComponentController {
@@ -78,25 +79,21 @@ struct onSurfaceCreated1 {
   @State destroyText: string = "Init";
   @State flag: boolean = true
 
-  onPageShow() {
-    AppStorage.setOrCreate('onSurfaceCreated', 'Init');
-    AppStorage.setOrCreate('onSurfaceChanged', 'Init');
-    AppStorage.setOrCreate('onSurfaceDestroyed', 'Init');
-  }
 
   build() {
     Column() {
       Text(this.createText).id('onSurfaceCreated_text')
         .onClick((e: ClickEvent) => {
           this.createText = AppStorage.get<string>('onSurfaceCreated')!
+          console.log(`onSurfaceCreated:Succeed`)
         })
       Text(this.changeText).id('onSurfaceChanged_text')
         .onClick((e: ClickEvent) => {
-          // this.changeText = AppStorage.get<string>('onSurfaceChanged')!
+          this.changeText = AppStorage.get<string>('onSurfaceChanged')!
         })
       Text(this.destroyText).id('onSurfaceDestroyed_text')
         .onClick((e: ClickEvent) => {
-          // this.destroyText = AppStorage.get<string>('onSurfaceDestroyed')!
+          this.destroyText = AppStorage.get<string>('onSurfaceDestroyed')!
         })
       Button("change size").id('onSurfaceChanged_button')
         .onClick((e: ClickEvent) => {
@@ -109,12 +106,10 @@ struct onSurfaceCreated1 {
         })
       if (this.flag) {
         XComponent({
-          id: 'xcomponent_onSurface',
           type: XComponentType.TEXTURE,
-          nativeXComponentHandler: ((value0: long): void => {
-          }),
           controller: this.xComponentController
-        } as XComponentParameters)
+        } as XComponentOptions)
+          .id('xcomponent_onSurface')
           .width(this.xcWidth)
           .height(this.xcHeight)
       }

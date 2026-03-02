@@ -15,9 +15,23 @@
 import RouterPageSizeChange from './UIobserver/Router/RouterPageSizeChange.test';
 import QueryNavDestinationSize from './UIobserver/Navigation/QueryNavDestinationSize.test';
 import NavDestinationSizeUnique from './UIobserver/Navigation/NavDestinationSizeUnique.test';
+import GetStackSize from './Router/GetStackSize.test';
+import NavigationDivider from './Navigation/NavigationDivider.test';
+import NavigationAttributeNullUndefinedTest from './Navigation/NavigationAttributeNullUndefined.test';
+import NavigatorAttributeNullUndefinedTest from './navigator/NavigatorAttributeNullUndefined.test';
+import NavDestinationAttributeNullUndefinedTest from './navDestination/NavDestinationAttributeNullUndefined.test';
+import TabsControllerNullUndefined from './TabsNullUndefined/TabsControllerNullUndefined.test';
+import TabsAttributeNullUndefined from './TabsNullUndefined/TabsAttributeNullUndefined.test';
 
 export default function testsuite() {
+  GetStackSize()
   RouterPageSizeChange()
   QueryNavDestinationSize()
   NavDestinationSizeUnique()
+  NavigationDivider()
+  NavigationAttributeNullUndefinedTest()
+  NavigatorAttributeNullUndefinedTest()
+  NavDestinationAttributeNullUndefinedTest()
+  TabsControllerNullUndefined()
+  TabsAttributeNullUndefined()
 }

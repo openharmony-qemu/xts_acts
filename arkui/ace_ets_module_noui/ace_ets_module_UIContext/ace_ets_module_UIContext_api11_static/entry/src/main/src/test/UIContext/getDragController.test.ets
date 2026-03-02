@@ -28,8 +28,9 @@ interface optionsObj {
 
 export default function getDragController() {
   describe('getDragController', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getDragController beforeEach start");
+
 
       await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import router from '@ohos.router'
 import {
   Entry,Text,Column,Button,Component,AlignRuleOption,FlexDirection,ItemAlign,FlexAlign,FontWeight,$r,TextInput,TextArea,List,ListItem,Image,Grid,Builder,applyStyles,
   GridItem,Rating,MenuItemGroup,MenuItem,Menu,ImageAnimator,DatePicker,CheckboxGroup,Checkbox,Search,Counter,ColumnSplit,AlphabetIndexer,Web,Toggle,TimePicker,
-  TextPicker,StepperItem,Stepper,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,ColumnOptions,
+  TextPicker,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,ColumnOptions,
   Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,GridColColumnOption,SizeOptions,
   Blank,DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,Progress,TextTimer,TextClock,ScrollBar,RichText,QRCode,Circle,Ellipse,Line,CommonMethod,
   Polyline,Polygon,Path,Rect,Shape,Badge,Refresh,ProgressType,BarState,BadgeParamWithNumber,RelativeContainer,WaterFlow,FlowItem,HorizontalAlign,VerticalAlign
@@ -51,15 +51,14 @@ struct sizePage {
 
     AppStorage.setOrCreate<SizeOptions>('_size', { width: 0, height: 0 });
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
       this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
       this.BackGroundColor = routerParamOptions.view.BackGroundColor
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -396,19 +395,6 @@ struct sizePage {
         WaterFlow()
           .applyStyles(this.commonStyle)
           .backgroundColor(this.BackGroundColor)
-      }
-      else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem()
-        }.applyStyles(this.commonStyle)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Text('Page One')
-          }.applyStyles(this.commonStyle)
-        }
-        .width(this.parentWidth)
-        .height(this.parentHeight)
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem().applyStyles(this.commonStyle)

@@ -37,14 +37,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function getListItemRect4() {
   describe('getListItemRect4', () => {
 
-    console.info("getListItemRect4 beforeAll start");
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
-    beforeAll(() => {
-
+    beforeAll(async (): Promise<void> => {
+      console.info("getListItemRect4 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("getListItemRect4 beforeEach start");
@@ -84,10 +79,11 @@ export default function getListItemRect4() {
 it('getListItemRect4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect4_static_0100] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Visibility> =
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
-      message.notify({ name: 'index', value: 0 })
+      message.notify({ name: 'index', value: 0.0 as Double })
       message1.notify({ name: 'visibility1', value: Visibility.Visible })
       await CommonFunc.sleep(1000);
 
@@ -126,10 +122,10 @@ it('getListItemRect4_static_0100', Level.LEVEL0, async (done: () => void): Promi
 
       console.log('assert size')
       console.log('listItem_0.right - listItem_0.left' + (listItem_0.right - listItem_0.left))
-      expect(Math.abs(uiContext.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1)
+      expect(Math.abs(UIContext.resolveUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1)
         .assertTrue();
       console.log('listItem_0.bottom - listItem_0.top' + (listItem_0.bottom - listItem_0.top))
-      expect(Math.abs(uiContext.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1)
+      expect(Math.abs(UIContext.resolveUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1)
         .assertTrue();
 
       done();
@@ -146,10 +142,11 @@ it('getListItemRect4_static_0100', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect4_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect4_static_0200] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Visibility> =
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
-      message.notify({ name: 'index', value: 0 })
+      message.notify({ name: 'index', value: 0.0 as Double })
       message1.notify({ name: 'visibility1', value: Visibility.Hidden })
       await CommonFunc.sleep(1000);
 
@@ -187,10 +184,10 @@ it('getListItemRect4_static_0200', Level.LEVEL0, async (done: () => void): Promi
 
       console.log('assert size')
       console.log('listItem_0.right - listItem_0.left' + (listItem_0.right - listItem_0.left))
-      expect(Math.abs(uiContext.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1)
+      expect(Math.abs(UIContext.resolveUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1)
         .assertTrue();
       console.log('listItem_0.bottom - listItem_0.top' + (listItem_0.bottom - listItem_0.top))
-      expect(Math.abs(uiContext.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1)
+      expect(Math.abs(UIContext.resolveUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1)
         .assertTrue();
 
       done();
@@ -207,10 +204,11 @@ it('getListItemRect4_static_0200', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect4_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect4_static_0300] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Visibility> =
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
-      message.notify({ name: 'index', value: 0 })
+      message.notify({ name: 'index', value: 0.0 as Double })
       message1.notify({ name: 'visibility1', value: Visibility.None })
       await CommonFunc.sleep(1000);
 

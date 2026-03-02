@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, Color,CommonMethod, AlignRuleOption } from '@ohos.arkui.component'
@@ -562,22 +562,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  backdropBlur: number = 3
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.backdropBlur(this.backdropBlur)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  backdropBlur: number = 3
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.backdropBlur(this.backdropBlur)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   backdropBlur: number = 3
 
@@ -995,16 +979,6 @@ function commonStyle(this: StackAttribute, componentKey: string){
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string){
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string){
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string){
   this.key(componentKey)
   return this
@@ -1179,8 +1153,6 @@ struct BackdropBlurPage {
   @State _backdropBlurSliderModifier: SliderModifier = new SliderModifier()
   @State _backdropBlurSpanModifier: SpanModifier = new SpanModifier()
   @State _backdropBlurStackModifier: StackModifier = new StackModifier()
-  @State _backdropBlurStepperModifier: StepperModifier = new StepperModifier()
-  @State _backdropBlurStepperItemModifier: StepperItemModifier = new StepperItemModifier()
   @State _backdropBlurSwiperModifier: SwiperModifier = new SwiperModifier()
   @State _backdropBlurTabContentModifier: TabContentModifier = new TabContentModifier()
   @State _backdropBlurTabsModifier: TabsModifier = new TabsModifier()
@@ -1207,8 +1179,7 @@ struct BackdropBlurPage {
   @State parentBackGroundColor: Color = Color.White
   onPageShow() {
     console.info('backdropBlur translate page show called ')
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     this._backdropBlurButton = routerParamOptions.view.testValue.setValue
     this._backdropBlurButtonModifier.backdropBlur = routerParamOptions.view.testValue.setValue.backdropBlur
     console.info('backdropBlur = ' + this._backdropBlurButton.backdropBlur)
@@ -1372,32 +1343,6 @@ struct BackdropBlurPage {
           .showTips(true)
           .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurSliderModifier)
-      }
-      if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
-					.commonStyle(this.componentKey)
-          .attributeModifier(this._backdropBlurStepperModifier)
-      }
-      if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-						.backgroundColor(Color.Red)
-            .commonStyle(this.componentKey)
-            .attributeModifier(this._backdropBlurStepperItemModifier)
-        }
-					.backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
       }
       if (this.targetView == 'Text') {
         Text('text1')

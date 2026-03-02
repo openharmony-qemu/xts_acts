@@ -31,7 +31,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textAreaLetterSpacing() {
   describe('textAreaLetterSpacing', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaLetterSpacing beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -46,7 +46,7 @@ export default function textAreaLetterSpacing() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaLetterSpacing state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaLetterSpacing" == pages.name)) {
           console.info("get textAreaLetterSpacing pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

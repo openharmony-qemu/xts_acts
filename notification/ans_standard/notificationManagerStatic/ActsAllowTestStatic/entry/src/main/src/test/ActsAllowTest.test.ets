@@ -40,9 +40,9 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundle :string = 'com.example.actsnotificationmanagerrequestenablenotificationallowtest.static'
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-let subscriber: commonEventManager.CommonEventSubscriber;
+let subscriber: commonEventManager.CommonEventSubscriber | undefined;
 // 订阅者信息
 let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
   events: ["event"],
@@ -54,7 +54,7 @@ export default function ActsAllowTest() {
   describe('SUB_ACTS_ALLOW_TEST', () => {
 
     const TAG = 'SUB_ACTS_ALLOW_TEST ===>';
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -89,7 +89,7 @@ export default function ActsAllowTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100'
-        notificationManager.requestEnableNotification(testAbilityContext).then(() => {
+        notificationManager.requestEnableNotification(testAbilityContext!).then(() => {
           console.info(`${TAG} requestEnableNotification succeeded`);
         }).catch((err: Error): void => {
           console.info(`${TAG} requestEnableNotification err: JSON.stringify(err)`);
@@ -194,7 +194,7 @@ export default function ActsAllowTest() {
                 }
                 // 订阅公共事件
                 try {
-                  commonEventManager.subscribe(subscriber,
+                  commonEventManager.subscribe(subscriber!,
                     (err: BusinessError| null, data: commonEventManager.CommonEventData|undefined) => {
                       if (err) {
                         console.error(`${TAG} Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
@@ -216,7 +216,7 @@ export default function ActsAllowTest() {
         }
         await Utils.msSleep(1500)
 
-        subscriber.getSubscribeInfo().then((subscribeInfo: commonEventManager.CommonEventSubscribeInfo | null) => {
+        subscriber!.getSubscribeInfo().then((subscribeInfo: commonEventManager.CommonEventSubscribeInfo | null) => {
           console.info(`${TAG} Succeeded in getting subscribe info, subscribe info is ` + JSON.stringify(subscribeInfo));
           if (subscribeInfo !== null) {
             let info = subscribeInfo as commonEventManager.CommonEventSubscribeInfo;

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,6 +26,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -33,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function tabsJsunit() {
   describe('tabsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       
@@ -55,7 +56,7 @@ export default function tabsJsunit() {
           await CommonFunc.sleep(2000);
           // console.info("push tabs page result:" + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push tabs page error:" + err);
       }
     });
@@ -218,7 +219,7 @@ it('testTabs_static_0800', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": "false",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -226,7 +227,7 @@ it('testTabs_static_0800', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("testTabs_static_0800 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_0800 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -252,7 +253,7 @@ it('testTabs_static_0900', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "false",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -260,7 +261,7 @@ it('testTabs_static_0900', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("testTabs_static_0900 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_0900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -286,7 +287,7 @@ it('testTabs_static_1000', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "false53",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -294,7 +295,7 @@ it('testTabs_static_1000', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("testTabs_static_1000 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_1000 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -320,7 +321,7 @@ it('testTabs_static_1100', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": "39284",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -328,7 +329,7 @@ it('testTabs_static_1100', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("testTabs_static_1100 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_1100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -354,7 +355,7 @@ it('testTabs_static_1200', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": "abc123",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 214,
@@ -362,7 +363,7 @@ it('testTabs_static_1200', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("testTabs_static_1200 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_1200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -388,7 +389,7 @@ it('testTabs_static_1300', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "avc12321",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 215,
@@ -396,7 +397,7 @@ it('testTabs_static_1300', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("testTabs_static_1300 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_1300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -422,7 +423,7 @@ it('testTabs_static_1400', Level.LEVEL0, async (done: () => void): Promise<void>
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("testTabs_static_1400 get state result is: " + JSON.stringify(indexEvent));
         if (indexEvent.data != null) {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['ACTION']).assertEqual(true);
+          expect((indexEvent.data as Record<String,RecordData>)['ACTION']).assertEqual(true);
         }
         done();
       }
@@ -432,7 +433,7 @@ it('testTabs_static_1400', Level.LEVEL0, async (done: () => void): Promise<void>
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testTabs_static_1400 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("testTabs_static_1400 click result is: " +

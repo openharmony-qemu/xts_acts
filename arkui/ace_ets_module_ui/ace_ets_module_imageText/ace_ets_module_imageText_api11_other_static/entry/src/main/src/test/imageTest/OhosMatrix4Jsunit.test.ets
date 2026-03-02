@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,6 +51,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { ScaleOptions } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 
 let domain: Int = 0x0000;
@@ -92,7 +93,7 @@ export default function ohosMatrix4Jsunit() {
           // console.info("push ohosMatrix4 page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push ohosMatrix4  page error:" + err);
       }
 
@@ -179,7 +180,7 @@ it('test_OhosMatrix4_static_004', Level.LEVEL1, async (done: () => void): Promis
             "scaleValue": {
               x: 1, y: 1
             } as ScaleOptions
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 140,
@@ -187,7 +188,7 @@ it('test_OhosMatrix4_static_004', Level.LEVEL1, async (done: () => void): Promis
         }
         console.info("[test_OhosMatrix4_004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[test_OhosMatrix4_004] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -210,7 +211,7 @@ it('test_OhosMatrix4_static_005', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000)
       let callback:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("[test_OhosMatrix4_005] get event state result is: " + JSON.stringify(eventData));
-        const data = eventData.data as Record<string, undefined|null|Object>
+        const data = eventData.data as Record<String,RecordData>
         expect(data['matrix1']).assertEqual("[100, 10]")
       }
       let innerEvent: events_emitter.InnerEvent = {
@@ -219,7 +220,7 @@ it('test_OhosMatrix4_static_005', Level.LEVEL1, async (done: () => void): Promis
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (err:Error) {
+      } catch (err) {
         console.info("[test_OhosMatrix4_005] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[test_OhosMatrix4_005] sendEventByKey ' + JSON.stringify(inspector.sendEventByKey('rotate5', 10, "")));
@@ -247,7 +248,7 @@ it('test_OhosMatrix4_static_006', Level.LEVEL1, async (done: () => void): Promis
             "matrix3": {
               x: 2
             } as Matrix
-          }as Record<string, undefined|null|Object>
+          }as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 140,
@@ -255,7 +256,7 @@ it('test_OhosMatrix4_static_006', Level.LEVEL1, async (done: () => void): Promis
         }
         console.info("[test_OhosMatrix4_006] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[test_OhosMatrix4_006] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

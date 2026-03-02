@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,9 +46,9 @@ export default function getProfileByAbility() {
      * @tc.desc   Check the invalid moduleName (by promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getProfileByAbilityInvalidModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getProfileByAbilityInvalidModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility(MODULE_NAME_TEST, ABILITY_NAME, METADATA_NAME).then((data: Array<string>): void => {
         hilog.info(domain, tag, "getProfileByAbilityInvalidModulePro_static success" + JSON.stringify(data))
         expect(data).assertFail()
@@ -66,9 +66,9 @@ export default function getProfileByAbility() {
      * @tc.desc   Check the empty moduleName (by promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getProfileByAbilityEmptyModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getProfileByAbilityEmptyModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility('', ABILITY_NAME, METADATA_NAME).then((data: Array<string>): void => {
         hilog.info(domain, tag, "getProfileByAbilityEmptyModulePro_static success" + JSON.stringify(data))
         expect(data).assertFail()
@@ -288,7 +288,8 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync('INVALID_NAME', ABILITY_NAME, METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "testGetProfileByAbilitySyncByInvalidModuleName_static failed" + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
         done();
@@ -308,7 +309,8 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync(MODULE_NAME_TEST, 'INVALID_NAME', METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "testGetProfileByAbilitySyncByInvalidAbilityName_static failed" + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
         done();
@@ -328,7 +330,8 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync(MODULE_NAME, ABILITY_NAME, METADATA_NAME_TEST);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "getProfileByAbilitySyncNoProfile_static failed" + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_PROFILE_NOT_EXIST);
         done();
@@ -348,7 +351,8 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync('', ABILITY_NAME, METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "getProfileByAbilitySyncByEmptyModuleName_static failed" + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_MODULE_NOT_EXIST);
         done();
@@ -368,7 +372,8 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync(MODULE_NAME_TEST, '', METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "getProfileByAbilitySyncByEmptyAbilityName_static failed" + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
         done();

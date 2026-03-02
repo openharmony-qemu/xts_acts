@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ export default function certificateJsunit() {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLExtensionsPromise("pem", true)
         expect(data != null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -62,7 +62,7 @@ export default function certificateJsunit() {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLExtensionsPromise("der", true)
         expect(data != null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -81,7 +81,7 @@ export default function certificateJsunit() {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLExtensionsPromise("pem", false);
         console.log("############### data:" + data.data + ":" + data.data.length + ": " + typeof data)
         expect(data.data.length === 0).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -99,7 +99,7 @@ export default function certificateJsunit() {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLExtensionsPromise("der", false)
         expect(data.data.length === 0).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -117,7 +117,7 @@ export default function certificateJsunit() {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLEntryExtensionsPromise("pem", true)
         expect(data != null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -135,7 +135,7 @@ export default function certificateJsunit() {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLEntryExtensionsPromise("der", true)
         expect(data != null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -153,7 +153,7 @@ export default function certificateJsunit() {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLEntryExtensionsPromise("pem", false)
         expect(data.data.length === 0).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -171,7 +171,7 @@ export default function certificateJsunit() {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLEntryExtensionsPromise("der", false)
         expect(data.data.length === 0).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -190,7 +190,7 @@ export default function certificateJsunit() {
         let data: boolean = await certPromise.checkHasX509CRLEntryExtensionsPromise("pem", true)
         expect(data != null).assertTrue();
         expect(data).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -209,7 +209,7 @@ export default function certificateJsunit() {
         let data: boolean = await certPromise.checkHasX509CRLEntryExtensionsPromise("der", true)
         expect(data != null).assertTrue();
         expect(data).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -228,7 +228,7 @@ export default function certificateJsunit() {
         let data: boolean = await certPromise.checkHasX509CRLEntryExtensionsPromise("pem", false)
         expect(data != null).assertTrue();
         expect(!data).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -247,7 +247,7 @@ export default function certificateJsunit() {
         let data: boolean = await certPromise.checkHasX509CRLEntryExtensionsPromise("der", false)
         expect(data != null).assertTrue();
         expect(!data).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -266,7 +266,7 @@ export default function certificateJsunit() {
         let data: boolean = await certPromise.checkHasUnsupportedX509CrlPromise('certNoCritical')
         expect(data != null).assertTrue();
         expect(!data).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -285,7 +285,7 @@ export default function certificateJsunit() {
         let data: boolean = await certPromise.checkHasUnsupportedX509CrlPromise('certHasCritical')
         expect(data != null).assertTrue();
         expect(data).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }

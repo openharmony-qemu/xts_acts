@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -36,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SearchJsunit() {
   describe('SearchJsunit', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")
     });
@@ -61,11 +62,7 @@ export default function SearchJsunit() {
       }
       console.info("SearchJsunit beforeEach end");
     });
-    afterEach(() => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
-      await CommonFunc.sleep(2000);
-    })
+
     /**
      * @tc.number   SearchJsunit_static_0100
      * @tc.name     SearchJsunit_static_0100
@@ -121,8 +118,9 @@ it('SearchJsunit_static_0200', Level.LEVEL0, async (done: () => void) => {
       'placeholder':'Type to search...',
       'textFont':{size:'14.00fp',style:FontStyle.Normal,weight:400,family:"HarmonyOS Sans"} as Font,
         'textAlign':TextAlign.Center,
-        'copyOption':CopyOptions.LocalDevice
-    } as Record<String,undefined|null|Object>
+        'copyOption':CopyOptions.LocalDevice,
+      "positionValue":2 as int
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -170,7 +168,7 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
   let eventData: events_emitter.EventData = {
     data: {
       'changeValue':'',
-      } as Record<String,undefined|null|Object>
+      } as Record<String,RecordData>
     }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -284,7 +282,7 @@ it('SearchJsunit_static_0400', Level.LEVEL0, async (done: () => void) => {
       'textFont':{size:"16.00fp",style:FontStyle.Normal,weight:FontWeight.Normal,family:"HarmonyOS Sans"} as Font,
       'textAlign':TextAlign.Start,
       'copyOption':CopyOptions.None
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,

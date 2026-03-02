@@ -44,7 +44,7 @@ export default function SXsymbolSpanStyleJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get SXsymbolSpanStyleJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SXsymbolSpanStyle" == pages.name)) {
           console.info("get SXsymbolSpanStyleJsunit pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
@@ -57,7 +57,7 @@ export default function SXsymbolSpanStyleJsunit() {
       }
       console.info("SXsymbolSpanStyleJsunit beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SXsymbolSpanStyleJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

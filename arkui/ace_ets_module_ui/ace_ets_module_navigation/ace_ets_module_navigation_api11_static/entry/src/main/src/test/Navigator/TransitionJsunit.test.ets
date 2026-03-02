@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,12 +27,13 @@ import { UtilsTest, startAbility } from '../Util.test';
 import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 interface Acton {
   btn1: boolean
 }
 export default function transitionJsunit() {
   describe('transitionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });
@@ -124,7 +125,7 @@ it('transitionTest_static_0300', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "opacity": 2,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 233,
@@ -157,7 +158,7 @@ it('transitionTest_static_0400', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "opacity": 1,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 233,

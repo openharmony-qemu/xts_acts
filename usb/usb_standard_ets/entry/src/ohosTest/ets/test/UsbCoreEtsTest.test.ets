@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -251,7 +251,15 @@ export default function UsbCoreEtsTest() {
 
       gPipe = usbMgr.connectDevice(devices);
       console.info(TAG, 'usb case testConnectDevice001 ret: ' + JSON.stringify(gPipe));
+      console.info(TAG, 'usb case testConnectDevice001 gPipe: ' + typeof(gPipe));
+      console.info(TAG, 'usb case testConnectDevice001 busNum: ' + typeof(gPipe.busNum));
+      console.info(TAG, 'usb case testConnectDevice001 devAddress: ' + typeof(gPipe.devAddress));
       expect(CheckEmptyUtils.isEmpty(gPipe)).assertFalse();
+      expect(typeof(gPipe)).assertEqual("object");
+      expect(typeof(gPipe.busNum)).assertEqual("number");
+      expect(typeof(gPipe.devAddress)).assertEqual("number");
+      expect(gPipe.busNum > 0).assertTrue();
+      expect(gPipe.devAddress > 0).assertTrue();
       toClosePipe('testConnectDevice001');
     })
 
@@ -374,6 +382,8 @@ export default function UsbCoreEtsTest() {
       getPipe('testGetRawDescriptor001');
       let descriptor = usbMgr.getRawDescriptor(gPipe);
       console.info(TAG, 'usb case testGetRawDescriptor001 ret: ' + JSON.stringify(descriptor));
+      console.info(TAG, 'usb case testGetRawDescriptor001 descriptor: ' + typeof(descriptor));
+      expect(typeof(descriptor)).assertEqual("object");
       expect(descriptor.length).assertLarger(0);
       toClosePipe('testGetRawDescriptor001');
     })

@@ -45,7 +45,7 @@ export default function MarkAnchorTest() {
     'List', 'Row', 'Scroll', 'Stack', 'Tabs', 'Circle', 'Ellipse', 'Line',
     'Polyline', 'Polygon', 'Path', 'Rect', 'Shape',
     'Refresh', 'TabContent', 'ListItem',
-    'RelativeContainer', 'Swiper', 'Navigator', 'TextTimer', 'GridCol',
+    'RelativeContainer', 'Swiper', 'TextTimer', 'GridCol',
     'GridItem', 'ScrollBar', 'Menu', 'MenuItem', 'MenuItemGroup',
     'ListItemGroup'
   )
@@ -111,7 +111,7 @@ export default function MarkAnchorTest() {
   ]
 
   describe('MarkAnchorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("markAnchorTest beforeAll start");
       
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

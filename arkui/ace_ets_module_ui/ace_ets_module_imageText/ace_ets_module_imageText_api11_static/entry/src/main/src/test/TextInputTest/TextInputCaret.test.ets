@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function textInput_caret() {
   describe('textInput_caret', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInput_caret beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -52,7 +52,7 @@ export default function textInput_caret() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textInput_caret state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInput_caret" == pages.name)) {
           console.info("get textInput_caret pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

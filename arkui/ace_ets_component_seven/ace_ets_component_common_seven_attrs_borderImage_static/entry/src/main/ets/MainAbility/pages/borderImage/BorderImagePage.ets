@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute, AlignRuleOption,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderImageOption, GradientDirection, RepeatMode } from '@ohos.arkui.component'
@@ -1278,44 +1278,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-	mBorderImage: BorderImageOption = {
-		source: { angle: 13,
-			direction: GradientDirection.Right,
-			colors: [[0xAEE1E2, 0.1], [0xD3E0DD, 0.4], [0xFCD1D6, 0.4]]
-		},
-		slice: 28,
-		width: 66,
-		repeat: RepeatMode.Stretch,
-		outset: 4,
-		fill: true
-	}
-
-
-	applyNormalAttribute(instance: StepperAttribute): void {
-		instance.borderImage(this.mBorderImage)
-	}
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-	mBorderImage: BorderImageOption = {
-		source: { angle: 13,
-			direction: GradientDirection.Right,
-			colors: [[0xAEE1E2, 0.1], [0xD3E0DD, 0.4], [0xFCD1D6, 0.4]]
-		},
-		slice: 28,
-		width: 66,
-		repeat: RepeatMode.Stretch,
-		outset: 4,
-		fill: true
-	}
-
-
-	applyNormalAttribute(instance: StepperItemAttribute): void {
-		instance.borderImage(this.mBorderImage)
-	}
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mBorderImage: BorderImageOption = {
 		source: { angle: 13,
@@ -1901,16 +1863,6 @@ function commonStyle(this: StackAttribute, componentKey: string){
 	return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string){
-	this.key(componentKey)
-	return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string){
-	this.key(componentKey)
-	return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string){
 	this.key(componentKey)
 	return this
@@ -2089,8 +2041,6 @@ struct BorderImagePage {
 	@State _borderImageSliderModifier: SliderModifier = new SliderModifier()
 	@State _borderImageSpanModifier: SpanModifier = new SpanModifier()
 	@State _borderImageStackModifier: StackModifier = new StackModifier()
-	@State _borderImageStepperModifier: StepperModifier = new StepperModifier()
-	@State _borderImageStepperItemModifier: StepperItemModifier = new StepperItemModifier()
 	@State _borderImageSwiperModifier: SwiperModifier = new SwiperModifier()
 	@State _borderImageTabContentModifier: TabContentModifier = new TabContentModifier()
 	@State _borderImageTabsModifier: TabsModifier = new TabsModifier()
@@ -2118,10 +2068,9 @@ struct BorderImagePage {
 
 	onPageShow() {
 		console.info('borderImage translate page show called ')
-		let routerParamOptions = new RouterParams();
-		routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+		let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
 		this.borderImageButton = routerParamOptions.view.testValue.setValue
-		const viewElement = JSON.parseJsonElement(JSON.stringify(routerParamOptions))
+		const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
 			.getElement("view")
 		this.targetView = viewElement.getString("targetView")
 		this.componentKey = viewElement.getString("componentKey")
@@ -2195,8 +2144,6 @@ struct BorderImagePage {
 			this._borderImageSliderModifier.mBorderImage = value.borderImage!;
 			this._borderImageSpanModifier.mBorderImage = value.borderImage!;
 			this._borderImageStackModifier.mBorderImage = value.borderImage!;
-			this._borderImageStepperModifier.mBorderImage = value.borderImage!;
-			this._borderImageStepperItemModifier.mBorderImage = value.borderImage!;
 			this._borderImageSwiperModifier.mBorderImage = value.borderImage!;
 			this._borderImageTabContentModifier.mBorderImage = value.borderImage!;
 			this._borderImageTabsModifier.mBorderImage = value.borderImage!;
@@ -2366,32 +2313,6 @@ struct BorderImagePage {
 					.showTips(true)
 					.commonStyle(this.componentKey)
 					.attributeModifier(this._borderImageSliderModifier)
-			}
-			if (this.targetView == 'Stepper') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._borderImageStepperModifier)
-			}
-			if (this.targetView == 'StepperItem') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-						.backgroundColor(Color.Red)
-						.commonStyle(this.componentKey)
-						.attributeModifier(this._borderImageStepperItemModifier)
-				}
-					.backgroundColor(Color.Yellow)
-					.width('100%')
-					.height('100%')
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')

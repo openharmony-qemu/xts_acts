@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,8 +32,18 @@ export async function createX509CertPem(input: string): Promise<cert.X509Cert> {
     let x509Cert: cert.X509Cert = await cert.createX509Cert(EncodingBlob);
 
     return x509Cert;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] createX509CertPem ${error}, error code: ${error.code}`);
     throw error as Error;
   }
+}
+
+export async function sleep(timeout: int): Promise<int> {
+  let st = 0;
+  return new Promise<int>((resolve, reject) => {
+    st = setTimeout(() => {
+      resolve(0);
+      clearTimeout(st);
+    }, timeout);
+  });
 }

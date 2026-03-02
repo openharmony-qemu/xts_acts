@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,9 +44,9 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
      * @tc.desc   AsyKeyGenerator with algName X25519
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Security_CryptoFramework_Agreement_ECC_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it("SUB_Security_CryptoFramework_Agreement_ECC_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_ECC_Func_0100";
       console.log(testNumber + ": started.");
       let param: string = "X25519";
@@ -58,7 +58,7 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -83,7 +83,7 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, true, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -111,7 +111,7 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
         let res: boolean = await agreementAsyCallbackFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -134,7 +134,7 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
       try {
         let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(agreementAlg);
         expect(agreement.algName == agreementAlg).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -157,8 +157,8 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
       try {
         let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(agreementAlg);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 801).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 801).assertTrue();
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
       }
       console.log(testNumber + ": succeed");
@@ -180,8 +180,8 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
       try {
         let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(agreementAlg);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 401).assertTrue();
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
       }
       console.log(testNumber + ": succeed");
@@ -210,8 +210,8 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
         let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(agreementAlg);
         await agreement.generateSecret(keyPair.priKey, keyPair.pubKey);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 17630001).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 17630001).assertTrue();
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
       }
       console.log(testNumber + ": succeed");

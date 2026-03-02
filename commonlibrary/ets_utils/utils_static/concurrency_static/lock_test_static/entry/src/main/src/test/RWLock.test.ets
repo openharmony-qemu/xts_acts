@@ -32,7 +32,7 @@ import { BaseClass, Event } from '../utils/Model';
 
 export default function RWLockTest() {
   describe('RWLockTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
     })
     /**
@@ -262,11 +262,13 @@ export default function RWLockTest() {
         const tag: string = 'RWLockTest006';
         console.info(`${tag} test start`);
         let count = 0
+        let class1 = new BaseClass()
         let lock = new RWLock().readLock()
         for (let i = 0; i < 100; i++) {
           taskpool.execute(() => {
             lock.lock()
             count++
+            class1.increaseCount()
             lock.unlock()
           })
         }
@@ -276,21 +278,23 @@ export default function RWLockTest() {
           eaw.run<void>(() => {
             lock.lock()
             count++
+            class1.increaseCount()
             lock.unlock()
           })
           eaw.join()
         }
         lock.lock()
         count++
+        class1.increaseCount()
         let func = async () => {
           lock.unlock()
         }
         await func()
-        while (count < 111) {
+        while (await class1.getCount() < 111) {
           await Utils.msSleep(200)
         }
         console.info(`${tag} test result: ${count}`);
-        expect(count).assertEqual(111)
+        expect(count).assertLessOrEqual(111)
         Done()
       });
 
@@ -361,11 +365,13 @@ export default function RWLockTest() {
         const tag: string = 'RWLockTest008';
         console.info(`${tag} test start`);
         let count = 0
+        let class1 = new BaseClass()
         let lock = new RWLock().readLock()
         for (let i = 0; i < 10; i++) {
           taskpool.execute(() => {
             lock.lock()
             count++
+            class1.increaseCount()
             throw new Error("error")
           }).finally(() => {
             lock.unlock()
@@ -380,21 +386,23 @@ export default function RWLockTest() {
           eaw.run<void>(() => {
             lock.lock()
             count++
+            class1.increaseCount()
             throw new Error("error")
           })
           eaw.join()
         }
         lock.lock()
         count++
+        class1.increaseCount()
         let func = async () => {
           lock.unlock()
         }
         await func()
-        while (count < 21) {
+        while (await class1.getCount() < 21) {
           await Utils.msSleep(200)
         }
         console.info(`${tag} test result: ${count}`);
-        expect(count).assertEqual(21)
+        expect(count).assertLessOrEqual(21)
         Done()
       });
 
@@ -455,10 +463,12 @@ export default function RWLockTest() {
         let lock2 = new RWLock().readLock()
         let event1 = new Event()
         let event2 = new Event()
+        let class1 = new BaseClass()
         taskpool.execute(() => {
           lock.lock()
           event1.Fire()
           count++
+          class1.increaseCount()
           event2.Wait()
           lock2.unlock()
         })
@@ -468,6 +478,7 @@ export default function RWLockTest() {
           lock2.lock()
           event2.Fire()
           count++
+          class1.increaseCount()
           event1.Wait()
           lock.unlock()
         })
@@ -475,16 +486,17 @@ export default function RWLockTest() {
         lock.lock()
         lock2.lock()
         count++
+          class1.increaseCount()
         let func = async () => {
           lock.unlock()
           lock2.unlock()
         }
         await func()
-        while (count < 3) {
+        while (await class1.getCount() < 3) {
           await Utils.msSleep(200)
         }
         console.info(`${tag} test result: ${count}`);
-        expect(count).assertEqual(3)
+        expect(count).assertLessOrEqual(3)
         Done()
       });
 

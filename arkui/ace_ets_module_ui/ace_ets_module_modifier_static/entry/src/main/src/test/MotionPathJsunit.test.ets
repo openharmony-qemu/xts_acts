@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,12 +28,13 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from './Util.test';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 interface Action {
   ACTION: boolean
 }
 export default function motionPathJsunit() {
   describe('common_motionPathTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 
@@ -76,7 +77,7 @@ it('motionPathTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
      await UtilsTest.msSleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("motionPathTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-        const indexdata = indexEvent.data as Record<String,undefined|null|Object>
+        const indexdata = indexEvent.data as Record<String,RecordData>
         expect(indexdata['ACTION'] as boolean).assertEqual(true);
         done();
       }

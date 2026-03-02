@@ -25,7 +25,7 @@ import inspector from '@ohos.arkui.inspector'
 
 export default function ratingOnChangeModifierTest() {
   describe('ratingOnChangeModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ratingOnChangeModifierTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")
@@ -59,6 +59,11 @@ export default function ratingOnChangeModifierTest() {
 
     afterEach(async () => {
       await CommonFunc.sleep(1000);
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      let options: router.RouterOptions = {
+        url:'MainAbility/pages/index/index',
+      }
+      routerInstance.pushUrl(options);
       console.info('ratingOnChangeModifier after each called');
     })
    

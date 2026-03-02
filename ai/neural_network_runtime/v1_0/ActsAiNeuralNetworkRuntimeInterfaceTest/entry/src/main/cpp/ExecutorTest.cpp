@@ -58,6 +58,10 @@ int SubAiNnRtFuncNorthExecutorCreate0100()
 int SubAiNnRtFuncNorthExecutorCreate0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Create_0200 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {

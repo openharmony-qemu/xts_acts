@@ -59,7 +59,7 @@ export default function sizeTest() {
     'ScrollBar',
     'Rating',
     'Search',
-    'RichText',
+    // 'RichText',
     'Slider',
     'Text',
     'TextArea',
@@ -76,7 +76,6 @@ export default function sizeTest() {
     'Grid',
     'List',
     'ListItem',
-    'Panel',
     'Refresh',
     'Row',
     'Scroll',
@@ -93,7 +92,6 @@ export default function sizeTest() {
     'Line',
     'GridItem',
     'RelativeContainer',
-    'Navigator',
     'Menu',
     'MenuItem',
   )
@@ -188,7 +186,7 @@ export default function sizeTest() {
    * Create test suite.
    */
   describe('SizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SizeTest beforeEach start");
 
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

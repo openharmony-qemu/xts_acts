@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const ERRCODE = 801;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let sqlStatement = "CREATE TABLE IF NOT EXISTS employee (" +
   "id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -45,7 +45,7 @@ sqlStatement = "CREATE TABLE IF NOT EXISTS product (" +
   "vendor INTEGER," + "describe TEXT)"
 const TAG = "testTag"
 const STORE_NAME = "distributed_rdb.db"
-let rdbStore: data_Rdb.RdbStore;
+let rdbStore: data_Rdb.RdbStore | undefined;
 let config: data_Rdb.StoreConfig = {
   "name": STORE_NAME,
   securityLevel: data_Rdb.SecurityLevel.S1
@@ -127,16 +127,16 @@ export default function relationalStoreDistributedTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
-      rdbStore = await data_Rdb.getRdbStore(context, config);
+      rdbStore = await data_Rdb.getRdbStore(context!, config);
       console.info(TAG + "create RelationalStore store success");
-      await executeSql1(rdbStore);
-      await executeSql2(rdbStore);
-      await executeSql3(rdbStore);
+      await executeSql1(rdbStore!);
+      await executeSql2(rdbStore!);
+      await executeSql3(rdbStore!);
     })
 
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach')
-      await data_Rdb.deleteRdbStore(context, config);
+      await data_Rdb.deleteRdbStore(context!, config);
     })
 
     afterAll(async (): Promise<void> => {
@@ -426,7 +426,8 @@ export default function relationalStoreDistributedTest() {
         try {
           await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PULL, predicates);
           expect(true).assertFail();
-        } catch(err:BusinessError) {
+        } catch(err) {
+          err = err as BusinessError;
           console.info(TAG + "testRdbStoreDistributed0011-2 err.code:" + err.code + " err.msg:" + err.message);
           expect(err.code).assertEqual(14800000);
         }
@@ -574,7 +575,7 @@ export default function relationalStoreDistributedTest() {
         let predicates = new data_Rdb.RdbPredicates("employee");
         predicates = predicates.inDevices(["12345678abcd"]);
         console.info(TAG + `SYNC_MODE_TIME_FIRST = ` + data_Rdb.SyncMode.SYNC_MODE_TIME_FIRST);
-        expect(data_Rdb.SyncMode.SYNC_MODE_TIME_FIRST).assertEqual(2);
+        expect(data_Rdb.SyncMode.SYNC_MODE_TIME_FIRST).assertEqual(4);
         console.info(TAG + "DATA_CHANGE = " + data_Rdb.ChangeType.DATA_CHANGE);
         expect(data_Rdb.ChangeType.DATA_CHANGE).assertEqual(0);
         console.info(TAG + "ASSET_CHANGE = " + data_Rdb.ChangeType.ASSET_CHANGE);
@@ -604,7 +605,7 @@ export default function relationalStoreDistributedTest() {
         let predicates = new data_Rdb.RdbPredicates("employee")
         predicates = predicates.inDevices(["12345678abcd"]);
         console.info(TAG + `SYNC_MODE_NATIVE_FIRST = ` + data_Rdb.SyncMode.SYNC_MODE_NATIVE_FIRST);
-        expect(data_Rdb.SyncMode.SYNC_MODE_NATIVE_FIRST).assertEqual(3);
+        expect(data_Rdb.SyncMode.SYNC_MODE_NATIVE_FIRST).assertEqual(5);
         try {
           rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_NATIVE_FIRST, predicates, (err, result) => {
             expect(true).assertFail();
@@ -629,7 +630,7 @@ export default function relationalStoreDistributedTest() {
         let predicates = new data_Rdb.RdbPredicates("employee")
         predicates = predicates.inDevices(["12345678abcd"]);
         console.info(TAG + `SYNC_MODE_CLOUD_FIRST = ` + data_Rdb.SyncMode.SYNC_MODE_CLOUD_FIRST);
-        expect(data_Rdb.SyncMode.SYNC_MODE_CLOUD_FIRST).assertEqual(4);
+        expect(data_Rdb.SyncMode.SYNC_MODE_CLOUD_FIRST).assertEqual(6);
         try {
           rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates, (err, result) => {
             expect(true).assertFail();
@@ -786,23 +787,25 @@ export default function relationalStoreDistributedTest() {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
+        console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_025 start *************');
         try {
           rdbStore!.setDistributedTables(['employee'], data_Rdb.DistributedType.DISTRIBUTED_DEVICE,
             (err: BusinessError | null, ret: Array<[String, Int]> | undefined) => {
               if (err) {
                 console.error(TAG + `SetDistributedTables failed, code is ${err.code},message is ${err.message}`);
                 expect(null).assertFail();
+                console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_025 end *************');
                 done();
               }
               console.info(TAG + `SetDistributedTables successfully.`);
               expect(err == undefined).assertTrue();
+              console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_025 end *************');
               done();
             })
         } catch (err) {
           console.info(TAG + "set employee to be distributed table failed");
           expect(null).assertFail();
         }
-        done();
       })
 
     /**
@@ -815,23 +818,25 @@ export default function relationalStoreDistributedTest() {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
+        console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_026 start *************');
         try {
           rdbStore!.setDistributedTables(['test'], data_Rdb.DistributedType.DISTRIBUTED_CLOUD,
             (err: BusinessError | null, ret: Array<[String, Int]> | undefined) => {
               if (err) {
                 console.error(TAG + `SetDistributedTables failed, code is ${err.code},message is ${err.message}`);
                 expect(null).assertFail();
+                console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_026 end *************');
                 done();
               }
               console.info(TAG + `SetDistributedTables successfully.`);
               expect(err == undefined).assertTrue();
+              console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_026 end *************');
               done();
             })
         } catch (err) {
           console.info(TAG + "set employee and product to be distributed table failed");
           expect(null).assertFail();
         }
-        done();
       })
 
     /**

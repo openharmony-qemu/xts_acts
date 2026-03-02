@@ -250,7 +250,7 @@ export default function requestSpecialUnitTest() {
               console.info('====>Download_Test_0300 delete files success');
               await downloadTask.delete();
               console.info('====>Download_Test_0300 delete downloadTask');
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               done();
             } catch (err) {
               console.info("====>Download_Test_0300 fail error: " + JSON.stringify(err));

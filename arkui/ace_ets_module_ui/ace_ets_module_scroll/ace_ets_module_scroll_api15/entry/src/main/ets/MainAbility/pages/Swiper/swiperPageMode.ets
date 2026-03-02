@@ -32,31 +32,30 @@ struct SwiperDemo1 {
 
   build() {
     Column({ space: 5 }) {
-      Text('PageFlipMode: ' + this.text1)
+      Text('PageFlipMode: ' + this.text1).height('5%')
       Button('单次翻页')
         .id('swiper_PageMode_single')
         .onClick(()=>{
           this.text1 = 'SINGLE'
           this.PageFlipMode1 == PageFlipMode.SINGLE
-        })
+        }).height('5%')
       Button('连续翻页')
         .id('swiper_PageMode_continuous')
         .onClick(()=>{
           this.text1 = 'CONTINUOUS'
           this.PageFlipMode1 == PageFlipMode.CONTINUOUS
-        })
+        }).height('5%')
 
       Text('' + this.onChange)
         .id('swiper_PageMode_onChange')
         .onClick(()=>{
           this.currentIndex = 0
-        })
+        }).height('5%')
 
       Swiper(this.swiperController) {
         LazyForEach(this.data, (item: string) => {
           Text(item.toString())
             .width('90%')
-            .height(160)
             .backgroundColor(0xAFEEEE)
             .textAlign(TextAlign.Center)
             .fontSize(30)
@@ -64,6 +63,7 @@ struct SwiperDemo1 {
       }
       .id('swiper_pageFlipMode')
       .width('80%')
+      .height('50%')
       .index(this.currentIndex)
       .pageFlipMode(this.PageFlipMode1)
       .cachedCount(2)

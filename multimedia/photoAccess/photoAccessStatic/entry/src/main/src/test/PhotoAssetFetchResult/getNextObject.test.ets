@@ -34,7 +34,7 @@ export default function assetGetNextObjectTest() {
     let getNextObjectCallbackTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions): Promise<void> => {
       try {
-        let fetchResult = await helper.getAssets(fetchOps);
+        let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
         expect(fetchResult.getCount()).assertEqual(2);
         await fetchResult.getFirstObject();
         fetchResult.getNextObject((err: BusinessError | null, asset) => {
@@ -61,7 +61,7 @@ export default function assetGetNextObjectTest() {
     let getNextObjectPromiseTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions) => {
         try {
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           expect(fetchResult.getCount()).assertEqual(2);
           let asset = await fetchResult.getFirstObject();
           asset = await fetchResult.getNextObject();
@@ -96,7 +96,7 @@ export default function assetGetNextObjectTest() {
       async (done: () => void): Promise<void> => {
         const testNum = 'getNextObject_callback_static_000';
         const predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE).limit(2, 0);
+        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE as long).limit(2, 0);
         const fetchOps: photoAccessHelper.FetchOptions = {
           fetchColumns: new Array<string>(),
           predicates: predicates
@@ -117,7 +117,7 @@ export default function assetGetNextObjectTest() {
       async (done: () => void): Promise<void> => {
         const testNum = 'getNextObject_promise_static_000';
         const predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE).limit(2, 0);
+        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE as long).limit(2, 0);
         const fetchOps: photoAccessHelper.FetchOptions = {
           fetchColumns: new Array<string>(),
           predicates: predicates
@@ -139,7 +139,7 @@ export default function assetGetNextObjectTest() {
       async (done: () => void): Promise<void> => {
         const testNum = 'getNextObject_callback_static_001';
         const predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.VIDEO).limit(2, 0);
+        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.VIDEO as long).limit(2, 0);
         const fetchOps: photoAccessHelper.FetchOptions = {
           fetchColumns: new Array<string>(),
           predicates: predicates
@@ -160,7 +160,7 @@ export default function assetGetNextObjectTest() {
       async (done: () => void): Promise<void> => {
         const testNum = 'getNextObject_promise_static_001';
         const predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.VIDEO).limit(2, 0);
+        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.VIDEO as long).limit(2, 0);
         const fetchOps: photoAccessHelper.FetchOptions = {
           fetchColumns: new Array<string>(),
           predicates: predicates

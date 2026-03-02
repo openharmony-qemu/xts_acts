@@ -53,13 +53,9 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSpaceResourceTest() {
   describe('ColumnSpaceResourceTest', () => {
-    await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")
-    const uiContext = AppStorage.get<UIContext>('uiContext')!;
-
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")
       console.info("ColumnSpaceResourceTest beforeAll start");
-
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -101,6 +97,7 @@ export default function ColumnSpaceResourceTest() {
      */
 it('ColumnSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ColumnSpaceResourceTest_0100] START');
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('ColumnSpaceResource_Column1');
@@ -136,6 +133,7 @@ it('ColumnSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void)
      */
 it('ColumnSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ColumnSpaceResourceTest_0200] START');
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('ColumnSpaceResource_Column2');
@@ -171,6 +169,7 @@ it('ColumnSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void)
      */
 it('ColumnSpaceResourceTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ColumnSpaceResourceTest_0300] START');
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('ColumnSpaceResource_Column3');

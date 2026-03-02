@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,8 +17,8 @@
 import router from '@ohos.router'
 import {
   Entry,Text,Column,Button,Component,FlexDirection,ItemAlign,ImageFit,FlexAlign,FontWeight,$r,TextInput,TextArea,List,ListItem,Search,Image,Grid,
-  GridItem,Rating,MenuItemGroup,MenuItem,Menu,ImageAnimator,DatePicker,CheckboxGroup,Checkbox,Search,Counter,ColumnSplit,AlphabetIndexer,Web,Toggle,TimePicker,TextPicker,StepperItem,
-  Stepper,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,FlexAlign,
+  GridItem,Rating,MenuItemGroup,MenuItem,Menu,ImageAnimator,DatePicker,CheckboxGroup,Checkbox,Search,Counter,ColumnSplit,AlphabetIndexer,Web,Toggle,TimePicker,TextPicker,
+  Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,FlexAlign,
   ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,
   GridColColumnOption,Rectangle,Blank,DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,Progress,QRCode,ScrollBar,SliderStyle,TextClock,TextTimer,
   Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,Refresh,RelativeContainer,BarState,WaterFlow,ProgressType,
@@ -60,8 +60,7 @@ struct ResponseRegionPage {
     // })
 
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', routerParamOptions.view.testValue.setValue as Array<Rectangle>)
       AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
       AppStorage.setOrCreate<string>('eventCallBackStr', '')
@@ -71,7 +70,7 @@ struct ResponseRegionPage {
       this.targetWidth = routerParamOptions.view.targetWidth
       this.targetHeight = routerParamOptions.view.targetHeight
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -202,15 +201,6 @@ struct ResponseRegionPage {
           })
             .showTips(true)
             .applyStyles(this.commonStyle)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-			.nextLabel('')
-          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -471,19 +461,6 @@ struct ResponseRegionPage {
               }
             }
           }.applyStyles(this.commonStyle)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .applyStyles(this.commonStyle)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

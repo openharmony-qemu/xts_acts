@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function RichEditorShortCutKeys006() {
   describe('RichEditorShortCutKeys006', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorShortCutKeys006 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -118,8 +118,21 @@ export default function RichEditorShortCutKeys006() {
         styleText = await style.getText();
         await CommonFunc.sleep(500);
         console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0012 styleText', styleText);
-        expect(styleText).assertContain('"value":"b","textStyle":{"fontSize":35,"fontColor":"#FF000000","fontStyl' +
-          'e":0,"decoration":{"type":0,"color":"#FF000000","style":0},"fontFamily":"HarmonyOS Sans","fontWeight":10,"lineHeight":0,"halfLeading":false,"strokeColor":"#FF000000","strokeWidth":0,"letterSpacing":0},"previewText":""');
+        expect(styleText).assertContain('"value":"b"')
+        expect(styleText).assertContain('"fontSize":35')
+        expect(styleText).assertContain('"fontColor":"#FF000000"')
+        expect(styleText).assertContain('"fontStyle":0')
+        expect(styleText).assertContain('"type":0')
+        expect(styleText).assertContain('"color":"#FF000000"')
+        expect(styleText).assertContain('"style":0')
+        expect(styleText).assertContain('"fontFamily":"HarmonyOS Sans"')
+        expect(styleText).assertContain('"fontWeight":10')
+        expect(styleText).assertContain('"lineHeight":0')
+        expect(styleText).assertContain('"halfLeading":false')
+        expect(styleText).assertContain('"strokeColor":"#FF000000"')
+        expect(styleText).assertContain('"strokeWidth":0')
+        expect(styleText).assertContain('"letterSpacing":0')
+        expect(styleText).assertContain('"previewText":""')
         done();
       });
 

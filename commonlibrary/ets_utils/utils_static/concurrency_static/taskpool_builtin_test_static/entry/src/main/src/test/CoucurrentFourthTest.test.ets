@@ -19,7 +19,6 @@ import { testRegExpToString1,
   testRegExpTest1,
   testRegExpConstructor1,
   testRegExpInstanceDotAll1,
-  testRegExpStaticProps1,
   testBigIntValueOf1,
   testUndefinedLiteral1,
   testBigIntToString1,
@@ -41,7 +40,7 @@ export default function supplyTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(20);
+      await sleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

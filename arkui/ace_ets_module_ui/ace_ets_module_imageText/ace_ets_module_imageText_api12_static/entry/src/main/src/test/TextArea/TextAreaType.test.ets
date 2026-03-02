@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextAreaTypeTest() {
   describe('TextAreaTypeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaTypeTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function TextAreaTypeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextAreaTypeTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextAreaType" == pages.name)) {
           console.info("get TextAreaTypeTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

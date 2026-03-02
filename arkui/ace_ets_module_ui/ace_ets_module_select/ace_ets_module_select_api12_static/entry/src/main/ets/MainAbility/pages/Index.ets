@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,6 +44,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 
 @Entry
@@ -63,7 +64,7 @@ struct SelectExample {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("selectTest stateChangCallBack before:" + JSON.stringify(eventData));
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
 
       if (data['spaceValue']) {
         this.spaceValue = Number(data['spaceValue']!.toString())
@@ -90,7 +91,7 @@ struct SelectExample {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
 

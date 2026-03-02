@@ -62,12 +62,13 @@ struct WordListSample {
   }
 
   build() {
-    Column({ space: 10 }) {
-      List({ space: 5}) {
+    Column() {
+      List() {
         ForEach(this.wordsGroup, (item: WordGroup) => {
           ForEach(item.words, (word: string) => {
             ListItem({ style: ListItemStyle.NONE }) {
               Button('Item_' + item.title + '_' + word)
+                .height('5%')
                 .backgroundColor(Color.Green)
                 .onClick(() => {
                   console.info('WordListSample group:' + this.wordsGroup.indexOf(item) + ' ' +
@@ -84,6 +85,7 @@ struct WordListSample {
         // group not exist
         ListItem({ style: ListItemStyle.NONE }) {
           Button('Item_GroupNo_Not' + '_' + 'Exsit')
+            .height('5%')
             .backgroundColor(Color.Red)
             .onClick(() => {
               this.listScroller.scrollToItemInGroup(
@@ -96,6 +98,7 @@ struct WordListSample {
         // index not exist
         ListItem({ style: ListItemStyle.NONE }) {
           Button('Item_IndexNo_Not' + '_' + 'Exsit')
+            .height('5%')
             .backgroundColor(Color.Red)
             .onClick(() => {
               this.listScroller.scrollToItemInGroup(

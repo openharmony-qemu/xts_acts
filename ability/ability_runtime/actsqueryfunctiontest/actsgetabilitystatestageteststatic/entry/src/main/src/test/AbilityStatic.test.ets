@@ -29,9 +29,9 @@ export default function abilityTest() {
      * @tc.desc   AbilityLifecycleState EnumValue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('ACTS_GetAbilityState_Static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('ACTS_GetAbilityState_Static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '====>start ACTS_GetAbilityState_Static_0700====');
       expect(abilityDelegatorRegistry.AbilityLifecycleState.UNINITIALIZED + '').assertEqual('0');
       expect(abilityDelegatorRegistry.AbilityLifecycleState.CREATE + '').assertEqual('1');

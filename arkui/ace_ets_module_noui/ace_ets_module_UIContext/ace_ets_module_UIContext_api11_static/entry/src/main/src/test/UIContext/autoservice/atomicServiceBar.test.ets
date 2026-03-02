@@ -30,7 +30,7 @@ export default function atomicServiceBarTest() {
   describe('atomicServiceBarTest', () => {
 
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("atomicServiceBarTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -78,7 +78,7 @@ it('ArkuiContext_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
         console.log('++++++++++++++++2')
           await CommonFunc.sleep(2000);
           if (atomicServiceBar != undefined) {
-              // support service 
+              // support service
               hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
               atomicServiceBar.setVisible(false);
               expect(true).assertTrue();

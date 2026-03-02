@@ -42,13 +42,23 @@ export default function badgeThemeTest() {
 
   describe(SUITE, () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("BadgePage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       
     });
 
     beforeEach(() => {
+      if (changeTheme) {
+        if ((AppStorage.get<CustomTheme>('badgeThemeProperty'))?.colors?.fontOnPrimary
+          == redCustomTheme?.colors?.fontOnPrimary) {
+          AppStorage.setOrCreate<CustomTheme>('badgeThemeProperty', greenCustomTheme);
+        } else {
+          AppStorage.setOrCreate<CustomTheme>('badgeThemeProperty', redCustomTheme);
+        }
+        localTheme = AppStorage.get<CustomTheme>('badgeThemeProperty');
+        changeTheme = false;
+      }
       try {
         const options: router.RouterOptions = {
           url: `MainAbility/pages/components/BadgePage`,
@@ -57,24 +67,13 @@ export default function badgeThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `BadgePage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(badgeThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>('badgeThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
-      }
-
-      if (changeTheme) {
-        if ((AppStorage.get(badgeThemeProperty) as CustomTheme | undefined)?.colors?.fontOnPrimary
-          == redCustomTheme?.colors?.fontOnPrimary) {
-          AppStorage.setOrCreate(badgeThemeProperty, greenCustomTheme);
-        } else {
-          AppStorage.setOrCreate(badgeThemeProperty, redCustomTheme);
-        }
-        localTheme = AppStorage.get<CustomTheme>(badgeThemeProperty);
-        changeTheme = false;
       }
     });
 

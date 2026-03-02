@@ -62,7 +62,6 @@ import {
   PickerTextStyle,
   CalendarAlign,
   Visibility,
-  Date,
   NavigationCommonTitle,
   NavDestinationCommonTitle,
   Alignment,

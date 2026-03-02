@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function LinkColor() {
   describe('LinkColor', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LinkColor beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
@@ -90,10 +90,10 @@ it('LinkColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('LinkColor_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state1'));
+      let button = await driver.findComponent(ON.id('LinkColor001'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('state1');
+      let strJson = inspector.getInspectorByKey('LinkColor001');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
@@ -115,10 +115,10 @@ it('LinkColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('LinkColor_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state2'));
+      let button = await driver.findComponent(ON.id('LinkColor002'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('state2');
+      let strJson = inspector.getInspectorByKey('LinkColor002');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
@@ -138,7 +138,7 @@ it('LinkColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('LinkColor_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state3'));
+      let button = await driver.findComponent(ON.id('LinkColor003'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LinkColor');
@@ -161,10 +161,10 @@ it('LinkColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('LinkColor_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state4'));
+      let button = await driver.findComponent(ON.id('LinkColor004'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('state4');
+      let strJson = inspector.getInspectorByKey('LinkColor004');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
@@ -210,10 +210,10 @@ it('LinkColor_static_0600', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('LinkColor_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state6'));
+      let button = await driver.findComponent(ON.id('LinkColor006'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('state6');
+      let strJson = inspector.getInspectorByKey('LinkColor006');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));

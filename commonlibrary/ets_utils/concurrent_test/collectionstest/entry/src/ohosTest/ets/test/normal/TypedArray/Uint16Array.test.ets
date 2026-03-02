@@ -1,9 +1,29 @@
 
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { sleep } from '../../../testability/TestUtils';
 
 export default function Uint16ArrayTest() {
   describe('Uint16ArrayTest', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      // Add delay to ensure resources from the previous test case are released
+      await sleep(20);
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+
     /**
      * @tc.name   testUint16Array0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0100
@@ -4218,46 +4238,455 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.name   testUint16ArrayOf0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20400
-     * @tc.desc   Test the function of the interface Of
+     * @tc.name   testUint16ArrayMissing0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_0100
+     * @tc.desc   Testing 'from' return properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testUint16ArrayOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const TAG = "testUint16ArrayOf0001";
-      try {
-        let result : collections.Uint16Array = collections.Uint16Array.of(1);
-        expect(result.toString()).assertEqual('1');
-        done();
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
-        done();
-      }
+    it('testUint16ArrayMissing0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Uint16Array = collections.Uint16Array.from([1,2,3]);
+      expect(array.toString()).assertEqual('1,2,3');
+      expect(array[1]).assertEqual(2);
+      expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(2);
+      expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(array.byteLength).assertEqual(6);
+      expect(array.byteOffset).assertEqual(0);
+      expect(array.length).assertEqual(3);
       done()
-    });
+    })
+
     /**
-     * @tc.name   testUint16ArrayOf0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20500
-     * @tc.desc   Test the function of the interface Of
+     * @tc.name   testUint16ArrayMissing0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_0200
+     * @tc.desc   Testing 'from' return properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testUint16ArrayOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const TAG = "testUint16ArrayOf0002";
-      try {
-        let result : collections.Uint16Array = collections.Uint16Array.of(1, 2, 3);
-        expect(result.toString()).assertEqual('1,2,3');
-        done();
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
-        done();
-      }
+    it('testUint16ArrayMissing0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Uint16Array = collections.Uint16Array.from<string>(
+        ["1", "3", "5"], (v: string, k: number) => parseInt(v));
+      expect(array.toString()).assertEqual('1,3,5');
+      expect(array[1]).assertEqual(3);
+      expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(array.byteLength).assertEqual(6);
+      expect(array.byteOffset).assertEqual(0);
+      expect(array.length).assertEqual(3);
       done()
-    });
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_0300
+     * @tc.desc   Testing 'from' interface with undefined mapFn.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let myset = new Set([1, 3, 5]);
+      let array: collections.Uint16Array = collections.Uint16Array.from(myset, undefined);
+      expect(array.toString()).assertEqual('1,3,5');
+      expect(array[1]).assertEqual(3);
+      expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(array.byteLength).assertEqual(6);
+      expect(array.byteOffset).assertEqual(0);
+      expect(array.length).assertEqual(3);
+      done()
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_0400
+     * @tc.desc   Testing 'copyWithin' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      let result = uint16Array.copyWithin(0, 3, undefined);
+      expect(result[1]).assertEqual(5);
+      expect(result.toString()).assertEqual('4,5,3,4,5');
+      expect(result.buffer.byteLength).assertEqual(10);
+      expect(result.byteLength).assertEqual(10);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done()
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_0500
+     * @tc.desc   Testing 'fill' with undefined start parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      let result = uint16Array.fill(9, undefined, 3);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('9,9,9,4,5');
+      expect(result.buffer.byteLength).assertEqual(10);
+      expect(result.byteLength).assertEqual(10);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_0600
+     * @tc.desc   Testing 'fill' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      let result = uint16Array.fill(9, 1, undefined);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('1,9,9,9,9');
+      expect(result.buffer.byteLength).assertEqual(10);
+      expect(result.byteLength).assertEqual(10);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_0700
+     * @tc.desc   Testing 'fill' with undefined start/end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      let result = uint16Array.fill(9, undefined, undefined);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('9,9,9,9,9');
+      expect(result.buffer.byteLength).assertEqual(10);
+      expect(result.byteLength).assertEqual(10);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_0800
+     * @tc.desc   Testing 'filter' with undefined predicate parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let arrayLike = [0, 1, 2, 3, 4];
+      let array: collections.Uint16Array = collections.Uint16Array.from(arrayLike);
+      let filtered: collections.Uint16Array = array.filter((element: number) => element % 2 == 0);
+      expect(filtered.toString()).assertEqual('0,2,4');
+      expect(filtered[1]).assertEqual(2);
+      expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(2);
+      expect(filtered.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(filtered.byteLength).assertEqual(6);
+      expect(filtered.byteOffset).assertEqual(0);
+      expect(filtered.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_0900
+     * @tc.desc   Testing 'indexOf' with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.indexOf(3, undefined);
+      expect(result).assertEqual(2);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_1000
+     * @tc.desc   Testing 'join' with undefined separator parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.join(undefined);
+      expect(result).assertEqual('1,2,3,4,5');
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_1100
+     * @tc.desc   Testing 'join' with empty string separator parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.join('');
+      expect(result).assertEqual('12345');
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_1200
+     * @tc.desc   Testing 'set' with undefined offset parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      uint16Array.set([6, 7], undefined);
+      expect(uint16Array.toString()).assertEqual('6,7,3,4,5')
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_1300
+     * @tc.desc   Testing 'slice' with undefined start parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.slice(undefined,4);
+      expect(result.toString()).assertEqual('1,2,3,4');
+      expect(result[1]).assertEqual(2);
+      expect(result.buffer.byteLength).assertEqual(8);
+      expect(result.byteLength).assertEqual(8);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(4);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_1400
+     * @tc.desc   Testing 'slice' with null end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.slice();
+      expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(result[1]).assertEqual(2);
+      expect(result.buffer.byteLength).assertEqual(10);
+      expect(result.byteLength).assertEqual(10);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_1500
+     * @tc.desc   Testing 'slice' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.slice(4, undefined);
+      expect(result.toString()).assertEqual('5');
+      expect(result[0]).assertEqual(5);
+      expect(result.buffer.byteLength).assertEqual(2);
+      expect(result.byteLength).assertEqual(2);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(1);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_1600
+     * @tc.desc   Testing 'sort' with undefined compareFn parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([5, 3, 1, 4, 2]);
+      let result = uint16Array.sort(undefined);
+      expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(result[0]).assertEqual(1);
+      expect(result.buffer.byteLength).assertEqual(10);
+      expect(result.byteLength).assertEqual(10);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_1700
+     * @tc.desc   Testing 'subarray' with undefined begin parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.subarray(undefined);
+      expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(result[0]).assertEqual(1);
+      expect(result.buffer.byteLength).assertEqual(10);
+      expect(result.byteLength).assertEqual(10);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_1800
+     * @tc.desc   Testing 'subarray' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.subarray(2, undefined);
+      expect(result.toString()).assertEqual('3,4,5');
+      expect(result[0]).assertEqual(3);
+      expect(result.buffer.byteLength).assertEqual(10);
+      expect(result.byteLength).assertEqual(6);
+      expect(result.byteOffset).assertEqual(4);
+      expect(result.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_1900
+     * @tc.desc   Test subarray() return properties validation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.subarray(1, 4);
+      expect(result.toString()).assertEqual('2,3,4');
+      expect(result[0]).assertEqual(2);
+      expect(result.buffer.byteLength).assertEqual(10);
+      expect(result.byteLength).assertEqual(6);
+      expect(result.byteOffset).assertEqual(2);
+      expect(result.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_2000
+     * @tc.desc   Testing 'includes' with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.includes(3, undefined);
+      expect(result).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_2100
+     * @tc.desc   Testing 'lastIndexOf' with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let uint16Array: collections.Uint16Array = new collections.Uint16Array([1, 2, 3, 4, 5]);
+      const result = uint16Array.lastIndexOf(3, undefined);
+      expect(result).assertEqual(-1);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_2200
+     * @tc.desc   Test of() creating Uint16Array from variadic arguments.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result : collections.Uint16Array = collections.Uint16Array.of(1, 2, 3);
+      expect(result.toString()).assertEqual('1,2,3');
+      expect(result[0]).assertEqual(1);
+      expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(2);
+      expect(result.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(result.byteLength).assertEqual(6);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_2300
+     * @tc.desc   Test map() with Math.sqrt callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Uint16Array = new collections.Uint16Array([25, 36, 49]);
+      const mapped = array.map(Math.sqrt);
+      expect(mapped.toString()).assertEqual("5,6,7");
+      expect(mapped[0]).assertEqual(5);
+      expect(mapped.buffer.byteLength).assertEqual(6);
+      expect(mapped.byteLength).assertEqual(6);
+      expect(mapped.byteOffset).assertEqual(0);
+      expect(mapped.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testUint16ArrayMissing0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_MISSING_2400
+     * @tc.desc   Test reverse() mutating array in place.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUint16ArrayMissing0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Uint16Array = new collections.Uint16Array([1,2,3,4,5]);
+      const result = array.reverse();
+      expect(result.toString()).assertEqual("5,4,3,2,1");
+      expect(result[0]).assertEqual(5);
+      expect(result.buffer.byteLength).assertEqual(10); 
+      expect(result.byteLength).assertEqual(10);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
   })
 }

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -99,7 +99,7 @@ export default function checkBoxGroupUIJsunit() {
           // console.info("push checkBoxGroupUIJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push checkBoxGroupUI page error:" + err);
         expect().assertFail();
       }
@@ -235,8 +235,6 @@ it('checkBoxGroupUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): 
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
       let checkGoup = await driver.findComponent(ON.id('allck'));
-      await (checkGoup?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
       await (checkGoup?.click() as Promise<void>);
       await driver.delayMs(waitUiReadyMs);
       // check the isSelect and name

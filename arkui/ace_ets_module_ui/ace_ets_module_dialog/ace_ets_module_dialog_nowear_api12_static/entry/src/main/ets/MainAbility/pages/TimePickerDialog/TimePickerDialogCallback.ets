@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,7 @@ import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Te
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -40,7 +41,7 @@ struct TimePickerDialogExampleA {
               let eventData: events_emitter.EventData = {
                 data: {
                   "action": 'onWillAppear'
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let event: events_emitter.InnerEvent = {
                 eventId: 50001,
@@ -53,7 +54,7 @@ struct TimePickerDialogExampleA {
               let eventData: events_emitter.EventData = {
                 data: {
                   "action": 'onDidAppear'
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let event: events_emitter.InnerEvent = {
                 eventId: 50002,
@@ -66,7 +67,7 @@ struct TimePickerDialogExampleA {
               let eventData: events_emitter.EventData = {
                 data: {
                   "action": 'onWillDisappear'
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let event: events_emitter.InnerEvent = {
                 eventId: 50003,
@@ -79,7 +80,7 @@ struct TimePickerDialogExampleA {
               let eventData: events_emitter.EventData = {
                 data: {
                   "action": 'onDidDisappear'
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let event: events_emitter.InnerEvent = {
                 eventId: 50004,

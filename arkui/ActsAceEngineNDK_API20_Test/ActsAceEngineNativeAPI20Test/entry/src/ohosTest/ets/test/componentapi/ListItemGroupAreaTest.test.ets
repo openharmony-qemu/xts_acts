@@ -22,10 +22,20 @@ export default function ListItemGroupAreaTest() {
   describe('ListItemGroupAreaTest', () => {
     let Component: Component;
     let ComponentPoint: Point;
+    let y1: number;
+    let y2: number;
     beforeEach(async (done: Function) => {
+      await Utils.sleep(1000);
       await Utils.pushPageNoClear(`componentapi/ListItemGroupArea`);
       Component = await Utils.driver.findComponent(ON.id('SwiperList'));
       ComponentPoint = await Component.getBoundsCenter();
+
+      let rect = Utils.getComponentRect("SwiperList");
+      let height = rect.bottom - rect.top;
+      console.info("ListItemGroupAreaTest height is" + height);
+      y1 = Math.round(globalThis.winTop + rect.top + height*0.2);
+      y2 = Math.round(globalThis.winTop + rect.bottom - height*0.2);
+      console.info("ListItemGroupAreaTest  centerX= " +  ComponentPoint.x  + ", y1 = " + y1  + ", y2 = " + y2);
       done();
     })
     /**
@@ -40,12 +50,12 @@ export default function ListItemGroupAreaTest() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_GROUP_AREA_OUTSIDE_0100 start<====`);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, ComponentPoint.x,
-                           ComponentPoint.y - 350, 5000);
-        await Utils.sleep(300);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, ComponentPoint.x,
-                           ComponentPoint.y + 350, 5000);
-        await Utils.sleep(300);
+        await Utils.driver.swipe(ComponentPoint.x, y2, ComponentPoint.x,
+                           y1, 5000);
+        await Utils.sleep(1000);
+        await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
+                           y2, 5000);
+        await Utils.sleep(1000);
         await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
         let result: number = nativexcomponent.TestAreaOutside();
         expect(1).assertEqual(result);
@@ -68,12 +78,12 @@ export default function ListItemGroupAreaTest() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_NONE_0200 start<====`);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, ComponentPoint.x,
-                           ComponentPoint.y - 250, 8000);
-        await Utils.sleep(300);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, ComponentPoint.x,
-                           ComponentPoint.y + 250, 8000);
-        await Utils.sleep(300);
+        await Utils.driver.swipe(ComponentPoint.x, y2, ComponentPoint.x,
+                           y1, 8000);
+        await Utils.sleep(1000);
+        await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
+                           y2, 8000);
+        await Utils.sleep(1000);
         await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
         let result: number = nativexcomponent.TestAreaNone();
         expect(1).assertEqual(result);
@@ -96,12 +106,12 @@ export default function ListItemGroupAreaTest() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_ITEM_0300 start<====`);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, ComponentPoint.x,
-                           ComponentPoint.y - 250, 8000);
-        await Utils.sleep(300);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, ComponentPoint.x,
-                           ComponentPoint.y + 250, 8000);
-        await Utils.sleep(300);
+        await Utils.driver.swipe(ComponentPoint.x, y2, ComponentPoint.x,
+                           y1, 8000);
+        await Utils.sleep(1000);
+        await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
+                           y2, 8000);
+        await Utils.sleep(1000);
         await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
         let result: number = nativexcomponent.TestAreaItem();
         expect(1).assertEqual(result);
@@ -124,12 +134,12 @@ export default function ListItemGroupAreaTest() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_HEADER_0400 start<====`);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, ComponentPoint.x,
-                           ComponentPoint.y - 250, 8000);
-        await Utils.sleep(300);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, ComponentPoint.x,
-                           ComponentPoint.y + 250, 8000);
-        await Utils.sleep(300);
+        await Utils.driver.swipe(ComponentPoint.x, y2, ComponentPoint.x,
+                           y1, 8000);
+        await Utils.sleep(1000);
+        await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
+                           y2, 8000);
+        await Utils.sleep(1000);
         await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
         let result: number = nativexcomponent.TestAreaHeader();
         expect(1).assertEqual(result);
@@ -152,12 +162,12 @@ export default function ListItemGroupAreaTest() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_FOOTER_0500 start<====`);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, ComponentPoint.x,
-                           ComponentPoint.y - 250, 8000);
-        await Utils.sleep(300);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, ComponentPoint.x,
-                           ComponentPoint.y + 250, 8000);
-        await Utils.sleep(300);
+        await Utils.driver.swipe(ComponentPoint.x, y2, ComponentPoint.x,
+                           y1, 8000);
+        await Utils.sleep(1000);
+        await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
+                           y2, 8000);
+        await Utils.sleep(1000);
         await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
         let result: number = nativexcomponent.TestAreaFooter();
         expect(1).assertEqual(result);

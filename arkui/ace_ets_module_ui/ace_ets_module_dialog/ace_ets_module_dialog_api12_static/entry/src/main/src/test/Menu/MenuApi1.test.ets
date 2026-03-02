@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function MenuApi1() {
   describe('MenuApi1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
     })
 
@@ -77,17 +77,11 @@ it('MenuApi1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
 
       if (AppStorage.get<number>("winLeft") == 0) {
-        console.log("-------sendEventByKey")
         inspector.sendEventByKey('MenuApi1_btn1',10,"")
         await CommonFunc.sleep(1000);
-        console.log("-------sendEventByKey")
         inspector.sendEventByKey('MenuApi1_btn2',10,"")
         await CommonFunc.sleep(1000);
-        console.log("-------getInspectorByKey")
-        console.log("-------" + inspector.getInspectorByKey('MenuApi1_text1'))
-        console.log("-------getInspectorByKey")
         let text1 = inspector.getInspectorByKey('MenuApi1_text1');
-        console.log("-------assertEqual")
         expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('undefined')
         await CommonFunc.sleep(1000);
       }

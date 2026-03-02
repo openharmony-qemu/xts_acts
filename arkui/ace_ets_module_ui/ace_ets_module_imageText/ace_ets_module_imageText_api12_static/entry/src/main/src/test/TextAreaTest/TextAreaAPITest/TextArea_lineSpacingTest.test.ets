@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextArea_lineSpacingTest() {
   describe('TextArea_lineSpacingTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextArea_lineSpacingTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -47,7 +47,7 @@ export default function TextArea_lineSpacingTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextArea_lineSpacingTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("lineSpacing" == pages.name)) {
           console.info("get TextArea_lineSpacingTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

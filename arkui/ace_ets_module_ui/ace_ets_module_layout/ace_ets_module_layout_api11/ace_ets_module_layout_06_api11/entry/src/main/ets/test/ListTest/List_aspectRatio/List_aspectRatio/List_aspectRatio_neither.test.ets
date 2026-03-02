@@ -80,13 +80,24 @@ export default function List_aspectRatio_neither() {
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_neither_01');
       let width: number = List01.right - List01.left;
+      let height: number = List01.bottom - List01.top;
+      console.info('[SUB_ACE_List_aspectRatio_neither_0100] height: ' + height);
       
       let item01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_neither_001');
       let itemwidth: number = item01.right - item01.left;
       let itemheight: number = item01.bottom - item01.top;
+      let column01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_neither_column');
+      let column_height: number = Math.round(column01.bottom - column01.top)
+      let list_height_count: number = Math.round(itemheight*4 + 3*vp2px(10))
 
       expect(Math.abs(Math.round(width * 0.8) - Math.round(itemwidth)) <= 1).assertTrue();
-      expect(Math.abs(Math.round((List01.bottom - List01.top) - (itemheight*4 + 3*vp2px(10)))) <= 1).assertTrue();
+      if (column_height > list_height_count) {
+        console.info('[SUB_ACE_List_aspectRatio_neither_0100] list_height_count: ' + list_height_count);
+        expect(Math.floor(Math.abs((List01.bottom - List01.top) - (itemheight*4 + 3*vp2px(10)))) <= 1).assertTrue();
+      } else {
+        console.info('[SUB_ACE_List_aspectRatio_neither_0100] column_height: ' + column_height);
+        expect(Math.abs(Math.round(List01.bottom - List01.top) - column_height) <= 1).assertTrue();
+      }
 
       console.info('[SUB_ACE_List_aspectRatio_neither_0100] END');
       done();
@@ -164,13 +175,24 @@ export default function List_aspectRatio_neither() {
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_neither_01');
       let width: number = List01.right - List01.left;
+      let height: number = List01.bottom - List01.top;
+      console.info('[SUB_ACE_List_aspectRatio_neither_0400] height: ' + height);
 
       let item01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_neither_001');
       let itemwidth: number = item01.right - item01.left;
       let itemheight: number = item01.bottom - item01.top;
+      let column01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_neither_column');
+      let column_height: number = Math.round(column01.bottom - column01.top)
+      let list_height_count: number = Math.round(itemheight*4 + 3*vp2px(10))
 
       expect(Math.abs(Math.round(width * 0.8) - Math.round(itemwidth)) <= 1).assertTrue();
-      expect(Math.abs(Math.round((List01.bottom - List01.top) - (itemheight*4 + 3*vp2px(10)))) <= 1).assertTrue();
+      if (column_height > list_height_count) {
+        console.info('[SUB_ACE_List_aspectRatio_neither_0400] list_height_count: '+ list_height_count);
+        expect(Math.floor(Math.abs((List01.bottom - List01.top) - (itemheight*4 + 3*vp2px(10)))) <= 1).assertTrue();
+      } else {
+        console.info('[SUB_ACE_List_aspectRatio_neither_0400] column_height: ' + column_height);
+        expect(Math.abs(Math.round(List01.bottom - List01.top) - column_height) <= 1).assertTrue();
+      }
 
       console.info('[SUB_ACE_List_aspectRatio_neither_0400] END');
       done();

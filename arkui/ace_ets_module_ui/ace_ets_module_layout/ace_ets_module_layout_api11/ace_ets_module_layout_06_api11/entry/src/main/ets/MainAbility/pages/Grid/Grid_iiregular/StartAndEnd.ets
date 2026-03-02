@@ -60,13 +60,13 @@ struct StartAndEnd {
         ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.On }) {
           Text()
             .width(20)
-            .height(150)
+            .height('60%')
             .borderRadius(10)
             .backgroundColor('#C0C0C0')
         }.width(20).backgroundColor('#ededed')
         .id('StartAndEnd_scrollBar')
 
-      }.height('80%')
+      }.height('70%')
 
     }.width('100%').margin({ top: 5 })
   }

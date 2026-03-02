@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import router from '@system.router';
 import { Entry,Component,FlexDirection,ItemAlign, Button, FlexAlign, Margin, ClickEvent, Flex, Alignment, ButtonType, FontWeight, TextOverflow, TextAlign, Text } from '@ohos.arkui.component';
-import { JsonObj3 } from '../../common/Utils';
 
 @Entry
 @Component
@@ -33,7 +31,9 @@ struct OhosRouterA {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'pages/ohosRouterB',
-            params: (new JsonObj3('B Page')).toJSON()
+            params: {
+              data: 'B Page'
+            } as JsonObj
           });
         });
       Button('back')
@@ -44,7 +44,9 @@ struct OhosRouterA {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'pages/ohosRouterB',
-            params: (new JsonObj3('B Page')).toJSON()
+            params: {
+              data: 'B Page'
+            } as JsonObj
           });
         });
       Button('clear')
@@ -55,7 +57,9 @@ struct OhosRouterA {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'pages/ohosRouterB',
-            params: (new JsonObj3('B Page')).toJSON()
+            params: {
+              data: 'B Page'
+            } as JsonObj
           });
         });
       Button('getLength')
@@ -66,7 +70,9 @@ struct OhosRouterA {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'pages/ohosRouterB',
-            params: (new JsonObj3('B Page')).toJSON()
+            params: {
+              data: 'B Page'
+            } as JsonObj
           });
         });
       Button('enableAlertBeforeBackPage')
@@ -77,7 +83,9 @@ struct OhosRouterA {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'pages/ohosRouterB',
-            params: (new JsonObj3('B Page')).toJSON()
+            params: {
+              data: 'B Page'
+            } as JsonObj
           });
         });
       Button('disableAlertBeforeBackPage')
@@ -88,9 +96,14 @@ struct OhosRouterA {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'pages/ohosRouterB',
-            params: (new JsonObj3('B Page')).toJSON()
+            params: {
+              data: 'B Page'
+            } as JsonObj
           });
         });
     }.width('100%').height('100%')
   }
+}
+class JsonObj {
+  data: string = ''
 }

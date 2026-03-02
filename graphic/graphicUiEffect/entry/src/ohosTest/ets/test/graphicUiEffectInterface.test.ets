@@ -35,11 +35,93 @@ export default function graphicUiEffectInterfaceTest() {
       let msg = " =====testCreateFilter==== "
       try {
         let filter : uiEffect.Filter = uiEffect.createFilter()
-        console.log(msg + " Succeed in uiEffect.createFilter ")
+        console.log(msg + " Succeed in uiEffect.createFilter ", filter)
+        expect(filter !== undefined).assertTrue();
         done()
       } catch (err) {
         console.log(msg + " Faild in uiEffect.createFilter " + JSON.stringify(err))
         console.log(msg + " Faild in uiEffect.createFilter " + err)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testCreateFilterBlur_0100
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICUIEFFECT_JS_API_002
+     * @tc.desc   Filter instances are created to add multiple filter effects to the component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateFilterBlur_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = " =====testCreateFilterBlur_0100==== "
+      try {
+        let filter : uiEffect.Filter = uiEffect.createFilter()
+        console.log(msg + " Succeed in uiEffect.createFilter ")
+        expect(filter !== undefined).assertTrue();
+        try {
+          let filter1 = filter.blur(-10)
+          console.info('www data success blur 111', JSON.stringify(filter1));
+        } catch (err) {
+          console.info('www data failed to blur 111', JSON.stringify(err));
+          expect().assertFail()
+        }
+        try {
+          let filter2 = filter.blur(0)
+          console.info('www data success blur 222', JSON.stringify(filter2));
+        } catch (err) {
+          console.info('www data failed to blur 222', JSON.stringify(err));
+          expect().assertFail()
+        }
+        try {
+          let filter3 = filter.blur(1)
+          console.info('www data success blur 333', JSON.stringify(filter3));
+        } catch (err) {
+          console.info('www data failed to blur 333', JSON.stringify(err));
+          expect().assertFail()
+        }
+        try {
+          let filter4 = filter.blur(null)
+          console.info('www data success blur 444', JSON.stringify(filter4));
+        } catch (err) {
+          console.info('www data failed to blur 444', JSON.stringify(err));
+          expect().assertFail()
+        }
+        try {
+          let filter5 = filter.blur(undefined)
+          console.info('www data success blur 555', JSON.stringify(filter5));
+        } catch (err) {
+          console.info('www data failed to blur 555', JSON.stringify(err));
+          expect().assertFail()
+        }
+        done()
+      } catch (err) {
+        console.log(msg + " Failed in uiEffect.createFilter " + JSON.stringify(err))
+        console.log(msg + " Failed in uiEffect.createFilter " + err)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testCreateEffect
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICUIEFFECT_JS_API_003
+     * @tc.desc   Filter instances are created to add multiple filter effects to the component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateEffect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = " =====testCreateEffect==== "
+      try {
+        let visualEffect : uiEffect.VisualEffect = uiEffect.createEffect()
+        console.log(msg + " Succeed in uiEffect.createFilter ", JSON.stringify(visualEffect))
+        expect(visualEffect !== undefined).assertTrue();
+        done()
+      } catch (err) {
+        console.log(msg + " Faild in uiEffect.createEffect " + JSON.stringify(err))
+        console.log(msg + " Faild in uiEffect.createEffect " + err)
         expect().assertFail()
         done()
       }

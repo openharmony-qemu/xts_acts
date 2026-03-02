@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function styledStringApi() {
   describe('styledStringApi', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("styledStringApi beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function styledStringApi() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get styledStringApi state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("styledStringApi" == pages.name)) {
           console.info("get styledStringApi pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, RefreshStatus, Column, Refresh, Text } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Component
 @Entry
@@ -36,7 +37,7 @@ struct RefreshCreateComponent {
     console.info("[stateChangCallBack] stateChangCallBack");
     if (eventData != null && eventData.data != null) {
       console.info("[stateChangCallBack] state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       if (data['isRefreshing'] != null) {
         this.isRefreshing = data['isRefreshing'] as boolean;
       }

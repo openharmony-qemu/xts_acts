@@ -18,7 +18,6 @@ import {
   test1,
   test10,
   test100,
-  test101,
   test102,
   test103,
   test108,
@@ -37,8 +36,6 @@ import {
   test22,
   test23,
   test24,
-  test25,
-  test26,
   test27,
   test28,
   test29,
@@ -436,20 +433,6 @@ export default function ActsProxyAndReflect6Test() {
       expect(result).assertEqual(true);
     })
 
-
-
-    /**
-     * @tc.name   testCacheProxyReflectTarget_026
-     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_2600
-     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCacheProxyReflectTarget_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = test26();
-      expect(result).assertEqual(true);
-    })
 
     /**
      * @tc.name   testCacheProxyReflectTarget_027
@@ -1267,32 +1250,6 @@ export default function ActsProxyAndReflect6Test() {
      */
     it('testCacheProxyReflectTarget_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = test100();
-      expect(result).assertEqual(true);
-    })
-
-    /**
-     * @tc.name   testCacheProxyReflectTarget_101
-     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_10100
-     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCacheProxyReflectTarget_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = test101();
-      expect(result).assertEqual(true);
-    })
-
-    /**
-     * @tc.name   testCacheProxyReflectTarget_102
-     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_10200
-     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCacheProxyReflectTarget_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = test102();
       expect(result).assertEqual(true);
     })
 

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -35,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function searchEnterKeyTypeTest() {
   describe('searchEnterKeyTypeTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("searchEnterKeyTypeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
@@ -89,7 +90,7 @@ it('searchEnterKeyType_static_0100', Level.LEVEL1, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Go
-          } as Record<string, Object | undefined | null>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 810,
@@ -97,7 +98,7 @@ it('searchEnterKeyType_static_0100', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -133,7 +134,7 @@ it('searchEnterKeyType_static_0200', Level.LEVEL1, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Search
-          } as Record<string, Object | undefined | null>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 811,
@@ -141,7 +142,7 @@ it('searchEnterKeyType_static_0200', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -177,7 +178,7 @@ it('searchEnterKeyType_static_0300', Level.LEVEL1, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Send
-          } as Record<string, Object | undefined | null>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 812,
@@ -185,7 +186,7 @@ it('searchEnterKeyType_static_0300', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -221,7 +222,7 @@ it('searchEnterKeyType_static_0400', Level.LEVEL1, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Next
-          } as Record<string, Object | undefined | null>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 813,
@@ -229,7 +230,7 @@ it('searchEnterKeyType_static_0400', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -265,7 +266,7 @@ it('searchEnterKeyType_static_0500', Level.LEVEL1, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Done
-          } as Record<string, Object | undefined | null>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 814,
@@ -273,7 +274,7 @@ it('searchEnterKeyType_static_0500', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -309,7 +310,7 @@ it('searchEnterKeyType_static_0600', Level.LEVEL1, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.PREVIOUS
-          } as Record<string, Object | undefined | null>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 815,
@@ -317,7 +318,7 @@ it('searchEnterKeyType_static_0600', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -352,7 +353,7 @@ it('searchEnterKeyType_static_0700', Level.LEVEL1, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.NEW_LINE
-          } as Record<string, Object | undefined | null>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 816,
@@ -360,7 +361,7 @@ it('searchEnterKeyType_static_0700', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -394,7 +395,7 @@ it('searchEnterKeyType_static_0800', Level.LEVEL1, async (done: () => void): Pro
           let eventData: events_emitter.EventData = {
             data: {
               "enterKeyType":  undefined
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 817,
@@ -402,7 +403,7 @@ it('searchEnterKeyType_static_0800', Level.LEVEL1, async (done: () => void): Pro
           }
           console.info('[' + tagName + '] start to publish emit');
           events_emitter.emit(innerEvent, eventData);
-        } catch (err:Error) {
+        } catch (err) {
           console.log('[' + tagName + '] change component data error: ' + err.message);
         }
         CommonFunc.sleep(2000);

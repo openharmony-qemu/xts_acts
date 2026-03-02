@@ -33,7 +33,7 @@ import inspector from '@ohos.arkui.inspector';
 import { sendTouchEvent } from '@ohos.arkui.Test';
 import common from '@ohos.app.ability.common';
 
-export class Utils {
+export default class Utils {
   static rect_left: number = 0;
   static rect_top: number = 0;
   static rect_right: number = 0;
@@ -42,9 +42,9 @@ export class Utils {
 
   static getComponentRect(key: string) {
     let strJson: string = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
     console.info("[inspector.getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[inspector.getInspectorByKey] rectInfo is: " + rectInfo);
     Utils.rect_left = Number(rectInfo[0][0] ?? 0);
     Utils.rect_top = Number(rectInfo[0][1] ?? 0);
@@ -131,48 +131,6 @@ export class Utils {
     console.info('up touch started: ' + JSON.stringify(upPoint))
     sendTouchEvent(upPoint)
     Utils.sleep(500)
-  }
-}
-
-export class AgeObj implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
-  age: int = 0
-
-  constructor(age: int) {
-    this.age = age;
-  }
-
-  constructor() {}
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.age = jsonElem.getInteger("age");
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = {
-      "age": jsonx.JsonElement.createInteger(this.age)
-    }
-    return jsonx.JsonElement.createObject(root)
-  }
-}
-
-export class routerParams implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable{
-  data1:string = ""
-
-  constructor(str:string) {
-    this.data1 = str
-  }
-
-  constructor() {}
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.data1 = jsonElem.getString("data1")
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = {
-      "data1": jsonx.JsonElement.createString(this.data1)
-    }
-    return jsonx.JsonElement.createObject(root)
   }
 }
 

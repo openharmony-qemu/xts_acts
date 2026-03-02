@@ -65,6 +65,13 @@
       {
         "name": "ohos.permission.WINDOW_TOPMOST"
       },
+      {
+ 	         "name": 'ohos.permission.CUSTOM_SCREEN_CAPTURE',
+ 	         "reason": "$string:app_name",
+ 	         "usedScene": {
+ 	           "when": "always"
+ 	         }
+ 	    }
     ]
   }
 }

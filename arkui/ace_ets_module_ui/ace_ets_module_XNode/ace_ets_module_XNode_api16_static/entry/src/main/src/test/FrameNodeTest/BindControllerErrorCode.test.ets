@@ -41,7 +41,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function BindControllerErrorCodeTest() {
   describe('BindControllerErrorCodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("BindControllerErrorCodeTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")

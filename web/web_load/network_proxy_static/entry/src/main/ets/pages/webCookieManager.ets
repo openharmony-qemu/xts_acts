@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,9 +16,9 @@
 import Utils from '../../src/test/Utils.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement'
-import { Button, ClickEvent, Column, Component, Entry, Row, Web, RecordData } from '@ohos.arkui.component'
+import { Button, ClickEvent, Column, Component, Entry, Row, Web } from '@ohos.arkui.component'
 
 class StringFields {
   public str: string = '';
@@ -61,7 +61,8 @@ struct webCookieManager {
               try {
                 webView.WebCookieManager.saveCookieSync();
                 Utils.emitEvent('success', 202502180);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent('fail', 202502180);
               }
@@ -71,7 +72,8 @@ struct webCookieManager {
               try {
                 webView.WebviewController.removeAllCache(true);
                 Utils.emitEvent('success', 202502211);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent('fail', 202502211);
               }

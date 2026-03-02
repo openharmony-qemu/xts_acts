@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest,startAbility} from '../Util.test';
 export default function setShapeClipTest() {
   describe('setShapeClipTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("setShapeClipTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
@@ -75,7 +75,7 @@ it('setShapeClipTest_static_0010', Level.LEVEL0, async (done: () => void): Promi
       let strJson: string = inspector.getInspectorByKey('SetShapeClip_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[setShapeClipTest_0010] component obj is: " + JSON.stringify(obj));
-      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('label'))).assertEqual('{"rect":{"left":0,"right":150,"top":0,"bottom":150},"roundRect":null,"circle":null,"oval":null,"path":null}');
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('label'))).assertEqual('"{\\"rect\\":{\\"top\\":0,\\"left\\":0,\\"right\\":150,\\"bottom\\":150},\\"roundRect\\":null,\\"circle\\":null,\\"oval\\":null,\\"path\\":null}"');
       console.info('[setShapeClipTest_0010] END');
       done();
     });  

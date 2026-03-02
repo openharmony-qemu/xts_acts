@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (C) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -61,36 +61,162 @@ export default function colorFilterTest() {
     it('testColorFilterCreateBlendModeColorFilterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testColorFilterCreateBlendModeColorFilterNormalStatic';
       try {
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.CLEAR);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SRC);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DST);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SRC_OVER);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DST_OVER);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SRC_IN);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DST_IN);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SRC_OUT);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DST_OUT);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SRC_ATOP);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DST_ATOP);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.XOR);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.PLUS);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.MODULATE);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SCREEN);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.OVERLAY);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DARKEN);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.LIGHTEN);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.COLOR_DODGE);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.COLOR_BURN);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.HARD_LIGHT);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SOFT_LIGHT);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DIFFERENCE);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.EXCLUSION);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.MULTIPLY);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.HUE);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SATURATION);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.COLOR);
-        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.LUMINOSITY);
+        let colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.CLEAR);
+        if(colorFilter == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SRC);
+        if(colorFilter == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DST);
+        if(colorFilter == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SRC_OVER);
+        if(colorFilter == undefined){
+          console.info(msg + ' 4 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DST_OVER);
+        if(colorFilter == undefined){
+          console.info(msg + ' 5 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SRC_IN);
+        if(colorFilter == undefined){
+          console.info(msg + ' 6 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DST_IN);
+        if(colorFilter == undefined){
+          console.info(msg + ' 7 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SRC_OUT);
+        if(colorFilter == undefined){
+          console.info(msg + ' 8 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DST_OUT);
+        if(colorFilter == undefined){
+          console.info(msg + ' 9 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SRC_ATOP);
+        if(colorFilter == undefined){
+          console.info(msg + ' 10 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DST_ATOP);
+        if(colorFilter == undefined){
+          console.info(msg + ' 11 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.XOR);
+        if(colorFilter == undefined){
+          console.info(msg + ' 12 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.PLUS);
+        if(colorFilter == undefined){
+          console.info(msg + ' 13 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.MODULATE);
+        if(colorFilter == undefined){
+          console.info(msg + ' 14 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SCREEN);
+        if(colorFilter == undefined){
+          console.info(msg + ' 15 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.OVERLAY);
+        if(colorFilter == undefined){
+          console.info(msg + ' 16 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DARKEN);
+        if(colorFilter == undefined){
+          console.info(msg + ' 17 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.LIGHTEN);
+        if(colorFilter == undefined){
+          console.info(msg + ' 18 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.COLOR_DODGE);
+        if(colorFilter == undefined){
+          console.info(msg + ' 19 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.COLOR_BURN);
+        if(colorFilter == undefined){
+          console.info(msg + ' 20 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.HARD_LIGHT);
+        if(colorFilter == undefined){
+          console.info(msg + ' 21 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SOFT_LIGHT);
+        if(colorFilter == undefined){
+          console.info(msg + ' 22 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.DIFFERENCE);
+        if(colorFilter == undefined){
+          console.info(msg + ' 23 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.EXCLUSION);
+        if(colorFilter == undefined){
+          console.info(msg + ' 24 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.MULTIPLY);
+        if(colorFilter == undefined){
+          console.info(msg + ' 25 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.HUE);
+        if(colorFilter == undefined){
+          console.info(msg + ' 26 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.SATURATION);
+        if(colorFilter == undefined){
+          console.info(msg + ' 27 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.COLOR);
+        if(colorFilter == undefined){
+          console.info(msg + ' 28 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.LUMINOSITY);
+        if(colorFilter == undefined){
+          console.info(msg + ' 29 test failed');
+          expect().assertFail();
+        }
         console.info(msg + ' createBlendModeColorFilter successed');
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter(100, drawing.BlendMode.LUMINOSITY);
+        if(colorFilter == undefined){
+          console.info(msg + ' 30 test failed');
+          expect().assertFail();
+        }
+        colorFilter = drawing.ColorFilter.createBlendModeColorFilter(255, drawing.BlendMode.COLOR);
+        if(colorFilter == undefined){
+          console.info(msg + ' 31 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -146,8 +272,12 @@ export default function colorFilterTest() {
           blue: Math.floor(Math.random() * 256).toInt()
         };
         try {
-          drawing.ColorFilter.createBlendModeColorFilter(randomColor, itemList[i]);
+          let colorFilter = drawing.ColorFilter.createBlendModeColorFilter(randomColor, itemList[i]);
           console.info(msg + ' createBlendModeColorFilter succeeded');
+          if(colorFilter == undefined){
+            console.info(msg + ' test failed step: ' + i);
+            expect().assertFail();
+          }
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -260,6 +390,10 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: 0, blue: 0
         }, drawing.BlendMode.SRC) as drawing.ColorFilter;
         console.info(msg + ' createBlendModeColorFilter successed');
+        if(colorFilter1 == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch(e) {
         e = e as BusinessError ;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -272,6 +406,10 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: 0, blue: 0
         }, drawing.BlendMode.DST) as drawing.ColorFilter;
         console.info(msg + ' createBlendModeColorFilter successed');
+        if(colorFilter2 == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
       } catch(e) {
         e = e as BusinessError ;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -280,8 +418,12 @@ export default function colorFilterTest() {
 
       try {
         if(colorFilter1 && colorFilter2){
-          drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
+          let colorFilter = drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
           console.info(msg + ' createComposeColorFilter successed');
+          if(colorFilter == undefined){
+            console.info(msg + ' 3 test failed');
+            expect().assertFail();
+          }
         }
       } catch(e) {
         e = e as BusinessError ;
@@ -292,8 +434,12 @@ export default function colorFilterTest() {
       try {
         let colorFilter2 = drawing.ColorFilter.createSRGBGammaToLinear();
         if(colorFilter1 && colorFilter2){
-          drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
+          let colorFilter = drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
           console.info(msg + ' createComposeColorFilter successed');
+          if(colorFilter == undefined){
+            console.info(msg + ' 4 test failed');
+            expect().assertFail();
+          }
         }
       } catch(e) {
         e = e as BusinessError ;
@@ -304,8 +450,12 @@ export default function colorFilterTest() {
       try {
         let colorFilter1 = drawing.ColorFilter.createSRGBGammaToLinear();
         if(colorFilter1 && colorFilter2){
-          drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
+          let colorFilter = drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
           console.info(msg + ' createComposeColorFilter successed');
+          if(colorFilter == undefined){
+            console.info(msg + ' 5 test failed');
+            expect().assertFail();
+          }
         }
       } catch(e) {
         e = e as BusinessError ;
@@ -317,8 +467,12 @@ export default function colorFilterTest() {
         let colorFilter1 = drawing.ColorFilter.createSRGBGammaToLinear();
         let colorFilter2 = drawing.ColorFilter.createLumaColorFilter();
         if(colorFilter1 && colorFilter2){
-          drawing.ColorFilter.createComposeColorFilter(colorFilter1,colorFilter2 );
+          let colorFilter = drawing.ColorFilter.createComposeColorFilter(colorFilter1,colorFilter2 );
           console.info(msg + ' createComposeColorFilter successed');
+          if(colorFilter == undefined){
+            console.info(msg + ' 6 test failed');
+            expect().assertFail();
+          }
         }
       } catch(e) {
         e = e as BusinessError ;
@@ -368,8 +522,12 @@ export default function colorFilterTest() {
     it('testColorFilterCreateLinearToSRGBGammaNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testColorFilterCreateLinearToSRGBGammaNormalStatic';
       try {
-        drawing.ColorFilter.createLinearToSRGBGamma();
+        let colorFilter = drawing.ColorFilter.createLinearToSRGBGamma();
         console.info(msg + ' createLinearToSRGBGamma successed');
+        if(colorFilter == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch(e) {
         e = e as BusinessError ;
         console.info(msg + ` createLinearToSRGBGamma errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -389,8 +547,12 @@ export default function colorFilterTest() {
       const msg = 'testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic';
       try {
         for (let i = 0; i < 20; i++) {
-          drawing.ColorFilter.createLinearToSRGBGamma();
+          let colorFilter = drawing.ColorFilter.createLinearToSRGBGamma();
           console.info(msg + ' createLinearToSRGBGamma successed');
+          if(colorFilter == undefined){
+            console.info(msg + ' 1 test failed');
+            expect().assertFail();
+          }
         }
       } catch(e) {
         e = e as BusinessError ;
@@ -410,8 +572,12 @@ export default function colorFilterTest() {
     it('testColorFilterCreateSRGBGammaToLinearNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testColorFilterCreateSRGBGammaToLinearNormalStatic';
       try {
-        drawing.ColorFilter.createSRGBGammaToLinear();
+        let colorFilter = drawing.ColorFilter.createSRGBGammaToLinear();
         console.info(msg + ' createSRGBGammaToLinear successed');
+        if(colorFilter == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch(e) {
         e = e as BusinessError ;
         console.info(msg + ` createSRGBGammaToLinear errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -431,8 +597,12 @@ export default function colorFilterTest() {
       const msg = 'testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic';
       try {
         for (let i = 0; i < 20; i++) {
-          drawing.ColorFilter.createSRGBGammaToLinear();
+          let colorFilter = drawing.ColorFilter.createSRGBGammaToLinear();
           console.info(msg + ' createSRGBGammaToLinear successed');
+          if(colorFilter == undefined){
+            console.info(msg + '  test failed step: ' + i);
+            expect().assertFail();
+          }
         }
       } catch(e) {
         e = e as BusinessError ;
@@ -452,8 +622,12 @@ export default function colorFilterTest() {
     it('testColorFilterCreateLumaColorFilterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testColorFilterCreateLumaColorFilterNormalStatic';
       try {
-        drawing.ColorFilter.createLumaColorFilter();
+        let colorFilter = drawing.ColorFilter.createLumaColorFilter();
         console.info(msg + ' createLumaColorFilter successed');
+        if(colorFilter == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch(e) {
         e = e as BusinessError ;
         console.info(msg + ` createLumaColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -473,8 +647,12 @@ export default function colorFilterTest() {
       const msg = 'testColorFilterCreateLumaColorFilterMultipleCallsStatic';
       try {
         for (let i = 0; i < 20; i++) {
-          drawing.ColorFilter.createLumaColorFilter();
+          let colorFilter = drawing.ColorFilter.createLumaColorFilter();
           console.info(msg + ' createLumaColorFilter successed');
+          if(colorFilter == undefined){
+            console.info(msg + ' test failed step: ' + i);
+            expect().assertFail();
+          }
         }
       } catch(e) {
         e = e as BusinessError ;
@@ -503,6 +681,10 @@ export default function colorFilterTest() {
         let colorFilter = drawing.ColorFilter.createMatrixColorFilter(matrix_);
         expect(colorFilter != null || colorFilter != undefined).assertTrue()
         console.info(msg + ' createMatrixColorFilter successed,colorFilter:' + colorFilter);
+        if(colorFilter == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch(e) {
         e = e as BusinessError ;
         console.info(msg + ` createMatrixColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
@@ -530,6 +712,10 @@ export default function colorFilterTest() {
           let colorFilter = drawing.ColorFilter.createMatrixColorFilter(matrix);
           expect(colorFilter != null || colorFilter != undefined).assertTrue()
           console.info(msg + ' createMatrixColorFilter successed,colorFilter:' + colorFilter);
+          if(colorFilter == undefined){
+            console.info(msg + ' test failed step: ' + i);
+            expect().assertFail();
+          }
         } catch(e) {
           e = e as BusinessError ;
           console.info(msg + ` createMatrixColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);

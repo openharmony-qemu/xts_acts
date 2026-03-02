@@ -44,7 +44,6 @@ import {
   Radio,
   Rating,
   ScrollBar,
-  Stepper,
   Search,
   Select,
   Slider,
@@ -91,7 +90,6 @@ import {
   MenuItem,
   ProgressType,
   BarState,
-  StepperItem,
   Scroller,
   Axis,
   ToggleType,
@@ -179,8 +177,7 @@ struct ConstraintSizePage {
 
   onPageShow() {
     console.info('ConstraintSize page show called ')
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     AppStorage.setOrCreate<ConstraintSizeOptions>('_constraintSize', routerParamOptions.view.testValue.setValue)
     this.targetView = routerParamOptions.view.targetView
     this.targetGroupView =  routerParamOptions.view.targetGroupView
@@ -282,14 +279,6 @@ struct ConstraintSizePage {
           })
             .showTips(true)
             .applyStyles(this.commonStyle)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -519,19 +508,6 @@ struct ConstraintSizePage {
               }
             }, (item: string) => item)
           }.applyStyles(this.commonStyle)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .applyStyles(this.commonStyle)
-          }
-          .backgroundColor(Color.Yellow)
-          .width(400)
-          .height(400)
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

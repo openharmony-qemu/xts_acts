@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,6 +38,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -66,7 +67,8 @@ export default function circleJsunit() {
           circle.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push circle page error:" + JSON.stringify(err));
       }
     });
@@ -109,7 +111,7 @@ it('circleTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
           data: {
             "width": '500px',
             "height": '500px',
-          } as Record<String, undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         console.info('[circleTest_static_0200] START');
         let innerEvent: emitter.InnerEvent = {
@@ -118,7 +120,8 @@ it('circleTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("[circleTest_static_0200] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[circleTest_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -144,7 +147,7 @@ it('circleTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
           data: {
             "width": '-a',
             "height": '-b',
-          } as Record<String, undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         console.info('[circleTest_static_0300] START');
         let innerEvent: emitter.InnerEvent = {
@@ -153,7 +156,8 @@ it('circleTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("[circleTest_030] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[circleTest_030] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,11 +17,11 @@ import {SetValue, RouterParams} from '../../common/Utils'
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import {TabContent,FlowItem,ColumnOptions,SideBarContainerType,HorizontalAlign,VerticalAlign,AlignRuleOption,
  BadgeParam,BadgeStyle,GridColColumnOption,GridColOptions,GridItem,GridCol,GridRowDirection,MenuItemGroup,
-  ToggleType,TimePicker,StepperItem,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,
+  ToggleType,TimePicker,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,
   MenuItemOptions,MenuItem,$r,Entry,Column,Component,Button,ClickEvent,ForEach,Text,Row,List,ListItem,Color,FlexAlign,ExpectedFrameRateRange,Scroll,Margin,
 // Styles,
   CommonMethod,applyStyles,Resource,NavPathStack,Builder,Length,
-  AlphabetIndexer,WebviewController,Blank,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,NavDestination,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,ScrollDirection,Search,Select,Slider,Stepper,
+  AlphabetIndexer,WebviewController,Blank,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,NavDestination,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,ScrollDirection,Search,Select,Slider,
   TextArea,TextClock,ImageFit,TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,ColumnSplit,Counter,GridRow,Grid,Refresh,RelativeContainer,RowSplit,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,DataPanelType
 } from '@ohos.arkui.component'
 import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement'
@@ -63,8 +63,7 @@ struct WidthPage {
     console.info('width page show called ')
     try {
       console.info('[TabIndexPage] start router ');
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Length>('_width', routerParamOptions.view.testValue.setValue.width)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
@@ -74,7 +73,7 @@ struct WidthPage {
       this.BackGroundColor = routerParamOptions.view.BackGroundColor
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
       console.info('[TabIndexPage] end router ');
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -446,20 +445,6 @@ struct WidthPage {
         WaterFlow()
         .applyStyles(this.commonStyle)
         .backgroundColor(this.BackGroundColor).height(100)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem()
-        }
-        .applyStyles(this.commonStyle)
-        .height(100)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Text('Page One')
-          }
-          .applyStyles(this.commonStyle)
-
-        }.key(this.parentComponentKey).width(this.parentWidth as number).height(this.parentHeight as number)
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem()

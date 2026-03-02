@@ -39,15 +39,12 @@ export default function comSizeAbilityTest_22() {
   describe('comSizeAbilityTest_22', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("comSizeAbilityTest_22 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("comSizeAbilityTest_22 beforeEach start")
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/comSizeAbility/comSizeAbilityTest_22'
@@ -78,6 +75,8 @@ export default function comSizeAbilityTest_22() {
      */
 it('comSizeAbilityTestJsunit_static_55', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_55 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("DataPanel_Offset");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Checkbox_Size");

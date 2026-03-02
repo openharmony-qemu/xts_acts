@@ -34,7 +34,7 @@ export default function ImageTextTest() {
   const SUITE = 'ImageText'
   describe('ImageTextTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageTextTest beforeEach start");
 
 
@@ -52,7 +52,7 @@ export default function ImageTextTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ImageTextTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("ImageText" == pages.name)) {
           console.info("get ImageTextTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

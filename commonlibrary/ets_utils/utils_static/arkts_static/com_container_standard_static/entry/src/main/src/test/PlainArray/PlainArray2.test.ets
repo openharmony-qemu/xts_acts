@@ -24,7 +24,7 @@ class Tmp {
 
 export default function PlainArrayTest2() {
   describe('plainArrayTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -157,48 +157,6 @@ export default function PlainArrayTest2() {
     });
 
     /**
-     * @tc.name   testPlainArrayHas0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_HAS_0300
-     * @tc.desc   Testing PlainArray has null.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testPlainArrayHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayHas0003';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray<string>();
-    //     plainArray.add(null, "zhang san");
-    //     plainArray.has(null);
-    //     expect('false').assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(err.code).assertEqual(401)
-    //   }
-    // });
-
-    /**
-     * @tc.name   testPlainArrayHas0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_HAS_0400
-     * @tc.desc   Testing PlainArray has undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testPlainArrayHas0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayHas0004';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray<string>();
-    //     plainArray.add(undefined, "zhang san");
-    //     plainArray.has(undefined);
-    //     expect('false').assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(err.code).assertEqual(401)
-    //   }
-    // });
-
-    /**
      * @tc.name   testPlainArrayHas0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_HAS_0500
      * @tc.desc   Testing PlainArray has.
@@ -272,48 +230,6 @@ export default function PlainArrayTest2() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GET_0300
-    //  * @tc.name      : testPlainArrayGet0003
-    //  * @tc.desc      : Testing PlainArray get null.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testPlainArrayGet0003';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray();
-    //     plainArray.add(null, "zhang san");
-    //     plainArray.get(null);
-    //     expect().assertFail();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GET_0400
-    //  * @tc.name      : testPlainArrayGet0004
-    //  * @tc.desc      : Testing PlainArray get undefined.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayGet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testPlainArrayGet0004';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray();
-    //     plainArray.add(undefined, "zhang san");
-    //     plainArray.get(undefined);
-    //     expect().assertFail();
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
 
     /**
      * @tc.name   testPlainArrayGet0005
@@ -391,31 +307,6 @@ export default function PlainArrayTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GETINDEXOFKEY_0300
-    //  * @tc.name      : testPlainArrayGetIndexOfKey0003
-    //  * @tc.desc      : Testing PlainArray getIndexOfKey.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayGetIndexOfKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testPlainArrayGetIndexOfKey0003';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray<string>();
-    //     plainArray.add(1, "squirrel");
-    //     plainArray.add(2, null);
-    //     plainArray.add(3, undefined);
-    //     let result = plainArray.getIndexOfKey(2);
-    //     expect(String(result)).assertEqual('1');
-    //     let result1 = plainArray.getIndexOfKey(3);
-    //     expect(String(result1)).assertEqual('2');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testPlainArrayGetIndexOfKey0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GETINDEXOFKEY_0400
@@ -486,31 +377,6 @@ export default function PlainArrayTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GETINDEXOVALUE_0300
-    //  * @tc.name      : testPlainArrayGetIndexOfValue0003
-    //  * @tc.desc      : Testing PlainArray getIndexOfValue.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayGetIndexOfValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayGetIndexOfValue0003';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray();
-    //     plainArray.add(1, "squirrel");
-    //     plainArray.add(2, null);
-    //     plainArray.add(3, undefined);
-    //     let result = plainArray.getIndexOfValue(null);
-    //     expect(result).assertEqual(1);
-    //     let result1 = plainArray.getIndexOfValue(undefined);
-    //     expect(result1).assertEqual(2);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testPlainArrayGetIndexOfValue0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GETINDEXOVALUE_0400
@@ -580,74 +446,6 @@ export default function PlainArrayTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GETKEYAT_0300
-    //  * @tc.name      : testPlainArrayGetKeyAt0003
-    //  * @tc.desc      : Testing PlainArray getKeyAt.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayGetKeyAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayGetKeyAt0003';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray();
-    //     plainArray.add(1, "squirrel");
-    //     plainArray.add(2, "sparrow");
-    //     plainArray.getKeyAt(null);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GETKEYAT_0400
-    //  * @tc.name      : testPlainArrayGetKeyAt0004
-    //  * @tc.desc      : Testing PlainArray getKeyAt.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayGetKeyAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayGetKeyAt0004';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray();
-    //     plainArray.add(1, "squirrel");
-    //     plainArray.add(2, "sparrow");
-    //     plainArray.getKeyAt(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testPlainArrayGetKeyAt0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GETKEYAT_0500
-     * @tc.desc   Testing PlainArray getKeyAt.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testPlainArrayGetKeyAt0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayGetKeyAt0005';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray<string>();
-    //     plainArray.add(1, "squirrel");
-    //     plainArray.add(2, "sparrow");
-    //     let result = plainArray.getKeyAt(1);
-    //     let index = plainArray.getIndexOfKey(result);
-    //     expect(String(index)).assertEqual('1');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-
     /**
      * @tc.name   testPlainArrayGetValueAt0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GETVALUEAT_0100
@@ -692,50 +490,6 @@ export default function PlainArrayTest2() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GETVALUEAT_0300
-    //  * @tc.name      : testPlainArrayGetValueAt0003
-    //  * @tc.desc      : Testing PlainArray getValueAt.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayGetValueAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayGetValueAt0003';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray<string>();
-    //     plainArray.add(1, "squirrel");
-    //     plainArray.add(2, "sparrow");
-    //     plainArray.getValueAt(null);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(String(err.code)).assertEqual('401');
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_GETVALUEAT_0400
-    //  * @tc.name      : testPlainArrayGetValueAt0004
-    //  * @tc.desc      : Testing PlainArray getValueAt.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayGetValueAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayGetValueAt0004';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray<string>();
-    //     plainArray.add(1, "squirrel");
-    //     plainArray.add(2, "sparrow");
-    //     plainArray.getValueAt(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
-    //     expect(String(err.code)).assertEqual('401');
-    //   }
-    // });
 
     /**
      * @tc.name   testPlainArrayGetValueAt0005
@@ -876,28 +630,6 @@ export default function PlainArrayTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_CLONE_0600
-    //  * @tc.name      : testPlainArrayClone0006
-    //  * @tc.desc      : Testing PlainArray clone.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayClone0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayClone0006';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray();
-    //     plainArray.add(1, null);
-    //     plainArray.add(2, undefined);
-    //     let newPlainArray = plainArray.clone();
-    //     expect(plainArray.length).assertEqual(newPlainArray.length);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testPlainArrayAdd0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_ADD_0100
@@ -941,26 +673,6 @@ export default function PlainArrayTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_ADD_0300
-    //  * @tc.name      : testPlainArrayAdd0003
-    //  * @tc.desc      : Testing PlainArray add.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayAdd0003';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray();
-    //     plainArray.add(1, null);
-    //     plainArray.add(2, undefined);
-    //     expect(plainArray.length).assertEqual(2);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testPlainArrayRemove0001
@@ -984,46 +696,6 @@ export default function PlainArrayTest2() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_REMOVE_0200
-    //  * @tc.name      : testPlainArrayRemove0002
-    //  * @tc.desc      : Testing PlainArray remove null.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayRemove0002';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray();
-    //     plainArray.remove(null);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_REMOVE_0300
-    //  * @tc.name      : testPlainArrayRemove0003
-    //  * @tc.desc      : Testing PlainArray remove undefined.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayRemove0003';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray();
-    //     plainArray.remove(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
 
     /**
      * @tc.name   testPlainArrayRemove0004
@@ -1325,75 +997,6 @@ export default function PlainArrayTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_SETVALUEAT_0400
-    //  * @tc.name      : testPlainArraySetValueAt0004
-    //  * @tc.desc      : Testing PlainArray setValueAt.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArraySetValueAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArraySetValueAt0004';
-    //   try {
-    //     let plainArray: PlainArray<string | number> = new PlainArray<string | number>();
-    //     plainArray.add(1, "squirrel");
-    //     plainArray.add(2, "sparrow");
-    //     plainArray.add(3, "sparrow");
-    //     plainArray.setValueAt(0, null);
-    //     plainArray.setValueAt(1, undefined);
-    //     expect(String(plainArray.length)).assertEqual('3');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_SETVALUEAT_0500
-    //  * @tc.name      : testPlainArraySetValueAt0005
-    //  * @tc.desc      : Testing PlainArray setValueAt.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArraySetValueAt0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArraySetValueAt0005';
-    //   try {
-    //     let plainArray: PlainArray<string | number> = new PlainArray();
-    //     plainArray.add(1, "squirrel");
-    //     plainArray.add(2, "sparrow");
-    //     plainArray.add(3, "sparrow");
-    //     plainArray.setValueAt(null, 2147483647);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_SETVALUEAT_0600
-    //  * @tc.name      : testPlainArraySetValueAt0006
-    //  * @tc.desc      : Testing PlainArray setValueAt.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArraySetValueAt0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArraySetValueAt0006';
-    //   try {
-    //     let plainArray: PlainArray<string | number> = new PlainArray();
-    //     plainArray.add(1, "squirrel");
-    //     plainArray.add(2, "sparrow");
-    //     plainArray.add(3, "sparrow");
-    //     plainArray.setValueAt(undefined, 2147483647);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
 
     /**
      * @tc.name   testPlainArrayToString0001
@@ -1418,29 +1021,6 @@ export default function PlainArrayTest2() {
         expect(false).assertFail();
       }
     });
-    //
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_TOSTRING_0200
-    //  * @tc.name      : testPlainArrayToString0002
-    //  * @tc.desc      : Testing PlainArray toString.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayToString0002';
-    //   try {
-    //     let plainArray: PlainArray<string | number> = new PlainArray();
-    //     plainArray.add(1, null);
-    //     plainArray.add(2, undefined);
-    //     let result = plainArray.toString();
-    //     console.log(`${TAG} result: ${result}`);
-    //     expect(result).assertEqual('1:,2:');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testPlainArrayToString0003
@@ -1608,26 +1188,6 @@ export default function PlainArrayTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_CLEAR_0400
-    //  * @tc.name      : testPlainArrayClear0004
-    //  * @tc.desc      : Testing PlainArray clear.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayClear0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayClear0004';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray<string>();
-    //     let result = plainArray.clear();
-    //     console.log(`${TAG} result: ${result}`);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testPlainArrayForEach0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_FOREACH_0100
@@ -1701,53 +1261,6 @@ export default function PlainArrayTest2() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_FOREACH_0400
-    //  * @tc.name      : testPlainArrayForEach0004
-    //  * @tc.desc      : Testing PlainArray forEach.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayForEach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayForEach0004';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray<string>();
-    //     plainArray.add(0, undefined);
-    //     plainArray.add(1, null);
-    //     plainArray.forEach((value: string, index: number) => {
-    //       console.log(`${TAG} value: ${value}, index: ${index}`);
-    //       expect(String(plainArray.get(index))).assertEqual(String(value));
-    //     });
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_FOREACH_0500
-    //  * @tc.name      : testPlainArrayForEach0005
-    //  * @tc.desc      : Testing PlainArray forEach.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArrayForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArrayForEach0005';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray<string>();
-    //     plainArray.add(0, undefined);
-    //     plainArray.add(1, null);
-    //     plainArray.forEach( (): void => {
-    //       expect(String(plainArray.length)).assertEqual('2');
-    //     });
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testPlainArrayForEach0006
@@ -1884,34 +1397,6 @@ export default function PlainArrayTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_SYMBOL_ITERATOR_0400
-    //  * @tc.name      : testPlainArraySymbolIterator0004
-    //  * @tc.desc      : Testing PlainArray Symbol.iterator.
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testPlainArraySymbolIterator0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
-    //   const TAG = 'testPlainArraySymbolIterator0004';
-    //   try {
-    //     let plainArray: PlainArray<string> = new PlainArray<string>();
-    //     plainArray.add(0, undefined);
-    //     plainArray.add(1, null);
-    //     let iter = plainArray.$_iterator();
-    //     let temp: IteratorResult<Object[]> = iter.next();
-    //     while (!temp.done) {
-    //       let key = temp.value[0] as number;
-    //       let value = temp.value[1] as string;
-    //       console.log(`${TAG} key: ${key}, value: ${value}`);
-    //       expect(String(plainArray.get(key))).assertEqual(String(value));
-    //       temp = iter.next();
-    //     }
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name      testPlainArraySymbolIterator0017

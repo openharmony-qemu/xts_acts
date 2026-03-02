@@ -55,3 +55,21 @@ export const TestConvertPositionToWindow001: (a: string) => void;
 export const TestIsInRenderState001: (a: string) => void;
 
 export const TestConvertPositionFromWindow001: (a: string) => void;
+
+export const CreateScrollToVisibleNodeTest: (a: string) => void;
+
+export const GetTextAreaScrollToVisibleTest: () => number;
+
+export const GetTextInputScrollToVisibleTest: () => number;
+
+export const DeleteBackwardTest: (a: string) => void;
+
+export const TextAreaDeleteBackwardTest: (a: string) => void;
+
+export const TextTest: (a: string) => void;
+
+export const TextInputTest: (a: string) => void;
+
+export const TextAreaTest: (a: string) => void;
+
+export const CreateNativeSwiperNode: (a: string) => void;

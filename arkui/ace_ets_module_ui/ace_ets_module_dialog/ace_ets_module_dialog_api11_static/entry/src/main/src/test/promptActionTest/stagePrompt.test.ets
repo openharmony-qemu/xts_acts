@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,6 +52,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -60,7 +61,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function stagePromptTest() {
   describe('stagePromptTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stagePromptTest beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
@@ -118,7 +119,8 @@ it('testPromptActionShowToast001_static', Level.LEVEL2, async (done: () => void)
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast001_static get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          const data = eventData.data as Record<String,RecordData>;
+          expect(data["STATUS"]).assertEqual(true);
           done();
         }
         try {
@@ -154,7 +156,8 @@ it('testPromptActionShowToast002_static', Level.LEVEL2, async (done: () => void)
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast002_static get event state result is: " + JSON.stringify(eventData));
-          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          const data = eventData.data as Record<String,RecordData>;
+          expect(data["STATUS"]).assertEqual(true);
           done();
         }
         try {
@@ -189,7 +192,8 @@ it('testPromptActionShowToast003_static', Level.LEVEL2, async (done: () => void)
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast003_static get event state result is: " + JSON.stringify(eventData));
-          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          const data = eventData.data as Record<String,RecordData>;
+          expect(data["STATUS"]).assertEqual(true);
           done();
         }
         try {
@@ -224,7 +228,8 @@ it('testPromptActionShowToast004_static', Level.LEVEL2, async (done: () => void)
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast004_static get event state result is: " + JSON.stringify(eventData));
-          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          const data = eventData.data as Record<String,RecordData>;
+          expect(data["STATUS"]).assertEqual(true);
           done();
         }
         try {
@@ -259,7 +264,8 @@ it('testPromptActionShowToast005_static', Level.LEVEL2, async (done: () => void)
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast005_static get event state result is: " + JSON.stringify(eventData));
-          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          const data = eventData.data as Record<String,RecordData>;
+          expect(data["STATUS"]).assertEqual(true);
           done();
         }
         try {

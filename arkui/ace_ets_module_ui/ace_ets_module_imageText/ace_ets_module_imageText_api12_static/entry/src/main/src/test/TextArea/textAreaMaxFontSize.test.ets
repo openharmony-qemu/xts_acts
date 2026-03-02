@@ -31,7 +31,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textAreaMaxFontSize() {
   describe('textAreaMaxFontSize', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaMaxFontSize beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -46,7 +46,7 @@ export default function textAreaMaxFontSize() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaMaxFontSize state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaMaxFontSize" == pages.name)) {
           console.info("get textAreaMaxFontSize pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

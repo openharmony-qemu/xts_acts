@@ -27,7 +27,7 @@ let libUtil: LibUtil = new LibUtil();
 export default function listScrollToIndex() {
 
   describe('ListScrollToIndex', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
     afterEach(async () => {
@@ -45,7 +45,7 @@ export default function listScrollToIndex() {
     it('testListScrollToIndex001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest001', 30, ScrollAlign.START)
-      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option.toJSON())
+      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option)
       await Utils.sleep(1500)
       let dataArray = libUtil.listGetOnScrollIndexData()
       console.log('testListScrollToIndex001', JSON.stringify(dataArray))
@@ -67,7 +67,7 @@ export default function listScrollToIndex() {
     it('testListScrollToIndex002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest002', -100, ScrollAlign.START)
-      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option.toJSON())
+      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option)
       await Utils.sleep(1500)
       let dataArray = libUtil.listGetOnScrollIndexData()
       console.log('testListScrollToIndex002', JSON.stringify(dataArray))
@@ -89,7 +89,7 @@ export default function listScrollToIndex() {
     it('testListScrollToIndex003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest003', 100, ScrollAlign.START)
-      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option.toJSON())
+      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option)
       await Utils.sleep(1500)
       let dataArray = libUtil.listGetOnScrollIndexData()
       console.log('testListScrollToIndex003', JSON.stringify(dataArray))
@@ -111,7 +111,7 @@ export default function listScrollToIndex() {
     it('testListScrollToIndex004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest004', 40, ScrollAlign.CENTER)
-      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option.toJSON())
+      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option)
       await Utils.sleep(1500)
       let dataArray = libUtil.listGetOnScrollIndexData()
       console.log('testListScrollToIndex004', JSON.stringify(dataArray))
@@ -133,7 +133,7 @@ export default function listScrollToIndex() {
     it('testListScrollToIndex005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest005', 20, ScrollAlign.END)
-      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option.toJSON())
+      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option)
       await Utils.sleep(1500)
       let dataArray = libUtil.listGetOnScrollIndexData()
       console.log('testListScrollToIndex005', JSON.stringify(dataArray))
@@ -155,7 +155,7 @@ export default function listScrollToIndex() {
     it('testListScrollToIndex006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let option: ListScrollToIndexData =
         new ListScrollToIndexData('ListScrollToIndexTest006', 40, ScrollAlign.AUTO)
-      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option.toJSON())
+      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option)
       await Utils.sleep(1500)
       let dataArray = libUtil.listGetOnScrollIndexData()
       console.log('testListScrollToIndex006', JSON.stringify(dataArray))
@@ -176,7 +176,7 @@ export default function listScrollToIndex() {
      */
     it('testListScrollToIndex007', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let option: ListScrollToIndexData = new ListScrollToIndexData('ListScrollToIndexTest007', 20, -1)
-      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option.toJSON())
+      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option)
       await Utils.sleep(1500)
       let dataArray = libUtil.listGetOnScrollIndexData()
       console.log('testListScrollToIndex007', JSON.stringify(dataArray))
@@ -197,7 +197,7 @@ export default function listScrollToIndex() {
      */
     it('testListScrollToIndex008', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let option: ListScrollToIndexData = new ListScrollToIndexData('ListScrollToIndexTest008', 40, 4)
-      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option.toJSON())
+      await Utils.pushPageByParams(`list/ListScrollToIndexTest`, option)
       await Utils.sleep(1500)
       let dataArray = libUtil.listGetOnScrollIndexData()
       console.log('testListScrollToIndex008', JSON.stringify(dataArray))

@@ -27,7 +27,7 @@ enum FontSizeScaleThreshold {
 export default class LeadingMarginCreator {
   private settings: RenderingContextSettings = new RenderingContextSettings(true)
   private offscreenCanvas: OffscreenCanvas = new OffscreenCanvas(canvasWidth, canvasHeight)
-  private offContext: OffscreenCanvasRenderingContext2D = this.offscreenCanvas.getContext('2d', this.settings)
+  private offContext: OffscreenCanvasRenderingContext2D = new OffscreenCanvasRenderingContext2D(canvasWidth, canvasHeight, this.settings);
   public static instance: LeadingMarginCreator = new LeadingMarginCreator()
 
   // 获得字体字号级别，分别是从0到4级
@@ -71,20 +71,30 @@ export default class LeadingMarginCreator {
   }
 
   public genStrMark(fontSize: number, str: string): image.PixelMap {
-    this.offContext = this.offscreenCanvas.getContext('2d', this.settings)
+    this.offContext = new OffscreenCanvasRenderingContext2D(canvasWidth, canvasHeight, this.settings);
     this.clearCanvas()
     this.offContext.font = fontSize + 'vp sans-serif'
     this.offContext.fillText(str + '.', 0, fontSize * 0.9)
-    return this.offContext.getPixelMap(0, 0, fontSize * (str.length + 1) / 1.75, fontSize)
+    let pixelMap = this.offContext.getPixelMap(0, 0, fontSize * (str.length + 1) / 1.75, fontSize)
+    if (pixelMap != undefined) {
+      return pixelMap as image.PixelMap
+    } else {
+      throw new Error(`GetPixelMap failed`)
+    }
   }
 
   public genSquareMark(fontSize: number): image.PixelMap {
-    this.offContext = this.offscreenCanvas.getContext('2d', this.settings)
+    this.offContext = new OffscreenCanvasRenderingContext2D(canvasWidth, canvasHeight, this.settings);
     this.clearCanvas()
     const coordinate = fontSize * (1 - 1 / 1.5) / 2
     const sideLength = fontSize / 1.5
     this.offContext.fillRect(coordinate, coordinate, sideLength, sideLength)
-    return this.offContext.getPixelMap(0, 0, fontSize, fontSize)
+    let pixelMap = this.offContext.getPixelMap(0, 0, fontSize, fontSize)
+    if (pixelMap != undefined) {
+      return pixelMap as image.PixelMap
+    } else {
+      throw new Error(`GetPixelMap failed`)
+    }
   }
 
   // 生成圆圈符号
@@ -94,15 +104,19 @@ export default class LeadingMarginCreator {
     const fontSizeLevel = this.getFontSizeLevel(fontSize)
     const marginLevel = this.getMarginLevel(width)
     const newCanvas = new OffscreenCanvas(canvasWidth, canvasHeight)
-    const newOffContext: OffscreenCanvasRenderingContext2D = newCanvas.getContext('2d', this.settings)
+    const newOffContext: OffscreenCanvasRenderingContext2D = new OffscreenCanvasRenderingContext2D(canvasWidth, canvasHeight, this.settings);
     const centerCoordinate = 50
     const radius = 10
-    this.clearCanvas()
     newOffContext.ellipse(100 * (indentLevel + 1) - centerCoordinate * marginLevel, offsetLevel[fontSizeLevel as int],
       radius * marginLevel, radius, 0, 0, 2 * Math.PI)
     newOffContext.fillStyle = '66FF0000'
     newOffContext.fill()
-    return newOffContext.getPixelMap(0, 0, 100 + 100 * indentLevel, 100)
+    let pixelMap = newOffContext.getPixelMap(0, 0, 100 + 100 * indentLevel, 100)
+    if (pixelMap != undefined) {
+      return pixelMap as image.PixelMap
+    } else {
+      throw new Error(`GetPixelMap failed`)
+    }
   }
 
   private clearCanvas() {

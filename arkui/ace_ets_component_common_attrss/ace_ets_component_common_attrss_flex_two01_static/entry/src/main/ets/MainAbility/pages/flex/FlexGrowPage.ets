@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,7 +43,6 @@ import {
   Radio,
   Rating,
   ScrollBar,
-  Stepper,
   Search,
   Select,
   Slider,
@@ -91,7 +90,6 @@ import {
   MenuItem,
   ProgressType,
   BarState,
-  StepperItem,
   Scroller,
   Axis,
   ToggleType,
@@ -152,8 +150,7 @@ struct FlexGrowPage {
     AppStorage.setOrCreate<number>('_parentHeight',  500)
     AppStorage.setOrCreate<number>('_compareFlexGrow',  1)
     try {
-      let routerParamOptions = new RouterParams()
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey ?? ''
       this.containerView = routerParamOptions.view.containerView ?? ''
@@ -165,7 +162,7 @@ struct FlexGrowPage {
       this.standardComponentKey = routerParamOptions.view.standardComponentKey
       this.targetWidth = routerParamOptions.view.targetWidth
       this.targetHeight = routerParamOptions.view.targetHeight
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -216,16 +213,6 @@ struct FlexGrowPage {
     }
     else if (this.targetView == 'Navigation') {
       Navigation().applyStyles(this.commonStyle)
-    } else if (this.targetView == 'NavRouter') {
-      // NavRouter() {
-      //   Row() {
-      //     Image($r('app.media.icon'))
-      //   }
-      //
-      //   NavDestination() {
-      //     Text('NavDestination').fontSize(10)
-      //   }
-      // }.applyStyles(this.commonStyle)
     }
     else if (this.targetView == 'Progress') {
       Progress({ value: 50, type: ProgressType.Linear }).applyStyles(this.commonStyle)
@@ -239,14 +226,6 @@ struct FlexGrowPage {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text().width(20).height(20).borderRadius(10)
       }.width(20).applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem() {
-          Column() {
-            Text('Page One')
-          }
-        }
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Search') {
       Search({ placeholder: 'Type to search...' })
         .searchButton('SEARCH')
@@ -340,15 +319,6 @@ struct FlexGrowPage {
       }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Row') {
       Row().applyStyles(this.commonStyle)
-    } 
-    else if (this.targetView == 'Panel') {
-      // Panel(true) {
-      //   Column() {
-      //     Text('Panel')
-      //   }
-      // }
-      // .mode(PanelMode.Half)
-      // .applyStyles(this.commonStyle)
     }
     else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: true }) {

@@ -23,6 +23,7 @@ struct Index2 {
          Row() {
            Column() {
              Text(this.message)
+               .id('textId')
              Button() {
                Text('next page')
              }.type(ButtonType.Capsule)

@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextMaxLines() {
   describe('TextMaxLines', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextMaxLines beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -47,7 +47,7 @@ export default function TextMaxLines() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextMaxLines state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextMaxLines" == pages.name)) {
           console.info("get TextMaxLines pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

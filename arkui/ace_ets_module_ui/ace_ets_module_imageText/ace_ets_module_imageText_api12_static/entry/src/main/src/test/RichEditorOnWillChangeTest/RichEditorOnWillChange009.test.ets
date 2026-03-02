@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorOnWillChange009() {
   describe('RichEditorOnWillChange009', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorOnWillChange009 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -115,8 +115,11 @@ export default function RichEditorOnWillChange009() {
       let rangeText = await range_text.getText();
       await CommonFunc.sleep(500);
       // rangeBefore rangeAfter
-      expect(rangeText).assertEqual('range_text:{"start":3,"end":3}{"start":3,"end":4}');
-
+      expect(rangeText.indexOf('range_text') == 0).assertEqual(true);
+      expect(rangeText.indexOf('"start":3') > 0).assertEqual(true);
+      expect(rangeText.indexOf('"end":3') > 0).assertEqual(true);
+      expect(rangeText.indexOf('"start":3') > 0).assertEqual(true);
+      expect(rangeText.indexOf('"end":4') > 0).assertEqual(true);
 
       let replace_text = await (driver.findComponent(ON.id('replace_text')) as Promise<Component>);
       let replaceSpanText = await replace_text.getText();

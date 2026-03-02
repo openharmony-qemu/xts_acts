@@ -48,7 +48,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorFontFeatureJsunit() {
   describe('RichEditorFontFeatureJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -62,7 +62,7 @@ export default function RichEditorFontFeatureJsunit() {
         defaultRouter.clear();
         let pages:router.RouterState = defaultRouter.getState();
         console.info("get RichEditorFontFeatureJsunit state pages:" + JSON.stringify(pages));
-        if (!("RichEditorFontFeatureJsunit" == pages.name)) {
+        if (!("RichEditorFontFeature" == pages.name)) {
           console.info("get RichEditorFontFeatureJsunit pages.name:" + JSON.stringify(pages.name));
           defaultRouter.pushUrl(options);
           let driver = Driver.create();

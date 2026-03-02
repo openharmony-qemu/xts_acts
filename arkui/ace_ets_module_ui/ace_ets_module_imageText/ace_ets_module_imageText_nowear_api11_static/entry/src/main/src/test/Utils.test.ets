@@ -16,7 +16,8 @@
 import componentRect from '@ohos.arkui.componentUtils'
 import RectValue from './Rect.test';
 import { ComponentUtils } from '@ohos.arkui.UIContext';
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default class Utils {
   static rect_width: number;
@@ -40,8 +41,9 @@ export default class Utils {
   }
 
   static getComponentRect(key: string) {
-    const componentUtils = new ComponentUtils()
-    let strJson: componentRect.ComponentInfo = componentUtils.getRectangleById(key);
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!;
+    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
+    let strJson: componentRect.ComponentInfo = componentUtils1.getRectangleById(key);
     Utils.rect_width = strJson.size.width
     Utils.rect_height = strJson.size.height
     Utils.rect_localOffsetX = strJson.localOffset.x

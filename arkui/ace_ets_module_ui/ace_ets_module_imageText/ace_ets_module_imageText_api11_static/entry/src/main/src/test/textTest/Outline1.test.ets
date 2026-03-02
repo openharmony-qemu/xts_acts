@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function outline() {
   describe('outline', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("outline beforeEach start");
 
 
@@ -52,7 +52,7 @@ export default function outline() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get outline state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("outline" == pages.name)) {
           console.info("get outline pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

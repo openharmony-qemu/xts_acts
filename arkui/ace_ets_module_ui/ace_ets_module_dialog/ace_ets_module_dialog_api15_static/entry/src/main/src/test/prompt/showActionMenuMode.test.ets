@@ -13,22 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-// import router from '@ohos.router';
-// import {
-//   UiComponent,
-//   Driver,
-//   Component,
-//   UiWindow,
-//   ON,
-//   BY,
-//   MatchPattern,
-//   DisplayRotation,
-//   ResizeDirection,
-//   WindowMode,
-//   PointerMatrix
-// } from '@ohos.UiTest';
-// import CommonFunc from '../../MainAbility/common/Common';
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
@@ -49,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function showActionMenuMode() {
   describe('showActionMenuMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.api15.static", "EntryAbility")
@@ -69,7 +53,7 @@ export default function showActionMenuMode() {
         if (!("showActionMenuMode" == pages.name)) {
           console.info("get showActionMenuMode state pages.name: " + JSON.stringify(pages.name));
           // let result = await showActionMenuMode.pushUrl(options);
-          showActionMenuMode.pushUrl(options);
+          showActionMenuMode.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push showActionMenuMode success: " + JSON.stringify(result));
         }
@@ -163,9 +147,8 @@ it('showActionMenuMode_static_0200', Level.LEVEL1, async (done: () => void): Pro
       console.info('[showActionMenuMode_static_0200] back');
 
       await CommonFunc.sleep(1000);
-      let btn4: Component = ( await driver.findComponent(ON.text('取消')) ) as Component;
+      let btn4 = ( await driver.findComponent(ON.text('取消')) );
       expect(btn4 != null).assertFalse();
-      await ( btn4?.click() as Promise<void>);
       console.info('[showActionMenuMode_static_0200] END');
       done();
     });

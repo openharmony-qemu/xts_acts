@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function listItem_Offset() {
 
   describe('ListItem_OffsetTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_OffsetTest beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -121,7 +121,7 @@ it('testListItemOffset_static', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(UIContext.resolveUIContext()!.vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe(360, 690, 360, 30);
+      await driver.swipe(360, 690, 360, 30);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest64');
       expect(Math.abs(locationText4.top - locationText4Again.top) <= 1).assertTrue();
       console.info('new testListItemOffset END');

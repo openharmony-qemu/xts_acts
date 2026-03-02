@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextHalfLeading() {
   describe('TextHalfLeading', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextHalfLeading beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -47,7 +47,7 @@ export default function TextHalfLeading() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextHalfLeading state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextHalfLeading" == pages.name)) {
           console.info("get TextHalfLeading pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

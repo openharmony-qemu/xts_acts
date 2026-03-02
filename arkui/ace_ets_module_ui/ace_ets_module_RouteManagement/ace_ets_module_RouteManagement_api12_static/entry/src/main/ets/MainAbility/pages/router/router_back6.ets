@@ -16,7 +16,10 @@
 import router from '@ohos.router'
 import { Entry, Component, Column, ColumnOptions, Text, Button, ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-import { AgeObj } from '../../common/Utils'
+
+class AgeObj {
+  age: number = 0
+}
 
 @Entry
 @Component
@@ -31,7 +34,7 @@ struct router_back6 {
       Button('back -1')
         .id('router_back6_btn')
         .onClick((e:ClickEvent) => {
-          this.getUIContext().getRouter().back(-1, (new AgeObj(18)).toJSON())
+          this.getUIContext().getRouter().back(-1, { age: 18 } as AgeObj)
         })
     }.width('100%').height('100%')
   }

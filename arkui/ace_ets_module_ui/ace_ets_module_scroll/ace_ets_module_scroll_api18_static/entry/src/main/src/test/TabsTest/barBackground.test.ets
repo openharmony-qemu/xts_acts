@@ -43,7 +43,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function barBackground() {
   describe('barBackground', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("barBackground beforeEach start");
 
       

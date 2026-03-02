@@ -53,6 +53,7 @@ export default class CommonFunc {
     });
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
       "windowRect Top: " + AppStorage.get<number>("winTop"));
+    console.info(`${key} rectInfo left: ${rectInfo[0][0]}, top: ${rectInfo[0][1]}, right: ${rectInfo[1][0]}, bottom: ${rectInfo[1][1]}`);
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),
@@ -63,9 +64,9 @@ export default class CommonFunc {
 
   static getComponentRectOnScreen(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<String,undefined|null|Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<String,undefined|null|Object>;
+    let obj: Record<String,undefined|null|Object> = JSON.parse<Object>(strJson, Class.from<String>()) as Record<String,undefined|null|Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
     CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import { Entry,Component,Image,Resource,$r,TextArea,TextClockController,ButtonAttribute,TransitionType,Padding,
   TextTimerController,TextTimer,FlexAlign,TextClock,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,
   Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,
-  Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,
+  Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer,TransitionEffect
 } from '@ohos.arkui.component';
 import {
@@ -27,6 +27,7 @@ import {
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
 import {ButtonModifier} from "@ohos.arkui.modifier";
+import { RecordData } from '@ohos.base';
 
 class CustomModifier extends ButtonModifier {
   applyNormalAttribute(instance: ButtonAttribute): void {
@@ -62,7 +63,7 @@ struct TransitionTest7Example {
             let backData: events_emitter.EventData = {
               data: {
                 "btn1": this.btn1,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 233,

@@ -1012,7 +1012,7 @@ static napi_value OH_LowPowerVideoSink_CreateByMime0100(napi_env env, napi_callb
         napi_create_int32(env, 0, &retValue);
         return retValue;
     }
-    const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_VC1;
+    const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AC3;
     OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(mime);
     int32_t res = 1;
     if (VideoSink == nullptr) {
@@ -1053,8 +1053,6 @@ static napi_value OH_LowPowerAudioSink_CreateByMime0100(napi_env env, napi_callb
     napi_create_int32(env, res, &retValue);
     return retValue;
 }
-
-
 napi_property_descriptor desc[] = {
     {"OH_LowPowerAudioSink_Configure0100", nullptr, OH_LowPowerAudioSink_Configure0100, nullptr, nullptr, nullptr,
      napi_default, nullptr},

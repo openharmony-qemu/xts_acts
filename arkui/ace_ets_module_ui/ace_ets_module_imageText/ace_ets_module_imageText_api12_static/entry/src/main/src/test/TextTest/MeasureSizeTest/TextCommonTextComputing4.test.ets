@@ -31,7 +31,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextCommonTextComputing4() {
   describe('TextCommonTextComputing4', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextCommonTextComputing4 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -46,7 +46,7 @@ export default function TextCommonTextComputing4() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextCommonTextComputing4 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextCommonTextComputing0160" == pages.name)) {
           console.info("get TextCommonTextComputing4 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -25,7 +25,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let testAbilityContext: common.UIAbilityContext
+let testAbilityContext: common.UIAbilityContext | undefined;
 let DOMAIN: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundle :string = 'com.acts.actsreminderagentmgr.static'
@@ -82,7 +82,7 @@ export default function ActsReminderAgentManagerStaticTest() {
 
         let TEST_CASE_NAME = 'SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001'
         console.info(`${TEST_CASE_NAME} START requestEnableNotification`)
-        notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
+        notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
           console.info(`${TEST_CASE_NAME} requestEnableNotification about is ${testAbilityContext}`)
           console.info(`${TEST_CASE_NAME} come in requestEnableNotification`);
           if (err) {
@@ -158,7 +158,7 @@ export default function ActsReminderAgentManagerStaticTest() {
               }
             }
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001 publishReminder error.code:" + error.code);
         }
       })
@@ -217,7 +217,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002 publishReminder error.code:" + error.code);
         }
       })
@@ -275,7 +275,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003 publishReminder error.code:" + error.code);
         }
       })
@@ -331,7 +331,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004 publishReminder error.code:" + error.code);
         }
       })
@@ -391,7 +391,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005 publishReminder error.code:" + error.code);
         }
       })
@@ -451,7 +451,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006 publishReminder error.code:" + error.code);
         }
       })
@@ -486,7 +486,7 @@ export default function ActsReminderAgentManagerStaticTest() {
               done();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_007 publishReminder error.code:" + error.code);
         }
       })
@@ -519,7 +519,7 @@ export default function ActsReminderAgentManagerStaticTest() {
             expect(false).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_008 publishReminder error.code:" + error.code);
         }
       })
@@ -550,7 +550,7 @@ export default function ActsReminderAgentManagerStaticTest() {
               done();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_009 publishReminder error.code:" + error.code);
         }
       })
@@ -579,7 +579,7 @@ export default function ActsReminderAgentManagerStaticTest() {
             expect(false).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_010 publishReminder error.code:" + error.code);
         }
       })
@@ -627,7 +627,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011 publishReminder error.code:" + error.code);
         }
       })
@@ -670,7 +670,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012 publishReminder error.code:" + error.code);
         }
       })
@@ -765,7 +765,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 publishReminder error.code:" + error.code);
         }
       })
@@ -974,7 +974,7 @@ export default function ActsReminderAgentManagerStaticTest() {
             })
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 publishReminder error.code:" + error.code + error.message);
       }
 

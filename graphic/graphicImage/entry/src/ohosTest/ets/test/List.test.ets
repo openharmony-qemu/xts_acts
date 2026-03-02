@@ -19,6 +19,16 @@ import imagePixelMapTest from './pixelMap'
 import imagePixelMapTestErrorCode from './pixelMapErrorCode'
 import pixelMapNewAPI from './PixelMapNewAPI.test'
 import graphicImagePixelMapAPI22 from './GraphicImagePixelMapAPI22.test'
+import graphicImagePixelMapAPI23 from './GraphicImagePixelMapAPI23.test'
+import graphicImagePixelMapAdd01 from './GraphicImagePixelMapAdd01.test'
+import graphicImagePixelMapAdd02 from './GraphicImagePixelMapAdd02.test'
+import graphicImagePixelMapAdd03 from './GraphicImagePixelMapAdd03.test'
+import graphicImagePixelMapAdd04 from './GraphicImagePixelMapAdd04.test'
+import GraphicSendImagePixelMapAdd01 from './GraphicSendImagePixelMapAdd01.test'
+import GraphicImageCreatePixelMap01 from './GraphicImageCreatePixelMap01.test'
+import GraphicImageCreatePixelMap02 from './GraphicImageCreatePixelMap02.test'
+import GraphicImageCreatePixelMap03 from './GraphicImageCreatePixelMap03.test'
+import GraphicImageCreatePixelMap04 from './GraphicImageCreatePixelMap04.test'
 
 export default function testsuite() {
   imagePixelMapTest()
@@ -28,4 +38,14 @@ export default function testsuite() {
   imagePixelMapTestErrorCode()
   pixelMapNewAPI()
   graphicImagePixelMapAPI22();
+  graphicImagePixelMapAPI23();
+  graphicImagePixelMapAdd01();
+  graphicImagePixelMapAdd02();
+  graphicImagePixelMapAdd03();
+  graphicImagePixelMapAdd04();
+  GraphicSendImagePixelMapAdd01();
+  GraphicImageCreatePixelMap01();
+  GraphicImageCreatePixelMap02();
+  GraphicImageCreatePixelMap03();
+  GraphicImageCreatePixelMap04();
 }

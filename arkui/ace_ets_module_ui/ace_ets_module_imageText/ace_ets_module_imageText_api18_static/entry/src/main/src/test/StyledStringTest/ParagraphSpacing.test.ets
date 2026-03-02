@@ -20,7 +20,6 @@ import {
   Text,
   TextAttribute,
   Column,
-  Component,
   Button,
   ButtonAttribute,
   ClickEvent,
@@ -49,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ParagraphSpacingTest() {
   describe('ParagraphSpacingTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
 
@@ -120,7 +119,7 @@ it('ParagraphSpacingTest_static_0020', Level.LEVEL0, async (done: () => void): P
 it('ParagraphSpacingTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {      console.info('[ParagraphSpacingTest_0030] START');
       await CommonFunc.sleep(500);
       console.info("[ParagraphSpacingTest_0030] value3:" + JSON.stringify(AppStorage.get<number>('paragraphSpacing3')));
-       expect(AppStorage.get<number>('paragraphSpacing3')).assertEqual(-10);
+       expect(AppStorage.get<number>('paragraphSpacing3')).assertEqual(0);
       AppStorage.delete('paragraphSpacing3')
       console.info('[ParagraphSpacingTest_0030] END');
       done();

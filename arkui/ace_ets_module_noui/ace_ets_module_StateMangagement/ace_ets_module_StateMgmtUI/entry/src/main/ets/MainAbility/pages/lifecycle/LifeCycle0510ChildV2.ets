@@ -18,10 +18,8 @@ import router from '@ohos.router'
 @ObservedV2
 export class LifeClass {
   @Trace public appear: number = 0
-  @Trace public attach: number = 0
   @Trace public built: number = 0
   @Trace public disappear: number = 0
-  @Trace public detach: number = 0
   @Trace public recycle: number = 0
   @Trace public reuse: number = 0
   @Trace public init: number = 0
@@ -54,9 +52,8 @@ struct Child {
   build() {
     Column() {
       Row() {
-        Text((AppStorageV2.connect(LifeClass)!!.appear + AppStorageV2.connect(LifeClass)!!.attach +
-        AppStorageV2.connect(LifeClass)!!.built + AppStorageV2.connect(LifeClass)!!.disappear +
-        AppStorageV2.connect(LifeClass)!!.detach + AppStorageV2.connect(LifeClass)!!.recycle +
+        Text((AppStorageV2.connect(LifeClass)!!.appear + AppStorageV2.connect(LifeClass)!!.built +
+        AppStorageV2.connect(LifeClass)!!.disappear + AppStorageV2.connect(LifeClass)!!.recycle +
         AppStorageV2.connect(LifeClass)!!.reuse + AppStorageV2.connect(LifeClass)!!.init).toString())
           .height('5%')
           .id('tvV2Num')

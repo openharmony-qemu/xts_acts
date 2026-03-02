@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function NavigationCustomTitlePage() {
   describe('NavigationCustomTitlePage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("NavigationCustomTitlePage beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation13.static", "EntryAbility");
@@ -119,6 +119,7 @@ it('NavigationCustomTitlePage_static_0200', Level.LEVEL0, async (done: () => voi
 
       let push = await driver.findComponent(ON.text('push'));
       await (push?.click() as Promise<void>)
+      await CommonFunc.sleep(1000);
       console.info('[NavigationCustomTitlePage_0200] push click');
 
       let btn1 = await driver.findComponent(ON.id('customNavTitleId'));

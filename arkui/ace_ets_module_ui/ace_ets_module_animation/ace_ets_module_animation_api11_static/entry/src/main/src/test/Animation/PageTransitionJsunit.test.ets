@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,11 +23,12 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { RouteType } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 export default function pageTransitionJsunit() {
   describe('pageTransitionJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("pageTransitionJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
@@ -74,7 +75,7 @@ it('pageTransitionTest_static_0400', Level.LEVEL0, async (done: () => void): Pro
           data: {
             "scale": 6.0,
             "opacity": 5.0
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 145,
@@ -89,8 +90,8 @@ it('pageTransitionTest_static_0400', Level.LEVEL0, async (done: () => void): Pro
       let callback = (indexEventOne: emitter.EventData) => {
         try {
           console.info("pageTransitionTest_static_0400 get state result is: " + JSON.stringify(indexEventOne));
-          const data: Record<String, undefined | null | Object> =
-            indexEventOne.data as Record<String, undefined | null | Object>
+          const data: Record<String,RecordData> =
+            indexEventOne.data as Record<String,RecordData>
           expect(data['scale']).assertEqual(6);
           expect(data['opacity']).assertEqual(5);
           expect(data['type']).assertEqual(RouteType.Push);

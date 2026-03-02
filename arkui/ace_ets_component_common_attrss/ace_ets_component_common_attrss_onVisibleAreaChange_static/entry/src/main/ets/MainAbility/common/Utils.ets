@@ -58,30 +58,9 @@ export class SetValue {
 export class ExpectValue {
   yOffSetMoveLength: number
 }
-export class RouterParams implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
+export class RouterParams {
   view: PageConfig = new PageConfig()
-
-  constructor() {}
-
-  constructor(view: PageConfig) {
-    this.view = view
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = {
-      "view": jsonx.JsonElement.createString(JSON.stringify(this.view))
-    }
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    let info = JSON.parse<PageConfig>(jsonElem.getString("view"), Type.of(new String() as Object))
-    if (info) {
-      this.view = info!
-    }
-  }
 }
-
 
 export class TestValue {
   describe: string = '';
@@ -139,7 +118,7 @@ export default class Utils {
     })
   }
 
-  static getStringFromFile(fileName: string): Promise<string> {
+  static async getStringFromFile(fileName: string): Promise<string> {
     const abilityContext = AppStorage.get<common.Context>("abilityContext") as common.Context
     const fileData: Uint8Array = await abilityContext.resourceManager.getRawFileContent(fileName);
     return new Promise<string>((resolve, reject) => {
@@ -174,7 +153,9 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
-          params: (new RouterParams(obj)).toJSON()
+          params: {
+            view: obj
+          } as RouterParams
         });
         await Utils.sleep(2000);
 
@@ -203,7 +184,7 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    await Utils.sleep(1000);
+    waitForCompletion(async ()=>{await Utils.sleep(1000);})
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
@@ -223,7 +204,7 @@ export default class Utils {
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    await Utils.sleep(2000);
+    waitForCompletion(async ()=>{await Utils.sleep(2000);})
     console.info('[' + componentKey + '] obj is: ' + strJson);
     return JSON.parseJsonElement(strJson);
   }

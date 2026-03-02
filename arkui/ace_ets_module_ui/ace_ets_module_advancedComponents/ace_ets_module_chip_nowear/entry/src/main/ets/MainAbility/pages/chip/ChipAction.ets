@@ -47,9 +47,12 @@ struct ChipAction {
           allowClose: true,
           enabled: true,
           backgroundColor: 0x808080,
+          onClicked: () => {
+            this.text = 'action'
+          }
         })
-      }.width(120).borderWidth(1).key('ChipActionCol')
-      Text(this.text).key('ChipAction')
+      }.width(120).borderWidth(1).id('ChipActionCol')
+      Text(this.text).id('tvChipAction')
     }
   }
 }

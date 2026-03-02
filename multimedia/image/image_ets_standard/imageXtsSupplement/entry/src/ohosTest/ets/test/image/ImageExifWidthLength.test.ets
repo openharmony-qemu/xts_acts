@@ -45,14 +45,12 @@ export default function ImageWidthLengthSupp() {
       console.info('beforeAll case');
     });
     beforeEach(async () => {
-      await sleep(500);
       console.info('beforeEach case');
       webpImageSourceApi = await getImageSource('test_exif_v2.webp');
       jpgImageSourceApi = await getImageSource('test_exif_v2.jpg');
     });
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(500);
       await webpImageSourceApi.release();
       await jpgImageSourceApi.release();
     });

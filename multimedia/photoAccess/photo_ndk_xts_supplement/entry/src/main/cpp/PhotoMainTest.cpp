@@ -31,6 +31,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHMediaAssetChangeRequestReleaseTest", OHMediaAssetChangeRequestReleaseTest),
     DESCRIPTOR("TestRequestImageForPath", TestRequestImageForPath),
     DESCRIPTOR("MediaAssetManagerCancelRequestTest", MediaAssetManagerCancelRequestTest),
+    DESCRIPTOR("OHMediaAssetManagerQuickRequestImageTest", OHMediaAssetManagerQuickRequestImageTest),
 };
 
 EXTERN_C_START

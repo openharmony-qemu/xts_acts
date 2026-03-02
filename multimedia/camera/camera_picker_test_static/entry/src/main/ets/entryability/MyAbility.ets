@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -76,6 +76,7 @@ class MyAbility extends UIAbility {
       let sketchStatusData: cameraObj.SketchStatusData = {
         status: 1,
         sketchRatio: (1.0) as float,
+        centerPointOffset: { x: (1.0) as float, y: (1.0) as float } as cameraObj.Point,
       }
       console.info('SketchStatusData status:' + sketchStatusData.status + ', sketchRatio: ' + sketchStatusData.sketchRatio);
     } catch (err) {
@@ -141,7 +142,7 @@ class MyAbility extends UIAbility {
         }
         hilog.info(0x0000, 'testTag', 'loadContent ok');
       });
-    } catch (e: Error) {
+    } catch (e) {
       hilog.info(0x0000, 'testTag', 'loadContent catch error：-----------' + e.message);
     }
   }

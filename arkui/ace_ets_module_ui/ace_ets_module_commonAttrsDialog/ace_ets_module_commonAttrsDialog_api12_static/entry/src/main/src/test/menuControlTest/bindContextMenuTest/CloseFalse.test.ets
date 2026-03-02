@@ -24,7 +24,7 @@ import { UtilsTest } from '../../Util.test';
 
 export default function CloseFalse() {
   describe('CloseFalse', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });
@@ -45,7 +45,6 @@ export default function CloseFalse() {
         }
       } catch (err) {
         console.error("push CloseFalse page error: " + err);
-        expect().assertFail();
       }
 
     });

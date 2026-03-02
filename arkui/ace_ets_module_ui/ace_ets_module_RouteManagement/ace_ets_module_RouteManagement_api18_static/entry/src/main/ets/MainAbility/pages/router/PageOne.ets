@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,29 +19,13 @@ import { Entry, Column, Component, Text, Button, Navigation, NavigationTitleMode
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 let router1 = new Router()
-
-class RouteParam implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  msg: string;
-
-  constructor() {
-    this.msg = '';
-  }
-
+class RouteParam {
   constructor(msg: string) {
-    this.msg = msg;
+    this.msg = msg
   }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = {
-      'msg': jsonx.JsonElement.createString(this.msg)
-    };
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.msg = jsonElem.tryGetString('msg');
-  }
+  private msg: string = '';
 }
 
 @Entry({routeName: 'nickNameOne'})
@@ -64,7 +48,7 @@ struct PageOne {
     let backData: events_emitter.EventData = {
       data: {
         'paramString': JSON.stringify(param)
-      } as Record<string, undefined|null|Object>
+      } as Record<String,RecordData>
     }
 
     let eventIdNum = 51;
@@ -86,7 +70,7 @@ struct PageOne {
       Column() {
         Button('pushUrl PageOne Single')
           .onClick((e:ClickEvent) => {
-            AppStorage.get<Router>("router")?.pushUrl({ url: 'MainAbility/pages/router/PageOne', params: (new RouteParam('pushUrl One Single')).toJSON() },router.RouterMode.Single)
+            AppStorage.get<Router>("router")?.pushUrl({ url: 'MainAbility/pages/router/PageOne', params: new RouteParam('pushUrl One Single') },router.RouterMode.Single)
           })
           .id('pushUrlId')
           .height('10%')
@@ -94,7 +78,7 @@ struct PageOne {
           .onClick((e:ClickEvent) => {
             try{
               console.log('+++++++++++++++1')
-              AppStorage.get<Router>("router")?.replaceUrl({ url: 'MainAbility/pages/router/PageOne', params: jsonx.JsonElement.createString('test string')},router.RouterMode.Single)
+              AppStorage.get<Router>("router")?.replaceUrl({ url: 'MainAbility/pages/router/PageOne', params: 'test string'},router.RouterMode.Single)
               console.log('+++++++++++++++2')
             }catch(err){
               console.log('+++++errreplaceUrl',err)
@@ -106,7 +90,7 @@ struct PageOne {
           .onClick((e:ClickEvent) => {
             try{
               initModule ('./PageOne')
-              router1.pushNamedRoute({ name: 'nickNameOne', params: jsonx.JsonElement.createInteger(20) }, router.RouterMode.Single)
+              router1.pushNamedRoute({ name: 'nickNameOne', params: 20 }, router.RouterMode.Single)
             }catch(err){
               console.log('+++++errpushNamedRoute',err)
             }

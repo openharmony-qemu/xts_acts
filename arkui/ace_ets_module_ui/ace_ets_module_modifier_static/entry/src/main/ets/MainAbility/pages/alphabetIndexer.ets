@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,Font,ColumnOptions,IndexerAlign,AlphabetIndexerAttribute,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Column,Font,ColumnOptions,IndexerAlign,AlphabetIndexerAttribute,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -67,7 +67,7 @@ struct AlphabetIndexerTest {
   build() {
     Row() {
       Button("change value").onClick((e: ClickEvent) => {
-        // (this.customModifier2 as CustomModifier).onChange1();
+        (this.customModifier2 as CustomModifier).onChange1();
       }).key("changeButton")
       AlphabetIndexer({ arrayValue: this.value, selected: 0 })
         .key('alphabetIndexerTest1')

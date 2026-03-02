@@ -43,8 +43,6 @@ export default function defaultTest() {
 
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-     'Stepper',
-     'StepperItem',
     // 'Web',
      'ColumnSplit',
      'RowSplit',
@@ -114,7 +112,7 @@ export default function defaultTest() {
     }
   }, {
     describe: 'Visibility',
-    exceptView: ['RichText', 'Web', 'StepperItem', 'TabContent'],
+    exceptView: ['RichText', 'Web', 'TabContent'],
     expectValue: {
       visibility: 'Visibility.Visible'
     }
@@ -141,7 +139,7 @@ export default function defaultTest() {
   ]
 
   describe('DefaultTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("defaultTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

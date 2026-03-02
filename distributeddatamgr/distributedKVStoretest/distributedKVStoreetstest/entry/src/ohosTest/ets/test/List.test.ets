@@ -31,6 +31,12 @@ import DeviceKvStoreReturnValue from './DeviceKvStoreReturnValue.test';
 import SingleKvStoreReturnValue from './SingleKvStoreReturnValue.test';
 import KVStoreResultSetReturnValue from './KVStoreResultSetReturnValue.test';
 import SchemaFieldNode from './SchemaFieldNode.test';
+import DistributedDataCoverageAdd from './DistributedDataCoverageAdd.test';
+import SingleKvStoreNull from './SingleKvStoreNull.test';
+import DeviceKvStoreNull from './DeviceKvStoreNull.test';
+import QueryNull from './QueryNull.test';
+import DeviceKvStoreGetCoverageAdd from './DeviceKvStoreGetCoverageAdd.test';
+import KVManagerCoverageAdd from './KVManagerCoverageAdd.test';
 
 export default function testsuite() {
   deviceKvStoreCallbackTest();
@@ -51,5 +57,10 @@ export default function testsuite() {
   SingleKvStoreReturnValue();
   KVStoreResultSetReturnValue();
   SchemaFieldNode();
-
+  DistributedDataCoverageAdd();
+  SingleKvStoreNull();
+  DeviceKvStoreNull();
+  QueryNull();
+  DeviceKvStoreGetCoverageAdd();
+  KVManagerCoverageAdd();
 }

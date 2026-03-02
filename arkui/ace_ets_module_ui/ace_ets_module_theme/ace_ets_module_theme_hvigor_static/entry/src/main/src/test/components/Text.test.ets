@@ -42,10 +42,9 @@ export default function textThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         const options: router.RouterOptions = {
@@ -54,11 +53,12 @@ export default function textThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `TextPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(textThemeProperty);
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await UtilsTest.msSleep(1000)
+          localTheme = AppStorage.get<CustomTheme>('TextThemeProperty');
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues')
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
@@ -66,13 +66,13 @@ export default function textThemeTest() {
       if (!changeTheme) {
         return;
       }
-      if ((AppStorage.get(textThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>('TextThemeProperty'))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate(textThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>('TextThemeProperty', greenCustomTheme);
       } else {
-        AppStorage.setOrCreate(textThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>('TextThemeProperty', redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(textThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>('TextThemeProperty');
       changeTheme = false;
     });
 

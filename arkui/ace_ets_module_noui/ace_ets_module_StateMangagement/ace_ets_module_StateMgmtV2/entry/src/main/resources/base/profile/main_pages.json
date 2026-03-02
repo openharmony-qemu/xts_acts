@@ -16,6 +16,7 @@
     "MainAbility/pages/Monitor/Monitor0280",
     "MainAbility/pages/Monitor/Monitor0290",
     "MainAbility/pages/Monitor/Monitor_Null",
+    "MainAbility/pages/Monitor/MonitorValueTest",
     "MainAbility/pages/Monitor/Monitor0300",
     "MainAbility/pages/ObservedV2/ExtendTrack",
     "MainAbility/pages/ObservedV2/NestTrack",

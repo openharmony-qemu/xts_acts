@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { Chip, ChipSize } from '@ohos.arkui.stateManagement';
+import { Chip, ChipSize, PrefixIconOptions} from '@ohos.arkui.advanced.Chip';
 import {
   Entry,
   Component,
@@ -24,6 +24,7 @@ import {
   DragEvent,
   Image,
   Button,
+  Color
 } from '@ohos.arkui.component';
 import {
   State,
@@ -33,6 +34,8 @@ import {
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
+import { Chip,ChipSize,PrefixIconOptions,SuffixIconOptions } from '@ohos.arkui.advanced.Chip'
+
 @Entry
 @Component
 struct ChipOnClose {
@@ -40,27 +43,27 @@ struct ChipOnClose {
   build() {
     Column() {
       Column(){
-        // Chip({
-        //   prefixIcon: {
-        //     src: $r('app.media.icon'),
-        //     size: { width: 16, height: 16 },
-        //     fillColor: Color.Red,
-        //   },
-        //   label: {
-        //     text: "操作块",
-        //     fontSize: 16,
-        //     fontColor: Color.Blue,
-        //     fontFamily: "HarmonyOS Sans",
-        //     labelMargin: { left: 4, right: 4 },
-        //   },
-        //   size: ChipSize.NORMAL,
-        //   allowClose: true,
-        //   enabled: true,
-        //   backgroundColor: 0x808080,
-        //   onClose:()=>{
-        //     this.text = 'onClose'
-        //   }
-        // })
+        Chip({
+          prefixIcon: {
+            src: $r('app.media.icon'),
+            size: { width: 16, height: 16 },
+            fillColor: Color.Red,
+          } as PrefixIconOptions,
+          label: {
+            text: "操作块",
+            fontSize: 16,
+            fontColor: Color.Blue,
+            fontFamily: "HarmonyOS Sans",
+            labelMargin: { left: 4, right: 4 },
+          },
+          size: ChipSize.NORMAL,
+          allowClose: true,
+          enabled: true,
+          backgroundColor: 0x808080,
+          onClose:()=>{
+            this.text = 'onClose'
+          }
+        })
       }.width(120).borderWidth(1).key('ChipOnCloseCol')
       Text(this.text).key('ChipOnClose')
     }

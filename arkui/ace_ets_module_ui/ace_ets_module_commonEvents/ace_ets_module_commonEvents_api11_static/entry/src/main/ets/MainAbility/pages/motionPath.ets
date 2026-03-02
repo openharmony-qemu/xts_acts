@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,6 +43,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -72,7 +73,7 @@ struct MotionPathExample {
             let backData: emitter.EventData = {
               data: {
                 "ACTION": this.rotatable,
-              } as Record<String, undefined | null | Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 132,
@@ -80,7 +81,7 @@ struct MotionPathExample {
             }
             console.info("button start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
           }
           this.getUIContext().animateTo({ duration: 4000, curve: Curve.Linear }, () => {
@@ -96,7 +97,7 @@ struct MotionPathExample {
               data: {
                 "fromX": this.fromX,
                 "toY": this.toY
-              } as Record<String, undefined | null | Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 133,
@@ -104,7 +105,7 @@ struct MotionPathExample {
             }
             console.info("button1 position start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("button1 position emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -124,8 +125,8 @@ struct MotionPathExample {
 
   private stateChangeCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     if (eventData != null) {
-      const data: Record<String, undefined | null | Object> =
-        eventData.data as Record<String, undefined | null | Object>
+      const data: Record<String,RecordData> =
+        eventData.data as Record<String,RecordData>
       console.info('motionPath page state change called:' + JSON.stringify(eventData));
       if (data['fromX'] != null) {
         this.fromX == data['fromX'] as number;

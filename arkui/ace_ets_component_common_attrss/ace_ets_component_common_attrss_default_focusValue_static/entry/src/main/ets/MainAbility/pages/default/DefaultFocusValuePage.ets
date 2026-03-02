@@ -16,9 +16,9 @@
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router';
 import { Entry, Component, TextTimerController, Scroller, Row, MenuItemOptions, AlphabetIndexer, Button, Checkbox,
-  CheckboxGroup, DatePicker, Image, ImageAnimator, Menu, Radio, Rating, Search, Select, Slider, Stepper, Text,
+  CheckboxGroup, DatePicker, Image, ImageAnimator, Menu, Radio, Rating, Search, Select, Slider, Text,
   TextArea, TextInput, TextPicker, TimePicker, Toggle, Column, ColumnSplit, Counter, Flex, GridRow, Grid, List,
-  RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, Color, $r, MenuItem, MenuItemGroup, StepperItem,
+  RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, Color, $r, MenuItem, MenuItemGroup,
   ToggleType, TextAlign, GridCol, GridItem, ListItem, ListItemGroup, SideBarContainerType, ForEach, TabContent,
   CommonMethod, applyStyles } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -38,8 +38,7 @@ struct DefaultFocusValuePage {
 
   onPageShow() {
     console.info('DefaultFocusValuePage show called ')
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     this.parentWidth = routerParamOptions.view.parentWidth
     this.parentHeight = routerParamOptions.view.parentHeight
     this.targetView = routerParamOptions.view.targetView ?? ""
@@ -94,14 +93,6 @@ struct DefaultFocusValuePage {
         Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }]).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Slider') {
         Slider().applyStyles(this.commonStyle)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem()
-        }.applyStyles(this.commonStyle)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem().applyStyles(this.commonStyle)
-        }
       } else if (this.targetView == 'Text') {
         Text('text').applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextArea') {

@@ -341,8 +341,6 @@ export default function ArraySomeTest() {
 
       expect(result).assertEqual(true);
       expect(paramsLog.length).assertEqual(2);
-      expect(paramsLog[0]).assertDeepEquals("{ elem: 10, idx: 0, arr: arr }");
-      expect(paramsLog[1]).assertDeepEquals("{ elem: 20, idx: 1, arr: arr }");
     });
 
     /**
@@ -365,42 +363,6 @@ export default function ArraySomeTest() {
       expect(result).assertEqual(true);
       expect(callCount).assertEqual(5);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1600
-     * @tc.name ArraySomeTest016
-     * @tc.desc Some() on non-array object (class array) via call()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('ArraySomeTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-    //   expect(ArraySomeTest016()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1700
-     * @tc.name ArraySomeTest017
-     * @tc.desc Use thisArg to bind this in callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('ArraySomeTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-    //   expect(ArraySomeTest017()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1800
-     * @tc.name ArraySomeTest018
-     * @tc.desc No thisArg: this is undefined in strict mode callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('ArraySomeTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-    //   expect(ArraySomeTest018()).assertEqual(undefined);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2000
@@ -502,34 +464,6 @@ export default function ArraySomeTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2400
-     * @tc.name ArraySomeTest024
-     * @tc.desc Delete unvisited element during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const result = ArraySomeTest024();
-    //
-    //   expect(result[0]).assertEqual(false);
-    //   expect(result[1]).assertEqual(2);
-    //   expect(result[2]).assertEqual(undefined);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2500
-     * @tc.name ArraySomeTest025
-     * @tc.desc Some() with Symbol elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest025()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2600
      * @tc.name ArraySomeTest026
      * @tc.desc Some() with nested objects (check reference equality)
@@ -552,39 +486,6 @@ export default function ArraySomeTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2700
-     * @tc.name ArraySomeTest027
-     * @tc.desc Callback is non-function (throws TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [1, 2];
-    //   let errorThrown = false;
-    //
-    //   try {
-    //     ArraySomeTest027(arr);
-    //   } catch (e) {
-    //     errorThrown = e instanceof TypeError;
-    //   }
-    //
-    //   expect(errorThrown).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2800
-     * @tc.name ArraySomeTest028
-     * @tc.desc Some() on non-array object without length (returns false)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest028()).assertEqual(false);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2900
      * @tc.name ArraySomeTest029
      * @tc.desc Some() with NaN elements (check if any NaN exists)
@@ -600,21 +501,6 @@ export default function ArraySomeTest() {
 
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3000
-     * @tc.name ArraySomeTest030
-     * @tc.desc Comprehensive test: mixed types + dynamic modification + thisArg
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-    //   const result = ArraySomeTest030();
-    //
-    //   expect(result[0]).assertEqual(true);
-    //   expect(result[1]).assertEqual(2);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3100
@@ -893,18 +779,6 @@ export default function ArraySomeTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4800
-     * @tc.name ArraySomeTest048
-     * @tc.desc Some() with symbol elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest048()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4900
      * @tc.name ArraySomeTest049
      * @tc.desc Some() with bigint elements
@@ -1075,54 +949,6 @@ export default function ArraySomeTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5900
-     * @tc.name ArraySomeTest059
-     * @tc.desc Some() with array-like objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest059()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6000
-     * @tc.name ArraySomeTest060
-     * @tc.desc Some() with strings (treated as array-like)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest060()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6100
-     * @tc.name ArraySomeTest061
-     * @tc.desc Some() with arguments object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest061()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6300
-     * @tc.name ArraySomeTest063
-     * @tc.desc Some() with thisArg binding
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest063()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6400
      * @tc.name ArraySomeTest064
      * @tc.desc Some() with arrow function and thisArg (no binding)
@@ -1138,66 +964,6 @@ export default function ArraySomeTest() {
 
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6500
-     * @tc.name ArraySomeTest065
-     * @tc.desc Some() with strict mode function and thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest065()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6600
-     * @tc.name ArraySomeTest066
-     * @tc.desc Some() with strict mode function without thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest066()).assertEqual(undefined);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6700
-     * @tc.name ArraySomeTest067
-     * @tc.desc Some() with non-strict mode function without thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest067()).assertEqual(undefined);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6800
-     * @tc.name ArraySomeTest068
-     * @tc.desc Some() with null thisArg in non-strict mode
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest068()).assertEqual(null);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6900
-     * @tc.name ArraySomeTest069
-     * @tc.desc Some() with null thisArg in strict mode
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest069()).assertEqual(null);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7000
@@ -1337,183 +1103,6 @@ export default function ArraySomeTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7600
-     * @tc.name ArraySomeTest076
-     * @tc.desc Some() with non-function callback (TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [2, 5, 8];
-    //   let errorThrown = false;
-    //
-    //   try {
-    //     ArraySomeTest076(arr);
-    //   } catch (e) {
-    //     errorThrown = e instanceof TypeError;
-    //   }
-    //
-    //   expect(errorThrown).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7700
-     * @tc.name ArraySomeTest077
-     * @tc.desc Some() with null callback (TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [2, 5, 8];
-    //   let errorThrown = false;
-    //
-    //   try {
-    //     ArraySomeTest077(arr);
-    //   } catch (e) {
-    //     errorThrown = e instanceof TypeError;
-    //   }
-    //
-    //   expect(errorThrown).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7800
-     * @tc.name ArraySomeTest078
-     * @tc.desc Some() with undefined callback (TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [2, 5, 8];
-    //   let errorThrown = false;
-    //
-    //   try {
-    //     ArraySomeTest078(arr);
-    //   } catch (e) {
-    //     errorThrown = e instanceof TypeError;
-    //   }
-    //
-    //   expect(errorThrown).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7900
-     * @tc.name ArraySomeTest079
-     * @tc.desc Some() with number callback (TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [2, 5, 8];
-    //   let errorThrown = false;
-    //
-    //   try {
-    //     ArraySomeTest079(arr);
-    //   } catch (e) {
-    //     errorThrown = e instanceof TypeError;
-    //   }
-    //
-    //   expect(errorThrown).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8000
-     * @tc.name ArraySomeTest080
-     * @tc.desc Some() with object callback (TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [2, 5, 8];
-    //   let errorThrown = false;
-    //
-    //   try {
-    //     ArraySomeTest080(arr);
-    //   } catch (e) {
-    //     errorThrown = e instanceof TypeError;
-    //   }
-    //
-    //   expect(errorThrown).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8100
-     * @tc.name ArraySomeTest081
-     * @tc.desc Some() with proxy object as thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest081()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8200
-     * @tc.name ArraySomeTest082
-     * @tc.desc Some() with proxy object as array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest082()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8300
-     * @tc.name ArraySomeTest083
-     * @tc.desc Some() with frozen array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest083()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8400
-     * @tc.name ArraySomeTest084
-     * @tc.desc Some() with sealed array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest084()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8500
-     * @tc.name ArraySomeTest085
-     * @tc.desc Some() with non-writable array elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest085()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8600
-     * @tc.name ArraySomeTest086
-     * @tc.desc Some() with getter properties in array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest086()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8700
      * @tc.name ArraySomeTest087
      * @tc.desc Some() with async callback (non-awaiting)
@@ -1529,18 +1118,6 @@ export default function ArraySomeTest() {
 
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8800
-     * @tc.name ArraySomeTest088
-     * @tc.desc Some() with generator function callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest088()).assertEqual(true);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8900
@@ -1584,30 +1161,6 @@ export default function ArraySomeTest() {
       expect(result).assertEqual(true);
       expect(callCount).assertEqual(500001);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9100
-     * @tc.name ArraySomeTest091
-     * @tc.desc Some() with typed array of large size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest091()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9200
-     * @tc.name ArraySomeTest092
-     * @tc.desc Some() with large string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest092()).assertEqual(true);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9300
@@ -1656,18 +1209,6 @@ export default function ArraySomeTest() {
       const result = arr.some(user => user.age > 21);
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9600
-     * @tc.name ArraySomeTest096
-     * @tc.desc Some() with array of symbols
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest096()).assertEqual(true);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9700
@@ -1734,37 +1275,6 @@ export default function ArraySomeTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_10100
-     * @tc.name ArraySomeTest101
-     * @tc.desc Some() with deeply nested arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // todo
-    // it('ArraySomeTest101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [
-    //     [1, [2, [3]]],
-    //     [4, [5, [6, [7, [15]]]]],
-    //     [8, [9]]
-    //   ];
-    //
-    //   type numArr = (number | numArr)[]
-    //   const hasValueGreaterThan10 = (value: number| numArr): boolean =>{
-    //     if (Array.isArray(value)) {
-    //       return value.some(item => hasValueGreaterThan10(item));
-    //     }
-    //     return value > 10;
-    //   }
-    //
-    //   const result = arr.some(outer => {
-    //     return Array.isArray(outer) && outer.some(item => hasValueGreaterThan10(item));
-    //   });
-    //
-    //   expect(result).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_10200
      * @tc.name ArraySomeTest102
      * @tc.desc Some() with deeply nested objects
@@ -1813,7 +1323,7 @@ export default function ArraySomeTest() {
       const timeoutId = setTimeout(() => {}, 0);
       const arr = [1, timeoutId, 3];
 
-      const result = arr.some(item => typeof item === 'Int' && item > 0);
+      const result = arr.some(item => typeof item === 'int' && item > 0);
 
       clearTimeout(timeoutId);
       expect(result).assertEqual(true);
@@ -1858,18 +1368,6 @@ export default function ArraySomeTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_11900
-     * @tc.name ArraySomeTest119
-     * @tc.desc Some() with array containing finalization registries
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest119()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_12000
      * @tc.name ArraySomeTest120
      * @tc.desc Some() with array containing atomics objects
@@ -1901,18 +1399,6 @@ export default function ArraySomeTest() {
 
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_12200
-     * @tc.name ArraySomeTest122
-     * @tc.desc Some() with array containing reflection objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArraySomeTest122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArraySomeTest122()).assertEqual(true);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_12300

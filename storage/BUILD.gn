@@ -39,13 +39,14 @@ group("storage") {
       "storagefileurijsteststatic:storagefileuri_js_test_static",
       "storagefileurindktest:ActsStorageFileUriNdkTest",
       "storagenopermissionjstest:storagenopermission_js_test",
+      "storagepcpickerjstest:storagepcpicker_js_test",
       "storagepickerjstest:storagepicker_js_test",
       "storagesecuritylabeljstest:storagesecuritylabel_js_test",
       "storagesecuritylabeljsteststatic:storagesecuritylabel_js_test_static",
       "storagestatfsjstest:storagestatfs_js_test",
       "storagestatfsjsteststatic:storagestatfs_js_test_static",
       "storagestatisticsjstest:storagestatistics_js_test",
-      "storagestoragestatisticsteststatic:storage_statistics_test_static"
+      "storagestatisticsteststatic:storage_statistics_test_static"
     ]
   }
 }

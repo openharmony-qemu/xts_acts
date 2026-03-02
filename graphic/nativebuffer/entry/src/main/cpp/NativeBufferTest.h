@@ -18,7 +18,7 @@
 
 #include "napi/native_api.h"
 #include <native_buffer/native_buffer.h>
-#include <native_window/graphic_error_code.h>
+#include <native_buffer/graphic_error_code.h>
 #include <common/log_common.h>
 #include <common/native_common.h>
 
@@ -45,6 +45,7 @@
 #define NUMBER_18 18
 #define NUMBER_19 19
 #define NUMBER_20 20
+#define NUMBER_21 21
 #define NUMBER_32 32
 #define NUMBER_50 50
 #define NUMBER_60 60

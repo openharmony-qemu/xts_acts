@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textAreaAutoFillTest() {
   describe('textAreaAutoFillTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaAutoFillTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -52,7 +52,7 @@ export default function textAreaAutoFillTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaAutoFillTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaAutoFill" == pages.name)) {
           console.info("get textAreaAutoFillTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

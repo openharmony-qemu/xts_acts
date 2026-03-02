@@ -36,8 +36,6 @@ export default function DefaultFocusTest() {
   //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
     'Select',
-    'Stepper',
-    'StepperItem',
     // 'Web',
     'SideBarContainer'
   )
@@ -67,7 +65,7 @@ export default function DefaultFocusTest() {
    */
 
   describe('DefaultFocusTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DefaultFocusTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.defaultfocus.testwear.static", "EntryAbility")
 

@@ -64,7 +64,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      await sleep(100);
+      await sleep(50);
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -162,6 +162,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let Count1: number = 0;
         let Count2: number = 0;
+        let lock = new Mutex();
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs2, 1, 50);
@@ -174,7 +175,9 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock.lock();
               Count2++;
+              lock.unlock();
               console.info('====taskPoolAsyncRunnerErrorSuccessTest1003:1');
             }
           })
@@ -218,12 +221,16 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0;
         let count2: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         for (let i = 0; i < 20; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs2, 1, 50);
           task.onExecutionSucceeded(() => {
             console.info('====onExecutionSucceeded: execute task success');
+            lock1.lock();
             count++;
+            lock1.unlock();
           });
           task2.onExecutionSucceeded(() => {
             console.info('====onExecutionSucceeded2: execute task success');
@@ -231,7 +238,9 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock2.lock();
               count2++;
+              lock2.unlock();
             }
           })
           asyncRunner.execute(task).then(() => {
@@ -538,36 +547,44 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       async (): Promise<void> => {
         console.log('taskPoolAsyncRunnerErrorSuccessTest1011: begin');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        let count: number = 0;
-        let count2: number = 0;
+        let workerCount1: number = 0;
+        let workerCount2: number = 0;
+        let mainCount1: number = 0;
+        let mainCount2: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
+        const incWorker1 = () => { lock1.lock(); workerCount1++; lock1.unlock(); };
+        const incWorker2 = () => { lock2.lock(); workerCount2++; lock2.unlock(); };
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs4, 1);
           task.onExecutionFailed(() => {
-            count++;
+            incWorker1();
           });
           task2.onExecutionFailed((e: Error) => {
             try {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
-              count2++;
+              incWorker2();
             }
           })
           asyncRunner.execute(task).catch(() => {
-            count++;
+            mainCount1++;
             console.info('taskpool: execute task fail');
           });
           asyncRunner.execute(task2).catch(() => {
-            count2++;
+            mainCount2++;
             console.info('taskpool: execute task fail');
           });
         }
-        while (count2 < 20 || count < 20) {
+        while (workerCount1 < 10 || workerCount2 < 10 || mainCount1 < 10 || mainCount2 < 10) {
           await sleep(100);
         }
-        expect(20).assertEqual(count);
-        expect(20).assertEqual(count2);
+        expect(10).assertEqual(workerCount1);
+        expect(10).assertEqual(workerCount2);
+        expect(10).assertEqual(mainCount1);
+        expect(10).assertEqual(mainCount2);
         console.log('taskPoolAsyncRunnerErrorSuccessTest1011: end');
 
       })
@@ -844,7 +861,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs9, 1);
           asyncRunner.execute(task).then((num) => {
-            count += Number(num);
+            count++;
           }).catch(() => {
             count++;
           });

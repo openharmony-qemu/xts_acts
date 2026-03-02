@@ -35,7 +35,7 @@ class TestEntry {
 
 export default function TreemapTest3() {
   describe('TreemapTest3', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -100,9 +100,6 @@ export default function TreemapTest3() {
     it('testConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testConstructor0003";
       try {
-        // class TestEntry {
-        //   public id: number = 0;
-        // }
 
         let ts1: TreeMap<TestEntry, string> =
           new TreeMap<TestEntry, string>((t1: TestEntry, t2: TestEntry): number => {
@@ -241,61 +238,6 @@ export default function TreemapTest3() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0600
-    //  * @tc.name       : testHasKey0002
-    //  * @tc.desc       : Test the function of the interface HasKey.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testHasKey0002
-     * @tc.number testHasKey0002
-     * @tc.desc   testHasKey0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHasKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testHasKey0002";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.hasKey(null);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0700
-    //  * @tc.name       : testHasKey0003
-    //  * @tc.desc       : Test the function of the interface HasKey.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testHasKey0003
-     * @tc.number testHasKey0003
-     * @tc.desc   testHasKey0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHasKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testHasKey0003";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.hasKey(null);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testHasKey0004
@@ -384,101 +326,6 @@ export default function TreemapTest3() {
       }
     });
 
-    /**
-     * @tc.name   testHasValue0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1200
-     * @tc.desc   Test the function of the interface HasValue.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHasValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //     const TAG = "testHasValue0001";
-    //     try {
-    //         let treeMap : TreeMap<string, number> = new TreeMap<string, number>();
-    //         let result = treeMap.hasValue("");
-    //         expect(String(result)).assertEqual('false');
-    //     } catch (err: BusinessError) {
-    //         console.error(`${TAG} failed, error: ${err.code}`);
-    //         expect(false).assertFail();
-    //     }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1300
-    //  * @tc.name       : testHasValue0002
-    //  * @tc.desc       : Test the function of the interface HasValue.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testHasValue0002
-     * @tc.number testHasValue0002
-     * @tc.desc   testHasValue0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHasValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testHasValue0002";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.hasValue(null);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1400
-    //  * @tc.name       : testHasValue0003
-    //  * @tc.desc       : Test the function of the interface HasValue.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testHasValue0003
-     * @tc.number testHasValue0003
-     * @tc.desc   testHasValue0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHasValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testHasValue0003";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.hasValue(undefined);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testHasValue0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1400
-     * @tc.desc   Test the function of the interface HasValue.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHasValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //     const TAG = "testHasValue0004";
-    //     try {
-    //         let treeMap : TreeMap<string, number> = new TreeMap<string, number>();
-    //         let result = treeMap.hasValue("squirrel");
-    //         expect(String(result)).assertEqual('false');
-    //     } catch (err: BusinessError) {
-    //         console.error(`${TAG} failed, error: ${err.code}`);
-    //         expect(false).assertFail();
-    //     }
-    // });
 
     /**
      * @tc.name   testHasValue0005
@@ -568,61 +415,6 @@ export default function TreemapTest3() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1900
-    //  * @tc.name       : testTreeMapGet0002
-    //  * @tc.desc       : Test the function of the interface treeMap.get.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapGet0002
-     * @tc.number testTreeMapGet0002
-     * @tc.desc   testTreeMapGet0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapGet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapGet0002";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.get(null);
-    //     expect(String(result)).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2000
-    //  * @tc.name       : testTreeMapGet0003
-    //  * @tc.desc       : Test the function of the interface treeMap.get.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapGet0003
-     * @tc.number testTreeMapGet0003
-     * @tc.desc   testTreeMapGet0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapGet0003";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.get(undefined);
-    //     expect(String(result)).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testTreeMapGet0004
@@ -1154,99 +946,6 @@ export default function TreemapTest3() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4200
-    //  * @tc.name       : testTreeMapSet0003
-    //  * @tc.desc       : Test the function of the interface Set.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapSet0003
-     * @tc.number testTreeMapSet0003
-     * @tc.desc   testTreeMapSet0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapSet0003";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     treeMap.set(null, 123);
-    //     let length = treeMap.length;
-    //     expect(String(length)).assertEqual('1');
-    //     let result = treeMap.get(null);
-    //     expect(String(result)).assertEqual('123');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4300
-    //  * @tc.name       : testTreeMapSet0004
-    //  * @tc.desc       : Test the function of the interface Set.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapSet0004
-     * @tc.number testTreeMapSet0004
-     * @tc.desc   testTreeMapSet0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapSet0004";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     treeMap.set(undefined, 123);
-    //     let length = treeMap.length;
-    //     expect(String(length)).assertEqual('1');
-    //     let result = treeMap.get(undefined);
-    //     expect(String(result)).assertEqual('123');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4400
-    //  * @tc.name       : testTreeMapSet0005
-    //  * @tc.desc       : Test the function of the interface Set.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapSet0005
-     * @tc.number testTreeMapSet0005
-     * @tc.desc   testTreeMapSet0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapSet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapSet0005";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     treeMap.set("a", null);
-    //     let length = treeMap.length;
-    //     expect(String(length)).assertEqual('1');
-    //     let result = treeMap.get("a");
-    //    expect(String(result)).assertEqual(null);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testTreeMapSet0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4500
@@ -1271,36 +970,6 @@ export default function TreemapTest3() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4600
-    //  * @tc.name       : testTreeMapSet0007
-    //  * @tc.desc       : Test the function of the interface Set.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapSet0007
-     * @tc.number testTreeMapSet0007
-     * @tc.desc   testTreeMapSet0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapSet0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapSet0007";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     treeMap.set("a", undefined);
-    //     let length = treeMap.length;
-    //     expect(String(length)).assertEqual('1');
-    //     let result = treeMap.get("a");
-    //     expect(String(result)).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testTreeMapSet0008
@@ -1342,9 +1011,7 @@ export default function TreemapTest3() {
     it('testTreeMapRemove0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTreeMapRemove0001";
       try {
-        let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-        // treeMap.set("squirrel", 123);
-        // treeMap.set("sparrow", 456);
+        let treeMap: TreeMap<string, number> = new TreeMap<string, number>()
         let result = treeMap.remove("");
         expect(String(result)).assertEqual('undefined');
       } catch (err) {
@@ -1354,61 +1021,6 @@ export default function TreemapTest3() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4900
-    //  * @tc.name       : testTreeMapRemove0002
-    //  * @tc.desc       : Test the function of the interface Set.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapRemove0002
-     * @tc.number testTreeMapRemove0002
-     * @tc.desc   testTreeMapRemove0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapRemove0002";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.remove(null);
-    //     expect(String(result)).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5000
-    //  * @tc.name       : testTreeMapRemove0003
-    //  * @tc.desc       : Test the function of the interface Set.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapRemove0003
-     * @tc.number testTreeMapRemove0003
-     * @tc.desc   testTreeMapRemove0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapRemove0003";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.remove(undefined);
-    //     expect(String(result)).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testTreeMapRemove0004
@@ -1497,61 +1109,6 @@ export default function TreemapTest3() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5500
-    //  * @tc.name       : testTreeMapGetLowerKey0002
-    //  * @tc.desc       : Test the function of the interface getLowerKey.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapGetLowerKey0002
-     * @tc.number testTreeMapGetLowerKey0002
-     * @tc.desc   testTreeMapGetLowerKey0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapGetLowerKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapGetLowerKey0002";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.getLowerKey(null);
-    //     expect(String(result)).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5600
-    //  * @tc.name       : testTreeMapGetLowerKey0003
-    //  * @tc.desc       : Test the function of the interface getLowerKey.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapGetLowerKey0003
-     * @tc.number testTreeMapGetLowerKey0003
-     * @tc.desc   testTreeMapGetLowerKey0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapGetLowerKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapGetLowerKey0003";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.getLowerKey(undefined);
-    //     expect(String(result)).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testTreeMapGetLowerKey0004
@@ -1663,61 +1220,6 @@ export default function TreemapTest3() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6200
-    //  * @tc.name       : testTreeMapGetHigherKey0002
-    //  * @tc.desc       : Test the function of the interface getHigherKey.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapGetHigherKey0002
-     * @tc.number testTreeMapGetHigherKey0002
-     * @tc.desc   testTreeMapGetHigherKey0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapGetHigherKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapGetHigherKey0002";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.getHigherKey(null);
-    //     expect(String(result)).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6300
-    //  * @tc.name       : testTreeMapGetHigherKey0003
-    //  * @tc.desc       : Test the function of the interface getHigherKey.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapGetHigherKey0003
-     * @tc.number testTreeMapGetHigherKey0003
-     * @tc.desc   testTreeMapGetHigherKey0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapGetHigherKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapGetHigherKey0003";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.getHigherKey(undefined);
-    //     expect(String(result)).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testTreeMapGetHigherKey0004
@@ -1830,61 +1332,6 @@ export default function TreemapTest3() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6900
-    //  * @tc.name       : testTreeMapReplaceKey0002
-    //  * @tc.desc       : Test the function of the interface replace.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapReplaceKey0002
-     * @tc.number testTreeMapReplaceKey0002
-     * @tc.desc   testTreeMapReplaceKey0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapReplaceKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapReplaceKey0002";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.replace(null, 123);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7000
-    //  * @tc.name       : testTreeMapReplaceKey0003
-    //  * @tc.desc       : Test the function of the interface replace.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    /**
-     * @tc.name   testTreeMapReplaceKey0003
-     * @tc.number testTreeMapReplaceKey0003
-     * @tc.desc   testTreeMapReplaceKey0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testTreeMapReplaceKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapReplaceKey0003";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     let result = treeMap.replace(undefined, 123);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testTreeMapReplaceKey0004

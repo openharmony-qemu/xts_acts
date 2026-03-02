@@ -25,7 +25,7 @@ export default function mathExpTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -143,7 +143,8 @@ export default function mathExpTest() {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200_01 start');
-        let result: number = exp(0.0);
+        const num: double = 0.0
+        let result: number = exp(num);
         let expected: number = 1.0;
         expect(result).assertEqual(expected);
         done();
@@ -459,7 +460,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200 start');
-      let a:number = Math.exp(1);
+      const num: double = 1.0
+      let a:number = Math.exp(num);
       let b:number = Math.E;
       expect(a).assertEqual(b);
       done()
@@ -477,7 +479,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0300_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300_02 start');
-      let a:number = Math.exp(-1);
+      const num: double = -1.0;
+      let a:number = Math.exp(num);
       let b:number = 1/Math.E;
       expect(a).assertEqual(b);
       done()
@@ -513,7 +516,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_06002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06002 start');
-      let a:number = Math.exp(2);
+      const num: double = 2.0;
+      let a:number = Math.exp(num);
       let b:number = 7.38905609893065;
       expect(a).assertEqual(b);
       done()
@@ -531,7 +535,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_7001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_7001 start');
-      let a:number = Math.exp(-2);
+      const num: double = -2.0;
+      let a:number = Math.exp(num);
       let b:number = 0.1353352832366127;
       expect(a).assertEqual(b);
       done()
@@ -549,7 +554,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0800_01", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0800_01 start');
-      let a:number = Math.exp(1.5);
+      const num: double = 1.5;
+      let a:number = Math.exp(num);
       let b:number = 4.4816890703380645;
       expect(a).assertEqual(b);
       done()
@@ -585,7 +591,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_1000_03", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_03 start');
-      let a:number = Math.exp(3);
+      const num: double = 3.0;
+      let a:number = Math.exp(num);
       let b:number = 20.085536923187668;
       expect(a).assertEqual(b);
       done()
@@ -603,7 +610,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_1100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100 start');
-      let a:number = Math.exp(-3);
+      const num: double = -3.0;
+      let a:number = Math.exp(num);
       let b:number = 0.049787068367863944;
       expect(a).assertEqual(b);
       done()
@@ -657,7 +665,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_1400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1400 start');
-      let a:number = Math.exp(2.5);
+      const num: double = 2.5;
+      let a:number = Math.exp(num);
       let b:number = 12.182493960703473;
       expect(a).assertEqual(b);
       done()
@@ -675,7 +684,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1600 start');
-      let a:number = Math.exp(4);
+      const num: double = 4.0;
+      let a:number = Math.exp(num);
       let b:number = 54.598150033144236;
       expect(a).assertEqual(b);
       done()
@@ -693,7 +703,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1700 start');
-      let a:number = Math.exp(-4);
+      const num: double = -4.0;
+      let a:number = Math.exp(num);
       let b:number = 0.018315638888734179;
       expect(a).assertEqual(b);
       done()
@@ -711,7 +722,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_1800_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1800_02 start');
-      let a:number = Math.exp(0.25);
+      const num: double = 0.25;
+      let a:number = Math.exp(num);
       let b:number = 1.2840254166877414;
       expect(a).assertEqual(b);
       done()
@@ -747,7 +759,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_2000_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2000_02 start');
-      let a:number = Math.exp(5);
+      const num: double = 5.0
+      let a:number = Math.exp(num);
       let b:number = 148.4131591025766;
       expect(a).assertEqual(b);
       done()
@@ -765,7 +778,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_2100_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2100_02 start');
-      let a:number = Math.exp(-5);
+      const num: double = -5.0
+      let a:number = Math.exp(num);
       let b:number = 0.006737946999085467;
       expect(a).assertEqual(b);
       done()
@@ -783,7 +797,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_2200_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2200_02 start');
-      let a:number = Math.exp(0.75);
+      const num: double = 0.75;
+      let a:number = Math.exp(num);
       let b:number = 2.117000016612675;
       expect(a).assertEqual(b);
       done()
@@ -819,7 +834,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_2600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2600 start');
-      let a:number = Math.exp(6);
+      const num: double = 6.0;
+      let a:number = Math.exp(num);
       let b:number = 403.4287934927351;
       expect(a).assertEqual(b);
       done()
@@ -837,7 +853,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_2700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2700 start');
-      let a:number = Math.exp(-6);
+      const num: double = -6.0;
+      let a:number = Math.exp(num);
       let b:number = 0.0024787521766663585;
       expect(a).assertEqual(b);
       done()
@@ -855,7 +872,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_3000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3000 start');
-      let a:number = Math.exp(1.25);
+      const num: double = 1.25;
+      let a:number = Math.exp(num);
       let b:number = 3.4903429574618414;
       expect(a).assertEqual(b);
       done()
@@ -891,7 +909,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_3200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3200 start');
-      let a:number = Math.exp(7);
+      const num: double = 7.0;
+      let a:number = Math.exp(num);
       let b:number = 1096.6331584284585;
       expect(a).assertEqual(b);
       done()
@@ -909,7 +928,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_3300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3300 start');
-      let a:number = Math.exp(-7);
+      const num: double = -7.0;
+      let a:number = Math.exp(num);
       let b:number = 0.0009118819655545162;
       expect(a).assertEqual(b);
       done()
@@ -945,7 +965,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_3600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3600 start');
-      let a:number = Math.exp(4.5);
+      const num: double = 4.5;
+      let a:number = Math.exp(num);
       let b:number = 90.01713130052181;
       expect(a).assertEqual(b);
       done()
@@ -981,7 +1002,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_3800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3800 start');
-      let a:number = Math.exp(8);
+      const num: double = 8.0;
+      let a:number = Math.exp(num);
       let b:number = 2980.9579870417282;
       expect(a).assertEqual(b);
       done()
@@ -999,7 +1021,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_3900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3900 start');
-      let a:number = Math.exp(-8);
+      const num: double = -8.0
+      let a:number = Math.exp(num);
       let b:number = 0.00033546262790251185;
       expect(a).assertEqual(b);
       done()
@@ -1017,7 +1040,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_4400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4400 start');
-      let a:number = Math.exp(9);
+      const num: double = 9.0;
+      let a:number = Math.exp(num);
       let b:number = 8103.083927575384;
       expect(a).assertEqual(b);
       done()
@@ -1035,7 +1059,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_4500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4500 start');
-      let a:number = Math.exp(-9);
+      const num: double = -9.0;
+      let a:number = Math.exp(num);
       let b:number = 0.00012340980408667956;
       expect(a).assertEqual(b);
       done()
@@ -1053,7 +1078,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_4600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4600 start');
-      let a:number = Math.exp(0.125);
+      const num: double = 0.125;
+      let a:number = Math.exp(num);
       let b:number = 1.1331484530668263;
       expect(a).assertEqual(b);
       done()
@@ -1089,7 +1115,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_4800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4800 start');
-      let a:number = Math.exp(5.5);
+      const num: double = 5.5;
+      let a:number = Math.exp(num);
       let b:number = 244.69193226422038;
       expect(a).assertEqual(b);
       done()
@@ -1125,7 +1152,8 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_5000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_5000 start');
-      let a:number = Math.exp(10);
+      const num: double = 10.0;
+      let a:number = Math.exp(num);
       let b:number = 22026.465794806718;
       expect(a).assertEqual(b);
       done()

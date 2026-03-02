@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file expect in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,16 +30,17 @@ export default function ErrcodeTest() {
      * @tc.desc   test errCode 17700072 when call getLaunchWant
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getLaunchWant_static_17700072', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getLaunchWant_static_17700072', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "getLaunchWant_static_17700072 start");
       try {
         let want = bundleManager.getLaunchWant();
         hilog.info(domain, tag, `getLaunchWant_static_17700072 successfully bundleName:${want.bundleName} abilityName:${want.abilityName}`);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `getLaunchWant_static_17700072 catch failed errCode:${err.code} message:${err.message}`);
         expect(err.code).assertEqual(17700072);
         done();

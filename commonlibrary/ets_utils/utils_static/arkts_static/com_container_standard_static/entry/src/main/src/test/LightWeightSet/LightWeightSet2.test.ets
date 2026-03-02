@@ -49,18 +49,9 @@ class C2 {
 
 export default function LightWeightSetTest2() {
   describe('lightWeightSetTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
-    // class C1 {
-    //   name: string = ""
-    //   age: string = ""
-    // }
-    //
-    // class C2 {
-    //   name: string = ""
-    // }
-
     /**
      * @tc.name   testLightWeightSet0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0100
@@ -269,49 +260,6 @@ export default function LightWeightSetTest2() {
 
     })
 
-
-    /**
-     * @tc.name   testLightWeightSet0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0900
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0010";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
-    //     lightWeightSet.add(undefined);
-    //     let result = lightWeightSet.has(undefined);
-    //     expect(String(result)).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-
-    /**
-     * @tc.name   testLightWeightSet0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1100
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0011";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
-    //     lightWeightSet.add(null);
-    //     let result = lightWeightSet.has(null);
-    //     expect(String(result)).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testLightWeightSet0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1200
@@ -338,163 +286,6 @@ export default function LightWeightSetTest2() {
       }
     });
 
-    /**
-     * @tc.name   testLightWeightSet0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1300
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0013";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
-    //     lightWeightSet.add("squirrel");
-    //     lightWeightSet.add("sparrow");
-    //     let obj = ["sparrow", "squirrel"];
-    //     let result = lightWeightSet.equal(obj);
-    //     expect(String(result)).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1400
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0014";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<number> = new LightWeightSet<number>();
-    //     lightWeightSet.add(10);
-    //     let obj = [8];
-    //     let result = lightWeightSet.equal(obj);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1500
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0015";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
-    //     lightWeightSet.add('');
-    //     let obj = [''];
-    //     let result = lightWeightSet.equal(obj);
-    //     expect(String(result)).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1600
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0016";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string | number> = new LightWeightSet<string | number>();
-    //     lightWeightSet.add('20');
-    //     lightWeightSet.add('30');
-    //     let obj = [20, 30];
-    //     let result = lightWeightSet.equal(obj);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1700
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0017";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string | number> = new LightWeightSet<string | number>();
-    //     lightWeightSet.add(null);
-    //     lightWeightSet.add(null);
-    //     let obj = [null, null];
-    //     let result = lightWeightSet.equal(obj);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1800
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0018";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string | number> = new LightWeightSet<string | number>();
-    //     lightWeightSet.add(undefined);
-    //     lightWeightSet.add(undefined);
-    //     let obj = [undefined, undefined];
-    //     let result = lightWeightSet.equal(obj);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1900
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0019";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<number> = new LightWeightSet<number>();
-    //     const MY_MAX: number = 10240;
-    //     let set = lightWeightSet.add(MY_MAX);
-    //     let result = lightWeightSet.equal(set);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightSet0020
@@ -588,48 +379,6 @@ export default function LightWeightSetTest2() {
     });
 
     /**
-     * @tc.name   testLightWeightSet0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2400
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0024";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
-    //     lightWeightSet.add(null);
-    //     let result = lightWeightSet.getIndexOf(null);
-    //     expect(String(result)).assertEqual('0');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2500
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0025";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
-    //     lightWeightSet.add(undefined);
-    //     let result = lightWeightSet.getIndexOf(undefined);
-    //     expect(String(result)).assertEqual('0');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
      * @tc.name   testLightWeightSet0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2600
      * @tc.desc   Test the function of the interface isEmpty.
@@ -677,48 +426,6 @@ export default function LightWeightSetTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightSet0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2800
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0028";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
-    //     lightWeightSet.add(null);
-    //     let result = lightWeightSet.remove(null);
-    //     expect(String(result)).assertEqual('null');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLightWeightSet0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2900
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0029";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
-    //     lightWeightSet.add(undefined);
-    //     let result = lightWeightSet.remove(undefined);
-    //     expect(String(result)).assertEqual('undefined');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightSet0030
@@ -951,28 +658,6 @@ export default function LightWeightSetTest2() {
         expect(false).assertFail();
       }
     });
-
-    /**
-     * @tc.name   testLightWeightSet0041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_4100
-     * @tc.desc   Test the function of the interface isEmpty.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0041";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
-    //     let result = lightWeightSet.clear();
-    //     // let result = lightWeightSet.length;
-    //     console.log(JSON.stringify(result), 'result-------')
-    //     // expect(String(result)).assertEqual('0');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testLightWeightSet0042
@@ -1528,7 +1213,6 @@ export default function LightWeightSetTest2() {
         let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
         lightWeightSet.add("squirrel");
         lightWeightSet.add("sparrow");
-        // 示例方法一：
         let nums: Array<string> = lightWeightSet.toArray()
         for (let item of nums) {
           console.log("value:" + item);
@@ -1555,7 +1239,6 @@ export default function LightWeightSetTest2() {
         let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
         lightWeightSet.add("squirrel");
         lightWeightSet.add("sparrow");
-        // 示例方法二：
         let iter = lightWeightSet.$_iterator();
         let temp: IteratorResult<string> = iter.next();
         while (!temp.done) {
@@ -1721,32 +1404,6 @@ export default function LightWeightSetTest2() {
         expect(false).assertFail();
       }
     })
-
-    /**
-     * @tc.name   testLightWeightSet0072
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_7200
-     * @tc.desc   Test the function foreach.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLightWeightSet0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testLightWeightSet0072";
-    //   try {
-    //     let lightWeightSet: LightWeightSet<number> = new LightWeightSet<number>();
-    //     let str: string = "0";
-    //     for (let i = 0; i < 10; i++) {
-    //       lightWeightSet.add(i);
-    //     }
-    //     lightWeightSet.forEach((value, index: number, lightWeightSet: LightWeightSet<number>) => {
-    //       expect(lightWeightSet.getIndexOf(value)).assertEqual(index);
-    //     }, str);
-    //     expect(str).assertEqual("0");
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
 
     /**
      * @tc.name   testLightWeightSet0017

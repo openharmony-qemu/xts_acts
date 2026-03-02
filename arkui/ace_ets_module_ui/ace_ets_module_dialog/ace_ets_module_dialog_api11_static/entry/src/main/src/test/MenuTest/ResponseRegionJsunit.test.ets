@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,6 +53,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
 import { sendTouchEvent } from "@ohos.arkui.Test";
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -62,7 +63,7 @@ export default function ResponseRegionJsunit() {
   describe('responseRegionTest', () => {
     let x_value: number;
     let y_value: number;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("responseRegionTest beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
@@ -88,7 +89,7 @@ export default function ResponseRegionJsunit() {
           await CommonFunc.sleep(2000);
           // console.info("push ResponseRegion success: " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push ResponseRegion page error:" + err);
       }
 
@@ -116,16 +117,16 @@ it('testResponseRegion01_static', Level.LEVEL2, async (done: () => void): Promis
           let eventData: emitter.EventData = {
             data: {
               "touchable": true,
-            } as Record<String,undefined|null|Object>
+            } as Record<String,RecordData>
           }
           let innerEvent: emitter.InnerEvent = {
             eventId: 30,
             priority: emitter.EventPriority.LOW
           }
           console.info("[testResponseRegion01_static] start to publish emit:" +
-          JSON.stringify(((eventData.data) as Record<String,undefined|null|Object>)));
+          JSON.stringify(((eventData.data) as Record<String,RecordData>)));
           emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[testResponseRegion01_static] change component data error: " + err.message);
         }
         await Utils.sleep(1000);
@@ -163,8 +164,9 @@ it('testResponseRegion02_static', Level.LEVEL2, async (done: () => void): Promis
       }
       let callbackTwo = (eventData: emitter.EventData) => {
         console.info("[testResponseRegion02_static] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<String,undefined|null|Object>)?.['ACTION']).assertEqual(true)
-        expect(((eventData.data) as Record<String,undefined|null|Object>)?.['EVENT_TYPE']).assertEqual('Down')
+        const data = eventData.data as Record<String,RecordData>;
+        expect(data['ACTION']).assertEqual(true)
+        expect(data['EVENT_TYPE']).assertEqual('Down')
         done();
       }
       let innerEventTwo: emitter.InnerEvent = {
@@ -173,7 +175,7 @@ it('testResponseRegion02_static', Level.LEVEL2, async (done: () => void): Promis
       }
       try {
         emitter.on(innerEventTwo, callbackTwo)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[testResponseRegion02_static] on emitter err : " + JSON.stringify(err));
       }
       console.info('[testResponseRegion02_static] testSendTouchEvent ' + sendTouchEvent(point));

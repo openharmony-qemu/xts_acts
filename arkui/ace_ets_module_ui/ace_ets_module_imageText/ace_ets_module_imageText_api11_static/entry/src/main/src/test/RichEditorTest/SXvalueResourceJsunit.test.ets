@@ -44,7 +44,7 @@ export default function SXvalueResourceJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get SXvalueResourceJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SXvalueResource" == pages.name)) {
           console.info("get SXvalueResourceJsunit pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
@@ -57,7 +57,7 @@ export default function SXvalueResourceJsunit() {
       }
       console.info("SXvalueResourceJsunit beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SXvalueResourceJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

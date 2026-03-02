@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -36,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function placementJsunit() {
   describe('placementJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("placementJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });
@@ -77,7 +78,7 @@ export default function placementJsunit() {
         await Utils.sleep(1500);
         let callback: (indexEvent: events_emitter.EventData) => void = (indexEvent: events_emitter.EventData) => {
           if (indexEvent != null) {
-            const data = indexEvent.data as Record<String,undefined|null|Object>
+            const data = indexEvent.data as Record<String,RecordData>
             console.info("placementTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
             if (data['placement'] != null) {
               expect((data['placement']) as Placement).assertEqual(Placement.TopLeft);
@@ -118,7 +119,7 @@ export default function placementJsunit() {
         await Utils.sleep(1500);
         let callbackOne: (indexEventOne: events_emitter.EventData) => void = (indexEventOne: events_emitter.EventData) => {
           if (indexEventOne != null) {
-            const data = indexEventOne.data as Record<String,undefined|null|Object>
+            const data = indexEventOne.data as Record<String,RecordData>
             console.info("placementTest_static_0100 get state result is: " + JSON.stringify(indexEventOne));
             if (data['placement'] != null) {
               expect((data['placement']) as Placement).assertEqual(Placement.TopRight);
@@ -161,7 +162,7 @@ export default function placementJsunit() {
         await Utils.sleep(1500);
         let callbackTwo: (indexEventTwo: events_emitter.EventData) => void = (indexEventTwo: events_emitter.EventData) => {
           if (indexEventTwo != null) {
-            const data = indexEventTwo.data as Record<String,undefined|null|Object>
+            const data = indexEventTwo.data as Record<String,RecordData>
             console.info("placementTest_static_0100 get state result is: " + JSON.stringify(indexEventTwo));
             if (data['placement'] != null) {
               expect((data['placement']) as Placement).assertEqual(Placement.BottomLeft);
@@ -203,7 +204,7 @@ export default function placementJsunit() {
         await Utils.sleep(1500);
         let callbackThree: (indexEventThree: events_emitter.EventData) => void = (indexEventThree: events_emitter.EventData) => {
           if (indexEventThree != null) {
-            const data = indexEventThree.data as Record<String,undefined|null|Object>
+            const data = indexEventThree.data as Record<String,RecordData>
             console.info("placementTest_static_0100 get state result is: " + JSON.stringify(indexEventThree));
             if (data['placement'] != null) {
               expect((data['placement']) as Placement).assertEqual(Placement.BottomRight);

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,79 +36,18 @@ import { UtilsTest } from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-class DataParam implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  data3: number[];
-
-  constructor() {
-    this.data3 = new Array<number>();
-  }
-
-  constructor(arr: number[]) {
-    this.data3 = arr;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    let arr = new Array<jsonx.JsonElement>();
-    for (let i = 0; i < this.data3.length; ++i) {
-      arr.push(jsonx.JsonElement.createDouble(this.data3[i]));
-    }
-    let arrJson = jsonx.JsonElement.createArray(arr);
-    root.set('data3', arrJson);
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    let arrJson = jsonElem.tryAsArray();
-    if (!arrJson) {
-      this.data3 = new Array<number>();
-      return;
-    }
-    let arr = new Array<number>();
-    for (let i = 0; i < arrJson!.length; i++) {
-      let val = arrJson![i].tryAsDouble();
-      if (val) {
-        arr.push(val);
-      }
-    }
-    this.data3 = arr;
-  }
+interface MainData {
+  data1: string
+  data2: DataParam
 }
 
-class MainData implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  data1: string;
-  data2: DataParam;
-
-  constructor() {
-    this.data1 = "";
-    this.data2 = new DataParam();
-  }
-
-  constructor(data1: string, data2: DataParam) {
-    this.data1 = data1;
-    this.data2 = data2;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    root.set('data1', jsonx.JsonElement.createString(this.data1))
-    root.set('data2', this.data2.toJSON());
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.data1 = jsonElem.tryGetString('data1');
-    let data2 = jsonElem.tryGetElement('data2');
-    if (data2) {
-      this.data2 = new DataParam();
-      this.data2.fromJSON(data2!);
-    }
-  }
+interface DataParam {
+  data3: number[]
 }
 
 export default function circleNewJsunit() {
   describe('circleNewTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
@@ -195,7 +134,7 @@ it('ACE_global_console_debug_static_0100', Level.LEVEL0, async () => {
       try {
         console.debug("ACE_global_console_debug test ok");
         expect(true).assertTrue();
-      } catch (error: Error) {
+      } catch (error) {
         console.log(casename + "errorcode: " + casename);
         expect().assertFail();
 
@@ -217,7 +156,7 @@ it('ACE_global_console_error_static_0200', Level.LEVEL0, async () => {
       try {
         console.error("ACE_global_console_warn test ok");
         expect(true).assertTrue();
-      } catch (error: Error) {
+      } catch (error) {
         console.log(casename + "errorcode: " + casename);
         expect().assertFail();
 
@@ -238,7 +177,12 @@ it('ACE_pushUrl_callback_static_0100', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({
         url: 'MainAbility/pages/common',
-        params: (new MainData('message', new DataParam([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as DataParam
+        } as MainData
       }, (err) => {
         if (err) {
           console.error(`pushUrl failed, code is ${(err as BusinessError)?.code}, message is ${(err as Error)?.message}`);
@@ -264,7 +208,12 @@ it('ACE_pushUrl_callback_static_0200', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({
         url: 'MainAbility/pages/ellipse',
-        params: (new MainData('message', new DataParam([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as DataParam
+        } as MainData
       }).then(() => {
         expect(true).assertTrue();
       })
@@ -291,7 +240,7 @@ it('ACE_showAlertBeforeBackPage_static_0100', Level.LEVEL0, async () => {
           message: 'Message Info'
         });
         expect(true).assertTrue();
-      } catch (error: Error) {
+      } catch (error) {
         console.error(`showAlertBeforeBackPage_0100 failed, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -313,7 +262,7 @@ it('ACE_showAlertBeforeBackPage_static_0200', Level.LEVEL0, async () => { //еЉВе
         //   message: undefined
         // });
         expect(true).assertTrue();
-      } catch (error: Error) {
+      } catch (error) {
         console.error(`ACE_showAlertBeforeBackPage_0200, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
         expect((error as BusinessError)?.code == 401).assertTrue();
       }
@@ -333,7 +282,7 @@ it('ACE_hideAlertBeforeBackPage_static_0100', Level.LEVEL0, async () => {
       try {
         routerInstance.hideAlertBeforeBackPage();
         expect(true).assertTrue();
-      } catch (error: Error) {
+      } catch (error) {
         console.error(`ACE_showAlertBeforeBackPage_0200, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -370,7 +319,7 @@ it('testGlobal_attribute_static_0100', Level.LEVEL0, async () => {
               expect(value).assertEqual('ohosProject');
             }
           });
-      } catch (error: Error) {
+      } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         console.error(`callback getStringValue failed, error code: ${code}, message: ${message}.`);

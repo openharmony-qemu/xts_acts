@@ -20,10 +20,10 @@ import {
 	Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
 	AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
 	LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-	Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+	Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
 	Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
 	RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-	FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+	FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
 	GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
 	TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
 	BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -34,8 +34,8 @@ import {
 	MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
 	ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
 	RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-	SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-	StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+	SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+	SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
 	TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
 	TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
 	BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderOptions, HitTestMode, AlignRuleOption
@@ -564,22 +564,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-	mHitTestBehavior: HitTestMode = HitTestMode.Transparent
-
-	applyNormalAttribute(instance: StepperAttribute): void {
-		instance.hitTestBehavior(this.mHitTestBehavior)
-	}
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-	mHitTestBehavior: HitTestMode = HitTestMode.Transparent
-
-	applyNormalAttribute(instance: StepperItemAttribute): void {
-		instance.hitTestBehavior(this.mHitTestBehavior)
-	}
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mHitTestBehavior: HitTestMode = HitTestMode.Transparent
 
@@ -776,8 +760,6 @@ struct HitTestBehaviorPage {
 	@State _hitTestBehaviorSliderModifier: SliderModifier = new SliderModifier()
 	@State _hitTestBehaviorSpanModifier: SpanModifier = new SpanModifier()
 	@State _hitTestBehaviorStackModifier: StackModifier = new StackModifier()
-	@State _hitTestBehaviorStepperModifier: StepperModifier = new StepperModifier()
-	@State _hitTestBehaviorStepperItemModifier: StepperItemModifier = new StepperItemModifier()
 	@State _hitTestBehaviorSwiperModifier: SwiperModifier = new SwiperModifier()
 	@State _hitTestBehaviorTabContentModifier: TabContentModifier = new TabContentModifier()
 	@State _hitTestBehaviorTabsModifier: TabsModifier = new TabsModifier()
@@ -805,17 +787,15 @@ struct HitTestBehaviorPage {
 
 	onPageShow() {
 		console.info('hitTestBehavior translate page show called ')
-		let routerParamOptions = new RouterParams()
-		routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-		this.targetView = routerParamOptions.view.targetView;
-		this.componentKey = routerParamOptions.view.componentKey as string;
-		this.parentWidth = routerParamOptions.view.parentWidth;
-		this.parentHeight = routerParamOptions.view.parentHeight;
-		this.columns = (routerParamOptions.view.columns as int)
-		this.gutter = (routerParamOptions.view.gutter as int)
-		this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
-		this.parentComponentKey = routerParamOptions.view.parentComponentKey;
-		this._hitTestBehaviorButtonModifier.mHitTestBehavior = routerParamOptions.view.testValue.setValue.hitTestBehavior
+		this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
+		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+		this._hitTestBehaviorButtonModifier.mHitTestBehavior = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.hitTestBehavior
 		attrsManager.registerDataChange((value: SetValue) => {
 			console.info('hitTestBehavior [registerDataChange] ' + JSON.stringify(value.hitTestBehavior))
 			this._hitTestBehaviorAlphabetIndexerModifier.mHitTestBehavior = value.hitTestBehavior
@@ -883,8 +863,6 @@ struct HitTestBehaviorPage {
 			this._hitTestBehaviorSliderModifier.mHitTestBehavior = value.hitTestBehavior
 			this._hitTestBehaviorSpanModifier.mHitTestBehavior = value.hitTestBehavior
 			this._hitTestBehaviorStackModifier.mHitTestBehavior = value.hitTestBehavior
-			this._hitTestBehaviorStepperModifier.mHitTestBehavior = value.hitTestBehavior
-			this._hitTestBehaviorStepperItemModifier.mHitTestBehavior = value.hitTestBehavior
 			this._hitTestBehaviorSwiperModifier.mHitTestBehavior = value.hitTestBehavior
 			this._hitTestBehaviorTabContentModifier.mHitTestBehavior = value.hitTestBehavior
 			this._hitTestBehaviorTabsModifier.mHitTestBehavior = value.hitTestBehavior
@@ -1059,32 +1037,6 @@ struct HitTestBehaviorPage {
 					.showTips(true)
 
 					.attributeModifier(this._hitTestBehaviorSliderModifier)
-			}
-			if (this.targetView == 'Stepper') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-				}
-
-
-			}
-			if (this.targetView == 'StepperItem') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-						.backgroundColor(Color.Red)
-
-
-				}
-					.backgroundColor(Color.Yellow)
-					.width('100%')
-					.height('100%')
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')

@@ -35,7 +35,7 @@ export default function navigationJsunit() {
     /**
      * run before testcase
      */
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });

@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorQueryLayout021() {
   describe('RichEditorQueryLayout021', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorQueryLayout021 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -95,13 +95,14 @@ export default function RichEditorQueryLayout021() {
       let layoutStyle = await (driver.findComponent(ON.id('layoutStyle')) as Promise<Component>);
       let layoutStyleText = await layoutStyle.getText();
       await CommonFunc.sleep(500);
-      expect(layoutStyleText).assertEqual('layoutStyle:{"borderRadius":"50.00px","margin":"[40.00px,40.00px,40.00px,40.00px]"}');
+      expect(layoutStyleText).assertContain('"margin":{"top":"40.00px","left":"40.00px","right":"40.00px","bottom":"40.00px"}');
+      expect(layoutStyleText).assertContain('"borderRadius":"50.00px"');
 
       let paragraphStyle = await (driver.findComponent(ON.id('paragraphStyle')) as Promise<Component>);
       let paragraphStyleText = await paragraphStyle.getText();
       await CommonFunc.sleep(500);
       expect(paragraphStyleText).assertContain('"textAlign":2');
-      expect(paragraphStyleText).assertContain('"leadingMargin":["16.00vp","0.00vp"]');
+      expect(paragraphStyleText).assertContain('"leadingMargin":{"size":["16.00vp","0.00vp"]}');
       expect(paragraphStyleText).assertContain('"wordBreak":2');
       expect(paragraphStyleText).assertContain('"lineBreakStrategy":0');
       done();

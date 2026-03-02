@@ -43,7 +43,6 @@ import {
   Scroller,
   Color,
   Rectangle,
-  LevelMode,
   ActionSheetOptions,
   ControlSize,
   DialogAlignment,
@@ -66,7 +65,7 @@ import { UIContext, Router,KeyboardAvoidMode,PromptAction } from '@ohos.arkui.UI
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BuilderNode, FrameNode } from '@ohos.arkui.node';
-import { ImmersiveMode } from '@ohos.promptAction';
+import { ImmersiveMode, LevelMode } from '@ohos.promptAction';
 import { LengthMetrics } from '@ohos.arkui.node';
 import { Callback } from '@ohos.base';
 import promptAction from '@ohos.promptAction';
@@ -144,9 +143,10 @@ struct showActionMenuMode {
         Text('返回首页')
           .superFancyText2()
           .onClick((event: ClickEvent) => {
-            // com.arkui.ace.dialog.api15.static({
-            //   url: 'MainAbility/pages/actionSheet/index'
-            // }, router.RouterMode.Standard)
+            const pageRouter = AppStorage.get<Router>('router') as Router
+            pageRouter.pushUrl({
+              url: 'MainAbility/pages/actionSheet/index'
+            }, router.RouterMode.Standard)
           })
           .id('back')
 

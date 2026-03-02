@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function imageSpanTest6() {
   describe('imageSpanTest6', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("imageSpanTest6 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -50,7 +50,7 @@ export default function imageSpanTest6() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get imageSpanTest6 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("imageSpan6" == pages.name)) {
           console.info("get imageSpanTest6 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

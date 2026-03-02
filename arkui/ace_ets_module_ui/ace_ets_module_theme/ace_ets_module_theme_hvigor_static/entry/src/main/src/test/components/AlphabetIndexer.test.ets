@@ -46,13 +46,13 @@ export default function alphabetIndexerThemeTest() {
   let colorValues: Map<string, string> | undefined = new Map<string, string>();
 
   describe(SUITE, () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetIndexerPage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       try {
         const options: router.RouterOptions = {
           url: `MainAbility/pages/components/AlphabetIndexerPage`,
@@ -61,24 +61,25 @@ export default function alphabetIndexerThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `AlphabetIndexerPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(alphabetIndexerThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>(`AlphabetIndexerThemeProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await UtilsTest.msSleep(2000)
         }
-        
-        colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey);
+
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues')
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
 
       if (!changeTheme) return;
-      if ((AppStorage.get<Theme>(alphabetIndexerThemeProperty))?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>(`AlphabetIndexerThemeProperty`))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate<CustomTheme>(alphabetIndexerThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`AlphabetIndexerThemeProperty`, greenCustomTheme);
       } else {
-        AppStorage.setOrCreate<CustomTheme>(alphabetIndexerThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`AlphabetIndexerThemeProperty`, redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(alphabetIndexerThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>(`AlphabetIndexerThemeProperty`);
       changeTheme = false;
     })
 

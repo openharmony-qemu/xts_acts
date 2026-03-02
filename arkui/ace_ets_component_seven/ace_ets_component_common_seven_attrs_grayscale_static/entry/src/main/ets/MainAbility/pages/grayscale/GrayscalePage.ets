@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
@@ -449,20 +449,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
      instance.grayscale(this.mGrayscale)
   }
 }
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mGrayscale: number = 0.9
-  applyNormalAttribute(instance: StepperAttribute): void {
-    console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
-     instance.grayscale(this.mGrayscale)
-  }
-}
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mGrayscale: number = 0.9
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
-     instance.grayscale(this.mGrayscale)
-  }
-}
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: SwiperAttribute): void {
@@ -631,8 +617,6 @@ struct grayscalePage {
   @State _grayscaleSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _grayscaleSliderMod: SliderModifier = new SliderModifier()
   @State _grayscaleStackMod: StackModifier = new StackModifier()
-  @State _grayscaleStepperMod: StepperModifier = new StepperModifier()
-  @State _grayscaleStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _grayscaleSwiperMod: SwiperModifier = new SwiperModifier()
   @State _grayscaleTabContentMod: TabContentModifier = new TabContentModifier()
   @State _grayscaleTabsMod: TabsModifier = new TabsModifier()
@@ -658,16 +642,14 @@ struct grayscalePage {
 
   onPageShow() {
     console.info('22222 grayscale page show called ')
-    let routerParamOptions = new RouterParams()
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-    this.targetView = routerParamOptions.view.targetView;
-    this.componentKey = routerParamOptions.view.componentKey as string;
-    this.parentWidth = routerParamOptions.view.parentWidth;
-    this.parentHeight = routerParamOptions.view.parentHeight;
-    this.columns = (routerParamOptions.view.columns as int)
-    this.gutter = (routerParamOptions.view.gutter as int)
-    this.parentComponentKey = routerParamOptions.view.parentComponentKey;
-    this._grayscaleButttonMod.mGrayscale = routerParamOptions.view.testValue.setValue.grayscale
+    this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+    this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+    this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+    this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+    this._grayscaleButttonMod.mGrayscale = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.grayscale
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('22222 [registerDataChange] ' + JSON.stringify(value.grayscale))
       this._grayscaleAlphabetIndexerMod.mGrayscale = value.grayscale
@@ -728,8 +710,6 @@ struct grayscalePage {
       this._grayscaleSideBarContainerMod.mGrayscale = value.grayscale
       this._grayscaleSliderMod.mGrayscale = value.grayscale
       this._grayscaleStackMod.mGrayscale = value.grayscale
-      this._grayscaleStepperMod.mGrayscale = value.grayscale
-      this._grayscaleStepperItemMod.mGrayscale = value.grayscale
       this._grayscaleSwiperMod.mGrayscale = value.grayscale
       this._grayscaleTabContentMod.mGrayscale = value.grayscale
       this._grayscaleTabsMod.mGrayscale = value.grayscale
@@ -852,14 +832,6 @@ struct grayscalePage {
           })
             .showTips(true)
             .attributeModifier(this._grayscaleSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1074,19 +1046,6 @@ struct grayscalePage {
               }
             }, (item: int) => item.toString())
           }.attributeModifier(this._grayscaleWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

@@ -33,28 +33,8 @@ export class RectValue {
   bottom: number = 0;
 }
 
-export class RouterParams implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
+export class RouterParams {
   view: PageConfig = new PageConfig()
-
-  constructor() {}
-
-  constructor(view: PageConfig) {
-    this.view = view
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = {
-      "view": jsonx.JsonElement.createString(JSON.stringify(this.view))
-    }
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    let info = JSON.parse<PageConfig>(jsonElem.getString("view"), Type.of(new String() as Object))
-    if (info) {
-      this.view = info!
-    }
-  }
 }
 
 export class ResponseRegion {
@@ -122,7 +102,7 @@ export default class Utils {
     })
   }
 
-  static getStringFromFile(fileName: string): Promise<string> {
+  static async getStringFromFile(fileName: string): Promise<string> {
     const abilityContext = AppStorage.get<common.Context>("abilityContext") as common.Context
     const fileData: Uint8Array = await abilityContext.resourceManager.getRawFileContent(fileName);
     return new Promise<string>((resolve, reject) => {
@@ -156,7 +136,9 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
-          params: (new RouterParams(obj)).toJSON()
+          params: {
+            view: obj
+          } as RouterParams
         });
         await Utils.sleep(1000);
       }
@@ -183,7 +165,7 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    await Utils.sleep(1000);
+    waitForCompletion(async ()=>{await Utils.sleep(1000)})
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
@@ -203,7 +185,7 @@ export default class Utils {
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
     // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
       left:Number(rectInfo[0][0] ?? 0),
@@ -217,7 +199,7 @@ export default class Utils {
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    await Utils.sleep(1000);
+    waitForCompletion(async ()=>{await Utils.sleep(1000)})
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }

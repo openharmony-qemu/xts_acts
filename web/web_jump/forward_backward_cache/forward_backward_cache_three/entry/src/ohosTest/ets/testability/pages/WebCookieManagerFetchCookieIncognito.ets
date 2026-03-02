@@ -117,7 +117,7 @@ struct WebCookieManagerFetchCookieIncognito {
               }
 
               case 'testFetchCookieIncognitoErrorCode003': {
-                let resultValue: number = 0
+                let resultValue = ''
                 try {
                   webView.WebCookieManager.clearAllCookiesSync(true);
                   webView.WebCookieManager.configCookieSync(URL, 'abc=edf', true);
@@ -127,17 +127,17 @@ struct WebCookieManagerFetchCookieIncognito {
                     })
                     .catch((error: business_error.BusinessError) => {
                       console.log('testFetchCookieIncognitoErrorCode003 error: ' + JSON.stringify(error));
-                      resultValue = error.code
+                      resultValue = error.code + error.message
                     })
                 } catch (error) {
                   console.error(`testFetchCookieIncognitoErrorCode003 ErrorCode: ${error.code},  Message: ${error.message}`);
-                  resultValue = error.code
+                  resultValue = error.code + error.message
                 }
 
-                let check = (v1: number, v2: number): boolean => {
+                let check = (v1: string, v2: string): boolean => {
                   return v1 === v2 ? true : false;
                 }
-                await waitForAssert(() => resultValue, check, 17100002, 136730, this.str);
+                await waitForAssert(() => resultValue, check, '17100002URL error. No valid cookie found for the specified URL.', 136730, this.str);
                 break;
               }
             }

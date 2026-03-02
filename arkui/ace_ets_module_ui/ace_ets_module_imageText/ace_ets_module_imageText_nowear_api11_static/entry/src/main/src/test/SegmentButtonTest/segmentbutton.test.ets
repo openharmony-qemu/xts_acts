@@ -30,10 +30,10 @@ import {UtilsTest, startAbility, stopApplication} from "../Util.test"
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-export default function abilityTest() {
+export default function segmentbutton() {
   const SUITE = 'SegmentButton'
-  describe('ActsAceSegmentButtonTest', () => {
-    beforeAll(() => {
+  describe('segmentbutton', () => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsAceSegmentButtonTest beforeEach start");
 
      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");
@@ -57,8 +57,7 @@ export default function abilityTest() {
       }
     })
     afterEach(async (): Promise<void> => {
-      let driver = Driver.create()
-      await driver.delayMs(2);
+      await CommonFunc.sleep(500);
     })
 
     
@@ -71,10 +70,11 @@ export default function abilityTest() {
 it('Advanced_ui_SegmentButton_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
   console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton start')
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
   console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton before')
       let singleTextSegmentButton = await driver.findComponent(ON.text('单选文字1'))
       await CommonFunc.sleep(500);
+  console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton before：' + singleTextSegmentButton)
   console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton success')
       let singleTextSegmentButtonIsEnabled = await (singleTextSegmentButton?.isEnabled() as Promise<Boolean>)
   console.log('Advanced_ui_SegmentButton_static_0100', 'isEnabled success')

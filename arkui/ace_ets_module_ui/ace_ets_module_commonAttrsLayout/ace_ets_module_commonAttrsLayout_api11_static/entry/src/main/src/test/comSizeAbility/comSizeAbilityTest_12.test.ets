@@ -38,16 +38,11 @@ let testAbilityContext: common.UIAbilityContext;
 export default function comSizeAbilityTest_12() {
   describe('comSizeAbilityTest_12', () => {
 
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("comSizeAbilityTest_12 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("comSizeAbilityTest_12 beforeEach start")
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/comSizeAbility/comSizeAbilityTest_12'
@@ -78,6 +73,8 @@ export default function comSizeAbilityTest_12() {
      */
 it('comSizeAbilityTestJsunit_static_31', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_31 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Rect_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Rect_Father");
@@ -138,6 +135,8 @@ it('comSizeAbilityTestJsunit_static_31', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_32', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_32 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Refresh_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Refresh_Father");

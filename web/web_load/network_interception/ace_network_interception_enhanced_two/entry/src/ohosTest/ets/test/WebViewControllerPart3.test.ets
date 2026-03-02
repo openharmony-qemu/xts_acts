@@ -13,11 +13,14 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
+import wifiMg from '@ohos.wifiManager';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 const EVENT_ID_SET_EIMIT_KEY = 142300;
@@ -47,6 +50,30 @@ export default function webViewControllerPart3Test() {
     });
 
     beforeEach(async (done: Function) => {
+      try {
+        console.info('======> wifi_test/isWifiActive :' + wifiMg.isWifiActive());
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info('======> Internet WifiLinkedInfo : ' + JSON.stringify(data));
+        console.info('======> Internet speed : ' + JSON.stringify(data.linkSpeed));
+        console.info('======> Internet chload : ' + JSON.stringify(data.chload));
+        console.info('======> Internet rssi : ' + JSON.stringify(data.rssi));
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info('======> WLAN connection established ');
+        } else {
+          expect().message('======> WLAN Network error').assertFail();
+          done()
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message('======> WLAN Network error').assertFail();
+          done();
+        } else if (data.chload >= 500) {
+          console.info('======> The internet connection is poor. ');
+        }
+      } catch (err) {
+        console.info('======> getLinkedInfo promise failed, err : ' + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
@@ -83,6 +110,38 @@ export default function webViewControllerPart3Test() {
       Utils.emitEvent("testSetNetworkAvailable002", EVENT_ID_SET_EIMIT_KEY)
       Utils.registerEvent("testSetNetworkAvailable002", 'true', 142320, done);
       Utils.waitAndClickComponent(driver, "WebViewControllerTestButton");
+    })
+    /**
+     * @tc.name   testSetNetworkAvailableNull
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_ERROR_0100
+     * @tc.desc   test setNetworkAvailable null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSetNetworkAvailableNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitSetNetworkAvailableNull', EVENT_ID_SET_EIMIT_KEY)
+      Utils.registerBaseEvent('testSetNetworkAvailableNull', '401', 26022703, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
+    })
+    /**
+     * @tc.name   testSetNetworkAvailableUndefined
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_ERROR_0200
+     * @tc.desc   test setNetworkAvailable undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSetNetworkAvailableUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitSetNetworkAvailableUndefined', EVENT_ID_SET_EIMIT_KEY)
+      Utils.registerBaseEvent('testSetNetworkAvailableUndefined', '401', 26022704, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
     })
 
 

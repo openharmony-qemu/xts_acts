@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,6 +34,7 @@ import { State } from '@ohos.arkui.stateManagement';
 import prompt from '@ohos.prompt'
 import Log from '../common/Log';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -69,7 +70,7 @@ struct PromptShowDialog {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": true
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60220,
@@ -77,7 +78,7 @@ struct PromptShowDialog {
             }
             console.info("showDialog start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("showDialog emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -100,7 +101,7 @@ struct PromptShowDialog {
             let backData1: events_emitter.EventData = {
               data: {
                 "STATUS": true
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent1: events_emitter.InnerEvent = {
               eventId: 60221,
@@ -108,7 +109,7 @@ struct PromptShowDialog {
             }
             console.info("showActionMenu start to emit action state")
             events_emitter.emit(backEvent1, backData1)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("showActionMenu emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,6 +35,7 @@ import {
   TextOverflow
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -73,7 +74,7 @@ struct CurvesSteps {
             let curve = Curves.stepsCurve(1, true)
             console.info("curve is" + curve)
             this.curveApi = "callBackSuccess"
-          } catch (err: Error) {
+          } catch (err) {
             console.info("curve onClick err: " + JSON.stringify((err as Error)?.message))
             this.curveApi = "callBackFail"
           }
@@ -83,7 +84,7 @@ struct CurvesSteps {
                 "curveApi": this.curveApi,
                 "curveSpringMotion": this.curve1,
                 "curveResSpringMotion": this.curve2
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60229,
@@ -91,7 +92,7 @@ struct CurvesSteps {
             }
             console.info("curveApi onClick start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("curveApi onClick emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

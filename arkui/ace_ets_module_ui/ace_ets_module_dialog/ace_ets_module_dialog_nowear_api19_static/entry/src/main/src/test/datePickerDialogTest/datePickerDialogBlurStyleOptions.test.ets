@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function datePickerDialogBlurStyleOptionsTest() {
   describe('DatePickerDialogBlurStyleOptionsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DatePickerDialogBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

@@ -49,7 +49,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function IfElseTest0100() {
   describe('IfElseTest0100', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("IfElseTest0100 beforeEach start");
 
 

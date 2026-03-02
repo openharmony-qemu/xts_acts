@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,17 +42,17 @@ import { $r, Alignment } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-const uiContext = new UIContext();
 
 
 export default function overLayJsunit() {
   describe('overLayTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("overLayJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
@@ -139,7 +139,7 @@ it('testOverlay_static_02', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "title": "new title"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,
@@ -147,7 +147,7 @@ it('testOverlay_static_02', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay02] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -178,7 +178,7 @@ it('testOverlay_static_03', Level.LEVEL0, async (done: () => void): Promise<void
             "align": Alignment.TopStart,
             "x": 30.0,
             "y": -30.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,
@@ -186,7 +186,7 @@ it('testOverlay_static_03', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay03] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -230,7 +230,7 @@ it('testOverlay_static_04', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "align": "Alignment.Center"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,
@@ -238,7 +238,7 @@ it('testOverlay_static_04', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay04] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -269,7 +269,7 @@ it('testOverlay_static_05', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "align": '-1'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1110,
@@ -277,7 +277,7 @@ it('testOverlay_static_05', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay05] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -309,7 +309,7 @@ it('testOverlay_static_06', Level.LEVEL0, async (done: () => void): Promise<void
           data: {
             "x": -30.0,
             "y": 30.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1110,
@@ -317,7 +317,7 @@ it('testOverlay_static_06', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay06] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -355,7 +355,7 @@ it('testOverlay_static_07', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "x": 1111111111.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1110,
@@ -363,7 +363,7 @@ it('testOverlay_static_07', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay07] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay07] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -395,7 +395,7 @@ it('testOverlay_static_08', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "y": 1111111111.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1110,
@@ -403,7 +403,7 @@ it('testOverlay_static_08', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay08] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

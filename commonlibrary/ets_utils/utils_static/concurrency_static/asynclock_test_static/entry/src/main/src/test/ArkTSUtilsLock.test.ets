@@ -68,7 +68,7 @@ class Obj {
 
 export default function arkTSUtilsLockTest() {
   describe('arkTSUtilsLockTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await sleep(20);
     })
     /**
@@ -935,7 +935,7 @@ export default function arkTSUtilsLockTest() {
           job1().catch((e: Error) => {
             console.error(`${TAG} job1 error: ${e}`);
           })
-          await sleep(50);
+          await sleep(100);
           job2().catch((e: Error) => {
             console.error(`${TAG} job2 error: ${e}`);
           })
@@ -1127,7 +1127,7 @@ export default function arkTSUtilsLockTest() {
           job1().catch((e: Error) => {
             console.error(`${TAG} job1 error: ${e}`);
           })
-          await sleep(50);
+          await sleep(100);
           job2().catch((e: Error) => {
             console.error(`${TAG} job2 error: ${e}`);
           })

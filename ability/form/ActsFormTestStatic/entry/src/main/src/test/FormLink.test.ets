@@ -27,7 +27,7 @@ const unsubscribeCallback = (tcNumber: string) => {
 let subscriberForm: CommonEventManager.CommonEventSubscriber;
 
 const DOMAIN: int = 0x0000;
-const TAG: string = 'testTag';
+const TAG: string = 'testTag formLinkTest';
 
 export default function formLinkTest() {
     describe("formLinkTest", (): void => {
@@ -62,9 +62,10 @@ export default function formLinkTest() {
                 "com.example.actsformtest.static",
                 "testform/pages/XtsFormLink",
             )).assertTrue();
-
+            hilog.info(DOMAIN, TAG, 'FormLinkStaticTest001 startAbility end');
             await Utils.msSleep(1000); // waiting for the async subscribe.
             if (!isChecked) {
+                hilog.info(DOMAIN, TAG, 'FormLinkStaticTest001 isChecked is false');
                 CommonEventManager.unsubscribe(subscriberForm, () => unsubscribeCallback("FormLinkStaticTest001"));
                 expect(false).assertTrue();
             }

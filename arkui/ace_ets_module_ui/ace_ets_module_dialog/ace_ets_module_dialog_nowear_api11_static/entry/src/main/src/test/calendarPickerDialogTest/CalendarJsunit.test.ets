@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,10 +27,11 @@ import { UtilsTest } from '../Util.test';
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Axis } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 
 export default function calendarJsunit() {
   describe('appInfoTest_four_1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_1 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })
@@ -50,7 +51,7 @@ export default function calendarJsunit() {
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push calendar page error: " + err);
       }
     });
@@ -76,7 +77,7 @@ it('ACE_calendar_CurrentDayStyle_colSpace', Level.LEVEL2, async (done: () => voi
           let eventData: events_emitter.EventData = {
             data: {
               "colSpace": 10,
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -84,7 +85,7 @@ it('ACE_calendar_CurrentDayStyle_colSpace', Level.LEVEL2, async (done: () => voi
           }
           console.info("[ACE_calendar_CurrentDayStyle_colSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_colSpace] change component data error: " + err.message);
         }
         done();
@@ -109,7 +110,7 @@ it('ACE_calendar_CurrentDayStyle_dailyFiveRowSpace', Level.LEVEL2, async (done: 
           let eventData: events_emitter.EventData = {
             data: {
               "dailyFiveRowSpace": 11,
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -117,7 +118,7 @@ it('ACE_calendar_CurrentDayStyle_dailyFiveRowSpace', Level.LEVEL2, async (done: 
           }
           console.info("[ACE_calendar_CurrentDayStyle_dailyFiveRowSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_dailyFiveRowSpace] change component data error: " + err.message);
         }
         done();
@@ -143,7 +144,7 @@ it('ACE_calendar_CurrentDayStyle_dailySixRowSpace', Level.LEVEL2, async (done: (
           let eventData: events_emitter.EventData = {
             data: {
               "dailySixRowSpace": 12,
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -151,7 +152,7 @@ it('ACE_calendar_CurrentDayStyle_dailySixRowSpace', Level.LEVEL2, async (done: (
           }
           console.info("[ACE_calendar_CurrentDayStyle_dailySixRowSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_dailySixRowSpace] change component data error: " + err.message);
         }
         done();
@@ -177,7 +178,7 @@ it('ACE_calendar_CurrentDayStyle_lunarHeight', Level.LEVEL2, async (done: () => 
           let eventData: events_emitter.EventData = {
             data: {
               "lunarHeight": 13,
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -185,7 +186,7 @@ it('ACE_calendar_CurrentDayStyle_lunarHeight', Level.LEVEL2, async (done: () => 
           }
           console.info("[ACE_calendar_CurrentDayStyle_lunarHeight] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_lunarHeight] change component data error: " + err.message);
         }
         done();
@@ -211,7 +212,7 @@ it('ACE_calendar_CurrentDayStyle_underscoreWidth', Level.LEVEL2, async (done: ()
           let eventData: events_emitter.EventData = {
             data: {
               "underscoreWidth": 14,
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -219,7 +220,7 @@ it('ACE_calendar_CurrentDayStyle_underscoreWidth', Level.LEVEL2, async (done: ()
           }
           console.info("[ACE_calendar_CurrentDayStyle_underscoreWidth] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_underscoreWidth] change component data error: " + err.message);
         }
         done();
@@ -245,7 +246,7 @@ it('ACE_calendar_CurrentDayStyle_underscoreLength', Level.LEVEL2, async (done: (
           let eventData: events_emitter.EventData = {
             data: {
               "underscoreLength": 15,
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -253,7 +254,7 @@ it('ACE_calendar_CurrentDayStyle_underscoreLength', Level.LEVEL2, async (done: (
           }
           console.info("[ACE_calendar_CurrentDayStyle_underscoreLength] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_underscoreLength] change component data error: " + err.message);
         }
         done();
@@ -279,7 +280,7 @@ it('ACE_calendar_CurrentDayStyle_scheduleMarkerRadius', Level.LEVEL2, async (don
           let eventData: events_emitter.EventData = {
             data: {
               "scheduleMarkerRadius": 16,
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -287,7 +288,7 @@ it('ACE_calendar_CurrentDayStyle_scheduleMarkerRadius', Level.LEVEL2, async (don
           }
           console.info("[ACE_calendar_CurrentDayStyle_scheduleMarkerRadius] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_scheduleMarkerRadius] change component data error: " + err.message);
         }
         done();
@@ -313,7 +314,7 @@ it('ACE_calendar_CurrentDayStyle_boundaryRowOffset', Level.LEVEL2, async (done: 
           let eventData: events_emitter.EventData = {
             data: {
               "boundaryRowOffset": 17,
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -321,7 +322,7 @@ it('ACE_calendar_CurrentDayStyle_boundaryRowOffset', Level.LEVEL2, async (done: 
           }
           console.info("[ACE_calendar_CurrentDayStyle_boundaryRowOffset] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_boundaryRowOffset] change component data error: " + err.message);
         }
         done();
@@ -346,7 +347,7 @@ it('ACE_calendar_WeekStyle_weekAndDayRowSpace', Level.LEVEL2, async (done: () =>
           let eventData: events_emitter.EventData = {
             data: {
               "weekAndDayRowSpace": 18,
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -354,7 +355,7 @@ it('ACE_calendar_WeekStyle_weekAndDayRowSpace', Level.LEVEL2, async (done: () =>
           }
           console.info("[ACE_calendar_WeekStyle_weekAndDayRowSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_WeekStyle_weekAndDayRowSpace] change component data error: " + err.message);
         }
         done();
@@ -380,7 +381,7 @@ it('ACE_calendar_CalendarAttribute_direction', Level.LEVEL2, async (done: () => 
           let eventData: events_emitter.EventData = {
             data: {
               "direction": Axis.Vertical,
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -388,7 +389,7 @@ it('ACE_calendar_CalendarAttribute_direction', Level.LEVEL2, async (done: () => 
           }
           console.info("[ACE_calendar_CalendarAttribute_direction] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CalendarAttribute_direction] change component data error: " + err.message);
         }
         done();

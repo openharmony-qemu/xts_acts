@@ -18,12 +18,10 @@
         "custom": [
             {
                 "xts": [
-		    "SystemCapability.Driver.HID.Extension",
-                    "SystemCapability.Driver.ExternalDevice",
-                    "SystemCapability.Driver.USB.Extension",
-                    "SystemCapability.Driver.DDK.Extension",
-                    "SystemCapability.Driver.UsbSerial.Extension",
-                    "SystemCapability.Driver.SCSI.Extension"
+                    "SystemCapability.Location.Location.Core",
+                    "SystemCapability.Location.Location.Gnss",
+                    "SystemCapability.Location.Location.Geofence",
+                    "SystemCapability.Location.Location.Geocoder"
                 ]
             }
         ]

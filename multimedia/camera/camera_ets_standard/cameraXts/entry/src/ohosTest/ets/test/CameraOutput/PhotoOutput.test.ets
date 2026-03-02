@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { camera } from '@kit.CameraKit';
 import { common } from '@kit.AbilityKit';
-import { cameraErrorCode, driveFn, getPermission, isEmpty } from '../common';
+import { cameraErrorCode, driveFn, getPermission, isEmpty, sleep } from '../common';
 import { indexSurfaceId } from '../../testability/pages/Index';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';
@@ -45,6 +45,7 @@ let mCameraDeviceArray: Array<camera.CameraDevice>;
 let mSupportedModes: Array<camera.SceneMode>;
 let mCameraInput: camera.CameraInput;
 let mCameraOutputCap: camera.CameraOutputCapability;
+let mFullCameraOutputCap: camera.CameraOutputCapability;
 let mPreviewOutput: camera.PreviewOutput;
 let mPhotoOutput: camera.PhotoOutput;
 let mPhotoSession: camera.PhotoSession;
@@ -98,6 +99,13 @@ function getOutputCapability() {
   console.info(TAG, 'camera, output cap: ' + JSON.stringify(mCameraOutputCap));
 }
 
+function getFullOutputCapability() {
+  console.info(TAG, 'getFullOutputCapability.');
+  mFullCameraOutputCap = mCameraManager.getSupportedFullOutputCapability(mCameraDeviceArray[0],
+    camera.SceneMode.NORMAL_PHOTO);
+  console.info(TAG, 'camera, full output cap: ' + JSON.stringify(mFullCameraOutputCap));
+}
+
 async function getPhotoSession(testName: string, previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
   console.info(TAG, 'getPhotoSession.');
   mPhotoSession = mCameraManager.createSession(mSupportedModes[0]);
@@ -114,6 +122,8 @@ async function getPhotoSession(testName: string, previewOutput: camera.PreviewOu
   console.info(TAG, testName + ' addOutput photoOutput passed.');
   await mPhotoSession.commitConfig();
   console.info(TAG, testName + ' commitConfig passed.');
+  await mPhotoSession.start();
+  console.info(TAG, testName + ' start passed.');
 }
 
 async function releasePhotoSession() {
@@ -194,6 +204,7 @@ export default function PhotoOutputTest() {
       getSupportedCameraDeviceArray();
       getSupportedModes();
       getOutputCapability();
+      getFullOutputCapability();
       await getPermission();
       await driveFn();
       getCameraInput();
@@ -610,6 +621,7 @@ export default function PhotoOutputTest() {
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let isCapture: boolean = false;
           mPhotoOutput.on('photoAvailable', (error, photo) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
@@ -619,8 +631,24 @@ export default function PhotoOutputTest() {
               let mainImage: image.Image = photo.main;
               console.info(TAG, testName + ' succeed to listen photoAvailable on.');
               expect(isEmpty(mainImage)).assertFalse();
+              isCapture = true
             }
           });
+          mPhotoOutput.capture();
+          // 设置超时循环检查
+          const maxRetry = 50; // 最大重试次数
+          const interval = 200; // 检查间隔200ms
+          for (let i = 0; i < maxRetry; i++) {
+            await sleep(interval);
+            if (isCapture) {
+              console.info(TAG, `${testName} succeed to listen photoAvailable on.`);
+              break;
+            }
+            if (i === maxRetry - 1) { // 最后一次循环
+              console.error(TAG, `${testName} failed to listen photoAvailable on.`);
+              expect().assertFail();
+            }
+          }
           await releasePhotoSession();
         }
         done();
@@ -651,6 +679,7 @@ export default function PhotoOutputTest() {
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let isCapture: boolean = false;
           mPhotoOutput.on('photoAvailable', (error, photo) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
@@ -660,8 +689,24 @@ export default function PhotoOutputTest() {
               let mainImage: image.Image = photo.main;
               console.info(TAG, testName + ' succeed to listen photoAvailable on.');
               expect(isEmpty(mainImage)).assertFalse();
+              isCapture = true
             }
           });
+          mPhotoOutput.capture();
+          // 设置超时循环检查
+          const maxRetry = 50; // 最大重试次数
+          const interval = 200; // 检查间隔200ms
+          for (let i = 0; i < maxRetry; i++) {
+            await sleep(interval);
+            if (isCapture) {
+              console.info(TAG, `${testName} succeed to listen photoAvailable on.`);
+              break;
+            }
+            if (i === maxRetry - 1) { // 最后一次循环
+              console.error(TAG, `${testName} failed to listen photoAvailable on.`);
+              expect().assertFail();
+            }
+          }
           mPhotoOutput.off('photoAvailable', (error, photo) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
@@ -1193,6 +1238,107 @@ export default function PhotoOutputTest() {
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   on_photoAvailable_listen_002
+     * @tc.number CAMERA_OUTPUT_PHOTO_039
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('on_photoAvailable_listen_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'on_photoAvailable_listen_002';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          let targetProfile = mFullCameraOutputCap.photoProfiles[0];
+          for (let i = 0; i < mFullCameraOutputCap.photoProfiles.length; i++) {
+            if (mFullCameraOutputCap.photoProfiles[i].format === camera.CameraFormat.CAMERA_FORMAT_YUV_420_SP) {
+              targetProfile = mFullCameraOutputCap.photoProfiles[i];
+              break;
+            }
+          }
+          console.info(TAG, 'yuv test, photo profile: ' + JSON.stringify(targetProfile));
+          mPhotoOutput = mCameraManager.createPhotoOutput(targetProfile);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          mPhotoOutput.onCapturePhotoAvailable((CapturePhoto: camera.CapturePhoto) => {
+            if (!CapturePhoto || !CapturePhoto.main) {
+              console.error(TAG, testName + ' received invalid CapturePhoto or missing main image');
+              expect().assertFail();
+              return;
+            }
+            let mainImage: image.Image | image.Picture = CapturePhoto.main;
+            console.info(TAG, testName + ' succeed to listen photoAvailable on.');
+            expect(isEmpty(mainImage)).assertFalse();
+            CapturePhoto.release();
+          });
+          await mPhotoOutput.capture;
+          await releasePhotoSession();
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   off_photoAvailable_listen_002
+     * @tc.number CAMERA_OUTPUT_PHOTO_040
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('off_photoAvailable_listen_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'off_photoAvailable_listen_002';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          let targetProfile = mFullCameraOutputCap.photoProfiles[0];
+          for (let i = 0; i < mFullCameraOutputCap.photoProfiles.length; i++) {
+            if (mFullCameraOutputCap.photoProfiles[i].format === camera.CameraFormat.CAMERA_FORMAT_YUV_420_SP) {
+              targetProfile = mFullCameraOutputCap.photoProfiles[i];
+              break;
+            }
+          }
+          console.info(TAG, 'yuv test, photo profile: ' + JSON.stringify(targetProfile));
+          mPhotoOutput = mCameraManager.createPhotoOutput(targetProfile);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          mPhotoOutput.onCapturePhotoAvailable((CapturePhoto: camera.CapturePhoto) => {
+            if (!CapturePhoto || !CapturePhoto.main) {
+              console.error(TAG, testName + ' received invalid CapturePhoto or missing main image');
+              expect().assertFail();
+              return;
+            }
+            let mainImage: image.Image | image.Picture = CapturePhoto.main;
+            console.info(TAG, testName + ' succeed to listen photoAvailable on.');
+            expect(isEmpty(mainImage)).assertFalse();
+            CapturePhoto.release();
+          });
+          await mPhotoOutput.capture();
+          mPhotoOutput.offCapturePhotoAvailable();
+          await releasePhotoSession();
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
         done();
       }
     })

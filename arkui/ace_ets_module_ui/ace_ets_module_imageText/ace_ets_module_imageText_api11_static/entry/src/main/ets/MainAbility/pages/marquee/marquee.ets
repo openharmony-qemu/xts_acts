@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,6 +31,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -68,7 +69,7 @@ struct MarqueeExample {
             let backData: emitter.EventData = {
               data: {
                 "fontColor": this.fontColor,
-              }  as Record<String,undefined|null|Object>
+              }  as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 127,
@@ -76,7 +77,7 @@ struct MarqueeExample {
             }
             console.info("Onstart start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("Onstart emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -87,7 +88,7 @@ struct MarqueeExample {
             let backData: emitter.EventData = {
               data: {
                 "fontSize": this.fontSize,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 128,
@@ -95,7 +96,7 @@ struct MarqueeExample {
             }
             console.info("Onbounce start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("Onbounce emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -107,7 +108,7 @@ struct MarqueeExample {
             let backData: emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalledThree,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 129,
@@ -115,7 +116,7 @@ struct MarqueeExample {
             }
             console.info("Onfinish start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("Onfinish emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -127,7 +128,7 @@ struct MarqueeExample {
             let backData: emitter.EventData = {
               data: {
                 "start": this.start,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 130,
@@ -135,7 +136,7 @@ struct MarqueeExample {
             }
             console.info("start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +21,7 @@ import {
   Flex, FlexDirection, ItemAlign, FlexAlign
 } from '@ohos.arkui.component'
 import { State,StoragePropRef,Observed } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 @Observed
 class TextInputEnterKeyTypeModifier  implements AttributeModifier<TextInputAttribute> {
   enterKeyType: EnterKeyType = EnterKeyType.Go;
@@ -37,7 +38,7 @@ struct TextInputEnterKeyType {
 
   private stateChangCallBack : (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null) {
-      let eventD = eventData.data as Record<String,undefined|null|Object>
+      let eventD = eventData.data as Record<String,RecordData>
       if (eventD!['enterKeyType'] != null) {
         console.info("[TextInputEnterKeyTypeModifier page] enterKeyType change data is " + eventD!['enterKeyType']);
         this.textInputEnterKeyTypeModifier.enterKeyType =  eventD!['enterKeyType'] as EnterKeyType;

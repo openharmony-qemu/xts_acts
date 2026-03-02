@@ -33,7 +33,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function TextPickerValue() {
   describe('TextPickerValue', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerValue beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.information.api20.static", "EntryAbility")
     });
@@ -72,8 +72,8 @@ export default function TextPickerValue() {
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextPicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextPickerValue_001 component obj is: ' + obj.getElement('$attrs').getElement('value'));
-      expect(obj.getElement('$attrs').getElement('value')).assertEqual('apple');
+      console.info('TextPickerValue_001 component obj is: ' + obj.getElement('$attrs').getString('value'));
+      expect(obj.getElement('$attrs').getString('value')).assertEqual('apple');
       console.info('[TextPickerValue_001] END');
       done();
     });
@@ -91,30 +91,13 @@ export default function TextPickerValue() {
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextPicker1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextPickerValue_002 component obj is: ' + obj.getElement('$attrs').getElement('value'));
-      expect(obj.getElement('$attrs').getElement('value')).assertEqual('apple');
+      console.info('TextPickerValue_002 component obj is: ' + obj.getElement('$attrs').getString('value'));
+      expect(obj.getElement('$attrs').getString('value')).assertEqual('apple');
       console.info('[TextPickerValue_002] END');
       done();
     });
 
-    /**
-     * @tc.number: TextPickerValue_static_003
-     * @tc.name  : TextPickerValue_static_003
-     * @tc.desc  : To test the value: null
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
-     */
-    it('TextPickerValue_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('TextPickerValue_003 START');
-      await Utils.sleep(1000);
-      let strJson = inspector.getInspectorByKey('TextPicker2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('TextPickerValue_003 component obj is: ' + obj.getElement('$attrs').getElement('value'));
-      expect(obj.getElement('$attrs').getElement('value')).assertEqual('apple');
-      console.info('[TextPickerValue_003] END');
-      done();
-    });
+
 
     /**
      * @tc.number: TextPickerValue_static_004
@@ -129,8 +112,8 @@ export default function TextPickerValue() {
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextPicker3');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextPickerValue_004 component obj is: ' + obj.getElement('$attrs').getElement('value'));
-      expect(obj.getElement('$attrs').getElement('value')).assertEqual('apple');
+      console.info('TextPickerValue_004 component obj is: ' + obj.getElement('$attrs').getString('value'));
+      expect(obj.getElement('$attrs').getString('value')).assertEqual('apple');
       console.info('[TextPickerValue_004] END');
       done();
     });

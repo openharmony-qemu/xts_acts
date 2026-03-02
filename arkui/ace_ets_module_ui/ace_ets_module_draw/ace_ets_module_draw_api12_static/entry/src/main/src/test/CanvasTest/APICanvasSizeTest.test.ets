@@ -26,7 +26,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function APICanvasSizeTest() {
   describe('APICanvasSizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APICanvasSizeTest beforeEach start");
 
 

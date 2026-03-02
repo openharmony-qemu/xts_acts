@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import {
   Alignment,
@@ -22,7 +23,6 @@ import {
   BlurStyle,
   BorderStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,
@@ -74,6 +74,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { CircleShape, EllipseShape, PathShape, RectShape, RectShapeOptions, ShapeSize } from '@ohos.arkui.shape'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -140,7 +141,7 @@ struct ClipAndMaskExample {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info("shapeClipping page state change called:" + JSON.stringify(eventData));
       if (data['maskValue'] != null) {
         this.maskType = new CircleShape({ width: 280, height: 280 } as ShapeSize);
@@ -149,7 +150,7 @@ struct ClipAndMaskExample {
   }
   private shapeChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info("shapeClipping page shape change called:" + JSON.stringify(eventData));
       if (data['clipValue'] != null) {
         this.clipType = new RectShape({ radius: 20 } as RectShapeOptions);

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ export default function textClockJsunit() {
   describe('appInfoTest_four_11', () => {
 
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_11 beforeEach start");
 
 
@@ -102,7 +102,7 @@ export default function textClockJsunit() {
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<number>("fontSize", 30)
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textClockTest_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -141,7 +141,7 @@ export default function textClockJsunit() {
       console.info('[textClockTest_static_04] START');
       try {
         AppStorage.setOrCreate<ResourceColor>("fontColor", '#FF000990')
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textClockTest_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -182,7 +182,7 @@ export default function textClockJsunit() {
       console.info('[textClockTest_static_06] START');
       try {
         AppStorage.setOrCreate<string>("format", '20')
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textClockTest_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

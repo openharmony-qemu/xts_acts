@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,6 +52,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -59,7 +60,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ohosPromptJsunit() {
   describe('appInfoTest_four_3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_3 beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
@@ -110,7 +111,7 @@ it('test_OhosPrompt_static_001', Level.LEVEL2, async (done: () => void): Promise
       let callback = (eventData: emitter.EventData) => {
         console.info("[test_OhosPrompt_static_001] get event state result is: " + JSON.stringify(eventData));
         await Utils.sleep(500)
-        expect(((eventData.data) as Record<String,undefined|null|Object>)['matrix1']).assertEqual("[100, 10]")
+        expect(((eventData.data) as Record<String,RecordData>)['matrix1']).assertEqual("[100, 10]")
       }
       let innerEvent: emitter.InnerEvent = {
         eventId: 142,

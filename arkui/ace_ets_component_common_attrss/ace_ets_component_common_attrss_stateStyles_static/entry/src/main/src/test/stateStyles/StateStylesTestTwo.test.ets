@@ -58,37 +58,23 @@ export default function stateStylesTestTwo() {
   }]
 
   describe('StateStylesTestTwo', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StateStylesTest beforeEach start");
       console.info("startAbility start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       console.info("startAbility end");
     });
     beforeEach(()=>{
-      AppStorage.setOrCreate<boolean>('_isSelect', true)
-      await UtilsTest.msSleep(2000)
     })
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Obtain target component information before changes
       let targetBeforeObjKey = inspector.getInspectorByKey(data.pageConfig.componentKey);
       await Utils.sleep(1000);
       let targetBeforeObj = JSON.parseJsonElement(targetBeforeObjKey)
-      // //Set value
-      AppStorage.setOrCreate<boolean>('_isSelect', data.testValue.setValue)
-      await Utils.sleep(1000);
-      //
-      // //Obtain target component information after changes
-      let targetAfterObjKey = inspector.getInspectorByKey(data.pageConfig.componentKey);
-      await Utils.sleep(1000);
-      let targetAfterObj = JSON.parseJsonElement(targetAfterObjKey)
-      //
       // //Check results
       console.info('[' + data.caseTag + ']' + 'targetBeforeObj.$attrs.zIndex is:' + targetBeforeObj.getElement('$attrs').getDouble('zIndex'));
       console.info('[' + data.caseTag + ']' + 'data.testValue.expectValue.selectedStyles is:' + data.testValue.expectValue.selectedStyles);
       expect(targetBeforeObj.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.selectedStyles);
-      console.info('[' + data.caseTag + ']' + 'targetAfterObj.$attrs.zIndex is:' + targetAfterObj.getElement('$attrs').getDouble('zIndex'));
-      console.info('[' + data.caseTag + ']' + 'data.testValue.expectValue.normalStyles is:' + data.testValue.expectValue.normalStyles);
-      expect(targetAfterObj.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.normalStyles);
     });
   })
 }

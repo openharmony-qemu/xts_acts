@@ -29,11 +29,8 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function MultiNavigation19() {
   describe('MultiNavigation19', () => {
-    beforeAll(() => {
-
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {
@@ -46,7 +43,7 @@ export default function MultiNavigation19() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get MultiNavigation19 state pages:" + JSON.stringify(pages));
-        if (!("List_SpaceChange" == pages.name)) {
+        if (!("MultiNavigation19" == pages.name)) {
           console.info("get MultiNavigation19 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

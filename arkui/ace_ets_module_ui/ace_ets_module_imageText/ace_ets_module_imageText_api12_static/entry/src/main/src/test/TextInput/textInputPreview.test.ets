@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputPreview() {
   describe('textInputPreview', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputPreview beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function textInputPreview() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textInputPreview state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInputPreview" == pages.name)) {
           console.info("get textInputPreview pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

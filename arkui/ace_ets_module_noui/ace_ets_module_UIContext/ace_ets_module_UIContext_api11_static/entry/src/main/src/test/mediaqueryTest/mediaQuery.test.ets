@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,12 +23,13 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 
 
 export default function mediaQueryOffJsunit() {
   describe('mediaQueryOffTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("mediaQueryOffTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
@@ -271,7 +272,7 @@ it('testmediaQueryOff_static_0011', Level.LEVEL0, async  () => {
         }
         console.info("onSelect_0012 click result is: " + JSON.stringify(inspector.sendEventByKey('offText', 10, "")));
         emitter.on(innerEventOne, callback1);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("onRequestPopupData_0012 on emitter err : " + JSON.stringify(err));
       }
       console.info('testmediaQueryOff_static_0011 END');
@@ -295,13 +296,13 @@ it('testmatchMediaSync_static_0001', Level.LEVEL0, async  () => {
           priority: emitter.EventPriority.LOW
         }
         let callback1 = (eventData: emitter.EventData) => {
-          const data: Record<String,undefined|null|Object> = eventData.data as Record<String,undefined|null|Object>
+          const data: Record<String,RecordData> = eventData.data as Record<String,RecordData>
           console.info("onRequestPopupData_0012 get event state result is: " + JSON.stringify(eventData));
           expect(data['STATUS']).assertEqual(true);
         }
         console.info("onSelect_0012 click result is: " + inspector.sendEventByKey('matchMediaSyncText', 10, "")); //没有执行页面的点击事件，appDied
         emitter.on(innerEventOne, callback1);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("onRequestPopupData_0012 on emitter err : " + JSON.stringify(err));
       }
       console.info('testmatchMediaSync_static_0001 END');

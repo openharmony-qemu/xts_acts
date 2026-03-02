@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,16 +42,16 @@ import { Visibility } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-const uiContext = new UIContext();
 
 export default function visibilityJsunit() {
   describe('visibilityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("visibilityJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
@@ -118,7 +118,7 @@ it('testVisibility_static_02', Level.LEVEL0, async () => {
         let eventData: emitter.EventData = {
           data: {
             "visibility": Visibility.Hidden,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 47,
@@ -126,7 +126,7 @@ it('testVisibility_static_02', Level.LEVEL0, async () => {
         }
         console.info("[testVisibility02] start to publish emit:" + JSON.stringify(eventData.data));
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -153,7 +153,7 @@ it('testVisibility_static_03', Level.LEVEL0, async () => {
         let eventData: emitter.EventData = {
           data: {
             "visibility": Visibility.None,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 48,
@@ -161,7 +161,7 @@ it('testVisibility_static_03', Level.LEVEL0, async () => {
         }
         console.info("[testVisibility03] start to publish emit:" + JSON.stringify(eventData.data));
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -188,7 +188,7 @@ it('testVisibility_static_04', Level.LEVEL0, async () => {
         let eventData: emitter.EventData = {
           data: {
             "visibility": 0.11111
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1116,
@@ -196,7 +196,7 @@ it('testVisibility_static_04', Level.LEVEL0, async () => {
         }
         console.info("[testVisibility04] start to publish emit:" + JSON.stringify(eventData.data));
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -222,7 +222,7 @@ it('testVisibility_static_05', Level.LEVEL0, async () => {
         let eventData: emitter.EventData = {
           data: {
             "visibility": 'nothing',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1116,
@@ -230,7 +230,7 @@ it('testVisibility_static_05', Level.LEVEL0, async () => {
         }
         console.info("[testVisibility05] start to publish emit:" + JSON.stringify(eventData.data));
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

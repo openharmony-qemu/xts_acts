@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
 import events_emitter from '@ohos.events.emitter';
 import { EdgeEffect } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -46,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function edgeEffectJsunit() {
   describe('edgeEffectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
 
@@ -108,7 +109,7 @@ it('edgeEffectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "edgeEffect": EdgeEffect.Spring,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 91,
@@ -116,7 +117,7 @@ it('edgeEffectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise
         }
         console.info("edgeEffectTest_static_0200 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("edgeEffectTest_static_0200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

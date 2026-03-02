@@ -26,7 +26,7 @@ export default function styledNumberFormatTest() {
     describe("styledNumberFormatTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'styledNumberFormatTest beforeAll start');
 
             await UtilsTest.startAbility("ohos.acts.i18nStage.static", "EntryAbility");
@@ -47,7 +47,7 @@ export default function styledNumberFormatTest() {
             let button: Component | null = await driver.findComponent(ON.id('i18nStageStaticText'));
             expect(button !== null).assertTrue();
             let text = await (button as Component).getText();
-            let str = '<span style="font-size: 16.00px;font-style: italic;font-weight: lighter;color: #FF0000FF;font-family: Arial;stroke-width: 0.00px;stroke-color: #000000FF;font-superscript: normal;">+</span><span style="font-size: 16.00px;font-style: italic;font-weight: lighter;color: #FF0000FF;font-family: Arial;stroke-width: 0.00px;stroke-color: #000000FF;font-superscript: normal;">123,456</span><span style="font-size: 16.00px;font-style: normal;font-weight: normal;color: #000000FF;font-family: Arial;stroke-width: 0.00px;stroke-color: #000000FF;font-superscript: normal;">.</span><span style="font-size: 16.00px;font-style: normal;font-weight: regular;color: #008000FF;font-family: Arial;stroke-width: 0.00px;stroke-color: #000000FF;font-superscript: normal;">79</span><span style="font-size: 16.00px;font-style: normal;font-weight: normal;color: #000000FF;font-family: HarmonyOS Sans;stroke-width: 0.00px;stroke-color: #000000FF;font-superscript: normal;"> </span><span style="font-size: 16.00px;font-style: italic;font-weight: medium;color: #0000FFFF;font-family: Arial;stroke-width: 0.00px;stroke-color: #000000FF;font-superscript: normal;">euros</span>';
+            let str = '<span style="font-size: 16.00px;font-style: italic;font-weight: lighter;color: #FF0000FF;font-family: Arial;stroke-width: 0.00px;stroke-color: #FF0000FF;font-superscript: normal;">+</span><span style="font-size: 16.00px;font-style: italic;font-weight: lighter;color: #FF0000FF;font-family: Arial;stroke-width: 0.00px;stroke-color: #FF0000FF;font-superscript: normal;">123,456</span><span style="font-size: 16.00px;font-style: normal;font-weight: normal;color: #000000FF;font-family: Arial;stroke-width: 0.00px;stroke-color: #000000FF;font-superscript: normal;">.</span><span style="font-size: 16.00px;font-style: normal;font-weight: regular;color: #008000FF;font-family: Arial;stroke-width: 0.00px;stroke-color: #008000FF;font-superscript: normal;">79</span><span style="font-size: 16.00px;font-style: normal;font-weight: normal;color: #000000FF;font-family: HarmonyOS Sans;stroke-width: 0.00px;stroke-color: #000000FF;font-superscript: normal;"> </span><span style="font-size: 16.00px;font-style: italic;font-weight: medium;color: #0000FFFF;font-family: Arial;stroke-width: 0.00px;stroke-color: #0000FFFF;font-superscript: normal;">euros</span>';
             expect(text).assertContain(str);
             hilog.info(domain, tag, '%{public}s', 'SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100 end');
             done();

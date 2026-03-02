@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function list_ListInitialIndex4Test() {
   describe('List_ListInitialIndex4Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("List_ListInitialIndex4Test beforeAll start");
             
       await UtilsTest.msSleep(4000)
@@ -145,10 +145,10 @@ it('testListInitialIndexToTwelveWithOneLane_static', Level.LEVEL0, async (done: 
       expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(UIContext.resolveUIContext()!.vp2px(0));
 
       let driver = Driver.create();
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
+      await (driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + fourthListItem.bottom)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + firstListItem.left + (firstListItem.right - firstListItem.left) / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + firstListItem.bottom)).toInt());
+        (Math.round((AppStorage.get<number>('winTop')) as number + firstListItem.bottom)).toInt()) as Promise<void>)
       await CommonFunc.sleep(2000);
 
       let scrollColumn = await driver!.findComponent(ON.type('Scroll'));

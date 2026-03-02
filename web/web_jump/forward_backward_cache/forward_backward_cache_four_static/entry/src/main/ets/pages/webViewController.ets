@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,6 +26,7 @@ import events_emitter from '@ohos.events.emitter';
 class StringFields {
   public str: string = '';
 }
+
 @Entry
 @Component
 struct Index {
@@ -75,7 +76,7 @@ struct Index {
                 Utils.emitEvent(this.cookieResult, 134);
                 web_webview.WebCookieManager.clearAllCookies();
                 }, 3000)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -102,7 +103,7 @@ struct Index {
                   }
                 })
                 }, 3000)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -123,7 +124,7 @@ struct Index {
                     Utils.emitEvent(cookie, 130)
                   })
                 }, 4000)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -134,7 +135,7 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitConfigCookieSync cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 132)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -152,7 +153,7 @@ struct Index {
                 console.log("emitConfigCookiePromise cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 136)
                 }, 3000)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -164,23 +165,27 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearAllCookiesSync cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 138)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
             }
             case "emitClearAllCookiesCallback": {
               try {
+                setTimeout(() => {
                 web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
                 web_webview.WebCookieManager.clearAllCookies((error) => {
                   if (error) {
                     console.log("error: " + error);
                   }
                 })
+                }, 2000);
+                setTimeout(() => {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearAllCookiesCallback cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 140)
-              } catch (error:BusinessError) {
+                }, 2000);
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -199,7 +204,7 @@ struct Index {
                 console.log("emitClearAllCookiesPromise cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 142)
                 }, 4000)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -211,38 +216,46 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearSessionCookieSync cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 144)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
             }
             case "emitClearSessionCookieCallback": {
               try {
-                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
-                web_webview.WebCookieManager.clearSessionCookie((error) => {
-                  if (error) {
-                    console.log("error: " + error);
-                  }
-                })
+                setTimeout(() => {
+                  web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
+                  web_webview.WebCookieManager.clearSessionCookie((error) => {
+                    if (error) {
+                      console.log("error: " + error);
+                    }
+                  })
+                },2000)
+                setTimeout(() => {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearSessionCookieCallback cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 146)
-              } catch (error:BusinessError) {
+                },2000)
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
             }
             case "emitClearSessionCookiePromise": {
               try {
-                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
-                web_webview.WebCookieManager.clearSessionCookie()
-                  .then(() => {
-                    console.log("clearSessionCookie success!");
-                  })
+                setTimeout(() => {
+                  web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
+                  web_webview.WebCookieManager.clearSessionCookie()
+                    .then(() => {
+                      console.log("clearSessionCookie success!");
+                    })
+                },2000)
+                setTimeout(() => {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearSessionCookiePromise cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 148)
-              } catch (error:BusinessError) {
+                },2000)
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -252,7 +265,7 @@ struct Index {
         })
       }
 
-      Web({ src: 'www.example.com', controller: this.controller })
+      Web({ src: 'https://www.example.com', controller: this.controller })
 
     }
   }

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,10 +17,10 @@
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import {ListItemGroup,BreakpointsReference,BreakPoints,GridRowOptions,GutterOption,TextTimerController,TabContent,FlowItem,ColumnOptions,SideBarContainerType,HorizontalAlign,VerticalAlign,AlignRuleOption,
   BadgeParam,BadgeStyle,GridColColumnOption,GridColOptions,GridItem,GridCol,GridRowDirection,MenuItemGroup,
-  ToggleType,TimePicker,StepperItem,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,CommonMethod,applyStyles,
+  ToggleType,TimePicker,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,CommonMethod,applyStyles,
   MenuItemOptions,MenuItem,$r,Entry,Column,Component,Button,ClickEvent,ForEach,Text,Row,List,ListItem,Color,FlexAlign,ExpectedFrameRateRange,Scroll,Margin,
 // Styles,
-  AlphabetIndexer,WebviewController,Blank,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,ScrollDirection,Search,Select,Slider,Stepper,
+  AlphabetIndexer,WebviewController,Blank,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,ScrollDirection,Search,Select,Slider,
   TextArea,TextClock,ImageFit,TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,ColumnSplit,Counter,GridRow,Grid,Refresh,RelativeContainer,RowSplit,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,DataPanelType,
   AlignRuleOption
 } from '@ohos.arkui.component'
@@ -43,8 +43,7 @@ struct GridSpanPage {
   onPageShow() {
     console.info('gridSpan page show called ')
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       console.log('routerParamOptions==========' + JSON.stringify(routerParamOptions))
       AppStorage.setOrCreate<number>('_gridSpan', routerParamOptions.view.testValue.setValue)
       this.targetView = routerParamOptions.view.targetView
@@ -53,7 +52,7 @@ struct GridSpanPage {
       this.parentHeight = routerParamOptions.view.parentHeight
       this.columns = routerParamOptions.view.columns
       this.gutter = routerParamOptions.view.gutter
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
 
@@ -115,18 +114,6 @@ struct GridSpanPage {
             TabContent() {
               Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White)
             }.tabBar('Tabs1')
-            .applyStyles(this.commonStyle)
-
-          }
-          .width(this.parentWidth as number).height(this.parentHeight as number)
-          .backgroundColor(Color.Pink)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
             .applyStyles(this.commonStyle)
 
           }
@@ -301,16 +288,6 @@ struct GridSpanPage {
                 .showTips(true)
 
                 .applyStyles(this.commonStyle)
-
-            } else if (this.targetView == 'Stepper') {
-              Stepper() {
-                StepperItem() {
-                  Column() {
-                    Text('Page One')
-                  }
-                }
-              }
-              .applyStyles(this.commonStyle)
 
             } else if (this.targetView == 'TextArea') {
               TextArea({

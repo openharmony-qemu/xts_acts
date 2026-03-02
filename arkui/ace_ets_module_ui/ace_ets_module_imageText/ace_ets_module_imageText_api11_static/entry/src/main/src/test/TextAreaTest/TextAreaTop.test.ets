@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textArea_top() {
   describe('textArea_top', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textArea_top beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -51,7 +51,7 @@ export default function textArea_top() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textArea_top state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textArea_top" == pages.name)) {
           console.info("get textArea_top pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

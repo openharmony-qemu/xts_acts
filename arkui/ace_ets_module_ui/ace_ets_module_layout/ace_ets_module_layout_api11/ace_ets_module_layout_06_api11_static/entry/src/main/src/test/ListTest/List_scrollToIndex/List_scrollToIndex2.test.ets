@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function List_scrollToIndex2() {
   describe('List_scrollToIndex2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("List_scrollToIndex2 beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -66,6 +66,7 @@ export default function List_scrollToIndex2() {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
       routerInstance.back()
+      await CommonFunc.sleep(1000);
       console.info("List_scrollToIndex2 after each called");
     });
 

@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorOnWillChange010() {
   describe('RichEditorOnWillChange010', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorOnWillChange010 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -113,18 +113,26 @@ export default function RichEditorOnWillChange010() {
       let onWillBefore = await onWillChange_rangeBefore.getText();
       await CommonFunc.sleep(500);
 
-      expect(onWillBefore).assertEqual('onWillChange_rangeBefore:{"start":1,"end":1}');
+      expect(onWillBefore.indexOf('onWillChange_rangeBefore') == 0).assertEqual(true);
+      expect(onWillBefore.indexOf('"start":1') > 0).assertEqual(true);
+      expect(onWillBefore.indexOf('"end":1') > 0).assertEqual(true);
 
       let onDidChange_rangeBefore = await (driver.findComponent(ON.id('onDidChange_rangeBefore')) as Promise<Component>);
       let onDidBefore = await onDidChange_rangeBefore.getText();
       await CommonFunc.sleep(500);
 
-      expect(onDidBefore).assertEqual('onDidChange rangeBefore:{"start":1,"end":1}');
+      expect(onDidBefore).assertEqual('onDidChange rangeBefore:{"end":1,"start":1}');
+      expect(onDidBefore.indexOf('onDidChange rangeBefore') == 0).assertEqual(true);
+      expect(onDidBefore.indexOf('"start":1') > 0).assertEqual(true);
+      expect(onDidBefore.indexOf('"end":1') > 0).assertEqual(true);
 
       let ondid_rangeAfter = await (driver.findComponent(ON.id('ondid_rangeAfter')) as Promise<Component>);
       let ondidRangeAfter = await ondid_rangeAfter.getText();
       await CommonFunc.sleep(500);
-      expect(ondidRangeAfter).assertEqual('ondid rangeAfter:{"start":1,"end":2}');
+
+      expect(ondidRangeAfter.indexOf('ondid rangeAfter:') == 0).assertEqual(true);
+      expect(ondidRangeAfter.indexOf('"start":1') > 0).assertEqual(true);
+      expect(ondidRangeAfter.indexOf('"end":2') > 0).assertEqual(true);
 
       let replace_text = await (driver.findComponent(ON.id('replace_text')) as Promise<Component>);
       let replaceSpanText = await replace_text.getText();

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,6 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { Type } from '@kit.ArkUI';
 
 interface Obj10 { a: number }
 
@@ -1276,18 +1275,6 @@ export default function ArraySpliceTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0082
-     * @tc.name testArraySplice0082
-     * @tc.desc Verify splice can be applied to array-like objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArraySplice0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   expect(testArraySpliceJs0082()).assertDeepEquals([1, 99, 3, 3]);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0083
      * @tc.name testArraySplice0083
      * @tc.desc Verify splice combined with map on array of numbers
@@ -1349,18 +1336,6 @@ export default function ArraySpliceTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0087
-     * @tc.name testArraySplice0087
-     * @tc.desc Verify splice on array-like object combined with map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArraySplice0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   expect(testArraySpliceJs0087()).assertDeepEquals([2, 198, 6]);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0088
      * @tc.name testArraySplice0088
      * @tc.desc Verify splice inserts elements and concatenates with another array
@@ -1401,7 +1376,7 @@ export default function ArraySpliceTest() {
     it('testArraySplice0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 2, 4, 3];
       arr.splice(1, 2, 99);
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt());
       expect(JSON.stringify(arr)).assertEqual(JSON.stringify([3, 5, 99]));
     });
 
@@ -1555,7 +1530,7 @@ export default function ArraySpliceTest() {
     it('testArraySplice0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 2, 4, 3];
       arr.splice(2, 0, 99);
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt());
       expect(JSON.stringify(arr)).assertEqual(JSON.stringify([2, 3, 4, 5, 99]));
     });
 
@@ -1588,18 +1563,6 @@ export default function ArraySpliceTest() {
       const filtered: I102[] = arr.filter(x => x.val > 2);
       expect(JSON.stringify(filtered.map<number>(x => x.val))).assertEqual(JSON.stringify([99, 100, 3]));
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0103
-     * @tc.name testArraySplice0103
-     * @tc.desc Verify splice on array-like object with negative start index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArraySplice0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   expect(testArraySpliceJs0103()).assertDeepEquals([1, 99, 3, 3]);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0104
@@ -1675,21 +1638,9 @@ export default function ArraySpliceTest() {
     it('testArraySplice0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: I108[] = [{ val: 3 }, { val: 1 }, { val: 2 }];
       arr.splice(1, 1, { val: 99 });
-      arr.sort((a: I108, b: I108): number => a.val - b.val);
+      arr.sort((a: I108, b: I108): int => (a.val - b.val).toInt());
       expect(JSON.stringify(arr.map<number>(x => x.val))).assertEqual(JSON.stringify([2, 3, 99]));
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0109
-     * @tc.name testArraySplice0109
-     * @tc.desc Verify splice on array-like object with multiple inserts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArraySplice0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   expect(testArraySpliceJs0109()).assertDeepEquals([1, 99, 100, 2, 4]);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0110
@@ -1775,7 +1726,7 @@ export default function ArraySpliceTest() {
      */
     it('testSparseArray0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [undefined, 3, 1, undefined, 2];
-      arr.sort((a, b) => (a ?? Infinity) - (b ?? Infinity));
+      arr.sort((a, b): int => ((a ?? Infinity) - (b ?? Infinity)).toInt());
       expect(arr[0]).assertEqual(1);
       expect(arr[arr.length-1]).assertEqual(undefined);
     });

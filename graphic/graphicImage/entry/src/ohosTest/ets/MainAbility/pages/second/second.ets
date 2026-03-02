@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,29 +13,32 @@
  * limitations under the License.
  */
 import router from '@system.router';
+import webview from '@ohos.web.webview';
 
 @Entry
 @Component
 struct Second {
-  private content: string = "Second Page"
+  @State surfaceId: string = 'surfaceId';
+  private webController: webview.WebviewController = new webview.WebviewController();
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Text(`${this.content}`)
+      Web({
+        src: 'https://www.baidu.com',
+        controller: this.webController
+      })
+      .width('100%')
+      .height(300)
+      .borderWidth(2)
+      Text(this.surfaceId)
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
-      Button() {
-        Text('secondPage_BackToIndex')
-          .fontSize(20)
-          .fontWeight(FontWeight.Bold)
-      }.type(ButtonType.Capsule)
-      .margin({
-        top: 20
-      })
-      .backgroundColor('#0D9FFB')
-      .onClick(() => {
-        router.back()
-      })
+        .id('getSurfaceId')
+        .onClick(async ()=>{
+          console.info('www data strJson click', 111);
+          this.surfaceId = await this.webController.getSurfaceId();
+          console.info('www data strJson click', this.surfaceId);
+        })
     }
     .width('100%')
     .height('100%')

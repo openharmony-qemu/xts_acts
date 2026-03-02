@@ -2,10 +2,7 @@
     "src": [
         "MainAbility/pages/index/index",
 
-        "MainAbility/pages/Counter/ActsAceCounterComponentTest",
-        "MainAbility/pages/Counter/CounterComponentTest",
-        "MainAbility/pages/Counter/CounterEnableTest",
-        "MainAbility/pages/Counter/CounterJsunitTest",
+
 
         "MainAbility/pages/Progress/LoadingProgressJsunit",
         "MainAbility/pages/Progress/LoadingProgressJsunit2",

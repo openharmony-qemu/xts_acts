@@ -28,8 +28,11 @@ export const AvTransCoderParamError: (interfaceName: string) => number;
 export const AvTransCoderOperateError: (interfaceName: string) => number;
 export const AvTransCoderNdkCancelled: (srcFd: number, srcOffset: number, srcLength: number, dstFd: number) => number;
 export const AvTransCoderSetStateCbError: () => number;
+export const AvTransCoderSetStateCb: () => number;
 export const AvTransCoderSetErrorCbError: () => number;
+export const AvTransCoderSetErrorCb: () => number;
 export const AvTransCoderSetProgressUpdateCbError: () => number;
+export const AvTransCoderSetProgressUpdateCb: () => number;
 export const AvTransCoderNdkProgressUpdateCb: (srcFd: number, srcOffset: number, srcLength: number, dstFd: number) => number;
 export const AvTransCoderConfigSetSrcFDError: (srcFd: number, srcOffset: number, srcLength: number) => number;
 export const AvTransCoderConfigParamError: (interfaceName: string, paramNum: number) => number;
@@ -46,6 +49,8 @@ export const AvTransCodeConfigSetDstVideoBitrate: (srcFd: number, srcOffset: num
     bitrate: number) => number;
 export const AvTransCodeConfigEnableBFrame: (srcFd: number, srcOffset: number, srcLength: number, dstFd: number,
     enableBFrame: boolean) => number;
+export const AvTransCodeConfigEnableBFrameError: (srcFd: number, srcOffset: number, srcLength: number, dstFd: number,
+    enableBFrame: boolean) => number;
 export const AvTransCodeConfigSetDstVideoResolution: (srcFd: number, srcOffset: number, srcLength: number, dstFd: number,
     width: number, height: number) => number;
 export const AvTransCoderErrorCode: (srcFd: number, srcOffset: number, srcLength: number) => number;
@@ -56,3 +61,4 @@ export const CheckAvTransCoderComplete: (user: AvTransCoderNdkUser) => number;
 export const AvTransCodeConfigSetDstFileTypeError: (srcFd: number, srcOffset: number, srcLength: number, dstFd: number,
     mimeType: number) => AvTransCoderResult;
 export const CheckAvTransCoderCallBackError: (user: AvTransCoderNdkUser) => number;
+export const AvTransCoderCreate: () => number;

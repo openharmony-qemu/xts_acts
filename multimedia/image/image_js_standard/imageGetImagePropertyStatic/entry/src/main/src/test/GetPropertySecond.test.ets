@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -116,7 +116,8 @@ const getImagePropertyErr = async (
       await imageSourceApi.getImageProperty(tag);
       expect(false).assertTrue();
       done();
-    } catch (error: BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       expect(error.code != 0).assertTrue();
       console.log(`${testNum} error msg: ` + error);
       done();
@@ -137,7 +138,7 @@ export default function imageGetImagePropertySecond() {
       console.info("beforeEach case");
     });
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {

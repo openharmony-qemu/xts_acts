@@ -61,9 +61,9 @@ export default function webViewSrollableJsunit(){
      * @tc.desc   test blurMode01 interface when choose callback mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('scrollByToStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('scrollByToStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('scrollByTo01', 10)
       await Utils.msSleep(1000);

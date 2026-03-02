@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,9 +27,9 @@ export default function GetAppCloneIdentityTest() {
      * @tc.desc   test errCode 201 when call getAppCloneIdentity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getAppCloneIdentity201', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getAppCloneIdentity201', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info(TAG + "getAppCloneIdentity201 start");
       try {
         await bundleManager.getAppCloneIdentity(-1).then((res: AppCloneIdentity) => {
@@ -42,7 +42,7 @@ export default function GetAppCloneIdentityTest() {
           expect(err.code).assertEqual(201);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         let message = (err as BusinessError).message;
         console.info(TAG +'getAppCloneIdentity201 catch failed: ' + message);
         expect().assertFail();

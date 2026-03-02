@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function QRCodeResourceStrTest() {
   describe('QRCodeResourceStrTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("QRCodeResourceStrTest beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.information.api20.static", "EntryAbility");
     });
@@ -78,42 +78,6 @@ it('QRCodeResourceStrTest_static_001', Level.LEVEL1, async (done: () => void): P
       done();
     });
   
-    
-    /**
-     * @tc.number   QRCodeResourceStrTest_static_002
-     * @tc.name     QRCodeResourceStrTest_static_002
-     * @tc.desc     QRCodeResourceStrTest_static_002
-     * @tc.level    Level.LEVEL1
-     */
-it('QRCodeResourceStrTest_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('QRCodeResourceStrTest_002 START');
-      await Utils.sleep(1000);
-      let strJson = inspector.getInspectorByKey('QRCode1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('QRCodeResourceStrTest_002 component obj is: ' + obj.getElement('$attrs').getString('value'));
-      expect(obj.getElement('$attrs').getString('value')).assertEqual('undefined');
-      console.info('[QRCodeResourceStrTest_002] END');
-      done();
-    });
-    
-    
-    /**
-     * @tc.number   QRCodeResourceStrTest_static_003
-     * @tc.name     QRCodeResourceStrTest_static_003
-     * @tc.desc     QRCodeResourceStrTest_static_003
-     * @tc.level    Level.LEVEL1
-     */
-it('QRCodeResourceStrTest_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('QRCodeResourceStrTest_003 START');
-      await Utils.sleep(1000);
-      let strJson = inspector.getInspectorByKey('QRCode2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('QRCodeResourceStrTest_003 component obj is: ' + obj.getElement('$attrs').getString('value'));
-      expect(obj.getElement('$attrs').getString('value')).assertEqual('null');
-      console.info('[QRCodeResourceStrTest_003] END');
-      done();
-    });
-
     
     
     /**

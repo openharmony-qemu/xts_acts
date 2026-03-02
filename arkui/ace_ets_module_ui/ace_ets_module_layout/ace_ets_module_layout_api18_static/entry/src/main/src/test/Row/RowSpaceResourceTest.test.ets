@@ -53,7 +53,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function RowSpaceResourceTest() {
   describe('RowSpaceResourceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RowSpaceResourceTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")

@@ -13,15 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { StepperView } from '../../view/markAnchor/StepperView';
-import { StepperItemView } from '../../view/markAnchor/StepperItemView';
 import { ListItemGroupView } from '../../view/markAnchor/ListItemGroupView';
 import { NavRouterView } from '../../view/markAnchor/NavRouterView';
 import { RouterParams, SetV } from '../../common/Utils';
 import router from '@ohos.router'
 import {
   Builder,
-  Stepper,
   NavPathStack,
   NavDestination,
   GridCol,
@@ -62,8 +59,6 @@ import {
   WaterFlow,
   SpanAttribute,
   StackAttribute,
-  StepperAttribute,
-  StepperItemAttribute,
   SwiperAttribute,
   TabContentAttribute,
   TabsAttribute,
@@ -93,7 +88,6 @@ import {
   PolygonAttribute,
   PolylineAttribute,
   ScrollAttribute,
-  StepperItem,
   TextTimer,
   TimePicker,
   ToggleType,
@@ -503,18 +497,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mAccessibilityLevel : string = ''
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.accessibilityLevel(this.mAccessibilityLevel)
-  }
-}
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mAccessibilityLevel : string = ''
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.accessibilityLevel(this.mAccessibilityLevel)
-  }
-}
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: SwiperAttribute): void {
@@ -670,8 +652,6 @@ struct accessibilityLevelDropPage {
   @State _accessibilityLevelSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _accessibilityLevelSliderMod: SliderModifier = new SliderModifier()
   @State _accessibilityLevelStackMod: StackModifier = new StackModifier()
-  @State _accessibilityLevelStepperMod: StepperModifier = new StepperModifier()
-  @State _accessibilityLevelStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _accessibilityLevelSwiperMod: SwiperModifier = new SwiperModifier()
   @State _accessibilityLevelTabContentMod: TabContentModifier = new TabContentModifier()
   @State _accessibilityLevelTabsMod: TabsModifier = new TabsModifier()
@@ -703,8 +683,7 @@ struct accessibilityLevelDropPage {
 
   onPageShow() {
     console.log('aboutToAppear routerParamOptions before' + this.targetView)
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey as string
     this.parentWidth = routerParamOptions.view.parentWidth
@@ -845,15 +824,6 @@ struct accessibilityLevelDropPage {
             .showTips(true)
 
             .applyStyles(this.fancy).attributeModifier(this._accessibilityLevelSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }
-          .applyStyles(this.fancy).attributeModifier(this._accessibilityLevelStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1118,21 +1088,6 @@ struct accessibilityLevelDropPage {
             }, (item: number) => String(item))
           }
           .applyStyles(this.fancy).attributeModifier(this._accessibilityLevelWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-
-            .applyStyles(this.fancy).attributeModifier(this._accessibilityLevelStepperItemMod)
-          }
-
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

@@ -53,79 +53,18 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 const waitUiReadyMs = 1000;
 
-export class RouterParams implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  data1: string;
-  data2: Data2;
-
-  constructor() {
-    this.data1 = "";
-    this.data2 = new Data2();
-  }
-
-  constructor(data1: string, data2: Data2) {
-    this.data1 = data1;
-    this.data2 = data2;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    root.set('data1', jsonx.JsonElement.createString(this.data1))
-    root.set('data2', this.data2.toJSON());
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.data1 = jsonElem.tryGetString('data1');
-    let data2 = jsonElem.tryGetElement('data2');
-    if (data2) {
-      this.data2 = new Data2();
-      this.data2.fromJSON(data2!);
-    }
-  }
+export interface RouterParams {
+  data1: string,
+  data2: Data2
 }
 
-export class Data2 implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  data3: number[];
-
-  constructor() {
-    this.data3 = [0];
-  }
-
-  constructor(arr: number[]) {
-    this.data3 = arr;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    let arr = new Array<jsonx.JsonElement>();
-    for (let i = 0; i < this.data3.length; ++i) {
-      arr.push(jsonx.JsonElement.createDouble(this.data3[i]));
-    }
-    let arrJson = jsonx.JsonElement.createArray(arr);
-    root.set('data3', arrJson);
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    let arrJson = jsonElem.tryAsArray();
-    if (!arrJson) {
-      this.data3 = new Array<number>();
-      return;
-    }
-    let arr = new Array<number>();
-    for (let i = 0; i < arrJson!.length; i++) {
-      let val = arrJson![i].tryAsDouble();
-      if (val) {
-        arr.push(val);
-      }
-    }
-    this.data3 = arr;
-  }
+export interface Data2 {
+  data3: number[]
 }
 
 export default function swiperAnimationJsunit() {
   describe('swiperAnimationJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperAnimationJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
@@ -141,7 +80,12 @@ export default function swiperAnimationJsunit() {
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/index/second',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -176,7 +120,12 @@ it('swiperAnimationJsunit_static_0024', Level.LEVEL0, async (done: () => void): 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -235,7 +184,12 @@ it('swiperAnimationJsunit_static_0012', Level.LEVEL0, async (done: () => void): 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -297,7 +251,12 @@ it('swiperAnimationJsunit_static_0027', Level.LEVEL0, async (done: () => void): 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -364,7 +323,12 @@ it('swiperAnimationJsunit_static_0019', Level.LEVEL0, async (done: () => void): 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -438,7 +402,12 @@ it('swiperAnimationJsunit_static_0022', Level.LEVEL0, async (done: () => void): 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -498,7 +467,12 @@ it('swiperAnimationJsunit_static_0023', Level.LEVEL0, async (done: () => void): 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -563,7 +537,12 @@ it('swiperAnimationJsunit_static_0011', Level.LEVEL0, async (done: () => void): 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -629,7 +608,12 @@ it('swiperAnimationJsunit_static_0028', Level.LEVEL0, async (done: () => void): 
         await CommonFunc.sleep(500);
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -705,7 +689,12 @@ it('swiperAnimationJsunit_static_0020', Level.LEVEL0, async (done: () => void): 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -783,7 +772,12 @@ it('swiperAnimationGestureJsunit_static_0016', Level.LEVEL0, async (done: () => 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -846,7 +840,12 @@ it('swiperAnimationGestureJsunit_static_0017', Level.LEVEL0, async (done: () => 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -913,7 +912,12 @@ it('swiperAnimationGestureJsunit_static_0019', Level.LEVEL0, async (done: () => 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })
@@ -987,7 +991,12 @@ it('swiperAnimationGestureJsunit_static_0020', Level.LEVEL0, async (done: () => 
         console.info("swiperAnimationJsunit " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/Swiper/swiperUI/swiperAnimation',
-          params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            } as Data2
+          } as RouterParams
         }).then(() => {
           // success
         })

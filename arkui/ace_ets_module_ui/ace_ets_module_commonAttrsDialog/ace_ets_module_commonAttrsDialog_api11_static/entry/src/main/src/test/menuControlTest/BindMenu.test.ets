@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ import { BusinessError } from '@ohos.base';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -36,7 +37,7 @@ const waitUiReadyMs: Int = 500;
 export default function BindMenuTest() {
 
   describe('BindMenuTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
@@ -71,8 +72,8 @@ it('ArkUI_Menu_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       let CASE: string = 'ArkUI_Menu_0100'
       console.info(`${SUITE} ${CASE} START`);
       let callback = (event: events_emitter.EventData) => {
-        const data = event.data as Record<string, Object | undefined | null>
-        const action = data['action'] as Record<string, Object | undefined | null>
+        const data = event.data as Record<String,RecordData>
+        const action = data['action'] as Record<String,RecordData>
         expect(action).assertEqual('onAppear');
       }
       let event: events_emitter.InnerEvent = {
@@ -104,8 +105,8 @@ it('ArkUI_Menu_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       let CASE: string = 'ArkUI_Menu_0200'
       console.info(`${SUITE} ${CASE} START`);
       let callback = (event: events_emitter.EventData) => {
-        const data = event.data as Record<string, Object | undefined | null>
-        const action = data['action'] as Record<string, Object | undefined | null>
+        const data = event.data as Record<String,RecordData>
+        const action = data['action'] as Record<String,RecordData>
         expect(action).assertEqual('onAppear');
       }
       let event: events_emitter.InnerEvent = {

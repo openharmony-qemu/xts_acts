@@ -42,9 +42,16 @@ describe('AccessibleCaptionConfiguration', function () {
     let captionManager = accessibility.getCaptionsManager();
     let stateEventType = 'enableChange';
     let callbackdata = (data) => {}
-    captionManager.on(stateEventType, callbackdata);
-	captionManager.off(stateEventType, callbackdata);
-    expect(true).assertTrue();
+    let result = false;
+    try {
+      captionManager.on(stateEventType, callbackdata);
+      captionManager.off(stateEventType, callbackdata);
+      result = true;
+    } catch (error) {
+      expect(null).assertFail();
+      done();
+    }
+    expect(result).assertEqual(true);
     done();
   })
 
@@ -61,10 +68,39 @@ describe('AccessibleCaptionConfiguration', function () {
     let captionManager = accessibility.getCaptionsManager();
     let stateEventType = 'styleChange';
     let callbackdata = (data) => {}
-    captionManager.on(stateEventType, callbackdata);
-	captionManager.off(stateEventType, callbackdata);
-    expect(true).assertTrue();
+    let result = false;
+    try {
+      captionManager.on(stateEventType, callbackdata);
+      captionManager.off(stateEventType, callbackdata);
+      result = true;
+    } catch (error) {
+      expect(null).assertFail();
+      done();
+    }
+    expect(result).assertEqual(true);
     done();
   })
+
+  /**
+   * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0101
+   * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0101
+   * @tc.desc   test Ability Captions Manager
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0101', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+    let captionsManager = accessibility.getCaptionsManager();
+    expect(captionsManager.enabled == true || captionsManager.enabled == false).assertTrue();
+    expect(captionsManager.style != null).assertTrue();
+    expect(captionsManager.style.backgroundColor != null).assertTrue();
+    expect(captionsManager.style.fontColor != null).assertTrue();
+    expect(captionsManager.style.fontEdgeType != null).assertTrue();
+    expect(captionsManager.style.fontFamily != null).assertTrue();
+    expect(captionsManager.style.fontScale != null).assertTrue();
+    expect(captionsManager.style.windowColor != null).assertTrue();
+    done();
+  })
+
 })
 }

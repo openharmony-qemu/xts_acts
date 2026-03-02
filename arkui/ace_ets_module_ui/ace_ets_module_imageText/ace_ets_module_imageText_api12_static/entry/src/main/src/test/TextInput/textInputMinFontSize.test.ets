@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputMinFontSize() {
   describe('textInputMinFontSize', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputMinFontSize beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function textInputMinFontSize() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textInputMinFontSize state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInputMinFontSize" == pages.name)) {
           console.info("get textInputMinFontSize pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

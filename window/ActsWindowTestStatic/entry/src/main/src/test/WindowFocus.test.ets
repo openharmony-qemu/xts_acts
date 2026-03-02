@@ -35,9 +35,9 @@ export default function WindowFocusTest() {
 
     describe("WindowFocusTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowFocusTest describe start');
-        let windowStage: window.WindowStage;
-        let win: window.Window;
-        let context: common.UIAbilityContext;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
+        let context: common.UIAbilityContext | undefined;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
@@ -77,9 +77,9 @@ export default function WindowFocusTest() {
             let caseName: string = 'test_shiftAppWindowPointerEvent_window_destroyed_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let mainWindow:window.Window = windowStage.getMainWindowSync();
+            let mainWindow:window.Window = windowStage!.getMainWindowSync();
             try{
-                let promise1 = windowStage.createSubWindow('test_shiftAppWindowPointerEvent_window_destroyed_static');
+                let promise1 = windowStage!.createSubWindow('test_shiftAppWindowPointerEvent_window_destroyed_static');
                 promise1.then((data:window.Window) => {
                     let subWindowClass:window.Window = data;
                     hilog.info(domain, tag,caseName+ ' Succeeded in creating the subwindow. Data: ' + data);
@@ -132,12 +132,12 @@ export default function WindowFocusTest() {
             let caseName: string = 'test_shiftAppWindowPointerEvent_Dialog_window_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let mainWindow:window.Window = windowStage.getMainWindowSync();
+            let mainWindow:window.Window = windowStage!.getMainWindowSync();
             try{
                 let config: window.Configuration = {
                     name: "test",
                     windowType: window.WindowType.TYPE_DIALOG,
-                    ctx: context,
+                    ctx: context!,
                     decorEnabled:true,
                     title:'dialog Window'
                 };
@@ -185,7 +185,169 @@ export default function WindowFocusTest() {
                 }
             }
         });
+        /**
+         * @tc.name   testTouchOutsideBaseTest_static
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_2360
+         * @tc.desc   Enable listening for click events outside the area of this window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
+        it('testTouchOutsideBaseTest_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,  async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTouchOutsideBaseTest_static';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            let mainWin: window.Window = await windowStage!.getMainWindow();
+            let callback = () => {
+                console.log('windowTest on/off touchOutside callback success');
+            }
+            try {
+                mainWin!.onTouchOutside(callback);
+            } catch (err) {
+                console.log(msgStr + 'window on touchOutside failed');
+                expect(true).assertFail();
+                done();
+            }
+            await Utils.msSleep(900);
+            try {
+                mainWin!.offTouchOutside(callback);
+                done();
+            } catch (err) {
+                console.log(msgStr + 'window off touchOutside failed');
+                expect(true).assertFail();
+                done();
+            }
+        });
+        /**
+         * @tc.name   testOnScreenShotAppEventwithDestoryedSubWindow_static
+         * @tc.number SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_static_0100
+         * @tc.desc   验证子窗销毁后监听on_screenshotAppEvent返回1300002错误码
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testOnScreenShotAppEventwithDestoryedSubWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
+            let caseName:string = "testOnScreenShotAppEventwithDestoryedSubWindow_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowClass:window.Window = await windowStage!.createSubWindow('testOnScreenShotAppEventwithDestoryedSubWindow_static');
+            await windowClass.destroyWindow();
+            try {
+                const callback = (data: window.ScreenshotEventType) => {
+                    console.log(`${caseName} callback data: ${JSON.stringify(data)}`);
+                }
+                windowClass.onScreenshotAppEvent(callback);
+                console.info(msgStr + 'Succeeded in calling on screenshotAppEvent.');
+                expect(true).assertFail();
+                done()
+            } catch (exception) {
+                exception = exception as BusinessError;
+                console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
+                expect(exception.code).assertEqual(1300002);
+                expect(exception.message!=null).assertTrue();
+                done()
+            }
+        })
 
+        /**
+         * @tc.name   testOffScreenShotAppEventwithDestoryedSubWindow_static
+         * @tc.number SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_static_0200
+         * @tc.desc   验证子窗销毁后取消监听off_screenshotAppEvent返回1300002错误码
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testOffScreenShotAppEventwithDestoryedSubWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
+            let caseName:string = "testOffScreenShotAppEventwithDestoryedSubWindow_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowClass:window.Window = await windowStage!.createSubWindow('testOffScreenShotAppEventwithDestoryedSubWindow_static');
+            await windowClass.destroyWindow();
+            try {
+                const callback = (data: window.ScreenshotEventType) => {
+                    console.log(`${caseName} callback data: ${JSON.stringify(data)}`);
+                }
+                windowClass.offScreenshotAppEvent(callback);
+                console.info(msgStr + 'Succeeded in calling off screenshotAppEvent.');
+                expect(true).assertFail();
+                done()
+            } catch (exception) {
+                exception = exception as BusinessError;
+                console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
+                expect(exception.code).assertEqual(1300002)
+                expect(exception.message!=null).assertTrue();
+                done()
+            }
+        })
+        /**
+         * @tc.name   testWindowOffDialogTargetTouch_RepeatOff_static
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_3650
+         * @tc.desc   Turns off listening for click events on the target window of the modal window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testWindowOffDialogTargetTouch_RepeatOff_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testWindowOffDialogTargetTouch_RepeatOff_static';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin');
+            let win: window.Window = await windowStage!.createSubWindow('testWindowOffDialogTargetTouch_RepeatOff_static');
+            console.log(msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            try {
+                (win as window.Window).onDialogTargetTouch(() => {
+                    console.info(msgStr + 'touch dialog target');
+                });
+            } catch (exception) {
+                console.error(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
+                await (win as window.Window).destroyWindow();
+                expect(true).assertFail();
+                done();
+            }
+            try {
+                (win as window.Window).offDialogTargetTouch();
+            } catch (exception) {
+                console.error(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
+                await (win as window.Window).destroyWindow();
+                expect(true).assertFail();
+                done();
+            }
+            try {
+                (win as window.Window).offDialogTargetTouch();
+                await (win as window.Window).destroyWindow();
+                done();
+            } catch (exception) {
+                console.error(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
+                await (win as window.Window).destroyWindow();
+                expect(true).assertFail();
+                done();
+            }
+        })
+        /**
+         * @tc.name   testisSeparationTouchEnabledwithDestoryedWindow_static
+         * @tc.number SUB_BASIC_WMS_FUNCTION_isSeparationTouchEnabled_static_0200
+         * @tc.desc   验证moveWindowToGlobalDisplay接口窗口状态异常调用
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testisSeparationTouchEnabledwithDestoryedWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            const caseName:string = 'testisSeparationTouchEnabledwithDestoryedWindow_static';
+            console.log(caseName + 'begin.');
+            let windowClass:window.Window = await windowStage!.createSubWindow('testisSeparationTouchEnabledwithDestoryedWindow_static')
+            await windowClass.destroyWindow();
+            try {
+                windowClass.isSeparationTouchEnabled();
+                await Utils.msSleep(200);
+                expect(true).assertFail();
+                done();
+            } catch (err) {
+                err = err as BusinessError;
+                console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+                expect(err.code).assertEqual(1300002)
+                expect(err.message != null).assertTrue();
+                done();
+            }
+        })
 
 
 

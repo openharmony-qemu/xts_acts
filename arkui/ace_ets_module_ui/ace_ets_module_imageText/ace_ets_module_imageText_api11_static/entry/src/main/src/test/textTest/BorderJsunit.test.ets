@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,6 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -33,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function borderJsunit() {
   describe('borderTest_five_1', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("borderTest_five_1 beforeEach start");
 
 
@@ -121,7 +122,7 @@ export default function borderJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "borderRadius": 70
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 3,
@@ -129,7 +130,7 @@ export default function borderJsunit() {
         }
         console.info("[testBorder_static_0300] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err :Error) {
+      } catch (err) {
         console.log("[testBorder_static_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

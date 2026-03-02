@@ -19,6 +19,7 @@ import { systemParameterEnhance} from '@kit.BasicServicesKit';
 import { commonEventManager } from '@kit.BasicServicesKit';
 import base from '@ohos.base';
 import { common, sendableContextManager } from '@kit.AbilityKit';
+import startupManager from '@ohos.app.appstartup.startupManager';
 import { wantAgent, Want } from '@kit.AbilityKit';
 import type { WantAgent } from '@kit.AbilityKit';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
@@ -216,8 +217,9 @@ export default function sendableContextManagerTest() {
             demo_num: 111
           }
         }
+        let errResult = -1;
 
-        commonEventManager.createSubscriber(ACTS_EVENT)
+        commonEventManager.createSubscriber({events: ['ACTS_TEST_OPENLINK', 'ACTS_TEST_DESTROY', 'ACTS_TEST_DESTROY_ASSIST']})
           .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
             subscriber = commonEventSubscriber;
             let unSubscribeCallback = () => {
@@ -227,14 +229,22 @@ export default function sendableContextManagerTest() {
               }, 600);
             }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log("OpenLink subscribeCallBack success " + JSON.stringify(data))
             if (data.event == 'ACTS_TEST_OPENLINK') {
               context.startAbility(want, (err: BusinessError) => {
                 console.info('context.startAbility applicationContext02 succeed');
               })
             }
             if (data.event == 'ACTS_TEST_DESTROY') {
-              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              errResult = data?.parameters?.result;
+            }
+            if (data.event == 'ACTS_TEST_DESTROY_ASSIST') {
+              try{
+                expect(errResult).assertEqual(16000053);
+              }catch{}
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
@@ -274,6 +284,578 @@ export default function sendableContextManagerTest() {
       } catch (error) {
         console.error(`${tag} restartApp fail, error: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(16000063);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_1000
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_1000
+     * @tc.desc   Test applicationContext.restartApp with null want parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_1000', Level.LEVEL0, (done: Function) => {
+      let tag:string = `SUB_ChildProcessManager_sendableContextManager_1000`;
+      let applicationContext = context.getApplicationContext();
+      let want: Want|null = null;
+      try {
+        applicationContext.restartApp(want);
+        console.info(`${tag} restartApp succeed`);
+        try{
+          expect().assertFail();
+        }catch(e){}
+        done();
+      } catch (error) {
+        console.error(`${tag} restartApp fail, error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_1100
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_1100
+     * @tc.desc   Test applicationContext.restartApp with undefined want parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_1100', Level.LEVEL0, (done: Function) => {
+      let tag:string = `SUB_ChildProcessManager_sendableContextManager_1100`;
+      let applicationContext = context.getApplicationContext();
+      let want: Want|undefined = undefined;
+      try {
+        applicationContext.restartApp(want);
+        console.info(`${tag} restartApp succeed`);
+        try{
+          expect().assertFail();
+        }catch(e){}
+        done();
+      } catch (error) {
+        console.error(`${tag} restartApp fail, error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_1200
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_1200
+     * @tc.desc   Test getGroupDir with null groupName parameter (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_1200', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_1200`;
+      let groupName: string|null = null;
+      try {
+        context.getGroupDir(groupName, (err: BusinessError, data: string) => {
+          if (err) {
+            console.error(`${tag} getGroupDir failed, err: ${JSON.stringify(err)}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.log(`${tag} getGroupDir result is: ${JSON.stringify(data)}`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(`${tag} getGroupDir failed, error: ${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_1300
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_1300
+     * @tc.desc   Test getGroupDir with null groupName parameter (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_1300', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_1300`;
+      let groupName: string|null = null;
+      try {
+        context.getGroupDir(groupName).then(data => {
+          console.log(`${tag} getGroupDir result: ${data}`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} getGroupDir failed, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} getGroupDir failed, error: ${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_1400
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_1400
+     * @tc.desc   Test createModuleContext with null moduleName parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_1400', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_1400`;
+      let moduleName: string|null = null;
+      try {
+        let moduleContext = context.createModuleContext(moduleName);
+        console.info(`${tag} createModuleContext succeed`);
+        try{
+          expect().assertFail();
+        }catch(e){}
+        done();
+      } catch (error) {
+        console.error(`${tag} createModuleContext failed, error: ${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_1500
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_1500
+     * @tc.desc   Test getGroupDir with empty string parameter (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_1500', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_1500`;
+      let groupName: string = "";
+      try {
+        context.getGroupDir(groupName, (err: BusinessError, data: string) => {
+          if (err?.code) {
+            console.error(`${tag} getGroupDir failed, err: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(401);
+            done();
+          } else {
+            console.log(`${tag} getGroupDir result is: ${JSON.stringify(data)}`);
+            try{
+              expect(data).assertEqual('');
+            }catch(e){}
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(`${tag} getGroupDir failed, error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_1600
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_1600
+     * @tc.desc   Test getGroupDir with empty string parameter (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_1600', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_1600`;
+      let groupName: string = "";
+      try {
+        context.getGroupDir(groupName).then(data => {
+          console.log(`${tag} getGroupDir result: ${data}`);
+          try{
+            expect(data).assertEqual('');
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} getGroupDir failed, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} getGroupDir failed, error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_1700
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_1700
+     * @tc.desc   Test createModuleContext with empty string parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_1700', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_1700`;
+      let moduleName: string = "";
+      try {
+        let moduleContext = context.createModuleContext(moduleName);
+        console.info(`${tag} createModuleContext succeed`);
+        try{
+          expect().assertFail();
+        }catch(e){}
+        done();
+      } catch (error) {
+        console.error(`${tag} createModuleContext failed, error: ${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_1800
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_1800
+     * @tc.desc   Test startupManager.run with null startupTasks parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_1800', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_1800`;
+      let startupTasks: Array<string>|null = null;
+      try {
+        startupManager.run(startupTasks).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(401);
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_1900
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_1900
+     * @tc.desc   Test startupManager.run with undefined startupTasks parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_1900', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_1900`;
+      let startupTasks: Array<string>|undefined = undefined;
+      try {
+        startupManager.run(startupTasks).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(401);
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_2000
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_2000
+     * @tc.desc   Test startupManager.run with null config parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_2000', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_2000`;
+      let startupTasks: Array<string> = ["testTask"];
+      let config = null;
+      try {
+        startupManager.run(startupTasks, config).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, catch error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(28800001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_2100
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_2100
+     * @tc.desc   Test startupManager.run with undefined config parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_2100', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_2100`;
+      let startupTasks: Array<string> = ["testTask"];
+      let config = undefined;
+      try {
+        startupManager.run(startupTasks, config).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, catch error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(28800001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_2200
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_2200
+     * @tc.desc   Test startupManager.run with three parameters, null startupTasks parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_2200', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_2200`;
+      let startupTasks: Array<string>|null = null;
+      let abilityStageContext = null;
+      let config = null;
+      try {
+        startupManager.run(startupTasks, abilityStageContext, config).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, catch error: ${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_2300
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_2300
+     * @tc.desc   Test startupManager.run with three parameters, undefined startupTasks parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_2300', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_2300`;
+      let startupTasks: Array<string>|undefined = undefined;
+      let abilityStageContext = undefined;
+      let config = undefined;
+      try {
+        startupManager.run(startupTasks, abilityStageContext, config).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_2400
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_2400
+     * @tc.desc   Test startupManager.run with three parameters, empty array startupTasks parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_2400', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_2400`;
+      let startupTasks: Array<string> = [];
+      let abilityStageContext = null;
+      let config = null;
+      try {
+        startupManager.run(startupTasks, abilityStageContext, config).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(16000050);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_2500
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_2500
+     * @tc.desc   Test startupManager.run with three parameters, null context parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_2500', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_2500`;
+      let startupTasks: Array<string> = ["testTask"];
+      let abilityStageContext = null;
+      let config = null;
+      try {
+        startupManager.run(startupTasks, abilityStageContext, config).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(28800001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_2600
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_2600
+     * @tc.desc   Test startupManager.run with three parameters, undefined context parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_2600', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_2600`;
+      let startupTasks: Array<string> = ["testTask"];
+      let abilityStageContext = undefined;
+      let config = undefined;
+      try {
+        startupManager.run(startupTasks, abilityStageContext, config).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(28800001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_2700
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_2700
+     * @tc.desc   Test startupManager.run with three parameters, null config parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_2700', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_2700`;
+      let startupTasks: Array<string> = ["testTask"];
+      let abilityStageContext = undefined;
+      let config = null;
+      try {
+        startupManager.run(startupTasks, abilityStageContext, config).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(28800001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_2800
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_2800
+     * @tc.desc   Test startupManager.run with three parameters, undefined config parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ChildProcessManager_sendableContextManager_2800', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_ChildProcessManager_sendableContextManager_2800`;
+      let startupTasks: Array<string> = ["testTask"];
+      let abilityStageContext = undefined;
+      let config = undefined;
+      try {
+        startupManager.run(startupTasks, abilityStageContext, config).then(() => {
+          console.info(`${tag} startupManager.run succeed`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${tag} startupManager.run failed, error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(28800001);
         done();
       }
     })

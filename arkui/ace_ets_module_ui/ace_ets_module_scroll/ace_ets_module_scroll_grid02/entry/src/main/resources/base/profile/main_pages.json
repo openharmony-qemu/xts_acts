@@ -37,6 +37,14 @@
         "MainAbility/pages/emptyBranch/gridRepeatTrue",
         "MainAbility/pages/emptyBranch/gridRepeatFalse",
         "MainAbility/pages/emptyBranch/gridRepeatUn",
-        "MainAbility/pages/emptyBranch/gridRepeatNull"
+        "MainAbility/pages/emptyBranch/gridRepeatNull",
+        "MainAbility/pages/Grid/editModeGrid",
+        "MainAbility/pages/Grid/editBadgeGrid",
+        "MainAbility/pages/gridDefault/gridDefault1",
+        "MainAbility/pages/gridDefault/gridDefault2",
+        "MainAbility/pages/gridDefault/gridDefault3",
+        "MainAbility/pages/gridItemDefault/gridItemNullUndefined",
+        "MainAbility/pages/LazyVGridLayout/columnsTemplateNullUndefined",
+        "MainAbility/pages/LazyVGridLayout/columnsRowsGapNullUndefined"
     ]
 }

@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function list_ListInitialIndex3Test() {
   describe('List_ListInitialIndex3Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("List_ListInitialIndex3Test beforeAll start");
             
       await UtilsTest.msSleep(4000)
@@ -158,7 +158,7 @@ it('testListInitialIndexToNegativeWithOneLane_static', Level.LEVEL0, async (done
 
       let driver = Driver.create()
 
-  driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
+  await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + fourthListItem.bottom)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + firstListItem.left + (firstListItem.right - firstListItem.left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + firstListItem.bottom)).toInt());

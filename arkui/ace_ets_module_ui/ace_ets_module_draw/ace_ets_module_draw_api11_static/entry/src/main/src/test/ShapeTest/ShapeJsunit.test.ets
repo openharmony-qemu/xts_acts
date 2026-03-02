@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,6 +38,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 import { LineCapStyle, LineJoinStyle } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -45,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function shapeJsunit() {
   describe('shapeJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
       
@@ -65,7 +66,8 @@ export default function shapeJsunit() {
           shape.pushUrl(options);
           await CommonFunc.sleep(1000);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push shape page error: " + err);
       }
     });
@@ -265,7 +267,7 @@ it('shapeTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "antiAlias": false,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -273,7 +275,8 @@ it('shapeTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("shapeTest_1000 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_1000 change component color error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -302,7 +305,7 @@ it('shapeTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "antiAlias": 'undefined',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -310,7 +313,8 @@ it('shapeTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1100 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1100 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -337,7 +341,7 @@ it('shapeTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "antiAlias": -0.1,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -345,7 +349,8 @@ it('shapeTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1200 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1200 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -372,7 +377,7 @@ it('shapeTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeLineCap": LineCapStyle.Round,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -380,7 +385,8 @@ it('shapeTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1300 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1300 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -410,7 +416,7 @@ it('shapeTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeLineCap": 'string'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -418,7 +424,8 @@ it('shapeTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1400 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1400 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -447,7 +454,7 @@ it('shapeTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeLineCap": '-0.2'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -455,7 +462,8 @@ it('shapeTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1500 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1500 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -484,7 +492,7 @@ it('shapeTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeLineJoin": LineJoinStyle.Round,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -492,7 +500,8 @@ it('shapeTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1600 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1600 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -522,7 +531,7 @@ it('shapeTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeLineJoin": 'nothing',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -530,7 +539,8 @@ it('shapeTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1700 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1700 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -559,7 +569,7 @@ it('shapeTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeLineJoin": 0.11111,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -567,7 +577,8 @@ it('shapeTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1800 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1800 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -596,7 +607,7 @@ it('shapeTest_static_2100', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeMiterLimit": "-0.11111",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -604,7 +615,8 @@ it('shapeTest_static_2100', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2100 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2100 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -633,7 +645,7 @@ it('shapeTest_static_3200', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeMiterLimit": 1.0,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -641,7 +653,8 @@ it('shapeTest_static_3200', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_3200 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_3200 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -670,7 +683,7 @@ it('shapeTest_static_3300', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeMiterLimit": 0.5,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -678,7 +691,8 @@ it('shapeTest_static_3300', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_3300 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_3300 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -707,7 +721,7 @@ it('shapeTest_static_2200', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeMiterLimit": 11111.0,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -715,7 +729,8 @@ it('shapeTest_static_2200', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2200 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2200 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -744,7 +759,7 @@ it('shapeTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeMiterLimit": 5.0,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -752,7 +767,8 @@ it('shapeTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1900 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1900 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -781,7 +797,7 @@ it('shapeTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeMiterLimit": "string",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -789,7 +805,8 @@ it('shapeTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2000 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2000 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -818,7 +835,7 @@ it('shapeTest_static_2300', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "fillOpacity": 1.0,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -826,7 +843,8 @@ it('shapeTest_static_2300', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2300 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2300 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -855,7 +873,7 @@ it('shapeTest_static_2400', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "fillOpacity": "-1",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -863,7 +881,8 @@ it('shapeTest_static_2400', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2400 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2400 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -891,7 +910,7 @@ it('shapeTest_static_2500', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "fillOpacity": "aaaaaaa",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -899,7 +918,8 @@ it('shapeTest_static_2500', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2500 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2500 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -927,7 +947,7 @@ it('shapeTest_static_2600', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "fillOpacity": "aa12345",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -935,7 +955,8 @@ it('shapeTest_static_2600', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2600 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2600 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -963,7 +984,7 @@ it('shapeTest_static_2700', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeDashArrayOne": "4",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -971,7 +992,8 @@ it('shapeTest_static_2700', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2700 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2700 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1000,7 +1022,7 @@ it('shapeTest_static_2800', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeDashArrayTwo": "4",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -1008,7 +1030,8 @@ it('shapeTest_static_2800', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2800 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2800 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1037,7 +1060,7 @@ it('shapeTest_static_2900', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeDashArrayThree": 4.0,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -1045,7 +1068,8 @@ it('shapeTest_static_2900', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2900 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2900 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1093,7 +1117,7 @@ it('shapeTest_static_3100', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: emitter.EventData = {
           data: {
             "strokeLineJoin": LineJoinStyle.Bevel,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,
@@ -1101,7 +1125,8 @@ it('shapeTest_static_3100', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_3100 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_3100 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);

@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function showActionSheetMode() {
   describe('showActionSheetMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.api15.static", "EntryAbility")
@@ -148,7 +148,6 @@ it('showactionSheetMode_static_0200', Level.LEVEL1, async (done: () => void): Pr
       await CommonFunc.sleep(1000);
       let btn4 = (await driver.findComponent(ON.text('Confirm button')));
       expect(btn4 != null).assertFalse();
-      await ( btn4?.click() as Promise<void>);
       console.info('[showactionSheetMode_static_0200] END');
       done();
     });

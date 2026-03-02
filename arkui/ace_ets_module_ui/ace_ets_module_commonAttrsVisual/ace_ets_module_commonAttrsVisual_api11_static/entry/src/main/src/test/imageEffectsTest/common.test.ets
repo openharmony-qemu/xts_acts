@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,6 +40,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -47,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function commonColorModeJsunit() {
   describe('commonColorModeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("commonColorModeJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
@@ -263,15 +264,15 @@ it('testCommonSlice_static_0018', Level.LEVEL2, async (done: () => void): Promis
         }
         let callback = (eventData: emitter.EventData) => {
           console.info("testCommonArea0001 get event state result is: " + JSON.stringify(eventData));
-          const data: Record<String, undefined | null | Object> =
-            eventData.data as Record<String, undefined | null | Object>
+          const data: Record<String,RecordData> =
+            eventData.data as Record<String,RecordData>
           expect(data['STATUS']).assertEqual(320);
         }
         emitter.on(innerEvent, callback);
         console.info("testCommonArea0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('areaText', 10, "")));
         await Utils.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testCommonArea0001 on click err : " + JSON.stringify(err));
       }
       done();

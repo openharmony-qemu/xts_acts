@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function APIUnderlineColorTest() {
   describe('APIUnderlineColorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APIUnderlineColorTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function APIUnderlineColorTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get APIUnderlineColorTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("APIUnderlineColor" == pages.name)) {
           console.info("get APIUnderlineColorTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

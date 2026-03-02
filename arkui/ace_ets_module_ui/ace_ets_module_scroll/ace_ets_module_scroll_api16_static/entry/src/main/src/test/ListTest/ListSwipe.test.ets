@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ export default function ListSwipeTest() {
   const waitUiReadyMs: number = 1500
 
   describe('ListSwipeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ListSwipeTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll16.static", "EntryAbility");
       
@@ -52,7 +52,7 @@ export default function ListSwipeTest() {
           router.pushUrl(options)
           await sleep(1000)
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -84,7 +84,7 @@ it('ArkUI_List_Swipe_static_0100', Level.LEVEL1, async (done: () => void): Promi
       console.info('get getInspectorByKey swipe0100')
       let strJson2: string = inspector.getInspectorByKey('swipe0100')
       console.info('ArkUI_List_Swipe_static_0100 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('end EXPANDED')
       console.info(`${SUITE} ${CASE} END`);
@@ -122,7 +122,7 @@ it('ArkUI_List_Swipe_static_0300', Level.LEVEL1, async (done: () => void): Promi
       console.info('get getInspectorByKey swipe0300')
       let strJson2: string = inspector.getInspectorByKey('swipe0300')
       console.info('ArkUI_List_Swipe_static_0300 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('EXPANDED')
       console.info(`${SUITE} ${CASE} END`);
@@ -148,7 +148,7 @@ it('ArkUI_List_Swipe_static_0400', Level.LEVEL1, async (done: () => void): Promi
       await sleep(8000) // wait for ui update
       let strJson2: string = inspector.getInspectorByKey('swipe0400')
       console.info('ArkUI_List_Swipe_static_0400 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('onFinish')
       console.info(`${SUITE} ${CASE} END`);
@@ -182,7 +182,7 @@ it('ArkUI_List_Swipe_static_0500', Level.LEVEL1, async (done: () => void): Promi
       let strJson2: string = inspector.getInspectorByKey('swipe0500')
 
       console.info('ArkUI_List_Swipe_static_0500 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('swipe end')
       console.info(`${SUITE} ${CASE} END`);

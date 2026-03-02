@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ import Utils from '../Util.test';
 
 export default function HashMapTest1() {
   describe("HashMapTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -499,7 +499,7 @@ export default function HashMapTest1() {
         arr.push(new Array<number | string>(key, value))
       })
       arr.sort((a, b) => {
-        return (a[0] as number) - (b[0] as number);
+        return ((a[0] as number) - (b[0] as number)).toInt()
       });
       for (let i = 0; i < arr.length; i++) {
         expect(String(arr[i][0])).assertEqual(String(i + 1));
@@ -526,7 +526,7 @@ export default function HashMapTest1() {
         arr.push(new Array<number>(key, value))
       })
       arr.sort((a, b) => {
-        return a[0] - b[0];
+        return (a[0] - b[0]).toInt()
       });
       for (let i = 0; i < arr.length; i++) {
         expect(String(arr[i])).assertEqual(String([i + 1, (hashMap.get(i + 1)! as int)]));
@@ -751,7 +751,7 @@ export default function HashMapTest1() {
         arr.push(new Array<number | string>(key, value))
       })
       arr.sort((a, b) => {
-        return (a[0] as number) - (b[0] as number);
+        return ((a[0] as number) - (b[0] as number)).toInt()
       });
       for (let i = 0; i < arr.length; i++) {
         expect(String(arr[i][0])).assertEqual(String(i + 1));
@@ -798,7 +798,7 @@ export default function HashMapTest1() {
         arr.push(new Array<number | string>(obj[0], obj[1]));
       }
       arr.sort((a, b) => {
-        return (a[0] as number) - (b[0] as number);
+        return ((a[0] as number) - (b[0] as number)).toInt()
       });
       for (let i = 0; i < arr.length; i++) {
         expect(String(arr[i][0])).assertEqual(String(i + 1));
@@ -904,47 +904,6 @@ export default function HashMapTest1() {
       }
       expect(String(flag)).assertEqual('true');
     });
-    /**
-     * @tc.name   testHashMap0048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04800
-     * @tc.desc   Test the function By HashMap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testHashMap0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let hashMap = new HashMap<number, string>();
-    //   try {
-    //     hashMap.set.bind({}, 1, "A")();
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(10200011);
-    //     expect(err.message).assertEqual(`The set method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testHashMap0049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04900
-     * @tc.desc   Test the function By HashMap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testHashMap0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let hashMap = new HashMap<number, string>();
-    //   hashMap.set(1, "A");
-    //   hashMap.set(2, "B");
-    //   try {
-    //     hashMap.setAll([1, 2, 3]);
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "map" must be HashMap. Received value is: 1,2,3`);
-    //   }
-    // });
 
     /**
      * @tc.name   testHashMap0050
@@ -977,26 +936,6 @@ export default function HashMapTest1() {
       }
     })
 
-
-    /**
-     * @tc.name   testHashMap0051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05100
-     * @tc.desc   Test the function By HashMap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testHashMap0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let hashMap = new HashMap<string, string>();
-    //   try {
-    //     hashMap.set.bind({}, "a", "b");
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(10200011);
-    //     expect(err.message).assertEqual(`The set method cannot be bound`);
-    //   }
-    // });
 
     /**
      * @tc.name   testHashMap0052
@@ -1062,66 +1001,6 @@ export default function HashMapTest1() {
         expect(err.code).assertEqual(401);
       }
     });
-
-    /**
-     * @tc.name   testHashMap0056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05600
-     * @tc.desc   Test the function By HashMap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHashMap0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let  hashMap = new HashMap<string, string>();
-    //   try {
-    //     hashMap.remove.bind({}, "a")();
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(10200011);
-    //     expect(err.message).assertEqual(`The remove method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testHashMap0057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05700
-     * @tc.desc   Test the function By HashMap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHashMap0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let  hashMap = new HashMap<string, string>();
-    //   try {
-    //     hashMap.forEach.bind({}, "a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(10200011);
-    //     expect(err.message).assertEqual(`The forEach method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testHashMap0058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05800
-     * @tc.desc   Test the function By HashMap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHashMap0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let  hashMap = new HashMap<string, string>();
-    //   try {
-    //     hashMap.forEach(11);
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "callbackfn" must be callable. Received value is: 11`);
-    //   }
-    // });
   });
 }
 

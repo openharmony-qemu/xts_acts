@@ -35,7 +35,7 @@ class TestEntry {
 
 export default function TreeSetTest2() {
   describe("TreeSetTest2", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -256,90 +256,6 @@ export default function TreeSetTest2() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1000
-    //  * @tc.name       : testHas0003
-    //  * @tc.desc       : Test the function of the interface has.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testHas0003";
-    //   try {
-    //     let treeSet: TreeSet<string | number | boolean | Object> = new TreeSet<string | number | boolean | Object>();
-    //     let result = treeSet.has(null);
-    //     expect(result).assertFalse();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1100
-    //  * @tc.name       : testHas0004
-    //  * @tc.desc       : Test the function of the interface has.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testHas0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testHas0004";
-    //   try {
-    //     let treeSet: TreeSet<string | number | boolean | Object> = new TreeSet<string | number | boolean | Object>();
-    //     treeSet.add("squirrel");
-    //     let result = treeSet.has(null);
-    //     expect(result).assertFalse();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1200
-    //  * @tc.name       : testHas0005
-    //  * @tc.desc       : Test the function of the interface has.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testHas0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testHas0005";
-    //   try {
-    //     let treeSet: TreeSet<string | number | boolean | Object> = new TreeSet<string | number | boolean | Object>();
-    //     let result = treeSet.has(undefined);
-    //     expect(result).assertFalse();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1300
-    //  * @tc.name       : testHas0006
-    //  * @tc.desc       : Test the function of the interface has.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testHas0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testHas0006";
-    //   setTimeout(() => {
-    //     try {
-    //       let treeSet: TreeSet<string | number | boolean | Object> = new TreeSet<string | number | boolean | Object>();
-    //       treeSet.add("squirrel");
-    //       let result = treeSet.has(undefined);
-    //       expect(result).assertFalse();
-    //     } catch (err: BusinessError) {
-    //       console.error(`${TAG} failed, error: ${err}`);
-    //       expect(false).assertFail();
-    //     }
-    //   }, 3000);
-    // });
 
     /**
      * @tc.name   testHas0007
@@ -673,70 +589,6 @@ export default function TreeSetTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2800
-    //  * @tc.name       : testAdd0003
-    //  * @tc.desc       : Test the function of the interface add.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testAdd0003";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.add(null);
-    //     expect(treeSet.length).assertEqual(1);
-    //     let result = treeSet.has(null);
-    //     expect(result).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2900
-    //  * @tc.name       : testAdd0004
-    //  * @tc.desc       : Test the function of the interface add.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testAdd0004";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.add(undefined);
-    //     expect(treeSet.length).assertEqual(1);
-    //     let result = treeSet.has(undefined);
-    //     expect(result).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3000
-    //  * @tc.name       : testAdd0005
-    //  * @tc.desc       : Test the function of the interface add.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testAdd0005";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.add(undefined);
-    //     expect(treeSet.length).assertEqual(1);
-    //     let result = treeSet.has(undefined);
-    //     expect(result).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
     /**
      * @tc.name   testAdd0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3100
@@ -824,84 +676,7 @@ export default function TreeSetTest2() {
         expect(false).assertFail();
       }
     });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3500
-    //  * @tc.name       : testRemove0003
-    //  * @tc.desc       : Test the function of the interface remove.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testRemove0003";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     let result = treeSet.remove(null);
-    //     expect(result).assertFalse();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3600
-    //  * @tc.name       : testRemove0004
-    //  * @tc.desc       : Test the function of the interface remove.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testRemove0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testRemove0004";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.add("squirrel");
-    //     let result = treeSet.remove(null);
-    //     expect(result).assertFalse();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3700
-    //  * @tc.name       : testRemove0005
-    //  * @tc.desc       : Test the function of the interface remove.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testRemove0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testRemove0005";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     let result = treeSet.remove(undefined);
-    //     expect(result).assertFalse();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3800
-    //  * @tc.name       : testRemove0006
-    //  * @tc.desc       : Test the function of the interface remove.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testRemove0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testRemove0006";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.add("squirrel");
-    //     let result = treeSet.remove(undefined);
-    //     expect(result).assertFalse();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+
     /**
      * @tc.name   testRemove0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3900
@@ -983,44 +758,7 @@ export default function TreeSetTest2() {
         expect(err.message).assertEqual("Container is empty");
       }
     });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4300
-    //  * @tc.name       : testGetLowerValue0002
-    //  * @tc.desc       : Test the function of the interface getLowerValue.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testGetLowerValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testGetLowerValue0002";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.getLowerValue(null);
-    //     expect(true).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4400
-    //  * @tc.name       : testGetLowerValue0003
-    //  * @tc.desc       : Test the function of the interface getLowerValue.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testGetLowerValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testGetLowerValue0003";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.getLowerValue(undefined);
-    //     expect(true).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
+
     /**
      * @tc.name   testGetLowerValue0004
      * @tc.number testGetLowerValue0004
@@ -1126,44 +864,7 @@ export default function TreeSetTest2() {
         expect(err.message).assertEqual("Container is empty");
       }
     });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5000
-    //  * @tc.name       : testGetHigherValue0002
-    //  * @tc.desc       : Test the function of the interface getHigherValue.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testGetHigherValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testGetHigherValue0002";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.getHigherValue(null);
-    //     expect(true).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5100
-    //  * @tc.name       : testGetHigherValue0003
-    //  * @tc.desc       : Test the function of the interface getHigherValue.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testGetHigherValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testGetHigherValue0003";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.getHigherValue(undefined);
-    //     expect(true).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
+
     /**
      * @tc.name   testGetHigherValue0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5200

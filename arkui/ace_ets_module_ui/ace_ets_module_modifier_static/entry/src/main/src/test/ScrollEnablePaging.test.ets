@@ -29,6 +29,7 @@ import inspector from '@ohos.arkui.inspector'
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from './Util.test';
 import CommonFunc from '../../ets/MainAbility/common/Common';
+import { RecordData } from '@ohos.base';
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
@@ -39,7 +40,7 @@ interface ItemN {
 export default function scrollEnablePagingJsunit() {
   describe('scroll_enablePagingTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollEnablePaging beforeEach start");
 
 
@@ -94,7 +95,7 @@ it('ArkUI_Stage_scrollEnablePaging_static_01', Level.LEVEL0, async (done: () => 
         let callBack = (backData: events_emitter.EventData) => {
           try {
             console.info(`ArkUI_Stage_scrollEnablePaging_static_01 get result is:` + JSON.stringify(backData));
-            const data = backData.data as Record<String,undefined|null|Object>
+            const data = backData.data as Record<String,RecordData>
             expect(data['itemNumber'] as int).assertEqual(7)
             console.info(`ArkUI_Stage_scrollEnablePaging_static_01 END`);
           } catch (err) {

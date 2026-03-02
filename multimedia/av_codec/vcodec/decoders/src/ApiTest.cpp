@@ -66,58 +66,21 @@ const int32_t *g_pixelFormat = nullptr;
 OH_AVCodec *vdec_ = NULL;
 OH_AVCapability *cap = nullptr;
 const string CODEC_NAME = "OH.Media.Codec.Decoder.Video.VC1";
-VDecAPI11Signal *signal_;
+const string CODEC_NAME_VP8 = "OH.Media.Codec.Decoder.Video.VP8";
+const string CODEC_NAME_VP9 = "OH.Media.Codec.Decoder.Video.VP9";
+const string CODEC_NAME_AV1 = "OH.Media.Codec.Decoder.Video.AV1";
+const string CODEC_NAME_RV30 = "OH.Media.Codec.Decoder.Video.Rv30";
+const string CODEC_NAME_RV40 = "OH.Media.Codec.Decoder.Video.Rv40";
+const string CODEC_NAME_MJPEG = "OH.Media.Codec.Decoder.Video.MJPEG";
+const string CODEC_NAME_MSVIDEO1 = "OH.Media.Codec.Decoder.Video.MSVIDEO1";
+const string CODEC_NAME_RAWVIDEO = "OH.Media.Codec.Decoder.Video.RAWVIDEO";
+const string CODEC_NAME_MPEG1 = "OH.Media.Codec.Decoder.Video.MPEG";
+const string CODEC_NAME_WVC1 = "OH.Media.Codec.Decoder.Video.WVC1";
+const string CODEC_NAME_WMV3 = "OH.Media.Codec.Decoder.Video.WMV3";
+const string CODEC_NAME_DVVIDEO = "OH.Media.Codec.Decoder.Video.DVVIDEO";
 constexpr uint32_t DEFAULT_WIDTH = 1920;
 constexpr uint32_t DEFAULT_HEIGHT = 1080;
 OH_AVFormat *format;
-static int g_fd = -1;
-static OH_AVMemory *memory = nullptr;
-static OH_AVSource *source = nullptr;
-static OH_AVDemuxer *demuxer = nullptr;
-static OH_AVFormat *sourceFormat = nullptr;
-static OH_AVFormat *trackFormat = nullptr;
-static OH_AVBuffer *avBuffer = nullptr;
-static int32_t g_trackCount;
-
-static int64_t GetFileSize(const char *fileName)
-{
-    int64_t fileSize = 0;
-    if (fileName != nullptr) {
-        struct stat fileStatus {};
-        if (stat(fileName, &fileStatus) == 0) {
-            fileSize = static_cast<int64_t>(fileStatus.st_size);
-        }
-    }
-    return fileSize;
-}
-static void GetFormat(const char *fileName)
-{
-    int trackType = 0;
-    g_fd = open(fileName, O_RDONLY);
-    int64_t size = GetFileSize(fileName);
-    cout << fileName << "-------" << g_fd << "-------" << size << endl;
-    source = OH_AVSource_CreateWithFD(g_fd, 0, size);
-    ASSERT_NE(source, nullptr);
-    demuxer = OH_AVDemuxer_CreateWithSource(source);
-    ASSERT_NE(demuxer, nullptr);
-    sourceFormat = OH_AVSource_GetSourceFormat(source);
-    ASSERT_NE(sourceFormat, nullptr);
-    ASSERT_TRUE(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount));
-    cout << "g_trackCount----" << g_trackCount << endl;
-    for (int32_t index = 0; index < g_trackCount; index++) {
-        ASSERT_EQ(AV_ERR_OK, OH_AVDemuxer_SelectTrackByID(demuxer, index));
-    }
-    for (int32_t index = 0; index < g_trackCount; index++) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, index);
-        ASSERT_NE(trackFormat, nullptr);
-        ASSERT_TRUE(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &trackType));
-        if (trackType == MEDIA_TYPE_VID) {
-            break;
-        }
-    }
-    close(g_fd);
-    g_fd = -1;
-}
 
 static bool CheckPixelFormat(int32_t pixformat)
 {
@@ -173,61 +136,19 @@ static bool CheckLevelsForProfile(int32_t profile, int32_t level)
     }
 }
 
-void DecApiNdkTest::SetUpTestCase()
-{
-    const char *file = "/data/test/media/test_vc1.avi";
-    GetFormat(file);
-}
-void DecApiNdkTest::TearDownTestCase()
-{
-    if (trackFormat != nullptr) {
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
-    }
-}
-void DecApiNdkTest::SetUp()
-{
-    signal_ = new VDecAPI11Signal();
-}
+void DecApiNdkTest::SetUpTestCase() {}
+void DecApiNdkTest::TearDownTestCase() {}
+
+void DecApiNdkTest::SetUp() {}
 void DecApiNdkTest::TearDown()
 {
     if (format != nullptr) {
         OH_AVFormat_Destroy(format);
         format = nullptr;
     }
-    if (signal_) {
-        delete signal_;
-        signal_ = nullptr;
-    }
     if (vdec_ != NULL) {
         OH_VideoDecoder_Destroy(vdec_);
         vdec_ = nullptr;
-    }
-
-    if (sourceFormat != nullptr) {
-        OH_AVFormat_Destroy(sourceFormat);
-        sourceFormat = nullptr;
-    }
-
-    if (memory != nullptr) {
-        OH_AVMemory_Destroy(memory);
-        memory = nullptr;
-    }
-    if (source != nullptr) {
-        OH_AVSource_Destroy(source);
-        source = nullptr;
-    }
-    if (demuxer != nullptr) {
-        OH_AVDemuxer_Destroy(demuxer);
-        demuxer = nullptr;
-    }
-    if (avBuffer != nullptr) {
-        OH_AVBuffer_Destroy(avBuffer);
-        avBuffer = nullptr;
-    }
-    if (g_fd > 0) {
-        close(g_fd);
-        g_fd = -1;
     }
 }
 } // namespace Media
@@ -251,6 +172,209 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0001, TestSize.Level2)
     }
 }
 
+/**
+ * @tc.name   VIDEO_VP8DEC_CAP_API_0001
+ * @tc.number VIDEO_VP8DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_VP8DEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_VP8, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_VP8, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_VP9DEC_CAP_API_0001
+ * @tc.number VIDEO_VP9DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_VP9DEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_VP9, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_VP9, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_AV1DEC_CAP_API_0001
+ * @tc.number VIDEO_AV1DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_AV1DEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_AV1, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_AV1, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_RV30DEC_CAP_API_0001
+ * @tc.number VIDEO_RV30DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_RV30DEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_RV30, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_RV30, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_RV40DEC_CAP_API_0001
+ * @tc.number VIDEO_RV40DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_RV40DEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_RV40, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_RV40, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_MJPEGDEC_CAP_API_0001
+ * @tc.number VIDEO_MJPEGDEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_MJPEGDEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_MJPEG, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_MJPEG, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_MSVIDEO1DEC_CAP_API_0001
+ * @tc.number VIDEO_MSVIDEO1DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_MSVIDEO1, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_MSVIDEO1, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_RAWVIDEODEC_CAP_API_0001
+ * @tc.number VIDEO_RAWVIDEODEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_RAWVIDEODEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_RAWVIDEO, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_RAWVIDEO, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_MPEG1DEC_CAP_API_0001
+ * @tc.number VIDEO_MPEG1DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_MPEG1DEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_MPEG1, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_MPEG1, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_WVC1DEC_CAP_API_0001
+ * @tc.number VIDEO_WVC1DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_WVC1DEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_WVC1, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_WVC1, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_WMV3DEC_CAP_API_0001
+ * @tc.number VIDEO_WMV3DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_WMV3DEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_WMV3, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_WMV3, codec_name);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_DVVIDEODEC_CAP_API_0001
+ * @tc.number VIDEO_DVVIDEODEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_DVVIDEODEC_CAP_API_0001, TestSize.Level2)
+{
+    cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_DVVIDEO, false);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME_DVVIDEO, codec_name);
+    }
+}
 
 /**
  * @tc.name   VIDEO_VC1DEC_CAP_API_0002
@@ -583,6 +707,164 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0012, TestSize.Level1)
         WMV3_PROFILE_MAIN, WMV3_LEVEL_MEDIUM));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         WMV3_PROFILE_MAIN, WMV3_LEVEL_HIGH));
+    }
+}
+
+/**
+ * @tc.name   VIDEO_VP9DEC_CAP_API_0013
+ * @tc.number VIDEO_VP9DEC_CAP_API_0013
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_VP9DEC_CAP_API_0013, TestSize.Level1)
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VP9,
+    false, SOFTWARE);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_1));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_11));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_2));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_21));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_3));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_31));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_4));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_41));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_5));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_51));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_52));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_6));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_61));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_0, VP9_LEVEL_62));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        VP9_PROFILE_1, VP9_LEVEL_31));
+    }
+}
+
+/**
+ * @tc.name   VIDEO_AV1DEC_CAP_API_0014
+ * @tc.number VIDEO_AV1DEC_CAP_API_0014
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_AV1DEC_CAP_API_0014, TestSize.Level1)
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
+    false, SOFTWARE);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_20));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_21));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_22));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_23));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_30));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_31));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_32));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_33));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_40));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_41));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_42));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_43));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_50));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_51));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_52));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_53));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_60));
+    }
+}
+
+/**
+ * @tc.name   VIDEO_AV1DEC_CAP_API_0015
+ * @tc.number VIDEO_AV1DEC_CAP_API_0015
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_AV1DEC_CAP_API_0015, TestSize.Level1)
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
+    false, SOFTWARE);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_61));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_62));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_63));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_70));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_71));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_72));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_MAIN, AV1_LEVEL_73));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        AV1_PROFILE_HIGH, AV1_LEVEL_33));
+    }
+}
+
+/**
+ * @tc.name   VIDEO_WVC1DEC_CAP_API_0016
+ * @tc.number VIDEO_WVC1DEC_CAP_API_0016
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_WVC1DEC_CAP_API_0016, TestSize.Level1)
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WVC1,
+    false, SOFTWARE);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L0));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L1));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L2));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L3));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L4));
     }
 }
 } // namespace

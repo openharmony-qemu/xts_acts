@@ -13,10 +13,12 @@
  * limitations under the License.
  */
 
-import { beforeAll, afterEach, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, afterEach, beforeEach, describe, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
+import wifiMg from '@ohos.wifiManager';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -30,6 +32,30 @@ export default function webJsunit() {
     });
 
     beforeEach(async (done: Function) => {
+      try {
+        console.info('======> wifi_test/isWifiActive :' + wifiMg.isWifiActive());
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info('======> Internet WifiLinkedInfo : ' + JSON.stringify(data));
+        console.info('======> Internet speed : ' + JSON.stringify(data.linkSpeed));
+        console.info('======> Internet chload : ' + JSON.stringify(data.chload));
+        console.info('======> Internet rssi : ' + JSON.stringify(data.rssi));
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info('======> WLAN connection established ');
+        } else {
+          expect().message('======> WLAN Network error').assertFail();
+          done()
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message('======> WLAN Network error').assertFail();
+          done();
+        } else if (data.chload >= 500) {
+          console.info('======> The internet connection is poor. ');
+        }
+      } catch (err) {
+        console.info('======> getLinkedInfo promise failed, err : ' + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
       }).catch((err: object) => {
@@ -152,6 +178,38 @@ export default function webJsunit() {
     it('GetItemAtIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitGetItemAtIndex', 135300)
       Utils.registerEvent('emitGetItemAtIndex', 'Example Domain', 135380, done);
+      sendEventByKey('webcomponent', 10, '');
+    })
+    /**
+     * @tc.name   testAccessStepNull
+     * @tc.number SUB_ACE_WEBVIEWCONTROLLER_ACCESSSTEP_ERROR_API_0001
+     * @tc.desc   test accessStep null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAccessStepNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitAccessStepNull', 135300)
+      Utils.registerBaseEvent('testAccessStepNull', '401', 26022701, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webcomponent', 10, '');
+    })
+    /**
+     * @tc.name   testAccessStepUndefined
+     * @tc.number SUB_ACE_WEBVIEWCONTROLLER_ACCESSSTEP_ERROR_API_0002
+     * @tc.desc   test accessStep undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAccessStepUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitAccessStepUndefined', 135300)
+      Utils.registerBaseEvent('testAccessStepUndefined', '401', 26022702, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       sendEventByKey('webcomponent', 10, '');
     })
   })

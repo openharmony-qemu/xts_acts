@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Text_lineSpacingTest() {
   describe('Text_lineSpacingTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Text_lineSpacingTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -47,7 +47,7 @@ export default function Text_lineSpacingTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Text_lineSpacingTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("lineSpacing" == pages.name)) {
           console.info("get Text_lineSpacingTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -70,7 +70,7 @@ export default function Text_lineSpacingTest() {
      * @tc.desc     Text_lineSpacingTest_static_001
      * @tc.level   Level.LEVEL0
      */
-    it('Text_lineSpacingTest_static_001', Level.LEVEL0, (done: () => void): Promise<void> => {
+    it('Text_lineSpacingTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Text_lineSpacingTest_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

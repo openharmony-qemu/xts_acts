@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SymbolGlyphApi() {
   describe('SymbolGlyphApi', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FontSettingOptions beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -47,7 +47,7 @@ export default function SymbolGlyphApi() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get FontSettingOptions state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SymbolGlyphApi" == pages.name)) {
           console.info("get FontSettingOptions pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

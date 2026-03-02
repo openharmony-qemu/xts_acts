@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,6 +36,7 @@ import {
   DividerStyle
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -81,7 +82,7 @@ struct TabsExample {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("tabs page state change called:" + JSON.stringify(eventData));
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       if (data['dividerColorStr'] != null) {
         this.dividerColorStr = data['dividerColorStr'] as string;
       }
@@ -97,15 +98,19 @@ struct TabsExample {
       if (data['nullFlag'] != null) {
         this.nullFlag = data['nullFlag'] as boolean;
       }
+
       if (data['dividerColor'] != null) {
         this.dividerColor = data['dividerColor'] as Color;
       }
+
       if (data['strokeWidthNum'] != null) {
         this.strokeWidthNum = data['strokeWidthNum'] as number;
       }
+
       if (data['startMarginNum'] != null) {
         this.startMarginNum = data['startMarginNum'] as number;
       }
+
       if (data['endMarginNum'] != null) {
         this.endMarginNum = data['endMarginNum'] as number;
       }
@@ -113,12 +118,15 @@ struct TabsExample {
       if (data['dividerColorRes'] != null) {
         this.dividerColorRes = data['dividerColorRes'] as Resource;
       }
+
       if (data['strokeWidthRes'] != null) {
         this.strokeWidthRes = data['strokeWidthRes'] as Resource;
       }
+
       if (data['startMarginRes'] != null) {
         this.startMarginRes = data['startMarginRes'] as Resource;
       }
+
       if (data['endMarginRes'] != null) {
         this.endMarginRes = data['endMarginRes'] as Resource;
       }

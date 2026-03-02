@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,6 +42,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -96,7 +97,7 @@ struct TouchExample {
             let backData: emitter.EventData = {
               data: {
                 "ACTION": this.touchFlag,
-              } as Record<String, undefined | null | Object>
+              } as Record<String,RecordData>
             }
             console.log('fang--->C')
             let backEvent: emitter.InnerEvent = {
@@ -106,7 +107,7 @@ struct TouchExample {
             console.log('fang--->D')
             console.info("touchFlag start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("touchFlag emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -119,7 +120,7 @@ struct TouchExample {
   private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[touch] page stateChangCallBack");
     if (eventData != null) {
-      const data = eventData.data as Record<String, undefined | null | Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info("[touch] page state change called:" + JSON.stringify(eventData));
       if (data['text'] != null) {
         this.text = data['text'] as string;

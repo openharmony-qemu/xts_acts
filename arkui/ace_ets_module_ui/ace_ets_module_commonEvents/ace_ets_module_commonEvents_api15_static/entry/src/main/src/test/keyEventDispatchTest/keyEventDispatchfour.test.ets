@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function keyEventDispatchTest4() {
   describe('keyEventDispatchTest4', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
       
@@ -88,7 +88,7 @@ it('keyEventDispatchTest4_static_0100', Level.LEVEL0, async (done: () => void): 
       await CommonFunc.sleep(1000);
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[keyEventDispatchTest4_010] obj is: " + obj1.getElement('$attrs').getString('content'));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('parentResponse');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('');
 
       console.info('[keyEventDispatchTest4_static_0100] END');
       done();

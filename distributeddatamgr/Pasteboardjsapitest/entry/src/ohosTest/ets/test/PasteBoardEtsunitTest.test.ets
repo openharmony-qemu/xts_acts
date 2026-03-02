@@ -1730,8 +1730,9 @@ export default function pasteBoardJEtsunitTest() {
                     expect(pasteDataProperty1.shareOption == 1).assertTrue();
                     console.info('f_test39: timestamp = ' + pasteDataProperty1.timestamp);
                     let tag1 = pasteData1.getTag();
-                    console.info('f_test39: gettag = ' + tag1);
-                    console.info('f_test39: additions = ' + pasteDataProperty1.additions["one"])
+                    expect(tag1 == "").assertTrue();
+                    let tiondata = pasteDataProperty1.additions["one"];
+                    expect(tiondata != null).assertTrue();
                     console.info('SUB_pasteBoard_function_JS_API_3900 end');
                     done();
                   });
@@ -2043,10 +2044,6 @@ export default function pasteBoardJEtsunitTest() {
             systemPasteboard.getPasteData().then((data) => {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
-
-              console.info('f_test46: Clears the pasteBoard')
-              systemPasteboard.clear()
-
               console.info('SUB_pasteBoard_function_JS_API_4600 end');
               done();
             })
@@ -2255,10 +2252,6 @@ export default function pasteBoardJEtsunitTest() {
             systemPasteboard.getPasteData().then((data) => {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
-
-              console.info('f_test51: Clears the pasteBoard')
-              systemPasteboard.clear()
-
               console.info('SUB_pasteBoard_function_JS_API_5100 end');
               done();
             })
@@ -2877,10 +2870,11 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test66 Converts the PlainTextData to text')
-              let pasteDataRecord = pasteData1.getRecordAt(0)
+              let pasteDataRecord = pasteData1.getRecordAt(0);
               expect(pasteDataRecord.mimeType).assertEqual(pasteboard.MIMETYPE_TEXT_PLAIN);
-              console.info('f_test66 pasteDataRecord.convertToText = ' + pasteDataRecord.convertToText);
-
+              let convertdata = pasteDataRecord.convertToText();
+              console.info('f_test66 pasteDataRecord.convertToText = ' + convertdata);
+              expect(convertdata != null).assertTrue();
               console.info('f_test66 SUB_pasteBoard_function_JS_API_6600 end');
               done();
             })
@@ -2919,8 +2913,9 @@ export default function pasteBoardJEtsunitTest() {
               console.info('f_test67 Converts the PlainTextData to text');
               let pasteDataRecord = pasteData1.getRecordAt(0);
               expect(pasteDataRecord.mimeType).assertEqual(pasteboard.MIMETYPE_TEXT_PLAIN);
-              console.info('f_test67 pasteDataRecord.convertToText = ' + pasteDataRecord.convertToText);
-
+              let convertdata = pasteDataRecord.convertToText();
+              console.info('f_test67 pasteDataRecord.convertToText = ' + convertdata);
+              expect(convertdata != null).assertTrue();
               console.info('SUB_pasteBoard_function_JS_API_6700 end');
               done();
             })
@@ -2962,8 +2957,9 @@ export default function pasteBoardJEtsunitTest() {
               console.info('f_test68 Converts the PlainTextData to text')
               let pasteDataRecord = pasteData1.getRecordAt(0);
               expect(pasteDataRecord.mimeType).assertEqual(pasteboard.MIMETYPE_TEXT_PLAIN);
-              console.info('f_test68 pasteDataRecord.convertToText = ' + pasteDataRecord.convertToText);
-
+              let convertdata = pasteDataRecord.convertToText();
+              console.info('f_test68 pasteDataRecord.convertToText = ' + convertdata);
+              expect(convertdata != null).assertTrue();
               console.info('SUB_pasteBoard_function_JS_API_6800 end');
               done();
             })
@@ -2998,12 +2994,15 @@ export default function pasteBoardJEtsunitTest() {
               console.info('f_test69 Converts the PlainTextData to text')
               let pasteDataRecord = pasteData1.getRecordAt(0)
               pasteDataRecord.convertToText().then((data) => {
-                console.info('convertToText success data  ' + JSON.stringify(data));
+                expect(data != null).assertTrue();
+                console.info('f_test69 convertToText is ' + JSON.stringify(data));
+                done();
               }).catch((error: ESObject) => {
                 console.error('convertToText failed because ' + JSON.stringify(error));
+                expect().assertFail();
+                done();
               });
               console.info('SUB_pasteBoard_function_JS_API_6900 end');
-              done();
             })
           });
         });
@@ -3020,7 +3019,6 @@ export default function pasteBoardJEtsunitTest() {
      */
     it('pasteboard_function_test70', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_7000 start')
-
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
         let textData0 = 'Hello World0';
@@ -3210,5 +3208,5 @@ export default function pasteBoardJEtsunitTest() {
       }
       console.info('SUB_pasteBoard_function_JS_API_7500 end')
     })
-  });
+  })
 }

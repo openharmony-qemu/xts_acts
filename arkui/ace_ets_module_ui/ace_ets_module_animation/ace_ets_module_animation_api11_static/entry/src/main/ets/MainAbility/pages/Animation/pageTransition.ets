@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { Callback } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -54,7 +55,7 @@ struct PageTransitionExample1 {
               "scale": this.scale1,
               "opacity": this.opacity1,
               "type": this.type
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
           } as emitter.EventData
           let backEvent: emitter.InnerEvent = {
             eventId: 144,
@@ -95,7 +96,7 @@ struct PageTransitionExample1 {
 
   private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     if (eventData != null) {
-      const data: Record<String, undefined | null | Object> = eventData.data as Record<String, undefined | null | Object>
+      const data: Record<String,RecordData> = eventData.data as Record<String,RecordData>
       console.info("active page state change called:" + JSON.stringify(eventData));
       if (data['scale'] != null) {
         this.scale1 = data['scale'] as Double;

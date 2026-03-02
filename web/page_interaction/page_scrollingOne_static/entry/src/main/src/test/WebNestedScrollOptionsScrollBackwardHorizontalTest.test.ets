@@ -64,9 +64,9 @@ export default function webNestedScrollOptionsScrollBackwardHorizontalTest() {
      * @tc.desc   test NestedScrollOptions scrollBackward horizontal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testNestedScrollOptionsScrollBackwardHorizontalStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testNestedScrollOptionsScrollBackwardHorizontalStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testNestedScrollOptionsScrollBackwardHorizontal003", 10)
       let webRect = UtilsHelpers.getComponentRect('RowSize');
       await Utils.msSleep(2000)

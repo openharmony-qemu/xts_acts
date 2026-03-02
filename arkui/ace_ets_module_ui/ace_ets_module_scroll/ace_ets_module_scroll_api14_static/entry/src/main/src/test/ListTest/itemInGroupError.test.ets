@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function itemInGroupError() {
   describe('itemInGroupError', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll14.static", "EntryAbility");
       
@@ -56,7 +56,7 @@ export default function itemInGroupError() {
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push itemInGroupError page error:" + err);
       }
       console.info("itemInGroupError beforeEach end");

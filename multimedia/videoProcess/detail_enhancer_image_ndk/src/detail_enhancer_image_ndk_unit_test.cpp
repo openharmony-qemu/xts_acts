@@ -116,6 +116,21 @@ bool IsSupportImageSR()
  */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_01, TestSize.Level1)
 {
+    ASSERT_EQ(param_srgb.metadataType, 0);
+    ASSERT_EQ(param_srgb.colorSpace, OH_COLORSPACE_SRGB_FULL);
+    ASSERT_EQ(param_srgb.pixelFormat, NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
+    ASSERT_EQ(param_p3.metadataType, 0);
+    ASSERT_EQ(param_p3.colorSpace, OH_COLORSPACE_P3_FULL);
+    ASSERT_EQ(param_p3.pixelFormat, NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
+    ASSERT_EQ(param_bt709.metadataType, 0);
+    ASSERT_EQ(param_bt709.colorSpace, OH_COLORSPACE_BT709_FULL);
+    ASSERT_EQ(param_bt709.pixelFormat, NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
+    ASSERT_EQ(param_not_support.metadataType, 0);
+    ASSERT_EQ(param_not_support.colorSpace, OH_COLORSPACE_BT601_EBU_FULL);
+    ASSERT_EQ(param_not_support.pixelFormat, NATIVEBUFFER_PIXEL_FMT_BGRX_8888);
+    ASSERT_EQ(param5.metadataType, 0);
+    ASSERT_EQ(param5.colorSpace, OH_COLORSPACE_BT2020_PQ_LIMIT);
+    ASSERT_EQ(param5.pixelFormat, NATIVEBUFFER_PIXEL_FMT_RGBA_1010102);
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_InitializeEnvironment();
     EXPECT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
     OH_ImageProcessing_DeinitializeEnvironment();
@@ -1486,6 +1501,32 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_47, TestSize.Level1)
     OH_ImageProcessing* instance = nullptr;
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_Destroy(instance);
     EXPECT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_INSTANCE);
+}
+
+// detail enhance invalid instance
+/**
+ * @tc.name   vpeImageNdk_48
+ * @tc.number vpeImageNdk_48
+ * @tc.desc   vpeImageNdk_48
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_48, TestSize.Level1)
+{
+    if (!IsSupportImageSR()) {
+        return;
+    }
+    OH_ImageProcessing_InitializeEnvironment();
+    OH_ImageProcessing* instance = nullptr;
+    OH_PixelmapNative* srcImg = nullptr;
+    OH_PixelmapNative* dstImg = nullptr;
+    CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
+    CreateEmptyPixelmap(&dstImg, 1440, 1920, PIXEL_FORMAT_RGBA_8888);
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_EnhanceDetail(instance, srcImg, dstImg);
+    EXPECT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_INSTANCE);
+    OH_ImageProcessing_Destroy(instance);
+    OH_ImageProcessing_DeinitializeEnvironment();
 }
 }
 } // namespace Media

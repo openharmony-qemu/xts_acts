@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function typeNodeTextSelectableMode1Test() {
   describe('typeNodeTextSelectableMode1Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("typeNodeTextSelectableMode1Test beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function typeNodeTextSelectableMode1Test() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get typeNodeTextSelectableMode1Test state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextSelectableMode1" == pages.name)) {
           console.info("get typeNodeTextSelectableMode1Test pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

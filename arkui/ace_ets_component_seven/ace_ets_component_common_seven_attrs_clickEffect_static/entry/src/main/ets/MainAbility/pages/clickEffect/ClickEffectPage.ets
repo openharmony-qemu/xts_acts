@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, ClickEffect, ClickEffectLevel, AlignRuleOption } from '@ohos.arkui.component'
@@ -561,22 +561,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-	mClickEffect: ClickEffect = { level: ClickEffectLevel.HEAVY, scale: 0.9 }
-
-	applyNormalAttribute(instance: StepperAttribute): void {
-		instance.clickEffect(this.mClickEffect)
-	}
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-	mClickEffect: ClickEffect = { level: ClickEffectLevel.HEAVY, scale: 0.9 }
-
-	applyNormalAttribute(instance: StepperItemAttribute): void {
-		instance.clickEffect(this.mClickEffect)
-	}
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mClickEffect: ClickEffect = { level: ClickEffectLevel.HEAVY, scale: 0.9 }
 
@@ -773,8 +757,6 @@ struct ClickEffectPage {
 	@State _clickEffectSliderModifier: SliderModifier = new SliderModifier()
 	@State _clickEffectSpanModifier: SpanModifier = new SpanModifier()
 	@State _clickEffectStackModifier: StackModifier = new StackModifier()
-	@State _clickEffectStepperModifier: StepperModifier = new StepperModifier()
-	@State _clickEffectStepperItemModifier: StepperItemModifier = new StepperItemModifier()
 	@State _clickEffectSwiperModifier: SwiperModifier = new SwiperModifier()
 	@State _clickEffectTabContentModifier: TabContentModifier = new TabContentModifier()
 	@State _clickEffectTabsModifier: TabsModifier = new TabsModifier()
@@ -802,17 +784,15 @@ struct ClickEffectPage {
 
 	onPageShow() {
 		console.info('clickEffect translate page show called ')
-		let routerParamOptions = new RouterParams()
-		routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-		this.targetView = routerParamOptions.view.targetView;
-		this.componentKey = routerParamOptions.view.componentKey as  string;
-		this.parentWidth = routerParamOptions.view.parentWidth;
-		this.parentHeight = routerParamOptions.view.parentHeight;
-		this.columns = (routerParamOptions.view.columns as int)
-		this.gutter = (routerParamOptions.view.gutter as int)
-		this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
-		this.parentComponentKey = routerParamOptions.view.parentComponentKey;
-		this._clickEffectCheckboxGroupModifier.mClickEffect = routerParamOptions.view.testValue.setValue.clickEffect
+		this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as  string;
+		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
+		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+		this._clickEffectCheckboxGroupModifier.mClickEffect = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.clickEffect
     attrsManager.registerDataChange((value: SetValue) => {
 			console.info('clickEffect [registerDataChange] ' + JSON.stringify(value.clickEffect))
 			this._clickEffectAlphabetIndexerModifier.mClickEffect = value.clickEffect
@@ -880,8 +860,6 @@ struct ClickEffectPage {
 			this._clickEffectSliderModifier.mClickEffect = value.clickEffect
 			this._clickEffectSpanModifier.mClickEffect = value.clickEffect
 			this._clickEffectStackModifier.mClickEffect = value.clickEffect
-			this._clickEffectStepperModifier.mClickEffect = value.clickEffect
-			this._clickEffectStepperItemModifier.mClickEffect = value.clickEffect
 			this._clickEffectSwiperModifier.mClickEffect = value.clickEffect
 			this._clickEffectTabContentModifier.mClickEffect = value.clickEffect
 			this._clickEffectTabsModifier.mClickEffect = value.clickEffect
@@ -1056,32 +1034,6 @@ struct ClickEffectPage {
 					.showTips(true)
 					
 					.attributeModifier(this._clickEffectSliderModifier)
-			}
-			if (this.targetView == 'Stepper') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-				}
-					
-				
-			}
-			if (this.targetView == 'StepperItem') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-						.backgroundColor(Color.Red)
-						
-				
-				}
-					.backgroundColor(Color.Yellow)
-					.width('100%')
-					.height('100%')
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')

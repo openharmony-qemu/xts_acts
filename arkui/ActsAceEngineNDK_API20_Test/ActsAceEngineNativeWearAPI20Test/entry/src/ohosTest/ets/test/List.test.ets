@@ -12,12 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import ArkUIKeyIntensionTest from "./arkuikeyeventtest/ArkUIKeyIntensionTest.test";
 import DialogXComponent from "./nativexcomponent/DialogXComponent.test"
 import DragAndDrogXComponent from "./nativexcomponent/DragAndDrogXComponent.test"
 import NodeEventTest from './NodeEventTest/NodeEventTest.test'
+import textAreaInputTest from './TextTest/textAreaInputTest.test';
 
 export default function testsuite() {
+  textAreaInputTest();
   DragAndDrogXComponent()
   DialogXComponent()
   NodeEventTest()
+  ArkUIKeyIntensionTest()
 }

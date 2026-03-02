@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,6 @@ import {
   MenuItemGroup,
   ToggleType,
   TimePicker,
-  StepperItem,
   SliderStyle,
   FlexDirection,
   ProgressType,
@@ -88,7 +87,6 @@ import {
   Search,
   Select,
   Slider,
-  Stepper,
   TextArea,
   TextClock,
   ImageFit,
@@ -151,8 +149,7 @@ struct WidthPage {
     console.info('width page show called ')
     try {
       console.info('[TabIndexPage] start router ');
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Length>('_width', routerParamOptions.view.testValue.setValue.width)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
@@ -162,7 +159,7 @@ struct WidthPage {
       this.BackGroundColor = routerParamOptions.view.BackGroundColor
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
       console.info('[TabIndexPage] end router ');
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -551,20 +548,6 @@ struct WidthPage {
         WaterFlow()
           .applyStyles(this.commonStyle)
           .backgroundColor(this.BackGroundColor).height(100)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem()
-        }
-        .applyStyles(this.commonStyle)
-        .height(100)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Text('Page One')
-          }
-          .applyStyles(this.commonStyle)
-
-        }.key(this.parentComponentKey).width(this.parentWidth as number).height(this.parentHeight as number)
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem()

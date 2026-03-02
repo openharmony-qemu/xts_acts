@@ -48,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function activeTest() {
   describe('activeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("activeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api14.static", "EntryAbility")
     });

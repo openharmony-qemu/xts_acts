@@ -81,9 +81,9 @@ export default function InjectOfflineResourcesTest() {
      * @tc.desc   test injectOfflineResources
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testInjectOfflineResourcesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testInjectOfflineResourcesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testInjectOfflineResources002", 10)
         await Utils.msSleep(500);

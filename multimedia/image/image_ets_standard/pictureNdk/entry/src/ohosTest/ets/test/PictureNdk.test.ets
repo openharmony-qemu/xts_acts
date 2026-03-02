@@ -533,6 +533,7 @@ const orientationValueErr = "-1";
 const testAllAuxiliaryPicturesExcludeFragmentJpg = "AllAuxiliaryPictures_exclude_fragment.jpg";
 
 let isSupportHEIFDecode: boolean;
+let isSupportVPE: boolean;
 let fileDir: string | undefined;
 
 enum ErrorCode {
@@ -921,6 +922,18 @@ export default function pictureNdkTest() {
     beforeAll(async () => {
       isSupportHEIFDecode = 
         image.createImageSource(fileDir + '/' + 'test.jpg').supportedFormats.includes('image/heic')
+      isSupportVPE = await fs.access("/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so").then((res: boolean) => {
+        if (res) {
+          console.info("file exists");
+          return true;
+        } else {
+          console.info("file not exists");
+          return false;
+        }
+      }).catch((err: BusinessError) => {
+        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
+        return false;
+      });
       isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean) => {
         if (res) {
           console.info("file exists");
@@ -4680,7 +4693,7 @@ export default function pictureNdkTest() {
               let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, Data[i].key)
               if(PropertyValue != Data[i].jpegData){
                   console.log("compare value error file:" + filename + "get value: " + PropertyValue + " compare value: " + Data[i].jpegData);
-                  expect.assertFail();
+                  expect().assertFail();
                   done()
                   return
               }
@@ -4716,7 +4729,7 @@ export default function pictureNdkTest() {
               let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, Data[i].key)
               if(PropertyValue != Data[i].pngData){
                   console.log("compare value error file:" + filename + "get value: " + PropertyValue + " compare value: " + Data[i].pngData);
-                  expect.assertFail();
+                  expect().assertFail();
                   done()
                   return
               }
@@ -4752,7 +4765,7 @@ export default function pictureNdkTest() {
               let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, Data[i].key)
               if(PropertyValue != Data[i].heifData){
                   console.log("compare value error file:" + filename + "get value: " + PropertyValue + " compare value: " + Data[i].heifData);
-                  expect.assertFail();
+                  expect().assertFail();
                   done()
                   return
               }
@@ -4788,7 +4801,7 @@ export default function pictureNdkTest() {
               let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, Data0[i].key)
               if(PropertyValue != Data0[i].jpegData){
                   console.log("compare value error file:" + filename + "get value: " + PropertyValue + " compare value: " + Data0[i].jpegData);
-                  expect.assertFail();
+                  expect().assertFail();
                   done()
                   return
               }
@@ -4817,13 +4830,13 @@ export default function pictureNdkTest() {
         for(let i = 0; i < ModifyData.length; i++){
             let setRes = ndkTest.MetadataSetProperty(ModifyData[i].key, ModifyData[i].modifyData)
             if(setRes != ErrorCode.IMAGE_SUCCESS){
-                expect.assertFail();
+                expect().assertFail();
                 done()
                 return
             }
             let getRes = ndkTest.MetadataGetProperty(ModifyData[i].key)
             if(getRes != ModifyData[i].compareData){
-                expect.assertFail();
+                expect().assertFail();
                 done()
                 return
             }
@@ -4852,7 +4865,7 @@ export default function pictureNdkTest() {
           if(Data[i].onlyRead == true){
             let setRes = ndkTest.MetadataSetPropertyErrorCode(Data[i].key, Data[i].jpegData)
             if(setRes != ErrorCode.IMAGE_UNSUPPORTED_METADATA){
-                expect.assertFail();
+                expect().assertFail();
                 done()
                 return
             }
@@ -4863,6 +4876,411 @@ export default function pictureNdkTest() {
         hilog.error(domain, testTag, caseName + `: Test exception ` + err);
         expect().assertFalse();
         done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0100
+     * @tc.desc   Test get HDR compose pixelmap from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0100', Level.LEVEL0, async (done: Function) => {
+      try{
+        if(!isSupportVPE) {
+          done();
+          return
+        };
+      } catch (error) {
+        console.info('file does not exist');
+      };
+      let caseName: string = `SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0100`;
+      let filePath = getFilePath("AllAuxiliaryPictures.jpg");
+      let imageSource = ndkTest.CreateFromUri(filePath);
+      if(imageSource == null)
+      {
+        hilog.error(domain, testTag, caseName + `: Create ImageSource failed`);
+        expect().assertFail();
+        done();
+        return;
+      }
+      let picture = ndkTest.CreatePictureByImageSourceWithOptions(imageSource);
+      ndkTest.ImageSourceRelease(imageSource);
+      if(picture == null)
+      {
+        hilog.error(domain, testTag, caseName + `: Create Picture failed`);
+        expect().assertFail();
+        done();
+        return;
+      }
+      let hdrPixelMapInfo = ndkTest.GetHdrComposedPixelmapWithOptions(picture, image.PixelMapFormat.RGBA_1010102);
+      ndkTest.PictureRelease(picture);
+      if(hdrPixelMapInfo != null)
+      {
+        hilog.info(domain, testTag, caseName + `: Get HDR Composed PixelMap success, hdrPixelMapInfo: ` + JSON.stringify(hdrPixelMapInfo));
+        let ret = hdrPixelMapInfo.isHdr && hdrPixelMapInfo.pixelFormat == image.PixelMapFormat.RGBA_1010102;
+        expect(ret).assertTrue();
+        done();
+      } else{
+        hilog.error(domain, testTag, caseName + `: Get HDR Composed PixelMap failed`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0200
+     * @tc.desc   Test get HDR compose pixelmap from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0200', Level.LEVEL0, async (done: Function) => {
+      try{
+        if(!isSupportVPE) {
+          done();
+          return
+        };
+      } catch (error) {
+        console.info('file does not exist');
+      };
+      if (!isSupportHEIFDecode) {
+        console.info("device is not support heif decode");
+        done();
+      } else{
+        let caseName: string = `SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0200`;
+        let filePath = getFilePath("all_auxtype.heic");
+        let imageSource = ndkTest.CreateFromUri(filePath);
+        if(imageSource == null)
+        {
+          hilog.error(domain, testTag, caseName + `: Create ImageSource failed`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let picture = ndkTest.CreatePictureByImageSourceWithOptions(imageSource);
+        ndkTest.ImageSourceRelease(imageSource);
+        if(picture == null)
+        {
+          hilog.error(domain, testTag, caseName + `: Create Picture failed`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let hdrPixelMapInfo = ndkTest.GetHdrComposedPixelmapWithOptions(picture, image.PixelMapFormat.YCBCR_P010);
+        ndkTest.PictureRelease(picture);
+        if(hdrPixelMapInfo != null)
+        {
+          hilog.info(domain, testTag, caseName + `: Get HDR Composed PixelMap success, hdrPixelMapInfo: ` + JSON.stringify(hdrPixelMapInfo));
+          let ret = hdrPixelMapInfo.isHdr && hdrPixelMapInfo.pixelFormat == image.PixelMapFormat.YCBCR_P010;
+          expect(ret).assertTrue();
+          done();
+        } else{
+          hilog.error(domain, testTag, caseName + `: Get HDR Composed PixelMap failed`);
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0300
+     * @tc.desc   Test get HDR compose pixelmap from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0300', Level.LEVEL0, async (done: Function) => {
+      try{
+        if(!isSupportVPE) {
+          done();
+          return
+        };
+      } catch (error) {
+        console.info('file does not exist');
+      };
+      let caseName: string = `SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0300`;
+      let filePath = getFilePath("AllAuxiliaryPictures.jpg");
+      let imageSource = ndkTest.CreateFromUri(filePath);
+      if(imageSource == null)
+      {
+        hilog.error(domain, testTag, caseName + `: Create ImageSource failed`);
+        expect().assertFail();
+        done();
+        return;
+      }
+      let picture = ndkTest.CreatePictureByImageSourceWithOptions(imageSource);
+      ndkTest.ImageSourceRelease(imageSource);
+      if(picture == null)
+      {
+        hilog.error(domain, testTag, caseName + `: Create Picture failed`);
+        expect().assertFail();
+        done();
+        return;
+      }
+      let hdrPixelMapInfo = ndkTest.GetHdrComposedPixelmapWithOptions(picture, image.PixelMapFormat.YCRCB_P010);
+      ndkTest.PictureRelease(picture);
+      if(hdrPixelMapInfo != null)
+      {
+        hilog.info(domain, testTag, caseName + `: Get HDR Composed PixelMap success, hdrPixelMapInfo: ` + JSON.stringify(hdrPixelMapInfo));
+        let ret = hdrPixelMapInfo.isHdr && hdrPixelMapInfo.pixelFormat == image.PixelMapFormat.YCRCB_P010;
+        expect(ret).assertTrue();
+        done();
+      } else{
+        hilog.error(domain, testTag, caseName + `: Get HDR Composed PixelMap failed`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0400
+     * @tc.desc   Test get HDR compose pixelmap from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0400', Level.LEVEL0, async (done: Function) => {
+      try{
+        if(!isSupportVPE) {
+          done();
+          return
+        };
+      } catch (error) {
+        console.info('file does not exist');
+      };
+      if (!isSupportHEIFDecode) {
+        console.info("device is not support heif decode");
+        done();
+      } else{
+        let caseName: string = `SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0400`;
+        let filePath = getFilePath("all_auxtype.heic");
+        let imageSource = ndkTest.CreateFromUri(filePath);
+        if(imageSource == null)
+        {
+          hilog.error(domain, testTag, caseName + `: Create ImageSource failed`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let picture = ndkTest.CreatePictureByImageSourceWithOptions(imageSource);
+        ndkTest.ImageSourceRelease(imageSource);
+        if(picture == null)
+        {
+          hilog.error(domain, testTag, caseName + `: Create Picture failed`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let resultErr = ndkTest.GetHdrComposedPixelmapWithOptionsError(picture, image.PixelMapFormat.RGB_565);
+        ndkTest.PictureRelease(picture);
+        expect(resultErr == 7600201).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0500
+     * @tc.desc   Test get HDR compose pixelmap from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0500', Level.LEVEL0, async (done: Function) => {
+      try{
+        if(!isSupportVPE) {
+          done();
+          return
+        };
+      } catch (error) {
+        console.info('file does not exist');
+      };
+      let caseName: string = `SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0500`;
+      let filePath = getFilePath("AllAuxiliaryPictures.jpg");
+      let imageSource = ndkTest.CreateFromUri(filePath);
+      if(imageSource == null)
+      {
+        hilog.error(domain, testTag, caseName + `: Create ImageSource failed`);
+        expect().assertFail();
+        done();
+        return;
+      }
+      let picture = ndkTest.CreatePictureByImageSourceWithOptions(imageSource);
+      ndkTest.ImageSourceRelease(imageSource);
+      if(picture == null)
+      {
+        hilog.error(domain, testTag, caseName + `: Create Picture failed`);
+        expect().assertFail();
+        done();
+        return;
+      }
+      let resultErr = ndkTest.GetHdrComposedPixelmapWithOptionsError(picture, image.PixelMapFormat.RGBA_8888);
+      ndkTest.PictureRelease(picture);
+      expect(resultErr == 7600201).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0600
+     * @tc.desc   Test get HDR compose pixelmap from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0600', Level.LEVEL0, async (done: Function) => {
+      try{
+        if(!isSupportVPE) {
+          done();
+          return
+        };
+      } catch (error) {
+        console.info('file does not exist');
+      };
+      if (!isSupportHEIFDecode) {
+        console.info("device is not support heif decode");
+        done();
+      } else{
+        let caseName: string = `SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0600`;
+        let filePath = getFilePath("all_auxtype.heic");
+        let imageSource = ndkTest.CreateFromUri(filePath);
+        if(imageSource == null)
+        {
+          hilog.error(domain, testTag, caseName + `: Create ImageSource failed`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let picture = ndkTest.CreatePictureByImageSourceWithOptions(imageSource);
+        ndkTest.ImageSourceRelease(imageSource);
+        if(picture == null)
+        {
+          hilog.error(domain, testTag, caseName + `: Create Picture failed`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let resultErr = ndkTest.GetHdrComposedPixelmapWithOptionsError(picture, image.PixelMapFormat.NV12);
+        ndkTest.PictureRelease(picture);
+        expect(resultErr == 7600201).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0700
+     * @tc.desc   Test get HDR compose pixelmap from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0700', Level.LEVEL0, async (done: Function) => {
+      try{
+        if(!isSupportVPE) {
+          done();
+          return
+        };
+      } catch (error) {
+        console.info('file does not exist');
+      };
+      let caseName: string = `SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0700`;
+      let filePath = getFilePath("AllAuxiliaryPictures.jpg");
+      let imageSource = ndkTest.CreateFromUri(filePath);
+      if(imageSource == null)
+      {
+        hilog.error(domain, testTag, caseName + `: Create ImageSource failed`);
+        expect().assertFail();
+        done();
+        return;
+      }
+      let picture = ndkTest.CreatePictureByImageSourceWithOptions(imageSource);
+      ndkTest.ImageSourceRelease(imageSource);
+      if(picture == null)
+      {
+        hilog.error(domain, testTag, caseName + `: Create Picture failed`);
+        expect().assertFail();
+        done();
+        return;
+      }
+      let result = ndkTest.GetHdrComposedPixelmapAndPixelMapTest(picture);
+      ndkTest.PictureRelease(picture);
+      if(typeof result == 'string')
+      {
+        hilog.error(domain, testTag, caseName + `: GetHdrComposedPixelmapAndPixelMapTest failed ` + result);
+        expect().assertFail();
+        done();
+      } else{
+        if(result != 0)
+        {
+          hilog.error(domain, testTag, caseName + `: GetHdrComposedPixelmapAndPixelMapTest failed, errorCode: ` + result);
+        }
+        expect(result == 0).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0800
+     * @tc.desc   Test get HDR compose pixelmap from picture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0800', Level.LEVEL0, async (done: Function) => {
+      try{
+        if(!isSupportVPE) {
+          done();
+          return
+        };
+      } catch (error) {
+        console.info('file does not exist');
+      };
+      if (!isSupportHEIFDecode) {
+        console.info("device is not support heif decode");
+        done();
+      } else{
+        let caseName: string = `SUB_MULTIMEDIA_PICTURE_PICTURE_GET_HDR_COMPOSE_PIXELMAP_0800`;
+        let filePath = getFilePath("all_auxtype.heic");
+        let imageSource = ndkTest.CreateFromUri(filePath);
+        if(imageSource == null)
+        {
+          hilog.error(domain, testTag, caseName + `: Create ImageSource failed`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let picture = ndkTest.CreatePictureByImageSourceWithOptions(imageSource);
+        ndkTest.ImageSourceRelease(imageSource);
+        if(picture == null)
+        {
+          hilog.error(domain, testTag, caseName + `: Create Picture failed`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let result = ndkTest.GetHdrComposedPixelmapAndPixelMapTest(picture);
+        ndkTest.PictureRelease(picture);
+        if(typeof result == 'string')
+        {
+          hilog.error(domain, testTag, caseName + `: GetHdrComposedPixelmapAndPixelMapTest failed ` + result);
+          expect().assertFail();
+          done();
+        } else{
+          if(result != 0)
+          {
+            hilog.error(domain, testTag, caseName + `: GetHdrComposedPixelmapAndPixelMapTest failed, errorCode: ` + result);
+          }
+          expect(result == 0).assertTrue();
+          done();
+        }
       }
     })
 

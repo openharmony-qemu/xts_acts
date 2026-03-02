@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,9 +32,9 @@ export default function WindowTitleTest() {
 
     describe("WindowTitleTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowTitleTest describe start');
-        let windowStage: window.WindowStage;
-        let win: window.Window;
-        let context: common.UIAbilityContext;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
+        let context: common.UIAbilityContext | undefined;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
@@ -73,15 +73,16 @@ export default function WindowTitleTest() {
             let caseName: string = 'testGetWindowDecorHeight_static_0100';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let load3 = await windowStage.loadContent('pages/index2');
+            let load3 = await windowStage!.loadContent('pages/index2');
             expect(!Boolean(load3)).assertTrue();
             try {
-                let tempWnd: window.Window  = await windowStage.getMainWindow();
+                let tempWnd: window.Window  = await windowStage!.getMainWindow();
                 (tempWnd as window.Window).getWindowDecorHeight()
-                hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow, tempWnd: ' + tempWnd);
+                hilog.info(0x0000, '[ANI]',msgStr + 'windowStage!.getMainWindow, tempWnd: ' + tempWnd);
                 expect(true).assertTrue()
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + ' Failed to get the height of window decor. Cause: ' + JSON.stringify(exception));
                 if (exception.code == 801 || exception.code == 1300002) {
                     expect(true).assertTrue()
@@ -105,7 +106,7 @@ export default function WindowTitleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            windowStage.createSubWindow('testSetWindowDecorVisibleErrCode1300002_static_0100')
+            windowStage!.createSubWindow('testSetWindowDecorVisibleErrCode1300002_static_0100')
                 .then((data: window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -116,7 +117,7 @@ export default function WindowTitleTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorVisible.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorVisible. Cause:' + JSON.stringify(e));
                         if(e!.code == 1300002){
                             done();
@@ -148,7 +149,7 @@ export default function WindowTitleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            windowStage.createSubWindow('testSetWindowDecorHeightErrCode1300002_static_0100')
+            windowStage!.createSubWindow('testSetWindowDecorHeightErrCode1300002_static_0100')
                 .then((data:window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -159,7 +160,8 @@ export default function WindowTitleTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorHeight.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorHeight. Cause:' + JSON.stringify(e));
                         expect(e.code).assertEqual(1300002);
                         done()
@@ -184,13 +186,14 @@ export default function WindowTitleTest() {
             let caseName: string = 'test_setWindowDecorHeight_setDecorButtonStyle_static_0100';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let windowClass: window.Window = await windowStage.getMainWindow();
+            let windowClass: window.Window = await windowStage!.getMainWindow();
             try {
                 windowClass.setWindowDecorHeight(50);
                 hilog.info(0x0000, '[ANI]',msgStr+ `Succeeded in setting the height of window decor`);
                 expect(true).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr+ `Failed to set the style of button. Cause code: ${exception.code}, message: ${exception.message}`);
                 if(exception.code = 801){
                     done();
@@ -212,7 +215,7 @@ export default function WindowTitleTest() {
             let msgStr: string = 'testWindowTitleButtonRectChange_on_Function_Callback_static_0100';
             hilog.info(0x0000, '[ANI]',msgStr + "begin on")
             try {
-                let windowClass: window.Window = await windowStage.getMainWindow();
+                let windowClass: window.Window = await windowStage!.getMainWindow();
                 windowClass.onWindowTitleButtonRectChange((titleButtonRect:window.TitleButtonRect) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window title buttons area changes. Data: ' + JSON.stringify(titleButtonRect));
                     hilog.info(0x0000, '[ANI]',msgStr + 'titleButtonRect Data: right' + JSON.stringify(titleButtonRect.right));
@@ -251,7 +254,7 @@ export default function WindowTitleTest() {
             let msgStr: string = 'testWindowTitleButtonRectChange_off_Function_Callback_static_0200';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin off');
             try {
-                let windowClass: window.Window = await windowStage.getMainWindow();
+                let windowClass: window.Window = await windowStage!.getMainWindow();
                 windowClass.offWindowTitleButtonRectChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window title buttons area changes');
                 expect(true).assertTrue();
@@ -281,7 +284,7 @@ export default function WindowTitleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            windowStage.createSubWindow('testOnWindowTitleButtonRectChangeErrCode1300002_static_0300')
+            windowStage!.createSubWindow('testOnWindowTitleButtonRectChangeErrCode1300002_static_0300')
                 .then((data: window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -322,7 +325,7 @@ export default function WindowTitleTest() {
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            windowStage.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300004_SubWindow_Promise')
+            windowStage!.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300004_SubWindow_Promise')
                 .then((data: window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -369,7 +372,7 @@ export default function WindowTitleTest() {
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            windowStage.createSubWindow('testSetDecorButtonStyleErrCode1300002_static_0100')
+            windowStage!.createSubWindow('testSetDecorButtonStyleErrCode1300002_static_0100')
                 .then((data: window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -421,13 +424,13 @@ export default function WindowTitleTest() {
             let windowConfig: window.Configuration = {
                 name: "testSetDecorButtonStyleErrCode1300004_0100",
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context,
+                ctx: context!,
             };
-            let tempWnd: window.Window;
+            let tempWnd: window.Window | undefined;
             tempWnd = await window.createWindow(windowConfig);
             expect(!!tempWnd).assertTrue();
-            await (tempWnd as window.Window).setUIContent("pages/index2");
-            await (tempWnd as window.Window).showWindow();
+            await (tempWnd! as window.Window).setUIContent("pages/index2");
+            await (tempWnd! as window.Window).showWindow();
             try {
                 // let param: window.DecorButtonStyle = {}
                 (tempWnd as window.Window).setDecorButtonStyle(style);
@@ -459,7 +462,7 @@ export default function WindowTitleTest() {
         it("testSetDecorButtonStyle_buttonIconSize_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr:string = "testSetDecorButtonStyle_buttonIconSize_static_0100";
             hilog.info(domain, tag,msgStr + "begin");
-            let windowClass:window.Window = windowStage.getMainWindowSync();
+            let windowClass:window.Window = windowStage!.getMainWindowSync();
             try {
                 let param: window.DecorButtonStyle = {
                     buttonIconSize: 15
@@ -492,7 +495,7 @@ export default function WindowTitleTest() {
         it("testSetDecorButtonStyle_buttonBackgroundCornerRadius_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr = "testSetDecorButtonStyle_buttonBackgroundCornerRadius_static_0100";
             hilog.info(domain, tag,msgStr + "begin");
-            let windowClass:window.Window = windowStage.getMainWindowSync();
+            let windowClass:window.Window = windowStage!.getMainWindowSync();
             try {
                 let param: window.DecorButtonStyle = {
                     buttonBackgroundCornerRadius: 3
@@ -528,7 +531,7 @@ export default function WindowTitleTest() {
             console.log(msgStr + "begin");
             let subWindowClass: window.Window;
             try {
-                subWindowClass = await windowStage.createSubWindow('test_getWindowDecorVisible_1300002');
+                subWindowClass = await windowStage!.createSubWindow('test_getWindowDecorVisible_1300002');
                 expect(!!subWindowClass).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWindowClass));
                 await subWindowClass.destroyWindow();
@@ -566,7 +569,7 @@ export default function WindowTitleTest() {
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
             try {
-                subWin = await windowStage.createSubWindow('testSetWindowTitleMoveEnabledErrCode1300002_SubWindow_Promise')
+                subWin = await windowStage!.createSubWindow('testSetWindowTitleMoveEnabledErrCode1300002_SubWindow_Promise')
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
@@ -604,9 +607,9 @@ export default function WindowTitleTest() {
             let windowConfig: window.Configuration = {
                 name: "testSetWindowTitleMoveEnabledErrCode1300004_0100",
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context,
+                ctx: context!,
             };
-            let tempWnd: window.Window;
+            let tempWnd: window.Window | undefined;
             try {
                 tempWnd = await window.createWindow(windowConfig);
                 expect(!!tempWnd).assertTrue();
@@ -616,8 +619,8 @@ export default function WindowTitleTest() {
                 expect(false).assertTrue();
                 done()
             }
-            await tempWnd.setUIContent("pages/Index");
-            await tempWnd.showWindow();
+            await tempWnd!.setUIContent("pages/Index");
+            await tempWnd!.showWindow();
             try {
                 (tempWnd! as window.Window).setWindowTitleMoveEnabled(true);
                 console.error(msgStr + 'Succeeded in calling setWindowTitleMoveEnabled.');
@@ -654,7 +657,7 @@ export default function WindowTitleTest() {
             let subWin: window.Window | undefined = undefined;
 
             try {
-                subWin = await windowStage.createSubWindow('testSetWindowTitlePromiseErrCode1300002_SubWindow_Promise')
+                subWin = await windowStage!.createSubWindow('testSetWindowTitlePromiseErrCode1300002_SubWindow_Promise')
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
@@ -695,7 +698,7 @@ export default function WindowTitleTest() {
             let subWin: window.Window | undefined = undefined;
 
             try {
-                subWin = await windowStage.createSubWindow('testSetWindowTitlePromiseErrCode801_0100')
+                subWin = await windowStage!.createSubWindow('testSetWindowTitlePromiseErrCode801_0100')
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
@@ -740,7 +743,7 @@ export default function WindowTitleTest() {
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
             try {
-                subWin = await windowStage.createSubWindow('testSetDecorButtonStyleErrCode1300002_SubWindow_Promise')
+                subWin = await windowStage!.createSubWindow('testSetDecorButtonStyleErrCode1300002_SubWindow_Promise')
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
@@ -778,9 +781,9 @@ export default function WindowTitleTest() {
             let config: window.Configuration = {
                 name: "test1",
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context
+                ctx: context!
             };
-            let tempWnd: window.Window;
+            let tempWnd: window.Window | undefined;
             try {
                 tempWnd = await window.createWindow(config)
                 expect(!!tempWnd).assertTrue();
@@ -790,16 +793,16 @@ export default function WindowTitleTest() {
                 expect(false).assertTrue();
                 done()
             }
-            tempWnd.setUIContent("pages/Index");
-            tempWnd.showWindow();
+            tempWnd!.setUIContent("pages/Index");
+            tempWnd!.showWindow();
             try {
                 (tempWnd! as window.Window).getDecorButtonStyle();
                 console.error(msgStr + 'Succeeded in calling getDecorButtonStyle.');
-                await tempWnd.destroyWindow();
+                await tempWnd!.destroyWindow();
             } catch (exception) {
                 exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call getDecorButtonStyle. Cause:' + JSON.stringify(exception.code));
-                await tempWnd.destroyWindow();
+                await tempWnd!.destroyWindow();
                 if (exception.code == 801) {
                     done();
                 } else if (exception.code == 1300004) {
@@ -826,7 +829,7 @@ export default function WindowTitleTest() {
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
             try {
-                subWin = await windowStage.createSubWindow('testGetTitleButtonRectErrCode1300002_SubWindow_Promise');
+                subWin = await windowStage!.createSubWindow('testGetTitleButtonRectErrCode1300002_SubWindow_Promise');
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
@@ -863,7 +866,7 @@ export default function WindowTitleTest() {
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
             try {
-                subWin = await windowStage.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300002_SubWindow_Promise');
+                subWin = await windowStage!.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300002_SubWindow_Promise');
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
@@ -901,7 +904,7 @@ export default function WindowTitleTest() {
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
             try {
-                subWin = await windowStage.createSubWindow('test_startMoving_ErrorCode_1300002');
+                subWin = await windowStage!.createSubWindow('test_startMoving_ErrorCode_1300002');
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
@@ -939,7 +942,7 @@ export default function WindowTitleTest() {
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
             try {
-                subWin = await windowStage.createSubWindow('testWindowTitleButtonRectChange_Off_Errcode1300002_0100');
+                subWin = await windowStage!.createSubWindow('testWindowTitleButtonRectChange_Off_Errcode1300002_0100');
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
@@ -973,7 +976,7 @@ export default function WindowTitleTest() {
         it('testGetTitleButtonRect_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr: string = 'testGetTitleButtonRect_static';
             hilog.info(domain, tag,msgStr + 'begin');
-            let windowClass: window.Window = windowStage.getMainWindowSync();
+            let windowClass: window.Window = windowStage!.getMainWindowSync();
             try {
                 let TitleButtonRect = windowClass.getTitleButtonRect();
                 hilog.info(domain, tag,msgStr + 'Succeeded in obtaining the area of title buttons. Data: ' + JSON.stringify(TitleButtonRect));

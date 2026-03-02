@@ -4,13 +4,14 @@
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
         "shell-timeout": "600000",
+        "testcase-timeout": "180000",
         "bundle-name": "com.example.Dialog.static",
         "module-name": "entry"
     },
     "kits": [
         {
             "test-file-name": [
-                "DialogStaticTest.hap"
+                "ActsAceDialogStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

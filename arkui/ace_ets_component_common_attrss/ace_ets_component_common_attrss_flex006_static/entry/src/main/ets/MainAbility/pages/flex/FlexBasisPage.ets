@@ -45,7 +45,6 @@ import {
   Rating,
   ScrollBar,
   Scroller,
-  Stepper,
   Search,
   Select,
   Slider,
@@ -90,7 +89,6 @@ import {
   MenuItem,
   ProgressType,
   BarState,
-  StepperItem,
   SliderStyle,
   Axis,
   ToggleType,
@@ -137,8 +135,7 @@ struct FlexBasisPage {
   @State targetHeight: number = 0
 
   onPageShow() {
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     AppStorage.setOrCreate('_flexBasis', routerParamOptions.view.testValue.setValue.flexBasis)
     console.info('xxxyyybbb: [FlexBasis] page show called ' + JSON.stringify(routerParamOptions))
     this.targetView = routerParamOptions.view.targetView ?? ''
@@ -219,14 +216,6 @@ struct FlexBasisPage {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text().width(20).height(20).borderRadius(10)
       }.width(20).applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem() {
-          Column() {
-            Text('Page One')
-          }
-        }
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Search') {
       Search({ placeholder: 'Type to search...' })
         .searchButton('SEARCH')

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
-  FontWeight,Axis,Margin,Swiper,ForEach,Slider,$rawfile, SliderStyle, ImageFit,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
+  FontWeight,Axis,Margin,Swiper,ForEach,Slider,$rawfile, SliderStyle, ImageFit,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -29,6 +29,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -90,7 +91,7 @@ struct PageRouteExample {
       let eventData: events_emitter.EventData = {
         data: {
           "value": this.state,
-        } as Record<String,undefined|null|Object>
+        } as Record<String,RecordData>
       }
       let eventt: events_emitter.InnerEvent = {
         eventId: 10,

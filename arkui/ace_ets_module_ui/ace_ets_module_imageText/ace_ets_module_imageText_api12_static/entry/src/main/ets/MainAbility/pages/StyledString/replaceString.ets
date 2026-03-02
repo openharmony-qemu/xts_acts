@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -127,8 +127,8 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.replaceString(20, 100, '789');
           }
-          catch (e:Error) {
-            this.text = e.code + ' ';
+          catch (e) {
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -139,8 +139,8 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.insertString(100, '789');
           }
-          catch (e:Error) {
-            this.text = e.code + ' ';
+          catch (e) {
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -151,8 +151,8 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.removeString(100, 100);
           }
-          catch (e:Error) {
-            this.text = e.code + ' ';
+          catch (e) {
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -168,8 +168,8 @@ struct getStylesDemo {
               styledValue: new TextStyle({ fontColor: Color.Blue })
             });
           }
-          catch (e:Error) {
-            this.text = e.code + ' ';
+          catch (e) {
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -185,8 +185,8 @@ struct getStylesDemo {
               styledValue: new TextStyle({ fontColor: Color.Blue })
             })
           }
-          catch (e:Error) {
-            this.text = e.code + ' ';
+          catch (e) {
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -197,8 +197,8 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.removeStyle(100, 1, StyledStringKey.DECORATION)
           }
-          catch (e:Error) {
-            this.text = e.code + ' ';
+          catch (e) {
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -209,8 +209,8 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.removeStyles(100, 1)
           }
-          catch (e:Error) {
-            this.text = e.code + ' ';
+          catch (e) {
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -226,8 +226,8 @@ struct getStylesDemo {
               styledValue: new TextStyle({fontColor: Color.Blue})
             }]))
           }
-          catch (e:Error) {
-            this.text = e.code + ' ';
+          catch (e) {
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -238,8 +238,8 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.insertStyledString(100, new StyledString('A'))
           }
-          catch (e:Error) {
-            this.text = e.code + ' ';
+          catch (e) {
+            this.text = e.code + '';
           }
         })
         .height('5%')

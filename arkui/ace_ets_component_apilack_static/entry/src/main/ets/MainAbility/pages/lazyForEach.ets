@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,6 +42,7 @@ import {
   TextOverflow
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = []
@@ -236,7 +237,7 @@ struct LazyForEachOnDataAdd {
                   try {
                     this.data.pushData('/path/image' + this.data.totalCount())
                     console.info("this.data.totalCount() is :" + this.data.totalCount())
-                  } catch (err: Error) {
+                  } catch (err) {
                     this.result_101 = false
                     console.info("LazyForEachOnDataAdd_101 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
@@ -246,7 +247,7 @@ struct LazyForEachOnDataAdd {
                     let backData1: events_emitter.EventData = {
                       data: {
                         "result1": this.result_101,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let backEvent1: events_emitter.InnerEvent = {
                       eventId: 60212,
@@ -254,7 +255,7 @@ struct LazyForEachOnDataAdd {
                     }
                     console.info("LazyForEachOnDataAdd_101 onClick start to emit action")
                     events_emitter.emit(backEvent1, backData1)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("LazyForEachOnDataAdd_101 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
@@ -288,7 +289,7 @@ struct LazyForEachOnDataAdd {
                 .onClick((e: ClickEvent) => {
                   try {
                     this.data.moveData(3, 1)
-                  } catch (err: Error) {
+                  } catch (err) {
                     this.result_102 = false
                     console.info("LazyForEachOnDataAdd_102 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
@@ -298,7 +299,7 @@ struct LazyForEachOnDataAdd {
                     let backData2: events_emitter.EventData = {
                       data: {
                         "result2": this.result_102,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let backEvent2: events_emitter.InnerEvent = {
                       eventId: 60213,
@@ -306,7 +307,7 @@ struct LazyForEachOnDataAdd {
                     }
                     console.info("LazyForEachOnDataAdd_102 onClick start to emit action")
                     events_emitter.emit(backEvent2, backData2)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("LazyForEachOnDataAdd_102 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
@@ -340,7 +341,7 @@ struct LazyForEachOnDataAdd {
                 .onClick((e: ClickEvent) => {
                   try {
                     this.data.popData()
-                  } catch (err: Error) {
+                  } catch (err) {
                     this.result_103 = false
                     console.info("LazyForEachOnDataAdd_103 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
@@ -350,7 +351,7 @@ struct LazyForEachOnDataAdd {
                     let backData3: events_emitter.EventData = {
                       data: {
                         "result3": this.result_103,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let backEvent3: events_emitter.InnerEvent = {
                       eventId: 60214,
@@ -358,7 +359,7 @@ struct LazyForEachOnDataAdd {
                     }
                     console.info("LazyForEachOnDataAdd_103 onClick start to emit action")
                     events_emitter.emit(backEvent3, backData3)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("LazyForEachOnDataAdd_103 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
@@ -393,7 +394,7 @@ struct LazyForEachOnDataAdd {
                 .onClick((e: ClickEvent) => {
                   try {
                     this.data.changeData(2)
-                  } catch (err: Error) {
+                  } catch (err) {
                     this.result_104 = false
                     console.info("LazyForEachOnDataAdd_104 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
@@ -403,7 +404,7 @@ struct LazyForEachOnDataAdd {
                     let backData4: events_emitter.EventData = {
                       data: {
                         "result4": this.result_104,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let backEvent4: events_emitter.InnerEvent = {
                       eventId: 60215,
@@ -411,7 +412,7 @@ struct LazyForEachOnDataAdd {
                     }
                     console.info("LazyForEachOnDataAdd_104 onClick start to emit action")
                     events_emitter.emit(backEvent4, backData4)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("LazyForEachOnDataAdd_104 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }

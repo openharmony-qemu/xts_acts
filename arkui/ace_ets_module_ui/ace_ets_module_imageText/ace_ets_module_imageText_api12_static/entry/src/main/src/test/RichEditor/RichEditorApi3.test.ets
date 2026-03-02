@@ -48,7 +48,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorApi3() {
   describe('RichEditorApi3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -62,7 +62,7 @@ export default function RichEditorApi3() {
         defaultRouter.clear();
         let pages:router.RouterState = defaultRouter.getState();
         console.info("get RichEditorApi3 state pages:" + JSON.stringify(pages));
-        if (!("List_SpaceChange" == pages.name)) {
+        if (!("RichEditorApi3" == pages.name)) {
           console.info("get RichEditorApi3 pages.name:" + JSON.stringify(pages.name));
           defaultRouter.pushUrl(options);
           await CommonFunc.sleep(2000);

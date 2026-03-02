@@ -31,7 +31,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textAreaHeightAdaptivePolicyTest() {
   describe('textAreaHeightAdaptivePolicyTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaHeightAdaptivePolicyTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -46,7 +46,7 @@ export default function textAreaHeightAdaptivePolicyTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaHeightAdaptivePolicyTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaHeightAdaptivePolicy" == pages.name)) {
           console.info("get textAreaHeightAdaptivePolicyTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

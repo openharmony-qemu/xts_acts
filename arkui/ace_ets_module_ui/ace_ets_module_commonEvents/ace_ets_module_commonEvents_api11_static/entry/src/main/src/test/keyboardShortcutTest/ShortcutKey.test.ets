@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,6 +31,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test'
 import { KeyCode } from '@ohos.multimodalInput.keyCode'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -78,7 +79,7 @@ export default function ShortcutKeyTest() {
   const baseEvent2 = 73000
 
   describe('ShortcutKeyTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
       
@@ -123,7 +124,7 @@ it('ArkUI_Shortcut_Key_static_0100', Level.LEVEL0, async () => {
       console.info(`${SUITE} ${CASE} START`);
 
       let callback = (event: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> = event.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> = event.data as Record<String,RecordData>
         expect(data['msg']).assertEqual('Ctrl_B');
         console.info(`${SUITE} ${CASE} data.msg:` + data['msg']);
       }
@@ -151,7 +152,7 @@ it('ArkUI_Shortcut_Key_static_0200', Level.LEVEL0, async () => {
       console.info(`${SUITE} ${CASE} START`);
 
       let callback = (event: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> = event.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> = event.data as Record<String,RecordData>
         expect(data['msg']).assertEqual('Shift_1');
         console.info(`${SUITE} ${CASE} data.msg:` + data['msg']);
       }
@@ -179,7 +180,7 @@ it('ArkUI_Shortcut_Key_static_0300', Level.LEVEL0, async () => {
       console.info(`${SUITE} ${CASE} START`);
 
       let callback = (event: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> = event.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> = event.data as Record<String,RecordData>
         expect(data['msg']).assertEqual('Alt_Q');
         console.info(`${SUITE} ${CASE} data.msg:` + data['msg']);
       }
@@ -213,8 +214,8 @@ it('ArkUI_Shortcut_Key_static_0400', Level.LEVEL0, async () => {
         let item = functionKey[i]
 
         let callback = (event: emitter.EventData) => {
-          const data: Record<String, undefined | null | Object> =
-            event.data as Record<String, undefined | null | Object>
+          const data: Record<String,RecordData> =
+            event.data as Record<String,RecordData>
           expect(data['msg']).assertEqual('Ctrl_' + FunctionKey[item]);
           console.info(`${SUITE} ${CASE} data.msg:` + i + ',' + data['msg']);
           if (i == end - 1) {

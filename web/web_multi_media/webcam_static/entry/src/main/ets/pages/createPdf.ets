@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -63,7 +63,7 @@ struct WebCameraApiNoCrash {
               try {
                 this.controller.startCamera();
                 Utils.emitEvent(true, 1401)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(false, 1401)
@@ -74,7 +74,7 @@ struct WebCameraApiNoCrash {
               try {
                 this.controller.stopCamera();
                 Utils.emitEvent(true, 1402)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(false, 1402)
@@ -85,7 +85,7 @@ struct WebCameraApiNoCrash {
               try {
                 this.controller.closeCamera();
                 Utils.emitEvent(true, 1403)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(false, 1403)
@@ -97,7 +97,7 @@ struct WebCameraApiNoCrash {
                 this.controller.startCamera();
                 this.controller.closeCamera();
                 Utils.emitEvent(true, 1404)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(false, 1404)
@@ -109,7 +109,7 @@ struct WebCameraApiNoCrash {
                 this.controller.startCamera();
                 this.controller.stopCamera();
                 Utils.emitEvent(true, 1405)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(false, 1405)
@@ -122,7 +122,7 @@ struct WebCameraApiNoCrash {
                 this.controller.stopCamera();
                 this.controller.closeCamera();
                 Utils.emitEvent(true, 1406)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(false, 1406)
@@ -135,7 +135,7 @@ struct WebCameraApiNoCrash {
                 this.controller.closeCamera();
                 this.controller.stopCamera();
                 Utils.emitEvent(true, 1407)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(false, 1407)
@@ -147,7 +147,7 @@ struct WebCameraApiNoCrash {
                 this.controller.startCamera();
                 this.controllerTwo.startCamera();
                 Utils.emitEvent(true, 1408)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(false, 1408)
@@ -161,7 +161,7 @@ struct WebCameraApiNoCrash {
                 this.controllerTwo.startCamera();
                 this.controllerTwo.stopCamera();
                 Utils.emitEvent(true, 1409)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(false, 1409)
@@ -175,7 +175,7 @@ struct WebCameraApiNoCrash {
                 this.controllerTwo.startCamera();
                 this.controllerTwo.closeCamera();
                 Utils.emitEvent(true, 1410)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(false, 1410)

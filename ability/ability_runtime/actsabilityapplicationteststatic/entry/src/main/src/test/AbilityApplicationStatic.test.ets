@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ export default function AbilityApplicationStaticTest() {
           expect(typeof (applicationContext.resourceDir) == 'string').assertTrue();
           hilog.info(domain, tag, `${caseName} end.`)
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.error(domain, tag, `${caseName} fail.`);
           expect().assertFail();
           done();
@@ -75,13 +75,14 @@ export default function AbilityApplicationStaticTest() {
           expect(application.AppPreloadType.TYPE_CREATE_PROCESS).assertEqual(1);
           expect(application.AppPreloadType.TYPE_CREATE_ABILITY_STAGE).assertEqual(2);
           expect(application.AppPreloadType.TYPE_CREATE_WINDOW_STAGE).assertEqual(3);
+          expect(application.AppPreloadType.TYPE_CREATE_BACKGROUND_ABILITY).assertEqual(4);
           expect(Type === application.AppPreloadType.TYPE_CREATE_PROCESS).assertFalse();
           expect(Type === application.AppPreloadType.TYPE_CREATE_ABILITY_STAGE).assertFalse();
           expect(Type === application.AppPreloadType.TYPE_CREATE_WINDOW_STAGE).assertFalse();
           expect(Type).assertEqual(application.AppPreloadType.UNSPECIFIED);
           hilog.info(domain, tag, `${caseName} end.`)
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.error(domain, tag, `${caseName} fail.`);
           expect().assertFail();
           done();

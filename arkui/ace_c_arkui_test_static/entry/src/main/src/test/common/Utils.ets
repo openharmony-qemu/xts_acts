@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,6 +24,7 @@ import RectValue from './Rect'
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static async sleep(count: int): Promise<int> {
@@ -99,7 +100,7 @@ export default class Utils {
     await (component?.click() as Promise<void>);
   }
 
-  static async pushPageByParams(pageTag: string, params: jsonx.JsonElement, done?: () => void) {
+  static async pushPageByParams(pageTag: string, params: object, done?: () => void) {
     let options: router.RouterOptions = {
       url: `pages/${pageTag}`,
       params: params
@@ -190,7 +191,7 @@ export default class Utils {
       priority: events_emitter.EventPriority.LOW
     } as events_emitter.InnerEvent, (eventData: events_emitter.EventData) => {
       console.info("Value Change CallBack");
-      const data = eventData!.data as Record<string, undefined | null | Object>
+      const data = eventData!.data as Record<String,RecordData>
       if (eventData != null && data != null) {
         if (pageTag == data['PAGE_TAG'] as string) {
           console.info("CallBack value:" + JSON.stringify(eventData));
@@ -207,7 +208,7 @@ export default class Utils {
         data: {
           "PAGE_TAG": pageTag,
           "VALUE": emitValue
-        } as Record<string, undefined | null | Object>
+        } as Record<String,RecordData>
       }
       let backEvent: events_emitter.InnerEvent = {
         eventId: eventId,

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,20 +43,25 @@ export const colorValuesKey: string = 'ColorValues';
 @Component
 struct Index {
   @State message: string = 'XTS Tests';
+  isSetColorValues: boolean = false
 
-  aboutToAppear() {
+  onPageShow() {
+    console.log('test : colorValues index  ' + 'on page show')
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
       AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
-      let colorValues: Map<string, undefined | string> = new Map<string, undefined | string>();
-      Colors.colors.forEach((_item, key) => {
-        const resourceJson: string = inspector.getInspectorByKey(`${key}${colorsForCheck}`);
-        const checkColor = JSON.parseJsonElement(resourceJson).getElement('$attrs').getString('backgroundColor');
-        colorValues.set(key, checkColor?.toString().toUpperCase());
-      });
-      AppStorage.setOrCreate<Map<string, undefined | string>>(colorValuesKey, colorValues);
-    } catch (error: Error) {
+      if (!this.isSetColorValues) {
+        let colorValues: Map<string, undefined | string> = new Map<string, undefined | string>();
+        Colors.colors.forEach((_item: string, key: string) => {
+          const resourceJson: string = inspector.getInspectorByKey(`${key}${colorsForCheck}`);
+          const checkColor = JSON.parseJsonElement(resourceJson).getElement('$attrs').getString('backgroundColor');
+          colorValues.set(key, checkColor?.toString().toUpperCase());
+        });
+        AppStorage.setOrCreate<Map<string, undefined | string>>(colorValuesKey, colorValues);
+        this.isSetColorValues = true
+      }
+    } catch (error) {
       console.log('error ' + error);
     }
   }

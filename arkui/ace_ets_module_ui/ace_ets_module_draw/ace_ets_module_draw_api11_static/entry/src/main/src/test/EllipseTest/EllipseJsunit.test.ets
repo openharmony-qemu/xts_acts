@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { startAbility, stopApplication, UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -44,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ellipseJsunit() {
   describe('ellipseTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
 
@@ -67,7 +68,8 @@ export default function ellipseJsunit() {
           await CommonFunc.sleep(2000);
           // console.info("push ellipse page result:" + JSON.stringify(result));
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push ellipse page error:" + err);
       }
     });
@@ -108,7 +110,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "width": '100px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 92,
@@ -116,7 +118,8 @@ export default function ellipseJsunit() {
         } as emitter.InnerEvent
         console.info("[testEllipse_static_02] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -140,7 +143,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "height": '500px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 92,
@@ -148,7 +151,8 @@ export default function ellipseJsunit() {
         } as emitter.InnerEvent
         console.info("[testEllipse_static_03] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse_static_03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -172,7 +176,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "width": '1111111111111.00px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 907,
@@ -180,7 +184,8 @@ export default function ellipseJsunit() {
         } as emitter.InnerEvent
         console.info("[testEllipse_static_04] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -204,7 +209,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "height": '12111111111111.00px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 907,
@@ -212,7 +217,8 @@ export default function ellipseJsunit() {
         } as emitter.InnerEvent
         console.info("[testEllipse_static_05] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -237,7 +243,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "height": '-40.00px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 908,
@@ -245,7 +251,8 @@ export default function ellipseJsunit() {
         } as emitter.InnerEvent
         console.info("[testEllipse_static_06] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -269,7 +276,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "width": '-10.00px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 908,
@@ -277,7 +284,8 @@ export default function ellipseJsunit() {
         } as emitter.InnerEvent
         console.info("[testEllipse07_static] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse07_static] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

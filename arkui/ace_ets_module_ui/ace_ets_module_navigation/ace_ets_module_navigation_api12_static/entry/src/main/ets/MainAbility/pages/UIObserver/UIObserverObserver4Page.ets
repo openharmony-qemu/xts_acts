@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -42,9 +42,9 @@ struct PageOne {
 
 export function callBackFuncOn(info: uiObserver.NavDestinationSwitchInfo) {
   console.info(`testTag navDestinationSwitchOn from: ${JSON.stringify(info.from)} to: ${JSON.stringify(info.to)}`)
-  let count: number | undefined = AppStorage.get('UIObserverObserver4Page_callBackFuncOnCount');
-  count = Number(count) + 1;
-  AppStorage.setOrCreate<number>('UIObserverObserver4Page_callBackFuncOnCount', count)
+  let count: int = AppStorage.get<int>('UIObserverObserver4Page_callBackFuncOnCount') ?? 0;
+  count = count + 1;
+  AppStorage.setOrCreate<int>('UIObserverObserver4Page_callBackFuncOnCount', count)
 }
 
 @Entry
@@ -52,6 +52,7 @@ export function callBackFuncOn(info: uiObserver.NavDestinationSwitchInfo) {
 struct UIObserverObserver4Page {
   private stack: NavPathStack = new NavPathStack();
   @State firstTime:boolean = false
+
   @Builder
   PageBuilder(name: string) {
     PageOne()
@@ -59,8 +60,8 @@ struct UIObserverObserver4Page {
 
   aboutToAppear() {
     if (this.firstTime == false) {
-        uiObserver.onNavDestinationSwitch( this.getUIContext(), { navigationId: 'myNavId' }, callBackFuncOn) //页面加载失败 sdk11.5
-        this.firstTime = true
+      uiObserver.onNavDestinationSwitch( this.getUIContext(), { navigationId: 'myNavId' }, callBackFuncOn) //页面加载失败 sdk11.5
+      this.firstTime = true
     }
   }
 
@@ -82,9 +83,7 @@ struct UIObserverObserver4Page {
       }
       .id('myNavId')
       .title('Navigation')
-      .navDestination(()=>{
-        this.PageBuilder('')
-      })
+      .navDestination(this.PageBuilder)
       .mode(NavigationMode.Stack)
     }
     .width('100%')

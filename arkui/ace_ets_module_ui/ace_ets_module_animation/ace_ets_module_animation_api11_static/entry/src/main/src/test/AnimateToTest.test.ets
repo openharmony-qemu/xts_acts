@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../test/Util.test'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -84,7 +85,7 @@ const waitUiReadyMs = 1000;
 export default function animateToTest() {
   describe('animateToTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
     });
@@ -132,7 +133,7 @@ it('animateToTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_0100 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['duration'] == 100).assertTrue();
+          expect((indexEvent.data as Record<String,RecordData>)['duration'] == 100).assertTrue();
         } catch (err) {
           console.info("animateToTest_static_0100 get state result is err: " + JSON.stringify(err));
         }
@@ -163,7 +164,7 @@ it('animateToTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       }
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_0200 get state result is: " + JSON.stringify(indexEvent))
-        expect((indexEvent.data as Record<String, undefined | null | Object>)['curve']).assertEqual('Ease');
+        expect((indexEvent.data as Record<String,RecordData>)['curve']).assertEqual('Ease');
         console.info('animateToTest_static_0200 END');
         done();
       }
@@ -193,7 +194,7 @@ it('animateToTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_0300 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['iterations'] == 1).assertTrue();
+          expect((indexEvent.data as Record<String,RecordData>)['iterations'] == 1).assertTrue();
         } catch (err) {
           console.info("animateToTest_static_0300 get state result err is: " + JSON.stringify(err))
         }
@@ -224,7 +225,7 @@ it('animateToTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       } as emitter.InnerEvent
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_0400 get state result is: " + JSON.stringify(indexEvent))
-        expect((indexEvent.data as Record<String, undefined | null | Object>)['tempo']).assertEqual(1000);
+        expect((indexEvent.data as Record<String,RecordData>)['tempo']).assertEqual(1000);
         console.info('animateToTest_static_0400 END');
         done();
       }
@@ -252,7 +253,7 @@ it('animateToTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
       } as emitter.InnerEvent
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_0500 get state result is: " + JSON.stringify(indexEvent))
-        expect((indexEvent.data as Record<String, undefined | null | Object>)['playmode']).assertEqual(PlayMode.Normal);
+        expect((indexEvent.data as Record<String,RecordData>)['playmode']).assertEqual(PlayMode.Normal);
         console.info('animateToTest_static_0500 END');
         done();
       }
@@ -292,7 +293,7 @@ it('animateToTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_0600 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['duration'] == 2000).assertTrue();
+          expect((indexEvent.data as Record<String,RecordData>)['duration'] == 2000).assertTrue();
         } catch (err) {
           console.info("animateToTest_static_0600 get state result err is: " + JSON.stringify(err));
         }
@@ -336,7 +337,7 @@ it('animateToTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_0700 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['curve']).assertEqual('Linear');
+          expect((indexEvent.data as Record<String,RecordData>)['curve']).assertEqual('Linear');
         } catch (err) {
           console.info("animateToTest_static_0700 get state result err is: " + JSON.stringify(err))
         }
@@ -381,7 +382,7 @@ it('animateToTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_0800 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['iterations']).assertEqual(2);
+          expect((indexEvent.data as Record<String,RecordData>)['iterations']).assertEqual(2);
         } catch (err) {
           console.info("animateToTest_static_0800 get state result err is: " + JSON.stringify(err))
         }
@@ -425,7 +426,7 @@ it('animateToTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_0900 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['tempo']).assertEqual(20000);
+          expect((indexEvent.data as Record<String,RecordData>)['tempo']).assertEqual(20000);
         } catch (err) {
           console.info("animateToTest_static_0900 get state result err is: " + JSON.stringify(err))
         }
@@ -469,7 +470,7 @@ it('animateToTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_1000 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['playmode'])
+          expect((indexEvent.data as Record<String,RecordData>)['playmode'])
             .assertEqual(PlayMode.Alternate);
         } catch (err) {
           console.info("animateToTest_static_1000 get state result err is: " + JSON.stringify(err))
@@ -514,7 +515,7 @@ it('animateToTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_1100 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['duration']).assertEqual(-1000);
+          expect((indexEvent.data as Record<String,RecordData>)['duration']).assertEqual(-1000);
         } catch (err) {
           console.info("animateToTest_static_1100 get state result err is: " + JSON.stringify(err))
         }
@@ -560,7 +561,7 @@ it('animateToTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_1200 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['duration']).assertEqual(100000000);
+          expect((indexEvent.data as Record<String,RecordData>)['duration']).assertEqual(100000000);
         } catch (err) {
           console.info("animateToTest_static_1200 get state result err is: " + JSON.stringify(err))
         }
@@ -605,7 +606,7 @@ it('animateToTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_1300 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['curve']).assertEqual('123');
+          expect((indexEvent.data as Record<String,RecordData>)['curve']).assertEqual('123');
         } catch (err) {
           console.info("animateToTest_static_1300 get state result err is: " + JSON.stringify(err))
         }
@@ -649,7 +650,7 @@ it('animateToTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_1400 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['curve']).assertEqual('abc');
+          expect((indexEvent.data as Record<String,RecordData>)['curve']).assertEqual('abc');
         } catch (err) {
           console.info("animateToTest_static_1400 get state result err is: " + JSON.stringify(err))
         }
@@ -694,7 +695,7 @@ it('animateToTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_1500 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['iteration']).assertEqual(121);
+          expect((indexEvent.data as Record<String,RecordData>)['iteration']).assertEqual(121);
         } catch (err) {
           console.info("animateToTest_static_1500 get state result err is: " + JSON.stringify(err))
         }
@@ -738,7 +739,7 @@ it('animateToTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_1600 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['iteration']).assertEqual(-5);
+          expect((indexEvent.data as Record<String,RecordData>)['iteration']).assertEqual(-5);
         } catch (err) {
           console.info("animateToTest_static_1600 get state result err is: " + JSON.stringify(err))
         }
@@ -782,7 +783,7 @@ it('animateToTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_1700 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['tempo']).assertEqual(12121212121212);
+          expect((indexEvent.data as Record<String,RecordData>)['tempo']).assertEqual(12121212121212);
         } catch (err) {
           console.info("animateToTest_static_1700 get state result err is: " + JSON.stringify(err))
         }
@@ -826,7 +827,7 @@ it('animateToTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_1800 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['tempo']).assertEqual(-5);
+          expect((indexEvent.data as Record<String,RecordData>)['tempo']).assertEqual(-5);
         } catch (err) {
           console.info("animateToTest_static_1800 get state result err is: " + JSON.stringify(err))
         }
@@ -870,7 +871,7 @@ it('animateToTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_1900 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['playmode']).assertEqual(-6);
+          expect((indexEvent.data as Record<String,RecordData>)['playmode']).assertEqual(-6);
         } catch (err) {
           console.info("animateToTest_static_1900 get state result err is: " + JSON.stringify(err))
         }
@@ -914,7 +915,7 @@ it('animateToTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_2000 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['playmode']).assertEqual(123456);
+          expect((indexEvent.data as Record<String,RecordData>)['playmode']).assertEqual(123456);
         } catch (err) {
           console.info("animateToTest_static_2000 get state result err is: " + JSON.stringify(err));
         }
@@ -947,7 +948,7 @@ it('animateToTest_static_2100', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_2100 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['finishCallbackType'])
+          expect((indexEvent.data as Record<String,RecordData>)['finishCallbackType'])
             .assertEqual(FinishCallbackType.REMOVED);
         } catch (err) {
           console.info("animateToTest_static_2100 get state result err is: " + JSON.stringify(err));
@@ -979,7 +980,7 @@ it('animateToTest_static_2200', Level.LEVEL0, async (done: () => void): Promise<
       } as emitter.InnerEvent
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_2200 get state result is: " + JSON.stringify(indexEvent))
-        expect((indexEvent.data as Record<String, undefined | null | Object>)['finishCallbackType'])
+        expect((indexEvent.data as Record<String,RecordData>)['finishCallbackType'])
           .assertEqual(FinishCallbackType.REMOVED);
         console.info('animateToTest_static_2200 END');
         done();
@@ -1021,7 +1022,7 @@ it('animateToTest_static_2300', Level.LEVEL0, async (done: () => void): Promise<
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animateToTest_static_2300 get state result is: " + JSON.stringify(indexEvent))
         try {
-          expect((indexEvent.data as Record<String, undefined | null | Object>)['finishCallbackType'])
+          expect((indexEvent.data as Record<String,RecordData>)['finishCallbackType'])
             .assertEqual(FinishCallbackType.LOGICALLY);
         } catch (err) {
           console.info("animateToTest_static_2300 get state result err is: " + JSON.stringify(err));

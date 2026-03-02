@@ -20,11 +20,11 @@ import { AnimatorResult, AnimatorOptions} from '@ohos.animator';
 import { RouterParams } from '../../common/Utils';
 import {TextTimerController,TabContent,FlowItem,ColumnOptions,SideBarContainerType,HorizontalAlign,VerticalAlign,AlignRuleOption,
   BadgeParam,BadgeStyle,GridColColumnOption,GridColOptions,GridItem,GridCol,GridRowDirection,MenuItemGroup,
-  ToggleType,TimePicker,StepperItem,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,
+  ToggleType,TimePicker,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,
   MenuItemOptions,MenuItem,$r,Entry,Column,Component,Button,ClickEvent,ForEach,Text,Row,List,ListItem,Color,FlexAlign,ExpectedFrameRateRange,Scroll,Margin,
 // Styles,Navigator,
   CommonMethod, applyStyles,
-  AlphabetIndexer,Blank,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,ScrollDirection,Search,Select,Slider,Stepper,
+  AlphabetIndexer,Blank,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,ScrollDirection,Search,Select,Slider,
   TextArea,TextClock,ImageFit,TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,ColumnSplit,Counter,GridRow,Grid,Refresh,RelativeContainer,RowSplit,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,DataPanelType
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
@@ -60,8 +60,7 @@ struct AspectRatioWidthPage {
   private src: string = 'Running Marquee starts rolling A B C D E F G H I J'; //Use by Marquee QRCode
 
   onPageShow() {
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     AppStorage.setOrCreate<number>('_aspectRatio',  routerParamOptions.view.testValue.setValue.aspectRatio)
     AppStorage.setOrCreate<number>('_width',  routerParamOptions.view.testValue.setValue.width as number)
     this.targetView = routerParamOptions.view.targetView
@@ -220,16 +219,6 @@ struct AspectRatioWidthPage {
           .backgroundColor(Color.Pink)
           .applyStyles(this.commonStyle)
 
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem()
-        }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
-
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem().backgroundColor(Color.Pink).applyStyles(this.commonStyle)
-
-        }
       } else if (this.targetView == 'Text') {
         Text('text')
           .fontSize(15)

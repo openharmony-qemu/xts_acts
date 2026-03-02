@@ -20,6 +20,7 @@ import ohosWindow from '@ohos.window';
 import { Driver, ON } from '@ohos.UiTest';
 import settings from '@ohos.settings';
 import display from '@ohos.display';
+import deviceInfo from '@ohos.deviceInfo';
 
 function createSysSubWindow(context: common.UIAbilityContext, caseName: string): Promise<window.Window> {
   let config: window.Configuration = {
@@ -89,6 +90,8 @@ export default function windowManageTest() {
     let isPCStatus: string = '';
     let isAutoWindow: string = '';
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -152,7 +155,7 @@ export default function windowManageTest() {
       let displayId = display.getDefaultDisplaySync().id;
       let width = display.getDefaultDisplaySync().width;
       let height = display.getDefaultDisplaySync().height;
-      if(isPCStatus != ''){
+      if(deviceType === '2in1'){
         try{
           await mainWindowClass.minimize();
           await sleep(1000);
@@ -662,7 +665,7 @@ export default function windowManageTest() {
       try {
         windowClass.setWindowTopmost(false).then(() => {
           console.info(`${caseName} Succeeded in setting the window to be top most.`);
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the window to be top most. Cause code: ${err.code}, message: ${err.message}`);
@@ -698,7 +701,7 @@ export default function windowManageTest() {
       try {
         windowClass.setWindowTopmost(true).then(async () => {
           console.info(`${caseName} Succeeded in setting the window to be top most.`);
-          expect(true).assertTrue();
+          
           await windowClass.setWindowTopmost(false)
           await subWindowClass.destroyWindow();
           done();
@@ -768,16 +771,28 @@ export default function windowManageTest() {
     it('testSetWindowMaximizeButtonVisible', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>  {
       let caseName = 'TestSetWindowMaximizeButtonVisible';
       try {
+        let count:boolean = false;
         windowClass.setWindowTitleButtonVisible(false, false);
         console.info(`${caseName} Succeeded in setting false to display the maximize buttons of main window.`);
         await sleep(1000);
         windowClass.on('windowTitleButtonRectChange', (titleButtonRect) => {
           console.info(`${caseName} Succeeded in enabling the listener for window title buttons area changes. Data: ` + JSON.stringify(titleButtonRect));
-          windowClass.off('windowTitleButtonRectChange');
-          done();
+          count = true;
+          console.info(`${caseName} windowTitleButtonRectChange count: `+ count);
         });
         windowClass.setWindowTitleButtonVisible(true, true);
         console.info(`${caseName} Succeeded in setting true to display the maximize buttons of main window.`);
+        await sleep(1000);
+        console.info(`${caseName}  count: `+ count);
+        if(isFreeWindowMode){
+          expect(count).assertEqual(true);
+          windowClass.off('windowTitleButtonRectChange');
+          done();
+        }else{
+          expect(count).assertEqual(false);
+          windowClass.off('windowTitleButtonRectChange');
+          done();
+        }
       } catch (exception) {
         if (exception.code === 801) {
           console.info(`${caseName} The current device type does not support to set whether to display the maximize buttons of main window.`);

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,6 +68,7 @@ import {
 import { Environment } from 'arkui.stateManagement.storage.environment';
 import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -154,7 +155,7 @@ struct NavigationExample {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.hideBar,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 1366,
@@ -162,7 +163,7 @@ struct NavigationExample {
             }
             console.info("navigationContent1 start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("navigationContent1 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -206,7 +207,7 @@ struct NavigationExample {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info("tabs page state change called:" + JSON.stringify(eventData));
       if (data['vertical'] != null) {
         this.titleMode = data['vertical'] as NavigationTitleMode;

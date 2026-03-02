@@ -21,7 +21,7 @@ import Utils from '../Util.test';
 
 export default function Uri_Emoji() {
   describe('Uri_Emoji', (): void => {
-      afterEach(() => {
+      afterEach(async (): Promise<void> => {
         await Utils.msSleep(20);
       })
     /**

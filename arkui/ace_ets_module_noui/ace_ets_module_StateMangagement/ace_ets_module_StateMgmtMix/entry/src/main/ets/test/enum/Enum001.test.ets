@@ -77,9 +77,8 @@ export default function Enum001() {
       expect(CustomComponentLifecycleState.INIT).assertEqual(0);
       expect(CustomComponentLifecycleState.APPEARED).assertEqual(1);
       expect(CustomComponentLifecycleState.BUILT).assertEqual(2);
-      expect(CustomComponentLifecycleState.MOUNTED).assertEqual(3);
-      expect(CustomComponentLifecycleState.RECYCLED).assertEqual(4);
-      expect(CustomComponentLifecycleState.DISAPPEARED).assertEqual(5);
+      expect(CustomComponentLifecycleState.RECYCLED).assertEqual(3);
+      expect(CustomComponentLifecycleState.DISAPPEARED).assertEqual(4);
       await CommonFunc.sleep(1000);
       console.info('[Enum001_003] END');
       done();

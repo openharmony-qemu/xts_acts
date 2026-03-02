@@ -52,7 +52,7 @@ class Temp1 {
 
 export default function LinkedListTest1() {
   describe('linkedListTest1', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -71,9 +71,6 @@ export default function LinkedListTest1() {
         Object>();
         linkList.add("zhang san");
         linkList.add(1);
-        // linkList.add({
-        //   age: 10, name: "zhang"
-        // });
         linkList.add(new Temp(10, "zhang"));
         linkList.add(undefined);
         linkList.add(null);
@@ -250,9 +247,6 @@ export default function LinkedListTest1() {
         Object>();
         linkList.add("zhang san");
         linkList.add(1);
-        // let temp: Temp = {
-        //   age: 10, name: "zhang"
-        // };
         let temp: Temp = new Temp(10, "zhang");
         linkList.add(temp);
         linkList.add(undefined);
@@ -294,9 +288,6 @@ export default function LinkedListTest1() {
         Object>();
         linkList.add("zhang san");
         linkList.add(1);
-        // let temp: Temp = {
-        //   age: 10, name: "zhang"
-        // };
         let temp: Temp = new Temp(10, "zhang");
         linkList.add(temp);
         linkList.add(undefined);
@@ -784,156 +775,6 @@ export default function LinkedListTest1() {
       }
     });
 
-    /**
-     * @tc.name   testLinkedListSet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0100
-     * @tc.desc   Testing LinkedList set linkList and update data
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLinkedListSet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListSet0001';
-    //   try {
-    //
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.add("zhang san");
-    //     linkList.add(1);
-    //     let param: Temp = {
-    //       age: 10, name: "zhang"
-    //     };
-    //     linkList.add(param);
-    //     linkList.add(undefined);
-    //     linkList.add(null);
-    //     linkList.add(true);
-    //     linkList.add([0, 1, 2, undefined]);
-    //
-    //     linkList.forEach((value, index: number) => {
-    //       expect(String(linkList.set(Math.floor(index ?? 0), "li si") != undefined)).assertEqual('true');
-    //     })
-    //     console.log(`${JSON.stringify(linkList)}`);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLinkedListSet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0200
-     * @tc.desc   Testing LinkedList set getIndexOf->set->removeByIndex
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLinkedListSet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListSet0002';
-    //   try {
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.add("zhang san");
-    //     linkList.add(1);
-    //     let param: Temp = {
-    //       age: 10, name: "zhang"
-    //     };
-    //     linkList.add(param);
-    //     linkList.add(undefined);
-    //     linkList.add(null);
-    //     linkList.add(true);
-    //     linkList.add([0, 1, 2, undefined]);
-    //
-    //     let index = linkList.getIndexOf(param);
-    //     let setParam = linkList.set(Math.floor(index), "li si");
-    //     let removeParam = linkList.removeByIndex(Math.floor(index));
-    //     expect(String(setParam == removeParam)).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLinkedListSet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0300
-     * @tc.desc   Testing LinkedList set get->set->has
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLinkedListSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListSet0003';
-    //   try {
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.add("zhang san");
-    //     linkList.add(1);
-    //     let param: Temp = {
-    //       age: 10, name: "zhang"
-    //     };
-    //     linkList.add(param);
-    //     linkList.add(undefined);
-    //     linkList.add(null);
-    //     linkList.add(true);
-    //     linkList.add([0, 1, 2, undefined]);
-    //
-    //     let index = linkList.getIndexOf(param);
-    //     let setParam = linkList.set(Math.floor(index), "li si");
-    //     expect(String(linkList.has(setParam))).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.name   testLinkedListSet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0400
-     * @tc.desc   Testing LinkedList set set->convertToArray->instanceof
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testLinkedListSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListSet0004';
-    //   try {
-    //     class Temp1 {
-    //       age: number = 0
-    //       name: string = ""
-    //
-    //       constructor(age: number, name: string) {
-    //         this.age = age;
-    //         this.name = name;
-    //       }
-    //     }
-    //
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.add("zhang san");
-    //     linkList.add(1);
-    //     let param: Temp1 = new Temp1(10, "zhang");
-    //     linkList.add(param);
-    //     linkList.add(undefined);
-    //     linkList.add(null);
-    //     linkList.add(true);
-    //     linkList.add([0, 1, 2, undefined]);
-    //
-    //     linkList.forEach((value, index) => {
-    //       linkList.set(Math.floor(index ?? 0), new Temp1(index, "zhang " + index));
-    //     })
-    //     let array = linkList.convertToArray();
-    //     array.forEach((value) => {
-    //       expect(String(value instanceof Temp1)).assertEqual('true');
-    //     })
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testLinkedListSet0005

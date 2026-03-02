@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,12 +57,12 @@ export default function ActsShortTimeTaskManagerStaticTest() {
             hilog.info(DOMAIN, TAG, '%{public}s',
               'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001 cancelSuspendDelay success');
             done();
-            } catch (error: BusinessError) {
+            } catch (error) {
             hilog.info(DOMAIN, TAG,
               'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001 requestSuspendDelay failed. code is: %{public}s' +
               JSON.stringify(error));
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001 aa error: %{public}s' +
           JSON.stringify(error));
           expect(false).assertTrue();
@@ -117,12 +117,12 @@ export default function ActsShortTimeTaskManagerStaticTest() {
                   done();
                 }
               })
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(DOMAIN, TAG,
               'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_002 requestSuspendDelay failed: %{public}s',
               JSON.stringify(error));
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_002 aa error: %{public}s',
             JSON.stringify(error));
           expect(false).assertTrue();
@@ -172,12 +172,12 @@ export default function ActsShortTimeTaskManagerStaticTest() {
                 'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003 requestSuspendDelay failed: %{public}s' +
                 JSON.stringify(error));
             })
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(DOMAIN, TAG,
               'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003 requestSuspendDelay failed: %{public}s' +
               JSON.stringify(error));
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003 aa error: %{public}s',
             JSON.stringify(error));
           expect(false).assertTrue();

@@ -49,9 +49,9 @@ export default function lastExitReasonStaticTest() {
      * @tc.desc   Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_FaultManagement_Static_7900`;
       hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 begin');
       try {
@@ -86,9 +86,9 @@ export default function lastExitReasonStaticTest() {
      * @tc.desc   Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7901', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7901', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_FaultManagement_Static_7901`;
       hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7901 begin');
       try {
@@ -107,6 +107,14 @@ export default function lastExitReasonStaticTest() {
         expect(lastExitDetailInfo?.rss).assertEqual(0);
         expect(lastExitDetailInfo?.timestamp).assertEqual(0);
         expect(lastExitDetailInfo?.uid).assertEqual(-1);
+        let launchUTCTime = launchParam?.launchUTCTime;
+        if(launchUTCTime !== undefined && launchUTCTime !== null) {
+          expect(launchUTCTime > 0).assertTrue();
+        }
+        let launchUptime = launchParam?.launchUptime;
+        if(launchUptime !== undefined && launchUptime !== null) {
+          expect(launchUptime > 0).assertTrue();
+        }
         let processState = lastExitDetailInfo?.processState
         if(processState != undefined && processState != null) {
           hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7901 lastExitDetailInfo.processState: ' + processState);

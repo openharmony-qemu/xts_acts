@@ -43,7 +43,6 @@ import {
   Rating,
   ScrollBar,
   Scroller,
-  Stepper,
   Search,
   Select,
   Slider,
@@ -88,7 +87,6 @@ import {
   MenuItem,
   ProgressType,
   BarState,
-  StepperItem,
   SliderStyle,
   Axis,
   ToggleType,
@@ -135,8 +133,7 @@ struct AlignSelfPage {
   onPageShow() {
     console.info('AlignSelf page show called ')
 
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     const value = routerParamOptions.view.testValue.setValue;
     const defaultValue = value.defaultAlignItems;
 
@@ -228,14 +225,6 @@ struct AlignSelfPage {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text().width(20).height(20).borderRadius(10)
       }.width(20).applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem() {
-          Column() {
-            Text('Page One')
-          }
-        }
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Search') {
       Search({ placeholder: 'Type to search...' })
         .searchButton('SEARCH')

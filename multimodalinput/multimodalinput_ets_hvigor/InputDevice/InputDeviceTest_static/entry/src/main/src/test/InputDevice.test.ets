@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ export default function InputDeviceTest() {
           ExpectTrue(inputDevice.KeyboardType.HANDWRITING_PEN == 4);
           ExpectTrue(inputDevice.KeyboardType.REMOTE_CONTROL == 5);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -81,7 +81,7 @@ export default function InputDeviceTest() {
         try {
           ExpectTrue(inputDevice.FunctionKey.CAPS_LOCK == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -117,7 +117,8 @@ export default function InputDeviceTest() {
               }
             });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} Failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -138,38 +139,46 @@ export default function InputDeviceTest() {
         let caseName = "SUB_MMI_Input_Api_InputDevice_0400";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          inputDevice.getDeviceInfo(1).then((deviceData: inputDevice.InputDeviceData) => {
-            hilog.info(domain, tag, `${caseName} Device info: ${JSON.stringify(deviceData)}`);
-            expect(deviceData.id).assertInstanceOf('Number');
-            expect(deviceData.name).assertInstanceOf('String');
-            expect(deviceData.sources).assertInstanceOf('Array');
-            expect(deviceData.axisRanges).assertInstanceOf('Array');
-            expect(deviceData.bus).assertInstanceOf('Number');
-            expect(deviceData.product).assertInstanceOf('Number');
-            expect(deviceData.vendor).assertInstanceOf('Number');
-            expect(deviceData.version).assertInstanceOf('Number');
-            expect(deviceData.phys).assertInstanceOf('String');
-            expect(deviceData.uniq).assertInstanceOf('String');
-            expect(deviceData).assertInstanceOf('Object');
-            for (let j = 0; j < deviceData.axisRanges.length; j++) {
-              ExpectTrue(deviceData.axisRanges[j].source == 'keyboard' || deviceData.axisRanges[j].source == 'mouse'
-                || deviceData.axisRanges[j].source == 'touchpad' || deviceData.axisRanges[j].source == 'touchscreen'
-                || deviceData.axisRanges[j].source == 'joystick' || deviceData.axisRanges[j].source == 'trackball');
-              ExpectTrue(deviceData.axisRanges[j].axis == 'touchmajor' || deviceData.axisRanges[j].axis == 'touchminor'
-                || deviceData.axisRanges[j].axis == 'orientation' || deviceData.axisRanges[j].axis == 'x'
-                || deviceData.axisRanges[j].axis == 'y' || deviceData.axisRanges[j].axis == 'pressure'
-                || deviceData.axisRanges[j].axis == 'toolminor' || deviceData.axisRanges[j].axis == 'toolmajor'
-                || deviceData.axisRanges[j].axis == 'null');
-              expect(deviceData.axisRanges[j].max).assertInstanceOf('Number');
-              expect(deviceData.axisRanges[j]).assertInstanceOf('Object');
-              expect(deviceData.axisRanges[j].min).assertInstanceOf('Number');
-              expect(deviceData.axisRanges[j].fuzz).assertInstanceOf('Number');
-              expect(deviceData.axisRanges[j].flat).assertInstanceOf('Number');
-              expect(deviceData.axisRanges[j].resolution).assertInstanceOf('Number');
+          await inputDevice.getDeviceList().then((ids: Array<Int>) => {
+            hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
+            expect(ids).assertInstanceOf('Array');
+            if(ids.length > 0) {
+              await inputDevice.getDeviceInfo(ids[0]).then((deviceData: inputDevice.InputDeviceData) => {
+                hilog.info(domain, tag, `${caseName} Device info: ${JSON.stringify(deviceData)}`);
+                expect(deviceData.id).assertInstanceOf('Int');
+                expect(deviceData.name).assertInstanceOf('String');
+                expect(deviceData.sources).assertInstanceOf('Array');
+                expect(deviceData.axisRanges).assertInstanceOf('Array');
+                expect(deviceData.bus).assertInstanceOf('Int');
+                expect(deviceData.product).assertInstanceOf('Int');
+                expect(deviceData.vendor).assertInstanceOf('Int');
+                expect(deviceData.version).assertInstanceOf('Int');
+                expect(deviceData.phys).assertInstanceOf('String');
+                expect(deviceData.uniq).assertInstanceOf('String');
+                expect(deviceData).assertInstanceOf('Object');
+                for (let j = 0; j < deviceData.axisRanges.length; j++) {
+                  ExpectTrue(deviceData.axisRanges[j].source == 'keyboard' || deviceData.axisRanges[j].source == 'mouse'
+                    || deviceData.axisRanges[j].source == 'touchpad' || deviceData.axisRanges[j].source == 'touchscreen'
+                    || deviceData.axisRanges[j].source == 'joystick' || deviceData.axisRanges[j].source == 'trackball');
+                  ExpectTrue(deviceData.axisRanges[j].axis == 'touchmajor' || deviceData.axisRanges[j].axis == 'touchminor'
+                    || deviceData.axisRanges[j].axis == 'orientation' || deviceData.axisRanges[j].axis == 'x'
+                    || deviceData.axisRanges[j].axis == 'y' || deviceData.axisRanges[j].axis == 'pressure'
+                    || deviceData.axisRanges[j].axis == 'toolminor' || deviceData.axisRanges[j].axis == 'toolmajor'
+                    || deviceData.axisRanges[j].axis == 'null');
+                  expect(deviceData.axisRanges[j].max).assertInstanceOf('Int');
+                  expect(deviceData.axisRanges[j]).assertInstanceOf('Object');
+                  expect(deviceData.axisRanges[j].min).assertInstanceOf('Int');
+                  expect(deviceData.axisRanges[j].fuzz).assertInstanceOf('Int');
+                  expect(deviceData.axisRanges[j].flat).assertInstanceOf('Int');
+                  expect(deviceData.axisRanges[j].resolution).assertInstanceOf('Int');
+                }
+                done();
+              });
             }
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag,
             `${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
@@ -204,7 +213,8 @@ export default function InputDeviceTest() {
             }
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} Failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -230,7 +240,7 @@ export default function InputDeviceTest() {
             ExpectTrue(Array.isArray(ids));
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag,
             `${caseName} Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
@@ -258,7 +268,8 @@ export default function InputDeviceTest() {
             isPhysicalKeyboardExist++;
             ExpectTrue(isPhysicalKeyboardExist == 1);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
         }
@@ -294,7 +305,7 @@ export default function InputDeviceTest() {
           ifInputDeviceOffSuccess++;
           ExpectTrue(ifInputDeviceOffSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info(`${caseName} Cancel listening device event failed, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectFalse(true);
@@ -322,7 +333,7 @@ export default function InputDeviceTest() {
           ifInputDeviceOffSuccess++;
           ExpectTrue(ifInputDeviceOffSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info(`${caseName} Cancel all listening device event failed, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectFalse(true);

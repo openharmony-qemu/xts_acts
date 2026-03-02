@@ -37,11 +37,11 @@ export default function onMeasureSize3() {
 
     console.info("onMeasureSize3 beforeAll start");
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
+    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")})
 
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
     });
     beforeEach(() => {

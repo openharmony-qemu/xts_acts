@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an 'AS IS' BASIS,
@@ -1390,7 +1390,6 @@ export default function streamTest() {
       await mustCallCheckAll();
     })
 
-    // Check the StreamWritable.
     /**
      * @tc.name   testStreamWritable001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_00100
@@ -1406,7 +1405,6 @@ export default function streamTest() {
       expect(writableStream.writable).assertEqual(false);
     });
 
-    // Check the StreamWritable.
     /**
      * @tc.name   testStreamWritable002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_00200
@@ -1423,7 +1421,6 @@ export default function streamTest() {
       expect(writableStream.writableEnded).assertEqual(true);
     })
 
-    // Check the StreamWritable.
     /**
      * @tc.name   testStreamWritable003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_00300
@@ -1440,7 +1437,6 @@ export default function streamTest() {
       writableStream.on('error', mustCall());
     });
 
-    // Check the StreamWritable.
     /**
      * @tc.name   testStreamWritable005
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_00500
@@ -1456,7 +1452,6 @@ export default function streamTest() {
       expect(writableStream.writable).assertEqual(false);
     });
 
-    // Check the StreamWritableCbError.
     /**
      * @tc.name   testStreamWritableCbError001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_00600
@@ -1476,7 +1471,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamWritableCbError.
     /**
      * @tc.name   testStreamWritableCbError002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_00700
@@ -1496,7 +1490,6 @@ export default function streamTest() {
       expect(num).assertEqual(0);
     });
 
-    // Check the StreamWritableCbTwice.
     /**
      * @tc.name   testStreamWritableCbTwice001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_00800
@@ -1515,7 +1508,6 @@ export default function streamTest() {
       await mustCallCheckAll();
     });
 
-    // Check the StreamWritableCbTwice.
     /**
      * @tc.name   testStreamWritableCbTwice002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_00900
@@ -1533,7 +1525,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamWritableCbTwice.
     /**
      * @tc.name   testStreamWritableCbTwice003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_01000
@@ -1551,7 +1542,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamWritableWriteError.
     /**
      * @tc.name   testStreamWritableWriteError001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_01100
@@ -1574,7 +1564,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamWritableWriteError.
     /**
      * @tc.name   testStreamWritableWriteError003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_01300
@@ -1595,7 +1584,6 @@ export default function streamTest() {
       expect((err as BusinessError).message).assertEqual('Parameter error. The type of test must be string.');
     });
 
-    // Check the StreamWritableWritevFinish.
     /**
      * @tc.name   testStreamWritableWritevFinish001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_01400
@@ -1615,7 +1603,6 @@ export default function streamTest() {
       done()
     });
 
-    // Check the StreamWritableWritevFinish.
     /**
      * @tc.name   testStreamWritableWritevFinish002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_01500
@@ -1634,7 +1621,6 @@ export default function streamTest() {
       writable.end('my test');
     });
 
-    // Check the StreamWritableConstructorSetMethods.
     /**
      * @tc.name   testStreamWritableConstructorSetMethods001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_02000
@@ -1655,7 +1641,6 @@ export default function streamTest() {
       expect((err as BusinessError).message).assertEqual('The doWrite() method is not implemented.');
     });
 
-    // Check the StreamWritableEndedState.
     /**
      * @tc.name   testStreamWritableEndedState001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_02300
@@ -1681,7 +1666,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamWritableFinished.
     /**
      * @tc.name   testStreamWritableFinished002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_02500
@@ -1700,7 +1684,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamWritableFinished.
     /**
      * @tc.name   testStreamWritableFinished003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_02600
@@ -1721,7 +1704,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamWritableFinished.
     /**
      * @tc.name   testStreamWritableFinished004
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_02700
@@ -1740,7 +1722,6 @@ export default function streamTest() {
       sync = false;
     });
 
-    // Check the StreamWritableFinished.
     /**
      * @tc.name   testStreamWritableFinished005
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_02800
@@ -1762,7 +1743,6 @@ export default function streamTest() {
       sync = false;
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_02900
@@ -1788,7 +1768,6 @@ export default function streamTest() {
       expect(writableStream.writableCorked).assertEqual(0);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_03000
@@ -1802,7 +1781,6 @@ export default function streamTest() {
       expect(writableStream.writableObjectMode).assertEqual(false);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_03100
@@ -1816,7 +1794,6 @@ export default function streamTest() {
       expect(writableStream.writableHighWatermark).assertEqual(16 * 1024);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties005
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_03300
@@ -1831,7 +1808,6 @@ export default function streamTest() {
       expect(writableStream.writableLength).assertEqual(5);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties006
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_03400
@@ -1845,7 +1821,6 @@ export default function streamTest() {
       expect(writableStream.writableLength).assertEqual(0);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties007
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_03500
@@ -1860,7 +1835,6 @@ export default function streamTest() {
       expect(customWritable.writableLength).assertEqual(5);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties008
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_03600
@@ -1876,7 +1850,6 @@ export default function streamTest() {
       expect(customWritable.writableLength).assertEqual(10);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties009
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_03700
@@ -1894,7 +1867,6 @@ export default function streamTest() {
       expect(customWritable.writableLength).assertEqual(0);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties010
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_03800
@@ -1904,13 +1876,12 @@ export default function streamTest() {
      * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const largeData = 'ab'.repeat(Math.floor(16384 / 2));
+      const largeData = 'ab'.repeat(Math.floor(16384 / 2).toInt());
       let writableStream = new MyWritableProperties010();
       let writeResult = writableStream.write(largeData);
       expect(writeResult).assertEqual(false);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties011
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_03900
@@ -1920,7 +1891,7 @@ export default function streamTest() {
      * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const largeData = 'ab'.repeat(Math.floor(16384 / 2));
+      const largeData = 'ab'.repeat(Math.floor(16384 / 2).toInt());
       let writableStream = new CustomWritable();
       writableStream.write(largeData);
       writableStream.write(largeData, 'utf8', mustCall(() => {
@@ -1933,7 +1904,6 @@ export default function streamTest() {
       expect(writableStream.writable).assertEqual(true);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties012
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_04000
@@ -1943,7 +1913,7 @@ export default function streamTest() {
      * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const largeData = 'ab'.repeat(Math.floor(16384 / 2));
+      const largeData = 'ab'.repeat(Math.floor(16384 / 2).toInt());
       let writableStream = new CustomWritable();
       writableStream.write(largeData);
       writableStream.on('drain', mustCall(() => {
@@ -1952,7 +1922,6 @@ export default function streamTest() {
       expect(writableStream.writableEnded).assertEqual(false);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties013
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_04100
@@ -1962,7 +1931,7 @@ export default function streamTest() {
      * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const largeData = 'ab'.repeat(Math.floor(16384 / 2));
+      const largeData = 'ab'.repeat(Math.floor(16384 / 2).toInt());
       let writableStream = new CustomWritable();
       writableStream.write(largeData);
       expect(writableStream.writable).assertEqual(true);
@@ -1970,7 +1939,6 @@ export default function streamTest() {
       expect(writableStream.writable).assertEqual(false);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties014
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_04200
@@ -1990,7 +1958,6 @@ export default function streamTest() {
       expect(writableStream.writableCorked).assertEqual(0);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties015
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_04300
@@ -2008,7 +1975,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableProperties016
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_04400
@@ -2027,7 +1993,6 @@ export default function streamTest() {
       writableStream.end();
     });
 
-    // Check the StreamWritableCork.
     /**
      * @tc.name   testStreamWritableCork001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_04600
@@ -2045,7 +2010,6 @@ export default function streamTest() {
       expect(dataWritten_Cork001).assertEqual('ab');
     });
 
-    // Check the StreamWritableCork.
     /**
      * @tc.name   testStreamWritableCork002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_04700
@@ -2068,7 +2032,6 @@ export default function streamTest() {
       expect(dataWritten_Cork002).assertEqual('abc');
     });
 
-    // Check the StreamWritableCork.
     /**
      * @tc.name   testStreamWritableCork003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_04800
@@ -2089,7 +2052,6 @@ export default function streamTest() {
       expect(dataWritten_Cork003).assertEqual('');
     });
 
-    // Check the StreamWritableOff.
     /**
      * @tc.name   testStreamWritableOff001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_04900
@@ -2113,7 +2075,6 @@ export default function streamTest() {
       }, 0);
     });
 
-    // Check the StreamWritableOff.
     /**
      * @tc.name   testStreamWritableOff002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_05000
@@ -2143,7 +2104,6 @@ export default function streamTest() {
       }, 0);
     });
 
-    // Check the StreamWritableChangeDefaultEncoding.
     /**
      * @tc.name   testStreamWritableChangeDefaultEncoding001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_05100
@@ -2160,7 +2120,6 @@ export default function streamTest() {
       testWritable.end();
     });
 
-    // Check the StreamWritableChangeDefaultEncoding.
     /**
      * @tc.name   testStreamWritableChangeDefaultEncoding002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_05200
@@ -2179,7 +2138,6 @@ export default function streamTest() {
       testWritable.end();
     });
 
-    // Check the StreamWritableChangeDefaultEncoding.
     /**
      * @tc.name   testStreamWritableChangeDefaultEncoding003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_05300
@@ -2204,7 +2162,6 @@ export default function streamTest() {
       expect((err as BusinessError).message).assertEqual('Parameter error. The type of abc must be string.');
     });
 
-    // Check the StreamWritableInvalidDrain.
     /**
      * @tc.name   testStreamWritableDrain001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_05500
@@ -2224,7 +2181,6 @@ export default function streamTest() {
       writableStream.end();
     });
 
-    // Check the StreamWritableWritev.
     /**
      * @tc.name   testStreamWritableWritev001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_05600
@@ -2239,7 +2195,6 @@ export default function streamTest() {
       expect(doWriteVCalled_Writev001).assertEqual(true);
     });
 
-    // Check the StreamDuplexEnd.
     /**
      * @tc.name   testStreamDuplexEnd001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_05700
@@ -2259,7 +2214,6 @@ export default function streamTest() {
       expect(finishCalled).assertEqual(false);
     });
 
-    // Check the StreamDuplexWritableFinished.
     /**
      * @tc.name   testStreamDuplexWritableFinished002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_05900
@@ -2278,7 +2232,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamDuplex.
     /**
      * @tc.name   testStreamDuplex001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_06000
@@ -2290,7 +2243,7 @@ export default function streamTest() {
     it('testStreamDuplex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let duplex = new MyDuplex001();
       expect(duplex instanceof stream.Duplex).assertEqual(true);
-      let read: Object;
+      let read: Object = {};
       duplex.on('data', (obj: Object) => {
         read = obj;
       });
@@ -2302,7 +2255,6 @@ export default function streamTest() {
       }, 0);
     });
 
-    // Check the StreamDuplex.
     /**
      * @tc.name   testStreamDuplex002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_06100
@@ -2319,7 +2271,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamDuplex.
     /**
      * @tc.name   testStreamDuplex004
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_06300
@@ -2338,7 +2289,6 @@ export default function streamTest() {
       duplex.write('Test data');
     });
 
-    // Check the StreamDuplexProperties.
     /**
      * @tc.name   testStreamDuplexProperties001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_06400
@@ -2352,7 +2302,6 @@ export default function streamTest() {
       expect(duplex.writableObjectMode).assertEqual(false);
     });
 
-    // Check the StreamReadableResumePause.
     /**
      * @tc.name   testStreamReadableResumePause001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_06500
@@ -2385,7 +2334,6 @@ export default function streamTest() {
       expect(dataCalled).assertEqual(true);
     });
 
-    // Check the StreamReadableResumePause.
     /**
      * @tc.name   testStreamReadableResumePause002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_06600
@@ -2402,7 +2350,6 @@ export default function streamTest() {
       expect((dataChunk as Object).toString()).assertEqual('test');
     });
 
-    // Check the StreamReadableResumePause.
     /**
      * @tc.name   testStreamReadableResumePause003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_06700
@@ -2422,7 +2369,6 @@ export default function streamTest() {
       expect(readable.readable).assertEqual(true);
     });
 
-    // Check the StreamReadableResumePause.
     /**
      * @tc.name   testStreamReadableResumePause004
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_06800
@@ -2436,7 +2382,6 @@ export default function streamTest() {
       expect(readable.isPaused()).assertEqual(false);
     });
 
-    // Check the StreamReadableResumePause.
     /**
      * @tc.name   testStreamReadableResumePause005
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_06900
@@ -2451,7 +2396,6 @@ export default function streamTest() {
       expect(readable.isPaused()).assertEqual(true);
     });
 
-    // Check the StreamReadableResumePause.
     /**
      * @tc.name   testStreamReadableResumePause006
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_07000
@@ -2467,7 +2411,6 @@ export default function streamTest() {
       expect(readable.isPaused()).assertEqual(false);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_07100
@@ -2481,7 +2424,6 @@ export default function streamTest() {
       expect(readable.readableObjectMode).assertEqual(false);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_07200
@@ -2495,7 +2437,6 @@ export default function streamTest() {
       expect(readable.readable).assertEqual(true);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_07300
@@ -2513,7 +2454,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties004
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_07400
@@ -2527,7 +2467,6 @@ export default function streamTest() {
       expect(readable.readableHighWatermark).assertEqual(16 * 1024);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties005
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_07500
@@ -2543,7 +2482,6 @@ export default function streamTest() {
       expect(readable.readableFlowing).assertEqual(true);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties006
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_07600
@@ -2558,7 +2496,6 @@ export default function streamTest() {
       expect(readable.readableFlowing).assertEqual(true);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties007
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_07700
@@ -2572,7 +2509,6 @@ export default function streamTest() {
       expect(readable.readableLength).assertEqual(0);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties008
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_07800
@@ -2588,7 +2524,6 @@ export default function streamTest() {
       expect(readable.readableLength).assertEqual(testData.length);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties009
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_07900
@@ -2612,7 +2547,6 @@ export default function streamTest() {
       expect(readable.readableLength).assertEqual(0);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties010
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_08000
@@ -2632,7 +2566,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties011
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_08100
@@ -2651,7 +2584,6 @@ export default function streamTest() {
       expect(readable.readableLength).assertEqual(testData1.length + testData2.length);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties012
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_08200
@@ -2669,7 +2601,6 @@ export default function streamTest() {
       expect(readable.readableEnded).assertEqual(false);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties013
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_08300
@@ -2683,7 +2614,6 @@ export default function streamTest() {
       expect(readable.readable).assertEqual(true);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties014
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_08400
@@ -2698,7 +2628,6 @@ export default function streamTest() {
       expect(readable.readableFlowing).assertEqual(null);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties015
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_08500
@@ -2712,7 +2641,6 @@ export default function streamTest() {
       expect(readable.readableEnded).assertEqual(false);
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties016
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_08600
@@ -2730,7 +2658,6 @@ export default function streamTest() {
       }, 0));
     });
 
-    // Check the StreamReadableProperties.
     /**
      * @tc.name   testStreamReadableProperties017
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_08700
@@ -2747,7 +2674,6 @@ export default function streamTest() {
       expect(readable.readable).assertEqual(true);
     });
 
-    // Check the StreamReadableConstructorSetMethods.
     /**
      * @tc.name   testStreamReadableConstructorSetMethods001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_08800
@@ -2762,7 +2688,6 @@ export default function streamTest() {
       expect(dRCalled_ConstructorSetMethods001).assertEqual(true);
     });
 
-    // Check the StreamReadableData.
     /**
      * @tc.name   testStreamReadableData002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_09000
@@ -2778,7 +2703,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamReadableData.
     /**
      * @tc.name   testStreamReadableData003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_23000
@@ -2794,7 +2718,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamReadableData.
     /**
      * @tc.name   testStreamReadableData007
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_23200
@@ -2814,7 +2737,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamReadableData.
     /**
      * @tc.name   testStreamReadableData008
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_24300
@@ -2837,7 +2759,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamReadableData.
     /**
      * @tc.name   testStreamReadableData010
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_22900
@@ -2856,7 +2777,6 @@ export default function streamTest() {
       src.resume();
     });
 
-    // Check the StreamReadableData.
     /**
      * @tc.name   testStreamReadableData011
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_23800
@@ -2872,7 +2792,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamReadableEmitReadableShortStream.
     /**
      * @tc.name   testStreamReadableEmitReadableShortStream002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_09300
@@ -2898,7 +2817,6 @@ export default function streamTest() {
       readableStream.push(null);
     });
 
-    // Check the StreamReadableEnded.
     /**
      * @tc.name   testStreamReadableEnded002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_09500
@@ -2917,7 +2835,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamReadableEnded.
     /**
      * @tc.name   testStreamReadableEnded003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_09600
@@ -2939,7 +2856,6 @@ export default function streamTest() {
       readable.push(null);
     });
 
-    // Check the StreamReadableHwm0Async.
     /**
      * @tc.name   testStreamReadableHwm0Async001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_09700
@@ -2959,7 +2875,6 @@ export default function streamTest() {
       });
     });
 
-    // Check the StreamReadablePauseAndResume.
     /**
      * @tc.name   testStreamReadablePauseAndResume001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_09900
@@ -2979,7 +2894,6 @@ export default function streamTest() {
       }, 0);
     });
 
-    // Check the StreamReadableReadable.
     /**
      * @tc.name   testStreamReadableReadable001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_10000
@@ -3002,7 +2916,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamReadableSetEncoding.
     /**
      * @tc.name   testStreamReadableSetEncoding001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_10100
@@ -3017,7 +2930,6 @@ export default function streamTest() {
       expect(readable.readableEncoding).assertEqual('utf-8');
     });
 
-    // Check the StreamReadableWithUnimplementedDoRead.
     /**
      * @tc.name   testStreamReadableWithUnimplementedDoRead001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_10200
@@ -3036,7 +2948,6 @@ export default function streamTest() {
       readable.read();
     });
 
-    // Check the StreamTransformCallbackTwice.
     /**
      * @tc.name   testStreamTransformCallbackTwice001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_10300
@@ -3054,7 +2965,6 @@ export default function streamTest() {
       transform.write('test');
     });
 
-    // Check the StreamTransformConstructor.
     /**
      * @tc.name   testStreamTransformConstructor001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_10400
@@ -3075,7 +2985,6 @@ export default function streamTest() {
       expect((err as BusinessError).message).assertEqual('The doTransform() method is not implemented.');
     });
 
-    // Check the StreamTransform.
     /**
      * @tc.name   testStreamTransform001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_10600
@@ -3097,7 +3006,6 @@ export default function streamTest() {
       transform.end();
     });
 
-    // Check the StreamTransform.
     /**
      * @tc.name   testStreamTransform002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_10700
@@ -3117,7 +3025,6 @@ export default function streamTest() {
       expect(endCalled).assertEqual(false);
     });
 
-    // Check the StreamTransform.
     /**
      * @tc.name   testStreamTransform003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_10800
@@ -3133,7 +3040,6 @@ export default function streamTest() {
       expect(doInitializeCalled_003).assertEqual(true);
     });
 
-    // Check the StreamTransform.
     /**
      * @tc.name   testStreamTransform004
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_10900
@@ -3148,7 +3054,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamTransform.
     /**
      * @tc.name   testStreamTransform005
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_11000
@@ -3164,7 +3069,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamTransform.
     /**
      * @tc.name   testStreamTransform006
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_11100
@@ -3190,7 +3094,6 @@ export default function streamTest() {
       }, 10);
     });
 
-    // Check the StreamTransform.
     /**
      * @tc.name   testStreamTransform007
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_11200
@@ -3216,7 +3119,6 @@ export default function streamTest() {
       }, 10);
     });
 
-    // Check the StreamTransform.
     /**
      * @tc.name   testStreamTransform008
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_11300
@@ -3231,7 +3133,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamTransform.
     /**
      * @tc.name   testStreamTransform009
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_11400
@@ -3247,7 +3148,6 @@ export default function streamTest() {
       expect(transformStream.isPaused()).assertEqual(true);
     });
 
-    // Check the StreamTransform.
     /**
      * @tc.name   testStreamTransform012
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_11700
@@ -3265,7 +3165,6 @@ export default function streamTest() {
       }, 0);
     });
 
-    // Check the StreamTransformProperties.
     /**
      * @tc.name   testStreamTransformProperties001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_11800
@@ -3279,7 +3178,6 @@ export default function streamTest() {
       expect(transform.writableHighWatermark).assertEqual(16 * 1024);
     });
 
-    // Check the StreamTransformProperties.
     /**
      * @tc.name   testStreamTransformProperties002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_11900
@@ -3293,7 +3191,6 @@ export default function streamTest() {
       expect(transform.readableHighWatermark).assertEqual(16 * 1024);
     });
 
-    // Check the StreamTransformEvent.
     /**
      * @tc.name   testStreamTransformEvent001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_12000
@@ -3315,7 +3212,6 @@ export default function streamTest() {
       transform.end();
     });
 
-    // Check the StreamTransformEvent.
     /**
      * @tc.name   testStreamTransformEvent002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_12100
@@ -3334,7 +3230,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamTransformEvent.
     /**
      * @tc.name   testStreamTransformEvent003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_12200
@@ -3350,7 +3245,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamTransformEvent.
     /**
      * @tc.name   testStreamTransformEvent004
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_12300
@@ -3372,7 +3266,6 @@ export default function streamTest() {
       expect(testListenerCalled).assertEqual(false);
     });
 
-    // Check the StreamTransformEvent.
     /**
      * @tc.name   testStreamTransformEvent005
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_12400
@@ -3403,7 +3296,6 @@ export default function streamTest() {
       }, 0);
     });
 
-    // Check the pipe.
     /**
      * @tc.name   testStreamPipe003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_12700
@@ -3420,7 +3312,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamDuplexProperties.
     /**
      * @tc.name   testStreamDuplexProperties002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_12900
@@ -3434,7 +3325,6 @@ export default function streamTest() {
       expect(duplex.writableHighWatermark).assertEqual(16 * 1024);
     });
 
-    // Check the StreamDuplexProperties.
     /**
      * @tc.name   testStreamDuplexProperties003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_13000
@@ -3566,7 +3456,6 @@ export default function streamTest() {
       expect((res as Object).toString()).assertEqual('你好');
     });
 
-    // Check the StreamReadablePipe.
     /**
      * @tc.name   testStreamPipe009
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_23100
@@ -3595,7 +3484,6 @@ export default function streamTest() {
       })
     });
 
-    // Check the StreamReadablePipe.
     /**
      * @tc.name   testStreamPipe015
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_23700
@@ -3616,7 +3504,6 @@ export default function streamTest() {
       })
     });
 
-    // Check the StreamReadablePipe.
     /**
      * @tc.name   testStreamPipe018
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_23500
@@ -3637,7 +3524,6 @@ export default function streamTest() {
       })
     });
 
-    // Check the StreamDuplexDoWritev.
     /**
      * @tc.name   testStreamDuplexDoWritev001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_14200
@@ -3654,7 +3540,6 @@ export default function streamTest() {
       }));
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_14500
@@ -3669,7 +3554,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_14600
@@ -3684,7 +3568,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_14700
@@ -3699,7 +3582,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding004
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_14800
@@ -3714,7 +3596,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding005
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_14900
@@ -3729,7 +3610,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding006
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_15000
@@ -3744,7 +3624,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding007
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_15100
@@ -3760,7 +3639,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding008
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_15200
@@ -3776,7 +3654,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding009
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_15300
@@ -3792,7 +3669,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding010
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_15400
@@ -3808,7 +3684,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding011
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_15500
@@ -3824,7 +3699,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding012
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_15600
@@ -3840,7 +3714,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding016
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_16000
@@ -3855,7 +3728,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding017
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_16100
@@ -3870,7 +3742,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding018
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_16200
@@ -3885,7 +3756,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding019
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_16300
@@ -3900,7 +3770,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding020
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_16400
@@ -3915,7 +3784,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding021
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_16500
@@ -3930,7 +3798,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding022
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_16600
@@ -3946,7 +3813,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding023
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_16700
@@ -3962,7 +3828,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding024
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_16800
@@ -3978,7 +3843,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding025
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_16900
@@ -3994,7 +3858,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding026
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_17000
@@ -4010,7 +3873,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding027
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_17100
@@ -4026,7 +3888,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding028
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_17200
@@ -4042,7 +3903,6 @@ export default function streamTest() {
       expect(readable.readableEncoding).assertEqual('gb2312');
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding029
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_17300
@@ -4058,7 +3918,6 @@ export default function streamTest() {
       expect(readable.readableEncoding).assertEqual('gbk');
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding030
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_17400
@@ -4074,7 +3933,6 @@ export default function streamTest() {
       expect(readable.readableEncoding).assertEqual('gb18030');
     });
 
-    // Check the StreamWritable.
     /**
      * @tc.name   testStreamWritableUintArr001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_18400
@@ -4092,7 +3950,6 @@ export default function streamTest() {
       expect(myWritableStream.writable).assertEqual(false);
     });
 
-    // Check the StreamWritableCbError.
     /**
      * @tc.name   testStreamWritableUintArr003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_18600
@@ -4111,7 +3968,6 @@ export default function streamTest() {
       myWritable.write(input);
     });
 
-    // Check the StreamWritableCbTwice.
     /**
      * @tc.name   testStreamWritableUintArrCbTwice002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_18900
@@ -4130,7 +3986,6 @@ export default function streamTest() {
       myWritableStream.write(input);
     });
 
-    // Check the StreamWritableCbTwice.
     /**
      * @tc.name   testStreamWritableUintArrCbTwice003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_19000
@@ -4149,7 +4004,6 @@ export default function streamTest() {
       myWritableStream.write(input);
     });
 
-    // Check the StreamWritableConstructorSetMethods.
     /**
      * @tc.name   testStreamWritableUintArrConstructorSetMethods001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_19600
@@ -4169,7 +4023,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableUintArrProperties001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_19800
@@ -4185,7 +4038,6 @@ export default function streamTest() {
       expect(myWritableStream.writableLength).assertEqual(6);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableUintArrProperties002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_19900
@@ -4201,7 +4053,6 @@ export default function streamTest() {
       expect(customWritable.writableLength).assertEqual(6);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableUintArrProperties003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_20000
@@ -4219,7 +4070,6 @@ export default function streamTest() {
       expect(customWritable.writableLength).assertEqual(12);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableUintArrProperties004
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_20100
@@ -4238,7 +4088,6 @@ export default function streamTest() {
       expect(customWritable.writableLength).assertEqual(0);
     });
 
-    // Check the StreamWritableProperties.
     /**
      * @tc.name   testStreamWritableUintArrProperties005
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_20200
@@ -4260,7 +4109,6 @@ export default function streamTest() {
       expect(writableStream.writableCorked).assertEqual(0);
     });
 
-    // Check the StreamWritableCork.
     /**
      * @tc.name   testStreamWritableUintArrCork001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_20300
@@ -4270,7 +4118,7 @@ export default function streamTest() {
      * @tc.level  LEVEL1
      */
     it('testStreamWritableUintArrCork001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      // let T = new Uint8Array(0);
+
       T_Cork0010203 = new Uint8Array(0);
       let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
       let input2 = new Uint8Array([0xE5, 0x86, 0x8D, 0xE8, 0xA7, 0x81]);
@@ -4282,11 +4130,10 @@ export default function streamTest() {
       myWritableStream.write(input2);
       myWritableStream.uncork();
       const strT = decoder.decodeToString(T_Cork0010203);
-      const strO = decoder.decodeToString(output); // 你好再见
+      const strO = decoder.decodeToString(output);
       expect(strT).assertEqual(strO);
     });
 
-    // Check the StreamWritableCork.
     /**
      * @tc.name   testStreamWritableUintArrCork002
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_20400
@@ -4315,11 +4162,10 @@ export default function streamTest() {
       myWritableStream.uncork();
       myWritableStream.uncork();
       const strT = decoder.decodeToString(T_Cork0010203);
-      const strO = decoder.decodeToString(output); // 再见小灰明天见
+      const strO = decoder.decodeToString(output);
       expect(strT).assertEqual(strO);
     });
 
-    // Check the StreamWritableCork.
     /**
      * @tc.name   testStreamWritableUintArrCork003
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_20500
@@ -4344,7 +4190,6 @@ export default function streamTest() {
       expect(T_Cork0010203.length).assertEqual(0);
     });
 
-    // Check the StreamWritableInvalidDrain.
     /**
      * @tc.name   testStreamWritableUintArrDrain001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_20600
@@ -4365,7 +4210,6 @@ export default function streamTest() {
       writableStream.end();
     });
 
-    // Check the StreamWritableWritev.
     /**
      * @tc.name   testStreamWritableWritevUintArr001
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_20700
@@ -4382,7 +4226,6 @@ export default function streamTest() {
       expect(doWriteVCalled_WritevUintArr001).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding040
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_21100
@@ -4397,7 +4240,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding041
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_21200
@@ -4412,7 +4254,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding042
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_21300
@@ -4428,7 +4269,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding043
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_21400
@@ -4443,7 +4283,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding044
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_21500
@@ -4458,7 +4297,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding045
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_21600
@@ -4474,7 +4312,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding046
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_21700
@@ -4489,7 +4326,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding047
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_21800
@@ -4504,7 +4340,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding048
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_21900
@@ -4520,7 +4355,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding049
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_22000
@@ -4535,7 +4369,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding050
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_22100
@@ -4550,7 +4383,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding051
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_22200
@@ -4566,7 +4398,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding052
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_22300
@@ -4581,7 +4412,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding053
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_22400
@@ -4596,7 +4426,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding054
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_22500
@@ -4612,7 +4441,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding055
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_22600
@@ -4627,7 +4455,6 @@ export default function streamTest() {
       expect(res).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding056
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_22700
@@ -4642,7 +4469,6 @@ export default function streamTest() {
       expect(res instanceof stream.Writable).assertTrue();
     });
 
-    // Check the StreamEncoding.
     /**
      * @tc.name   testStreamEncoding057
      * @tc.number SUB_IBRARY_ETSUTILS_STREAM_22800
@@ -4658,7 +4484,6 @@ export default function streamTest() {
       expect(result).assertEqual(true);
     });
 
-    // Check the Writable Stream Property.
     /**
      * @tc.name    WriteProperty
      * @tc.number  SUB_IBRARY_ETSUTILS_STREAM_23900
@@ -4678,7 +4503,6 @@ export default function streamTest() {
       expect(writableStream.writableFinished).assertEqual(false);
     });
 
-    // Check the Readable Stream Property.
     /**
      * @tc.name    ReadableProperty
      * @tc.number  SUB_IBRARY_ETSUTILS_STREAM_24000
@@ -4698,7 +4522,6 @@ export default function streamTest() {
       expect(readableStream.readableEnded).assertEqual(false);
     });
 
-    // Check the Duplex Stream Property.
     /**
      * @tc.name    DuplexProperty
      * @tc.number  SUB_IBRARY_ETSUTILS_STREAM_24100

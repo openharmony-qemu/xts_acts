@@ -4,7 +4,7 @@ import Utils from './Util.test';
 export default function promiseTest() {
 
   describe('PromiseTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**
@@ -270,7 +270,7 @@ async function dealPromise(flag: boolean): Promise<Array<string>> {
     array.push(res);
   })
 
-  p.catch((e: Error): string => {
+  p.catch((e: Error) => {
     array.push('reject');
     array.push(e.message);
   })

@@ -17,10 +17,10 @@
 import router from '@ohos.router';
 import { Entry, Component, TextTimerController, Scroller, Builder, AlphabetIndexer, Blank, Button, Checkbox,
   CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator, LoadingProgress, Marquee, Menu,
-  Navigation, Progress, QRCode, Radio, Rating, ScrollBar, Search, Select, Slider, Stepper, Text, TextArea,
+  Navigation, Progress, QRCode, Radio, Rating, ScrollBar, Search, Select, Slider, Text, TextArea,
   TextClock, TextInput, TextPicker, TextTimer, TimePicker, Toggle, Badge, Column, ColumnSplit, Counter, Flex, GridRow,
   Grid, List, Refresh, RelativeContainer, Row, RowSplit, Scroll, SideBarContainer, Stack, Swiper,
-  Tabs, WaterFlow, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, $r, StepperItem, ToggleType,
+  Tabs, WaterFlow, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, $r, ToggleType,
   BadgeStyle, BadgeParamWithString, SideBarContainerType, TextAlign, Color, FlexDirection, MenuItem, NavPathStack,
   MenuItemOptions, CommonMethod, applyStyles } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -42,8 +42,7 @@ struct DefaultFlexPage {
 
   onPageShow() {
     console.info('DefaultFlexPage show called ')
-    let routerParamOptions =  new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     this.containerView = routerParamOptions.view.containerView ?? ""
     this.componentKey = routerParamOptions.view.componentKey ?? ""
     this.parentWidth = routerParamOptions.view.parentWidth
@@ -112,10 +111,6 @@ struct DefaultFlexPage {
       Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }]).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Slider') {
       Slider().applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem()
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Text') {
       Text('text').applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextArea') {

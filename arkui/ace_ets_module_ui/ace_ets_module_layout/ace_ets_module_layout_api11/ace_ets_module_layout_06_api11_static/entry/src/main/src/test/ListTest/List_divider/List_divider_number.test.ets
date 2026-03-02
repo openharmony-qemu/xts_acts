@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function List_divider_number() {
   describe('List_divider_number', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("List_divider_number beforeAll start");
             
       await UtilsTest.msSleep(4000)
@@ -79,6 +79,7 @@ export default function List_divider_number() {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
       routerInstance.back()
+      await CommonFunc.sleep(1000);
       console.info("List_divider_number after each called");
     });
 

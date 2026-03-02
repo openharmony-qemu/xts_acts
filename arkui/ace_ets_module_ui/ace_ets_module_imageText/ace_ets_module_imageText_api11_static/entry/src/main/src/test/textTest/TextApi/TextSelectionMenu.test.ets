@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextSelectionMenu() {
   describe('TextSelectionMenu', ()  => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextSelectionMenu beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -63,20 +63,6 @@ export default function TextSelectionMenu() {
       console.info("TextSelectionMenu beforeEach end");
     });
 
-
-    afterEach(async (): Promise<void> => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back();
-      await CommonFunc.sleep(2000);
-      let pages: router.RouterState = routerInstance.getState();
-      console.info("get Search state pages afterEach:" + JSON.stringify(pages));
-      if (pages.name !== "index") {
-        let options: router.RouterOptions = {
-          url: 'MainAbility/pages/index/index',
-        }
-        routerInstance.pushUrl(options);
-        await CommonFunc.sleep(2000);
-      }})
 
     
     /**

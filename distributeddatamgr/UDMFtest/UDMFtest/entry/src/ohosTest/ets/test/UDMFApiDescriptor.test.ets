@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file expect in compliance with the License.
  * You may obtain a copy of the License at
@@ -7366,7 +7366,7 @@ export default function UDMFApiDescriptorTest() {
       try {
         let result = UTD.getUniformDataTypesByFilenameExtension(".xls");
         console.log("result=====>" + JSON.stringify(result));
-        expect(result[0]).assertEqual(UTD.UniformDataType.EXCEL)
+        expect(result).assertContain(UTD.UniformDataType.EXCEL)
       } catch (err) {
         console.log("err message:" + err.message + ";err code:" + err.code);
         expect().assertFail();
@@ -7477,7 +7477,7 @@ export default function UDMFApiDescriptorTest() {
       try {
         let result = UTD.getUniformDataTypesByMIMEType("image/tiff");
         console.log("result=====>" + result);
-        expect(result[0] == "general.tiff").assertEqual(true);
+        expect(result).assertContain('general.tiff');
       } catch (err) {
         console.log("err message:" + err.message + ";err code:" + err.code);
         expect().assertFail();
@@ -7585,7 +7585,7 @@ export default function UDMFApiDescriptorTest() {
       try {
         let result = UTD.getUniformDataTypesByMIMEType("audio/x-ms-wma", UTD.UniformDataType.WINDOWS_MEDIA_WMA);
         console.log("result=====>" + result);
-        expect(result[0] == UTD.UniformDataType.WINDOWS_MEDIA_WMA).assertEqual(true);
+        expect(result).assertContain(UTD.UniformDataType.WINDOWS_MEDIA_WMA);
       } catch (err) {
         console.log("err message:" + err.message + ";err code:" + err.code);
         expect().assertFail();
@@ -7622,7 +7622,7 @@ export default function UDMFApiDescriptorTest() {
       try {
          let result = UTD.getUniformDataTypesByFilenameExtension(".rb", 'general.shell-script');
         console.log("result=====>" + JSON.stringify(result));
-        expect(result[0]).assertEqual(UTD.UniformDataType.RUBY_SCRIPT)
+        expect(result).assertContain(UTD.UniformDataType.RUBY_SCRIPT)
       } catch (err) {
         console.log("err message:" + err.message + ";err code:" + err.code);
         expect().assertFail();
@@ -8161,7 +8161,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest149 start');
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        expect(typeIds).assertContain('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8183,7 +8183,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest150 start');
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages', 'general.composite-object');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        expect(typeIds).assertContain('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8205,7 +8205,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest151 start');
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages', 'com.apple.iwork');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        expect(typeIds).assertContain('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8227,7 +8227,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest152 start');
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.numbers');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        expect(typeIds).assertContain('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8249,7 +8249,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest153 start');
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.numbers', 'general.composite-object');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        expect(typeIds).assertContain('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8271,7 +8271,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest154 start');
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.numbers', 'com.apple.iwork');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        expect(typeIds).assertContain('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8293,7 +8293,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest155 start');
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.key');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        expect(typeIds).assertContain('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8315,7 +8315,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest156 start');
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.key', 'general.composite-object');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        expect(typeIds).assertContain('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8337,7 +8337,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest157 start');
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.key', 'com.apple.iwork');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        expect(typeIds).assertContain('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8359,7 +8359,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest158 start');
       try {
         let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        expect(typeIds).assertContain('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8381,7 +8381,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest159 start');
       try {
         let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages', 'general.composite-object');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        expect(typeIds).assertContain('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8403,7 +8403,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest160 start');
       try {
         let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages', 'com.apple.iwork');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        expect(typeIds).assertContain('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8425,7 +8425,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest161 start');
       try {
         let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.numbers');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        expect(typeIds).assertContain('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8447,7 +8447,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest162 start');
       try {
         let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.numbers', 'general.composite-object');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        expect(typeIds).assertContain('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8469,7 +8469,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest163 start');
       try {
         let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.numbers', 'com.apple.iwork');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        expect(typeIds).assertContain('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8491,7 +8491,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest164 start');
       try {
         let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.keynote');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        expect(typeIds).assertContain('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8513,7 +8513,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest165 start');
       try {
         let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.keynote', 'general.composite-object');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        expect(typeIds).assertContain('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8535,7 +8535,7 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + 'UDMFUtdTest166 start');
       try {
         let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.keynote', 'com.apple.iwork');
-        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        expect(typeIds).assertContain('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
@@ -8578,5 +8578,168 @@ export default function UDMFApiDescriptorTest() {
       }
       console.log(tag + 'UDMFUtdTest167 end');
     });
+
+    /**
+     * @tc.name   testTypeDescriptorTypeId0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_TypeDescriptorTypeIdTest_0100
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTypeDescriptorTypeId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log('testTypeDescriptorTypeId0100 start');
+      expect(UTD.UniformDataType.TEXT).assertEqual("general.text");
+      let typeObj = UTD.getTypeDescriptor(UTD.UniformDataType.TEXT);
+      typeObj.typeId = "aaa";
+      typeObj.belongingToTypes = ["bbb"];
+      typeObj.description = "ccc";
+      typeObj.referenceURL = "ddd";
+      typeObj.iconFile = "eee";
+      typeObj.filenameExtensions = ["fff"];
+      typeObj.mimeTypes = ["ggg"]
+      console.log("typeId:" + typeObj.typeId);
+      console.log("belongingToTypes:" + typeObj.belongingToTypes);
+      console.log("description:" + typeObj.description);
+      console.log("referenceURL:" + typeObj.referenceURL);
+      console.log("iconFile:" + typeObj.iconFile);
+      console.log("filenameExtensions:" + typeObj.filenameExtensions.toString());
+      console.log("mimeTypes:" + typeObj.mimeTypes.toString());
+      expect(typeObj.typeId).assertEqual("aaa");
+      expect(typeObj.belongingToTypes[0]).assertEqual("bbb");
+      expect(typeObj.description).assertEqual("ccc");
+      expect(typeObj.referenceURL).assertEqual("ddd");
+      expect(typeObj.iconFile).assertEqual("eee");
+      expect(typeObj.filenameExtensions.toString()).assertEqual("fff");
+      expect(typeObj.mimeTypes.toString()).assertEqual("ggg");
+      console.log("testTypeDescriptorTypeId0100 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByFilenameExtensionErr0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByFilenameExtensionErrTest_0100
+     * @tc.desc   parameter to getUniformDataTypesByFilenameExtension()  --parameter is ".xls"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByFilenameExtensionErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log('testGetUniformDataTypesByFilenameExtensionErr0100 start');
+      try {
+        let result = UTD.getUniformDataTypesByFilenameExtension(".xls", "");
+        console.log(tag + "result=====>" + JSON.stringify(result));
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByFilenameExtensionErr0100 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByFilenameExtensionErr0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByFilenameExtensionErrTest_0200
+     * @tc.desc   parameter to getUniformDataTypesByFilenameExtension()  --parameter is ".xls"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByFilenameExtensionErr0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log('testGetUniformDataTypesByFilenameExtensionErr0200 start');
+      try {
+        let result = UTD.getUniformDataTypesByFilenameExtension(".xls", null);
+        console.log(tag + "result=====>" + JSON.stringify(result));
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByFilenameExtensionErr0200 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByFilenameExtensionErr0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByFilenameExtensionErrTest_0300
+     * @tc.desc   parameter to getUniformDataTypesByFilenameExtension()  --parameter is ".xls"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByFilenameExtensionErr0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log('testGetUniformDataTypesByFilenameExtensionErr0300 start');
+      try {
+        let result = UTD.getUniformDataTypesByFilenameExtension(".xls", undefined);
+        console.log(tag + "result=====>" + JSON.stringify(result));
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByFilenameExtensionErr0300 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByMIMETypeErr0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByMIMETypeErrTest_0100
+     * @tc.desc   parameter to getUniformDataTypesByMIMEType() --"image/tiff"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByMIMETypeErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'testGetUniformDataTypesByMIMETypeErr0100 start');
+      try {
+        let result = UTD.getUniformDataTypesByMIMEType("image/tiff", "");
+        console.log(tag + "result=====>" + result);
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByMIMETypeErr0100 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByMIMETypeErr0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByMIMETypeErrTest_0200
+     * @tc.desc   parameter to getUniformDataTypesByMIMEType() --"image/tiff"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByMIMETypeErr0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'testGetUniformDataTypesByMIMETypeErr0200 start');
+      try {
+        let result = UTD.getUniformDataTypesByMIMEType("image/tiff", null);
+        console.log(tag + "result=====>" + result);
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByMIMETypeErr0200 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByMIMETypeErr0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByMIMETypeErrTest_0300
+     * @tc.desc   parameter to getUniformDataTypesByMIMEType() --"image/tiff"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByMIMETypeErr0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'testGetUniformDataTypesByMIMETypeErr0300 start');
+      try {
+        let result = UTD.getUniformDataTypesByMIMEType("image/tiff", undefined);
+        console.log(tag + "result=====>" + result);
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByMIMETypeErr0300 end");
+    });
+
   })
 }

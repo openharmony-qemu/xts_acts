@@ -13,8 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { StepperView } from '../../view/markAnchor/StepperView';
-import { StepperItemView } from '../../view/markAnchor/StepperItemView';
 import { ListItemGroupView } from '../../view/markAnchor/ListItemGroupView';
 import { NavRouterView } from '../../view/markAnchor/NavRouterView';
 import { attrsManager } from '../../common/AttrsManager';
@@ -50,7 +48,6 @@ import {
   Entry,
   Select,
   Select,
-  Stepper,
   TextArea,
   TextClock,
   TextInput,
@@ -114,8 +111,6 @@ import {
   WaterFlow,
   SpanAttribute,
   StackAttribute,
-  StepperAttribute,
-  StepperItemAttribute,
   SwiperAttribute,
   TabContentAttribute,
   TabsAttribute,
@@ -156,7 +151,6 @@ import {
   PolygonAttribute,
   PolylineAttribute,
   ScrollAttribute,
-  StepperItem,
   TextTimer,
   TimePicker,
   ToggleType,
@@ -222,7 +216,6 @@ import {
   WaterFlowSections,
   Scroller,
   SectionOptions,
-  Stepper,
   MenuItemOptions,
   Navigation,
   NavPathStack,
@@ -690,22 +683,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mAccessibilityText: string = ''
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.accessibilityText(this.mAccessibilityText)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mAccessibilityText: string = ''
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.accessibilityText(this.mAccessibilityText)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mAccessibilityText: string = ''
 
@@ -890,8 +867,6 @@ struct accessibilityTextTestDropPage {
   @State _accessibilityTextSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _accessibilityTextSliderMod: SliderModifier = new SliderModifier()
   @State _accessibilityTextStackMod: StackModifier = new StackModifier()
-  @State _accessibilityTextStepperMod: StepperModifier = new StepperModifier()
-  @State _accessibilityTextStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _accessibilityTextSwiperMod: SwiperModifier = new SwiperModifier()
   @State _accessibilityTextTabContentMod: TabContentModifier = new TabContentModifier()
   @State _accessibilityTextTabsMod: TabsModifier = new TabsModifier()
@@ -924,8 +899,7 @@ struct accessibilityTextTestDropPage {
 
   onPageShow() {
     console.log('aboutToAppear routerParamOptions before' + this.targetView)
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey as string
     this.parentWidth = routerParamOptions.view.parentWidth
@@ -994,8 +968,6 @@ struct accessibilityTextTestDropPage {
       this._accessibilityTextSideBarContainerMod.mAccessibilityText = value.accessibilityText
       this._accessibilityTextSliderMod.mAccessibilityText = value.accessibilityText
       this._accessibilityTextStackMod.mAccessibilityText = value.accessibilityText
-      this._accessibilityTextStepperMod.mAccessibilityText = value.accessibilityText
-      this._accessibilityTextStepperItemMod.mAccessibilityText = value.accessibilityText
       this._accessibilityTextSwiperMod.mAccessibilityText = value.accessibilityText
       this._accessibilityTextTabContentMod.mAccessibilityText = value.accessibilityText
       this._accessibilityTextTabsMod.mAccessibilityText = value.accessibilityText
@@ -1153,15 +1125,6 @@ struct accessibilityTextTestDropPage {
           .showTips(true)
 
           .applyStyles(this.fancy).attributeModifier(this._accessibilityTextSliderMod)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
-        .applyStyles(this.fancy).attributeModifier(this._accessibilityTextStepperMod)
       } else if (this.targetView == 'TextArea') {
         TextArea({
           placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1426,21 +1389,6 @@ struct accessibilityTextTestDropPage {
           }, (item: number) => String(item))
         }
         .applyStyles(this.fancy).attributeModifier(this._accessibilityTextWaterFlowMod)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-
-          .applyStyles(this.fancy).attributeModifier(this._accessibilityTextStepperItemMod)
-        }
-
-        .backgroundColor(Color.Yellow)
-        .width('100%')
-        .height('100%')
       } else if (this.targetView == 'GridCol') {
         GridRow({
           columns: 1,

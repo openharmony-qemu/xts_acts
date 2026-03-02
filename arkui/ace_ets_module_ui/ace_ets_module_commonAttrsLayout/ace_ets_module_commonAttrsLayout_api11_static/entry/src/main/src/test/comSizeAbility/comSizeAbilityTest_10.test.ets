@@ -37,17 +37,11 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function comSizeAbilityTest_10() {
   describe('comSizeAbilityTest_10', () => {
-
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("comSizeAbilityTest_10 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("comSizeAbilityTest_10 beforeEach start")
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/comSizeAbility/comSizeAbilityTest_10'
@@ -78,6 +72,8 @@ export default function comSizeAbilityTest_10() {
      */
 it('comSizeAbilityTestJsunit_static_26', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_26 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('comSizeAbilityTest_10_to_1'));
@@ -141,6 +137,8 @@ it('comSizeAbilityTestJsunit_static_26', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_27', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_27 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('comSizeAbilityTest_10_to_2'));
@@ -204,6 +202,8 @@ it('comSizeAbilityTestJsunit_static_27', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_28', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_28 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('comSizeAbilityTest_10_to_3'));

@@ -46,7 +46,7 @@ const waitUiReadyMs = 1000;
 
 export default function ScrollApi1() {
   describe('ScrollApi1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       
     });

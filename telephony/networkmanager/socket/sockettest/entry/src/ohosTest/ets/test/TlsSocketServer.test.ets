@@ -1810,6 +1810,68 @@ export default function TLSSocketServerTest() {
     })
 
     /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetSocketFd_0100
+     * @tc.desc   Test to obtain TLSSocketServer FD after successful listen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetSocketFd0100';
+      console.info(`${caseName} test start `);
+      try {
+        await tlsServer.listen(tlsConnectOptions).catch((err: BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        await tlsServer.getSocketFd().then((fd: number) => {
+          console.info(`${caseName} get Socket FD success: ${fd}`);
+          expectTrue(fd !== -1);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} getSocketFd err: ${JSON.stringify(err)}`);
+          expectFail(false);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
+        expectFail(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetSocketFd0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetSocketFd_0200
+     * @tc.desc   Test to obtain TLSSocketServer FD after without listen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetSocketFd0200';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+        await tlsServer.getSocketFd().then((fd: number) => {
+          console.info(`${caseName} get Socket FD success: ${fd}`);
+          expectTrue(fd === -1);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} getSocketFd err: ${JSON.stringify(err)}`);
+          expectFail(false);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
+        expectFail(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
      * @tc.name   testNetworkMgrSocketTLSSocketServerGetCertificate0100
      * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0100
      * @tc.desc   Test to obtain a certificate,Use Promise asynchronous callback.

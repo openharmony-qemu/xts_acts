@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function girdContainerJsunit() {
   describe('girdContainerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("girdContainerTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
@@ -56,7 +56,8 @@ export default function girdContainerJsunit() {
           console.info("get girdContainer state pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push girdContainer page error:" + err);
       }
     });

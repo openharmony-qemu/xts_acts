@@ -31,10 +31,15 @@ import enableEdgeAutoScroll_false from './DragInteractionOptions/enableEdgeAutoS
 import enableEdgeAutoScroll_true from './DragInteractionOptions/enableEdgeAutoScroll_true.test';
 import enableEdgeAutoScroll from './DragInteractionOptions/enableEdgeAutoScroll.test';
 import notifyDragStartRequest from './Drag/notifyDragStartRequest.test';
+import DragEventUITest from "./DragController/DragEventUI.test";
+import dragActionAndPreviewTest from "./DragController/DragActionAndPreviewNullandundefined/DragActionAndPreviewTest.test";
+import createDragActionAndSpringTest from "./DragController/CreateDragActionAndSpringNullandundefined/CreateDragActionAndSpringTest.test";
+import dragControllerTest from './UIContext/DragControllerNullandundefined/DragControllerTest.test';
 
 
 export default function testsuite() {
     dragAdaptationTest();
+    DragEventUITest();
     getDragController();
     PreDrag();
     enableEdgeAutoScroll_false();
@@ -51,4 +56,7 @@ export default function testsuite() {
     APIPreDragStatusTest();
     DragInteractionOptionsTest();
     DragPreviewOptions();
+    dragActionAndPreviewTest();
+    createDragActionAndSpringTest();
+    dragControllerTest();
 }

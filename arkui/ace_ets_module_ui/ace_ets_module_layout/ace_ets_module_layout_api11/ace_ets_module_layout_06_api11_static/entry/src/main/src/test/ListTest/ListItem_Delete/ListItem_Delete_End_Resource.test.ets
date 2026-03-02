@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ListItem_Delete_End_Resource() {
   describe('ListItem_Delete_End_Resource', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_Delete_End_Resource beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -53,7 +53,7 @@ export default function ListItem_Delete_End_Resource() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ListItem_Delete_End_Resource state pages:" + JSON.stringify(pages));
-        if (!("ListItem_Delete_End_Resource" == pages.name)) {
+        if (!("List_SpaceChange" == pages.name)) {
           console.info("get ListItem_Delete_End_Resource pages.name:" + JSON.stringify(pages.name));
            routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -72,12 +72,6 @@ export default function ListItem_Delete_End_Resource() {
       await CommonFunc.sleep(3000);
 
     });
-
-    
-    
-    
-
-
 
 /**
      * @tc.number   SUB_ACE_ListItem_Delete_End_Resource_static_0100
@@ -102,13 +96,13 @@ it('SUB_ACE_ListItem_Delete_End_Resource_static_0100', Level.LEVEL0, async (done
       console.log('slide ')
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(5))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(5))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(3000);
+      await CommonFunc.sleep(2000);
 
       let text_011 = inspector.getInspectorByKey('ListItem_Delete_End_Resource_text_01');
 
@@ -125,11 +119,6 @@ it('SUB_ACE_ListItem_Delete_End_Resource_static_0100', Level.LEVEL0, async (done
       console.info('[SUB_ACE_ListItem_Delete_End_Resource_0100] END');
       done();
     });
-    
-    
-    
-
-
 
 /**
      * @tc.number   SUB_ACE_ListItem_Delete_End_Resource_static_0200
@@ -160,13 +149,13 @@ it('SUB_ACE_ListItem_Delete_End_Resource_static_0200', Level.LEVEL0, async (done
       console.info("SUB_ACE_ListItem_Delete_End_Resource_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       console.log('slide ')
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(3000);
+      await CommonFunc.sleep(2000);
 
       let text_011 = inspector.getInspectorByKey('ListItem_Delete_End_Resource_text_01');
 

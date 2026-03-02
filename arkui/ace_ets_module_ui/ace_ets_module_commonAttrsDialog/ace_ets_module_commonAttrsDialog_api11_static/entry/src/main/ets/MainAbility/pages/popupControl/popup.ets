@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage,State } from '@ohos.arkui.stateManagement';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../../../hypium/index';
+import { RecordData } from '@ohos.base';
 
 interface CustomEventData {
   enableArrow?: boolean; // 可选属性，类型为布尔值
@@ -84,7 +85,7 @@ struct PopupExample12 {
                 "arrowPointPosition": this.arrowPointPosition,
                 "arrowWidth": this.arrowWidth,
                 "arrowHeight": this.arrowHeight,
-              } as Record<string, Object | undefined | null>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 65,

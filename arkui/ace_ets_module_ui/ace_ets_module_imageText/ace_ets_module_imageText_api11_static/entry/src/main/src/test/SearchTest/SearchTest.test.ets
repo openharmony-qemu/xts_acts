@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ function spliceColor(sysColor: Resource) {
 
 export default function search() {
   describe('ActsAceSearchTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("search beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
 
@@ -68,21 +68,12 @@ export default function search() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push SearchModifierTest page error: " + err);
         expect().assertFail();
       }
     });
 
-    afterEach(async (): Promise<void> => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      let pages:router.RouterState = routerInstance.getState();
-      console.info("get Search state pages afterEach:" + JSON.stringify(pages));
-      if(pages.name !== "index"){
-        routerInstance.back();
-        await CommonFunc.sleep(1000);
-      }
-    })
 
     
     /**
@@ -124,7 +115,7 @@ export default function search() {
           name: 'caretWidthNumber', value: caretWidthNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0200] change component data error: " + err.message);
       }
 
@@ -159,7 +150,7 @@ export default function search() {
           name: 'caretWidthString', value: caretWidthString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0300] change component data error: " + err.message);
       }
 
@@ -193,7 +184,7 @@ export default function search() {
           name: 'caretWidthString', value: caretWidthString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0400] change component data error: " + err.message);
       }
 
@@ -227,7 +218,7 @@ export default function search() {
           name: 'caretWidthString', value: caretWidthString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0500] change component data error: " + err.message);
       }
 
@@ -291,7 +282,7 @@ export default function search() {
           name: 'caretWidthNumber', value: caretWidthNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0700] change component data error: " + err.message);
       }
 
@@ -325,7 +316,7 @@ export default function search() {
           name: 'caretWidthNumber', value: caretWidthNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0800] change component data error: " + err.message);
       }
 
@@ -359,7 +350,7 @@ export default function search() {
           name: 'caretWidthNumber', value: caretWidthNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0900] change component data error: " + err.message);
       }
 
@@ -393,7 +384,7 @@ export default function search() {
     //       name: 'caretWidthNumber', value: caretWidthNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CaretStyle_static_1000] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -428,7 +419,7 @@ export default function search() {
     //       name: 'caretWidthNumber', value: caretWidthNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CaretStyle_static_1100] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -488,7 +479,7 @@ export default function search() {
           name: 'caretColorNumber', value: caretColorNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1300] change component data error: " + err.message);
       }
 
@@ -522,7 +513,7 @@ export default function search() {
           name: 'caretColorColor', value: caretColorColor
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1400] change component data error: " + err.message);
       }
 
@@ -556,7 +547,7 @@ export default function search() {
           name: 'caretColorString', value: caretColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1500] change component data error: " + err.message);
       }
 
@@ -624,7 +615,7 @@ export default function search() {
           name: 'caretColorString', value: caretColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1700] change component data error: " + err.message);
       }
 
@@ -661,7 +652,7 @@ export default function search() {
     //       name: 'caretColorNumber', value: caretColorNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CaretStyle_static_1800] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -699,7 +690,7 @@ export default function search() {
     //       name: 'caretColorNumber', value: caretColorNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CaretStyle_static_1900] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -741,7 +732,7 @@ export default function search() {
           name: 'caretWidthNumber', value: caretWidthNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_2000] change component data error: " + err.message);
       }
 
@@ -780,7 +771,7 @@ export default function search() {
           name: 'caretColorString', value: caretColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_2100] change component data error: " + err.message);
       }
 
@@ -814,7 +805,7 @@ export default function search() {
           name: 'caretColorString', value: caretColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_2200] change component data error: " + err.message);
       }
 
@@ -929,7 +920,7 @@ export default function search() {
           name: 'textColorNumber', value: textColorNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_2700] change component data error: " + err.message);
       }
 
@@ -995,7 +986,7 @@ export default function search() {
           name: 'leftSearchIconSizeNumber', value: leftSearchIconSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0200] change component data error: " + err.message);
       }
 
@@ -1033,7 +1024,7 @@ export default function search() {
           name: 'leftSearchIconSizeString', value: leftSearchIconSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0300] change component data error: " + err.message);
       }
 
@@ -1070,7 +1061,7 @@ export default function search() {
           name: 'leftSearchIconSizeString', value: leftSearchIconSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0400] change component data error: " + err.message);
       }
 
@@ -1108,7 +1099,7 @@ export default function search() {
           name: 'leftSearchIconSizeString', value: leftSearchIconSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0500] change component data error: " + err.message);
       }
 
@@ -1148,7 +1139,7 @@ export default function search() {
           name: 'leftSearchIconSizeResource', value: leftSearchIconSizeResource
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0600] change component data error: " + err.message);
       }
 
@@ -1186,7 +1177,7 @@ export default function search() {
           name: 'leftSearchIconSizeNumber', value: leftSearchIconSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(5000);
@@ -1225,7 +1216,7 @@ export default function search() {
           name: 'leftSearchIconSizeNumber', value: leftSearchIconSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0800] change component data error: " + err.message);
       }
 
@@ -1263,7 +1254,7 @@ export default function search() {
           name: 'leftSearchIconSizeNumber', value: leftSearchIconSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0900] change component data error: " + err.message);
       }
 
@@ -1300,7 +1291,7 @@ export default function search() {
           name: 'leftSearchIconSizeNumber', value: leftSearchIconSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1000] change component data error: " + err.message);
       }
 
@@ -1338,7 +1329,7 @@ export default function search() {
     //       name: 'leftSearchIconSizeNumber', value: leftSearchIconSizeNumber
     //     });
     //     ;
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_SearchIcon_1100] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -1376,7 +1367,7 @@ export default function search() {
     //       name: 'leftSearchIconSizeNumber', value: leftSearchIconSizeNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_SearchIcon_1200] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -1439,7 +1430,7 @@ export default function search() {
           name: 'leftSearchIconColorNumber', value: leftSearchIconColorNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1400] change component data error: " + err.message);
       }
 
@@ -1473,7 +1464,7 @@ export default function search() {
           name: 'leftSearchIconColorColor', value: leftSearchIconColorColor
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1500] change component data error: " + err.message);
       }
 
@@ -1507,7 +1498,7 @@ export default function search() {
           name: 'leftSearchIconColorString', value: leftSearchIconColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1600] change component data error: " + err.message);
       }
 
@@ -1575,7 +1566,7 @@ export default function search() {
           name: 'leftSearchIconColorString', value: leftSearchIconColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1800] change component data error: " + err.message);
       }
 
@@ -1612,7 +1603,7 @@ export default function search() {
     //       name: 'leftSearchIconColorNumber', value: leftSearchIconColorNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_SearchIcon_1900] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -1650,7 +1641,7 @@ export default function search() {
     //       name: 'leftSearchIconColorNumber', value: leftSearchIconColorNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_SearchIcon_2000] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -1692,7 +1683,7 @@ export default function search() {
           name: 'leftSearchIconColorNumber', value: leftSearchIconColorNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2100);
@@ -1756,7 +1747,7 @@ export default function search() {
           name: 'searchSrcPath', value: searchSrcPath
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2300] change component data error: " + err.message);
       }
 
@@ -1790,7 +1781,7 @@ export default function search() {
           name: 'searchSrcPath', value: searchSrcPath
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2400] change component data error: " + err.message);
       }
 
@@ -1824,7 +1815,7 @@ export default function search() {
           name: 'searchSrcPath', value: searchSrcPath
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2500] change component data error: " + err.message);
       }
 
@@ -1890,7 +1881,7 @@ export default function search() {
           name: 'searchSrcPath', value: searchSrcPath
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2700] change component data error: " + err.message);
       }
 
@@ -1924,7 +1915,7 @@ export default function search() {
           name: 'searchSrcPath', value: searchSrcPath
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2800] change component data error: " + err.message);
       }
 
@@ -1959,7 +1950,7 @@ export default function search() {
     //       name: 'searchSrcPath', value: searchSrcPath
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_SearchIcon_2900] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -1995,7 +1986,7 @@ export default function search() {
     //       name: 'searchSrcPath', value: searchSrcPath
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_SearchIcon_3000] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -2054,7 +2045,7 @@ export default function search() {
           name: 'rightButtonStyleParam', value: rightButtonStyleParam
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0200] change component data error: " + err.message);
       }
 
@@ -2089,7 +2080,7 @@ export default function search() {
           name: 'rightButtonStyleParam', value: rightButtonStyleParam
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0300] change component data error: " + err.message);
       }
 
@@ -2128,7 +2119,7 @@ export default function search() {
     //       name: 'rightButtonStyleParam', value: rightButtonStyleParam
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CancelButton_0400] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -2168,7 +2159,7 @@ export default function search() {
     //       name: 'rightButtonStyleParam', value: rightButtonStyleParam
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CancelButton_0500] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -2231,7 +2222,7 @@ export default function search() {
           name: 'rightCancelIconSizeNumber', value: rightCancelIconSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0700] change component data error: " + err.message);
       }
 
@@ -2271,7 +2262,7 @@ export default function search() {
           name: 'rightCancelIconSizeString', value: rightCancelIconSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0800] change component data error: " + err.message);
       }
 
@@ -2311,7 +2302,7 @@ export default function search() {
           name: 'rightCancelIconSizeString', value: rightCancelIconSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0900] change component data error: " + err.message);
       }
 
@@ -2351,7 +2342,7 @@ export default function search() {
           name: 'rightCancelIconSizeString', value: rightCancelIconSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1000] change component data error: " + err.message);
       }
 
@@ -2396,7 +2387,7 @@ export default function search() {
           name: 'rightCancelIconSizeResource', value: rightCancelIconSizeResource
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1100] change component data error: " + err.message);
       }
 
@@ -2436,7 +2427,7 @@ export default function search() {
           name: 'rightCancelIconSizeNumber', value: rightCancelIconSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(5000);
@@ -2477,7 +2468,7 @@ export default function search() {
           name: 'rightCancelIconSizeNumber', value: rightCancelIconSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1300] change component data error: " + err.message);
       }
 
@@ -2516,7 +2507,7 @@ export default function search() {
           name: 'rightCancelIconSizeNumber', value: rightCancelIconSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1400] change component data error: " + err.message);
       }
 
@@ -2555,7 +2546,7 @@ export default function search() {
           name: 'rightCancelIconSizeNumber', value: rightCancelIconSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1500] change component data error: " + err.message);
       }
 
@@ -2595,7 +2586,7 @@ export default function search() {
     //       name: 'rightCancelIconSizeNumber', value: rightCancelIconSizeNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CancelButton_1600] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -2635,7 +2626,7 @@ export default function search() {
     //       name: 'rightCancelIconSizeNumber', value: rightCancelIconSizeNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CancelButton_1700] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -2702,7 +2693,7 @@ export default function search() {
           name: 'rightCancelIconColorNumber', value: rightCancelIconColorNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1900] change component data error: " + err.message);
       }
 
@@ -2739,7 +2730,7 @@ export default function search() {
           name: 'rightCancelIconColorColor', value: rightCancelIconColorColor
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2000] change component data error: " + err.message);
       }
 
@@ -2776,7 +2767,7 @@ export default function search() {
           name: 'rightCancelIconColorString', value: rightCancelIconColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2100] change component data error: " + err.message);
       }
 
@@ -2849,7 +2840,7 @@ export default function search() {
           name: 'rightCancelIconColorString', value: rightCancelIconColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2300] change component data error: " + err.message);
       }
 
@@ -2888,7 +2879,7 @@ export default function search() {
     //       name: 'rightCancelIconColorNumber', value: rightCancelIconColorNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CancelButton_2400] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -2928,7 +2919,7 @@ export default function search() {
     //       name: 'rightCancelIconColorNumber', value: rightCancelIconColorNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CancelButton_2500] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -2972,7 +2963,7 @@ export default function search() {
           name: 'rightCancelIconColorNumber', value: rightCancelIconColorNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2700);
@@ -3044,7 +3035,7 @@ export default function search() {
           name: 'rightIconSrcPath', value: rightIconSrcPath
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2800] change component data error: " + err.message);
       }
 
@@ -3081,7 +3072,7 @@ export default function search() {
           name: 'rightIconSrcPath', value: rightIconSrcPath
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2900] change component data error: " + err.message);
       }
 
@@ -3118,7 +3109,7 @@ export default function search() {
           name: 'rightIconSrcPath', value: rightIconSrcPath
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_3000] change component data error: " + err.message);
       }
 
@@ -3189,7 +3180,7 @@ export default function search() {
           name: 'rightIconSrcPath', value: rightIconSrcPath
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_3200] change component data error: " + err.message);
       }
 
@@ -3226,7 +3217,7 @@ export default function search() {
     //       name: 'rightIconSrcPath', value: rightIconSrcPath
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CancelButton_3300] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -3264,7 +3255,7 @@ export default function search() {
     //       name: 'rightIconSrcPath', value: rightIconSrcPath
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CancelButton_3400] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -3302,7 +3293,7 @@ export default function search() {
     //       name: 'rightIconSrcPath', value: rightIconSrcPath
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_CancelButton_3500] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -3367,7 +3358,7 @@ export default function search() {
           name: 'searchButtonFontSizeString', value: searchButtonFontSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0200] change component data error: " + err.message);
       }
 
@@ -3401,7 +3392,7 @@ export default function search() {
           name: 'searchButtonFontSizeString', value: searchButtonFontSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0300] change component data error: " + err.message);
       }
 
@@ -3435,7 +3426,7 @@ export default function search() {
           name: 'searchButtonFontSizeNumber', value: searchButtonFontSizeNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0400] change component data error: " + err.message);
       }
 
@@ -3469,7 +3460,7 @@ export default function search() {
           name: 'searchButtonFontSizeString', value: searchButtonFontSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0500] change component data error: " + err.message);
       }
 
@@ -3504,7 +3495,7 @@ export default function search() {
         });
         await CommonFunc.sleep(2000);
         console.info("[ArkUI_Stage_Search_SearchButton_0600] start to publish emit");
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0600] change component data error: " + err.message);
       }
 
@@ -3569,7 +3560,7 @@ export default function search() {
           name: 'searchButtonFontSizeString', value: searchButtonFontSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0800] change component data error: " + err.message);
       }
 
@@ -3603,7 +3594,7 @@ export default function search() {
           name: 'searchButtonFontSizeString', value: searchButtonFontSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0900] change component data error: " + err.message);
       }
 
@@ -3637,7 +3628,7 @@ export default function search() {
           name: 'searchButtonFontSizeString', value: searchButtonFontSizeString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1000] change component data error: " + err.message);
       }
 
@@ -3676,7 +3667,7 @@ export default function search() {
     //       name: 'searchButtonFontSizeString', value: searchButtonFontSizeString
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_SearchButton_1100] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -3717,7 +3708,7 @@ export default function search() {
     //       name: 'searchButtonFontSizeString', value: searchButtonFontSizeString
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_SearchButton_1200] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -3782,7 +3773,7 @@ export default function search() {
           name: 'searchButtonFontColorNumber', value: searchButtonFontColorNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1400] change component data error: " + err.message);
       }
 
@@ -3817,7 +3808,7 @@ export default function search() {
           name: 'searchButtonFontColorColor', value: searchButtonFontColorColor
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1500] change component data error: " + err.message);
       }
 
@@ -3852,7 +3843,7 @@ export default function search() {
           name: 'searchButtonFontColorString', value: searchButtonFontColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1600] change component data error: " + err.message);
       }
 
@@ -3921,7 +3912,7 @@ export default function search() {
           name: 'searchButtonFontColorString', value: searchButtonFontColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1800] change component data error: " + err.message);
       }
 
@@ -3958,7 +3949,7 @@ export default function search() {
     //       name: 'searchButtonFontColorNumber', value: searchButtonFontColorNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_SearchButton_1900] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -3996,7 +3987,7 @@ export default function search() {
     //       name: 'searchButtonFontColorNumber', value: searchButtonFontColorNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_SearchButton_2000] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -4038,7 +4029,7 @@ export default function search() {
           name: 'searchButtonFontColorNumber', value: searchButtonFontColorNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_2100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2100);
@@ -4102,7 +4093,7 @@ export default function search() {
           name: 'textColorNumber', value: textColorNumber
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_FontColor_0200] change component data error: " + err.message);
       }
 
@@ -4134,7 +4125,7 @@ export default function search() {
           name: 'textColorColor', value: textColorColor
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_FontColor_0300] change component data error: " + err.message);
       }
 
@@ -4166,7 +4157,7 @@ export default function search() {
           name: 'textColorString', value: textColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_FontColor_0400] change component data error: " + err.message);
       }
 
@@ -4230,7 +4221,7 @@ export default function search() {
           name: 'textColorString', value: textColorString
         });
         await CommonFunc.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_FontColor_0600] change component data error: " + err.message);
       }
 
@@ -4265,7 +4256,7 @@ export default function search() {
     //       name: 'textColorNumber', value: textColorNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_FontColor_0700] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -4301,7 +4292,7 @@ export default function search() {
     //       name: 'textColorNumber', value: textColorNumber
     //     });
     //     await CommonFunc.sleep(2000);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[ArkUI_Stage_Search_FontColor_0800] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);

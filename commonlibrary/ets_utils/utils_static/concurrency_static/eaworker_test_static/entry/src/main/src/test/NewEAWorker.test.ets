@@ -47,8 +47,8 @@ export const Sleep = (ms: int) => {
 
 export default function NewEAWorkerTest() {
   describe('NewEAWorkerTest', (): void => {
-    afterEach(() => {
-      await Utils.msSleep(300);
+    afterEach(async (): Promise<void> => {
+      await Utils.msSleep(100);
     })
 
     /**
@@ -64,6 +64,8 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'getWorkerIdTest001';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        let emptyId = worker.getWorkerId();
+        expect(emptyId).assertEqual(undefined);
         try {
           worker.start();
           let workerId1 = worker.getWorkerId();
@@ -258,7 +260,7 @@ export default function NewEAWorkerTest() {
         let worker: EAWorker | null = null;
         let workerId: int | undefined = undefined;
         try {
-          const task = new taskpool.Task((): int | undefined => {
+          const task = new taskpool.Task(() => {
             worker = new EAWorker();
             worker!.start();
             workerId = worker!.getWorkerId();
@@ -707,7 +709,7 @@ export default function NewEAWorkerTest() {
           EAWorker.main().start();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Main worker cannot be started');
+          expect(error.message).assertContain('EAWorker:: Main worker cannot be started');
         } finally {
           console.info(`${TAG} test end`);
           done();
@@ -735,7 +737,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Worker already started');
+          expect(error.message).assertContain('EAWorker:: Worker already started or quit');
         } finally {
           try {
             worker.quit();
@@ -766,7 +768,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Cannot stop worker before start');
+          expect(error.message).assertContain('EAWorker:: Cannot stop worker before start');
         } finally {
           try {
             worker.quit();
@@ -797,7 +799,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Cannot stop worker before start');
+          expect(error.message).assertContain('EAWorker:: Cannot stop worker before start');
         } finally {
           try {
             worker.quit();
@@ -828,7 +830,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Cannot stop worker before start');
+          expect(error.message).assertContain('EAWorker:: Cannot stop worker before start');
         } finally {
           try {
             worker.quit();
@@ -860,7 +862,7 @@ export default function NewEAWorkerTest() {
           worker.start();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Can not run task when worker is not started');
+          expect(error.message).assertContain('EAWorker:: Cannot run task when worker is not started');
         } finally {
           try {
             worker.quit();
@@ -892,7 +894,7 @@ export default function NewEAWorkerTest() {
           }).Await();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Can not run task when worker is not started');
+          expect(error.message).assertContain('EAWorker:: Cannot run task when worker is not started');
         } finally {
           try {
             worker.quit();
@@ -925,7 +927,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail()
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Can not post task when worker is not started');
+          expect(error.message).assertContain('EAWorker:: Cannot post task when worker is not started');
         } finally {
           try {
             worker.quit();
@@ -1380,25 +1382,17 @@ export default function NewEAWorkerTest() {
         console.info(`${TAG} test start`);
         let worker: EAWorker | null = null;
         let taskExecuted = false;
-        let isWorkerAlive = false;
         try {
           const task = (): void => {
-            isWorkerAlive = worker!.isAlive();
             taskExecuted = true;
           }
           worker = new EAWorker(task);
           worker!.start();
-          await new Promise<string>((resolve, reject) => {
-            const timeout = setTimeout(() => {
-              if (!taskExecuted) {
-                reject(new Error('任务执行超时'));
-              } else {
-                resolve('task success');
-              }
-            }, 3000);
-          });
+          while(!taskExecuted){
+            await Utils.msSleep(100);
+          }
           expect(taskExecuted).assertTrue();
-          expect(isWorkerAlive).assertFalse();
+          expect(worker!.isAlive()).assertTrue();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -1468,15 +1462,9 @@ export default function NewEAWorkerTest() {
             taskExecuted = true;
           }
           worker.postTask(task)
-          await new Promise<string>((resolve, reject) => {
-            const timeout = setTimeout(() => {
-              if (!taskExecuted) {
-                reject(new Error('任务执行超时'));
-              } else {
-                resolve('task success');
-              }
-            }, 3000);
-          });
+          while(!taskExecuted){
+            await Utils.msSleep(100);
+          }
           expect(taskExecuted).assertTrue();
           expect(isWorkerAlive).assertTrue();
         } catch (error) {
@@ -1699,7 +1687,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Main worker cannot set priority');
+          expect(error.message).assertContain('EAWorker:: Main worker cannot set priority');
         } finally {
           console.info(`${TAG} test end`);
           done();
@@ -1723,7 +1711,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Main worker cannot be stopped');
+          expect(error.message).assertContain('EAWorker:: Main worker cannot be stopped');
         } finally {
           console.info(`${TAG} test end`);
           done();
@@ -1755,7 +1743,9 @@ export default function NewEAWorkerTest() {
             });
           }
           worker.quit();
-          await Utils.msSleep(1200);
+          while(count<10){
+            await Utils.msSleep(100);
+          }
           console.info(`${TAG} counter：${count}`);
           expect(count).assertEqual(10);
         } catch (error) {
@@ -1794,7 +1784,9 @@ export default function NewEAWorkerTest() {
             }, 100);
           });
           worker.quit();
-          await Utils.msSleep(3000);
+          while(!fired){
+            await Utils.msSleep(100);
+          }
           expect(fired).assertTrue();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -1831,7 +1823,9 @@ export default function NewEAWorkerTest() {
         worker.start();
         try {
           worker.quit();
-          await Utils.msSleep(1100);
+          while(!doneFlag){
+            await Utils.msSleep(100);
+          }
           expect(doneFlag).assertTrue();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -1923,7 +1917,9 @@ export default function NewEAWorkerTest() {
         });
         worker.start();
         try {
-          await Utils.msSleep(1000);
+          while(!doneFlag){
+            await Utils.msSleep(100);
+          }
           console.info(`${TAG} doneFlag：${doneFlag}`);
           expect(doneFlag).assertTrue();
         } catch (error) {
@@ -1961,7 +1957,7 @@ export default function NewEAWorkerTest() {
             quitCalledInside = true;
           });
           worker!.start();
-          await Utils.msSleep(2000);
+          await Utils.msSleep(1000);
         } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
           expect(error.message).assertEqual('Unable to launch coroutine: no suitable worker was found')

@@ -74,7 +74,7 @@ export default function Date7Test() {
     it('Date7Test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const testDate3 = new Date();
       testDate3.setUTCFullYear(2024);
-      testDate3.setUTCMonth(1);
+      testDate3.setUTCMonth(2);
       testDate3.setUTCDate(29);
       testDate3.setUTCHours(12);
       testDate3.setUTCMinutes(34);
@@ -467,14 +467,14 @@ export default function Date7Test() {
     it('Date7Test_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date27 = new Date();
       date27.setUTCFullYear(2010);
-      date27.setUTCMonth(5);
+      date27.setUTCMonth(4);
       date27.setUTCDate(15);
       date27.setUTCHours(9);
       date27.setUTCMinutes(30);
       date27.setUTCSeconds(45);
       date27.setUTCMilliseconds(500);
       expect(date27.getUTCFullYear()).assertEqual(2010);
-      expect(date27.getUTCMonth()).assertEqual(5);
+      expect(date27.getUTCMonth()).assertEqual(4);
       expect(date27.getUTCDate()).assertEqual(15);
       expect(date27.getUTCHours()).assertEqual(9);
       expect(date27.getUTCMinutes()).assertEqual(30);
@@ -674,8 +674,8 @@ export default function Date7Test() {
       const date40 = new Date();
       date40.setUTCFullYear(2050);
       expect(date40.getUTCFullYear()).assertEqual(2050);
-      date40.setUTCMonth(10);
-      expect(date40.getUTCMonth()).assertEqual(10);
+      date40.setUTCMonth(9);
+      expect(date40.getUTCMonth()).assertEqual(9);
       date40.setUTCDate(11);
       expect(date40.getUTCDate()).assertEqual(11);
     });
@@ -1163,7 +1163,7 @@ export default function Date7Test() {
     it('Date7Test_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date71 = new Date();
       date71.setUTCFullYear(2000);
-      date71.setUTCMonth(1);
+      date71.setUTCMonth(2);
       date71.setUTCDate(29);
       expect(date71.getUTCFullYear()).assertEqual(2000);
       expect(date71.getUTCMonth()).assertEqual(2);
@@ -1549,14 +1549,14 @@ export default function Date7Test() {
     it('Date7Test_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date96 = new Date();
       date96.setUTCFullYear(2026);
-      date96.setUTCMonth(8);
+      date96.setUTCMonth(7);
       date96.setUTCDate(10);
       date96.setUTCHours(9);
       date96.setUTCMinutes(8);
       date96.setUTCSeconds(7);
       date96.setUTCMilliseconds(6);
       expect(date96.getUTCFullYear()).assertEqual(2026);
-      expect(date96.getUTCMonth()).assertEqual(8);
+      expect(date96.getUTCMonth()).assertEqual(7);
       expect(date96.getUTCDate()).assertEqual(10);
       expect(date96.getUTCHours()).assertEqual(9);
       expect(date96.getUTCMinutes()).assertEqual(8);
@@ -1590,7 +1590,7 @@ export default function Date7Test() {
     it('Date7Test_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date98 = new Date();
       date98.setUTCFullYear(0);
-      date98.setUTCMonth(1);
+      date98.setUTCMonth(2);
       date98.setUTCDate(28);
       expect(date98.getUTCFullYear()).assertEqual(0);
       expect(date98.getUTCMonth()).assertEqual(2);
@@ -2251,7 +2251,7 @@ export default function Date7Test() {
     it('Date7Test_141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date141 = new Date();
       date141.setUTCFullYear(1900);
-      date141.setUTCMonth(1);
+      date141.setUTCMonth(2);
       date141.setUTCDate(28);
       expect(date141.getUTCFullYear()).assertEqual(1900);
       expect(date141.getUTCMonth()).assertEqual(2);

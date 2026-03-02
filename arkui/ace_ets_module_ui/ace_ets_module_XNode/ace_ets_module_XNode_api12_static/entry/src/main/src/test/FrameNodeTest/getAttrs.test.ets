@@ -31,7 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function getAttrsTest() {
   describe('getAttrsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getAttrsTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
@@ -186,7 +186,10 @@ it('getAttrsTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0500] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"top":{"unit":1,"value":3},"right":{"unit":1,"value":3},"bottom":{"unit":1,"value":3},"left":{"unit":1,"value":3}}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"top":{"unit":1,"value":3}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"right":{"unit":1,"value":3}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"bottom":{"unit":1,"value":3}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"left":{"unit":1,"value":3}');
       console.info('[getAttrsTest_static_0500] END');
       done();
     });
@@ -212,7 +215,10 @@ it('getAttrsTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<v
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0600] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"top":{"unit":1,"value":10},"right":{"unit":1,"value":10},"bottom":{"unit":1,"value":10},"left":{"unit":1,"value":10}}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"top":{"unit":1,"value":10}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"right":{"unit":1,"value":10}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"bottom":{"unit":1,"value":10}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"left":{"unit":1,"value":10}');
       console.info('[getAttrsTest_static_0600] END');
       done();
     });
@@ -238,7 +244,10 @@ it('getAttrsTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<v
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0700] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"top":{"unit":1,"value":20},"right":{"unit":1,"value":20},"bottom":{"unit":1,"value":20},"left":{"unit":1,"value":20}}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"top":{"unit":1,"value":20}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"right":{"unit":1,"value":20}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"bottom":{"unit":1,"value":20}');
+      expect(obj.getElement('$attrs').getString('content')).assertContain('"left":{"unit":1,"value":20}');
       console.info('[getAttrsTest_static_0700] END');
       done();
     });
@@ -342,7 +351,7 @@ it('getAttrsTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<v
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_1100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("undefined");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("false");
       console.info('[getAttrsTest_static_1100] END');
       done();
     });

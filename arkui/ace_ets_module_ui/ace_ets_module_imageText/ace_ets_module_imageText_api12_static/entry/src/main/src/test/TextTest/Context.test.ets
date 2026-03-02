@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Context() {
   describe('Context', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Context beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -47,7 +47,7 @@ export default function Context() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Context state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("Context" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

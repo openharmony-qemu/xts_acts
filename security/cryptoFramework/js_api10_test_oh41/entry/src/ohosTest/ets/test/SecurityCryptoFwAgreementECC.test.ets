@@ -50,9 +50,9 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
      * @tc.desc   AsyKeyGenerator with algName X25519
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Security_CryptoFramework_Agreement_ECC_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("SUB_Security_CryptoFramework_Agreement_ECC_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_ECC_Func_0100";
       console.log(testNumber + ": started.");
       let param: string = "X25519";

@@ -22,7 +22,7 @@ export default function DecimalTest027() {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(200)
       console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });
@@ -40,9 +40,9 @@ export default function DecimalTest027() {
      * @tc.desc   Test powSqrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("Decimal_powSqrt_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it("Decimal_powSqrt_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       Decimal.set ({
         toExpNeg: -7,
         toExpPos: 21,
@@ -54,7 +54,7 @@ export default function DecimalTest027() {
       let e : string = '0';
       for (let total = 0; total < 100; total++) {
         e = Decimal.random( Math.random() * 40 + 1 | 0 ).toExponential();
-        r = new Decimal(e.slice(0, e.indexOf('e') + 1) + ( Math.random() < 0.5 ? '-' : '' ) +( n = Math.floor( Math.random() * 9e15 ) + '' ).slice( Math.random() * n.length | 0 ));
+        r = new Decimal(e.slice(new Int(0), e.indexOf('e') + 1) + ( Math.random() < 0.5 ? '-' : '' ) +( n = Math.floor( Math.random() * 9e15 ) + '' ).slice( (Math.random() * n.length | 0).toInt()));
         if ((Math.random() * 9 | 0) == 0) {
           Decimal.set ({ rounding: 0 });
         } else if ((Math.random() * 9 | 0) == 1) {

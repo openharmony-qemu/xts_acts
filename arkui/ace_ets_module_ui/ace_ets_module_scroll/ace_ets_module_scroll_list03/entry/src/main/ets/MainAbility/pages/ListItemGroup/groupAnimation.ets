@@ -38,7 +38,6 @@ struct ListItemGroupAnimationPage {
       .fontSize(20)
       .backgroundColor(0xAABBCC)
       .width('100%')
-      .padding(10)
   }
 
   @Builder
@@ -47,7 +46,6 @@ struct ListItemGroupAnimationPage {
       .fontSize(16)
       .backgroundColor(0xAABBCC)
       .width('100%')
-      .padding(5)
   }
 
   build() {
@@ -59,7 +57,7 @@ struct ListItemGroupAnimationPage {
           this.scroller.scrollPage({ next: true, animation: true })
         })
 		
-      List({ space: 5, scroller: this.scroller }) {
+      List({ scroller: this.scroller }) {
         ForEach(this.tableAnimation, (item: TableAnimation) => {
           ListItemGroup({ header: this.itemHead(item.title), footer: this.itemFoot(item.projects.length) }) {
             ForEach(item.projects, (project: string) => {

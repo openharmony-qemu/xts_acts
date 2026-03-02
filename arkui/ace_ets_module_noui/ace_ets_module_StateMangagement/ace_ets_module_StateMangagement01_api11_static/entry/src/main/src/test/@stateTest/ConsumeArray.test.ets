@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ConsumeArray() {
   describe('ConsumeArray', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ConsumeArray beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");

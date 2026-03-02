@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorQueryLayout006() {
   describe('RichEditorQueryLayout006', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorQueryLayout006 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -95,8 +95,8 @@ export default function RichEditorQueryLayout006() {
       let style = await (driver.findComponent(ON.id('style')) as Promise<Component>);
       let styleText = await style.getText();
       await CommonFunc.sleep(500);
-      expect(styleText)
-        .assertEqual('style:{"borderRadius":"{\\"topLeft\\":\\"40.00px\\",\\"topRight\\":\\"40.00px\\",\\"bottomLeft\\":\\"40.00px\\",\\"bottomRight\\":\\"40.00px\\"}","margin":"[40.00px,40.00px,40.00px,40.00px]"}');
+      expect(styleText).assertContain('"margin":{"top":"40.00px","left":"40.00px","right":"40.00px","bottom":"40.00px"}');
+      expect(styleText).assertContain('"borderRadius":{"topLeft":"40.00px","topRight":"40.00px","bottomLeft":"40.00px","bottomRight":"40.00px"}');
       done();
     });
 

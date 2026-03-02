@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export default function instanceTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -56,7 +56,7 @@ export default function instanceTest() {
         let instance1 = NullValue.INSTANCE;
         let instance2 = NullValue.INSTANCE;
         expect(instance1 === instance2).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -74,7 +74,7 @@ export default function instanceTest() {
       let TAG = "testNullValueInstance0002";
       try {
         expect(NullValue.INSTANCE.getType()).assertEqual(NullType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -92,7 +92,7 @@ export default function instanceTest() {
       let TAG = "testNullValueInstance0003";
       try {
         expect(NullValue.INSTANCE.toString()).assertEqual(NullType.REF.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -111,7 +111,7 @@ export default function instanceTest() {
       try {
         let instance = NullValue.INSTANCE;
         expect(instance.toLocaleString()).assertEqual(instance.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -129,7 +129,7 @@ export default function instanceTest() {
       let TAG = "testNullValueInstance0005";
       try {
         expect(NullValue.INSTANCE.toPrint(0)).assertEqual(NullType.REF.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -150,7 +150,7 @@ export default function instanceTest() {
         expect(instance.toPrint(0)).assertEqual(NullType.REF.toString());
         expect(instance.toPrint(1)).assertEqual(NullType.REF.toString());
         expect(instance.toPrint(2)).assertEqual(NullType.REF.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -188,7 +188,7 @@ export default function instanceTest() {
       try {
         let boolValue = new BooleanValue(BooleanType.REF, true);
         expect(boolValue.getValueData()).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -207,7 +207,7 @@ export default function instanceTest() {
       try {
         let boolValue = new BooleanValue(BooleanType.REF, false);
         expect(boolValue.getValueData()).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -226,7 +226,7 @@ export default function instanceTest() {
       try {
         let boolValue = new BooleanValue(BooleanType.REF, new Boolean(true));
         expect(boolValue.getValueData()).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -245,7 +245,7 @@ export default function instanceTest() {
       try {
         let boolValue = new BooleanValue(BooleanType.REF, new Boolean(false));
         expect(boolValue.getValueData()).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -264,7 +264,7 @@ export default function instanceTest() {
       try {
         let boolValue = new BooleanValue(BooleanType.REF, true);
         expect(typeof boolValue.getValueData()).assertEqual('boolean');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -284,7 +284,7 @@ export default function instanceTest() {
         let boolValue1 = new BooleanValue(BooleanType.REF, true);
         let boolValue2 = new BooleanValue(BooleanType.REF, true);
         expect(boolValue1.getValueData()).assertEqual(boolValue2.getValueData());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -305,7 +305,7 @@ export default function instanceTest() {
         let firstCall = boolValue.getValueData();
         let secondCall = boolValue.getValueData();
         expect(firstCall).assertEqual(secondCall);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }

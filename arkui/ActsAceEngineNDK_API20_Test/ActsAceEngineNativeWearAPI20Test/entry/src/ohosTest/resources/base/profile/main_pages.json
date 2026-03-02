@@ -3,6 +3,8 @@
     "MainAbility/pages/XTSIndex",
     "MainAbility/pages/NativeXComponent/DragAndDrogXComponent",
     "MainAbility/pages/NativeXComponent/DialogXComponent",
-    "MainAbility/pages/NodeEventTest/NodeEventTest"
+    "MainAbility/pages/NodeEventTest/NodeEventTest",
+    "MainAbility/pages/Text/textAreaInputTest",
+    "MainAbility/pages/ArkUIKeyEventTest/ArkUIKeyIntensionTest"
   ]
 }

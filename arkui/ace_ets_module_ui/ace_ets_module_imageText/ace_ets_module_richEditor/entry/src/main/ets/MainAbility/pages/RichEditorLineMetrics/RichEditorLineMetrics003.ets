@@ -20,31 +20,30 @@ struct RichEditorLineMetrics003 {
   build() {
 
     Column() {
-      Text('lineMetrics:' + this.lineMetrics).id('lineMetrics')
-      Button('get lineMetrics(null)').id('getFirst')
-        .onClick(() => {
-          let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          let lineMetrics = layoutManager.getLineMetrics(null);
-          console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
-          this.lineMetrics = lineMetrics + '';
-        })
-        .margin({ bottom: 20, top: 10 })
-      Button('get lineMetrics(undefined)').id('getUndefined')
-        .onClick(() => {
-          let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          let lineMetrics = layoutManager.getLineMetrics(undefined);
-          console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
-          this.lineMetrics = lineMetrics + '';
-        })
-        .margin({ bottom: 20, top: 10 })
-      Button('get lineMetrics(-1)').id('get1')
-        .onClick(() => {
-          let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          let lineMetrics = layoutManager.getLineMetrics(-1);
-          console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
-          this.lineMetrics = lineMetrics + '';
-        })
-        .margin({ bottom: 20, top: 10 })
+      Text('lineMetrics:' + this.lineMetrics).id('lineMetrics').height('5%')
+      Row(){
+        Button('get lineMetrics(null)').id('getFirst')
+          .onClick(() => {
+            let layoutManager: LayoutManager = this.controller.getLayoutManager();
+            let lineMetrics = layoutManager.getLineMetrics(null);
+            console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
+            this.lineMetrics = lineMetrics + '';
+          }).width('33%')
+        Button('get lineMetrics(undefined)').id('getUndefined')
+          .onClick(() => {
+            let layoutManager: LayoutManager = this.controller.getLayoutManager();
+            let lineMetrics = layoutManager.getLineMetrics(undefined);
+            console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
+            this.lineMetrics = lineMetrics + '';
+          }).width('33%')
+        Button('get lineMetrics(-1)').id('get1')
+          .onClick(() => {
+            let layoutManager: LayoutManager = this.controller.getLayoutManager();
+            let lineMetrics = layoutManager.getLineMetrics(-1);
+            console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
+            this.lineMetrics = lineMetrics + '';
+          }).width('33%')
+      }.height('5%')
       RichEditor({ controller: this.controller })
         .height(200)
         .borderWidth(1)
@@ -73,5 +72,6 @@ struct RichEditorLineMetrics003 {
         .id('RichEditorLineMetrics003')
 
     }
+    .width('100%')
   }
 }

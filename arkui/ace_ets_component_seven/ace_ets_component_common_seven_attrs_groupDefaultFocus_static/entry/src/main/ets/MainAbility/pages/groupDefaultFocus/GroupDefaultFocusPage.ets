@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, AlignRuleOption } from '@ohos.arkui.component'
@@ -562,22 +562,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-	mGroupDefaultFocus: boolean = false
-
-	applyNormalAttribute(instance: StepperAttribute): void {
-		instance.groupDefaultFocus(this.mGroupDefaultFocus)
-	}
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-	mGroupDefaultFocus: boolean = false
-
-	applyNormalAttribute(instance: StepperItemAttribute): void {
-		instance.groupDefaultFocus(this.mGroupDefaultFocus)
-	}
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mGroupDefaultFocus: boolean = false
 
@@ -774,8 +758,6 @@ struct GroupDefaultFocusPage {
 	@State _groupDefaultFocusSliderModifier: SliderModifier = new SliderModifier()
 	@State _groupDefaultFocusSpanModifier: SpanModifier = new SpanModifier()
 	@State _groupDefaultFocusStackModifier: StackModifier = new StackModifier()
-	@State _groupDefaultFocusStepperModifier: StepperModifier = new StepperModifier()
-	@State _groupDefaultFocusStepperItemModifier: StepperItemModifier = new StepperItemModifier()
 	@State _groupDefaultFocusSwiperModifier: SwiperModifier = new SwiperModifier()
 	@State _groupDefaultFocusTabContentModifier: TabContentModifier = new TabContentModifier()
 	@State _groupDefaultFocusTabsModifier: TabsModifier = new TabsModifier()
@@ -803,17 +785,15 @@ struct GroupDefaultFocusPage {
 
 	onPageShow() {
 		console.info('groupDefaultFocus translate page show called ')
-		let routerParamOptions = new RouterParams()
-		routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-		this.targetView = routerParamOptions.view.targetView;
-		this.componentKey = routerParamOptions.view.componentKey as string;
-		this.parentWidth = routerParamOptions.view.parentWidth;
-		this.parentHeight = routerParamOptions.view.parentHeight;
-		this.columns = (routerParamOptions.view.columns as int)
-		this.gutter = (routerParamOptions.view.gutter as int)
-		this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
-		this.parentComponentKey = routerParamOptions.view.parentComponentKey;
-		this._groupDefaultFocusButtonModifier.mGroupDefaultFocus = routerParamOptions.view.testValue.setValue.groupDefaultFocus
+		this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
+		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+		this._groupDefaultFocusButtonModifier.mGroupDefaultFocus = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.groupDefaultFocus
     attrsManager.registerDataChange((value: SetValue) => {
 			console.info('groupDefaultFocus [registerDataChange] ' + JSON.stringify(value.groupDefaultFocus))
 			this._groupDefaultFocusAlphabetIndexerModifier.mGroupDefaultFocus = value.groupDefaultFocus
@@ -881,8 +861,6 @@ struct GroupDefaultFocusPage {
 			this._groupDefaultFocusSliderModifier.mGroupDefaultFocus = value.groupDefaultFocus
 			this._groupDefaultFocusSpanModifier.mGroupDefaultFocus = value.groupDefaultFocus
 			this._groupDefaultFocusStackModifier.mGroupDefaultFocus = value.groupDefaultFocus
-			this._groupDefaultFocusStepperModifier.mGroupDefaultFocus = value.groupDefaultFocus
-			this._groupDefaultFocusStepperItemModifier.mGroupDefaultFocus = value.groupDefaultFocus
 			this._groupDefaultFocusSwiperModifier.mGroupDefaultFocus = value.groupDefaultFocus
 			this._groupDefaultFocusTabContentModifier.mGroupDefaultFocus = value.groupDefaultFocus
 			this._groupDefaultFocusTabsModifier.mGroupDefaultFocus = value.groupDefaultFocus
@@ -1057,32 +1035,6 @@ struct GroupDefaultFocusPage {
 					.showTips(true)
 					
 					.attributeModifier(this._groupDefaultFocusSliderModifier)
-			}
-			if (this.targetView == 'Stepper') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-				}
-					
-					
-			}
-			if (this.targetView == 'StepperItem') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-						.backgroundColor(Color.Red)
-						
-						
-				}
-					.backgroundColor(Color.Yellow)
-					.width('100%')
-					.height('100%')
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')

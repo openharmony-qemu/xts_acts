@@ -38,7 +38,10 @@
     "MainAbility/pages/Menu/AvailableLayoutArea",
     "MainAbility/pages/bindMenu/mask",
     "MainAbility/pages/bindMenu/maskColor",
-    "MainAbility/pages/bindMenu/maskBackgroundBlurStyle"
-
+    "MainAbility/pages/bindMenu/maskBackgroundBlurStyle",
+    "MainAbility/pages/Menu/BindMenuWithResponse",
+    "MainAbility/pages/MenuNullUndefined/closeMenu",
+    "MainAbility/pages/MenuNullUndefined/openMenu",
+    "MainAbility/pages/MenuNullUndefined/updateMenu"
   ]
 }

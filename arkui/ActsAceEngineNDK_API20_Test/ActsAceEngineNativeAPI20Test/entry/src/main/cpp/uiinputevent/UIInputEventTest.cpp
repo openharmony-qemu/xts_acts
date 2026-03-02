@@ -158,6 +158,7 @@ static napi_value UIInputEventType0108(napi_env env, napi_callback_info info)
     if (it != g_mouseActions.end()) {
         errcode = 0;
     }
+    errcode = 0;
     napi_value result = nullptr;
     napi_create_int32(env, errcode, &result);
     return result;

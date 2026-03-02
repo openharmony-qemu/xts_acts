@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,7 +56,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
           let secret: cryptoFramework.DataBlob = pbkdf2Utils.generateKdfKey(kdfAlgName, spec);
           expect(secret.data.byteLength).assertEqual(keySize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -85,9 +85,9 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
           pbkdf2Utils.generateKdfKey(kdfAlgName, spec);
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -114,9 +114,9 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
           let secret: cryptoFramework.DataBlob = pbkdf2Utils.generateKdfKey(kdfAlgName, spec);
           expect(secret.data.byteLength).assertEqual(keySize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -143,7 +143,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
           let secret: cryptoFramework.DataBlob = pbkdf2Utils.generateKdfKey(kdfAlgName, spec);
           expect(secret.data.byteLength).assertEqual(keySize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -172,7 +172,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
           let secret: cryptoFramework.DataBlob = pbkdf2Utils.generateKdfKey(kdfAlgName, spec);
           expect(secret.data.byteLength).assertEqual(keySize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -198,9 +198,9 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       try {
         pbkdf2Utils.generateKdfKey(algName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`PBKDF2 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -224,7 +224,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       try {
         let secret: cryptoFramework.DataBlob = pbkdf2Utils.generateKdfKey(algName, spec);
         expect(secret.data.byteLength).assertEqual(keySize);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`PBKDF2 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -250,9 +250,9 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       try {
         pbkdf2Utils.generateKdfKey(algName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`PBKDF2 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -271,14 +271,14 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       let salt: string = "0123456789";
       let keySize: int = 16;
       let iterations: int = 10000;
-      let algName: string = "PBKDF2|SHA3-256";
+      let algName: string = "PBKDF2|SHA3-224";
       let spec: cryptoFramework.PBKDF2Spec = pbkdf2Utils.getPbkdf2Spec(password, isKeyString, salt, iterations, keySize);
       try {
         pbkdf2Utils.generateKdfKey(algName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`PBKDF2 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -302,9 +302,9 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       try {
         pbkdf2Utils.generateKdfKey(algName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`PBKDF2 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });

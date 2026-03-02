@@ -75,7 +75,9 @@ struct RichEditorCustomSpan016 {
   options1: RichEditorStyledStringOptions = { controller: this.controller1 } as RichEditorStyledStringOptions;
 
   onPageShow() {
-    this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+    waitForCompletion(async ()=>{
+      this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+    })
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {
@@ -130,7 +132,7 @@ build() {
       }).id('setSelect')
 
 
-      Text('info:' + this.info).id('info')
+      Text('info:' + this.info).id('info').height(50)
 
       RichEditor(this.options)
         .onReady((): void => {

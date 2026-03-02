@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,7 @@ import common from '@ohos.app.ability.common';
 import emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import { startAbility, stopApplication, UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -44,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function VideoCallBackJsunit() {
   describe('VideoCallBackJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       
@@ -87,7 +88,7 @@ export default function VideoCallBackJsunit() {
 it('videoCallbackJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       let callback = (event: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> = event.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> = event.data as Record<String,RecordData>
         expect(data['action']).assertEqual('onStart');
         console.info('videoCallbackJsunit_static_0500 event: ' + data['action']);
       }
@@ -103,7 +104,7 @@ it('videoCallbackJsunit_static_0500', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(5000);
 
       let callback2 = (event: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> = event.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> = event.data as Record<String,RecordData>
         expect(data['action']).assertEqual('onStop');
         console.info('videoCallbackJsunit_static_0500 event: ' + data['action']);
       }
@@ -132,7 +133,7 @@ it('videoCallbackJsunit_static_0500', Level.LEVEL0, async (done: () => void): Pr
 it('videoCallbackJsunit_static_0501', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       let callback = (event: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> = event.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> = event.data as Record<String,RecordData>
         expect(data['action']).assertEqual('onStart');
         console.info('videoCallbackJsunit_static_0500 event: ' + data['action']);
       }
@@ -150,7 +151,7 @@ it('videoCallbackJsunit_static_0501', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(5000);
 
       let callback2 = (event: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> = event.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> = event.data as Record<String,RecordData>
         expect(data['action']).assertEqual('onStop');
         console.info('videoCallbackJsunit_static_0500 event: ' + data['action']);
       }

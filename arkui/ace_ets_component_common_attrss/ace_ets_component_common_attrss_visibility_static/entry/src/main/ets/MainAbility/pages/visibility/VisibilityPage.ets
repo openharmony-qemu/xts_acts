@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,6 @@ import {
   TabContent,
   ListItemGroup,
   ListItem,
-  StepperItem,
   SliderStyle,
   BadgeParamWithNumber,
   Blank,
@@ -126,7 +125,7 @@ import {
   ColumnOptions,
   MenuItemOptions,CommonMethod,applyStyles,
   CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions,WebviewController,Web,
-  Stepper,$r,Visibility,Axis,Navigation,Builder,NavPathStack
+  $r,Visibility,Axis,Navigation,Builder,NavPathStack
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
 import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
@@ -148,8 +147,7 @@ struct VisibilityPage {
     AppStorage.setOrCreate<Visibility>('_visibility', Visibility.Visible)
     try {
       console.info('[TabIndexPage] start router ');
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Visibility>('_visibility', routerParamOptions.view.testValue.setValue)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
@@ -158,7 +156,7 @@ struct VisibilityPage {
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
       console.info('[TabIndexPage] end router ');
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -439,14 +437,6 @@ struct VisibilityPage {
             })
               .showTips(true)
               .applyStyles(this.commonStyle)
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem() {
-                Column() {
-                  Text('Page One')
-                }
-              }
-            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextArea') {
             TextArea({
               placeholder: 'The text area can hold an unlimited amount of text. input your word...'

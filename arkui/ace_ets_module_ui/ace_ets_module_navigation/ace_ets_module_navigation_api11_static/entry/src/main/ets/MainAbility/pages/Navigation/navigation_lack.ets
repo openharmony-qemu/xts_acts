@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -26,6 +26,7 @@ import {
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 interface EventMessage {
   titleMode: NavigationTitleMode
   hideToolBar: boolean|number
@@ -144,7 +145,7 @@ struct NavigationExample {
               let backData: events_emitter.EventData = {
                 data: {
                   "ACTION": this.hideBar,
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 1366,
@@ -152,7 +153,7 @@ struct NavigationExample {
               }
               console.info("navigationContent1 start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (err: Error) {
+            } catch (err) {
               console.info("navigationContent1 emit action state err: " + JSON.stringify(err.message))
             }
           })

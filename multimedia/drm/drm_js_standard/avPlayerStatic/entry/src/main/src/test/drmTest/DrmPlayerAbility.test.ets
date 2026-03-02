@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -111,7 +111,7 @@ export default function abilityTest() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     });
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(2000);
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -140,7 +140,7 @@ export default function abilityTest() {
       }
       try {
         let drmMediaKeySystem2 = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2300 createMediaKeySystem err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
         for (let j = 0; j < 64; j++) {
@@ -162,7 +162,7 @@ export default function abilityTest() {
       let drmMediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2400 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -176,7 +176,7 @@ export default function abilityTest() {
       }
       try {
         let session2 = drmMediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2400 createMediaKeySession err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
         for (let j = 0; j < 64; j++) {
@@ -199,7 +199,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1000 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -240,7 +240,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1000 failed");
         mediaKeySystem!.destroy();
         done();
@@ -260,14 +260,14 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX MEDIA_AVPLAYER_0100 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
       }
       try {
         session = drmMediaKeySystem!.createMediaKeySession();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX MEDIA_AVPLAYER_0100 createMediaKeySession failed");
         drmMediaKeySystem!.destroy();
         done();
@@ -291,7 +291,7 @@ export default function abilityTest() {
       let drmMediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX MEDIA_AVPLAYER_0200 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -320,7 +320,7 @@ export default function abilityTest() {
       let drmMediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_0100 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -329,7 +329,7 @@ export default function abilityTest() {
       drmMediaKeySystem!.destroy();
       try {
         let metric = drmMediaKeySystem!.getStatistics();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_0100 err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
       }
@@ -348,7 +348,7 @@ export default function abilityTest() {
       let errCode: double = 0;
       try {
         let drmMediaKeySystem = drm.createMediaKeySystem("405E6D359B9A41E8B843DD3C6E72C42C");
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_0200 createMediaKeySystem err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
       }
@@ -367,7 +367,7 @@ export default function abilityTest() {
       let errCode: double = 0;
       try {
         let drmMediaKeySystem = drm.createMediaKeySystem("");
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_0300 createMediaKeySystem err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
       }
@@ -399,7 +399,7 @@ export default function abilityTest() {
       let errCode: double = 0;
       try {
         let isSysSupport = drm.isMediaKeySystemSupported("");
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_0500 isMediaKeySystemSupported err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
       }
@@ -444,7 +444,7 @@ export default function abilityTest() {
       let errCode: double = 0;
       try {
         let isSysSupport = drm.isMediaKeySystemSupported("", "video/mp4");
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_0800 isMediaKeySystemSupported err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
       }
@@ -480,7 +480,7 @@ export default function abilityTest() {
       let errCode: double = 0;
       try {
         let isSysSupport = drm.isMediaKeySystemSupported(systemName, "");
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_1000 isMediaKeySystemSupported err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
       }
@@ -512,7 +512,7 @@ export default function abilityTest() {
       try {
         let isSysSupport = drm.isMediaKeySystemSupported(systemName, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_HW_CRYPTO);
         console.log("XX DRM_FRAMEWORK_API_1200 isSysSupport is", isSysSupport);
-      } catch(error: Error) {
+      } catch(error) {
         console.log("XX DRM_FRAMEWORK_API_1200 isSysSupport error: ", JSON.stringify(error));
         expect(true).assertFalse();
       }
@@ -530,7 +530,7 @@ export default function abilityTest() {
       try {
         let isSysSupport = drm.isMediaKeySystemSupported(systemName, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_ENHANCED_HW);
         console.log("XX DRM_FRAMEWORK_API_1300 isSysSupport is", isSysSupport);
-      } catch(error: Error) {
+      } catch(error) {
         console.log("XX DRM_FRAMEWORK_API_1300 isSysSupport error: ", JSON.stringify(error));
         expect(true).assertFalse();
       }
@@ -579,7 +579,7 @@ export default function abilityTest() {
       try {
         let isSysSupport = drm.isMediaKeySystemSupported("", "video/mp4",
           drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_1700 isMediaKeySystemSupported err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
       }
@@ -612,14 +612,14 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2000 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
       }
       try {
         session = drmMediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2000 createMediaKeySession failed");
         drmMediaKeySystem!.destroy();
         done();
@@ -635,7 +635,7 @@ export default function abilityTest() {
         expect(result2).assertFalse();
         session!.destroy();
         drmMediaKeySystem!.destroy();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2000 failed");
         session!.destroy();
         drmMediaKeySystem!.destroy();
@@ -656,7 +656,7 @@ export default function abilityTest() {
       let drmMaxLevel:drm.ContentProtectionLevel = drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_UNKNOWN;
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2100 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -664,7 +664,7 @@ export default function abilityTest() {
       try {
         drmMaxLevel = drmMediaKeySystem!.getMaxContentProtectionLevel();
         console.log("XX DRM_FRAMEWORK_API_2100 getMaxContentProtectionLevel is ", drmMaxLevel);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2100 getMaxContentProtectionLevel failed");
         drmMediaKeySystem!.destroy();
         done();
@@ -673,7 +673,7 @@ export default function abilityTest() {
       if(drmMaxLevel === drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_HW_CRYPTO) {
         try {
           session = drmMediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_HW_CRYPTO);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("XX DRM_FRAMEWORK_API_2100 createMediaKeySession failed");
           drmMediaKeySystem!.destroy();
           done();
@@ -693,7 +693,7 @@ export default function abilityTest() {
           expect(result2).not().assertFalse();
           session!.destroy();
           drmMediaKeySystem!.destroy();
-        } catch (err: Error) {
+        } catch (err) {
           console.log("XX DRM_FRAMEWORK_API_2100 failed");
           session!.destroy();
           drmMediaKeySystem!.destroy();
@@ -718,7 +718,7 @@ export default function abilityTest() {
       let drmMaxLevel:drm.ContentProtectionLevel = drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_UNKNOWN;
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2200 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -726,7 +726,7 @@ export default function abilityTest() {
       try {
         drmMaxLevel = drmMediaKeySystem!.getMaxContentProtectionLevel();
         console.log("XX DRM_FRAMEWORK_API_2200 getMaxContentProtectionLevel is ", drmMaxLevel);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2200 getMaxContentProtectionLevel failed");
         drmMediaKeySystem!.destroy();
         done();
@@ -735,7 +735,7 @@ export default function abilityTest() {
       if(drmMaxLevel === drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_HW_CRYPTO) {
         try {
           session = drmMediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_HW_CRYPTO);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("XX DRM_FRAMEWORK_API_2200 createMediaKeySession failed");
           drmMediaKeySystem!.destroy();
           done();
@@ -750,14 +750,14 @@ export default function abilityTest() {
           } else {
             try {
               let result = session!.requireSecureDecoderModule("hls/ts");
-            } catch (err: Error) {
+            } catch (err) {
               console.log("XX DRM_FRAMEWORK_API_2200 requireSecureDecoderModule err end", (err as BusinessError).code);
               expect((err as BusinessError).code).assertEqual(drm.DrmErrorCode.SERVICE_FATAL_ERROR);
             }
             session!.destroy();
             drmMediaKeySystem!.destroy();
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.log("XX DRM_FRAMEWORK_API_2200 failed");
           session!.destroy();
           drmMediaKeySystem!.destroy();
@@ -781,7 +781,7 @@ export default function abilityTest() {
       let drmMediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2500 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -792,7 +792,7 @@ export default function abilityTest() {
         drmMediaKeySystem!.destroy();
         done();
         expect(false).assertEqual(true);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2500 createMediaKeySession err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
         drmMediaKeySystem!.destroy();
@@ -813,7 +813,7 @@ export default function abilityTest() {
       let drmMediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2600 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -825,7 +825,7 @@ export default function abilityTest() {
         drmMediaKeySystem!.destroy();
         done();
         expect(false).assertEqual(true);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_FRAMEWORK_API_2600 createMediaKeySession err end", (err as BusinessError).code);
         errCode = (err as BusinessError).code;
         drmMediaKeySystem!.destroy();
@@ -846,7 +846,7 @@ export default function abilityTest() {
       let cstatus:drm.CertificateStatus|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0100 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -854,7 +854,7 @@ export default function abilityTest() {
       try {
         cstatus = drmsys!.getCertificateStatus();
         console.log("XX DRM_AVPLAYER_0100 cstatus is ",cstatus)
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0100 getCertificateStatus failed")
         drmsys!.destroy();
         done();
@@ -887,7 +887,7 @@ export default function abilityTest() {
           drmsys!.destroy();
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.info("XX DRM_AVPLAYER_0100 failed");
         drmsys!.destroy();
         done();
@@ -908,14 +908,14 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0200 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
       }
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0200 createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -967,7 +967,7 @@ export default function abilityTest() {
           done();
           expect(false).assertEqual(true);
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.info("XX DRM_AVPLAYER_0200 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -988,7 +988,7 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0300 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -996,7 +996,7 @@ export default function abilityTest() {
 
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0300 createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -1047,7 +1047,7 @@ export default function abilityTest() {
             expect(false).assertEqual(true);
           });
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0300 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -1068,7 +1068,7 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0400 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -1076,7 +1076,7 @@ export default function abilityTest() {
 
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0400  createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -1124,7 +1124,7 @@ export default function abilityTest() {
             expect(false).assertEqual(true);
           });
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0400 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -1145,7 +1145,7 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0500 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -1153,7 +1153,7 @@ export default function abilityTest() {
 
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0500 createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -1182,7 +1182,7 @@ export default function abilityTest() {
           done();
           expect(false).assertEqual(true);
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0500 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -1204,7 +1204,7 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0700 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -1212,7 +1212,7 @@ export default function abilityTest() {
 
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0700 createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -1242,7 +1242,7 @@ export default function abilityTest() {
           drmsys!.destroy();
           done();
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0700 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -1263,7 +1263,7 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0800 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -1271,7 +1271,7 @@ export default function abilityTest() {
 
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0800 createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -1312,7 +1312,7 @@ export default function abilityTest() {
           done();
           expect(false).assertEqual(true);
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0800 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -1333,7 +1333,7 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0900 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -1341,7 +1341,7 @@ export default function abilityTest() {
     
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0900 createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -1376,7 +1376,7 @@ export default function abilityTest() {
                 console.log("XX DRM_AVPLAYER_0900 clearMediaKeys");
                 try {
                   let keyvalue2 = session!.checkMediaKeyStatus();
-                } catch (err: Error) {
+                } catch (err) {
                   console.log("XX DRM_AVPLAYER_0900 generateKeySystemRequest err end", err);
                   errCode = (err as BusinessError).code;
                 }
@@ -1439,7 +1439,7 @@ export default function abilityTest() {
               expect(false).assertEqual(true);
             });
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_0900 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -1460,7 +1460,7 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1000 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -1468,7 +1468,7 @@ export default function abilityTest() {
     
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1000 createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -1524,7 +1524,7 @@ export default function abilityTest() {
           done();
           expect(false).assertEqual(true);
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1000 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -1545,7 +1545,7 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1100 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -1553,7 +1553,7 @@ export default function abilityTest() {
     
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1100 createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -1609,7 +1609,7 @@ export default function abilityTest() {
           done();
           expect(false).assertEqual(true);
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1100 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -1629,7 +1629,7 @@ export default function abilityTest() {
       let drmsys:drm.MediaKeySystem|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1200 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -1659,7 +1659,7 @@ export default function abilityTest() {
       let drmsys:drm.MediaKeySystem|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1300 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -1690,7 +1690,7 @@ export default function abilityTest() {
       let uint8pssh = base64.decodeSync('');
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1400 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -1722,7 +1722,7 @@ export default function abilityTest() {
         if(isClearPlay){
           try {
             drmsys = drm.createMediaKeySystem(systemName);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_1500 createMediaKeySystem failed");
             done();
             expect(false).assertEqual(true);
@@ -1730,7 +1730,7 @@ export default function abilityTest() {
 
           try {
             session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_1500 createMediaKeySession failed");
             drmsys!.destroy();
             done();
@@ -1799,7 +1799,7 @@ export default function abilityTest() {
         } else {
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1500 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -1822,7 +1822,7 @@ export default function abilityTest() {
         if (isClearPlay) {
           try {
             drmsys = drm.createMediaKeySystem(systemName);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_1600 createMediaKeySystem failed");
             done();
             expect(false).assertEqual(true);
@@ -1830,7 +1830,7 @@ export default function abilityTest() {
 
           try {
             session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_1600 createMediaKeySession failed");
             drmsys!.destroy();
             done();
@@ -1889,7 +1889,7 @@ export default function abilityTest() {
         else {
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1600 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -1913,7 +1913,7 @@ export default function abilityTest() {
         if(isClearPlay){
           try {
             drmsys = drm.createMediaKeySystem(systemName);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_1700 createMediaKeySystem failed");
             done();
             expect(false).assertEqual(true);
@@ -1921,7 +1921,7 @@ export default function abilityTest() {
 
           try {
             session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_1700 createMediaKeySession failed");
             drmsys!.destroy();
             done();
@@ -1977,7 +1977,7 @@ export default function abilityTest() {
         } else {
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1700 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -2000,7 +2000,7 @@ export default function abilityTest() {
         if (isClearPlay){
           try {
             drmsys = drm.createMediaKeySystem(systemName);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_1800 createMediaKeySystem failed");
             done();
             expect(false).assertEqual(true);
@@ -2008,7 +2008,7 @@ export default function abilityTest() {
 
           try {
             session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_1800 createMediaKeySession failed");
             drmsys!.destroy();
             done();
@@ -2069,7 +2069,7 @@ export default function abilityTest() {
         } else {
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1800 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -2092,7 +2092,7 @@ export default function abilityTest() {
         if (isClearPlay){
           try {
             drmsys = drm.createMediaKeySystem(systemName);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_1900 createMediaKeySystem failed");
             done();
             expect(false).assertEqual(true);
@@ -2100,7 +2100,7 @@ export default function abilityTest() {
 
           try {
             session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_1900 createMediaKeySession failed");
             drmsys!.destroy();
             done();
@@ -2171,7 +2171,7 @@ export default function abilityTest() {
         } else {
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_1900 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -2194,7 +2194,7 @@ export default function abilityTest() {
         if(isClearPlay) {
           try {
             drmsys = drm.createMediaKeySystem(systemName);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_2000 createMediaKeySystem failed");
             done();
             expect(false).assertEqual(true);
@@ -2202,7 +2202,7 @@ export default function abilityTest() {
 
           try {
             session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX DRM_AVPLAYER_2000 createMediaKeySession failed");
             drmsys!.destroy();
             done();
@@ -2268,7 +2268,7 @@ export default function abilityTest() {
         } else {
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2000 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -2289,7 +2289,7 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2100 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2297,7 +2297,7 @@ export default function abilityTest() {
 
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2100 createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -2314,7 +2314,7 @@ export default function abilityTest() {
           drmsys!.destroy();
           done();
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2100 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -2335,7 +2335,7 @@ export default function abilityTest() {
       let session:drm.MediaKeySession|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2200 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2343,7 +2343,7 @@ export default function abilityTest() {
 
       try {
         session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2200 createMediaKeySession failed");
         drmsys!.destroy();
         done();
@@ -2361,7 +2361,7 @@ export default function abilityTest() {
           drmsys!.destroy();
           done();
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2200 failed");
         session!.destroy();
         drmsys!.destroy();
@@ -2381,7 +2381,7 @@ export default function abilityTest() {
       let drmsys:drm.MediaKeySystem|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2300 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2392,7 +2392,7 @@ export default function abilityTest() {
         expect(cstatus).assertEqual(drm.CertificateStatus.CERT_STATUS_PROVISIONED);
         drmsys!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2300 failed");
         drmsys!.destroy();
         done();
@@ -2429,7 +2429,7 @@ export default function abilityTest() {
       let drmsys:drm.MediaKeySystem|undefined;
       try {
         drmsys = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2700 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2441,7 +2441,7 @@ export default function abilityTest() {
         expect(drmMaxLevel).not().assertEqual(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_UNKNOWN);
         drmsys!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX DRM_AVPLAYER_2700 failed");
         drmsys!.destroy();
         done();
@@ -2474,7 +2474,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0100 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2490,7 +2490,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0100 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2509,7 +2509,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0200 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2522,7 +2522,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0200 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2541,7 +2541,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0300 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2558,7 +2558,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0300 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2577,7 +2577,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0400 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2594,7 +2594,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0400 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2613,7 +2613,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0500 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2630,7 +2630,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0500 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2649,7 +2649,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0600 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2666,7 +2666,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0600 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2685,7 +2685,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0700 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2699,7 +2699,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0700 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2718,7 +2718,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0800 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2733,7 +2733,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0800 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2752,7 +2752,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0900 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2766,7 +2766,7 @@ export default function abilityTest() {
         expect(getCfg).assertEqual("64");
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_0900 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2785,7 +2785,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1100 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2802,7 +2802,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1100 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2821,7 +2821,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1200 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2838,7 +2838,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1200 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2857,7 +2857,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1300 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2880,7 +2880,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1300 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2899,7 +2899,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1400 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2916,7 +2916,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1400 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2935,7 +2935,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1500 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2952,7 +2952,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1500 failed");
         mediaKeySystem!.destroy();
         done();
@@ -2971,7 +2971,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1600 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -2988,7 +2988,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1600 failed");
         mediaKeySystem!.destroy();
         done();
@@ -3007,7 +3007,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1700 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -3024,7 +3024,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1700 failed");
         mediaKeySystem!.destroy();
         done();
@@ -3043,7 +3043,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1800 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -3060,7 +3060,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1800 failed");
         mediaKeySystem!.destroy();
         done();
@@ -3079,7 +3079,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1900 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -3096,7 +3096,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_1900 failed");
         mediaKeySystem!.destroy();
         done();
@@ -3116,7 +3116,7 @@ export default function abilityTest() {
       let mediaKeySystem:drm.MediaKeySystem|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_2000 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -3133,7 +3133,7 @@ export default function abilityTest() {
         }
         mediaKeySystem!.destroy();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SET_GET_CONFIG_2000 failed");
         mediaKeySystem!.destroy();
         done();
@@ -3153,14 +3153,14 @@ export default function abilityTest() {
       let keySession:drm.MediaKeySession|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0100 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
       }
       try {
         keySession = mediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0100 createMediaKeySession failed");
         mediaKeySystem!.destroy();
         done();
@@ -3170,13 +3170,13 @@ export default function abilityTest() {
       try {
         let licenseResponseByte:Uint8Array;
         let sign = 1;
-        keySession!.on('keyRequired', (eventInfo) => {
+        keySession!.onKeyRequired((eventInfo) => {
           console.info('bbbbb receive keyRequired ' + eventInfo.info);
           console.info('bbbbb receive keyRequired ' + eventInfo.extraInfo);
           sign = 2;
           expect(sign).assertEqual(2);
           console.info("XX SESSION_ON_OFF_0100 2 is ",sign)
-          keySession!.off('keyRequired');
+          keySession!.offKeyRequired();
           keySession!.destroy();
           mediaKeySystem!.destroy();
           done();
@@ -3216,7 +3216,7 @@ export default function abilityTest() {
           done();
           expect(false).assertEqual(true);
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0100 failed");
         keySession!.destroy();
         mediaKeySystem!.destroy();
@@ -3237,7 +3237,7 @@ export default function abilityTest() {
       let keySession:drm.MediaKeySession|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0200 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -3245,7 +3245,7 @@ export default function abilityTest() {
     
       try {
         keySession = mediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0200 createMediaKeySession failed");
         mediaKeySystem!.destroy();
         done();
@@ -3255,12 +3255,12 @@ export default function abilityTest() {
       try {
         let licenseResponseByte:Uint8Array;
         let sign = 1;
-        keySession!.on('keyRequired', (eventInfo) => {
+        keySession!.onKeyRequired((eventInfo) => {
           console.info('bbbbb receive keyRequired ' + eventInfo.info);
           console.info('bbbbb receive keyRequired ' + eventInfo.extraInfo);
           sign = 2;
         });
-        keySession!.off('keyRequired');
+        keySession!.offKeyRequired();
         let base64 = new util.Base64Helper();
         let uint8pssh = base64.decodeSync('AAAA73Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAM97InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoieHV4aW5zdyIsImtpZHMiOlsiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDAiLCJhY2EyNTVlNWIyZGRlMmU0YzhiYjdjMTY2Y2VhYzEwMSIsImFjYTI1NWU1YjJkZGUyZTRjOGJiN2MxNjZjZWFjMTAxIiwiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDEiXSwiZW5zY2hlbWEiOiJjYmMxIn0=');
         let optionalData:drm.OptionsData[] = [{
@@ -3302,7 +3302,7 @@ export default function abilityTest() {
           done();
           expect(false).assertEqual(true);
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0200 failed");
         keySession!.destroy();
         mediaKeySystem!.destroy();
@@ -3325,7 +3325,7 @@ export default function abilityTest() {
         if(isClearPlay){
           try {
             mediaKeySystem = drm.createMediaKeySystem(systemName);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX SESSION_ON_OFF_0300 createMediaKeySystem failed");
             done();
             expect(false).assertEqual(true);
@@ -3333,14 +3333,14 @@ export default function abilityTest() {
 
           try {
             keySession = mediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX SESSION_ON_OFF_0300 createMediaKeySession failed");
             mediaKeySystem!.destroy();
             done();
             expect(false).assertEqual(true);
           }
           let sign = 1;
-          keySession!.on('keyExpired', (eventInfo) => {
+          keySession!.onKeyExpired((eventInfo) => {
             console.info('bbbbb receive keyExpired ' + eventInfo.info);
             console.info('bbbbb receive keyExpired ' + eventInfo.extraInfo);
             sign = 2;
@@ -3366,7 +3366,7 @@ export default function abilityTest() {
                 keySession!.processMediaKeyResponse(responseArray).then((keyId) => {
                   await Utils.msSleep(1000);
                   expect(sign).assertEqual(2);
-                  keySession!.off('keyExpired');
+                  keySession!.offKeyExpired();
                   keySession!.destroy();
                   mediaKeySystem!.destroy();
                   console.log("XX SESSION_ON_OFF_0300 keyExpired success");
@@ -3395,7 +3395,7 @@ export default function abilityTest() {
         } else {
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0300 failed");
         keySession!.destroy();
         mediaKeySystem!.destroy();
@@ -3418,7 +3418,7 @@ export default function abilityTest() {
         if(isClearPlay){
           try {
             mediaKeySystem = drm.createMediaKeySystem(systemName);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX SESSION_ON_OFF_0400 createMediaKeySystem failed");
             done();
             expect(false).assertEqual(true);
@@ -3426,7 +3426,7 @@ export default function abilityTest() {
 
           try {
             keySession = mediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX SESSION_ON_OFF_0400 createMediaKeySession failed");
             mediaKeySystem!.destroy();
             done();
@@ -3434,12 +3434,12 @@ export default function abilityTest() {
           }
 
           let sign = 1;
-          keySession!.on('keyExpired', (eventInfo) => {
+          keySession!.onKeyExpired((eventInfo) => {
             console.info('bbbbb receive keyExpired ' + eventInfo.info);
             console.info('bbbbb receive keyExpired ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.off('keyExpired');
+          keySession!.offKeyExpired();
           let base64 = new util.Base64Helper();
           let uint8pssh =
             base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
@@ -3489,7 +3489,7 @@ export default function abilityTest() {
         } else {
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0400 failed");
         keySession!.destroy();
         mediaKeySystem!.destroy();
@@ -3510,14 +3510,14 @@ export default function abilityTest() {
       let keySession:drm.MediaKeySession|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0500 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
       }
       try {
         keySession = mediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0500 createMediaKeySession failed");
         mediaKeySystem!.destroy();
         done();
@@ -3526,7 +3526,7 @@ export default function abilityTest() {
       try {
         if(isClearPlay){
           let sign = 1;
-          keySession!.on('expirationUpdate', (eventInfo) => {
+          keySession!.onExpirationUpdate((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
@@ -3553,7 +3553,7 @@ export default function abilityTest() {
                   keySession!.restoreOfflineMediaKeys(keyArray).then(() => {
                     await Utils.msSleep(1000);
                     expect(sign).assertEqual(2);
-                    keySession!.off('expirationUpdate');
+                    keySession!.offExpirationUpdate();
                     keySession!.destroy();
                     mediaKeySystem!.destroy();
                     console.log("XX SESSION_ON_OFF_0500 expirationUpdate success");
@@ -3595,7 +3595,7 @@ export default function abilityTest() {
           });
         } else {
           let sign = 1;
-          keySession!.on('expirationUpdate', (eventInfo) => {
+          keySession!.onExpirationUpdate((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
@@ -3615,7 +3615,7 @@ export default function abilityTest() {
               console.info("XX SESSION_ON_OFF_0500 expirationUpdate sign is ",sign);
               await Utils.msSleep(1000);
               expect(sign).assertEqual(2);
-              keySession!.off('expirationUpdate');
+              keySession!.offExpirationUpdate();
               keySession!.destroy();
               mediaKeySystem!.destroy();
               console.info("XX SESSION_ON_OFF_0500 expirationUpdate success");
@@ -3635,7 +3635,7 @@ export default function abilityTest() {
             expect(false).assertEqual(true);
           });
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0500 failed");
         keySession!.destroy();
         mediaKeySystem!.destroy();
@@ -3656,7 +3656,7 @@ export default function abilityTest() {
       let keySession:drm.MediaKeySession|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0600 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -3664,7 +3664,7 @@ export default function abilityTest() {
     
       try {
         keySession = mediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0600 createMediaKeySession failed");
         mediaKeySystem!.destroy();
         done();
@@ -3674,12 +3674,12 @@ export default function abilityTest() {
       try {
         if(isClearPlay){
           let sign = 1;
-          keySession!.on('expirationUpdate', (eventInfo) => {
+          keySession!.onExpirationUpdate((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.off('expirationUpdate');
+          keySession!.offExpirationUpdate();
           let base64 = new util.Base64Helper();
           let uint8pssh =
             base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
@@ -3750,12 +3750,12 @@ export default function abilityTest() {
           });
         } else {
           let sign = 1;
-          keySession!.on('expirationUpdate', (eventInfo) => {
+          keySession!.onExpirationUpdate((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.off('expirationUpdate');
+          keySession!.offExpirationUpdate();
           let base64 = new util.Base64Helper();
           let uint8pssh = base64.decodeSync('AAAA73Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAM97InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoieHV4aW5zdyIsImtpZHMiOlsiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDAiLCJhY2EyNTVlNWIyZGRlMmU0YzhiYjdjMTY2Y2VhYzEwMSIsImFjYTI1NWU1YjJkZGUyZTRjOGJiN2MxNjZjZWFjMTAxIiwiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDEiXSwiZW5zY2hlbWEiOiJjYmMxIn0=');
           let optionalData:drm.OptionsData[] = [{
@@ -3790,7 +3790,7 @@ export default function abilityTest() {
             expect(false).assertEqual(true);
           });
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0600 failed");
         keySession!.destroy();
         mediaKeySystem!.destroy();
@@ -3811,7 +3811,7 @@ export default function abilityTest() {
       let keySession:drm.MediaKeySession|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0700 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -3819,7 +3819,7 @@ export default function abilityTest() {
     
       try {
         keySession = mediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0700 createMediaKeySession failed");
         mediaKeySystem!.destroy();
         done();
@@ -3828,7 +3828,7 @@ export default function abilityTest() {
     
       try {
         let sign = 1;
-        keySession!.on('keysChange', (keyInfo, newKeyAvailable) => {
+        keySession!.onKeysChange((keyInfo, newKeyAvailable) => {
           console.info('bbbbb receive keysChange newKeyAvailable:' + newKeyAvailable);
           for (let index = 0; index < keyInfo.length; index++) {
             console.info('bbbbb receive keysChange index:' + index);
@@ -3870,7 +3870,7 @@ export default function abilityTest() {
               keySession!.processMediaKeyResponse(responseArray2).then((keyId) => {
                 await Utils.msSleep(1000);
                 expect(sign).assertEqual(2);
-                keySession!.off('keysChange');
+                keySession!.offKeysChange();
                 keySession!.destroy();
                 mediaKeySystem!.destroy();
                 console.log("XX SESSION_ON_OFF_0700 keysChange success");
@@ -3896,7 +3896,7 @@ export default function abilityTest() {
           done();
           expect(false).assertEqual(true);
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0700 failed");
         keySession!.destroy();
         mediaKeySystem!.destroy();
@@ -3917,7 +3917,7 @@ export default function abilityTest() {
       let keySession:drm.MediaKeySession|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0800 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -3925,7 +3925,7 @@ export default function abilityTest() {
     
       try {
         keySession = mediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0800 createMediaKeySession failed");
         mediaKeySystem!.destroy();
         done();
@@ -3934,7 +3934,7 @@ export default function abilityTest() {
     
       try {
         let sign = 1;
-        keySession!.on('keysChange', (keyInfo, newKeyAvailable) => {
+        keySession!.onKeysChange((keyInfo, newKeyAvailable) => {
           console.info('bbbbb receive keysChange newKeyAvailable:' + newKeyAvailable);
           for (let index = 0; index < keyInfo.length; index++) {
             console.info('bbbbb receive keysChange index:' + index);
@@ -3943,7 +3943,7 @@ export default function abilityTest() {
           }
           sign = 2;
         });
-        keySession!.off('keysChange');
+        keySession!.offKeysChange();
         let responseArray:Uint8Array;
         let responseArray2:Uint8Array;
         let base64 = new util.Base64Helper();
@@ -3977,7 +3977,7 @@ export default function abilityTest() {
               keySession!.processMediaKeyResponse(responseArray2).then((keyId) => {
                 await Utils.msSleep(1000);
                 expect(sign).assertEqual(1);
-                keySession!.off('keysChange');
+                keySession!.offKeysChange();
                 keySession!.destroy();
                 mediaKeySystem!.destroy();
                 console.log("XX SESSION_ON_OFF_0700 keysChange success");
@@ -4003,7 +4003,7 @@ export default function abilityTest() {
           done();
           expect(false).assertEqual(true);
         });
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0800 failed");
         keySession!.destroy();
         mediaKeySystem!.destroy();
@@ -4025,13 +4025,13 @@ export default function abilityTest() {
         if(isClearPlay){
           try {
             mediaKeySystem = drm.createMediaKeySystem(systemName);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX SESSION_ON_OFF_0900 createMediaKeySystem failed");
             done();
             expect(false).assertEqual(true);
           }
           let sign = 1;
-          mediaKeySystem!.on('keySystemRequired', (eventInfo) => {
+          mediaKeySystem!.onKeySystemRequired((eventInfo) => {
             console.info('bbbbb receive keySystemRequired ' + eventInfo.info);
             console.info('bbbbb receive keySystemRequired ' + eventInfo.extraInfo);
             sign = 2;
@@ -4047,7 +4047,7 @@ export default function abilityTest() {
             mediaKeySystem!.processKeySystemResponse(arry).then(() => {
               await Utils.msSleep(1000);
               expect(sign).assertEqual(2);
-              mediaKeySystem!.off('keySystemRequired');
+              mediaKeySystem!.offKeySystemRequired();
               mediaKeySystem!.destroy();
               console.log("XX SESSION_ON_OFF_0900 keySystemRequired success");
               done();
@@ -4066,7 +4066,7 @@ export default function abilityTest() {
         } else {
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0900 failed");
         mediaKeySystem!.destroy();
         done();
@@ -4087,18 +4087,18 @@ export default function abilityTest() {
         if(isClearPlay){
           try {
             mediaKeySystem = drm.createMediaKeySystem(systemName);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("XX SESSION_ON_OFF_1000 createMediaKeySystem failed");
             done();
             expect(false).assertEqual(true);
           }
           let sign = 1;
-          mediaKeySystem!.on('keySystemRequired', (eventInfo) => {
+          mediaKeySystem!.onKeySystemRequired((eventInfo) => {
             console.info('bbbbb receive keySystemRequired ' + eventInfo.info);
             console.info('bbbbb receive keySystemRequired ' + eventInfo.extraInfo);
             sign = 2;
           });
-          mediaKeySystem!.off('keySystemRequired');
+          mediaKeySystem!.offKeySystemRequired();
           mediaKeySystem!.generateKeySystemRequest().then((drmRequest) => {
             console.log("XX SESSION_ON_OFF_1000 generateKeySystemRequest end", drmRequest.data, drmRequest.defaultURL);
             console.log("XX SESSION_ON_OFF_1000 processKeySystemResponse start");
@@ -4128,7 +4128,7 @@ export default function abilityTest() {
         } else {
           done();
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_1000 failed");
         mediaKeySystem!.destroy();
         done();
@@ -4148,7 +4148,7 @@ export default function abilityTest() {
       let keySession:drm.MediaKeySession|undefined;
       try {
         mediaKeySystem = drm.createMediaKeySystem(systemName);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0600 createMediaKeySystem failed");
         done();
         expect(false).assertEqual(true);
@@ -4156,7 +4156,7 @@ export default function abilityTest() {
     
       try {
         keySession = mediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0600 createMediaKeySession failed");
         mediaKeySystem!.destroy();
         done();
@@ -4166,12 +4166,12 @@ export default function abilityTest() {
       try {
         if(isClearPlay){
           let sign = 1;
-          keySession!.on('vendorDefined', (eventInfo) => {
+          keySession!.onVendorDefined((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.off('vendorDefined');
+          keySession!.offVendorDefined();
           let base64 = new util.Base64Helper();
           let uint8pssh =
             base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
@@ -4242,12 +4242,12 @@ export default function abilityTest() {
           });
         } else {
           let sign = 1;
-          keySession!.on('vendorDefined', (eventInfo) => {
+          keySession!.onVendorDefined((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.off('vendorDefined');
+          keySession!.offVendorDefined();
           let base64 = new util.Base64Helper();
           let uint8pssh = base64.decodeSync('AAAA73Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAM97InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoieHV4aW5zdyIsImtpZHMiOlsiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDAiLCJhY2EyNTVlNWIyZGRlMmU0YzhiYjdjMTY2Y2VhYzEwMSIsImFjYTI1NWU1YjJkZGUyZTRjOGJiN2MxNjZjZWFjMTAxIiwiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDEiXSwiZW5zY2hlbWEiOiJjYmMxIn0=');
           let optionalData:drm.OptionsData[] = [{
@@ -4282,7 +4282,7 @@ export default function abilityTest() {
             expect(false).assertEqual(true);
           });
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.log("XX SESSION_ON_OFF_0600 failed");
         keySession!.destroy();
         mediaKeySystem!.destroy();

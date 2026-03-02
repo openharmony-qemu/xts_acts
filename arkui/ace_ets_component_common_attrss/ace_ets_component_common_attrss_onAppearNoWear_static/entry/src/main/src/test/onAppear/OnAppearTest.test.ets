@@ -39,7 +39,6 @@ export default function onAppearTest() {
   //Component to be tested
   let supportView:Array<string> = new Array<string>(
     'Select',
-    'StepperItem',
     'ColumnSplit',
     'FlowItem',
     'RowSplit',
@@ -72,7 +71,7 @@ export default function onAppearTest() {
   }]
 
   describe('OnAppearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.acts.arkui.onappear.testwear.static", "EntryAbility")
     });

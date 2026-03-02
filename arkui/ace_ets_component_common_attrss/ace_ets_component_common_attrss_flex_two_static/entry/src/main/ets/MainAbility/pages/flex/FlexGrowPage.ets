@@ -44,7 +44,7 @@ import {
   Radio,
   Rating,
   ScrollBar,
-  Stepper,
+
   Search,
   Select,
   Slider,
@@ -92,7 +92,6 @@ import {
   MenuItem,
   ProgressType,
   BarState,
-  StepperItem,
   Scroller,
   Axis,
   ToggleType,
@@ -168,8 +167,7 @@ struct FlexGrowPage {
     AppStorage.setOrCreate<number>('_parentHeight',  500)
     AppStorage.setOrCreate<number>('_compareFlexGrow',  1)
 
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey ?? ""
     this.containerView = routerParamOptions.view.containerView ?? ""
@@ -243,14 +241,6 @@ struct FlexGrowPage {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text().width(20).height(20).borderRadius(10)
       }.width(20).applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem() {
-          Column() {
-            Text('Page One')
-          }
-        }
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Search') {
       Search({ placeholder: 'Type to search...' })
         .searchButton('SEARCH')

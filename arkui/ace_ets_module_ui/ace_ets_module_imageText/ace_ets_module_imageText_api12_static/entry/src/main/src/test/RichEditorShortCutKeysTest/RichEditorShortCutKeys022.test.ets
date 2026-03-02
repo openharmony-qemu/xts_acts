@@ -48,7 +48,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorShortCutKeys022() {
   describe('RichEditorShortCutKeys022', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorShortCutKeys022 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -103,9 +103,10 @@ export default function RichEditorShortCutKeys022() {
       let style = await (driver.findComponent(ON.id('style')) as Promise<Component>);
       let styleText = await style.getText();
       await CommonFunc.sleep(500);
-      let textStyle1 = 'spanPosition:{"spanIndex":2,"spanRange":[2,5]},value:"bcd",' +
-        'textStyle:{"fontColor":"#FFFF0000"';
-      expect(styleText).assertContain(textStyle1);
+     expect(styleText).assertContain('"spanIndex":2');
+      expect(styleText).assertContain('"spanRange":[2,5]');
+      expect(styleText).assertContain('value:"bcd"');
+      expect(styleText).assertContain('"fontColor":"#FFFF0000"');
       done();
     });
 

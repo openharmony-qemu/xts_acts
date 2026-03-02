@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,7 +25,6 @@ import {
   TabContent,
   ListItemGroup,
   ListItem,
-  StepperItem,
   SliderStyle,
   BadgeParamWithNumber,
   Blank,
@@ -128,7 +127,7 @@ import {
   Axis,Builder,CommonMethod,applyStyles,DataPanelType,/*NavRouter,Panel,Navigator,*/
   MenuItemOptions,
   CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions,WebviewController,Web,
-  Stepper,LineJoinStyle,HitTestMode,
+  LineJoinStyle,HitTestMode,
   NavPathStack,
   AlignRuleOption
 } from '@ohos.arkui.component';
@@ -155,13 +154,12 @@ struct TouchablePage {
     console.info('TouchablePage page show called ')
     try {
       console.info('[TabIndexPage] start router ');
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<HitTestMode>('_hitTestBehavior', routerParamOptions.view.testValue.setValue)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       console.info('[TabIndexPage] end router '+this._hitTestBehavior,routerParamOptions.view.testValue.setValue);
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -241,16 +239,6 @@ struct TouchablePage {
         .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
         .backgroundColor(Color.Black)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Button('StepperItem')
-          }
-          .backgroundColor(Color.Green)
-          .applyStyles(this.commonStyle)
-        }
-        .width('100%')
-        .height('70%')
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem() {
@@ -350,14 +338,6 @@ struct TouchablePage {
             .width(20)
             .backgroundColor('#ededed')
             .applyStyles(this.commonStyle)
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem() {
-                Column() {
-                  Text('Page One')
-                }
-              }
-            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Search') {
             Search({ placeholder: 'Type to search...' })
               .backgroundColor(Color.White)

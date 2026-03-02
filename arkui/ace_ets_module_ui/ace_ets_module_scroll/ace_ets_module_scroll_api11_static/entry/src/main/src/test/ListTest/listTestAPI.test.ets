@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -46,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listNewJsunit() {
   describe('listNewJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       
@@ -68,7 +69,7 @@ export default function listNewJsunit() {
           await CommonFunc.sleep(2000);
           // console.info("push list page success " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push list page error: " + err);
       }
     });
@@ -222,12 +223,12 @@ it('testListNe_static_0007', Level.LEVEL1, async (done: () => void): Promise<voi
       }
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         try {
-          const data = eventData.data as Record<String, undefined | null | Object>
+          const data = eventData.data as Record<String,RecordData>
           console.info("callback success");
           console.info("testListNe_static_0007 eventData.data?.['result'] result is: " + data['result']);
           expect(data['result']).assertEqual("success");
           console.info("testListNe_static_0007 end");
-        } catch (err: Error) {
+        } catch (err) {
           console.info("testListNe_static_0007 on events_emitter err : " + JSON.stringify(err));
         }
       }
@@ -235,7 +236,7 @@ it('testListNe_static_0007', Level.LEVEL1, async (done: () => void): Promise<voi
         console.info("testListNe_static_0007 click result is: " +
         JSON.stringify(inspector.sendEventByKey('onScrollBegin', 10, "")));
         events_emitter.on(innerEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testListNe_static_0007 on events_emitter err : " + JSON.stringify(err));
       }
       done()

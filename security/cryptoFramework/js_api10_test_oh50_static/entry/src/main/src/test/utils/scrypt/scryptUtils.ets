@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ async function doScryptKdfPromise(spec: cryptoFramework.KdfSpec): Promise<crypto
     let secret: cryptoFramework.DataBlob = await kdf.generateSecret(spec);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doScryptKdfPromise “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -54,7 +54,7 @@ function doScryptKdfSync(spec: cryptoFramework.KdfSpec): cryptoFramework.DataBlo
     let secret: cryptoFramework.DataBlob = kdf.generateSecretSync(spec);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doScryptKdfSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -100,7 +100,7 @@ async function  doScryptKdfTaskPool(maxMemory: long, n: long, r: long, p: long,
     let ret: boolean = secret.data.length == keySize ? true: false;
     console.info("################## data:" + secret.data)
     return {ret:ret, code: code, secret: secret} as secretResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doScryptKdfTaskPool “${error}“, error code: ${error.code}`);
     code = error.code as number;
     let secret: cryptoFramework.DataBlob = {data: new Uint8Array()} as cryptoFramework.DataBlob;

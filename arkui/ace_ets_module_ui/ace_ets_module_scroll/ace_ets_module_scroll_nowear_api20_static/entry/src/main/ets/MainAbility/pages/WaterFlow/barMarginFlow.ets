@@ -74,10 +74,10 @@ struct scrollBarMarginWaterFlow {
       .rowsGap(5)
       .scrollBarColor(Color.Blue)
       .scrollBarWidth(20)
-      // .scrollBarMargin({
-      //   start: LengthMetrics.px(40),
-      //   end: LengthMetrics.vp(20)
-      // })
+      .scrollBarMargin({
+        start: LengthMetrics.px(40),
+        end: LengthMetrics.vp(20)
+      })
       .edgeEffect(EdgeEffect.Spring)
       .direction(Direction.Ltr)
       .border({

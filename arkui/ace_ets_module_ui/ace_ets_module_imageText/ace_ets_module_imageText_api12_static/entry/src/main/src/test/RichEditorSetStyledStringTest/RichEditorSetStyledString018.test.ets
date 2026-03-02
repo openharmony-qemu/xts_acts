@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorSetStyledString018() {
   describe('RichEditorSetStyledString018', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorSetStyledString018 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -94,7 +94,13 @@ export default function RichEditorSetStyledString018() {
       let shadowValues = await (driver.findComponent(ON.id('shadowValues')) as Promise<Component>);
       let shadowValuesText = await shadowValues.getText();
       await CommonFunc.sleep(500);
-      expect(shadowValuesText).assertContain('shadowValues:{"radius":5,"offsetX":10,"offsetY":-10,"color":"#FFFFFF00","type":0}');
+
+      expect(shadowValuesText).assertContain('"fill":false');
+      expect(shadowValuesText).assertContain('"type":0');
+      expect(shadowValuesText).assertContain('"color":"#FFFFFF00"');
+      expect(shadowValuesText).assertContain('"radius":5');
+      expect(shadowValuesText).assertContain('"offsetX":10');
+      expect(shadowValuesText).assertContain('"offsetY":-10');
       done();
     });
 

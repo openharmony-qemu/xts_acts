@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -81,8 +81,6 @@ import {
   SideBarContainerType,
   Slider,
   Stack,
-  Stepper,
-  StepperItem,
   Swiper,
   TabContent,
   Tabs,
@@ -122,15 +120,14 @@ struct DefaultPage {
     console.info('DefaultPage show called ')
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
-      let routerParamOptions = new RouterParams()
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView ?? ''
       this.componentKey = routerParamOptions.view.componentKey ?? ''
       console.log('aboutToAppear routerParamOptions success' + this.targetView)
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -213,14 +210,6 @@ struct DefaultPage {
         Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }]).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Slider') {
         Slider().applyStyles(this.commonStyle)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem()
-        }.applyStyles(this.commonStyle)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem().applyStyles(this.commonStyle)
-        }
       } else if (this.targetView == 'Text') {
         Text('text').applyStyles(this.commonStyle)
       } else if (this.targetView == 'TextArea') {

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,13 +15,13 @@
  */
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
+import { BusinessError } from '@ohos.base';
 import {
   Alignment,
   AlignRuleOption,
   Axis,
   BlurStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,
@@ -67,6 +67,7 @@ import {
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -83,17 +84,17 @@ struct OhosRouterB {
     const routerInstance = AppStorage.get<Router>("router") as Router
     let params = routerInstance.getParams();
     if (params) {
-      console.info("[OhosRouterB] getParams result: " + JSON.stringifyJsonElement(params));
+      console.info("[OhosRouterB] getParams result: " + params);
       this.getRouterParams(params);
     }
   }
 
-  getRouterParams(params: jsonx.JsonElement) {
+  getRouterParams(params: Object) {
     try {
       let paramsData: events_emitter.EventData = {
         data: {
           "params": params,
-        } as Record<String,undefined|null|Object>
+        } as Record<String,RecordData>
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 142,
@@ -101,7 +102,7 @@ struct OhosRouterB {
       }
       console.info("[OhosRouterB] start to emit params");
       events_emitter.emit(paramsEvent, paramsData);
-    } catch (err: Error) {
+    } catch (err) {
       console.info("[OhosRouterB] emit params err: " + JSON.stringify((err as Error)?.message));
     }
   }

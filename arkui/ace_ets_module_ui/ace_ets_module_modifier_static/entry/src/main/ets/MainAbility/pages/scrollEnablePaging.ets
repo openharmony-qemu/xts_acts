@@ -19,6 +19,7 @@ import { Entry, Column, Component, ForEach, Scroll, Scroller, Flex, FlexDirectio
   ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent} from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 class CustomModifier extends ScrollModifier {
 	applyNormalAttribute(instance: ScrollAttribute): void {
 		// super.applyNormalAttribute?.(instance);
@@ -49,7 +50,7 @@ struct ScrollEnablePaging {
                   let backData: events_emitter.EventData = {
                     data: {
                       "itemNumber": item,
-                    } as Record<String,undefined|null|Object>
+                    } as Record<String,RecordData>
                   }
                   let backEvent: events_emitter.InnerEvent = {
                     eventId: 79002,
@@ -57,7 +58,7 @@ struct ScrollEnablePaging {
                   }
                   console.info("scroll NestedScrollOptionsScroll start to emit action state");
                   events_emitter.emit(backEvent, backData);
-                } catch (err: Error) {
+                } catch (err) {
                   console.info("scroll NestedScrollOptionsScroll emit action state err: " + JSON.stringify(err));
                 }
               })

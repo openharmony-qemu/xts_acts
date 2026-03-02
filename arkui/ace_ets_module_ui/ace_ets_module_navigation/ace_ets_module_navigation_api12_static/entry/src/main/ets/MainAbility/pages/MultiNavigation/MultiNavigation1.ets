@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavPathInfo,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -25,8 +25,7 @@ import {
   PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
-
+import {MultiNavigation,MultiNavPathStack, SplitPolicy}  from './mainpage/MultiNavigation';
 @Entry
 @Component
 struct MultiNavigation1 {
@@ -43,16 +42,16 @@ struct MultiNavigation1 {
 
   build() {
     Column() {
-      MultiNavigation({   //导致页面加载失败
+      MultiNavigation({
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name: string) => {}  //编译报错 type __Options_MultiNavigation has no property named onHomeShowInTop
+        onHomeShowInTop: (name: string) => {}
       })
-        // .width(350).height(400).border({width:1}) //编译报错 Property 'width' does not exist on type 'MultiNavigation'
+        .width(350).height(400).border({width:1})
 
       Button('pushPath PageDetail1')
         .onClick((event: ClickEvent) => {
-        // this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);  //函数重载问题
+          this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
       })
         .id('MultiNavigation1_btn1')
 
@@ -70,7 +69,7 @@ export struct PageDetail1 {
         Text('PageDetail1').id('MultiNavigation1_PageDetail1_text1')
         Button('pushPath pageDetail2').onClick((e: ClickEvent) => {
           if (this.pageStack !== undefined && this.pageStack !== null){
-            // this.pageStack.pushPath({name:'PageDetail2',param:'a'},true, SplitPolicy.DETAIL_PAGE)
+            this.pageStack.pushPath(new NavPathInfo('PageDetail2', 'a'),true, SplitPolicy.DETAIL_PAGE)
           }
         }).id('MultiNavigation1_PageDetail1_btn1')
       }
@@ -89,7 +88,7 @@ export struct PageDetail2 {
         Text('PageDetail2').id('MultiNavigation1_PageDetail2_text1')
         Button('pop').onClick((e: ClickEvent) => {
           if (this.pageStack !== undefined && this.pageStack !== null){
-            // this.pageStack.pop()
+            this.pageStack.pop()
           }
         }).id('MultiNavigation1_PageDetail2_btn1')
       }

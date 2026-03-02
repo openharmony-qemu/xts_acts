@@ -15,7 +15,7 @@
  */
 import { LevelOrder } from '@ohos.promptAction'
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, LevelOrder, ColumnOptions, RowOptions, DialogAlignment} from '@ohos.arkui.component'
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, RowOptions, DialogAlignment} from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry

@@ -37,7 +37,6 @@ import {
   MenuItemGroup,
   ToggleType,
   TimePicker,
-  StepperItem,
   SliderStyle,
   FlexDirection,
   ProgressType,
@@ -92,7 +91,6 @@ import {
   Search,
   Select,
   Slider,
-  Stepper,
   TextArea,
   TextClock,
   ImageFit,
@@ -151,8 +149,7 @@ struct FocusablePage {
 
   onPageShow() {
     console.info('[FocusablePage] page show called ');
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     AppStorage.setOrCreate<boolean>('_focusable',  routerParamOptions.view.testValue.setValue)
 
     this.targetView = routerParamOptions.view.targetView
@@ -308,32 +305,6 @@ struct FocusablePage {
 
         .applyStyles(this.commonStyle)
 
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One').focusable(true)
-            }
-          }
-        }
-
-        .applyStyles(this.commonStyle)
-
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-                .focusable(true)
-            }
-          }
-
-          .applyStyles(this.commonStyle)
-
-          .backgroundColor(Color.Red)
-          .width('100%')
-          .height('100%')
-        }.backgroundColor(Color.Yellow).width(200).height(100)
       } else if (this.targetView == 'TextPicker') {
         TextPicker({ range: ['apple1', 'orange2', 'peach3', 'grape4'] })
           .width(200)

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,6 +30,7 @@ import Utils  from "../../../ets/MainAbility/common/Utils";
 import Utils from '../../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter'
 import { Axis } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -44,7 +45,7 @@ function sleep(time: int):Promise<int> {
 export default function sliderJsunit1() {
   describe('appInfoTest_five_3', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 
@@ -107,7 +108,7 @@ it('testSlider002_static', Level.LEVEL1, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "decorationValue": Axis.Horizontal
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 196,
@@ -160,7 +161,7 @@ it('testSlider004_static', Level.LEVEL1, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "value": "10",
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 196,
@@ -168,7 +169,7 @@ it('testSlider004_static', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("[testSlider004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testSlider004] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
@@ -212,7 +213,7 @@ it('testSlider006_static', Level.LEVEL1, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "stepValue": "10",
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 196,

@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ResourceDefaultTest() {
   describe('ResourceDefaultTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ResourceDefaultTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")
@@ -60,7 +60,6 @@ export default function ResourceDefaultTest() {
       }
       console.info("ResourceDefaultTest beforeEach end");
     });
-
 
     /**
          * @tc.number   ResourceDefaultTest_static_0030
@@ -106,7 +105,7 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_verticalAlign');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_0040] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"value":3,"#ordinal":1}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('3');
       console.info('[ResourceDefaultTest_0040] END');
       done();
     });
@@ -181,9 +180,11 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_colorFilter');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_static_0070] component obj is: " +
-      obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getElement('$attrs').getString('colorFilter'))
-        .assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
+        (JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('imageNodes')[0])));
+      expect(obj.getElement('$attrs').getArray('imageNodes')[0].getString('colorFilterMatrix'))
+        .assertEqual('[1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000,' +
+          ' 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, ' +
+          '0.000000, 1.000000, 0.000000]');
       console.info('[ResourceDefaultTest_static_0070] END');
       done();
     });
@@ -233,7 +234,7 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_verticalAlign');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_0090] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"value":3,"#ordinal":1}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('3');
       console.info('[ResourceDefaultTest_0090] END');
       done();
     });
@@ -308,9 +309,11 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_colorFilter');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_static_0120] component obj is: " +
-      obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getElement('$attrs').getString('colorFilter'))
-        .assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
+        (JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('imageNodes')[0])));
+      expect(obj.getElement('$attrs').getArray('imageNodes')[0].getString('colorFilterMatrix'))
+        .assertEqual('[1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, ' +
+          '0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, ' +
+          '0.000000, 0.000000, 1.000000, 0.000000]');
       console.info('[ResourceDefaultTest_static_0070] END');
       done();
     });

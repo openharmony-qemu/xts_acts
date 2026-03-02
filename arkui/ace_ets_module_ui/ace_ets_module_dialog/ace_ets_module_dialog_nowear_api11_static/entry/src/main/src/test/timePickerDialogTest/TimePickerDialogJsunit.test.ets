@@ -24,7 +24,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function TimePickerDialogJsunit() {
   describe('TimePickerDialogJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TimePickerDialogJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })

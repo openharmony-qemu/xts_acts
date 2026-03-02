@@ -34,15 +34,15 @@ export default function webJsunitTwo() {
       console.log("App start")
     });
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_014
-     * @tc.name       : DeleteJavaScriptRegisterStatic
-     * @tc.desc       : test delet specific proxy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name        DeleteJavaScriptRegisterStatic
+     * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_014
+     * @tc.desc        test delet specific proxy
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
      */
-    it('DeleteJavaScriptRegisterStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('DeleteJavaScriptRegisterStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitDeleteJavaScriptRegister";
         Utils.emitEvent(emitKey, 10);

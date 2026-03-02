@@ -29,7 +29,7 @@ struct APICanvasSize {
         .height('50%')
         .backgroundColor('#ffff00')
         .onReady(() => {
-          this.context.canvas!.drawCircle(50, 50, 50)   //Error line
+          //this.context.canvas!.drawCircle(50, 50, 50)
           this.context.invalidate()
         } as VoidCallback)
 

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -41,7 +42,7 @@ export default function PanGesture3Jsunit() {
   describe('PanGesture3Jsunit', () => {
     let x_value: number;
     let y_value: number;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -90,7 +91,7 @@ it('testPanGesture_static_01', Level.LEVEL0, async (done: () => void): Promise<v
           let eventData: emitter.EventData = {
             data: {
               "touchable": true,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
           }
           let innerEvent: emitter.InnerEvent = {
             eventId: 23,
@@ -98,13 +99,13 @@ it('testPanGesture_static_01', Level.LEVEL0, async (done: () => void): Promise<v
           }
           console.info("[testPanGesture01] start to publish emit:" + JSON.stringify(eventData.data));
           emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[testPanGesture01] change component data error: " + err.message);
         }
         await CommonFunc.sleep(1000);
         console.info('[testPanGesture01] END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -146,7 +147,7 @@ it('testPanGesture_static_02', Level.LEVEL0, async (done: () => void): Promise<v
       }
       try {
         emitter.on(innerEventTwo, callbackTwo)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[testPanGesture02] on emitter err : " + JSON.stringify(err));
       }
       console.info('[testPanGesture02] testSendTouchEvent ' + sendTouchEvent(point));

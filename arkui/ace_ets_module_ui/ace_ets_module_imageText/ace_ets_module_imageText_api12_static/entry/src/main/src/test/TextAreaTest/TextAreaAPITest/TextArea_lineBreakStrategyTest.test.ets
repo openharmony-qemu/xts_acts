@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextArea_lineBreakStrategyTest() {
   describe('TextArea_lineBreakStrategyTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextArea_lineBreakStrategyTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -47,7 +47,7 @@ export default function TextArea_lineBreakStrategyTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextArea_lineBreakStrategyTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("lineBreakStrategy" == pages.name)) {
           console.info("get TextArea_lineBreakStrategyTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

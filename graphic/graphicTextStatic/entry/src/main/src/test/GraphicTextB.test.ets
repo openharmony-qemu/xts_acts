@@ -38,8 +38,8 @@ async function loadFontByPromiseInvalidParameter(msg: string | null | undefined,
 export default function GraphicTextBTest() {
 
   describe('GraphicTextBTest', () => {
-    let myColor: common2D.Color;
-    let myPoint: common2D.Point;
+    let myColor: common2D.Color | undefined;
+    let myPoint: common2D.Point | undefined;
     beforeAll(() => {
       myColor = { alpha: 255, red: 255, green: 0, blue: 0 };
       myPoint = { x: 11, y: 12 };
@@ -93,7 +93,6 @@ export default function GraphicTextBTest() {
         expect(text.TextHeightBehavior.DISABLE_LAST_ASCENT).assertEqual(2)
         expect(text.TextHeightBehavior.DISABLE_ALL).assertEqual(3)
         console.log(msg + ' Succeed in Enum ')
-        expect(true).assertTrue()
         done()
       }catch(err){
         console.log(msg + ' Failed in Enum ' + err)
@@ -116,13 +115,13 @@ export default function GraphicTextBTest() {
       let msg = "====testTextStyle_3===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
-        color: myColor,
-        point: myPoint,
+        color: myColor!,
+        point: myPoint!,
         blurRadius: 0.8
       };
       console.info(msg + ' myTextShadow ready go');
       let myRectStyle: text.RectStyle = {
-        color: myColor,
+        color: myColor!,
         leftTopRadius: 15,
         rightTopRadius: 15,
         rightBottomRadius: 15,
@@ -137,7 +136,7 @@ export default function GraphicTextBTest() {
       try {
         console.info(msg + ' Details are ready, carried out!');
         let myTextStyle : text.TextStyle = {
-          color: myColor,
+          color: myColor!,
           fontWeight : text.FontWeight.W100,
           fontStyle : text.FontStyle.ITALIC,
           baseline : text.TextBaseline.ALPHABETIC,
@@ -167,7 +166,6 @@ export default function GraphicTextBTest() {
           try {
             let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
             console.log(msg + ' Succeed in text.ParagraphBuilder')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));
@@ -202,13 +200,13 @@ export default function GraphicTextBTest() {
       let msg = "====testParagraphStyle_2===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
-        color: myColor,
-        point: myPoint,
+        color: myColor!,
+        point: myPoint!,
         blurRadius: 0.8
       };
       console.info(msg + ' myTextShadow ready go');
       let myRectStyle: text.RectStyle = {
-        color: myColor,
+        color: myColor!,
         leftTopRadius: 15,
         rightTopRadius: 15,
         rightBottomRadius: 15,
@@ -231,7 +229,7 @@ export default function GraphicTextBTest() {
       try {
         console.info(msg + ' Details are ready, carried out!');
         let myTextStyle : text.TextStyle = {
-          color: myColor,
+          color: myColor!,
           fontWeight : text.FontWeight.W100,
           fontStyle : text.FontStyle.ITALIC,
           baseline : text.TextBaseline.ALPHABETIC,
@@ -263,7 +261,6 @@ export default function GraphicTextBTest() {
           try {
             let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
             console.log(msg + ' Succeed in text.ParagraphBuilder')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));
@@ -313,7 +310,6 @@ export default function GraphicTextBTest() {
         console.log(msg + ' Succeed in every Variable!')
         paragraph.paintOnPath(canvas, path, 0, 0);
         console.log(msg + ' Succeed in paragraph.paintOnPath')
-        expect(true).assertTrue()
         done()
       }catch(err){
         console.info(msg + 'test paragraph.paintOnPath error ' + JSON.stringify(err));
@@ -341,7 +337,6 @@ export default function GraphicTextBTest() {
         console.log(msg + ' text.FontCollection.getGlobalInstance OK, fontCollection is  ' + fontCollection )
         fontCollection.clearCaches();
         console.log(msg + ' Succeed in fontCollection.clearCaches.')
-        expect(true).assertTrue()
         done()
       } catch (err) {
         console.info(msg + ' Failed in fontCollection.getGlobalInstance.    Cause: ' + JSON.stringify(err));
@@ -364,13 +359,13 @@ export default function GraphicTextBTest() {
       let msg = "====testTextStyle_FontVariation===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
-        color: myColor,
-        point: myPoint,
+        color: myColor!,
+        point: myPoint!,
         blurRadius: 0.8
       };
       console.info(msg + ' myTextShadow ready go');
       let myRectStyle: text.RectStyle = {
-        color: myColor,
+        color: myColor!,
         leftTopRadius: 15,
         rightTopRadius: 15,
         rightBottomRadius: 15,
@@ -390,7 +385,7 @@ export default function GraphicTextBTest() {
       try {
         console.info(msg + ' Details are ready, carried out!');
         let myTextStyle : text.TextStyle = {
-          color: myColor,
+          color: myColor!,
           fontWeight : text.FontWeight.W100,
           fontStyle : text.FontStyle.ITALIC,
           baseline : text.TextBaseline.ALPHABETIC,
@@ -421,7 +416,6 @@ export default function GraphicTextBTest() {
           try {
             let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
             console.log(msg + ' Succeed in text.ParagraphBuilder, This case Pass !')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));
@@ -456,13 +450,13 @@ export default function GraphicTextBTest() {
       let msg = "====testStrutStyle_leading===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
-        color: myColor,
-        point: myPoint,
+        color: myColor!,
+        point: myPoint!,
         blurRadius: 0.8
       };
       console.info(msg + ' myTextShadow ready go');
       let myRectStyle: text.RectStyle = {
-        color: myColor,
+        color: myColor!,
         leftTopRadius: 15,
         rightTopRadius: 15,
         rightBottomRadius: 15,
@@ -482,7 +476,7 @@ export default function GraphicTextBTest() {
       try {
         console.info(msg + ' Details are ready, carried out!');
         let myTextStyle : text.TextStyle = {
-          color: myColor,
+          color: myColor!,
           fontWeight : text.FontWeight.W100,
           fontStyle : text.FontStyle.ITALIC,
           baseline : text.TextBaseline.ALPHABETIC,
@@ -522,7 +516,6 @@ export default function GraphicTextBTest() {
           try {
             let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
             console.log(msg + ' Succeed in text.ParagraphBuilder, This case Pass !')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));
@@ -557,13 +550,13 @@ export default function GraphicTextBTest() {
       let msg = "====testGetLongestLineWithIndent===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
-        color: myColor,
-        point: myPoint,
+        color: myColor!,
+        point: myPoint!,
         blurRadius: 0.8
       };
       console.info(msg + ' myTextShadow ready go');
       let myRectStyle: text.RectStyle = {
-        color: myColor,
+        color: myColor!,
         leftTopRadius: 15,
         rightTopRadius: 15,
         rightBottomRadius: 15,
@@ -583,7 +576,7 @@ export default function GraphicTextBTest() {
       try {
         console.info(msg + ' Details are ready, carried out!');
         let myTextStyle : text.TextStyle = {
-          color: myColor,
+          color: myColor!,
           fontWeight : text.FontWeight.W100,
           fontStyle : text.FontStyle.ITALIC,
           baseline : text.TextBaseline.ALPHABETIC,
@@ -624,7 +617,6 @@ export default function GraphicTextBTest() {
             console.log(msg + ' Succeed in ParagraphBuilder')
             let paragraph = ParagraphGraphBuilder.build()
             console.log(msg + ' Succeed in build paragraph')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));

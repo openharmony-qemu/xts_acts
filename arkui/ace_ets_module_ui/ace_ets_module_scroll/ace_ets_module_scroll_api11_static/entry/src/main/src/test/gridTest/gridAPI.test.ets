@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,6 +22,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 export default function gridMaxCountJsunit() {
   describe('gridMaxCountTest', () => {
@@ -112,7 +113,7 @@ it('testEdgeEffectOptions0003_static_03', Level.LEVEL0, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "alwaysEnabled": false
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 321,
@@ -120,7 +121,7 @@ it('testEdgeEffectOptions0003_static_03', Level.LEVEL0, async () => {
         }
         console.info("[testEdgeEffectOptions0003_static_03] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testEdgeEffectOptions0003_static_03] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

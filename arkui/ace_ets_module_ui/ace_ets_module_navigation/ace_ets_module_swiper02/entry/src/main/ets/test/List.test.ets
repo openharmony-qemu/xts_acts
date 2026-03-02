@@ -16,9 +16,22 @@ import swiperFillPolicy from './swiper/swiperFillPolicy.test';
 import SwiperParamExample from './swiper/SwiperParamExample.test';
 import TabsExample1 from './tabs/TabsExample1.test';
 import TabsExample2 from './tabs/TabsExample2.test';
+import ArcSwiperControllerFinishAnimationNullTest from './arcSwiper/ArcSwiperControllerFinishAnimationNull.test';
+import ArcDotIndicatorNullUndefinedTest from './arcSwiper/ArcDotIndicatorNullUndefined.test';
+import ArcSwiperAttributeUndefinedTest from './arcSwiper/ArcSwiperAttributeUndefined.test';
+import ArcSwiperAttributeNullTest from './arcSwiper/ArcSwiperAttributeNull.test';
+import SwiperFakeDragTest from './swiper/SwiperFakeDragTest.test';
+import SwiperAttributeNullUndefined from './SwiperAttributeNullUndefined/SwiperAttributeNullUndefined.test';
+
 export default function testsuite() {
   swiperFillPolicy()
   SwiperParamExample()
   TabsExample1()
   TabsExample2()
+  ArcSwiperControllerFinishAnimationNullTest()
+  ArcDotIndicatorNullUndefinedTest()
+  ArcSwiperAttributeNullTest()
+  ArcSwiperAttributeUndefinedTest()
+  SwiperFakeDragTest()
+  SwiperAttributeNullUndefined()
 }

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { startAbility, stopApplication, UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -44,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function LineJsunit() {
   describe('LineTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
       
@@ -64,7 +65,8 @@ export default function LineJsunit() {
           line.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push line page error: " + err);
       }
     });
@@ -160,7 +162,7 @@ it('lineTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void>
           data: {
             "startPoint": 50.0,
             "startPointOne": 50.0,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 131,
@@ -168,7 +170,8 @@ it('lineTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void>
         } as emitter.InnerEvent
         console.info("lineTest_static_0500 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0500 change component error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -199,7 +202,7 @@ it('lineTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void>
           data: {
             "endPoint": 100.0,
             "endPointOne": 150.0,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 131,
@@ -207,7 +210,8 @@ it('lineTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void>
         } as emitter.InnerEvent
         console.info("lineTest_static_0600 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0600 change component error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -239,7 +243,7 @@ it('lineTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void>
           data: {
             "startPoint": 'A',
             "startPointOne": 'B',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 131,
@@ -247,7 +251,8 @@ it('lineTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void>
         } as emitter.InnerEvent
         console.info("lineTest_static_0700 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0700 change component error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -278,7 +283,7 @@ it('lineTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void>
           data: {
             "endPoint": 'A',
             "endPointOne": 'B',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 131,
@@ -286,7 +291,8 @@ it('lineTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("lineTest_static_0800 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0800 change component error: " + err.message);
       }
       await CommonFunc.sleep(2000);

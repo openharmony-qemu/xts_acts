@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest,startAbility} from '../Util.test';
 export default function typeNodeProgressTest() {
   describe('typeNodeProgressTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("typeNodeProgressTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
@@ -101,7 +101,10 @@ it('initializeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise
       let strJson: string = inspector.getInspectorByKey('TypeNode_initialize');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[initializeTest_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('{"top":{"unit":1,"value":10},"right":{"unit":1,"value":10},"bottom":{"unit":1,"value":10},"left":{"unit":1,"value":10}}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"top":{"unit":1,"value":10}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"right":{"unit":1,"value":10}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"bottom":{"unit":1,"value":10}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"left":{"unit":1,"value":10}');
       //取值是{"top":{"unit":{},"value":0},"left":{"unit":{},"value":0}，期望是{"top":{"unit":1,"value":10},
       console.info('[initializeTest_0200] END');
       done();
@@ -128,7 +131,10 @@ it('attributeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       let strJson: string = inspector.getInspectorByKey('TypeNode_attribute');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[attributeTest_0300] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('{"top":{"unit":1,"value":5},"right":{"unit":1,"value":5},"bottom":{"unit":1,"value":5},"left":{"unit":1,"value":5}}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"top":{"unit":1,"value":5}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"right":{"unit":1,"value":5}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"bottom":{"unit":1,"value":5}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"left":{"unit":1,"value":5}');
       console.info('[attributeTest_0300] END');
       done();
     });

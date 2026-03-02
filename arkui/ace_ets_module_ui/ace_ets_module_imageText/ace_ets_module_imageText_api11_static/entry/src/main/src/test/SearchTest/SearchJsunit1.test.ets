@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,6 +32,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -39,7 +40,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function searchTest() {
   describe('searchTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("searchTest beforeEach start");
 
 
@@ -63,7 +64,7 @@ export default function searchTest() {
           await CommonFunc.sleep(2000);
           // console.info("push search page result: " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push search page error: " + err);
       }
     });
@@ -88,7 +89,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 2,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1501,
@@ -96,7 +97,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -136,7 +137,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 4,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1701,
@@ -144,7 +145,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -172,7 +173,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 5,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1801,
@@ -180,7 +181,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -217,7 +218,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 6,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1901,
@@ -225,7 +226,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -252,7 +253,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 7,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2001,
@@ -260,7 +261,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -294,7 +295,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 8,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2101,
@@ -302,7 +303,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -339,7 +340,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 9,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2201,
@@ -347,7 +348,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -375,7 +376,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 10,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2301,
@@ -383,7 +384,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -410,7 +411,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 11,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2401,
@@ -418,7 +419,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -455,7 +456,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 12,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2501,
@@ -463,7 +464,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);

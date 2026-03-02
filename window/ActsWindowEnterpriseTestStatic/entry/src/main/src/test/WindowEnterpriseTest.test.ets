@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -77,13 +77,13 @@ export default function WindowEnterpriseTest() {
         hilog.info(domain, tag, '%{public}s', 'WindowEnterpriseTest describe start');
         hilog.info(domain, tag, 'WindowEnterpriseTest start');
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        let windowStage: window.WindowStage;
-        let win: window.Window;
-        let context: common.UIAbilityContext;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
+        let context: common.UIAbilityContext | undefined;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
-        beforeAll(() => {
+        beforeAll(async () => {
             hilog.info(domain, tag, 'beforeAll start');
             let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -97,7 +97,7 @@ export default function WindowEnterpriseTest() {
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
                 hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
 
-            } catch (e:BusinessError) {
+            } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
             }
 
@@ -124,7 +124,7 @@ export default function WindowEnterpriseTest() {
         it('test_GET_VISIBLEWINDOWINFO_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_GET_VISIBLEWINDOWINFO_static_0100 ';
             hilog.info(domain, tag,caseName + 'begin');
-            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context!);
             try {
                 let windowClass2:window.Window = windowStageStart.getMainWindowSync();
                 let res:window.WindowProperties = windowClass2.getWindowProperties()
@@ -166,23 +166,24 @@ export default function WindowEnterpriseTest() {
                     await terminateAbility(caseName);
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
+                    hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' +' code:' +err.code+'msg:'+ err.message);
                     await terminateAbility(caseName);
-                    expect(false).assertTrue();
-                    done();
+                    expect(err.message!=null).assertTrue();
+                    if (err.code === 801) {
+                        hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);
+                        done()
+                    } else {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    
                 });
             } catch (err) {
                 err = err as BusinessError;
                 await terminateAbility(caseName);
                 hilog.info(domain, tag,`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
-                expect(err.message!=null).assertTrue();
-                if (err.code === 801) {
-                    hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);
-                    done()
-                } else {
-                    expect(false).assertTrue();
-                    done();
-                }
+                expect(false).assertTrue();
+                done();
             }
         });
         

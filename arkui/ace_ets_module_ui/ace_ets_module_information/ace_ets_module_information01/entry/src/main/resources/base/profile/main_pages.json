@@ -13,6 +13,8 @@
         "MainAbility/pages/DataPanel/DatalPanelUIJsunit",
         "MainAbility/pages/DataPanel/DataPanelContentModifier",
         "MainAbility/pages/DataPanel/DataPanelTest",
+        "MainAbility/pages/DataPanel/DataPanelCloseEffect",
+        "MainAbility/pages/DataPanel/DataPanelPropertiesNullUndefinedTest",
 
         "MainAbility/pages/Gauge/Gauge3Jsunit",
         "MainAbility/pages/Gauge/GaugeColorsTest",
@@ -20,6 +22,7 @@
         "MainAbility/pages/Gauge/GaugePrivacySensitive",
         "MainAbility/pages/Gauge/GaugeUxTest",
         "MainAbility/pages/Gauge/GaugeContentModifier",
+        "MainAbility/pages/Gauge/GaugePropertiesNullUndefinedTest",
 
         "MainAbility/pages/PatternLock/PatternLock11Jsunit",
         "MainAbility/pages/PatternLock/PatternLockActivateCircleStyle1",

@@ -49,7 +49,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function StackMatchParentTest() {
   describe('StackMatchParentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StackMatchParentTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")

@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -93,7 +93,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           })
         }
         hilog.info(0x0000, 'taskPoolTaskGroupExecute1001', '%{public}s', `Count1.count========${Count1.count}`);
-        while (Count1.count < 1) {
+        while (Count1.count < 1 || Count2.count < 1) {
           await sleep(100)
         }
         expect(String(1)).assertEqual(String(Count1.count))
@@ -171,7 +171,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           Count2.count = Count2.count + (num[1] as Number)
           console.info('======', Count1.count, Count2.count)
         })
-        while (Count1.count < 1) {
+        while (Count1.count < 1 || Count2.count < 1) {
           await sleep(100)
         }
         expect(String(1)).assertEqual(String(Count1.count))
@@ -246,7 +246,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           Count2.count = Count2.count + (num[1] as Number)
           console.info('======', Count1.count)
         })
-        while (Count1.count < 1) {
+        while (Count1.count < 1 || Count2.count < 1) {
           await sleep(100)
         }
         expect(String(1)).assertEqual(String(Count1.count))
@@ -280,10 +280,12 @@ export default function taskPoolTaskGroupExecuteTest() {
           Count1.count = Count1.count + (num[0] as Number)
           Count2.count = Count2.count + (num[1] as Number)
           console.info('======', Count1.count)
+          count1++
         }).catch((e: Any) => {
           //expect((e as BusinessError)?.name).assertContain('BusinessError')
-          count1++
           console.info('======e', JSON.stringify(e))
+          // The task of ArkTS-Sta is canceled at runtime and enters "then" instead of "reject", but the uncertainty of the number of workers in the taskpool (when the number of workers is only 1) will lead to task2 being canceled before it runs and entering "reject".
+          count1++
         })
         await sleep(1000)
         taskpool.cancel(task2)
@@ -390,7 +392,7 @@ export default function taskPoolTaskGroupExecuteTest() {
         });
 
         hilog.info(0x0000, 'taskPoolTaskGroupExecute1009', '%{public}s', `Count1.count========${Count1.count}`);
-        while (Count1.count < 1) {
+        while (Count1.count < 1 || Count2.count < 1) {
           await sleep(100)
         }
 
@@ -494,7 +496,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           console.info("taskpool: execute task success")
         });
 
-        while (Count1.count < 1) {
+        while (count < 1 || Count1.count < 1 || Count2.count < 1 || count2 < 1) {
           await sleep(100)
         }
         expect(String(1)).assertEqual(String(Count1.count))
@@ -538,7 +540,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           console.info("taskpool: execute task success")
         });
 
-        while (count < 1) {
+        while (count < 1 || count2 < 1) {
           await sleep(100)
         }
 
@@ -589,7 +591,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           console.info("taskpool: execute task success")
         });
 
-        while (count < 1) {
+        while (count < 1 || count2 < 1) {
           await sleep(100)
         }
 

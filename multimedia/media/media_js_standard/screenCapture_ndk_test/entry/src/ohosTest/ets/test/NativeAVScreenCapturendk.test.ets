@@ -1072,7 +1072,7 @@ export default function nativeAVScreenCaptureNdkTest() {
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeWindowOnly();
-      let expectedResult: number = deviceinfo.deviceType === '2in1' ? 0 : 1;
+      let expectedResult: number = 0;
       expect(result).assertEqual(expectedResult);
       result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenOnly();
       expect(result).assertEqual(expectedResult);
@@ -1091,7 +1091,7 @@ export default function nativeAVScreenCaptureNdkTest() {
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureExcludePickerWindows();
-      let expectedResult: number = deviceinfo.deviceType === '2in1' ? 0 : 1;
+      let expectedResult: number = 0;
       expect(result).assertEqual(expectedResult);
       done();
     });
@@ -1233,6 +1233,22 @@ export default function nativeAVScreenCaptureNdkTest() {
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_STRATEGY_0100', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategy1();
       expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_MULTIDISPLAY_CAPABILITY_0501
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_MULTIDISPLAY_CAPABILITY_0501
+     * @tc.desc   normalMultiDisplayCaptureCapabilityTest 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_MULTIDISPLAY_CAPABILITY_0501', Level.LEVEL0, async (done: Function) => {
+      console.info(Tag + "normalMultiDisplayCaptureCapabilityTest-------------before click:");
+      let result: number = myScreenCaptureNdk.normalMultiDisplayCaptureCapabilityTest();
+      console.info(Tag + "normalMultiDisplayCaptureCapabilityTest-------------res:" + result);
+      expect(result).assertEqual(3);
       done();
     });
   })

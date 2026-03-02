@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
+import { RecordData } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -41,7 +42,7 @@ function sleep(time: int):Promise<int> {
 
 export default function Toggle3Jsunit() {
   describe('Toggle3Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
@@ -140,7 +141,7 @@ it('testToggle04_static', Level.LEVEL1, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "isOn": true,
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 231,
@@ -174,7 +175,7 @@ it('testToggle05_static', Level.LEVEL1, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "selectedColor": '#330A59F8',
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 231,
@@ -207,7 +208,7 @@ it('testToggle08_static', Level.LEVEL1, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "isOn": false,
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 231,
@@ -241,7 +242,7 @@ it('testToggle09_static', Level.LEVEL1, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "isOn": false,
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 231,

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,13 +30,14 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest} from '../Util.test'
+import { RecordData } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function aboutToDisappearJsunit() {
   describe('aboutToDisappearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
     });
 
@@ -78,10 +79,9 @@ it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): P
       await Utils.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("aboutToDisappearTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-        const data = indexEvent.data as Record<string, Object | undefined | null>
-        const event = data['ACTION'] as Record<string, Object | undefined | null>
+        const data = indexEvent.data as Record<String,RecordData>
+        const event = data['ACTION'] as Record<String,RecordData>
         expect(event).assertEqual(false);
-        done();
       }
       let indexEvent: events_emitter.InnerEvent = {
         eventId: 49,
@@ -89,12 +89,13 @@ it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): P
       } as events_emitter.InnerEvent
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("aboutToDisappearTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("aboutToDisappearTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
       await Utils.sleep(1000);
       console.info('aboutToDisappearTest_static_0100 END');
+      done();
     });
   })
 }

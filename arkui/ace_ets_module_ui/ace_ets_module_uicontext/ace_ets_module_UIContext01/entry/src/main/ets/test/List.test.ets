@@ -22,6 +22,9 @@ import UIContextTestCase from './UIContext/UIContextTestCase.test';
 import GetUIContextMethodTest from './getUIContext/GetUIContextMethodTest.test';
 import CacheMaxCountForHSPParamTest from './CacheMaxCountTest/CacheMaxCountForHSPParamTest.test';
 import WidthBreakpointEnumsTest from './getUIContext/WidthBreakpointEnumsTest.test';
+import GetWindowIdTest from './getUIContext/GetWindowIdTest.test';
+import UIContextOnFrameTest from './getUIContext/UIContextOnFrameTest.test';
+import UIContextOnIdleTest from './getUIContext/UIContextOnIdleTest.test';
 
 import CacheMaxCountForHSPTest from './CacheMaxCountTest/CacheMaxCountForHSPTest.test';
 import GetNodeByIdNullTest from './ContextTest/GetNodeByIdNullTest.test';
@@ -45,6 +48,9 @@ export default function testsuite() {
   GetUIContextMethodTest();
   CacheMaxCountForHSPParamTest();
   WidthBreakpointEnumsTest();
+  GetWindowIdTest();
+  UIContextOnFrameTest();
+  UIContextOnIdleTest();
   
   APIgetFrameNodeByUniqueId();
   UIContextOnIdle();

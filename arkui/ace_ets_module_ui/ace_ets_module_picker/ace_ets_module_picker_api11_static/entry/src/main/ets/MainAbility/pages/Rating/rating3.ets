@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,11 +31,12 @@ import {
   FontWeight,
   Axis,
   Margin,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,
+  PickerTextStyle, CalendarAlign, CalendarPicker,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,FlexAlign,Rating
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -46,7 +47,7 @@ struct RatingExample {
     console.info("rating page stateChangCallBack");
     if (eventData != null && eventData.data != null) {
       console.info("rating page state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, Object | null | undefined> 
+      const data = eventData.data as Record<String,RecordData> 
       if (data!['rating'] != null) {
         this.rating = data!['rating'] as double;
       }

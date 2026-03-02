@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -35,7 +36,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function appearJsunit() {
   describe('appearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -81,8 +82,8 @@ it('testAppear_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       try {
         let callBackAppear1 = (backData: emitter.EventData) => {
-          const data: Record<String, undefined | null | Object> =
-            backData.data as Record<String, undefined | null | Object>
+          const data: Record<String,RecordData> =
+            backData.data as Record<String,RecordData>
           console.info("testAppear01 get appearEvent result is: " + JSON.stringify(backData));
           await CommonFunc.sleep(1000);
           expect(data['ACTION']).assertEqual(false);
@@ -93,7 +94,7 @@ it('testAppear_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
           priority: emitter.EventPriority.LOW
         }
         emitter.on(appearEvent1, callBackAppear1);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testAppear01 on appearEvent err : " + JSON.stringify(err));
       }
       console.info("testAppear01 click result is: " + JSON.stringify(inspector.sendEventByKey('appear', 10, "")));
@@ -103,8 +104,8 @@ it('testAppear_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testAppear02] START');
       try {
         let callBackDisAppear = (backData1: emitter.EventData) => {
-          const data: Record<String, undefined | null | Object> =
-            backData1.data as Record<String, undefined | null | Object>
+          const data: Record<String,RecordData> =
+            backData1.data as Record<String,RecordData>
           console.info("testAppear02 get disAppearEvent result is: " + JSON.stringify(backData1));
           console.info("testAppear02 get backData1.data.ACTION result is: " + data['ACTION']);
           expect(data['ACTION']).assertEqual(true);
@@ -115,15 +116,15 @@ it('testAppear_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
           priority: emitter.EventPriority.LOW
         }
         emitter.on(disAppearEvent, callBackDisAppear);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testAppear02 on disAppearEvent err : " + JSON.stringify(err));
       }
 
       await CommonFunc.sleep(1000);
       console.info('[testAppear03] START');
       let callBackAppear2 = (backData2: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> =
-          backData2.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> =
+          backData2.data as Record<String,RecordData>
         console.info("testAppear03 get appearEvent result is: " + JSON.stringify(backData2));
         console.info("testAppear03 get backData2.data.APPEAR: " + data['APPEAR']);
         expect(data['APPEAR']).assertEqual("appearStatusOn");
@@ -137,7 +138,7 @@ it('testAppear_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
         console.info("testAppear03 appearEvent click result is: " +
         JSON.stringify(inspector.sendEventByKey('appear', 10, "")));
         emitter.on(appearEvent2, callBackAppear2);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testAppear03 on appearEvent err : " + JSON.stringify(err));
       }
 

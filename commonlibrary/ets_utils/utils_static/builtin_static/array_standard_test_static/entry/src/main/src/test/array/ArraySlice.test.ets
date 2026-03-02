@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ interface Opt72 { vals?: number[] }
 
 interface Obj73 { a: number };
 
-type Fn83 = (x: number) => number;
+type Fn83 = (x: int) => int;
 
 interface Opt83 { fn?: Fn83 }
 
@@ -64,7 +64,7 @@ interface Opt98 { n?: number }
 
 interface Opt101 { n?: number }
 
-interface Opt107 { fn?: (x: number) => number }
+interface Opt107 { fn?: (x: int) => int }
 
 interface Opt108 { val?: number }
 
@@ -80,7 +80,7 @@ interface Opt130 { n?: number }
 
 interface Opt134 { vals?: number[] }
 
-interface Opt137 { fn?: (x: number) => number }
+interface Opt137 { fn?: (x: int) => int }
 
 interface Opt141 { n?: number }
 
@@ -99,7 +99,7 @@ interface Opt166 { fn?: () => number }
 
 interface Opt174 { n?: number }
 
-interface Opt176 { fn?: (x: number) => number }
+interface Opt176 { fn?: (x: int) => int }
 
 interface Obj178 {
   a: number;
@@ -689,7 +689,7 @@ export default function ArraySliceTest() {
      */
     it('testArraySlice027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 1, 4, 2];
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt());
       const sliced: number[] = arr.slice(1, 3);
       expect(JSON.stringify(sliced)).assertEqual(JSON.stringify([2, 3]));
     });
@@ -1170,7 +1170,7 @@ export default function ArraySliceTest() {
      */
     it('testArraySlice060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 1, 4, 2];
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt());
       const sliced: number[] = arr.slice(1, 3);
       expect(JSON.stringify(sliced)).assertEqual(JSON.stringify([2, 3]));
     });
@@ -1314,23 +1314,6 @@ export default function ArraySliceTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_070
-     * @tc.name testArraySlice070
-     * @tc.desc Verify slice() on array after concat of arrays with different types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // 问题？
-    // it('testArraySlice070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr1:number[]=[1,2];
-    //   const arr2:string[]=['a','b'];
-    //   const arr:(number|string)[]=arr1.concat(arr2);
-    //   const sliced:(number|string)[]=arr.slice(1,3);
-    //   expect(sliced).assertDeepEquals([2,'a']);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_071
      * @tc.name testArraySlice071
      * @tc.desc Verify slice() on array after repeated push and pop
@@ -1460,7 +1443,7 @@ export default function ArraySliceTest() {
      */
     it('testArraySlice079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 3, 4, 1];
-      arr.sort((a, b) => b - a);
+      arr.sort((a, b) => (b - a).toInt());
       const sliced: number[] = arr.slice(1, 3);
       expect(JSON.stringify(sliced)).assertEqual(JSON.stringify([4, 3]));
     });
@@ -1519,7 +1502,7 @@ export default function ArraySliceTest() {
      * @tc.level Level 1
      */
     it('testArraySlice083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: Opt83[] = [{ fn: (x: number) => x + 1 }, {}, { fn: (x: number) => x * 2 }];
+      const arr: Opt83[] = [{ fn: (x: int) => x + 1 }, {}, { fn: (x: int) => x * 2 }];
       const sliced: Opt83[] = arr.slice(0, 2);
       expect(sliced.length).assertEqual(2);
       expect(sliced[1].fn === undefined).assertEqual(true);
@@ -1867,7 +1850,7 @@ export default function ArraySliceTest() {
      * @tc.level Level 1
      */
     it('testArraySlice107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: Opt107[] = [{ fn: (x: number) => x + 1 }, {}, { fn: (x: number) => x * 2 }];
+      const arr: Opt107[] = [{ fn: (x: int) => x + 1 }, {}, { fn: (x: int) => x * 2 }];
       const sliced: Opt107[] = arr.slice(0, 2);
       expect(sliced.length).assertEqual(2);
       expect(sliced[1].fn === undefined).assertEqual(true);
@@ -2320,7 +2303,7 @@ export default function ArraySliceTest() {
      */
     it('testArraySlice137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let state = 1;
-      const arr: Opt137[] = [{ fn: (x: number) => x + state }, { fn: (x: number) => x * state }];
+      const arr: Opt137[] = [{ fn: (x: int) => x + state }, { fn: (x: int) => x * state }];
       state = 5;
       const sliced: Opt137[] = arr.slice();
       expect(sliced[0].fn!(2)).assertEqual(7);
@@ -2601,22 +2584,6 @@ export default function ArraySliceTest() {
       const sliced: number[] = arr.slice(0, 2);
       expect(JSON.stringify(sliced)).assertEqual(JSON.stringify([1, 2]));
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_156
-     * @tc.name testArraySlice156
-     * @tc.desc Verify slice() on array of arrays after flatMap and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // todo
-    // it('testArraySlice156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: number[][] = [[1, 2], [3, 4]];
-    //   const flat: number[] = arr.flatMap(x => x);
-    //   const sliced: number[] = flat.slice(1, 3);
-    //   expect(sliced).assertDeepEquals([2, 3]);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_157
@@ -2918,7 +2885,7 @@ export default function ArraySliceTest() {
      * @tc.level Level 1
      */
     it('testArraySlice176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: Opt176[] = [{ fn: (x: number) => x + 1 }, {}, {}];
+      const arr: Opt176[] = [{ fn: (x: int) => x + 1 }, {}, {}];
       const sliced: Opt176[] = arr.slice(0, 2);
       expect(sliced[1].fn === undefined).assertEqual(true);
       expect(sliced[0].fn!(2)).assertEqual(3);
@@ -2970,22 +2937,6 @@ export default function ArraySliceTest() {
       const sliced: number[] = arr.slice(-4, -1);
       expect(JSON.stringify(sliced)).assertEqual(JSON.stringify([4, 3, 2]));
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_180
-     * @tc.name testArraySlice180
-     * @tc.desc Verify slice() on array of nested arrays after flatMap and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // todo
-    // it('testArraySlice180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
-    //   const flat: number[] = arr.flatMap(x => x.map(y => y * 2));
-    //   const sliced: number[] = flat.slice(2, 6);
-    //   expect(sliced).assertDeepEquals([6, 8, 10, 12]);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_181

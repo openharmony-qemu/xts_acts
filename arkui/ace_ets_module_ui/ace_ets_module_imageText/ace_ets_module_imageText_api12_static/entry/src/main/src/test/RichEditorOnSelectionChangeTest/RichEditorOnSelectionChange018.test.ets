@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorOnSelectionChange018() {
   describe('RichEditorOnSelectionChange018', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -103,8 +103,8 @@ export default function RichEditorOnSelectionChange018() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":4,"end":4}');
-
+      expect(messageText).assertContain('"start":4');
+      expect(messageText).assertContain('"end":4');
       let onSelectCallBack = await (driver.findComponent(ON.id('onSelectCallBack')) as Promise<Component>);
       let onSelectCallBackText = await onSelectCallBack.getText();
       await CommonFunc.sleep(500);
@@ -135,8 +135,8 @@ export default function RichEditorOnSelectionChange018() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":2,"end":4}');
-
+      expect(messageText).assertContain('"start":2');
+      expect(messageText).assertContain('"end":4');
       let onSelectCallBack = await (driver.findComponent(ON.id('onSelectCallBack')) as Promise<Component>);
       let onSelectCallBackText = await onSelectCallBack.getText();
       await CommonFunc.sleep(500);
@@ -148,8 +148,8 @@ export default function RichEditorOnSelectionChange018() {
 
       messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":1,"end":1}');
-
+      expect(messageText).assertContain('"start":1');
+      expect(messageText).assertContain('"end":1');
       done();
     });
 

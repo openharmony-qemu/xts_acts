@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -504,9 +504,18 @@ export default function UsbBaseTest() {
           try {
             let gDeviceList: Array<Readonly<UsbMgr.USBDevice>> = UsbMgr.getDevices();
             let devices: UsbMgr.USBDevice = gDeviceList[0];
-            let remRight = UsbMgr.removeRight(devices.name);
-            hilog.info(domain, tag, 'usb case testRemoveRight001 ret : ' + remRight);
-            expect(remRight).assertTrue();
+            let isHasRight = UsbMgr.hasRight(devices.name);
+            if (isHasRight == true) {
+              let remRight = UsbMgr.removeRight(devices.name);
+              hilog.info(domain, tag, 'usb case testRemoveRight001 ret : ' + remRight);
+              expect(remRight).assertTrue();
+              done();
+            } else {
+              let res: boolean = await UsbMgr.requestRight(devices.name);
+              let remRight = UsbMgr.removeRight(devices.name);
+              expect(remRight).assertTrue();
+              done();
+            }
           } catch (err) {
             hilog.info(domain, tag, 'testRemoveRight001 catch err code: ' + JSON.stringify(err));
             expect(err !== null).assertFalse();
@@ -555,14 +564,14 @@ export default function UsbBaseTest() {
     it("USBRequestTargetType001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '----------------------USBRequestTargetType001---------------------------');
-      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE}`);
-      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE)).assertEqual('number');
-      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE}`);
-      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE)).assertEqual('number');
-      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT}`);
-      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT)).assertEqual('number');
-      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER}`);
-      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER)).assertEqual('number');
+      hilog.info(domain, tag, `USB_REQUEST_TARGET_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE)).assertEqual('int');
+      hilog.info(domain, tag, `USB_REQUEST_TARGET_INTERFACE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE)).assertEqual('int');
+      hilog.info(domain, tag, `USB_REQUEST_TARGET_ENDPOINT: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT)).assertEqual('int');
+      hilog.info(domain, tag, `USB_REQUEST_TARGET_OTHER: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER)).assertEqual('int');
       done();
       hilog.info(domain, tag, '%{public}s', 'USBRequestTargetType001 end');
     })
@@ -630,7 +639,7 @@ export default function UsbBaseTest() {
             let result: boolean = UsbMgr.resetUsbDevice(gPipe);
             console.info(domain, 'usb resetUsbDevice ret :' + result);
             expect(result == false).assertTrue();
-          } catch (error:BusinessError) {
+          } catch (error) {
             const err = error as BusinessError;
             console.info(domain, 'resetUsbDevice failed: ' + err);
             expect(err.code).assertEqual(14400008);
@@ -668,7 +677,7 @@ export default function UsbBaseTest() {
             let result: boolean = UsbMgr.resetUsbDevice(gPipe);
             console.info(domain, 'usb resetUsbDevice ret :' + result);
             expect(result == false).assertTrue();
-          } catch (error:BusinessError) {
+          } catch (error) {
             const err = error as BusinessError;
             console.info(domain, 'resetUsbDevice failed: ' + err);
             expect(err.code).assertEqual(14400001);
@@ -704,7 +713,7 @@ export default function UsbBaseTest() {
             let result: boolean = UsbMgr.resetUsbDevice(gPipe);
             console.info(domain, 'usb resetUsbDevice ret :' + result);
             expect(result == false).assertTrue();
-          } catch (error:BusinessError) {
+          } catch (error) {
             const err = error as BusinessError;
             console.info(domain, 'resetUsbDevice failed: ' + err);
             expect(err.code).assertEqual(14400013);
@@ -732,7 +741,7 @@ export default function UsbBaseTest() {
           };
           let descriptor = UsbMgr.getRawDescriptor(gPipe);
           hilog.info(domain, tag, 'usb case testGetRawDescriptor002 ret: ' + JSON.stringify(descriptor));
-        } catch(error:BusinessError){
+        } catch(error){
           const err = error as BusinessError;
           console.info(domain, 'getRawDescriptor failed: ' + err);
           expect(err.code).assertEqual(14400001);

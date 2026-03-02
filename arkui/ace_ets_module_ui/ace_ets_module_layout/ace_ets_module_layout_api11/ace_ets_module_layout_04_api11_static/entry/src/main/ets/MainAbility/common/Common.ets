@@ -41,13 +41,14 @@ export default class CommonFunc {
   static getComponentRect(key: string) {
     let strJson: string = inspector.getInspectorByKey(key);
     console.log('strJsonstrJsonstrJsonstrJson',strJson)
-    await CommonFunc.sleep(1000)
+    waitForCompletion(async ()=>{ await CommonFunc.sleep(1000) })
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
     let rectInfo = parts.map((part: string) => {
       return part.split(",").map((item: string):double => parseFloat(item.trim()));
     });
+    console.info(`${key} rectInfo left: ${rectInfo[0][0]}, top: ${rectInfo[0][1]}, right: ${rectInfo[1][0]}, bottom: ${rectInfo[1][1]}`);
     CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0)
     CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0)
     CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0)
@@ -59,9 +60,9 @@ export default class CommonFunc {
 
   static getComponentRectOnScreen(key: string) {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<String,undefined|null|Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<String,undefined|null|Object>;
+    let obj: Record<String,undefined|null|Object> = JSON.parse<Object>(strJson, Class.from<String>()) as Record<String,undefined|null|Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj['$rect']! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj['$rect']! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
     CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));

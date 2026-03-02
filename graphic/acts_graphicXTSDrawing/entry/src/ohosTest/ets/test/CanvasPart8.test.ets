@@ -373,6 +373,15 @@ export default function drawingTsCanvasPart8Test() {
         console.info(msg + `drawVertices 5 errorCode is:  ${e.code} + errormsg is: ${e.message} `);
         expect(e.code).assertEqual(401);
       }
+      try {
+        canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 3, [], texsArray, colors, 3, indices,drawing.BlendMode.SRC);
+        console.log(msg + "drawVertices 6 success ")
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawVertices 6 errorCode is:  ${e.code} + errormsg is: ${e.message} `);
+        expect(e.code).assertEqual(25900001);
+      }
     })
     /**
      * @tc.name   testCanvasDrawVerticesUndefined
@@ -763,6 +772,36 @@ export default function drawingTsCanvasPart8Test() {
         e = e as BusinessError;
         console.info(msg + `drawVertices 3 errorCode is:  ${e.code} + errormsg is: ${e.message} `);
         expect(e.code).assertEqual(25900001);
+      }
+    })
+    /**
+     * @tc.name   testCanvasDrawRegionAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5500
+     * @tc.desc   testCanvasDrawRegionAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasDrawRegionAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRegionAbnormal';
+      let canvas = new drawing.Canvas(pixel);
+      try {
+        canvas.drawRegion(null);
+        console.log(msg + "drawRegion 1 success ")
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawRegion 1 errorCode is:  ${e.code} + errormsg is: ${e.message} `);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawRegion(undefined);
+        console.log(msg + "drawRegion 2 success ")
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawRegion 2 errorCode is:  ${e.code} + errormsg is: ${e.message} `);
+        expect(e.code).assertEqual(401);
       }
     })
   })

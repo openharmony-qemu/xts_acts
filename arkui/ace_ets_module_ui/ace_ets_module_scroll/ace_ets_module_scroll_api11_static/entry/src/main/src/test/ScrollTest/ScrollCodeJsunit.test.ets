@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,6 +26,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -33,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function scrollCodeJsunit() {
   describe('scrollCodeJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -55,7 +56,7 @@ export default function scrollCodeJsunit() {
           await CommonFunc.sleep(2000);
           // console.info("push ScrollCode page success " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push ScrollCode page error " + JSON.stringify(err));
       }
     });
@@ -104,7 +105,7 @@ it('test_scrollCode_static_002', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "Vertical"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -112,7 +113,7 @@ it('test_scrollCode_static_002', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[test_scrollCode_static_002] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_002] change scrollable error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -140,7 +141,7 @@ it('test_scrollCode_static_003', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "scrollBar": "Off"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 186,
@@ -148,7 +149,7 @@ it('test_scrollCode_static_003', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[test_scrollCode_static_003] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_003] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -175,7 +176,7 @@ it('test_scrollCode_static_004', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "scrollBarColor": "#FFB6C1"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 187,
@@ -183,7 +184,7 @@ it('test_scrollCode_static_004', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[test_scrollCode_static_004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_004] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -210,7 +211,7 @@ it('test_scrollCode_static_005', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "scrollBarWidth": 40
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 188,
@@ -218,7 +219,7 @@ it('test_scrollCode_static_005', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[test_scrollCode_static_005] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_005] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -243,7 +244,7 @@ it('test_scrollCode_static_006', Level.LEVEL0, async (done: () => void): Promise
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("[test_scrollCode_static_06] get event state result is: " + JSON.stringify(eventData));
         if (eventData.data != null) {
-          expect((eventData.data as Record<String, undefined | null | Object>)['scrollToIndex']).assertEqual(10)
+          expect((eventData.data as Record<String,RecordData>)['scrollToIndex']).assertEqual(10)
         }
       }
       let innerEvent: events_emitter.InnerEvent = {
@@ -252,7 +253,7 @@ it('test_scrollCode_static_006', Level.LEVEL0, async (done: () => void): Promise
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[test_scrollCode_static_06] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[test_scrollCode_static_006] sendEventByKey ' +

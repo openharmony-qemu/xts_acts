@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,6 +50,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { RecordData } from '@ohos.base';
 
 
 let domain: Int = 0x0000;
@@ -82,7 +83,7 @@ export default function shapeClippingJsunit() {
           // console.info("push shapeClipping page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push shapeClipping page error:" + err);
       }
 
@@ -147,7 +148,7 @@ it('testShapeClipping_static_003', Level.LEVEL1, async (done: () => void): Promi
         let eventData: events_emitter.EventData = {
           data: {
             "maskValue": false
-          }as Record<string, undefined|null|Object>
+          }as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 32,
@@ -155,7 +156,7 @@ it('testShapeClipping_static_003', Level.LEVEL1, async (done: () => void): Promi
         }
         console.info("[testShapeClipping_static_003] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testShapeClipping_static_003] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -182,7 +183,7 @@ it('testShapeClipping_static_004', Level.LEVEL1, async (done: () => void): Promi
         let eventData: events_emitter.EventData = {
           data: {
             "clipValue": false
-          }as Record<string, undefined|null|Object>
+          }as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 33,
@@ -190,7 +191,7 @@ it('testShapeClipping_static_004', Level.LEVEL1, async (done: () => void): Promi
         }
         console.info("[testShapeClipping_static_004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testShapeClipping_static_004] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

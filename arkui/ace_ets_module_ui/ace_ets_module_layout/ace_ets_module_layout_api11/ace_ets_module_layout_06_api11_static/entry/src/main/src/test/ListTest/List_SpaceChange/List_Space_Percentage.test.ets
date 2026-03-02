@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function List_Space_Percentage() {
   describe('List_Space_Percentage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_Space_Percentage beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -67,6 +67,7 @@ export default function List_Space_Percentage() {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
       routerInstance.back()
+      await CommonFunc.sleep(1000);
       console.info("List_Space_Percentage after each called");
     });
 

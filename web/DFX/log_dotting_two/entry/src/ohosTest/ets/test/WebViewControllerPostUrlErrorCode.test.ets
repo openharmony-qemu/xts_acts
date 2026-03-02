@@ -83,7 +83,7 @@ export default function webViewControllerPostUrlErrorCode() {
      */
     it('testWebViewControllerPostUrl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerPostUrl002", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testWebViewControllerPostUrl002", '17100002', 115690, done);
+      Utils.registerEvent("testWebViewControllerPostUrl002", '17100002URL error. The webpage corresponding to the URL is invalid.', 115690, done);
       await Utils.waitAndClickComponent(driver, "PostUrlErrorCodeButton");
     })
   })

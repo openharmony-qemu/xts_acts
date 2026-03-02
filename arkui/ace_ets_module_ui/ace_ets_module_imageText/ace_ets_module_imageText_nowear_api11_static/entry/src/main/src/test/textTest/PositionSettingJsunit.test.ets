@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,6 +33,7 @@ import { UtilsTest } from '../Util.test';
 import {
   Position
 } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -46,7 +47,7 @@ interface Data2 {
 }
 export default function positionSettingJsunit() {
   describe('positionSettingJsunit', () : void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("positionSettingJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")
@@ -129,7 +130,7 @@ it('testPositionSetting_static_003', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textAlign": Alignment.BottomEnd
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 25,
@@ -137,7 +138,7 @@ it('testPositionSetting_static_003', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting003] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testPositionSetting003] change component data error: " + err.message );
       }
       await CommonFunc.sleep(4000);
@@ -163,7 +164,7 @@ it('testPositionSetting_static_004', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "directionT": Direction.Ltr
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 25,
@@ -171,7 +172,7 @@ it('testPositionSetting_static_004', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting004] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err : Error) {
+      } catch (err) {
         console.log("[testPositionSetting004] change component data error: " + err?.message);
       }
       await CommonFunc.sleep(3000);
@@ -226,7 +227,7 @@ it('testPositionSetting_static_006', Level.LEVEL1, async (done: ()=>void) => {
             "position2": {
               x: '30%', y: '50%'
             } as Position
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -235,7 +236,7 @@ it('testPositionSetting_static_006', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting006] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testPositionSetting006] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -295,7 +296,7 @@ it('testPositionSetting_static_008', Level.LEVEL1, async (done: ()=>void) => {
             "anchor": {
               x: 0, y: 0
             } as Position,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -304,7 +305,7 @@ it('testPositionSetting_static_008', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting008] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err :Error) {
+      } catch (err) {
         console.log("[testPositionSetting008] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -356,7 +357,7 @@ it('testPositionSetting_static_010', Level.LEVEL1, async (done: ()=>void) => {
             "offsetT": {
               x: 150, y: 10
             } as Position,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -365,7 +366,7 @@ it('testPositionSetting_static_010', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting010] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err :Error) {
+      } catch (err) {
         console.log("[testPositionSetting010] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);

@@ -18,6 +18,8 @@ import { BusinessError } from '@ohos.base';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import common from '@ohos.app.ability.common';
 import { ApplicationStateChangeCallback } from '@kit.AbilityKit';
+import eventBus from '../lib/EventBus';
+import { Event } from '@kit.ArkTS';
 
 let TestAbilityContext:common.UIAbilityContext;
 export default function LifeCycleLinstenerTest() {
@@ -36,14 +38,17 @@ export default function LifeCycleLinstenerTest() {
     beforeEach(() => {
       globalThis.entryAbilityContext1 = undefined;
     });
-    afterEach(async () => {
-      try{
-        await globalThis.entryAbilityContext1?.terminateSelf();
+    afterEach(async (done: Function) => {
+      if (globalThis.entryAbilityContext1) {
+        globalThis.entryAbilityContext1.terminateSelf();
+        await eventBus.onWait('EntryAbility1_onDestroy');
         console.log(`afterEach terminateSelf success`);
-      }catch{}
-      await sleep(1000);
-      await abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
-      await sleep(2000);
+      }
+      if (!globalThis.testAbilityOnForeground) {
+        abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
+        await eventBus.onWait('TestAbility_onForeground');
+      }
+      done();
     });
     afterAll(() => {
     });
@@ -88,10 +93,12 @@ export default function LifeCycleLinstenerTest() {
             onApplicationForeground() {
               console.info(tag + 'applicationStateChangeCallback onApplicationForeground');
               forgoundFlag = true;
+              eventBus.emit(`${tag}_onApplicationForeground`);
             },
             onApplicationBackground() {
               console.info(tag + 'applicationStateChangeCallback onApplicationBackground');
               backgoundFlag = true;
+              eventBus.emit(`${tag}_onApplicationBackground`);
             }
           }
           let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
@@ -102,12 +109,18 @@ export default function LifeCycleLinstenerTest() {
             expect(1).assertEqual(5);
             done();
           }
-          await TestAbilityContext.moveAbilityToBackground();
-          await sleep(1000);
+          TestAbilityContext.moveAbilityToBackground();
+          await Promise.all([
+            eventBus.onWait('TestAbility_onBackground'),
+            eventBus.onWait(`${tag}_onApplicationBackground`),
+          ]);
           console.info(tag + ` backgoundFlag: ` + backgoundFlag);
           expect(backgoundFlag).assertTrue();
-          await abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
-          await sleep(2000);
+          abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
+          await Promise.all([
+            eventBus.onWait('TestAbility_onForeground'),
+            eventBus.onWait(`${tag}_onApplicationForeground`),
+          ]);
           console.info(tag + ` forgoundFlag: ` + forgoundFlag);
           expect(forgoundFlag).assertTrue();
           try {
@@ -153,10 +166,12 @@ export default function LifeCycleLinstenerTest() {
             onApplicationForeground() {
               console.info(tag + 'applicationStateChangeCallback onApplicationForeground');
               forgoundFlag = true;
+              eventBus.emit(`${tag}_onApplicationForeground`);
             },
             onApplicationBackground() {
               console.info(tag + 'applicationStateChangeCallback onApplicationBackground');
               backgoundFlag = false;
+              eventBus.emit(`${tag}_onApplicationBackground`);
             }
           }
           let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
@@ -174,7 +189,7 @@ export default function LifeCycleLinstenerTest() {
             expect().assertFail();
             done();
           }
-          await TestAbilityContext.startAbility({
+          TestAbilityContext.startAbility({
             bundleName:'com.acts.moveabilitytobgtest',
             abilityName:'EntryAbility1'
           }).then((data)=>{
@@ -184,11 +199,17 @@ export default function LifeCycleLinstenerTest() {
             try{expect().assertFail();}catch{}
             done();
           })
-          await sleep(2000);
-          await globalThis.entryAbilityContext1?.moveAbilityToBackground();
-          await sleep(2000);
-          await TestAbilityContext.moveAbilityToBackground();
-          await sleep(2000);
+          await Promise.all([
+            eventBus.onWait('EntryAbility1_onForeground'),
+            eventBus.onWait('TestAbility_onBackground'),
+          ])
+          globalThis.entryAbilityContext1?.moveAbilityToBackground();
+          await Promise.all([
+            eventBus.onWait('EntryAbility1_onBackground'),
+            eventBus.onWait('TestAbility_onForeground'),
+          ])
+          TestAbilityContext.moveAbilityToBackground();
+          await Promise.all([eventBus.onWait('TestAbility_onBackground')])
           await abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
           await sleep(2000);
           if (forgoundFlag || backgoundFlag){

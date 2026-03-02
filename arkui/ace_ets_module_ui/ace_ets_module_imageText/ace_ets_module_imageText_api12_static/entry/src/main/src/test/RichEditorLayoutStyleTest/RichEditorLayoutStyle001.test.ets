@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorLayoutStyle001() {
   describe('RichEditorLayoutStyle001', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -93,7 +93,7 @@ export default function RichEditorLayoutStyle001() {
       let imageStyle = await (driver.findComponent(ON.id('imageStyle')) as Promise<Component>);
       let imageStyleText = await imageStyle.getText();
       await CommonFunc.sleep(500);
-      expect(imageStyleText.indexOf('"margin":""') > 0).assertEqual(true);
+      expect(imageStyleText).assertEqual('imageStyle:undefined');
       done();
     });
 

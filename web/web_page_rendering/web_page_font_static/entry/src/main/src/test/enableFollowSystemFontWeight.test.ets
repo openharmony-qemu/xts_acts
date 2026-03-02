@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ export default function webenableFollowSystemFontWeightJsunit() {
         abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.webpagefonttest.static')
         await Utils.msSleep(2000)
         console.log('beforeAll end,%s', "Succeed!")
-      } catch(error: Error) {
+      } catch(error) {
         console.info(`beforeAll error: ${JSON.stringify(error)}`)
       }
     });
@@ -67,9 +67,9 @@ export default function webenableFollowSystemFontWeightJsunit() {
      * @tc.desc   test enableSmoothDragResize01 interface when choose callback mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('enableFollowSystemFontWeightStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('enableFollowSystemFontWeightStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void):Promise<void> =>{
       Utils.emitEvent('emitenableFollowSystemFontWeight01', 10)
       await Utils.msSleep(2000);

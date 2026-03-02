@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextfieldSingleTest() {
   describe('TextfieldSingleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextfieldSingleTest beforeEach start");
 
 
@@ -50,7 +50,7 @@ export default function TextfieldSingleTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get TextfieldSingleTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextfieldSingle" == pages.name)) {
           console.info("get TextfieldSingleTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

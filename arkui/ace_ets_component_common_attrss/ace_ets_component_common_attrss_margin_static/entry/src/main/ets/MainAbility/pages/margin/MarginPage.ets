@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -106,8 +106,6 @@ import {
   Slider,
   SliderStyle,
   Stack,
-  Stepper,
-  StepperItem,
   Swiper,
   SwiperController,
   TabContent,
@@ -160,8 +158,7 @@ struct MarginPage {
       bottom: 0,
     } as Margin)
     try {
-      let routerParamOptions = new RouterParams()
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
       console.log('routerParamOptions==========================' + JSON.stringify(routerParamOptions))
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView
@@ -172,7 +169,7 @@ struct MarginPage {
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
       this.buttonComponentKey = routerParamOptions.view.buttonComponentKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
 
@@ -276,19 +273,6 @@ struct MarginPage {
             Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White)
           }.tabBar('Tabs2').key(this.buttonComponentKey)
         }.width(this.parentWidth).height(this.parentHeight).key(this.parentComponentKey)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-          .margin(this._margin)
-          .key(this.componentKey)
-          .width('100%')
-          .height('100%')
-        }.backgroundColor(Color.Yellow).width(this.parentWidth).height(this.parentHeight).key(this.parentComponentKey)
       } else if (this.targetView == 'GridCol') {
         GridRow({
           columns: 1,
@@ -417,14 +401,6 @@ struct MarginPage {
               max: 100,
               style: SliderStyle.OutSet
             }).showTips(true).applyStyles(this.commonStyle)
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem() {
-                Column() {
-                  Text('Page One')
-                }
-              }
-            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextArea') {
             TextArea({
               placeholder: 'The text area can hold an unlimited amount of text. input your word...'

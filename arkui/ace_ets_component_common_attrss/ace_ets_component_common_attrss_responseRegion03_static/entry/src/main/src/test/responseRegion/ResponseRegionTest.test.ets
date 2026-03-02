@@ -83,7 +83,6 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
 export default function responseRegionTest() {
   let supportView:Array<string> = new Array<string>(
     'Text',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',
@@ -239,7 +238,7 @@ export default function responseRegionTest() {
   ]
 
   describe('ResponseRegionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ResponseRegionTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs03.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

@@ -20,6 +20,7 @@ import AddMonitorErrorCode001 from './uiutilsTest/AddMonitorErrorCode001.test';
 import ApplySync001 from './uiutilsTest/ApplySync001.test';
 import FlushUpdates001 from './uiutilsTest/FlushUpdates001.test';
 import FlushErrorCode from './uiutilsTest/FlushErrorCode.test';
+import uiUtilsNullUndefinedTest from './uiutilsTest/UIUtilsNullUndefinedTest.test';
 import getTarget1Test from './getTargetTest/getTarget1.test';
 import getTarget2Test from './getTargetTest/getTarget2.test';
 import getTarget3Test from './getTargetTest/getTarget3.test';
@@ -79,6 +80,7 @@ import V1PropObservedTest from './uiutilsTest/PropObserved.test';
 import V1ProvideConsumTest from './uiutilsTest/ProvideConsum.test';
 import V1StateObservedTest from './uiutilsTest/StateObserved.test';
 import V2ObservedTest from './uiutilsTest/V2Observed.test';
+import DecoratorInfoTest from './uiutilsTest/DecoratorInfo.test';
 
 export default function testsuite() {
     V1LinkObservedTest();
@@ -123,6 +125,7 @@ export default function testsuite() {
     makeObserved0150Test();
     MakeObservedTest0090();
     MakeObservedTest0300();
+    uiUtilsNullUndefinedTest();
     FreezeV2Test();
     FreezeV2Test03();
     FreezeV2Child();
@@ -148,4 +151,5 @@ export default function testsuite() {
     useSharedStorageTest();
     persistStorageATest();
     Enum001();
+    DecoratorInfoTest();
 }

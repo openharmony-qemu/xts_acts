@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,6 +45,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { jsonx } from 'std/core'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -100,7 +101,7 @@ struct DragExample {
               let backData: emitter.EventData = {
                 data: {
                   "ACTION": 'onDragStart onAction'
-                } as Record<String, undefined | null | Object>
+                } as Record<String,RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 86,
@@ -108,7 +109,7 @@ struct DragExample {
               }
               console.info("apple start to emit action state")
               emitter.emit(backEvent, backData)
-            } catch (err: Error) {
+            } catch (err) {
               console.info("apple emit action state err: " + JSON.stringify((err as Error)?.message))
             }
             return this.pixelMapBuilder
@@ -216,7 +217,7 @@ struct DragExample {
             data: {
               "pointX": event.getWindowX(),
               "pointY": event.getWindowY()
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
           }
           let backEvent: emitter.InnerEvent = {
             eventId: 87,
@@ -224,7 +225,7 @@ struct DragExample {
           }
           console.info("onDragEnter start to emit action state")
           emitter.emit(backEvent, backData)
-        } catch (err: Error) {
+        } catch (err) {
           console.info("onDragEnter emit action state err: " + JSON.stringify((err as Error)?.message))
         }
       })
@@ -234,7 +235,7 @@ struct DragExample {
           let backData: emitter.EventData = {
             data: {
               "ACTION": "onDragMove onAction"
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
           }
           let backEvent: emitter.InnerEvent = {
             eventId: 88,
@@ -242,7 +243,7 @@ struct DragExample {
           }
           console.info("onDragMove start to emit action state")
           emitter.emit(backEvent, backData)
-        } catch (err: Error) {
+        } catch (err) {
           console.info("onDragMove emit action state err: " + JSON.stringify((err as Error)?.message))
         }
       })
@@ -252,7 +253,7 @@ struct DragExample {
           let backData: emitter.EventData = {
             data: {
               "ACTION": 'onDragLeave onAction'
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
           }
           let backEvent: emitter.InnerEvent = {
             eventId: 89,
@@ -260,7 +261,7 @@ struct DragExample {
           }
           console.info("onDragLeave start to emit action state")
           emitter.emit(backEvent, backData)
-        } catch (err: Error) {
+        } catch (err) {
           console.info("onDragLeave emit action state err: " + JSON.stringify((err as Error)?.message))
         }
       })
@@ -270,7 +271,7 @@ struct DragExample {
           let backData: emitter.EventData = {
             data: {
               "ACTION": 'onDrop onAction'
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
           }
           let backEvent: emitter.InnerEvent = {
             eventId: 90,
@@ -278,7 +279,7 @@ struct DragExample {
           }
           console.info("onDrop start to emit action state")
           emitter.emit(backEvent, backData)
-        } catch (err: Error) {
+        } catch (err) {
           console.info("onDrop emit action state err: " + JSON.stringify((err as Error)?.message))
         }
         if (this.bool) {

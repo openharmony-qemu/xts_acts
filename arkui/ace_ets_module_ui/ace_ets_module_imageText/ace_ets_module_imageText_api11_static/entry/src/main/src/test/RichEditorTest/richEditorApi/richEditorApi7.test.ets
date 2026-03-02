@@ -53,7 +53,7 @@ export default function richEditorApi7() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get richEditorApi7 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("richEditorApi7" == pages.name)) {
           console.info("get richEditorApi7 pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
@@ -66,7 +66,7 @@ export default function richEditorApi7() {
       }
       console.info("richEditorApi7 beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("richEditorApi7 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

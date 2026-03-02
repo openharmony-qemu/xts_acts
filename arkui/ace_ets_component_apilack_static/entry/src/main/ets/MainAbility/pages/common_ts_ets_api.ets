@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,6 +33,7 @@ import {
 } from '@ohos.arkui.component';
 import { Environment } from 'arkui.stateManagement.storage.environment'
 import { SubscribedAbstractProperty } from 'arkui.stateManagement.storage.storageProperty'
+import { RecordData } from '@ohos.base';
 
 let varA: SubscribedAbstractProperty<number> | undefined = AppStorage.link<number>('varA')
 
@@ -111,7 +112,7 @@ struct Common_ts_ets_apiStaticClear {
             let backData: events_emitter.EventData = {
               data: {
                 "Result": (enable != undefined)
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60231,
@@ -119,7 +120,7 @@ struct Common_ts_ets_apiStaticClear {
             }
             console.info("PersistProp start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("PersistProp emit action state err: " + JSON.stringify((err as Error)?.message))
           }
 
@@ -144,7 +145,7 @@ struct Common_ts_ets_apiStaticClear {
             let backData: events_emitter.EventData = {
               data: {
                 "Score": "Score"
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60230,
@@ -152,7 +153,7 @@ struct Common_ts_ets_apiStaticClear {
             }
             console.info("PersistProp start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("PersistProp emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

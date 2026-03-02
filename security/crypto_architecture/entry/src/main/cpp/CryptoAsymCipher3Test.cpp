@@ -378,7 +378,7 @@ napi_value OHCryptoSymKeyGeneratorCreateNotSupport(napi_env env, napi_callback_i
     napi_value result;
     napi_create_int32(env, DEFAULT_CODE, &result);
     OH_CryptoSymKeyGenerator *ctx = nullptr;
-    OH_Crypto_ErrCode ret = OH_CryptoSymKeyGenerator_Create("RC4", &ctx);
+    OH_Crypto_ErrCode ret = OH_CryptoSymKeyGenerator_Create("RC5", &ctx);
     if (ret == CRYPTO_NOT_SUPPORTED) {
         napi_create_int32(env, 0, &result);
     }

@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorOnSelectionChange015() {
   describe('RichEditorOnSelectionChange015', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -102,7 +102,9 @@ export default function RichEditorOnSelectionChange015() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":0,"end":0}');
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":0') > 0).assertEqual(true);
 
       let set_end = await (driver.findComponent(ON.id('set_end')) as Promise<Component>)
       await set_end.click();
@@ -110,8 +112,9 @@ export default function RichEditorOnSelectionChange015() {
 
       messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":4,"end":4}');
-
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":4') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":4') > 0).assertEqual(true);
       done();
     });
 

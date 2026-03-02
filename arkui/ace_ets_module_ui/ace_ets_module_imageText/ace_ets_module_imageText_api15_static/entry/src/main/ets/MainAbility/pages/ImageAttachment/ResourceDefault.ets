@@ -36,7 +36,8 @@ import {
   Button,
   Row,
   Margin,
-  ResourceImageAttachmentOptions
+  ResourceImageAttachmentOptions,
+  DrawingColorFilter
 } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
@@ -44,8 +45,8 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct ResourceDefault {
-  private ColorFilterMatrix: Array<number> = new Array<number>(0.239, 0, 0, 0, 0, 0, 0.616, 0, 0, 0, 0, 0, 0.706, 0, 0, 0, 0, 0, 1, 0);
-  @State DrawingColorFilterFirst: ColorFilter = new ColorFilter(this.ColorFilterMatrix)
+  private ColorFilterMatrix: number[] = [0.239, 0, 0, 0, 0, 0, 0.616, 0, 0, 0, 0, 0, 0.706, 0, 0, 0, 0, 0, 1, 0];
+  @State DrawingColorFilterFirst: ColorFilter | DrawingColorFilter | undefined = new ColorFilter(this.ColorFilterMatrix)
   @State mutableStyledString1: MutableStyledString = new MutableStyledString("Init");
   @State resourceValue: string = 'resourceValue'
   @State size1: string = 'size'
@@ -54,21 +55,20 @@ struct ResourceDefault {
   @State layoutStyle: string = 'layoutStyle'
   @State colorFilter: string = 'colorFilter'
   controller: RichEditorStyledStringController = new RichEditorStyledStringController();
-  options: RichEditorStyledStringOptions = { controller: this.controller } as RichEditorStyledStringOptions;
+  options: RichEditorStyledStringOptions = { controller: this.controller };
 
-  update() {
+  update(){
     this.controller.setStyledString(this.mutableStyledString1)
   }
-
   build() {
     Column({ space: 1 } as ColumnOptions) {
-      RichEditor(this.options).width('100%')
+      RichEditor( this.options ).width('100%')
         .height('10%')
       Button('append resource').height('5%').id('set_default_append_resource')
-        .onClick((e: ClickEvent) => {
+        .onClick(()=>{
           this.mutableStyledString1.appendStyledString(new MutableStyledString(new ImageAttachment({
             resourceValue: $r('app.media.icon'),
-          } as ResourceImageAttachmentOptions)))
+          })))
           this.update()
         })
       Button('append string').height('5%').id('set_colorFilter_append_str')
@@ -80,54 +80,55 @@ struct ResourceDefault {
             objectFit: undefined,
             layoutStyle: undefined,
             colorFilter: undefined,
-          } as ResourceImageAttachmentOptions)))
+          })))
           this.update()
         })
       Row() {
-      Button('getStyles').width('50%').height('5%').id('get_default_styles')
-      .onClick(() => {
-          let imageArray = this.mutableStyledString1.getStyles(0,  this.mutableStyledString1.length)!
-          for (let i = 0; i < imageArray.length; ++i) {
-            if (imageArray[i].styledKey === 300) {
-              let attachment = imageArray[i]?.styledValue as ImageAttachment
-              console.info('ImageAttachment value  ' + JSON.stringify(attachment.value))
-              this.resourceValue = '' + JSON.stringify(attachment.value)
-              console.info('ImageAttachment size  ' + JSON.stringify(attachment.size))
-              this.size1 = '' + JSON.stringify(attachment.size)
-              console.info('ImageAttachment verticalAlign  ' + JSON.stringify(attachment.verticalAlign))
-              this.verticalAlign = '' + JSON.stringify(attachment.verticalAlign)
-              console.info('ImageAttachment objectFit  ' + JSON.stringify(attachment.objectFit))
-              this.objectFit = '' + JSON.stringify(attachment.objectFit)
-              console.info('ImageAttachment layoutStyle  ' + JSON.stringify(attachment.layoutStyle))
-              this.layoutStyle = '' + JSON.stringify(attachment.layoutStyle)
-              if (attachment.colorFilter) {
-                this.DrawingColorFilterFirst = attachment.colorFilter as ColorFilter
-                console.info('ImageAttachment colorFilter1  ' + JSON.stringify(attachment.colorFilter))
-                this.colorFilter = '' + JSON.stringify(attachment.colorFilter)
-              } else {
-                console.info('ImageAttachment colorFilter2  ' + JSON.stringify(attachment.colorFilter))
-                this.colorFilter = 'undefined'
+        Button('getStyles').width('50%').height('5%').id('get_default_styles')
+          .onClick((e: ClickEvent) => {
+            let imageArray = this.mutableStyledString1.getStyles(0,  this.mutableStyledString1.length)!
+            console.log('xyb: ' + imageArray.length + JSON.stringify(imageArray))
+            for (let i = 0; i < imageArray.length; ++i) {
+              if (imageArray[i].styledKey === 300) {
+                let attachment = imageArray[i].styledValue as ImageAttachment
+                console.info('ImageAttachment value  ' + JSON.stringify(attachment.value))
+                this.resourceValue = '' + JSON.stringify(attachment.value)
+                console.info('ImageAttachment size  ' + JSON.stringify(attachment.size))
+                this.size1 = '' + JSON.stringify(attachment.size)
+                console.info('ImageAttachment verticalAlign  ' + JSON.stringify(attachment.verticalAlign))
+                this.verticalAlign = '' + JSON.stringify(attachment.verticalAlign)
+                console.info('ImageAttachment objectFit  ' + JSON.stringify(attachment.objectFit))
+                this.objectFit = '' + JSON.stringify(attachment.objectFit)
+                console.info('ImageAttachment layoutStyle  ' + JSON.stringify(attachment.layoutStyle))
+                this.layoutStyle = '' + JSON.stringify(attachment.layoutStyle)
+                if (attachment.colorFilter) {
+                  this.DrawingColorFilterFirst = attachment.colorFilter as ColorFilter
+                  console.info('ImageAttachment colorFilter1  ' + JSON.stringify(attachment.colorFilter))
+                  this.colorFilter = '' + JSON.stringify(attachment.colorFilter)
+                } else {
+                  console.info('ImageAttachment colorFilter2  ' + JSON.stringify(attachment.colorFilter))
+                  this.colorFilter = 'undefined'
+                }
               }
             }
-          }
-          })
-          .height(35)
-          .padding(8)
-          .margin({ top: 10, right: 10 } as Margin)
+          }).height(35).padding(8).margin({top:10,right:10} as Margin)
         Text(this.resourceValue).id('default_resourceValue').height('5%')
       }
-
       Row() {
         Text(this.size1).id('default_size').height('5%')
         Text(this.verticalAlign).id('default_verticalAlign').height('5%')
       }
-
       Row() {
         Text(this.objectFit).id('default_objectFit').height('5%')
         Text(this.layoutStyle).id('default_layoutStyle').height('5%')
       }
-
-      Text(this.colorFilter).id('default_colorFilter').height('5%')
+      Text() {
+        ImageSpan($r('app.media.startIcon'))
+          .width(50)
+          .height(50)
+          .supportSvg2(true)
+          .colorFilter(this.DrawingColorFilterFirst)
+      }.id('default_colorFilter').height('5%')
     }.width('100%')
   }
 }

@@ -27,80 +27,18 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility } from '../Util.test';
 
-class DataObj1 implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  data3: number[];
-
-  constructor() {
-    this.data3 = new Array<number>();
-  }
-
-  constructor(arr: number[]) {
-    this.data3 = arr;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    let arr = new Array<jsonx.JsonElement>();
-    for (let i = 0; i < this.data3.length; ++i) {
-      arr.push(jsonx.JsonElement.createDouble(this.data3[i]));
-    }
-    let arrJson = jsonx.JsonElement.createArray(arr);
-    root.set('data3', arrJson);
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    let arrJson = jsonElem.tryAsArray();
-    if (!arrJson) {
-      this.data3 = new Array<number>();
-      return;
-    }
-    let arr = new Array<number>();
-    for (let i = 0; i < arrJson!.length; i++) {
-      let val = arrJson![i].tryAsDouble();
-      if (val) {
-        arr.push(val);
-      }
-    }
-    this.data3 = arr;
-  }
+interface DataObj {
+  data1: string,
+  data2: DataObj1
 }
-
-class DataObj implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  data1: string;
-  data2: DataObj1;
-
-  constructor() {
-    this.data1 = "";
-    this.data2 = new DataObj1();
-  }
-
-  constructor(data1: string, data2: DataObj1) {
-    this.data1 = data1;
-    this.data2 = data2;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    root.set('data1', jsonx.JsonElement.createString(this.data1))
-    root.set('data2', this.data2.toJSON());
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.data1 = jsonElem.tryGetString('data1');
-    let data2 = jsonElem.tryGetElement('data2');
-    if (data2) {
-      this.data2 = new DataObj1();
-      this.data2.fromJSON(data2!);
-    }
-  }
+interface DataObj1 {
+  data3: Array<number>
 }
 
 export default function ApiCommponentAdd02Jsunit() {
   describe('ApiCommponentAdd02Jsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ApiCommponentAdd02Jsunit beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
@@ -119,7 +57,12 @@ export default function ApiCommponentAdd02Jsunit() {
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           routerInstance.pushUrl({
             url: 'MainAbility/pages/Scroll/loadingprogrees_add02',
-            params: (new DataObj('message', new DataObj1([123, 456, 789]))).toJSON()
+            params: {
+              data1: 'message',
+              data2: {
+                data3: [123, 456, 789]
+              }
+            } as DataObj
           }).then(() => {
               // success
             })
@@ -148,7 +91,12 @@ it('ApiCommponentAdd02Jsunit_static_0900', Level.LEVEL1, async (done: () => void
       routerInstance.clear();
       routerInstance.pushUrl({
         url: 'MainAbility/pages/Scroll/waterflow_add',
-        params: (new DataObj('message', new DataObj1([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as DataObj
       }).then(() => {
         // success
       }).catch((err: Error):void => {

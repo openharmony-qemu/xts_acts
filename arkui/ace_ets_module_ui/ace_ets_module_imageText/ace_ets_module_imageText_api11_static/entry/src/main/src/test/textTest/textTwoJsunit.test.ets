@@ -36,7 +36,7 @@ const waitUiReadyMs = 1000;
 export default function textTwoJsunit() {
   describe('textTwoJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textTwoJsunit beforeEach start");
 
 

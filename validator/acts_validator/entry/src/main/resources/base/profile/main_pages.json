@@ -179,6 +179,11 @@
     "pages/ArkUI/CapiSourceType",
     "pages/ArkUI/AccessiBilityStateDescription",
     "pages/ArkUI/Magnifier",
-    "pages/ArkUI/RadiusRenderStrategy"
+    "pages/ArkUI/RadiusRenderStrategy",
+    "pages/ArkUI/ImageDownloadInfo",
+    "pages/ArkUI/GameAddTest",
+    "pages/ArkUI/AdvancedBlendMode",
+    "pages/ArkUI/AccessibilityCustom",
+    "pages/ArkUI/CapiGrid"
   ]
 }

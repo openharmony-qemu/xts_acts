@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,10 +21,11 @@ import inspector from '@ohos.arkui.inspector'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility } from './Util.test'
+import { RecordData } from '@ohos.base';
 
 export default function transitionJsunit() {
   describe('transitionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("transitionTest beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
@@ -70,7 +71,7 @@ it('transitionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise
       await Utils.sleep(1000);
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("transitionTest_static_0200 get state result is: " + JSON.stringify(indexEvent));
-        expect((indexEvent.data as Record<string,undefined|null|Object>)['btn1']).assertEqual(false);
+        expect((indexEvent.data as Record<String,RecordData>)['btn1']).assertEqual(false);
       }
       try {
         events_emitter.on(indexEvent, callback);

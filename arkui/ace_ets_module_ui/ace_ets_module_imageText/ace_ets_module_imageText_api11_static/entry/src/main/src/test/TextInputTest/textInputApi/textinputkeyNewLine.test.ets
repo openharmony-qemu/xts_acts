@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputApiTest() {
   describe('textInputApiTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputApiTest beforeEach start");
 
 
@@ -50,7 +50,7 @@ export default function textInputApiTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textInputApiTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("input_keytype" == pages.name)) {
           console.info("get textInputApiTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
@@ -82,7 +82,7 @@ export default function textInputApiTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputApiTest] get inspector value is: " + JSON.stringify(obj));
       console.info("[textInput1] get inspector value is: " + JSON.stringify(obj.getElement('$attrs').getString('enterKeyType')));
-      expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Done')
+      expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.NewLine')
       done();
 
     });

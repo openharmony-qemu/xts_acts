@@ -243,8 +243,8 @@ class TestWorker extends EAWorker {
 
 export default function EAWorkerTest() {
   describe('EAWorkerTest', (): void => {
-    afterEach(() => {
-      await Utils.msSleep(200);
+    afterEach(async (): Promise<void> => {
+      await Utils.msSleep(100);
     })
 
     /**
@@ -2119,7 +2119,7 @@ export default function EAWorkerTest() {
         const inputNum = 1;
         try {
           const workerPromise = new Promise<bigint>((resolve, reject) => {
-            worker.run(async (): Promise<bigint> => {
+            worker.run(async () => {
               try {
                 const result = BigInt(inputNum)
                 resolve(result);
@@ -2160,7 +2160,7 @@ export default function EAWorkerTest() {
         const inputLiteral: Literal = 'pending';
         try {
           const workerPromise = new Promise<Literal>((resolve, reject) => {
-            worker.run(async (input: Literal): Promise<Literal> => {
+            worker.run(async (input: Literal) => {
               try {
                 if (input == 'pending') {
                   input = 'success';
@@ -2201,7 +2201,7 @@ export default function EAWorkerTest() {
         let inputPerson = new Person(23);
         try {
           const workerPromise = new Promise<Person>((resolve, reject) => {
-            worker.run(async (input: Person): Promise<Person> => {
+            worker.run(async (input: Person) => {
               try {
                 input.age = 25;
                 resolve(input);
@@ -2245,7 +2245,7 @@ export default function EAWorkerTest() {
         let inputDouble: Double = 0;
         try {
           const workerPromise = new Promise<null>((resolve, reject) => {
-            worker.run(async (input: undefined): Promise<null> => {
+            worker.run(async (input: undefined) => {
               try {
                 inputDouble = 1;
                 resolve(null);
@@ -2286,7 +2286,7 @@ export default function EAWorkerTest() {
         let inputPerson = new Person(23);
         try {
           const workerPromise = new Promise<Status>((resolve, reject) => {
-            worker.run(async (input: Status): Promise<Status> => {
+            worker.run(async (input: Status) => {
               try {
                 input = Status.SUCCESS;
                 resolve(input);
@@ -2332,7 +2332,7 @@ export default function EAWorkerTest() {
         };
         try {
           const workerPromise = new Promise<() => Promise<number>>((resolve, reject) => {
-            worker.run(async (input: () => Promise<number>): Promise<() => Promise<number>> => {
+            worker.run(async (input: () => Promise<number>) => {
               try {
                 const value = await input();
                 const additionalValue = await Promise.resolve(10);
@@ -2380,7 +2380,7 @@ export default function EAWorkerTest() {
         };
         try {
           const workerPromise = new Promise<taskpool.Task>((resolve, reject) => {
-            worker.run(async (input?: string): Promise<taskpool.Task> => {
+            worker.run(async (input?: string) => {
               try {
                 const taskName: string = input !== undefined ? input : 'taskName';
                 let task: taskpool.Task = new taskpool.Task(taskName, taskFunc, 20);

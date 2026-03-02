@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import Utils from './Util.test';
 
 export default function Int16ArrayTest() {
   describe('Int16ArrayTest', ():void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     let value: string;
@@ -1468,7 +1468,7 @@ export default function Int16ArrayTest() {
     it('testInt16ArrayFrom0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16ArrayFrom0070";
       try {
-        let array = Int16Array.from(Array.from(new Array<number>(1, 2, 3), (value:number,index:number)=>{return value+value}));
+        let array = Int16Array.from(Array.from(new Array<number>(1, 2, 3), (value: number, index: int ) => { return value + value }));
         expect(String(array[0])).assertEqual('2');
         expect(String(array[1])).assertEqual('4');
         expect(String(array[2])).assertEqual('6');

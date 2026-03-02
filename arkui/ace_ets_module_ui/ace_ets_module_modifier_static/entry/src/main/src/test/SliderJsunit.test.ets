@@ -30,7 +30,7 @@ import { UtilsTest, startAbility } from './Util.test';
 import events_emitter from '@ohos.events.emitter';
 export default function sliderTest() {
   describe('sliderTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 
@@ -305,7 +305,7 @@ it('ArkUX_Stage_Slider_static_0110', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create();
       let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-     await UtilsTest.msSleep(2000)
+      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('slider');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("ArkUX_Stage_Slider_static_0110 component is: " + JSON.stringify(objNew.getElement('$attrs')));

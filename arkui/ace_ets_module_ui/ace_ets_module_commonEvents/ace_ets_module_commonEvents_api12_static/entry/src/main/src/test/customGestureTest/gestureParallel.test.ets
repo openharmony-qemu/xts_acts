@@ -38,7 +38,7 @@ const uiContext = new UIContext();
 
 export default function gestureParallelTest() {
   describe('gestureParallelTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
       
@@ -85,10 +85,10 @@ export default function gestureParallelTest() {
 it('gestureParallelTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[gestureParallelTest_001] START');
       let str1 = inspector.getInspectorByKey("parallelGestureKey");
-      let obj: Record<string, Object> = JSON.parse<Object>(str1, Type.of(new String() as Object)) as Record<string, Object>;
+      let obj: Record<string, Object> = JSON.parse<Object>(str1, Class.from<String>()) as Record<string, Object>;
       console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
       // get column left and top on screen
-      let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["getElement('$rect')"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+      let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["getElement('$rect')"]! + ']', Class.from<String>()) as Array<Array<number>>;
       CommonFunc.rect_left =
         Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
       CommonFunc.rect_top =

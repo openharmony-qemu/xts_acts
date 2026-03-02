@@ -45,7 +45,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorOnWillChange001() {
   describe('RichEditorOnWillChange001', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -108,9 +108,12 @@ export default function RichEditorOnWillChange001() {
 
       expect(replaceText).assertEqual('replacedSpans_callback:true');
       expect(didText).assertEqual('onDidChange_callback:true');
-      expect(onWillBeforeText.indexOf('{"start":0,"end":0}') > 0).assertEqual(true);
-      expect(onDidBeforeText.indexOf('{"start":0,"end":0}') > 0).assertEqual(true);
-      expect(length).assertEqual('rangeAfter_emoji:{"start":0,"end":2}');
+      expect(onWillBeforeText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(onWillBeforeText.indexOf('"end":0') > 0).assertEqual(true);
+
+      expect(onDidBeforeText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(onDidBeforeText.indexOf('"end":0') > 0).assertEqual(true);
+      expect(length).assertEqual('rangeAfter_emoji:{"end":2,"start":0}');
 
       let pointCenter = await rich.getBoundsCenter();
       await driver.click(pointCenter.x, pointCenter.y);
@@ -129,8 +132,11 @@ export default function RichEditorOnWillChange001() {
       onDidBeforeText = await onDidChange_rangeBefore.getText();
       await CommonFunc.sleep(500);
 
-      expect(onWillBeforeText.indexOf('{"start":0,"end":2}') > 0).assertEqual(true);
-      expect(onDidBeforeText.indexOf('{"start":0,"end":2}') > 0).assertEqual(true);
+      expect(onWillBeforeText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(onWillBeforeText.indexOf('"end":2') > 0).assertEqual(true);
+
+      expect(onDidBeforeText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(onDidBeforeText.indexOf('"end":2') > 0).assertEqual(true);
 
       expect(replacedSpans.indexOf('[]') > 0).assertEqual(true);
 

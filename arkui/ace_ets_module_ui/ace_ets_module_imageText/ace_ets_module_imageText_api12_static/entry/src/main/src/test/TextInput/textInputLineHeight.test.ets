@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputLineHeight() {
   describe('textInputLineHeight', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputLineHeight beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function textInputLineHeight() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textInputLineHeight state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInputLineHeight" == pages.name)) {
           console.info("get textInputLineHeight pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

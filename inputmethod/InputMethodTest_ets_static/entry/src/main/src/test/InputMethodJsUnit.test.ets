@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,7 +29,7 @@ export default function inputMethodTest() {
 
     describe("inputMethodTest", (): void => {
         console.info('%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             console.info('%{public}s', 'beforeAll start');
             let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             abilityDelegator.addAbilityMonitor({
@@ -77,7 +77,8 @@ export default function inputMethodTest() {
                 await inputMethod.switchInputMethod(inputM);
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error('====>inputmethodNomal_test_switchInputMethod_static_001 switchInputMethod catch err' + JSON.stringify(err))
                 expect(err.code).assertEqual(201);
                 expect(err.message).assertContain("the permissions check fails");
@@ -109,7 +110,7 @@ export default function inputMethodTest() {
                         expect().assertFail();
                         done();
                     }
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.error("====>inputmethodNomal_test_switchInputMethod_static_002 catch err: " + JSON.stringify(err));
                     done();
                     console.info("====>inputmethodNomal_test_switchInputMethod_static_002 end");
@@ -124,9 +125,9 @@ export default function inputMethodTest() {
          * @tc.desc   Test Indicates the input method which will hide softboard with calback.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('inputmethodNomal_test_hideSoftKeyboard_static_001', Level.LEVEL2, async (done: () => void)  => {
+        it('inputmethodNomal_test_hideSoftKeyboard_static_001', Level.LEVEL0, async (done: () => void)  => {
             console.info("====>*********inputmethodNomal_test_hideSoftKeyboard_static_001 start************");
             let inputMethodCtrl = inputMethod.getController()
             inputMethodCtrl.hideSoftKeyboard((err : BusinessError | null) => {
@@ -140,7 +141,7 @@ export default function inputMethodTest() {
                         expect().assertFail();
                         done();
                     }
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.error("====>inputmethodNomal_test_hideSoftKeyboard_static_001 catch err: " + JSON.stringify(err));
                     expect().assertFail();
                     done();
@@ -165,7 +166,8 @@ export default function inputMethodTest() {
                 await inputMethodCtrl.hideSoftKeyboard();
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error('====>inputmethodNomal_test_hideSoftKeyboard_static_002 hideSoftKeyboard catch err' + JSON.stringify(err))
                 expect(err.code).assertEqual(201);
                 expect(err.message).assertContain("the permissions check fails");

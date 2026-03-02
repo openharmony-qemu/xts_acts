@@ -165,10 +165,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -711,24 +707,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mRenderFit: RenderFit = RenderFit.RIGHT
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    console.info(`renderFit page show ${JSON.stringify(this.mRenderFit)}`)
-    instance.renderFit(this.mRenderFit)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mRenderFit: RenderFit = RenderFit.RIGHT
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    console.info(`renderFit page show ${JSON.stringify(this.mRenderFit)}`)
-    instance.renderFit(this.mRenderFit)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mRenderFit: RenderFit = RenderFit.RIGHT
 
@@ -1212,18 +1190,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1418,8 +1384,6 @@ struct renderFitPage {
   @State _renderFitSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _renderFitSliderMod: SliderModifier = new SliderModifier()
   @State _renderFitStackMod: StackModifier = new StackModifier()
-  @State _renderFitStepperMod: StepperModifier = new StepperModifier()
-  @State _renderFitStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _renderFitSwiperMod: SwiperModifier = new SwiperModifier()
   @State _renderFitTabContentMod: TabContentModifier = new TabContentModifier()
   @State _renderFitTabsMod: TabsModifier = new TabsModifier()
@@ -1555,14 +1519,6 @@ struct renderFitPage {
           })
             .showTips(true)
             .commonStyle(this.componentKey).attributeModifier(this._renderFitSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.commonStyle(this.componentKey).attributeModifier(this._renderFitStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1784,19 +1740,6 @@ struct renderFitPage {
               }
             }, (item: int) => item.toString())
           }.commonStyle(this.componentKey).attributeModifier(this._renderFitWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .commonStyle(this.componentKey).attributeModifier(this._renderFitStepperItemMod)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

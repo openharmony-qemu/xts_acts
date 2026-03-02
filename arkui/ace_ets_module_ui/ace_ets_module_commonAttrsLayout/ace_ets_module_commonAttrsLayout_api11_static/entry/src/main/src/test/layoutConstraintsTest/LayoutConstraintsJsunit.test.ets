@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -36,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function layoutConstraintsJsunit() {
   describe('layoutConstraintsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("layoutConstraintsTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
@@ -56,7 +57,8 @@ export default function layoutConstraintsJsunit() {
           console.info("get layoutConstraints state pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push layoutConstraints page error:" + err);
       }
     });
@@ -100,7 +102,7 @@ it('testLayoutConstraints002_static', Level.LEVEL0, async (done: () => void): Pr
         let eventData: emitter.EventData = {
           data: {
             "aspectRatio": 2.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 20,
@@ -108,7 +110,8 @@ it('testLayoutConstraints002_static', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[testLayoutConstraints002] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints002] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -153,7 +156,7 @@ it('testLayoutConstraints004_static', Level.LEVEL0, async (done: () => void): Pr
         let eventData: emitter.EventData = {
           data: {
             "displayPriority": 5.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 21,
@@ -161,7 +164,8 @@ it('testLayoutConstraints004_static', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[testLayoutConstraints004] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints004] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -186,7 +190,7 @@ it('testLayoutConstraints005_static', Level.LEVEL0, async (done: () => void): Pr
         let eventData: emitter.EventData = {
           data: {
             "aspectRatio": -4.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 1112,
@@ -194,7 +198,8 @@ it('testLayoutConstraints005_static', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[testLayoutConstraints005] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints005] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -220,7 +225,7 @@ it('testLayoutConstraints006_static', Level.LEVEL0, async (done: () => void): Pr
         let eventData: emitter.EventData = {
           data: {
             "aspectRatio": 9997077.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 1112,
@@ -228,7 +233,8 @@ it('testLayoutConstraints006_static', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[testLayoutConstraints006] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints006] change component data error: " + err.message);
       }
       await Utils.sleep(4000);

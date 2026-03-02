@@ -37,6 +37,7 @@ import drawingTsCanvasPart2Test from './CanvasPart2.test';
 import drawingTsCanvasPart3Test from './CanvasPart3.test';
 import drawingTsCanvasPart4Test from './CanvasPart4.test';
 import drawingTsCanvasPart5Test from './CanvasPart5.test';
+import drawingTsCanvasPart6Test from './CanvasPart6.test';
 import drawingTsCanvasPart7Test from './CanvasPart7.test';
 import drawingTsCanvasPart8Test from './CanvasPart8.test';
 import drawingTsRegionTest from './Region.test';
@@ -82,6 +83,7 @@ export default function testsuite() {
   drawingTsCanvasPart3Test();
   drawingTsCanvasPart4Test();
   drawingTsCanvasPart5Test();
+  drawingTsCanvasPart6Test();
   drawingTsCanvasPart7Test();
   drawingTsCanvasPart8Test();
   drawingTsRegionTest();

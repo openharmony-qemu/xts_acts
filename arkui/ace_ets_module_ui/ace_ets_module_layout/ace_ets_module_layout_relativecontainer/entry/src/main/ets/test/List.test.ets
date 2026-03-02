@@ -78,6 +78,7 @@ import RelativeBorder from './RelativeContainerTest/RelativeBorder.test'
 import RelativePadding from './RelativeContainerTest/RelativePadding.test'
 import RelativeContainer from './RelativeContainerTest/RelativeContainer.test'
 import relativeCTest from "./RelativeContainerTest/relative/relative.test"
+import relativeContainerGuideLineNullUndefinedTest from "./RelativeContainer/relativeContainerGuideLineNullUndefinedTest.test"
 
 export default function testsuite() {
   RelativeContainer_Level()
@@ -131,4 +132,5 @@ export default function testsuite() {
   RelativeBorder()
   RelativeContainer()
   relativeCTest()
+  relativeContainerGuideLineNullUndefinedTest()
 }

@@ -59,7 +59,7 @@ const uiContext = new UIContext();
 
 export default function SwiperNextPrevMarginAddJsunit() {
   describe('SwiperNextPrevMarginAddJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SwiperNextPrevMarginAddJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
@@ -76,7 +76,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
           console.info("ApiCommponentAddJsunit state success " + JSON.stringify(pages.name));
           ohosrouter.pushUrl({
             url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin',
-            params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+            params: {
+              data1: 'message',
+              data2: {
+                data3: [123, 456, 789]
+              } as Data2
+            } as RouterParams
           }).then(() => {
             // success
           })
@@ -110,65 +115,6 @@ it('SwiperNextPrevMarginAddJsunit_static_0100', Level.LEVEL0, async (done: () =>
       done();
     });
 
-
-    
-    /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_0036
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_0036
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_0036
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_0036', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_0036 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'nextMargin', value: null
-      })
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[SwiperNextPrevMarginAddJsunit_static_0036'] component obj is: " +
-      obj.getElement('$attrs').getString('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp');
-      done();
-    });
-
-
-    
-    /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_0300
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_0300
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_0300
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_0300 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'nextMargin', value: -30
-      })
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[apiCommponentAddJsunit_0300'] component obj is: " +
-      obj.getElement('$attrs').getElement('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00px');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp');
-      // calculate the gap
-      let columnSwiper = CommonFunc.getComponentRect('ColumnSwiper');
-      let right = columnSwiper.right;
-      let left = columnSwiper.left;
-      let swiperMargin = CommonFunc.getComponentRect('swiperNextPrevMargin');
-      let swiperRight = swiperMargin.right;
-      let swiperLeft = swiperMargin.left;
-      console.info("[apiCommponentAddJsunit_0300'] component value is: " + right + "," + left + ","
-        + swiperRight + "," + swiperLeft);
-      expect(Math.abs(Math.round(((right - left) * 0.9) - (swiperRight - swiperLeft))) <= 1).assertTrue();
-      done();
-    });
 
 
     
@@ -244,41 +190,6 @@ it('SwiperNextPrevMarginAddJsunit_static_022', Level.LEVEL0, async (done: () => 
 
     
     /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_0500
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_0500
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_0500
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_0500 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'nextMargin', value: undefined
-      });
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[apiCommponentAddJsunit_0500'] component obj is: " +
-      obj.getElement('$attrs').getElement('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00px');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp');
-      // calculate the gap
-      let columnSwiper = CommonFunc.getComponentRect('ColumnSwiper');
-      let right2 = columnSwiper.right;
-      let left2 = columnSwiper.left;
-      let swiperMargin = CommonFunc.getComponentRect('swiperNextPrevMargin');
-      let swiperRight2 = swiperMargin.right;
-      let swiperLeft2 = swiperMargin.left;
-      console.info("[apiCommponentAddJsunit_0500'] component value is: " + right2 + "," + left2 + ","
-        + swiperRight2 + "," + swiperLeft2);
-      expect(Math.abs(Math.round(((right2 - left2) * 0.9) - (swiperRight2 - swiperLeft2))) <= 1).assertTrue();
-      done();
-    });
-
-    
-    /**
      * @tc.number   SwiperNextPrevMarginAddJsunit_static_0600
      * @tc.name     SwiperNextPrevMarginAddJsunit_static_0600
      * @tc.desc     SwiperNextPrevMarginAddJsunit_static_0600
@@ -312,7 +223,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0600', Level.LEVEL0, async (done: () =>
       done();
     });
 
-    
+
     /**
      * @tc.number   SwiperNextPrevMarginAddJsunit_static_0700
      * @tc.name     SwiperNextPrevMarginAddJsunit_static_0700
@@ -325,10 +236,6 @@ it('SwiperNextPrevMarginAddJsunit_static_0700', Level.LEVEL0, async (done: () =>
       // dymanic chage the value
       const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
       globalMessage?.notify({
-        name: 'prevMargin', value: null
-      });
-      await CommonFunc.sleep(500);
-      globalMessage?.notify({
         name: 'nextMargin', value: 0
       });
       await CommonFunc.sleep(500);
@@ -337,44 +244,10 @@ it('SwiperNextPrevMarginAddJsunit_static_0700', Level.LEVEL0, async (done: () =>
       console.info("[apiCommponentAddJsunit_0700'] component obj is: " +
       obj.getElement('$attrs').getElement('nextMargin'));
       expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00px');
       done();
     });
 
-    
-    /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_0800
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_0800
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_0800
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_0800 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'prevMargin', value: -30
-      });
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[apiCommponentAddJsunit_0800'] component obj is: " +
-      obj.getElement('$attrs').getElement('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp');
-      // calculate the gap
-      let columnSwiper = CommonFunc.getComponentRect('ColumnSwiper');
-      let right = columnSwiper.right;
-      let left = columnSwiper.left;
-      let swiperMargin = CommonFunc.getComponentRect('swiperNextPrevMargin');
-      let swiperRight = swiperMargin.right;
-      let swiperLeft = swiperMargin.left;
-      console.info("[apiCommponentAddJsunit_0800'] component value is: " + right + "," + left + ","
-        + swiperRight + "," + swiperLeft);
-      expect(Math.abs(Math.round(((right - left) * 0.9) - (swiperRight - swiperLeft))) <= 1).assertTrue();
-      done();
-    });
+
 
     
     /**
@@ -411,40 +284,6 @@ it('SwiperNextPrevMarginAddJsunit_static_0900', Level.LEVEL0, async (done: () =>
       done();
     });
 
-    
-    /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_1000
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_1000
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_1000
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_1000 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'prevMargin', value: undefined
-      });
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[apiCommponentAddJsunit_1000'] component obj is: " +
-      obj.getElement('$attrs').getElement('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00px');
-      // calculate the gap
-      let columnSwiper = CommonFunc.getComponentRect('ColumnSwiper');
-      let right = columnSwiper.right;
-      let left = columnSwiper.left;
-      let swiperMargin = CommonFunc.getComponentRect('swiperNextPrevMargin');
-      let swiperRight = swiperMargin.right;
-      let swiperLeft = swiperMargin.left;
-      console.info("[apiCommponentAddJsunit_1000'] component value is: " + right + "," + left + ","
-        + swiperRight + "," + swiperLeft);
-      expect(Math.abs(Math.round(((right - left) * 0.9) - (swiperRight - swiperLeft))) <= 1).assertTrue();
-      done();
-    });
 
     
     /**
@@ -524,46 +363,7 @@ it('SwiperNextPrevMarginAddJsunit_static_1200', Level.LEVEL0, async (done: () =>
       done();
     });
 
-    
-    /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_1300
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_1300
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_1300
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_1300 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'nextMargin', value: -30
-      });
-      await CommonFunc.sleep(500);
-      globalMessage?.notify({
-        name: 'prevMargin', value: -40
-      });
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[apiCommponentAddJsunit_1300'] component obj is: " +
-      obj.getElement('$attrs').getElement('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp');
-      // calculate the gap
-      let columnSwiper = CommonFunc.getComponentRect('ColumnSwiper');
-      let right = columnSwiper.right;
-      let left = columnSwiper.left;
-      let swiperMargin = CommonFunc.getComponentRect('swiperNextPrevMargin');
-      let swiperRight = swiperMargin.right;
-      let swiperLeft = swiperMargin.left;
-      console.info("[apiCommponentAddJsunit_1300'] component value is: " + right + "," + left + ","
-        + swiperRight + "," + swiperLeft);
-      expect(Math.abs(Math.round(((right - left) * 0.9) - (swiperRight - swiperLeft))) <= 1).assertTrue();
-      done();
-    });
 
-    
     /**
      * @tc.number   SwiperNextPrevMarginAddJsunit_static_1400
      * @tc.name     SwiperNextPrevMarginAddJsunit_static_1400
@@ -618,7 +418,12 @@ it('SwiperNextPrevMarginAddJsunit_static_1500', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginDuplicate',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -660,7 +465,12 @@ it('SwiperNextPrevMarginAddJsunit_static_1600', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -702,7 +512,12 @@ it('SwiperNextPrevMarginAddJsunit_static_1700', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -753,7 +568,12 @@ it('SwiperNextPrevMarginAddJsunit_static_1800', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -805,7 +625,12 @@ it('SwiperNextPrevMarginAddJsunit_static_1900', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -857,7 +682,12 @@ it('SwiperNextPrevMarginAddJsunit_static_2000', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -909,7 +739,12 @@ it('SwiperNextPrevMarginAddJsunit_static_2100', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -961,7 +796,12 @@ it('SwiperNextPrevMarginAddJsunit_static_2200', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1013,7 +853,12 @@ it('SwiperNextPrevMarginAddJsunit_static_2300', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1066,7 +911,12 @@ it('SwiperNextPrevMarginAddJsunit_static_020', Level.LEVEL0, async (done: () => 
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1109,7 +959,12 @@ it('SwiperNextPrevMarginAddJsunit_static_2500', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1161,7 +1016,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0076', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin76',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1208,7 +1068,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0078', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1254,7 +1119,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0077', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1309,7 +1179,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0081', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin81',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1357,7 +1232,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0080', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin81',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1412,7 +1292,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0079', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin79',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1462,7 +1347,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0082', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin82',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1511,7 +1401,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0083', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin83',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1561,7 +1456,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0084', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin84',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1607,7 +1507,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0085', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin85',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1653,7 +1558,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0063', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin63',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1701,7 +1611,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0062', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin62',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1750,7 +1665,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0061', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin61',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1797,7 +1717,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0060', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin60',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1852,7 +1777,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0067', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin67',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1906,7 +1836,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0066', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin66',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -1959,7 +1894,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0065', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin65',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2014,7 +1954,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0064', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin64',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2067,7 +2012,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0055', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin55',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2120,7 +2070,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0054', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin54',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2171,7 +2126,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0053', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin53',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2222,7 +2182,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0052', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2282,7 +2247,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0059', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin59',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2336,7 +2306,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0058', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin58',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2389,7 +2364,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0057', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin57',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2444,7 +2424,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0056', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin56',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2497,7 +2482,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0050', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2549,7 +2539,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0051', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2603,7 +2598,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0042', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2665,7 +2665,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0043', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2727,7 +2732,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0044', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2789,7 +2799,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0045', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2851,7 +2866,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0046', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2927,7 +2947,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0047', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -2993,7 +3018,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0048', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3060,7 +3090,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0049', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3126,7 +3161,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0072', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3196,7 +3236,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0073', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3265,7 +3310,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0074', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3334,7 +3384,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0075', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3404,7 +3459,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0068', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3475,7 +3535,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0069', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3546,7 +3611,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0070', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3617,7 +3687,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0071', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3687,7 +3762,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0041', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })
@@ -3761,7 +3841,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0040', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as Data2
+        } as RouterParams
       }).then(() => {
         // success
       })

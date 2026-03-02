@@ -62,8 +62,8 @@ struct DirectiveMenuExample {
           this.textPosition1.x = newValue.globalPosition.x;
           this.textPosition1.y = newValue.globalPosition.y;
         })
-        .bindContextMenu(this.MenuBuilder, ResponseType.LongPress,
-          // { anchorPosition: { x: 10, y: 20 }, }
+        .bindMenu(this.MenuBuilder,
+           { anchorPosition: { x: 10, y: 20 }, }
         )
       Text('bindContextMenu2')
         .id('bindContextMenuAnchorPosition2')
@@ -75,8 +75,8 @@ struct DirectiveMenuExample {
           this.textPosition2.x = newValue.globalPosition.x;
           this.textPosition2.y = newValue.globalPosition.y;
         })
-        .bindContextMenu(this.MenuBuilder, ResponseType.LongPress,
-          // { anchorPosition: { x: -10, y: -20 }, }
+        .bindMenu(this.MenuBuilder,
+           { anchorPosition: { x: -10, y: -20 }, }
         )
 
       Text('bindContextMenu3')
@@ -89,8 +89,8 @@ struct DirectiveMenuExample {
           this.textPosition3.x = newValue.globalPosition.x;
           this.textPosition3.y = newValue.globalPosition.y;
         })
-        .bindContextMenu(this.MenuBuilder, ResponseType.LongPress,
-          // { anchorPosition: { x: -20, y: 20 }, }
+        .bindMenu(this.MenuBuilder,
+           { anchorPosition: { x: -20, y: 20 }, }
         )
     }
     .alignItems(HorizontalAlign.Start)

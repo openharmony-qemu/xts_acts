@@ -2188,6 +2188,281 @@ export default function AVScreenCaptureNdkTest() {
         }
       })
 
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVSCREEN_CAPTURE_ErrCode0200
+     * @tc.number SUB_MULTIMEIDA_OH_AVSCREEN_CAPTURE_ErrCode0200
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVSCREEN_CAPTURE_ErrCode0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVSCREEN_CAPTURE_ErrCode0200 start====");
+          let result: number = avscreencapture.OH_AVSCREEN_CAPTURE_ErrCode0200();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVSCREEN_CAPTURE_ErrCode0200 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AUDIO_CAPTURE_TYPEENUM0100
+     * @tc.number SUB_MULTIMEIDA_OH_AUDIO_CAPTURE_TYPEENUM0100
+     * @tc.desc   test OH_AudioCaptureSourceTypeEnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AUDIO_CAPTURE_TYPEENUM0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AUDIO_CAPTURE_TYPEENUM0100 start====");
+          let result: number = avscreencapture.OH_AudioCaptureSourceTypeEnum();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AUDIO_CAPTURE_TYPEENUM0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_CAPTURE_MODEENUM0100
+     * @tc.number SUB_MULTIMEIDA_OH_CAPTURE_MODEENUM0100
+     * @tc.desc   test OH_CaptureModeEnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_CAPTURE_MODEENUM0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_CAPTURE_MODEENUM0100 start====");
+          let result: number = avscreencapture.OH_CaptureModeEnum();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_CAPTURE_MODEENUM0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AUDIO_CODE_FORMATENUM0100
+     * @tc.number SUB_MULTIMEIDA_OH_AUDIO_CODE_FORMATENUM0100
+     * @tc.desc   test OH_AudioCodecFormatEnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AUDIO_CODE_FORMATENUM0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AUDIO_CODE_FORMATENUM0100 start====");
+          let result: number = avscreencapture.OH_AudioCodecFormatEnum();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AUDIO_CODE_FORMATENUM0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_VIDEO_CODE_FORMATENUM0100
+     * @tc.number SUB_MULTIMEIDA_OH_VIDEO_CODE_FORMATENUM0100
+     * @tc.desc   test OH_VideoCodecFormatEnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_VIDEO_CODE_FORMATENUM0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_VIDEO_CODE_FORMATENUM0100 start====");
+          let result: number = avscreencapture.OH_VideoCodecFormatEnum();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_VIDEO_CODE_FORMATENUM0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_DATA_CODE_TYPEENUM0100
+     * @tc.number SUB_MULTIMEIDA_OH_DATA_CODE_TYPEENUM0100
+     * @tc.desc   test OH_DataTypeEnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_DATA_CODE_TYPEENUM0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_DATA_CODE_TYPEENUM0100 start====");
+          let result: number = avscreencapture.OH_DataTypeEnum();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_DATA_CODE_TYPEENUM0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0100
+     * @tc.number SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0100
+     * @tc.desc   test OH_AVScreenCaptureStateCodeEnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0100 start====");
+          let result: number = avscreencapture.OH_AVScreenCaptureStateCodeEnum();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+    
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_CONTENT_CHANGED_EVENTENUM0100
+     * @tc.number SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_CONTENT_CHANGED_EVENTENUM0100
+     * @tc.desc   test OH_AVScreenCaptureContentChangedEventEnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_CONTENT_CHANGED_EVENTENUM0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_CONTENT_CHANGED_EVENTENUM0100 start====");
+          let result: number = avscreencapture.OH_AVScreenCaptureContentChangedEventEnum();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_CONTENT_CHANGED_EVENTENUM0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_ERRCODE0100
+     * @tc.number SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_ERRCODE0100
+     * @tc.desc   test OH_AVScreenCaptureErrCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_ERRCODE0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_ERRCODE0100 start====");
+          let result: number = avscreencapture.OH_AVScreenCaptureErrCode();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_ERRCODE0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100 start====");
+          let result: number = avscreencapture.OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0100 start====");
+          let result: number = avscreencapture.OH_AVScreenCapture_GetMultiDisplayIdsSelected0100();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0101',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0101 start====");
+          let result: number = avscreencapture.OH_AVScreenCapture_GetMultiDisplayIdsSelected0101();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0101 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
 
   })
 }

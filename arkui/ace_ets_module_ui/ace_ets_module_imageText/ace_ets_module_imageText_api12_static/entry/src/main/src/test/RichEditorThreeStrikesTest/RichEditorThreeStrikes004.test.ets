@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorThreeStrikes004() {
   describe('RichEditorThreeStrikes004', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorThreeStrikes004 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -128,7 +128,7 @@ export default function RichEditorThreeStrikes004() {
       await CommonFunc.sleep(80);
       await driver.click(getBounds.left + 150, getBounds.top + 30);
       await CommonFunc.sleep(1000);
-      let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
+      let copy = await driver.findComponent(ON.text('复制'));
       if(copy){
         await copy.click();
       }
