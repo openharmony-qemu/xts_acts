@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsDataShareConfigEtsTestStatic.hap"
+                "ActsDataShareConfigEtsStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
