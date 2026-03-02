@@ -28,7 +28,7 @@ struct SideBarContainerAttributeNullUndefined {
         Column() {
           ForEach(this.arr, (item: number) => {
             Column({ space: 5 }) {
-              Text("Index0" + item)
+              Text('Index0' + item)
                 .fontSize(25)
                 .fontColor(this.current === item ? '#0A59F7' : '#999')
                 .fontFamily('source-sans-pro,cursive,sans-serif')
@@ -37,7 +37,7 @@ struct SideBarContainerAttributeNullUndefined {
               this.current = item
             })
           }, (item: string) => item)
-        }.width('100%').key("SideBarContainer_Attribute_SideBar_01")
+        }.width('100%').key('SideBarContainer_Attribute_SideBar_01')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
 
@@ -56,13 +56,13 @@ struct SideBarContainerAttributeNullUndefined {
       .maxSideBarWidth(null)
       .minContentWidth(null)
       .divider(null)
-      .key("sidebar1")
+      .key('sidebar1')
       .height('30%')
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
           ForEach(this.arr, (item: number) => {
             Column({ space: 5 }) {
-              Text("Index0" + item)
+              Text('Index0' + item)
                 .fontSize(25)
                 .fontColor(this.current === item ? '#0A59F7' : '#999')
                 .fontFamily('source-sans-pro,cursive,sans-serif')
@@ -71,7 +71,7 @@ struct SideBarContainerAttributeNullUndefined {
               this.current = item
             })
           }, (item: string) => item)
-        }.width('100%').key("SideBarContainer_Attribute_SideBar_01")
+        }.width('100%').key('SideBarContainer_Attribute_SideBar_01')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
 
@@ -90,13 +90,13 @@ struct SideBarContainerAttributeNullUndefined {
       .maxSideBarWidth(undefined)
       .minContentWidth(undefined)
       .divider(undefined)
-      .key("sidebar2")
+      .key('sidebar2')
       .height('30%')
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
           ForEach(this.arr, (item: number) => {
             Column({ space: 5 }) {
-              Text("Index0" + item)
+              Text('Index0' + item)
                 .fontSize(25)
                 .fontColor(this.current === item ? '#0A59F7' : '#999')
                 .fontFamily('source-sans-pro,cursive,sans-serif')
@@ -105,7 +105,7 @@ struct SideBarContainerAttributeNullUndefined {
               this.current = item
             })
           }, (item: string) => item)
-        }.width('100%').key("SideBarContainer_Attribute_SideBar_01")
+        }.width('100%').key('SideBarContainer_Attribute_SideBar_01')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
 
@@ -116,7 +116,7 @@ struct SideBarContainerAttributeNullUndefined {
         .margin({ top: 50, left: 20, right: 30 })
 
       }
-      .key("sidebar3")
+      .key('sidebar3')
       .height('30%')
     }
   }
