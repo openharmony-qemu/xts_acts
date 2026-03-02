@@ -2080,9 +2080,9 @@ export default function RdbErrorCode14800033() {
      */
     it('testRdbRestore14800033_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.info(TAG + "************* testRdbRestore14800033_065 start *************");
-      await rdbStore.backup("backup2.db");
+      await rdbStore!.backup("backup2.db");
       try {
-         rdbStore.restore("backup2.db", (err) => {
+         rdbStore!.restore("backup2.db", (err) => {
           console.info(TAG + `restore is successful`);
          });
       } catch (e) {
