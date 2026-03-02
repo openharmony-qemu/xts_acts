@@ -516,7 +516,11 @@ export default function ConnectionBasicTest() {
        let netConn = connection.createNetConnection();
        netConn.on('netAvailable',(data:connection.NetHandle)=>{
          console.info(`${caseName}success to get data: ${JSON.stringify(data)}`);
-         ExpectTrue(data.netId != null)
+         if (data != null) {
+          ExpectTrue(data.netId != null)
+         }else{
+          ExpectFail();
+         }
          console.info(`${caseName}---End`);
          done();
        });
@@ -612,12 +616,22 @@ export default function ConnectionBasicTest() {
        let netConn = connection.createNetConnection();
        netConn.on('netCapabilitiesChange',(data:connection.NetCapabilityInfo)=>{
          console.info(`${caseName}success to get data: ${JSON.stringify(data)}`);
-         ExpectTrue(data.netCap.linkUpBandwidthKbps != null)
-         ExpectTrue(data.netCap.linkDownBandwidthKbps != null)
-         if(data.netCap.networkCap != undefined)
-           ExpectTrue(data.netCap.networkCap.length > 0)
-         if(data.netCap.bearerTypes != undefined)
-           ExpectTrue(data.netCap.bearerTypes.length > 0)
+         if (data != null) {
+           ExpectTrue(data.netCap.linkUpBandwidthKbps != null)
+           ExpectTrue(data.netCap.linkDownBandwidthKbps != null)
+           if (data.netCap.networkCap != undefined) {
+             ExpectTrue(data.netCap.networkCap.length > 0)
+           }else{
+             ExpectFail();
+           }
+           if (data.netCap.bearerTypes != undefined) {
+             ExpectTrue(data.netCap.bearerTypes.length > 0)
+           }else{
+             ExpectFail();
+           }
+         }else{
+            ExpectFail();
+         }
          console.info(`${caseName}---End`);
          done();
        })
@@ -682,11 +696,15 @@ export default function ConnectionBasicTest() {
        let netConn = connection.createNetConnection();
        netConn.on('netConnectionPropertiesChange',(data:connection.NetConnectionPropertyInfo)=>{
          console.info(`${caseName}success to get data: ${JSON.stringify(data)}`);
-         ExpectTrue(data.netHandle.netId != null)
-         ExpectTrue(data.connectionProperties.linkAddresses[0].address.address != null)
-         ExpectTrue(data.connectionProperties.linkAddresses[0].address.family != null)
-         ExpectTrue(data.connectionProperties.linkAddresses[0].address.port != null)
-         ExpectTrue(data.connectionProperties.linkAddresses[0].prefixLength != null)
+         if (data != null) {
+           ExpectTrue(data.netHandle.netId != null)
+           ExpectTrue(data.connectionProperties.linkAddresses[0].address.address != null)
+           ExpectTrue(data.connectionProperties.linkAddresses[0].address.family != null)
+           ExpectTrue(data.connectionProperties.linkAddresses[0].address.port != null)
+           ExpectTrue(data.connectionProperties.linkAddresses[0].prefixLength != null)
+         }else{
+          ExpectFail();
+         }
          console.info(`${caseName}---End`);
          done();
        })
