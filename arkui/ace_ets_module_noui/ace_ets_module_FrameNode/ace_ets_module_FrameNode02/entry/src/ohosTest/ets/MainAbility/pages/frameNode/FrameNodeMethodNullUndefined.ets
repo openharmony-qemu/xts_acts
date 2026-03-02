@@ -21,7 +21,7 @@ const TEST_TAG: string = 'FrameNode '
 // 继承NodeController实现自定义UI控制器
 class MyNodeController extends NodeController {
   public frameNode: FrameNode | null = null;
-  public childList: FrameNode[] = new Array<FrameNode>();
+  public childList: FrameNode[] = [];
   private rootNode: FrameNode | null = null;
   private uiContext: UIContext | null = null;
   private childrenCount: number = 0;
