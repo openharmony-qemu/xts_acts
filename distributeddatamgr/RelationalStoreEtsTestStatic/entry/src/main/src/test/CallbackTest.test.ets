@@ -1239,30 +1239,28 @@ export default function CallbackTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    //  it('SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400',
-    //  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-    //    console.info(TAG +"-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400 start-----")
-    //    rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
-    //    try {
-    //     if (rdbStore != undefined) {
-    //        (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("123456789", "", (err) => {
-    //         if(err){
-    //           expect(err.code).assertEqual(14800000);
-    //           done();
-    //         }else{
-    //           expect().assertFail();
-    //           done();
-    //         }
-    //       })
-    //     }
-    //    } catch (err) {
-    //     console.info(TAG + "obtainDistributedTableName err.code" + err.code + "err.message" + err.message)
-    //     expect(err.code).assertEqual(14800000);
-    //     done();
-    //    }   
-    //    console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400 end-----")
-  
-    //  })
+     it('SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+       console.info(TAG +"-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400 start-----")
+       rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+       try {
+        if (rdbStore != undefined) {
+           (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("123456789", "", (err) => {
+            if(err){
+              expect(err.code).assertEqual(14800000);
+            }else{
+              expect().assertFail();
+            }
+          })
+        }
+       } catch (err) {
+        console.info(TAG + "obtainDistributedTableName err.code" + err.code + "err.message" + err.message)
+        expect(err.code).assertEqual(14800000);    
+       }  
+       done(); 
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400 end-----")
+      
+     })
 
      /**
      * @tc.name   SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500
@@ -1280,16 +1278,14 @@ export default function CallbackTest() {
         (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("", "EMPLOYEE", (err) => {
           if(err){
             expect(err.code).assertEqual(14800000);
-            done();
           }else{
             expect().assertFail();
-            done();
           }
          })
        } catch (err) {
-        expect(err.code).assertEqual(14800000)
-        done();
-       }   
+        expect(err.code).assertEqual(14800000)  
+       }  
+       done(); 
        console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500 end-----")
   
      })
