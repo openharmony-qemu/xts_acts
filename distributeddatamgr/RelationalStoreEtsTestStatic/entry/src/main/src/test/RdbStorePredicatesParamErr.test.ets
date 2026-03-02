@@ -402,7 +402,7 @@ export default function rdbStorePredicatesParamErrTest() {
     })
 
     /**
-     * @tc.name   testNotBetween0003
+     * @tc.name   testNotBetween0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesParamErrTest_0130
      * @tc.desc   predicates notBetween  param with ""
      * @tc.size   MEDIUMTEST
