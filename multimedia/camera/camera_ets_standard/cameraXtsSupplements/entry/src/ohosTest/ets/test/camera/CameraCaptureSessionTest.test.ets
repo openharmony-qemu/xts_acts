@@ -28,6 +28,7 @@ import {
 import { indexSurfaceId } from '../../testability/pages/Index';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { media } from '@kit.MediaKit';
+
 const TAG = "CameraCaptureSessionTestSupp";
 let mCameraManager: camera.CameraManager;
 let mCameraDeviceArray: Array<camera.CameraDevice>;
@@ -161,7 +162,7 @@ function createPhotoOutput() {
 async function getCreateCaptureSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
   console.info(TAG, 'getCreateCaptureSession.');
   mCaptureSession = mCameraManager.createCaptureSession();
-  console.info(TAG, 'getCreateCaptureSession.',mCaptureSession);
+  console.info(TAG, 'getCreateCaptureSession.', mCaptureSession);
   mCaptureSession.beginConfig();
   mCaptureSession.addInput(mCameraInput);
   await mCameraInput.open();
@@ -170,6 +171,7 @@ async function getCreateCaptureSession(previewOutput: camera.PreviewOutput, phot
   await mCaptureSession.commitConfig();
   mCaptureSession.start();
 }
+
 async function releaseCaptureSession() {
   console.info(TAG, 'releasePhotoSession.');
   await mPreviewOutput?.release();
@@ -222,16 +224,17 @@ export default function CameraCaptureSessionTest() {
       try {
         createPhotoOutput();
         let aeMode = camera.ExposureMode.EXPOSURE_MODE_LOCKED;
-        console.info(TAG,'aeMode')
+        console.info(TAG, 'aeMode')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'mCaptureSession');
         let support = mCaptureSession.isExposureModeSupported(aeMode);
-        console.info(TAG,'support')
+        console.info(TAG, 'support')
         if (support) {
           mCaptureSession.setExposureMode(aeMode);
-          console.info(TAG,'success setExposureMode')
-          let ExposureMode = mCaptureSession.getExposureMode();
-          console.info(TAG, testName, 'getExposureMode', ExposureMode);
+          console.info(TAG, 'success setExposureMode')
+          let res: camera.ExposureMode = mCaptureSession.getExposureMode();
+          console.info(TAG, testName, 'getExposureMode', res);
+          expect(res == camera.ExposureMode.EXPOSURE_MODE_LOCKED).assertTrue()
         }
         await releaseCaptureSession();
         done();
@@ -260,16 +263,17 @@ export default function CameraCaptureSessionTest() {
       try {
         createPhotoOutput();
         let aeMode = camera.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO;
-        console.info(TAG,'aeMode')
+        console.info(TAG, 'aeMode')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'mCaptureSession');
         let support = mCaptureSession.isExposureModeSupported(aeMode);
-        console.info(TAG,'support')
+        console.info(TAG, 'support')
         if (support) {
           mCaptureSession.setExposureMode(aeMode);
-          console.info(TAG,'success setExposureMode')
-          let ExposureMode = mCaptureSession.getExposureMode();
-          console.info(TAG, testName, 'getExposureMode', ExposureMode);
+          console.info(TAG, 'success setExposureMode')
+          let res: camera.ExposureMode = mCaptureSession.getExposureMode();
+          console.info(TAG, testName, 'getExposureMode', res);
+          expect(res == camera.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO).assertTrue()
         }
         await releaseCaptureSession();
         done();
@@ -298,16 +302,17 @@ export default function CameraCaptureSessionTest() {
       try {
         createPhotoOutput();
         let flashMode = camera.FlashMode.FLASH_MODE_CLOSE;
-        console.info(TAG,'flashMode')
+        console.info(TAG, 'flashMode')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
         let support = mCaptureSession.isFlashModeSupported(flashMode);
-        console.info(TAG,'support')
+        console.info(TAG, 'support')
         if (support) {
           mCaptureSession.setFlashMode(flashMode);
-          console.info(TAG,'success setFlashMode')
-          let FlashMode = mCaptureSession.getFlashMode();
-          console.info(TAG, testName, 'getFlashMode', FlashMode);
+          console.info(TAG, 'success setFlashMode')
+          let res: camera.FlashMode = mCaptureSession.getFlashMode();
+          console.info(TAG, testName, 'getFlashMode', res);
+          expect(res == camera.FlashMode.FLASH_MODE_CLOSE).assertTrue()
         }
         await releaseCaptureSession();
         done();
@@ -336,16 +341,17 @@ export default function CameraCaptureSessionTest() {
       try {
         createPhotoOutput();
         let flashMode = camera.FlashMode.FLASH_MODE_OPEN;
-        console.info(TAG,'flashMode')
+        console.info(TAG, 'flashMode')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
         let support = mCaptureSession.isFlashModeSupported(flashMode);
-        console.info(TAG,'support')
+        console.info(TAG, 'support')
         if (support) {
           mCaptureSession.setFlashMode(flashMode);
-          console.info(TAG,'success setFlashMode')
-          let FlashMode = mCaptureSession.getFlashMode();
-          console.info(TAG, testName, 'getFlashMode', FlashMode);
+          console.info(TAG, 'success setFlashMode')
+          let res: camera.FlashMode = mCaptureSession.getFlashMode();
+          console.info(TAG, testName, 'getFlashMode', res);
+          expect(res == camera.FlashMode.FLASH_MODE_OPEN).assertTrue()
         }
         await releaseCaptureSession();
         done();
@@ -374,16 +380,17 @@ export default function CameraCaptureSessionTest() {
       try {
         createPhotoOutput();
         let flashMode = camera.FlashMode.FLASH_MODE_ALWAYS_OPEN;
-        console.info(TAG,'flashMode')
+        console.info(TAG, 'flashMode')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
         let support = mCaptureSession.isFlashModeSupported(flashMode);
-        console.info(TAG,'support')
+        console.info(TAG, 'support')
         if (support) {
           mCaptureSession.setFlashMode(flashMode);
-          console.info(TAG,'success setFlashMode')
-          let FlashMode = mCaptureSession.getFlashMode();
-          console.info(TAG, testName, 'getFlashMode', FlashMode);
+          console.info(TAG, 'success setFlashMode')
+          let res: camera.FlashMode = mCaptureSession.getFlashMode();
+          console.info(TAG, testName, 'getFlashMode', res);
+          expect(res == camera.FlashMode.FLASH_MODE_ALWAYS_OPEN).assertTrue()
         }
         await releaseCaptureSession();
         done();
@@ -413,8 +420,16 @@ export default function CameraCaptureSessionTest() {
         createPhotoOutput();
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, testName, 'getCreateCaptureSession');
+        let point: camera.Point = { x: 1, y: 1 }
+        console.info(TAG, 'point')
+        mCaptureSession.setMeteringPoint(point);
+        console.info(TAG, testName, 'success');
         mCaptureSession.setMeteringPoint(null);
         console.info(TAG, testName, 'success setMeteringPoint');
+        let result = mCaptureSession.getMeteringPoint();
+        console.info(TAG, testName, 'success getMeteringPoint', JSON.stringify(result));
+        expect(result.x).assertEqual(point.x)
+        expect(result.y).assertEqual(point.y)
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -443,8 +458,16 @@ export default function CameraCaptureSessionTest() {
         createPhotoOutput();
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, testName, 'getCreateCaptureSession');
+        let point: camera.Point = { x: 1, y: 1 }
+        console.info(TAG, 'point')
+        mCaptureSession.setMeteringPoint(point);
+        console.info(TAG, testName, 'success');
         mCaptureSession.setMeteringPoint(undefined);
         console.info(TAG, testName, 'success setMeteringPoint');
+        let result = mCaptureSession.getMeteringPoint();
+        console.info(TAG, testName, 'success getMeteringPoint', JSON.stringify(result));
+        expect(result.x).assertEqual(point.x)
+        expect(result.y).assertEqual(point.y)
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -473,8 +496,16 @@ export default function CameraCaptureSessionTest() {
         createPhotoOutput();
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, testName, 'getCreateCaptureSession');
+        let point: camera.Point = { x: 1, y: 1 }
+        console.info(TAG, 'point')
+        mCaptureSession.setMeteringPoint(point);
+        console.info(TAG, testName, 'success');
         mCaptureSession.setMeteringPoint(AppStorage.get('emptyString'));
         console.info(TAG, testName, 'success setMeteringPoint');
+        let result = mCaptureSession.getMeteringPoint();
+        console.info(TAG, testName, 'success getMeteringPoint', JSON.stringify(result));
+        expect(result.x).assertEqual(point.x)
+        expect(result.y).assertEqual(point.y)
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -503,45 +534,12 @@ export default function CameraCaptureSessionTest() {
         createPhotoOutput();
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, testName, 'getCreateCaptureSession');
-        let point:camera.Point = { x: 1, y: 1 }
-        console.info(TAG,'point')
+        let point: camera.Point = { x: 1, y: 1 }
+        console.info(TAG, 'point')
         mCaptureSession.setMeteringPoint(point);
         let result = mCaptureSession.getMeteringPoint();
-        console.info(TAG, testName, 'success getMeteringPoint',JSON.stringify(result));
+        console.info(TAG, testName, 'success getMeteringPoint', JSON.stringify(result));
         expect(result.x).assertEqual(point.x)
-        await releaseCaptureSession();
-        done();
-      } catch (err) {
-        console.error(TAG, testName, err.message, err.code);
-        expect().assertFail()
-        await releaseCaptureSession();
-        done();
-      }
-    })
-    /**
-     * @tc.name   SUB_CAMERA_CAPTURE_SESSION_GET_METERING_POINT_002
-     * @tc.number SUB_CAMERA_CAPTURE_SESSION_GET_METERING_POINT_002
-     * @tc.desc   getMeteringPoint
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAPTURE_SESSION_GET_METERING_POINT_002', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAPTURE_SESSION_GET_METERING_POINT_002';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      try {
-        createPhotoOutput();
-        await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
-        console.info(TAG, testName, 'getCreateCaptureSession');
-        let point:camera.Point = { x: 1, y: 1 }
-        console.info(TAG,'point')
-        mCaptureSession.setMeteringPoint(point);
-        let result = mCaptureSession.getMeteringPoint();
-        console.info(TAG, testName, 'success getMeteringPoint',JSON.stringify(result));
         expect(result.y).assertEqual(point.y)
         await releaseCaptureSession();
         done();
@@ -555,7 +553,7 @@ export default function CameraCaptureSessionTest() {
     /**
      * @tc.name   SUB_CAMERA_CAPTURE_SESSION_REMOVE_INPUT_001
      * @tc.number SUB_CAMERA_CAPTURE_SESSION_REMOVE_INPUT_001
-     * @tc.desc   undefined null
+     * @tc.desc   removeInput null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -569,15 +567,14 @@ export default function CameraCaptureSessionTest() {
       }
       try {
         createPhotoOutput();
-        console.info(TAG,'start')
+        console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, testName, 'getCreateCaptureSession');
         mCaptureSession.beginConfig();
         console.info(TAG, testName + 'beginConfig passed.')
         mCaptureSession.removeInput(null);
         console.info(TAG, testName, 'success removeInput');
-        await mCaptureSession.commitConfig();
-        console.info(TAG, 'getCreatePhotoSession.success',);
+        expect().assertFail()
         await releaseCaptureSession();
         done();
       } catch (error) {
@@ -604,15 +601,14 @@ export default function CameraCaptureSessionTest() {
       }
       try {
         createPhotoOutput();
-        console.info(TAG,'start')
+        console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, testName, 'getCreateCaptureSession');
         mCaptureSession.beginConfig();
         console.info(TAG, testName + 'beginConfig passed.')
         mCaptureSession.removeInput(undefined);
         console.info(TAG, testName, 'success removeInput');
-        await mCaptureSession.commitConfig();
-        console.info(TAG, 'getCreatePhotoSession.success',);
+        expect().assertFail()
         await releaseCaptureSession();
         done();
       } catch (error) {
@@ -639,15 +635,14 @@ export default function CameraCaptureSessionTest() {
       }
       try {
         createPhotoOutput();
-        console.info(TAG,'start')
+        console.info(TAG, 'start')
         mCaptureSession = mCameraManager.createCaptureSession();
         console.info(TAG, 'getCreateCaptureSession.', mCaptureSession);
         mCaptureSession.beginConfig();
         console.info(TAG, testName + 'beginConfig passed.')
         mCaptureSession.removeInput(AppStorage.get('emptyString'));
         console.info(TAG, testName, 'success removeInput');
-        await mCaptureSession.commitConfig();
-        console.info(TAG, 'getCreatePhotoSession.success',);
+        expect().assertFail()
         await releaseCaptureSession();
         done();
       } catch (error) {
@@ -675,16 +670,17 @@ export default function CameraCaptureSessionTest() {
       try {
         createPhotoOutput();
         let afMode = camera.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO;
-        console.info(TAG,'focusMode')
+        console.info(TAG, 'focusMode')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
         let support = mCaptureSession.isFocusModeSupported(afMode);
-        console.info(TAG,'support')
+        console.info(TAG, 'support')
         if (support) {
           mCaptureSession.setFocusMode(afMode);
-          console.info(TAG,'success setFocusMode')
-          let newFocusMode = mCaptureSession.getFocusMode();
-          console.info(TAG, testName, 'getExposureMode', newFocusMode);
+          console.info(TAG, 'success setFocusMode')
+          let res: camera.FocusMode = mCaptureSession.getFocusMode();
+          console.info(TAG, testName, 'getExposureMode', res);
+          expect(res == camera.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO).assertTrue()
         }
         await releaseCaptureSession();
         done();
@@ -713,16 +709,17 @@ export default function CameraCaptureSessionTest() {
       try {
         createPhotoOutput();
         let afMode = camera.FocusMode.FOCUS_MODE_AUTO;
-        console.info(TAG,'focusMode')
+        console.info(TAG, 'focusMode')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
         let support = mCaptureSession.isFocusModeSupported(afMode);
-        console.info(TAG,'support')
+        console.info(TAG, 'support')
         if (support) {
           mCaptureSession.setFocusMode(afMode);
-          console.info(TAG,'success setFocusMode')
-          let newFocusMode = mCaptureSession.getFocusMode();
-          console.info(TAG, testName, 'getExposureMode', newFocusMode);
+          console.info(TAG, 'success setFocusMode')
+          let res: camera.FocusMode = mCaptureSession.getFocusMode();
+          console.info(TAG, testName, 'getExposureMode', res);
+          expect(res == camera.FocusMode.FOCUS_MODE_AUTO).assertTrue()
         }
         await releaseCaptureSession();
         done();
@@ -751,16 +748,17 @@ export default function CameraCaptureSessionTest() {
       try {
         createPhotoOutput();
         let afMode = camera.FocusMode.FOCUS_MODE_LOCKED;
-        console.info(TAG,'focusMode')
+        console.info(TAG, 'focusMode')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
         let support = mCaptureSession.isFocusModeSupported(afMode);
-        console.info(TAG,'support')
+        console.info(TAG, 'support')
         if (support) {
           mCaptureSession.setFocusMode(afMode);
-          console.info(TAG,'success setFocusMode')
-          let newFocusMode = mCaptureSession.getFocusMode();
-          console.info(TAG, testName, 'getExposureMode', newFocusMode);
+          console.info(TAG, 'success setFocusMode')
+          let res: camera.FocusMode = mCaptureSession.getFocusMode();
+          console.info(TAG, testName, 'getExposureMode', res);
+          expect(res == camera.FocusMode.FOCUS_MODE_LOCKED).assertTrue()
         }
         await releaseCaptureSession();
         done();
@@ -791,8 +789,15 @@ export default function CameraCaptureSessionTest() {
         console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
-        mCaptureSession.setFocusPoint(null);
+        const point: camera.Point = { x: 0, y: 1 };
+        mCaptureSession.setFocusPoint(point);
         console.info(TAG, 'success setFocusPoint')
+        mCaptureSession.setFocusPoint(null);
+        console.info(TAG, 'success')
+        let res = mCaptureSession.getFocusPoint();
+        console.info(TAG, 'success getFocusPoint', JSON.stringify(res))
+        expect(res.x).assertEqual(point.x);
+        expect(res.y).assertEqual(point.y);
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -822,8 +827,15 @@ export default function CameraCaptureSessionTest() {
         console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
-        mCaptureSession.setFocusPoint(undefined);
+        const point: camera.Point = { x: 0, y: 1 };
+        mCaptureSession.setFocusPoint(point);
         console.info(TAG, 'success setFocusPoint')
+        mCaptureSession.setFocusPoint(undefined);
+        console.info(TAG, 'success')
+        let res = mCaptureSession.getFocusPoint();
+        console.info(TAG, 'success getFocusPoint', JSON.stringify(res))
+        expect(res.x).assertEqual(point.x);
+        expect(res.y).assertEqual(point.y);
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -853,8 +865,15 @@ export default function CameraCaptureSessionTest() {
         console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
-        mCaptureSession.setFocusPoint(AppStorage.get('emptyString'));
+        const point: camera.Point = { x: 0, y: 1 };
+        mCaptureSession.setFocusPoint(point);
         console.info(TAG, 'success setFocusPoint')
+        mCaptureSession.setFocusPoint(AppStorage.get('emptyString'));
+        console.info(TAG, 'success')
+        let res = mCaptureSession.getFocusPoint();
+        console.info(TAG, 'success getFocusPoint', JSON.stringify(res))
+        expect(res.x).assertEqual(point.x);
+        expect(res.y).assertEqual(point.y);
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -884,8 +903,31 @@ export default function CameraCaptureSessionTest() {
         console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
-        mCaptureSession.setZoomRatio(null);
-        console.info(TAG, 'success setZoomRatio')
+
+        if (mCaptureSession.getZoomRatioRange()) {
+          let res: Array<number> = mCaptureSession.getZoomRatioRange();
+          console.info(TAG, testName, 'video FocusModeSupported, expected: ', JSON.stringify(res));
+          mCaptureSession.setZoomRatio(null);
+          console.info(TAG, 'success setZoomRatio')
+          let result = mCaptureSession.getZoomRatio()
+          console.info(TAG, 'getZoomRatioRange', JSON.stringify(result))
+        } else {
+          console.error(TAG, testName, "该设备不支持变焦");
+        }
+
+
+        // let zoomRatioRange: Array<number> = [];
+        // zoomRatioRange = mCaptureSession.getZoomRatioRange();
+        // console.info(TAG, 'getZoomRatioRange',JSON.stringify(zoomRatioRange))
+        // let zoomRatio = zoomRatioRange[0];
+        // mCaptureSession.setZoomRatio(zoomRatio);
+        // console.info(TAG, 'success')
+        // mCaptureSession.setZoomRatio(null);
+        // console.info(TAG, 'success setZoomRatio')
+        // let res = mCaptureSession.getZoomRatio()
+        // console.info(TAG, 'getZoomRatioRange',JSON.stringify(res))
+
+
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -915,8 +957,16 @@ export default function CameraCaptureSessionTest() {
         console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
-        mCaptureSession.setZoomRatio(undefined);
-        console.info(TAG, 'success setZoomRatio')
+        if (mCaptureSession.getZoomRatioRange()) {
+          let res: Array<number> = mCaptureSession.getZoomRatioRange();
+          console.info(TAG, testName, 'video FocusModeSupported, expected: ', JSON.stringify(res));
+          mCaptureSession.setZoomRatio(undefined);
+          console.info(TAG, 'success setZoomRatio')
+          let result = mCaptureSession.getZoomRatio()
+          console.info(TAG, 'getZoomRatioRange', JSON.stringify(result))
+        } else {
+          console.error(TAG, testName, "该设备不支持变焦");
+        }
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -946,8 +996,16 @@ export default function CameraCaptureSessionTest() {
         console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
-        mCaptureSession.setZoomRatio(AppStorage.get('emptyString'));
-        console.info(TAG, 'success setZoomRatio')
+        if (mCaptureSession.getZoomRatioRange()) {
+          let res: Array<number> = mCaptureSession.getZoomRatioRange();
+          console.info(TAG, testName, 'video FocusModeSupported, expected: ', JSON.stringify(res));
+          mCaptureSession.setZoomRatio(AppStorage.get('emptyString'));
+          console.info(TAG, 'success setZoomRatio')
+          let result = mCaptureSession.getZoomRatio()
+          console.info(TAG, 'getZoomRatioRange', JSON.stringify(result))
+        } else {
+          console.error(TAG, testName, "该设备不支持变焦");
+        }
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -975,12 +1033,21 @@ export default function CameraCaptureSessionTest() {
       }
       try {
         createPhotoOutput();
-        let mode = camera.VideoStabilizationMode.OFF;
-        console.info(TAG,'mode',mode)
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
-        mCaptureSession.setVideoStabilizationMode(mode);
-        console.info(TAG,'success setVideoStabilizationMode')
+        let mode = camera.VideoStabilizationMode.OFF;
+        console.info(TAG, 'mode')
+        let vsMode = camera.VideoStabilizationMode.OFF;
+        console.info(TAG, 'vsMode')
+        if (mCaptureSession.isVideoStabilizationModeSupported(vsMode)) {
+          mCaptureSession.setVideoStabilizationMode(mode);
+          console.info(TAG, 'success setVideoStabilizationMode')
+          let res: camera.VideoStabilizationMode = mCaptureSession.getActiveVideoStabilizationMode();
+          console.info(TAG, 'success getActiveVideoStabilizationMode', JSON.stringify(res))
+          expect(res == camera.VideoStabilizationMode.OFF).assertTrue()
+        } else {
+          console.error(TAG, testName + '当前设备不支持此配置');
+        }
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -1007,17 +1074,26 @@ export default function CameraCaptureSessionTest() {
       }
       try {
         createPhotoOutput();
-        let mode = camera.VideoStabilizationMode.MIDDLE;
-        console.info(TAG,'mode',mode)
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
-        mCaptureSession.setVideoStabilizationMode(mode);
-        console.info(TAG,'success setVideoStabilizationMode')
+        let mode = camera.VideoStabilizationMode.MIDDLE;
+        console.info(TAG, 'mode', mode)
+        let vsMode = camera.VideoStabilizationMode.MIDDLE;
+        console.info(TAG, 'vsMode')
+        if (mCaptureSession.isVideoStabilizationModeSupported(vsMode)) {
+          mCaptureSession.setVideoStabilizationMode(mode);
+          console.info(TAG, 'success setVideoStabilizationMode')
+          let res: camera.VideoStabilizationMode = mCaptureSession.getActiveVideoStabilizationMode();
+          console.info(TAG, 'success getActiveVideoStabilizationMode', JSON.stringify(res))
+          expect(res == camera.VideoStabilizationMode.MIDDLE).assertTrue()
+        } else {
+          console.error(TAG, testName + '当前设备不支持此配置');
+        }
         await releaseCaptureSession();
         done();
       } catch (err) {
         console.error(TAG, testName, err.message, err.code);
-        expect(Number(err.code)).assertEqual(7400102)
+        expect().assertFail()
         await releaseCaptureSession();
         done();
       }
@@ -1039,17 +1115,26 @@ export default function CameraCaptureSessionTest() {
       }
       try {
         createPhotoOutput();
-        let mode = camera.VideoStabilizationMode.AUTO;
-        console.info(TAG,'mode',mode)
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
-        mCaptureSession.setVideoStabilizationMode(mode);
-        console.info(TAG,'success setVideoStabilizationMode')
+        let mode = camera.VideoStabilizationMode.AUTO;
+        console.info(TAG, 'mode', mode)
+        let vsMode = camera.VideoStabilizationMode.AUTO;
+        console.info(TAG, 'vsMode')
+        if (mCaptureSession.isVideoStabilizationModeSupported(vsMode)) {
+          mCaptureSession.setVideoStabilizationMode(mode);
+          console.info(TAG, 'success setVideoStabilizationMode')
+          let res: camera.VideoStabilizationMode = mCaptureSession.getActiveVideoStabilizationMode();
+          console.info(TAG, 'success getActiveVideoStabilizationMode', JSON.stringify(res))
+          expect(res == camera.VideoStabilizationMode.AUTO).assertTrue()
+        } else {
+          console.error(TAG, testName + '当前设备不支持此配置');
+        }
         await releaseCaptureSession();
         done();
       } catch (err) {
         console.error(TAG, testName, err.message, err.code);
-        expect(Number(err.code)).assertEqual(7400102)
+        expect().assertFail()
         await releaseCaptureSession();
         done();
       }
@@ -1075,8 +1160,14 @@ export default function CameraCaptureSessionTest() {
         console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
+        let biasRangeArray: Array<number> = [];
+        biasRangeArray = mCaptureSession.getExposureBiasRange();
+        console.info(TAG, 'getExposureBiasRange', JSON.stringify(biasRangeArray))
         mCaptureSession.setExposureBias(null);
         console.info(TAG, 'success setExposureBias')
+        let res = mCaptureSession.getExposureValue();
+        console.info(TAG, 'success getExposureValue', JSON.stringify(res))
+        expect(res == 0).assertTrue();
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -1106,8 +1197,14 @@ export default function CameraCaptureSessionTest() {
         console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
+        let biasRangeArray: Array<number> = [];
+        biasRangeArray = mCaptureSession.getExposureBiasRange();
+        console.info(TAG, 'getExposureBiasRange', JSON.stringify(biasRangeArray))
         mCaptureSession.setExposureBias(undefined);
         console.info(TAG, 'success setExposureBias')
+        let res = mCaptureSession.getExposureValue();
+        console.info(TAG, 'success getExposureValue', JSON.stringify(res))
+        expect(res == 0).assertTrue();
         await releaseCaptureSession();
         done();
       } catch (err) {
@@ -1137,8 +1234,14 @@ export default function CameraCaptureSessionTest() {
         console.info(TAG, 'start')
         await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
         console.info(TAG, 'getCreateCaptureSession');
+        let biasRangeArray: Array<number> = [];
+        biasRangeArray = mCaptureSession.getExposureBiasRange();
+        console.info(TAG, 'getExposureBiasRange', JSON.stringify(biasRangeArray))
         mCaptureSession.setExposureBias(AppStorage.get('emptyString'));
         console.info(TAG, 'success setExposureBias')
+        let res = mCaptureSession.getExposureValue();
+        console.info(TAG, 'success getExposureValue', JSON.stringify(res))
+        expect(res == 0).assertTrue();
         await releaseCaptureSession();
         done();
       } catch (err) {
