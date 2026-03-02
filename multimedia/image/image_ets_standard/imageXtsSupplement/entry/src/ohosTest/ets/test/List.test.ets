@@ -227,7 +227,8 @@ import ImageGetComponentFirSupp from './Picture/PictureGetComponentFirSupp.test'
 import ImagePictureTest from './image/ImagePictureTest.test';
 import CrateImageSupp from './image/CreateImageTest.test';
 import CreatePixelMapUsingAllocatorTest from './image/ImageCreatePixelMapUsingAllocatorTest.test';
-
+import ImageCreatePixelMapFromSurfaceTest from './image/ImageCreatePixelMapFromSurfaceTest.test';
+import ImageCreatePremultipliedPixelMapTest from './image/ImageCreatePremultipliedPixelMapTest.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -441,4 +442,6 @@ export default function testsuite() {
   ImagePictureTest();
   CrateImageSupp();
   CreatePixelMapUsingAllocatorTest();
+  ImageCreatePixelMapFromSurfaceTest();
+  ImageCreatePremultipliedPixelMapTest();
 }

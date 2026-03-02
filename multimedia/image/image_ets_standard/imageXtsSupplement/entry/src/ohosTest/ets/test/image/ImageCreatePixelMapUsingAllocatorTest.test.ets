@@ -50,8 +50,6 @@ export default function CreatePixelMapUsingAllocatorTest() {;
     afterAll(() => {
       console.info('afterAll case');
     });
-
-
     /**
      * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_001
      * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_001
