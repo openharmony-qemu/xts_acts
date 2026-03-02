@@ -123,6 +123,7 @@
         "MainAbility/pages/Text/TextSelectionProperties",
         "MainAbility/pages/Text/TextSpecialOptionsNull",
         "MainAbility/pages/Text/TextLayoutOptionsNull",
-        "MainAbility/pages/Text/TextSpecialAttrsNull"
+        "MainAbility/pages/Text/TextSpecialAttrsNull",
+        "MainAbility/pages/Text/TextMethodsNull"
     ]
 }
