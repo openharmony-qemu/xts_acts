@@ -226,6 +226,10 @@ import PicturePackingPixelMapSecTestSupp from './image/PicturePackingPixelMapSec
 import ImageGetComponentFirSupp from './Picture/PictureGetComponentFirSupp.test';
 import ImagePictureTest from './image/ImagePictureTest.test';
 import CrateImageSupp from './image/CreateImageTest.test';
+import ImagCreatePixelMapTest from './image/ImagCreatePixelMapTest.test';
+import ImageCreateImageSourceSuppTest from './image/ImageCreateImageSourceTests.test';
+import ImageHeifsTest from './image/ImageHeifMetadataTest.test';
+import SendImageTest from './image/SendImageTest.test';
 
 
 export default function testsuite() {
@@ -439,4 +443,8 @@ export default function testsuite() {
   ImageGetComponentFirSupp();
   ImagePictureTest();
   CrateImageSupp();
+  ImagCreatePixelMapTest();
+  ImageCreateImageSourceSuppTest();
+  ImageHeifsTest();
+  SendImageTest();
 }
