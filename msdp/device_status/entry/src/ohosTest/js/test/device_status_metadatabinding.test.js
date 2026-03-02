@@ -342,6 +342,7 @@ export default function DeviceStatusMetadataBindingTest() {
         metadataBinding.off('operationSubmitMetadata', "", (data) => {
           console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 metadataBinding.off is success' + data)
         })
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 metadataBinding.off is success')
       } catch (error) {
         console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 metadataBinding.off is failed' + JSON.stringify(error))
         expect().assertFail()
