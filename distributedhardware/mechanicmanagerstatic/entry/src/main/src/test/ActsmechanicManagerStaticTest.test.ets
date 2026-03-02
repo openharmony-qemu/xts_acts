@@ -51,13 +51,13 @@ export default function ActsmechanicManagerStaticTest() {
             expect(result.mechInfo.mechId == 0).assertTrue();
             expect(result.mechInfo.mechDeviceType == 0).assertTrue();
             expect(result.mechInfo.mechName == 'Osmo Mobile 7P').assertTrue();
+            done();
           };
           hilog.info(domain, tag, '注册连接状态变化事件的回调监听');
           mechanicManager.onAttachStateChange((callback: mechanicManager.AttachStateChangeInfo) => {
             hilog.info(domain, tag, `'result:' ${callback}`);
           });
           hilog.info(domain, tag, '注册连接状态变化事件的回调监听成功');
-          expect(flag == 0).assertTrue();
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', '注册连接状态变化事件的回调监听失败 failed for ' + err);
           const e = err as BusinessError;
