@@ -50,7 +50,7 @@ export default function slidenullundeifned(){
     * @tc.number: bindSheetHoverMode_0100
     * @tc.name  : bindSheetHoverMode_0100
     * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-    * @tc.level : Level 3
+    * @tc.level : Level 0
     * @tc.type
     * @tc.size
     */
@@ -77,6 +77,14 @@ export default function slidenullundeifned(){
         done();
     })
 
+    /* *
+    * @tc.number: slideundefined_001
+    * @tc.name  : slideundefined_001
+    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
+    * @tc.level : Level 0
+    * @tc.type
+    * @tc.size
+    */
     it('slideundefined_001', Level.LEVEL0, async (done:Function) =>{
       let tagName = 'slidenullundeifned';
       let driver = await Driver.create()

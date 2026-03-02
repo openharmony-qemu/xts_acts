@@ -18,7 +18,7 @@
 struct sliderUndefied {
   @State inSetValue: number = 40
   @State outSetValue: number = 40
-  @State Begin: number = SliderChangeMode.Begin
+  @State begin: number = SliderChangeMode.Begin
 
   onPageShow() {
     console.info('Slider page show called');
@@ -62,7 +62,7 @@ struct sliderUndefied {
           .suffix(null,null)
           .onChange((value: number, mode: SliderChangeMode) => {
             this.outSetValue = value
-            this.Begin = mode
+            this.begin = mode
             console.info('value: ' + value + '---mode: ' + mode)
           })
           .width("100")
@@ -94,11 +94,11 @@ struct sliderUndefied {
           .blockStyle(undefined)
           .onChange((value: number, mode: SliderChangeMode) => {
             this.outSetValue = value
-            this.Begin = mode
+            this.begin = mode
             console.info('value: ' + value + '---mode: ' + mode)
           })
-          .width("100")
-          .height("100")
+          .width('100')
+          .height('100')
           // .id('sliderundefined')
           .key('sliderundefined')
 

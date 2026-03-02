@@ -49,10 +49,10 @@ export default function radiounllundefined(){
 
 
     /* *
-    * @tc.number: bindSheetHoverMode_0100
-    * @tc.name  : bindSheetHoverMode_0100
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-    * @tc.level : Level 3
+    * @tc.number: radionull_001
+    * @tc.name  : radionull_001
+    * @tc.desc  : To test radionull
+    * @tc.level : Level 0
     * @tc.type
     * @tc.size
     */
@@ -68,6 +68,14 @@ export default function radiounllundefined(){
       done();
     })
 
+    /* *
+    * @tc.number: radioundefined_001
+    * @tc.name  : radioundefined_001
+    * @tc.desc  : To test radioundefined
+    * @tc.level : Level 0
+    * @tc.type
+    * @tc.size
+    */
     it('radioundefined_001', Level.LEVEL0, async (done:Function) =>{
       let tagName = 'slidenullundeifned';
       let driver = await Driver.create()

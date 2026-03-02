@@ -57,7 +57,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectFont_Null_001', Level.LEVEL0, async (done: Function) => {
       console.info('selectFont_Null_001 START');
       await Utils.sleep(1000);
@@ -77,7 +76,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectFont_Undefined_002', Level.LEVEL0, async (done: Function) => {
       console.info('selectFont_Undefined_002 START');
       await Utils.sleep(1000);
@@ -133,7 +131,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectSelectedOptionBgColor_Null_005', Level.LEVEL0, async (done: Function) => {
       console.info('selectSelectedOptionBgColor_Null_005 START');
       await Utils.sleep(1000);
@@ -154,7 +151,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectSelectedOptionBgColor_Undefined_006', Level.LEVEL0, async (done: Function) => {
       console.info('selectSelectedOptionBgColor_Undefined_006 START');
       await Utils.sleep(1000);
@@ -173,7 +169,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectSelectedOptionFont_Null_007', Level.LEVEL0, async (done: Function) => {
       console.info('selectSelectedOptionFont_Null_007 START');
       await Utils.sleep(1000);
@@ -194,7 +189,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectSelectedOptionFont_Undefined_008', Level.LEVEL0, async (done: Function) => {
       console.info('selectSelectedOptionFont_Undefined_008 START');
       await Utils.sleep(1000);
@@ -251,7 +245,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectOptionBgColor_Null_011', Level.LEVEL0, async (done: Function) => {
       console.info('selectOptionBgColor_Null_011 START');
       await Utils.sleep(1000);
@@ -270,7 +263,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectOptionBgColor_Undefined_012', Level.LEVEL0, async (done: Function) => {
       console.info('selectOptionBgColor_Undefined_012 START');
       await Utils.sleep(1000);
@@ -289,7 +281,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectOptionFont_Null_013', Level.LEVEL0, async (done: Function) => {
       console.info('selectOptionFont_Null_013 START');
       await Utils.sleep(1000);
@@ -308,7 +299,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectOptionFont_Undefined_014', Level.LEVEL0, async (done: Function) => {
       console.info('selectOptionFont_Undefined_014 START');
       await Utils.sleep(1000);
@@ -327,7 +317,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectOptionFontColor_Null_015', Level.LEVEL0, async (done: Function) => {
       console.info('selectOptionFontColor_Null_015 START');
       await Utils.sleep(1000);
@@ -457,7 +446,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectMenuAlign_Null_022', Level.LEVEL0, async (done: Function) => {
       console.info('selectMenuAlign_Null_022 START');
       await Utils.sleep(1000);
@@ -477,7 +465,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectMenuAlign_Undefined_023', Level.LEVEL0, async (done: Function) => {
       console.info('selectMenuAlign_Undefined_023 START');
       await Utils.sleep(1000);
@@ -568,7 +555,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectMenuBackgroundColor_Null_028', Level.LEVEL0, async (done: Function) => {
       console.info('selectMenuBackgroundColor_Null_028 START');
       await Utils.sleep(1000);
@@ -587,7 +573,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectMenuBackgroundColor_Undefined_029', Level.LEVEL0, async (done: Function) => {
       console.info('selectMenuBackgroundColor_Undefined_029 START');
       await Utils.sleep(1000);
@@ -606,7 +591,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectMenuBackgroundBlurStyle_Null_030', Level.LEVEL0, async (done: Function) => {
       console.info('selectMenuBackgroundBlurStyle_Null_030 START');
       await Utils.sleep(1000);
@@ -625,7 +609,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectMenuBackgroundBlurStyle_Undefined_031', Level.LEVEL0, async (done: Function) => {
       console.info('selectMenuBackgroundBlurStyle_Undefined_031 START');
       await Utils.sleep(1000);
@@ -680,7 +663,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectShowDefaultSelectedIcon_Null_034', Level.LEVEL0, async (done: Function) => {
       console.info('selectShowDefaultSelectedIcon_Null_034 START');
       await Utils.sleep(1000);
@@ -700,7 +682,6 @@ export default function selectAttributeNullTest() {
      * @tc.size   
      * @tc.level  
      */
-     // fail error
     it('selectShowDefaultSelectedIcon_Undefined_035', Level.LEVEL0, async (done: Function) => {
       console.info('selectShowDefaultSelectedIcon_Undefined_035 START');
       await Utils.sleep(1000);
