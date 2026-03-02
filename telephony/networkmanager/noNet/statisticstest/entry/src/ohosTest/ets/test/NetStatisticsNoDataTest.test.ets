@@ -52,8 +52,7 @@ export default function   netStatisticsNoDataTest() {
     beforeAll(async () => {
       hasData = await data.isCellularDataEnabled();
       if (hasData) {
-        await data.disableCellularData();
-        hasData = await data.isCellularDataEnabled();
+        console.info(`hasData is ${hasData}`);
       }
     });
 
