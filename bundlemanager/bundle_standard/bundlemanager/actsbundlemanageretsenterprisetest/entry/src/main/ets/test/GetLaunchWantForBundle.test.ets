@@ -130,5 +130,55 @@ export default function getLaunchWantForBundle() {
                 done();
             });
         });
+
+        /**
+         * @tc.name   testGetLaunchWantForBundleWithEmptyString
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2770
+         * @tc.desc   Test getLaunchWantForBundle with empty string bundleName.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetLaunchWantForBundleWithEmptyString', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleMgr.getLaunchWantForBundle('').then(res => {
+                expect().assertFail();
+            }).catch(err => {
+                expect(err.code).assertEqual(1);
+            });
+            bundleMgr.getLaunchWantForBundle('', (err, res) => {
+                if (err) {
+                    expect(err.code).assertEqual(1);
+                    done();
+                    return;
+                }
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetLaunchWantForBundleWithUndefined
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2780
+         * @tc.desc   Test getLaunchWantForBundle with undefined bundleName.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetLaunchWantForBundleWithUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleMgr.getLaunchWantForBundle(undefined).then(res => {
+                expect().assertFail();
+            }).catch(err => {
+                expect(err.code).assertEqual(1);
+            });
+            bundleMgr.getLaunchWantForBundle(undefined, (err, res) => {
+                if (err) {
+                    expect(err.code).assertEqual(1);
+                    done();
+                    return;
+                }
+                expect().assertFail();
+                done();
+            });
+        });
     });
 }
