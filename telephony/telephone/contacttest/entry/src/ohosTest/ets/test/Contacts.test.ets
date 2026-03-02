@@ -17,6 +17,9 @@ import { describe, beforeAll, it, expect, Level, Size, TestType } from '@ohos/hy
 import { BusinessError } from '@ohos.base';
 import contact from '@ohos.contact';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
+import bundleManager from '@ohos.bundle.bundleManager';
+import account from '@ohos.account.osAccount';
 import Want from '@ohos.app.ability.Want';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 
