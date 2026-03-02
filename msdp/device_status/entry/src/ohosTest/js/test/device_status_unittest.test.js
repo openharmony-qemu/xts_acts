@@ -261,7 +261,7 @@ export default function DeviceStatusUnitTest() {
             console.log(JSON.stringify(stationary));
             try {
                 p_done = done;
-                stationary.on(null, stationary.ActivityEvent.EXIT, 1, pub_callback);
+                stationary.on(null, stationary.ActivityEvent.EXIT, reportLatencyNs, pub_callback);
                 expect().assertFail();
             } catch (error) {
                 console.error('error Log' + error);
@@ -284,7 +284,7 @@ export default function DeviceStatusUnitTest() {
             console.log(JSON.stringify(stationary));
             try {
                 p_done = done;
-                stationary.on(undefined, stationary.ActivityEvent.EXIT, 1, pub_callback);
+                stationary.on(undefined, stationary.ActivityEvent.EXIT, reportLatencyNs, pub_callback);
                 expect().assertFail();
             } catch (error) {
                 console.error('error Log' + error);
