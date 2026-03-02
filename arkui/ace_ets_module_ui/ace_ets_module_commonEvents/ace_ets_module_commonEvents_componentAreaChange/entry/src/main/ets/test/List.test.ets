@@ -22,6 +22,7 @@ import onVisibleTest from "./onVisiable/onVisibleAreaApproximateChange.test";
 import onVisiable from './onVisiable/onVisiable.test';
 import measureFromViewportTest from "./onVisiable/measureFromViewport.test";
 import measureFromViewportOnVisibleTest from './measureFromViewport/measureFromViewportOnVisible.test';
+import onVisibleAreaApproximateChangeNullAndUndefinedTest from './OnVisibleAreaApproximateChange/onVisibleAreaApproximateChangeNullAndUndefinedTest.test';
 
 export default function testsuite() {
   appearJsunit();
@@ -32,4 +33,5 @@ export default function testsuite() {
   onVisibleTest();
   measureFromViewportTest();
   measureFromViewportOnVisibleTest();
+  onVisibleAreaApproximateChangeNullAndUndefinedTest();
 }

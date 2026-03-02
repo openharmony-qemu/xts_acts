@@ -9,6 +9,7 @@
         "MainAbility/pages/onVisiable/onVisiable",
         "MainAbility/pages/onVisiable/onVisibleAreaApproximateChange",
         "MainAbility/pages/onVisiable/measureFromViewport",
-        "MainAbility/pages/measureFromViewport/measureFromViewportOnVisible"
+        "MainAbility/pages/measureFromViewport/measureFromViewportOnVisible",
+        "MainAbility/pages/CommonMethod/onVisibleAreaApproximateChangeNullAndUndefined"
     ]
 }

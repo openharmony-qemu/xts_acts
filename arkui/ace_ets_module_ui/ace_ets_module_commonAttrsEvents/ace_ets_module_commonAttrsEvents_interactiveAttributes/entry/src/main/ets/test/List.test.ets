@@ -16,10 +16,22 @@ import enableJsunit from './enabledTest/EnableJsunit.test';
 import monopolizeTest from './TouchInteractionControl/monopolizeEventsTest/monopolizeTest.test';
 import responseRegionListTest from "./responseRegion/responseRegionList.test";
 import componentUtilsTest from './componentUtils/ComponentUtilsTest.test';
+import backgroundImageNullAndUndefinedTest from './BackgroundImage/backgroundImageNullAndUndefinedTest.test';
+import monopolizeEventsNullAndUndefinedTest from './MonopolizeEvents/monopolizeEventsNullAndUndefinedTest.test';
+import obscuredNullAndUndefinedTest from './Obscured/obscuredNullAndUndefinedTest.test';
+import overlayNullAndUndefinedTest from './Overlay/overlayNullAndUndefinedTest.test';
+import restoreIdNullAndUndefinedTest from './RestoreId/restoreIdNullAndUndefinedTest.test';
+import zIndexNullAndUndefinedTest from './ZIndex/zIndexNullAndUndefinedTest.test';
 
 export default function testsuite() {
     enableJsunit();
     monopolizeTest();
     responseRegionListTest();
     componentUtilsTest();
+    backgroundImageNullAndUndefinedTest();
+    monopolizeEventsNullAndUndefinedTest();
+    obscuredNullAndUndefinedTest();
+    overlayNullAndUndefinedTest();
+    restoreIdNullAndUndefinedTest();
+    zIndexNullAndUndefinedTest();
 }

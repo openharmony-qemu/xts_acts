@@ -11,6 +11,15 @@
         "MainAbility/pages/componentSnapshotCreateFromBuilder/createFromBuilderCallback",
         "MainAbility/pages/componentSnapshotCreateFromBuilder/createFromBuilder",
         "MainAbility/pages/componentSnapshotCreateFromBuilder/createFromComponent",
-        "MainAbility/pages/componentSnapshotCreateFromBuilder/errorCreateFromBuilder"
+        "MainAbility/pages/componentSnapshotCreateFromBuilder/errorCreateFromBuilder",
+        "MainAbility/pages/ComponentSnapshot/GetCallback/GetCallbackNullAndUndefined",
+        "MainAbility/pages/ComponentSnapshot/GetPromise/GetPromiseNullAndUndefined",
+        "MainAbility/pages/ComponentSnapshot/CreateFromBuilder/CreateFromBuilderNullAndUndefined",
+        "MainAbility/pages/ComponentSnapshot/GetSync/GetSyncNullAndUndefined",
+        "MainAbility/pages/ComponentSnapshot/UIContextGet/UIContextGetNullAndUndefined",
+        "MainAbility/pages/ComponentSnapshot/UIContextGetPromise/UIContextGetPromiseNullAndUndefined",
+        "MainAbility/pages/ComponentSnapshot/UIContextGetSync/UIContextGetSyncNullAndUndefined",
+        "MainAbility/pages/ComponentSnapshot/GetWithUniqueId/GetWithUniqueIdNullAndUndefined",
+        "MainAbility/pages/ComponentSnapshot/GetSyncWithUniqueId/GetSyncWithUniqueIdNullAndUndefined"
     ]
 }

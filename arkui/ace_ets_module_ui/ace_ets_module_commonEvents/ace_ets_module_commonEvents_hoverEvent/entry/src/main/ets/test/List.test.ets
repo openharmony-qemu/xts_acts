@@ -15,8 +15,30 @@
 
 import onHoverStatusChange from './onHoverStatusChange/onHoverStatusChange.test'
 import MouseEventWindowTest from "./MouseEvent/MouseEventWindow.test";
+import hoverEffectNullAndUndefinedTest from './HoverEffect/hoverEffectNullAndUndefinedTest.test';
+import setOnClickNullAndUndefinedTest from './UICommonEvent/SetOnClick/setOnClickNullAndUndefinedTest.test';
+import setOnTouchNullAndUndefinedTest from './UICommonEvent/SetOnTouch/setOnTouchNullAndUndefinedTest.test';
+import setOnAppearNullAndUndefinedTest from './UICommonEvent/SetOnAppear/setOnAppearNullAndUndefinedTest.test';
+import setOnDisappearNullAndUndefinedTest from './UICommonEvent/SetOnDisappear/setOnDisappearNullAndUndefinedTest.test';
+import setOnKeyEventNullAndUndefinedTest from './UICommonEvent/SetOnKeyEvent/setOnKeyEventNullAndUndefinedTest.test';
+import setOnFocusNullAndUndefinedTest from './UICommonEvent/SetOnFocus/setOnFocusNullAndUndefinedTest.test';
+import setOnBlurNullAndUndefinedTest from './UICommonEvent/SetOnBlur/setOnBlurNullAndUndefinedTest.test';
+import setOnHoverNullAndUndefinedTest from './UICommonEvent/SetOnHover/setOnHoverNullAndUndefinedTest.test';
+import setOnMouseNullAndUndefinedTest from './UICommonEvent/SetOnMouse/setOnMouseNullAndUndefinedTest.test';
+import setOnSizeChangeNullAndUndefinedTest from './UICommonEvent/SetOnSizeChange/setOnSizeChangeNullAndUndefinedTest.test';
 
 export default function testsuite() {
   onHoverStatusChange();
   MouseEventWindowTest();
+  hoverEffectNullAndUndefinedTest();
+  setOnClickNullAndUndefinedTest();
+  setOnTouchNullAndUndefinedTest();
+  setOnAppearNullAndUndefinedTest();
+  setOnDisappearNullAndUndefinedTest();
+  setOnKeyEventNullAndUndefinedTest();
+  setOnFocusNullAndUndefinedTest();
+  setOnBlurNullAndUndefinedTest();
+  setOnHoverNullAndUndefinedTest();
+  setOnMouseNullAndUndefinedTest();
+  setOnSizeChangeNullAndUndefinedTest();
 }

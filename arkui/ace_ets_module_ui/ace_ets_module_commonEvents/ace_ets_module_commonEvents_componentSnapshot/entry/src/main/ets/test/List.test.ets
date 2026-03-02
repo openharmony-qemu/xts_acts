@@ -24,6 +24,15 @@ import createFromBuilderTest from "./componentSnapshotCreateFromBuilder/createFr
 import createFromBuilderCallbackTest from "./componentSnapshotCreateFromBuilder/createFromBuilderCallback.test";
 import createFromComponent from "./componentSnapshotCreateFromBuilder/createFromComponent.test";
 import errorCreateFromBuilderTest from "./componentSnapshotCreateFromBuilder/errorCreateFromBuilder.test";
+import getCallbackNullAndUndefinedTest from './ComponentSnapshot/GetCallback/getCallbackNullAndUndefinedTest.test';
+import getPromiseNullAndUndefinedTest from './ComponentSnapshot/GetPromise/getPromiseNullAndUndefinedTest.test';
+import createFromBuilderNullAndUndefinedTest from './ComponentSnapshot/CreateFromBuilder/createFromBuilderNullAndUndefinedTest.test';
+import getSyncNullAndUndefinedTest from './ComponentSnapshot/GetSync/getSyncNullAndUndefinedTest.test';
+import uIContextGetNullAndUndefinedTest from './ComponentSnapshot/UIContextGet/uIContextGetNullAndUndefinedTest.test';
+import uIContextGetPromiseNullAndUndefinedTest from './ComponentSnapshot/UIContextGetPromise/uIContextGetPromiseNullAndUndefinedTest.test';
+import uIContextGetSyncNullAndUndefinedTest from './ComponentSnapshot/UIContextGetSync/uIContextGetSyncNullAndUndefinedTest.test';
+import getWithUniqueIdNullAndUndefinedTest from './ComponentSnapshot/GetWithUniqueId/getWithUniqueIdNullAndUndefinedTest.test';
+import getSyncWithUniqueIdNullAndUndefinedTest from './ComponentSnapshot/GetSyncWithUniqueId/getSyncWithUniqueIdNullAndUndefinedTest.test';
 
 export default function testsuite() {
   SnapshotOptions_region();
@@ -37,4 +46,13 @@ export default function testsuite() {
   createFromBuilderTest();
   createFromComponent();
   errorCreateFromBuilderTest();
+  getCallbackNullAndUndefinedTest();
+  getPromiseNullAndUndefinedTest();
+  createFromBuilderNullAndUndefinedTest();
+  getSyncNullAndUndefinedTest();
+  uIContextGetNullAndUndefinedTest();
+  uIContextGetPromiseNullAndUndefinedTest();
+  uIContextGetSyncNullAndUndefinedTest();
+  getWithUniqueIdNullAndUndefinedTest();
+  getSyncWithUniqueIdNullAndUndefinedTest();
 }

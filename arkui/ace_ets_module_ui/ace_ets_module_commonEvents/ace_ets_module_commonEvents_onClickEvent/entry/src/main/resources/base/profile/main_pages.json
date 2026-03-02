@@ -8,6 +8,7 @@
         "MainAbility/pages/InteractionEventBindingInfo/InteractionEventBindingInfo",
         "MainAbility/pages/Color/colorMetrics",
         "MainAbility/pages/Background/BackgroundOptions",
-        "MainAbility/pages/NodeRenderState/nodeRenderState"
+        "MainAbility/pages/NodeRenderState/nodeRenderState",
+        "MainAbility/pages/ClickEvent/ClickEventNullAndUndefined"
     ]
 }
