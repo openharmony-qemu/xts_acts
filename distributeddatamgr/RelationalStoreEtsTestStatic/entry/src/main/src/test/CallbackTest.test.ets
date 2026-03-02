@@ -1158,7 +1158,7 @@ export default function CallbackTest() {
        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
        try {
         if (rdbStore != undefined) {
-           (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("123456789", "", (err) => {
+           (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("123456789", "", (err: BusinessError|null) => {
             if(err){
               expect(err.code).assertEqual(14800000);
             }else{
@@ -1188,7 +1188,7 @@ export default function CallbackTest() {
        console.info(TAG +"-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500 start-----")
        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
        try {
-        (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("", "EMPLOYEE", (err) => {
+        (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("", "EMPLOYEE", (err: BusinessError|null) => {
           if(err){
             expect(err.code).assertEqual(14800000);
           }else{
