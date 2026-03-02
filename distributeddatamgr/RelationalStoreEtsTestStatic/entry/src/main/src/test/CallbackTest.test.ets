@@ -1130,21 +1130,18 @@ export default function CallbackTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+    it('SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300 start *************");
       try {
         let PRIKey: Array<data_relationalStore.PRIKeyType> = [30 as long, 31 as long];
         await rdbStore!.getModifyTime("employee", "age", PRIKey);
         console.log(TAG + 'modifyTime success');
-        done();
       } catch (err) {
         console.log(TAG +
           `SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
         expect(err.code).assertEqual(14800033);
-        done();
       }
       console.log(TAG + "************* SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300 end *************");
-      done();
     })
 
      /**
