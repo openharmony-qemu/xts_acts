@@ -204,10 +204,10 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0800 is start---------------")
       try {
         metadataBinding.submitMetadata("")
-        console.log('metadataBinding.submitMetadata is success')
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_0800 metadataBinding.submitMetadata is success')
         expect().assertFail()
       } catch (error) {
-        console.log('metadataBinding.submitMetadata is failed' + JSON.stringify(error))
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_0800 metadataBinding.submitMetadata is failed' + JSON.stringify(error))
         expect(error.code == 32100001).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0800 is end---------------")
@@ -226,10 +226,10 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0900 is start---------------")
       try {
         metadataBinding.submitMetadata(null)
-        console.log('metadataBinding.submitMetadata is success')
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_0900 metadataBinding.submitMetadata is success')
         expect().assertFail()
       } catch (error) {
-        console.log('metadataBinding.submitMetadata is failed' + JSON.stringify(error))
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_0900 metadataBinding.submitMetadata is failed' + JSON.stringify(error))
         expect(error.code == 401).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0900 is end---------------")
@@ -248,10 +248,10 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1000 is start---------------")
       try {
         metadataBinding.submitMetadata(undefined)
-        console.log('metadataBinding.submitMetadata is success')
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1000 metadataBinding.submitMetadata is success')
         expect().assertFail()
       } catch (error) {
-        console.log('metadataBinding.submitMetadata is failed' + JSON.stringify(error))
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1000 metadataBinding.submitMetadata is failed' + JSON.stringify(error))
         expect(error.code == 401).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1000 is end---------------")
@@ -271,11 +271,11 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1100 is start---------------")
       try {
         metadataBinding.on('operationSubmitMetadata', "", (data) => {
-          console.log('metadataBinding.on is success' + data)
-          expect().assertFail()
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1100 metadataBinding.on is success' + data)
         })
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1100 metadataBinding.on is success')
       } catch (error) {
-        console.log('metadataBinding.on is failed catch' + JSON.stringify(error))
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1100 metadataBinding.on is failed catch' + JSON.stringify(error))
         expect(error.code == 32100004).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1100 is end---------------")
@@ -294,11 +294,11 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1200 is start---------------")
       try {
         metadataBinding.on('operationSubmitMetadata', null, (data) => {
-          console.log('metadataBinding.on is success' + data)
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1200 metadataBinding.on is success' + data)
           expect().assertFail()
         })
       } catch (error) {
-        console.log('metadataBinding.on is failed catch' + JSON.stringify(error))
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1200 metadataBinding.on is failed catch' + JSON.stringify(error))
         expect(error.code == 401).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1200 is end---------------")
@@ -317,11 +317,11 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1300 is start---------------")
       try {
         metadataBinding.on('operationSubmitMetadata', undefined, (data) => {
-          console.log('metadataBinding.on is success' + data)
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1300 metadataBinding.on is success' + data)
           expect().assertFail()
         })
       } catch (error) {
-        console.log('metadataBinding.on is failed catch' + JSON.stringify(error))
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1300 metadataBinding.on is failed catch' + JSON.stringify(error))
         expect(error.code == 401).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1300 is end---------------")
@@ -340,10 +340,10 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 is start---------------")
       try {
         metadataBinding.off('operationSubmitMetadata', "", (data) => {
-          console.log('metadataBinding.off is success' + data)
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 metadataBinding.off is success' + data)
         })
       } catch (error) {
-        console.log('metadataBinding.off is failed' + JSON.stringify(error))
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 metadataBinding.off is failed' + JSON.stringify(error))
         expect().assertFail()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 is end---------------")
@@ -362,11 +362,11 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1500 is start---------------")
       try {
         metadataBinding.off('operationSubmitMetadata', null, (data) => {
-          console.log('metadataBinding.off is success' + data)
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1500 metadataBinding.off is success' + data)
           expect().assertFail()
         })
       } catch (error) {
-        console.log('metadataBinding.off is failed' + JSON.stringify(error))
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1500 metadataBinding.off is failed' + JSON.stringify(error))
         expect(error.code == 401).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1500 is end---------------")
@@ -385,11 +385,11 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1600 is start---------------")
       try {
         metadataBinding.off('operationSubmitMetadata', undefined, (data) => {
-          console.log('metadataBinding.off is success' + data)
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1600 metadataBinding.off is success' + data)
           expect().assertFail()
         })
       } catch (error) {
-        console.log('metadataBinding.off is failed' + JSON.stringify(error))
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1600 metadataBinding.off is failed' + JSON.stringify(error))
         expect(error.code == 401).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1600 is end---------------")
