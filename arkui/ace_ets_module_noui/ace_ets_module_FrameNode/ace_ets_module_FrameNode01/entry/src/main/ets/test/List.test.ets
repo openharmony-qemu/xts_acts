@@ -94,6 +94,12 @@ import SetCrossLanguageOptionsNullTest from './FrameNodeMethod/SetCrossLanguageO
 import GetInteractionEventBindingInfoNullTest from './FrameNodeMethod/GetInteractionEventBindingInfoNullTest.test';
 
 export default function testsuite() {
+  CreateNodeNullUndefinedTest();
+  ConvertPositionNullUndefinedTest();
+  ConvertPositionToFromWindowNullTest();
+  RemoveAdoptedChildNullTest();
+  SetCrossLanguageOptionsNullTest();
+  GetInteractionEventBindingInfoNullTest();
   APIdisposeTreeTest();
   APImarkNodeGroupTest();
   APIPanGestureisisBeginTest();
@@ -167,10 +173,4 @@ export default function testsuite() {
   GraphicsFourBoundaryTest();
   FrameNodeConvertPositionTest();
   FrameNodeConvertPositionErrorCodeTest();
-  CreateNodeNullUndefinedTest();
-  ConvertPositionNullUndefinedTest();
-  ConvertPositionToFromWindowNullTest();
-  RemoveAdoptedChildNullTest();
-  SetCrossLanguageOptionsNullTest();
-  GetInteractionEventBindingInfoNullTest();
 }
