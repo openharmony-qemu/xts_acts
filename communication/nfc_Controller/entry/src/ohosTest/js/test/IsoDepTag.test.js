@@ -499,7 +499,6 @@ export default function nfcIsoDepTagTest() {
                 hceService.off("hceCmd", apduCallback)
                 console.info('[NFC_test]0900 hceServicesoff success ')
                 hceService.stop(hceElementName)
-                expect(true).assertTrue();
                 console.info('[NFC_test]0900 hceServicestop success ')
             } catch (error) {
                 console.info('[NFC_test]0900 hceService on/off error' + error + "/" + error.code)
@@ -603,6 +602,32 @@ export default function nfcIsoDepTagTest() {
             let hceService = new cardEmulation.HceService();
             console.info('[NFC_test]14 hceService state is' + hceService )
             let aidList = ["A0000000031010", "A0000000031011"]
+            let responseData = [0x1, 0x2];
+            try {
+                hceService.startHCE(aidList);
+                console.info('[NFC_test]14 hceService startHCE is success ')
+                hceService.stopHCE();
+                console.info('[NFC_test]14 hceService stopHCE is success ')
+                hceService.sendResponse(responseData);
+                console.info('[NFC_test]14 hceService sendResponse is success ')
+            } catch (error) {
+                console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code)
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1401
+         * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1401
+         * @tc.desc   Whether to support a certain type of card HceService startHCE/stopHCE/sendResponse
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1401', Level.LEVEL0, function ()  {
+            let hceService = new cardEmulation.HceService();
+            console.info('[NFC_test]14 hceService state is' + hceService )
+            let aidList = [];
             let responseData = [0x1, 0x2];
             try {
                 hceService.startHCE(aidList);
