@@ -629,7 +629,7 @@ export default function pasteboardTestNdkTest() {
      */
     it('OH_Pasteboard_HasRemoteData0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_HasRemoteData0200' );
-      let data = testndk.OH_Pasteboard_HasRemoteData0100();
+      let data = testndk.OH_Pasteboard_HasRemoteData0200();
       console.info( TAG + 'OH_Pasteboard_HasRemoteData0200 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })

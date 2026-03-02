@@ -1367,7 +1367,7 @@ export default function PasteboardReturnvalue() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + `createData with empty string error: ${err.message}`);
-        expect(err.code).assertEqual("401");
+        expect(err.code).assertEqual(String(401));
       }
       console.info("SUB_Pasteboard_Returnvalue_Abnormal_026 end");
       done();
@@ -1388,7 +1388,7 @@ export default function PasteboardReturnvalue() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + `createRecord with empty string error: ${err.message}`);
-        expect(err.code).assertEqual("401");
+        expect(err.code).assertEqual(String(401));
       }
       console.info("SUB_Pasteboard_Returnvalue_Abnormal_027 end");
       done();
@@ -1410,7 +1410,7 @@ export default function PasteboardReturnvalue() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + `addEntry with empty string error: ${err.message}`);
-        expect(err.code).assertEqual("401");
+        expect(err.code).assertEqual(String(401));
       }
       console.info("SUB_Pasteboard_Returnvalue_Abnormal_028 end");
       done();
@@ -1437,7 +1437,7 @@ export default function PasteboardReturnvalue() {
         })
       } catch (err) {
         console.error(TAG + `addEntry with empty string error: ${err.message}`);
-        expect(err.code).assertEqual("401");
+        expect(err.code).assertEqual(String(401));
       }
       console.info("SUB_Pasteboard_Returnvalue_Abnormal_029 end");
       done();
@@ -1640,7 +1640,7 @@ export default function PasteboardReturnvalue() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + `addRecord with empty string error: ${err.message}`);
-        expect(err.code).assertEqual("401");
+        expect(err.code).assertEqual(String(401));
       }
       console.info("SUB_Pasteboard_Returnvalue_Abnormal_037 end");
       done();
@@ -1990,7 +1990,7 @@ export default function PasteboardReturnvalue() {
         expect(hasdatat).assertFalse();
       } catch (err) {
         console.error(TAG + `hasDataType with empty string error: ${err.message}`);
-        expect(err.code).assertEqual("401");
+        expect(err.code).assertEqual(String(401));
       }
       console.info("SUB_Pasteboard_Returnvalue_Abnormal_051 end");
       done();
@@ -2013,7 +2013,7 @@ export default function PasteboardReturnvalue() {
         })
       } catch (err) {
         console.error(TAG + `detectPatterns error: ${err.message}`);
-        expect(err.code).assertEqual("401");
+        expect(err.code).assertEqual(String(401));
       }
       console.info("SUB_Pasteboard_Returnvalue_Abnormal_052 end");
       done();
