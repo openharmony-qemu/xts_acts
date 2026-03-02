@@ -104,7 +104,15 @@ import ComponentContentIsDisposedTest from './NodeReturnTest/ComponentContentIsD
 import FrameNodeIsDisposedTest from './NodeReturnTest/FrameNodeIsDisposedTest.test';
 import RenderNodeIsDisposedTest from './NodeReturnTest/RenderNodeIsDisposedTest.test';
 import NodeAdapterIsDisposedTest from './NodeReturnTest/NodeAdapterIsDisposedTest.test';
+
 import graphicsApiNullUndefinedTest from './GraphicsTest/graphicsApiNullUndefinedTest.test';
+import renderNodeApiNullUndefinedest from './RenderNodeTest/renderNodeApiNullUndefinedest.test';
+import nodeContentApiNullUndefinedTest from './NodeContent/nodeContentApiNullUndefinedTest.test';
+import builderNodeBuildNullUndefinedTest from './BuilderNodeTest/builderNodeBuildNullUndefinedTest.test';
+import builderNodeUpdateNullUndefinedTest from './BuilderNodeTest/builderNodeUpdateNullUndefinedTest.test';
+import builderNodeReuseNullUndefinedTest from './BuilderNodeTest/builderNodeReuseNullUndefinedTest.test';
+import ReactiveBuilderNodeReuseNullUndefinedTest from './BuilderNodeTest/ReactiveBuilderNodeReuseNullUndefinedTest.test';
+import builderNodeInheritFreezeOptionsFalseTest from './BuilderNodeTest/builderNodeInheritFreezeOptionsFalseTest.test';
 
 export default function testsuite() {
   arkuiNodeTest();
@@ -198,5 +206,14 @@ export default function testsuite() {
   FrameNodeIsDisposedTest();
   RenderNodeIsDisposedTest();
   NodeAdapterIsDisposedTest();
+
   graphicsApiNullUndefinedTest();
+  renderNodeApiNullUndefinedest();
+  nodeContentApiNullUndefinedTest();
+  builderNodeBuildNullUndefinedTest();
+  builderNodeUpdateNullUndefinedTest();
+  builderNodeReuseNullUndefinedTest();
+  ReactiveBuilderNodeReuseNullUndefinedTest();
+  builderNodeInheritFreezeOptionsFalseTest();
+
 }
