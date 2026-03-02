@@ -1005,7 +1005,7 @@ export default function CameraGetActiveProfileTest() {
           await createVideoOutput();
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
           let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_90);
-          console.info(TAG, testName,"videoRotation:",videoRotation);
+          console.info(TAG, testName, "videoRotation:", videoRotation);
           expect(videoRotation === camera.ImageRotation.ROTATION_0 ||
             videoRotation === camera.ImageRotation.ROTATION_90 ||
             videoRotation === camera.ImageRotation.ROTATION_180 || videoRotation === camera.ImageRotation.ROTATION_270)
@@ -1036,7 +1036,7 @@ export default function CameraGetActiveProfileTest() {
           await createVideoOutput();
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
           let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_180);
-          console.info(TAG, testName,"videoRotation:",videoRotation);
+          console.info(TAG, testName, "videoRotation:", videoRotation);
           expect(videoRotation === camera.ImageRotation.ROTATION_0 ||
             videoRotation === camera.ImageRotation.ROTATION_90 ||
             videoRotation === camera.ImageRotation.ROTATION_180 || videoRotation === camera.ImageRotation.ROTATION_270)
@@ -1067,7 +1067,7 @@ export default function CameraGetActiveProfileTest() {
           await createVideoOutput();
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
           let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_270);
-          console.info(TAG, testName,"videoRotation:",videoRotation);
+          console.info(TAG, testName, "videoRotation:", videoRotation);
           expect(videoRotation === camera.ImageRotation.ROTATION_0 ||
             videoRotation === camera.ImageRotation.ROTATION_90 ||
             videoRotation === camera.ImageRotation.ROTATION_180 || videoRotation === camera.ImageRotation.ROTATION_270)

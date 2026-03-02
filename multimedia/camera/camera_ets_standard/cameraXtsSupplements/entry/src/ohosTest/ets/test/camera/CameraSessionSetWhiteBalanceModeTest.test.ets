@@ -254,7 +254,6 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
@@ -270,6 +269,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       console.info('afterAll case');
       await closeFd(fdNumber);
     });
+
 
     /**
      * @tc.name   CAMERA_SESSION_SET_WHITE_BALANCE_MODE_001

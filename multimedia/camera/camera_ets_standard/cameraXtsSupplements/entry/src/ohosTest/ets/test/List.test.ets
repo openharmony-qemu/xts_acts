@@ -91,4 +91,5 @@ export default function testsuite() {
   CameraGetActiveProfileTest();
   CameraSessionBandSuppTest();
   CameraManagerGetSupportedOutputCapabilityTest();
+
 }
