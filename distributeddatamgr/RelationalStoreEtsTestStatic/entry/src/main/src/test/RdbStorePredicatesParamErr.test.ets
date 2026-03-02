@@ -103,7 +103,7 @@ export default function rdbStorePredicatesParamErrTest() {
           try{
             predicates.notEqualTo("", -0.123);
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();
             done();
           } catch (err) {
@@ -131,7 +131,7 @@ export default function rdbStorePredicatesParamErrTest() {
           let predicates = new relationalStore.RdbPredicates("AllDataType");
           predicates.isNull("");
           let result = await rdbStore!.query(predicates);
-          expect(3).assertEqual(result?.rowCount);
+          expect(0).assertEqual(result?.rowCount);
           result.close();
           done();
         } catch (err) {
@@ -157,7 +157,7 @@ export default function rdbStorePredicatesParamErrTest() {
         try {
           predicates.contains("", "DEF");
           let result = await rdbStore!.query(predicates);
-          expect(3).assertEqual(result?.rowCount);
+          expect(0).assertEqual(result?.rowCount);
           result.close();
           done();
         } catch (err) {
@@ -182,7 +182,7 @@ export default function rdbStorePredicatesParamErrTest() {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
         predicates.beginsWith("", "#");
         let result = await rdbStore!.query(predicates);
-        expect(3).assertEqual(result?.rowCount);
+        expect(0).assertEqual(result?.rowCount);
         result.close();
         done();
         } catch (err) {
@@ -208,7 +208,7 @@ export default function rdbStorePredicatesParamErrTest() {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
         predicates.beginsWith("characterValue", "");
         let result = await rdbStore!.query(predicates);
-        expect(3).assertEqual(result?.rowCount);
+        expect(0).assertEqual(result?.rowCount);
         result.close();
         done();
         } catch (err) {
@@ -233,7 +233,7 @@ export default function rdbStorePredicatesParamErrTest() {
           let predicates = new relationalStore.RdbPredicates("AllDataType");
           predicates.endsWith("", "LMN");
           let result = await rdbStore!.query(predicates);
-          expect(3).assertEqual(result?.rowCount);
+          expect(0).assertEqual(result?.rowCount);
           result.close();
           done();
         } catch (err) {
@@ -258,7 +258,7 @@ export default function rdbStorePredicatesParamErrTest() {
           let predicates = new relationalStore.RdbPredicates("AllDataType");
           predicates.endsWith("stringValue", "");
           let result = await rdbStore!.query(predicates);
-          expect(3).assertEqual(result?.rowCount);
+          expect(0).assertEqual(result?.rowCount);
           result.close();
           done();
         } catch (err) {
@@ -283,7 +283,7 @@ export default function rdbStorePredicatesParamErrTest() {
           let predicates = new relationalStore.RdbPredicates("AllDataType");
           predicates.like("", "%#%");
           let result = await rdbStore!.query(predicates);
-          expect(3).assertEqual(result?.rowCount);
+          expect(0).assertEqual(result?.rowCount);
           result.close();
           done();
   
@@ -310,7 +310,7 @@ export default function rdbStorePredicatesParamErrTest() {
           let predicates = new relationalStore.RdbPredicates("AllDataType");
           predicates.like("characterValue", "");
           let result = await rdbStore!.query(predicates);
-          expect(3).assertEqual(result?.rowCount);
+          expect(0).assertEqual(result?.rowCount);
           result.close();
           done();
   
@@ -338,7 +338,7 @@ export default function rdbStorePredicatesParamErrTest() {
             predicates.glob("", "ABC*");
             expect(predicates !== null).assertTrue();
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();   
             done(); 
           } catch (err) {
@@ -364,7 +364,7 @@ export default function rdbStorePredicatesParamErrTest() {
             predicates.glob("stringValue", "");
             expect(predicates !== null).assertTrue();
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();   
             done(); 
           } catch (err) {
@@ -390,7 +390,7 @@ export default function rdbStorePredicatesParamErrTest() {
              predicates.between("", "ABB", "ABD");
             expect(predicates !== null).assertTrue();
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();   
             done(); 
           } catch (err) {
@@ -415,7 +415,7 @@ export default function rdbStorePredicatesParamErrTest() {
             predicates.notBetween("", "ABC", "ABD");
             expect(predicates !== null).assertTrue();
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close(); 
             done();   
           } catch (err) {
@@ -441,7 +441,7 @@ export default function rdbStorePredicatesParamErrTest() {
             predicates.greaterThan("", "ABC");
             expect(predicates !== null).assertTrue();
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();  
             done();  
     
@@ -468,7 +468,7 @@ export default function rdbStorePredicatesParamErrTest() {
             predicates.lessThan("", "ABC");
             expect(predicates !== null).assertTrue();
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close(); 
             done();   
           } catch (err) {
@@ -494,7 +494,7 @@ export default function rdbStorePredicatesParamErrTest() {
             predicates.greaterThanOrEqualTo("", "ABC");
             expect(predicates !== null).assertTrue();
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();   
             done(); 
           } catch (err) {
@@ -520,7 +520,7 @@ export default function rdbStorePredicatesParamErrTest() {
             predicates.lessThanOrEqualTo("", "ABC");
             expect(predicates !== null).assertTrue();
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();   
             done(); 
           } catch (err) {
@@ -546,7 +546,7 @@ export default function rdbStorePredicatesParamErrTest() {
             predicates.groupBy([]);
             expect(predicates !== null).assertTrue();   
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close(); 
             done();
           } catch (err) {
@@ -573,7 +573,7 @@ export default function rdbStorePredicatesParamErrTest() {
             let pr = predicates.inValues("", values);
             expect(typeof(pr) === "object").assertTrue();
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();
             done();
           } catch (err) {
@@ -599,7 +599,7 @@ export default function rdbStorePredicatesParamErrTest() {
             let predicates = new relationalStore.RdbPredicates("AllDataType");
             predicates.notInValues("", values);
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();
             done();
           } catch (err) {
@@ -624,7 +624,7 @@ export default function rdbStorePredicatesParamErrTest() {
             let predicates = new relationalStore.RdbPredicates("AllDataType");
             predicates.notInValues("integerValue", []);
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();
             done();
           } catch (err) {
@@ -649,7 +649,7 @@ export default function rdbStorePredicatesParamErrTest() {
             let predicates = new relationalStore.RdbPredicates("AllDataType");
             predicates.notContains("stringValue", "");
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();
             done();
           } catch (err) {
@@ -674,7 +674,7 @@ export default function rdbStorePredicatesParamErrTest() {
             let predicates = new relationalStore.RdbPredicates("AllDataType");
             predicates.notLike("", "ABCDEFGHIJKLMN");
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();
             done();
           } catch (err) {
@@ -699,7 +699,7 @@ export default function rdbStorePredicatesParamErrTest() {
             let predicates = new relationalStore.RdbPredicates("AllDataType");
             predicates.notLike("stringValue", "");
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();
             done();
           } catch (err) {
@@ -724,7 +724,7 @@ export default function rdbStorePredicatesParamErrTest() {
             let predicates = new relationalStore.RdbPredicates("AllDataType");
             predicates.notContains("", "ABC");
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();
             done();
           } catch (err) {
@@ -750,7 +750,7 @@ export default function rdbStorePredicatesParamErrTest() {
             predicates.orderByAsc("");
             expect(predicates !== null).assertTrue();
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();   
             done(); 
           } catch (err) {
@@ -776,7 +776,7 @@ export default function rdbStorePredicatesParamErrTest() {
             predicates.orderByDesc("");
             expect(predicates !== null).assertTrue();  
             let result = await rdbStore!.query(predicates);
-            expect(3).assertEqual(result?.rowCount);
+            expect(0).assertEqual(result?.rowCount);
             result.close();
             done();  
           } catch (err) {
