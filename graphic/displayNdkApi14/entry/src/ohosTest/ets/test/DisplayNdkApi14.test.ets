@@ -58,7 +58,10 @@ async function ClickButtonDriver(){
   console.info(`come in Driver create`);
   let buttonOne = await driver.findComponent(ON.text('允许'));
   console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
-  await buttonOne.click();
+  if(buttonOne){
+    await buttonOne.click();
+  }
+  
 }
 export default function ActsDisplayNdkApi14Test() {
 
@@ -775,13 +778,15 @@ export default function ActsDisplayNdkApi14Test() {
           };
           let promise = screenshot.capture();
           promise.then((PixelMap: image.PixelMap) => {
-            console.log(caseName + 'Succeeded in saving screenshot. Pixel bytes number: ' + PixelMap.getPixelBytesNumber());
+            console.log(caseName + 'Succeeded in saving screenshot. Pixel bytes number: ' + PixelMap.getPixelBytesNumber()+'PixelMap.isEditable:'+PixelMap.isEditable+'PixelMap.isStrideAlignment:'+PixelMap.isStrideAlignment);
             PixelMap.getImageInfo().then((imageInfo:image.ImageInfo)=>{
               let PixelMapWidth = imageInfo.size.width;
               let PixelMapHeight = imageInfo.size.height;
               console.log(caseName + ' PixelMapWidth:'+ PixelMapWidth + ' ,PixelMapHeight:'+ PixelMapHeight);
               expect(PixelMapWidth).assertLarger(0);
               expect(PixelMapHeight).assertLarger(0);
+              expect(PixelMap.isEditable).assertEqual(false);
+              expect(PixelMap.isStrideAlignment).assertEqual(false);
               PixelMap.release(); // PixelMap使用完后及时释放内存
               done();
             })
