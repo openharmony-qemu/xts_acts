@@ -467,7 +467,7 @@ export default function DisplayTest() {
                 expect(data!.waterfallDisplayAreaRects.top.width).assertLargerOrEqual(0);
                 expect(data!.waterfallDisplayAreaRects.right.width).assertLargerOrEqual(0);
                 expect(data!.waterfallDisplayAreaRects.bottom.width).assertLargerOrEqual(0);
-                expect(data!.waterfallDisplayAreaRectsleft.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.height).assertLargerOrEqual(0);
                 expect(data!.waterfallDisplayAreaRects.top.height).assertLargerOrEqual(0);
                 expect(data!.waterfallDisplayAreaRects.right.height).assertLargerOrEqual(0);
                 expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
@@ -518,7 +518,7 @@ export default function DisplayTest() {
                 expect(data!.waterfallDisplayAreaRects.top.width).assertLargerOrEqual(0);
                 expect(data!.waterfallDisplayAreaRects.right.width).assertLargerOrEqual(0);
                 expect(data!.waterfallDisplayAreaRects.bottom.width).assertLargerOrEqual(0);
-                expect(data!.waterfallDisplayAreaRectsleft.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.height).assertLargerOrEqual(0);
                 expect(data!.waterfallDisplayAreaRects.top.height).assertLargerOrEqual(0);
                 expect(data!.waterfallDisplayAreaRects.right.height).assertLargerOrEqual(0);
                 expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
