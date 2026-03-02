@@ -447,6 +447,31 @@ export default function DisplayTest() {
             let dpClass: display.Display = display.getDefaultDisplaySync();
             expect(!!dpClass).assertTrue();
             dpClass.getCutoutInfo((err:BusinessError<void> | null, data:display.CutoutInfo| undefined) : void => {
+                if (data!.boundingRects.length !== 0) {
+                    expect(data!.boundingRects[0]!.left).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.top).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.height).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.width).assertLargerOrEqual(0);
+                } else {
+                    expect(data!.boundingRects.length).assertEqual(0);
+                }
+                expect(data!.waterfallDisplayAreaRects.left.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
+                done();
                 if (err && err.code) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + JSON.stringify(err));
                     expect(false).assertTrue();
@@ -473,6 +498,30 @@ export default function DisplayTest() {
             expect(!!dpClass).assertTrue();
             dpClass.getCutoutInfo().then((data: display.CutoutInfo) => {
                 hilog.info(0x0000, '[ANI]','Succeeded in getting cutoutInfo. Data: ' + JSON.stringify(data));
+                if (data!.boundingRects.length !== 0) {
+                    expect(data!.boundingRects[0]!.left).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.top).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.height).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.width).assertLargerOrEqual(0);
+                } else {
+                    expect(data!.boundingRects.length).assertEqual(0);
+                }
+                expect(data!.waterfallDisplayAreaRects.left.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
                 done();
             }).catch((error: Error) =>{
                 hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + JSON.stringify(error));
@@ -2644,6 +2693,40 @@ export default function DisplayTest() {
             } else {
                 expect().assertFail()
             }
+        }
+    })
+
+    /**
+    * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0340
+    * @tc.name        testGetDefaultDisplaySync_SyncFunction_static_0200
+    * @tc.desc        To test the sync function of obtaining the target display by id
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 1
+    */
+    it('testGetDefaultDisplaySync_SyncFunction_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, '[ANI]','testGetDefaultDisplaySync_SyncFunction_static_0200 begin');
+        try {
+            let dsp:display.Display = display.getDefaultDisplaySync();
+            hilog.info(0x0000, '[ANI]','displayTest getDefaultDisplaySyncTest1: ' + JSON.stringify(dsp));
+            expect(dsp.id !== null).assertTrue();
+            expect(dsp.refreshRate !== null).assertTrue();
+            expect(dsp.width !== null).assertTrue();
+            expect(dsp.height !== null).assertTrue();
+            expect(dsp.rotation !== null).assertTrue();
+            expect(dsp.densityDPI !== null).assertTrue();
+            expect(dsp.name !== null).assertTrue();
+            expect(dsp.alive).assertTrue();
+            expect(dsp.state !== null).assertTrue();
+            expect(dsp.densityPixels !== null).assertTrue();
+            expect(dsp.scaledDensity !== null).assertTrue();
+            expect(dsp.xDPI !== null).assertTrue();
+            expect(dsp.yDPI !== null).assertTrue();
+            done();
+        } catch (err) {
+            hilog.error(0x0000, '[ANI]','getDefaultDisplaySyncTest1 error ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
         }
     })
 
