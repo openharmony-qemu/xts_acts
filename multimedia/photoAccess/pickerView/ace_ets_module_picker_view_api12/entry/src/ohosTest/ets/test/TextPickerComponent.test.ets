@@ -3967,7 +3967,7 @@ export default function TextPicker() {
     /**
       * @tc.name   testPicker76
       * @tc.number testPicker76
-      * @tc.desc   Testing PhotoPicker showDateOnScroller
+      * @tc.desc   Testing PhotoPicker showDateOnScrollbar
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL0
@@ -3979,10 +3979,10 @@ export default function TextPicker() {
       }
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      pickerOptions.showDateOnScroller = true;
+      pickerOptions.showDateOnScrollbar = true;
       let callback = (event: events_emitter.EventData) => {
-        let expectResult: boolean = pickerOptions.showDateOnScroller ?? false;
-        let result: PhotoPickerResult = event?.data?.msg.showDateOnScroller;
+        let expectResult: boolean = pickerOptions.showDateOnScrollbar ?? false;
+        let result: PhotoPickerResult = event?.data?.msg.showDateOnScrollbar;
         console.info('testPicker76 result event.data.msg=:' + result);
         console.info('testPicker76 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
