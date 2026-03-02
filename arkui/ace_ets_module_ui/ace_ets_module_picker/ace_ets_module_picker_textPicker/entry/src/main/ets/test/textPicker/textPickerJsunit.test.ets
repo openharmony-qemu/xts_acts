@@ -134,19 +134,28 @@ export default function TextPickerJsunitTest() {
      */
     it('TextPickerJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Verify the functions of TextPicker component
-      await CommonFunc.sleep(500);
       console.info('[TextPickerJsunit_0300] START');
-      let component = CommonFunc.getComponentRectOnScreen('textPicker');
-      let bottom = component.bottom
-      let right = component.right
-      let top = component.top
-      let middle = (top + bottom) / 2
+      await CommonFunc.sleep(500);
+      let driver = await Driver.create()
+
+      let textPicker = await driver.findComponent(ON.id('textPicker'));
+      let rect = await textPicker.getBounds();
+      let left = rect.left
+      let top = rect.top
+      let bottom = rect.bottom
+      let right = rect.right
+
       console.info("[TextPickerJsunit_0300] bottom: " + JSON.stringify(bottom));
       console.info("[TextPickerJsunit_0300] right: " + JSON.stringify(right));
-      let driver = await UiDriver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(right / 2), Math.round(middle + 50), Math.round(right / 2), Math.round(middle - 50));
-      await CommonFunc.sleep(6000);
+
+      await driver.swipe(
+        Math.round(left + (right - left) / 2), 
+        Math.round(top + (bottom - top) / 2),
+        Math.round(left + (right - left) / 2), 
+        Math.round(top));
+
+      await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('textContent1');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[TextPickerJsunit_0300] obj: " + JSON.stringify(obj));
