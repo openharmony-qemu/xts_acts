@@ -122,6 +122,7 @@
         "MainAbility/pages/Text/TextLineBreakStrategyNull",
         "MainAbility/pages/Text/TextSelectionProperties",
         "MainAbility/pages/Text/TextSpecialOptionsNull",
-        "MainAbility/pages/Text/TextLayoutOptionsNull"
+        "MainAbility/pages/Text/TextLayoutOptionsNull",
+        "MainAbility/pages/Text/TextSpecialAttrsNull"
     ]
 }
