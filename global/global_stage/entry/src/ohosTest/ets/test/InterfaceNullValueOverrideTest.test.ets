@@ -4,8 +4,8 @@ import { BusinessError } from '@ohos.base';
 import sendableResourceManager from '@ohos.sendableResourceManager';
 import { GlobalContext } from '../test/global';
 
-export default function interfaceNullValueOverrideTest() {
-  describe("interfaceNullValueOverrideTest", () => {
+export default function InterfaceNullValueOverrideTest() {
+  describe("InterfaceNullValueOverrideTest", () => {
     console.log('*************start interfaceNullValueOverrideTest*************');
     let resContext: Context;
     let res: resourceManager.ResourceManager;
@@ -2734,8 +2734,8 @@ export default function interfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getColor_null_test_0200
-       * @tc.name     : getColor_null_test_0200
+       * @tc.number   : getColorByName_null_test_0200
+       * @tc.name     : getColorByName_null_test_0200
        * @tc.desc     : promise mode with NULL
        * @tc.size     : MEDIUM
        * @tc.type     : Function
@@ -2769,8 +2769,8 @@ export default function interfaceNullValueOverrideTest() {
 
 
       /**
-       * @tc.number   : getColorByName_null_test_0100
-       * @tc.name     : getColorByName_null_test_0100
+       * @tc.number   : getColorSync_null_test_0100
+       * @tc.name     : getColorSync_null_test_0100
        * @tc.desc     : with NULL
        * @tc.size     : MEDIUM
        * @tc.type     : Function
@@ -3164,7 +3164,7 @@ export default function interfaceNullValueOverrideTest() {
           expect(value).assertFail();
         } catch (e) {
           let error = e as BusinessError;
-          console.log('getPluralStringByNameSync_null_test_0100 err:' + error.code);
+          console.log('getPluralStringByNameSync_null_test_0200 err:' + error.code);
           expect(Number(error.code)).assertEqual(401);
         }
       })
@@ -3373,4 +3373,5 @@ export default function interfaceNullValueOverrideTest() {
 
       console.log('*************end interfaceNullValueOverrideTest*************');
     })
-  }
+  })
+}
