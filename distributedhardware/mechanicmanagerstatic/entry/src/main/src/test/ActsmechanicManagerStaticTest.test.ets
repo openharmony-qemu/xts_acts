@@ -202,7 +202,7 @@ export default function ActsmechanicManagerStaticTest() {
           hilog.info(domain, tag, "====>setCameraTrackingEnabled err:" + JSON.stringify(err));
           const e = err as BusinessError;
           hilog.info(domain, tag, `setCameraTrackingEnabled err.code: ${e.code}`);
-          expect(e.code == 33300001 || e.code == 33300002 || e.code == 33300003).assertTrue()
+          expect(e.code == 33300001).assertTrue()
         }
         hilog.info(domain, tag, `======>${LOG_NAME} end======`);
         done();
