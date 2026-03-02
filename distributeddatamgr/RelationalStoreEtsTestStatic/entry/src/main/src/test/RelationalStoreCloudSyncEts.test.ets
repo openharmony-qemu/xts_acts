@@ -915,7 +915,7 @@ export default function relationalStoreCloudSyncEts() {
 
     /**
      * @tc.name   testRdbStoreCloudSync0011
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_1100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_1500
      * @tc.desc   cloudSync with tables SYNC_MODE_PULL,SYNC_MODE_PUSH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
