@@ -435,7 +435,7 @@ export default function HasCard2PublicTest() {
             ExpectFail();
             done();
           } else {
-            console.info(`${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} isEmergencyPhoneNumber fail, data->${JSON.stringify(data)}`);
             ExpectFail();
             done();
           }
@@ -466,7 +466,7 @@ export default function HasCard2PublicTest() {
             ExpectFail();
             done();
           } else {
-            console.info(`${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} isEmergencyPhoneNumber fail, data->${JSON.stringify(data)}`);
             ExpectFail();
             done();
           }
@@ -532,7 +532,7 @@ export default function HasCard2PublicTest() {
             ExpectFail();
             done();
           } else {
-            console.info(`${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} isEmergencyPhoneNumber fail, data->${JSON.stringify(data)}`);
             ExpectFail();
             done();
           }
@@ -598,7 +598,7 @@ export default function HasCard2PublicTest() {
             ExpectFail();
             done();
           } else {
-            console.info(`${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} isEmergencyPhoneNumber fail, data->${JSON.stringify(data)}`);
             ExpectFail();
             done();
           }
@@ -749,11 +749,11 @@ export default function HasCard2PublicTest() {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber3400';
       console.info(`${caseName} test start`);
       call.isEmergencyPhoneNumber("").then((data: boolean) => {
-        console.info(`${caseName} isEmergencyPhoneNumber,promise: data->${JSON.stringify(data)}`);
+        console.info(`${caseName} isEmergencyPhoneNumber fail, promise: data->${JSON.stringify(data)}`);
         ExpectFail();
         done();
       }).catch((err: BusinessError) => {
-        console.info(`${caseName} isEmergencyPhoneNumber fail,promise: err->${JSON.stringify(err)}`);
+        console.info(`${caseName} isEmergencyPhoneNumber, promise: err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 8300001);
         done();
       });
@@ -773,11 +773,11 @@ export default function HasCard2PublicTest() {
       console.info(`${caseName} test start`);
       try {
         call.isEmergencyPhoneNumber(undefined).then((data: boolean) => {
-          console.info(`${caseName} isEmergencyPhoneNumber,promise: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} isEmergencyPhoneNumber fail, promise: data->${JSON.stringify(data)}`);
           ExpectFail();
           done();
         }).catch((err: BusinessError) => {
-          console.info(`${caseName} isEmergencyPhoneNumber fail,promise: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} isEmergencyPhoneNumber fail, promise: err->${JSON.stringify(err)}`);
           ExpectFail();
           done();
         });
@@ -803,11 +803,11 @@ export default function HasCard2PublicTest() {
       console.info(`${caseName} test start`);
       try {
         call.isEmergencyPhoneNumber(null).then((data: boolean) => {
-          console.info(`${caseName} isEmergencyPhoneNumber,promise: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} isEmergencyPhoneNumber fail, promise: data->${JSON.stringify(data)}`);
           ExpectFail();
           done();
         }).catch((err: BusinessError) => {
-          console.info(`${caseName} isEmergencyPhoneNumber fail,promise: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} isEmergencyPhoneNumber fail, promise: err->${JSON.stringify(err)}`);
           ExpectFail();
           done();
         });
@@ -1387,11 +1387,11 @@ export default function HasCard2PublicTest() {
       try {
         call.formatPhoneNumber("", options, (err: BusinessError, data: string) => {
           if (err) {
-            console.info(`${caseName} formatPhoneNumber fail, err->${JSON.stringify(err)}`);
+            console.info(`${caseName} formatPhoneNumber success, err->${JSON.stringify(err)}`);
             ExpectTrue(err.code == 8300001);
             done();
           } else {
-            console.info(`${caseName} formatPhoneNumber finish + ${JSON.stringify(data)}`);
+            console.info(`${caseName} formatPhoneNumber fail, data-> ${JSON.stringify(data)}`);
             ExpectFail();
             done();
           }
@@ -1425,13 +1425,13 @@ export default function HasCard2PublicTest() {
             ExpectFail();
             done();
           } else {
-            console.info(`${caseName} formatPhoneNumber finish + ${JSON.stringify(data)}`);
+            console.info(`${caseName} formatPhoneNumber fail, data-> ${JSON.stringify(data)}`);
             ExpectFail();
             done();
           }
         });
       } catch (err) {
-        console.info(`${caseName}  fail, err->${JSON.stringify(err)}`);
+        console.info(`${caseName}  success, err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
         done();
       }
@@ -1456,7 +1456,7 @@ export default function HasCard2PublicTest() {
             ExpectFail();
             done();
           } else {
-            console.info(`${caseName} formatPhoneNumber finish + ${JSON.stringify(data)}`);
+            console.info(`${caseName} formatPhoneNumber fail, data-> ${JSON.stringify(data)}`);
             ExpectFail();
             done();
           }
@@ -1483,17 +1483,17 @@ export default function HasCard2PublicTest() {
       try {
         call.formatPhoneNumber(undefined, (err: BusinessError, data: string) => {
           if (err) {
-            console.info(`${caseName} formatPhoneNumber fail, err = ${JSON.stringify(err)}`);
+            console.info(`${caseName} formatPhoneNumber fail, err-> ${JSON.stringify(err)}`);
             ExpectFail();
             done();
           } else {
-            console.info(`${caseName} formatPhoneNumber finish, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} formatPhoneNumber fail, data->${JSON.stringify(data)}`);
             ExpectFail();
             done();
           }
         });
       } catch (err) {
-        console.info(`${caseName}  fail, err->${JSON.stringify(err)}`);
+        console.info(`${caseName}  success, err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
         done();
       }
@@ -1521,13 +1521,13 @@ export default function HasCard2PublicTest() {
             ExpectFail();
             done();
           } else {
-            console.info(`${caseName} formatPhoneNumber finish + ${JSON.stringify(data)}`);
+            console.info(`${caseName} formatPhoneNumber fail, data->${JSON.stringify(data)}`);
             ExpectFail();
             done();
           }
         });
       } catch (err) {
-        console.info(`${caseName}  fail, err->${JSON.stringify(err)}`);
+        console.info(`${caseName}  success, err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
         done();
       }
