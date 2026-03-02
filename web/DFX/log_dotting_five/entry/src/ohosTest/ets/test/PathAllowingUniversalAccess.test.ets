@@ -131,17 +131,17 @@ export default function setPathAllowingUniversalAccessTest() {
       });
 
     /**
-     * @tc.name   testSetPathAllowingUniversalAccess003
+     * @tc.name   testPathAllowingUniversalAccess003
      * @tc.number SUB_WEB_SETPATHALLOWINGUNIVERSALACCESS_0300
      * @tc.desc   test setPathAllowingUniversalAccess with empty array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetPathAllowingUniversalAccess003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPathAllowingUniversalAccess003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        let emitKey = 'testSetPathAllowingUniversalAccess003';
-        let tcName = 'testSetPathAllowingUniversalAccess003';
+        let emitKey = 'testPathAllowingUniversalAccess003';
+        let tcName = 'testPathAllowingUniversalAccess003';
         let isReturn = false;
         Utils.emitEvent(emitKey, 119060);
         Utils.registerEvent(tcName, '17100003', 119090, () => {
