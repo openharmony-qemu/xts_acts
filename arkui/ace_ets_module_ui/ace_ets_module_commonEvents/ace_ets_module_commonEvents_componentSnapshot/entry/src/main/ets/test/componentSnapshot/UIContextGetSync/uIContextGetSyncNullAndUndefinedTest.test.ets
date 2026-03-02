@@ -44,6 +44,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
     });
 
+    /**
+     * @tc.name   getSyncIdEmptyV12001
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_001
+     * @tc.desc   Test UIContext getSync with empty id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncIdEmptyV12001', Level.LEVEL0, async () => {
       console.info('[getSyncIdEmptyV12001] START');
       let driver: Driver = Driver.create();
@@ -59,6 +67,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncIdEmptyV12001] END');
     });
 
+    /**
+     * @tc.name   getSyncIdNullV12002
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_002
+     * @tc.desc   Test UIContext getSync with null id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncIdNullV12002', Level.LEVEL0, async () => {
       console.info('[getSyncIdNullV12002] START');
       let driver: Driver = Driver.create();
@@ -74,6 +90,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncIdNullV12002] END');
     });
 
+    /**
+     * @tc.name   getSyncIdUndefinedV12003
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_003
+     * @tc.desc   Test UIContext getSync with undefined id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncIdUndefinedV12003', Level.LEVEL0, async () => {
       console.info('[getSyncIdUndefinedV12003] START');
       let driver: Driver = Driver.create();
@@ -89,6 +113,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncIdUndefinedV12003] END');
     });
 
+    /**
+     * @tc.name   getSyncOptionsNullV12004
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_004
+     * @tc.desc   Test UIContext getSync with null options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncOptionsNullV12004', Level.LEVEL0, async () => {
       console.info('[getSyncOptionsNullV12004] START');
       let driver: Driver = Driver.create();
@@ -104,6 +136,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncOptionsNullV12004] END');
     });
 
+    /**
+     * @tc.name   getSyncOptionsUndefinedV12005
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_005
+     * @tc.desc   Test UIContext getSync with undefined options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncOptionsUndefinedV12005', Level.LEVEL0, async () => {
       console.info('[getSyncOptionsUndefinedV12005] START');
       let driver: Driver = Driver.create();
@@ -119,6 +159,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncOptionsUndefinedV12005] END');
     });
 
+    /**
+     * @tc.name   getSyncColorSpaceUNKNOWNV23001
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_006
+     * @tc.desc   Test UIContext getSync with ColorSpace.UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncColorSpaceUNKNOWNV23001', Level.LEVEL0, async () => {
       console.info('[getSyncColorSpaceUNKNOWNV23001] START');
       let driver: Driver = Driver.create();
@@ -134,6 +182,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncColorSpaceUNKNOWNV23001] END');
     });
 
+    /**
+     * @tc.name   getSyncColorSpaceDISPLAYP3V23004
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_007
+     * @tc.desc   Test UIContext getSync with ColorSpace.DISPLAY_P3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncColorSpaceDISPLAYP3V23004', Level.LEVEL0, async () => {
       console.info('[getSyncColorSpaceDISPLAYP3V23004] START');
       let driver: Driver = Driver.create();
@@ -149,6 +205,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncColorSpaceDISPLAYP3V23004] END');
     });
 
+    /**
+     * @tc.name   getSyncColorSpaceSRGBV23005
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_008
+     * @tc.desc   Test UIContext getSync with ColorSpace.SRGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncColorSpaceSRGBV23005', Level.LEVEL0, async () => {
       console.info('[getSyncColorSpaceSRGBV23005] START');
       let driver: Driver = Driver.create();
@@ -164,6 +228,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncColorSpaceSRGBV23005] END');
     });
 
+    /**
+     * @tc.name   getSyncColorModeIsAutoTrueV23014
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_009
+     * @tc.desc   Test UIContext getSync with colorMode isAuto set to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncColorModeIsAutoTrueV23014', Level.LEVEL0, async () => {
       console.info('[getSyncColorModeIsAutoTrueV23014] START');
       let driver: Driver = Driver.create();
@@ -179,6 +251,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncColorModeIsAutoTrueV23014] END');
     });
 
+    /**
+     * @tc.name   getSyncColorModeIsAutoFalseV23015
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_010
+     * @tc.desc   Test UIContext getSync with colorMode isAuto set to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncColorModeIsAutoFalseV23015', Level.LEVEL0, async () => {
       console.info('[getSyncColorModeIsAutoFalseV23015] START');
       let driver: Driver = Driver.create();
@@ -194,6 +274,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncColorModeIsAutoFalseV23015] END');
     });
 
+    /**
+     * @tc.name   getSyncDynamicRangeModeHIGHV23016
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_011
+     * @tc.desc   Test UIContext getSync with DynamicRangeMode.HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncDynamicRangeModeHIGHV23016', Level.LEVEL0, async () => {
       console.info('[getSyncDynamicRangeModeHIGHV23016] START');
       let driver: Driver = Driver.create();
@@ -209,6 +297,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncDynamicRangeModeHIGHV23016] END');
     });
 
+    /**
+     * @tc.name   getSyncDynamicRangeModeCONSTRAINTV23017
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_012
+     * @tc.desc   Test UIContext getSync with DynamicRangeMode.CONSTRAINT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncDynamicRangeModeCONSTRAINTV23017', Level.LEVEL0, async () => {
       console.info('[getSyncDynamicRangeModeCONSTRAINTV23017] START');
       let driver: Driver = Driver.create();
@@ -224,6 +320,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncDynamicRangeModeCONSTRAINTV23017] END');
     });
 
+    /**
+     * @tc.name   getSyncDynamicRangeModeSTANDARDV23018
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_013
+     * @tc.desc   Test UIContext getSync with DynamicRangeMode.STANDARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncDynamicRangeModeSTANDARDV23018', Level.LEVEL0, async () => {
       console.info('[getSyncDynamicRangeModeSTANDARDV23018] START');
       let driver: Driver = Driver.create();
@@ -239,6 +343,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncDynamicRangeModeSTANDARDV23018] END');
     });
 
+    /**
+     * @tc.name   getSyncDynamicRangeModeIsAutoTrueV23019
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_014
+     * @tc.desc   Test UIContext getSync with dynamicRangeMode isAuto set to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncDynamicRangeModeIsAutoTrueV23019', Level.LEVEL0, async () => {
       console.info('[getSyncDynamicRangeModeIsAutoTrueV23019] START');
       let driver: Driver = Driver.create();
@@ -254,6 +366,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncDynamicRangeModeIsAutoTrueV23019] END');
     });
 
+    /**
+     * @tc.name   getSyncDynamicRangeModeIsAutoFalseV23020
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_015
+     * @tc.desc   Test UIContext getSync with dynamicRangeMode isAuto set to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncDynamicRangeModeIsAutoFalseV23020', Level.LEVEL0, async () => {
       console.info('[getSyncDynamicRangeModeIsAutoFalseV23020] START');
       let driver: Driver = Driver.create();
@@ -269,6 +389,14 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
       console.info('[getSyncDynamicRangeModeIsAutoFalseV23020] END');
     });
 
+    /**
+     * @tc.name   getSyncColorSpaceDISPLAYP3LIMITV23022
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETSYNC_PARAM_016
+     * @tc.desc   Test UIContext getSync with ColorSpace.DISPLAY_P3 with limit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSyncColorSpaceDISPLAYP3LIMITV23022', Level.LEVEL0, async () => {
       console.info('[getSyncColorSpaceDISPLAYP3LIMITV23022] START');
       let driver: Driver = Driver.create();

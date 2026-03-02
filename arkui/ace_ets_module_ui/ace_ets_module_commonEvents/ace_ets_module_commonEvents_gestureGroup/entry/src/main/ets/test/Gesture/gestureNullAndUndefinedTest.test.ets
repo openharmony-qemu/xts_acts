@@ -45,6 +45,14 @@ export default function gestureNullAndUndefined() {
       console.info("gestureNullAndUndefined after each called");
     });
 
+    /**
+     * @tc.name   gestureNullV11001
+     * @tc.number SUB_ARKUI_COMMONMETHOD_GESTURE_PARAM_001
+     * @tc.desc   Test gesture with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureNullV11001', Level.LEVEL0, async () => {
       console.info('[gestureNullV11001] START');
       let driver: Driver = Driver.create();
@@ -59,6 +67,14 @@ export default function gestureNullAndUndefined() {
       console.info('[gestureNullV11001] END');
     });
 
+    /**
+     * @tc.name   gestureUndefinedV11002
+     * @tc.number SUB_ARKUI_COMMONMETHOD_GESTURE_PARAM_002
+     * @tc.desc   Test gesture with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureUndefinedV11002', Level.LEVEL0, async () => {
       console.info('[gestureUndefinedV11002] START');
       let driver: Driver = Driver.create();
@@ -73,6 +89,14 @@ export default function gestureNullAndUndefined() {
       console.info('[gestureUndefinedV11002] END');
     });
 
+    /**
+     * @tc.name   gestureMaskNullV11003
+     * @tc.number SUB_ARKUI_COMMONMETHOD_GESTURE_PARAM_003
+     * @tc.desc   Test gesture with null mask parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureMaskNullV11003', Level.LEVEL0, async () => {
       console.info('[gestureMaskNullV11003] START');
       let driver: Driver = Driver.create();
@@ -87,6 +111,14 @@ export default function gestureNullAndUndefined() {
       console.info('[gestureMaskNullV11003] END');
     });
 
+    /**
+     * @tc.name   gestureMaskUndefinedV11004
+     * @tc.number SUB_ARKUI_COMMONMETHOD_GESTURE_PARAM_004
+     * @tc.desc   Test gesture with undefined mask parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureMaskUndefinedV11004', Level.LEVEL0, async () => {
       console.info('[gestureMaskUndefinedV11004] START');
       let driver: Driver = Driver.create();

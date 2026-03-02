@@ -45,6 +45,14 @@ export default function zIndexNullAndUndefined() {
       console.info("zIndexNullAndUndefined after each called");
     });
 
+    /**
+     * @tc.name   zIndexNullV11001
+     * @tc.number SUB_ARKUI_COMMONMETHOD_ZINDEX_PARAM_001
+     * @tc.desc   Test zIndex with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('zIndexNullV11001', Level.LEVEL0, async () => {
       console.info('[zIndexNullV11001] START');
       let driver: Driver = Driver.create();
@@ -56,6 +64,14 @@ export default function zIndexNullAndUndefined() {
       console.info('[zIndexNullV11001] END');
     });
 
+    /**
+     * @tc.name   zIndexUndefinedV11002
+     * @tc.number SUB_ARKUI_COMMONMETHOD_ZINDEX_PARAM_002
+     * @tc.desc   Test zIndex with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('zIndexUndefinedV11002', Level.LEVEL0, async () => {
       console.info('[zIndexUndefinedV11002] START');
       let driver: Driver = Driver.create();

@@ -44,6 +44,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
     });
 
+    /**
+     * @tc.name   getIdEmptyV15001
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_001
+     * @tc.desc   Test UIContext get with empty id using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getIdEmptyV15001', Level.LEVEL0, async () => {
       console.info('[getIdEmptyV15001] START');
       let driver: Driver = Driver.create();
@@ -59,6 +67,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getIdEmptyV15001] END');
     });
 
+    /**
+     * @tc.name   getOptionsNullV15004
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_002
+     * @tc.desc   Test UIContext get with null options using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getOptionsNullV15004', Level.LEVEL0, async () => {
       console.info('[getOptionsNullV15004] START');
       let driver: Driver = Driver.create();
@@ -74,6 +90,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getOptionsNullV15004] END');
     });
 
+    /**
+     * @tc.name   getOptionsUndefinedV15005
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_003
+     * @tc.desc   Test UIContext get with undefined options using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getOptionsUndefinedV15005', Level.LEVEL0, async () => {
       console.info('[getOptionsUndefinedV15005] START');
       let driver: Driver = Driver.create();
@@ -89,6 +113,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getOptionsUndefinedV15005] END');
     });
 
+    /**
+     * @tc.name   getWaitTrueV15006
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_004
+     * @tc.desc   Test UIContext get with wait set to true using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getWaitTrueV15006', Level.LEVEL0, async () => {
       console.info('[getWaitTrueV15006] START');
       let driver: Driver = Driver.create();
@@ -104,6 +136,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getWaitTrueV15006] END');
     });
 
+    /**
+     * @tc.name   getWaitFalseV15007
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_005
+     * @tc.desc   Test UIContext get with wait set to false using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getWaitFalseV15007', Level.LEVEL0, async () => {
       console.info('[getWaitFalseV15007] START');
       let driver: Driver = Driver.create();
@@ -119,6 +159,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getWaitFalseV15007] END');
     });
 
+    /**
+     * @tc.name   getColorSpaceUNKNOWNV23001
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_006
+     * @tc.desc   Test UIContext get with ColorSpace.UNKNOWN using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorSpaceUNKNOWNV23001', Level.LEVEL0, async () => {
       console.info('[getColorSpaceUNKNOWNV23001] START');
       let driver: Driver = Driver.create();
@@ -134,6 +182,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getColorSpaceUNKNOWNV23001] END');
     });
 
+    /**
+     * @tc.name   getColorSpaceADOBERGB1998V23002
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_007
+     * @tc.desc   Test UIContext get with ColorSpace.ADOBE_RGB_1998 using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorSpaceADOBERGB1998V23002', Level.LEVEL0, async () => {
       console.info('[getColorSpaceADOBERGB1998V23002] START');
       let driver: Driver = Driver.create();
@@ -149,6 +205,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getColorSpaceADOBERGB1998V23002] END');
     });
 
+    /**
+     * @tc.name   getColorSpaceDISPLAYP3V23004
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_008
+     * @tc.desc   Test UIContext get with ColorSpace.DISPLAY_P3 using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorSpaceDISPLAYP3V23004', Level.LEVEL0, async () => {
       console.info('[getColorSpaceDISPLAYP3V23004] START');
       let driver: Driver = Driver.create();
@@ -164,6 +228,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getColorSpaceDISPLAYP3V23004] END');
     });
 
+    /**
+     * @tc.name   getColorSpaceSRGBV23005
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_009
+     * @tc.desc   Test UIContext get with ColorSpace.SRGB using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorSpaceSRGBV23005', Level.LEVEL0, async () => {
       console.info('[getColorSpaceSRGBV23005] START');
       let driver: Driver = Driver.create();
@@ -179,6 +251,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getColorSpaceSRGBV23005] END');
     });
 
+    /**
+     * @tc.name   getColorModeIsAutoTrueV23014
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_010
+     * @tc.desc   Test UIContext get with colorMode isAuto set to true using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorModeIsAutoTrueV23014', Level.LEVEL0, async () => {
       console.info('[getColorModeIsAutoTrueV23014] START');
       let driver: Driver = Driver.create();
@@ -194,6 +274,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getColorModeIsAutoTrueV23014] END');
     });
 
+    /**
+     * @tc.name   getColorModeIsAutoFalseV23015
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_011
+     * @tc.desc   Test UIContext get with colorMode isAuto set to false using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorModeIsAutoFalseV23015', Level.LEVEL0, async () => {
       console.info('[getColorModeIsAutoFalseV23015] START');
       let driver: Driver = Driver.create();
@@ -209,6 +297,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getColorModeIsAutoFalseV23015] END');
     });
 
+    /**
+     * @tc.name   getDynamicRangeModeHIGHV23016
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_012
+     * @tc.desc   Test UIContext get with DynamicRangeMode.HIGH using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDynamicRangeModeHIGHV23016', Level.LEVEL0, async () => {
       console.info('[getDynamicRangeModeHIGHV23016] START');
       let driver: Driver = Driver.create();
@@ -224,6 +320,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getDynamicRangeModeHIGHV23016] END');
     });
 
+    /**
+     * @tc.name   getDynamicRangeModeCONSTRAINTV23017
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_013
+     * @tc.desc   Test UIContext get with DynamicRangeMode.CONSTRAINT using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDynamicRangeModeCONSTRAINTV23017', Level.LEVEL0, async () => {
       console.info('[getDynamicRangeModeCONSTRAINTV23017] START');
       let driver: Driver = Driver.create();
@@ -239,6 +343,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getDynamicRangeModeCONSTRAINTV23017] END');
     });
 
+    /**
+     * @tc.name   getDynamicRangeModeSTANDARDV23018
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_014
+     * @tc.desc   Test UIContext get with DynamicRangeMode.STANDARD using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDynamicRangeModeSTANDARDV23018', Level.LEVEL0, async () => {
       console.info('[getDynamicRangeModeSTANDARDV23018] START');
       let driver: Driver = Driver.create();
@@ -254,6 +366,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getDynamicRangeModeSTANDARDV23018] END');
     });
 
+    /**
+     * @tc.name   getDynamicRangeModeIsAutoTrueV23019
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_015
+     * @tc.desc   Test UIContext get with dynamicRangeMode isAuto set to true using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDynamicRangeModeIsAutoTrueV23019', Level.LEVEL0, async () => {
       console.info('[getDynamicRangeModeIsAutoTrueV23019] START');
       let driver: Driver = Driver.create();
@@ -269,6 +389,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getDynamicRangeModeIsAutoTrueV23019] END');
     });
 
+    /**
+     * @tc.name   getDynamicRangeModeIsAutoFalseV23020
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_016
+     * @tc.desc   Test UIContext get with dynamicRangeMode isAuto set to false using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDynamicRangeModeIsAutoFalseV23020', Level.LEVEL0, async () => {
       console.info('[getDynamicRangeModeIsAutoFalseV23020] START');
       let driver: Driver = Driver.create();
@@ -284,6 +412,14 @@ export default function uIContextGetPromiseNullAndUndefinedTest() {
       console.info('[getDynamicRangeModeIsAutoFalseV23020] END');
     });
 
+    /**
+     * @tc.name   getColorSpaceDISPLAYP3LIMITV23022
+     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_UICONTEXT_GETPROMISE_PARAM_017
+     * @tc.desc   Test UIContext get with ColorSpace.DISPLAY_P3 with limit using promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorSpaceDISPLAYP3LIMITV23022', Level.LEVEL0, async () => {
       console.info('[getColorSpaceDISPLAYP3LIMITV23022] START');
       let driver: Driver = Driver.create();

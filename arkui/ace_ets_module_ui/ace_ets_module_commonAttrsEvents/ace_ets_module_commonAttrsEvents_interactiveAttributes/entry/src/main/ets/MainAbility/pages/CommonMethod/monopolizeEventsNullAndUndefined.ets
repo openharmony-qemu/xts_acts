@@ -33,7 +33,7 @@ struct CommonMethodMonopolizeEventsNullAndUndefined {
           .backgroundColor(Color.Blue)
           .onTouch((event: TouchEvent)=>{
             if (event.type == TouchType.Down) {
-              console.log("inner column touch down")
+              console.log('inner column touch down')
             }
           })
         Column()
@@ -44,7 +44,7 @@ struct CommonMethodMonopolizeEventsNullAndUndefined {
           .backgroundColor(Color.Blue)
           .onTouch((event: TouchEvent)=>{
             if (event.type == TouchType.Down) {
-              console.log("inner column touch down")
+              console.log('inner column touch down')
             }
           })
       }

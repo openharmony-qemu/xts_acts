@@ -24,8 +24,8 @@ struct CommonMethodOnVisibleAreaApproximateChangeNullAndUndefined {
   build() {
     Column() {
       Column() {
-        Text(this.testTextStr).id("onVisibleAreaApproximateChange_column_id")
-        Text(this.testRowStr).id("onVisibleAreaApproximateChange_row_id")
+        Text(this.testTextStr).id('onVisibleAreaApproximateChange_column_id')
+        Text(this.testRowStr).id('onVisibleAreaApproximateChange_row_id')
       }
       .height('10%')
       .backgroundColor(Color.Gray)
@@ -33,7 +33,7 @@ struct CommonMethodOnVisibleAreaApproximateChangeNullAndUndefined {
 
       Scroll(this.scroller) {
         Column() {
-          Text("Test Text Visible Change")
+          Text('Test Text Visible Change')
             .height('30%')
             .backgroundColor(Color.Green)
             .onVisibleAreaApproximateChange({ ratios: [], expectedUpdateInterval: 1000 },
@@ -49,7 +49,7 @@ struct CommonMethodOnVisibleAreaApproximateChangeNullAndUndefined {
                   this.testTextStr = 'Test Text is completely invisible'
                 }
               })
-          Text("Test Text Visible Change")
+          Text('Test Text Visible Change')
             .height('30%')
             .backgroundColor(Color.Green)
             .onVisibleAreaApproximateChange(null,
@@ -65,7 +65,7 @@ struct CommonMethodOnVisibleAreaApproximateChangeNullAndUndefined {
                   this.testTextStr = 'Test Text is completely invisible'
                 }
               })
-          Text("Test Text Visible Change")
+          Text('Test Text Visible Change')
             .height('30%')
             .backgroundColor(Color.Green)
             .onVisibleAreaApproximateChange(undefined,
@@ -81,12 +81,12 @@ struct CommonMethodOnVisibleAreaApproximateChangeNullAndUndefined {
                   this.testTextStr = 'Test Text is completely invisible'
                 }
               })
-          Text("Test Text Visible Change")
+          Text('Test Text Visible Change')
             .height('30%')
             .backgroundColor(Color.Green)
             .onVisibleAreaApproximateChange({ ratios: [0.0, 1.0], expectedUpdateInterval: 1000 },
               null)
-          Text("Test Text Visible Change")
+          Text('Test Text Visible Change')
             .height('30%')
             .backgroundColor(Color.Green)
             .onVisibleAreaApproximateChange({ ratios: [0.0, 1.0], expectedUpdateInterval: 1000 },

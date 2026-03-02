@@ -74,16 +74,16 @@ export default function commonMethodMonopolizeEventsNullAndUndefinedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('commonMethodMonopolizeEventsNullV1002', Level.LEVEL0, async (done: Function) => {
-      console.info('commonMethodMonopolizeEventsNullV1002 START');
+    it('commonMethodMonopolizeEventsUndefinedV1002', Level.LEVEL0, async (done: Function) => {
+      console.info('commonMethodMonopolizeEventsUndefinedV1002 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('monopolize_column2');
-      console.info("[commonMethodMonopolizeEventsNullV1002] component obj is: " + JSON.stringify(JSON.parse(strJson)));
-      console.info("[commonMethodMonopolizeEventsNullV1002] component obj.$attrs is: " + JSON.stringify(JSON.parse(strJson).$attrs));
-      console.info("[commonMethodMonopolizeEventsNullV1002] text: " + JSON.stringify(JSON.parse(strJson).$attrs.monopolizeEvents));
+      console.info("[commonMethodMonopolizeEventsUndefinedV1002] component obj is: " + JSON.stringify(JSON.parse(strJson)));
+      console.info("[commonMethodMonopolizeEventsUndefinedV1002] component obj.$attrs is: " + JSON.stringify(JSON.parse(strJson).$attrs));
+      console.info("[commonMethodMonopolizeEventsUndefinedV1002] text: " + JSON.stringify(JSON.parse(strJson).$attrs.monopolizeEvents));
       expect(JSON.parse(strJson).$attrs.monopolizeEvents).assertEqual(false);
-      console.info('[commonMethodMonopolizeEventsNullV1002] END');
+      console.info('[commonMethodMonopolizeEventsUndefinedV1002] END');
       done();
     });
   })

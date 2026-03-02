@@ -33,7 +33,7 @@ struct CommonMethodOnDragSpringLoadingNullAndUndefined {
           .height('5%')
           .backgroundColor('#008888')
         Image($r('app.media.app_icon'))
-          .id("ori_image")
+          .id('ori_image')
           .width('30%')
           .height('10%')
           .id('image')
@@ -56,12 +56,12 @@ struct CommonMethodOnDragSpringLoadingNullAndUndefined {
             .width('100%')
             .height('5%')
             .backgroundColor('#008888')
-            .id("text")
+            .id('text')
         }
         .width('45%')
         .height('20%')
         .onDragSpringLoading(null, this.config)
-        .id("column1")
+        .id('column1')
         .backgroundColor(Color.Grey)
 
         Column() {
@@ -69,12 +69,12 @@ struct CommonMethodOnDragSpringLoadingNullAndUndefined {
             .width('100%')
             .height('5%')
             .backgroundColor('#008888')
-            .id("text")
+            .id('text')
         }
         .width('45%')
         .height('20%')
         .onDragSpringLoading(undefined, this.config)
-        .id("column2")
+        .id('column2')
         .backgroundColor(Color.Grey)
 
         Column() {
@@ -82,7 +82,7 @@ struct CommonMethodOnDragSpringLoadingNullAndUndefined {
             .width('100%')
             .height('5%')
             .backgroundColor('#008888')
-            .id("text")
+            .id('text')
         }
         .width('45%')
         .height('20%')
@@ -90,7 +90,7 @@ struct CommonMethodOnDragSpringLoadingNullAndUndefined {
           this.state = context.state;
           this.currentNotifySequence = context.currentNotifySequence;
         }, null)
-        .id("column3")
+        .id('column3')
         .backgroundColor(Color.Grey)
 
         Column() {
@@ -98,7 +98,7 @@ struct CommonMethodOnDragSpringLoadingNullAndUndefined {
             .width('100%')
             .height('5%')
             .backgroundColor('#008888')
-            .id("text")
+            .id('text')
         }
         .width('45%')
         .height('20%')
@@ -106,7 +106,7 @@ struct CommonMethodOnDragSpringLoadingNullAndUndefined {
           this.state = context.state;
           this.currentNotifySequence = context.currentNotifySequence;
         }, undefined)
-        .id("column4")
+        .id('column4')
         .backgroundColor(Color.Grey)
       }
     }
