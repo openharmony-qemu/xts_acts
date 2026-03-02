@@ -168,7 +168,7 @@ import {
           try {
             let PRIKey: relationalStore.PRIKeyType[] = ['test_key1', 'test_key2'];
             hilog.info(domain, tag, 'RS0453 PRIKey: ' + JSON.stringify(PRIKey));
-            await rdbStore.getModifyTime('', 'num', PRIKey).then((data: relationalStore.ModifyTime) => {
+            await rdbStore!.getModifyTime('', 'num', PRIKey).then((data: relationalStore.ModifyTime) => {
               console.log(tag + ` modifyTime:` + JSON.stringify(data));
               expect().assertFail();
               done();
@@ -198,7 +198,7 @@ import {
         try {
           let PRIKey: relationalStore.PRIKeyType[] = ['test_key1', 'test_key2'];
           hilog.info(domain, tag, 'RS0453 PRIKey: ' + JSON.stringify(PRIKey));
-          await rdbStore.getModifyTime('cloud_integer', '', PRIKey).then((data: relationalStore.ModifyTime) => {
+          await rdbStore!.getModifyTime('cloud_integer', '', PRIKey).then((data: relationalStore.ModifyTime) => {
             console.log(tag + ` modifyTime:` + JSON.stringify(data));
             expect().assertFail();
             done();
@@ -227,7 +227,7 @@ import {
       async (done: () => void): Promise<void> => {
       console.log(tag + '************* testRdbStoreGetModifyTime0003 start *************');
       try {
-        await rdbStore.getModifyTime('cloud_text', 'num', []).then((data: relationalStore.ModifyTime) => {
+        await rdbStore!.getModifyTime('cloud_text', 'num', []).then((data: relationalStore.ModifyTime) => {
           console.log(tag + ` modifyTime:` + JSON.stringify(data));
           expect().assertFail();
           done();
@@ -255,7 +255,7 @@ import {
       async (done: () => void): Promise<void> => {
       console.log(tag + '************* testRdbStoreGetModifyTime0004 start *************');
       try {
-         rdbStore.getModifyTime('cloud_text', 'num', [], (err) => {
+         rdbStore!.getModifyTime('cloud_text', 'num', [], (err) => {
           if(err){
             console.log(tag + `get modify time fail, err code is ${err.code}, message is ${err.message}.`);
             expect(err.code).assertEqual(14800000);
@@ -283,7 +283,7 @@ import {
       console.log(tag + '************* testRdbStoreGetModifyTime0005 start *************');
       try {
         let PRIKey: relationalStore.PRIKeyType[] = ['test_key1', 'test_key2'];
-         rdbStore.getModifyTime('cloud_text', '', PRIKey, (err) => {
+         rdbStore!.getModifyTime('cloud_text', '', PRIKey, (err) => {
           if(err){
             console.log(tag + `get modify time fail, err code is ${err.code}, message is ${err.message}.`);
             expect(err.code).assertEqual(14800000);
@@ -311,7 +311,7 @@ import {
       console.log(tag + '************* testRdbStoreGetModifyTime0006 start *************');
       try {
         let PRIKey: relationalStore.PRIKeyType[] = ['test_key1', 'test_key2'];
-         rdbStore.getModifyTime('', 'num', PRIKey, (err) => {
+         rdbStore!.getModifyTime('', 'num', PRIKey, (err) => {
           if(err){
             console.log(tag + `get modify time fail, err code is ${err.code}, message is ${err.message}.`);
             expect(err.code).assertEqual(14800000);
@@ -340,7 +340,7 @@ import {
           try {
             let PRIKey: relationalStore.PRIKeyType[] = ['test_key1', 'test_key2'];
             hilog.info(domain, tag, 'RS0453 PRIKey: ' + JSON.stringify(PRIKey));
-             rdbStore.getModifyTime('cloud_text', 'num', PRIKey, (err, data) => {
+             rdbStore!.getModifyTime('cloud_text', 'num', PRIKey, (err, data) => {
               console.log(tag + ` modifyTime:` + JSON.stringify(data));
               expect(typeof(data) === "object").assertTrue()
               done();
@@ -366,7 +366,7 @@ import {
         async (done: () => void): Promise<void> => {
           console.log(tag + "************* testRdbRestore0002 start *************");
           try {
-            await rdbStore.restore("");
+            await rdbStore!.restore("");
             console.info("testRdbRestore0002 restore succeeded");
             expect().assertFail();
             done();
@@ -391,10 +391,17 @@ import {
       async (done: () => void): Promise<void> => {
         console.log(tag + "************* testRdbRestore0003 start *************");
         try {
-           rdbStore!.restore("", (err) => {
-            console.info("testRdbRestore0003 restore succeeded");
-            expect().assertFail();
-            done();
+           rdbStore!.restore("", (err: BusinessError|null) => {
+            if(err){
+              console.log(tag + `rdbStore.restore fail, errcode: ` + err.code);
+              expect(14800010).assertEqual(err.code);
+              done();
+            }else{
+              console.info("testRdbRestore0003 restore succeeded");
+              expect().assertFail();
+              done();
+            }
+         
            });
    
         } catch (err) {
