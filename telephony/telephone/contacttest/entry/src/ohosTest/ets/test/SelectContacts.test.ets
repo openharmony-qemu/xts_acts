@@ -114,6 +114,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts0100";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -159,6 +163,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts0200";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -204,6 +212,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts0300";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -249,6 +261,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts0400";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -294,6 +310,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts0500";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -339,6 +359,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts0600";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -384,6 +408,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts0700";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -435,6 +463,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts0800";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -486,6 +518,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts0900";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -537,6 +573,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts1000";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -591,6 +631,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts1100";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
@@ -645,6 +689,10 @@ export default function SelectContactsTest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSelectContacts1200";
       console.info(`${caseName} test start `);
+      if (!canIUse("SystemCapability.Applications.Contacts")) {
+        ExpectTrue();
+        done();
+      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let data: number = await contact.addContact(context, contactData);
