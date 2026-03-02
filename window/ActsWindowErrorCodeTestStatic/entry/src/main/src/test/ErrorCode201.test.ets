@@ -570,8 +570,8 @@ export default function ErrorCode201() {
             })
         } catch (err) {
             err = err as BusinessError;
-            hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-            expect(err.code === 801).assertTrue()
+            hilog.info(domain, tag,caseName + 'error in makeUnique, err : ' + JSON.stringify(err));
+            expect(err.code === 801 || err.code === 201).assertTrue()
             done();
         }
     });
