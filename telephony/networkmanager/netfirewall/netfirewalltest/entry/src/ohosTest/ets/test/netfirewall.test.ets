@@ -554,7 +554,7 @@ export default function netfirewallTest() {
           } else {
             ExpectFail();
           }
-          if (rule.domains != undefine) {
+          if (rule.domains != undefined) {
             ExpectTrue(rule.domains.length() != 0);
           }
           done();
