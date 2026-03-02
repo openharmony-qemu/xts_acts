@@ -623,17 +623,17 @@ export default function RdbErrorCode801() {
       })
 
        /**
-     * @tc.name RdbExecute801_002
-     * @tc.number RdbExecute801_002
+     * @tc.name RdbExecute801_003
+     * @tc.number RdbExecute801_003
      * @tc.desc 1. set isReadOnly as true
      *          2. open read-only database
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('RdbExecute801_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('RdbExecute801_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
-      console.info(TAG + "************* RdbExecute801_002 start *************");
+      console.info(TAG + "************* RdbExecute801_003 start *************");
 
       try {
         let textId = await rdbStoreMemory!.beginTrans()
@@ -641,10 +641,10 @@ export default function RdbErrorCode801() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG +
-          `RdbExecute801_002 execute is failed, code is ${err.code},message is ${err.message}`);
+          `RdbExecute801_003 execute is failed, code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(801);
       }
-      console.log(TAG + "************* RdbExecute801_002 end *************");
+      console.log(TAG + "************* RdbExecute801_003 end *************");
       done();
   })
 
