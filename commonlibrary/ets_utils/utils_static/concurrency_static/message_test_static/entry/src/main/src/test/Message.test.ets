@@ -618,7 +618,7 @@ export default function MessageTest() {
             console.log("worker one message");
             let currentWorkerId = EAWorker.current()!.getWorkerId();
             expect(currentWorkerId).assertEqual(workerId);
-          }, EAWorker.main());
+          });
           let message = new concurrency.Message(1, "handler workerID", handler)
           handler.sendMessage(message);
         } catch (error) {
