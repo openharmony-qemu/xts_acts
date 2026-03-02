@@ -1014,7 +1014,7 @@ static napi_value OriginAVScreenCaptureCallBackTest(napi_env env, napi_callback_
     screenCaptureCb = nullptr;
     napi_value res;
     OH_AVSCREEN_CAPTURE_ErrCode result;
-    if (result1 == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (screenCaptureResult == AV_SCREEN_CAPTURE_ERR_OK) {
         result = AV_SCREEN_CAPTURE_ERR_OK;
     } else {
         OH_LOG_INFO(LOG_APP, "init/start/stop failed, init: %d, start: %d", result1, result2);
