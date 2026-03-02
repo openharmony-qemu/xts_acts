@@ -112,9 +112,9 @@ export default function CloudDataErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('setCloudStrategyTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('setCloudStrategyTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: () => void): Promise<void> => {
-          console.info(TAG + "************* setCloudStrategyTest003 start *************");
+          console.info(TAG + "************* setCloudStrategyTest004 start *************");
           try {
             await cloudData.setCloudStrategy(cloudData.StrategyType.NETWORK, [cloudData.NetWorkStrategy.CELLULAR as Long])
               .then(() => {
@@ -128,11 +128,11 @@ export default function CloudDataErrorCode() {
                 done();
               });
           } catch (e: Error) {
-            console.error(TAG + `setCloudStrategyTest003 + ${e.code} + ${e.message}`);
+            console.error(TAG + `setCloudStrategyTest004 + ${e.code} + ${e.message}`);
             expect(false).assertTrue();
             done();
           }
-          console.info(TAG + "************* setCloudStrategyTest003 End *************");
+          console.info(TAG + "************* setCloudStrategyTest004 End *************");
         })
   })
 }
