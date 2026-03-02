@@ -26,12 +26,12 @@ export default function InterfaceNullValueOverrideTest() {
     });
 
     /**
-     * @tc.number   : getString_null_test_0100
-     * @tc.name     : getString_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getString_null_test_0100
+     * @tc.name    getString_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getString_null_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getString(null, (err: BusinessError, value: string) => {
@@ -47,12 +47,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getString_null_test_0200
-     * @tc.name     : getString_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getString_null_test_0200
+     * @tc.name    getString_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getString_null_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getString(null).then((value: string) => {
@@ -71,12 +71,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringValue_null_test_0100
-     * @tc.name     : getStringValue_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringValue_null_test_0100
+     * @tc.name    getStringValue_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringValue_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -98,12 +98,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringValue_null_test_0200
-     * @tc.name     : getStringValue_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringValue_null_test_0200
+     * @tc.name    getStringValue_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringValue_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -132,12 +132,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringArray_null_test_0100
-     * @tc.name     : getStringArray_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringArray_null_test_0100
+     * @tc.name    getStringArray_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringArray_null_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getStringArray(null, (err: BusinessError, value: Array<string>) => {
@@ -153,12 +153,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringArray_null_test_0200
-     * @tc.name     : getStringArray_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringArray_null_test_0200
+     * @tc.name    getStringArray_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringArray_null_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getStringArray(null).then((value: Array<string>) => {
@@ -177,12 +177,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayValue_null_test_0100
-     * @tc.name     : getStringArrayValue_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringArrayValue_null_test_0100
+     * @tc.name    getStringArrayValue_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringArrayValue_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -204,12 +204,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayValue_null_test_0200
-     * @tc.name     : getStringArrayValue_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringArrayValue_null_test_0200
+     * @tc.name    getStringArrayValue_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringArrayValue_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -238,12 +238,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMedia_null_test_0100
-     * @tc.name     : getMedia_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMedia_null_test_0100
+     * @tc.name    getMedia_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMedia_null_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getMedia(null, (err: BusinessError, value: Uint8Array) => {
@@ -259,12 +259,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMedia_null_test_0200
-     * @tc.name     : getMedia_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMedia_null_test_0200
+     * @tc.name    getMedia_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMedia_null_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getMedia(null).then((value: Uint8Array) => {
@@ -283,12 +283,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_null_test_0100
-     * @tc.name     : getMediaContent_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContent_null_test_0100
+     * @tc.name    getMediaContent_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContent_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -310,12 +310,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_null_test_0200
-     * @tc.name     : getMediaContent_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContent_null_test_0200
+     * @tc.name    getMediaContent_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContent_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -344,12 +344,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_null_test_0300
-     * @tc.name     : getMediaContent_null_test_0300
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContent_null_test_0300
+     * @tc.name    getMediaContent_null_test_0300
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContent_null_test_0300', Level.LEVEL3, async (done: Function) => {
       try {
@@ -371,12 +371,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_null_test_0400
-     * @tc.name     : getMediaContent_null_test_0400
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContent_null_test_0400
+     * @tc.name    getMediaContent_null_test_0400
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContent_null_test_0400', Level.LEVEL3, async (done: Function) => {
       try {
@@ -405,12 +405,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_null_test_0500
-     * @tc.name     : getMediaContent_null_test_0500
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContent_null_test_0500
+     * @tc.name    getMediaContent_null_test_0500
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContent_null_test_0500', Level.LEVEL3, async (done: Function) => {
       try {
@@ -436,12 +436,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_null_test_0600
-     * @tc.name     : getMediaContent_null_test_0600
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContent_null_test_0600
+     * @tc.name    getMediaContent_null_test_0600
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContent_null_test_0600', Level.LEVEL3, async (done: Function) => {
       try {
@@ -475,12 +475,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_null_test_0700
-     * @tc.name     : getMediaContent_null_test_0700
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContent_null_test_0700
+     * @tc.name    getMediaContent_null_test_0700
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContent_null_test_0700', Level.LEVEL3, async (done: Function) => {
       try {
@@ -502,12 +502,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_null_test_0800
-     * @tc.name     : getMediaContent_null_test_0800
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContent_null_test_0800
+     * @tc.name    getMediaContent_null_test_0800
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContent_null_test_0800', Level.LEVEL3, async (done: Function) => {
       try {
@@ -537,12 +537,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64_null_test_0100
-     * @tc.name     : getMediaBase64_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaBase64_null_test_0100
+     * @tc.name    getMediaBase64_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaBase64_null_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getMediaBase64(null, (err: BusinessError, value: string) => {
@@ -558,12 +558,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64_null_test_0200
-     * @tc.name     : getMediaBase64_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaBase64_null_test_0200
+     * @tc.name    getMediaBase64_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaBase64_null_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getMediaBase64(null).then((value: string) => {
@@ -582,12 +582,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_null_test_0100
-     * @tc.name     : getMediaContentBase64_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContentBase64_null_test_0100
+     * @tc.name    getMediaContentBase64_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContentBase64_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -609,12 +609,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_null_test_0200
-     * @tc.name     : getMediaContentBase64_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContentBase64_null_test_0200
+     * @tc.name    getMediaContentBase64_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContentBase64_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -643,12 +643,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_null_test_0300
-     * @tc.name     : getMediaContentBase64_null_test_0300
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContentBase64_null_test_0300
+     * @tc.name    getMediaContentBase64_null_test_0300
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContentBase64_null_test_0300', Level.LEVEL3, async (done: Function) => {
       try {
@@ -670,12 +670,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_null_test_0400
-     * @tc.name     : getMediaContentBase64_null_test_0400
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContentBase64_null_test_0400
+     * @tc.name    getMediaContentBase64_null_test_0400
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContentBase64_null_test_0400', Level.LEVEL3, async (done: Function) => {
       try {
@@ -704,12 +704,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_null_test_0500
-     * @tc.name     : getMediaContentBase64_null_test_0500
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContentBase64_null_test_0500
+     * @tc.name    getMediaContentBase64_null_test_0500
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContentBase64_null_test_0500', Level.LEVEL3, async (done: Function) => {
       try {
@@ -735,12 +735,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_null_test_0600
-     * @tc.name     : getMediaContentBase64_null_test_0600
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContentBase64_null_test_0600
+     * @tc.name    getMediaContentBase64_null_test_0600
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContentBase64_null_test_0600', Level.LEVEL3, async (done: Function) => {
       try {
@@ -774,12 +774,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_null_test_0700
-     * @tc.name     : getMediaContentBase64_null_test_0700
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContentBase64_null_test_0700
+     * @tc.name    getMediaContentBase64_null_test_0700
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContentBase64_null_test_0700', Level.LEVEL3, async (done: Function) => {
       try {
@@ -801,12 +801,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_null_test_0800
-     * @tc.name     : getMediaContentBase64_null_test_0800
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaContentBase64_null_test_0800
+     * @tc.name    getMediaContentBase64_null_test_0800
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaContentBase64_null_test_0800', Level.LEVEL3, async (done: Function) => {
       try {
@@ -836,12 +836,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralString_null_test_0100
-     * @tc.name     : getPluralString_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralString_null_test_0100
+     * @tc.name    getPluralString_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralString_null_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getPluralString(null, 1, (err: BusinessError, value: string) => {
@@ -857,12 +857,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralString_null_test_0200
-     * @tc.name     : getPluralString_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralString_null_test_0200
+     * @tc.name    getPluralString_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralString_null_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getPluralString(null, 1).then((value: string) => {
@@ -881,12 +881,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralString_null_test_0300
-     * @tc.name     : getPluralString_null_test_0300
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralString_null_test_0300
+     * @tc.name    getPluralString_null_test_0300
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralString_null_test_0300', Level.LEVEL3, async (done: Function) => {
       try {
@@ -908,12 +908,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralString_null_test_0400
-     * @tc.name     : getPluralString_null_test_0400
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralString_null_test_0400
+     * @tc.name    getPluralString_null_test_0400
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralString_null_test_0400', Level.LEVEL3, async (done: Function) => {
       try {
@@ -942,12 +942,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_null_test_0100
-     * @tc.name     : getPluralStringValue_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralStringValue_null_test_0100
+     * @tc.name    getPluralStringValue_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralStringValue_null_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue(null, 1, (err: BusinessError, value: string) => {
@@ -963,12 +963,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_null_test_0200
-     * @tc.name     : getPluralStringValue_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralStringValue_null_test_0200
+     * @tc.name    getPluralStringValue_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralStringValue_null_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue(null, 1).then((value: string) => {
@@ -987,12 +987,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_null_test_0300
-     * @tc.name     : getPluralStringValue_null_test_0300
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralStringValue_null_test_0300
+     * @tc.name    getPluralStringValue_null_test_0300
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralStringValue_null_test_0300', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1014,12 +1014,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_null_test_0400
-     * @tc.name     : getPluralStringValue_null_test_0400
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralStringValue_null_test_0400
+     * @tc.name    getPluralStringValue_null_test_0400
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralStringValue_null_test_0400', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1048,12 +1048,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getRawFile_null_test_0100
-     * @tc.name     : getRawFile_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFile_null_test_0100
+     * @tc.name    getRawFile_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFile_null_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getRawFile(null, (err: BusinessError, value: Uint8Array) => {
@@ -1069,12 +1069,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getRawFile_null_test_0200
-     * @tc.name     : getRawFile_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFile_null_test_0200
+     * @tc.name    getRawFile_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFile_null_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getRawFile(null).then((value: Uint8Array) => {
@@ -1093,12 +1093,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getRawFileDescriptor_null_test_0100
-     * @tc.name     : getRawFileDescriptor_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFileDescriptor_null_test_0100
+     * @tc.name    getRawFileDescriptor_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFileDescriptor_null_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getRawFileDescriptor(null, (err: BusinessError, value: resourceManager.RawFileDescriptor) => {
@@ -1114,12 +1114,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getRawFileDescriptor_null_test_0200
-     * @tc.name     : getRawFileDescriptor_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFileDescriptor_null_test_0200
+     * @tc.name    getRawFileDescriptor_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFileDescriptor_null_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getRawFileDescriptor(null).then((value: resourceManager.RawFileDescriptor) => {
@@ -1138,12 +1138,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : closeRawFileDescriptor_null_test_0100
-     * @tc.name     : closeRawFileDescriptor_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  closeRawFileDescriptor_null_test_0100
+     * @tc.name    closeRawFileDescriptor_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('closeRawFileDescriptor_null_test_0100', Level.LEVEL3, async (done: Function) => {
       res.closeRawFileDescriptor(null, (err: BusinessError) => {
@@ -1158,12 +1158,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : closeRawFileDescriptor_null_test_0200
-     * @tc.name     : closeRawFileDescriptor_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  closeRawFileDescriptor_null_test_0200
+     * @tc.name    closeRawFileDescriptor_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('closeRawFileDescriptor_null_test_0200', Level.LEVEL3, async (done: Function) => {
       res.closeRawFileDescriptor(null).then(() => {
@@ -1181,12 +1181,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringByName_null_test_0100
-     * @tc.name     : getStringByName_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringByName_null_test_0100
+     * @tc.name    getStringByName_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringByName_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1208,12 +1208,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringByName_null_test_0200
-     * @tc.name     : getStringByName_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringByName_null_test_0200
+     * @tc.name    getStringByName_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringByName_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1242,12 +1242,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayByName_null_test_0100
-     * @tc.name     : getStringArrayByName_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringArrayByName_null_test_0100
+     * @tc.name    getStringArrayByName_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringArrayByName_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1269,12 +1269,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayByName_null_test_0200
-     * @tc.name     : getStringArrayByName_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringArrayByName_null_test_0200
+     * @tc.name    getStringArrayByName_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringArrayByName_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1303,12 +1303,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaByName_null_test_0100
-     * @tc.name     : getMediaByName_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaByName_null_test_0100
+     * @tc.name    getMediaByName_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaByName_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1330,12 +1330,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaByName_null_test_0200
-     * @tc.name     : getMediaByName_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaByName_null_test_0200
+     * @tc.name    getMediaByName_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaByName_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1364,12 +1364,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaByName_null_test_0300
-     * @tc.name     : getMediaByName_null_test_0300
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaByName_null_test_0300
+     * @tc.name    getMediaByName_null_test_0300
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaByName_null_test_0300', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1391,12 +1391,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaByName_null_test_0400
-     * @tc.name     : getMediaByName_null_test_0400
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaByName_null_test_0400
+     * @tc.name    getMediaByName_null_test_0400
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaByName_null_test_0400', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1425,12 +1425,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaByName_null_test_0500
-     * @tc.name     : getMediaByName_null_test_0500
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaByName_null_test_0500
+     * @tc.name    getMediaByName_null_test_0500
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaByName_null_test_0500', Level.LEVEL3, async (done: Function) => {
       res.getMediaByName('app.media.icon', null, (err: BusinessError, value: Uint8Array) => {
@@ -1446,12 +1446,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaByName_null_test_0600
-     * @tc.name     : getMediaByName_null_test_0600
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaByName_null_test_0600
+     * @tc.name    getMediaByName_null_test_0600
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaByName_null_test_0600', Level.LEVEL3, async (done: Function) => {
       let Null: number | null = null;
@@ -1471,12 +1471,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64ByName_null_test_0100
-     * @tc.name     : getMediaBase64ByName_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaBase64ByName_null_test_0100
+     * @tc.name    getMediaBase64ByName_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaBase64ByName_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1498,12 +1498,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64ByName_null_test_0200
-     * @tc.name     : getMediaBase64ByName_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaBase64ByName_null_test_0200
+     * @tc.name    getMediaBase64ByName_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaBase64ByName_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1532,12 +1532,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64ByName_null_test_0300
-     * @tc.name     : getMediaBase64ByName_null_test_0300
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaBase64ByName_null_test_0300
+     * @tc.name    getMediaBase64ByName_null_test_0300
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaBase64ByName_null_test_0300', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1559,12 +1559,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64ByName_null_test_0400
-     * @tc.name     : getMediaBase64ByName_null_test_0400
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaBase64ByName_null_test_0400
+     * @tc.name    getMediaBase64ByName_null_test_0400
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaBase64ByName_null_test_0400', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1593,12 +1593,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64ByName_null_test_0500
-     * @tc.name     : getMediaBase64ByName_null_test_0500
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaBase64ByName_null_test_0500
+     * @tc.name    getMediaBase64ByName_null_test_0500
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaBase64ByName_null_test_0500', Level.LEVEL3, async (done: Function) => {
       res.getMediaBase64ByName('app.media.icon', null, (err: BusinessError, value: string) => {
@@ -1614,12 +1614,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64ByName_null_test_0600
-     * @tc.name     : getMediaBase64ByName_null_test_0600
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getMediaBase64ByName_null_test_0600
+     * @tc.name    getMediaBase64ByName_null_test_0600
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getMediaBase64ByName_null_test_0600', Level.LEVEL3, async (done: Function) => {
       let Null: number | null = null;
@@ -1639,12 +1639,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringByName_null_test_0100
-     * @tc.name     : getPluralStringByName_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralStringByName_null_test_0100
+     * @tc.name    getPluralStringByName_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralStringByName_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1666,12 +1666,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringByName_null_test_0200
-     * @tc.name     : getPluralStringByName_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralStringByName_null_test_0200
+     * @tc.name    getPluralStringByName_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralStringByName_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1700,12 +1700,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringByName_null_test_0300
-     * @tc.name     : getPluralStringByName_null_test_0300
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralStringByName_null_test_0300
+     * @tc.name    getPluralStringByName_null_test_0300
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralStringByName_null_test_0300', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1727,12 +1727,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringByName_null_test_0400
-     * @tc.name     : getPluralStringByName_null_test_0400
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getPluralStringByName_null_test_0400
+     * @tc.name    getPluralStringByName_null_test_0400
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getPluralStringByName_null_test_0400', Level.LEVEL3, async (done: Function) => {
       try {
@@ -1761,12 +1761,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_null_test_0100
-     * @tc.name     : getStringSync_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringSync_null_test_0100
+     * @tc.name    getStringSync_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringSync_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -1781,12 +1781,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_null_test_0200
-     * @tc.name     : getStringSync_null_test_0200
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringSync_null_test_0200
+     * @tc.name    getStringSync_null_test_0200
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringSync_null_test_0200', Level.LEVEL3, () => {
       try {
@@ -1801,12 +1801,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_null_test_0300
-     * @tc.name     : getStringSync_null_test_0300
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringSync_null_test_0300
+     * @tc.name    getStringSync_null_test_0300
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringSync_null_test_0300', Level.LEVEL3, () => {
       try {
@@ -1821,12 +1821,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_null_test_0400
-     * @tc.name     : getStringSync_null_test_0400
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringSync_null_test_0400
+     * @tc.name    getStringSync_null_test_0400
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringSync_null_test_0400', Level.LEVEL3, () => {
       try {
@@ -1841,12 +1841,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringByNameSync_null_test_0100
-     * @tc.name     : getStringByNameSync_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringByNameSync_null_test_0100
+     * @tc.name    getStringByNameSync_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringByNameSync_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -1861,12 +1861,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringByNameSync_null_test_0200
-     * @tc.name     : getStringByNameSync_null_test_0200
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringByNameSync_null_test_0200
+     * @tc.name    getStringByNameSync_null_test_0200
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringByNameSync_null_test_0200', Level.LEVEL3, () => {
       try {
@@ -1881,12 +1881,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getStringByNameSync_null_test_0300
-     * @tc.name     : getStringByNameSync_null_test_0300
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getStringByNameSync_null_test_0300
+     * @tc.name    getStringByNameSync_null_test_0300
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getStringByNameSync_null_test_0300', Level.LEVEL3, () => {
       try {
@@ -1901,12 +1901,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getBoolean_null_test_0100
-     * @tc.name     : getBoolean_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getBoolean_null_test_0100
+     * @tc.name    getBoolean_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getBoolean_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -1921,12 +1921,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getBooleanByName_null_test_0100
-     * @tc.name     : getBooleanByName_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getBooleanByName_null_test_0100
+     * @tc.name    getBooleanByName_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getBooleanByName_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -1941,12 +1941,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getNumber_null_test_0100
-     * @tc.name     : getNumber_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getNumber_null_test_0100
+     * @tc.name    getNumber_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getNumber_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -1961,12 +1961,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getNumberByName_null_test_0100
-     * @tc.name     : getNumberByName_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getNumberByName_null_test_0100
+     * @tc.name    getNumberByName_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getNumberByName_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -1981,12 +1981,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getIntPluralStringValueSync_null_test_0100
-     * @tc.name     : getIntPluralStringValueSync_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getIntPluralStringValueSync_null_test_0100
+     * @tc.name    getIntPluralStringValueSync_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getIntPluralStringValueSync_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -2001,12 +2001,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getIntPluralStringValueSync_null_test_0200
-     * @tc.name     : getIntPluralStringValueSync_null_test_0200
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getIntPluralStringValueSync_null_test_0200
+     * @tc.name    getIntPluralStringValueSync_null_test_0200
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getIntPluralStringValueSync_null_test_0200', Level.LEVEL3, () => {
       try {
@@ -2021,12 +2021,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getIntPluralStringValueSync_null_test_0300
-     * @tc.name     : getIntPluralStringValueSync_null_test_0300
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getIntPluralStringValueSync_null_test_0300
+     * @tc.name    getIntPluralStringValueSync_null_test_0300
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getIntPluralStringValueSync_null_test_0300', Level.LEVEL3, () => {
       try {
@@ -2041,12 +2041,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getIntPluralStringValueSync_null_test_0400
-     * @tc.name     : getIntPluralStringValueSync_null_test_0400
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getIntPluralStringValueSync_null_test_0400
+     * @tc.name    getIntPluralStringValueSync_null_test_0400
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getIntPluralStringValueSync_null_test_0400', Level.LEVEL3, () => {
       try {
@@ -2061,12 +2061,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getIntPluralStringValueSync_null_test_0500
-     * @tc.name     : getIntPluralStringValueSync_null_test_0500
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getIntPluralStringValueSync_null_test_0500
+     * @tc.name    getIntPluralStringValueSync_null_test_0500
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getIntPluralStringValueSync_null_test_0500', Level.LEVEL3, () => {
       try {
@@ -2081,12 +2081,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getIntPluralStringByNameSync_null_test_0100
-     * @tc.name     : getIntPluralStringByNameSync_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getIntPluralStringByNameSync_null_test_0100
+     * @tc.name    getIntPluralStringByNameSync_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getIntPluralStringByNameSync_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -2101,12 +2101,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getIntPluralStringByNameSync_null_test_0200
-     * @tc.name     : getIntPluralStringByNameSync_null_test_0200
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getIntPluralStringByNameSync_null_test_0200
+     * @tc.name    getIntPluralStringByNameSync_null_test_0200
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getIntPluralStringByNameSync_null_test_0200', Level.LEVEL3, () => {
       try {
@@ -2121,12 +2121,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getIntPluralStringByNameSync_null_test_0300
-     * @tc.name     : getIntPluralStringByNameSync_null_test_0300
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getIntPluralStringByNameSync_null_test_0300
+     * @tc.name    getIntPluralStringByNameSync_null_test_0300
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getIntPluralStringByNameSync_null_test_0300', Level.LEVEL3, () => {
       try {
@@ -2141,12 +2141,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDoublePluralStringValueSync_null_test_0100
-     * @tc.name     : getDoublePluralStringValueSync_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDoublePluralStringValueSync_null_test_0100
+     * @tc.name    getDoublePluralStringValueSync_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDoublePluralStringValueSync_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -2161,12 +2161,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDoublePluralStringValueSync_null_test_0200
-     * @tc.name     : getDoublePluralStringValueSync_null_test_0200
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDoublePluralStringValueSync_null_test_0200
+     * @tc.name    getDoublePluralStringValueSync_null_test_0200
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDoublePluralStringValueSync_null_test_0200', Level.LEVEL3, () => {
       try {
@@ -2181,12 +2181,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDoublePluralStringValueSync_null_test_0300
-     * @tc.name     : getDoublePluralStringValueSync_null_test_0300
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDoublePluralStringValueSync_null_test_0300
+     * @tc.name    getDoublePluralStringValueSync_null_test_0300
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDoublePluralStringValueSync_null_test_0300', Level.LEVEL3, () => {
       try {
@@ -2201,12 +2201,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDoublePluralStringValueSync_null_test_0400
-     * @tc.name     : getDoublePluralStringValueSync_null_test_0400
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDoublePluralStringValueSync_null_test_0400
+     * @tc.name    getDoublePluralStringValueSync_null_test_0400
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDoublePluralStringValueSync_null_test_0400', Level.LEVEL3, () => {
       try {
@@ -2221,12 +2221,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDoublePluralStringValueSync_null_test_0500
-     * @tc.name     : getDoublePluralStringValueSync_null_test_0500
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDoublePluralStringValueSync_null_test_0500
+     * @tc.name    getDoublePluralStringValueSync_null_test_0500
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDoublePluralStringValueSync_null_test_0500', Level.LEVEL3, () => {
       try {
@@ -2241,12 +2241,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDoublePluralStringByNameSync_null_test_0100
-     * @tc.name     : getDoublePluralStringByNameSync_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDoublePluralStringByNameSync_null_test_0100
+     * @tc.name    getDoublePluralStringByNameSync_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDoublePluralStringByNameSync_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -2261,12 +2261,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDoublePluralStringByNameSync_null_test_0200
-     * @tc.name     : getDoublePluralStringByNameSync_null_test_0200
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDoublePluralStringByNameSync_null_test_0200
+     * @tc.name    getDoublePluralStringByNameSync_null_test_0200
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDoublePluralStringByNameSync_null_test_0200', Level.LEVEL3, () => {
       try {
@@ -2281,12 +2281,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDoublePluralStringByNameSync_null_test_0300
-     * @tc.name     : getDoublePluralStringByNameSync_null_test_0300
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDoublePluralStringByNameSync_null_test_0300
+     * @tc.name    getDoublePluralStringByNameSync_null_test_0300
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDoublePluralStringByNameSync_null_test_0300', Level.LEVEL3, () => {
       try {
@@ -2301,12 +2301,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getRawFileContent_null_test_0100
-     * @tc.name     : getRawFileContent_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFileContent_null_test_0100
+     * @tc.name    getRawFileContent_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFileContent_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -2328,12 +2328,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getRawFileContent_null_test_0200
-     * @tc.name     : getRawFileContent_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFileContent_null_test_0200
+     * @tc.name    getRawFileContent_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFileContent_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -2362,12 +2362,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getRawFd_null_test_0100
-     * @tc.name     : getRawFd_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFd_null_test_0100
+     * @tc.name    getRawFd_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFd_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -2389,12 +2389,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getRawFd_null_test_0200
-     * @tc.name     : getRawFd_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFd_null_test_0200
+     * @tc.name    getRawFd_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFd_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -2423,12 +2423,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : closeRawFd_null_test_0100
-     * @tc.name     : closeRawFd_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  closeRawFd_null_test_0100
+     * @tc.name    closeRawFd_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('closeRawFd_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -2450,12 +2450,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : closeRawFd_null_test_0200
-     * @tc.name     : closeRawFd_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  closeRawFd_null_test_0200
+     * @tc.name    closeRawFd_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('closeRawFd_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -2484,12 +2484,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_null_test_0100
-     * @tc.name     : getDrawableDescriptor_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDrawableDescriptor_null_test_0100
+     * @tc.name    getDrawableDescriptor_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDrawableDescriptor_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -2504,12 +2504,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_null_test_0200
-     * @tc.name     : getDrawableDescriptor_null_test_0200
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDrawableDescriptor_null_test_0200
+     * @tc.name    getDrawableDescriptor_null_test_0200
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDrawableDescriptor_null_test_0200', Level.LEVEL3, () => {
       try {
@@ -2524,12 +2524,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_null_test_0300
-     * @tc.name     : getDrawableDescriptor_null_test_0300
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDrawableDescriptor_null_test_0300
+     * @tc.name    getDrawableDescriptor_null_test_0300
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDrawableDescriptor_null_test_0300', Level.LEVEL3, () => {
       try {
@@ -2544,12 +2544,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptorByName_null_test_0100
-     * @tc.name     : getDrawableDescriptorByName_null_test_0100
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDrawableDescriptorByName_null_test_0100
+     * @tc.name    getDrawableDescriptorByName_null_test_0100
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDrawableDescriptorByName_null_test_0100', Level.LEVEL3, () => {
       try {
@@ -2564,12 +2564,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptorByName_null_test_0200
-     * @tc.name     : getDrawableDescriptorByName_null_test_0200
-     * @tc.desc     : with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getDrawableDescriptorByName_null_test_0200
+     * @tc.name    getDrawableDescriptorByName_null_test_0200
+     * @tc.desc    with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getDrawableDescriptorByName_null_test_0200', Level.LEVEL3, () => {
       try {
@@ -2585,12 +2585,12 @@ export default function InterfaceNullValueOverrideTest() {
 
 
     /**
-     * @tc.number   : getRawFileList_null_test_0100
-     * @tc.name     : getRawFileList_null_test_0100
-     * @tc.desc     : callback mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFileList_null_test_0100
+     * @tc.name    getRawFileList_null_test_0100
+     * @tc.desc    callback mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFileList_null_test_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -2612,12 +2612,12 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.number   : getRawFileList_null_test_0200
-     * @tc.name     : getRawFileList_null_test_0200
-     * @tc.desc     : promise mode with NULL
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFileList_null_test_0200
+     * @tc.name    getRawFileList_null_test_0200
+     * @tc.desc    promise mode with NULL
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFileList_null_test_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -2646,12 +2646,12 @@ export default function InterfaceNullValueOverrideTest() {
 
 
       /**
-       * @tc.number   : getColor_null_test_0100
-       * @tc.name     : getColor_null_test_0100
-       * @tc.desc     : callback mode with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getColor_null_test_0100
+       * @tc.name    getColor_null_test_0100
+       * @tc.desc    callback mode with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getColor_null_test_0100', Level.LEVEL3, async (done: Function) => {
         try {
@@ -2673,12 +2673,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getColor_null_test_0200
-       * @tc.name     : getColor_null_test_0200
-       * @tc.desc     : promise mode with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getColor_null_test_0200
+       * @tc.name    getColor_null_test_0200
+       * @tc.desc    promise mode with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getColor_null_test_0200', Level.LEVEL3, async (done: Function) => {
         try {
@@ -2707,12 +2707,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getColorByName_null_test_0100
-       * @tc.name     : getColorByName_null_test_0100
-       * @tc.desc     : callback mode with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getColorByName_null_test_0100
+       * @tc.name    getColorByName_null_test_0100
+       * @tc.desc    callback mode with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getColorByName_null_test_0100', Level.LEVEL3, async (done: Function) => {
         try {
@@ -2734,12 +2734,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getColorByName_null_test_0200
-       * @tc.name     : getColorByName_null_test_0200
-       * @tc.desc     : promise mode with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getColorByName_null_test_0200
+       * @tc.name    getColorByName_null_test_0200
+       * @tc.desc    promise mode with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getColorByName_null_test_0200', Level.LEVEL3, async (done: Function) => {
         try {
@@ -2769,12 +2769,12 @@ export default function InterfaceNullValueOverrideTest() {
 
 
       /**
-       * @tc.number   : getColorSync_null_test_0100
-       * @tc.name     : getColorSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getColorSync_null_test_0100
+       * @tc.name    getColorSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getColorSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -2789,12 +2789,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getColorByNameSync_null_test_0100
-       * @tc.name     : getColorByNameSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getColorByNameSync_null_test_0100
+       * @tc.name    getColorByNameSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getColorByNameSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -2809,12 +2809,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : addResource_null_test_0100
-       * @tc.name     : addResource_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  addResource_null_test_0100
+       * @tc.name    addResource_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('addResource_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -2829,12 +2829,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : removeResource_null_test_0100
-       * @tc.name     : removeResource_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  removeResource_null_test_0100
+       * @tc.name    removeResource_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('removeResource_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -2849,12 +2849,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getRawFdSync_null_test_0100
-       * @tc.name     : getRawFdSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getRawFdSync_null_test_0100
+       * @tc.name    getRawFdSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getRawFdSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -2869,12 +2869,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : closeRawFdSync_null_test_0100
-       * @tc.name     : closeRawFdSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  closeRawFdSync_null_test_0100
+       * @tc.name    closeRawFdSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('closeRawFdSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -2889,12 +2889,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getRawFileListSync_null_test_0100
-       * @tc.name     : getRawFileListSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getRawFileListSync_null_test_0100
+       * @tc.name    getRawFileListSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getRawFileListSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -2909,12 +2909,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getRawFileContentSync_null_test_0100
-       * @tc.name     : getRawFileContentSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getRawFileContentSync_null_test_0100
+       * @tc.name    getRawFileContentSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getRawFileContentSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -2929,12 +2929,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getMediaContentSync_null_test_0100
-       * @tc.name     : getMediaContentSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getMediaContentSync_null_test_0100
+       * @tc.name    getMediaContentSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getMediaContentSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -2949,12 +2949,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getMediaContentSync_null_test_0200
-       * @tc.name     : getMediaContentSync_null_test_0200
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getMediaContentSync_null_test_0200
+       * @tc.name    getMediaContentSync_null_test_0200
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getMediaContentSync_null_test_0200', Level.LEVEL3, () => {
         try {
@@ -2969,12 +2969,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getMediaContentSync_null_test_0300
-       * @tc.name     : getMediaContentSync_null_test_0300
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getMediaContentSync_null_test_0300
+       * @tc.name    getMediaContentSync_null_test_0300
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getMediaContentSync_null_test_0300', Level.LEVEL3, () => {
         try {
@@ -2989,12 +2989,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getMediaContentBase64Sync_null_test_0100
-       * @tc.name     : getMediaContentBase64Sync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getMediaContentBase64Sync_null_test_0100
+       * @tc.name    getMediaContentBase64Sync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getMediaContentBase64Sync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3009,12 +3009,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getMediaContentBase64Sync_null_test_0200
-       * @tc.name     : getMediaContentBase64Sync_null_test_0200
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getMediaContentBase64Sync_null_test_0200
+       * @tc.name    getMediaContentBase64Sync_null_test_0200
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getMediaContentBase64Sync_null_test_0200', Level.LEVEL3, () => {
         try {
@@ -3029,12 +3029,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getMediaContentBase64Sync_null_test_0300
-       * @tc.name     : getMediaContentBase64Sync_null_test_0300
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getMediaContentBase64Sync_null_test_0300
+       * @tc.name    getMediaContentBase64Sync_null_test_0300
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getMediaContentBase64Sync_null_test_0300', Level.LEVEL3, () => {
         try {
@@ -3050,12 +3050,12 @@ export default function InterfaceNullValueOverrideTest() {
 
 
       /**
-       * @tc.number   : getPluralStringValueSync_null_test_0100
-       * @tc.name     : getPluralStringValueSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getPluralStringValueSync_null_test_0100
+       * @tc.name    getPluralStringValueSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getPluralStringValueSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3070,12 +3070,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getPluralStringValueSync_null_test_0200
-       * @tc.name     : getPluralStringValueSync_null_test_0200
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getPluralStringValueSync_null_test_0200
+       * @tc.name    getPluralStringValueSync_null_test_0200
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getPluralStringValueSync_null_test_0200', Level.LEVEL3, () => {
         try {
@@ -3090,12 +3090,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getPluralStringValueSync_null_test_0300
-       * @tc.name     : getPluralStringValueSync_null_test_0300
-       * @tc.desc     : NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getPluralStringValueSync_null_test_0300
+       * @tc.name    getPluralStringValueSync_null_test_0300
+       * @tc.desc    NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getPluralStringValueSync_null_test_0300', Level.LEVEL3, () => {
         try {
@@ -3110,12 +3110,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getStringArrayValueSync_null_test_0100
-       * @tc.name     : getStringArrayValueSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getStringArrayValueSync_null_test_0100
+       * @tc.name    getStringArrayValueSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getStringArrayValueSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3130,12 +3130,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getPluralStringByNameSync_null_test_0100
-       * @tc.name     : getPluralStringByNameSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getPluralStringByNameSync_null_test_0100
+       * @tc.name    getPluralStringByNameSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getPluralStringByNameSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3150,12 +3150,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getPluralStringByNameSync_null_test_0200
-       * @tc.name     : getPluralStringByNameSync_null_test_0200
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getPluralStringByNameSync_null_test_0200
+       * @tc.name    getPluralStringByNameSync_null_test_0200
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getPluralStringByNameSync_null_test_0200', Level.LEVEL3, () => {
         try {
@@ -3170,12 +3170,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getMediaByNameSync_null_test_0100
-       * @tc.name     : getMediaByNameSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getMediaByNameSync_null_test_0100
+       * @tc.name    getMediaByNameSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getMediaByNameSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3190,12 +3190,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getMediaByNameSync_null_test_0200
-       * @tc.name     : getMediaByNameSync_null_test_0200
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getMediaByNameSync_null_test_0200
+       * @tc.name    getMediaByNameSync_null_test_0200
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getMediaByNameSync_null_test_0200', Level.LEVEL3, () => {
         try {
@@ -3210,12 +3210,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getMediaBase64ByNameSync_null_test_0100
-       * @tc.name     : getMediaBase64ByNameSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getMediaBase64ByNameSync_null_test_0100
+       * @tc.name    getMediaBase64ByNameSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getMediaBase64ByNameSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3230,12 +3230,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getMediaBase64ByNameSync_null_test_0200
-       * @tc.name     : getMediaBase64ByNameSync_null_test_0200
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getMediaBase64ByNameSync_null_test_0200
+       * @tc.name    getMediaBase64ByNameSync_null_test_0200
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getMediaBase64ByNameSync_null_test_0200', Level.LEVEL3, () => {
         try {
@@ -3250,12 +3250,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getStringArrayByNameSync_null_test_0100
-       * @tc.name     : getStringArrayByNameSync_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getStringArrayByNameSync_null_test_0100
+       * @tc.name    getStringArrayByNameSync_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getStringArrayByNameSync_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3270,12 +3270,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getSymbol_null_test_0100
-       * @tc.name     : getSymbol_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getSymbol_null_test_0100
+       * @tc.name    getSymbol_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getSymbol_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3290,12 +3290,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getSymbolByName_null_test_0100
-       * @tc.name     : getSymbolByName_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  getSymbolByName_null_test_0100
+       * @tc.name    getSymbolByName_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('getSymbolByName_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3310,12 +3310,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : isRawDir_null_test_0100
-       * @tc.name     : isRawDir_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  isRawDir_null_test_0100
+       * @tc.name    isRawDir_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('isRawDir_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3330,12 +3330,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : resourceToSendableResource_null_test_0100
-       * @tc.name     : resourceToSendableResource_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  resourceToSendableResource_null_test_0100
+       * @tc.name    resourceToSendableResource_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('resourceToSendableResource_null_test_0100', Level.LEVEL3, () => {
         try {
@@ -3351,12 +3351,12 @@ export default function InterfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : sendableResourceToResource_null_test_0100
-       * @tc.name     : sendableResourceToResource_null_test_0100
-       * @tc.desc     : with NULL
-       * @tc.size     : MEDIUM
-       * @tc.type     : Function
-       * @tc.level    : Level 3
+       * @tc.number  sendableResourceToResource_null_test_0100
+       * @tc.name    sendableResourceToResource_null_test_0100
+       * @tc.desc    with NULL
+       * @tc.size    MEDIUM
+       * @tc.type    Function
+       * @tc.level   Level 3
        */
       it('sendableResourceToResource_null_test_0100', Level.LEVEL3, () => {
         try {
