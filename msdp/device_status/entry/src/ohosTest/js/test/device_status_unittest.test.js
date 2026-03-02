@@ -265,7 +265,7 @@ export default function DeviceStatusUnitTest() {
                 expect().assertFail();
             } catch (error) {
                 console.error('error Log' + error);
-                console.info(`stationary.on fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_0600 stationary.on fail: ${JSON.stringify(error, ['code', 'message'])}`);
                 expect(error.code).assertEqual(401);
                 done();
             }
@@ -288,7 +288,7 @@ export default function DeviceStatusUnitTest() {
                 expect().assertFail();
             } catch (error) {
                 console.error('error Log' + error);
-                console.info(`stationary.on fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_0700 stationary.on fail: ${JSON.stringify(error, ['code', 'message'])}`);
                 expect(error.code).assertEqual(401);
                 done();
             }
@@ -311,7 +311,7 @@ export default function DeviceStatusUnitTest() {
                 expect().assertFail();
             } catch (error) {
                 console.error('error Log' + error);
-                console.info(`stationary.on fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_0800 stationary.on fail: ${JSON.stringify(error, ['code', 'message'])}`);
                 expect(error.code).assertEqual(401);
                 done();
             }
@@ -334,7 +334,7 @@ export default function DeviceStatusUnitTest() {
                 expect().assertFail();
             } catch (error) {
                 console.error('error Log' + error);
-                console.info(`stationary.on fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_0900 stationary.on fail: ${JSON.stringify(error, ['code', 'message'])}`);
                 expect(error.code).assertEqual(401);
                 done();
             }
@@ -357,7 +357,7 @@ export default function DeviceStatusUnitTest() {
                 expect().assertFail();
             } catch (error) {
                 console.error('error Log' + error);
-                console.info(`stationary.off fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_1000 stationary.off fail: ${JSON.stringify(error, ['code', 'message'])}`);
                 expect(error.code).assertEqual(401);
                 done();
             }
@@ -380,7 +380,7 @@ export default function DeviceStatusUnitTest() {
                 expect().assertFail();
             } catch (error) {
                 console.error('error Log' + error);
-                console.info(`stationary.off fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_1100 stationary.off fail: ${JSON.stringify(error, ['code', 'message'])}`);
                 expect(error.code).assertEqual(401);
                 done();
             }
