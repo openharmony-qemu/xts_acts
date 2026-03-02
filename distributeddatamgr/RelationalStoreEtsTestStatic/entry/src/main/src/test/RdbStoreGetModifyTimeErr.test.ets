@@ -41,8 +41,8 @@ import {
     'name': STORE_NAME,
     securityLevel: relationalStore.SecurityLevel.S1,
   }
-  let rdbStore: relationalStore.RdbStore;
-  let context: common.UIAbilityContext;
+  let rdbStore: relationalStore.RdbStore | undefined;
+  let context: common.UIAbilityContext | undefined;
   let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   let syncProgressDetail: relationalStore.ProgressDetails;
   
@@ -63,7 +63,7 @@ import {
         try {
           console.log(tag + 'create rdb store before');
           try {
-            rdbStore = await relationalStore.getRdbStore(context, config);
+            rdbStore = await relationalStore.getRdbStore(context!, config);
             console.log(tag + 'create rdb store success');
           } catch (err: BusinessError) {
             console.log(tag + 'create rdb store failed' + `, error code is ${err.code}, message is ${err.message}`);
@@ -87,9 +87,9 @@ import {
             'recycledTime INTEGER, ' +
             'num INTEGER PRIMARY KEY)';
           try {
-            await rdbStore.executeSql(sql_text);
-            await rdbStore.executeSql(sql_int);
-            await rdbStore.executeSql(sql_integer);
+            await rdbStore!.executeSql(sql_text);
+            await rdbStore!.executeSql(sql_int);
+            await rdbStore!.executeSql(sql_integer);
             console.log(tag + 'create table cloud_text cloud_int cloud_integer success');
           } catch (err: BusinessError) {
             console.log(tag + 'create table cloud_text cloud_int cloud_integer failed' +
@@ -149,7 +149,7 @@ import {
   
       afterAll(async (): Promise<void> => {
         console.info(tag + 'afterAll');
-        await relationalStore.deleteRdbStore(context, config);
+        await relationalStore.deleteRdbStore(context!, config);
       })
   
       console.log(tag + '*************Unit Test Begin*************');
