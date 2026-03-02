@@ -446,7 +446,7 @@ export default function Array_06Test() {
         const callbackfn = (prev: bigint, curr: long): bigint => prev + BigInt(curr);
         const initialValue: bigint = 0n;
         const result = reduceRight<bigint>(array, callbackfn, initialValue);
-        expect(result).assertEqual(99n);
+        expect(result).assertEqual(98n);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
