@@ -11,10 +11,10 @@ class Params {
 
 // builder组件
 @Builder
-function BuildTextWithParams(params: Params) {
+function buildTextWithParams(params: Params) {
   Column() {
     Text(params.text1).id('text').fontSize(20)
-    Text("this is a CustomNode with ProxyNode").fontSize(20)
+    Text('this is a CustomNode with ProxyNode').fontSize(20)
   }
 }
 
@@ -32,7 +32,7 @@ class MyNodeController extends NodeController {
 
   // 更新节点内容
   updateNode() {
-    this.params += "~"
+    this.params += '~'
     this.builderNode?.update(new Params(this.params));
   }
 
@@ -43,7 +43,7 @@ class MyNodeController extends NodeController {
       // 创建BuilderNode
       let builderNode: BuilderNode<Params> = new BuilderNode<Params>(this.uiContext!, renderOptions);
       // useParallel设置为true，并行执行wrapBuilder，创建UI
-      builderNode.build(wrapBuilder(BuildTextWithParams), new Params("Build with Params"), {useParallel: true});
+      builderNode.build(wrapBuilder(buildTextWithParams), new Params('Build with Params'), {useParallel: true});
       this.builderNode = builderNode;
     }
   }
@@ -71,7 +71,7 @@ struct MyStateSample {
         .width(200)
         .height(50)
         .margin({ bottom: 10 } as Margin)
-      Button("Update")
+      Button('Update')
         .onClick((e: ClickEvent) => {
           this.nodeController?.updateNode();
         })
