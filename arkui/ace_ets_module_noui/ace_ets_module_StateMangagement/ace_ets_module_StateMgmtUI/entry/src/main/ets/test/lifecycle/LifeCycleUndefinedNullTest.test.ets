@@ -16,6 +16,13 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { UiComponent, Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import { UIUtils, CustomComponentLifecycleObserver } from '@ohos.arkui.StateManagement';
+
+class LifeCycleObserverUndefinedClass implements CustomComponentLifecycleObserver {
+  aboutToReuse(params?: Record<string, Object | null | undefined> | undefined): void {
+    console.info('LifeCycleObserverUndefinedClass aboutToReuse');
+  }
+}
 
 export default function LifeCycleUndefinedNull() {
   describe('LifeCycleUndefinedNull', () => {
@@ -55,7 +62,7 @@ export default function LifeCycleUndefinedNull() {
      */
     it('LifeCycleUndefinedNull_001', Level.LEVEL2, async (done: Function) => {
       console.info('[LifeCycleUndefinedNull_001] START');
-      await sleep(1000)
+      await CommonFunc.sleep(1000)
       let comThis: ESObject = AppStorage.get('LifeCycleUndefinedNull')
       try {
         UIUtils.getLifecycle(comThis).removeObserver(null)
