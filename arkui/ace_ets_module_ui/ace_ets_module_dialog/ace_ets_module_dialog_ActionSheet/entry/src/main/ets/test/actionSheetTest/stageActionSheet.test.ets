@@ -54,6 +54,7 @@ export default function stageActionSheet() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+
     /**
      * @tc.number    SUB_ACE_testShowActionShee_0100
      * @tc.name      testShowActionShee001 
@@ -89,6 +90,7 @@ export default function stageActionSheet() {
         done();
       }, 500)
     });
+
     /**
      * @tc.number    SUB_ACE_testShowActionShee_0200
      * @tc.name      testShowActionShee002
@@ -124,6 +126,7 @@ export default function stageActionSheet() {
         done();
       }, 500)
     });
+    
     /**
      * @tc.number    SUB_ACE_testShowActionShee_0300 
      * @tc.name      testShowActionShee003

@@ -47,6 +47,7 @@ export default function ActionSheet3() {
       }
       done();
     });
+    
     /* *
     * @tc.number  ActionSheet3_0100
     * @tc.name    SUB_ACE_ActionSheet3_0100
@@ -78,6 +79,7 @@ export default function ActionSheet3() {
       console.info('[ActionSheet3_0100] END');
       done();
     });
+
     /* *
     * @tc.number  ActionSheet3_0200
     * @tc.name    SUB_ACE_ActionSheet3_0200

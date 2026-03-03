@@ -47,6 +47,7 @@ export default function ActionSheet2() {
       }
       done();
     });
+
     /* *
     * @tc.number  ActionSheet2_0100
     * @tc.name    SUB_ACE_ActionSheet2_0100
@@ -82,6 +83,7 @@ export default function ActionSheet2() {
       console.info('[ActionSheet2_0100] END');
       done();
     });
+    
     /* *
     * @tc.number  ActionSheet2_0200
     * @tc.name    SUB_ACE_ActionSheet2_0200
