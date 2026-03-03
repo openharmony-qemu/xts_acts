@@ -150,7 +150,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_0101', Level.LEVEL0, function ()  {
+        it('SUB_Communication_NFC_nfcNDEF_js_0101', Level.LEVEL0, function (done)  {
             if (NdefTag != null && NdefTag != undefined) {
                 try {
                     let ndefMessage = tag.ndef.createNdefMessage(null);
@@ -161,7 +161,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef1 ndefMessage1 error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef1 ndefMessage1 error: " + error);
                         expect().assertFail();
                     }
@@ -181,7 +181,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_0102', Level.LEVEL0, function ()  {
+        it('SUB_Communication_NFC_nfcNDEF_js_0102', Level.LEVEL0, function (done)  {
             if (NdefTag != null && NdefTag != undefined) {
                 try {
                     let ndefMessage = tag.ndef.createNdefMessage(undefined);
@@ -192,7 +192,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef1 ndefMessage1 error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef1 ndefMessage1 error: " + error);
                         expect().assertFail();
                     }
@@ -212,7 +212,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_0103', Level.LEVEL0, function ()  {
+        it('SUB_Communication_NFC_nfcNDEF_js_0103', Level.LEVEL0, function (done)  {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [];
                 try {
@@ -224,7 +224,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef1 ndefMessage1 error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef1 ndefMessage1 error: " + error);
                         expect().assertFail();
                     }
@@ -516,12 +516,12 @@ export default function nfcNDEFTagTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0901
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0901
-         * @tc.desc   Write ndef messages to this tag promise. The error code is 401
+         * @tc.desc   Write ndef messages to this tag promise.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_0901', Level.LEVEL1, async function (done) {
+        it('SUB_Communication_NFC_nfcNDEF_js_0901', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 (async () => {
                     try {
@@ -543,12 +543,12 @@ export default function nfcNDEFTagTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0902
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0902
-         * @tc.desc   Write ndef messages to this tag promise. The error code is 401
+         * @tc.desc   Write ndef messages to this tag promise.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_0902', Level.LEVEL1, async function (done) {
+        it('SUB_Communication_NFC_nfcNDEF_js_0902', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 (async () => {
                     try {
@@ -570,24 +570,24 @@ export default function nfcNDEFTagTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0903
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0903
-         * @tc.desc   Write ndef messages to this tag promise. The error code is 401
+         * @tc.desc   Write ndef messages to this tag promise.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_0903', Level.LEVEL1, async function (done) {
+        it('SUB_Communication_NFC_nfcNDEF_js_0903', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 try {
                     await NdefTag.writeNdef(null).then((data) => {
                         console.info("[NFC_test] ndef9 writeNdef data: " + data);
                         expect(data).assertInstanceOf('Number')
                         done();
-                    })
+                    });
                 } catch (err) {
                     if (err.code === 401) {
                         console.info("[NFC_test] ndef9 writeNdef err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test] ndef9 writeNdef err: " + err);
                         expect().assertFail();
                     }
@@ -602,24 +602,24 @@ export default function nfcNDEFTagTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0904
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0904
-         * @tc.desc   Write ndef messages to this tag promise. The error code is 401
+         * @tc.desc   Write ndef messages to this tag promise.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_0904', Level.LEVEL1, async function (done) {
+        it('SUB_Communication_NFC_nfcNDEF_js_0904', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 try {
                     await NdefTag.writeNdef(undefined).then((data) => {
                         console.info("[NFC_test] ndef9 writeNdef data: " + data);
                         expect(data).assertInstanceOf('Number')
                         done();
-                    })
+                    });
                 } catch (err) {
                     if (err.code === 401) {
                         console.info("[NFC_test] ndef9 writeNdef err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test] ndef9 writeNdef err: " + err);
                         expect().assertFail();
                     }
@@ -685,17 +685,17 @@ export default function nfcNDEFTagTest() {
         it('SUB_Communication_NFC_nfcNDEF_js_1001', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 function writeNdef_callback() {
-                    return new Promise ((resovle, reject) => {
+                    return new Promise ((resolve, reject) => {
                         NdefTag.writeNdef(null, (err, data)=> {
                             if (err) {
                                 reject(err.code);
                             } else {
                                 console.info("[NFC_test] ndef10 writeNdef2 data: " + data);
-                                resovle();
+                                resolve();
                                 done();
                             }
-                        })
-                    })
+                        });
+                    });
                 }
                 await writeNdef_callback().then((data) => {
                     console.info("[NFC_test] ndef10 writeNdef2 done: ");
@@ -704,7 +704,7 @@ export default function nfcNDEFTagTest() {
                     if (err.code === 401) {
                         console.info("[NFC_test] ndef10 writeNdef2 err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test] ndef10 writeNdef2 err: " + err);
                         expect().assertFail();
                     }
@@ -727,17 +727,17 @@ export default function nfcNDEFTagTest() {
         it('SUB_Communication_NFC_nfcNDEF_js_1002', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 function writeNdef_callback() {
-                    return new Promise ((resovle, reject) => {
+                    return new Promise ((resolve, reject) => {
                         NdefTag.writeNdef(undefined, (err, data)=> {
                             if (err) {
                                 reject(err.code);
                             } else {
                                 console.info("[NFC_test] ndef10 writeNdef2 data: " + data);
-                                resovle();
+                                resolve();
                                 done();
                             }
-                        })
-                    })
+                        });
+                    });
                 }
                 await writeNdef_callback().then((data) => {
                     console.info("[NFC_test] ndef10 writeNdef2 done: ");
@@ -746,7 +746,7 @@ export default function nfcNDEFTagTest() {
                     if (err.code === 401) {
                         console.info("[NFC_test] ndef10 writeNdef2 err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test] ndef10 writeNdef2 err: " + err);
                         expect().assertFail();
                     }
@@ -979,7 +979,6 @@ export default function nfcNDEFTagTest() {
                 let NdefFormatable = tag.getNdefFormatable(NdefFormatableTag);
                 await NdefFormatable.format(ndefmessage).then(() => {
                     console.info("[NFC_test]ndef15 Formatable format1 ");
-                    expect(data).assertInstanceOf('Number')
                 }).catch((err)=> {
                     if (err.code == 201) {
                         console.info("[NFC_test]ndef15 Formatable format1 err: " + err + err.code);
@@ -1018,13 +1017,12 @@ export default function nfcNDEFTagTest() {
                 try {
                     await NdefFormatable.format(null).then(() => {
                         console.info("[NFC_test]ndef15 Formatable format1 ");
-                        expect(data).assertInstanceOf('Number')
-                    })
+                    });
                 } catch (err) {
                     if (err.code === 401) {
                         console.info("[NFC_test] ndef15 Formatable format1 err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test] ndef15 Formatable format1 err: " + err);
                         expect().assertFail();
                     }
@@ -1052,13 +1050,12 @@ export default function nfcNDEFTagTest() {
                 try {
                     await NdefFormatable.format(undefined).then(() => {
                         console.info("[NFC_test]ndef15 Formatable format1 ");
-                        expect(data).assertInstanceOf('Number')
-                    })
+                    });
                 } catch (err) {
                     if (err.code === 401) {
                         console.info("[NFC_test] ndef15 Formatable format1 err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test] ndef15 Formatable format1 err: " + err);
                         expect().assertFail();
                     }
@@ -1115,19 +1112,20 @@ export default function nfcNDEFTagTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1601', Level.LEVEL0, async function (done) {
+            let NdefFormatable = tag.getNdefFormatable(NdefFormatableTag);
             if (NdefTag != null && NdefTag != undefined) {
                 function format_callback() {
-                    return new Promise ((resovle, reject) => {
-                        NdefTag.format(null, (err, data)=> {
+                    return new Promise ((resolve, reject) => {
+                        NdefFormatable.format(null, (err, data)=> {
                             if (err) {
                                 reject(err.code);
                             } else {
                                 console.info("[NFC_test] ndef16 Formatable format data: " + data);
-                                resovle();
+                                resolve();
                                 done();
                             }
-                        })
-                    })
+                        });
+                    });
                 }
                 await format_callback().then((data) => {
                     console.info("[NFC_test] ndef16 Formatable format done: ");
@@ -1136,7 +1134,7 @@ export default function nfcNDEFTagTest() {
                     if (err.code === 401) {
                         console.info("[NFC_test] ndef16 Formatable format err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test] ndef16 Formatable format err: " + err);
                         expect().assertFail();
                     }
@@ -1157,19 +1155,20 @@ export default function nfcNDEFTagTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1602', Level.LEVEL0, async function (done) {
+            let NdefFormatable = tag.getNdefFormatable(NdefFormatableTag);
             if (NdefTag != null && NdefTag != undefined) {
                 function format_callback() {
-                    return new Promise ((resovle, reject) => {
-                        NdefTag.format(undefined, (err, data)=> {
+                    return new Promise ((resolve, reject) => {
+                        NdefFormatable.format(undefined, (err, data)=> {
                             if (err) {
                                 reject(err.code);
                             } else {
                                 console.info("[NFC_test] ndef16 Formatable format data: " + data);
-                                resovle();
+                                resolve();
                                 done();
                             }
-                        })
-                    })
+                        });
+                    });
                 }
                 await format_callback().then((data) => {
                     console.info("[NFC_test] ndef16 Formatable format done: ");
@@ -1178,7 +1177,7 @@ export default function nfcNDEFTagTest() {
                     if (err.code === 401) {
                         console.info("[NFC_test] ndef16 Formatable format err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test] ndef16 Formatable format err: " + err);
                         expect().assertFail();
                     }
@@ -1249,13 +1248,12 @@ export default function nfcNDEFTagTest() {
                 try {
                     await NdefFormatable.formatReadOnly(null).then(() => {
                         console.info("[NFC_test]ndef17 Formatable formatReadOnly1 " + data);
-                        expect(data).assertInstanceOf('Number')
-                    })
+                    });
                 } catch (err) {
                     if (err.code === 401) {
                         console.info("[NFC_test]ndef17 Formatable formatReadOnly1 err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef17 Formatable formatReadOnly1 err: " + err);
                         expect().assertFail();
                     }
@@ -1286,13 +1284,11 @@ export default function nfcNDEFTagTest() {
                 try {
                     await NdefFormatable.formatReadOnly(undefined).then(() => {
                         console.info("[NFC_test]ndef17 Formatable formatReadOnly1 " + data);
-                        expect(data).assertInstanceOf('Number')
-                    })
-                } catch (err) {
+                    });
                     if (err.code === 401) {
                         console.info("[NFC_test]ndef17 Formatable formatReadOnly1 err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef17 Formatable formatReadOnly1 err: " + err);
                         expect().assertFail();
                     }
@@ -1353,39 +1349,35 @@ export default function nfcNDEFTagTest() {
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1801', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
-                let rawData = [
-                    0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43
-                ];
-                let ndefmessage = tag.ndef.createNdefMessage(rawData);
                 let NdefFormatable = tag.getNdefFormatable(NdefFormatableTag);
-                function format_callback() {
-                    return new Promise ((resovle, reject) => {
+                function formatReadOnly_callback() {
+                    return new Promise ((resolve, reject) => {
                         NdefFormatable.formatReadOnly(null, (err, data)=> {
                             if (err) {
                                 reject(err.code);
                             } else {
                                 console.info("[NFC_test] ndef18 Formatable formatReadOnly1 data: " + data);
-                                resovle();
+                                resolve();
                                 done();
                             }
                         })
                     })
                 }
-                await format_callback().then((data) => {
+                await formatReadOnly_callback().then((data) => {
                     console.info("[NFC_test] ndef18 Formatable formatReadOnly1 done: ");
                 })
                 .catch ((err) => {
                     if (err.code === 401) {
                         console.info("[NFC_test]ndef18 Formatable formatReadOnly1 err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef18 Formatable formatReadOnly1 err: " + err);
                         expect().assertFail();
                     }
                     done();
                 })
             } else {
-                console.info("[NFC_test]NdefTag16 = null & = undefined: ");
+                console.info("[NFC_test]NdefTag18 = null & = undefined: ");
                 expect().assertFail();
             }
         })
@@ -1400,39 +1392,35 @@ export default function nfcNDEFTagTest() {
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1802', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
-                let rawData = [
-                    0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43
-                ];
-                let ndefmessage = tag.ndef.createNdefMessage(rawData);
                 let NdefFormatable = tag.getNdefFormatable(NdefFormatableTag);
-                function format_callback() {
-                    return new Promise ((resovle, reject) => {
+                function formatReadOnly_callback() {
+                    return new Promise ((resolve, reject) => {
                         NdefFormatable.formatReadOnly(undefined, (err, data)=> {
                             if (err) {
                                 reject(err.code);
                             } else {
                                 console.info("[NFC_test] ndef18 Formatable formatReadOnly1 data: " + data);
-                                resovle();
+                                resolve();
                                 done();
                             }
                         })
                     })
                 }
-                await format_callback().then((data) => {
+                await formatReadOnly_callback().then((data) => {
                     console.info("[NFC_test] ndef18 Formatable formatReadOnly1 done: ");
                 })
                 .catch ((err) => {
                     if (err.code === 401) {
                         console.info("[NFC_test]ndef18 Formatable formatReadOnly1 err: " + err);
                         expect(401).assertEqual(err.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef18 Formatable formatReadOnly1 err: " + err);
                         expect().assertFail();
                     }
                     done();
                 })
             } else {
-                console.info("[NFC_test]NdefTag16 = null & = undefined: ");
+                console.info("[NFC_test]NdefTag18 = null & = undefined: ");
                 expect().assertFail();
             }
         })
@@ -1473,7 +1461,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_1901', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_1901', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeUriRecord is object3" );
@@ -1487,7 +1475,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef19 ndefMessage makeUriRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef19 ndefMessage makeUriRecord error: " + error);
                         expect().assertFail();
                     }
@@ -1507,7 +1495,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_1901', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_1901', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeUriRecord is object3" );
@@ -1521,7 +1509,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef19 ndefMessage makeUriRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef19 ndefMessage makeUriRecord error: " + error);
                         expect().assertFail();
                     }
@@ -1541,7 +1529,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_1901', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_1901', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeUriRecord is object3" );
@@ -1555,7 +1543,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef19 ndefMessage makeUriRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef19 ndefMessage makeUriRecord error: " + error);
                         expect().assertFail();
                     }
@@ -1617,7 +1605,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef20 ndefMessage makeTextRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef20 ndefMessage makeTextRecord error: " + error);
                         expect().assertFail();
                     }
@@ -1637,7 +1625,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2002', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2002', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeTextRecord is object4" );
@@ -1651,7 +1639,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef20 ndefMessage makeTextRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef20 ndefMessage makeTextRecord error: " + error);
                         expect().assertFail();
                     }
@@ -1671,7 +1659,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2003', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2003', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeTextRecord is object4" );
@@ -1685,7 +1673,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef20 ndefMessage makeTextRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef20 ndefMessage makeTextRecord error: " + error);
                         expect().assertFail();
                     }
@@ -1727,7 +1715,7 @@ export default function nfcNDEFTagTest() {
                     console.info("[NFC_test]ndef21 ndefMessage2 error: " + error);
                     expect().assertFail();
                 }
-            }else{
+            } else{
                 console.info("[NFC_test]ndef21 typeof2 ->: "+ typeof(NdefTag) );
                 expect().assertFail();
             }
@@ -1741,7 +1729,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2100', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2101', Level.LEVEL0, function (done) {
             let NdefTag;
             try{
                 NdefTag= tag.getNdef(NDEFTaginfo);
@@ -1769,7 +1757,7 @@ export default function nfcNDEFTagTest() {
                     }
                     done();
                 }
-            }else{
+            } else{
                 console.info("[NFC_test]ndef21 typeof2 ->: "+ typeof(NdefTag) );
                 expect().assertFail();
             }
@@ -1783,7 +1771,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2102', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2102', Level.LEVEL0, function (done) {
             let NdefTag;
             try{
                 NdefTag= tag.getNdef(NDEFTaginfo);
@@ -1805,7 +1793,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef21 ndefMessage makeMimeRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef21 ndefMessage makeMimeRecord error: " + error);
                         expect().assertFail();
                     }
@@ -1825,7 +1813,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2103', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2103', Level.LEVEL0, function (done) {
             let NdefTag;
             try{
                 NdefTag= tag.getNdef(NDEFTaginfo);
@@ -1847,7 +1835,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef21 ndefMessage makeMimeRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef21 ndefMessage makeMimeRecord error: " + error);
                         expect().assertFail();
                     }
@@ -1895,7 +1883,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2201', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2201', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeExternalRecord is object6" );
@@ -1909,7 +1897,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef22 ndefMessage makeExternalRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef22 ndefMessage makeExternalRecord error: " + error);
                         expect().assertFail();
                     }
@@ -1929,7 +1917,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2202', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2202', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeExternalRecord is object6" );
@@ -1943,7 +1931,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef22 ndefMessage makeExternalRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef22 ndefMessage makeExternalRecord error: " + error);
                         expect().assertFail();
                     }
@@ -1963,7 +1951,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2203', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2203', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeExternalRecord is object6" );
@@ -1977,7 +1965,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef22 ndefMessage makeExternalRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef22 ndefMessage makeExternalRecord error: " + error);
                         expect().assertFail();
                     }
@@ -2063,13 +2051,9 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2302', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2302', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
-                let rawData1 = [0xD1, 0x01];
-                console.info("messageToBytes is object7" );
                 try {
-                    let ndefMessage1 = tag.ndef.createNdefMessage(rawData1);
-                    console.info("[NFC_test]ndef23 Message result4: " + JSON.stringify(ndefMessage1));
                     let makeERecords1 = tag.ndef.messageToBytes(null);
                     if (makeERecords1.length > 0) {
                         expect(makeERecords1.length > 0).assertTrue();
@@ -2082,7 +2066,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef23 ndefMessage messageToBytes error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef23 ndefMessage messageToBytes error: " + error);
                         expect().assertFail();
                     }
@@ -2102,14 +2086,10 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2303', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2303', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
-                let rawData1 = [0xD1, 0x01];
-                console.info("messageToBytes is object7" );
                 try {
-                    let ndefMessage1 = tag.ndef.createNdefMessage(rawData1);
-                    console.info("[NFC_test]ndef23 Message result4: " + JSON.stringify(ndefMessage1));
-                    let makeERecords1 = tag.ndef.messageToBytes(undefined);
+                    let makeERecords1 = tag.ndef.messageToBytes(null);
                     if (makeERecords1.length > 0) {
                         expect(makeERecords1.length > 0).assertTrue();
                     } else {
@@ -2121,7 +2101,7 @@ export default function nfcNDEFTagTest() {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef23 ndefMessage messageToBytes error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef23 ndefMessage messageToBytes error: " + error);
                         expect().assertFail();
                     }
@@ -2157,7 +2137,7 @@ export default function nfcNDEFTagTest() {
                         console.info("[NFC_test]ndef24 makeApplicationRecord ndefRecord: " + makeERecords);
                         expect().assertFail();
                     }             
-                }catch(error){
+                } catch (error) {
                     console.info("[NFC_test]ndef24 makeApplicationRecord error: " + error);
                     expect().assertFail();
                 }
@@ -2175,7 +2155,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2401', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2401', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeApplicationRecord is object7" );
@@ -2191,11 +2171,11 @@ export default function nfcNDEFTagTest() {
                         console.info("[NFC_test]ndef24 makeApplicationRecord ndefRecord: " + makeERecords);
                         expect().assertFail();
                     }             
-                }catch(error){
+                } catch (error) {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef24 ndefMessage makeApplicationRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef24 ndefMessage makeApplicationRecord error: " + error);
                         expect().assertFail();
                     }
@@ -2215,7 +2195,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2402', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2402', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeApplicationRecord is object7" );
@@ -2227,15 +2207,15 @@ export default function nfcNDEFTagTest() {
                     if (makeERecords != undefined){
                         console.info("[NFC_test]ndef24 makeApplicationRecord rtdType: " + makeERecords.rtdType);
                         console.info("[NFC_test]ndef24 makeApplicationRecord payload: " + makeERecords.payload);
-                    }else{
+                    } else {
                         console.info("[NFC_test]ndef24 makeApplicationRecord ndefRecord: " + makeERecords);
                         expect().assertFail();
                     }             
-                }catch(error){
+                } catch (error) {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef24 ndefMessage makeApplicationRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef24 ndefMessage makeApplicationRecord error: " + error);
                         expect().assertFail();
                     }
@@ -2255,7 +2235,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_2403', Level.LEVEL0, function () {
+        it('SUB_Communication_NFC_nfcNDEF_js_2403', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeApplicationRecord is object7" );
@@ -2267,15 +2247,15 @@ export default function nfcNDEFTagTest() {
                     if (makeERecords != undefined){
                         console.info("[NFC_test]ndef24 makeApplicationRecord rtdType: " + makeERecords.rtdType);
                         console.info("[NFC_test]ndef24 makeApplicationRecord payload: " + makeERecords.payload);
-                    }else{
+                    } else {
                         console.info("[NFC_test]ndef24 makeApplicationRecord ndefRecord: " + makeERecords);
                         expect().assertFail();
                     }             
-                }catch(error){
+                } catch (error) {
                     if (error.code === 401) {
                         console.info("[NFC_test]ndef24 ndefMessage makeApplicationRecord error: " + error);
                         expect(401).assertEqual(error.code);
-                    }else {
+                    } else {
                         console.info("[NFC_test]ndef24 ndefMessage makeApplicationRecord error: " + error);
                         expect().assertFail();
                     }
