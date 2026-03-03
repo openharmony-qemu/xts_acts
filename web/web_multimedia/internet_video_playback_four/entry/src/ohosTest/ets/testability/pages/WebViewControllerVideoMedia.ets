@@ -513,7 +513,6 @@ struct WebViewControllerVideoMedia {
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("playVideo()");
-                  this.controller.runJavaScript("playVideo()");
                   let nums=1;
                   let tryTime=200
                   while(nums < tryTime) {
