@@ -90,7 +90,7 @@ export default function SendAblePhotoAssertHelperSuppTest() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'getAssets failed ', JSON.stringify(error), error.code);
-        expect(error.code).assertEqual('13900020')
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -120,7 +120,7 @@ export default function SendAblePhotoAssertHelperSuppTest() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'getAssets failed ', JSON.stringify(error), error.code);
-        expect(error.code).assertEqual('13900020')
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -180,7 +180,7 @@ export default function SendAblePhotoAssertHelperSuppTest() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'setAssets failed ', JSON.stringify(error), error.code);
-        expect(error.code).assertEqual('13900020')
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -210,7 +210,7 @@ export default function SendAblePhotoAssertHelperSuppTest() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'setAssets failed ', JSON.stringify(error), error.code);
-        expect(error.code).assertEqual('13900020')
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -273,7 +273,7 @@ export default function SendAblePhotoAssertHelperSuppTest() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'setAssets failed ', JSON.stringify(error), error.code);
-        expect(error.code).assertEqual('13900020')
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
