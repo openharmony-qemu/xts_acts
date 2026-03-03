@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,14 +23,14 @@ export default function certFrameworkX509CertVerifyTestUnit() {
   describe("certFrameworkX509CertVerifyTestUnit", () => {
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Null_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Null_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Null_0012
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Null_0012
      * @tc.desc   X509Cert.verify with null parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Verify_Null_001",
+    it("SUB_Security_Cert_Framework_X509Cert_Verify_Null_0012",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -48,14 +48,14 @@ export default function certFrameworkX509CertVerifyTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_0011
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_0011
      * @tc.desc   X509Cert.verify with undefined parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_001",
+    it("SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_0011",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -73,14 +73,14 @@ export default function certFrameworkX509CertVerifyTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Null_002
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Null_002
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Null_007
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Null_007
      * @tc.desc   X509Cert.verify with null parameter using callback test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Verify_Null_002",
+    it("SUB_Security_Cert_Framework_X509Cert_Verify_Null_007",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -105,14 +105,14 @@ export default function certFrameworkX509CertVerifyTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_002
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_002
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_007
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_007
      * @tc.desc   X509Cert.verify with undefined parameter using callback test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_002",
+    it("SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_007",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {

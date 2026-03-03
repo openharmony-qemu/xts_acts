@@ -118,14 +118,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Match_Null_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Match_Null_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Match_Null_0010
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Match_Null_0010
      * @tc.desc   X509Cert.match with null parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Match_Null_001",
+    it("SUB_Security_Cert_Framework_X509Cert_Match_Null_0010",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -143,14 +143,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Match_Undefined_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Match_Undefined_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Match_Undefined_0011
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Match_Undefined_0011
      * @tc.desc   X509Cert.match with undefined parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Match_Undefined_001",
+    it("SUB_Security_Cert_Framework_X509Cert_Match_Undefined_0011",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -168,14 +168,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_GetItem_Null_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_GetItem_Null_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_GetItem_Null_006
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_GetItem_Null_006
      * @tc.desc   X509Cert.getItem with null parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_GetItem_Null_001",
+    it("SUB_Security_Cert_Framework_X509Cert_GetItem_Null_006",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -193,14 +193,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_GetItem_Undefined_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_GetItem_Undefined_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_GetItem_Undefined_0011
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_GetItem_Undefined_0011
      * @tc.desc   X509Cert.getItem with undefined parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_GetItem_Undefined_001",
+    it("SUB_Security_Cert_Framework_X509Cert_GetItem_Undefined_0011",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -218,14 +218,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_0010
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_0010
      * @tc.desc   X509Cert.checkValidityWithDate with null parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_001",
+    it("SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_0010",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -243,14 +243,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_0012
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_0012
      * @tc.desc   X509Cert.checkValidityWithDate with undefined parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_001",
+    it("SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_0012",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -268,14 +268,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_002
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_002
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_0022
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_0022
      * @tc.desc   X509Cert.checkValidityWithDate with null parameter using callback test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_002",
+    it("SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Null_0022",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -292,14 +292,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_002
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_002
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_0022
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_0022
      * @tc.desc   X509Cert.checkValidityWithDate with undefined parameter using callback test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_002",
+    it("SUB_Security_Cert_Framework_X509Cert_CheckValidityWithDate_Undefined_0022",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -316,14 +316,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Null_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Null_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Null_0011
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Null_0011
      * @tc.desc   X509Cert.verify with null parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Verify_Null_001",
+    it("SUB_Security_Cert_Framework_X509Cert_Verify_Null_0011",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -341,14 +341,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_011
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_011
      * @tc.desc   X509Cert.verify with undefined parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_001",
+    it("SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_011",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -366,14 +366,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Null_002
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Null_002
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Null_006
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Null_006
      * @tc.desc   X509Cert.verify with null parameter using callback test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Verify_Null_002",
+    it("SUB_Security_Cert_Framework_X509Cert_Verify_Null_006",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -398,14 +398,14 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_002
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_002
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_006
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_006
      * @tc.desc   X509Cert.verify with undefined parameter using callback test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_002",
+    it("SUB_Security_Cert_Framework_X509Cert_Verify_Undefined_006",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {

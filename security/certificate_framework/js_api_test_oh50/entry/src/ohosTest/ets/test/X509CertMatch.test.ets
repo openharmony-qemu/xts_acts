@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,14 +22,14 @@ export default function certFrameworkX509CertMatchTestUnit() {
   describe("certFrameworkX509CertMatchTestUnit", () => {
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Match_Null_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Match_Null_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Match_Null_0012
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Match_Null_0012
      * @tc.desc   X509Cert.match with null parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Match_Null_001",
+    it("SUB_Security_Cert_Framework_X509Cert_Match_Null_0012",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
@@ -47,14 +47,14 @@ export default function certFrameworkX509CertMatchTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Match_Undefined_001
-     * @tc.number SUB_Security_Cert_Framework_X509Cert_Match_Undefined_001
+     * @tc.name   SUB_Security_Cert_Framework_X509Cert_Match_Undefined_0012
+     * @tc.number SUB_Security_Cert_Framework_X509Cert_Match_Undefined_0012
      * @tc.desc   X509Cert.match with undefined parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_Cert_Framework_X509Cert_Match_Undefined_001",
+    it("SUB_Security_Cert_Framework_X509Cert_Match_Undefined_0012",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let encodingBlob: cert.EncodingBlob = {
