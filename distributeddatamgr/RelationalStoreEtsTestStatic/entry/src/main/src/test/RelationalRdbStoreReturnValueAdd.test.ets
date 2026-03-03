@@ -453,8 +453,8 @@ export default function RelationalRdbStoreReturnValueAddTest() {
             expect().assertFail();
             done();
           }
-          console.info(domain, tag, TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
-          expect(resultSet.columnCount).assertEqual(0);
+          console.info(domain, tag, TAG + `ResultSet column names: ${resultSet!.columnNames}, column count: ${resultSet!.columnCount}`);
+          expect(resultSet!.columnCount).assertEqual(0);
           done();
         });
       }catch(err) {
@@ -1922,26 +1922,26 @@ export default function RelationalRdbStoreReturnValueAddTest() {
             done();
           }
           try {
-            console.info(domain, tag + TAG +`ResultSet column names: ${resultSet.columnNames}`);
-            console.info(`ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
-            expect(resultSet.columnNames.length > 0).assertTrue();
-            console.info(domain, tag + TAG +`ResultSet column count: ${resultSet.columnCount}`);
-            expect(resultSet.columnCount == 9).assertTrue();
-            console.info(domain, tag + TAG +`ResultSet rowIndex:${resultSet.rowIndex}`);
-            expect(resultSet.rowIndex == -1).assertTrue();
-            console.info(domain, tag + TAG +`ResultSet isAtFirstRow: ${resultSet.isAtFirstRow}`);
-            expect(resultSet.isAtFirstRow).assertEqual(false);
-            console.info(domain, tag + TAG +`ResultSet isAtLastRow: ${resultSet.isAtLastRow}`);
-            expect(resultSet.isAtLastRow).assertEqual(false);
-            console.info(domain, tag + TAG +`ResultSet isEnded:${resultSet.isEnded}`);
-            expect(resultSet.isEnded).assertEqual(false);
-            console.info(domain, tag + TAG +`ResultSet isStarted: ${resultSet.isStarted}`);
-            expect(resultSet.isStarted).assertEqual(false);
-            console.info(domain, tag + TAG +`ResultSet isClosed: ${resultSet.isClosed}`);
-            expect(resultSet.isClosed).assertEqual(false);
-            console.info(domain, tag + TAG +`ResultSet rowCount:${resultSet.rowCount}`);
-            expect(resultSet.rowCount == 1).assertTrue();
-            resultSet.close();
+            console.info(domain, tag + TAG +`ResultSet column names: ${resultSet!.columnNames}`);
+            console.info(`ResultSet column names: ${resultSet!.columnNames}, column count: ${resultSet!.columnCount}`);
+            expect(resultSet!.columnNames.length > 0).assertTrue();
+            console.info(domain, tag + TAG +`ResultSet column count: ${resultSet!.columnCount}`);
+            expect(resultSet!.columnCount == 9).assertTrue();
+            console.info(domain, tag + TAG +`ResultSet rowIndex:${resultSet!.rowIndex}`);
+            expect(resultSet!.rowIndex == -1).assertTrue();
+            console.info(domain, tag + TAG +`ResultSet isAtFirstRow: ${resultSet!.isAtFirstRow}`);
+            expect(resultSet!.isAtFirstRow).assertEqual(false);
+            console.info(domain, tag + TAG +`ResultSet isAtLastRow: ${resultSet!.isAtLastRow}`);
+            expect(resultSet!.isAtLastRow).assertEqual(false);
+            console.info(domain, tag + TAG +`ResultSet isEnded:${resultSet!.isEnded}`);
+            expect(resultSet!.isEnded).assertEqual(false);
+            console.info(domain, tag + TAG +`ResultSet isStarted: ${resultSet!.isStarted}`);
+            expect(resultSet!.isStarted).assertEqual(false);
+            console.info(domain, tag + TAG +`ResultSet isClosed: ${resultSet!.isClosed}`);
+            expect(resultSet!.isClosed).assertEqual(false);
+            console.info(domain, tag + TAG +`ResultSet rowCount:${resultSet!.rowCount}`);
+            expect(resultSet!.rowCount == 1).assertTrue();
+            resultSet!.close();
             done();
           } catch (err) {
             console.error(`Query failed, code is ${err.code}, message is ${err.message}`);
@@ -1972,25 +1972,25 @@ export default function RelationalRdbStoreReturnValueAddTest() {
           done();
         }
         try {
-          console.info(domain, tag + TAG +`ResultSet column names: ${resultSet.columnNames}`);
-          expect(resultSet.columnNames.length > 0).assertTrue();
-          console.info(domain, tag + TAG +`ResultSet column count: ${resultSet.columnCount}`);
-          expect(resultSet.columnCount == 9).assertTrue();
-          console.info(domain, tag + TAG +`ResultSet rowIndex:${resultSet.rowIndex}`);
-          expect(resultSet.rowIndex == -1).assertTrue();
-          console.info(domain, tag + TAG +`ResultSet isAtFirstRow: ${resultSet.isAtFirstRow}`);
-          expect(resultSet.isAtFirstRow).assertEqual(false);
-          console.info(domain, tag + TAG +`ResultSet isAtLastRow: ${resultSet.isAtLastRow}`);
-          expect(resultSet.isAtLastRow).assertEqual(false);
-          console.info(domain, tag + TAG +`ResultSet isEnded:${resultSet.isEnded}`);
-          expect(resultSet.isEnded).assertEqual(false);
-          console.info(domain, tag + TAG +`ResultSet isStarted: ${resultSet.isStarted}`);
-          expect(resultSet.isStarted).assertEqual(false);
-          console.info(domain, tag + TAG +`ResultSet isClosed: ${resultSet.isClosed}`);
-          expect(resultSet.isClosed).assertEqual(false);
-          console.info(domain, tag + TAG +`ResultSet rowCount:${resultSet.rowCount}`);
-          expect(resultSet.rowCount == 1).assertTrue();
-          resultSet.close();
+          console.info(domain, tag + TAG +`ResultSet column names: ${resultSet!.columnNames}`);
+          expect(resultSet!.columnNames.length > 0).assertTrue();
+          console.info(domain, tag + TAG +`ResultSet column count: ${resultSet!.columnCount}`);
+          expect(resultSet!.columnCount == 9).assertTrue();
+          console.info(domain, tag + TAG +`ResultSet rowIndex:${resultSet!.rowIndex}`);
+          expect(resultSet!.rowIndex == -1).assertTrue();
+          console.info(domain, tag + TAG +`ResultSet isAtFirstRow: ${resultSet!.isAtFirstRow}`);
+          expect(resultSet!.isAtFirstRow).assertEqual(false);
+          console.info(domain, tag + TAG +`ResultSet isAtLastRow: ${resultSet!.isAtLastRow}`);
+          expect(resultSet!.isAtLastRow).assertEqual(false);
+          console.info(domain, tag + TAG +`ResultSet isEnded:${resultSet!.isEnded}`);
+          expect(resultSet!.isEnded).assertEqual(false);
+          console.info(domain, tag + TAG +`ResultSet isStarted: ${resultSet!.isStarted}`);
+          expect(resultSet!.isStarted).assertEqual(false);
+          console.info(domain, tag + TAG +`ResultSet isClosed: ${resultSet!.isClosed}`);
+          expect(resultSet!.isClosed).assertEqual(false);
+          console.info(domain, tag + TAG +`ResultSet rowCount:${resultSet!.rowCount}`);
+          expect(resultSet!.rowCount == 1).assertTrue();
+          resultSet!.close();
           done();
         } catch (err) {
           console.error(`Query failed, code is ${err.code}, message is ${err.message}`);
