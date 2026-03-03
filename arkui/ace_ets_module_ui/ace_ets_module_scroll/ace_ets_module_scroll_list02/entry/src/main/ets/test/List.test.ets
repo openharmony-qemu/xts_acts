@@ -67,8 +67,8 @@ import listVisibleContent from './List/listVisibleContent.test';
 import ListFlingCallback from './List/ListFlingCallback.test'
 import ListScrollEdgeCallback from './List/ListScrollEdgeCallback.test';
 import listFrictionRes from './List/listFrictionRes.test';
-import listItemNullUndefinedTest from './ListItem/listItemNullUndefined.test'
 import swipeActionNullUndefined from './ListItem/swipeActionNullUndefined.test'
+import listItemNullUndefinedTest from './ListItem/listItemNullUndefined.test'
 import listItemGroupNullUndefinedTest from './ListItemGroup/listItemGroupNullUndefined.test'
 import childrenMainSizeNullUndefined from './listDefault/childrenMainSizeNullUndefined.test';
 import listEventNullUndefined from './listDefault/listEventNullUndefined.test';
@@ -133,8 +133,8 @@ export default function testsuite() {
   ListFlingCallback()
   ListScrollEdgeCallback()
   listFrictionRes()
-  listItemNullUndefinedTest()
   swipeActionNullUndefined()
+  listItemNullUndefinedTest()
   listItemGroupNullUndefinedTest()
   childrenMainSizeNullUndefined()
   listEventNullUndefined()

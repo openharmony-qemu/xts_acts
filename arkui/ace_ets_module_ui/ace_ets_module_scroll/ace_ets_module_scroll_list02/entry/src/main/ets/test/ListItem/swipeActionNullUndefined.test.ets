@@ -41,6 +41,10 @@ export default function swipeActionNullUndefined() {
       console.info("swipeActionNullUndefined beforeEach end");
       done();
     });
+    beforeAll(async () => {
+      await CommonFunc.sleep(1000);
+      console.info('swipeActionNullUndefined beforeAll start');
+    });
     
     // ========== expand tests ==========
     /**
@@ -53,6 +57,7 @@ export default function swipeActionNullUndefined() {
      */
     it('expandNullUndefined_0100', Level.LEVEL2, async () => {
       console.info('[expandNullUndefined_0100] START');
+      await CommonFunc.sleep(1000);
       let driver = await Driver.create()
       let clickBtn = await driver.findComponent(ON.id('expand_nullUndefined_1'));
       await clickBtn.click();
@@ -78,6 +83,7 @@ export default function swipeActionNullUndefined() {
      */
     it('expandNullUndefined_0200', Level.LEVEL2, async () => {
       console.info('[expandNullUndefined_0200] START');
+      await CommonFunc.sleep(1000);
       let driver = await Driver.create()
       let clickBtn = await driver.findComponent(ON.id('expand_nullUndefined_2'));
       await clickBtn.click();
@@ -103,6 +109,7 @@ export default function swipeActionNullUndefined() {
      */
     it('expandNullUndefined_0300', Level.LEVEL2, async () => {
       console.info('[expandNullUndefined_0300] START');
+      await CommonFunc.sleep(1000);
       let driver = await Driver.create()
       let clickBtn = await driver.findComponent(ON.id('expand_nullUndefined_3'));
       await clickBtn.click();
@@ -128,6 +135,7 @@ export default function swipeActionNullUndefined() {
      */
     it('expandNullUndefined_0400', Level.LEVEL2, async () => {
       console.info('[expandNullUndefined_0400] START');
+      await CommonFunc.sleep(1000);
       let driver = await Driver.create()
       let clickBtn = await driver.findComponent(ON.id('expand_nullUndefined_4'));
       await clickBtn.click();
@@ -154,6 +162,7 @@ export default function swipeActionNullUndefined() {
      */
     it('collapseNullUndefined_0100', Level.LEVEL2, async () => {
       console.info('[collapseNullUndefined_0100] START');
+      await CommonFunc.sleep(1000);
       let driver = await Driver.create()
       let clickBtn = await driver.findComponent(ON.id('collapse_nullUndefined_1'));
       await clickBtn.click();
@@ -179,6 +188,7 @@ export default function swipeActionNullUndefined() {
      */
     it('collapseNullUndefined_0200', Level.LEVEL2, async () => {
       console.info('[collapseNullUndefined_0200] START');
+      await CommonFunc.sleep(1000);
       let driver = await Driver.create()
       let clickBtn = await driver.findComponent(ON.id('collapse_nullUndefined_2'));
       await clickBtn.click();
