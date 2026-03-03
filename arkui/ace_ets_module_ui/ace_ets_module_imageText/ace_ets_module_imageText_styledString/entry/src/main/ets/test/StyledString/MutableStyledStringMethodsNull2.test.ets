@@ -16,7 +16,6 @@
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
-import { destoryAbility, sleep, startPage } from '../../../uiutils/commonUtils';
 
 export default function MutableStyledStringMethodsNull2Test() {
   describe('MutableStyledStringMethodsNull2Test', () => {
