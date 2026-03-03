@@ -536,7 +536,7 @@ export default function nfcIsoDepTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1001', Level.LEVEL0,async function (done)  {
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1001', Level.LEVEL0, async function (done) {
             let hceService = new cardEmulation.HceService();
             console.info('[NFC_test]10 hceService state is' + hceService);
             try {
@@ -564,7 +564,7 @@ export default function nfcIsoDepTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1002', Level.LEVEL0,async function (done)  {
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1002', Level.LEVEL0, async function (done) {
             let hceService = new cardEmulation.HceService();
             console.info('[NFC_test]10 hceService state is' + hceService);
             try {
@@ -592,7 +592,7 @@ export default function nfcIsoDepTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1002', Level.LEVEL0,async function (done)  {
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1003', Level.LEVEL0, async function (done) {
             let hceService = new cardEmulation.HceService();
             console.info('[NFC_test]10 hceService state is' + hceService);
             let responseData = [];
@@ -645,23 +645,23 @@ export default function nfcIsoDepTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1101', Level.LEVEL0,async function (done)  {
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1101', Level.LEVEL0, async function (done) {
             let hceService = new cardEmulation.HceService();
             console.info('[NFC_test]11 hceService state is' + hceService )
             function transmit_callback() {
-                return new Promise((resovle, reject) => {
+                return new Promise((resolve, reject) => {
                     hceService.transmit(null, (err, data) => {
                         if (err) {
                             reject(err.code);
                         } else {
-                            console.info('[NFC_test]11 hceService.transmit data: ' + data);
-                            resovle();
+                            console.info("[NFC_test] hceService.transmit data: " + data);
+                            resolve();
                             done();
                         }
                     });
                 });
             }
-            await transmit_callback().then ((data) => {
+            await transmit_callback().then((data) => {
                 console.info('[NFC_test]11 hceService.transmit done ');
             })
             .catch (err => {
@@ -672,6 +672,7 @@ export default function nfcIsoDepTagTest() {
                     console.info('[NFC_test]11 hceService.transmit err: ' + err);
                     expect().assertFail();
                 }
+                done();
             })
         })
 
@@ -683,24 +684,24 @@ export default function nfcIsoDepTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1102', Level.LEVEL0,async function (done)  {
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1102', Level.LEVEL0, async function (done) {
             let hceService = new cardEmulation.HceService();
             console.info('[NFC_test]11 hceService state is' + hceService )
             function transmit_callback() {
-                return new Promise((resovle, reject) => {
-                    hceService.transmit(null, (err, data) => {
+                return new Promise((resolve, reject) => {
+                    hceService.transmit(undefined, (err, data) => {
                         if (err) {
                             reject(err.code);
                         } else {
                             console.info('[NFC_test]11 hceService.transmit data: ' + data);
-                            resovle();
+                            resolve();
                             done();
                         }
                     });
                 });
             }
-            await transmit_callback().then ((data) => {
-                console.info('[NFC_test]11 hceService.transmit done ');
+            await transmit_callback().then((data) => {
+                console.info("[NFC_test] hceService.transmit done ");
             })
             .catch (err => {
                 if (err.code === 401) {
@@ -710,6 +711,7 @@ export default function nfcIsoDepTagTest() {
                     console.info('[NFC_test]11 hceService.transmit err: ' + err);
                     expect().assertFail();
                 }
+                done();
             })
         })
 
@@ -721,24 +723,24 @@ export default function nfcIsoDepTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1103', Level.LEVEL0,async function (done)  {
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1103', Level.LEVEL0, async function (done) {
             let hceService = new cardEmulation.HceService();
             console.info('[NFC_test]11 hceService state is' + hceService )
             let responseData = [];
             function transmit_callback() {
-                return new Promise((resovle, reject) => {
+                return new Promise((resolve, reject) => {
                     hceService.transmit(responseData, (err, data) => {
                         if (err) {
                             reject(err.code);
                         } else {
                             console.info('[NFC_test]11 hceService.transmit data: ' + data);
-                            resovle();
+                            resolve();
                             done();
                         }
                     });
                 });
             }
-            await transmit_callback().then ((data) => {
+            await transmit_callback().then((data) => {
                 console.info('[NFC_test]11 hceService.transmit done ');
             })
             .catch (err => {
@@ -749,6 +751,7 @@ export default function nfcIsoDepTagTest() {
                     console.info('[NFC_test]11 hceService.transmit err: ' + err);
                     expect().assertFail();
                 }
+                done();
             })
         })
 
@@ -853,8 +856,6 @@ export default function nfcIsoDepTagTest() {
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_1402', Level.LEVEL0, function ()  {
             let hceService = new cardEmulation.HceService();
             console.info('[NFC_test]14 hceService state is' + hceService )
-            let aidList = [];
-            let responseData = [0x1, 0x2];
             try {
                 hceService.startHCE(null);
                 console.info('[NFC_test]14 hceService startHCE is success ')
@@ -864,39 +865,7 @@ export default function nfcIsoDepTagTest() {
                 console.info('[NFC_test]14 hceService sendResponse is success ')
             } catch (error) {
                 if (error.code === 401) {
-                    console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code)
-                    expect(401).assertEqual(error.code);
-                } else {
-                    console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code)
-                    expect().assertFail();
-                }
-                done();
-            }
-        })
-
-        /**
-         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1402
-         * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1402
-         * @tc.desc   Whether to support a certain type of card HceService startHCE/stopHCE/sendResponse
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1402', Level.LEVEL0, function ()  {
-            let hceService = new cardEmulation.HceService();
-            console.info('[NFC_test]14 hceService state is' + hceService )
-            let aidList = [];
-            let responseData = [0x1, 0x2];
-            try {
-                hceService.startHCE(undefined);
-                console.info('[NFC_test]14 hceService startHCE is success ')
-                hceService.stopHCE();
-                console.info('[NFC_test]14 hceService stopHCE is success ')
-                hceService.sendResponse(undefined);
-                console.info('[NFC_test]14 hceService sendResponse is success ')
-            } catch (error) {
-                if (error.code === 401) {
-                    console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code)
+                    console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code);
                     expect(401).assertEqual(error.code);
                 } else {
                     console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code)
@@ -917,6 +886,36 @@ export default function nfcIsoDepTagTest() {
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_1403', Level.LEVEL0, function ()  {
             let hceService = new cardEmulation.HceService();
             console.info('[NFC_test]14 hceService state is' + hceService )
+            try {
+                hceService.startHCE(undefined);
+                console.info('[NFC_test]14 hceService startHCE is success ')
+                hceService.stopHCE();
+                console.info('[NFC_test]14 hceService stopHCE is success ')
+                hceService.sendResponse(undefined);
+                console.info('[NFC_test]14 hceService sendResponse is success ')
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code)
+                    expect().assertFail();
+                }
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1404
+         * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1404
+         * @tc.desc   Whether to support a certain type of card HceService startHCE/stopHCE/sendResponse
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1404', Level.LEVEL0, function ()  {
+            let hceService = new cardEmulation.HceService();
+            console.info('[NFC_test]14 hceService state is' + hceService )
             let aidList = [];
             let responseData = [];
             try {
@@ -928,7 +927,7 @@ export default function nfcIsoDepTagTest() {
                 console.info('[NFC_test]14 hceService sendResponse is success ')
             } catch (error) {
                 if (error.code === 401) {
-                    console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code)
+                    console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code);
                     expect(401).assertEqual(error.code);
                 } else {
                     console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code)
