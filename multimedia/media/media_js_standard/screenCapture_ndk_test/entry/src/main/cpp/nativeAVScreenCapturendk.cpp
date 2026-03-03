@@ -1006,7 +1006,7 @@ static napi_value OriginAVScreenCaptureCallBackTest1(napi_env env, napi_callback
 // SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
 static napi_value OriginAVScreenCaptureCallBackTest2(napi_env env, napi_callback_info info)
 {
-    auto screenCaptureResult =OH_AVScreenCapture_SetErrorCallback(
+    auto screenCaptureResult = OH_AVScreenCapture_SetErrorCallback(
         screenCaptureStrategyForPrivacyMaskMode, OnError, nullptr);
     int32_t resCapture = TEST_FAILED;
     if (screenCaptureResult == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
