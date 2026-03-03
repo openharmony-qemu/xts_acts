@@ -270,7 +270,6 @@ export default function CameraGetActiveProfileTest() {
       await closeFd(fdNumber);
     });
 
-
     /**
      * @tc.name   CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_001
      * @tc.number CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_001
@@ -495,7 +494,7 @@ export default function CameraGetActiveProfileTest() {
     /**
      * @tc.name   CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_006
      * @tc.number CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_006
-     * @tc.desc   capture settings Parameter missing
+     * @tc.desc   capture settings null Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -527,7 +526,7 @@ export default function CameraGetActiveProfileTest() {
     /**
      * @tc.name   CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_007
      * @tc.number CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_007
-     * @tc.desc   capture settings Parameter missing
+     * @tc.desc   capture settings undefined Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -716,7 +715,7 @@ export default function CameraGetActiveProfileTest() {
     /**
      * @tc.name   CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_012
      * @tc.number CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_012
-     * @tc.desc   capture promise settings Parameter missing
+     * @tc.desc   capture promise settings null Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -743,7 +742,7 @@ export default function CameraGetActiveProfileTest() {
     /**
      * @tc.name   CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_013
      * @tc.number CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_013
-     * @tc.desc   capture promise settings Parameter missing
+     * @tc.desc   capture promise settings undefined Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -910,7 +909,7 @@ export default function CameraGetActiveProfileTest() {
     /**
      * @tc.name   CAMERA_GET_VIDEO_ROTATION_001
      * @tc.number CAMERA_GET_VIDEO_ROTATION_001
-     * @tc.desc   getVideoRotation Parameter missing
+     * @tc.desc   getVideoRotation null Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -935,7 +934,7 @@ export default function CameraGetActiveProfileTest() {
     /**
      * @tc.name   CAMERA_GET_VIDEO_ROTATION_002
      * @tc.number CAMERA_GET_VIDEO_ROTATION_002
-     * @tc.desc   getVideoRotation Parameter missing
+     * @tc.desc   getVideoRotation undefined Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
