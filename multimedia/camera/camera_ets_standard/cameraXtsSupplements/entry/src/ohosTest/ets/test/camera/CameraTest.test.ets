@@ -597,12 +597,9 @@ export default function CameraTest() {
       try {
         createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        let ImageRotation = mPhotoOutput.getPhotoRotation(null);
+        mPhotoOutput.getPhotoRotation(null);
         console.info(TAG, testName, 'success getPhotoRotation');
-        expect(ImageRotation == camera.ImageRotation.ROTATION_0 ||
-          ImageRotation == camera.ImageRotation.ROTATION_90 ||
-          ImageRotation == camera.ImageRotation.ROTATION_180 ||
-          ImageRotation == camera.ImageRotation.ROTATION_270).assertTrue()
+        expect().assertFail()
         await releasePhotoSession();
         done()
       } catch (err) {
@@ -630,12 +627,9 @@ export default function CameraTest() {
       try {
         createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        let ImageRotation = mPhotoOutput.getPhotoRotation(undefined);
+        mPhotoOutput.getPhotoRotation(undefined);
         console.info(TAG, testName, 'success getPhotoRotation');
-        expect(ImageRotation == camera.ImageRotation.ROTATION_0 ||
-          ImageRotation == camera.ImageRotation.ROTATION_90 ||
-          ImageRotation == camera.ImageRotation.ROTATION_180 ||
-          ImageRotation == camera.ImageRotation.ROTATION_270).assertTrue()
+        expect().assertFail()
         await releasePhotoSession();
         done()
       } catch (err) {
