@@ -70,7 +70,7 @@ export default function ImageHeifsTest() {
         done();
       } catch (error) {
         console.error(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -106,7 +106,7 @@ export default function ImageHeifsTest() {
         done();
       } catch (error) {
         console.error(TAG, testName, ' getProperties error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -185,7 +185,7 @@ export default function ImageHeifsTest() {
         done();
       } catch (error) {
         console.error(TAG, testName, ' getHdrComposedPixelmapWithOptions error', error.message, error.code);
-        expect(error.code).assertEqual('7600202');
+        expect(Number(error.code)).assertEqual(7600202);
       } finally {
         imageSource?.release();
         done();
@@ -222,7 +222,7 @@ export default function ImageHeifsTest() {
         done();
       } catch (error) {
         console.error(TAG, testName, ' getHdrComposedPixelmapWithOptions error', error.message, error.code);
-        expect(error.code).assertEqual('7600202');
+        expect(Number(error.code)).assertEqual(7600202);
       } finally {
         imageSource?.release();
         done();
@@ -259,7 +259,7 @@ export default function ImageHeifsTest() {
         done();
       } catch (error) {
         console.error(TAG, testName, ' getHdrComposedPixelmapWithOptions error', error.message, error.code);
-        expect(error.code).assertEqual('7600202');
+        expect(Number(error.code)).assertEqual(7600202);
       } finally {
         imageSource?.release();
         done();
@@ -295,7 +295,7 @@ export default function ImageHeifsTest() {
         console.info(TAG, testName, 'success setProperties');
       } catch (error) {
         console.info(TAG, testName, ' getHdrComposedPixelmapWithOptions error', error.message, error.code);
-        expect(error.code).assertEqual('7600202');
+        expect(Number(error.code)).assertEqual(7600202);
       } finally {
         imageSource?.release();
         done();
@@ -331,7 +331,7 @@ export default function ImageHeifsTest() {
         console.info(TAG, testName, 'success setProperties');
       } catch (error) {
         console.info(TAG, testName, ' getHdrComposedPixelmapWithOptions error', error.message, error.code);
-        expect(error.code).assertEqual('7600202');
+        expect(Number(error.code)).assertEqual(7600202);
       } finally {
         imageSource?.release();
         done();
