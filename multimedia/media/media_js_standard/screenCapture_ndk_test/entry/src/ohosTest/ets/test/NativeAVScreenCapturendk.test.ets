@@ -557,7 +557,7 @@ export default function nativeAVScreenCaptureNdkTest() {
       let result1: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker3();
 
       expect(result1).assertEqual(0);
-      let isShowDialog: number = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
+      isShowDialog = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
       let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
       console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
         resultStop);
@@ -607,10 +607,10 @@ export default function nativeAVScreenCaptureNdkTest() {
         result5);
       expect(result5).assertEqual(0);
 
-      let result6: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest6();
+      let result5: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest6();
       console.info(Tag + "OriginAVScreenCaptureCallBackTest6-------------result6:" +
-        result6);
-      expect(result6).assertEqual(0);
+        result5);
+      expect(result5).assertEqual(0);
 
       let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
       console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
