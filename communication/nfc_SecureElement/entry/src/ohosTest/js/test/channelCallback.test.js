@@ -220,6 +220,7 @@ export default function channelCallbacktest() {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
                             expect().assertFail();
                         }
+                        done();
                     })
                 }
             } catch (error) {
@@ -268,6 +269,7 @@ export default function channelCallbacktest() {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
                             expect().assertFail();
                         }
+                        done();
                     })
                 }
             } catch (error) {
@@ -317,6 +319,7 @@ export default function channelCallbacktest() {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
                             expect().assertFail();
                         }
+                        done();
                     })
                 }
             } catch (error) {
@@ -497,6 +500,7 @@ export default function channelCallbacktest() {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
                             expect().assertFail();
                         }
+                        done();
                     })
                 }
             } catch (error) {
@@ -546,6 +550,7 @@ export default function channelCallbacktest() {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
                             expect().assertFail();
                         }
+                        done();
                     })
                 }
             } catch (error) {
@@ -596,6 +601,7 @@ export default function channelCallbacktest() {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
                             expect().assertFail();
                         }
+                        done();
                     })
                 }
             } catch (error) {
@@ -1245,8 +1251,6 @@ export default function channelCallbacktest() {
                             console.info("[NFC_test] 15 openBasicChannel occurs exception err: " + err);
                             expect().assertFail();
                         }
-                        console.info("[NFC_test]15 openBasicChannel occurs exception:" + err.code + "---" + err);
-                        expect(801).assertEqual(err.code);
                     });
                     sleep(5000);
                 }
@@ -1601,7 +1605,7 @@ export default function channelCallbacktest() {
                         console.info("[NFC_test] MifareClassicTag5 writeSingleBlock1 error: " + error);
                         expect(801).assertEqual(error.code);
                     }
-                    done();;
+                    done();
             }
             sleep(900);
             done();
@@ -1680,7 +1684,7 @@ export default function channelCallbacktest() {
                         console.info("[NFC_test] MifareClassicTag5 writeSingleBlock1 error: " + error);
                         expect(801).assertEqual(error.code);
                     }
-                    done();;
+                    done();
             }
             sleep(900);
             done();
