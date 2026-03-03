@@ -633,5 +633,26 @@ export default function gridDefaultTest1() {
       expect(obj.$attrs.cachedCount).assertEqual(1);
       console.info('[gridCachedCountNullUndefined_0300] END');
     })
+
+    /**
+     * @tc.name   gridCachedCountNullUndefined_0400
+     * @tc.number gridCachedCountNullUndefined_0400
+     * @tc.desc   Test Grid cachedCount show property with false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('gridCachedCountNullUndefined_0400', Level.LEVEL0, async () => {
+      console.info('[gridCachedCountNullUndefined_0400] START');
+      let strJson: string = getInspectorByKey('grid_cachedCount_show_false');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+      console.info("[gridCachedCountNullUndefined_0400] type: " + JSON.stringify(obj.$type));
+      console.info("[gridCachedCountNullUndefined_0400] show false is: " + JSON.stringify(obj.$attrs.cachedCount));
+
+      // Grid cachedCount show 设置false
+      expect(obj.$attrs.cachedCount).assertEqual(2);
+      console.info('[gridCachedCountNullUndefined_0400] END');
+    })
   })
 }
