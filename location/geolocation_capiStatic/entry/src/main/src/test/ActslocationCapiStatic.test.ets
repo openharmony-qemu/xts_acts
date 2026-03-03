@@ -174,7 +174,7 @@ export default function actslocationTest() {
          * @tc.type  Function
          * @tc.size  MEDIUMTEST
          */
-        it('testGeolocationManagerGeofenceConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
+        it('testGeolocationManagerCoreConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
             async(done:()=>void):Promise<void>=>{
                 expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_DEFAULT == -1)
                 expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_PERMISSION_DENIED == -2)
@@ -212,7 +212,7 @@ export default function actslocationTest() {
          * @tc.type  Function
          * @tc.size  MEDIUMTEST
          */
-        it('testGeolocationManagerGeofenceConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
+        it('testGeolocationManagerGnssConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
             async(done:()=>void):Promise<void>=>{
                 expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_UNKNOWN == 0)
                 expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GPS == 1)
