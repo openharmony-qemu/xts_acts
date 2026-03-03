@@ -47,7 +47,9 @@
                 "./resource/medialibrary/01.gif ->/data/tmp/case",
                 "./resource/medialibrary/01.png ->/data/tmp/case",
                 "./resource/medialibrary/01.mpeg ->/data/tmp/case",
-                "./resource/medialibrary/stm_RAW.dng ->/data/tmp/case"
+                "./resource/medialibrary/stm_RAW.dng ->/data/tmp/case",
+                "./resource/medialibrary/test.jpg ->/data/tmp/case"
+
             ]
         },
         {
