@@ -16,8 +16,40 @@
 
 import webSetAppCustomUserAgent from './WebSetAppCustomUserAgent.test';
 import webSetUserAgentForHosts from './WebSetUserAgentForHosts.test';
+import webSetUserAgentClientHintsEnabled from './WebSetUserAgentClientHintsEnabled.test';
+import webUserAgentMetadata from './WebUserAgentMetadata.test';
+import webSetUrlUrlTrustListList from './WebSetUrlTrustList.test';
+import webViewControllerRefresh from './WebViewControllerRefresh.test';
+import webUserAgentBrandVersion from './WebUserAgentBrandVersion.test';
+import webTestUserAgentMetadata from './WebUserAgentMetadataBrandVersionList.test';
+import webTestUserAgentMetadataArch from './WebUserAgentMetadataArch.test';
+import webTestUserAgentMetadataBitness from './WebUserAgentMetadataBitness.test';
+import webTestUserAgentMetadataFormFactors from './WebUserAgentMetadataFormFactors.test';
+import webTestUserAgentMetadataFormFactorsEum from './WebUserAgentMetadataFormFactorsEum.test';
+import webTestUserAgentMetadataFullVersion from './WebUserAgentMetadataFullVersion.test';
+import webTestUserAgentMetadataMobile from './WebUserAgentMetadataMobile.test';
+import webTestUserAgentMetadataModel from './WebUserAgentMetadataModel.test';
+import webTestUserAgentMetadataPlatform from './WebUserAgentMetadataPlatform.test';
+import webTestUserAgentMetadataPlatformVersion from './WebUserAgentMetadataPlatformVersion.test';
+import webTestUserAgentMetadataWow64 from './WebUserAgentMetadataWow64.test';
 
 export default function testsuite() {
   webSetAppCustomUserAgent();
   webSetUserAgentForHosts();
+  webSetUserAgentClientHintsEnabled();
+  webUserAgentMetadata();
+  webSetUrlUrlTrustListList();
+  webViewControllerRefresh();
+  webUserAgentBrandVersion();
+  webTestUserAgentMetadata();
+  webTestUserAgentMetadataArch();
+  webTestUserAgentMetadataBitness();
+  webTestUserAgentMetadataFormFactors();
+  webTestUserAgentMetadataFormFactorsEum();
+  webTestUserAgentMetadataFullVersion();
+  webTestUserAgentMetadataMobile();
+  webTestUserAgentMetadataModel();
+  webTestUserAgentMetadataPlatform();
+  webTestUserAgentMetadataPlatformVersion();
+  webTestUserAgentMetadataWow64();
 }
