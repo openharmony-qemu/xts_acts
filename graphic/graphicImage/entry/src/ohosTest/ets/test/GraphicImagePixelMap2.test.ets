@@ -26,10 +26,6 @@ export default function graphicImagePixelMap2() {
   describe("graphicImagePixelMap2", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     beforeAll(() => {
-      // let opts: image.InitializationOptions = {
-      //   editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
-      // }
-      // pixelMap = image.createPixelMapSync(opts);
     })
 
     /**
@@ -931,35 +927,6 @@ export default function graphicImagePixelMap2() {
         await pixelMap.release();
         done();
       })
-
-    /**
-     * @tc.name   graphicImagePixelMap2_2900
-     * @tc.number graphicImagePixelMap2_2900
-     * @tc.desc   image API ArkTS1.2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    // it('graphicImagePixelMap2_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     let msgStr = 'www data graphicImagePixelMap2_2900';
-    //     let opts: image.InitializationOptions = {
-    //       editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
-    //     }
-    //     let pixelMap: image.PixelMap = image.createPixelMapSync(opts);
-    //     if (pixelMap != undefined) {
-    //       try {
-    //         console.info(msgStr + 'PixelMapFormat convert Succeeded 1111');
-    //         await pixelMap.convertPixelFormat(image.PixelMapFormat.ASTC_4x4);
-    //         console.info(msgStr + 'PixelMapFormat convert Succeeded');
-    //       } catch(err){
-    //         console.info(msgStr + 'PixelMapFormat convert failed ', err.code);
-    //         expect().assertFail();
-    //       }
-    //     }
-    //     await pixelMap.release();
-    //     done();
-    //   })
 
     /**
      * @tc.name   graphicImagePixelMap2_3000

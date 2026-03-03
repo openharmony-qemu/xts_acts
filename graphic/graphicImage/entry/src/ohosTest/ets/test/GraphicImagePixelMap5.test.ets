@@ -26,14 +26,14 @@ export default function graphicImagePixelMap5() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.name   graphicImagePixelMap4_1400
-     * @tc.number graphicImagePixelMap4_1400
+     * @tc.name   graphicImagePixelMap5_1400
+     * @tc.number graphicImagePixelMap5_1400
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -52,14 +52,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_1500
-     * @tc.number graphicImagePixelMap4_1500
+     * @tc.name   graphicImagePixelMap5_1500
+     * @tc.number graphicImagePixelMap5_1500
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -78,14 +78,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_1600
-     * @tc.number graphicImagePixelMap4_1600
+     * @tc.name   graphicImagePixelMap5_1600
+     * @tc.number graphicImagePixelMap5_1600
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -104,14 +104,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_1700
-     * @tc.number graphicImagePixelMap4_1700
+     * @tc.name   graphicImagePixelMap5_1700
+     * @tc.number graphicImagePixelMap5_1700
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -130,14 +130,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_1800
-     * @tc.number graphicImagePixelMap4_1800
+     * @tc.name   graphicImagePixelMap5_1800
+     * @tc.number graphicImagePixelMap5_1800
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -156,14 +156,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_1900
-     * @tc.number graphicImagePixelMap4_1900
+     * @tc.name   graphicImagePixelMap5_1900
+     * @tc.number graphicImagePixelMap5_1900
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -182,14 +182,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_2000
-     * @tc.number graphicImagePixelMap4_2000
+     * @tc.name   graphicImagePixelMap5_2000
+     * @tc.number graphicImagePixelMap5_2000
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let opts: image.InitializationOptions = {
           editable: true, srcPixelFormat: image.PixelMapFormat.RGBA_8888,
@@ -207,14 +207,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_2100
-     * @tc.number graphicImagePixelMap4_2100
+     * @tc.name   graphicImagePixelMap5_2100
+     * @tc.number graphicImagePixelMap5_2100
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let opts: image.InitializationOptions = {
           editable: true, srcPixelFormat: image.PixelMapFormat.RGBA_8888,
@@ -232,14 +232,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_2200
-     * @tc.number graphicImagePixelMap4_2200
+     * @tc.name   graphicImagePixelMap5_2200
+     * @tc.number graphicImagePixelMap5_2200
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let opts: image.InitializationOptions = {
           editable: true, srcPixelFormat: image.PixelMapFormat.RGBA_8888,
@@ -257,14 +257,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_2300
-     * @tc.number graphicImagePixelMap4_2300
+     * @tc.name   graphicImagePixelMap5_2300
+     * @tc.number graphicImagePixelMap5_2300
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let opts: image.InitializationOptions = {
           editable: true, pixelFormat: image.PixelMapFormat.YCBCR_P010, size: { height: 4, width: 6 }
@@ -274,21 +274,21 @@ export default function graphicImagePixelMap5() {
           console.info('graphicImagePixelMap5_2300 success');
           done();
         } catch(error){
-          console.error(`www data Failed to graphicImagePixelMap4_2300. code is ${error}`);
+          console.error(`www data Failed to graphicImagePixelMap5_2300. code is ${error}`);
           expect().assertFail();
           done();
         }
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_2400
-     * @tc.number graphicImagePixelMap4_2400
+     * @tc.name   graphicImagePixelMap5_2400
+     * @tc.number graphicImagePixelMap5_2400
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -299,7 +299,7 @@ export default function graphicImagePixelMap5() {
           expect().assertFail();
           done();
         } catch(error){
-          console.error(`www data Failed to graphicImagePixelMap4_2400. code is ${error.code}, message is `
+          console.error(`www data Failed to graphicImagePixelMap5_2400. code is ${error.code}, message is `
             + `${error.message}`);
           expect(Number(error.code) === 7600201).assertTrue();
           done();
@@ -307,14 +307,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_2500
-     * @tc.number graphicImagePixelMap4_2500
+     * @tc.name   graphicImagePixelMap5_2500
+     * @tc.number graphicImagePixelMap5_2500
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -325,7 +325,7 @@ export default function graphicImagePixelMap5() {
           expect().assertFail();
           done();
         } catch(error){
-          console.error(`www data Failed to graphicImagePixelMap4_2500. code is ${error.code}, message is `
+          console.error(`www data Failed to graphicImagePixelMap5_2500. code is ${error.code}, message is `
             + `${error.message}`);
           expect(Number(error.code) === 7600201).assertTrue();
           done();
@@ -333,14 +333,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_2600
-     * @tc.number graphicImagePixelMap4_2600
+     * @tc.name   graphicImagePixelMap5_2600
+     * @tc.number graphicImagePixelMap5_2600
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -351,7 +351,7 @@ export default function graphicImagePixelMap5() {
           console.info('graphicImagePixelMap5_2600 success');
           done();
         } catch(error){
-          console.error(`www data Failed to graphicImagePixelMap4_2600. code is ${error}, message is `
+          console.error(`www data Failed to graphicImagePixelMap5_2600. code is ${error}, message is `
             + `${error.message}`);
           expect(error).assertEqual(7600201);
           done();
@@ -359,14 +359,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_2700
-     * @tc.number graphicImagePixelMap4_2700
+     * @tc.name   graphicImagePixelMap5_2700
+     * @tc.number graphicImagePixelMap5_2700
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -384,14 +384,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_2800
-     * @tc.number graphicImagePixelMap4_2800
+     * @tc.name   graphicImagePixelMap5_2800
+     * @tc.number graphicImagePixelMap5_2800
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -409,14 +409,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_2900
-     * @tc.number graphicImagePixelMap4_2900
+     * @tc.name   graphicImagePixelMap5_2900
+     * @tc.number graphicImagePixelMap5_2900
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await image.createPixelMapFromSurfaceWithTransformation('111111', true)
           .then((pixelMap: image.PixelMap) => {
@@ -439,14 +439,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_3000
-     * @tc.number graphicImagePixelMap4_3000
+     * @tc.name   graphicImagePixelMap5_3000
+     * @tc.number graphicImagePixelMap5_3000
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await image.createPixelMapFromSurfaceWithTransformation('', true)
           .then((pixelMap: image.PixelMap) => {
@@ -469,14 +469,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_3100
-     * @tc.number graphicImagePixelMap4_3100
+     * @tc.name   graphicImagePixelMap5_3100
+     * @tc.number graphicImagePixelMap5_3100
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const pixelMap: image.PixelMap = image.createPixelMapFromSurfaceWithTransformationSync('111111', true);
@@ -500,14 +500,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_3200
-     * @tc.number graphicImagePixelMap4_3200
+     * @tc.name   graphicImagePixelMap5_3200
+     * @tc.number graphicImagePixelMap5_3200
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const pixelMap: image.PixelMap = image.createPixelMapFromSurfaceWithTransformationSync('', true);
@@ -531,14 +531,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_3300
-     * @tc.number graphicImagePixelMap4_3300
+     * @tc.name   graphicImagePixelMap5_3300
+     * @tc.number graphicImagePixelMap5_3300
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -573,14 +573,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_3400
-     * @tc.number graphicImagePixelMap4_3400
+     * @tc.name   graphicImagePixelMap5_3400
+     * @tc.number graphicImagePixelMap5_3400
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -627,14 +627,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_3500
-     * @tc.number graphicImagePixelMap4_3500
+     * @tc.name   graphicImagePixelMap5_3500
+     * @tc.number graphicImagePixelMap5_3500
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -654,14 +654,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_3600
-     * @tc.number graphicImagePixelMap4_3600
+     * @tc.name   graphicImagePixelMap5_3600
+     * @tc.number graphicImagePixelMap5_3600
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -682,14 +682,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_3700
-     * @tc.number graphicImagePixelMap4_3700
+     * @tc.name   graphicImagePixelMap5_3700
+     * @tc.number graphicImagePixelMap5_3700
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -709,14 +709,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_3800
-     * @tc.number graphicImagePixelMap4_3800
+     * @tc.name   graphicImagePixelMap5_3800
+     * @tc.number graphicImagePixelMap5_3800
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -758,14 +758,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_3900
-     * @tc.number graphicImagePixelMap4_3900
+     * @tc.name   graphicImagePixelMap5_3900
+     * @tc.number graphicImagePixelMap5_3900
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -784,14 +784,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_4000
-     * @tc.number graphicImagePixelMap4_4000
+     * @tc.name   graphicImagePixelMap5_4000
+     * @tc.number graphicImagePixelMap5_4000
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -815,14 +815,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_4100
-     * @tc.number graphicImagePixelMap4_4100
+     * @tc.name   graphicImagePixelMap5_4100
+     * @tc.number graphicImagePixelMap5_4100
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -841,14 +841,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_4200
-     * @tc.number graphicImagePixelMap4_4200
+     * @tc.name   graphicImagePixelMap5_4200
+     * @tc.number graphicImagePixelMap5_4200
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg = '=====graphicImagePixelMap5_4200=====';
         const color: ArrayBuffer = new ArrayBuffer(16);
@@ -885,14 +885,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_4300
-     * @tc.number graphicImagePixelMap4_4300
+     * @tc.name   graphicImagePixelMap5_4300
+     * @tc.number graphicImagePixelMap5_4300
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg = '=====graphicImagePixelMap5_4300=====';
         const color: ArrayBuffer = new ArrayBuffer(16);
@@ -1021,14 +1021,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name    graphicImagePixelMap4_0100
-     * @tc.number  graphicImagePixelMap4_0100
+     * @tc.name    graphicImagePixelMap5_0100
+     * @tc.number  graphicImagePixelMap5_0100
      * @tc.desc    createPixelMapFromSurface function test.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('graphicImagePixelMap4_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('graphicImagePixelMap5_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
           // Test with valid parameters
@@ -1056,14 +1056,14 @@ export default function graphicImagePixelMap5() {
       });
 
     /**
-     * @tc.name    graphicImagePixelMap4_0200
-     * @tc.number  graphicImagePixelMap4_0200
+     * @tc.name    graphicImagePixelMap5_0200
+     * @tc.number  graphicImagePixelMap5_0200
      * @tc.desc    createPixelMapFromSurface function test.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('graphicImagePixelMap4_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('graphicImagePixelMap5_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
           // Test with valid parameters
@@ -1091,20 +1091,20 @@ export default function graphicImagePixelMap5() {
       });
 
     /**
-     * @tc.name   graphicImagePixelMap4_0300
-     * @tc.number graphicImagePixelMap4_0300
+     * @tc.name   graphicImagePixelMap5_0300
+     * @tc.number graphicImagePixelMap5_0300
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
         let surfaceId = '';
         try {
           let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync(surfaceId, region);
-          console.info('www data succeed in graphicImagePixelMap4_0300');
+          console.info('www data succeed in graphicImagePixelMap5_0300');
           expect(pixelMap !== null).assertTrue();
 
           // Verify basic properties
@@ -1122,19 +1122,19 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_0400
-     * @tc.number graphicImagePixelMap4_0400
+     * @tc.name   graphicImagePixelMap5_0400
+     * @tc.number graphicImagePixelMap5_0400
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let surfaceId = '';
         try {
           let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync(surfaceId);
-          console.info('www data succeed in graphicImagePixelMap4_0400');
+          console.info('www data succeed in graphicImagePixelMap5_0400');
           expect(pixelMap !== null).assertTrue();
 
           // Verify basic properties
@@ -1152,14 +1152,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_0500
-     * @tc.number graphicImagePixelMap4_0500
+     * @tc.name   graphicImagePixelMap5_0500
+     * @tc.number graphicImagePixelMap5_0500
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap4_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let opts: image.InitializationOptions = {
           editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 }
@@ -1176,14 +1176,14 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap4_0600
-     * @tc.number graphicImagePixelMap4_0600
+     * @tc.name   graphicImagePixelMap5_0600
+     * @tc.number graphicImagePixelMap5_0600
      * @tc.desc   image pixelMap newAPI22
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("graphicImagePixelMap4_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("graphicImagePixelMap5_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
