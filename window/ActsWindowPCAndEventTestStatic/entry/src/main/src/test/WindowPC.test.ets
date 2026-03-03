@@ -738,7 +738,7 @@ export default function WindowPCTest() {
             } catch (e) {
                 e = e as BusinessError;
                 console.log(msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
-                if(e.code == 801){
+                if(e.code === 801){
                     done()
                 }else{
                     expect(e.code).assertEqual(1300002);
@@ -4281,7 +4281,7 @@ export default function WindowPCTest() {
             } catch (exception) {
                 exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + ' Failed to get the height of window decor. Cause: ' + JSON.stringify(exception));
-                if (exception.code == 801 || exception.code == 1300002) {
+                if (exception.code === 801 || exception.code === 1300002) {
                     expect(true).assertTrue()
                     done()
                 } else {
@@ -4738,10 +4738,10 @@ export default function WindowPCTest() {
             } catch (err) {
                 err = err as BusinessError;
                 console.error(msgStr + `Failed to getWindowDecorVisible. Cause code: ${err.code}, message: ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                     console.log(msgStr + '此设备不支持');
                     done();
-                } else if(err.code == 1300002){
+                } else if(err.code === 1300002){
                     expect(true).assertTrue();
                     done();
                 }else {
@@ -5000,9 +5000,9 @@ export default function WindowPCTest() {
                 exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call getDecorButtonStyle. Cause:' + JSON.stringify(exception.code));
                 await tempWnd!.destroyWindow();
-                if (exception.code == 801) {
+                if (exception.code === 801) {
                     done();
-                } else if (exception.code == 1300004) {
+                } else if (exception.code === 1300004) {
                     done()
                 } else {
                     expect(false).assertFail();
@@ -5185,7 +5185,7 @@ export default function WindowPCTest() {
             } catch (error) {
                 error = error as BusinessError;
                 hilog.info(domain, tag,msgStr + 'Failed to get the area of title buttons. Cause: ' + JSON.stringify(error));
-                if (error.code == 801) {
+                if (error.code === 801) {
                     expect(true).assertTrue()
                     done()
                 } else {
