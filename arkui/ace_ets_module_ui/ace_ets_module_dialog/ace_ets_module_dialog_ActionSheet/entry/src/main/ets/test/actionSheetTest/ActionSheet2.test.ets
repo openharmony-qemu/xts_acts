@@ -49,7 +49,7 @@ export default function ActionSheet2() {
     });
     /* *
     * @tc.number  ActionSheet2_0100
-    * @tc.name    ActionSheet2_0100
+    * @tc.name    SUB_ACE_ActionSheet2_0100
     * @tc.desc    To test that the Provide decorator supports union types.
     * @tc.level   Level 0
     */
@@ -84,7 +84,7 @@ export default function ActionSheet2() {
     });
     /* *
     * @tc.number  ActionSheet2_0200
-    * @tc.name    ActionSheet2_0200
+    * @tc.name    SUB_ACE_ActionSheet2_0200
     * @tc.desc    To test that the Provide decorator supports union types.
     * @tc.level   Level 0
     */

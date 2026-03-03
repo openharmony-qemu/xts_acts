@@ -45,7 +45,7 @@ export default function ActionSheetJsunit() {
 
     /**
      * @tc.name    ActionSheetJsunit_0100
-     * @tc.number  ActionSheetJsunit_0100
+     * @tc.number  SUB_ACE_ActionSheetJsunit_0100
      * @tc.desc    set api
      * @tc.level   Level 0
      * @tc.type  

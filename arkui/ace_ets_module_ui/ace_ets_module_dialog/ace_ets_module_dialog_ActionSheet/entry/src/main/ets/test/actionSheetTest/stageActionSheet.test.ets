@@ -55,8 +55,8 @@ export default function stageActionSheet() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    testShowActionShee001
-     * @tc.name      testShowActionShee001
+     * @tc.number    SUB_ACE_testShowActionShee_0100
+     * @tc.name      testShowActionShee001 
      * @tc.desc      set api
      * @tc.level:    Level 0
      * @tc.type :
@@ -90,7 +90,7 @@ export default function stageActionSheet() {
       }, 500)
     });
     /**
-     * @tc.number    testShowActionShee002
+     * @tc.number    SUB_ACE_testShowActionShee_0200
      * @tc.name      testShowActionShee002
      * @tc.desc      set api
      * @tc.level:    Level 0
@@ -125,7 +125,7 @@ export default function stageActionSheet() {
       }, 500)
     });
     /**
-     * @tc.number    testShowActionShee003
+     * @tc.number    SUB_ACE_testShowActionShee_0300 
      * @tc.name      testShowActionShee003
      * @tc.desc      set api
      * @tc.level:    Level 0
