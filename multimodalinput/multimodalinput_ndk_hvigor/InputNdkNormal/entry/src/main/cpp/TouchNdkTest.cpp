@@ -145,9 +145,11 @@ static napi_value AddKeyEventHook1(napi_env env, napi_callback_info info)
 
     Input_Result retResult = OH_Input_AddKeyEventHook(HookCallback);
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_AddKeyEventHook_0100 retResult:%{public}d", retResult);
-    napi_create_int32(env,
-        (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SERVICE_EXCEPTION ||
-        retResult == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, &result);
+    if (retResult == INPUT_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, retResult == INPUT_DEVICE_NOT_SUPPORTED ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, retResult == INPUT_PERMISSION_DENIED ? 1 : 0, &result);
+    };
     return result;
 }
 
@@ -157,7 +159,7 @@ static napi_value RemoveKeyEventHook1(napi_env env, napi_callback_info info)
 
     Input_Result retResult = OH_Input_RemoveKeyEventHook(HookCallback);
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_RemoveKeyEventHook_0100 retResult:%{public}d", retResult);
-    napi_create_int32(env, (retResult == INPUT_SUCCESS || retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    napi_create_int32(env, retResult == INPUT_SUCCESS ? 1 : 0, &result);
     return result;
 }
 
@@ -170,8 +172,7 @@ static napi_value DispatchToNextHandler1(napi_env env, napi_callback_info info)
     OH_Input_GetKeyEventId(keyEvent, &eventId);
     Input_Result retResult = OH_Input_DispatchToNextHandler(eventId);
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_DispatchToNextHandler_0100 retResult:%{public}d", retResult);
-    napi_create_int32(env,
-        (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
     OH_Input_DestroyKeyEvent(&keyEvent);
     return result;
 }
@@ -732,6 +733,62 @@ static napi_value KeyCode26(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value KeyCode27(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t keyCode1 = 2009;
+    int32_t keyCode2 = 2012;
+    int32_t keyCode3 = 2014;
+    int32_t keyCode4 = 2018;
+    int32_t keyCode5 = 2019;
+    int32_t keyCode6 = 2020;
+    int32_t keyCode7 = 2022;
+    int32_t keyCode8 = 2032;
+    int32_t keyCode9 = 2042;
+    int32_t keyCode10 = 2045;
+    int32_t keyCode11 = 2046;
+    napi_create_int32(env,
+                      (Input_KeyCode::KEYCODE_9 == keyCode1 &&
+                      Input_KeyCode::KEYCODE_DPAD_UP == keyCode2 &&
+                      Input_KeyCode::KEYCODE_DPAD_LEFT == keyCode3 &&
+                      Input_KeyCode::KEYCODE_B == keyCode4 &&
+                      Input_KeyCode::KEYCODE_C == keyCode5 &&
+                      Input_KeyCode::KEYCODE_D == keyCode6 &&
+                      Input_KeyCode::KEYCODE_F == keyCode7 &&
+                      Input_KeyCode::KEYCODE_P == keyCode8 &&
+                      Input_KeyCode::KEYCODE_Z == keyCode9 &&
+                      Input_KeyCode::KEYCODE_ALT_LEFT == keyCode10 &&
+                      Input_KeyCode::KEYCODE_ALT_RIGHT == keyCode11) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value KeyCode28(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t keyCode1 = 2047;
+    int32_t keyCode2 = 2049;
+    int32_t keyCode3 = 2054;
+    int32_t keyCode4 = 2072;
+    int32_t keyCode5 = 2073;
+    int32_t keyCode6 = 2075;
+    int32_t keyCode7 = 2076;
+    int32_t keyCode8 = 2081;
+    int32_t keyCode9 = 2090;
+    int32_t keyCode10 = 2112;
+    napi_create_int32(env,
+                      (Input_KeyCode::KEYCODE_SHIFT_LEFT == keyCode1 &&
+                      Input_KeyCode::KEYCODE_TAB == keyCode2 &&
+                      Input_KeyCode::KEYCODE_ENTER == keyCode3 &&
+                      Input_KeyCode::KEYCODE_CTRL_LEFT == keyCode4 &&
+                      Input_KeyCode::KEYCODE_CTRL_RIGHT == keyCode5 &&
+                      Input_KeyCode::KEYCODE_SCROLL_LOCK == keyCode6 &&
+                      Input_KeyCode::KEYCODE_META_LEFT == keyCode7 &&
+                      Input_KeyCode::KEYCODE_MOVE_HOME == keyCode8 &&
+                      Input_KeyCode::KEYCODE_F1 == keyCode9 &&
+                      Input_KeyCode::KEYCODE_NUMPAD_9 == keyCode10) ? 1 : 0, &result);
+    return result;
+}
+
 static napi_value PointerStyle1(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -923,6 +980,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"KeyCode24", nullptr, KeyCode24, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"KeyCode25", nullptr, KeyCode25, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"KeyCode26", nullptr, KeyCode26, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode27", nullptr, KeyCode27, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode28", nullptr, KeyCode28, nullptr, nullptr, nullptr, napi_default, nullptr},        
         {"PointerStyle1", nullptr, PointerStyle1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"PointerStyle2", nullptr, PointerStyle2, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"PointerStyle3", nullptr, PointerStyle3, nullptr, nullptr, nullptr, napi_default, nullptr},
