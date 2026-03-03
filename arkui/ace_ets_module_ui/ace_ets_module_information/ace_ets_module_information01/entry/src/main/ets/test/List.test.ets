@@ -45,6 +45,7 @@ import QRCodeJsunitTest from './QRCodeTest/QRCodeJsunitTest.test';
 import QRCodeNodeTest from './QRCodeTest/QRCodeNodeTest.test';
 import QRCodeResourceStrTest from './QRCodeTest/QRCodeResourceStrTest.test';
 import QRCodeUIJsunit from './QRCodeTest/QRCodeUIJsunit.test';
+import QrcodePropertiesNullUndefinedTest from './QRCodeTest/QrcodePropertiesNullUndefinedTest.test';
 
 export default function testsuite() {
 
@@ -81,4 +82,5 @@ export default function testsuite() {
     QRCodeNodeTest()
     QRCodeResourceStrTest()
     QRCodeUIJsunit()
+    QrcodePropertiesNullUndefinedTest()
 }

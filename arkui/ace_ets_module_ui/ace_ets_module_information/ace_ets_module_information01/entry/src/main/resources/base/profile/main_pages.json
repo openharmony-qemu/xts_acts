@@ -33,6 +33,7 @@
         "MainAbility/pages/QRCode/QRCodeJsunitTest",
         "MainAbility/pages/QRCode/QRCodeNodeTest",
         "MainAbility/pages/QRCode/QRCodeResourceStrTest",
-        "MainAbility/pages/QRCode/QRCodeUIJsunit"
+        "MainAbility/pages/QRCode/QRCodeUIJsunit",
+        "MainAbility/pages/QRCode/QrcodePropertiesNullUndefinedTest"
     ]
 }
