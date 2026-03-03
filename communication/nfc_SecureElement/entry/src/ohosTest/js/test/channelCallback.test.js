@@ -594,9 +594,9 @@ export default function channelCallbacktest() {
                         console.info("[NFC_test]11 openBasicChannel done");
                     })
                     .catch(error => {
-                        if (error.code === 3300101) {
+                        if (error === 3300101) {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error.code + "---" + error);
-                            expect(3300101).assertEqual(error.code);
+                            expect(3300101).assertEqual(error);
                         } else {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
                             expect().assertFail();
