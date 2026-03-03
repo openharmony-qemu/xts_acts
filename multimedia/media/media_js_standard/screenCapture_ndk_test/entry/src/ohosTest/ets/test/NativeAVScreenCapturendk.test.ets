@@ -539,6 +539,31 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PICKER_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PICKER_0100
+     * @tc.desc   OH_AVScreenCapture_StrategyForPrivacyMaskMode 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PICKER_0100', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPicker();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
+      expect(result).assertEqual(0);
+
+      let isShowDialog: number = (await Utils.btnPickerTextScreenCapture()) || (await Utils.btnTextScreenCapture());
+      let result1: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker3();
+      expect(result1).assertEqual(0);
+      let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
+        resultStop);
+      expect(resultStop).assertEqual(0);
+      expect(isShowDialog).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401
      * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401
      * @tc.desc   OH_AVScreenCapture_StrategyForPrivacyMaskMode 1
@@ -1063,6 +1088,22 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0004
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0004
+     * @tc.desc   OH_AVScreenCapture_SetPickerMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0004', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeWindowOnly();
+      let expectedResult: number = 0;
+      result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenAndWindow3();
+      expect(result).assertEqual(expectedResult);
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
      * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
      * @tc.desc   OH_AVScreenCapture_SetPickerMode
@@ -1113,16 +1154,32 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
 
+
     /**
-     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001
-     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
+     * @tc.desc   OH_AVScreenCapture_ExcludePickerWindows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureExcludePickerWindows();
+      let expectedResult: number = 0;
+      expect(result).assertEqual(expectedResult);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0003
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0003
      * @tc.desc   OH_AVScreenCapture_presentPicker not surport
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001', Level.LEVEL0, async (done: Function) => {
-      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker1();
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0003', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker3();
       expect(result).assertEqual(0);
       done();
     });
