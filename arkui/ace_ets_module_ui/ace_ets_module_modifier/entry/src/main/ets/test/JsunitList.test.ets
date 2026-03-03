@@ -95,6 +95,13 @@ import ButtonAttributeModifierNullUndefined from './button/ButtonAttributeModifi
 import AttributeModifierNullUndefined from './button/AttributeModifierNullUndefined.test';
 import AttributeUpdaterNullUndefined from './button/AttributeUpdaterNullUndefined.test';
 import CommonModifierNullUndefinedTest from './button/CommonModifierNullUndefined.test';
+import gridModifierNullUndefined from './grid/gridModifierNullUndefined.test';
+import listModifierNullUndefined from './list/listModifierNullUndefined.test';
+import listItemModifierNullUndefined from './list/listItemModifierNullUndefined.test';
+import listItemGroupModifierNullUndefined from './list/groupModifierNullUndefined.test';
+import refreshModifierNullUndefined from './refresh/refreshModifierNullUndefined.test';
+import scrollModifierNullUndefined from './scroll/scrollModifierNullUndefined.test';
+import waterFlowModifierNullUndefined from './waterFlow/waterFlowModifierNullUndefined.test';
 
 export default function testsuite() {
   ButtonDrawModifierNullUndefined();
@@ -102,6 +109,13 @@ export default function testsuite() {
   AttributeModifierNullUndefined();
   AttributeUpdaterNullUndefined();
   CommonModifierNullUndefinedTest();
+  gridModifierNullUndefined();
+  listModifierNullUndefined();
+  listItemModifierNullUndefined();
+  listItemGroupModifierNullUndefined();
+  refreshModifierNullUndefined();
+  scrollModifierNullUndefined();
+  waterFlowModifierNullUndefined();
   common9Jsunit();
   common1Jsunit();
   shortcutKeyJsunit();
