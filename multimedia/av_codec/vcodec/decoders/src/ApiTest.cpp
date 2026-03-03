@@ -869,14 +869,14 @@ HWTEST_F(DecApiNdkTest, VIDEO_WVC1DEC_CAP_API_0016, TestSize.Level1)
 }
 
 /**
- * @tc.name   VIDEO_MSVIDEO1DEC_CAP_API_0017
- * @tc.number VIDEO_MSVIDEO1DEC_CAP_API_0017
+ * @tc.name   VIDEO_AV1DEO1DEC_CAP_API_0017
+ * @tc.number VIDEO_AV1DEO1DEC_CAP_API_0017
  * @tc.desc   api test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0010, TestSize.Level1)
+HWTEST_F(DecApiNdkTest, VIDEO_AV1DEO1DEC_CAP_API_0017, TestSize.Level1)
 {
     OH_AVErrCode ret = AV_ERR_OK;
     const int32_t* profiles = nullptr;
