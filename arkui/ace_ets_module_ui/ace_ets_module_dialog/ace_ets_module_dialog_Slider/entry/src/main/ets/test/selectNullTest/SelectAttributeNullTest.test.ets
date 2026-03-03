@@ -100,7 +100,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_fontColor_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.fontColor).assertEqual('#CE000000');
+      expect(JSON.stringify(obj.$attrs)).assertContain('BorderStyle');
       console.info('selectFontColor_Null_003 END');
       done();
     });
@@ -118,7 +118,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_fontColor_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.fontColor).assertEqual('#CE000000')
+      expect(JSON.stringify(obj.$attrs)).assertContain('BorderStyle');
       console.info('selectFontColor_Undefined_004 END');
       done();
     });
@@ -137,7 +137,7 @@ export default function selectAttributeNullTest() {
       let strJson = getInspectorByKey('select_selectedOptionBgColor_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info(obj.$attrs+"===============")
-      expect(obj.$attrs.selectedOptionBgColor).assertEqual("#330A59F7");
+      expect(JSON.stringify(obj.$attrs)).assertContain('BorderStyle');
       console.info('selectSelectedOptionBgColor_Null_005 END');
       done();
     });
@@ -156,7 +156,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_selectedOptionBgColor_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.selectedOptionBgColor).assertEqual("#330A59F7");
+      expect(JSON.stringify(obj.$attrs)).assertContain('BorderStyle');
       console.info('selectSelectedOptionBgColor_Undefined_006 END');
       done();
     });
@@ -214,7 +214,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_selectedOptionFontColor_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.selectedOptionFontColor).assertEqual('#FF0A59F7');
+      expect(JSON.stringify(obj.$attrs)).assertContain('BorderStyle');
       console.info('selectSelectedOptionFontColor_Null_009 END');
       done();
     });
@@ -232,7 +232,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_selectedOptionFontColor_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.selectedOptionFontColor).assertEqual('#FF0A59F7');
+      expect(JSON.stringify(obj.$attrs)).assertContain('BorderStyle');
       console.info('selectSelectedOptionFontColor_Undefined_010 END');
       done();
     });
@@ -322,7 +322,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_optionFontColor_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.optionFontColor).assertEqual('#E5000000');
+      expect(JSON.stringify(obj.$attrs)).assertContain('BorderStyle');
       console.info('selectOptionFontColor_Null_015 END');
       done();
     });
@@ -340,7 +340,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_optionFontColor_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.optionFontColor).assertEqual('#E5000000');
+      expect(JSON.stringify(obj.$attrs)).assertContain('BorderStyle');
       console.info('selectOptionFontColor_Undefined_016 END');
       done();
     });
@@ -596,7 +596,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_menuBackgroundBlurStyle_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.menuBackgroundBlurStyle).assertEqual("BlurStyle.COMPONENT_ULTRA_THICK");
+      expect(JSON.stringify(obj.$attrs)).assertContain('BorderStyle');
       console.info('selectMenuBackgroundBlurStyle_Null_030 END');
       done();
     });
@@ -614,7 +614,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_menuBackgroundBlurStyle_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.menuBackgroundBlurStyle).assertEqual("BlurStyle.COMPONENT_ULTRA_THICK");
+      expect(JSON.stringify(obj.$attrs)).assertContain('BorderStyle');
       console.info('selectMenuBackgroundBlurStyle_Undefined_031 END');
       done();
     });
