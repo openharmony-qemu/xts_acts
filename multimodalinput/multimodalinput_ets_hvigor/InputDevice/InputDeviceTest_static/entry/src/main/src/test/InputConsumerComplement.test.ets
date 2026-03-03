@@ -49,7 +49,8 @@ export default function InputConsumerComplementTest() {
             expect(data.length >= 0).assertTrue();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(801);
           done();
@@ -84,12 +85,14 @@ export default function InputConsumerComplementTest() {
             expect().assertFail();
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${error.code}`);
             expect(error.code).assertEqual(401);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${error.code} ${error.message}`);
           expect().assertFail();
           done();
@@ -126,12 +129,14 @@ export default function InputConsumerComplementTest() {
             expect(ifInputConsumerOnSuccess).assertEqual(1);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${error.code}`);
             expect().assertFail();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${error.code} ${error.message}`);
           expect().assertFail();
           done();
@@ -166,12 +171,14 @@ export default function InputConsumerComplementTest() {
             console.info(`${caseName} unsubscribe success`);
             expect().assertFail();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${error}`);
             expect(error.code).assertEqual(401);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${error}`);
           expect().assertFail();
           done();
@@ -208,12 +215,14 @@ export default function InputConsumerComplementTest() {
             ifInputConsumerOffSuccess++;
             expect(ifInputConsumerOffSuccess).assertEqual(1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${error}`);
             expect().assertFail();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${error}`);
           expect().assertFail();
           done();

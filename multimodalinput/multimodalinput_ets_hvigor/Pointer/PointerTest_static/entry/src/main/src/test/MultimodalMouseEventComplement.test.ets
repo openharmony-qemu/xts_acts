@@ -94,7 +94,8 @@ export default function MultimodalMouseEventComplementTest() {
           expect(testMouseEvent.scrollLock).assertEqual(true);
           expect(testMouseEvent.toolType).assertEqual(ToolType.MOUSE);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
           done();

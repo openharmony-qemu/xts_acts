@@ -51,7 +51,8 @@ export default function InfraredEmitterComplementTest() {
           console.info(`${caseName} transmitInfrared success.`);
           expect().assertFail();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -78,7 +79,8 @@ export default function InfraredEmitterComplementTest() {
           console.info(`${caseName} transmitInfrared success.`);
           expect().assertFail();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -105,7 +107,8 @@ export default function InfraredEmitterComplementTest() {
           console.info(`${caseName} transmitInfrared success.`);
           expect().assertFail();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -134,7 +137,8 @@ export default function InfraredEmitterComplementTest() {
           ifTransmitInfraredSuccess++;
           expect(ifTransmitInfraredSuccess).assertEqual(1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${error.code} ${error.message}`);
           expect().assertFail();
           done();

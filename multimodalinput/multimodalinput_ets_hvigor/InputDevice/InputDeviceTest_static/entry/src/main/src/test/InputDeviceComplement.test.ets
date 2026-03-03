@@ -94,7 +94,8 @@ export default function InputDeviceComplementTest() {
               }
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device id list, error: ${error}`);
           expect().assertFail();
           done();
@@ -127,7 +128,8 @@ export default function InputDeviceComplementTest() {
               }
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device id list, error: ${error}`);
           expect().assertFail();
           done();
@@ -197,7 +199,8 @@ export default function InputDeviceComplementTest() {
                 }
               });
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
           done();
@@ -259,7 +262,8 @@ export default function InputDeviceComplementTest() {
                 }
             });
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
           done();
@@ -318,7 +322,8 @@ export default function InputDeviceComplementTest() {
               done();
             }
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
           done();
@@ -350,7 +355,8 @@ export default function InputDeviceComplementTest() {
               done();
             }
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
           done();
@@ -380,7 +386,8 @@ export default function InputDeviceComplementTest() {
               expect(flagExecuteCallSupportKeys).assertEqual(1);
               done();
             });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
           done();
@@ -415,7 +422,8 @@ export default function InputDeviceComplementTest() {
                 done();
               }
             });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${error}`);
           expect().assertFail();
           done();
@@ -444,7 +452,8 @@ export default function InputDeviceComplementTest() {
               expect(supportResult).assertInstanceOf('Array');
               done();
             });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${error}`);
           expect().assertFail();
           done();
@@ -473,7 +482,8 @@ export default function InputDeviceComplementTest() {
             expect(flagExecuteCallSupportKeys).assertEqual(1);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
           done();
@@ -502,7 +512,8 @@ export default function InputDeviceComplementTest() {
             expect().assertFail();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${error.code}`);
           expect(error.code).assertEqual(401);
           done();
@@ -530,7 +541,8 @@ export default function InputDeviceComplementTest() {
             expect(supportResult).assertInstanceOf('Array');
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${error}`);
           expect().assertFail();
           done();
@@ -563,7 +575,8 @@ export default function InputDeviceComplementTest() {
                 done();
               }
             });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${error}`);
           expect().assertFail();
           done();
@@ -594,7 +607,8 @@ export default function InputDeviceComplementTest() {
               done();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${error.code}`);
           expect(error.code).assertEqual(401);
           done();
@@ -621,7 +635,8 @@ export default function InputDeviceComplementTest() {
           flagExecuteCallSupportKeysSync++;
           expect(flagExecuteCallSupportKeysSync).assertEqual(1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
           done();
@@ -648,7 +663,8 @@ export default function InputDeviceComplementTest() {
           let supportResult: Array<Boolean> = inputDevice.supportKeysSync(1, keys);
           expect().assertFail();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${error}`);
           expect(error.code).assertEqual(401);
           done();
@@ -674,7 +690,8 @@ export default function InputDeviceComplementTest() {
           let supportResult: Array<Boolean> = inputDevice.supportKeysSync(1, keys);
           expect(supportResult).assertInstanceOf('Array');
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${error}`);
           expect().assertFail();
           done();
@@ -699,7 +716,8 @@ export default function InputDeviceComplementTest() {
           let supportResult: Array<Boolean> = inputDevice.supportKeysSync(1, keys);
           expect().assertFail();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           console.info(`${caseName} Failed to get device info, error: ${error.code}`);
           expect(error.code).assertEqual(401);
           done();

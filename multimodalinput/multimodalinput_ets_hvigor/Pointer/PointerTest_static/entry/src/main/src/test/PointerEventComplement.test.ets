@@ -44,7 +44,8 @@ export default function MultimodalInputPointerComplementTest() {
           expect(pointer.RightClickType.TOUCHPAD_LEFT_BUTTON).assertEqual(2);
           expect(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP).assertEqual(3);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
           done();

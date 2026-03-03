@@ -85,7 +85,8 @@ export default function MultimodalTouchEventComplementTest() {
           expect(testTouch.fixedDisplayX).assertEqual(1);
           expect(testTouch.fixedDisplayY).assertEqual(1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;  
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
           done();
