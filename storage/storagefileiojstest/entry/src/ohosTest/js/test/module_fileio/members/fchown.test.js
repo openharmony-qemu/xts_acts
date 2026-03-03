@@ -90,24 +90,453 @@ describe('fileio_fchown', async function () {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('fileio_test_fchown_sync_000', Level.LEVEL0, async function () {
-    let fpath = await nextFileName('fileio_test_fchown_sync_000');
-    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
-    try {
-      let stat = fileio.statSync(fpath);
-      expect(isIntNum(stat.uid)).assertTrue();
+   it('fileio_test_fchown_sync_000', Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileio_test_fchown_sync_000');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     try {
+       let stat = fileio.statSync(fpath);
+       expect(isIntNum(stat.uid)).assertTrue();
+       let fd = fileio.openSync(fpath, 0o102, 0o666);
+       fileio.fchmodSync(fd, 0o777);
+       fileio.fchownSync(fd, stat.uid + 1, stat.gid + 1);
+       let stat1 = fileio.statSync(fpath);
+       expect(stat.uid == stat1.uid).assertTrue();
+       expect(stat.gid == stat1.gid).assertTrue();
+       fileio.closeSync(fd);
+       fileio.unlinkSync(fpath);
+     } catch (e) {
+       console.info('fileio_test_fchown_sync_000 has failed for ' + e);
+       expect(null).assertFail();
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_fchown_promise_error_001
+    * @tc.number SUB_DF_FILEIO_FCHOWN_PROMISE_ERROR_001
+    * @tc.desc   Test fchown() interface with null fd. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_fchown_promise_error_001', Level.LEVEL2, async function () {
+     try {
+       await fileio.fchown(null, 1, 1);
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_fchown_promise_error_001: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_fchown_promise_error_002
+    * @tc.number SUB_DF_FILEIO_FCHOWN_PROMISE_ERROR_002
+    * @tc.desc   Test fchown() interface with undefined fd. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_fchown_promise_error_002', Level.LEVEL2, async function () {
+     try {
+       await fileio.fchown(undefined, 1, 1);
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_fchown_promise_error_002: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_fchown_promise_error_003
+    * @tc.number SUB_DF_FILEIO_FCHOWN_PROMISE_ERROR_003
+    * @tc.desc   Test fchown() interface with null uid. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_fchown_promise_error_003', Level.LEVEL2, async function () {
+     let fpath = await nextFileName('fileio_test_fchown_promise_error_003');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     let fd = fileio.openSync(fpath, 0o102, 0o666);
+     try {
+       await fileio.fchown(fd, null, 1);
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_fchown_promise_error_003: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+       fileio.closeSync(fd);
+       fileio.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_fchown_promise_error_004
+    * @tc.number SUB_DF_FILEIO_FCHOWN_PROMISE_ERROR_004
+    * @tc.desc   Test fchown() interface with undefined uid. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_fchown_promise_error_004', Level.LEVEL2, async function () {
+     let fpath = await nextFileName('fileio_test_fchown_promise_error_004');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     let fd = fileio.openSync(fpath, 0o102, 0o666);
+     try {
+       await fileio.fchown(fd, undefined, 1);
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_fchown_promise_error_004: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+       fileio.closeSync(fd);
+       fileio.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_fchown_promise_error_005
+    * @tc.number SUB_DF_FILEIO_FCHOWN_PROMISE_ERROR_005
+    * @tc.desc   Test fchown() interface with null gid. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_fchown_promise_error_005', Level.LEVEL2, async function () {
+     let fpath = await nextFileName('fileio_test_fchown_promise_error_005');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     let fd = fileio.openSync(fpath, 0o102, 0o666);
+     try {
+       await fileio.fchown(fd, 1, null);
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_fchown_promise_error_005: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+       fileio.closeSync(fd);
+       fileio.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_fchown_promise_error_006
+    * @tc.number SUB_DF_FILEIO_FCHOWN_PROMISE_ERROR_006
+    * @tc.desc   Test fchown() interface with undefined gid. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileio_test_fchown_promise_error_006', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_fchown_promise_error_006');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       let fd = fileio.openSync(fpath, 0o102, 0o666);
-      fileio.fchmodSync(fd, 0o777);
-      fileio.fchownSync(fd, stat.uid + 1, stat.gid + 1);
-      let stat1 = fileio.statSync(fpath);
-      expect(stat.uid == stat1.uid).assertTrue();
-      expect(stat.gid == stat1.gid).assertTrue();
-      fileio.closeSync(fd);
-      fileio.unlinkSync(fpath);
-    } catch (e) {
-      console.info('fileio_test_fchown_sync_000 has failed for ' + e);
-      expect(null).assertFail();
-    }
-  });
-});
+      try {
+        await fileio.fchown(fd, 1, undefined);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.log('fileio_test_fchown_promise_error_006: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+        fileio.closeSync(fd);
+        fileio.unlinkSync(fpath);
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_callback_error_001
+     * @tc.number SUB_DF_FILEIO_FCHOWN_CALLBACK_ERROR_001
+     * @tc.desc   Test fchown() interface with null fd. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_callback_error_001', Level.LEVEL2, async function (done) {
+      try {
+        fileio.fchown(null, 1, 1, (err) => {
+          if (err) {
+            console.log('fileio_test_fchown_callback_error_001: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log('fileio_test_fchown_callback_error_001 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_callback_error_002
+     * @tc.number SUB_DF_FILEIO_FCHOWN_CALLBACK_ERROR_002
+     * @tc.desc   Test fchown() interface with undefined fd. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_callback_error_002', Level.LEVEL2, async function (done) {
+      try {
+        fileio.fchown(undefined, 1, 1, (err) => {
+          if (err) {
+            console.log('fileio_test_fchown_callback_error_002: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log('fileio_test_fchown_callback_error_002 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_callback_error_003
+     * @tc.number SUB_DF_FILEIO_FCHOWN_CALLBACK_ERROR_003
+     * @tc.desc   Test fchown() interface with null uid. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_callback_error_003', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileio_test_fchown_callback_error_003');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let fd = fileio.openSync(fpath, 0o102, 0o666);
+      try {
+        fileio.fchown(fd, null, 1, (err) => {
+          if (err) {
+            console.log('fileio_test_fchown_callback_error_003: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+            fileio.closeSync(fd);
+            fileio.unlinkSync(fpath);
+            done();
+          }
+        });
+      } catch (err) {
+        console.log('fileio_test_fchown_callback_error_003 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+        fileio.closeSync(fd);
+        fileio.unlinkSync(fpath);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_callback_error_004
+     * @tc.number SUB_DF_FILEIO_FCHOWN_CALLBACK_ERROR_004
+     * @tc.desc   Test fchown() interface with undefined uid. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_callback_error_004', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileio_test_fchown_callback_error_004');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let fd = fileio.openSync(fpath, 0o102, 0o666);
+      try {
+        fileio.fchown(fd, undefined, 1, (err) => {
+          if (err) {
+            console.log('fileio_test_fchown_callback_error_004: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+            fileio.closeSync(fd);
+            fileio.unlinkSync(fpath);
+            done();
+          }
+        });
+      } catch (err) {
+        console.log('fileio_test_fchown_callback_error_004 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+        fileio.closeSync(fd);
+        fileio.unlinkSync(fpath);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_callback_error_005
+     * @tc.number SUB_DF_FILEIO_FCHOWN_CALLBACK_ERROR_005
+     * @tc.desc   Test fchown() interface with null gid. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_callback_error_005', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileio_test_fchown_callback_error_005');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let fd = fileio.openSync(fpath, 0o102, 0o666);
+      try {
+        fileio.fchown(fd, 1, null, (err) => {
+          if (err) {
+            console.log('fileio_test_fchown_callback_error_005: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+            fileio.closeSync(fd);
+            fileio.unlinkSync(fpath);
+            done();
+          }
+        });
+      } catch (err) {
+        console.log('fileio_test_fchown_callback_error_005 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+        fileio.closeSync(fd);
+        fileio.unlinkSync(fpath);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_callback_error_006
+     * @tc.number SUB_DF_FILEIO_FCHOWN_CALLBACK_ERROR_006
+     * @tc.desc   Test fchown() interface with undefined gid. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_callback_error_006', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileio_test_fchown_callback_error_006');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let fd = fileio.openSync(fpath, 0o102, 0o666);
+      try {
+        fileio.fchown(fd, 1, undefined, (err) => {
+          if (err) {
+            console.log('fileio_test_fchown_callback_error_006: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+            fileio.closeSync(fd);
+            fileio.unlinkSync(fpath);
+            done();
+          }
+          });
+        } catch (err) {
+          console.log('fileio_test_fchown_callback_error_006 err: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+          fileio.closeSync(fd);
+          fileio.unlinkSync(fpath);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_sync_error_001
+     * @tc.number SUB_DF_FILEIO_FCHOWN_SYNC_ERROR_001
+     * @tc.desc   Test fchownSync() interface with null fd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_sync_error_001', Level.LEVEL2, async function () {
+      try {
+        fileio.fchownSync(null, 1, 1);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.log('fileio_test_fchown_sync_error_001: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_sync_error_002
+     * @tc.number SUB_DF_FILEIO_FCHOWN_SYNC_ERROR_002
+     * @tc.desc   Test fchownSync() interface with undefined fd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_sync_error_002', Level.LEVEL2, async function () {
+      try {
+        fileio.fchownSync(undefined, 1, 1);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.log('fileio_test_fchown_sync_error_002: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_sync_error_003
+     * @tc.number SUB_DF_FILEIO_FCHOWN_SYNC_ERROR_003
+     * @tc.desc   Test fchownSync() interface with null uid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_sync_error_003', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_fchown_sync_error_003');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let fd = fileio.openSync(fpath, 0o102, 0o666);
+      try {
+        fileio.fchownSync(fd, null, 1);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.log('fileio_test_fchown_sync_error_003: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+        fileio.closeSync(fd);
+        fileio.unlinkSync(fpath);
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_sync_error_004
+     * @tc.number SUB_DF_FILEIO_FCHOWN_SYNC_ERROR_004
+     * @tc.desc   Test fchownSync() interface with undefined uid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_sync_error_004', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_fchown_sync_error_004');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let fd = fileio.openSync(fpath, 0o102, 0o666);
+      try {
+        fileio.fchownSync(fd, undefined, 1);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.log('fileio_test_fchown_sync_error_004: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+        fileio.closeSync(fd);
+        fileio.unlinkSync(fpath);
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_sync_error_005
+     * @tc.number SUB_DF_FILEIO_FCHOWN_SYNC_ERROR_005
+     * @tc.desc   Test fchownSync() interface with null gid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_fchown_sync_error_005', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_fchown_sync_error_005');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let fd = fileio.openSync(fpath, 0o102, 0o666);
+      try {
+        fileio.fchownSync(fd, 1, null);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.log('fileio_test_fchown_sync_error_005: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+        fileio.closeSync(fd);
+        fileio.unlinkSync(fpath);
+      }
+    });
+
+    /**
+     * @tc.name   fileio_test_fchown_sync_error_006
+     * @tc.number SUB_DF_FILEIO_FCHOWN_SYNC_ERROR_006
+     * @tc.desc   Test fchownSync() interface with undefined gid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('fileio_test_fchown_sync_error_006', Level.LEVEL2, async function () {
+       let fpath = await nextFileName('fileio_test_fchown_sync_error_006');
+       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+       let fd = fileio.openSync(fpath, 0o102, 0o666);
+       try {
+         fileio.fchownSync(fd, 1, undefined);
+         expect(false).assertTrue();
+       } catch (err) {
+         console.log('fileio_test_fchown_sync_error_006: ' + err.message + ', code: ' + err.code);
+         expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+         fileio.closeSync(fd);
+         fileio.unlinkSync(fpath);
+       }
+     });
+   });
 }
