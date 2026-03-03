@@ -2264,7 +2264,7 @@ static napi_value normalAVScreenCaptureStrategyForCornerWrapMode(napi_env env, n
     }
 
     if (screenCaptureNormal) {
-        result = OH_AVScreenCapture_Release(screenCaptureNormal);
+        OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
     if (result == AV_SCREEN_CAPTURE_ERR_OK) {
