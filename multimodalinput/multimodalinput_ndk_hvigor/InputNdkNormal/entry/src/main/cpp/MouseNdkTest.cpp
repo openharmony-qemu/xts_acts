@@ -103,8 +103,8 @@ static napi_value RequestInjection1(napi_env env, napi_callback_info info)
     };
     Input_Result retResult = OH_Input_RequestInjection(fnCallBack);
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_RequestInjection_0100 retResult:%{public}d", retResult);
-    if (retResult == 801) {
-        napi_create_int32(env, (retResult == 801) ? 1 : 0, &result);
+    if (retResult == INPUT_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, (retResult == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, &result);
     } else if (retResult == INPUT_INJECTION_AUTHORIZING) {
         napi_create_int32(env, (retResult == INPUT_INJECTION_AUTHORIZING) ? 1 : 0, &result);
     } else if (retResult == INPUT_INJECTION_AUTHORIZED_OTHERS) {

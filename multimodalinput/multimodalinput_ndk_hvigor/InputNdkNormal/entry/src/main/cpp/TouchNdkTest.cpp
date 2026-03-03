@@ -938,59 +938,223 @@ static napi_value PointerStyle7(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value createTouchEvent(napi_env env, napi_callback_info info)
+{
+    struct Input_TouchEvent *touchEvent = OH_Input_CreateTouchEvent();
+    napi_value result;
+    napi_create_int32(env, touchEvent == nullptr, &result);
+    OH_Input_DestroyTouchEvent(&touchEvent);
+    return result;
+}
+
+static napi_value destroyTouchEvent(napi_env env, napi_callback_info info)
+{
+    struct Input_TouchEvent *touchEvent = OH_Input_CreateTouchEvent();
+    napi_value result;
+    OH_Input_DestroyTouchEvent(&touchEvent);
+    napi_create_int32(env, touchEvent == nullptr, &result);
+    return result;
+}
+
+static napi_value touchEventAction(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+	
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+	
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+	
+    int value0;
+    napi_get_value_int32(env, args[0], &value0);
+	
+    struct Input_TouchEvent *touchEvent = OH_Input_CreateTouchEvent();
+    OH_Input_SetTouchEventAction(touchEvent, value0);
+    napi_value result;
+    napi_create_int32(env, OH_Input_GetTouchEventAction(touchEvent), &result);
+    OH_Input_DestroyTouchEvent(&touchEvent);
+    return result;
+}
+
+static napi_value touchEventFingerId(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+	
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+	
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+	
+    int value0;
+    napi_get_value_int32(env, args[0], &value0);
+	
+    struct Input_TouchEvent *touchEvent = OH_Input_CreateTouchEvent();
+    OH_Input_SetTouchEventFingerId(touchEvent, value0);
+    napi_value result;
+    napi_create_int32(env, OH_Input_GetTouchEventFingerId(touchEvent), &result);
+    OH_Input_DestroyTouchEvent(&touchEvent);
+    return result;
+}
+
+static napi_value touchEventDisplayX(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+	
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+	
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+	
+    int value0;
+    napi_get_value_int32(env, args[0], &value0);
+	
+    struct Input_TouchEvent *touchEvent = OH_Input_CreateTouchEvent();
+    OH_Input_SetTouchEventDisplayX(touchEvent, value0);
+    napi_value result;
+    napi_create_int32(env, OH_Input_GetTouchEventDisplayX(touchEvent), &result);
+    OH_Input_DestroyTouchEvent(&touchEvent);
+    return result;
+}
+
+static napi_value touchEventDisplayY(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+	
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+	
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+	
+    int value0;
+    napi_get_value_int32(env, args[0], &value0);
+	
+    struct Input_TouchEvent *touchEvent = OH_Input_CreateTouchEvent();
+    OH_Input_SetTouchEventDisplayY(touchEvent, value0);
+    napi_value result;
+    napi_create_int32(env, OH_Input_GetTouchEventDisplayY(touchEvent), &result);
+    OH_Input_DestroyTouchEvent(&touchEvent);
+    return result;
+}
+
+static napi_value touchEventActionTime(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+	
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+	
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+	
+    int value0;
+    napi_get_value_int32(env, args[0], &value0);
+	
+    struct Input_TouchEvent *touchEvent = OH_Input_CreateTouchEvent();
+    OH_Input_SetTouchEventActionTime(touchEvent, value0);
+    napi_value result;
+    napi_create_int32(env, OH_Input_GetTouchEventActionTime(touchEvent), &result);
+    OH_Input_DestroyTouchEvent(&touchEvent);
+    return result;
+}
+
+static napi_value injectTouchEvent(napi_env env, napi_callback_info info)
+{
+	size_t argc = 2;
+    napi_value args[2] = {nullptr};
+	
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+	
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    napi_valuetype valuetype1;
+    napi_typeof(env, args[1], &valuetype1);
+	
+    int value0;
+    napi_get_value_int32(env, args[0], &value0);
+    int value1;
+    napi_get_value_int32(env, args[0], &value1);
+	
+    struct Input_TouchEvent *touchEvent = OH_Input_CreateTouchEvent();
+    OH_Input_SetTouchEventAction(touchEvent, TOUCH_ACTION_DOWN);
+    OH_Input_SetTouchEventFingerId(touchEvent, 0);
+    OH_Input_SetTouchEventDisplayX(touchEvent, value0);
+    OH_Input_SetTouchEventDisplayY(touchEvent, value1);
+    OH_Input_SetTouchEventActionTime(touchEvent, -1);
+    napi_value result;
+    napi_create_int32(env, OH_Input_InjectTouchEvent(touchEvent), &result);
+    OH_Input_DestroyTouchEvent(&touchEvent);
+    return result;
+}
 
 EXTERN_C_START
+static napi_property_descriptor desc_part1[] = {
+    {"QueryMaxTouchPoints1", nullptr, QueryMaxTouchPoints1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"QueryMaxTouchPoints2", nullptr, QueryMaxTouchPoints2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"InjectTouchEventGlobal1", nullptr, InjectTouchEventGlobal1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"InjectTouchEventGlobal2", nullptr, InjectTouchEventGlobal2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"InjectTouchEventGlobal3", nullptr, InjectTouchEventGlobal3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AxisEventGlobal1", nullptr, AxisEventGlobal1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AxisEventGlobal2", nullptr, AxisEventGlobal2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetKeyEventId1", nullptr, GetKeyEventId1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AddKeyEventHook1", nullptr, AddKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"RemoveKeyEventHook1", nullptr, RemoveKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"DispatchToNextHandler1", nullptr, DispatchToNextHandler1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode1", nullptr, KeyCode1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode2", nullptr, KeyCode2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode3", nullptr, KeyCode3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode4", nullptr, KeyCode4, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode5", nullptr, KeyCode5, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode6", nullptr, KeyCode6, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode7", nullptr, KeyCode7, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode8", nullptr, KeyCode8, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode9", nullptr, KeyCode9, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode10", nullptr, KeyCode10, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode11", nullptr, KeyCode11, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode12", nullptr, KeyCode12, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode13", nullptr, KeyCode13, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode14", nullptr, KeyCode14, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode15", nullptr, KeyCode15, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode16", nullptr, KeyCode16, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode17", nullptr, KeyCode17, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode18", nullptr, KeyCode18, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode19", nullptr, KeyCode19, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode20", nullptr, KeyCode20, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode21", nullptr, KeyCode21, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode22", nullptr, KeyCode22, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode23", nullptr, KeyCode23, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode24", nullptr, KeyCode24, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode25", nullptr, KeyCode25, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode26", nullptr, KeyCode26, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode27", nullptr, KeyCode27, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode28", nullptr, KeyCode28, nullptr, nullptr, nullptr, napi_default, nullptr},
+};
+
+static napi_property_descriptor desc_part2[] = {
+    {"PointerStyle1", nullptr, PointerStyle1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"PointerStyle2", nullptr, PointerStyle2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"PointerStyle3", nullptr, PointerStyle3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"PointerStyle4", nullptr, PointerStyle4, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"PointerStyle5", nullptr, PointerStyle5, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"PointerStyle6", nullptr, PointerStyle6, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"PointerStyle7", nullptr, PointerStyle7, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"createTouchEvent", nullptr, createTouchEvent, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"destroyTouchEvent", nullptr, destroyTouchEvent, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"touchEventAction", nullptr, touchEventAction, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"touchEventFingerId", nullptr, touchEventFingerId, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"touchEventDisplayX", nullptr, touchEventDisplayX, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"touchEventDisplayY", nullptr, touchEventDisplayY, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"touchEventActionTime", nullptr, touchEventActionTime, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"injectTouchEvent", nullptr, injectTouchEvent, nullptr, nullptr, nullptr, napi_default, nullptr},    
+};
+
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[] = {
-        {"QueryMaxTouchPoints1", nullptr, QueryMaxTouchPoints1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"QueryMaxTouchPoints2", nullptr, QueryMaxTouchPoints2, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"InjectTouchEventGlobal1", nullptr, InjectTouchEventGlobal1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"InjectTouchEventGlobal2", nullptr, InjectTouchEventGlobal2, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"InjectTouchEventGlobal3", nullptr, InjectTouchEventGlobal3, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AxisEventGlobal1", nullptr, AxisEventGlobal1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AxisEventGlobal2", nullptr, AxisEventGlobal2, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyEventId1", nullptr, GetKeyEventId1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AddKeyEventHook1", nullptr, AddKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"RemoveKeyEventHook1", nullptr, RemoveKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"DispatchToNextHandler1", nullptr, DispatchToNextHandler1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode1", nullptr, KeyCode1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode2", nullptr, KeyCode2, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode3", nullptr, KeyCode3, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode4", nullptr, KeyCode4, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode5", nullptr, KeyCode5, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode6", nullptr, KeyCode6, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode7", nullptr, KeyCode7, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode8", nullptr, KeyCode8, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode9", nullptr, KeyCode9, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode10", nullptr, KeyCode10, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode11", nullptr, KeyCode11, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode12", nullptr, KeyCode12, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode13", nullptr, KeyCode13, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode14", nullptr, KeyCode14, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode15", nullptr, KeyCode15, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode16", nullptr, KeyCode16, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode17", nullptr, KeyCode17, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode18", nullptr, KeyCode18, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode19", nullptr, KeyCode19, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode20", nullptr, KeyCode20, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode21", nullptr, KeyCode21, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode22", nullptr, KeyCode22, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode23", nullptr, KeyCode23, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode24", nullptr, KeyCode24, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode25", nullptr, KeyCode25, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode26", nullptr, KeyCode26, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode27", nullptr, KeyCode27, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"KeyCode28", nullptr, KeyCode28, nullptr, nullptr, nullptr, napi_default, nullptr},        
-        {"PointerStyle1", nullptr, PointerStyle1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"PointerStyle2", nullptr, PointerStyle2, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"PointerStyle3", nullptr, PointerStyle3, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"PointerStyle4", nullptr, PointerStyle4, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"PointerStyle5", nullptr, PointerStyle5, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"PointerStyle6", nullptr, PointerStyle6, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"PointerStyle7", nullptr, PointerStyle7, nullptr, nullptr, nullptr, napi_default, nullptr},
-    };
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    napi_define_properties(env, exports, sizeof(desc_part1) / sizeof(desc_part1[0]), desc_part1);
+    napi_define_properties(env, exports, sizeof(desc_part2) / sizeof(desc_part2[0]), desc_part2);
     return exports;
 }
 EXTERN_C_END
