@@ -102,10 +102,10 @@ struct cameraFitRotate {
   nextClickFn() {
     if (this.testItemName === '拍照预览') {
       this.testItemName = '录像预览';
-      await CameraService.startVideoPreview();
+      CameraService.startVideoPreview();
     } else {
       this.testItemName = '视频录制';
-      await CameraService.startVideo();
+      CameraService.startVideo();
       this.nextEnabled = false;
       this.Vue = true;
     }
