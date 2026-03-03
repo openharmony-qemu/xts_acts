@@ -115,7 +115,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts0100";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -164,7 +164,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts0200";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -213,7 +213,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts0300";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -262,7 +262,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts0400";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -311,7 +311,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts0500";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -360,7 +360,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts0600";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -409,7 +409,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts0700";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -464,7 +464,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts0800";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -519,7 +519,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts0900";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -574,7 +574,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts1000";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -632,7 +632,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts1100";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -690,7 +690,7 @@ export default function SelectContactsTest() {
       const caseName: string = "testTelephonyContactSelectContacts1200";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {

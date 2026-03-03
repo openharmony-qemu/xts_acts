@@ -206,7 +206,7 @@ export default function SaveToExistingContactViaUITest() {
       const caseName: string = "testTelephonyContactSaveToExistingContactViaUI0100";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -277,7 +277,7 @@ export default function SaveToExistingContactViaUITest() {
       const caseName: string = "testTelephonyContactSaveToExistingContactViaUI0200";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -352,7 +352,7 @@ export default function SaveToExistingContactViaUITest() {
       const caseName: string = "testTelephonyContactSaveToExistingContactViaUI0300";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {

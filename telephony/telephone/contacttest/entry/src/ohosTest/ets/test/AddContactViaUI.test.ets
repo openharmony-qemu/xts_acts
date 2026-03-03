@@ -205,7 +205,7 @@ export default function AddContactViaUITest() {
       const caseName: string = "testTelephonyContactAddContactViaUI0100";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -252,7 +252,7 @@ export default function AddContactViaUITest() {
       const caseName: string = "testTelephonyContactAddContactViaUI0200";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
@@ -301,7 +301,7 @@ export default function AddContactViaUITest() {
       const caseName: string = "testTelephonyContactAddContactViaUI0300";
       console.info(`${caseName} test start `);
       if (!canIUse("SystemCapability.Applications.Contacts")) {
-        ExpectTrue();
+        console.log(`${caseName} no syscap`);
         done();
       }
       try {
