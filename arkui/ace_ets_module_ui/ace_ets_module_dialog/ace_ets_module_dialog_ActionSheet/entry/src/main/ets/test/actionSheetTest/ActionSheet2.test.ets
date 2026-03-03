@@ -48,10 +48,10 @@ export default function ActionSheet2() {
       done();
     });
     /* *
-    * @tc.number: ActionSheet2_0100
-    * @tc.name  : ActionSheet2_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 0
+    * @tc.number  ActionSheet2_0100
+    * @tc.name    ActionSheet2_0100
+    * @tc.desc    To test that the Provide decorator supports union types.
+    * @tc.level   Level 0
     */
     it('ActionSheet2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheet2_0100 START');
@@ -83,10 +83,10 @@ export default function ActionSheet2() {
       done();
     });
     /* *
-    * @tc.number: ActionSheet2_0200
-    * @tc.name  : ActionSheet2_0200
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 0
+    * @tc.number  ActionSheet2_0200
+    * @tc.name    ActionSheet2_0200
+    * @tc.desc    To test that the Provide decorator supports union types.
+    * @tc.level   Level 0
     */
     it('ActionSheet2_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheet2_0200 START');

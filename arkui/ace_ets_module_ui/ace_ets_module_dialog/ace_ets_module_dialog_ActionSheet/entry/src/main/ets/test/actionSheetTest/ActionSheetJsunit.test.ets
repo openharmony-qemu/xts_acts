@@ -44,12 +44,12 @@ export default function ActionSheetJsunit() {
     });
 
     /**
-     * @tc.number    ActionSheetJsunit_0100
-     * @tc.name      ActionSheetJsunit_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name    ActionSheetJsunit_0100
+     * @tc.number  ActionSheetJsunit_0100
+     * @tc.desc    set api
+     * @tc.level   Level 0
+     * @tc.type  
+     * @tc.size  
      */
 
     it('ActionSheetJsunit_0100', Level.LEVEL0, async (done: Function) => {
