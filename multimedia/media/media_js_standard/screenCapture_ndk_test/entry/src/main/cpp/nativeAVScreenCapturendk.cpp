@@ -1026,12 +1026,12 @@ static napi_value OriginAVScreenCaptureCallBackTest(napi_env env, napi_callback_
     OH_AVScreenCapture_Release(screenCapture);
     CloseFile(audioFile, nullptr);
     screenCaptureCb = nullptr;
-    napi_value res;
-    OH_AVSCREEN_CAPTURE_ErrCode result;
+    int32_t resCapture = TEST_FAILED;
     if (screenCaptureResult == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
-    napi_create_int32(env, result, &res);
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
     return res;
 }
 
