@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import WindowPCStaticTest from "./WindowPCStatic.test";
+import WindowPCTest from "./WindowPC.test";
 import WindowEventStatic from "./WindowEventStatic.test";
 export default function testsuite() {
-  WindowPCStaticTest();
+  WindowPCTest();
   WindowEventStatic();
 }
