@@ -673,12 +673,14 @@ export default function uiUiWindowTest() {
         await driver.delayMs(waitUiReadyMs)
         let scbCom = await driver.findComponent(ON.id('SCBDividerFlex1'))
         await driver.delayMs(waitUiReadyMs)
+        // Non-free multi-window mode
         if (scbCom != null) {
           let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           let bounds = await window.getBounds()
           let point = await driver.getDisplaySize()
           // The device's screen splitting mode is left-right split screen.
           if (bounds.right != point.x) {
+            console.log("The device's screen splitting mode is left-right split screen.")
             await window.resize(0, bounds.bottom - bounds.top, ResizeDirection.RIGHT)
             await driver.delayMs(waitUiReadyMs * 5)
             let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
@@ -687,11 +689,13 @@ export default function uiUiWindowTest() {
           }
           // The device's screen splitting method is top and bottom split.
           else {
+            console.log("The device's screen splitting method is top and bottom split.")
             await driver.setDisplayRotationEnabled(true)
             await driver.delayMs(waitUiReadyMs)
             await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
             await driver.delayMs(waitUiReadyMs)
             let direction0 = await driver.getDisplayRotation()
+            console.log("getDisplayRotation success direction0 = " + direction0)
             if (direction0 == DisplayRotation.ROTATION_0) {
               await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
               await driver.delayMs(waitUiReadyMs)
@@ -707,7 +711,9 @@ export default function uiUiWindowTest() {
             console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
             expect(window3 == null).assertTrue()
           }
-        } else {
+        }
+        // Free Multi-Window Mode
+        else {
           let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           let bounds1 = await window2.getBounds()
           await window2.resize(500, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
