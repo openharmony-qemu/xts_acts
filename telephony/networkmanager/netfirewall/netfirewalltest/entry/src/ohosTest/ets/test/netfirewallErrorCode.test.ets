@@ -540,7 +540,7 @@ export default function NetfirewallErrorCode01() {
         let ruleParam: netFirewall.RequestParam = {
           page: 1,
           pageSize: 10,
-          orderField: netFirewall.NetFirewallOrderField.ORDER_BY_RECORD_TIME,
+          orderField: netFirewall.NetFirewallOrderField.ORDER_BY_RULE_NAME,
           orderType: netFirewall.NetFirewallOrderType.ORDER_DESC
         };
         netFirewall.getNetFirewallRules(555, ruleParam).then((result: netFirewall.FirewallRulePage) => {
@@ -1598,7 +1598,7 @@ export default function NetfirewallErrorCode01() {
           done();
         }, (err: BusinessError) => {
           console.log(`${caseName}update firewall rule failed: `, JSON.stringify(err));
-          ExpectTrue(err.code == 29400000);
+          ExpectTrue(err.code == 2100001);
           done();
         }).catch((err:BusinessError)=>{
           console.log(`${caseName} update firewall rule failed: `,JSON.stringify(err));
@@ -1608,7 +1608,7 @@ export default function NetfirewallErrorCode01() {
       }catch (err){
         console.log(`${caseName} --test end`);
         console.log(`${caseName} catch err is `,JSON.stringify(err));
-        ExpectTrue(err.code == 29400000);
+        ExpectTrue(err.code == 2100001);
         done();
       }
     })
