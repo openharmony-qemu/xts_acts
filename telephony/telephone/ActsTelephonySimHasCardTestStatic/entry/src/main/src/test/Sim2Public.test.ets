@@ -434,7 +434,7 @@ export default function Sim2Public() {
           await sim.setShowName(0,name);
           console.info(`${caseName} success has  card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           sim.getSimAccountInfo(0, (err: BusinessError | null, data: sim.IccAccountInfo | undefined) => {
-            if (data?.simId .toInt().toInt() > 0 && data?.slotIndex .toInt() >= 0 && data?.isEsim !== true && data?.isActive !== false && data?.iccId.length .toInt() > 0 && data?.showName.length .toInt() > 0 && data?.showNumber.length .toInt() > 0 ) {
+            if (data?.simId .toInt() > 0 && data?.slotIndex .toInt() >= 0 && data?.isEsim !== true && data?.isActive !== false && data?.iccId.length .toInt() > 0 && data?.showName.length .toInt() > 0 && data?.showNumber.length .toInt() > 0 ) {
               console.info(`${caseName}: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
               ExpectTrue(true);
               console.info(`${caseName} test end `);
