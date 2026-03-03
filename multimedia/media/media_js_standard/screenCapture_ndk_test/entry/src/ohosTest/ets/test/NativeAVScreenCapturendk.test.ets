@@ -552,9 +552,58 @@ export default function nativeAVScreenCaptureNdkTest() {
       console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
       expect(result).assertEqual(0);
 
-      let isShowDialog: number = (await Utils.btnPickerTextScreenCapture()) || (await Utils.btnTextScreenCapture());
+      let isShowDialog: number = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
       let result1: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker3();
       expect(result1).assertEqual(0);
+      let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
+        resultStop);
+      expect(resultStop).assertEqual(0);
+      expect(isShowDialog).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
+     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPicker();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
+      expect(result).assertEqual(0);
+
+      let isShowDialog: number = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
+
+      let result1: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest1();
+      console.info(Tag + "OriginAVScreenCaptureCallBackTest1-------------result1:" +
+        result1);
+      expect(result1).assertEqual(0);
+
+      let result2: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest2();
+      console.info(Tag + "OriginAVScreenCaptureCallBackTest2-------------result2:" +
+        result2);
+      expect(result2).assertEqual(0);
+
+      let result3: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest3();
+      console.info(Tag + "OriginAVScreenCaptureCallBackTest3-------------result3:" +
+        result3);
+      expect(result3).assertEqual(0);
+
+      let result4: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest4();
+      console.info(Tag + "OriginAVScreenCaptureCallBackTest4-------------result4:" +
+        result4);
+      expect(result4).assertEqual(0);
+
+      let result5: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest5();
+      console.info(Tag + "OriginAVScreenCaptureCallBackTest5-------------result5:" +
+        result5);
+      expect(result5).assertEqual(0);
+
       let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
       console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
         resultStop);
@@ -1119,23 +1168,6 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result).assertEqual(expectedResult);
       result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenAndWindow();
       expect(result).assertEqual(expectedResult);
-      done();
-    });
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
-     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
-     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureCallback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100', Level.LEVEL0,async (done: Function) => {
-      console.info(Tag + "OriginAVScreenCaptureCallBackTest-------------before click:");
-      let result: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest();
-      console.info(Tag + "OriginAVScreenCaptureCallBackTest-------------res:" + result);
-      expect(result).assertEqual(0);
-      await Utils.btnTextScreenCapture();
       done();
     });
 

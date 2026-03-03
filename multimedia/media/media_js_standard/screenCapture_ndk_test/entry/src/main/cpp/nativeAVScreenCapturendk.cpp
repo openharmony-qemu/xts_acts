@@ -989,43 +989,10 @@ static napi_value OriginAVScreenCaptureTest(napi_env env, napi_callback_info inf
 }
 
 // SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
-static napi_value OriginAVScreenCaptureCallBackTest(napi_env env, napi_callback_info info)
+static napi_value OriginAVScreenCaptureCallBackTest1(napi_env env, napi_callback_info info)
 {
-    FILE *audioFile = nullptr;
-    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
-    OH_AVScreenCaptureConfig config_;
-    SetConfig(config_);
-    config_.videoInfo.videoCapInfo.videoSource = OH_VIDEO_SOURCE_SURFACE_RGBA;
-    audioFile = OpenAFile(audioFile, "SUB_MULTIMEDIA_CAPTUR_CALLBACK_0100");
-    screenCaptureCb = std::make_shared<ScreenCaptureNdkTestCallback>(screenCapture, audioFile, nullptr, nullptr);
-    OH_AVScreenCapture_Init(screenCapture, config_);
-    OH_AVScreenCapture_StartScreenCapture(screenCapture);
     OH_AVScreenCaptureCallback callback = {OnError, OnAudioBufferAvailable, OnVideoBufferAvailable};
-    screenCaptureResult = OH_AVScreenCapture_SetCallback(screenCapture, callback);
-    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
-        napi_throw_error((env), nullptr, "error : expect SetCallback is 2 ");
-    }
-    screenCaptureResult = OH_AVScreenCapture_SetErrorCallback(screenCaptureNormal, OnError, nullptr);
-    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
-        napi_throw_error((env), nullptr, "error : expect SetErrorCallback is 2 ");
-    }
-    screenCaptureResult = OH_AVScreenCapture_SetStateCallback(screenCaptureNormal, OnStateChange, nullptr);
-    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
-        napi_throw_error((env), nullptr, "error : expect SetStateCallback is 2 ");
-    }
-    screenCaptureResult = OH_AVScreenCapture_SetDataCallback(screenCaptureNormal, OnBufferAvailable, nullptr);
-    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
-        napi_throw_error((env), nullptr, "error : expect SetDataCallback is 2 ");
-    }
-    screenCaptureResult = OH_AVScreenCapture_SetDisplayCallback(screenCaptureNormal, OnDisplaySelected, nullptr);
-    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
-        napi_throw_error((env), nullptr, "error : expect DisplaySelected is 2 ");
-    }
-    OH_AVScreenCapture_StopScreenCapture(screenCapture);
-    DelCallback(screenCapture);
-    OH_AVScreenCapture_Release(screenCapture);
-    CloseFile(audioFile, nullptr);
-    screenCaptureCb = nullptr;
+    auto screenCaptureResult = OH_AVScreenCapture_SetCallback(screenCaptureStrategyForPrivacyMaskMode, callback);
     int32_t resCapture = TEST_FAILED;
     if (screenCaptureResult == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
@@ -1035,6 +1002,57 @@ static napi_value OriginAVScreenCaptureCallBackTest(napi_env env, napi_callback_
     return res;
 }
 
+// SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
+static napi_value OriginAVScreenCaptureCallBackTest2(napi_env env, napi_callback_info info)
+{
+    auto screenCaptureResult = OH_AVScreenCapture_SetErrorCallback(screenCaptureStrategyForPrivacyMaskMode, OnError, nullptr);
+    int32_t resCapture = TEST_FAILED;
+    if (screenCaptureResult == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+// SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
+static napi_value OriginAVScreenCaptureCallBackTest3(napi_env env, napi_callback_info info)
+{
+    auto screenCaptureResult = OH_AVScreenCapture_SetStateCallback(screenCaptureStrategyForPrivacyMaskMode, OnStateChange, nullptr);
+    int32_t resCapture = TEST_FAILED;
+    if (screenCaptureResult == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+// SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
+static napi_value OriginAVScreenCaptureCallBackTest4(napi_env env, napi_callback_info info)
+{
+    auto screenCaptureResult = OH_AVScreenCapture_SetDataCallback(screenCaptureStrategyForPrivacyMaskMode, OnBufferAvailable, nullptr);
+    int32_t resCapture = TEST_FAILED;
+    if (screenCaptureResult == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+// SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
+static napi_value OriginAVScreenCaptureCallBackTest5(napi_env env, napi_callback_info info)
+{
+    auto screenCaptureResult = OH_AVScreenCapture_SetDisplayCallback(screenCaptureStrategyForPrivacyMaskMode, OnDisplaySelected, nullptr);
+    int32_t resCapture = TEST_FAILED;
+    if (screenCaptureResult == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
 static napi_value normalAVScreenCaptureShowCursorTest(napi_env env, napi_callback_info info)
 {
     screenCaptureNormal = OH_AVScreenCapture_Create();
@@ -2677,7 +2695,15 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"originAVScreenCaptureTest", nullptr, OriginAVScreenCaptureTest, nullptr, nullptr, nullptr,
             napi_default, nullptr},
-        {"OriginAVScreenCaptureCallBackTest", nullptr, OriginAVScreenCaptureCallBackTest, nullptr, nullptr, nullptr,
+        {"OriginAVScreenCaptureCallBackTest1", nullptr, OriginAVScreenCaptureCallBackTest1, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"OriginAVScreenCaptureCallBackTest2", nullptr, OriginAVScreenCaptureCallBackTest2, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"OriginAVScreenCaptureCallBackTest3", nullptr, OriginAVScreenCaptureCallBackTest3, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"OriginAVScreenCaptureCallBackTest4", nullptr, OriginAVScreenCaptureCallBackTest4, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"OriginAVScreenCaptureCallBackTest5", nullptr, OriginAVScreenCaptureCallBackTest5, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"normalAVScreenCaptureTestStop", nullptr, normalAVScreenCaptureTestStop, nullptr, nullptr, nullptr,
             napi_default, nullptr},
