@@ -1499,7 +1499,7 @@ export default function ArrayFindIndexTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayFindIndex0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: (number | undefined)[] = Array<number | undefined>(1000);
+      const arr: (number | undefined)[] = Array.create<number | undefined>(1000, undefined);
       arr[500] = 999;
       const index: number = arr.findIndex(x => x === 999);
       expect(index).assertEqual(500);

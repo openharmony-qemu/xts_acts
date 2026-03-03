@@ -283,11 +283,10 @@ export default function ConcurrentSetTest() {
     it("concurrent_Set_Constructor_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrKeys: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       const arrValues: string[] = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-      const array = Array<[number, string]>(10);
-      for (let i = 0; i < 10; i++) {
-        const arrKV: [number, string] = [arrKeys[i], arrValues[i]]
-        array[i] = arrKV;
-      }
+      const array = new Array<[Number, string]>(10, (i) => { 
+        let arrKV: [Number, string] = [arrKeys[i], arrValues[i]] 
+        return arrKV
+      });
       const arrayLike = array as ArrayLike<[number, string]>;
       const concurrentSet: containers.ConcurrentSet<[number, string]> = new containers.ConcurrentSet<[number, string]>(arrayLike);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('10');
