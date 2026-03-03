@@ -965,15 +965,15 @@ export default function SendableImagePixelMapTest() {
       }
     });
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_001
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_001
+     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_001
+     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_001
      * @tc.desc      createPixelMapFromSurface surfaceId cover null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_001', Level.LEVEL1, async (done: Function) => {
-      const testName = "SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_001";
+    it('SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_001', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_001";
       console.info(TAG, `start：${testName}`);
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
       try {
@@ -988,15 +988,15 @@ export default function SendableImagePixelMapTest() {
       }
     });
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_002
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_002
+     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_002
+     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_002
      * @tc.desc      createPixelMapFromSurface surfaceId cover undefined
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_002', Level.LEVEL1, async (done: Function) => {
-      const testName = "SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_002";
+    it('SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_002', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_002";
       console.info(TAG, `start：${testName}`);
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
       try {
@@ -1011,15 +1011,15 @@ export default function SendableImagePixelMapTest() {
       }
     });
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_003
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_003
+     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_003
+     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_003
      * @tc.desc      createPixelMapFromSurface region cover null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_003', Level.LEVEL1, async (done: Function) => {
-      const testName = "SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_003";
+    it('SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_003', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_003";
       console.info(TAG, `start：${testName}`);
       let surfaceId = 'surfaceId'
       try {
@@ -1034,15 +1034,15 @@ export default function SendableImagePixelMapTest() {
       }
     });
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_004
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_004
+     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_004
+     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_004
      * @tc.desc      createPixelMapFromSurface region cover undefined
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_004', Level.LEVEL1, async (done: Function) => {
-      const testName = "SUB_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_004";
+    it('SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_004', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_CREATE_PIXEL_MAP_SUPP_004";
       console.info(TAG, `start：${testName}`);
       let surfaceId = 'surfaceId'
       try {
