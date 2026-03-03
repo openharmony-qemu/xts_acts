@@ -127,7 +127,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('RelationalRdbStoreReturnValueAddTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
+    it('RelationalRdbStoreReturnValueAddTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void)  => {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0001 start *************');
       const valueBucket1: relationalStore.ValuesBucket = {
         "data1": "wangwu",
@@ -137,11 +137,12 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       try{
         rdbStore!.insert("", valueBucket1, (err, rowId) => {
           console.info(domain, tag, `Insert is successful, rowId = ${rowId}`);
+          done();
         });
       }catch(err) {
         console.error(domain, tag, `RelationalRdbStoreReturnValueAddTest_0001 failed message:${err.message} code:${err.code}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(domain, tag + '************* RelationalRdbStoreReturnValueAddTest_0001 end *************');
     })
@@ -443,21 +444,23 @@ export default function RelationalRdbStoreReturnValueAddTest() {
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('RelationalRdbStoreReturnValueAddTest_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
+    it('RelationalRdbStoreReturnValueAddTest_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void)  => {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0014 start *************');
       try{
         rdbStore!.querySql("", (err, resultSet) => {
           if (!resultSet) {
             console.error('Query succeeded but resultSet is null');
-            return;
+            expect().assertFail();
+            done();
           }
           console.info(domain, tag, TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount).assertEqual(0);
+          done();
         });
       }catch(err) {
         console.error(domain, tag, TAG + `Query failed, code is ${err.code}, message is ${err.message}`);
         expect().assertFail();
-        return;
+        done()
       }
       console.info(domain, tag + '************* RelationalRdbStoreReturnValueAddTest_0014 end *************');
     })
@@ -1907,7 +1910,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('RelationalRdbStoreReturnValueAddTest_0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
+    it('RelationalRdbStoreReturnValueAddTest_0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void)  => {
       console.info(domain, tag + TAG + '************* RelationalRdbStoreReturnValueAddTest_0071 start *************');
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -1915,7 +1918,8 @@ export default function RelationalRdbStoreReturnValueAddTest() {
         rdbStore!.query(predicates, (err, resultSet) => {
           if (!resultSet) {
             console.error('Query succeeded but resultSet is null');
-            return;
+            expect().assertFail();
+            done();
           }
           try {
             console.info(domain, tag + TAG +`ResultSet column names: ${resultSet.columnNames}`);
@@ -1938,9 +1942,11 @@ export default function RelationalRdbStoreReturnValueAddTest() {
             console.info(domain, tag + TAG +`ResultSet rowCount:${resultSet.rowCount}`);
             expect(resultSet.rowCount == 1).assertTrue();
             resultSet.close();
+            done();
           } catch (err) {
             console.error(`Query failed, code is ${err.code}, message is ${err.message}`);
             expect().assertFail();
+            done();
           }
         });
       }
@@ -1955,14 +1961,15 @@ export default function RelationalRdbStoreReturnValueAddTest() {
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('RelationalRdbStoreReturnValueAddTest_0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
+    it('RelationalRdbStoreReturnValueAddTest_0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void)  => {
       console.info(domain, tag + TAG + '************* RelationalRdbStoreReturnValueAddTest_0072 start *************');
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       rdbStore!.querySql("SELECT * FROM test", (err, resultSet) => {
         if (!resultSet) {
           console.error('Query succeeded but resultSet is null');
-          return;
+          expect().assertFail();
+          done();
         }
         try {
           console.info(domain, tag + TAG +`ResultSet column names: ${resultSet.columnNames}`);
@@ -1984,9 +1991,11 @@ export default function RelationalRdbStoreReturnValueAddTest() {
           console.info(domain, tag + TAG +`ResultSet rowCount:${resultSet.rowCount}`);
           expect(resultSet.rowCount == 1).assertTrue();
           resultSet.close();
+          done();
         } catch (err) {
           console.error(`Query failed, code is ${err.code}, message is ${err.message}`);
           expect().assertFail();
+          done();
         }
       });
       console.info(domain, tag + TAG + '************* RelationalRdbStoreReturnValueAddTest_0072 end *************');
