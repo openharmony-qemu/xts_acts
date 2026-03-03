@@ -118,8 +118,9 @@ export default function testsuite() {
   PhotoShowAssetsFetchResultTest();
   PhotoAccessHelperReadonlyCommentSupp();
   photoFetchResultGetObjectByPositionTestSupp();
+  SendAblePhotoAssertHelperSuppTest();
   PhotoAssertHelperSuppTest();
   requestImageTest();
   PhotoGetAssetsTestSupp();
-  SendAblePhotoAssertHelperSuppTest();
+
 }
