@@ -5726,9 +5726,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             let dragToY = pipWindowCenter.y;
             await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
             await sleep(3000);
+            let expectValue = deviceType == 'tv' ? true : false;
             let isPipActive = await pipController.isPiPActive();
             console.log(tag + caseName + ' isPipActive: ' + isPipActive);
-            expect(isPipActive).assertEqual(false);
+            expect(isPipActive).assertEqual(expectValue);
             await pipController.stopPiP();
             await sleep(5000);
             done();
