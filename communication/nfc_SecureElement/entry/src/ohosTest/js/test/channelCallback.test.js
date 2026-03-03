@@ -1540,7 +1540,7 @@ export default function channelCallbacktest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_Ese_LogicalChannel_js_2600', Level.LEVEL0, async function (done) {
+        it('SUB_Communication_Ese_LogicalChannel_js_2602', Level.LEVEL0, async function (done) {
             try {
                 if (getReader == undefined) {
                     console.info("[NFC_test]26 This function is not supported because the phone NFC chip is ST chip.");
