@@ -1530,7 +1530,7 @@ export default function nfcNDEFTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcNDEF_js_1901', Level.LEVEL0, function (done) {
+        it('SUB_Communication_NFC_nfcNDEF_js_1903', Level.LEVEL0, function (done) {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
                 console.info("makeUriRecord is object3" );

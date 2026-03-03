@@ -288,7 +288,7 @@ export default function channelCallbacktest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_Ese_LogicalChannel_js_0902', Level.LEVEL0, async function (done) {
+        it('SUB_Communication_Ese_LogicalChannel_js_0903', Level.LEVEL0, async function (done) {
             let aidArray1 = [];
             try {
                 if (getReader == undefined) {
@@ -802,14 +802,14 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1202
-         * @tc.number SUB_Communication_Ese_LogicalChannel_js_1202
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1203
+         * @tc.number SUB_Communication_Ese_LogicalChannel_js_1203
          * @tc.desc   open LogicalChannel Send an APDU command to the SE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_Ese_LogicalChannel_js_1202', Level.LEVEL0, async function (done) {
+        it('SUB_Communication_Ese_LogicalChannel_js_1203', Level.LEVEL0, async function (done) {
             try {
                 if (getReader == undefined) {
                     console.info("[NFC_test]12 This function is not supported because the phone NFC chip is ST chip.");
@@ -1619,7 +1619,7 @@ export default function channelCallbacktest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_Ese_LogicalChannel_js_2600', Level.LEVEL0, async function (done) {
+        it('SUB_Communication_Ese_LogicalChannel_js_2603', Level.LEVEL0, async function (done) {
             try {
                 if (getReader == undefined) {
                     console.info("[NFC_test]26 This function is not supported because the phone NFC chip is ST chip.");

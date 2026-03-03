@@ -247,7 +247,7 @@ export default function nfcATagSessionTest() {
             }
         })
 
-        /*
+        /**
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_0502
          * @tc.number SUB_Communication_NFC_nfcAtage_js_0502
          * @tc.desc   Test setSendDataTimeout api.
