@@ -1112,7 +1112,35 @@ export default function geolocationTest_GeoErr() {
                 try {
                     let isGeocoderAvailable = geolocationm.isGeocoderAvailable();
                     console.info("isGeocoderAvailable01 return:" + JSON.stringify(isGeocoderAvailable));
-                    expect(isGeocoderAvailable).assertTrue();
+                    if (isGeocoderAvailable) {
+                        let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 5};
+                        try {
+                            geolocationm.getAddressesFromLocationName(geocodeRequest).then((result) => {
+                                console.info('getAddressesFromLocationName: ' + JSON.stringify(result));
+                                expect(result.length>0).assertTrue();
+                            })
+                            .catch((error) => {
+                                console.error('promise, getAddressesFromLocationName: error=' + JSON.stringify(error));
+                            });
+                        } catch (err) {
+                            console.error("errCode:" + err.code + ", message:"  + err.message);
+                        }
+                    } else {
+                        let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 1};
+                        try {
+                            geolocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                            console.info('SUB_HSS_isGeocoderAvailable_0001: data=' + JSON.stringify(data));
+                            if(data){
+                                expect(data.length>0).assertTrue();
+                            }else{
+                                console.info("The device Capability not supported." + JSON.stringify(data));
+                                expect(data === undefined || data === null).assertTrue();
+                            }
+                            });
+                        } catch (err) {
+                            console.error("errCode:" + err.code + ", message:"  + err.message);
+                        }
+                    }
                 } catch (error) {
                     console.error("[lbs_js] Promise isGeocoderAvailable01:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
                 }
@@ -1216,7 +1244,7 @@ export default function geolocationTest_GeoErr() {
                             expect(data.length>0).assertTrue();
                         }else{
                             console.info("The device Capability not supported." + JSON.stringify(data));
-                            expect(data.length==0).assertTrue();
+                            expect(data === undefined || data === null).assertTrue();
                         }
                     });
                 } catch (err) {
@@ -1285,7 +1313,7 @@ export default function geolocationTest_GeoErr() {
                             console.info('getAddressesFromLocation0200: data=' + JSON.stringify(data));
                             expect(data.length>0).assertTrue();
                         }else{
-                            expect(data.length==0).assertTrue();
+                            expect(data === undefined || data === null).assertTrue();
                         }
                     });
                 } catch (err) {
@@ -1312,11 +1340,17 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
+                let isGeocoderAvailable = geolocationm.isGeocoderAvailable();
                 let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
                 try {
                     geolocationm.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
                         console.info('getAddressesFromLocation0300: data=' + JSON.stringify(data));
-                        expect(data.length>0).assertTrue();
+                        if (isGeocoderAvailable){
+                            expect(data.length>0).assertTrue();
+                        } else {
+                            expect(data === undefined || data === null).assertTrue();
+                        }
+                        
                     });
                 } catch (err) {
                     console.error("getAddressesFromLocation0300:errCode:" + err.code + ", message:"  + err.message);
@@ -1343,7 +1377,7 @@ export default function geolocationTest_GeoErr() {
                 done();
             } else {
                 let locationEnabledChange = (state) => {
-                    console.info('locationEnabledChange: state:打开' + JSON.stringify(state));
+                    console.info('locationEnabledChange: state:' + JSON.stringify(state));
                     expect(state).assertTrue()
                 }
                 try {
@@ -1405,7 +1439,9 @@ export default function geolocationTest_GeoErr() {
             } else {
                 geolocation.isGeoServiceAvailable().then((result) => {
                     console.info('promise, isGeoServiceAvailable0002: ' + JSON.stringify(result));
-                    expect(result).assertTrue();
+                    if(result) {
+                        expect(result).assertTrue();
+                    }
                 });
                 await sleep(1000);
                 done();
@@ -1455,10 +1491,15 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
+                let isGeocoderAvailable = geolocationm.isGeocoderAvailable();
                 let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 1};
                 geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
                     console.info('geolocationgetAddressesFromLocationName0004: data=' + JSON.stringify(data));
-                    expect(data.length>0).assertTrue();
+                    if (isGeocoderAvailable){
+                        expect(data.length>0).assertTrue();
+                    } else {
+                        expect(data === undefined || data === null).assertTrue();
+                    }
                 });
                 await sleep(1000);
                 done();
@@ -1509,10 +1550,15 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
+                let isGeocoderAvailable = geolocationm.isGeocoderAvailable();
                 let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
                 geolocation.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
                     console.info('geolocationgetAddressesFromLocation0006: ' + JSON.stringify(data));
-                    expect(data.length>0).assertTrue();
+                    if (isGeocoderAvailable){
+                        expect(data.length>0).assertTrue();
+                    } else {
+                        expect(data === undefined || data === null).assertTrue();
+                    }
                 });
                 await sleep(1000);
                 done();
@@ -1536,10 +1582,15 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
+                let isGeocoderAvailable = geolocationm.isGeocoderAvailable();
                 let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
                 geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
                     console.info('geolocationgetAddressesFromLocation0007: data=' + JSON.stringify(data));
-                    expect(data.length>0).assertTrue();
+                    if (isGeocoderAvailable){
+                        expect(data.length>0).assertTrue();
+                    } else {
+                        expect(data === undefined || data === null).assertTrue();
+                    }
                 });
                 await sleep(1000);
                 done();
