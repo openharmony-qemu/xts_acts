@@ -91,6 +91,7 @@ struct WaterFlowSectionsNullUndefined {
         count += this.twoColumnSection.itemsCount
       }
     }
+    this.sections.splice(0, 0, sectionOptions)
   }
 
   build() {
@@ -300,7 +301,7 @@ struct WaterFlowSectionsNullUndefined {
       }.height('5%')
 
       WaterFlow({ scroller: this.scroller, sections: this.sections }) {
-        ForEach(this.dataSource, (item: number) => {
+        LazyForEach(this.dataSource, (item: number) => {
           FlowItem() {
             Text('item' + item)
               .width('100%')
@@ -310,10 +311,11 @@ struct WaterFlowSectionsNullUndefined {
           }
           .width('100%')
           .height(this.itemHeightArray[item % 100])
-        })
+          .backgroundColor(0xFFE4E1)
+          .borderWidth(1)
+        }, (item: string) => item)
       }
       .id('waterFlow_sectionOptions_nullUndefined')
-      .columnsTemplate('1fr 1fr')
       .width('90%')
       .height('30%')
       .backgroundColor(0xFAEEE0)
