@@ -2279,7 +2279,7 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] CmsParser_DecryptEnvelopedData_Null_001 "${error}", error code: ${error.code}`);
-        expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
+        expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -2300,7 +2300,7 @@ export default function certX509CertCheckNullOrUndefinedTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] CmsParser_DecryptEnvelopedData_Undefined_001 "${error}", error code: ${error.code}`);
-        expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
+        expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
