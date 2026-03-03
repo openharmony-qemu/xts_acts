@@ -24,8 +24,12 @@ export default function ActsLocationCApi20Test() {
     beforeAll(async (done: Function) => {
       geoLocationManager.disableLocation()
       done();
+    });
+    afterAll(async (done: Function) => {
+      await changedLocationMode();
+      done();
     }
-    )
+    );
 
     /**
      * @tc.name   testLocationKitOHLocationInfoGetAdditionalInfoTest0100
