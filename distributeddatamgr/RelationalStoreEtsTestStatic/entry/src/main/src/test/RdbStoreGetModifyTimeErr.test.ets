@@ -65,7 +65,7 @@ import {
           try {
             rdbStore = await relationalStore.getRdbStore(context!, config);
             console.log(tag + 'create rdb store success');
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.log(tag + 'create rdb store failed' + `, error code is ${err.code}, message is ${err.message}`);
             expect().assertFail();
             done();
@@ -91,7 +91,7 @@ import {
             await rdbStore!.executeSql(sql_int);
             await rdbStore!.executeSql(sql_integer);
             console.log(tag + 'create table cloud_text cloud_int cloud_integer success');
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.log(tag + 'create table cloud_text cloud_int cloud_integer failed' +
               `, error code is ${err.code}, message is ${err.message}`)
             expect().assertFail();
@@ -105,7 +105,7 @@ import {
           try {
             await rdbStore!.setDistributedTables(tableArray, relationalStore.DistributedType.DISTRIBUTED_CLOUD, setConfig);
             console.log(tag + 'setDistributedTables success');
-          } catch (err: BusinessError) {
+          } catch (err) {
               console.log(tag + 'setDistributedTables fail' + `, error code is ${err.code}, message is ${err.message}`);
           }
   
@@ -132,7 +132,7 @@ import {
           }
           await rdbStore!.batchInsert('cloud_integer', vBucketArray2);
           console.log(tag + 'create rdb store success');
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + 'create rdb store failed' + `, error code is ${err.code}, message is ${err.message}`);
           expect().assertFail();
         }
