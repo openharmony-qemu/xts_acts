@@ -1505,7 +1505,7 @@ export default function RdbErrorCode14800032() {
       await (rdbStore as relationalStore.RdbStore).executeSql("UPDATE test4 SET name = ? WHERE id = "+1, [null]) 
       expect(null).assertFail();
       done();
-    } catch(e: BusinessError) {
+    } catch(e) {
       console.log("testRdbStoreExecuteSqlErr0200 err: failed, err: code=" + e.code + " message=" + e.message);
       expect(14800032).assertEqual(e.code);
       done();
