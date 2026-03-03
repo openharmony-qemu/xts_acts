@@ -317,7 +317,7 @@ export default function WindowPCTest() {
                     expect(true).assertTrue()
                     done();
                 }).catch((err: Error):Promise<void> => {
-                    if (err!.code == 801 || err!.code == 1300001) {
+                    if (err!.code === 801 || err!.code === 1300001) {
                         hilog.info(0x0000, '[ANI]',msgStr + ' The current device type does not support calling recover or recover not support ')
                         expect(true).assertTrue()
                         done();
@@ -357,9 +357,9 @@ export default function WindowPCTest() {
                         subWin!.minimize((err: BusinessError<void>|null) :void => {
                             const errCode: number = err!.code;
                             if (errCode) {
-                                if(errCode == 801){
+                                if(errCode === 801){
                                     done();
-                                }else if (errCode == 1300002){
+                                }else if (errCode === 1300002){
                                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call minimize. Cause:' + JSON.stringify(err));
                                     expect(err!.code).assertEqual(1300002);
                                     done()
@@ -545,7 +545,7 @@ export default function WindowPCTest() {
                     
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         done();
                     } else {
                         expect(false).assertFalse();
@@ -560,7 +560,7 @@ export default function WindowPCTest() {
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         done();
                     } else {
 
@@ -571,7 +571,7 @@ export default function WindowPCTest() {
             } catch (exception) {
                 exception = exception as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
-                if (exception.code == 801) {
+                if (exception.code === 801) {
                     done();
                 } else {
 
@@ -667,7 +667,7 @@ export default function WindowPCTest() {
                     expect(false).assertTrue();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.error(domain, tag,msgStr + 'Failed to call setWindowRectAutoSave. Cause: ' + JSON.stringify(err));
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         hilog.info(domain, tag,caseName + 'this deviceType does not support the Capability.');
                         done()
                     } else {
@@ -802,7 +802,7 @@ export default function WindowPCTest() {
                 done();
             }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(domain, tag,`${caseName} Unauthorized operation. Cause code: ${err.code}, message: ${err.message}`);
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 }else{
                     expect(1300004).assertEqual(err.code);
@@ -845,7 +845,7 @@ export default function WindowPCTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
-                if(err.code == 801){
+                if(err.code === 801){
                     expect(err.message!=null).assertTrue();
                     done();
                 } else{
@@ -904,7 +904,7 @@ export default function WindowPCTest() {
                     err = err as BusinessError;
                     hilog.error(domain, tag,`${caseName} failed dialog window, err: ${JSON.stringify(err)}`);
                     await windowClass2.destroyWindow();
-                    if(err.code == 801){
+                    if(err.code === 801){
                         expect(err.message!=null).assertTrue();
                         done();
                     } else{
@@ -1015,7 +1015,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1078,7 +1078,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1145,7 +1145,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1212,7 +1212,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1279,7 +1279,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1346,7 +1346,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1413,7 +1413,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1480,7 +1480,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1547,7 +1547,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1614,7 +1614,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1681,7 +1681,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1748,7 +1748,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1815,7 +1815,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1882,7 +1882,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1949,7 +1949,7 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
-                if(err.code == 801){
+                if(err.code === 801){
                     done();
                 } else{
                     expect(false).assertTrue();
@@ -1986,7 +1986,7 @@ export default function WindowPCTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
                     expect(err.message!=null).assertTrue();
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
                         done();
                     } else {
@@ -2043,7 +2043,7 @@ export default function WindowPCTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
                     expect(err.message!=null).assertTrue();
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
                         done();
                     } else {
@@ -2092,7 +2092,7 @@ export default function WindowPCTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
                     expect(err.message!=null).assertTrue();
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
                         done();
                     } else {
@@ -2142,7 +2142,7 @@ export default function WindowPCTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
                     expect(err.message!=null).assertTrue();
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
                         done();
                     } else {
@@ -2194,7 +2194,7 @@ export default function WindowPCTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
                     expect(err.message!=null).assertTrue();
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
                         done();
                     } else {
@@ -2249,7 +2249,7 @@ export default function WindowPCTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
                     expect(err.message!=null).assertTrue();
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
                         done();
                     } else {
@@ -2293,7 +2293,7 @@ export default function WindowPCTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
                     expect(err.message!=null).assertTrue();
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
                         done();
                     } else {
@@ -2443,7 +2443,7 @@ export default function WindowPCTest() {
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     console.error(msgStr+'shiftAppWindowTouchEvent : ' + err.code + ',message:' + err.message)
                     await subWindowClass.destroyWindow();
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         done();
                     } else {
                         expect(err.code).assertEqual(1300002);
@@ -2454,7 +2454,7 @@ export default function WindowPCTest() {
                 err = err as BusinessError;
                 console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
                 await subWindowClass.destroyWindow();
-                if (err.code == 801) {
+                if (err.code === 801) {
                     expect(err.message != null).assertTrue();
                     done()
                 } else {
@@ -2485,7 +2485,7 @@ export default function WindowPCTest() {
                     done();
                 }).catch((error: Error):PromiseLike<void>|undefined => {
                     console.log(msgStr + 'Failed to shift app window focus1. Cause:' + JSON.stringify(error));
-                    if (error.code == 801 || error.code == 1300002) {
+                    if (error.code === 801 || error.code === 1300002) {
                         expect(true).assertTrue()
                         done()
                     } else {
@@ -2521,7 +2521,7 @@ export default function WindowPCTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
                     await terminateAbility(message);
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         expect(err.message != null).assertTrue();
                         console.error(`The device not support setSupportedWindowModes`);
                         expect(true).assertTrue();
@@ -2569,7 +2569,7 @@ export default function WindowPCTest() {
                 }).catch(async (err: Error):PromiseLike<void>|undefined => {
                     console.error(caseName + `Failed to set window support modes. Cause code: ${err.code}, message: ${err.message}`);
                     await terminateAbility(caseName);
-                    if (err.code == 801) {
+                    if (err.code === 801) {
                         expect(err.message != null).assertTrue();
                         done();
                     } else {
@@ -4316,9 +4316,9 @@ export default function WindowPCTest() {
                         done()
                     } catch (e) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorVisible. Cause:' + JSON.stringify(e));
-                        if(e!.code == 1300002){
+                        if(e!.code === 1300002){
                             done();
-                        }else if(e!.code == 801){
+                        }else if(e!.code === 801){
                             done();
                         }else {
                             expect(false).assertTrue();
@@ -4428,7 +4428,7 @@ export default function WindowPCTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to enable the listener for window title buttons area changes. Cause: ' + JSON.stringify(err));
-                if (err!.code == 801) {
+                if (err!.code === 801) {
                     expect(true).assertTrue()
                     done()
                 } else {
@@ -4459,7 +4459,7 @@ export default function WindowPCTest() {
             } catch (error) {
                 error = error as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to disable the listener for window title buttons area changes. Cause: ' + JSON.stringify(error));
-                if (error!.code == 1300002) {
+                if (error!.code === 1300002) {
                     expect(true).assertTrue()
                     done()
                 } else {
@@ -4541,7 +4541,7 @@ export default function WindowPCTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setWindowTitleButtonVisible. Cause:' +
                         JSON.stringify(exception));
                         await (subWin!! as window.Window).destroyWindow();
-                        if (exception!.code == 801) {
+                        if (exception!.code === 801) {
                             hilog.info(0x0000, '[ANI]',msgStr + '此设备不支持getDecorButtonStyle能力.');
                         } else {
                             expect(exception!.code).assertEqual(1300004);
@@ -4639,7 +4639,7 @@ export default function WindowPCTest() {
                 exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setDecorButtonStyle. Cause:' + JSON.stringify(exception));
                 await (tempWnd! as window.Window).destroyWindow();
-                if (exception!.code == 801) {
+                if (exception!.code === 801) {
                     hilog.info(0x0000, '[ANI]',msgStr + '此设备不支持setDecorButtonStyle能力.');
                 } else {
                     expect(exception!.code).assertEqual(1300004);
@@ -4669,7 +4669,7 @@ export default function WindowPCTest() {
             } catch (error) {
                 error = error as BusinessError;
                 hilog.error(domain, tag,msgStr + ' Failed. Cause:'+JSON.stringify(error.code) + JSON.stringify(error));
-                if (error.code == 801) {
+                if (error.code === 801) {
                     done();
                 } else {
                     expect(error.code).assertEqual(401);
@@ -4702,7 +4702,7 @@ export default function WindowPCTest() {
             } catch (error) {
                 error = error as BusinessError;
                 hilog.error(domain, tag,msgStr + ' Failed. Cause:'+JSON.stringify(error.code) + JSON.stringify(error));
-                if (error.code == 801) {
+                if (error.code === 801) {
                     done();
                 } else {
                     expect(error.code).assertEqual(401);
@@ -4829,7 +4829,7 @@ export default function WindowPCTest() {
                 console.error(msgStr + 'Failed to set the call setWindowTitleMoveEnabled. Cause:' +
                 JSON.stringify(exception));
                 await (tempWnd! as window.Window).destroyWindow();
-                if (exception.code == 801) {
+                if (exception.code === 801) {
                     console.info(msgStr + '此设备不支持setWindowTitleMoveEnabled能力.');
                 } else {
                     expect(exception.code).assertEqual(1300004);
@@ -4908,7 +4908,7 @@ export default function WindowPCTest() {
                     console.info(msgStr + 'Succeeded in calling setWindowTitle.');
                 }).catch((err: Error) => {
                     console.error(msgStr + 'Failed to call setWindowTitle. Cause: ' + JSON.stringify(err));
-                    if(err.code == 801){
+                    if(err.code === 801){
                         done();
                     }else{
                         expect(err.code).assertEqual(1300002);
