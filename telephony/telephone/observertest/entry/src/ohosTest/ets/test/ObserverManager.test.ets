@@ -572,7 +572,6 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-
     /**
      * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOff
      * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0100
@@ -734,7 +733,6 @@ export default function observerManagerTest() {
       await data.enableCellularData();
       console.info(`${caseName} test end `);
     });
-
 
     /**
      * @tc.name   testTelephonyObserverCellularDataFlowChangeOnId0100
