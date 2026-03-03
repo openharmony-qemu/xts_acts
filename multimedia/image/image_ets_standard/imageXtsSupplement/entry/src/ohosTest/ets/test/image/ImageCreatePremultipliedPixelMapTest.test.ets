@@ -57,7 +57,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
     /**
      * @tc.name   IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_TEST_001
      * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_TEST_001
-     * @tc.desc   createPremultipliedPixelMap isEditable true
+     * @tc.desc   createPremultipliedPixelMap srcPixelmap editable true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -114,7 +114,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
     /**
      * @tc.name   IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_TEST_002
      * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_TEST_002
-     * @tc.desc   createPremultipliedPixelMap isEditable false
+     * @tc.desc   createPremultipliedPixelMap srcPixelmap editable false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -171,7 +171,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
     /**
      * @tc.name   IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_TEST_003
      * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_TEST_003
-     * @tc.desc   createPremultipliedPixelMap PixelMap does not allow modification
+     * @tc.desc   createPremultipliedPixelMap dstPixelMap editable false PixelMap does not allow modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -225,66 +225,11 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
       } finally {
       }
     })
-    /**
-     * @tc.name   IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_TEST_004
-     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_TEST_004
-     * @tc.desc   createPremultipliedPixelMap PixelMap does not allow modification
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_TEST_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_TEST_004';
-      try {
-        const color: ArrayBuffer = new ArrayBuffer(16);
-        let bufferArr = new Uint8Array(color);
-        for (let i = 0; i < bufferArr.length; i += 4) {
-          bufferArr[i] = 255;
-          bufferArr[i+1] = 255;
-          bufferArr[i+2] = 122;
-          bufferArr[i+3] = 122;
-        }
-        let optsForUnpre: image.InitializationOptions = {
-          editable: false,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          size: { height: 2, width: 2 },
-          alphaType: image.AlphaType.UNPREMUL
-        }
-        let srcPixelmap = image.createPixelMapSync(color, optsForUnpre);
-        let optsForPre: image.InitializationOptions = {
-          editable: false,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          size: { height: 2, width: 2 },
-          alphaType: image.AlphaType.PREMUL
-        }
-        let dstPixelMap = image.createPixelMapSync(optsForPre);
-        image.createPremultipliedPixelMap(srcPixelmap, dstPixelMap, async (error: BusinessError) => {
-          if (error) {
-            console.error(TAG,testName,`Failed to convert pixelmap, error code is `,error);
-            expect(error).assertEqual(62980248);
-            await srcPixelmap?.release();
-            await dstPixelMap?.release();
-            done();
-          } else {
-            expect().assertFail();
-            await srcPixelmap?.release();
-            await dstPixelMap?.release();
-            done();
-            console.info(TAG,testName,'Succeeded in converting pixelmap.');
-          }
-        })
-      } catch (error) {
-        console.error(TAG, testName, "create failed:", error.code, error.msg);
-        expect().assertFail();
-        await srcPixelmap?.release();
-        await dstPixelMap?.release();
-        done();
-      }
-    })
+
     /**
      * @tc.name   IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_001
      * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_001
-     * @tc.desc   createPremultipliedPixelMap isEditable true
+     * @tc.desc   createPremultipliedPixelMap srcPixelmap true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -329,7 +274,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
     /**
      * @tc.name   IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_002
      * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_002
-     * @tc.desc   createPremultipliedPixelMap isEditable false
+     * @tc.desc   createPremultipliedPixelMap srcPixelmap false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -374,7 +319,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
     /**
      * @tc.name   IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_003
      * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_003
-     * @tc.desc   createPremultipliedPixelMap PixelMap does not allow modification
+     * @tc.desc   createPremultipliedPixelMap dstPixelMap editable false PixelMap does not allow modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -391,7 +336,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
           bufferArr[i+3] = 122;
         }
         let optsForUnpre: image.InitializationOptions = {
-          editable: false,
+          editable: true,
           pixelFormat: image.PixelMapFormat.RGBA_8888,
           size: { height: 2, width: 2 },
           alphaType: image.AlphaType.UNPREMUL
@@ -417,56 +362,11 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
         done();
       }
     })
-    /**
-     * @tc.name   IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_004
-     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_004
-     * @tc.desc   createPremultipliedPixelMap PixelMap does not allow modification
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_CREATE_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_004';
-      try {
-        const color: ArrayBuffer = new ArrayBuffer(16);
-        let bufferArr = new Uint8Array(color);
-        for (let i = 0; i < bufferArr.length; i += 4) {
-          bufferArr[i] = 255;
-          bufferArr[i+1] = 255;
-          bufferArr[i+2] = 122;
-          bufferArr[i+3] = 122;
-        }
-        let optsForUnpre: image.InitializationOptions = {
-          editable: false,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          size: { height: 2, width: 2 },
-          alphaType: image.AlphaType.UNPREMUL
-        }
-        let srcPixelmap = image.createPixelMapSync(color, optsForUnpre);
-        let optsForPre: image.InitializationOptions = {
-          editable: false,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          size: { height: 2, width: 2 },
-          alphaType: image.AlphaType.PREMUL
-        }
-        let dstPixelMap = image.createPixelMapSync(optsForPre);
-        console.info(TAG,testName,'start in  pixelmap.');
-        await image.createPremultipliedPixelMap(srcPixelmap, dstPixelMap);
-        console.info(TAG,testName,'Succeeded in converting pixelmap.');
-        expect().assertFail();
-      } catch (error) {
-        console.error(TAG, testName, "create failed:", error.code, error.msg,error);
-        expect(error).assertEqual(62980248);
-      } finally {
-        await srcPixelmap?.release();
-        await dstPixelMap?.release();
-        done();
-      }
-    })
+
     /**
      * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_TEST_001
      * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_TEST_001
-     * @tc.desc   createUnpremultipliedPixelMap isEditable true
+     * @tc.desc   createUnpremultipliedPixelMap srcPixelmap editable true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -521,7 +421,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
     /**
      * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_TEST_002
      * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_TEST_002
-     * @tc.desc   createUnpremultipliedPixelMap isEditable false
+     * @tc.desc   createUnpremultipliedPixelMap srcPixelmap editable false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -576,7 +476,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
     /**
      * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_TEST_003
      * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_TEST_003
-     * @tc.desc   createUnpremultipliedPixelMap PixelMap does not allow modification
+     * @tc.desc   createUnpremultipliedPixelMap dstPixelMap editable false PixelMap does not allow modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -609,63 +509,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
         image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap, async (error: BusinessError) => {
           if (error) {
             console.error(TAG,testName,`Failed to convert pixelmap, error code is`,error);
-            expect(error).assertEqual(62980248)
-            await srcPixelmap?.release();
-            await dstPixelMap?.release();
-            done();
-          } else {
-            expect().assertFail();
-            console.info(TAG,testName,'Succeeded in converting pixelmap.');
-            await srcPixelmap?.release();
-            await dstPixelMap?.release();
-            done();
-          }
-        })
-      } catch (error) {
-        console.error(TAG, testName, "create failed:", error.code, error.msg);
-        expect().assertFail();
-        await srcPixelmap?.release();
-        await dstPixelMap?.release();
-        done();
-      }
-    })
-    /**
-     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_TEST_004
-     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_TEST_004
-     * @tc.desc   createUnpremultipliedPixelMap PixelMap does not allow modification
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_TEST_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_TEST_004';
-      try {
-        const color: ArrayBuffer = new ArrayBuffer(16);
-        let bufferArr = new Uint8Array(color);
-        for (let i = 0; i < bufferArr.length; i += 4) {
-          bufferArr[i] = 255;
-          bufferArr[i+1] = 255;
-          bufferArr[i+2] = 122;
-          bufferArr[i+3] = 122;
-        }
-        let optsForUnpre: image.InitializationOptions = {
-          editable: true,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          size: { height: 2, width: 2 },
-          alphaType: image.AlphaType.PREMUL
-        }
-        let srcPixelmap = image.createPixelMapSync(color, optsForUnpre);
-        let optsForPre: image.InitializationOptions = {
-          editable: false,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          size: { height: 2, width: 2 },
-          alphaType: image.AlphaType.UNPREMUL
-        }
-        let dstPixelMap = image.createPixelMapSync(optsForPre);
-        image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap, async (error: BusinessError) => {
-          if (error) {
-            console.error(TAG,testName,`Failed to convert pixelmap, error code is `,error);
-            expect(error).assertEqual(62980248)
+            expect(error).assertEqual(62980248);
             await srcPixelmap?.release();
             await dstPixelMap?.release();
             done();
@@ -688,7 +532,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
     /**
      * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_001
      * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_001
-     * @tc.desc   createUnpremultipliedPixelMap isEditable true
+     * @tc.desc   createUnpremultipliedPixelMap srcPixelmap editable true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -733,7 +577,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
     /**
      * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_002
      * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_002
-     * @tc.desc   createUnpremultipliedPixelMap isEditable false
+     * @tc.desc   createUnpremultipliedPixelMap srcPixelmap editable false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -778,7 +622,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
     /**
      * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_003
      * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_003
-     * @tc.desc   createPremultipliedPixelMap PixelMap does not allow modification
+     * @tc.desc   createUnpremultipliedPixelMap dstPixelMap editable false PixelMap does not allow modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -796,51 +640,6 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
         }
         let optsForUnpre: image.InitializationOptions = {
           editable: true,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          size: { height: 2, width: 2 },
-          alphaType: image.AlphaType.PREMUL
-        }
-        let srcPixelmap = image.createPixelMapSync(color, optsForUnpre);
-        let optsForPre: image.InitializationOptions = {
-          editable: false,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          size: { height: 2, width: 2 },
-          alphaType: image.AlphaType.UNPREMUL
-        }
-        let dstPixelMap = image.createPixelMapSync(optsForPre);
-        await image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap);
-        console.info(TAG,testName,'Succeeded in converting pixelmap.');
-        expect().assertFail();
-      } catch (error) {
-        console.error(TAG, testName, "create failed:", error.code, error.msg);
-        expect(error).assertEqual(62980248);
-      } finally {
-        await srcPixelmap?.release();
-        await dstPixelMap?.release();
-        done();
-      }
-    })
-    /**
-     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_004
-     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_004
-     * @tc.desc   createPremultipliedPixelMap PixelMap does not allow modification
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_TEST_004';
-      try {
-        const color: ArrayBuffer = new ArrayBuffer(16);
-        let bufferArr = new Uint8Array(color);
-        for (let i = 0; i < bufferArr.length; i += 4) {
-          bufferArr[i] = 255;
-          bufferArr[i+1] = 255;
-          bufferArr[i+2] = 122;
-          bufferArr[i+3] = 122;
-        }
-        let optsForUnpre: image.InitializationOptions = {
-          editable: false,
           pixelFormat: image.PixelMapFormat.RGBA_8888,
           size: { height: 2, width: 2 },
           alphaType: image.AlphaType.PREMUL
