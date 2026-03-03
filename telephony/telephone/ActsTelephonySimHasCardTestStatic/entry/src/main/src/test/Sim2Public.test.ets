@@ -136,7 +136,7 @@ export default function Sim2Public() {
         if (data) {
           console.info(`${caseName}:success have card,data->${JSON.stringify(data)}`);
           sim.getISOCountryCodeForSim(0).then((data: string) => {
-            if (data?.length.toInt() > 0) {
+            if (data?.length as int > 0) {
               console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
               ExpectTrue(true);
               console.info(`${caseName} test end `);
