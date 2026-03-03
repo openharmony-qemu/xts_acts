@@ -607,10 +607,10 @@ export default function nativeAVScreenCaptureNdkTest() {
         result5);
       expect(result5).assertEqual(0);
 
-      let result5: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest6();
+      let result6: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest6();
       console.info(Tag + "OriginAVScreenCaptureCallBackTest6-------------result6:" +
-        result5);
-      expect(result5).assertEqual(0);
+        result6);
+      expect(result6).assertEqual(0);
 
       let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
       console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
