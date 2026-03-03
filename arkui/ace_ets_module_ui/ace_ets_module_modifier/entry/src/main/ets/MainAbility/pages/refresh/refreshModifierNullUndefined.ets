@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { RefreshModifier } from "@ohos.arkui.modifier";
+import { RefreshModifier } from '@ohos.arkui.modifier';
 
 class MyRefreshModifier extends RefreshModifier {
   applyNormalAttribute(instance: RefreshAttribute | null | undefined): void {

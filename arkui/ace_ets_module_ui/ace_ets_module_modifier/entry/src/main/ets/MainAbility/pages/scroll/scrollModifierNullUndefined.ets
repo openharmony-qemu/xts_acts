@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ScrollModifier } from "@ohos.arkui.modifier";
+import { ScrollModifier } from '@ohos.arkui.modifier';
 
 class MyScrollModifier extends ScrollModifier {
   applyNormalAttribute(instance: ScrollAttribute | null | undefined): void {

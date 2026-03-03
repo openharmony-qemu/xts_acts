@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ListItemGroupModifier } from "@ohos.arkui.modifier";
+import { ListItemGroupModifier } from '@ohos.arkui.modifier';
 
 class MyListItemGroupModifier extends ListItemGroupModifier {
   applyNormalAttribute(instance: ListItemGroupAttribute | null | undefined): void {

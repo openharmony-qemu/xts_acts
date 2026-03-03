@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { WaterFlowModifier } from "@ohos.arkui.modifier";
+import { WaterFlowModifier } from '@ohos.arkui.modifier';
 
 class MyWaterFlowModifier extends WaterFlowModifier {
   applyNormalAttribute(instance: WaterFlowAttribute | null | undefined): void {

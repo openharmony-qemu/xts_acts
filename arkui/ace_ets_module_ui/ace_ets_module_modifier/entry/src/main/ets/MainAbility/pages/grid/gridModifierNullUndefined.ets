@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { GridModifier } from "@ohos.arkui.modifier";
+import { GridModifier } from '@ohos.arkui.modifier';
 
 class MyGridModifier extends GridModifier {
   applyNormalAttribute(instance: GridAttribute | null | undefined): void {
