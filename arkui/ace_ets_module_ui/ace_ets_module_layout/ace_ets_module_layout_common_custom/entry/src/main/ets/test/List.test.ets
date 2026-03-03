@@ -51,6 +51,9 @@ import LayoutGravityNullUndefinedTest from './CommonAttrs/LayoutGravityNullUndef
 import IgnoreLayoutSafeAreaNullUndefinedTest from './CommonAttrs/IgnoreLayoutSafeAreaNullUndefined.test';
 import ExpandSafeAreaNullUndefinedTest from './CommonAttrs/ExpandSafeAreaNullUndefined.test';
 
+import MediaQueryMatchMediaNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaNullUndefinedTest.test';
+import MediaQueryMatchMediaSyncNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaSyncNullUndefinedTest.test';
+
 export default function testsuite() {
   Calc01();
   Calc02();
@@ -89,4 +92,7 @@ export default function testsuite() {
   LayoutGravityNullUndefinedTest();
   IgnoreLayoutSafeAreaNullUndefinedTest();
   ExpandSafeAreaNullUndefinedTest();
+
+  MediaQueryMatchMediaNullUndefinedTest();
+  MediaQueryMatchMediaSyncNullUndefinedTest();
 }
