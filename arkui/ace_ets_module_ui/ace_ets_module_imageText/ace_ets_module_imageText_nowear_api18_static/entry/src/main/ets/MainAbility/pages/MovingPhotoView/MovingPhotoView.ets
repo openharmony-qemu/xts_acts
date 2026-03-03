@@ -103,7 +103,7 @@ struct MovingPhotoView1 {
         Stack({ alignContent: Alignment.BottomStart }) {
           if (this.refreshMovingPhoto) {
             MovingPhotoView({
-              movingPhoto: data,
+              movingPhoto: data as photoAccessHelper.MovingPhoto,
               controller: this.controller,
               imageAIOptions: this.options
             })
