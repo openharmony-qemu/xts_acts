@@ -65,3 +65,4 @@ struct MediaQueryMatchMediaSyncNullUndefined {
     }
     .width('100%').height('100%')
   }
+}
