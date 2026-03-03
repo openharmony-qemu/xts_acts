@@ -158,7 +158,6 @@ export default function DisplayTest() {
             }
             await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
             await Utils.msSleep(300);
-            console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)`}
             try{
                 let data:string = displayClass.getDisplayCapability();
                 // let capabilityData = JSON.parse(data);
