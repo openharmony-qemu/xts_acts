@@ -136,6 +136,7 @@ import TextSelectionPropertiesTest from './TextTest/TextSelectionProperties.test
 import TextSpecialOptionsNullTest from './TextTest/TextSpecialOptionsNull.test';
 import TextLayoutOptionsNullTest from './TextTest/TextLayoutOptionsNull.test';
 import TextSpecialAttrsNullTest from './TextTest/TextSpecialAttrsNull.test';
+import TextMethodsNullTest from './TextTest/TextMethodsNull.test';
 
 
 export default function testsuite() {
@@ -263,4 +264,5 @@ export default function testsuite() {
   TextSpecialOptionsNullTest();
   TextLayoutOptionsNullTest();
   TextSpecialAttrsNullTest();
+  TextMethodsNullTest();
 }
