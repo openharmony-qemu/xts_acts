@@ -1912,7 +1912,7 @@ export default function TaskpoolTest() {
           console.info(`${caseName}: taskConstructor2 return value: ${JSON.stringify(res)}`);
           isTerminate1 = true;
           result2 = res as number[] | undefined[];
-          expect(JSON.stringify(result2)).assertDeepEquals('null, null');
+          expect(JSON.stringify(result2)).assertDeepEquals('[null,null]');
         });
         while (isTerminate1 && isTerminate2) {
           await promiseCase();

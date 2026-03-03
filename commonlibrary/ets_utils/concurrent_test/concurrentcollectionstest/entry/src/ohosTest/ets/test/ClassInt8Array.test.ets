@@ -879,7 +879,7 @@ export default function Int8ArrayGlobalTest() {
             count++
           }
           await taskpool.execute(group).then((res) => {
-            expect(JSON.stringify(res)).assertContain('1,3,5,4')
+            expect(res.toString()).assertContain('1,3,5,4')
             flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
