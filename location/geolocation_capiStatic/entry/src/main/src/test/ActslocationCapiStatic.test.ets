@@ -168,7 +168,7 @@ export default function actslocationTest() {
 
         /**
          * @tc.number  testGeolocationManagerCoreConfig001
-         * @tc.name  testGeolocationManagerGeofenceConfig001
+         * @tc.name  testGeolocationManagerCoreConfig001
          * @tc.desc  Test Location API functionality
          * @tc.level  Level 2
          * @tc.type  Function
@@ -206,7 +206,7 @@ export default function actslocationTest() {
        
         /**
          * @tc.number  testGeolocationManagerGnssConfig001
-         * @tc.name  testGeolocationManagerGeofenceConfig001
+         * @tc.name  testGeolocationManagerGnssConfig001
          * @tc.desc  Test Location API functionality
          * @tc.level  Level 2
          * @tc.type  Function
