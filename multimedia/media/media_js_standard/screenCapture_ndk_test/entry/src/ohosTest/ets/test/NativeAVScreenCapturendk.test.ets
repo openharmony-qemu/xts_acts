@@ -1156,14 +1156,14 @@ export default function nativeAVScreenCaptureNdkTest() {
 
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0002
-     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0002
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0102
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0102
      * @tc.desc   OH_AVScreenCapture_ExcludePickerWindows
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0002', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0102', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureExcludePickerWindows2();
       let expectedResult: number = 0;
       expect(result).assertEqual(expectedResult);
