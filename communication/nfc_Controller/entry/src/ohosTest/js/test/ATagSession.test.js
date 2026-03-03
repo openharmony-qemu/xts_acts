@@ -491,10 +491,10 @@ export default function nfcATagSessionTest() {
                     expect(data).assertInstanceOf('Array')
                     done();
                 });
-            } catch(err) {
-                if (err.code == 401) {
+            } catch (err) {
+                if (err.code === 401) {
                     console.info("[NFC_test] tagsession11 nfcAtage transmit err: " + err);
-                    expect(true).assertTrue();
+                    expect(401).assertEqual(err.code);
                 } else {
                     console.info("[NFC_test] tagsession11 nfcAtage transmit err: " + err);
                     expect().assertFail();
@@ -514,14 +514,14 @@ export default function nfcATagSessionTest() {
         it('SUB_Communication_NFC_nfcAtage_js_1102', Level.LEVEL0, async function (done) {
             try {
                 await tag.getNfcATag(aTag).transmit(undefined).then((data) => {
-                    console.info("[NFC_test] tagsession11 nfcAtage sendData1 data: " + data );
+                    console.info("[NFC_test] tagsession11 nfcAtage transmit data: " + data );
                     expect(data).assertInstanceOf('Array')
                     done();
                 });
-            } catch(err) {
-                if (err.code == 401) {
+            } catch (err) {
+                if (err.code === 401) {
                     console.info("[NFC_test] tagsession11 nfcAtage transmit err: " + err);
-                    expect(true).assertTrue();
+                    expect(401).assertEqual(err.code);
                 } else {
                     console.info("[NFC_test] tagsession11 nfcAtage transmit err: " + err);
                     expect().assertFail();
@@ -585,15 +585,14 @@ export default function nfcATagSessionTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcAtage_js_1201', Level.LEVEL0, async function (done) {
-            let sendDatas = [0x01, 0x02, 0x03, 0x04];
             function transmit_callback() {
-                return new Promise((resovle, reject) =>{
+                return new Promise((resolve, reject) => {
                     tag.getNfcATag(aTag).transmit(null, (err, data)=> {
                         if (err) {
                             reject(err.code);
                         } else {
                             console.info("[NFC_test] tagsession12 nfcAtage transmit data: " + data);
-                            resovle();
+                            resolve();
                             done();
                         }
                     });
@@ -604,10 +603,10 @@ export default function nfcATagSessionTest() {
             })
             .catch (err => {
                 if (err.code === 401) {
-                    console.info("[NFC_test] tagsession12 nfcAtage transmit data err: " + err);
+                    console.info("[NFC_test] tagsession12 nfcAtage transmit err: " + err);
                     expect(401).assertEqual(err.code);
                 } else {
-                    cconsole.info("[NFC_test] tagsession12 nfcAtage transmit data err: " + err);
+                    console.info("[NFC_test] tagsession12 nfcAtage transmit err: " + err);
                     expect().assertFail();
                 }
                 done();
@@ -624,13 +623,13 @@ export default function nfcATagSessionTest() {
          */
         it('SUB_Communication_NFC_nfcAtage_js_1202', Level.LEVEL0, async function (done) {
             function transmit_callback() {
-                return new Promise((resovle, reject) =>{
+                return new Promise((resolve, reject) => {
                     tag.getNfcATag(aTag).transmit(undefined, (err, data)=> {
                         if (err) {
                             reject(err.code);
                         } else {
                             console.info("[NFC_test] tagsession12 nfcAtage transmit data: " + data);
-                            resovle();
+                            resolve();
                             done();
                         }
                     });
@@ -641,10 +640,10 @@ export default function nfcATagSessionTest() {
             })
             .catch (err => {
                 if (err.code === 401) {
-                    console.info("[NFC_test] tagsession12 nfcAtage transmit data err: " + err);
+                    console.info("[NFC_test] tagsession12 nfcAtage transmit err: " + err);
                     expect(401).assertEqual(err.code);
                 } else {
-                    cconsole.info("[NFC_test] tagsession12 nfcAtage transmit data err: " + err);
+                    console.info("[NFC_test] tagsession12 nfcAtage transmit err: " + err);
                     expect().assertFail();
                 }
                 done();
@@ -700,6 +699,62 @@ export default function nfcATagSessionTest() {
                 } catch (error) {
                     console.info('[NFC_test] tagsession14 setTimeout error' + error)
                     expect(3100201).assertEqual(error.code)
+                }
+            } else {
+                console.info("[NFC_test]getAtag14 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcAtage_js_1401
+         * @tc.number SUB_Communication_NFC_nfcAtage_js_1401
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfcAtage_js_1401', Level.LEVEL0, function ()  {
+            if (getAtag != null && getAtag != undefined) {
+                try {
+                    getAtag.setTimeout(null);
+                    console.info("[NFC_test] tagsession1401 setTimeout success");
+                } catch (error) {
+                    if (error.code === 401) {
+                        console.info('[NFC_test] tagsession1401 401 setTimeout error' + error);
+                        expect(401).assertEqual(error.code);
+                    } else {
+                        console.info('[NFC_test] tagsession1401 setTimeout error' + error);
+                        expect(3100201).assertEqual(error.code)
+                    }
+                }
+            } else {
+                console.info("[NFC_test]getAtag14 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcAtage_js_1402
+         * @tc.number SUB_Communication_NFC_nfcAtage_js_1402
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfcAtage_js_1402', Level.LEVEL0, function ()  {
+            if (getAtag != null && getAtag != undefined) {
+                try {
+                    getAtag.setTimeout(undefined);
+                    console.info("[NFC_test] tagsession1402 setTimeout success");
+                } catch (error) {
+                    if (error.code === 401) {
+                        console.info('[NFC_test] tagsession1402 401 setTimeout error' + error);
+                        expect(401).assertEqual(error.code);
+                    } else {
+                        console.info('[NFC_test] tagsession1402 setTimeout error' + error);
+                        expect(3100201).assertEqual(error.code);
+                    }
                 }
             } else {
                 console.info("[NFC_test]getAtag14 = null & = undefined: ");
