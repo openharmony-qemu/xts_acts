@@ -867,4 +867,32 @@ HWTEST_F(DecApiNdkTest, VIDEO_WVC1DEC_CAP_API_0016, TestSize.Level1)
         WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L4));
     }
 }
+
+/**
+ * @tc.name   VIDEO_MSVIDEO1DEC_CAP_API_0017
+ * @tc.number VIDEO_MSVIDEO1DEC_CAP_API_0017
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0010, TestSize.Level1)
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1, false, SOFTWARE);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_NE(nullptr, profiles);
+        for (int i = 0; i < profileNum; i++) {
+            EXPECT_GE(profiles[i], 0);
+            if (profileNum == 3) {
+                ASSERT_EQ(profiles[2], AV1_PROFILE_PROFESSIONAL);
+            }
+        }
+    }
+}
 } // namespace
