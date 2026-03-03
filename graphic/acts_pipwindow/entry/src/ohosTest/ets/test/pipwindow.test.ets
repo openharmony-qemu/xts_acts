@@ -3981,6 +3981,87 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         done();
       }
     });
+    /**
+     * @tc.name   test_on_controlEvent
+     * @tc.number SUB_BASIC_WMS_PIP_WINDOW_ON_CONTROLEVENT_0300
+     * @tc.desc   验证on_controlEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_on_controlEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'test_on_controlEvent!'
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let controlParam: pipWindow.ControlEventParam;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: 500,
+        contentHeight: 500
+      };
+      let callback = (control: pipWindow.ControlEventParam) => {
+        console.info(`${message} success in callback, control: ${control}`)
+        controlParam = control
+      }
+      let driver: Driver =
+        Driver.create();
+      try {
+        let promise = pipWindow.create(config);
+        promise.then(async (data) => {
+          pipController = data;
+          if (!pipController.isPiPSupported()) {
+
+            done();
+          } else {
+            console.log(`${message} Succeeded in creating pip controller, Data:${data}`)
+            await pipController.startPiP();
+            await sleep(1000);
+            pipController.on('controlEvent', callback);
+            let button1 = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
+            let Bounds = await button1.getBounds()
+            let bottom = Bounds.bottom
+            let BoundsCenter = await button1.getBoundsCenter();
+            let x = BoundsCenter.x;
+            console.log(`${message} BoundsCenter x: ${x}, bottom: ${bottom}`);
+            await driver.findComponent(ON.id('SCBPipSceneOverlay')).then(async (component) => {
+              await component.click();
+              await sleep(1000);
+              let button2 = await driver.findComponent(ON.id('control_play'));
+              console.log(`${message} button2: ${JSON.stringify(button2)}`);
+              await button2.click();
+            })
+            await sleep(1000);
+            expect(controlParam.controlType).assertEqual(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE);
+            expect(controlParam.status).assertEqual(pipWindow.PiPControlStatus.PAUSE);
+            await pipController.stopPiP();
+            await sleep(10000)
+            pipController.off('controlEvent', callback);
+            done();
+          }
+        }).catch((err: BusinessError) => {
+          console.log(`${message} promise Failed to create pipcontroller.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
+          pipController?.off('controlEvent', callback);
+          if (err.code == 801) {
+            expect(err.message != null).assertTrue();
+
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log(`${message} Failed to create pipcontroller.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+        expect().assertFail();
+        done();
+      }
+
+
+    });
 
     /**
      * @tc.name   test_updateContentNode_ErrorCode_401
