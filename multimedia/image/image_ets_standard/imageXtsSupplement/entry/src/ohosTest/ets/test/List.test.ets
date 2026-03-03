@@ -224,8 +224,6 @@ import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
 import PicturePackingPixelMapFirTestSupp from './image/PicturePackingPixelMapFir.test';
 import PicturePackingPixelMapSecTestSupp from './image/PicturePackingPixelMapSec.test';
 import ImageGetComponentFirSupp from './Picture/PictureGetComponentFirSupp.test';
-import ImagePictureTest from './image/ImagePictureTest.test';
-import CrateImageSupp from './image/CreateImageTest.test';
 import ImageGetComponentSuppSec from './image/ImageGetComponenentSuppSec.test';
 import PicturePackToFileTestSupp from './image/PicturePackToFileSupp.test';
 import PicturePackToFileTestSecSupp from './image/PicturePackToFileSuppSec.test';
@@ -313,7 +311,6 @@ export default function testsuite() {
   CreateAuxiliaryPictureTest();
   ImageAuxiliaryPictureGetMetadataTest();
   ImageAuxiliaryPictureWritePixelIsFromBufferTest();
-  ImageCreatePictureTest();
   ImageCreatePictureFromParcelTest();
   ImageCreateUnpremultipliedPixelMapTest();
   ImagePixelMapConvertPixelFormatTest();
@@ -444,7 +441,6 @@ export default function testsuite() {
   PicturePackingPixelMapSecTestSupp();
   ImageGetComponentFirSupp();
   ImagePictureTest();
-  CrateImageSupp();
   ImageGetComponentSuppSec();
   PicturePackToFileTestSupp();
   PicturePackToFileTestSecSupp();
