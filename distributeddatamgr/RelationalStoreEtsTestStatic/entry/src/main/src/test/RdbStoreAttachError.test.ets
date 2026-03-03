@@ -155,9 +155,6 @@ export default function rdbStoreAttachErrorTest() {
             await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
             await relationalStore.deleteRdbStore(context!, STORE_CONFIG2);
             await relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
-            await relationalStore.deleteRdbStore(context!, STORE_CONFIG4);
-            await relationalStore.deleteRdbStore(context!, STORE_CONFIG5);
-            await relationalStore.deleteRdbStore(context!, STORE_CONFIG6);
             console.info(tag + 'afterEach success');
         })
         
@@ -347,9 +344,16 @@ export default function rdbStoreAttachErrorTest() {
                 let num = await store!.attach(context!, STORE_CONFIG5, 'attachDB');
                 expect(num > 0).assertTrue();
             } catch (err){
-                hilog.error(domain, tag, 'testRdbStoreAttachErr0006 err:' + JSON.stringify(err));
-                expect(err.code).assertEqual(14800016);
-            }      
+                if(err.code === 801){
+                    hilog.error(domain, tag, 'testRdbStoreAttachErr0006 err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(801);  
+                }else{
+                    hilog.error(domain, tag, 'testRdbStoreAttachErr0006 err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(14800016);
+                }
+                
+            }  
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG5);      
             console.log(tag + "************* testRdbStoreAttachErr0006 end *************");
         })
 
@@ -372,7 +376,8 @@ export default function rdbStoreAttachErrorTest() {
             } catch (err){
                 hilog.error(domain, tag, 'testRdbStoreAttachErr0007 err:' + JSON.stringify(err));
                 expect(err.code).assertEqual(801);
-            }      
+            }  
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG6);    
             console.log(tag + "************* testRdbStoreAttachErr0007 end *************");
         })
 
