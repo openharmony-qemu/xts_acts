@@ -2824,6 +2824,192 @@ export default function mdnsTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrResolveLocalService2200
+     * @tc.number SUB_NetworkMgr_Mdns_ResolveLocalService_2200
+     * @tc.desc   Parsing an mDNS service callBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrResolveLocalService2200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,async (done: Function) => {
+      const caseName: string = "testNetworkMgrResolveLocalService2200";
+      console.info(`${caseName} test start `);
+      try {
+        let localServiceInfo: mdns.LocalServiceInfo = {
+          serviceType: "_print._udp",
+          serviceName: "",
+          port: 8081,
+          host: {
+            address: address,
+          },
+          serviceAttribute: [{
+            key: "111", value: [1]
+          }]
+        }
+        mdns.resolveLocalService(null, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
+          if (error) {
+            console.log(`${caseName} falil ${JSON.stringify(error)}`);
+            ExpectTrue(false, caseName);
+            done();
+          } else {
+            console.log(`${caseName} success ${JSON.stringify(data)}`);
+            ExpectTrue(false, caseName);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}: err is catch ${err}`);
+        ExpectTrue(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrResolveLocalService2300
+     * @tc.number SUB_NetworkMgr_Mdns_ResolveLocalService_2300
+     * @tc.desc   Parsing an mDNS service callBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrResolveLocalService2300",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,async (done: Function) => {
+      const caseName: string = "testNetworkMgrResolveLocalService2300";
+      console.info(`${caseName} test start `);
+      try {
+        let localServiceInfo: mdns.LocalServiceInfo = {
+          serviceType: "_print._udp",
+          serviceName: getName(),
+          port: 8081,
+          host: {
+            address: address,
+          },
+          serviceAttribute: []
+        }
+        mdns.resolveLocalService(null, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
+          if (error) {
+            console.log(`${caseName} falil ${JSON.stringify(error)}`);
+            ExpectTrue(false, caseName);
+            done();
+          } else {
+            console.log(`${caseName} success ${JSON.stringify(data)}`);
+            ExpectTrue(false, caseName);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}: err is catch ${err}`);
+        ExpectTrue(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrResolveLocalService2400
+     * @tc.number SUB_NetworkMgr_Mdns_ResolveLocalService_2400
+     * @tc.desc   Parsing an mDNS service callBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrResolveLocalService2400",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,async (done: Function) => {
+      const caseName: string = "testNetworkMgrResolveLocalService2400";
+      console.info(`${caseName} test start `);
+      try {
+        let localServiceInfo: mdns.LocalServiceInfo = {
+          serviceType: "_print._udp",
+          serviceName: getName(),
+          port: 8081,
+          host: {
+            address: address,
+          },
+          serviceAttribute: [{
+            key: "111", value: []
+          }]
+        }
+        mdns.resolveLocalService(null, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
+          if (error) {
+            console.log(`${caseName} falil ${JSON.stringify(error)}`);
+            ExpectTrue(false, caseName);
+            done();
+          } else {
+            console.log(`${caseName} success ${JSON.stringify(data)}`);
+            ExpectTrue(false, caseName);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}: err is catch ${err}`);
+        ExpectTrue(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrResolveLocalService2500
+     * @tc.number SUB_NetworkMgr_Mdns_ResolveLocalService_2500
+     * @tc.desc   Parsing an mDNS service callBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrResolveLocalService2500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,async (done: Function) => {
+      const caseName: string = "testNetworkMgrResolveLocalService2500";
+      console.info(`${caseName} test start `);
+      try {
+        mdns.resolveLocalService(null, null, (error: BusinessError, data: mdns.LocalServiceInfo) => {
+          if (error) {
+            console.log(`${caseName} falil ${JSON.stringify(error)}`);
+            ExpectTrue(false, caseName);
+            done();
+          } else {
+            console.log(`${caseName} success ${JSON.stringify(data)}`);
+            ExpectTrue(false, caseName);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}: err is catch ${err}`);
+        ExpectTrue(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrResolveLocalService2600
+     * @tc.number SUB_NetworkMgr_Mdns_ResolveLocalService_2600
+     * @tc.desc   Parsing an mDNS service callBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrResolveLocalService2600",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,async (done: Function) => {
+      const caseName: string = "testNetworkMgrResolveLocalService2600";
+      console.info(`${caseName} test start `);
+      try {
+        mdns.resolveLocalService(undefined, undefined, (error: BusinessError, data: mdns.LocalServiceInfo) => {
+          if (error) {
+            console.log(`${caseName} falil ${JSON.stringify(error)}`);
+            ExpectTrue(false, caseName);
+            done();
+          } else {
+            console.log(`${caseName} success ${JSON.stringify(data)}`);
+            ExpectTrue(false, caseName);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}: err is catch ${err}`);
+        ExpectTrue(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
      * @tc.name   testNetworkMgrStartSearchingMDNS0100
      * @tc.number SUB_NetworkMgr_Mdns_StartSearchingMDNS_0100
      * @tc.desc   Start searching for mDNS services within the local area network callBack
