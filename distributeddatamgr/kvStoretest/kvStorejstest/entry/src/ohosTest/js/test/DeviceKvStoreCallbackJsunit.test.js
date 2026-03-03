@@ -1192,6 +1192,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStorePutBatch102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch102');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let entries = [];
             for (var i = 0; i < 10; i++) {
@@ -1235,6 +1240,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStorePutBatch103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch103');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let entries = [];
             for (var i = 0; i < 10; i++) {
