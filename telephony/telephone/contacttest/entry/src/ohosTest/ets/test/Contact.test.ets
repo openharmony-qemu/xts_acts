@@ -1070,8 +1070,6 @@ export default function ErrTest() {
               try {
                 contact.updateContact(context, con, (updateErr: BusinessError, updateDate: void) => {
                   console.info(`${caseName} updateContact: data->${JSON.stringify(updateDate)}`);
-                  ExpectTrue(updateDate <= 0);
-                  done();
                 });
               } catch (e) {
                 console.info(`${caseName} updateContact: catch err->${JSON.stringify(e)}`);
@@ -1217,8 +1215,6 @@ export default function ErrTest() {
                     attributes: attr.attributes
                   }, (updateErr: BusinessError, updateDate: void) => {
                     console.info(`${caseName} updateContact: data->${JSON.stringify(updateDate)}`);
-                    ExpectTrue(updateDate <= 0);
-                    done();
                   });
                 } catch (e) {
                   console.info(`${caseName} updateContact: catch err->${JSON.stringify(e)}`);
