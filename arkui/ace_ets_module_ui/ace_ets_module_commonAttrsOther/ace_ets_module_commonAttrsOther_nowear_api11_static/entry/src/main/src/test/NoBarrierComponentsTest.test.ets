@@ -37,7 +37,7 @@ import { UtilsTest } from './Util.test';
 
 export default function noBarrierComponentsTest() {
   describe('noBarrierComponentsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("noBarrierComponentsTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.nowear.api11.static", "EntryAbility")

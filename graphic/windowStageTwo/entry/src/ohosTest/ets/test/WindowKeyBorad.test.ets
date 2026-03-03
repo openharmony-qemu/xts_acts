@@ -87,6 +87,7 @@ export default function windowKeyBorad() {
             await text3.click();
             console.info('beforeAll 完成 click success');
         }else{
+          await sleep(2000);
           await driver.pressBack();
           console.info('beforeAll pressBack success');
         }
@@ -136,11 +137,7 @@ export default function windowKeyBorad() {
             expect(keyboardInfo.animated).assertEqual(true);
             expect(keyboardInfo.config?.curve).assertEqual(1);
             expect(keyboardInfo.config?.duration).assertLarger(0);
-            if (keyboardInfo.config?.param != null) {
-              expect(true).assertTrue();
-            } else {
-              expect(true).assertFalse();
-            }
+            expect(keyboardInfo.config?.param != null).assertTrue();
             mainWindow.off('keyboardWillShow');
             await driver.pressBack();
             await sleep(500);
@@ -278,11 +275,7 @@ export default function windowKeyBorad() {
             expect(keyboardInfo.animated).assertEqual(true);
             expect(keyboardInfo.config?.curve).assertEqual(1);
             expect(keyboardInfo.config?.duration).assertLarger(0);
-            if (keyboardInfo.config?.param != null) {
-              expect(true).assertTrue();
-            } else {
-              expect(true).assertFalse();
-            }
+            expect(keyboardInfo.config?.param != null).assertTrue();
             mainWindow.off('keyboardWillHide');
             done();
           }

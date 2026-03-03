@@ -437,7 +437,7 @@ export default function cameraVideoQualityPrioritizationTest() {
 
   describe('CameraVideoQualityPrioritizationTest', () => {
     console.info(TAG + '----------CameraVideoQualityPrioritizationTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -458,7 +458,7 @@ export default function cameraVideoQualityPrioritizationTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);

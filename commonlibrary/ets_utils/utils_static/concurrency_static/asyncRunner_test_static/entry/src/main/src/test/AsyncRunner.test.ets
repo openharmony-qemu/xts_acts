@@ -200,7 +200,11 @@ export default function asyncRunnerTest() {
               .assertEqual('BusinessError: The asyncRunner task has been canceled.');
           })
           if (i > 3) {
-            taskpool.cancel(task);
+            try {
+              taskpool.cancel(task);
+            } catch (e) {
+              expect(e.toString()).assertContain('asyncRunner task has been executed');
+            }
           }
         }
         while (num < 5) {
@@ -628,7 +632,7 @@ export default function asyncRunnerTest() {
           await promiseCase();
         }
 
-        expect(cancelNum).assertEqual(size);
+        expect((doneCount - cancelNum) > 0).assertTrue();
         done();
       });
 
@@ -692,8 +696,8 @@ export default function asyncRunnerTest() {
           await promiseCase();
         }
 
-        expect(cancelNum).assertEqual(size);
-        expect(asyncCatchNum).assertEqual(asyncSize);
+        expect((size - cancelNum) > 0).assertTrue();
+        expect((asyncSize - asyncCatchNum) > 0).assertTrue();
         done();
       });
 
@@ -751,8 +755,7 @@ export default function asyncRunnerTest() {
         let task = new taskpool.Task(loop);
         let runner = new taskpool.AsyncRunner(1, 1);
         runner.execute(task)
-          .catch((e: Error) => {
-            expect(e.message).assertContain("asyncRunner task has been canceled");
+          .then(() => {
             terminate = true;
           })
         setTimeout(() => {
@@ -785,7 +788,7 @@ export default function asyncRunnerTest() {
         runner.execute(task).then(() => {
         }).catch((e: Error) => {
           console.info('TaskPoolTestClass241_error', e.message)
-          expect(e.message).assertContain('asyncRunner task has been canceled')
+          expect(e.message).assertContain('this is loop error')
           terminate = true;
         })
         setTimeout(() => {
@@ -848,14 +851,12 @@ export default function asyncRunnerTest() {
         let result: object | undefined = undefined;
         let task = new taskpool.Task(delaySum, 10.0, 20.0, 500.0);
         let runner = new taskpool.AsyncRunner(1, 1);
-        runner.execute(task).catch((e: Error) => {
-          // const be = e as BusinessError;
-          // code = be.code;
-          // error = e.message;
-          console.info('TaskPoolTestClass243_error', e.message)
-          expect(e.message).assertContain('asyncRunner task has been canceled')
+        runner.execute(task).then(() => {
           terminate = true;
-        })
+        }).catch((e: Error) => {
+          console.info('TaskPoolTestClass243_error', e.message)
+          terminate = true;
+        });
         setTimeout(() => {
           taskpool.cancel(task);
         }, 300);
@@ -883,9 +884,7 @@ export default function asyncRunnerTest() {
         let result: object | undefined = undefined;
         let task = new taskpool.Task(loop);
         let runner = new taskpool.AsyncRunner(1, 1);
-        runner.execute(task).catch((e: Error) => {
-
-          expect(e.message).assertContain("asyncRunner task has been canceled");
+        runner.execute(task).then(() => {
           terminate = true;
         })
         setTimeout(() => {

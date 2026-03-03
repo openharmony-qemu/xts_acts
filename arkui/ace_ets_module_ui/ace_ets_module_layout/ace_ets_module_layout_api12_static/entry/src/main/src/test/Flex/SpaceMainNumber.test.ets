@@ -53,7 +53,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SpaceMainNumberJsunit() {
   describe('SpaceMainNumberJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SpaceMainNumberJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")

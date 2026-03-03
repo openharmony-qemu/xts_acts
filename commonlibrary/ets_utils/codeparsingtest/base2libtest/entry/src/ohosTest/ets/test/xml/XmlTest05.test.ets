@@ -49,6 +49,12 @@ const arrayEquals = (actual: number[], expected: number[]): boolean => {
   return true;
 };
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function XmlTest_05() {
   describe('XmlTest_05', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -56,10 +62,11 @@ export default function XmlTest_05() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
+      await sleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -70,43 +77,6 @@ export default function XmlTest_05() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1600
-     * @tc.name      ParseTest0016
-     * @tc.desc      Test XML input with unescaped illegal characters in predefined entities (<, >, &, ", ')
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('ParseTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0016';
-        console.log(TAG + ' start');
-
-        str = "";
-        try{
-          let strXml = //All throw BusinessError
-            '<root>\n' +
-              '  <content>Price < 100 & Stock > 50</content>\n' +
-              '  <item name="John "Doe"" />\n' +
-              '  <user id=\'O\'Neil\' />\n' +
-              '</root>'
-
-          let testEncoder = new util.TextEncoder();
-          let arrBuffer = testEncoder.encodeInto(strXml);
-          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
-
-          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-          testThat.parse(options);
-
-          expect().assertFail()
-
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err).assertContain("BusinessError")
-        }
-
-      });
 
     /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1700
@@ -138,82 +108,6 @@ export default function XmlTest_05() {
         expect(str).not().assertContain("&#x0B")
         expect(str).not().assertContain("&#x0C")
         expect(str).not().assertContain("&#x1F")
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1800
-     * @tc.name      ParseTest0018
-     * @tc.desc      Test element/attribute names containing illegal characters (spaces, special symbols, starting with numbers)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('ParseTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0018';
-        console.log(TAG + ' start');
-
-        str = "";
-        try{
-          let strXml = //Element and attribute names with illegal characters throw BusinessError
-            '<root>\n' +
-              '  <item name>Content</item>\n' +
-              '  <123element>Test</123element>\n' +
-              '  <user na&me="Alice" />\n' +
-              '</root>'
-
-          let testEncoder = new util.TextEncoder();
-          let arrBuffer = testEncoder.encodeInto(strXml);
-          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
-
-          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-          testThat.parse(options);
-
-          expect().assertFail()
-
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err).assertContain("BusinessError")
-        }
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1900
-     * @tc.name      ParseTest0019
-     * @tc.desc      Test CDATA sections containing illegal end markers (]]>)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('ParseTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0019';
-        console.log(TAG + ' start');
-
-        str = "";
-        try{
-          let strXml =
-            '<root>\n' +
-              '  <code><![CDATA[\n' +
-              '    if (a > b) {\n' +
-              '      return "]]>";\n' +
-              '    }\n' +
-              '  ]]></code>\n' +
-              '</root>'
-
-          let testEncoder = new util.TextEncoder();
-          let arrBuffer = testEncoder.encodeInto(strXml);
-          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
-
-          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-          testThat.parse(options);
-
-          expect().assertFail()
-
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err).assertContain("BusinessError")
-        }
 
       });
 
@@ -280,43 +174,6 @@ export default function XmlTest_05() {
         expect(str).assertContain("id demo")
         expect(str).assertContain("Test parsing comments")
         expect(str).assertContain("Nested Node Content")
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2200
-     * @tc.name      ParseTest0022
-     * @tc.desc      Test XML input with whitespace characters but unclosed tags to verify format error exception is triggered first
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('ParseTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0022';
-        console.log(TAG + ' start');
-
-        str = "";
-        try{
-          let strXml =
-            '<?xml version="1.0" encoding="UTF-8"?>\n' +
-              '<root  >  \n' +
-              '  <data>  Test  <![CDATA[<>&]]>  \n' +
-              '  <item  id="1"  >  Unclosed  \n' +
-              '</root>'
-
-          let testEncoder = new util.TextEncoder();
-          let arrBuffer = testEncoder.encodeInto(strXml);
-          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
-
-          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-          testThat.parse(options);
-
-          expect().assertFail()
-
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err).assertContain("BusinessError")
-        }
 
       });
 

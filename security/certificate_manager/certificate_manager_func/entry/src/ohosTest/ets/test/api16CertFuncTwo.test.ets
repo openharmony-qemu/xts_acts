@@ -579,21 +579,47 @@ export default function api16CertFuncTestTwoUnit() {
       if (deviceInfo.deviceType == '2in1') {
         let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
         try {
-          await certManagerDialog.openUninstallCertificateDialog(null, certificateType, uir)
-          expect(null).assertFail();
-        } catch (err) {
-          console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
-        }
-
-        try {
           await certManagerDialog.openUninstallCertificateDialog(context, 2, uir)
           expect(null).assertFail();
         } catch (err) {
           console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: e.code " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
-
+        try {
+          await certManagerDialog.openUninstallCertificateDialog(null, certificateType, uir)
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+        try {
+          await certManagerDialog.openUninstallCertificateDialog(context, certificateType, '')
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+        try {
+          await certManagerDialog.openUninstallCertificateDialog(context, certificateType, null)
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+        try {
+          await certManagerDialog.openUninstallCertificateDialog(context, certificateType, undefined)
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+        try {
+          await certManagerDialog.openUninstallCertificateDialog(undefined, certificateType, uir)
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
         try {
           await certManagerDialog.openUninstallCertificateDialog(context, certificateType, 'test')
           expect(null).assertFail();
@@ -720,15 +746,42 @@ export default function api16CertFuncTestTwoUnit() {
       };
       if (deviceInfo.deviceType == '2in1') {
         try {
+          await certManagerDialog.openCertificateDetailDialog(null, caCert1, property)
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenCertificateDialog_0012: e.code " + err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try {
+          await certManagerDialog.openCertificateDetailDialog(undefined, caCert1, property)
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenCertificateDialog_0012: e.code " + err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try {
           await certManagerDialog.openCertificateDetailDialog(context, null, property)
           expect(null).assertFail();
         } catch (err) {
           console.log("SUB_Security_CertManager_OpenCertificateDialog_0012: e.code " + err.code);
           expect(err.code).assertEqual(401);
         }
-
+        try {
+          await certManagerDialog.openCertificateDetailDialog(context, undefined, property)
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenCertificateDialog_0012: e.code " + err.code);
+          expect(err.code).assertEqual(401);
+        }
         try {
           await certManagerDialog.openCertificateDetailDialog(context, caCert1, null)
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenCertificateDialog_0012: e.code " + err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try {
+          await certManagerDialog.openCertificateDetailDialog(context, caCert1, undefined)
           expect(null).assertFail();
         } catch (err) {
           console.log("SUB_Security_CertManager_OpenCertificateDialog_0012: e.code " + err.code);
@@ -915,6 +968,13 @@ export default function api16CertFuncTestTwoUnit() {
         console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`)
         expect(err.code).assertEqual(401);
       }
+      try {
+        await certManagerDialog.openAuthorizeDialog(undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`)
+        expect(err.code).assertEqual(401);
+      }
       done();
     });
     
@@ -1018,9 +1078,15 @@ export default function api16CertFuncTestTwoUnit() {
       ];
       let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
       let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
-
       try {
         await certManagerDialog.openAuthorizeDialog(null, authorizeRequest);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        await certManagerDialog.openAuthorizeDialog(undefined, authorizeRequest);
         expect(null).assertFail();
       } catch (error) {
         console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
@@ -1034,7 +1100,22 @@ export default function api16CertFuncTestTwoUnit() {
         console.error(`SUB_Security_CertManager_Ukey_0200 Failed2 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
-
+      try {
+        await certManagerDialog.openAuthorizeDialog(context, undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_0200 Failed2 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(29700006);
+      }
+      let certTypesNull: Array<certManagerDialog.CertificateType> = [];
+      let authorizeRequestNull: certManagerDialog.AuthorizeRequest = { certTypes: certTypesNull, certPurpose: certPurpose };
+      try {
+        await certManagerDialog.openAuthorizeDialog(context, authorizeRequestNull);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_0200 Failed3 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(29700006);
+      }
       let certTypes1: Array<certManagerDialog.CertificateType> = [999];
       let authorizeRequest1: certManagerDialog.AuthorizeRequest = { certTypes: certTypes1, certPurpose: certPurpose };
 
@@ -1103,6 +1184,13 @@ export default function api16CertFuncTestTwoUnit() {
         console.error(`SUB_Security_CertManager_Ukey_1000 Failed1 to open ukey authorization dialog. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
+      try {
+        await certManagerDialog.openUkeyAuthDialog(undefined, ukeyAuthRequest);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_1000 Failed1 to open ukey authorization dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
 
       try {
         await certManagerDialog.openUkeyAuthDialog(context, null);
@@ -1110,6 +1198,13 @@ export default function api16CertFuncTestTwoUnit() {
       } catch (error) {
         console.error(`SUB_Security_CertManager_Ukey_1000 Failed2 to open ukey authorization dialog. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
+      }
+      try {
+        await certManagerDialog.openUkeyAuthDialog(context, undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_1000 Failed2 to open ukey authorization dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(29700006);
       }
 
       let keyUri1: string = ""
@@ -1181,6 +1276,7 @@ export default function api16CertFuncTestTwoUnit() {
           console.error(`SUB_Security_CertManager_Ukey_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(29700007);
         }
+
       } else {
         console.info(`SUB_Security_CertManager_Ukey_1300 device not support openUkeyAuthDialog`)
       }

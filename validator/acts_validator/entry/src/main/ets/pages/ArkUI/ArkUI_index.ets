@@ -43,6 +43,8 @@ struct IndexPage {
   @State result: string = '';
   @State TEST: number = 0;
   private TestCaseList: TestCase[] = [
+    { title: 'CapiGrid', uri: 'pages/ArkUI/CapiGrid' },
+    { title: 'AccessibilityCustom', uri: 'pages/ArkUI/AccessibilityCustom' },
     { title: 'ScrollingList', uri: 'pages/ArkUI/ScrollListTest' },
     { title: 'TouchMove', uri: 'pages/ArkUI/TouchMoveTest' },
     { title: 'PinchGesture', uri: 'pages/ArkUI/PinchGestureTest' },

@@ -54,7 +54,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SpaceCross5AlignItemsJsunit() {
   describe('SpaceCross5AlignItemsJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SpaceCross5AlignItemsJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")

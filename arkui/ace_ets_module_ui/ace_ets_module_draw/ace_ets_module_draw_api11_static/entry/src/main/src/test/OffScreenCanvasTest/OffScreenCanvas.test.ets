@@ -38,7 +38,7 @@ export default function OffScreenCanvasTest() {
 
   const SUITE: string = 'OffScreenCanvas'
   describe('OffScreenCanvasTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("OffScreenCanvasTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")

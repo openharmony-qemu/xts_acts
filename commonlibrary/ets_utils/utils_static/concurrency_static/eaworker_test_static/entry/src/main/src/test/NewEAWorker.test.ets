@@ -47,7 +47,7 @@ export const Sleep = (ms: int) => {
 
 export default function NewEAWorkerTest() {
   describe('NewEAWorkerTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -64,6 +64,8 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'getWorkerIdTest001';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        let emptyId = worker.getWorkerId();
+        expect(emptyId).assertEqual(undefined);
         try {
           worker.start();
           let workerId1 = worker.getWorkerId();
@@ -1380,10 +1382,8 @@ export default function NewEAWorkerTest() {
         console.info(`${TAG} test start`);
         let worker: EAWorker | null = null;
         let taskExecuted = false;
-        let isWorkerAlive = false;
         try {
           const task = (): void => {
-            isWorkerAlive = worker!.isAlive();
             taskExecuted = true;
           }
           worker = new EAWorker(task);
@@ -1392,7 +1392,7 @@ export default function NewEAWorkerTest() {
             await Utils.msSleep(100);
           }
           expect(taskExecuted).assertTrue();
-          expect(isWorkerAlive).assertFalse();
+          expect(worker!.isAlive()).assertTrue();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();

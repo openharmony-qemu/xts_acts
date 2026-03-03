@@ -24,6 +24,13 @@
     "MainAbility/pages/promptAction/ToastExample",
     "MainAbility/pages/promptAction/openToastTest",
     "MainAbility/pages/promptAction/PromptActionToastErrorCode",
-    "MainAbility/pages/dialog/getDialogControllerReturn"
+    "MainAbility/pages/dialog/getDialogControllerReturn",
+    "MainAbility/pages/overlayManager/AddComponentContentWithOrderNullTest",
+    "MainAbility/pages/overlayManager/HideComponentContentNullTest",
+    "MainAbility/pages/overlayManager/RemoveComponentContentNullTest",
+    "MainAbility/pages/UIContextTest/CloseBindSheetNullTest",
+    "MainAbility/pages/UIContextTest/OpenBindSheetNullTest",
+    "MainAbility/pages/UIContextTest/ShowActionSheetNullTest",
+    "MainAbility/pages/UIContextTest/UpdateBindSheetNullTest"
   ]
 }

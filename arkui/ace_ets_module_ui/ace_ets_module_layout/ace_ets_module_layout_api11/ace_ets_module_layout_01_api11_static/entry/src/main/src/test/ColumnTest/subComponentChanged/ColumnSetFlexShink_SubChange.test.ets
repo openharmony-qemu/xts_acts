@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetFlexShink_SubChange() {
   describe('ColumnSetFlexShinkTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetFlexShinkTest beforeEach start");
 
 

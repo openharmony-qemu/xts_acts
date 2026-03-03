@@ -102,6 +102,8 @@ export default function abilityTest() {
         }
       await getPermision();
       await sleep(300);
+      await sleep(300);
+      await sleep(300);
       await clickButtonDriver();
     })
     beforeEach(() => {
@@ -115,6 +117,173 @@ export default function abilityTest() {
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
+    })
+
+    /**
+     * @tc.name   testStartFloatingBall_0100
+     * @tc.number testStartFloatingBall_0100
+     * @tc.desc   testStartFloatingBall_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testStartFloatingBall_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testStartFloatingBall_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallController: floatingBall.FloatingBallController | undefined
+      let floatingBallController2: floatingBall.FloatingBallController | undefined
+      try {
+        floatingBallController = await floatingBall.create(config)
+        await floatingBallController.startFloatingBall(null);
+        console.info(msgStr + 'Succeeded');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        if (exception.code === 801) {
+          done();
+        } else {
+          expect(exception.code).assertEqual(1300019);
+          expect(exception.message!=null).assertTrue();
+        }
+      }
+      try {
+        floatingBallController2 = await floatingBall.create(config)
+        await floatingBallController2?.startFloatingBall(undefined);
+        console.info(msgStr + 'Succeeded2.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        if (exception.code === 801) {
+          done();
+        } else {
+          expect(exception.code).assertEqual(1300019);
+          expect(exception.message!=null).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testUpdateFloatingBall_0100
+     * @tc.number testUpdateFloatingBall_0100
+     * @tc.desc   testUpdateFloatingBall_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUpdateFloatingBall_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testUpdateFloatingBall_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      let floatingBallController: floatingBall.FloatingBallController | undefined;
+      let isSupport = true;
+      try {
+        floatingBallController = await floatingBall.create(config)
+        await floatingBallController.startFloatingBall(startParams);
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        if (exception.code === 801) {
+          isSupport = false;
+        }
+      }
+
+      if (isSupport) {
+        try {
+          await floatingBallController?.updateFloatingBall(null);
+          console.info(msgStr + 'Succeeded');
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+          expect(exception.code).assertEqual(1300019);
+          expect(exception.message!=null).assertTrue();
+        }
+        try {
+          await floatingBallController?.updateFloatingBall(undefined);
+          console.info(msgStr + 'Succeeded2.');
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+          expect(exception.code).assertEqual(1300019);
+          expect(exception.message!=null).assertTrue();
+          await floatingBallController?.stopFloatingBall();
+          done();
+        }
+      } else {
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRestoreMainWindow_0200
+     * @tc.number testRestoreMainWindow_0200
+     * @tc.desc   testRestoreMainWindow_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRestoreMainWindow_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testRestoreMainWindow_0200";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      let floatingBallController: floatingBall.FloatingBallController | undefined
+      let isSupport = true;
+      try {
+        floatingBallController = await floatingBall.create(config)
+        await floatingBallController.startFloatingBall(startParams);
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        if (exception.code === 801) {
+          isSupport = false;
+        }
+      }
+      if (isSupport) {
+        try {
+          await floatingBallController?.restoreMainWindow(null);
+          console.info(msgStr + 'Succeeded');
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+          expect(exception.code).assertEqual(1300019);
+          expect(exception.message!=null).assertTrue();
+        }
+        try {
+          await floatingBallController?.restoreMainWindow(undefined);
+          console.info(msgStr + 'Succeeded2.');
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+          expect(exception.code).assertEqual(1300019);
+          expect(exception.message!=null).assertTrue();
+          await floatingBallController?.stopFloatingBall();
+          done();
+        }
+      } else {
+        done();
+      }
     })
 
     /**
@@ -2856,9 +3025,6 @@ export default function abilityTest() {
         }
       }
     })
-    
-
-    
 
   })
 }

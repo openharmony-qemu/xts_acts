@@ -485,7 +485,7 @@ export default function cameraJSUnitOutput() {
 
   describe('cameraJSUnitOutput', () => {
     hilog.info(domain, tag, '----------cameraJSUnitOutput begin--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await getVideoSurface();
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -493,7 +493,7 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, 'beforeAll case');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'beforeEach case');
     })
@@ -502,7 +502,7 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, 'afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await closeFd();
       await release();
       hilog.info(domain, tag, 'afterAll case');

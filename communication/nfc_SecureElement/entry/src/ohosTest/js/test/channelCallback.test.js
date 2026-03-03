@@ -153,21 +153,21 @@ export default function channelCallbacktest() {
                         console.info("[NFC_test]09 openBasicChannel done");
                     })
                     .catch(error => {
-                        if (error == 401) {
+                        if (error === 401) {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error.code + "---" + error);
-                            expect(true).assertTrue();
-                        } else if (error == 3300101) {
+                            expect(401).assertEqual(error);
+                        } else if (error === 3300101) {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
-                            expect(true).assertTrue();
-                        } else if (error == 3300102) {
+                            expect(3300101).assertEqual(error);
+                        } else if (error === 3300102) {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
-                            expect(true).assertTrue();
-                        } else if (error == 3300103) {
+                            expect(3300102).assertEqual(error);
+                        } else if (error === 3300103) {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
                             expect(3300103).assertEqual(error);
-                        } else if (error == 3300104) {
+                        } else if (error === 3300104) {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
-                            expect(true).assertTrue();
+                            expect(3300104).assertEqual(error);
                         } else {
                             console.info("[NFC_test]09 openBasicChannel_p2_callback occurs exception:" + error);
                             expect().assertFail();
@@ -228,21 +228,21 @@ export default function channelCallbacktest() {
                     })
                     .catch(error => {
                         console.info("[NFC_test]10 openBasicChannel failed" + error + "--error.code--" + error.code);
-                        if (error == 401) {
+                        if (error === 401) {
                             console.info("[NFC_test]10 openBasicChannel failed" + error);
-                            expect(true).assertTrue();
-                        } else if (error == 3300101) {
+                            expect(401).assertEqual(error);
+                        } else if (error === 3300101) {
                             console.info("[NFC_test]10 openLogicalChannel occurs exception:"+ error);
-                            expect(true).assertTrue();
-                        } else if (error == 3300102) {
+                            expect(3300101).assertEqual(error);
+                        } else if (error === 3300102) {
                             console.info("[NFC_test]10 openLogicalChannel occurs exception:" + error);
-                            expect(true).assertTrue();
-                        } else if (error == 3300103) {
+                            expect(3300102).assertEqual(error);
+                        } else if (error === 3300103) {
                             console.info("[NFC_test]10 openLogicalChannel occurs exception:" + error);
-                            expect(true).assertTrue();
-                        } else if (error == 3300104) {
+                            expect(3300103).assertEqual(error);
+                        } else if (error === 3300104) {
                             console.info("[NFC_test]10 openLogicalChannel occurs exception:" + error);
-                            expect(true).assertTrue();
+                            expect(3300104).assertEqual(error);
                         } else {
                             console.info("[NFC_test]10 openLogicalChannel occurs exception:" + error);
                             expect().assertFail();
@@ -647,10 +647,10 @@ export default function channelCallbacktest() {
 				done();
 			}catch(error){
 				console.info("[NFC_test]1900 openBasicChannel error result:" + JSON.stringify(error) + "error_code:" + error.code);
-				if (error.code == 401){
-					expect(true).assertTrue();
-				}else if (error.code == 801){
-					expect(true).assertTrue();
+				if (error.code === 401){
+					expect(401).assertEqual(error.code);
+				}else if (error.code === 801){
+					expect(801).assertEqual(error.code);
 				}else{
 					expect().assertFail();
 				}
@@ -680,8 +680,8 @@ export default function channelCallbacktest() {
 				})
 			} catch (error) {
 				console.info("[NFC_test]25 createService occurs exception:" + error.code + "---" + JSON.stringify(error));
-				if (error.code == 801){
-					expect(true).assertTrue();
+				if (error.code === 801){
+					expect(801).assertEqual(error.code);
 				}else{
 					expect().assertFail;
 				}
@@ -721,18 +721,18 @@ export default function channelCallbacktest() {
                                                 expect(data).assertDeepEquals([]);
                                             }
                                         }).catch((error) => {
-                                            if (error.code == 401) {
+                                            if (error.code === 401) {
                                                 console.info("[NFC_test]26 transmit failed" + error + "--error.code--" + error.code);
-                                                expect(true).assertTrue();
-                                            } else if (error.code == 3300101) {
+                                                expect(401).assertEqual(error.code);
+                                            } else if (error.code === 3300101) {
                                                 console.info("[NFC_test]26 transmit failed" + error + "--error.code--" + error.code);
-                                                expect(true).assertTrue();
-                                            } else if (error.code == 3300103) {
+                                                expect(3300101).assertEqual(error.code);
+                                            } else if (error.code === 3300103) {
                                                 console.info("[NFC_test]26 transmit failed" + error + "--error.code--" + error.code);
-                                                expect(true).assertTrue();
-                                            } else if (error.code == 3300104) {
+                                                expect(3300103).assertEqual(error.code);
+                                            } else if (error.code === 3300104) {
                                                 console.info("[NFC_test]26 transmit failed" + error + "--error.code--" + error.code);
-                                                expect(true).assertTrue();
+                                                expect(3300104).assertEqual(error.code);
                                             } else  {
                                                 console.info("[NFC_test]26 transmit failed" + error + "--error.code--" + error.code);
                                                 expect().assertFail();
@@ -794,18 +794,18 @@ export default function channelCallbacktest() {
                                                 expect(data).assertDeepEquals([]);
                                             }
                                         }).catch((error) => {
-                                            if (error.code == 401) {
+                                            if (error.code === 401) {
                                                 console.info("[NFC_test]26 transmit failed" + error + "--error.code--" + error.code);
-                                                expect(true).assertTrue();
-                                            } else if (error.code == 3300101) {
+                                                expect(401).assertEqual(error.code);
+                                            } else if (error.code === 3300101) {
                                                 console.info("[NFC_test]26 transmit failed" + error + "--error.code--" + error.code);
-                                                expect(true).assertTrue();
-                                            } else if (error.code == 3300103) {
+                                                expect(3300101).assertEqual(error.code);
+                                            } else if (error.code === 3300103) {
                                                 console.info("[NFC_test]26 transmit failed" + error + "--error.code--" + error.code);
-                                                expect(true).assertTrue();
-                                            } else if (error.code == 3300104) {
+                                                expect(3300103).assertEqual(error.code);
+                                            } else if (error.code === 3300104) {
                                                 console.info("[NFC_test]26 transmit failed" + error + "--error.code--" + error.code);
-                                                expect(true).assertTrue();
+                                                expect(3300104).assertEqual(error.code);
                                             } else  {
                                                 console.info("[NFC_test]26 transmit failed" + error + "--error.code--" + error.code);
                                                 expect().assertFail();

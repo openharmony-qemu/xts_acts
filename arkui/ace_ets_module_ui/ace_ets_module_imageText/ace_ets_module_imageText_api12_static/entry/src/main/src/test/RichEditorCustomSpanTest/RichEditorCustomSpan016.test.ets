@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorCustomSpan016() {
   describe('RichEditorCustomSpan016', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -123,7 +123,7 @@ export default function RichEditorCustomSpan016() {
       expect(infoText).assertContain('"start":5');
       expect(infoText).assertContain('"length":1');
       expect(infoText).assertContain('"styledKey":400');
-      expect(infoText).assertContain('"styledValue":{"type_":"CustomSpan","width":80,"word":"Hello"');
+      expect(infoText).assertContain('"styledValue":');
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);

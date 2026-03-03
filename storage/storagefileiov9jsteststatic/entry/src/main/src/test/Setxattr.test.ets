@@ -128,5 +128,236 @@ export default function fileIOSetxattr() {
       }
     });
 
+    /**
+     * @tc.name   test_FileIO_Setxattr_Async_Static_005
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Async_0500
+     * @tc.desc   Test setxattr() interface with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Setxattr_Async_Static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let attrKey = 'user.comment';
+      let attrValue = 'Test file.';
+      try {
+        await fs.setxattr("", attrKey, attrValue);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_005 error' + e.code + e.message);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Setxattr_Async_Static_006
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Async_0600
+     * @tc.desc   Test setxattr() interface with empty string for second parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Setxattr_Async_Static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Setxattr_Async_Static_006');
+      let attrValue = 'Test file.';
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        await fs.setxattr(fpath, "", attrValue);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_006 error' + e.code + e.message);
+        expect(e.code === 13900042).assertTrue();
+        fs.unlinkSync(fpath);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Setxattr_Async_Static_007
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Async_0700
+     * @tc.desc   Test setxattr() interface with empty string for third parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Setxattr_Async_Static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Setxattr_Async_Static_007');
+      let attrKey = 'user.comment';
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        await fs.setxattr(fpath, attrKey, "");
+        let getValue = fs.getxattrSync(fpath, attrKey);
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_007 value is: ' + getValue);
+        expect(getValue).assertEqual("");
+        fs.unlinkSync(fpath);
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_007 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Setxattr_Sync_Static_005
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Sync_0500
+     * @tc.desc   Test setxattrSync() interface with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Setxattr_Sync_Static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let attrKey = 'user.comment';
+      let attrValue = 'Test file.';
+      try {
+        fs.setxattrSync("", attrKey, attrValue);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_005 error' + e.code + e.message);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Setxattr_Sync_Static_006
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Sync_0600
+     * @tc.desc   Test setxattrSync() interface with empty string for second parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Setxattr_Sync_Static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Setxattr_Sync_Static_006');
+      let attrValue = 'Test file.';
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fs.setxattrSync(fpath, "", attrValue);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_006 error' + e.code);
+        expect(e.code === 13900042).assertTrue();
+        fs.unlinkSync(fpath);
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Setxattr_Sync_Static_007
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Sync_0700
+     * @tc.desc   Test setxattrSync() interface with empty string for third parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Setxattr_Sync_Static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Setxattr_Sync_Static_007');
+      let attrKey = 'user.comment';
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fs.setxattrSync(fpath, attrKey, "");
+        let getValue = fs.getxattrSync(fpath, attrKey);
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_007 value is: ' + getValue);
+        expect(getValue).assertEqual("");
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_007 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Getxattr_Async_Static_001
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_NULL_Async_0100
+     * @tc.desc   Test getxattr() interface with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Getxattr_Async_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let attrKey = 'user.comment';
+      try {
+        let getValue = await fs.getxattr("", attrKey);
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 value is: ' + getValue);
+        expect(getValue).assertEqual("");
+        done();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Async_Static_001 error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Getxattr_Async_Static_002
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_NULL_Async_0200
+     * @tc.desc   Test getxattr() interface with empty string for second parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Getxattr_Async_Static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Getxattr_Async_Static_002');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        let getValue = await fs.getxattr(fpath, "");
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 value is: ' + getValue);
+        expect(getValue).assertEqual("");
+        done();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Async_Static_002 error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Getxattr_Sync_Static_001
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_NULL_Sync_0100
+     * @tc.desc   Test getxattrSync() interface with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Getxattr_Sync_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let attrKey = 'user.comment';
+      try {
+        let getValue = fs.getxattrSync("", attrKey);
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 value is: ' + getValue);
+        expect(getValue).assertEqual("");
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Getxattr_Sync_Static_002
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_NULL_Sync_0200
+     * @tc.desc   Test getxattrSync() interface with empty string for second parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Getxattr_Sync_Static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Getxattr_Sync_Static_002');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        let getValue = fs.getxattrSync(fpath, "");
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_002 value is: ' + getValue);
+        expect(getValue).assertEqual("");
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_002 error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
   });
 }

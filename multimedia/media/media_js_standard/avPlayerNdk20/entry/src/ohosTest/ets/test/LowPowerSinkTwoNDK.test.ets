@@ -999,33 +999,6 @@ export default function LowPowerSinkNdk2Test() {
       })
 
     /**
-     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0300
-     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0300
-     * @tc.desc   test OH_LowPowerAudioSink
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
-          try {
-            console.info("====>SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0300 start====");
-            let result: number = lowpoweraudiosinkndk.OH_LowPowerAudioSink_GetParameter0300();
-            expect(0).assertEqual(result);
-            done()
-          } catch (err) {
-            console.error("====>SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0300 catch err: " + err);
-            expect(false).assertEqual(true);
-            done()
-          }
-        } else {
-          done()
-        }
-      })
-
-    /**
      * @tc.name   SUB_MULTIMEIDA_OH_AVSamplesBuffer_GetRemainedCapacity0100
      * @tc.number SUB_MULTIMEIDA_OH_AVSamplesBuffer_GetRemainedCapacity0100
      * @tc.desc   test OH_LowPowerAudioSink

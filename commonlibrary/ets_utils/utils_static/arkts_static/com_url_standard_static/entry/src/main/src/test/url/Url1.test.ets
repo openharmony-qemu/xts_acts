@@ -48,7 +48,7 @@ interface KeyTestCase {
 
 export default function urlTest1() {
   describe('urlTest1', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

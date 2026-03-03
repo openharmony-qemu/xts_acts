@@ -224,7 +224,7 @@ export default function webCookieManagerConfigCookie() {
     it('testConfigCookieIncludeHttpOnlyErrorCode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent('testConfigCookieIncludeHttpOnlyErrorCode005', 135400)
-        Utils.registerEvent('testConfigCookieIncludeHttpOnlyErrorCode005', 17100002, 135510, done);
+        Utils.registerEvent('testConfigCookieIncludeHttpOnlyErrorCode005', '17100002URL error. No valid cookie found for the specified URL.', 135510, done);
         await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnlyErrorCode005');
       })
 

@@ -263,6 +263,8 @@ export default function colorSpaceManagerTest() {
         let colorSpaceMgr = colorSpaceManager.create(primaries, gamma);
         expect(colorSpaceMgr != null).assertTrue();
         let ga = colorSpaceMgr.getGamma();
+        console.info('www data SUB_GRAPHIC_COLOR_SPACE_API_static_008 getGamma ', ga);
+        expect(ga).assertLarger(0);
         let gap = ga - gamma;
         let wp: number[] = colorSpaceMgr.getWhitePoint();
         console.info('www data wp ' + typeof(colorSpaceMgr.getWhitePoint()));
@@ -555,6 +557,91 @@ export default function colorSpaceManagerTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_017
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_017
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_017 begin');
+        try {
+          let primaries: colorSpaceManager.ColorSpacePrimaries = {
+            redX: 0.64,
+            redY: 0.33,
+            greenX: 0.3,
+            greenY: 0.6,
+            blueX: 0.15,
+            blueY: 0.06,
+            whitePointX: 0.3127,
+            whitePointY: 0.3290
+          };
+          let gamma = 2.875;
+          let colorSpaceMgr = colorSpaceManager.create(primaries, gamma);
+          let colorSpaceName = colorSpaceMgr.getColorSpaceName();
+          console.info('www data SUB_GRAPHIC_COLOR_SPACE_API_static_017 ', colorSpaceName);
+          expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.CUSTOM);
+          done();
+        } catch (err) {
+          console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_018
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_018
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_018 begin');
+        try {
+          let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.UNKNOWN);
+          console.info('www data SUB_GRAPHIC_COLOR_SPACE_API_static_018 success', JSON.stringify(colorSpace));
+          expect(colorSpace).assertUndefined();
+          // let colorSpaceName = colorSpace.getColorSpaceName();
+          // console.info('www data SUB_GRAPHIC_COLOR_SPACE_API_static_018 ', colorSpaceName);
+          done();
+        } catch (err) {
+          console.info('www data SUB_GRAPHIC_COLOR_SPACE_API_static_018 failed to create ', JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_019
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_019
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_019 begin');
+        try {
+          let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.CUSTOM);
+          console.info('www data SUB_GRAPHIC_COLOR_SPACE_API_static_019 success', JSON.stringify(colorSpace));
+          expect(colorSpace).assertUndefined();
+          // let colorSpaceName = colorSpace.getColorSpaceName();
+          // console.info('www data SUB_GRAPHIC_COLOR_SPACE_API_static_019 ', colorSpaceName);
+          done();
+        } catch (err) {
+          console.info('www data SUB_GRAPHIC_COLOR_SPACE_API_static_019 failed to create ', JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
 
   })
 }

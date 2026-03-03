@@ -66,9 +66,12 @@ export default function startAbilityForResultTestStatic() {
         abilityName: 'EntryAbility1'
       };
       try {
-        await context!.startAbilityForResult(want).then(() => {
+        await context!.startAbilityForResult(want).then((data) => {
           hilog.info(domain, tag, `startAbilityForResult success`);
-          expect(true).assertTrue()
+          expect(data?.resultCode).assertEqual(111);
+          expect(data?.want?.bundleName).assertEqual("com.acts.startabilityforresulttest.static");
+          expect(data?.want?.abilityName).assertEqual("EntryAbility1");
+          expect(data?.want?.moduleName).assertEqual("entry");
           done();
         }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbilityForResult error: ${JSON.stringify(err)}.`)
@@ -133,9 +136,12 @@ export default function startAbilityForResultTestStatic() {
         displayId: 0,
       };
       try {
-        await context!.startAbilityForResult(want, options).then(() => {
+        await context!.startAbilityForResult(want, options).then((data) => {
           hilog.info(domain, tag, `startAbilityForResult success`);
-          expect(true).assertTrue()
+          expect(data?.resultCode).assertEqual(111);
+          expect(data?.want?.bundleName).assertEqual("com.acts.startabilityforresulttest.static");
+          expect(data?.want?.abilityName).assertEqual("EntryAbility1");
+          expect(data?.want?.moduleName).assertEqual("entry");
           done();
         }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbilityForResult error: ${JSON.stringify(err)}.`)
@@ -200,14 +206,17 @@ export default function startAbilityForResultTestStatic() {
         abilityName: 'EntryAbility1'
       };
       try {
-        context?.startAbilityForResult(want, (err: BusinessError<void> | null) => {
+        context?.startAbilityForResult(want, (err: BusinessError<void> | null, data) => {
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbilityForResult failed, code is ${err?.code}, message is ${err?.message}`);
             expect().assertFail();
             done();
           } else {
             hilog.info(domain, tag, `startAbilityForResult success`);
-            expect(true).assertTrue()
+            expect(data?.resultCode).assertEqual(111);
+            expect(data?.want?.bundleName).assertEqual("com.acts.startabilityforresulttest.static");
+            expect(data?.want?.abilityName).assertEqual("EntryAbility1");
+            expect(data?.want?.moduleName).assertEqual("entry");
             done();
           }
         });
@@ -271,7 +280,7 @@ export default function startAbilityForResultTestStatic() {
         displayId: 0
       };
       try {
-        context?.startAbilityForResult(want, options, (err: BusinessError<void> | null) => {
+        context?.startAbilityForResult(want, options, (err: BusinessError<void> | null, data) => {
         hilog.info(domain, tag,`startAbilityForResult start`);
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbilityForResult failed, code is ${err?.code}, message is ${err?.message}`);
@@ -279,7 +288,10 @@ export default function startAbilityForResultTestStatic() {
             done();
           } else {
             hilog.info(domain, tag, `startAbilityForResult success`);
-            expect(true).assertTrue()
+            expect(data?.resultCode).assertEqual(111);
+            expect(data?.want?.bundleName).assertEqual("com.acts.startabilityforresulttest.static");
+            expect(data?.want?.abilityName).assertEqual("EntryAbility1");
+            expect(data?.want?.moduleName).assertEqual("entry");
             done();
           }
         });

@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatNestObject() {
   describe('RepeatNestObject', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatNestObject beforeEach start");
 
 

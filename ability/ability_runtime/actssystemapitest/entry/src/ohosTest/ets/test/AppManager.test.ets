@@ -697,5 +697,664 @@ export default function appManagerTest() {
         done();
       }
     });
+
+    
+    /**
+     * @tc.name   System_API_Test_App_Manager_1800
+     * @tc.number System_API_Test_App_Manager_1800
+     * @tc.desc   Test the third-party application without permission call killProcessesByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('System_API_Test_App_Manager_1800', Level.LEVEL0, (done: Function) => {
+      let TAG = 'System_API_Test_App_Manager_1800';
+      let bundleName = "com.ohos.applicationsss";
+      try {
+        appManager.killProcessesByBundleName(bundleName, true).then((data) => {
+          console.log('System_API_Test_App_Manager_1800 killProcessesByBundleName success.');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`System_API_Test_App_Manager_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
+          done();
+        });
+      } catch (paramError) {
+        let code = (paramError as BusinessError).code;
+        let message = (paramError as BusinessError).message;
+        console.error(`System_API_Test_App_Manager_1800 [appManager] error: ${code}, ${message}`);
+        expect(paramError.code).assertEqual(ERROR_PERMISSION_CODE);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   System_API_Test_App_Manager_GetAppMemorySize_Promise_0100
+     * @tc.number System_API_Test_App_Manager_GetAppMemorySize_Promise_0100
+     * @tc.desc   Test getAppMemorySize with promise style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('System_API_Test_App_Manager_GetAppMemorySize_Promise_0100', Level.LEVEL0, async (done: Function) => {
+      let TAG = 'System_API_Test_App_Manager_GetAppMemorySize_Promise_0100';
+      console.log(`${TAG}, begin`);
+      try {
+        appManager.getAppMemorySize().then((data: number) => {
+          console.log(`${TAG}, getAppMemorySize success, data: ${data}`);
+          expect(typeof data).assertEqual('number');
+          expect(data).assertLarger(0);
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`${TAG}, getAppMemorySize error, errorCode: ${err?.code}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   System_API_Test_App_Manager_GetAppMemorySize_Callback_0100
+     * @tc.number System_API_Test_App_Manager_GetAppMemorySize_Callback_0100
+     * @tc.desc   Test getAppMemorySize with callback style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('System_API_Test_App_Manager_GetAppMemorySize_Callback_0100', Level.LEVEL0, (done: Function) => {
+      let TAG = 'System_API_Test_App_Manager_GetAppMemorySize_Callback_0100';
+      console.log(`${TAG}, begin`);
+      try {
+        appManager.getAppMemorySize((err: BusinessError | null, data: number | undefined) => {
+          if (err) {
+            console.error(`${TAG}, getAppMemorySize error, errorCode: ${err.code}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.log(`${TAG}, getAppMemorySize success, data: ${data}`);
+            expect(typeof data).assertEqual('number');
+            expect(data).assertLarger(0);
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0100
+     * @tc.desc   Test killProcessesByBundleName with bundleName as null (callback style)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0100', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0100';
+      try {
+        appManager.killProcessesByBundleName(null, (err: BusinessError) => {
+          console.log(TAG + " err.code: " + err.code);
+          expect(err.code).assertEqual(401);
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0200
+     * @tc.desc   Test killProcessesByBundleName with bundleName as undefined (callback style)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0200', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0200';
+      try {
+        appManager.killProcessesByBundleName(undefined, (err: BusinessError) => {
+          console.log(TAG + " err.code: " + err.code);
+          expect(err.code).assertEqual(401);
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0300
+     * @tc.desc   Test killProcessesByBundleName with bundleName as null (promise style)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0300', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0300';
+      try {
+        appManager.killProcessesByBundleName(null)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(401);
+            done();
+          });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0400
+     * @tc.desc   Test killProcessesByBundleName with bundleName as undefined (promise style)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0400', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0400';
+      try {
+        appManager.killProcessesByBundleName(undefined)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(401);
+            done();
+          });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0500
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0500
+     * @tc.desc   Test killProcessesByBundleName with bundleName as null and options parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0500', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0500';
+      try {
+        appManager.killProcessesByBundleName(null, false)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(401);
+            done();
+          });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0600
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0600
+     * @tc.desc   Test killProcessesByBundleName with bundleName as undefined and options parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0600', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0600';
+      try {
+        appManager.killProcessesByBundleName(undefined, false)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(401);
+            done();
+          });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0700
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0700
+     * @tc.desc   Test killProcessesByBundleName with options as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0700', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0700';
+      try {
+        appManager.killProcessesByBundleName("com.ohos.application", null)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0800
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0800
+     * @tc.desc   Test killProcessesByBundleName with options as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0800', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0800';
+      try {
+        appManager.killProcessesByBundleName("com.ohos.application", undefined)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0900
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0900
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string (promise style)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0900', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0900';
+      try {
+        appManager.killProcessesByBundleName("")
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1000
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1000
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string (callback style)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1000', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1000';
+      try {
+        appManager.killProcessesByBundleName("", (err: BusinessError) => {
+          console.log(TAG + " err.code: " + err.code);
+          expect(err.code).assertEqual(201);
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1100
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string and clearPageStack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1100', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1100';
+      try {
+        appManager.killProcessesByBundleName("", false)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+      } catch (err) {
+        console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1200
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1200
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack and appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1200', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1200';
+      try {
+        appManager.killProcessesByBundleName("", false, 0)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+      } catch (e) {
+        console.log(TAG + " err.code: " + e.code);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1300
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1300
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string and appIndex as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1300', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1300';
+
+      try {
+        appManager.killProcessesByBundleName("", false, null)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect().assertFail();
+            done();
+          });
+      } catch (e) {
+        console.log(TAG + " err.code: " + e.code);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1400
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1400
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string and appIndex as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1400', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1400';
+
+      try {
+        appManager.killProcessesByBundleName("", false, undefined)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+      } catch (e) {
+        console.log(TAG + " err.code: " + e.code);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1500
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1500
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string and callback as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1500', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1500';
+      try {
+        appManager.killProcessesByBundleName("", null)
+        .then(() => {
+          console.log(TAG + ' should not reach here');
+          expect().assertFail();
+          done();
+        })
+        .catch((err: BusinessError) => {
+          console.log(TAG + " err.code: " + err.code);
+          expect(err.code).assertEqual(201);
+          done();
+        });
+      } catch (err) {
+        console.log(TAG + " err.code: " + err.code);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1600
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1600
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string and callback as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1600', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1600';
+      try {
+        appManager.killProcessesByBundleName("", undefined)
+        .then(() => {
+          console.log(TAG + ' should not reach here');
+          expect().assertFail();
+          done();
+        })
+        .catch((err: BusinessError) => {
+          console.log(TAG + " err.code: " + err.code);
+          expect(err.code).assertEqual(201);
+          done();
+        });
+
+      } catch (err) {
+        console.log(TAG + " err.code: " + err.code);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1700
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1700
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as null and appIndex as 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1700', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1700';
+
+      try {
+        appManager.killProcessesByBundleName("", null, 0)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+      } catch (e) {
+        console.log(TAG + " err.code: " + e.code);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1800
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1800
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as undefined and appIndex as 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1800', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1800';
+
+      try {
+        appManager.killProcessesByBundleName("", undefined, 0)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+      } catch (e) {
+        console.log(TAG + " err.code: " + e.code);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1900
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1900
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as false and appIndex as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1900', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1900';
+      try {
+        appManager.killProcessesByBundleName("", true, null)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code: " + err.code);
+            expect().assertFail();
+            done();
+          });
+      } catch (e) {
+        console.log(TAG + " err.code catch: " + e.code);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_2000
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_2000
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as false and appIndex as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_2000', Level.LEVEL1, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_2000';
+      try {
+        appManager.killProcessesByBundleName("", true, undefined)
+          .then(() => {
+            console.log(TAG + ' should not reach here');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.log(TAG + " err.code : " + err.code);
+            expect().assertFail();
+            done();
+          });
+      } catch (e) {
+        console.log(TAG + " err.code catch: " + e.code);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+
+    });
   })
 }

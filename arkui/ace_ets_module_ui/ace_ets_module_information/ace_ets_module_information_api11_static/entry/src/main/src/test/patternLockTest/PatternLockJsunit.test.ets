@@ -35,7 +35,7 @@ const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function patternLockJsunit() {
   describe('appInfoTest_four_5', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_5 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

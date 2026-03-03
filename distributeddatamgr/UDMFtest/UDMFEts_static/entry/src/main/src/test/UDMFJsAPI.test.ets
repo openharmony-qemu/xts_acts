@@ -2599,7 +2599,7 @@ export default function UDMFJsApiTest() {
               }
             }
           }
-          await unifiedDataChannel.deleteData(options1);
+          waitForCompletion(async ()=>{await unifiedDataChannel.deleteData(options1)});
           done();
         }).catch((err1) => {
           let err = err1 as BusinessError;
@@ -2831,7 +2831,7 @@ export default function UDMFJsApiTest() {
               }
             }
           }
-          await unifiedDataChannel.deleteData(options1);
+          waitForCompletion(async ()=>{await unifiedDataChannel.deleteData(options1)});
           done();
         }).catch((err1) => {
           let err = err1 as BusinessError;
@@ -3045,7 +3045,7 @@ export default function UDMFJsApiTest() {
               }
             }
           }
-          await unifiedDataChannel.deleteData(options1);
+          waitForCompletion(async ()=>{await unifiedDataChannel.deleteData(options1)});
           done();
         }).catch((err1) => {
           let err = err1 as BusinessError;

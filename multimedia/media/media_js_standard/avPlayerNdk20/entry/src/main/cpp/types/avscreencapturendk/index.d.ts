@@ -114,3 +114,7 @@ export const OH_DataTypeEnum: () => number;
 export const OH_AVScreenCaptureStateCodeEnum: () => number;
 export const OH_AVScreenCaptureContentChangedEventEnum: () => number;
 export const OH_AVScreenCaptureErrCode: () => number;
+export const OH_AVSCREEN_CAPTURE_ErrCode0200: () => number;
+export const OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100: () => number;
+export const OH_AVScreenCapture_GetMultiDisplayIdsSelected0100: () => number;
+export const OH_AVScreenCapture_GetMultiDisplayIdsSelected0101: () => number;

@@ -75,6 +75,11 @@ import RdbStoreErrorCodeAdd2Test from './RdbStoreErrorCodeAdd2.test';
 import RdbStoreErrorCodeAdd3Test from './RdbStoreErrorCodeAdd3.test';
 import RdbStoreErrorCodeAdd4Test from './RdbStoreErrorCodeAdd4.test';
 
+import RdbStoreLiteResultNullUndefinedTest from './RdbStoreLiteResultNullUndefined.test';
+import RdbStoreNullUndefinedTest from './RdbStoreNullUndefined.test';
+import RdbStoreResultNullUndefinedTest from './RdbStoreResultNullUndefined.test';
+import DataRdbStoreCoverageAdd from './DataRdbStoreCoverageAdd.test'
+
 export default function testsuite() {
   relationalStoreEncryptTest()
   relationalStoreUpdateTest()
@@ -138,4 +143,9 @@ export default function testsuite() {
   RdbStoreErrorCodeAdd2Test()
   RdbStoreErrorCodeAdd3Test()
   RdbStoreErrorCodeAdd4Test()
+
+  RdbStoreLiteResultNullUndefinedTest()
+  RdbStoreNullUndefinedTest()
+  RdbStoreResultNullUndefinedTest()
+  DataRdbStoreCoverageAdd()
 }

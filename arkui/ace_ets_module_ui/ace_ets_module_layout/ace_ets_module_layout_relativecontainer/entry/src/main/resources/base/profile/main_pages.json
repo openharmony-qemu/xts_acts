@@ -50,6 +50,7 @@
         "MainAbility/pages/RelativeContainer/RelativeBorder",
         "MainAbility/pages/RelativeContainer/RelativePadding",
         "MainAbility/pages/RelativeContainer/RelativeContainer",
-        "MainAbility/pages/RelativeContainer/relativecommon/relative"
+        "MainAbility/pages/RelativeContainer/relativecommon/relative",
+        "MainAbility/pages/RelativeContainer/relativeContainerGuideLineNullUndefined"
     ]
 }

@@ -25,7 +25,6 @@ import {
   PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import router,{DisableAlertBeforeBackPageOptions} from '@system.router';
 
 @Entry
 @Component

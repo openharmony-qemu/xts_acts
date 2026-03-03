@@ -52,7 +52,7 @@ function alphabetDefaultPopupSize(sysWidth: Resource) {
 
 export default function ActsAlphabetIndexerUxTest() {
   describe('ActsAlphabetIndexerUxTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       

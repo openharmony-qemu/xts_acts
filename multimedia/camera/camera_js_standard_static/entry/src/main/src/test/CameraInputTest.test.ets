@@ -341,7 +341,7 @@ let isEmpty08 = (data: BusinessError) => {
 
    describe('CameraInputTest', () => {
     console.info(TAG + '----------CameraInputTest--------------');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       try {
         await Utils.msSleep(1000);
         getPreviewOutputSurface();
@@ -355,7 +355,7 @@ let isEmpty08 = (data: BusinessError) => {
       }
     });
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1000);
       console.info('beforeEach case');
     });
@@ -364,7 +364,7 @@ let isEmpty08 = (data: BusinessError) => {
       console.info('afterEach case');
     });
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       console.info('afterAll case');
     });

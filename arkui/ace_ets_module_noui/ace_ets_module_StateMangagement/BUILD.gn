@@ -23,7 +23,7 @@ group("ActsAceEtsModuleStateMangagementTest") {
     "ace_ets_module_StateMgmtV103:ActsAceEtsModuleStateMgmtV103Test",
     "ace_ets_module_StateMgmtV101:ActsAceEtsModuleStateMgmtV101Test",
     "ace_ets_module_StateMangagement_api18_static:ActsAceEtsModuleStateMangagementApi18StaticTest",
-    "ace_ets_module_StateMangagement_nowear_api11_static:ActsAceEtsModuleStateMangagementNoWearApi11Static1Test",
+    "ace_ets_module_StateMangagement_nowear_api11_static:ActsAceEtsModuleStateMangagementNoWearApi11StaticTest",
     "ace_ets_module_StateMangagement_nowear_api12_static:ActsAceEtsModuleStateMangagementNoWearApi12StaticTest",
     "ace_ets_module_StateMangagement01_api11_static:ActsAceEtsModuleStateMangagement01Api11StaticTest",
     "ace_ets_module_StateMangagement02_api11_static:ActsAceEtsModuleStateMangagement02Api11StaticTest",

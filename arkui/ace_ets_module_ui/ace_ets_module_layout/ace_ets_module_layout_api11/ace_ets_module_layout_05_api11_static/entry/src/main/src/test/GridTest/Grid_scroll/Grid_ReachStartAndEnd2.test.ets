@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_ReachStartAndEnd2() {
   describe('Grid_ReachStartAndEnd2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("Grid_ReachStartAndEnd2 beforeAll start111")
            
       await UtilsTest.msSleep(4000)

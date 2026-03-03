@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignStart_AddOffset() {
   describe('AlignStart_AddOffset', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignStart_AddOffset beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

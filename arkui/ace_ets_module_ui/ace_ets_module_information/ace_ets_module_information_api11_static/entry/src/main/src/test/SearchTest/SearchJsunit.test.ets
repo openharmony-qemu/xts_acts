@@ -34,7 +34,7 @@ const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function searchJsunit() {
   describe('searchJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("searchJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

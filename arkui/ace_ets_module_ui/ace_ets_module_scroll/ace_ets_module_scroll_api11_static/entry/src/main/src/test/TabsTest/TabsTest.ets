@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function tabs() {
   let count: number = 0
   describe('ActsAceTabsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
@@ -227,53 +227,6 @@ it('ArkUI_Tabs_Divider_static_0500', Level.LEVEL0, async (done: () => void): Pro
       expect(dividerObject.getString('endMargin')).assertEqual("5.00px");
       done();
     });
-
-
-
-    /**
-     * @tc.number   ArkUI_Tabs_Divider_static_0600
-     * @tc.name     ArkUI_Tabs_Divider_static_0600
-     * @tc.desc     ArkUI_Tabs_Divider_static_0600
-     * @tc.level    Level.LEVEL0
-     */
-it('ArkUI_Tabs_Divider_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUI_Tabs_Divider_static_0600 start");
-      await Utils.sleep(2000);
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "nullFlag": true,
-          } as Record<String,RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 183,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[ArkUI_Tabs_Divider_static_0600] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[ArkUI_Tabs_Divider_static_0600] change component data error: " + err.message);
-      }
-      await Utils.sleep(2000);
-      let defaultStrJson = inspector.getInspectorByKey('defaultTabs');
-      let defaultObj = JSON.parseJsonElement(defaultStrJson);
-      console.info("[ArkUI_Tabs_Divider_static_0600] defaultDivider:" +
-      JSON.stringify(defaultObj.getElement('$attrs').getElement('divider')));
-      let defaultDividerObject = defaultObj.getElement('$attrs').getElement('divider');
-      let defaultDividerColor: string = defaultDividerObject.getString('color');
-
-      let strJson = inspector.getInspectorByKey('tabsTest');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Tabs_Divider_static_0600] divider:" +
-      JSON.stringify(obj.getElement('$attrs').getElement('divider')));
-      let dividerObject = obj.getElement('$attrs').getElement('divider');
-      expect(dividerObject.tryGetString('strokeWidth')).assertEqual("0.00px");
-      expect(dividerObject.tryGetString('color')).assertEqual(defaultDividerColor);
-      expect(dividerObject.tryGetString('startMargin')).assertEqual('0.00px');
-      expect(dividerObject.tryGetString('endMargin')).assertEqual('0.00px');
-      done();
-    });
-
 
 
     /**

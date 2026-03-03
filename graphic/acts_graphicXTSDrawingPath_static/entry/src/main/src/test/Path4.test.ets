@@ -650,6 +650,15 @@ export default function drawingTsPath4Test() {
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
+      try {
+        path1.addPolygon([], false);
+        path1.addPolygon([], true);
+        console.info(msg + 'addPolygon successes');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `addPolygon errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
     })
     /**
      * @tc.name   testPathAddPolygonMultipleCallsStatic

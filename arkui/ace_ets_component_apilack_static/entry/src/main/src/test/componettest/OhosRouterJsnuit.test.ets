@@ -46,7 +46,7 @@ let tag: string = 'testTag';
 
 export default function OhosRouterJsunit() {
   describe('ohosRouterTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

@@ -34,7 +34,7 @@ let emitKey = "emitUserAgent";
 
 export default function selectmenuTest() {
   describe('ActsSelectMenuTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsSelectMenuTest beforeEach start");
 
 

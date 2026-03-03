@@ -103,8 +103,13 @@ export default function columnWidthsTest() {
         let obj: ESObject = JSON.parse(strJson);
         console.info("[Testsjh_0102]:" + JSON.stringify(obj.$attrs));
         console.info("[columnWitchTest_0102]:" + JSON.stringify(obj.$attrs.columnWidths));
-        let str = vp2px(112).toFixed(2).toString() + 'px,' + vp2px(112).toFixed(2).toString() + 'px,'
-        + vp2px(112).toFixed(2).toString() + 'px';
+
+        //打印分层参数返回值
+        let resourceWidth = getContext().resourceManager.getNumber($r('sys.float.ohos_id_picker_select_divider_spacing'))
+        console.info("defaultPickerItemHeight0001 sys:" + resourceWidth);
+
+        let str = vp2px(resourceWidth*2).toFixed(2).toString() + 'px,' + vp2px(resourceWidth*2).toFixed(2).toString() + 'px,'
+        + vp2px(resourceWidth*2).toFixed(2).toString() + 'px';
         expect(obj.$attrs.columnWidths).assertEqual(str);
         await Utils.sleep(1000);
         console.info('columnWidthsText_0102 END');
@@ -125,8 +130,13 @@ export default function columnWidthsTest() {
         let strJson = getInspectorByKey('columnWidths_004');
         let obj: ESObject = JSON.parse(strJson);
         console.info("[columnWitchTest_0103]:" + JSON.stringify(obj.$attrs.columnWidths));
-        let str = vp2px(112).toFixed(2).toString() + 'px,' + vp2px(112).toFixed(2).toString() + 'px,'
-        + vp2px(112).toFixed(2).toString() + 'px';
+
+        //打印分层参数返回值
+        let resourceWidth = getContext().resourceManager.getNumber($r('sys.float.ohos_id_picker_select_divider_spacing'))
+        console.info("defaultPickerItemHeight0001 sys:" + resourceWidth);
+        
+        let str = vp2px(resourceWidth*2).toFixed(2).toString() + 'px,' + vp2px(resourceWidth*2).toFixed(2).toString() + 'px,'
+        + vp2px(resourceWidth*2).toFixed(2).toString() + 'px';
         expect(obj.$attrs.columnWidths).assertEqual(str);
         await Utils.sleep(1000);
         console.info('columnWidthsText_0103 END');

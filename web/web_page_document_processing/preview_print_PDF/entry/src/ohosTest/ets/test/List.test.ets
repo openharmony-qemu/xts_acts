@@ -14,11 +14,17 @@
  */
 import webInitTest from './WebInitTest.test'
 import createPdf from './createPdfJsunit.test'
+import CreatePdfCallbackError from './CreatePdfCallbackError.test'
+import CreatePdfPromiseError from './CreatePdfPromiseError.test'
 import WebViewOnPdfLoadEvent from './WebViewOnPdfLoadEvent.test'
 import WebViewOnPdfLoadResult from './WebViewOnPdfLoadResult.test'
+import WebViewControllerCreateWebPrintDocumentAdapter from './WebViewControllerCreateWebPrintDocumentAdapter.test'
 export default function testsuite() {
   webInitTest()
   createPdf()
+  CreatePdfCallbackError()
+  CreatePdfPromiseError()
   WebViewOnPdfLoadEvent()
   WebViewOnPdfLoadResult()
+  WebViewControllerCreateWebPrintDocumentAdapter()
 }

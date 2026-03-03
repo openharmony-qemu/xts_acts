@@ -2075,7 +2075,6 @@ export default function WindowPropertiesTest() {
             try{
                 windowClass.isWindowHighlighted();
                 await windowClass.destroyWindow();
-                expect(true).assertTrue()
                 done();
             } catch(err) {
                 err = err as BusinessError;

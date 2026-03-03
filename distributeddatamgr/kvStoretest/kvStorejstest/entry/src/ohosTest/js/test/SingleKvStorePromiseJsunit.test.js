@@ -3001,7 +3001,7 @@ describe('singleKvStorePromiseTest', function () {
         });
         await getInsertEntries.then(function(insertEntries){
             console.info('testSingleKvStoreChangeNotification101 getInsertEntries' + JSON.stringify(insertEntries));
-            expect(insertEntries).assertNotNull();
+            expect(insertEntries).not().assertNull();;
             done();
         }).catch((error) => {
             console.info('testSingleKvStoreChangeNotification101 can NOT getInsertEntries, fail:' + error);
@@ -3032,7 +3032,7 @@ describe('singleKvStorePromiseTest', function () {
         });
         await getUpdateEntries.then(function(updateEntries){
             console.info('testSingleKvStoreChangeNotification102 getUpdateEntries' + JSON.stringify(updateEntries));
-            expect(updateEntries).assertNotNull();
+            expect(updateEntries).not().assertNull();;
             done();
         }).catch((error) => {
             console.info('testSingleKvStoreChangeNotification102 can NOT getUpdateEntries, fail:' + error);
@@ -3063,7 +3063,7 @@ describe('singleKvStorePromiseTest', function () {
         });
         await getdeleteEntries.then(function(deleteEntries){
             console.info('testSingleKvStoreChangeNotification103 deleteEntries' + JSON.stringify(getdeleteEntries));
-            expect(deleteEntries != null).assertNotNull();
+            expect(deleteEntries != null).not().assertNull();;
             done();
         }).catch((error) => {
             console.info('testSingleKvStoreChangeNotification103 can NOT getdeleteEntries, fail:' + error);

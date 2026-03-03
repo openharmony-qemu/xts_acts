@@ -58,8 +58,8 @@ struct webPrefetchPageEnhancedTest {
         Button('prefetchPage click')
           .key('WebPrefetchPageEnhancedButton')
           .onClick(async () => {
-            await waitForExist(()=>this.isReceive, this.emitKey, 0);
-            await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+            await waitForExist(()=>this.isReceive, this.emitKey, 0, 1000);
+            await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
             switch (this.emitKey) {
@@ -93,6 +93,15 @@ struct webPrefetchPageEnhancedTest {
                 } catch (error) {
                   console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
                   Utils.emitEvent(error.message, 2025091603);
+                }
+                break;
+              }
+              case 'emitPrefetchPageWithHeaderError01': {
+                try {
+                  this.controller.prefetchPage('123', [{ headerKey: 'headerKey', headerValue: 'headerValue' }]);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.code + error.message, 26020501);
                 }
                 break;
               }
@@ -266,7 +275,7 @@ struct webPrefetchPageEnhancedTest {
                   this.controller.prefetchPage('123', [{ headerKey: 'headerKey', headerValue: 'headerValue' }], options);
                 } catch (error) {
                   console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
-                  Utils.emitEvent(Number(error.code), 2025091616);
+                  Utils.emitEvent(error.code + error.message, 2025091616);
                 }
                 break;
               }

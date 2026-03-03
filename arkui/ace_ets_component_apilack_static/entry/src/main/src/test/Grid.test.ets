@@ -35,7 +35,7 @@ import RectValue from './RectValue.test';
 
 export default function gridMaxCountJsunit() {
   describe('gridMaxCountTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

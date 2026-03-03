@@ -42,7 +42,7 @@ export { getHarName as getHarName2 } from 'library/src/main/ets/GetHarNameTest.t
 
 export { expect as expect2 } from '@ohos/hypium';
 
-export { TAG as ConstantTAG } from '@ohos/hypium/src/main/Constant';
+export { Level as ConstantTAG } from '@ohos/hypium/index';
 
 export { add as hspAdd } from 'loadHsp';
 

@@ -1146,6 +1146,309 @@ export default function LinkedListTest() {
         expect(err.code).assertEqual(10200017)
       }
     });
+    /**
+     * @tc.name   testLinkedListCase001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase001';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      try {
+        linkedList.insert(null, "A");
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        linkedList.insert(undefined, 0);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testLinkedListCase002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0200
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase002';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.insert(0, null);
+      expect(linkedList[0]).assertNull();
+
+      linkedList.insert(1, undefined);
+      expect(linkedList[1]).assertUndefined();
+    });
+
+    /**
+     * @tc.name   testLinkedListCase003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0300
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase003';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(null);
+      linkedList.add(undefined);
+      try {
+        linkedList.get(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        linkedList.get(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testLinkedListCase004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0400
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase004';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(null);
+      linkedList.add(undefined);
+
+      let result1 = linkedList.getIndexOf(null);
+      expect(result1).assertEqual(2);
+
+      let result2 = linkedList.getIndexOf(undefined);
+      expect(result2).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   testLinkedListCase005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0500
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase005';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(null);
+      linkedList.add(undefined);
+      try {
+        let result1 = linkedList.removeByIndex(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        let result2 = linkedList.removeByIndex(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testLinkedListCase006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0600
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase006';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(null);
+      linkedList.add(undefined);
+
+      let result1 = linkedList.remove(null);
+      expect(result1).assertTrue();
+
+      let result2 = linkedList.remove(undefined);
+      expect(result2).assertTrue();
+    });
+
+    /**
+     * @tc.name   testLinkedListCase007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0700
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase007';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(null);
+      linkedList.add(undefined);
+      let result1 = linkedList.removeFirstFound(null);
+      expect(result1).assertTrue();
+
+      let result2 = linkedList.removeFirstFound(undefined);
+      expect(result2).assertTrue();
+    });
+
+    /**
+     * @tc.name   testLinkedListCase008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0800
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase008';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(null);
+      linkedList.add(undefined);
+      let result1 = linkedList.removeLastFound(null);
+      expect(result1).assertTrue();
+
+      let result2 = linkedList.removeLastFound(undefined);
+      expect(result2).assertTrue();
+    });
+
+    /**
+     * @tc.name   testLinkedListCase009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0900
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase009';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(null);
+      linkedList.add(undefined);
+      let result1 = linkedList.getLastIndexOf(null);
+      expect(result1).assertEqual(2);
+
+      let result2 = linkedList.getLastIndexOf(undefined);
+      expect(result2).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   testLinkedListCase010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_1000
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase010';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(null);
+      linkedList.add(undefined);
+      try {
+        linkedList.set(null, 'A');
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        linkedList.set(undefined, 'B');
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testLinkedListCase011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_1100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase011';
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(null);
+      linkedList.add(undefined);
+      linkedList.set(0, null);
+      expect(linkedList[0]).assertNull();
+
+      linkedList.set(1, undefined);
+      expect(linkedList[1]).assertUndefined();
+    });
+
+    /**
+     * @tc.name   testLinkedListCase012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_1200
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLinkedListCase012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLinkedListCase011';
+      let num = 0;
+      let linkedList = new LinkedList<number | string | boolean | undefined | null | Object>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(null);
+      linkedList.add(undefined);
+      linkedList.forEach((value: number | string | boolean | undefined | null | Object,
+        index: number | string | boolean | undefined | null | Object): void => {
+        num++;
+      }, null);
+
+      linkedList.forEach((value: number | string | boolean | undefined | null | Object,
+        index: number | string | boolean | undefined | null | Object): void => {
+        num++;
+      }, undefined);
+      expect(num).assertEqual(8);
+    });
 
   });
 }

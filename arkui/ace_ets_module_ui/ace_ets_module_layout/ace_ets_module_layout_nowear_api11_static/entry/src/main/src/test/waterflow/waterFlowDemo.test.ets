@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function waterFlowDemoJsunit() {
   describe('waterFlowDemoJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("waterFlowDemoJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api11.static", "EntryAbility")

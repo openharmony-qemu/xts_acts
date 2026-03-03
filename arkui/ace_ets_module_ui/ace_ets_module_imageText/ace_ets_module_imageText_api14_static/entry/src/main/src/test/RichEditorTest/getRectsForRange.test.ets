@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function getRectsForRangeTest() {
   describe('getRectsForRangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getRectsForRangeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility")

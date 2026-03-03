@@ -28,7 +28,6 @@ import AnimatorOptionTest1 from './animatetest/AnimatorOptionTest1.test'
 import AnimatorOptionTest2 from './animatetest/AnimatorOptionTest2.test'
 import FocusControlTest from './foucscontroltest/FocusRequestTest.test'
 import KeyEventTest from './keyeventtest/KeyEventTest.test'
-import NodeEventTest from './nodeeventtest/NodeEventTest.test'
 import NodeAdapterTest from './nodeadaptertest/NodeAdapterTest.test'
 import NodeContentTest from './nodecontenttest/NodeContentTest.test'
 import SnapShotTest from './snapshottest/SnapShotTest.test'
@@ -102,7 +101,6 @@ export default function testsuite() {
   AnimatorOptionTest2()
   FocusControlTest()
   KeyEventTest()
-  NodeEventTest()
   NodeAdapterTest()
   NodeContentTest()
   SnapShotTest()

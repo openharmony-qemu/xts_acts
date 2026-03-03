@@ -45,7 +45,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function waterFlowView() {
   describe('waterFlowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.open.harmony.modifiernowear.static", "EntryAbility")
@@ -62,7 +62,7 @@ export default function waterFlowView() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get WaterFlowView state pages:" + JSON.stringify(pages));
-        if (!("WaterFlowView" == pages.name)) {
+        if (!("waterFlowView" == pages.name)) {
           console.info("get WaterFlowView pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

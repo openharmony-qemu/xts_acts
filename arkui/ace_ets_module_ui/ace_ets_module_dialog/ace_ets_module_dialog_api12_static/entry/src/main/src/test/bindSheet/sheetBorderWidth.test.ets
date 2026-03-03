@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function sheetBorderWidth() {
   describe('sheetBorderWidth', () => {
     let currentDeviceIsPC = false
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
       

@@ -37,7 +37,7 @@ const uiContext=new UIContext()
 export default function textStyleJsunit() {
   describe('textStyleTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textStyleTest beforeEach start");
 
 

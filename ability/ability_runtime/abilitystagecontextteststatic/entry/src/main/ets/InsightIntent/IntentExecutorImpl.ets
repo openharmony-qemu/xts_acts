@@ -19,7 +19,8 @@ import insightIntent from '@ohos.app.ability.insightIntent'
 import window from '@ohos.window';
 import hilog from '@ohos.hilog'
 import Want from '@ohos.app.ability.Want';
-import { RecordData } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
+import insightIntentProvider from '@ohos.app.ability.insightIntentProvider'
 
 export default class IntentExecutorImpl extends InsightIntentExecutor {
   onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, RecordData>,
@@ -69,6 +70,42 @@ export default class IntentExecutorImpl extends InsightIntentExecutor {
         flags: 25
       };
       return result;
+    }
+
+    try {
+      let result: insightIntent.ExecuteResult = {
+        code: 404,
+        result: {
+          'message': 'Nothing',
+        } as Record<string, RecordData>
+      };
+      insightIntentProvider.sendExecuteResult(this.context.instanceId, result)
+        .then(() => {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'testTag setExecuteResult success');
+        })
+        .catch((err: Error): void => {
+          let error = err as BusinessError;
+          hilog.error(0x0000, 'testTag', `testTag setExecuteResult fail, error code: ${JSON.stringify(error)}`);
+        })
+    } catch (err) {
+      let error = err as BusinessError;
+      hilog.error(0x0000, 'testTag', `testTag setExecuteResult fail, error code: ${JSON.stringify(error)}`);
+    }
+
+    try {
+      this.context.setReturnModeForUIAbilityForeground(insightIntent.ReturnMode.CALLBACK);
+    } catch (err) {
+      let error = err as BusinessError;
+      hilog.error(0x0000, 'testTag',
+        `testTag setReturnModeForUIAbilityForeground fail, error code: ${JSON.stringify(error)}`);
+    }
+
+    try {
+      this.context.setReturnModeForUIExtensionAbility(insightIntent.ReturnMode.FUNCTION)
+    } catch (err) {
+      let error = err as BusinessError;
+      hilog.error(0x0000, 'testTag',
+        `testTag setReturnModeForUIExtensionAbility fail, error code:  ${JSON.stringify(error)}`);
     }
 
     // if developer need load content

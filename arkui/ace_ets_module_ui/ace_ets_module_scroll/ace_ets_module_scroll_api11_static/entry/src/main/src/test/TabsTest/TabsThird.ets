@@ -56,7 +56,7 @@ function tabsDefaultFontSize(sysWidth: Resource) {
 export default function tabsThird() {
   describe('ActsAceTabsTestThird', () => {
     let count: int = 0
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

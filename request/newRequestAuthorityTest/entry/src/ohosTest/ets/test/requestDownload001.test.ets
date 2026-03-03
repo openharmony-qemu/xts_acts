@@ -17,6 +17,7 @@ import request from "@ohos.request";
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
 import common from '@ohos.app.ability.common';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestDownloadOneJSUnitTest() {
   describe('requestDownloadOneJSUnit', () => {
@@ -51,6 +52,16 @@ export default function requestDownloadOneJSUnitTest() {
         }, timeout);
       });
     };
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
+    });
 
     /**
      * @tc.name   SUB_Misc_REQUEST_create_Callback_0140
@@ -488,7 +499,7 @@ export default function requestDownloadOneJSUnitTest() {
               return;
             }
             console.info(`====>SUB_Misc_REQUEST_create_Callback_0090 Succeeded in starting a download task.`);
-            expect(true).assertEqual(true);
+            expect(task !== undefined).assertEqual(true);
             await request.agent.remove(task.tid);
             console.info("====>----------------SUB_Misc_REQUEST_create_Callback_0090 is end-------------------");
             done();
@@ -542,7 +553,7 @@ export default function requestDownloadOneJSUnitTest() {
               return;
             }
             console.info(`====>SUB_Misc_REQUEST_Create_Promise_0180 Succeeded in starting a download task.`);
-            expect(true).assertEqual(true);
+            expect(task !== undefined).assertEqual(true);
             await request.agent.remove(task.tid);
             console.info("====>------------------SUB_Misc_REQUEST_Create_Promise_0180 is end-------------------");
             done();
@@ -772,7 +783,7 @@ export default function requestDownloadOneJSUnitTest() {
               return;
             }
             console.info(`====>SUB_Misc_REQUEST_Create_Promise_0030 Succeeded in starting a download task.`);
-            expect(true).assertEqual(true);
+            expect(task !== undefined).assertEqual(true);
             await request.agent.remove(task.tid);
             console.info("====>--------------------SUB_Misc_REQUEST_Create_Promise_0030 is end---------------------");
             done();
@@ -818,7 +829,7 @@ export default function requestDownloadOneJSUnitTest() {
               return;
             }
             console.info(`====>SUB_Misc_REQUEST_Create_Promise_0040 Succeeded in starting a download task.`);
-            expect(true).assertEqual(true);
+            expect(task !== undefined).assertEqual(true);
             await request.agent.remove(task.tid);
             console.info("====>-------------------SUB_Misc_REQUEST_Create_Promise_0040 is end--------------------");
             done();
@@ -863,7 +874,7 @@ export default function requestDownloadOneJSUnitTest() {
               expect().assertFail();
             }
             console.info(`====>SUB_Misc_REQUEST_Create_Promise_0130 Succeeded in starting a download task.`);
-            expect(true).assertEqual(true);
+            expect(task !== undefined).assertEqual(true);
             await request.agent.remove(task.tid);
             done();
           });
@@ -912,7 +923,7 @@ export default function requestDownloadOneJSUnitTest() {
               return;
             }
             console.info(`====>SUB_Misc_REQUEST_Create_Callback_0060 Succeeded in starting a download task.`);
-            expect(true).assertEqual(true);
+            expect(task !== undefined).assertEqual(true);
             request.agent.remove(task.tid);
             console.info("====>----------------SUB_Misc_REQUEST_Create_Callback_0060 is end---------------------");
             done();
@@ -992,7 +1003,7 @@ export default function requestDownloadOneJSUnitTest() {
         let task = await request.agent.create(baseContext, config);
         console.info(`====>SUB_Misc_REQUEST_Create_Promise_0070 Succeeded download task length: ` + task.config.url.length);
         await request.agent.remove(task.tid);
-        expect(true).assertTrue();
+        expect(task !== undefined).assertTrue();
         done();
       }catch(err){
         console.info("====>SUB_Misc_REQUEST_Create_Promise_0070 create err: " + JSON.stringify(err));

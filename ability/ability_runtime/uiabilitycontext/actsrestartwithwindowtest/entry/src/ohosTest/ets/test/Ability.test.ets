@@ -102,5 +102,67 @@ export default function abilityTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testRestartAppWantNull0200
+     * @tc.number SUB_Ability_AbilityRuntime_RestartApp_0200
+     * @tc.desc   Test UIAbilityContext.restartApp with null want parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRestartAppWantNull0200', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_RestartApp_0200';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      if (!supportRestartWithWindow) {
+        done();
+        return;
+      }
+
+      try {
+        await testContext.restartApp(null);
+        hilog.info(DOMAIN, LOG_TAG, `${tag} restartApp succeed`);
+        try{
+          expect().assertFail();
+        }catch(e){}
+        done();
+      } catch (err) {
+        hilog.error(DOMAIN, LOG_TAG, `${tag} restartApp fail, error: ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRestartAppWantUndefined0300
+     * @tc.number SUB_Ability_AbilityRuntime_RestartApp_0300
+     * @tc.desc   Test UIAbilityContext.restartApp with undefined want parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRestartAppWantUndefined0300', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_RestartApp_0300';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      if (!supportRestartWithWindow) {
+        done();
+        return;
+      }
+
+      try {
+        await testContext.restartApp(undefined);
+        hilog.info(DOMAIN, LOG_TAG, `${tag} restartApp succeed`);
+        try{
+          expect().assertFail();
+        }catch(e){}
+        done();
+      } catch (err) {
+        hilog.error(DOMAIN, LOG_TAG, `${tag} restartApp fail, error: ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
   })
 }

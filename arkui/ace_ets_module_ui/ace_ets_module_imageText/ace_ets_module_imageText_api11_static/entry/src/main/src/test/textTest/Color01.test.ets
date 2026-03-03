@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function colorEnumJsunit() {
   describe('colorEnumJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("colorEnumJsunit beforeEach start");
 
 

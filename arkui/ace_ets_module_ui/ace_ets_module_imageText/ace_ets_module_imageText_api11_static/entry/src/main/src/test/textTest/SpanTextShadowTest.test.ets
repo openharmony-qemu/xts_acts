@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function SpanTextShadowTest() {
   describe('SpanTextShadowTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SpanTextShadowTest beforeEach start");
 
 

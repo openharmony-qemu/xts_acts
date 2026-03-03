@@ -44,7 +44,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function appStorageRefJsunit() {
   describe('appStorageRefJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appStorageRefJsunit beforeEach start");
 
 

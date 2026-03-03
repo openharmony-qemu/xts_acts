@@ -32,7 +32,7 @@ let tag: string = 'testTag';
 export default function DateTimeOptions() {
   describe('DateTimeOptions', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DateTimeOptions beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
 

@@ -2360,5 +2360,73 @@ export default function abilityTest() {
       };
     })
 
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9500
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9500
+     * @tc.desc   The typy of EventInfo is requestFocusForAccessibility, The triggerAction of EventInfo is click ,The textAnnouncedForAccessibility of EventInfo is test123  test sendEvent() function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9500', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9500');
+      let event = new accessibility.EventInfo(eventType,bundleName,triggerAction);
+      event.bundleName = '';
+      event.componentType = '';
+      event.description = '';
+      event.contents = [];
+      event.lastContent = '';
+      event.textAnnouncedForAccessibility = '';
+      event.customId = '';
+      event.bundleName = '';
+      let result = false;
+
+      try {
+        await accessibility.sendAccessibilityEvent(event);
+        hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9500 has successed`);
+      } catch (error) {
+        hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9500 has error`);
+        result = true;
+      };
+      expect(result).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9600
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9600
+     * @tc.desc   The typy of EventInfo is requestFocusForAccessibility, The triggerAction of EventInfo is click ,The textAnnouncedForAccessibility of EventInfo is test123  test sendEvent() function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9600', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9600');
+      let event = new accessibility.EventInfo(eventType,bundleName,triggerAction);
+      event.bundleName = '';
+      event.componentType = '';
+      event.description = '';
+      event.contents = [];
+      event.lastContent = '';
+      event.textAnnouncedForAccessibility = '';
+      event.customId = '';
+      event.bundleName = '';
+      let result = false;
+
+
+      accessibility.sendAccessibilityEvent(event, (err) => {
+        hilog.info(domain, tag, "AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9600  start ");
+        if (err != null && err.code != 0) {
+          hilog.error(domain, tag,`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9600 has error`);
+          result = true;
+        } else {
+          hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9600 has successed`);
+          result = false;
+        }
+        expect(result).assertEqual(true);
+        done();
+      })
+    })
+
   })
 }

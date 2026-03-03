@@ -485,7 +485,9 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async ()=>{
+          await unifiedDataChannel.deleteData(options1);
+        })
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -596,7 +598,9 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async ()=>{
+          await unifiedDataChannel.deleteData(options1);
+        });
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -611,7 +615,7 @@ export default function UDMFApiDataAllTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       TAG = 'SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2000';
       let options: unifiedDataChannel.Options = {
         intention: unifiedDataChannel.Intention.DATA_HUB
@@ -808,7 +812,7 @@ export default function UDMFApiDataAllTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       TAG = 'SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2100';
 
       let options: unifiedDataChannel.Options = {
@@ -1009,7 +1013,7 @@ export default function UDMFApiDataAllTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       TAG = 'SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200';
 
       let options: unifiedDataChannel.Options = {
@@ -1254,7 +1258,7 @@ export default function UDMFApiDataAllTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  (done: () => void) => {
+    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       TAG = 'SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2300';
       let options: unifiedDataChannel.Options = {
         intention: unifiedDataChannel.Intention.DATA_HUB
@@ -1472,7 +1476,7 @@ export default function UDMFApiDataAllTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  (done: () => void) => {
+    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       TAG = 'SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2400';
       let options: unifiedDataChannel.Options = {
         intention: unifiedDataChannel.Intention.DATA_HUB
@@ -1896,7 +1900,9 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async ()=>{
+          await unifiedDataChannel.deleteData(options1);
+        });
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -1958,7 +1964,9 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async ()=>{
+          await unifiedDataChannel.deleteData(options1);
+        });
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -2019,7 +2027,9 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async ()=>{
+          await unifiedDataChannel.deleteData(options1);
+        });
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -2195,7 +2205,9 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async ()=>{
+          await unifiedDataChannel.deleteData(options1);
+        });
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -2250,7 +2262,9 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async ()=>{
+          await unifiedDataChannel.deleteData(options1);
+        });
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -2305,7 +2319,9 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async ()=>{
+          await unifiedDataChannel.deleteData(options1);
+        });
       }).catch((err) => {
         expect().assertFail();
         done();

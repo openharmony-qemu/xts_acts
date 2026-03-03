@@ -91,6 +91,11 @@ class RationalNumber {
   }
 }
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
 
 export default function RationalNumberTest() {
   describe('RationalNumberTest', () => {
@@ -99,10 +104,11 @@ export default function RationalNumberTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
+      await sleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

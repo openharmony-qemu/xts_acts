@@ -55,7 +55,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function swiperItemSpace() {
   describe('swiperItemSpaceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperItemSpace beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

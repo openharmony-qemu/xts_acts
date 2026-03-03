@@ -614,6 +614,182 @@ export default function NetExtAttributeHasNetTest() {
     }
   });
 
+    /**
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttribute0800
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0800
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL1
+    */
+   it("testNetworkMgrConnectionSetNetExtAttribute0800", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+     let caseName: string = "testNetworkMgrConnectionSetNetExtAttribute0800";
+     console.info(`${caseName}---Start`);
+     try{
+       connection.setNetExtAttribute(null, null).then(() => {
+        console.info(`${caseName} setNetExtAttributeSync success `);
+        ExpectFail();
+        done();
+        console.info(`${caseName}---End`);
+       }).catch((err: BusinessError)=>{
+        console.info(`${caseName} setNetExtAttributeSync failed err is `+JSON.stringify(err));
+        ExpectTrue(err.code == 201 || err.code == 2100001);
+        done();
+       })
+     }catch (err){
+      console.info(`${caseName} catch err is `+JSON.stringify(err));
+      console.info(`${caseName} is not pc device `+JSON.stringify(err));
+      ExpectFail();
+      console.info(`${caseName}---End`);
+      done();
+     }
+   });
+
+       /**
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttribute0900
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0900
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL1
+    */
+   it("testNetworkMgrConnectionSetNetExtAttribute0900", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+     let caseName: string = "testNetworkMgrConnectionSetNetExtAttribute0900";
+     console.info(`${caseName}---Start`);
+     try{
+       connection.setNetExtAttribute(null, null).then(() => {
+        console.info(`${caseName} setNetExtAttributeSync success `);
+        ExpectFail();
+        done();
+        console.info(`${caseName}---End`);
+       }).catch((err: BusinessError)=>{
+        console.info(`${caseName} setNetExtAttributeSync failed err is `+JSON.stringify(err));
+        ExpectTrue(err.code == 201 || err.code == 2100001);
+        done();
+       })
+     }catch (err){
+      console.info(`${caseName} catch err is `+JSON.stringify(err));
+      console.info(`${caseName} is not pc device `+JSON.stringify(err));
+      ExpectFail();
+      console.info(`${caseName}---End`);
+      done();
+     }
+   });
+
+    /**
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttribute0500
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_0500
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+   it("testNetworkMgrConnectionGetNetExtAttribute0500", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+     let caseName: string = "testNetworkMgrConnectionGetNetExtAttribute0500";
+     console.info(`${caseName}---Start`);
+     try{
+       let netHandle = connection.getDefaultNetSync();
+       connection.getNetExtAttribute(null).then((netExtAttribute: string)=>{
+        console.info(`${caseName} getNetExtAttribute success netExtAttribute is ->`+ netExtAttribute);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+       }).catch((err: BusinessError)=>{
+        console.info(`${caseName} getNetExtAttribute failed err is ->`+ JSON.stringify(err));
+        ExpectTrue(err.code == 2100001);
+        console.info(`${caseName}---End`);
+        done();
+       })
+      }catch (err){
+        console.info(`${caseName} catch err is `+JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttribute0600
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_0600
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+   it("testNetworkMgrConnectionGetNetExtAttribute0600", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+     let caseName: string = "testNetworkMgrConnectionGetNetExtAttribute0600";
+     console.info(`${caseName}---Start`);
+     try{
+       let netHandle = connection.getDefaultNetSync();
+       connection.getNetExtAttribute(undefined).then((netExtAttribute: string)=>{
+        console.info(`${caseName} getNetExtAttribute success netExtAttribute is ->`+ netExtAttribute);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+       }).catch((err: BusinessError)=>{
+        console.info(`${caseName} getNetExtAttribute failed err is ->`+ JSON.stringify(err));
+        ExpectTrue(err.code == 2100001);
+        console.info(`${caseName}---End`);
+        done();
+       })
+      }catch (err){
+        console.info(`${caseName} catch err is `+JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+   /**
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttributeSync0500
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_0500
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+   it("testNetworkMgrConnectionGetNetExtAttributeSync0500", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+     let caseName: string = "testNetworkMgrConnectionGetNetExtAttributeSync0500";
+     console.info(`${caseName}---Start`);
+     try{
+        let netExtAttribute: string = connection.getNetExtAttributeSync(null);
+        console.info(`${caseName} netExtAttribute is ->`+JSON.stringify(netExtAttribute));
+        ExpectFail();
+        done();
+        console.info(`${caseName}---End`);
+     }catch (err){
+        console.info(`${caseName} catch err is `+JSON.stringify(err));
+        ExpectTrue(err.code == 2100001);
+        console.info(`${caseName}---End`);
+        done();
+     }
+   });
+  
+    /**
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttributeSync0600
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_0600
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+   it("testNetworkMgrConnectionGetNetExtAttributeSync0600", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+     let caseName: string = "testNetworkMgrConnectionGetNetExtAttributeSync0600";
+     console.info(`${caseName}---Start`);
+     try{
+        let netExtAttribute: string = connection.getNetExtAttributeSync(undefined);
+        console.info(`${caseName} netExtAttribute is ->`+JSON.stringify(netExtAttribute));
+        ExpectFail();
+        done();
+        console.info(`${caseName}---End`);
+     }catch (err){
+        console.info(`${caseName} catch err is `+JSON.stringify(err));
+        ExpectTrue(err.code == 2100001);
+        console.info(`${caseName}---End`);
+        done();
+     }
+   });
+
   });
 }
 

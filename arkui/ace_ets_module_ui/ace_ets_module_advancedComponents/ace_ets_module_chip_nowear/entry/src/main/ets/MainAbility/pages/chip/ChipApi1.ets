@@ -52,6 +52,18 @@ struct ChipApi1 {
         backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
         activatedBackgroundColor: "#FFFF0000",
         borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
+          suffixSymbolOptions: {
+            activatedAccessibility: {
+              accessibilityText: 'helloActivate',
+              accessibilityLevel: 'yes',
+              accessibilityDescription: 'helloActivate'
+            },
+            normalAccessibility: {
+              accessibilityText: 'helloNormal',
+              accessibilityLevel: 'yes',
+              accessibilityDescription: 'helloNormal'
+            }
+          },
         onClose:()=>{
           console.log("chip on close")
         },

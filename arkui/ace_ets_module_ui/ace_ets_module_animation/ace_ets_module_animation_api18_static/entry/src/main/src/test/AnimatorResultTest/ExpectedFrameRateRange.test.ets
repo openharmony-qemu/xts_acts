@@ -35,7 +35,7 @@ import { RecordData } from '@ohos.base';
 
 export default function ExpectedFrameRateRange() {
   describe('ExpectedFrameRateRange', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ExpectedFrameRateRange beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation18.static", "EntryAbility")

@@ -50,6 +50,18 @@ const ABILITY_ERROR7 = {
     bundleName: "",
     name: ""
 };
+const ABILITY_ERROR8 = {
+    bundleName: null,
+    name: ABILITY_NAME
+};
+const ABILITY_ERROR9 = {
+    bundleName: BUNDLE_NAME,
+    name: null
+};
+const ABILITY_ERROR10 = {
+    bundleName: null,
+    name: null
+};
 
 
 export default function isAbilityEnabledETSUnit() {
@@ -201,6 +213,51 @@ export default function isAbilityEnabledETSUnit() {
                 done();
             });
         });
+
+        /**
+         * @tc.name   Sub_Bms_Framework_Status_AbilityEnable_5250
+         * @tc.number Sub_Bms_Framework_Status_AbilityEnable_5250
+         * @tc.desc   Check the return value of the interface when bundleName and ability is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('Sub_Bms_Framework_Status_AbilityEnable_5250', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+            let abilityInfo8 = generateAbilityInfoForTest(ABILITY_ERROR8.bundleName,ABILITY_ERROR8.name);
+            let abilityInfo9 = generateAbilityInfoForTest(ABILITY_ERROR9.bundleName,ABILITY_ERROR9.name);
+            let abilityInfo10 = generateAbilityInfoForTest(ABILITY_ERROR10.bundleName,ABILITY_ERROR10.name);
+            await Bundle.isAbilityEnabled(abilityInfo8).then((data) => {
+                expect(data).assertFail();
+            }).catch((error) => {
+                expect(error.code).assertEqual(2);
+            });
+
+           await Bundle.isAbilityEnabled(abilityInfo9).then((data) => {
+                expect(data).assertFail();
+            }).catch((error) => {
+                expect(error.code).assertEqual(2);
+            });
+            await Bundle.isAbilityEnabled(abilityInfo10).then((data) => {
+                expect(data).assertFail();
+            }).catch((error) => {
+                expect(error.code).assertEqual(2);
+            });
+
+            Bundle.isAbilityEnabled(abilityInfo8, (error, data) => {
+                expect(error.code).assertEqual(2);
+                expect(data).assertEqual(undefined);
+                Bundle.isAbilityEnabled(abilityInfo9,(error, data) => {
+                    expect(error.code).assertEqual(2);
+                    expect(data).assertEqual(undefined);
+                    Bundle.isAbilityEnabled(abilityInfo10, (error, data)=>{
+                        expect(error.code).assertEqual(2);
+                        expect(data).assertEqual(undefined);
+                        done();
+                    })
+                })
+            })
+        });
+        
 
         function generateAbilityInfoForTest(bundleName, name) {
             let map1 = new Map([

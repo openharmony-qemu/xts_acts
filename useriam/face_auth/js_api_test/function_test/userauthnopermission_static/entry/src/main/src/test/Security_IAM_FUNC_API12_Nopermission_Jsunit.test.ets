@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function userauthTest_Nopermission_API12() {
   describe('userauthTest_Nopermission_API12', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({

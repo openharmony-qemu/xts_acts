@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexWrapReverse_notFixedParentMargin() {
   describe('FlexWrapReverse_notFixedParentMargin', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexWrapReverse_notFixedParentMargin beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

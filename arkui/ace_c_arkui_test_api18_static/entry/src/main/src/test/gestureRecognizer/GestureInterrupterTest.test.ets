@@ -28,7 +28,7 @@ let rootSlot: Content = new NodeContent() as Content;
 export default function gestureInterrupterTest() {
 
   describe('GestureInterrupterTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api18.static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {

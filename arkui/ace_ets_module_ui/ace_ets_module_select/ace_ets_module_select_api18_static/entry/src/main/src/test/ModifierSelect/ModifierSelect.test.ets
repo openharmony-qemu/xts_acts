@@ -41,7 +41,7 @@ import { UtilsTest, startAbility } from '../Util.test';
  
  export default function ModifierPage() {
    describe('ModifierPage', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
        
        await UtilsTest.startAbility("com.arkui.ace.select.api18.static", "EntryAbility");
        

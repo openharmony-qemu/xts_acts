@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function flexTextMargin_CenterJsunit() {
   describe('flexItemAlignCenterTest4', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexItemAlignCenterTest4 beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")

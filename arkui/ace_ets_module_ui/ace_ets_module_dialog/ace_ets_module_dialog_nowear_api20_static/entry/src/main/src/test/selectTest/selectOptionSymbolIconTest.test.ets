@@ -37,7 +37,7 @@ export default function SelectOptionSymbolIconTest() {
   describe('SelectOptionSymbolIconTest', () => {
     const SLEEP_TIME_1000 = 1000;
     const SLEEP_TIME_500 = 500;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SelectOptionSymbolIconTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api20.static", "EntryAbility")
     });

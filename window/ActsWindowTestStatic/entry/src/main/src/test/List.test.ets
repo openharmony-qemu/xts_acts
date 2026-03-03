@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import WindowLifeCycleTest from "./WindowLifeCycle.test";
 import WindowLayoutTest from "./WindowLayout.test";
 import WindowImmersiveTest from "./WindowImmersive.test";
 import WindowModalTest from "./WindowModal.test";
@@ -23,8 +22,10 @@ import WindowPropertiesTest from "./WindowProperties.test";
 import WindowPCTest from "./WindowPC.test";
 import WindowKeyBoardTest from "./WindowKeyBoard.test";
 import WindowFocusTest from "./WindowFocus.test";
+import WindowPCAndEventTest from "./WindowPCAndEventTest.test";
+import WindowPCStaticTest from "./WindowPCStatic.test";
+import WindowEventStatic from "./WindowEventStatic.test";
 export default function testsuite() {
-  WindowLifeCycleTest();
   WindowImmersiveTest();
   WindowLayoutTest();
   WindowModalTest();
@@ -35,4 +36,7 @@ export default function testsuite() {
   WindowPCTest();
   WindowKeyBoardTest();
   WindowFocusTest();
+  WindowPCAndEventTest();
+  WindowPCStaticTest();
+  WindowEventStatic();
 }

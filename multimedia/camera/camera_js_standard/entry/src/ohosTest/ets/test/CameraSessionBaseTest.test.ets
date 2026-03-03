@@ -473,6 +473,7 @@ export default function cameraSessionTest() {
 
   let isoInfoCallback = async (isoInfo: cameraObj.IsoInfo) => {
     console.info(TAG + `Iso info: ${isoInfo}`);
+    expect(isoInfo.iso == undefined).assertFalse();
   }
 
   describe('CameraSessionBaseTest', () => {

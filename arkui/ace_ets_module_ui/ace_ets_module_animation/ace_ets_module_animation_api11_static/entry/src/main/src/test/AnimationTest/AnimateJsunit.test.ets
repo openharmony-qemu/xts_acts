@@ -82,7 +82,7 @@ interface ParamName2 {
 export default function animateJsunit() {
   describe('animateTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("animateJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

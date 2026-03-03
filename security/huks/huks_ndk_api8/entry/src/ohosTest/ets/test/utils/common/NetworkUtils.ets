@@ -28,7 +28,7 @@ export async function CheckWifiInfo() {
     if (wifiLinkedInfo.connState != wifiManager.ConnState.CONNECTED) {
       throw new Error("WLAN Network error");
     }
-    if (wifiLinkedInfo.chload >= 800 || wifiLinkedInfo.rssi <= -80) {
+    if (wifiLinkedInfo.chload >= 900 || wifiLinkedInfo.rssi <= -80) {
       throw new Error("WLAN Network error");
     }
     if (wifiLinkedInfo.chload >= 500) {

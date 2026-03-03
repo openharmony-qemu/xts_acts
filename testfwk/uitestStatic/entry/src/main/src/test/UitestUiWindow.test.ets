@@ -306,7 +306,60 @@ export default function uitestUiWindowTest() {
                     hilog.info(domain, tag, `testWindowResizeA_static bounds5, ${JSON.stringify(bounds5)} `);
                     expect(bounds5 != bounds4).assertTrue();
                   }
+
                 }
+
+                let window6 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+                hilog.info(domain, tag, `testWindowResizeA_static  window6 , ${JSON.stringify(window6)}`);
+                expect(window6 != null).assertTrue();
+                if (window6 != null) {
+                  let bounds6 = await window6.getBounds();
+                  hilog.info(domain, tag, `testWindowResizeA_static bounds6, ${JSON.stringify(bounds6)} `);
+                  await window6.resize(500, 500, ResizeDirection.UP);
+                  let window7 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+                  hilog.info(domain, tag, `testWindowResizeA_static  window7 , ${JSON.stringify(window7)}`);
+                  expect(window7 != null).assertTrue();
+                  if (window7 != null) {
+                    let bounds7 = await window7.getBounds();
+                    hilog.info(domain, tag, `testWindowResizeA_static bounds7, ${JSON.stringify(bounds7)} `);
+                    expect(bounds7 != bounds6).assertTrue();
+                  }
+                }
+
+                let window8 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+                hilog.info(domain, tag, `testWindowResizeA_static  window8 , ${JSON.stringify(window8)}`);
+                expect(window8 != null).assertTrue();
+                if (window8 != null) {
+                  let bounds8 = await window8.getBounds();
+                  hilog.info(domain, tag, `testWindowResizeA_static bounds8, ${JSON.stringify(bounds8)} `);
+                  await window8.resize(500, 500, ResizeDirection.DOWN);
+                  let window9 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+                  hilog.info(domain, tag, `testWindowResizeA_static  window9 , ${JSON.stringify(window9)}`);
+                  expect(window9 != null).assertTrue();
+                  if (window9 != null) {
+                    let bounds9 = await window9.getBounds();
+                    hilog.info(domain, tag, `testWindowResizeA_static bounds9, ${JSON.stringify(bounds9)} `);
+                    expect(bounds9 != bounds8).assertTrue();
+                  }
+                }
+
+                let window10 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+                hilog.info(domain, tag, `testWindowResizeA_static  window10 , ${JSON.stringify(window10)}`);
+                expect(window10 != null).assertTrue();
+                if (window10 != null) {
+                  let bounds10 = await window10.getBounds();
+                  hilog.info(domain, tag, `testWindowResizeA_static bounds10, ${JSON.stringify(bounds10)} `);
+                  await window10.resize(500, 500, ResizeDirection.RIGHT);
+                  let window11 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+                  hilog.info(domain, tag, `testWindowResizeA_static  window11 , ${JSON.stringify(window11)}`);
+                  expect(window11 != null).assertTrue();
+                  if (window11 != null) {
+                    let bounds11 = await window11.getBounds();
+                    hilog.info(domain, tag, `testWindowResizeA_static bounds11, ${JSON.stringify(bounds11)} `);
+                    expect(bounds11 != bounds10).assertTrue();
+                  }
+                }
+
               }
             }
           }
@@ -314,12 +367,7 @@ export default function uitestUiWindowTest() {
       } catch (err) {
         err = err as BusinessError;
         hilog.info(domain, tag, `testWindowResizeA_static error, ${JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue();
-          expect(err.code).assertEqual(DeviceErrorCode);
-        } else {
-          expect(false).assertTrue()
-        }
+        expect(err.code).assertEqual(DeviceErrorCode);
       }
       hilog.info(domain, tag, `testWindowResizeA_static end `);
       await stopApplication('com.uitestScene.acts')
@@ -362,6 +410,11 @@ export default function uitestUiWindowTest() {
             let bounds2 = await window2.getBounds();
             hilog.info(domain, tag, `testWindowMoveTo_static bounds2, ${JSON.stringify(bounds2)} `);
             expect(bounds1 != bounds2).assertTrue();
+            expect(bounds1.left != bounds2.left).assertTrue();
+            expect(bounds1.top != bounds2.top).assertTrue();
+            expect(bounds1.right != bounds2.right).assertTrue();
+            expect(bounds1.bottom != bounds2.bottom).assertTrue();
+            expect(bounds1.displayId == bounds2.displayId).assertTrue();
           }
         }
       } catch (err) {
@@ -522,6 +575,9 @@ export default function uitestUiWindowTest() {
           hilog.info(domain, tag, `testWindowIsActive isActive, ${JSON.stringify(isActive)} `);
           expect(isActive == true).assertTrue()
         }
+        let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', focused: false, active: false });
+        hilog.info(domain, tag, `testWindowIsActive window1, ${JSON.stringify(window1)} `);
+        expect(window1 == null).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, `testWindowIsActive error, ${JSON.stringify(error)} `);
         expect().assertFail()

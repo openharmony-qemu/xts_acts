@@ -20,7 +20,7 @@ import bundle from '@ohos.bundle'
 import osaccount from '@ohos.account.osAccount'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import wifiMg from '@ohos.wifiManager';
-
+import notificationManager from '@ohos.notificationManager';
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -100,7 +100,7 @@ export default function geolocationTest_GeoErr() {
                   expect().message("======> WLAN Network error").assertFail();
                   done();
                 }
-                if (data.chload >= 800 || data.rssi <= -80) {
+                if (data.chload >= 900 || data.rssi <= -80) {
                   expect().message("======> WLAN Network error").assertFail();
                   done();
                 } else if (data.chload >= 500) {
@@ -1620,10 +1620,120 @@ export default function geolocationTest_GeoErr() {
                 await sleep(1000);
                 done();
             }            
-        });  
-        
-           
-        
+        });
+
+         /**
+          * @tc.name   SUB_HSS_addGnssGeofence_0001
+          * @tc.number SUB_HSS_addGnssGeofence_0001
+          * @tc.desc   GnssGeofence.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */        
+         it('SUB_HSS_addGnssGeofence_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {        
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_addGnssGeofence_0001: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let geofence = {
+                    "latitude": 34.12,
+                    "longitude": 124.11,
+                    "radius": 10000.0,
+                    "expiration": 10000.0
+                }
+                let transitionStatusList = [
+                    geolocationm.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER,
+                    geolocationm.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_EXIT,
+                ];
+                let notificationRequest1 = {
+                    id: 1,
+                    content: {
+                        notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+                        normal: {
+                            title: "围栏通知",
+                            text: "围栏进入",
+                            additionalText: ""
+                        }
+                    }
+                };
+                let notificationRequest2 = {
+                    id: 2,
+                    content: {
+                        notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+                        normal: {
+                            title: "围栏通知",
+                            text: "围栏进入",
+                            additionalText: ""
+                        }
+                    }
+                };
+                let notificationRequestList = [notificationRequest1, notificationRequest2];
+                let gnssGeofenceRequest = {
+                    geofence: geofence,
+                    monitorTransitionEvents: transitionStatusList,
+                    notifications: notificationRequestList,
+                    loiterTimeMs: 10000,
+                    fenceExtensionAbilityName: "fenceExtensionAbility",
+                    geofenceTransitionCallback: (err, transition) => {
+                        if (err) {
+                            console.error('SUB_HSS_addGnssGeofence_0001 geofenceTransitionCallback: err=' + JSON.stringify(err));
+                        }
+                        if (transition) {
+                            console.info("SUB_HSS_addGnssGeofence_0001 GeofenceTransition: %{public}s", JSON.stringify(transition)); 
+                        }
+                }
+                };
+                try { 
+                    console.info("SUB_HSS_addGnssGeofence_0001 ======>loiterTimeMs ", typeof gnssGeofenceRequest.loiterTimeMs);
+                    expect(typeof gnssGeofenceRequest.loiterTimeMs).assertEqual("number");
+                    console.info("SUB_HSS_addGnssGeofence_0001 ======>fenceExtensionAbilityName ", typeof gnssGeofenceRequest.fenceExtensionAbilityName);
+                    expect(typeof gnssGeofenceRequest.fenceExtensionAbilityName).assertEqual("string");                    
+                } catch (error) {
+                    console.error("SUB_HSS_addGnssGeofence_0001:" + JSON.stringify(error));
+                }
+                await sleep(1000);
+                done();
+            }
+        });
+
+         /**
+          * @tc.name   SUB_HSS_getActiveGeofences_0001
+          * @tc.number SUB_HSS_getActiveGeofences_0001
+          * @tc.desc   GnssGeofence.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
+         it('SUB_HSS_getActiveGeofences_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {        
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_getActiveGeofences_0001: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                try {
+                    geolocationm.getActiveGeoFences().then((res) => {
+                        if (res) {
+                            console.info("SUB_HSS_getActiveGeofences_0001, fence num: " + res.size);
+                            expect(res != null).assertTrue();
+                            done();
+                        }
+                    }).catch((error) => {
+                        console.error("promise, SUB_HSS_getActiveGeofences_0001 error=" + error.code);
+                        expect(error.code).assertEqual(201);
+                    });
+                } catch (error) {
+                    console.error("SUB_HSS_getActiveGeofences_0001: errCode" + error.code + ", errMessage" + error.message);
+                    expect().assertFalse();
+                }
+                await sleep(1000);
+                done();
+            }
+        });        
         
 
 

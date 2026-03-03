@@ -666,5 +666,55 @@ export default function verificationTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_RestoreWindowStage_0100
+     * @tc.number SUB_AA_OpenHarmony_RestoreWindowStage_0100
+     * @tc.desc   restoreWindowStage with null parameter test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_RestoreWindowStage_0100', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_RestoreWindowStage_0100 ==>';
+      console.info(TAG + " start");
+      let flag = false;
+      try {
+        AppStorage.get<common.UIAbilityContext>("abilityContext")!.restoreWindowStage(null);
+        console.info(TAG + "restoreWindowStage should throw error");
+        flag = true;
+        expect(flag).assertTrue();
+        done();
+      } catch (err) {
+        console.info(TAG + "restoreWindowStage err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_RestoreWindowStage_0200
+     * @tc.number SUB_AA_OpenHarmony_RestoreWindowStage_0200
+     * @tc.desc   restoreWindowStage with undefined parameter test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_RestoreWindowStage_0200', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_RestoreWindowStage_0200 ==>';
+      console.info(TAG + " start");
+      let flag = false;
+      try {
+        AppStorage.get<common.UIAbilityContext>("abilityContext")!.restoreWindowStage(undefined);
+        console.info(TAG + "restoreWindowStage should throw error");
+        flag = true;
+        expect(flag).assertTrue();
+        done();
+      } catch (err) {
+        console.info(TAG + "restoreWindowStage err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

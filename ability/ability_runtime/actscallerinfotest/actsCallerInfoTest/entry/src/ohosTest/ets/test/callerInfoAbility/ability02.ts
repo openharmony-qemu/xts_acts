@@ -16,7 +16,7 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 
 export default class CallerInfo02 extends UIAbility {
   onCreate(want, launchParam):void {
@@ -27,6 +27,7 @@ export default class CallerInfo02 extends UIAbility {
 
   onDestroy():void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'CallerInfo02 onDestroy');
+    commonEventManager.publish('CallerInfo02_onDestroy', () => {});
   }
 
   onWindowStageCreate(windowStage: window.WindowStage):void {
@@ -47,25 +48,12 @@ export default class CallerInfo02 extends UIAbility {
 
   onForeground():void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'CallerInfo02 onForeground');
-    try {
-      globalThis.CallerInfo02.startAbility(
-        {
-          bundleName: 'com.acts.actsCallerInfoTest',
-          abilityName: 'callerInfo01'
-        }).then(() => {
-        hilog.info(0x0000, 'testTag', '%{public}s', `CallerInfo02 startAbility end`);
-      })
-    } catch (err) {
-      // 处理入参错误异常
-      let code = (err as BusinessError).code;
-      let message = (err as BusinessError).message;
-      hilog.info(0x0000, 'testTag', '%{public}s', `startAbility failed, error.code: ${code}, error.message: ${message}`);
-    }
+    commonEventManager.publish('CallerInfo02_onForeground', () => {});
   }
 
   onBackground():void {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'CallerInfo02 onBackground');
-    globalThis.CallerInfo02.terminateSelf();
+    commonEventManager.publish('CallerInfo02_onBackground', () => {});
   }
 }

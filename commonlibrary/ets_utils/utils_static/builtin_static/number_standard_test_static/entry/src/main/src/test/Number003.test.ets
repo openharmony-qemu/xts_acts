@@ -92,27 +92,6 @@ export default function BuiltinsNumberIsIntegerTest() {
       Done();
     })
 
-
-
-    /**
-     * @tc.number SUB_BUILTINS_NUMBER_ISINTEGER_TEST_0400
-     * @tc.name builtinsNumberIsIntegerTest0400
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('builtinsNumberIsIntegerTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (Done: () => void): Promise<void> => {
-    //   const caseName = 'builtinsNumberIsIntegerTest0400';
-    //   console.log(`${caseName} test start`);
-    //   const num3 = Number.isInteger(999999999999999999999999999999999999n);
-    //   console.log(`${num3}`);
-    //   expect(true).assertEqual(num3);
-    //   console.log(`${caseName} test end`);
-    //   Done();
-    // })
-
-
     /**
      * @tc.number SUB_BUILTINS_NUMBER_ISINTEGER_TEST_0500
      * @tc.name builtinsNumberIsIntegerTest0500
@@ -130,8 +109,6 @@ export default function BuiltinsNumberIsIntegerTest() {
       console.log(`${caseName} test end`);
       Done();
     })
-
-
 
     /**
      * @tc.number SUB_BUILTINS_NUMBER_ISINTEGER_TEST_0600
@@ -207,17 +184,6 @@ export default function BuiltinsNumberIsIntegerTest() {
       console.log(`${caseName} test end`);
       Done();
     })
-
-
-
-
-
-
-
-
-
-
-
 
     /**
      * @tc.number SUB_BUILTINS_NUMBER_ISINTEGER_TEST_1400

@@ -42,7 +42,7 @@ export default function ifThemeTest() {
 
   describe(SUITE, () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("IfPage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       

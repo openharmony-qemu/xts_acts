@@ -416,7 +416,7 @@ export default function emitterGetListenterCountTest() {
       const TEST_CASE_NAME = 'Sub_Notification_Emitter_GetListenerCount_1100';
       let eventId11 ='E'.repeat(10240)
       let options: emitter.Options = {
-        priority: emitter.EventPriority.HIGH
+        priority: emitter.EventPriority.LOW
       };
       let onCallback11 : Callback<emitter.EventData> = (eventData: emitter.EventData) : void => {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
@@ -454,7 +454,7 @@ export default function emitterGetListenterCountTest() {
       let eventId12 ='E'.repeat(10241)
       let eventId121 ='E'.repeat(10240)
       let options: emitter.Options = {
-        priority: emitter.EventPriority.HIGH
+        priority: emitter.EventPriority.IDLE
       };
       let onCallback12 : Callback<emitter.EventData> = (eventData: emitter.EventData) : void => {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
@@ -539,7 +539,7 @@ export default function emitterGetListenterCountTest() {
         data: new Sample()
       }
       let options: emitter.Options = {
-        priority: emitter.EventPriority.HIGH
+        priority: emitter.EventPriority.LOW
       };
       let onCallback14 : Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
         let storage: Sample = eventData.data!;
@@ -583,7 +583,7 @@ export default function emitterGetListenterCountTest() {
         data: new Sample()
       }
       let options: emitter.Options = {
-        priority: emitter.EventPriority.HIGH
+        priority: emitter.EventPriority.IDLE
       };
       let onCallback15 : Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
         let storage: Sample = eventData.data!;

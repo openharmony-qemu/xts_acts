@@ -26,7 +26,7 @@ import { RecordData } from '@ohos.base';
 
 export default function motionPathJsunit() {
   describe('motionPathTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("motionPathTest beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

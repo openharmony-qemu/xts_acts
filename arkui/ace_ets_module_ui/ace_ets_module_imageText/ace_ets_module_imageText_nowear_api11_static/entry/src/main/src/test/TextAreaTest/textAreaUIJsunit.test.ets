@@ -43,7 +43,7 @@ const waitUiReadyMs = 1000;
 
 export default function textAreaUIJsunit() {
   describe('textAreaUIJsunit', () : void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaUIJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")

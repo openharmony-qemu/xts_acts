@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ProgressContentTest() {
   describe('ProgressContentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ProgressContentTest beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.information.api20.static", "EntryAbility");
     });

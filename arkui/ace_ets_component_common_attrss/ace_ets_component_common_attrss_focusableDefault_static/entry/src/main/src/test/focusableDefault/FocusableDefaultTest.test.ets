@@ -92,7 +92,7 @@ export default function FocusableDefaultTest() {
      */
 
     describe("FocusableDefaultTest", () => {
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             console.info("FocusableDefaultTest beforeEach start");
             
             await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

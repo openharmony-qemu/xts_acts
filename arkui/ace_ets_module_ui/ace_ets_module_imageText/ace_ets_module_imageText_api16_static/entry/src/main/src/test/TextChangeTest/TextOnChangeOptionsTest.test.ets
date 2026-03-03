@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function TextOnChangeOptionsTest() {
   describe('TextOnChangeOptionsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextOnChangeOptionsTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

@@ -25,6 +25,11 @@
     "pages": "$profile:main_pages",
     "requestPermissions": [
       {
+        "name": "ohos.permission.ACTIVITY_MOTION",
+        "reason": "$string:EntryAbility_desc",
+        "usedScene": {}
+      },
+      {
         "name":"ohos.permission.DETECT_GESTURE"
       }
     ],

@@ -879,7 +879,7 @@ export default function Int16ArrayGlobalTest() {
             count++
           }
           await taskpool.execute(group).then((res) => {
-            expect(res).assertContain('1,3,5,4')
+            expect(res.toString()).assertContain('1,3,5,4')
             flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
@@ -1110,7 +1110,7 @@ export default function Int16ArrayGlobalTest() {
             group.addTask(Int16_test_0027, array, caseName, i)
           }
           await taskpool.execute(group).then((res) => {
-            expect(res).assertContain('5,4,3,2,1')
+            expect(JSON.stringify(res)).assertContain('5,4,3,2,1')
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);

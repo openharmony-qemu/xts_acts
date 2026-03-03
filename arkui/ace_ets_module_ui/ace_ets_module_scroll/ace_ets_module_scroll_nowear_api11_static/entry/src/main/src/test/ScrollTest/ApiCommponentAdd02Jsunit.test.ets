@@ -38,7 +38,7 @@ interface DataObj1 {
 export default function ApiCommponentAdd02Jsunit() {
   describe('ApiCommponentAdd02Jsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ApiCommponentAdd02Jsunit beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");

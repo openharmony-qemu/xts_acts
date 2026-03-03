@@ -955,7 +955,7 @@ export default function imagePackToFileGif() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let isSupportFormat = isSupportImageFormat("HDRVividSingleLayer.heic", "image/heic");
+        let isSupportFormat = await isSupportImageFormat("HDRVividSingleLayer.heic", "image/heic");
         if (!isSupportFormat) {
           console.info("device is not support imageformat heic");
           expect(!isSupportFormat).assertTrue();

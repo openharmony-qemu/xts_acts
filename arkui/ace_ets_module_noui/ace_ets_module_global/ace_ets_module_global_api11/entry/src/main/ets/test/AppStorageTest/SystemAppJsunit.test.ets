@@ -132,6 +132,43 @@ export default function systemAppJsunit() {
       console.info('systemAppTest_0600 END');
       done();
     });
+
+    /**
+     * @tc.name   systemAppTest_0601
+     * @tc.number systemAppTest_0601
+     * @tc.desc   systemAppTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('systemAppTest_0601', Level.LEVEL0, async (done: Function) => {
+      console.info('systemAppTest_0601 START');
+      let a = app.setImageCacheCount(undefined);
+      app.setImageCacheCount(undefined);
+      console.info('systemAppTest_0601 info' + app.setImageCacheCount(undefined));
+      expect(a == null).assertTrue();
+      console.info('systemAppTest_0601 END');
+      done();
+    });
+
+    /**
+     * @tc.name   systemAppTest_0602
+     * @tc.number systemAppTest_0602
+     * @tc.desc   systemAppTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('systemAppTest_0602', Level.LEVEL0, async (done: Function) => {
+      console.info('systemAppTest_0602 START');
+      let a = app.setImageCacheCount(null);
+      app.setImageCacheCount(null);
+      console.info('systemAppTest_0602 info' + app.setImageCacheCount(null));
+      expect(a == null).assertTrue();
+      console.info('systemAppTest_0602 END');
+      done();
+    });
+
     /**
      * @tc.name   systemAppTest_0700
      * @tc.number systemAppTest_0700
@@ -147,6 +184,43 @@ export default function systemAppJsunit() {
       console.info('systemAppTest_0700 END');
       done();
     });
+
+    /**
+     * @tc.name   systemAppTest_0701
+     * @tc.number systemAppTest_0701
+     * @tc.desc   systemAppTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('systemAppTest_0701', Level.LEVEL0, async (done: Function) => {
+      console.info('systemAppTest_0701 START');
+      let a = app.setImageRawDataCacheSize(undefined);
+      app.setImageRawDataCacheSize(undefined);
+      console.info('systemAppTest_0701 info' + app.setImageRawDataCacheSize(undefined));
+      expect(a == null).assertTrue();
+      console.info('systemAppTest_0701 END');
+      done();
+    });
+
+    /**
+     * @tc.name   systemAppTest_0702
+     * @tc.number systemAppTest_0702
+     * @tc.desc   systemAppTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('systemAppTest_0702', Level.LEVEL0, async (done: Function) => {
+      console.info('systemAppTest_0702 START');
+      let a = app.setImageRawDataCacheSize(null);
+      app.setImageRawDataCacheSize(null);
+      console.info('systemAppTest_0702 info' + app.setImageRawDataCacheSize(null));
+      expect(a == null).assertTrue();
+      console.info('systemAppTest_0702 END');
+      done();
+    });
+
     /**
      * @tc.name   systemAppTest_0800
      * @tc.number systemAppTest_0800
@@ -162,6 +236,43 @@ export default function systemAppJsunit() {
       console.info('systemAppTest_0800 END');
       done();
     });
+
+    /**
+     * @tc.name   systemAppTest_0801
+     * @tc.number systemAppTest_0801
+     * @tc.desc   systemAppTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('systemAppTest_0801', Level.LEVEL0, async (done: Function) => {
+      console.info('systemAppTest_0801 START');
+      let a = app.setImageFileCacheSize(undefined);
+      app.setImageFileCacheSize(undefined);
+      console.info('systemAppTest_0801 info' + app.setImageFileCacheSize(undefined));
+      expect(a == null).assertTrue();
+      console.info('systemAppTest_0801 END');
+      done();
+    });
+
+    /**
+     * @tc.name   systemAppTest_0802
+     * @tc.number systemAppTest_0802
+     * @tc.desc   systemAppTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('systemAppTest_0802', Level.LEVEL0, async (done: Function) => {
+      console.info('systemAppTest_0802 START');
+      let a = app.setImageFileCacheSize(null);
+      app.setImageFileCacheSize(null);
+      console.info('systemAppTest_0802 info' + app.setImageFileCacheSize(null));
+      expect(a == null).assertTrue();
+      console.info('systemAppTest_0802 END');
+      done();
+    });
+
     /**
      * @tc.name   systemAppTest_0900
      * @tc.number systemAppTest_0900

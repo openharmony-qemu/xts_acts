@@ -395,6 +395,13 @@ export default function uitestDriverErrorTest() {
     it('testKnuckleKnock_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testKnuckleKnock_17000007_static start`);
       try {
+        await driver!.knuckleKnock([],  2)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testKnuckleKnock_17000007_static error point = []: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
+      }
+      try {
         await driver!.knuckleKnock([{x: -1, y: 100}],  2)
         expect().assertFail();
       }catch (e) {

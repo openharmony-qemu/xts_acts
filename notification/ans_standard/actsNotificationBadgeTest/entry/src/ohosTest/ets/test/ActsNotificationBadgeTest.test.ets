@@ -104,20 +104,22 @@ export default function ActsNotificationBadgeTest() {
      * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Corner_SetNum_0900', Level.LEVEL0, async (done: Function) => {
+      let count :number = 0
       try {
         notificationManager.setBadgeNumber(10, (err) => {
           if (err) {
             console.log(`Sub_Notification_Ans_Corner_SetNum_0900 failed, error code: ${err.code}, message: ${err.message}`)
             if(err.code == 801){
-              expect(true).assertTrue()
+              expect(err.code).assertEqual(801)
               done()
             }else{
               expect(false).assertTrue()
               done()
             }
           } else {
+            count++
             console.log("Sub_Notification_Ans_Corner_SetNum_0900 success")
-            expect(true).assertTrue()
+            expect(count).assertEqual(1)
             done();
           }
         })
@@ -137,15 +139,17 @@ export default function ActsNotificationBadgeTest() {
      * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Corner_SetNum_1000', Level.LEVEL0, async (done: Function) => {
+      let count :number = 0
       try {
         await notificationManager.setBadgeNumber(10).then(() => {
+          count++
           console.log("Sub_Notification_Ans_Corner_SetNum_1000 success")
-          expect(true).assertTrue()
+          expect(count).assertEqual(1)
           done();
         }).catch((err: BusinessError) => {
           console.log(`Sub_Notification_Ans_Corner_SetNum_1000 failed, error code: ${err.code}, message: ${err.message}`)
             if(err.code == 801){
-              expect(true).assertTrue()
+              expect(err.code).assertEqual(801)
               done()
             }else{
               expect(false).assertTrue()

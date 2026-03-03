@@ -28,7 +28,7 @@ interface optionsObj {
 
 export default function getUIObserver() {
   describe('getUIObserver', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getUIObserver beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

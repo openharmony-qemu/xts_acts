@@ -3,6 +3,7 @@
         "MainAbility/pages/index/index",
         "MainAbility/pages/AxisEvent/AxisEvent",
         "MainAbility/pages/AxisEvent/getPinchAxisScaleValue",
-        "MainAbility/pages/HasAxisTest/HasAxisTest"
+        "MainAbility/pages/HasAxisTest/HasAxisTest",
+        "MainAbility/pages/AxisEvent/hasAxisNullAndUndefined"
     ]
 }

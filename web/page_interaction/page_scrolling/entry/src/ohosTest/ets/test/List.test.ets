@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
+ * Licensed under Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -21,6 +21,9 @@ import webNestedScrollOptionsScrollForwardTest from './WebNestedScrollOptionsScr
 import NestedScrollMode from './NestedScrollMode.test'
 import scrollEvent from './scrollEvent.test'
 import scrollByTo from './scrollByTo.test'
+import ScrollToError from './ScrollToError.test'
+import ScrollByError from './ScrollByError.test'
+import scrollByWithResultError from './ScrollByWithResultError.test'
 export default function testsuite() {
   webResourceResponseGet()
   webViewOnScroll()
@@ -30,4 +33,7 @@ export default function testsuite() {
   NestedScrollMode()
   scrollEvent()
   scrollByTo()
+  ScrollToError()
+  ScrollByError()
+  scrollByWithResultError()
 }

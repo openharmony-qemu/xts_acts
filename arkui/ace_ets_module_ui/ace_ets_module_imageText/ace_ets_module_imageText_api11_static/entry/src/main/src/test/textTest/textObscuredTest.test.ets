@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textObscuredTest() {
   describe('textObscuredTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textObscuredTest beforeEach start");
 
 
