@@ -124,9 +124,19 @@ void OnUserSelected(OH_AVScreenCapture* capture, OH_AVScreenCapture_UserSelectio
     uint64_t* displayId = new uint64_t;
     uint64_t** displayIds = new uint64_t*;
     size_t* count = new size_t;
-    OH_AVScreenCapture_GetCaptureTypeSelected(selections, selectType);
-    OH_AVScreenCapture_GetDisplayIdSelected(selections, displayId);
-    OH_AVScreenCapture_GetMultiDisplayIdsSelected(selections, displayIds, count);
+    OH_AVSCREEN_CAPTURE_ErrCode result0 = AV_SCREEN_CAPTURE_ERR_OK;
+    result0 = OH_AVScreenCapture_GetCaptureTypeSelected(selections, selectType);
+    if (result0 != AV_SCREEN_CAPTURE_ERR_OK) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect GetTypeSelected is not nullptr");
+    }
+    result0 = OH_AVScreenCapture_GetDisplayIdSelected(selections, displayId);
+    if (result0 != AV_SCREEN_CAPTURE_ERR_OK) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect GetDisplayIdSelected is not nullptr");
+    }
+    result0 = OH_AVScreenCapture_GetMultiDisplayIdsSelected(selections, displayIds, count);
+    if (result0 != AV_SCREEN_CAPTURE_ERR_OK) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect GetDisplayIdsSelected is not nullptr");
+    }
     g_userSelectedType = *selectType;
     g_userSelectedDisplayId = *displayId;
     g_userSelectedDisplayIds = *displayIds;
@@ -1007,6 +1017,10 @@ static napi_value OriginAVScreenCaptureCallBackTest(napi_env env, napi_callback_
     if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         napi_throw_error((env), nullptr, "error : expect SetDataCallback is 2 ");
     }
+    screenCaptureResult = OH_AVScreenCapture_SetDisplayCallback(screenCaptureNormal, OnDisplaySelected, nullptr);
+    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        napi_throw_error((env), nullptr, "error : expect DisplaySelected is 2 ");
+    }
     screenCaptureResult = OH_AVScreenCapture_StopScreenCapture(screenCapture);
     DelCallback(screenCapture);
     screenCaptureResult = OH_AVScreenCapture_Release(screenCapture);
@@ -1490,7 +1504,7 @@ static napi_value normalAVScreenCaptureSelectionCallbackSuccess(napi_env env, na
     }
     OH_AVScreenCaptureConfig config_;
     SetConfig(config_);
-
+    screenCaptureEnv = env;
     bool isMicrophone = false;
     OH_AVScreenCapture_SetMicrophoneEnabled(screenCaptureNormal, isMicrophone);
     OH_AVScreenCapture_SetErrorCallback(screenCaptureNormal, OnError, nullptr);
@@ -1685,7 +1699,7 @@ static napi_value normalStrategyTest(napi_env env, napi_callback_info info)
     }
     OH_AVScreenCaptureConfig config_;
     SetConfig(config_);
-
+    screenCaptureEnv = env;
     OH_AVScreenCapture_CaptureStrategy* strategyNull = nullptr;
     OH_AVSCREEN_CAPTURE_ErrCode result0 = AV_SCREEN_CAPTURE_ERR_OK;
     result0 = OH_AVScreenCapture_SetCaptureStrategy(screenCaptureStrategyForPrivacyMaskMode, strategyNull);
