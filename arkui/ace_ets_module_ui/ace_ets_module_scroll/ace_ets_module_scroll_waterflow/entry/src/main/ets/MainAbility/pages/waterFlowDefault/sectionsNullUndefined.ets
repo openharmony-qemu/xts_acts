@@ -300,7 +300,7 @@ struct WaterFlowSectionsNullUndefined {
       }.height('5%')
 
       WaterFlow({ scroller: this.scroller, sections: this.sections }) {
-        ForEach(this.numbers, (item: number) => {
+        ForEach(this.dataSource, (item: number) => {
           FlowItem() {
             Text('item' + item)
               .width('100%')
