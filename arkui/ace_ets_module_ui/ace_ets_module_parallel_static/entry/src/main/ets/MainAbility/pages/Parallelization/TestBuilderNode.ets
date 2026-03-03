@@ -1,69 +1,82 @@
 'use static'
-import {
-  Text,
-  Column,
-  Component,
-  UIContext,
-  Builder,
-  Entry,
-  Row,
-  wrapBuilder,
-  NodeContainer,
-  FontWeight
-} from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
-import { NodeController, BuilderNode, FrameNode } from '@ohos.arkui.node';
+import { UIContext, Column, Text, Button, Entry, Component, ClickEvent, Margin, NodeContainer, wrapBuilder} from '@ohos.arkui.component'
+import {BuilderNode, FrameNode, NodeController, NodeRenderType, RenderOptions, Size } from '@ohos.arkui.node'
 
 class Params {
-  text: string = "";
-
+  text1: string;
   constructor(text: string) {
-    this.text = text;
+    this.text1 = text;
   }
 }
 
+// builder组件
 @Builder
-function buildText(params: Params) {
+function BuildTextWithParams(params: Params) {
   Column() {
-    Text(params.text)
-      .id('text')
-      .fontSize(50)
-      .fontWeight(FontWeight.Bold)
+    Text(params.text1).id('text').fontSize(20)
+    Text("this is a CustomNode with ProxyNode").fontSize(20)
   }
 }
 
-class TextNodeController extends NodeController {
-  private textNode: BuilderNode<Params> | null = null;
-  private message: string = "DEFAULT";
+class MyNodeController extends NodeController {
+  private builderNode ?: BuilderNode<Params>;
+  private uiContext?: UIContext;
+  private params: string = "update with Params";
 
-  constructor(message: string) {
-    super();
-    this.message = message;
+  // 创建节点时调用
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.uiContext = uiContext;
+    this.addBuilderNode();
+    return this.builderNode? this.builderNode!.getFrameNode()!:null;
   }
 
-  makeNode(context: UIContext): FrameNode | null {
-    this.textNode = new BuilderNode<Params>(context);
-    this.textNode!.build(wrapBuilder(buildText), new Params(this.message));
-    return this.textNode!.getFrameNode();
+  // 更新节点内容
+  updateNode() {
+    this.params += "~"
+    this.builderNode?.update(new Params(this.params));
+  }
+
+  addBuilderNode(){
+    if ( this.builderNode === undefined ) {
+      let renderOptions: RenderOptions =
+        { selfIdealSize: { width: 100, height: 100 } as Size, type: NodeRenderType.RENDER_TYPE_DISPLAY }
+      // 创建BuilderNode
+      let builderNode: BuilderNode<Params> = new BuilderNode<Params>(this.uiContext!, renderOptions);
+      // useParallel设置为true，并行执行wrapBuilder，创建UI
+      builderNode.build(wrapBuilder(BuildTextWithParams), new Params("Build with Params"), {useParallel: true});
+      this.builderNode = builderNode;
+    }
   }
 }
 
 @Entry
 @Component
-struct Index {
-  @State message: string = "hello";
+struct MyStateSample {
+  private nodeController: MyNodeController = new MyNodeController();
 
   build() {
-    Row() {
+    Column() {
       Column() {
-        NodeContainer(new TextNodeController(this.message))
-          .width('100%')
-          .height(100)
-          .backgroundColor('#FFF0F0F0')
+        Text('NodeContainer')
+        NodeContainer(this.nodeController)
+          .borderWidth(1)
+          .height("80%")
+          .width("100%")
       }
-      .width('100%')
-      .height('100%')
+      .height("40%")
+      Button('addBuilderNode')
+        .onClick((e: ClickEvent) => {
+          this.nodeController.addBuilderNode();
+        })
+        .width(200)
+        .height(50)
+        .margin({ bottom: 10 } as Margin)
+      Button("Update")
+        .onClick((e: ClickEvent) => {
+          this.nodeController?.updateNode();
+        })
+        .width(200)
+        .height(50)
     }
-    .height('100%')
   }
 }
