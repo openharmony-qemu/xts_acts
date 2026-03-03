@@ -32,7 +32,6 @@ async function getFd(fileName: string) {
   const fileInfo = await fs.open(filePath);
   fdNumber = fileInfo.fd
 }
-
 async function getImageSource(path: string): Promise<image.ImageSource> {
   await getFd(path);
   const imageSourceApi = image.createImageSource(fdNumber);
@@ -81,7 +80,7 @@ export default function ImageCreatePixelMapFromSurfaceTest() {
     /**
      * @tc.name   IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_001
      * @tc.number IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_001
-     * @tc.desc   createPixelMapFromSurfaceWithTransformation INVALID_PARAMETER
+     * @tc.desc   createPixelMapFromSurfaceWithTransformation null INVALID_PARAMETER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -103,7 +102,7 @@ export default function ImageCreatePixelMapFromSurfaceTest() {
     /**
      * @tc.name   IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_002
      * @tc.number IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_002
-     * @tc.desc   createPixelMapFromSurfaceWithTransformation INVALID_PARAMETER
+     * @tc.desc   createPixelMapFromSurfaceWithTransformation undefined INVALID_PARAMETER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -126,7 +125,7 @@ export default function ImageCreatePixelMapFromSurfaceTest() {
     /**
      * @tc.name   IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_003
      * @tc.number IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_003
-     * @tc.desc   createPixelMapFromSurfaceWithTransformation INVALID_PARAMETER
+     * @tc.desc   createPixelMapFromSurfaceWithTransformation "" INVALID_PARAMETER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -134,7 +133,6 @@ export default function ImageCreatePixelMapFromSurfaceTest() {
     it('IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_003';
       try {
-
         console.info(TAG,testName,"start :");
         pixelMap = await image.createPixelMapFromSurfaceWithTransformation("", true);
         console.info(TAG, testName, "res :", pixelMap);
@@ -149,7 +147,7 @@ export default function ImageCreatePixelMapFromSurfaceTest() {
     /**
      * @tc.name   IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_SYNC_001
      * @tc.number IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_SYNC_001
-     * @tc.desc   createPixelMapFromSurfaceWithTransformation INVALID_PARAMETER
+     * @tc.desc   createPixelMapFromSurfaceWithTransformationSync null INVALID_PARAMETER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -171,7 +169,7 @@ export default function ImageCreatePixelMapFromSurfaceTest() {
     /**
      * @tc.name   IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_SYNC_002
      * @tc.number IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_SYNC_002
-     * @tc.desc   createPixelMapFromSurfaceWithTransformation INVALID_PARAMETER
+     * @tc.desc   createPixelMapFromSurfaceWithTransformationSync undefined INVALID_PARAMETER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -194,7 +192,7 @@ export default function ImageCreatePixelMapFromSurfaceTest() {
     /**
      * @tc.name   IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_SYNC_003
      * @tc.number IMAGE_CREATE_PIXELMAP_FROM_SURFACE_WITH_TRANSFORMATION_SYNC_003
-     * @tc.desc   createPixelMapFromSurfaceWithTransformation INVALID_PARAMETER
+     * @tc.desc   createPixelMapFromSurfaceWithTransformationSync "" INVALID_PARAMETER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
