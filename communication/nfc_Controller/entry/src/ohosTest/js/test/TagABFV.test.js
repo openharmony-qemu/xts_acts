@@ -1146,7 +1146,7 @@ export default function nfcTagABFVTest() {
             } catch (error) {
                 if (error.code === 401) {
                     console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
-                    expect(401).assertEqual(error.code)
+                    expect(401).assertEqual(error.code);
                 } else {
                     console.info('nfc registerForegroundDispatch failed');
                     expect().assertFail();
