@@ -39,8 +39,24 @@ async function getImageSource(path: string): Promise<image.ImageSource> {
   return imageSourceApi;
 }
 
+async function createPictureSUPP(context : Context): Promise<image.Picture> {
+  let array = new ArrayBuffer(300000000);
+  let pathUri = 'AllAuxiliaryPictures_exclude_fragment.jpg'
+  let path = `file://${context.filesDir}/${pathUri}`;
+  const fd = await fs.open(path, fs.OpenMode.READ_ONLY);
+  let readLength = await fs.read(fd.fd, array);
+    let ops: image.SourceOptions = {
+      sourceDensity: 98,
+    }
+    let imageSource: image.ImageSource = image.createImageSource(array, ops);
+    let pixelMap: image.PixelMap = await imageSource.createPixelMap();
+    let pictureObj: image.Picture = image.createPicture(pixelMap);
+  return pictureObj;
+}
+
 export default function SendableImagePixelMapTest() {
   describe('SendableImagePixelMapTest', () => {
+    let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
     });
@@ -1349,6 +1365,432 @@ export default function SendableImagePixelMapTest() {
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_001
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_001
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover UNKNOWN
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_001', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_001";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.UNKNOWN
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_002
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_002
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover ARGB_8888
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_002', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_002";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.ARGB_8888
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_003
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_003
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover RGB_565
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_003', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_003";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.RGB_565
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_004
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_004
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover RGBA_8888
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_004', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_004";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_005
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_005
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover BGRA_8888
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_005', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_005";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.BGRA_8888
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_006
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_006
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover RGB_888
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_006', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_006";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.RGB_888
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_007
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_007
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover ALPHA_8
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_007', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_007";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.ALPHA_8
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_008
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_008
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover RGBA_F16
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_008', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_008";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.RGBA_F16
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_009
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_009
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover NV21
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_009', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_009";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.NV21
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_010
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_010
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover NV12
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_010', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_010";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.NV12
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_011
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_011
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover RGBA_1010102
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_011', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_011";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.RGBA_1010102
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_012
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_012
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover YCBCR_P010
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_012', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_012";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.YCBCR_P010
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_013
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_013
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover YCRCB_P010
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_013', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_013";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.YCRCB_P010
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_014
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_014
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover ASTC_4x4
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_014', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_014";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let opt: image.HdrComposeOptions = {
+          desiredPixelFormat: image.PixelMapFormat.ASTC_4x4
+        };
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_015
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_015
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_015', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_015";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(null);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_016
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_016
+     * @tc.desc      getHdrComposedPixelmapWithOptions options cover undefined
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_016', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_016";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(undefined);
+        expect().assertFail();
+        await picture?.release();
+        await res?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7600201);
         done();
       }
     });
