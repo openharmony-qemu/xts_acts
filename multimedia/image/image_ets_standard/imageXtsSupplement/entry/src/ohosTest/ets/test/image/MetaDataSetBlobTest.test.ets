@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +21,7 @@ import fs from '@ohos.file.fs';
 
 const TAG = 'MetaDataSetBlobTest.xts'
 let fdNumber: number;
+
 async function getFd(fileName: string) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let filePath = `file://${testContext.filesDir}/${fileName}`;
@@ -78,7 +79,7 @@ export default function MetaDataSetBlobTest() {
       try {
         let metaData = await getPropertiesAbnormalPromiseTest(testName, path);
         await metaData.setBlob(null);
-        expect(isEmpty(metaData)).assertFalse();
+        expect().assertFail();
         done();
       } catch (error) {
         console.error(TAG, testName, ' setBlob error', error.message, error.code);
@@ -101,7 +102,7 @@ export default function MetaDataSetBlobTest() {
       try {
         let metaData = await getPropertiesAbnormalPromiseTest(testName, path);
         await metaData.setBlob(undefined);
-        expect(isEmpty(metaData)).assertFalse();
+        expect().assertFail();
         done();
       } catch (error) {
         console.error(TAG, testName, ' setBlob error', error.message, error.code);
@@ -213,26 +214,6 @@ export default function MetaDataSetBlobTest() {
         expect(isEmpty(result.isCloudEnhanced)).assertTrue();
         expect(isEmpty(result.cloudLabel)).assertTrue();
         expect(isEmpty(result.isWindSnapshot)).assertTrue();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' createInstance error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_MAKER_NOTE_HUA_WEI_META_DATA_TEST_002
-     * @tc.name       SUB_IMAGE_MAKER_NOTE_HUA_WEI_META_DATA_TEST_002
-     * @tc.desc       image -MakerNoteHuaweiMetadata -createInstance
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_MAKER_NOTE_HUA_WEI_META_DATA_TEST_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_MAKER_NOTE_HUA_WEI_META_DATA_TEST_002';
-      try {
-        let result = image.MakerNoteHuaweiMetadata.createInstance();
         expect(isEmpty(result.sceneVersion)).assertTrue();
         expect(isEmpty(result.sceneFoodConfidence)).assertTrue();
         expect(isEmpty(result.sceneStageConfidence)).assertTrue();
@@ -243,26 +224,6 @@ export default function MetaDataSetBlobTest() {
         expect(isEmpty(result.sceneSunsetConfidence)).assertTrue();
         expect(isEmpty(result.sceneSunsetConfidence)).assertTrue();
         expect(isEmpty(result.sceneFlowersConfidence)).assertTrue();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' createInstance error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_MAKER_NOTE_HUA_WEI_META_DATA_TEST_003
-     * @tc.name       SUB_IMAGE_MAKER_NOTE_HUA_WEI_META_DATA_TEST_003
-     * @tc.desc       image -MakerNoteHuaweiMetadata -createInstance
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_MAKER_NOTE_HUA_WEI_META_DATA_TEST_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_MAKER_NOTE_HUA_WEI_META_DATA_TEST_003';
-      try {
-        let result = image.MakerNoteHuaweiMetadata.createInstance();
         expect(isEmpty(result.sceneNightConfidence)).assertTrue();
         expect(isEmpty(result.sceneTextConfidence)).assertTrue();
         expect(isEmpty(result.faceCount)).assertTrue();
@@ -299,22 +260,26 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      let imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           await metaData.exifMetadata.getProperties(null).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
+            expect().assertFail();
+            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName,
               `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
+            expect().assertFail();
+            done();
           });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata getProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
@@ -345,15 +310,19 @@ export default function MetaDataSetBlobTest() {
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           await metaData.exifMetadata.getProperties(undefined).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
+            expect().assertFail();
+            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName,
               `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
+            expect().assertFail();
+            done();
           });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata getProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
@@ -384,15 +353,19 @@ export default function MetaDataSetBlobTest() {
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           await metaData.exifMetadata.setProperties(null).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
+            expect().assertFail();
+            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName,
               `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
+            expect().assertFail();
+            done();
           });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata setProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
@@ -423,15 +396,19 @@ export default function MetaDataSetBlobTest() {
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           await metaData.exifMetadata.setProperties(undefined).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
+            expect().assertFail();
+            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName,
               `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
+            expect().assertFail();
+            done();
           });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata setProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
@@ -461,11 +438,13 @@ export default function MetaDataSetBlobTest() {
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           await metaData.exifMetadata.setProperties({ "abc": "abc" });
+          expect().assertFail();
+          done();
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata setProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(7600202);
@@ -507,41 +486,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.imageDescription).assertEqual(metaData.exifMetadata.imageDescription);
           expect(New_metaData.make).assertEqual(metaData.exifMetadata.make);
           expect(New_metaData.model).assertEqual(metaData.exifMetadata.model);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_002
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_002
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_002';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
           expect(isEmpty(New_metaData)).assertFalse();
           expect(New_metaData.stripOffsets).assertEqual(metaData.exifMetadata.stripOffsets);
           expect(New_metaData.orientation).assertEqual(metaData.exifMetadata.orientation);
@@ -553,41 +497,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.planarConfiguration).assertEqual(metaData.exifMetadata.planarConfiguration);
           expect(New_metaData.resolutionUnit).assertEqual(metaData.exifMetadata.resolutionUnit);
           expect(New_metaData.transferFunction).assertEqual(metaData.exifMetadata.transferFunction);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_003
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_003
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_003';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
           expect(isEmpty(New_metaData)).assertFalse();
           expect(New_metaData.software).assertEqual(metaData.exifMetadata.software);
           expect(New_metaData.dateTime).assertEqual(metaData.exifMetadata.dateTime);
@@ -599,42 +508,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.yCbCrSubSampling).assertEqual(metaData.exifMetadata.yCbCrSubSampling);
           expect(New_metaData.yCbCrPositioning).assertEqual(metaData.exifMetadata.yCbCrPositioning);
           expect(New_metaData.referenceBlackWhite).assertEqual(metaData.exifMetadata.referenceBlackWhite);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_004
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_004
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_004';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
-          expect(isEmpty(New_metaData)).assertFalse();
           expect(New_metaData.copyright).assertEqual(metaData.exifMetadata.copyright);
           expect(New_metaData.exposureTime).assertEqual(metaData.exifMetadata.exposureTime);
           expect(New_metaData.fNumber).assertEqual(metaData.exifMetadata.fNumber);
@@ -645,42 +518,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.gpsLatitude).assertEqual(metaData.exifMetadata.gpsLatitude);
           expect(New_metaData.gpsLongitudeRef).assertEqual(metaData.exifMetadata.gpsLongitudeRef);
           expect(New_metaData.gpsLongitude).assertEqual(metaData.exifMetadata.gpsLongitude);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_005
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_005
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_005', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_005';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
-          expect(isEmpty(New_metaData)).assertFalse();
           expect(New_metaData.gpsAltitudeRef).assertEqual(metaData.exifMetadata.gpsAltitudeRef);
           expect(New_metaData.gpsAltitude).assertEqual(metaData.exifMetadata.gpsAltitude);
           expect(New_metaData.gpsTimestamp).assertEqual(metaData.exifMetadata.gpsTimestamp);
@@ -691,42 +528,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.gpsSpeedRef).assertEqual(metaData.exifMetadata.gpsSpeedRef);
           expect(New_metaData.gpsSpeed).assertEqual(metaData.exifMetadata.gpsSpeed);
           expect(New_metaData.gpsTrackRef).assertEqual(metaData.exifMetadata.gpsTrackRef);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_006
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_006
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_006', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_006';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
-          expect(isEmpty(New_metaData)).assertFalse();
           expect(New_metaData.gpsTrack).assertEqual(metaData.exifMetadata.gpsTrack);
           expect(New_metaData.gpsImgDirectionRef).assertEqual(metaData.exifMetadata.gpsImgDirectionRef);
           expect(New_metaData.gpsImgDirection).assertEqual(metaData.exifMetadata.gpsImgDirection);
@@ -737,42 +538,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.gpsDestLongitude).assertEqual(metaData.exifMetadata.gpsDestLongitude);
           expect(New_metaData.gpsDestBearingRef).assertEqual(metaData.exifMetadata.gpsDestBearingRef);
           expect(New_metaData.gpsDestBearing).assertEqual(metaData.exifMetadata.gpsDestBearing);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_007
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_007
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_007', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_007';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
-          expect(isEmpty(New_metaData)).assertFalse();
           expect(New_metaData.gpsDestDistanceRef).assertEqual(metaData.exifMetadata.gpsDestDistanceRef);
           expect(New_metaData.gpsDestDistance).assertEqual(metaData.exifMetadata.gpsDestDistance);
           expect(New_metaData.gpsProcessingMethod).assertEqual(metaData.exifMetadata.gpsProcessingMethod);
@@ -783,42 +548,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.isoSpeedRatings).assertEqual(metaData.exifMetadata.isoSpeedRatings);
           expect(New_metaData.photographicSensitivity).assertEqual(metaData.exifMetadata.photographicSensitivity);
           expect(New_metaData.oecf).assertEqual(metaData.exifMetadata.oecf);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_008
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_008
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_008', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_008';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
-          expect(isEmpty(New_metaData)).assertFalse();
           expect(New_metaData.sensitivityType).assertEqual(metaData.exifMetadata.sensitivityType);
           expect(New_metaData.standardOutputSensitivity).assertEqual(metaData.exifMetadata.standardOutputSensitivity);
           expect(New_metaData.recommendedExposureIndex).assertEqual(metaData.exifMetadata.recommendedExposureIndex);
@@ -829,42 +558,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.dateTimeDigitized).assertEqual(metaData.exifMetadata.dateTimeDigitized);
           expect(New_metaData.offsetTime).assertEqual(metaData.exifMetadata.offsetTime);
           expect(New_metaData.offsetTimeOriginal).assertEqual(metaData.exifMetadata.offsetTimeOriginal);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_009
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_009
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_009', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_009';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
-          expect(isEmpty(New_metaData)).assertFalse();
           expect(New_metaData.offsetTimeDigitized).assertEqual(metaData.exifMetadata.offsetTimeDigitized);
           expect(New_metaData.componentsConfiguration).assertEqual(metaData.exifMetadata.componentsConfiguration);
           expect(New_metaData.compressedBitsPerPixel).assertEqual(metaData.exifMetadata.compressedBitsPerPixel);
@@ -875,41 +568,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.maxApertureValue).assertEqual(metaData.exifMetadata.maxApertureValue);
           expect(New_metaData.subjectDistance).assertEqual(metaData.exifMetadata.subjectDistance);
           expect(New_metaData.meteringMode).assertEqual(metaData.exifMetadata.meteringMode);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0010
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0010
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0010', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0010';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
           expect(New_metaData.lightSource).assertEqual(metaData.exifMetadata.lightSource);
           expect(New_metaData.flash).assertEqual(metaData.exifMetadata.flash);
           expect(New_metaData.focalLength).assertEqual(metaData.exifMetadata.focalLength);
@@ -920,41 +578,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.subsecTimeOriginal).assertEqual(metaData.exifMetadata.subsecTimeOriginal);
           expect(New_metaData.subsecTimeDigitized).assertEqual(metaData.exifMetadata.subsecTimeDigitized);
           expect(New_metaData.flashpixVersion).assertEqual(metaData.exifMetadata.flashpixVersion);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0011
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0011
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0011', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0011';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
           expect(New_metaData.colorSpace).assertEqual(metaData.exifMetadata.colorSpace);
           expect(New_metaData.pixelXDimension).assertEqual(metaData.exifMetadata.pixelXDimension);
           expect(New_metaData.pixelYDimension).assertEqual(metaData.exifMetadata.pixelYDimension);
@@ -965,41 +588,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.focalPlaneYResolution).assertEqual(metaData.exifMetadata.focalPlaneYResolution);
           expect(New_metaData.focalPlaneResolutionUnit).assertEqual(metaData.exifMetadata.focalPlaneResolutionUnit);
           expect(New_metaData.subjectLocation).assertEqual(metaData.exifMetadata.subjectLocation);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0012
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0012
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0012', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0012';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
           expect(New_metaData.exposureIndex).assertEqual(metaData.exifMetadata.exposureIndex);
           expect(New_metaData.sensingMethod).assertEqual(metaData.exifMetadata.sensingMethod);
           expect(New_metaData.fileSource).assertEqual(metaData.exifMetadata.fileSource);
@@ -1010,41 +598,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.whiteBalance).assertEqual(metaData.exifMetadata.whiteBalance);
           expect(New_metaData.digitalZoomRatio).assertEqual(metaData.exifMetadata.digitalZoomRatio);
           expect(New_metaData.focalLengthIn35mmFilm).assertEqual(metaData.exifMetadata.focalLengthIn35mmFilm);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0013
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0013
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0013', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0013';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
           expect(New_metaData.sceneCaptureType).assertEqual(metaData.exifMetadata.sceneCaptureType);
           expect(New_metaData.gainControl).assertEqual(metaData.exifMetadata.gainControl);
           expect(New_metaData.contrast).assertEqual(metaData.exifMetadata.contrast);
@@ -1055,41 +608,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.imageUniqueId).assertEqual(metaData.exifMetadata.imageUniqueId);
           expect(New_metaData.cameraOwnerName).assertEqual(metaData.exifMetadata.cameraOwnerName);
           expect(New_metaData.bodySerialNumber).assertEqual(metaData.exifMetadata.bodySerialNumber);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0014
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0014
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0014', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_CLONE_TEST_0014';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let New_metaData: image.ExifMetadata = await metaData.exifMetadata.clone();
-          console.info(TAG, testName, 'exifMetadata clone Success.');
           expect(New_metaData.lensSpecification).assertEqual(metaData.exifMetadata.lensSpecification);
           expect(New_metaData.lensMake).assertEqual(metaData.exifMetadata.lensMake);
           expect(New_metaData.lensModel).assertEqual(metaData.exifMetadata.lensModel);
@@ -1207,15 +725,19 @@ export default function MetaDataSetBlobTest() {
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           await metaData.makerNoteHuaweiMetadata.setProperties(null).then(async () => {
             console.info(TAG, testName, 'Set properties success.');
+            expect().assertFail();
+            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName,
               `Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
+            expect().assertFail();
+            done();
           })
         } else {
           console.error(TAG, testName, 'metadata is null. ');
+          expect().assertFail();
+          done();
         }
-        expect().assertFail();
-        done();
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
@@ -1245,11 +767,13 @@ export default function MetaDataSetBlobTest() {
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           await metaData.makerNoteHuaweiMetadata.setProperties(undefined);
+          expect().assertFail();
+          done();
         } else {
           console.error(TAG, testName, 'metadata is null. ');
+          expect().assertFail();
+          done();
         }
-        expect().assertFail();
-        done();
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
@@ -1279,11 +803,13 @@ export default function MetaDataSetBlobTest() {
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           await metaData.makerNoteHuaweiMetadata.setBlob(undefined);
+          expect().assertFail();
+          done();
         } else {
           console.error(TAG, testName, 'metadata is null. ');
+          expect().assertFail();
+          done();
         }
-        expect().assertFail();
-        done();
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setBlob error', error.message, error.code);
         expect(Number(error.code)).assertEqual(7600206);
@@ -1313,11 +839,13 @@ export default function MetaDataSetBlobTest() {
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           await metaData.makerNoteHuaweiMetadata.setBlob(null);
+          expect().assertFail();
+          done();
         } else {
           console.error(TAG, testName, 'metadata is null. ');
+          expect().assertFail();
+          done();
         }
-        expect().assertFail();
-        done();
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setBlob error', error.message, error.code);
         expect(Number(error.code)).assertEqual(7600206);
@@ -1359,41 +887,6 @@ export default function MetaDataSetBlobTest() {
           expect(New_metaData.isCloudEnhanced).assertEqual(metaData.makerNoteHuaweiMetadata.isCloudEnhanced);
           expect(New_metaData.cloudLabel).assertEqual(metaData.makerNoteHuaweiMetadata.cloudLabel);
           expect(New_metaData.isWindSnapshot).assertEqual(metaData.makerNoteHuaweiMetadata.isWindSnapshot);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' makerNoteHuaweiMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_CLONE_TEST_002
-     * @tc.name       SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_CLONE_TEST_002
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_CLONE_TEST_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_CLONE_TEST_002';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-          let New_metaData: image.MakerNoteHuaweiMetadata = await metaData.makerNoteHuaweiMetadata.clone();
-          console.info(TAG, testName, 'makerNoteHuaweiMetadata clone Success.');
           expect(isEmpty(New_metaData)).assertFalse();
           expect(New_metaData.sceneVersion).assertEqual(metaData.makerNoteHuaweiMetadata.sceneVersion);
           expect(New_metaData.sceneFoodConfidence).assertEqual(metaData.makerNoteHuaweiMetadata.sceneFoodConfidence);
@@ -1410,42 +903,6 @@ export default function MetaDataSetBlobTest() {
             .assertEqual(metaData.makerNoteHuaweiMetadata.sceneFlowersConfidence);
           expect(New_metaData.sceneNightConfidence).assertEqual(metaData.makerNoteHuaweiMetadata.sceneNightConfidence);
           expect(New_metaData.sceneTextConfidence).assertEqual(metaData.makerNoteHuaweiMetadata.sceneTextConfidence);
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
-          expect().assertFail();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' makerNoteHuaweiMetadata clone error', error.message, error.code);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_CLONE_TEST_003
-     * @tc.name       SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_CLONE_TEST_003
-     * @tc.desc       Metadata -exifMetadata -clone
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_CLONE_TEST_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_CLONE_TEST_003';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let imageSourceApi = await getImageSource(path);
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-          let New_metaData: image.MakerNoteHuaweiMetadata = await metaData.makerNoteHuaweiMetadata.clone();
-          console.info(TAG, testName, 'makerNoteHuaweiMetadata clone Success.');
-          expect(isEmpty(New_metaData)).assertFalse();
           expect(New_metaData.faceCount).assertEqual(metaData.makerNoteHuaweiMetadata.faceCount);
           expect(New_metaData.faceConfidences).assertEqual(metaData.makerNoteHuaweiMetadata.faceConfidences);
           expect(New_metaData.faceSmileScores).assertEqual(metaData.makerNoteHuaweiMetadata.faceSmileScores);
@@ -1466,6 +923,6 @@ export default function MetaDataSetBlobTest() {
         expect().assertFail();
         done();
       }
-    })
+    });
   })
 }
