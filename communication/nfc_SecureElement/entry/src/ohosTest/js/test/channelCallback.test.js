@@ -1148,7 +1148,7 @@ export default function channelCallbacktest() {
                     });
                     sleep(5000);
                 }
-            } catch (error) {
+            } catch (err) {
                 if (err.code === 401) {
                     console.info("[NFC_test] 15 openBasicChannel occurs exception err: " + err);
                     expect(401).assertEqual(err.code);
@@ -1198,7 +1198,7 @@ export default function channelCallbacktest() {
                     });
                     sleep(5000);
                 }
-            } catch (error) {
+            } catch (err) {
                 if (err.code === 401) {
                     console.info("[NFC_test] 15 openBasicChannel occurs exception err: " + err);
                     expect(401).assertEqual(err.code);
@@ -1252,7 +1252,7 @@ export default function channelCallbacktest() {
                             expect().assertFail();
                         }
                     });
-                    sleep(5000);
+                    done();
                 }
             } catch (error) {
                 console.info("[NFC_test]15 openBasicChannel occurs exception:" + error.code + "---" + error);
