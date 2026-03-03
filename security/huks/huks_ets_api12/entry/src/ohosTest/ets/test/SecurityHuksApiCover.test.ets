@@ -82,7 +82,7 @@ export default function SecurityHuksApiCover() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000018); // HUKS_ERR_CODE_INVALID_ARGUMENT
+        expect(err.code).assertEqual(401); // HUKS_ERR_CODE_INVALID_ARGUMENT
       }
     });
 
@@ -104,7 +104,7 @@ export default function SecurityHuksApiCover() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000018); // HUKS_ERR_CODE_INVALID_ARGUMENT
+        expect(err.code).assertEqual(401); // HUKS_ERR_CODE_INVALID_ARGUMENT
       }
     });
 
@@ -126,7 +126,7 @@ export default function SecurityHuksApiCover() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000018); // HUKS_ERR_CODE_INVALID_ARGUMENT
+        expect(err.code).assertEqual(401); // HUKS_ERR_CODE_INVALID_ARGUMENT
       }
     });
 
@@ -147,7 +147,7 @@ export default function SecurityHuksApiCover() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000018); // HUKS_ERR_CODE_INVALID_ARGUMENT
+        expect(err.code).assertEqual(401); // HUKS_ERR_CODE_INVALID_ARGUMENT
       }
     });
 
@@ -168,7 +168,7 @@ export default function SecurityHuksApiCover() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000018); // HUKS_ERR_CODE_INVALID_ARGUMENT
+       expect(err.code).assertEqual(401); // HUKS_ERR_CODE_INVALID_ARGUMENT
       }
     });
 
@@ -187,7 +187,7 @@ export default function SecurityHuksApiCover() {
         await huks.generateKeyItem(testNumber, huksOptions);
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000018); // HUKS_ERR_CODE_INVALID_ARGUMENT
+        expect(err.code).assertEqual(401); // HUKS_ERR_CODE_INVALID_ARGUMENT
       }
     });
   });
