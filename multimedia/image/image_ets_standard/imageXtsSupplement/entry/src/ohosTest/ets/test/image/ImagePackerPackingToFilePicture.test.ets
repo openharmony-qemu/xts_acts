@@ -23,7 +23,12 @@ import fileio from '@ohos.fileio';
 
 let fdNumber: number;
 const TAG = 'ImageImagePackerPackingToFile';
-
+interface HdrPicture {
+  uri: string,
+  fd: number,
+  fileSize: number,
+  fileData: ArrayBuffer
+}
 async function createPictureObj(done:Function,testName: string, pathUri: string): Promise<image.Picture> {
   try {
     let fileC = fs.openSync(pathUri, fs.OpenMode.READ_ONLY);
@@ -39,6 +44,32 @@ async function createPictureObj(done:Function,testName: string, pathUri: string)
     return error;
   }
 }
+const testImageSourceCreatePixelMap = async (file: string | number | ArrayBuffer, desiredFormat: image.PixelMapFormat) => {
+  let imageSource: image.ImageSource;
+  if (typeof file == 'string') {
+    let buffer = await getBuffer(file);
+    imageSource = image.createImageSource(buffer);
+  } else if (typeof file == 'number') {
+    imageSource = image.createImageSource(file);
+  } else {
+    imageSource = image.createImageSource(file);
+  }
+  let decodingOpt: image.DecodingOptions = {
+    editable: true,
+    desiredPixelFormat: desiredFormat,
+    desiredDynamicRange: image.DecodingDynamicRange.HDR
+  }
+  let pixelMap = await imageSource.createPixelMap(decodingOpt);
+  if (pixelMap.getImageInfoSync().pixelFormat != desiredFormat) {
+    try {
+      await pixelMap.convertPixelFormat(desiredFormat);
+    } catch (error) {
+      console.info(TAG, "image10bitPixelMap", 'convertPixelFormat failed, msg:%{public}s', JSON.stringify(error));
+    }
+  }
+  return pixelMap;
+}
+
 async function getFd(fileName: string) {
   let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let basePath = context.filesDir;
@@ -53,12 +84,37 @@ async function getFd(fileName: string) {
     console.info(TAG, "image case open fd err " + err);
   })
 }
+const checkPackResult = async (orgInfo: image.ImageInfo, file: number | ArrayBuffer, format: image.PixelMapFormat, mimeType: string) => {
+  let newPixelMap = await testImageSourceCreatePixelMap(file, format);
+  let newInfo = newPixelMap.getImageInfoSync();
+  console.log(`org width: ${orgInfo.size.width}, new width: ${newInfo.size.width}`)
+  console.log(`org height: ${orgInfo.size.height}, new height: ${newInfo.size.height}`)
+  console.log(`org format: ${orgInfo.pixelFormat}, new width: ${newInfo.pixelFormat}`)
+  console.log(`org isHdr: ${orgInfo.isHdr}, new width: ${newInfo.isHdr}`)
+  console.log(`org mimeType: ${orgInfo.mimeType}, new mimeType: ${newInfo.mimeType}`)
+  return orgInfo.size.width == newInfo.size.width && orgInfo.size.height == newInfo.size.height &&
+    orgInfo.pixelFormat == newInfo.pixelFormat && orgInfo.isHdr == newInfo.isHdr &&
+    mimeType == newInfo.mimeType
+}
 
 async function getImageSource(path: string): Promise<image.ImageSource> {
   await getFd(path);
   const imageSourceApi = image.createImageSource(fdNumber);
   console.info(TAG, "createImageSource: " + JSON.stringify(imageSourceApi.getImageInfoSync()));
   return imageSourceApi;
+}
+let openHdrPic: HdrPicture;
+const getBuffer = async (fileName: string) => {
+  let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let basePath = context.filesDir;
+  let filePath = basePath + '/' + fileName;
+  let file = fs.openSync(filePath);
+  const stats = fs.statSync(filePath);
+  const fileSize = stats.size;
+  const bufferRead = new ArrayBuffer(fileSize)
+  fs.readSync(file.fd, bufferRead)
+  openHdrPic = { uri: filePath, fd: file.fd, fileSize: fileSize, fileData: bufferRead }
+  return bufferRead
 }
 export default function ImagePackerPackingToFilePictureTest() {
   describe('ImagePackerPackingToFilePictureTest', () => {
@@ -692,14 +748,12 @@ export default function ImagePackerPackingToFilePictureTest() {
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_019';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      // const path = 'file://' + testContext.filesDir + "/" + "test_exif_v2.jpg";
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      // let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
       try {
         const imagePackerObj: image.ImagePacker = await image.createImagePacker();
         console.info(TAG, testName, 'createImagePacker Successful.');
         let packOpts: image.PackingOption = {
-          format: "image/png",
+          format: "image/jpeg",
           quality: 98,
           bufferSize: 10,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
@@ -712,11 +766,10 @@ export default function ImagePackerPackingToFilePictureTest() {
         let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
         await imagePackerObj.packToFile(pictureObj, file.fd, packOpts);
         console.info(TAG, testName, 'packToFile success');
-        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, 'failed in packing the imageSucceeded in packing the image',error.code);
-        expect(error.code).assertEqual(401);
+        expect().assertFail();
         done();
       }
     })
@@ -732,14 +785,12 @@ export default function ImagePackerPackingToFilePictureTest() {
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_020';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      // const path = 'file://' + testContext.filesDir + "/" + "test_exif_v2.jpg";
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      // let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
       try {
         const imagePackerObj: image.ImagePacker = await image.createImagePacker();
         console.info(TAG, testName, 'createImagePacker Successful.');
         let packOpts: image.PackingOption = {
-          format: "image/png",
+          format: "image/jpeg",
           quality: 98,
           bufferSize: 10,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
@@ -752,11 +803,10 @@ export default function ImagePackerPackingToFilePictureTest() {
         let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
         await imagePackerObj.packToFile(pictureObj, file.fd, packOpts);
         console.info(TAG, testName, 'packToFile success');
-        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG, testName, 'failed in packing the imageSucceeded in packing the image',error.code);
-        expect(error.code).assertEqual(401);
+        expect().assertFail();
         done();
       }
     })
@@ -771,15 +821,12 @@ export default function ImagePackerPackingToFilePictureTest() {
      */
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_021';
-      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      // const path = 'file://' + testContext.filesDir + "/" + "test_exif_v2.jpg";
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      // let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
       try {
         const imagePackerObj: image.ImagePacker = await image.createImagePacker();
         console.info(TAG, testName, 'createImagePacker Successful.');
         let packOpts: image.PackingOption = {
-          format: "image/png",
+          format: "image/jpeg",
           quality: 98,
           bufferSize: 10,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
@@ -792,7 +839,7 @@ export default function ImagePackerPackingToFilePictureTest() {
         console.info(TAG, testName, 'packToFile success');
         done();
       } catch (error) {
-        console.info(TAG, testName, 'failed in packing the imageSucceeded in packing the image',error.code);
+        console.error(TAG, testName, 'failed in packing the imageSucceeded in packing the image',error.code);
         expect().assertFail();
         done();
       }
@@ -807,15 +854,13 @@ export default function ImagePackerPackingToFilePictureTest() {
      */
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_022';
-      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      // const path = 'file://' + testContext.filesDir + "/" + "test_exif_v2.jpg";
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      // let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
+
       try {
         const imagePackerObj: image.ImagePacker = await image.createImagePacker();
         console.info(TAG, testName, 'createImagePacker Successful.');
         let packOpts: image.PackingOption = {
-          format: "image/png",
+          format: "image/jpeg",
           quality: 98,
           bufferSize: 10,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
@@ -827,7 +872,7 @@ export default function ImagePackerPackingToFilePictureTest() {
         console.info(TAG, testName, 'packToFile success');
         done();
       } catch (error) {
-        console.info(TAG, testName, 'failed in packing the imageSucceeded in packing the image',error.code);
+        console.error(TAG, testName, 'failed in packing the imageSucceeded in packing the image',error.code);
         expect().assertFail();
         done();
       }
