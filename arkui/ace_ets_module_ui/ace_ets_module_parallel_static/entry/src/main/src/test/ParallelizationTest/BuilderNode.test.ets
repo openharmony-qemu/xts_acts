@@ -91,7 +91,7 @@ export default function TestBuilderNode() {
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let strJsonNew = inspector.getInspectorByKey('text');
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('hello');
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('Build with Params');
       console.info('[' + tagName + '] END ===========================');
       done();
     });
