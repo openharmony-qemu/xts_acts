@@ -1285,6 +1285,7 @@ export default function nfcNDEFTagTest() {
                     await NdefFormatable.formatReadOnly(undefined).then(() => {
                         console.info("[NFC_test]ndef17 Formatable formatReadOnly1 " + data);
                     });
+                } catch (err) {
                     if (err.code === 401) {
                         console.info("[NFC_test]ndef17 Formatable formatReadOnly1 err: " + err);
                         expect(401).assertEqual(err.code);

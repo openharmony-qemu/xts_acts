@@ -1971,7 +1971,7 @@ export default function nfcMifareClassicTag() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_mifareClassic_js_2001', Level.LEVEL0, function ()  {
+        it('SUB_Communication_NFC_mifareClassic_js_2001', Level.LEVEL0, function (done)  {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
                 try{
                     let blockIndex = MifareClassicTag.getBlockIndex(null);
@@ -2001,7 +2001,7 @@ export default function nfcMifareClassicTag() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_mifareClassic_js_2002', Level.LEVEL0, function ()  {
+        it('SUB_Communication_NFC_mifareClassic_js_2002', Level.LEVEL0, function (done)  {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
                 try{
                     let blockIndex = MifareClassicTag.getBlockIndex(undefined);
@@ -2056,7 +2056,7 @@ export default function nfcMifareClassicTag() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_mifareClassic_js_2101', Level.LEVEL0, function ()  {
+        it('SUB_Communication_NFC_mifareClassic_js_2101', Level.LEVEL0, function (done)  {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
                 try{
                     let sectorIndex = MifareClassicTag.getSectorIndex(null);
@@ -2086,7 +2086,7 @@ export default function nfcMifareClassicTag() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_mifareClassic_js_2102', Level.LEVEL0, function ()  {
+        it('SUB_Communication_NFC_mifareClassic_js_2102', Level.LEVEL0, function (done)  {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
                 try{
                     let sectorIndex = MifareClassicTag.getSectorIndex(undefined);
