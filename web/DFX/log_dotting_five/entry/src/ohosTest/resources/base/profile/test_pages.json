@@ -11,8 +11,6 @@
     "testability/pages/precompileJavaScriptTest",
     "testability/pages/WebDownloadEnumTest2",
     "testability/pages/EnableBackForwardCache",
-    "testability/pages/PrefetchResourceTest",
-    "testability/pages/PrefetchResourcePageTest",
     "testability/pages/PathAllowingUniversalAccess"
   ]
 }
