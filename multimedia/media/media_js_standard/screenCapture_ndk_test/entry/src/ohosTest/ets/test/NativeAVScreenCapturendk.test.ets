@@ -552,17 +552,18 @@ export default function nativeAVScreenCaptureNdkTest() {
       console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
       expect(result).assertEqual(0);
 
-      let isShowDialog: number = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
-      expect(isShowDialog).assertEqual(0);
+      let isShowDialog: boolean =
+        (await Utils.btnPickerTextScreenCapture() == 0) || (await Utils.btnTextScreenCapture() == 0);
+      expect(isShowDialog).assertEqual(true);
       let result1: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker3();
 
       expect(result1).assertEqual(0);
-      isShowDialog = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
+      isShowDialog = (await Utils.btnPickerTextScreenCapture() == 0) || (await Utils.btnTextScreenCapture() == 0);
       let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
       console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
         resultStop);
       expect(resultStop).assertEqual(0);
-      expect(isShowDialog).assertEqual(0);
+      expect(isShowDialog).assertEqual(true);
       done();
     });
 
@@ -580,7 +581,8 @@ export default function nativeAVScreenCaptureNdkTest() {
       console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
       expect(result).assertEqual(0);
 
-      let isShowDialog: number = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
+      let isShowDialog: boolean =
+        (await Utils.btnPickerTextScreenCapture() == 0) || (await Utils.btnTextScreenCapture() == 0);
 
       let result1: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest1();
       console.info(Tag + "OriginAVScreenCaptureCallBackTest1-------------result1:" +
@@ -596,7 +598,7 @@ export default function nativeAVScreenCaptureNdkTest() {
       console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
         resultStop);
       expect(resultStop).assertEqual(0);
-      expect(isShowDialog).assertEqual(0);
+      expect(isShowDialog).assertEqual(true);
       done();
     });
     /**
@@ -613,7 +615,8 @@ export default function nativeAVScreenCaptureNdkTest() {
       console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
       expect(result).assertEqual(0);
 
-      let isShowDialog: number = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
+      let isShowDialog: boolean =
+        (await Utils.btnPickerTextScreenCapture() == 0) || (await Utils.btnTextScreenCapture() == 0);
 
       let result3: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest3();
       console.info(Tag + "OriginAVScreenCaptureCallBackTest3-------------result3:" +
@@ -629,7 +632,7 @@ export default function nativeAVScreenCaptureNdkTest() {
       console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
         resultStop);
       expect(resultStop).assertEqual(0);
-      expect(isShowDialog).assertEqual(0);
+      expect(isShowDialog).assertEqual(true);
       done();
     });
 
@@ -647,7 +650,8 @@ export default function nativeAVScreenCaptureNdkTest() {
       console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
       expect(result).assertEqual(0);
 
-      let isShowDialog: number = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
+      let isShowDialog: boolean =
+        (await Utils.btnPickerTextScreenCapture() == 0) || (await Utils.btnTextScreenCapture() == 0);
 
       let result5: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest5();
       console.info(Tag + "OriginAVScreenCaptureCallBackTest5-------------result5:" +
@@ -663,7 +667,7 @@ export default function nativeAVScreenCaptureNdkTest() {
       console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
         resultStop);
       expect(resultStop).assertEqual(0);
-      expect(isShowDialog).assertEqual(0);
+      expect(isShowDialog).assertEqual(true);
       done();
     });
 
