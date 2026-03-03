@@ -95,13 +95,13 @@ import ButtonAttributeModifierNullUndefined from './button/ButtonAttributeModifi
 import AttributeModifierNullUndefined from './button/AttributeModifierNullUndefined.test';
 import AttributeUpdaterNullUndefined from './button/AttributeUpdaterNullUndefined.test';
 import CommonModifierNullUndefinedTest from './button/CommonModifierNullUndefined.test';
-import gridModifierNullUndefined from './grid/gridModifierNullUndefined';
-import listModifierNullUndefined from './list/listModifierNullUndefined';
-import listItemModifierNullUndefined from './list/listItemModifierNullUndefined';
-import listItemGroupModifierNullUndefined from './list/groupModifierNullUndefined';
-import refreshModifierNullUndefined from './refresh/refreshModifierNullUndefined';
-import scrollModifierNullUndefined from './scroll/scrollModifierNullUndefined';
-import waterFlowModifierNullUndefined from './waterFlow/waterFlowModifierNullUndefined';
+import gridModifierNullUndefined from './grid/gridModifierNullUndefined.test';
+import listModifierNullUndefined from './list/listModifierNullUndefined.test';
+import listItemModifierNullUndefined from './list/listItemModifierNullUndefined.test';
+import listItemGroupModifierNullUndefined from './list/groupModifierNullUndefined.test';
+import refreshModifierNullUndefined from './refresh/refreshModifierNullUndefined.test';
+import scrollModifierNullUndefined from './scroll/scrollModifierNullUndefined.test';
+import waterFlowModifierNullUndefined from './waterFlow/waterFlowModifierNullUndefined.test';
 
 export default function testsuite() {
   ButtonDrawModifierNullUndefined();
