@@ -553,8 +553,11 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result).assertEqual(0);
 
       let isShowDialog: number = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
+      expect(isShowDialog).assertEqual(0);
       let result1: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker3();
+
       expect(result1).assertEqual(0);
+      let isShowDialog: number = !(await Utils.btnPickerTextScreenCapture()) || !(await Utils.btnTextScreenCapture());
       let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
       console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
         resultStop);
@@ -1133,6 +1136,21 @@ export default function nativeAVScreenCaptureNdkTest() {
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForClosedMode();
       expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_CONTEXNT_CALLBACK_0004
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_CONTEXNT_CALLBACK_0004
+     * @tc.desc   OH_AVScreenCapture_SetPickerMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_CONTEXNT_CALLBACK_0004', Level.LEVEL0, async (done: Function) => {
+      let expectedResult: number = 0;
+      result = myScreenCaptureNdk.normalAVScreenCaptureSetContentChangedCallback();
+      expect(result).assertEqual(expectedResult);
       done();
     });
 

@@ -1418,6 +1418,25 @@ static napi_value normalAVScreenCaptureSetCaptureAreaTestStop(napi_env env, napi
     return res;
 }
 
+static napi_value normalAVScreenCaptureSetContentChangedCallback(napi_env env, napi_callback_info info)
+{
+    screenCaptureContentChange = OH_AVScreenCapture_Create();
+    if (screenCaptureContentChange == nullptr) {
+        napi_throw_error((env), nullptr, "error : expect screenCaptureContentChange is not nullptr");
+    }
+
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_SetCaptureContentChangedCallback(
+        screenCaptureContentChange, OnCaptureContentChanged, nullptr);
+
+    int32_t resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
+
 static napi_value normalAVScreenCaptureStrategyForForPicker(napi_env env, napi_callback_info info)
 {
     screenCaptureStrategyForPrivacyMaskMode = OH_AVScreenCapture_Create();
@@ -2814,6 +2833,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalMultiDisplayCaptureCapabilityTest", nullptr, normalMultiDisplayCaptureCapabilityTest, nullptr,
             nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureSetContentChangedCallback", nullptr, normalAVScreenCaptureSetContentChangedCallback,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
