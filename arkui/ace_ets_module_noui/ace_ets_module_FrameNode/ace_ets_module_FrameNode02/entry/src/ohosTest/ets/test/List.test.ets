@@ -27,6 +27,7 @@ import IsOnMainTreeMethodTest from './frameNodeTest/IsOnMainTreeMethodTest.test'
 import isInRenderStateTest from './frameNodeTest/isInRenderStateTest.test';
 import FrameNodeMethodNullUndefinedTest from './frameNodeTest/FrameNodeMethodNullUndefined.test';
 import CustomPropertyNullUndefinedTest from './frameNodeTest/CustomPropertyNullUndefined.test';
+import AddComponentContentNullUndefinedTest from './frameNodeTest/AddComponentContentNullUndefined.test';
 
 export default function testsuite() {
   APIsetOnclickTest();
@@ -44,4 +45,5 @@ export default function testsuite() {
   isInRenderStateTest()
   FrameNodeMethodNullUndefinedTest()
   CustomPropertyNullUndefinedTest()
+  AddComponentContentNullUndefinedTest()
 }
