@@ -2850,11 +2850,19 @@ export default function DisplayTest() {
                 display.makeUnique(vid).then(() => {
                     hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in make unique screen');
                 }).catch((e)=> {
-                    hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + JSON.stringify(e));
+                    hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + e.code);
+                    if (e.code === 801) {
+                        hilog.info(domain, tag, caseName + 'device not support makeUnique');
+                        done();
+                    }
                 })
             }catch (err) {
                 err = err as BusinessError;
-                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + JSON.stringify(err));
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code);
+                if (err.code === 801) {
+                        hilog.info(domain, tag, caseName + 'device not support makeUnique');
+                        done();
+                }
             }
             
             // 验证onAdd回调被触发，接收到有效的screenId（大于等于 1000）
@@ -2927,11 +2935,19 @@ export default function DisplayTest() {
         display.makeUnique(vid).then(() => {
             hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in make unique screen');
         }).catch((e)=> {
-            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + JSON.stringify(e));
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + e.code);
+            if (e.code === 801) {
+                hilog.info(domain, tag, caseName + 'device not support makeUnique');
+                done();
+            }
         })
         }catch (err) {
         err = err as BusinessError;
-        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + JSON.stringify(err));
+        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code);
+            if (err.code === 801) {
+                    hilog.info(domain, tag, caseName + 'device not support makeUnique');
+                    done();
+            }
         }
 
         // 清理：销毁创建的虚拟屏
