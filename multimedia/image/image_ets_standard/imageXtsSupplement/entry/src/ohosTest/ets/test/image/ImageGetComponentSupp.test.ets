@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,300 +13,33 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { image, sendableImage } from '@kit.ImageKit';
+import { image } from '@kit.ImageKit';
 import { BusinessError } from '@ohos.base';
-import { common } from '@kit.AbilityKit';
-import { camera } from '@kit.CameraKit';
-import {
-  closeFd,
-  COMMON_WAIT_DURATION,
-  driveFn,
-  getFd,
-  getPermission,
-  isEmpty,
-  resourceName,
-  sceneMode,
-  sleep
-} from '../common';
-import { indexSurfaceId } from '../../testability/pages/Index';
-import { media } from '@kit.MediaKit';
-import { tag } from '@kit.ConnectivityKit';
+import { fileIo as fs, ReadOptions } from '@kit.CoreFileKit';
+import common from '@ohos.app.ability.common';
 
-const TAG = 'ImageGetComponentTestSupp'
-let mCameraManager: camera.CameraManager;
-let mCameraDeviceArray: Array<camera.CameraDevice>;
-let mSupportedModes: Array<camera.SceneMode>;
-let mCameraInput: camera.CameraInput;
-let mPreviewOutput: camera.PreviewOutput;
-let mPhotoOutput: camera.PhotoOutput;
-let mVideoOutput: camera.VideoOutput;
-let mVideoSurfaceId: string;
-let mReceiverSurfaceId: string;
-let mPhotoSession: camera.PhotoSession;
-let mVideoSession: camera.VideoSession;
-let mAVRecorder: media.AVRecorder;
-let receiver : image.ImageReceiver;
+const TAG = 'CreatePixelMapUsingAllocatorTestSupp'
+let pixelMap : image.PixelMap
 let fdNumber: number;
-let fdPath: string;
-let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-
-
-
-let CameraVideoProfile: media.AVRecorderProfile = {
-  audioBitrate: 48000,
-  audioChannels: 2,
-  audioCodec: media.CodecMimeType.AUDIO_AAC,
-  audioSampleRate: 48000,
-  fileFormat: media.ContainerFormatType.CFT_MPEG_4,
-  videoBitrate: 2000000,
-  videoCodec: media.CodecMimeType.VIDEO_AVC,
-  videoFrameWidth: 640,
-  videoFrameHeight: 480,
-  videoFrameRate: 30
-};
-
-let videoConfig: media.AVRecorderConfig = {
-  videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV,
-  profile: CameraVideoProfile,
-  url: 'file://',
-  location: { latitude: 30, longitude: 130 } as camera.Location,
-  rotation: 0
-};
-
-function getCameraManager() {
-  console.info(TAG, 'getCameraManager.');
-  mCameraManager = camera.getCameraManager(testContext);
-  if (isEmpty(mCameraManager)) {
-    return false;
-  }
-  console.info(TAG, 'mCameraManager created successfully.');
-  return true;
+async function getFd(fileName: string) {
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let filePath = `file://${testContext.filesDir}/${fileName}`;
+  console.info(TAG, 'image case filePath is ' + filePath);
+  const fileInfo = await fs.open(filePath);
+  fdNumber = fileInfo.fd
 }
 
-function getSupportedCameraDeviceArray() {
-  console.info(TAG, 'getSupportedCameraDeviceArray.');
-  mCameraDeviceArray = mCameraManager.getSupportedCameras();
-  if (isEmpty(mCameraDeviceArray)) {
-    return false;
-  }
-  console.info(TAG, 'getSupportedCameraDeviceArray length: ' + mCameraDeviceArray.length);
-  return true;
+async function getImageSource(path: string): Promise<image.ImageSource> {
+  await getFd(path);
+  const imageSourceApi = image.createImageSource(fdNumber);
+  console.info(TAG, "createImageSource: " + JSON.stringify(imageSourceApi.getImageInfoSync()));
+  return imageSourceApi;
 }
 
-function getCameraInput() {
-  console.info(TAG, 'getCameraInput.');
-  if (mCameraDeviceArray.length) {
-    mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[0]);
-    if (isEmpty(mCameraInput)) {
-      return false;
-    }
-    return true;
-  }
-  console.info(TAG, 'cameraInput created successfully.');
-  return false;
-}
-
-
-async function getVideoSurfaceId() {
-  console.info(TAG, 'getVideoSurfaceId begin.');
-  let fileName: string = resourceName();
-  fdNumber = await getFd(fileName);
-  fdPath = "fd://" + fdNumber;
-  console.info(TAG, 'case fdPath is: ' + fdPath);
-  videoConfig.url = fdPath;
-  console.info(TAG, 'get videoConfig url.');
-  mAVRecorder = await media.createAVRecorder();
-  expect(isEmpty(mAVRecorder)).assertFalse();
-  console.info(TAG, 'createAVRecorder passed. state: ' + mAVRecorder.state);
-  await mAVRecorder.prepare(videoConfig).then(() => {
-    console.info('prepare success');
-  }).catch((error: BusinessError) => {
-    console.error(TAG, 'failed to prepare, err: ' + error.code + ', msg: ' + error.message);
-  });
-  console.info(TAG, 'AVRecorder state: ' + mAVRecorder.state);
-  mVideoSurfaceId = await mAVRecorder.getInputSurface();
-  console.info(TAG, 'mVideoSurfaceId: ' + mVideoSurfaceId);
-}
-
-function createPhotoOutput() {
-  let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
-  let haveValidDevice = false;
-  for (const device of mCameraDeviceArray) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
-    if (mSupportedModes.includes(camera.SceneMode.NORMAL_PHOTO)) {
-      useDevice = device;
-      haveValidDevice = true;
-      break;
-    }
-  }
-  if (!haveValidDevice) {
-    return;
-  }
-  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_PHOTO);
-  let previewProfile = cameraOutputCap.previewProfiles[0];
-  let photoProfile = cameraOutputCap.photoProfiles[0];
-  for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
-    let foundProfile = cameraOutputCap.photoProfiles.find((indexPhotoProfile: camera.Profile) => {
-      console.log(TAG, 'find photoProfile: w: ' + indexPhotoProfile.size.width + 'h: ' + indexPhotoProfile.size.height);
-      console.log(TAG,
-        'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
-      return Math.abs((indexPhotoProfile.size.width * indexPreviewProfiles.size.height) -
-        (indexPreviewProfiles.size.width * indexPhotoProfile.size.height)) < Number.EPSILON;
-    })
-    if (foundProfile) {
-      photoProfile = foundProfile;
-      previewProfile = indexPreviewProfiles;
-      break;
-    }
-  }
-  console.log(TAG, 'photoProfile: w: ' + photoProfile.size.width + 'h: ' + photoProfile.size.height);
-  console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
-  mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, mReceiverSurfaceId);
-  mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
-}
-
-async function createVideoOutput() {
-  await getVideoSurfaceId();
-  let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
-  let haveValidDevice = false;
-  for (const device of mCameraDeviceArray) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
-    if (mSupportedModes.includes(camera.SceneMode.NORMAL_VIDEO)) {
-      useDevice = device;
-      haveValidDevice = true;
-      break;
-    }
-  }
-  if (!haveValidDevice) {
-    return;
-  }
-  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
-  let previewProfile = cameraOutputCap.previewProfiles[0];
-  let videoProfile = cameraOutputCap.videoProfiles[0];
-  for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
-    let foundProfile = cameraOutputCap.videoProfiles.find((indexVideoProfile: camera.Profile) => {
-      console.log(TAG, 'find videoProfile: w: ' + indexVideoProfile.size.width + 'h: ' + indexVideoProfile.size.height);
-      console.log(TAG,
-        'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
-      return Math.abs((indexVideoProfile.size.width * indexPreviewProfiles.size.height) -
-        (indexPreviewProfiles.size.width * indexVideoProfile.size.height)) < Number.EPSILON;
-    })
-    if (foundProfile) {
-      videoProfile = foundProfile;
-      previewProfile = indexPreviewProfiles;
-      break;
-    }
-  }
-  console.log(TAG, 'videoProfile: w: ' + videoProfile.size.width + 'h: ' + videoProfile.size.height);
-  console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
-  CameraVideoProfile.videoFrameWidth = videoProfile.size.width;
-  CameraVideoProfile.videoFrameHeight = videoProfile.size.height;
-  mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
-  console.log(TAG, 'createVideoOutput' + videoProfile,'surfaceID', mVideoSurfaceId);
-  mVideoOutput = mCameraManager.createVideoOutput(videoProfile, mVideoSurfaceId);
-  console.log(TAG, 'create preview output' + mPreviewOutput,'createVideoOutput', mVideoOutput);
-}
-
-async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
-  console.info(TAG, 'getCreatePhotoSession.');
-  mPhotoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
-  mPhotoSession.beginConfig();
-  mPhotoSession.addInput(mCameraInput);
-  await mCameraInput.open();
-  mPhotoSession.addOutput(previewOutput);
-  mPhotoSession.addOutput(photoOutput);
-  await mPhotoSession.commitConfig();
-}
-
-async function getCreateVideoSession(testName: string, previewOutput: camera.PreviewOutput,
-  videoOutput: camera.VideoOutput) {
-  console.info(TAG, 'getCreateVideoSession.');
-  mVideoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_VIDEO);
-  mVideoSession.beginConfig();
-  console.info(TAG, testName + ' beginConfig passed.');
-  mVideoSession.addInput(mCameraInput);
-  console.info(TAG, testName + ' addInput passed.');
-  await mCameraInput.open();
-  console.info(TAG, testName + ' camera open passed.');
-  mVideoSession.addOutput(previewOutput);
-  console.info(TAG, testName + ' addOutput previewOutput passed.');
-  mVideoSession.addOutput(videoOutput);
-  console.info(TAG, testName + ' addOutput videoOutput passed.');
-  await mVideoSession.commitConfig();
-  console.info(TAG, testName + ' session commitConfig successfully.');
-}
-
-async function releasePhotoSession() {
-  console.info(TAG, 'releasePhotoSession.');
-  await mPreviewOutput?.release();
-  await mPhotoOutput?.release();
-  await mPhotoSession?.release();
-}
-
-async function releaseVideoSession() {
-  console.info(TAG, 'releaseVideoSession.');
-  await mAVRecorder?.release();
-  await mPreviewOutput?.release();
-  await mVideoOutput?.release();
-  await mVideoSession?.release();
-}
-
-async function ImageGetComponent(done: Function, testName: string, callback: (receiver:image.ImageReceiver) => void) {
-  try {
-    if (isEmpty(mCameraDeviceArray)) {
-      console.info(TAG, testName, ' mCameraDeviceArray is null.');
-    } else {
-      let size: image.Size = {
-        height: 8192,
-        width: 8
-      }
-      let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-      mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
-      console.info(TAG,testName,"get receiver SurfaceId success");
-      callback(receiver);
-      await releasePhotoSession();
-      done();
-    }
-  } catch (error) {
-    console.info(TAG ,testName, error.message, error.code);
-    await releasePhotoSession();
-    done();
-  }
-}
-
-async function sendableGetComponent(done: Function, testName: string, callback: (receiver:sendableImage.ImageReceiver) => void) {
-  try {
-    if (isEmpty(mCameraDeviceArray)) {
-      console.info(TAG, testName, ' mCameraDeviceArray is null.');
-    } else {
-      let size: image.Size = {
-        height: 8192,
-        width: 8
-      }
-      let receiver: sendableImage.ImageReceiver = sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-      mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
-      console.info(TAG,testName,"get receiver SurfaceId success");
-      callback(receiver);
-      await releasePhotoSession();
-      done();
-    }
-  } catch (error) {
-    console.info(TAG ,testName, error.message, error.code);
-    await releasePhotoSession();
-    done();
-  }
-}
-export default function ImageGetComponentSupp() {
-  describe('ImageGetComponentSupp', () => {
+export default function CreatePixelMapUsingAllocatorTest() {;
+  describe('CreatePixelMapUsingAllocatorTest', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
-      AppStorage.setOrCreate('empty','')
-      await getPermission();
-      await driveFn();
-      getCameraManager();
-      getSupportedCameraDeviceArray();
-      getCameraInput();
-      await getVideoSurfaceId();
     });
     beforeEach(async () => {
       console.info('beforeEach case');
@@ -314,459 +47,1554 @@ export default function ImageGetComponentSupp() {
     afterEach(async () => {
       console.info('afterEach case');
     });
-    afterAll(async () => {
+    afterAll(() => {
       console.info('afterAll case');
-      await closeFd(fdNumber);
-      AppStorage.delete('empty')
     });
-
     /**
-     * @tc.number     image_getComponent_AsyncCallback_001
-     * @tc.name       image_getComponent_AsyncCallback_001
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_getComponent_AsyncCallback_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'image_getComponent_AsyncCallback_001';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          console.info(TAG, testName, ' receiver.on begin');
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          img.getComponent(image.ComponentType.JPEG,(err: BusinessError, component: image.Component) => {
-            if (err) {
-              console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
-              expect().assertFail();
-            } else {
-              console.info(TAG, testName,'Succeeded in getting component.');
-            }
-          })
-          await releasePhotoSession();
-          console.info(TAG,testName,"releasePhotoSession success");
-          done();
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-
-  /**
-     * @tc.number     image_getComponent_AsyncCallback_002
-     * @tc.name       image_getComponent_AsyncCallback_002
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_getComponent_AsyncCallback_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'image_getComponent_AsyncCallback_002';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          img.getComponent(image.ComponentType.YUV_Y, (err: BusinessError, component: image.Component) => {
-            if (err) {
-              console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
-            } else {
-              console.info(TAG, testName,'Succeeded in getting component.');
-              expect().assertFail();
-            }
-          })
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-    /**
-     * @tc.number     image_getComponent_AsyncCallback_003
-     * @tc.name       image_getComponent_AsyncCallback_003
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_getComponent_AsyncCallback_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'image_getComponent_AsyncCallback_003';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          img.getComponent(image.ComponentType.YUV_U, (err: BusinessError, component: image.Component) => {
-            if (err) {
-              console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
-            } else {
-              console.info(TAG, testName,'Succeeded in getting component.');
-              expect().assertFail();
-            }
-          })
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-    /**
-     * @tc.number     image_getComponent_AsyncCallback_004
-     * @tc.name       image_getComponent_AsyncCallback_004
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_getComponent_AsyncCallback_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'image_getComponent_AsyncCallback_004';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          img.getComponent(image.ComponentType.YUV_V, (err: BusinessError, component: image.Component) => {
-            if (err) {
-              console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
-            } else {
-              console.info(TAG, testName,'Succeeded in getting component.');
-              expect().assertFail();
-            }
-          })
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-
-    /**
-     * @tc.number     image_getComponent_Promise_001
-     * @tc.name       image_getComponent_Promise_001
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_getComponent_Promise_001', Level.LEVEL0, async (done: Function,img : image.Image) => {
-      const testName = 'image_getComponent_Promise_001';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          let component = await img.getComponent(image.ComponentType.JPEG);
-          console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
-          expect(component.componentType).assertEqual(image.ComponentType.JPEG);
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-
-    /**
-     * @tc.number     image_getComponent_Promise_002
-     * @tc.name       image_getComponent_Promise_002
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_getComponent_Promise_002', Level.LEVEL0, async (done: Function,img : image.Image) => {
-      const testName = 'image_getComponent_Promise_002';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          let component = await img.getComponent(image.ComponentType.YUV_Y);
-          console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
-          expect().assertFail();
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-
-    /**
-     * @tc.number     image_getComponent_Promise_003
-     * @tc.name       image_getComponent_Promise_003
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_getComponent_Promise_003', Level.LEVEL0, async (done: Function,img : image.Image) => {
-      const testName = 'image_getComponent_Promise_003';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          let component = await img.getComponent(image.ComponentType.YUV_U);
-          console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
-          expect().assertFail();
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-
-    /**
-     * @tc.number     image_getComponent_Promise_004
-     * @tc.name       image_getComponent_Promise_004
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_getComponent_Promise_004', Level.LEVEL0, async (done: Function,img : image.Image) => {
-      const testName = 'image_getComponent_Promise_004';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          let component = await img.getComponent(image.ComponentType.YUV_V);
-          console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
-          expect().assertFail();
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-    /**
-     * @tc.number     image_sendableImage_getComponent_Promise_001
-     * @tc.name       image_sendableImage_getComponent_Promise_001
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_sendableImage_getComponent_Promise_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'image_sendableImage_getComponent_Promise_001';
-      sendableGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          let component = await img.getComponent(image.ComponentType.JPEG);
-          console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
-          expect(component.componentType).assertEqual(image.ComponentType.JPEG);
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-    /**
-     * @tc.number     image_sendableImage_getComponent_Promise_002
-     * @tc.name       image_sendableImage_getComponent_Promise_002
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_sendableImage_getComponent_Promise_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'image_sendableImage_getComponent_Promise_002';
-      sendableGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          let component = await img.getComponent(image.ComponentType.YUV_Y);
-          console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
-          expect().assertFail();
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-    /**
-     * @tc.number     image_sendableImage_getComponent_Promise_003
-     * @tc.name       image_sendableImage_getComponent_Promise_003
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_sendableImage_getComponent_Promise_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'image_sendableImage_getComponent_Promise_003';
-      sendableGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          let component = await img.getComponent(image.ComponentType.YUV_U);
-          console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
-          expect().assertFail();
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-    /**
-     * @tc.number     image_sendableImage_getComponent_Promise_004
-     * @tc.name       image_sendableImage_getComponent_Promise_004
-     * @tc.desc       Image.getComponent,ComponentType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_sendableImage_getComponent_Promise_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'image_sendableImage_getComponent_Promise_004';
-      sendableGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          let img = await receiver.readNextImage();
-          console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-          let component = await img.getComponent(image.ComponentType.YUV_V);
-          console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
-          expect().assertFail();
-        });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-/**
-     * @tc.number     image_getMetadata_Error_test_001
-     * @tc.name       image_getMetadata_Error_test_001
-     * @tc.desc       Image.getMetadata23 error 7600302
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('image_getMetadata_Error_test_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'image_getMetadata_Error_test_001';
-      try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        } else {
-          let size: image.Size = {
-            height: 8192,
-            width: 8
-          }
-          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
-          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
-          receiver.on('imageArrival', async () => {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            try {
-              let value = img.getMetadata(-1);
-              console.info(TAG, testName, 'img.getMetadata succeeded.',value);
-              expect().assertFail();
-            } catch (error) {
-              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
-              expect(error.code).assertEqual('7600302');
-            }
-            done();
-          });
-          createPhotoOutput();
-          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
-          await sleep(2000);
-          done();
-        }
-      } catch (error) {
-        console.info(TAG ,testName, error.message, error.code);
-        await releasePhotoSession();
-        done();
-      }
-    })
-    /**
-     * @tc.name   IMAGE_GET_META_DATA_TEST_001
-     * @tc.number IMAGE_GET_META_DATA_TEST_001
-     * @tc.desc   getMetadata image.HdrMetadataKey.HDR_GAINMAP_METADATA
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_001
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_001
+     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat ARGB_8888
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('IMAGE_GET_META_DATA_TEST_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_GET_META_DATA_TEST_001';
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_001';
+      const color: ArrayBuffer = new ArrayBuffer(1024);
       try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        } else {
-          let size: image.Size = {
-            height: 8192,
-            width: 8
-          }
-          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
-          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
-          receiver.on('imageArrival', async () => {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            try {
-              console.info(TAG,testName,"get receiver SurfaceId success");
-              let value = img.getMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE);
-              console.info(TAG, testName, 'img.getMetadata succeeded.',value);
-              expect().assertFail();
-            } catch (error) {
-              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
-              expect(Number(error.code)).assertEqual(7600302)
-            }
-            done();
-          });
-          createPhotoOutput();
-          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
-          await sleep(2000);
-          done();
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+          size: { height: 16, width: 16 }
         }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
       } catch (error) {
-        console.info(TAG ,testName, error.message, error.code);
-        await releasePhotoSession();
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
         done();
       }
     })
     /**
-     * @tc.name   IMAGE_GET_BUFFER_DATA_TEST_001
-     * @tc.number IMAGE_GET_BUFFER_DATA_TEST_001
-     * @tc.desc   getBufferData  返回值属性
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_002
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_002
+     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat RGB_565
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('IMAGE_GET_BUFFER_DATA_TEST_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_001';
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_002';
+      const color: ArrayBuffer = new ArrayBuffer(1024);
       try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        } else {
-          let size: image.Size = {
-            height: 8192,
-            width: 8
-          }
-          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
-          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
-          receiver.on('imageArrival', async () => {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            try {
-              console.info(TAG,testName,"get receiver SurfaceId success");
-              let value = img.getBufferData()
-              console.info(TAG, testName, 'img.getMetadata succeeded.',value);
-              expect(value?.rowStride).not().assertUndefined()
-              expect(value?.pixelStride).not().assertUndefined()
-              expect(value?.byteBuffer).not().assertUndefined()
-            } catch (error) {
-              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
-              expect().assertFail();
-            }
-            done();
-          });
-          createPhotoOutput();
-          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
-          await sleep(2000);
-          done();
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGB_565,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 4 }
         }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
       } catch (error) {
-        console.info(TAG ,testName, error.message, error.code);
-        await releasePhotoSession();
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_003
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_003
+     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat RGBA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_003';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_004
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_004
+     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat BGRA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_004';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_005
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_005
+     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat RGB_888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_005';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGB_888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_006
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_006
+     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat ALPHA_8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_006';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_8,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_007
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_007
+     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat NV21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_007';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.NV21,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_008
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_008
+     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat NV12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_008';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.NV12,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_009
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_009
+     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat RGBA_1010102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_009';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGBA_1010102,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_010
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_010
+     * @tc.desc   createPixelMapUsingAllocatorSync opts alphaType UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_010';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.UNKNOWN,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap= image.createPixelMapUsingAllocatorSync(color, opts,image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_011
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_011
+     * @tc.desc   createPixelMapUsingAllocatorSync opts alphaType OPAQUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_011', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_011';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_012
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_012
+     * @tc.desc   createPixelMapUsingAllocatorSync opts alphaType PREMUL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_012', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_012';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_013
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_013
+     * @tc.desc   createPixelMapUsingAllocatorSync opts alphaType UNPREMUL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_013', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_013';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.UNPREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_014
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_014
+     * @tc.desc   createPixelMapUsingAllocatorSync opts ScaleMode FIT_TARGET_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_014', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_014';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_015
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_015
+     * @tc.desc   createPixelMapUsingAllocatorSync opts scaleMode CENTER_CROP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_015', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_015';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_016
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_016
+     * @tc.desc   createPixelMapUsingAllocatorSync opts editable false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_016', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_016';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_017
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_017
+     * @tc.desc   createPixelMapUsingAllocatorSync opts pixelFormat ARGB_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_017', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_017';
+      const color: ArrayBuffer = new ArrayBuffer(1024);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.ARGB_8888,
+          scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+          size: { height: 16, width: 16 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_018
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_018
+     * @tc.desc   createPixelMapUsingAllocatorSync opts pixelFormat RGB_565
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_018', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_018';
+      const color: ArrayBuffer = new ArrayBuffer(1024);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 4 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_019
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_019
+     * @tc.desc   createPixelMapUsingAllocatorSync opts pixelFormat RGBA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_019', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_019';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_020
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_020
+     * @tc.desc   createPixelMapUsingAllocatorSync opts pixelFormat BGRA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_020', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_020';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_021
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_021
+     * @tc.desc   createPixelMapUsingAllocatorSync opts pixelFormat RGB_888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_021', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_021';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_888,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_022
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_022
+     * @tc.desc   createPixelMapUsingAllocatorSync opts pixelFormat ALPHA_8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_022', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_022';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.ALPHA_8,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_023
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_023
+     * @tc.desc   createPixelMapUsingAllocatorSync opts pixelFormat NV21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_023', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_023';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.NV21,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_024
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_024
+     * @tc.desc   createPixelMapUsingAllocatorSync opts pixelFormat NV12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_024', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_024';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.NV12,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_025
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_025
+     * @tc.desc   createPixelMapUsingAllocatorSync pixelMap isEditable false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_025', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_025';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.NV12,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName, 'Succeeded in creating pixelmap.', pixelMap.isEditable);
+        expect(pixelMap.isEditable).assertFalse();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_001
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_001
+     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat ARGB_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_001';
+      const color: ArrayBuffer = new ArrayBuffer(1024);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+          size: { height: 16, width: 16 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_002
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_002
+     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat RGB_565
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_002';
+      const color: ArrayBuffer = new ArrayBuffer(1024);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGB_565,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 4 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_003
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_003
+     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat RGBA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_003';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_004
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_004
+     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat BGRA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_004';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_005
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_005
+     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat RGB_888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_005';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGB_888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_006
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_006
+     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat ALPHA_8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_006';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_8,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_007
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_007
+     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat NV21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_007';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.NV21,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_008
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_008
+     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat NV12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_008';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.NV12,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_009
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_009
+     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat RGBA_1010102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_009';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGBA_1010102,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_010
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_010
+     * @tc.desc   createPixelMapUsingAllocator opts alphaType UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_010';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.UNKNOWN,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap= image.createPixelMapUsingAllocatorSync(color, opts,image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_011
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_011
+     * @tc.desc   createPixelMapUsingAllocator opts alphaType OPAQUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_011', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_011';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_012
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_012
+     * @tc.desc   createPixelMapUsingAllocator opts alphaType PREMUL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_012', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_012';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_013
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_013
+     * @tc.desc   createPixelMapUsingAllocator opts alphaType UNPREMUL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_013', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_013';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.UNPREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_014
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_014
+     * @tc.desc   createPixelMapUsingAllocator opts ScaleMode FIT_TARGET_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_014', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_014';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_015
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_015
+     * @tc.desc   createPixelMapUsingAllocator opts scaleMode CENTER_CROP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_015', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_015';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_016
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_016
+     * @tc.desc   createPixelMapUsingAllocator opts editable false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_016', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_016';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_017
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_017
+     * @tc.desc   createPixelMapUsingAllocator opts pixelFormat ARGB_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_017', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_017';
+      const color: ArrayBuffer = new ArrayBuffer(1024);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.PREMUL,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.ARGB_8888,
+          scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+          size: { height: 16, width: 16 }
+        }
+        pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_018
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_018
+     * @tc.desc   createPixelMapUsingAllocator opts pixelFormat RGB_565
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_018', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_018';
+      const color: ArrayBuffer = new ArrayBuffer(1024);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 4 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_019
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_019
+     * @tc.desc   createPixelMapUsingAllocator opts pixelFormat RGBA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_019', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_019';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_020
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_020
+     * @tc.desc   createPixelMapUsingAllocator opts pixelFormat BGRA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_020', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_020';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_021
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_021
+     * @tc.desc   createPixelMapUsingAllocator opts pixelFormat RGB_888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_021', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_021';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.RGB_888,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_022
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_022
+     * @tc.desc   createPixelMapUsingAllocator opts pixelFormat ALPHA_8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_022', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_022';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.ALPHA_8,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_023
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_023
+     * @tc.desc   createPixelMapUsingAllocator opts pixelFormat NV21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_023', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_023';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.NV21,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_024
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_024
+     * @tc.desc   createPixelMapUsingAllocator opts pixelFormat NV12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_024', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_024';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.NV12,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        expect(pixelMap != undefined).assertTrue();
+        console.info(TAG, testName,'Succeeded in creating pixelmap.',pixelMap);
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_025
+     * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_025
+     * @tc.desc   createPixelMapUsingAllocator pixelMap isEditable false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_025', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_025';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      try {
+        let opts: image.InitializationOptions = {
+          alphaType: image.AlphaType.OPAQUE,
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.NV12,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
+        console.info(TAG, testName, 'Succeeded in creating pixelmap.', pixelMap.isEditable);
+        expect(pixelMap.isEditable).assertFalse();
+      } catch (error) {
+        console.error(TAG,testName,"create failed:",error.code,error.msg);
+        expect().assertFail();
+      }finally {
+        await pixelMap?.release();
         done();
       }
     })
   })
 }
-
