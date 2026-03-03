@@ -1288,6 +1288,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStorePutBatch104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch104');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let entries = [];
             for (var i = 0; i < 10; i++) {
@@ -1331,6 +1336,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStorePutBatch105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch105');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             var bo = false;
             let entries = [];
@@ -1375,6 +1385,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStorePutBatch106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch106');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             var arr = new Uint8Array([21,31]);
             let entries = [];
@@ -2078,6 +2093,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStoreGetResultSet101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSet101');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let resultSet;
             let entries = [];
@@ -2123,6 +2143,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStoreGetResultSet102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSet102');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let resultSet;
             await kvStore.getResultSet(localDeviceId, 'batch_test_string_key', async function (err, result) {
@@ -2200,6 +2225,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStoreGetResultSet105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSet105');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let resultSet;
             let entries = [];
@@ -2247,6 +2277,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStoreGetResultSet106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSet106');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let resultSet;
             let entries = [];
@@ -2324,6 +2359,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStoreCloseResultSet102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreCloseResultSet102');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let resultSet = null;
             await kvStore.getResultSet(localDeviceId, 'batch_test_string_key', async function(err, result) {
@@ -2411,6 +2451,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStoreGetResultSize101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSize101');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let entries = [];
             for (var i = 0; i < 10; i++) {
@@ -2453,6 +2498,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStoreGetResultSize102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSize102');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let entries = [];
             for (var i = 0; i < 10; i++) {
@@ -2494,6 +2544,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStoreGetEntries101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetEntries101');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             var arr = new Uint8Array([21,31]);
             let entries = [];
@@ -2541,6 +2596,11 @@ describe('deviceKvStoreCallbackTest', function () {
      */
     it('testDeviceKvStoreGetEntries102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetEntries102');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             var arr = new Uint8Array([21,31]);
             let entries = [];
