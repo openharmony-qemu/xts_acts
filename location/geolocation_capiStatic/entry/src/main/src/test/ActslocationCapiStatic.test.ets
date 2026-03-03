@@ -155,7 +155,7 @@ export default function actslocationTest() {
         it('testGeolocationManagerGeofenceConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
             async(done:()=>void):Promise<void>=>{
                 expect(true).assertEqual(geoLocationManager.CoordinateSystemType.WGS84 == 1)
-                expect(true).assertEqual(geoLocationManager.CoordinateSystemType.WGS84 == 2)
+                expect(true).assertEqual(geoLocationManager.CoordinateSystemType.GCJ02 == 2)
 
                 expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_DWELL == 4)
 
