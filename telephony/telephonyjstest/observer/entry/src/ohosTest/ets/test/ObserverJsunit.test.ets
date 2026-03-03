@@ -313,7 +313,7 @@ export default function ObserverJsunit() {
       try {
         let callback = (value:observer.CallStateInfo) => {
           console.log("on callStateChange, state:" + value.state + ", number:" + value.number);
-          expect(false).assertFalse();
+          expect(false).assertTrue();
           done();
         }
         observer.on(null, {
@@ -340,7 +340,7 @@ export default function ObserverJsunit() {
       try {
         let callback = (value:observer.CallStateInfo) => {
           console.log("on callStateChange, state:" + value.state + ", number:" + value.number);
-          expect(false).assertFalse();
+          expect(false).assertTrue();
           done();
         }
         observer.on(undefined, {
@@ -393,9 +393,10 @@ export default function ObserverJsunit() {
       try {
         let callback = (value:observer.CallStateInfo) => {
           console.log("on callStateChange, state:" + value.state + ", number:" + value.number);
+          expect(false).assertTrue();
+          done();
         }
         observer.on(null, callback);
-        done();
       } catch (error) {
         console.log("on callStateChange success, error:" + error.code);
         expect(Number(error.code)).assertEqual(401);
@@ -417,9 +418,10 @@ export default function ObserverJsunit() {
       try {
         let callback = (value:observer.CallStateInfo) => {
           console.log("on callStateChange, state:" + value.state + ", number:" + value.number);
+          expect(false).assertTrue();
+          done();
         }
         observer.on(undefined, callback);
-        done();
       } catch (error) {
         console.log("on callStateChange success, error:" + error.code);
         expect(Number(error.code)).assertEqual(401);
