@@ -144,7 +144,7 @@ export default function CreatePixelMapUsingAllocatorTest() {;
     /**
      * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_004
      * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_SYNC_TEST_004
-     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat RGBA_8888
+     * @tc.desc   createPixelMapUsingAllocatorSync opts srcPixelFormat BGRA_8888
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -917,7 +917,7 @@ export default function CreatePixelMapUsingAllocatorTest() {;
     /**
      * @tc.name   IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_004
      * @tc.number IMAGE_CREATE_PIXELMAP_USING_ALLOCATOR_TEST_004
-     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat RGBA_8888
+     * @tc.desc   createPixelMapUsingAllocator opts srcPixelFormat BGRA_8888
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
