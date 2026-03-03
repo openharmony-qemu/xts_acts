@@ -35,10 +35,8 @@ export default function AVSessionManagerCallback() {
             console.info('TestLog: Start testing testcase');
         })
 
-        afterEach(async function (done) {
+        afterEach(async function () {
             console.info('TestLog: End testing testcase');
-            await sleep(1000);
-            done();
         })
 
         afterAll(function () {
@@ -61,15 +59,15 @@ export default function AVSessionManagerCallback() {
                     console.info(`${TAG}TestLog: AVSession created error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue()
                 } else {
-                    console.info(`${TAG}TestLog: AVSession :${session.sessionId}created successfully,length = ${value.sessionId.length}`);
                     expect(value.sessionId.length).assertEqual(64);
                     session = value;
+                    console.info(`${TAG}TestLog: AVSession :${session.sessionId} created successfully`);
                 }
             });
             await sleep(500);
             await session.destroy().then(() => {
                 console.info(`${TAG}TestLog: Session Destroy SUCCESS`);
-                console.info(`${TAG}TestLog: AVSession :${session.sessionId}destroyed successfully`);
+                console.info(`${TAG}TestLog: AVSession :${session.sessionId} destroyed successfully`);
             }).catch((err) => {
                 console.info(`${TAG}TestLog: Session Destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -135,15 +133,15 @@ export default function AVSessionManagerCallback() {
                     console.info(`${TAG}TestLog: AVSession created error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue()
                 } else {
-                    console.info(`${TAG}TestLog: AVSession :${session.sessionId}created successfully,length = ${value.sessionId.length}`);
                     expect(value.sessionId.length).assertEqual(64);
                     session = value;
+                    console.info(`${TAG}TestLog: AVSession :${session.sessionId} created successfully`);
                 }
             });
             await sleep(500);
             await session.destroy().then(() => {
                 console.info(`${TAG}TestLog: Session Destroy SUCCESS`);
-                console.info(`${TAG}TestLog: AVSession :${session.sessionId}destroyed successfully`);
+                console.info(`${TAG}TestLog: AVSession :${session.sessionId} destroyed successfully`);
             }).catch((err) => {
                 console.info(`${TAG}TestLog: Session Destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
