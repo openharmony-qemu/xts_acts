@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import locationcapi20 from 'liblocationcapi20.so'
 import { geolocation, geoLocationManager } from '@kit.LocationKit';
+import { changedLocationMode } from "./ActsLocation20Test.test";
 
 const OS_LOCATION_ERR_OK = 0;
 
