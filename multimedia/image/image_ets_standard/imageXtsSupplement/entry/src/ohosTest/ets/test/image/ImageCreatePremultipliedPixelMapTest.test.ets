@@ -438,7 +438,7 @@ export default function ImageCreatePremultipliedPixelMapTest() {;
           bufferArr[i+3] = 122;
         }
         let optsForUnpre: image.InitializationOptions = {
-          editable: true,
+          editable: false,
           pixelFormat: image.PixelMapFormat.RGBA_8888,
           size: { height: 2, width: 2 },
           alphaType: image.AlphaType.PREMUL
