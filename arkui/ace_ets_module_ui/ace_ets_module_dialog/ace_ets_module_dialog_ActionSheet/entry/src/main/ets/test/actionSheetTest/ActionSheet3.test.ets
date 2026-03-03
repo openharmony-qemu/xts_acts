@@ -83,7 +83,7 @@ export default function ActionSheet3() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ActionSheet2_0200
+     * @tc.number    SUB_ACE_ActionSheet3_0200
      * @tc.name      ActionSheet3_0200
      * @tc.desc      set api
      * @tc.level:    Level 0
