@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import hilog from '@ohos.hilog';
 
 export default function swipeActionNullUndefined() {
   describe('swipeActionNullUndefined', () => {
