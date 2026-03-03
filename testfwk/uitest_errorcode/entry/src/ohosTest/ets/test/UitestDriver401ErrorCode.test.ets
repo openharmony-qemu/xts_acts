@@ -3214,34 +3214,5 @@ export default function uitestEnumTest() {
       console.log(`${TestTag}, testApi22_Driver_injectKnucklePointerAction_17000005 END`);
     })
 
-    /**
-     * @tc.name   testApi22_Driver_injectKnucklePointerAction_17000005
-     * @tc.number UiTest_uitest401_0102
-     * @tc.desc   type 401 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testApi9_Driver_injectKnucklePointerAction_17000005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(`${TestTag}, testApi22_Driver_injectKnucklePointerAction_17000005 start`);
-      let driver = Driver.create()
-      try {
-        let points = PointerMatrix.create(1, 1);
-        points.setPoint(0, 0, {x: 100, y: 100})
-        await driver.injectKnucklePointerAction(points, null);
-      } catch (error) {
-        console.log(TestTag, `testApi22_Driver_injectKnucklePointerAction_17000005, spe = null error is, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
-      }
-      try {
-        let points = PointerMatrix.create(1, 1);
-        points.setPoint(0, 0, {x: 100, y: 100})
-        await driver.injectKnucklePointerAction(points, undefined);
-      } catch (error) {
-        console.log(TestTag, `testApi22_Driver_injectKnucklePointerAction_17000005, spe = undefined error is, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
-      }
-      console.log(`${TestTag}, testApi22_Driver_injectKnucklePointerAction_17000005 END`);
-    })
  })
 }
