@@ -141,7 +141,7 @@ describe('fileio_FdOpenStream', async function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_fdopenstream_promise_error_001: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(err.message == 'Arg fd is required to be type integer').assertTrue();
      }
    });
 
@@ -153,13 +153,13 @@ describe('fileio_FdOpenStream', async function () {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-   it('fileio_test_fdopenstream_promise_error_2', Level.LEVEL2, async function () {
+   it('fileio_test_fdopenstream_promise_error_002', Level.LEVEL2, async function () {
      try {
        await fileio.fdopenStream(undefined, 'r+');
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_fdopenstream_promise_error_002: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(err.message == 'Arg fd is required to be type integer').assertTrue();
      }
    });
 
@@ -180,7 +180,7 @@ describe('fileio_FdOpenStream', async function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_fdopenstream_promise_error_003: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid argument').assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
      }
@@ -203,7 +203,7 @@ describe('fileio_FdOpenStream', async function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_fdopenstream_promise_error_004: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Arg mode is required to be type string').assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
      }
@@ -226,7 +226,7 @@ describe('fileio_FdOpenStream', async function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_fdopenstream_promise_error_005: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Arg mode is required to be type string').assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
      }
@@ -245,13 +245,13 @@ describe('fileio_FdOpenStream', async function () {
        fileio.fdopenStream(null, 'r+', (err, fp) => {
          if (err) {
            console.log('fileio_test_fdopenstream_callback_error_001: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+           expect(err.message == 'Arg fd is required to be type integer').assertTrue();
            done();
          }
        });
      } catch (err) {
        console.log('fileio_test_fdopenstream_callback_error_001 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(err.message == 'Arg fd is required to be type integer').assertTrue();
        done();
      }
    });
@@ -269,13 +269,13 @@ describe('fileio_FdOpenStream', async function () {
        fileio.fdopenStream(undefined, 'r+', (err, fp) => {
          if (err) {
            console.log('fileio_test_fdopenstream_callback_error_002: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+           expect(err.message == 'Arg fd is required to be type integer').assertTrue();
            done();
          }
        });
      } catch (err) {
        console.log('fileio_test_fdopenstream_callback_error_002 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(err.message == 'Arg fd is required to be type integer').assertTrue();
        done();
      }
    });
@@ -296,7 +296,7 @@ describe('fileio_FdOpenStream', async function () {
        fileio.fdopenStream(fd, '', (err, fp) => {
          if (err) {
            console.log('fileio_test_fdopenstream_callback_error_003: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+           expect(err.message == 'Invalid argument').assertTrue();
            fileio.closeSync(fd);
            fileio.unlinkSync(fpath);
            done();
@@ -304,7 +304,7 @@ describe('fileio_FdOpenStream', async function () {
        });
      } catch (err) {
        console.log('fileio_test_fdopenstream_callback_error_003 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid argument').assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
        done();
@@ -327,7 +327,7 @@ describe('fileio_FdOpenStream', async function () {
         fileio.fdopenStream(fd, null, (err, fp) => {
           if (err) {
             console.log('fileio_test_fdopenstream_callback_error_004: ' + err.message + ', code: ' + err.code);
-            expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+            expect(err.message == 'Arg mode is required to be type string').assertTrue();
             fileio.closeSync(fd);
             fileio.unlinkSync(fpath);
             done();
@@ -335,7 +335,7 @@ describe('fileio_FdOpenStream', async function () {
         });
      } catch (err) {
        console.log('fileio_test_fdopenstream_callback_error_004 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Arg mode is required to be type string').assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
        done();
@@ -358,7 +358,7 @@ describe('fileio_FdOpenStream', async function () {
        fileio.fdopenStream(fd, undefined, (err, fp) => {
          if (err) {
            console.log('fileio_test_fdopenstream_callback_error_005: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+           expect(err.message == 'Arg mode is required to be type string').assertTrue();
            fileio.closeSync(fd);
            fileio.unlinkSync(fpath);
            done();
@@ -366,7 +366,7 @@ describe('fileio_FdOpenStream', async function () {
        });
      } catch (err) {
        console.log('fileio_test_fdopenstream_callback_error_005 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Arg mode is required to be type string').assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
        done();
@@ -387,7 +387,7 @@ describe('fileio_FdOpenStream', async function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_fdopenstream_sync_error_001: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(err.message == 'Arg fd is required to be type integer').assertTrue();
      }
    });
 
@@ -405,7 +405,7 @@ describe('fileio_FdOpenStream', async function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_fdopenstream_sync_error_002: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(err.message == 'Arg fd is required to be type integer').assertTrue();
      }
    });
 
@@ -426,7 +426,7 @@ describe('fileio_FdOpenStream', async function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_fdopenstream_sync_error_003: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid argument').assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
      }
@@ -449,7 +449,7 @@ describe('fileio_FdOpenStream', async function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_fdopenstream_sync_error_004: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Arg mode is required to be type string').assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
      }
@@ -472,7 +472,7 @@ describe('fileio_FdOpenStream', async function () {
         expect(false).assertTrue();
       } catch (err) {
         console.log('fileio_test_fdopenstream_sync_error_005: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+        expect(err.message == 'Arg mode is required to be type string').assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
       }

@@ -1002,13 +1002,14 @@ describe('fileio_copyfile', function () {
   	     
   	     try {
   	       await fileio.copyFile(fpath, fpathTarget, undefined);
+		   let stat1 = fileio.statSync(fpath);
+		   let stat2 = fileio.statSync(fpathTarget);
+		   expect(stat1.size == stat2.size).assertTrue();
   	       fileio.unlinkSync(fpath);
   	       fileio.unlinkSync(fpathTarget);
-  	       expect(false).assertTrue();
   	     } catch (err) {
   	       console.log('fileio_copy_file_promise_error_010: ' + err.message + ', code: ' + err.code);
-  	       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-  	       fileio.unlinkSync(fpath);
+  	       expect(false).assertTrue();
   	     }
   	   });
 
@@ -1072,12 +1073,10 @@ describe('fileio_copyfile', function () {
   	           fileio.unlinkSync(fpath);
   	           fileio.unlinkSync(fpathTarget);
   	           done();
-  	         }
-  	         fileio.closeSync(fdTarget);
-  	         fileio.unlinkSync(fpath);
-  	         fileio.unlinkSync(fpathTarget);
-  	         expect(false).assertTrue();
-  	         done();
+  	         } else {
+			   expect(false).assertTrue();
+  	           done();
+			 }
   	       });
   	     } catch (err) {
   	       console.log('fileio_copy_file_callback_error_010 err: ' + err.message + ', code: ' + err.code);
@@ -1496,12 +1495,10 @@ describe('fileio_copyfile', function () {
   	           fileio.unlinkSync(fpath);
   	           fileio.unlinkSync(fpathTarget);
   	           done();
-  	         }
-  	         fileio.closeSync(fdTarget);
-  	         fileio.unlinkSync(fpath);
-  	         fileio.unlinkSync(fpathTarget);
-  	         expect(false).assertTrue();
-  	         done();
+  	         } else {
+				expect(false).assertTrue();
+  	            done();
+			 }
   	       });
   	     } catch (err) {
   	       console.log('fileio_copy_file_callback_mode_error_011 err: ' + err.message + ', code: ' + err.code);

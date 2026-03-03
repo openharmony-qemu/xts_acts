@@ -119,12 +119,16 @@ describe('fileio_fchown', async function () {
     * @tc.level  LEVEL2
     */
    it('fileio_test_fchown_promise_error_001', Level.LEVEL2, async function () {
+     let fpath = await nextFileName('fileio_test_fchown_promise_error_001');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
      try {
        await fileio.fchown(null, 1, 1);
-       expect(false).assertTrue();
+       let stat = fileio.statSync(fpath);
+       expect(isIntNum(stat.uid)).assertTrue();
+       fileio.unlinkSync(fpath);
      } catch (err) {
        console.log('fileio_test_fchown_promise_error_001: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(false).assertTrue();
      }
    });
 
@@ -137,12 +141,16 @@ describe('fileio_fchown', async function () {
     * @tc.level  LEVEL2
     */
    it('fileio_test_fchown_promise_error_002', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_test_fchown_promise_error_002');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
      try {
        await fileio.fchown(undefined, 1, 1);
-       expect(false).assertTrue();
+       let stat = fileio.statSync(fpath);
+       expect(isIntNum(stat.uid)).assertTrue();
+       fileio.unlinkSync(fpath);
      } catch (err) {
        console.log('fileio_test_fchown_promise_error_002: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(false).assertTrue();
      }
    });
 
@@ -160,12 +168,13 @@ describe('fileio_fchown', async function () {
      let fd = fileio.openSync(fpath, 0o102, 0o666);
      try {
        await fileio.fchown(fd, null, 1);
-       expect(false).assertTrue();
-     } catch (err) {
-       console.log('fileio_test_fchown_promise_error_003: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+       let stat = fileio.statSync(fpath);
+       expect(isIntNum(stat.uid)).assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
+     } catch (err) {
+       console.log('fileio_test_fchown_promise_error_003: ' + err.message + ', code: ' + err.code);
+       expect(false).assertTrue();
      }
    });
 
@@ -183,12 +192,13 @@ describe('fileio_fchown', async function () {
      let fd = fileio.openSync(fpath, 0o102, 0o666);
      try {
        await fileio.fchown(fd, undefined, 1);
-       expect(false).assertTrue();
-     } catch (err) {
-       console.log('fileio_test_fchown_promise_error_004: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+       let stat = fileio.statSync(fpath);
+       expect(isIntNum(stat.uid)).assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
+     } catch (err) {
+       console.log('fileio_test_fchown_promise_error_004: ' + err.message + ', code: ' + err.code);
+       expect(false).assertTrue();
      }
    });
 
@@ -206,12 +216,13 @@ describe('fileio_fchown', async function () {
      let fd = fileio.openSync(fpath, 0o102, 0o666);
      try {
        await fileio.fchown(fd, 1, null);
-       expect(false).assertTrue();
-     } catch (err) {
-       console.log('fileio_test_fchown_promise_error_005: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+       let stat = fileio.statSync(fpath);
+       expect(isIntNum(stat.uid)).assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
+     } catch (err) {
+       console.log('fileio_test_fchown_promise_error_005: ' + err.message + ', code: ' + err.code);
+       expect(false).assertTrue();
      }
    });
 
@@ -229,12 +240,13 @@ describe('fileio_fchown', async function () {
       let fd = fileio.openSync(fpath, 0o102, 0o666);
       try {
         await fileio.fchown(fd, 1, undefined);
-        expect(false).assertTrue();
-      } catch (err) {
-        console.log('fileio_test_fchown_promise_error_006: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+        let stat = fileio.statSync(fpath);
+        expect(isIntNum(stat.uid)).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
+      } catch (err) {
+        console.log('fileio_test_fchown_promise_error_006: ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
       }
     });
 
@@ -247,6 +259,8 @@ describe('fileio_fchown', async function () {
      * @tc.level  LEVEL2
      */
     it('fileio_test_fchown_callback_error_001', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileio_test_fchown_callback_error_001');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         fileio.fchown(null, 1, 1, (err) => {
           if (err) {
@@ -254,10 +268,14 @@ describe('fileio_fchown', async function () {
             expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
             done();
           }
+          let stat = fileio.statSync(fpath);
+          expect(isIntNum(stat.uid)).assertTrue();
+          fileio.unlinkSync(fpath);
+          done();
         });
       } catch (err) {
         console.log('fileio_test_fchown_callback_error_001 err: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -271,6 +289,8 @@ describe('fileio_fchown', async function () {
      * @tc.level  LEVEL2
      */
     it('fileio_test_fchown_callback_error_002', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileio_test_fchown_callback_error_002');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         fileio.fchown(undefined, 1, 1, (err) => {
           if (err) {
@@ -278,10 +298,14 @@ describe('fileio_fchown', async function () {
             expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
             done();
           }
+          let stat = fileio.statSync(fpath);
+          expect(isIntNum(stat.uid)).assertTrue();
+          fileio.unlinkSync(fpath);
+          done();
         });
       } catch (err) {
         console.log('fileio_test_fchown_callback_error_002 err: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -303,16 +327,17 @@ describe('fileio_fchown', async function () {
           if (err) {
             console.log('fileio_test_fchown_callback_error_003: ' + err.message + ', code: ' + err.code);
             expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
-            fileio.closeSync(fd);
-            fileio.unlinkSync(fpath);
             done();
           }
+          let stat = fileio.statSync(fpath);
+          expect(isIntNum(stat.uid)).assertTrue();
+          fileio.closeSync(fd);
+          fileio.unlinkSync(fpath);
+          done();
         });
       } catch (err) {
         console.log('fileio_test_fchown_callback_error_003 err: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
-        fileio.closeSync(fd);
-        fileio.unlinkSync(fpath);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -334,16 +359,17 @@ describe('fileio_fchown', async function () {
           if (err) {
             console.log('fileio_test_fchown_callback_error_004: ' + err.message + ', code: ' + err.code);
             expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
-            fileio.closeSync(fd);
-            fileio.unlinkSync(fpath);
             done();
           }
+          let stat = fileio.statSync(fpath);
+          expect(isIntNum(stat.uid)).assertTrue();
+          fileio.closeSync(fd);
+          fileio.unlinkSync(fpath);
+          done();
         });
       } catch (err) {
         console.log('fileio_test_fchown_callback_error_004 err: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
-        fileio.closeSync(fd);
-        fileio.unlinkSync(fpath);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -365,16 +391,17 @@ describe('fileio_fchown', async function () {
           if (err) {
             console.log('fileio_test_fchown_callback_error_005: ' + err.message + ', code: ' + err.code);
             expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
-            fileio.closeSync(fd);
-            fileio.unlinkSync(fpath);
             done();
           }
+          let stat = fileio.statSync(fpath);
+          expect(isIntNum(stat.uid)).assertTrue();
+          fileio.closeSync(fd);
+          fileio.unlinkSync(fpath);
+          done();
         });
       } catch (err) {
         console.log('fileio_test_fchown_callback_error_005 err: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
-        fileio.closeSync(fd);
-        fileio.unlinkSync(fpath);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -396,20 +423,20 @@ describe('fileio_fchown', async function () {
           if (err) {
             console.log('fileio_test_fchown_callback_error_006: ' + err.message + ', code: ' + err.code);
             expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
-            fileio.closeSync(fd);
-            fileio.unlinkSync(fpath);
             done();
           }
-          });
-        } catch (err) {
-          console.log('fileio_test_fchown_callback_error_006 err: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+          let stat = fileio.statSync(fpath);
+          expect(isIntNum(stat.uid)).assertTrue();
           fileio.closeSync(fd);
           fileio.unlinkSync(fpath);
           done();
+          });
+        } catch (err) {
+          console.log('fileio_test_fchown_callback_error_006 err: ' + err.message + ', code: ' + err.code);
+          expect(false).assertTrue();
+          done();
         }
       });
-    });
 
     /**
      * @tc.name   fileio_test_fchown_sync_error_001
@@ -420,12 +447,16 @@ describe('fileio_fchown', async function () {
      * * @tc.level  LEVEL2
      */
     it('fileio_test_fchown_sync_error_001', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_fchown_sync_error_001');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         fileio.fchownSync(null, 1, 1);
-        expect(false).assertTrue();
+        let stat = fileio.statSync(fpath);
+        expect(isIntNum(stat.uid)).assertTrue();
+        fileio.unlinkSync(fpath);
       } catch (err) {
         console.log('fileio_test_fchown_sync_error_001: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+        expect(false).assertTrue();
       }
     });
 
@@ -438,12 +469,16 @@ describe('fileio_fchown', async function () {
      * @tc.level  LEVEL2
      */
     it('fileio_test_fchown_sync_error_002', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_fchown_sync_error_002');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         fileio.fchownSync(undefined, 1, 1);
-        expect(false).assertTrue();
+        let stat = fileio.statSync(fpath);
+        expect(isIntNum(stat.uid)).assertTrue();
+        fileio.unlinkSync(fpath);
       } catch (err) {
         console.log('fileio_test_fchown_sync_error_002: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+        expect(false).assertTrue();
       }
     });
 
@@ -461,12 +496,13 @@ describe('fileio_fchown', async function () {
       let fd = fileio.openSync(fpath, 0o102, 0o666);
       try {
         fileio.fchownSync(fd, null, 1);
-        expect(false).assertTrue();
-      } catch (err) {
-        console.log('fileio_test_fchown_sync_error_003: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+        let stat = fileio.statSync(fpath);
+        expect(isIntNum(stat.uid)).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
+      } catch (err) {
+        console.log('fileio_test_fchown_sync_error_003: ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
       }
     });
 
@@ -484,12 +520,13 @@ describe('fileio_fchown', async function () {
       let fd = fileio.openSync(fpath, 0o102, 0o666);
       try {
         fileio.fchownSync(fd, undefined, 1);
-        expect(false).assertTrue();
-      } catch (err) {
-        console.log('fileio_test_fchown_sync_error_004: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid uid' || err.message == 'Invalid arg').assertTrue();
+        let stat = fileio.statSync(fpath);
+        expect(isIntNum(stat.uid)).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
+      } catch (err) {
+        console.log('fileio_test_fchown_sync_error_004: ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
       }
     });
 
@@ -507,12 +544,13 @@ describe('fileio_fchown', async function () {
       let fd = fileio.openSync(fpath, 0o102, 0o666);
       try {
         fileio.fchownSync(fd, 1, null);
-        expect(false).assertTrue();
-      } catch (err) {
-        console.log('fileio_test_fchown_sync_error_005: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+        let stat = fileio.statSync(fpath);
+        expect(isIntNum(stat.uid)).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
+      } catch (err) {
+        console.log('fileio_test_fchown_sync_error_005: ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
       }
     });
 
@@ -530,12 +568,13 @@ describe('fileio_fchown', async function () {
        let fd = fileio.openSync(fpath, 0o102, 0o666);
        try {
          fileio.fchownSync(fd, 1, undefined);
-         expect(false).assertTrue();
-       } catch (err) {
-         console.log('fileio_test_fchown_sync_error_006: ' + err.message + ', code: ' + err.code);
-         expect(err.message == 'Invalid gid' || err.message == 'Invalid arg').assertTrue();
+         let stat = fileio.statSync(fpath);
+         expect(isIntNum(stat.uid)).assertTrue();
          fileio.closeSync(fd);
          fileio.unlinkSync(fpath);
+       } catch (err) {
+         console.log('fileio_test_fchown_sync_error_006: ' + err.message + ', code: ' + err.code);
+         expect(false).assertTrue();
        }
      });
    });

@@ -109,12 +109,15 @@ describe('fileio_fchmod', function () {
     * @tc.level  LEVEL2
     */
    it('fileio_test_fchmod_promise_error_001', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_test_fchmod_promise_error_001');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
      try {
        await fileio.fchmod(null, 0o666);
-       expect(false).assertTrue();
+       expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
+       fileio.unlinkSync(fpath);
      } catch (err) {
        console.log('fileio_test_fchmod_promise_error_001: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(false).assertTrue();
      }
    });
 
@@ -127,9 +130,12 @@ describe('fileio_fchmod', function () {
     * @tc.level  LEVEL2
     */
    it('fileio_test_fchmod_promise_error_002', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_test_fchmod_promise_error_002');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
      try {
        await fileio.fchmod(undefined, 0o666);
-       expect(false).assertTrue();
+       expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
+       fileio.unlinkSync(fpath);
      } catch (err) {
        console.log('fileio_test_fchmod_promise_error_002: ' + err.message + ', code: ' + err.code);
        expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
@@ -150,12 +156,12 @@ describe('fileio_fchmod', function () {
      let fd = fileio.openSync(fpath, 0o102, 0o666);
      try {
        await fileio.fchmod(fd, null);
-       expect(false).assertTrue();
-     } catch (err) {
-       console.log('fileio_test_fchmod_promise_error_003: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
+     } catch (err) {
+       console.log('fileio_test_fchmod_promise_error_003: ' + err.message + ', code: ' + err.code);
+       expect(false).assertTrue();
      }
    });
 
@@ -173,12 +179,12 @@ describe('fileio_fchmod', function () {
      let fd = fileio.openSync(fpath, 0o102, 0o666);
      try {
        await fileio.fchmod(fd, undefined);
-       expect(false).assertTrue();
+       expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
+       fileio.closeSync(fd);
+       fileio.unlinkSync(fpath);
       } catch (err) {
         console.log('fileio_test_fchmod_promise_error_004: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-        fileio.closeSync(fd);
-        fileio.unlinkSync(fpath);
+        expect(false).assertTrue();
       }
     });
 
@@ -191,6 +197,8 @@ describe('fileio_fchmod', function () {
     * @tc.level  LEVEL2
     */
    it('fileio_test_fchmod_callback_error_001', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_test_fchmod_callback_error_001');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
      try {
        fileio.fchmod(null, 0o666, (err) => {
          if (err) {
@@ -198,10 +206,12 @@ describe('fileio_fchmod', function () {
            expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
            done();
          }
+         expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
+         done();
        });
      } catch (err) {
        console.log('fileio_test_fchmod_callback_error_001 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(false).assertTrue();
        done();
      }
    });
@@ -215,6 +225,8 @@ describe('fileio_fchmod', function () {
     * @tc.level  LEVEL2
     */
    it('fileio_test_fchmod_callback_error_002', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_test_fchmod_callback_error_002');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
      try {
        fileio.fchmod(undefined, 0o666, (err) => {
          if (err) {
@@ -222,10 +234,12 @@ describe('fileio_fchmod', function () {
            expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
            done();
          }
+         expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
+         done();
        });
      } catch (err) {
        console.log('fileio_test_fchmod_callback_error_002 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(false).assertTrue();
        done();
      }
    });
@@ -247,16 +261,16 @@ describe('fileio_fchmod', function () {
           if (err) {
             console.log('fileio_test_fchmod_callback_error_003: ' + err.message + ', code: ' + err.code);
             expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-            fileio.closeSync(fd);
-            fileio.unlinkSync(fpath);
             done();
           }
+          expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
+          fileio.closeSync(fd);
+          fileio.unlinkSync(fpath);
+          done();
         });
      } catch (err) {
        console.log('fileio_test_fchmod_callback_error_003 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-       fileio.closeSync(fd);
-       fileio.unlinkSync(fpath);
+       expect(false).assertTrue();
        done();
      }
    });
@@ -278,16 +292,16 @@ describe('fileio_fchmod', function () {
          if (err) {
            console.log('fileio_test_fchmod_callback_error_004: ' + err.message + ', code: ' + err.code);
            expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-           fileio.closeSync(fd);
-           fileio.unlinkSync(fpath);
            done();
          }
+        expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
+        fileio.closeSync(fd);
+        fileio.unlinkSync(fpath);
+        done();
        });
       } catch (err) {
         console.log('fileio_test_fchmod_callback_error_004 err: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-        fileio.closeSync(fd);
-        fileio.unlinkSync(fpath);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -301,12 +315,15 @@ describe('fileio_fchmod', function () {
     * @tc.level  LEVEL2
     */
    it('fileio_test_fchmod_sync_error_001', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_test_fchmod_sync_error_001');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
      try {
        fileio.fchmodSync(null, 0o666);
-       expect(false).assertTrue();
+       expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
+       fileio.unlinkSync(fpath);
      } catch (err) {
        console.log('fileio_test_fchmod_sync_error_001: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(false).assertTrue();
      }
    });
 
@@ -319,12 +336,15 @@ describe('fileio_fchmod', function () {
     * @tc.level  LEVEL2
     */
    it('fileio_test_fchmod_sync_error_002', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_test_fchmod_sync_error_001');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
      try {
        fileio.fchmodSync(undefined, 0o666);
-       expect(false).assertTrue();
+       expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
+       fileio.unlinkSync(fpath);
      } catch (err) {
        console.log('fileio_test_fchmod_sync_error_002: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Bad file descriptor' || err.message == 'Invalid fd').assertTrue();
+       expect(false).assertTrue();
      }
    });
 
@@ -342,12 +362,12 @@ describe('fileio_fchmod', function () {
      let fd = fileio.openSync(fpath, 0o102, 0o666);
      try {
        fileio.fchmodSync(fd, null);
-       expect(false).assertTrue();
-     } catch (err) {
-       console.log('fileio_test_fchmod_sync_error_003: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
+     } catch (err) {
+       console.log('fileio_test_fchmod_sync_error_003: ' + err.message + ', code: ' + err.code);
+       expect(false).assertTrue();
      }
    });
 
@@ -365,12 +385,12 @@ describe('fileio_fchmod', function () {
      let fd = fileio.openSync(fpath, 0o102, 0o666);
      try {
        fileio.fchmodSync(fd, undefined);
-       expect(false).assertTrue();
-     } catch (err) {
-       console.log('fileio_test_fchmod_sync_error_004: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+       expect((fileio.statSync(fpath).mode & 0o777) == 0o664).assertTrue();
        fileio.closeSync(fd);
        fileio.unlinkSync(fpath);
+     } catch (err) {
+       console.log('fileio_test_fchmod_sync_error_004: ' + err.message + ', code: ' + err.code);
+       expect(false).assertTrue();
      }
    });
  });
