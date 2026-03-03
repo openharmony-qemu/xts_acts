@@ -293,7 +293,7 @@ export default function pasteBoardTest() {
 
         /**
          * @tc.name   SUB_SystemPasteboard_Permission_Static_0090
-         * @tc.number SUB_SystemPasteboard_Permission_Static_0080
+         * @tc.number SUB_SystemPasteboard_Permission_Static_0090
          * @tc.desc   Test permission API functionality.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
