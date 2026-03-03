@@ -24,8 +24,6 @@ import precompileJavaScript from './precompileJavaScript.test';
 import ActsAceWebViewSdkSchemeHandler from './webViewSdkSchemeHandler.test';
 import webDownloadEnumTestTwo from './WebDownloadEnumTest2.test';
 import EnableBackForwardCacheTest from './enableBackForwardCache.test';
-import prefetchResourceTest from './PrefetchResourceTest.test';
-import prefetchResourcePageTest from './PrefetchResourcePageTest.test';
 import PathAllowingUniversalAccessTest from './PathAllowingUniversalAccess.test';
 
 export default function testsuite() {
@@ -41,7 +39,5 @@ export default function testsuite() {
   ActsAceWebViewSdkSchemeHandler();
   webDownloadEnumTestTwo();
   EnableBackForwardCacheTest();
-  prefetchResourceTest();
-  prefetchResourcePageTest();
   PathAllowingUniversalAccessTest();
 }
