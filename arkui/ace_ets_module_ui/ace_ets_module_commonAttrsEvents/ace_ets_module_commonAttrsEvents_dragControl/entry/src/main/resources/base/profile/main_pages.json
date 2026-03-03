@@ -33,6 +33,9 @@
         "MainAbility/pages/DragPreview/DragPreviewNullAndUndefined",
         "MainAbility/pages/DragEvent/DragEventNullAndUndefined",
         "MainAbility/pages/DragPreviewOptions/DragPreviewOptionsNullAndUndefined",
-        "MainAbility/pages/AllowDrop/AllowDropNullAndUndefined"
+        "MainAbility/pages/AllowDrop/AllowDropNullAndUndefined",
+        "MainAbility/pages/DragEvent/setDataNullAndUndefined",
+        "MainAbility/pages/DragEvent/startDataLoadingNullAndUndefined",
+        "MainAbility/pages/DragEvent/setDataLoadParamsNullAndUndefined"
     ]
 }

@@ -10,6 +10,13 @@
         "MainAbility/pages/CommonMethod/monopolizeEventsNullAndUndefined",
         "MainAbility/pages/CommonMethod/restoreIdNullAndUndefined",
         "MainAbility/pages/CommonMethod/obscuredNullAndUndefined",
-        "MainAbility/pages/ZIndex/ZIndexNullAndUndefined"
+        "MainAbility/pages/ZIndex/ZIndexNullAndUndefined",
+        "MainAbility/pages/CommonMethod/responseRegionNullAndUndefined",
+        "MainAbility/pages/CommonMethod/mouseResponseRegionNullAndUndefined",
+        "MainAbility/pages/CommonMethod/responseRegionListNullAndUndefined",
+        "MainAbility/pages/CommonMethod/hitTestBehaviorNullAndUndefined",
+        "MainAbility/pages/CommonMethod/backgroundNullAndUndefined",
+        "MainAbility/pages/CommonMethod/backgroundImageNullAndUndefined",
+        "MainAbility/pages/CommonMethod/backgroundImageSizeNullAndUndefined"
     ]
 }

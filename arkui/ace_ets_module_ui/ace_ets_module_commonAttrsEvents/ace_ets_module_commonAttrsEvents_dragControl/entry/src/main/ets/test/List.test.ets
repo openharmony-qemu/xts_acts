@@ -42,6 +42,9 @@ import dragEventNullAndUndefinedTest from './DragEvent/dragEventNullAndUndefined
 import onMoveNullAndUndefinedTest from './OnMove/onMoveNullAndUndefinedTest.test';
 import onMoveV20NullAndUndefinedTest from './OnMoveV20/onMoveV20NullAndUndefinedTest.test';
 import allowDropNullAndUndefinedTest from './AllowDrop/allowDropNullAndUndefinedTest.test';
+import setDataLoadParamsNullAndUndefinedTest from './DragEvent/setDataLoadParamsNullAndUndefinedTest.test';
+import setDataNullAndUndefinedTest from './DragEvent/setDataNullAndUndefinedTest.test';
+import startDataLoadingNullAndUndefinedTest from './DragEvent/startDataLoadingNullAndUndefinedTest.test';
 
 export default function testsuite() {
     dragAdaptationTest();
@@ -72,4 +75,7 @@ export default function testsuite() {
     onMoveNullAndUndefinedTest();
     onMoveV20NullAndUndefinedTest();
     allowDropNullAndUndefinedTest();
+    setDataLoadParamsNullAndUndefinedTest();
+    setDataNullAndUndefinedTest();
+    startDataLoadingNullAndUndefinedTest();
 }

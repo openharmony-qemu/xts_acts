@@ -22,6 +22,19 @@ import obscuredNullAndUndefinedTest from './Obscured/obscuredNullAndUndefinedTes
 import overlayNullAndUndefinedTest from './Overlay/overlayNullAndUndefinedTest.test';
 import restoreIdNullAndUndefinedTest from './RestoreId/restoreIdNullAndUndefinedTest.test';
 import zIndexNullAndUndefinedTest from './ZIndex/zIndexNullAndUndefinedTest.test';
+import commonMethodBackgroundImageNullAndUndefinedTest
+    from './CommonMethod/commonMethodBackgroundImageNullAndUndefinedTest.test';
+import commonMethodBackgroundImageSizeNullAndUndefinedTest
+    from './CommonMethod/commonMethodBackgroundImageSizeNullAndUndefinedTest.test';
+import commonMethodBackgroundNullAndUndefinedTest from './CommonMethod/commonMethodBackgroundNullAndUndefinedTest.test';
+import commonMethodHitTestBehaviorNullAndUndefinedTest
+    from './CommonMethod/commonMethodHitTestBehaviorNullAndUndefinedTest.test';
+import commonMethodMouseResponseRegionNullAndUndefinedTest
+    from './CommonMethod/commonMethodMouseResponseRegionNullAndUndefinedTest.test';
+import commonMethodResponseRegionListNullAndUndefinedTest
+    from './CommonMethod/commonMethodResponseRegionListNullAndUndefinedTest.test';
+import commonMethodResponseRegionNullAndUndefinedTest
+    from './CommonMethod/commonMethodResponseRegionNullAndUndefinedTest.test';
 
 export default function testsuite() {
     enableJsunit();
@@ -34,4 +47,11 @@ export default function testsuite() {
     overlayNullAndUndefinedTest();
     restoreIdNullAndUndefinedTest();
     zIndexNullAndUndefinedTest();
+    commonMethodBackgroundImageNullAndUndefinedTest();
+    commonMethodBackgroundImageSizeNullAndUndefinedTest();
+    commonMethodBackgroundNullAndUndefinedTest();
+    commonMethodHitTestBehaviorNullAndUndefinedTest();
+    commonMethodMouseResponseRegionNullAndUndefinedTest();
+    commonMethodResponseRegionListNullAndUndefinedTest();
+    commonMethodResponseRegionNullAndUndefinedTest();
 }
