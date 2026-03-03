@@ -47,12 +47,12 @@ export default function ActionSheetJsunit() {
      * @tc.number    ActionSheetJsunit_0100
      * @tc.name      ActionSheetJsunit_0100
      * @tc.desc      set api
-     * @tc.level:    Level 2
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
 
-    it('ActionSheetJsunit_0100', Level.LEVEL2, async (done: Function) => {
+    it('ActionSheetJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
      
       console.info('ActionSheetJsunit_0100 START');

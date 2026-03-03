@@ -58,11 +58,11 @@ export default function stageActionSheet() {
      * @tc.number    testShowActionShee001
      * @tc.name      testShowActionShee001
      * @tc.desc      set api
-     * @tc.level:    Level 2
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('testShowActionShee001', Level.LEVEL2, async (done: Function) => {
+    it('testShowActionShee001', Level.LEVEL0, async (done: Function) => {
       console.info('testShowActionShee001 START');
       setTimeout(() => {
         try {
@@ -93,11 +93,11 @@ export default function stageActionSheet() {
      * @tc.number    testShowActionShee002
      * @tc.name      testShowActionShee002
      * @tc.desc      set api
-     * @tc.level:    Level 2
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('testShowActionShee002', Level.LEVEL2, async (done: Function) => {
+    it('testShowActionShee002', Level.LEVEL0, async (done: Function) => {
       console.info('testShowActionShee002 START');
       setTimeout(() => {
         try {
@@ -128,11 +128,11 @@ export default function stageActionSheet() {
      * @tc.number    testShowActionShee003
      * @tc.name      testShowActionShee003
      * @tc.desc      set api
-     * @tc.level:    Level 2
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('testShowActionShee003', Level.LEVEL2, async (done: Function) => {
+    it('testShowActionShee003', Level.LEVEL0, async (done: Function) => {
       console.info('testShowActionShee003 START');
       setTimeout(() => {
         try {
