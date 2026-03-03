@@ -21,7 +21,7 @@ function buildTextWithParams(params: Params) {
 class MyNodeController extends NodeController {
   private builderNode ?: BuilderNode<Params>;
   private uiContext?: UIContext;
-  private params: string = "update with Params";
+  private params: string = 'update with Params';
 
   // 创建节点时调用
   makeNode(uiContext: UIContext): FrameNode | null {
@@ -60,10 +60,10 @@ struct MyStateSample {
         Text('NodeContainer')
         NodeContainer(this.nodeController)
           .borderWidth(1)
-          .height("80%")
-          .width("100%")
+          .height('80%')
+          .width('100%')
       }
-      .height("40%")
+      .height('40%')
       Button('addBuilderNode')
         .onClick((e: ClickEvent) => {
           this.nodeController.addBuilderNode();
