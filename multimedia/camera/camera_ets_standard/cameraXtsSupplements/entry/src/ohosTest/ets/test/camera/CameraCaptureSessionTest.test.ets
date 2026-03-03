@@ -914,20 +914,6 @@ export default function CameraCaptureSessionTest() {
         } else {
           console.error(TAG, testName, "该设备不支持变焦");
         }
-
-
-        // let zoomRatioRange: Array<number> = [];
-        // zoomRatioRange = mCaptureSession.getZoomRatioRange();
-        // console.info(TAG, 'getZoomRatioRange',JSON.stringify(zoomRatioRange))
-        // let zoomRatio = zoomRatioRange[0];
-        // mCaptureSession.setZoomRatio(zoomRatio);
-        // console.info(TAG, 'success')
-        // mCaptureSession.setZoomRatio(null);
-        // console.info(TAG, 'success setZoomRatio')
-        // let res = mCaptureSession.getZoomRatio()
-        // console.info(TAG, 'getZoomRatioRange',JSON.stringify(res))
-
-
         await releaseCaptureSession();
         done();
       } catch (err) {
