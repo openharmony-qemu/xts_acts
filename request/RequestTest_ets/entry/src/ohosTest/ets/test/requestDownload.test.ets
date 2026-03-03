@@ -18,6 +18,7 @@ import featureAbility from '@ohos.ability.featureAbility'
 import fileio from '@ohos.fileio';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "@ohos/hypium";
 import { BusinessError } from '@ohos.base';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestDownloadJSUnit() {
   describe('requestDownloadTest', () => {
@@ -34,6 +35,9 @@ export default function requestDownloadJSUnit() {
      * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
      */
     beforeEach(async () => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
       console.info('====>beforeEach: Prerequisites is executed.');
       await setDownLoadConfig()
     });
