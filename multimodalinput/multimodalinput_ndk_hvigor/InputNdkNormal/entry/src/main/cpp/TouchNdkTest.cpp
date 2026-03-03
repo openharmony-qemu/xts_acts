@@ -1148,7 +1148,7 @@ static napi_property_descriptor desc_part2[] = {
     {"touchEventDisplayX", nullptr, touchEventDisplayX, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"touchEventDisplayY", nullptr, touchEventDisplayY, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"touchEventActionTime", nullptr, touchEventActionTime, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"injectTouchEvent", nullptr, injectTouchEvent, nullptr, nullptr, nullptr, napi_default, nullptr},    
+    {"injectTouchEvent", nullptr, injectTouchEvent, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 static napi_value Init(napi_env env, napi_value exports)
