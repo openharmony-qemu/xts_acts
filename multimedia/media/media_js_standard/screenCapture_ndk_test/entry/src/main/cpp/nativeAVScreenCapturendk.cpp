@@ -1017,7 +1017,6 @@ static napi_value OriginAVScreenCaptureCallBackTest(napi_env env, napi_callback_
     if (screenCaptureResult == AV_SCREEN_CAPTURE_ERR_OK) {
         result = AV_SCREEN_CAPTURE_ERR_OK;
     } else {
-        OH_LOG_INFO(LOG_APP, "init/start/stop failed, init: %d, start: %d", result1, result2);
         result = AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT;
     }
     napi_create_int32(env, result, &res);
