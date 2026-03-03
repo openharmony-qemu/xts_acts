@@ -120,6 +120,6 @@ export default function testsuite() {
   photoFetchResultGetObjectByPositionTestSupp();
   PhotoAssertHelperSuppTest();
   requestImageTest();
-  PhotoGetAssetsTestSupp();
   PhotoSetTitleTestSupp();
+  PhotoGetAssetsTestSupp();
 }
