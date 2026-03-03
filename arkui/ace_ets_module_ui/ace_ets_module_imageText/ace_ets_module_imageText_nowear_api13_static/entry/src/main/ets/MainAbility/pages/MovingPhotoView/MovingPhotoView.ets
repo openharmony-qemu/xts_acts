@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { MovingPhotoView, MovingPhotoViewController, MovingPhotoViewAttribute } from '@ohos.multimedia.movingphotoview';
+import { MovingPhotoView, MovingPhotoViewController, MovingPhotoViewAttribute } from '@ohos.multimedia.MovingPhotoView';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import fs from '@ohos.file.fs';
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
