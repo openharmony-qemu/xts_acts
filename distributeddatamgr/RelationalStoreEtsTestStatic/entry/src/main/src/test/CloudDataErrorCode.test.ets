@@ -96,7 +96,7 @@ export default function CloudDataErrorCode() {
             expect(err.code).assertEqual(801);
             done();
           });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + `setCloudStrategyTest003 + ${e.code} + ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -127,7 +127,7 @@ export default function CloudDataErrorCode() {
                 expect(err.code).assertEqual(801);
                 done();
               });
-          } catch (e: Error) {
+          } catch (e) {
             console.error(TAG + `setCloudStrategyTest004 + ${e.code} + ${e.message}`);
             expect(false).assertTrue();
             done();
