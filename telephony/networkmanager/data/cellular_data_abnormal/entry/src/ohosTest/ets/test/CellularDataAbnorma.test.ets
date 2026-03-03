@@ -481,12 +481,12 @@ export default function ActsCellularDataAbnormalTest() {
       try {
         let isEnabled: boolean = Boolean(cellular.isCellularDataRoamingEnabledSync(null));
         console.info(`${caseName} success isCellularDataRoamingEnabledSync : `+isEnabled);
-        ExpectFail();
+        ExpectTrue(isEnabled == false);
         done();
         console.info(`${caseName}---End`);
       } catch (error) {
         console.info(`${caseName} catch err is :` +JSON.stringify(error));
-        ExpectTrue(error.code === 8300003);
+        ExpectFail();
         done();
         console.info(`${caseName}---End`);
       }
@@ -506,12 +506,12 @@ export default function ActsCellularDataAbnormalTest() {
       try {
         let isEnabled: boolean = Boolean(cellular.isCellularDataRoamingEnabledSync(undefined));
         console.info(`${caseName} success isCellularDataRoamingEnabledSync : `+isEnabled);
-        ExpectFail();
+        ExpectTrue(isEnabled == false);
         done();
         console.info(`${caseName}---End`);
       } catch (error) {
         console.info(`${caseName} catch err is :` +JSON.stringify(error));
-        ExpectTrue(error.code === 8300003);
+        ExpectFail();
         done();
         console.info(`${caseName}---End`);
       }
