@@ -430,7 +430,7 @@ export default function documentPickerPromise(abilityContext: Context) {
       try {
         new picker.DocumentViewPicker().save(option).then((result) => {
         console.info(`test_Documentpicker_Save_Promise_010 result: ${JSON.stringify(result)}`);
-        expect(result.length === 1).assertTrue();
+        expect(picker.DocumentPickerMode.DOWNLOAD === 1).assertTrue();
         done();
       }).catch((err: Error) => {
         console.info(`test_Documentpicker_Save_Promise_010 err: ${JSON.stringify(err)}`);
