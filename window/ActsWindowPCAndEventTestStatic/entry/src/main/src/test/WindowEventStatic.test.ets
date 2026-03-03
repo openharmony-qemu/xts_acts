@@ -1084,6 +1084,8 @@ export default function WindowEventStatic() {
             } catch (e) {
                 e = e as BusinessError;
                 hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
+                hilog.error(domain, tag, msgStr + 'exception code = ' + JSON.stringify(e.code));
+                hilog.error(domain, tag, msgStr + 'exception code = ' + JSON.stringify(e.message));
                 if (e.code === 801) {
                     done();
                 } else {
@@ -1166,6 +1168,127 @@ export default function WindowEventStatic() {
                 }
             }
         });
+
+        /**
+     * @tc.number    SUB_WINDOW_WINDOWTOUCHABLE_FALSE_0100
+     * @tc.name      testSetWindowTouchableFalse_static_0100
+     * @tc.desc      test setWindowTouchable with false parameter using Promise.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it('testSetWindowTouchableFalse_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowTouchableFalse_static_0100';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        try {
+          await win!.setWindowTouchable(false);
+          hilog.info(domain, tag, caseName + ' setWindowTouchable with false success');
+
+          await win!.setWindowTouchable(true);
+          hilog.info(domain, tag, caseName + ' setWindowTouchable with true success');
+          done();
+        } catch (e) {
+          e = e as BusinessError;
+          hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
+          expect(false).assertTrue();
+        }
+      })
+
+    /**
+     * @tc.number    SUB_WINDOW_WINDOWTOUCHABLE_FALSE_CALLBACK_0100
+     * @tc.name      testSetWindowTouchableFalseCallback_static_0100
+     * @tc.desc      test setWindowTouchable with false parameter using AsyncCallback.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it('testSetWindowTouchableFalseCallback_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowTouchableFalseCallback_static_0100';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        try {
+          win!.setWindowTouchable(false, (err: BusinessError | null) => {
+            hilog.info(domain, tag, caseName + ' setWindowTouchable callback err: ' + JSON.stringify(err));
+            if (err && err.code != 0) {
+              hilog.error(domain, tag,
+                caseName + ' setWindowTouchable failed. code: ' + err.code + ', message: ' + err.message);
+              expect(false).assertTrue();
+              done();
+            } else {
+              hilog.info(domain, tag, caseName + ' setWindowTouchable with false success');
+              win!.setWindowTouchable(true, (err2: BusinessError | null) => {
+                hilog.info(domain, tag, caseName + ' setWindowTouchable callback err2: ' + JSON.stringify(err2));
+                if (err2 && err2.code != 0) {
+                  hilog.error(domain, tag,
+                    caseName + ' setWindowTouchable true failed. code: ' + err2.code + ', message: ' + err2.message);
+                  expect(false).assertTrue();
+                  done();
+                } else {
+                  hilog.info(domain, tag, caseName + ' setWindowTouchable with true success');
+                  done();
+                }
+              });
+            }
+          });
+        } catch (e) {
+          e = e as BusinessError;
+          hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
+          expect(false).assertTrue();
+        }
+      })
+
+    
+
+    /**
+     * @tc.number    SUB_WINDOW_SETSUBWINDOWMODAL_MODALITY_0100
+     * @tc.name      testSetSubWindowModalModality_static
+     * @tc.desc      test setSubWindowModal with modalityType parameter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it('testSetSubWindowModalModality_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetSubWindowModalModality_static';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        try {
+          let subWin: window.Window = await windowStage!.createSubWindow('testSetSubWindowModalModality_static');
+          hilog.info(domain, tag, caseName + ' create subWindow success');
+          await subWin.setUIContent('pages/index2');
+          hilog.info(domain, tag, caseName + ' setUIContent success');
+          await subWin.showWindow();
+          hilog.info(domain, tag, caseName + ' showWindow success');
+
+          await subWin.setSubWindowModal(false, window.ModalityType.APPLICATION_MODALITY);
+          hilog.info(domain, tag, caseName + ' setSubWindowModal with APPLICATION_MODALITY success');
+
+          await subWin.destroyWindow();
+          hilog.info(domain, tag, caseName + ' destroyWindow success');
+
+          done();
+        } catch (e) {
+          e = e as BusinessError;
+          hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
+          hilog.error(domain, tag, caseName + ' error code: ' + e.code + ', message: ' + e.message);
+          if (e.code === 801) {
+            hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
+            done();
+          } else if (e.code === 401) {
+            hilog.error(domain, tag, caseName + ' 不支持设置false');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      })
 
     });
 }
