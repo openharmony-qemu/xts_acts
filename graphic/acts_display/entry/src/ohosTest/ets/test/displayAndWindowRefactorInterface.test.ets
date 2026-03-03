@@ -196,5 +196,64 @@ export default function displayAndWindowRefactorInterfaceTest() {
         done();
       }
     });
+
+    /**
+ 	     * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_201_0100
+ 	     * @tc.name      test_DestroyVirtualScreenErrorcode201
+ 	     * @tc.desc      test_DestroyVirtualScreenErrorcode_201 when no permisson
+ 	     * @tc.size      MediumTest
+ 	     * @tc.type      Function
+ 	     * @tc.level     Level 3
+ 	     */
+ 	     it('test_DestroyVirtualScreenErrorcode201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+ 	         let caseName: string = 'test_DestroyVirtualScreenErrorcode201 ';
+ 	         try {
+ 	                 display.destroyVirtualScreen(0).then(() => {
+ 	                 console.info(caseName + 'succeeded in destroy virtual screen, data : ');
+ 	                 expect(false).assertTrue();
+ 	                 done();
+ 	             }).catch((err: BusinessError) => {
+ 	                 console.info(caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+ 	                     expect(err.code === 201).assertTrue();
+ 	                 done();
+ 	             })
+ 	         } catch (err) {
+ 	             console.info(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+ 	             expect(err.code === 801).assertTrue();
+ 	             done();
+ 	         }
+ 	     });
+ 	 
+ 	     /**
+ 	     * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_201c_0100
+ 	     * @tc.name      test_MakeUniqueErrorcode_201
+ 	     * @tc.desc      test_MakeUniqueErrorcode_201 when no permisson
+ 	     * @tc.size      MediumTest
+ 	     * @tc.type      Function
+ 	     * @tc.level     Level 3
+ 	     */
+ 	     it('test_MakeUniqueErrorcode_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+ 	         let caseName: string = 'test_MakeUniqueErrorcode_201 ';
+ 	         try {
+ 	                 display.makeUnique(0).then(()=>{
+ 	                 console.info(caseName + 'Succeeded in makeUnique');
+ 	                 expect(false).assertTrue();
+ 	                 done();
+ 	             }).catch((err: BusinessError) => {
+ 	                 console.info(caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
+ 	                 expect(err.code === 201).assertTrue();
+ 	                 done();
+ 	             })
+ 	         } catch (err) {
+ 	             console.info(caseName + 'error in makeUnique, err : ' + JSON.stringify(err));
+               if(err.code === 801){
+                done();
+               }else{
+                expect(err.code).assertEqual(201);
+ 	              done();
+               }
+ 	             
+ 	         }
+ 	     });
   })
 }
