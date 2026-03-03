@@ -143,9 +143,9 @@ class MySequence2 implements rpc.Parcelable {
   }
 }
 
-export default function graphicImagePixelMap() {
+export default function graphicImagePixelMap1() {
 
-  describe("graphicImagePixelMap", (): void => {
+  describe("graphicImagePixelMap1", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     beforeAll(() => {
       let opts: image.InitializationOptions = {

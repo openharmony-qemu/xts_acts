@@ -927,16 +927,16 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   testCreateUnpremultipliedPixelMap_callback
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_018
+     * @tc.name   graphicImagePixelMap5_0700
+     * @tc.number graphicImagePixelMap5_0700
      * @tc.desc   The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCreateUnpremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg = " =testCreateUnpremultipliedPixelMap_callback= "
+        let msg = " =graphicImagePixelMap5_0700= "
         console.log(" www data 3" + msg + " begin ")
         const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
         let bufferArr = new Uint8Array(color);
@@ -975,16 +975,16 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   testCreateUnpremultipliedPixelMap_promise
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_019
+     * @tc.name   graphicImagePixelMap5_0800
+     * @tc.number graphicImagePixelMap5_0800
      * @tc.desc   The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCreateUnpremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg = " =testCreateUnpremultipliedPixelMap_promise= "
+        let msg = " =graphicImagePixelMap5_0800= "
         console.log(" www data 4" + msg + " begin ")
         const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
         let bufferArr = new Uint8Array(color);
