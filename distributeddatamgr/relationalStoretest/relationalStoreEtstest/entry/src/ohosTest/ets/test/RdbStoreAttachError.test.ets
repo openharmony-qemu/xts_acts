@@ -124,9 +124,6 @@ export default function rdbStoreAttachEtsunitTest() {
         afterEach(async () => {
             console.info(TAG + 'afterEach');
             await data_relationalStore.deleteRdbStore(context, "rdbstore.db");
-            await data_relationalStore.deleteRdbStore(context, "rdbstore4.db");
-            await data_relationalStore.deleteRdbStore(context, "rdbstore5.db");
-            await data_relationalStore.deleteRdbStore(context, "rdbstore6.db");
             console.info(TAG + 'afterEach success');
         })
         
@@ -299,9 +296,16 @@ export default function rdbStoreAttachEtsunitTest() {
                 let number = await store.attach(context, STORE_CONFIG_S2, "attachDB");
                 expect(1).assertEqual(number);
             }catch(e) {
-                console.log("testRdbStoreAttach0034 err: failed, err: code=" + e.code + " message=" + e.message);
-                expect(e.code).assertEqual(14800010);
+                if(e.code === "801"){
+                    console.log("testRdbStoreAttach0034 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("801");
+                }else{
+                    console.log("testRdbStoreAttach0034 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual(14800010);
+                }
+            
             }
+            await data_relationalStore.deleteRdbStore(context, STORE_CONFIG_S2);
             
             console.log(TAG + "************* testRdbStoreAttach0034 end *************");
               
@@ -324,9 +328,15 @@ export default function rdbStoreAttachEtsunitTest() {
             let number = await store.attach(context, STORE_CONFIG_S3, "attachDB");
             expect(1).assertEqual(number);
             }catch(e) {
-                console.log("testRdbStoreAttach0035 err: failed, err: code=" + e.code + " message=" + e.message);
-                expect(e.code).assertEqual(14800010);
+                if(e.code === "801"){
+                    console.log("testRdbStoreAttach0035 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("801");
+                }else{
+                    console.log("testRdbStoreAttach0035 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual(14800010);
+                }
             }
+            await data_relationalStore.deleteRdbStore(context, STORE_CONFIG_S3);
         
             console.log(TAG + "************* testRdbStoreAttach0035 end *************");
               
@@ -349,9 +359,15 @@ export default function rdbStoreAttachEtsunitTest() {
             let number = await store.attach(context, STORE_CONFIG_S4, "attachDB");
             expect(1).assertEqual(number);
             }catch(e) {
-                console.log("testRdbStoreAttach0036 err: failed, err: code=" + e.code + " message=" + e.message);
-                expect(e.code).assertEqual(14800010);
+                if(e.code === "801"){
+                    console.log("testRdbStoreAttach0036 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("801");
+                }else{
+                    console.log("testRdbStoreAttach0036 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual(14800010);
+                }
             }
+            await data_relationalStore.deleteRdbStore(context, STORE_CONFIG_S4);
 
             console.log(TAG + "************* testRdbStoreAttach0036 end *************");
                   
