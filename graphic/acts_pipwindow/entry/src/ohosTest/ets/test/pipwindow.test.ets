@@ -137,6 +137,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
 
     beforeAll(async () => {
       console.log('beforeAll start..');
+      try {
       isPipWindowEnabled = await isPipWindowSupport(context1);
       console.log('beforeAll isPipEnabled:' + isPipWindowEnabled);
       let windowClass = windowStage.getMainWindowSync();
@@ -144,7 +145,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
-      try {
+      
         let driver = Driver.create();
         let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
         console.log('findComponent allowed: ' + JSON.stringify(allowed));

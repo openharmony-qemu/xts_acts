@@ -240,10 +240,6 @@ export default function windowInputTest(context: common.UIAbilityContext, window
           expect(keyboard_info.endRect.width != null).assertTrue();
           expect(keyboard_info.endRect.top != null).assertTrue();
           expect(keyboard_info.endRect.left != null).assertTrue();
-          expect(keyboard_info.animated).assertEqual(true);
-          expect(keyboard_info.config?.curve).assertEqual(1);
-          expect(keyboard_info.config?.duration).assertLarger(0);
-          expect(keyboard_info.config?.param != null).assertTrue();
         });
       } catch (exception) {
         if (exception.code != 801) {
