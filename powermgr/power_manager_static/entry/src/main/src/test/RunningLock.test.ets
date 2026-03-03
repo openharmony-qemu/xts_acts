@@ -757,7 +757,7 @@ export default function RunningLockTest() {
           hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
           expect(lock).not().assertUndefined();
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -789,7 +789,7 @@ export default function RunningLockTest() {
                 done();
               }
             })
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
