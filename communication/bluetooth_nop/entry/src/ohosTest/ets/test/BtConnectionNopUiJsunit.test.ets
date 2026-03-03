@@ -735,7 +735,7 @@ export default function btConnectionNopUiJsunit() {
         connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_NONE,0);
         console.info("[bluetooth_js]connection on/offScanModeChange  is success ");
         expect(true).assertFalse();
-      } catch (err) {
+      } catch (e) {
         console.error("[bluetooth_js]connection on/offScanModeChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(e.code) === 801) {
           console.info('[bluetooth_js] RK板 is not support');
