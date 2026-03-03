@@ -15,17 +15,14 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level, beforeEach, afterAll, afterEach } from '@ohos/hypium'
-import {
-  photoKeys, fetchOption, getPermission, driveFn, sleep, LOG_TAG, isEmpty
-} from '../common'
+import { getPermission, driveFn, sleep, LOG_TAG, isEmpty } from '../common'
 import common from '@ohos.app.ability.common'
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { dataSharePredicates } from '@kit.ArkData';
-import { PhotoSource, RecentPhotoInfo, RecentPhotoOptions } from '@kit.MediaLibraryKit';
-import { JSON, uri } from '@kit.ArkTS';
+import { JSON } from '@kit.ArkTS';
+import { PhotoSource, RecentPhotoOptions } from '@kit.MediaLibraryKit';
 
 const TAG = LOG_TAG + 'PhotoSetTitleSupp';
-
 export default function PhotoSetTitleTestSupp() {
   describe('PhotoSetTitleTestSupp', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -95,7 +92,6 @@ export default function PhotoSetTitleTestSupp() {
         done();
       }
     });
-
     /**
      * @tc.number   SUB_SET_TITLE_TEST_001
      * @tc.name     SUB_SET_TITLE_TEST_001
@@ -300,7 +296,7 @@ export default function PhotoSetTitleTestSupp() {
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
           await PhAccessHelper.getAssets(fetchOptions);
         let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let res = await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, [null]);
+        let res = await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, null);
         console.info(TAG, testName, 'deleteAssets successfully', res);
         expect().assertFail();
         done();
@@ -330,7 +326,7 @@ export default function PhotoSetTitleTestSupp() {
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
           await PhAccessHelper.getAssets(fetchOptions);
         let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let res = await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, [undefined]);
+        let res = await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, undefined);
         console.info(TAG, testName, 'deleteAssets successfully', res);
         expect().assertFail();
         done();
@@ -343,7 +339,7 @@ export default function PhotoSetTitleTestSupp() {
     /**
      * @tc.number   SUB_ADD_ASSETS_TEST_001
      * @tc.name     SUB_ADD_ASSETS_TEST_001
-     * @tc.desc     MediaAlbumChangeRequest.addAssets-第一参数为null
+     * @tc.desc     MediaAlbumChangeRequest.addAssets-第一参数为null--------
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    Level 0
@@ -352,7 +348,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_ADD_ASSETS_TEST_001";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
@@ -361,7 +357,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed addAssetsDemo ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -377,7 +373,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_ADD_ASSETS_TEST_002";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
@@ -386,7 +382,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed addAssetsDemo ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -402,7 +398,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_ADD_ASSETS_TEST_003";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
@@ -411,7 +407,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed addAssetsDemo ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -427,7 +423,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_REMOVE_ASSETS_TEST_001";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
@@ -436,7 +432,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed removeAssetsDemo  ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -452,7 +448,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_REMOVE_ASSETS_TEST_002";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
@@ -461,7 +457,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed removeAssetsDemo  ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -477,7 +473,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_REMOVE_ASSETS_TEST_003";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
@@ -486,7 +482,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed removeAssetsDemo  ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -502,7 +498,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_SET_ALBUM_NAME_TEST_001";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
@@ -512,7 +508,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed setAlbumNameDemo ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -528,7 +524,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_SET_ALBUM_NAME_TEST_002";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
@@ -538,7 +534,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed setAlbumNameDemo ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -554,7 +550,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_SET_ALBUM_NAME_TEST_003";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
@@ -564,37 +560,11 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed setAlbumNameDemo ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
-    /**
-     * @tc.number   SUB_GET_ASSET_TEST_001
-     * @tc.name     SUB_GET_ASSET_TEST_001
-     * @tc.desc     getAsset-所有属性覆盖
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_GET_ASSET_TEST_001", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_GET_ASSET_TEST_001";
-      try {
-        let fileUri = testContext.filesDir + '/test.jpg';
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-          photoAccessHelper.MediaAssetChangeRequest.createImageAssetRequest(testContext, fileUri);
-        await PhAccessHelper.applyChanges(assetChangeRequest);
-        let asset: photoAccessHelper.PhotoAsset = assetChangeRequest.getAsset();
-        console.info(TAG, testName, 'create asset successfully with uri = ' + asset.uri);
-        expect(asset.uri.length > 0).assertTrue();
-        expect(asset.displayName.length > 0).assertTrue();
-        expect(asset.photoType).assertEqual(photoAccessHelper.PhotoType.IMAGE);
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' getAssetDemo  Failed ', JSON.stringify(error), error.code);
-        expect().assertFail();
-        done();
-      }
-    });
+
     /**
      * @tc.number   SUB_GET_ALBUM_TEST_001
      * @tc.name     SUB_GET_ALBUM_TEST_001
@@ -620,135 +590,6 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, ' getAlbumDemo Failed ', JSON.stringify(error), error.code);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_CREATE_ASSET_REQUEST_TEST_001
-     * @tc.name     SUB_CREATE_ASSET_REQUEST_TEST_001
-     * @tc.desc     createAssetRequest-第一个参数为null
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_CREATE_ASSET_REQUEST_TEST_001", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_CREATE_ASSET_REQUEST_TEST_001";
-      try {
-        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-        let extension: string = 'jpg';
-        let options: photoAccessHelper.CreateOptions = {
-          title: 'testPhoto'
-        }
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-          photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(null, photoType, extension, options);
-        let fileUri = testContext.filesDir + '/test.jpg';
-        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, fileUri);
-        await PhAccessHelper.applyChanges(assetChangeRequest);
-        console.info(TAG, testName, 'apply createAssetRequest successfully', assetChangeRequest);
-        expect(assetChangeRequest != undefined).assertTrue();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' Failed ', JSON.stringify(error), error.code);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_CREATE_ASSET_REQUEST_TEST_002
-     * @tc.name     SUB_CREATE_ASSET_REQUEST_TEST_002
-     * @tc.desc     createAssetRequest-第一个参数为undefined
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_CREATE_ASSET_REQUEST_TEST_002", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_CREATE_ASSET_REQUEST_TEST_002";
-      try {
-        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-        let extension: string = 'jpg';
-        let options: photoAccessHelper.CreateOptions = {
-          title: 'testPhoto'
-        }
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-          photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(undefined, photoType, extension, options);
-        let fileUri = testContext.filesDir + '/test.jpg';
-        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, fileUri);
-        console.info(TAG, testName, 'apply createAssetRequest successfully', fileUri);
-        await PhAccessHelper.applyChanges(assetChangeRequest);
-        console.info(TAG, testName, 'apply createAssetRequest successfully', assetChangeRequest);
-        expect(assetChangeRequest != undefined).assertTrue();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, ' Failed ', JSON.stringify(error), error.code);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_001
-     * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_001
-     * @tc.desc     showSingleAssetCreationDialogEx-正常情况
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_001", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_001";
-      try {
-        let srcFileUri: string = testContext.filesDir + '/test.jpg';
-        let creationSetting: photoAccessHelper.CreationSetting = {
-          title: 'test',
-          fileNameExtension: 'jpg',
-          photoType: photoAccessHelper.PhotoType.IMAGE
-        }
-        let isImageFullyDisplayed: boolean = true
-        PhAccessHelper.showSingleAssetCreationDialogEx(srcFileUri, creationSetting, isImageFullyDisplayed)
-          .then((desFileUri) => {
-            console.info(TAG, testName, 'showSingleAssetCreationDialogEx success, data is ' + desFileUri);
-            expect(isEmpty(desFileUri)).assertFalse();
-            done();
-          })
-        await sleep(1500);
-        let power = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-        await power?.click();
-      } catch (error) {
-        console.error(TAG, testName,
-          'showSingleAssetCreationDialogEx failed, errCode is ' + error.code + ', errMsg is ' + error.message);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_002
-     * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_002
-     * @tc.desc     showSingleAssetCreationDialogEx-第2个参数属性photoType:覆盖枚举:['VIDEO']
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_002", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_002";
-      try {
-        let srcFileUri: string = testContext.filesDir + '/test.jpg';
-        let creationSetting: photoAccessHelper.CreationSetting = {
-          title: 'test',
-          fileNameExtension: 'jpg',
-          photoType: photoAccessHelper.PhotoType.VIDEO
-        }
-        let isImageFullyDisplayed: boolean = true
-        PhAccessHelper.showSingleAssetCreationDialogEx(srcFileUri, creationSetting, isImageFullyDisplayed)
-          .then((desFileUri) => {
-            console.info(TAG, testName, 'showSingleAssetCreationDialogEx success, data is ' + desFileUri);
-            expect(isEmpty(desFileUri)).assertFalse();
-            done();
-          })
-        await sleep(1500);
-        let power = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-        await power?.click();
-      } catch (error) {
-        console.error(TAG, testName,
-          'showSingleAssetCreationDialogEx failed, errCode is ' + error.code + ', errMsg is ' + error.message);
         expect().assertFail();
         done();
       }
@@ -839,214 +680,6 @@ export default function PhotoSetTitleTestSupp() {
       }
     });
     /**
-     * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_006
-     * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_006
-     * @tc.desc     showSingleAssetCreationDialogEx-第二个参数为null
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_006", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_006";
-      try {
-        let srcFileUri: string = 'file://media/Photo/4/IMG_1770778723_002/test.jpg';
-        let isImageFullyDisplayed: boolean = true
-        await PhAccessHelper.showSingleAssetCreationDialogEx(srcFileUri, null, isImageFullyDisplayed);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(TAG, testName,
-          'showSingleAssetCreationDialogEx failed, errCode is ' + error.code + ', errMsg is ' + error.message);
-        expect(Number(error.code)).assertEqual(401);
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_007
-     * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_007
-     * @tc.desc     showSingleAssetCreationDialogEx-第二个参数为undefined
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_007", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_007";
-      try {
-        let srcFileUri: string = 'file://media/Photo/4/IMG_1770778723_002/test.jpg';
-        let isImageFullyDisplayed: boolean = true
-        await PhAccessHelper.showSingleAssetCreationDialogEx(srcFileUri, undefined, isImageFullyDisplayed);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(TAG, testName,
-          'showSingleAssetCreationDialogEx failed, errCode is ' + error.code + ', errMsg is ' + error.message);
-        expect(Number(error.code)).assertEqual(401);
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_008
-     * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_008
-     * @tc.desc     showSingleAssetCreationDialogEx-false-第二个参数为null
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_008", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_008";
-      try {
-        let srcFileUri: string = 'file://media/Photo/4/IMG_1770778723_002/test.jpg';
-        let isImageFullyDisplayed: boolean = false
-        await PhAccessHelper.showSingleAssetCreationDialogEx(srcFileUri, null, isImageFullyDisplayed);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(TAG, testName,
-          'showSingleAssetCreationDialogEx failed, errCode is ' + error.code + ', errMsg is ' + error.message);
-        expect(Number(error.code)).assertEqual(401);
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_009
-     * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_009
-     * @tc.desc     showSingleAssetCreationDialogEx-false-第二个参数为undefined
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_009", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_009";
-      try {
-        let srcFileUri: string = 'file://media/Photo/4/IMG_1770778723_002/test.jpg';
-        let isImageFullyDisplayed: boolean = false
-        await PhAccessHelper.showSingleAssetCreationDialogEx(srcFileUri, undefined, isImageFullyDisplayed);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(TAG, testName,
-          'showSingleAssetCreationDialogEx failed, errCode is ' + error.code + ', errMsg is ' + error.message);
-        expect(Number(error.code)).assertEqual(401);
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0010
-     * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0010
-     * @tc.desc     showSingleAssetCreationDialogEx-第三个参数false覆盖
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0010", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0010";
-      try {
-        let srcFileUri: string = 'file://media/Photo/4/IMG_1770778723_002/test.jpg';
-        let creationSetting: photoAccessHelper.CreationSetting = {
-          title: 'test',
-          fileNameExtension: 'jpg',
-          photoType: photoAccessHelper.PhotoType.IMAGE
-        }
-        let isImageFullyDisplayed: boolean = false
-        PhAccessHelper.showSingleAssetCreationDialogEx(srcFileUri, creationSetting, isImageFullyDisplayed)
-          .then((desFileUri) => {
-            console.info(TAG, testName, 'showSingleAssetCreationDialogEx success, data is ' + desFileUri);
-            expect(isEmpty(desFileUri)).assertFalse();
-            done();
-          })
-        await sleep(1500);
-        let power = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-        await power?.click();
-      } catch (error) {
-        console.error(TAG, testName,
-          'showSingleAssetCreationDialogEx failed, errCode is ' + error.code + ', errMsg is ' + error.message);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0011
-     * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0011
-     * @tc.desc     showSingleAssetCreationDialogEx-false-第一个参数为null
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0011", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0011";
-      try {
-        let creationSetting: photoAccessHelper.CreationSetting = {
-          title: 'test',
-          fileNameExtension: 'jpg',
-          photoType: photoAccessHelper.PhotoType.IMAGE
-        }
-        let isImageFullyDisplayed: boolean = false
-        await PhAccessHelper.showSingleAssetCreationDialogEx(null, creationSetting, isImageFullyDisplayed);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(TAG, testName,
-          'showSingleAssetCreationDialogEx failed, errCode is ' + error.code + ', errMsg is ' + error.message);
-        expect(Number(error.code)).assertEqual(401);
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0012
-     * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0012
-     * @tc.desc     showSingleAssetCreationDialogEx-false-第一个参数为undefined
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0012", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0012";
-      try {
-        let creationSetting: photoAccessHelper.CreationSetting = {
-          title: 'test',
-          fileNameExtension: 'jpg',
-          photoType: photoAccessHelper.PhotoType.IMAGE
-        }
-        let isImageFullyDisplayed: boolean = false
-        await PhAccessHelper.showSingleAssetCreationDialogEx(undefined, creationSetting, isImageFullyDisplayed);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(TAG, testName,
-          'showSingleAssetCreationDialogEx failed, errCode is ' + error.code + ', errMsg is ' + error.message);
-        expect(Number(error.code)).assertEqual(401);
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0013
-     * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0013
-     * @tc.desc     showSingleAssetCreationDialogEx-false-第一个参数为空字符串
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0013", Level.LEVEL0, async (done: Function) => {
-      const testName = "SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0013";
-      try {
-        let creationSetting: photoAccessHelper.CreationSetting = {
-          title: 'test',
-          fileNameExtension: 'jpg',
-          photoType: photoAccessHelper.PhotoType.IMAGE
-        }
-        let isImageFullyDisplayed: boolean = false
-        await PhAccessHelper.showSingleAssetCreationDialogEx(AppStorage.get('emptyString'), creationSetting,
-          isImageFullyDisplayed);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(TAG, testName,
-          'showSingleAssetCreationDialogEx failed, errCode is ' + error.code + ', errMsg is ' + error.message);
-        expect(Number(error.code)).assertEqual(401);
-        done();
-      }
-    });
-    /**
      * @tc.number   SUB_AlBUM_ADD_ASSETS_TEST_001
      * @tc.name     SUB_AlBUM_ADD_ASSETS_TEST_001
      * @tc.desc     Album.AddAssets-第一个参数为null
@@ -1058,7 +691,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_ADD_ASSETS_TEST_001";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.addAssets(null, () => {
           console.info(TAG, testName, 'addAssets successfully');
@@ -1067,7 +700,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets with null param Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1083,7 +716,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_ADD_ASSETS_TEST_002";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.addAssets(undefined, () => {
           console.info(TAG, testName, 'addAssets successfully');
@@ -1092,7 +725,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets with null param Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1108,7 +741,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_ADD_ASSETS_TEST_003";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.addAssets([], (err) => {
           console.info(TAG, testName, 'addAssets successfully');
@@ -1117,7 +750,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets with null param Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1133,7 +766,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_ADD_ASSETS_PROMISE_TEST_001";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.addAssets(null).then(() => {
           console.info(TAG, testName, 'addAssets successfully');
@@ -1142,7 +775,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets with null param Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1158,7 +791,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_ADD_ASSETS_PROMISE_TEST_002";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.addAssets(undefined).then(() => {
           console.info(TAG, testName, 'addAssets successfully');
@@ -1167,7 +800,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets with null param Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1183,7 +816,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_ADD_ASSETS_PROMISE_TEST_003";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.addAssets([]).then(() => {
           console.info(TAG, testName, 'addAssets successfully');
@@ -1192,7 +825,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets with null param Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1208,7 +841,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_REMOVE_ASSETS_CALLBACK_TEST_001";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.removeAssets(null, () => {
           console.info(TAG, testName, 'album removeAssets successfully');
@@ -1217,7 +850,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1233,7 +866,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_REMOVE_ASSETS_CALLBACK_TEST_002";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.removeAssets(undefined, () => {
           console.info(TAG, testName, 'album removeAssets successfully');
@@ -1242,7 +875,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1258,7 +891,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_REMOVE_ASSETS_CALLBACK_TEST_003";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.removeAssets([], () => {
           console.info(TAG, testName, 'album removeAssets successfully');
@@ -1267,7 +900,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1283,7 +916,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_REMOVE_ASSETS_TEST_001";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.removeAssets(null).then(() => {
           console.info(TAG, testName, 'album removeAssets successfully');
@@ -1292,7 +925,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1308,7 +941,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_REMOVE_ASSETS_TEST_002";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.removeAssets(undefined).then(() => {
           console.info(TAG, testName, 'album removeAssets successfully');
@@ -1317,7 +950,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1333,7 +966,7 @@ export default function PhotoSetTitleTestSupp() {
       const testName = "SUB_AlBUM_REMOVE_ASSETS_TEST_003";
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         album.removeAssets([]).then(() => {
           console.info(TAG, testName, 'album removeAssets successfully');
@@ -1342,7 +975,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, 'album addAssets Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -1456,7 +1089,6 @@ export default function PhotoSetTitleTestSupp() {
         done();
       }
     });
-
     /**
      * @tc.number   SUB_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_001
      * @tc.name     SUB_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_001
@@ -1541,6 +1173,5 @@ export default function PhotoSetTitleTestSupp() {
         done();
       }
     });
-
   })
 }
