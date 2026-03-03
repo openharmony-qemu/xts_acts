@@ -166,8 +166,8 @@ class MyNodeAdapter extends NodeAdapter {
 }
 
 class MyNodeAdapterController extends NodeController {
-  private rootNode: FrameNode | null = null;
-  private nodeAdapter: MyNodeAdapter | null = null;
+  public rootNode: FrameNode | null = null;
+  public nodeAdapter: MyNodeAdapter | null = null;
 
   makeNode(uiContext: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(uiContext);
