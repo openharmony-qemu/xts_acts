@@ -47,13 +47,15 @@ export default function ActionSheet3() {
       }
       done();
     });
-    
-    /* *
-    * @tc.number  ActionSheet3_0100
-    * @tc.name    SUB_ACE_ActionSheet3_0100
-    * @tc.desc    To test that the Provide decorator supports union types.
-    * @tc.level   Level 0
-    */
+
+    /**
+     * @tc.number    SUB_ACE_ActionSheet3_0100
+     * @tc.name      ActionSheet3_0100
+     * @tc.desc      set api
+     * @tc.level:    Level 0
+     * @tc.type :
+     * @tc.size :
+     */
     it('ActionSheet3_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheet3_0100 START');
       let driver = await Driver.create()
@@ -80,12 +82,14 @@ export default function ActionSheet3() {
       done();
     });
 
-    /* *
-    * @tc.number  ActionSheet3_0200
-    * @tc.name    SUB_ACE_ActionSheet3_0200
-    * @tc.desc    To test that the Provide decorator supports union types.
-    * @tc.level   Level 0
-    */
+    /**
+     * @tc.number    SUB_ACE_ActionSheet2_0200
+     * @tc.name      ActionSheet3_0200
+     * @tc.desc      set api
+     * @tc.level:    Level 0
+     * @tc.type :
+     * @tc.size :
+     */
     it('ActionSheet3_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheet3_0200 START');
       let driver = await Driver.create()
