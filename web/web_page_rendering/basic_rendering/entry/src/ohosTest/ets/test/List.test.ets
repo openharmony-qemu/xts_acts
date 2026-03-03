@@ -29,6 +29,7 @@ import webViewOnFullScreenExit from './webViewOnFullScreenExit.test';
 import getSurfaceId from './getSurfaceId.test';
 import webViewControllerJsunit from './webViewControllerJsunit.test';
 import WebViewOnFirstScreenPaint from './WebViewOnFirstScreenPaint.test'
+import webPageSnapshotTest from './WebPageSnapshot.test';
 
 
 export default function testsuite() {
@@ -49,4 +50,5 @@ export default function testsuite() {
   getSurfaceId();
   webViewControllerJsunit();
   WebViewOnFirstScreenPaint();
+  webPageSnapshotTest();
 }
