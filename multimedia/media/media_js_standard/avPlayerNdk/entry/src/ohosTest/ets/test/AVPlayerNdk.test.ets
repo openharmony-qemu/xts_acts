@@ -2339,8 +2339,8 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.number     : testOhAvPlayerSetDataSource001
-     * @tc.name       : TestOhAvPlayerSetDataSource001
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0100
+     * @tc.name       : testOhAvPlayerSetDataSource001
      * @tc.desc       : test OH_AVPlayer_SetDataSource function
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2353,8 +2353,8 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.number     : testOhAvPlayerSetDataSource002
-     * @tc.name       : TestOhAvPlayerSetDataSource002
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0200
+     * @tc.name       : testOhAvPlayerSetDataSource002
      * @tc.desc       : test OH_AVPlayer_SetDataSource function
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2367,8 +2367,8 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.number     : testOhAvPlayerSetDataSource003
-     * @tc.name       : TestOhAvPlayerSetDataSource003
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0300
+     * @tc.name       : testOhAvPlayerSetDataSource003
      * @tc.desc       : test OH_AVPlayer_SetDataSource function
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2381,8 +2381,8 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.number     : testOhAvPlayerSetDataSource004
-     * @tc.name       : TestOhAvPlayerSetDataSource004
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0400
+     * @tc.name       : testOhAvPlayerSetDataSource004
      * @tc.desc       : test OH_AVPlayer_SetDataSource function
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2395,8 +2395,8 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.number     : testOhAvPlayerSetDataSource005
-     * @tc.name       : TestOhAvPlayerSetDataSource005
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0500
+     * @tc.name       : testOhAvPlayerSetDataSource005
      * @tc.desc       : test OH_AVPlayer_SetDataSource function
      * @tc.size       : MediumTest
      * @tc.type       : Function
