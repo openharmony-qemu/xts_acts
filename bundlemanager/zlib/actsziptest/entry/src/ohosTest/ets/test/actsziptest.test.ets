@@ -17940,7 +17940,7 @@ export default function ActsZipTest() {
             } catch (errData) {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData.code).assertEqual(401);
-		expect(errData.message).assertEqual("The parameter check failed"
+		expect(errData.message).assertEqual("The parameter check failed")
             }
             console.info("==================actsZipTest131 end==================");
             done();
