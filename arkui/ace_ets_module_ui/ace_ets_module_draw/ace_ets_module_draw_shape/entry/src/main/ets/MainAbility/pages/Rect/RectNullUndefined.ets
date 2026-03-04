@@ -22,7 +22,7 @@ struct RectNullUndefinedTest {
       Row() {
         // Valid parameters (对照)
         Rect()
-          .width(80)
+          .width(60)
           .height(40)
           .stroke(Color.Orange)
           .strokeWidth(2)
@@ -32,7 +32,7 @@ struct RectNullUndefinedTest {
 
         // strokeMiterLimit with null
         Rect()
-          .width(80)
+          .width(60)
           .height(40)
           .stroke(Color.Orange)
           .strokeWidth(2)
@@ -42,13 +42,23 @@ struct RectNullUndefinedTest {
 
         // strokeMiterLimit with undefined
         Rect()
-          .width(80)
+          .width(60)
           .height(40)
           .stroke(Color.Orange)
           .strokeWidth(2)
           .strokeLineJoin(LineJoinStyle.Miter)
           .strokeMiterLimit(undefined)
           .id('Rect_strokeMiterLimit_undefined')
+
+        // strokeMiterLimit with empty string
+        Rect()
+          .width(60)
+          .height(40)
+          .stroke(Color.Orange)
+          .strokeWidth(2)
+          .strokeLineJoin(LineJoinStyle.Miter)
+          .strokeMiterLimit('')
+          .id('Rect_strokeMiterLimit_empty_string')
       }
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
