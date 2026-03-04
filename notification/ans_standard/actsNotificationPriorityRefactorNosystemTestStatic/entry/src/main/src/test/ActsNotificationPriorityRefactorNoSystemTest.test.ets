@@ -43,7 +43,7 @@ import bundleManager from '@ohos.bundle.bundleManager'
 const TAG = 'NotificationHits';
 const TEST_SUITE_NAME = 'Notification';
 let DOMAIN_NUMBER: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let bundleName: string = "com.example.hitsnotificationpriorityrefactornosystemtest.static"
+let bundleName: string = "com.example.actsnotificationpriorityrefactornosystemtest.static"
 let testAbilityContext: common.UIAbilityContext;
 let count :int = 0
 
