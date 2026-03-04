@@ -64,7 +64,7 @@ struct webUserAgentMetadata {
               case 'emitSetUserAgentMetadata': {
                 try {
                   let userAgent = webView.WebviewController.getDefaultUserAgent();
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = new Array<webView.UserAgentBrandVersion>;
+                  let arrayVersions: webView.UserAgentBrandVersion[] = [];
                   let brandVersion:webView.UserAgentBrandVersion = new webView.UserAgentBrandVersion();
                   brandVersion.setBrand('brand OpenHarmony');
                   brandVersion.setMajorVersion('major version 1.0');

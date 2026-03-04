@@ -65,7 +65,7 @@ struct webSetUrlTrustList {
             switch (this.emitKey) {
               case 'emitSetUrlTrustList': {
                 try {
-                  let urlTrustList: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}"
+                  let urlTrustList: string = '{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}'
                   this.controller.setUrlTrustList(urlTrustList, true, true);
                   Utils.emitEvent(true, 174280);
                 } catch (error) {
@@ -104,7 +104,7 @@ struct webSetUrlTrustList {
               }
               case 'emitSetUrlTrustListSecondParamNull': {
                 try {
-                  let urlTrustList: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}"
+                  let urlTrustList: string = '{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}'
                   this.controller.setUrlTrustList(urlTrustList, null, true);
                   Utils.emitEvent(false, 174310);
                 } catch (error) {
@@ -119,7 +119,7 @@ struct webSetUrlTrustList {
               }
               case 'emitSetUrlTrustListSecondParamUndefined': {
                 try {
-                  let urlTrustList: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}"
+                  let urlTrustList: string = '{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}'
 
                   this.controller.setUrlTrustList(urlTrustList, undefined, true);
                   Utils.emitEvent(false, 174320);
@@ -135,7 +135,7 @@ struct webSetUrlTrustList {
               }
               case 'emitSetUrlTrustListThirdParamNull': {
                 try {
-                  let urlTrustList: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}"
+                  let urlTrustList: string = '{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}'
 
                   this.controller.setUrlTrustList(urlTrustList, true, null);
                   Utils.emitEvent(false, 174330);
@@ -151,7 +151,7 @@ struct webSetUrlTrustList {
               }
               case 'emitSetUrlTrustListThirdParamUndefined': {
                 try {
-                  let urlTrustList: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}"
+                  let urlTrustList: string = '{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}'
 
                   this.controller.setUrlTrustList(urlTrustList, true, undefined);
                   Utils.emitEvent(false, 174340);
@@ -167,7 +167,7 @@ struct webSetUrlTrustList {
               }
               case 'emitSetUrlTrustListInitError': {
                 try {
-                  let urlTrustList: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}"
+                  let urlTrustList: string = '{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}'
 
                   let tempController = new webView.WebviewController();
                   tempController.setUrlTrustList(urlTrustList, true, true);
@@ -184,7 +184,7 @@ struct webSetUrlTrustList {
               }
               case 'emitSetUrlTrustListWhitelistUrlLoad': {
                 try {
-                  let urlTrustList: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}"
+                  let urlTrustList: string = '{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}'
                   console.log("==emitSetUrlTrustListWhitelistUrlLoad")
                   this.controller.setUrlTrustList(urlTrustList, true, true);
                   this.controller.loadUrl($rawfile('urlTrustList.html'));
@@ -198,7 +198,7 @@ struct webSetUrlTrustList {
 
               case 'emitSetUrlTrustListWildList': {
                 try {
-                  let urlWildcardList: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"*.example.com\", \"path\":\"*\"}]}"
+                  let urlWildcardList: string = '{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"*.example.com\", \"path\":\"*\"}]}'
                   console.log('==emitSetUrlTrustListWildList')
                   this.controller.setUrlTrustList(urlWildcardList, true, true);
                   this.controller.loadUrl($rawfile('urlTrustList.html'));

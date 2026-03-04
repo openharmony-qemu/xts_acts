@@ -268,8 +268,8 @@ struct webUserAgentMetadataFormFactorsEum {
                   for(let j = 0; j < formFactors.length; j++) {
                     console.info('emitSetFormFactorsMultiple FormFactor:' +j + '' + formFactors[j]);
                   }
-                  if (formFactors[0] == webView.UserAgentFormFactor.MOBILE
-                    && formFactors[1] == webView.UserAgentFormFactor.TABLET) {
+                  if (formFactors[0] == webView.UserAgentFormFactor.MOBILE && formFactors[1] ==
+                  webView.UserAgentFormFactor.TABLET) {
                     Utils.emitEvent(true, 175110);
                   } else {
                     Utils.emitEvent(false, 175110);
