@@ -46,6 +46,10 @@ struct extensionCreateSubWindowWithFalseOpt {
             const subWindowConfig: window.SubWindowOptions = {
               title: 'This is a subwindow',
               decorEnabled: true,
+              isModal:true,
+              modalityType:window.ModalityType.WINDOW_MODALITY,
+              maximizeSupported:true,
+              outlineEnabled:true
             };
             // 创建子窗口
             await extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig, false)
