@@ -446,6 +446,7 @@ export default function stateManagementNullUndefinedTest() {
         // Clean up if property was created
         if (AppStorage.has(propName)) {
           PersistentStorage.deleteProp(propName);
+          AppStorage.delete(propName)
         }
         // If no exception is thrown, the test passes
         console.info('[PersistentStorage_persistProps_emptyKey_001] END');
@@ -479,6 +480,7 @@ export default function stateManagementNullUndefinedTest() {
         // Clean up if property was created
         if (AppStorage.has(propName)) {
           PersistentStorage.deleteProp(propName);
+          AppStorage.delete(propName)
         }
         // If no exception is thrown, the test passes
         console.info('[PersistentStorage_PersistProps_emptyKey_001] END');

@@ -130,6 +130,7 @@ export default function testsuite() {
     FreezeV2Test03();
     FreezeV2Child();
     FreezeV1Test();
+    FreezeV1Test02();
     FreezeV1Test03();
     freezeInactive();
     twoWayBindTest();
