@@ -2576,7 +2576,7 @@ export default function Util3Test() {
         expect(e.code).assertEqual('401');
       }
       let result3 = base64Helper.encodeToStringSync(array, util.Type.MIME_URL_SAFE);
-      expect(result3.length).assertEqual("193");
+      expect(result3.length).assertEqual(193);
     })
   })
 }
