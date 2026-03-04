@@ -887,19 +887,17 @@ HWTEST_F(DecApiNdkTest, VIDEO_AV1DEO1DEC_CAP_API_0017, TestSize.Level1)
         ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
         ASSERT_EQ(AV_ERR_OK, ret);
         ASSERT_NE(nullptr, profiles);
-        if (profiles != nullptr && profileNum > 0) {
-            bool professionalFound = false;
-            for (int i = 0; i < profileNum; i++) {
-                EXPECT_GE(profiles[i], 0);
-                if (profiles[i] == AV1_PROFILE_PROFESSIONAL) {
-                    professionalFound = true;
-                }
+        bool professionalFound = false;
+        for (int i = 0; i < profileNum; i++) {
+            EXPECT_GE(profiles[i], 0);
+            if (profiles[i] == AV1_PROFILE_PROFESSIONAL) {
+                professionalFound = true;
             }
-            if (professionalFound) {
-                ASSERT_EQ(AV1_PROFILE_PROFESSIONAL, profiles[profileNum - 1]);
-            } else {
-                cout << "AV1_RPOFILE_PROFESSIONAL is not supported" << endl;
-            }
+        }
+        if (professionalFound) {
+            ASSERT_EQ(AV1_PROFILE_PROFESSIONAL, profiles[profileNum - 1]);
+        } else {
+            cout << "AV1_RPOFILE_PROFESSIONAL is not supported" << endl;
         }
     }
 }
