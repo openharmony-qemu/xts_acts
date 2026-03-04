@@ -204,8 +204,8 @@ export default function AddContactViaUITest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactAddContactViaUI0100";
       console.info(`${caseName} test start `);
-      if (!canIUse("SystemCapability.Applications.Contacts")) {
-        console.log(`${caseName} no syscap`);
+      if (deviceInfo.deviceType == 'default') {
+        console.log(`${caseName} not support default`);
         done();
       }
       try {
@@ -251,8 +251,8 @@ export default function AddContactViaUITest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactAddContactViaUI0200";
       console.info(`${caseName} test start `);
-      if (!canIUse("SystemCapability.Applications.Contacts")) {
-        console.log(`${caseName} no syscap`);
+      if (deviceInfo.deviceType == 'default') {
+        console.log(`${caseName} not support default`);
         done();
       }
       try {
@@ -300,8 +300,8 @@ export default function AddContactViaUITest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactAddContactViaUI0300";
       console.info(`${caseName} test start `);
-      if (!canIUse("SystemCapability.Applications.Contacts")) {
-        console.log(`${caseName} no syscap`);
+      if (deviceInfo.deviceType == 'default') {
+        console.log(`${caseName} not support default`);
         done();
       }
       try {
