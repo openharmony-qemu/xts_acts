@@ -101,8 +101,8 @@ const STORE_CONFIG_S4: data_relationalStore.StoreConfig = {
     tokenizer: data_relationalStore.Tokenizer.NONE_TOKENIZER,      
 };
 
-export default function rdbStoreAttachEtsunitTest() {
-    describe('rdbStoreAttachEtsunitTest', () => {
+export default function rdbStoreAttachErrorTest() {
+    describe('rdbStoreAttachErrorTest', () => {
         beforeAll(async () => {
             console.info(TAG + 'beforeAll');
         })
