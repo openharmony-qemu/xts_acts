@@ -1115,12 +1115,14 @@ export default function geolocationTest_GeoErr() {
                     if (isGeocoderAvailable) {
                         let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 5};
                         try {
-                            geolocationm.getAddressesFromLocationName(geocodeRequest).then((result) => {
-                                console.info('getAddressesFromLocationName: ' + JSON.stringify(result));
-                                expect(result.length>0).assertTrue();
-                            })
-                            .catch((error) => {
-                                console.error('promise, getAddressesFromLocationName: error=' + JSON.stringify(error));
+                            geolocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                                console.info('SUB_HSS_isGeocoderAvailable_0001: data=' + JSON.stringify(data));
+                                if(data){
+                                    expect(data.length>0).assertTrue();
+                                }else{
+                                    console.info("The device Capability not supported." + JSON.stringify(data));
+                                    expect(data === undefined || data === null).assertFalse();
+                                }
                             });
                         } catch (err) {
                             console.error("errCode:" + err.code + ", message:"  + err.message);
@@ -1129,13 +1131,13 @@ export default function geolocationTest_GeoErr() {
                         let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 1};
                         try {
                             geolocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
-                            console.info('SUB_HSS_isGeocoderAvailable_0001: data=' + JSON.stringify(data));
-                            if(data){
-                                expect(data.length>0).assertTrue();
-                            }else{
-                                console.info("The device Capability not supported." + JSON.stringify(data));
-                                expect(data === undefined || data === null).assertTrue();
-                            }
+                                console.info('SUB_HSS_isGeocoderAvailable_0001: data=' + JSON.stringify(data));
+                                if(data){
+                                    expect(data.length>0).assertFalse();
+                                }else{
+                                    console.info("The device Capability not supported." + JSON.stringify(data));
+                                    expect(data === undefined || data === null).assertTrue();
+                                }
                             });
                         } catch (err) {
                             console.error("errCode:" + err.code + ", message:"  + err.message);
