@@ -232,10 +232,14 @@ export default function netfirewallTest() {
           remotePorts: [],
           localPorts: [],
           domains: [],
+          dns: {
+            primaryDns: "11.1.11.1",
+            standbyDns: "11.0.11.2"
+          } 
         };
         await netFirewall.addNetFirewallRule(ipRule_01).then(async (result: number) => {
           console.info(`${caseName} rule Id: `, result);
-          ExpectTrue(true);
+          ExpectTrue(result != undefined);
           done();
         }, (reason: BusinessError) => {
           ExpectFail();
@@ -332,6 +336,7 @@ export default function netfirewallTest() {
       try{
         await netFirewall.setNetFirewallPolicy(undefined, undefined).then(() => {
           console.info(`${caseName} set firewall policy success.`);
+          ExpectFail();
           done();
         }).catch((error : BusinessError) => {
           console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
@@ -360,6 +365,7 @@ export default function netfirewallTest() {
       try{
         await netFirewall.setNetFirewallPolicy(null, null).then(() => {
           console.info(`${caseName} set firewall policy success.`);
+          ExpectFail();
           done();
         }).catch((error : BusinessError) => {
           console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
@@ -461,7 +467,6 @@ export default function netfirewallTest() {
           action: ruleAction_RULE_ALLOW,
           type: ruleType_RULE_IP,
           isEnabled: true,
-          id: 1,
           description: "rule10 description",
           appUid: 20001,
           protocol: 6,
@@ -515,10 +520,11 @@ export default function netfirewallTest() {
         };
         await netFirewall.addNetFirewallRule(ipRule_01).then(async (result: number) => {
           console.info(`${caseName} rule Id: `, result);
+          Current_Ruler_ID = result;
         }, (reason: BusinessError) => {
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
           ExpectFail();
           done();
-          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
         });
 
         await netFirewall.getNetFirewallRule(userId, Current_Ruler_ID).then((rule: netFirewall.NetFirewallRule) => {
@@ -590,7 +596,6 @@ export default function netfirewallTest() {
           action: ruleAction_RULE_DENY,
           type: ruleType_RULE_DOMAIN,
           isEnabled: false,
-          id: 1,
           description: "rule10 description",
           appUid: 20001,
           protocol: 6,
@@ -606,10 +611,11 @@ export default function netfirewallTest() {
         };
         await netFirewall.addNetFirewallRule(ipRule_01).then(async (result: number) => {
           console.info(`${caseName} rule Id: `, result);
+          Current_Ruler_ID = result;
         }, (reason: BusinessError) => {
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
           ExpectFail();
           done();
-          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
         });
 
         await netFirewall.getNetFirewallRule(userId, Current_Ruler_ID).then((rule: netFirewall.NetFirewallRule) => {
@@ -669,7 +675,6 @@ export default function netfirewallTest() {
           action: ruleAction_RULE_DENY,
           type: ruleType_RULE_DNS,
           isEnabled: false,
-          id: 1,
           description: "rule10 description",
           appUid: 20001,
           protocol: 6,
@@ -679,16 +684,17 @@ export default function netfirewallTest() {
           localPorts: [],
           domains: [],
           dns: {
-            primaryDns: "11.1.11.1",
-            standbyDns: "11.0.11.2"
+            primaryDns: "11.1.11.10",
+            standbyDns: "11.0.11.20"
           }
         };
         await netFirewall.addNetFirewallRule(ipRule_01).then(async (result: number) => {
           console.info(`${caseName} rule Id: `, result);
+          Current_Ruler_ID = result;
         }, (reason: BusinessError) => {
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
           ExpectFail();
           done();
-          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
         });
 
         await netFirewall.getNetFirewallRule(userId, Current_Ruler_ID).then((rule: netFirewall.NetFirewallRule) => {
@@ -771,7 +777,7 @@ export default function netfirewallTest() {
         });
 
         await netFirewall.getNetFirewallPolicy(userId).then((result: netFirewall.NetFirewallPolicy)=>{
-          console.log(`${caseName} getNetFirewallPolicy success`)
+          console.log(`${caseName} getNetFirewallPolicy success`);
           console.log('firewall policy: ', JSON.stringify(result));
           ExpectTrue(result.isOpen);
           ExpectTrue(result.inAction == netFirewall.FirewallRuleAction.RULE_ALLOW);
@@ -783,7 +789,7 @@ export default function netfirewallTest() {
           done();
         })
       }catch (err){
-        console.log(`${caseName} getNetFirewallPolicy failed Error is `,err)
+        console.log(`${caseName} getNetFirewallPolicy failed Error is `, err);
         ExpectFail();
         done();
       }
@@ -814,7 +820,7 @@ export default function netfirewallTest() {
         });
 
         await netFirewall.getNetFirewallPolicy(userId).then((result: netFirewall.NetFirewallPolicy)=>{
-          console.log(`${caseName} getNetFirewallPolicy success`)
+          console.log(`${caseName} getNetFirewallPolicy success`);
           console.log('firewall policy: ', JSON.stringify(result));
           ExpectTrue(result.isOpen == false);
           ExpectTrue(result.inAction == netFirewall.FirewallRuleAction.RULE_DENY);
@@ -826,7 +832,7 @@ export default function netfirewallTest() {
           done();
         })
       }catch (err){
-        console.log(`${caseName} getNetFirewallPolicy failed Error is `,err)
+        console.log(`${caseName} getNetFirewallPolicy failed Error is `, err);
         ExpectFail();
         done();
       }
