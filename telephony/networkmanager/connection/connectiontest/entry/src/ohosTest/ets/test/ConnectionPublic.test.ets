@@ -6386,6 +6386,114 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNameCallback0200
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNameCallback_0200
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionGetAddressesByNameCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNameCallback0200';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getAddressesByName("",(error:BusinessError,data:connection.NetAddress[]) => {
+          if(error) {
+            console.info(`${caseName} error: ${JSON.stringify(error)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          }
+          else {
+            console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
+            console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
+            ExpectTrue(data.length > 0);
+            ExpectTrue(data[0].address == "127.0.0.1");
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNameCallback0300
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNameCallback_0300
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionGetAddressesByNameCallback0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNameCallback0300';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getAddressesByName(null,(error:BusinessError,data:connection.NetAddress[]) => {
+          if(error) {
+            console.info(`${caseName} error: ${JSON.stringify(error)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          }
+          else {
+            console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
+            console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
+            ExpectTrue(data.length > 0);
+            ExpectTrue(data[0].address == "127.0.0.1");
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNameCallback0400
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNameCallback_0400
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionGetAddressesByNameCallback0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNameCallback0400';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getAddressesByName(undefined,(error:BusinessError,data:connection.NetAddress[]) => {
+          if(error) {
+            console.info(`${caseName} error: ${JSON.stringify(error)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          }
+          else {
+            console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
+            console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
+            ExpectTrue(data.length > 0);
+            ExpectTrue(data[0].address == "127.0.0.1");
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionGetAddressesByNamePromise0100
      * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNamePromise_0100
      * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
@@ -6419,6 +6527,139 @@ export default function ConnectionPublicTest() {
       }
     });
 
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNamePromise0100
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNamePromise_0100
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionGetAddressesByNamePromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNamePromise0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let host:string = "127.0.0.1";
+        connection.getAddressesByName(host).then((data:connection.NetAddress[]) => {
+          console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
+          console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
+          ExpectTrue(data.length > 0);
+          ExpectTrue(data[0].address == "127.0.0.1");
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error:BusinessError) => {
+          console.info(`${caseName} failed to getAddressesByName error:${error.message}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNamePromise0100
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNamePromise_0100
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionGetAddressesByNamePromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNamePromise0200';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getAddressesByName("").then((data:connection.NetAddress[]) => {
+          console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
+          console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
+          ExpectTrue(data.length > 0);
+          ExpectTrue(data[0].address == "127.0.0.1");
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error:BusinessError) => {
+          console.info(`${caseName} failed to getAddressesByName error:${error.message}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNamePromise0300
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNamePromise_0300
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionGetAddressesByNamePromise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNamePromise0300';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getAddressesByName(null).then((data:connection.NetAddress[]) => {
+          console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
+          console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
+          ExpectTrue(data.length > 0);
+          ExpectTrue(data[0].address == "127.0.0.1");
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error:BusinessError) => {
+          console.info(`${caseName} failed to getAddressesByName error:${error.message}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNamePromise0400
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNamePromise_0400
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionGetAddressesByNamePromise0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNamePromise0400';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getAddressesByName(undefined).then((data:connection.NetAddress[]) => {
+          console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
+          console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
+          ExpectTrue(data.length > 0);
+          ExpectTrue(data[0].address == "127.0.0.1");
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error:BusinessError) => {
+          console.info(`${caseName} failed to getAddressesByName error:${error.message}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    
     /**
      * @tc.name   testNetworkMgrConnectionSetAppHttpProxy0100
      * @tc.number SUB_NetworkMgr_Connection_SetAppHttpProxy_0100
@@ -6721,6 +6962,151 @@ export default function ConnectionPublicTest() {
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionAddCustomDnsRule0800
+     * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_0800
+     * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionAddCustomDnsRule0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule0800';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.addCustomDnsRule("192.168.1.1", []).then((data: void) => {
+          console.error(`${caseName} data:${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} error:${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionAddCustomDnsRule0900
+     * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_0900
+     * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionAddCustomDnsRule0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule0900';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.addCustomDnsRule("192.168.1.1", null, (error: BusinessError, data: void) => {
+          console.error(`${caseName} error:${JSON.stringify(error)}, data:${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectTrue(err != null);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionAddCustomDnsRule1000
+     * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_1000
+     * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionAddCustomDnsRule1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule1000';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.addCustomDnsRule("192.168.1.1", undefined, (error: BusinessError, data: void) => {
+          console.error(`${caseName} error:${JSON.stringify(error)}, data:${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectTrue(err != null);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionAddCustomDnsRule1100
+     * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_1100
+     * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionAddCustomDnsRule01100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule01100';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.addCustomDnsRule("192.168.1.1", null).then((data: void) => {
+          console.error(`${caseName} data:${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} error:${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectTrue(err != null);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionAddCustomDnsRule1200
+     * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_1200
+     * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionAddCustomDnsRule1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule1200';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.addCustomDnsRule("192.168.1.1", undefined).then((data: void) => {
+          console.error(`${caseName} data:${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} error:${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectTrue(err != null);
         console.info(`${caseName}---End`);
         done();
       }
