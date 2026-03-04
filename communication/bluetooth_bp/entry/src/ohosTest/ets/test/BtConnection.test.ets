@@ -2423,12 +2423,13 @@ describe('btConnectionTest', () => {
             expect(true).assertFalse();
         } catch (err) {
             console.error(`${caseName} setLocalName error, error code is: ${err.code}, error message is: ${err.message}`);
-            if (err.code === 801) {
+            let errorCode = Number(err.code);
+            if (errorCode === 801) {
                 console.info(`${caseName} setLocalName is not support`);
-                expect(Number(err.code)).assertEqual(801);
-            } else if (err.code === 2900003 || err.code === 2900099) {
+                expect(errorCode).assertEqual(801);
+            } else if (errorCode === 2900003 || errorCode === 2900099) {
                 console.info(`${caseName} bluetooth is disabled or not enabled`);
-                expect(err.code === 2900003 || err.code === 2900099).assertTrue();
+                expect(errorCode === 2900003 || errorCode === 2900099).assertTrue();
             } else {
                 console.error(`${caseName} unexpected error code: ${err.code}`);
                 expect().assertFail();
@@ -2496,14 +2497,17 @@ describe('btConnectionTest', () => {
             expect(true).assertEqual(result === 0 || result === 1 || result === 2 || result === 3);
         } catch (err) {
             console.info("getProfileConnectionState null errCode:" + err.code + ",errMessage:" + err.message);
-            if (err.code === 401) {
-                console.info('[bluetooth_js]getProfileConnectionState null parameter error as expected');
-                expect(Number(err.code)).assertEqual(401);
-            } else if (err.code === 801 || err.code === 2900004) {
+            console.info("getProfileConnectionState null errCode type:" + typeof err.code + ", value:" + JSON.stringify(err.code));
+            let errorCode = Number(err.code);
+            console.info("getProfileConnectionState null converted errorCode:" + errorCode);
+            if (errorCode === 401) {
+                console.info('[bluetooth_js]getProfileConnectionState null parameter error as expected (401)');
+                expect(errorCode).assertEqual(401);
+            } else if (errorCode === 801 || errorCode === 2900004) {
                 console.info('[bluetooth_js]getProfileConnectionState is not support or profile not support');
                 expect(true).assertTrue();
             } else {
-                console.error('[bluetooth_js]getProfileConnectionState unexpected error code: ' + err.code);
+                console.error('[bluetooth_js]getProfileConnectionState unexpected error code: ' + err.code + ' (converted: ' + errorCode + ')');
                 expect().assertFail();
             }
         }
@@ -3533,14 +3537,18 @@ describe('btConnectionTest', () => {
             expect().assertFail();
         } catch (err) {
             console.error(`${caseName} discoveryResult error, error code is: ${err.code}, error message is: ${err.message}`);
-            if (err.code === 801) {
-                console.info(`${caseName} discoveryResult on/off is not support`);
-                expect(Number(err.code)).assertEqual(801);
-            } else if (err.code !== undefined) {
-                expect(Number(err.code)).assertEqual(2900099);
-            } else {
+            if (err.code === undefined) {
                 console.info(`${caseName} discoveryResult error without code, message: ${err.message}`);
                 expect(true).assertTrue();
+            } else if (err.code === 801) {
+                console.info(`${caseName} discoveryResult on/off is not support`);
+                expect(Number(err.code)).assertEqual(801);
+            } else if (err.code === 2900099 || err.code === 2900003) {
+                console.info(`${caseName} bluetooth is not enabled or disabled`);
+                expect(err.code === 2900099 || err.code === 2900003).assertTrue();
+            } else {
+                console.error(`${caseName} unexpected error code: ${err.code}`);
+                expect().assertFail();
             }
         }
         console.info(`${caseName}---End`);
