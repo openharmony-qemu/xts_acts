@@ -61,9 +61,14 @@ export default function textPickerDefaultPickerItemHeightJsunit() {
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextPicker');
       console.info("[testtextPickerDefaultPickerItemHeight0001] width value :" + JSON.parse(strJson).$attrs.width);
+      
+      //打印分层参数返回值
+      let resourceWidth = getContext().resourceManager.getNumber($r('sys.float.ohos_id_picker_select_divider_spacing'))
+      console.info("defaultPickerItemHeight0001 sys:" + resourceWidth);
+
       let number: string = JSON.parse(strJson).$attrs.width.slice(0,-2);
-      let numberValue = Number((parseFloat(number) - 112.00).toFixed(2));
-      console.info("[testtextPickerDefaultPickerItemHeight0001] width value numberValue:" + numberValue);
+      let numberValue = Number((parseFloat(number) - resourceWidth*2).toFixed(2));
+      console.info("[testTextPickerDefaultPickerItemHeight0001] width value numberValue:" + numberValue);
       expect(Math.abs(numberValue) <= 0.01).assertTrue();
     });
 

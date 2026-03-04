@@ -49,7 +49,17 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
         console.info('[bluetooth_js]hid registerHidDevice result'+ JSON.stringify(data));
         expect(data).not().assertUndefined();
     }
-
+    function onReceiveEvent_ScanMode_real(data : bluetooth.ScanMode){
+        console.info('[bluetooth_js]hid onReceiveEvent_ScanMode result'+ JSON.stringify(data));
+        if(data === bluetooth.ScanMode.SCAN_MODE_NONE){
+            console.info('[bluetooth_js]hid onReceiveEvent_ScanMode success');
+            expect(data === bluetooth.ScanMode.SCAN_MODE_NONE).assertTrue();
+            bluetooth.offScanModeChange()
+        }else{
+            expect().assertFail();
+            bluetooth.offScanModeChange()
+        }
+    }
     async function tryToEnableBt() {
         let sta = btAccess.getState();
         switch (sta) {
@@ -2351,6 +2361,26 @@ describe('btConnectionTest', () => {
         }
         done();
     })
-
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0300
+     * @tc.desc   Test common 入参不一致 api23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let oldScanMode = bluetooth.getBluetoothScanMode();
+            console.info('[bluetooth_js] ScanMode_0300 oldScanMode = '+ JSON.stringify(oldScanMode));
+            bluetooth.onScanModeChange(onReceiveEvent_ScanMode_real);
+            bluetooth.setBluetoothScanMode(bluetooth.ScanMode.SCAN_MODE_NONE,0);
+            console.info("[bluetooth_js]connection on/offScanModeChange  is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]connection on/offScanModeChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            expect().assertFail();
+        }
+        done();
+    })
 })
 }

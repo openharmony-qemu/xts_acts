@@ -88,6 +88,7 @@ import mediaAssetChangeRequestErrorTest from './MediaAssetChangeRequest/mediaAss
 import positionTypeTest from './PhotoAccessHelper/positionType.test'
 import registerPhotoChangeTest from './PhotoAccessHelper/registerPhotoChange.test'
 import manageRiskPermissionTest from './PhotoAccessHelper/manageRiskPermission.test'
+import createAssetWithShortTermPermissionTest from './PhotoAccessHelper/createAssetWithShortTermPermission.test';
 
 export default function testsuite() {
   provisionResourcesTest();
@@ -166,4 +167,5 @@ export default function testsuite() {
   positionTypeTest();
   registerPhotoChangeTest();
   manageRiskPermissionTest();
+  createAssetWithShortTermPermissionTest();
 }

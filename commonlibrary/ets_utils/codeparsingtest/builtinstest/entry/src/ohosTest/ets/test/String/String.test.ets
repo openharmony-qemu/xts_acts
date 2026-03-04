@@ -3917,7 +3917,7 @@ export default function StringTest() {
       const TAG = "testStringSplit0010";
       try {
         const str = '';
-        expect(str.split(" ")).assertContain([""]);
+        expect(JSON.stringify(str.split(" "))).assertDeepEquals(JSON.stringify([""]));
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -3935,7 +3935,7 @@ export default function StringTest() {
       const TAG = "testStringSplit0011";
       try {
         let str = '';
-        expect(str.split("a")).assertContain([""]);
+        expect(JSON.stringify(str.split("a"))).assertDeepEquals(JSON.stringify([""]));
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();

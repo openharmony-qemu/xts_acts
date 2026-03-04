@@ -111,7 +111,6 @@ export default function PathIterator() {
           done();
         }
       })
-
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_STATIC_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_STATIC_0300
@@ -305,5 +304,32 @@ export default function PathIterator() {
         }
       })
 
+    /**
+     * @tc.name   testPathIteratorNextAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_STATIC_0800
+     * @tc.desc   test for pathIterator next
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPathIteratorNextAbnormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let msg = " ====testPathIteratorNextAbnormal==== "
+        let path: drawing.Path = new drawing.Path();
+        path.moveTo(10, 20);
+        let iter: drawing.PathIterator = new drawing.PathIterator(path);
+        let offset = 0;
+        try {
+          let verb = iter.next([], offset);
+          console.info(msg + ' iter.next([], offset) success: ' + verb);
+          expect().assertFail();
+          done();
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` PathIterator next errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect(e.code).assertEqual(401);
+          done();
+        }
+      })
   })
 }

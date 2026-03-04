@@ -217,6 +217,23 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       try {
         await mainWin.setWindowTransitionAnimation(window.WindowTransitionType.DESTROY, transitionAnimation).then(() => {
           console.info(msgStr + 'Succeeded in setting window transition animation. Cause:');
+          try {
+            let transitionAnimationResult = mainWin.getWindowTransitionAnimation(window.WindowTransitionType.DESTROY);
+            console.error(msgStr + `success obtain the window transition animation.`+JSON.stringify(transitionAnimationResult));
+            expect(!!transitionAnimationResult).assertTrue();
+            expect(transitionAnimationResult!.opacity).assertLargerOrEqual(0);
+            expect(transitionAnimationResult!.config.curve).assertEqual(window.WindowAnimationCurve.INTERPOLATION_SPRING);
+            expect(transitionAnimationResult!.config.param!=null).assertTrue();
+          } catch (err) {
+            if (isFreeWindowMode) {
+              console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            } else {
+              console.log(msgStr + 'getWindowTransitionAnimation 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+              console.log(msgStr + JSON.stringify(err))
+              expect(err.code).assertEqual(801);
+            }
+          }
         }).catch((err: BusinessError) => {
           if (err.code != 801) {
             console.error(msgStr + `Failed to set window transition animation. Cause code: ${err.code}, message: ${err.message}`);
@@ -265,6 +282,24 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       try {
         await mainWin.setWindowTransitionAnimation(window.WindowTransitionType.DESTROY, transitionAnimation).then(() => {
           console.info(msgStr + 'Succeeded in setting window transition animation. Cause:');
+          try {
+            let transitionAnimationResult = mainWin.getWindowTransitionAnimation(window.WindowTransitionType.DESTROY);
+            console.error(msgStr + `success obtain the window transition animation.`+JSON.stringify(transitionAnimationResult));
+            expect(!!transitionAnimationResult).assertTrue();
+            expect(transitionAnimationResult!.opacity).assertLargerOrEqual(0);
+            expect(transitionAnimationResult!.config.curve).assertEqual(window.WindowAnimationCurve.CUBIC_BEZIER);
+            expect(transitionAnimationResult!.config.param!=null).assertTrue();
+            expect(transitionAnimationResult!.config.duration).assertLargerOrEqual(0);
+          } catch (err) {
+            if (isFreeWindowMode) {
+              console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            } else {
+              console.log(msgStr + 'getWindowTransitionAnimation 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+              console.log(msgStr + JSON.stringify(err))
+              expect(err.code).assertEqual(801);
+            }
+          }
         }).catch((err: BusinessError) => {
           if (err.code != 801) {
             console.error(msgStr + `Failed to set window transition animation. Cause code: ${err.code}, message: ${err.message}`);
@@ -512,8 +547,11 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           console.info(msgStr + 'Succeeded in setting window transition animation. Cause:');
           try {
             let transitionAnimationResult = mainWin.getWindowTransitionAnimation(window.WindowTransitionType.DESTROY);
-            console.error(msgStr + `success obtain the window transition animation.`);
+            console.error(msgStr + `success obtain the window transition animation.`+JSON.stringify(transitionAnimationResult));
             expect(!!transitionAnimationResult).assertTrue();
+            expect(transitionAnimationResult!.opacity).assertLargerOrEqual(0);
+            expect(transitionAnimationResult!.config.curve).assertEqual(window.WindowAnimationCurve.LINEAR);
+            expect(transitionAnimationResult!.config.duration).assertLargerOrEqual(0);
           } catch (err) {
             if (isFreeWindowMode) {
               console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);

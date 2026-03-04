@@ -49,6 +49,12 @@
         "MainAbility/pages/Scroll/scrollFrictionRes",
         "MainAbility/pages/Scroll/scrollOffsetRes",
         "MainAbility/pages/Scroll/scrollContentOffset",
-        "MainAbility/pages/scrollCallback/currentScroll"
+        "MainAbility/pages/scrollCallback/currentScroll",
+        "MainAbility/pages/ScrollBar/scrollBarNullUndefined",
+        "MainAbility/pages/scrollDefault/scrollEventNullUndefined",
+        "MainAbility/pages/scrollDefault/scrollerNullUndefined",
+        "MainAbility/pages/scrollDefault/scrollDefault1",
+        "MainAbility/pages/scrollDefault/scrollDefault2",
+        "MainAbility/pages/scrollDefault/scrollDefault3"
     ]
 }

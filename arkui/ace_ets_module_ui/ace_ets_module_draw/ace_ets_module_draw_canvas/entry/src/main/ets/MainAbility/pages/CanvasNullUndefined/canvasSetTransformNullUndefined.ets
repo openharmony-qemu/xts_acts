@@ -44,6 +44,29 @@ struct canvasSetTransformNullUndefined {
           })
           .id('canvasSetTransformUndefined')
       }
+      Row({space:2}){
+        Canvas(this.context)
+          .width(80)
+          .height(80)
+          .backgroundColor('#0ffff0')
+          .onReady(() =>{
+            this.context.fillRect(80, 20, 50, 50);
+            this.context.setTransform(null,null,null,null,null,null);
+            this.context.fillRect(80, 20, 50, 50);
+          })
+          .id('canvasSetTransformNewNull')
+
+        Canvas(this.context)
+          .width(80)
+          .height(80)
+          .backgroundColor('#0ffff0')
+          .onReady(() =>{
+            this.context.fillRect(80, 20, 50, 50);
+            this.context.setTransform(undefined,undefined,undefined,undefined,undefined,undefined);
+            this.context.fillRect(80, 20, 50, 50);
+          })
+          .id('canvasSetTransformNewUndefined')
+      }
     }
     .width('100%')
     .height('100%')

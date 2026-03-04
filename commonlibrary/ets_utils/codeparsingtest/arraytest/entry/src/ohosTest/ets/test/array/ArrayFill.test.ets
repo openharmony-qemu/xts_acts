@@ -198,7 +198,7 @@ export default function ArrayFillTest() {
     it("testArrayFill0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
       arr.fill(NaN);
-      expect(arr).assertDeepEquals([NaN, NaN, NaN]);
+      expect(JSON.stringify(arr)).assertDeepEquals(JSON.stringify([NaN, NaN, NaN]));
     });
 
     /**
@@ -756,7 +756,7 @@ export default function ArrayFillTest() {
     it("testArrayFill0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
       arr.fill(NaN, 1, 3);
-      expect(arr).assertDeepEquals([1, NaN, NaN, 4]);
+      expect(JSON.stringify(arr)).assertDeepEquals(JSON.stringify([1, NaN, NaN, 4]));
     });
 
     /**
@@ -1057,7 +1057,7 @@ export default function ArrayFillTest() {
     it("testArrayFill0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
       arr.fill(NaN);
-      expect(arr).assertDeepEquals([NaN, NaN, NaN]);
+      expect(JSON.stringify(arr)).assertDeepEquals(JSON.stringify([NaN, NaN, NaN]));
     });
 
     /**

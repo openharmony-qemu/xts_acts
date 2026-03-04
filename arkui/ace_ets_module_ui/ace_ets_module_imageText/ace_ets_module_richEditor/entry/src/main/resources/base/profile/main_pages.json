@@ -178,6 +178,15 @@
   "MainAbility/pages/RichEditorApi23/RichEditorParagraphStyle",
   "MainAbility/pages/RichEditorApi23/RichEditorSingleLine",
   "MainAbility/pages/RichEditorApi23/RichEditorTextStyle",
-  "MainAbility/pages/RichEditor/RichEditorDataDetectorDateTime"
+  "MainAbility/pages/RichEditor/RichEditorDataDetectorDateTime",
+  "MainAbility/pages/RichEditor/RichEditorSpecialOptionsNull",
+  "MainAbility/pages/RichEditor/RichEditorDataDetectorOptionsNull",
+  "MainAbility/pages/RichEditor/RichEditorInputOptionsNull",
+  "MainAbility/pages/RichEditor/RichEditorLengthOptionsNull",
+  "MainAbility/pages/RichEditor/RichEditorOtherOptionsNull",
+  "MainAbility/pages/RichEditor/RichEditorControllerMethodsNull",
+  "MainAbility/pages/RichEditor/RichEditorSpanMethodsNull",
+  "MainAbility/pages/RichEditor/RichEditorControllerMethodsNull2",
+  "MainAbility/pages/RichEditor/RichEditorStyledStringControllerNull"
   ]
 }

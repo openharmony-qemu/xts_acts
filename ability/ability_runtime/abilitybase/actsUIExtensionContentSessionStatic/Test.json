@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsUIExtensionContentSessionTestStatic.hap"
+                "ActsUIExtensionContentSessionStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

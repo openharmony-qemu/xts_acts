@@ -303,6 +303,8 @@ export default function TaskPoolSequenceRunnerTest() {
     it('sequenceRunner1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+      Count1.count = 0;
+ 	    Count2.count = 0;
       Count3.count = 0
       Count4.count = 0
       let count1: number = 0

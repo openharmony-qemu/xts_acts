@@ -96,7 +96,7 @@ struct StateArrayNumber {
             this.message.shift()
           })
 
-        ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
+        ForEach(Array.from(this.message.entries()), (item: [int, number]) => {
           Text(`${item[1]} index: ${item[0]}`).fontSize(9).id('stateArrayNumber_value_' + item[0])
             .height('5%')
           Divider()

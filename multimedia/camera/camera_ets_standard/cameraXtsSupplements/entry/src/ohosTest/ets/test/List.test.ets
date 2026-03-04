@@ -44,6 +44,10 @@ import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test'
 import CameraSessionSetWhiteBalanceModeTest from './camera/CameraSessionSetWhiteBalanceModeTest.test';
 import CameraGetActiveProfileTest from './camera/CameraGetActiveProfileTest.test';
 import CameraSessionBandSuppTest from './camera/CameraSessionBandSupp.test';
+import CameraCaptureSessionTest from './camera/CameraCaptureSessionTest.test';
+import CameraPhotoSessionTest from './camera/CameraPhotoSessionTest.test';
+import CameraTest from './camera/CameraTest.test';
+
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -90,6 +94,9 @@ export default function testsuite() {
   CameraSessionSetWhiteBalanceModeTest();
   CameraGetActiveProfileTest();
   CameraSessionBandSuppTest();
+  CameraPhotoSessionTest();
+  CameraCaptureSessionTest();
+  CameraTest()
   CameraManagerGetSupportedOutputCapabilityTest();
 
 }

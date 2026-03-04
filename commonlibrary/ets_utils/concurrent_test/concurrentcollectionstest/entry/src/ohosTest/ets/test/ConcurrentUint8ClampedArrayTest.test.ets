@@ -813,7 +813,7 @@ export default function Uint8ClampedArrayTest() {
             group.addTask(test_uint8ClampedArray_020, uint8ClampedArray, caseName, i)
           }
           await taskpool.execute(group).then((res) => {
-            expect(res).assertContain('4,3,2,1')
+            expect(JSON.stringify(res)).assertContain('4,3,2,1')
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);

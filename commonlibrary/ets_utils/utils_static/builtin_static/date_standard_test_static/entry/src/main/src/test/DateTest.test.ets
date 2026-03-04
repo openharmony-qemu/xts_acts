@@ -6287,9 +6287,8 @@ export default function dateTest() {
       const TAG = 'testDateToLocaleStringConstEvent0001';
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
-        const formattedDate = event.toLocaleString('en-GB', {
-          timeZone: 'UTC'
-        });
+        const options: Intl.DateTimeFormatOptions = { timeZone: 'UTC' };
+        const formattedDate = event.toLocaleString('en-GB', options);
         expect(formattedDate).assertEqual("20/12/2012, 03:00:00");
       } catch (err) {
         err = err as BusinessError;
@@ -6309,9 +6308,8 @@ export default function dateTest() {
       const TAG = 'testDateToLocaleStringConstEvent0002';
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
-        const formattedDate = event.toLocaleString('ko-KR', {
-          timeZone: 'UTC'
-        });
+        const options: Intl.DateTimeFormatOptions = { timeZone: 'UTC' };
+        const formattedDate = event.toLocaleString('ko-KR', options);
         expect(formattedDate).assertEqual("2012. 12. 20. 오전 3:00:00");
       } catch (err) {
         err = err as BusinessError;
@@ -6390,9 +6388,8 @@ export default function dateTest() {
       const TAG = "testDateToLocaleStringConstEvent0006";
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
-        const result = event.toLocaleString(undefined, {
-          timeZone: 'UTC'
-        });
+        const options: Intl.DateTimeFormatOptions = { timeZone: 'UTC' };
+        const result = event.toLocaleString(undefined, options);
         expect(result).assertEqual("12/20/2012, 3:00:00 AM");
       } catch (err) {
         err = err as BusinessError;

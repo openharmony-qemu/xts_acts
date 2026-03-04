@@ -173,7 +173,7 @@ HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymK
 {
     OH_CryptoSymKeyGenerator *ctx = nullptr;
 
-    EXPECT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"RC4", &ctx), CRYPTO_NOT_SUPPORTED);
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"RC5", &ctx), CRYPTO_NOT_SUPPORTED);
     EXPECT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES128", nullptr), CRYPTO_INVALID_PARAMS);
     EXPECT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"aes128", &ctx), CRYPTO_NOT_SUPPORTED);
     EXPECT_EQ(OH_CryptoSymKeyGenerator_Create(nullptr, &ctx), CRYPTO_INVALID_PARAMS);

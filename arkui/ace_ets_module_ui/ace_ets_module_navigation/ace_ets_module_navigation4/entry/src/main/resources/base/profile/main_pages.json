@@ -9,6 +9,8 @@
         "MainAbility/pages/Navigation/NavigationDivider",
         "MainAbility/pages/Navigation/NavigationAttributeNullUndefined",
         "MainAbility/pages/navigator/NavigatorAttributeNullUndefined",
-        "MainAbility/pages/navDestination/NavDestinationAttributeNullUndefined"
+        "MainAbility/pages/navDestination/NavDestinationAttributeNullUndefined",
+        "MainAbility/pages/TabsNullUndefined/TabsControllerNullUndefined",
+        "MainAbility/pages/TabsNullUndefined/TabsAttributeNullUndefined"
     ]
 }

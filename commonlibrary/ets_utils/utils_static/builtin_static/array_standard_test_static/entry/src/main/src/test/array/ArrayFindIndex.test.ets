@@ -1260,14 +1260,14 @@ export default function ArrayFindIndexTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    // todo
-    // it("testArrayFindIndex0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   const arr: number[][] = [[1, 2], [3, 4]];
-    //   let arr1: Array<number> = [];
-    //   const flatArr: number[] = arr1.concat(...arr);
-    //   const index: number = flatArr.findIndex(x => x === 4);
-    //   expect(index).assertEqual(3);
-    // });
+    it("testArrayFindIndex0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[][] = [[1, 2], [3, 4]];
+      let arr1: Array<number> = [];
+      const flatArr: number[] = arr1.concat(...arr);
+      const index: number = flatArr.findIndex(x => x === 4);
+      expect(index).assertEqual(3);
+    });
+
 
     /**
      * @tc.name   testArrayFindIndex0084

@@ -661,11 +661,13 @@ export default function actslocationTest() {
                 }).catch((error) => {
                   console.error('promise, SUB_Location_getActiveGeoFences_0100: error=' + error.code);
                   expect(error.code).assertEqual(801);
+                  done();
                 });
               } catch (error) {
                 console.error("SUB_Location_getActiveGeoFences_0100: errCode" + error.code + ", errMessage" + error.message);
                 expect().assertFalse();
               }
+              done();
              }
             })
 

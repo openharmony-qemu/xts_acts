@@ -17,6 +17,7 @@ import cacheDownload from "@ohos.request.cacheDownload";
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import Server from '../common/Server'
 import fs from  '@ohos.file.fs';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestCacheDownloadHttpUnitTest() {
   describe('requestCacheDownloadHttpJSTest', () => {
@@ -42,6 +43,9 @@ export default function requestCacheDownloadHttpUnitTest() {
      * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
      */
     beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
       console.info('====>beforeEach: setFileCacheSize start.');
       cacheDownload.setFileCacheSize(0);
       console.info('====>beforeEach: setFileCacheSize success.');

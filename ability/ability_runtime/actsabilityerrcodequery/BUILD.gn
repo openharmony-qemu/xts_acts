@@ -22,7 +22,7 @@ group("actsabilityerrcodequery") {
       "actsabilityerrcodequerytestrely:ActsAbilityErrCodeQueryTestRely",
       "actsabilityerrcodequerytestrely2:ActsAbilityErrCodeQueryTestRely2",
       "actserrorcodeapplicationcontextassist:ActsErrorCodeApplicationContextAssist",
-      "actsuiextensioncontentsessionerrorcodestatic:ActsUIExtensionContentSessionErrorCodeTestStatic"
+      "actsuiextensioncontentsessionerrorcodestatic:ActsUIExtensionContentSessionErrorCodeStaticTest"
     ]
   }
 }

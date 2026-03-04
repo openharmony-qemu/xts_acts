@@ -52,10 +52,10 @@ export default function textPickerOnScrollStopTest(){
       console.info('textPickerOnScrollStopTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('myTextPicker'));
-      let rect = await btn1.getBounds();
-      console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.swipe(Math.round((rect.left+rect.right)/2),Math.round((rect.top+rect.bottom)/2),Math.round((rect.left+rect.right)/2),Math.round((rect.top+rect.bottom)/4),600);
+
+      let textpicker = await driver.findComponent(ON.id('myTextPicker'));
+      let textpickerCenter = await textpicker.getBoundsCenter();
+      await driver.mouseScroll(textpickerCenter, true, 10);
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('text');
       console.info('[textPickerOnScrollStopTest_0100] textPickerOnScrollStopTest JSON.parse(strJson) is: ' + JSON.stringify(strJson));

@@ -64,7 +64,7 @@ struct imageAddApi2 {
         .enableAnalyzer(true)
         .width(200)
         .height(200)
-        .key('imageAddApi2')
+        .key('imageEnableAnalyzerTrue')
       Button('getTypes')
         .width(80)
         .height(80)

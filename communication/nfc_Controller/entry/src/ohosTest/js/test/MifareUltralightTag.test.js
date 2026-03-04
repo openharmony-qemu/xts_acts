@@ -51,7 +51,7 @@ export default function nfcMifareUltralightTag() {
         beforeEach(function() {
             try {
                 MifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
-                console.info(' mifareUltralight is' + mifareUltralight)
+                console.info(' mifareUltralight is' + MifareUltralightTag)
             } catch (error) {
                 console.info(' mifareUltralight error' + error)
             }

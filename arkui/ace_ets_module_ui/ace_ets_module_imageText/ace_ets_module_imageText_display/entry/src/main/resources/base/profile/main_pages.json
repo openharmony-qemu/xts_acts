@@ -4,6 +4,7 @@
 		"MainAbility/pages/Preset/InputPreset",
 
         "MainAbility/pages/Hyperlink/PreventDefault",
+        "MainAbility/pages/Hyperlink/HyperlinkPropertiesNullUndefinedTest",
 
         "MainAbility/pages/Marquee/MarqueeApi",
         "MainAbility/pages/Marquee/MarqueeDynamicSyncSceneType",
@@ -16,6 +17,7 @@
         "MainAbility/pages/Marquee/MarqueeOptions2",
         "MainAbility/pages/Marquee/MarqueeUI",
         "MainAbility/pages/Marquee/MarqueeOptionsTest03",
+        "MainAbility/pages/Marquee/MarqueePropertiesNullUndefined",
         
         "MainAbility/pages/SymbolGlyph/BounceSymbolEffect",
         "MainAbility/pages/SymbolGlyph/EffectFillStyle",
@@ -31,6 +33,7 @@
         "MainAbility/pages/SymbolGlyph/SymbolGlyphApi5",
         "MainAbility/pages/SymbolGlyph/SymbolGlyphFontScaleTest",
         "MainAbility/pages/SymbolGlyph/SymbolGlyphNode",
-        "MainAbility/pages/SymbolGlyph/SymbolEffectNullUndefinedTest"
+        "MainAbility/pages/SymbolGlyph/SymbolEffectNullUndefinedTest",
+        "MainAbility/pages/SymbolGlyph/SymbolGlyphPropertiesNullUndefinedTest"
     ]
 }

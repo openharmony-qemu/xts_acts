@@ -481,6 +481,15 @@
         "description": "$string:form_description",
         "icon": "$media:icon",
         "label": "$string:entry_label",
+        "name": "selection",
+        "srcEntrance": "./ets/FormAbility/FormAbility.ts",
+        "type": "selection",
+        "visible": true
+    },
+    {
+        "description": "$string:form_description",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
         "name": "crypto",
         "srcEntrance": "./ets/FormAbility/FormAbility.ts",
         "type": "crypto",

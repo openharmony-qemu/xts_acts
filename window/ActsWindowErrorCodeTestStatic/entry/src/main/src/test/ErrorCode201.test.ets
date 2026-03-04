@@ -262,14 +262,12 @@ export default function ErrorCode201() {
                 hilog.info(domain, tag,caseName+'Succeeded in getMainWindowSync' );
                 windowClass.setWindowTopmost(false).then(() => {
                     hilog.info(domain, tag,caseName+'Succeeded in setting the window to be top most.' );
-                    expect(true).assertTrue();
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.error(domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err!.code}, message: ${err!.message}`);
                     if (err!.code === 801) {
                         done();
                     } else if(err!.code === 201){
-                        expect(true).assertTrue();
                         done();
                     } else {
                         expect(false).assertTrue();
@@ -521,6 +519,70 @@ export default function ErrorCode201() {
     
     
     })
+
+    /**
+    * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_201_static_0100
+    * @tc.name      test_DestroyVirtualScreenErrorcode201_static
+    * @tc.desc      test_DestroyVirtualScreenErrorcode_201 when no permisson
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 3
+    */
+    it('test_DestroyVirtualScreenErrorcode201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_DestroyVirtualScreenErrorcode201 ';
+        try {
+                display.destroyVirtualScreen(0).then(() => {
+                hilog.info(domain, tag,caseName + 'succeeded in destroy virtual screen, data : ');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+                    expect(err!.code === 201).assertTrue();
+                done();
+            })
+        } catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+            expect(err.code === 801).assertTrue();
+            done();
+        }
+    });
+
+    /**
+    * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_201_static_0100
+    * @tc.name      test_MakeUniqueErrorcode_201_static
+    * @tc.desc      test_MakeUniqueErrorcode_401 when no permisson
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 3
+    */
+    it('test_MakeUniqueErrorcode_201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_MakeUniqueErrorcode_201_static ';
+        try {
+                display.makeUnique(0).then(()=>{
+                hilog.info(domain, tag,caseName + 'Succeeded in makeUnique');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error) :PromiseLike<void>|undefined => {
+                hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
+                if (err!.code === 801) {
+                    done();
+                } else {
+                    expect(err!.code === 201).assertTrue();
+                    done();
+                }
+            })
+        } catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,caseName + 'error in makeUnique, err : ' + JSON.stringify(err));
+            if (err!.code === 801) {
+                done();
+            } else {
+                expect(err!.code === 201).assertTrue();
+                done();
+            }
+        }
+    });
 
 
 

@@ -3951,5 +3951,72 @@ export default function FastBuffer4() {
       expect(typeof result.byteOffset).assertEqual('number');
       expect(result.byteOffset).assertEqual(0);
     })
+
+    /**
+     * @tc.name   testfastBuffer0001
+     * @tc.number SUB_BUFFER_FASTBUFFER_TEST_0100
+     * @tc.desc   Testing Buffer.prototyp
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testfastBuffer0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      let buf1 = fastbuffer.from('this is a test', null);
+      expect(buf1.length).assertEqual(14);
+      let buf2 = fastbuffer.from('this is a test', undefined);
+      expect(buf2.length).assertEqual(14);
+
+    })
+
+
+    /**
+     * @tc.name   testfastBuffer0002
+     * @tc.number SUB_BUFFER_FASTBUFFER_TEST_0200
+     * @tc.desc   Testing Buffer.prototyp
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testfastBuffer0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      let buf = fastbuffer.from('this is a buffer');
+      let res1 = buf.includes('this', null).toString();
+      expect(res1.length).assertEqual(4);
+      let res2 = buf.includes('this', undefined).toString()
+      expect(res2.length).assertEqual(4);
+      let res3 = buf.includes('this', 0, null).toString();
+      expect(res3.length).assertEqual(4);
+      let res4 = buf.includes('this', 0, undefined).toString();
+      expect(res4.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.name   testfastBuffer0003
+     * @tc.number SUB_BUFFER_FASTBUFFER_TEST_0300
+     * @tc.desc   Testing Buffer.prototyp
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testfastBuffer0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      let buf = fastbuffer.allocUninitializedFromPool(6);
+      let res1 = buf.writeIntBE(0x1234567890ab, null, 6);
+      expect(res1).assertEqual(6);
+      let res2 = buf.writeIntBE(0x1234567890ab, undefined, 6);
+      expect(res2).assertEqual(6);
+      let res3 = buf.writeIntLE(0x1234567890ab, null, 6);
+      expect(res3).assertEqual(6);
+      let res4 = buf.writeIntLE(0x1234567890ab, undefined, 6);
+      expect(res4).assertEqual(6);
+      let res5 = buf.writeUIntLE(0x1234567890ab, null, 6);
+      expect(res5).assertEqual(6);
+      let res6 = buf.writeUIntLE(0x1234567890ab, undefined, 6);
+      expect(res6).assertEqual(6);
+      let res7 = buf.writeUIntBE(0x1234567890ab, null, 6);
+      expect(res7).assertEqual(6);
+      let res8 = buf.writeUIntBE(0x1234567890ab, undefined, 6);
+      expect(res8).assertEqual(6);
+    })
+
+
   })
 }

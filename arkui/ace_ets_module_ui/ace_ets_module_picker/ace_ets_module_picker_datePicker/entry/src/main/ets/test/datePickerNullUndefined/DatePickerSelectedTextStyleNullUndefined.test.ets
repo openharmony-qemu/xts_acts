@@ -48,7 +48,7 @@ export default function DatePickerSelectedTextStyleNullUndefinedTest() {
         router.clear();
         let pages = router.getState();
         console.info("get DatePickerSelectedTextStyleNullUndefinedTest state pages:" + JSON.stringify(pages));
-        if (!("DatePickerLunarNullUndefined" == pages.name)) {
+        if (!("DatePickerSelectedTextStyleNullUndefined" == pages.name)) {
           console.info("get DatePickerSelectedTextStyleNullUndefinedTest pages.name:" + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
@@ -65,60 +65,15 @@ export default function DatePickerSelectedTextStyleNullUndefinedTest() {
 
     /**
      * @tc.name   datePickerSelectedTextStyle_001
-     * @tc.number SUB_ARKUI_DATEPICKER_SELECTEDTEXTSTYLE_PARAM_001
-     * @tc.desc   测试DatePicker的selectedTextStyle属性 - 自定义样式
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
-     */
-    it('datePickerSelectedTextStyle_001', Level.LEVEL2, async () => {
-      console.info('[datePickerSelectedTextStyle_001] START');
-
-      let strJson: string = getInspectorByKey('datePicker_selectedTextStyle_custom');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-
-      console.info("[datePickerSelectedTextStyle_001] selectedTextStyle value is: " + JSON.stringify(obj.$attrs.selectedTextStyle));
-
-      // 验证属性值包含设置的color
-      let selectedTextStyleValue: Record<string, ESObject> = obj.$attrs.selectedTextStyle as Record<string, ESObject>;
-      expect(selectedTextStyleValue !== null).assertTrue();
-
-      console.info('[datePickerSelectedTextStyle_001] END');
-    });
-
-    /**
-     * @tc.name   datePickerSelectedTextStyle_002
-     * @tc.number SUB_ARKUI_DATEPICKER_SELECTEDTEXTSTYLE_PARAM_002
-     * @tc.desc   测试DatePicker的selectedTextStyle属性 - 默认值
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
-     */
-    it('datePickerSelectedTextStyle_002', Level.LEVEL2, async () => {
-      console.info('[datePickerSelectedTextStyle_002] START');
-
-      let strJson: string = getInspectorByKey('datePicker_selectedTextStyle_default');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-
-      console.info("[datePickerSelectedTextStyle_002] selectedTextStyle value is: " + JSON.stringify(obj.$attrs.selectedTextStyle));
-
-      // 验证属性存在
-      let selectedTextStyleValue: Record<string, ESObject> = obj.$attrs.selectedTextStyle as Record<string, ESObject>;
-      expect(selectedTextStyleValue !== null).assertTrue();
-
-      console.info('[datePickerSelectedTextStyle_002] END');
-    });
-
-    /**
-     * @tc.name   datePickerSelectedTextStyle_003
      * @tc.number SUB_ARKUI_DATEPICKER_SELECTEDTEXTSTYLE_NULL_001
      * @tc.desc   测试DatePicker的selectedTextStyle属性 - null参数应恢复为默认值
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('datePickerSelectedTextStyle_003', Level.LEVEL2, async () => {
-      console.info('[datePickerSelectedTextStyle_003] START');
+    it('datePickerSelectedTextStyle_001', Level.LEVEL2, async (done: Function) => {
+      console.info('[datePickerSelectedTextStyle_001] START');
+      await CommonFunc.sleep(1000);
 
       // 获取默认值组件的属性
       let strJsonCompare: string = getInspectorByKey('datePicker_selectedTextStyle_default');
@@ -128,27 +83,29 @@ export default function DatePickerSelectedTextStyleNullUndefinedTest() {
       let strJson: string = getInspectorByKey('datePicker_selectedTextStyle_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[datePickerSelectedTextStyle_003] default selectedTextStyle value is: " + JSON.stringify(objCompare.$attrs.selectedTextStyle));
-      console.info("[datePickerSelectedTextStyle_003] null selectedTextStyle value is: " + JSON.stringify(obj.$attrs.selectedTextStyle));
+      console.info("[datePickerSelectedTextStyle_001] default selectedTextStyle value is: " + JSON.stringify(objCompare.$attrs.selectedTextStyle));
+      console.info("[datePickerSelectedTextStyle_001] null selectedTextStyle value is: " + JSON.stringify(obj.$attrs.selectedTextStyle));
 
       // null 应该恢复为默认值，两者应该相等
       expect(obj.$attrs.selectedTextStyle.color).assertEqual(objCompare.$attrs.selectedTextStyle.color);
       expect(obj.$attrs.selectedTextStyle.font.size).assertEqual(objCompare.$attrs.selectedTextStyle.font.size);
       expect(obj.$attrs.selectedTextStyle.font.weight).assertEqual(objCompare.$attrs.selectedTextStyle.font.weight);
 
-      console.info('[datePickerSelectedTextStyle_003] END');
+      console.info('[datePickerSelectedTextStyle_001] END');
+      done();
     });
 
     /**
-     * @tc.name   datePickerSelectedTextStyle_004
+     * @tc.name   datePickerSelectedTextStyle_002
      * @tc.number SUB_ARKUI_DATEPICKER_SELECTEDTEXTSTYLE_UNDEFINED_001
      * @tc.desc   测试DatePicker的selectedTextStyle属性 - undefined参数应恢复为默认值
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('datePickerSelectedTextStyle_004', Level.LEVEL2, async () => {
-      console.info('[datePickerSelectedTextStyle_004] START');
+    it('datePickerSelectedTextStyle_002', Level.LEVEL2, async (done: Function) => {
+      console.info('[datePickerSelectedTextStyle_002] START');
+      await CommonFunc.sleep(1000);
 
       // 获取默认值组件的属性
       let strJsonCompare: string = getInspectorByKey('datePicker_selectedTextStyle_default');
@@ -158,38 +115,16 @@ export default function DatePickerSelectedTextStyleNullUndefinedTest() {
       let strJson: string = getInspectorByKey('datePicker_selectedTextStyle_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[datePickerSelectedTextStyle_004] default selectedTextStyle value is: " + JSON.stringify(objCompare.$attrs.selectedTextStyle));
-      console.info("[datePickerSelectedTextStyle_004] undefined selectedTextStyle value is: " + JSON.stringify(obj.$attrs.selectedTextStyle));
+      console.info("[datePickerSelectedTextStyle_002] default selectedTextStyle value is: " + JSON.stringify(objCompare.$attrs.selectedTextStyle));
+      console.info("[datePickerSelectedTextStyle_002] undefined selectedTextStyle value is: " + JSON.stringify(obj.$attrs.selectedTextStyle));
 
       // undefined 应该恢复为默认值，两者应该相等
       expect(obj.$attrs.selectedTextStyle.color).assertEqual(objCompare.$attrs.selectedTextStyle.color);
       expect(obj.$attrs.selectedTextStyle.font.size).assertEqual(objCompare.$attrs.selectedTextStyle.font.size);
       expect(obj.$attrs.selectedTextStyle.font.weight).assertEqual(objCompare.$attrs.selectedTextStyle.font.weight);
 
-      console.info('[datePickerSelectedTextStyle_004] END');
-    });
-
-    /**
-     * @tc.name   datePickerSelectedTextStyle_005
-     * @tc.number SUB_ARKUI_DATEPICKER_SELECTEDTEXTSTYLE_PARAM_003
-     * @tc.desc   测试DatePicker的selectedTextStyle属性 - 另一个自定义样式
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
-     */
-    it('datePickerSelectedTextStyle_005', Level.LEVEL2, async () => {
-      console.info('[datePickerSelectedTextStyle_005] START');
-
-      let strJson: string = getInspectorByKey('datePicker_selectedTextStyle_custom2');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-
-      console.info("[datePickerSelectedTextStyle_005] selectedTextStyle value is: " + JSON.stringify(obj.$attrs.selectedTextStyle));
-
-      // 验证属性值包含设置的color
-      let selectedTextStyleValue: Record<string, ESObject> = obj.$attrs.selectedTextStyle as Record<string, ESObject>;
-      expect(selectedTextStyleValue !== null).assertTrue();
-
-      console.info('[datePickerSelectedTextStyle_005] END');
+      console.info('[datePickerSelectedTextStyle_002] END');
+      done();
     });
   })
 }

@@ -43,6 +43,7 @@ struct IndexPage {
   @State result: string = '';
   @State TEST: number = 0;
   private TestCaseList: TestCase[] = [
+    { title: 'CapiGrid', uri: 'pages/ArkUI/CapiGrid' },
     { title: 'AccessibilityCustom', uri: 'pages/ArkUI/AccessibilityCustom' },
     { title: 'ScrollingList', uri: 'pages/ArkUI/ScrollListTest' },
     { title: 'TouchMove', uri: 'pages/ArkUI/TouchMoveTest' },
@@ -158,6 +159,7 @@ struct IndexPage {
     { title: 'ImageDownloadInfo', uri: 'pages/ArkUI/ImageDownloadInfo' },
     { title: 'GameAddTest', uri: 'pages/ArkUI/GameAddTest' },
     { title: 'AdvancedBlendMode', uri: 'pages/ArkUI/AdvancedBlendMode' },
+    { title: 'PluginComponentTest', uri: 'pages/ArkUI/PluginComponentTest' }
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
