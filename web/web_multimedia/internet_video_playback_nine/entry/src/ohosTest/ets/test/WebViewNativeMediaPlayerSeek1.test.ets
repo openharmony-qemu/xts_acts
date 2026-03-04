@@ -43,7 +43,6 @@ export default function webViewNativeMediaPlayerSeek1() {
       } catch (err) {
         console.error("push webViewNativeMediaPlayerSeek1 page error:" + err);
       }
-      await driver.waitForComponent(ON.id("webViewNativeMediaPlayerSeek13"), 10000);
       console.log("waitForComponent webViewNativeMediaPlayerSeek13");
       done()
     });
