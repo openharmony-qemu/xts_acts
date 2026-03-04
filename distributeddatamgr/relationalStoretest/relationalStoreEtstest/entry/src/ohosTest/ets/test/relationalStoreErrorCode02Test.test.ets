@@ -162,7 +162,7 @@ export default function relationalStoreErrorCode02Test() {
 
     /**
      * @tc.name   relationalStoreTest004
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_getRdbStoreErrorAPITest_1000
      * @tc.desc   getRdbStore success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -189,7 +189,7 @@ export default function relationalStoreErrorCode02Test() {
 
     /**
      * @tc.name   relationalStoreTest005
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_getRdbStoreErrorAPITest_1100
      * @tc.desc   getRdbStore success promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
