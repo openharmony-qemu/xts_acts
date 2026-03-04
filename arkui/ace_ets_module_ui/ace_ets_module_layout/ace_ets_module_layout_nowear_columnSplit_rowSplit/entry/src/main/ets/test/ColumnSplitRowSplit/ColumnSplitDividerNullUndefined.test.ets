@@ -50,21 +50,10 @@ export default function ColumnSplitDividerNullUndefinedTest() {
     it('columnSplitDividerNullUndefined_0100', Level.LEVEL0, async () => {
       console.info('[columnSplitDividerNullUndefined_0100] START');
 
-      let strJson: string = getInspectorByKey('columnsplit_divider_null');
+      let strJson = getInspectorByKey('columnsplit_divider_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-
-      console.info("[columnSplitDividerNullUndefined_0100] null obj is: " + JSON.stringify(obj.$attrs));
-
-      // null 应该使 startMargin 和 endMargin 为 0
-      // divider属性默认值为null，分割线上下margin为0.0vp
-      let dividerValue: ESObject = obj.$attrs.divider;
-      if (dividerValue !== null && typeof dividerValue === 'object') {
-        expect((dividerValue as Record<string, ESObject>).startMargin).assertEqual('0.00vp');
-        expect((dividerValue as Record<string, ESObject>).endMargin).assertEqual('0.00vp');
-      } else {
-        // divider为null或undefined，也符合预期
-        expect(dividerValue === null || dividerValue === undefined).assertEqual(true);
-      }
+      console.info("[columnSplitDividerNullUndefined_0100] null obj is: " + JSON.stringify(obj.$attrs.divider));
+      expect(JSON.stringify(obj.$attrs.divider)).assertEqual('{}');
       console.info('[columnSplitDividerNullUndefined_0100] END');
     })
 
@@ -79,20 +68,10 @@ export default function ColumnSplitDividerNullUndefinedTest() {
     it('columnSplitDividerNullUndefined_0200', Level.LEVEL0, async () => {
       console.info('[columnSplitDividerNullUndefined_0200] START');
 
-      let strJson: string = getInspectorByKey('columnsplit_divider_undefined');
+      let strJson = getInspectorByKey('columnsplit_divider_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-
-      console.info("[columnSplitDividerNullUndefined_0200] undefined obj is: " + JSON.stringify(obj.$attrs));
-
-      // undefined 应该被当作默认值处理（null），startMargin和endMargin为0
-      let dividerValue: ESObject = obj.$attrs.divider;
-      if (dividerValue !== null && typeof dividerValue === 'object') {
-        expect((dividerValue as Record<string, ESObject>).startMargin).assertEqual('0.00vp');
-        expect((dividerValue as Record<string, ESObject>).endMargin).assertEqual('0.00vp');
-      } else {
-        // divider为null或undefined，也符合预期
-        expect(dividerValue === null || dividerValue === undefined).assertEqual(true);
-      }
+      console.info("[columnSplitDividerNullUndefined_0200] null obj is: " + JSON.stringify(obj.$attrs.divider));
+      expect(JSON.stringify(obj.$attrs.divider)).assertEqual('{}');
       console.info('[columnSplitDividerNullUndefined_0200] END');
     })
 
@@ -107,18 +86,11 @@ export default function ColumnSplitDividerNullUndefinedTest() {
     it('columnSplitDividerNullUndefined_0300', Level.LEVEL0, async () => {
       console.info('[columnSplitDividerNullUndefined_0300] START');
 
-      let strJson: string = getInspectorByKey('columnsplit_divider_valid');
+      let strJson = getInspectorByKey('columnsplit_divider_valid');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-
-      console.info("[columnSplitDividerNullUndefined_0300] valid obj is: " + JSON.stringify(obj.$attrs));
-
-      // 有效的divider值 { startMargin: 5, endMargin: 5 } 应该被正确设置
-      let dividerValue: ESObject = obj.$attrs.divider;
-      expect(dividerValue !== null && dividerValue !== undefined).assertEqual(true);
-      if (dividerValue !== null && typeof dividerValue === 'object') {
-        expect((dividerValue as Record<string, ESObject>).startMargin).assertEqual('5.00vp');
-        expect((dividerValue as Record<string, ESObject>).endMargin).assertEqual('5.00vp');
-      }
+      console.info("[columnSplitDividerNullUndefined_0300] valid obj is: " + JSON.stringify(obj.$attrs.divider));
+      expect(obj.$attrs.divider.startMargin).assertEqual('5.00vp');
+      expect(obj.$attrs.divider.endMargin).assertEqual('5.00vp');
       console.info('[columnSplitDividerNullUndefined_0300] END');
     })
 
@@ -133,18 +105,11 @@ export default function ColumnSplitDividerNullUndefinedTest() {
     it('columnSplitDividerNullUndefined_0400', Level.LEVEL0, async () => {
       console.info('[columnSplitDividerNullUndefined_0400] START');
 
-      let strJson: string = getInspectorByKey('columnsplit_divider_start');
+      let strJson = getInspectorByKey('columnsplit_divider_start');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-
-      console.info("[columnSplitDividerNullUndefined_0400] startMargin obj is: " + JSON.stringify(obj.$attrs));
-
-      // 有效的divider值 { startMargin: 10, endMargin: 0 } 应该被正确设置
-      let dividerValue: ESObject = obj.$attrs.divider;
-      expect(dividerValue !== null && dividerValue !== undefined).assertEqual(true);
-      if (dividerValue !== null && typeof dividerValue === 'object') {
-        expect((dividerValue as Record<string, ESObject>).startMargin).assertEqual('10.00vp');
-        expect((dividerValue as Record<string, ESObject>).endMargin).assertEqual('0.00vp');
-      }
+      console.info("[columnSplitDividerNullUndefined_0400] valid obj is: " + JSON.stringify(obj.$attrs.divider));
+      expect(obj.$attrs.divider.startMargin).assertEqual('10.00vp');
+      expect(obj.$attrs.divider.endMargin).assertEqual('0.00vp');
       console.info('[columnSplitDividerNullUndefined_0400] END');
     })
 
@@ -159,18 +124,11 @@ export default function ColumnSplitDividerNullUndefinedTest() {
     it('columnSplitDividerNullUndefined_0500', Level.LEVEL0, async () => {
       console.info('[columnSplitDividerNullUndefined_0500] START');
 
-      let strJson: string = getInspectorByKey('columnsplit_divider_end');
+      let strJson = getInspectorByKey('columnsplit_divider_end');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-
-      console.info("[columnSplitDividerNullUndefined_0500] endMargin obj is: " + JSON.stringify(obj.$attrs));
-
-      // 有效的divider值 { startMargin: 0, endMargin: 10 } 应该被正确设置
-      let dividerValue: ESObject = obj.$attrs.divider;
-      expect(dividerValue !== null && dividerValue !== undefined).assertEqual(true);
-      if (dividerValue !== null && typeof dividerValue === 'object') {
-        expect((dividerValue as Record<string, ESObject>).startMargin).assertEqual('0.00vp');
-        expect((dividerValue as Record<string, ESObject>).endMargin).assertEqual('10.00vp');
-      }
+      console.info("[columnSplitDividerNullUndefined_0500] valid obj is: " + JSON.stringify(obj.$attrs.divider));
+      expect(obj.$attrs.divider.startMargin).assertEqual('0.00vp');
+      expect(obj.$attrs.divider.endMargin).assertEqual('10.00vp');
       console.info('[columnSplitDividerNullUndefined_0500] END');
     })
   })
