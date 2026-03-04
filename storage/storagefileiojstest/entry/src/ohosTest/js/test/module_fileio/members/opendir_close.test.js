@@ -124,7 +124,7 @@ describe('fileio_opendir_close', function () {
       expect(null).assertFail();
     } catch (e) {
       console.log('fileio_opendir_empty_string_000 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -142,7 +142,7 @@ describe('fileio_opendir_close', function () {
       expect(null).assertFail();
     } catch (e) {
       console.log('fileio_opendir_null_000 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
     }
   });
 
@@ -160,7 +160,7 @@ describe('fileio_opendir_close', function () {
       expect(null).assertFail();
     } catch (e) {
       console.log('fileio_opendir_undefined_000 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
     }
   });
 
@@ -173,10 +173,16 @@ describe('fileio_opendir_close', function () {
    * @tc.level  LEVEL0
    */
   it('fileio_opendir_callback_empty_string_000', Level.LEVEL0, async function (done) {
-    fileio.opendir('', function (error, dd) {
-      expect(error !== null).assertTrue();
+    try {
+      fileio.opendir('', function (error, dd) {
+        expect(error !== null).assertTrue();
+        done();
+      });
+    } catch (e) {
+      console.log('fileio_opendir_callback_empty_string_000 has failed for ' + e);
+      expect(e.message == 'No such file or directory').assertTrue();
       done();
-    });
+    }
   });
 
   /**
@@ -188,10 +194,21 @@ describe('fileio_opendir_close', function () {
    * @tc.level  LEVEL0
    */
   it('fileio_opendir_callback_null_000', Level.LEVEL0, async function (done) {
-    fileio.opendir(null, function (error, dd) {
-      expect(error !== null).assertTrue();
+    try {
+      fileio.opendir(null, function (error, dd) {
+        if (error) {
+          console.log('fileio_opendir_callback_null_000 err: ' + error);
+          expect(error.message == 'Invalid path').assertTrue();
+          done();
+        }
+        expect(null).assertFail();
+        done();
+      });
+    } catch (e) {
+      console.log('fileio_opendir_callback_null_000 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
       done();
-    });
+    }
   });
 
   /**
@@ -203,10 +220,21 @@ describe('fileio_opendir_close', function () {
    * @tc.level  LEVEL0
    */
   it('fileio_opendir_callback_undefined_000', Level.LEVEL0, async function (done) {
-    fileio.opendir(undefined, function (error, dd) {
-      expect(error !== null).assertTrue();
+    try {
+      fileio.opendir(undefined, function (error, dd) {
+        if (error) {
+          console.log('fileio_opendir_callback_undefined_000 err: ' + error);
+          expect(error.message == 'Invalid path').assertTrue();
+          done();
+        }
+        expect(null).assertFail();
+        done();
+      });
+    } catch (e) {
+      console.log('fileio_opendir_callback_undefined_000 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
       done();
-    });
+    }
   });
 
   /**
@@ -223,7 +251,7 @@ describe('fileio_opendir_close', function () {
       expect(null).assertFail();
     } catch (e) {
       console.log('fileio_opendirSync_empty_string_000 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -241,7 +269,7 @@ describe('fileio_opendir_close', function () {
       expect(null).assertFail();
     } catch (e) {
       console.log('fileio_opendirSync_null_000 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
     }
   });
 
@@ -259,7 +287,7 @@ describe('fileio_opendir_close', function () {
       expect(null).assertFail();
     } catch (e) {
       console.log('fileio_opendirSync_undefined_000 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
     }
   });
 });

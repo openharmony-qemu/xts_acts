@@ -1601,7 +1601,7 @@ describe('fileio_lstat', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_lstat_promise_error_002: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
      }
    });
 
@@ -1619,7 +1619,7 @@ describe('fileio_lstat', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_lstat_promise_error_003: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
      }
    });
 
@@ -1660,13 +1660,13 @@ describe('fileio_lstat', function () {
        fileio.lstat(null, (err) => {
          if (err) {
            console.log('fileio_test_lstat_callback_error_002: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+           expect(err.message == 'Invalid path').assertTrue();
            done();
          }
        });
      } catch (err) {
        console.log('fileio_test_lstat_callback_error_002 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
        done();
      }
    });
@@ -1684,13 +1684,13 @@ describe('fileio_lstat', function () {
        fileio.lstat(undefined, (err) => {
          if (err) {
            console.log('fileio_test_lstat_callback_error_003: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+           expect(err.message == 'Invalid path').assertTrue();
            done();
          }
        });
      } catch (err) {
        console.log('fileio_test_lstat_callback_error_003 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
        done();
      }
    });
@@ -1727,7 +1727,7 @@ describe('fileio_lstat', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_lstat_sync_error_002: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'The first argument requires type string').assertTrue();
      }
    });
 
@@ -1745,11 +1745,8 @@ describe('fileio_lstat', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_lstat_sync_error_003: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'The first argument requires type string').assertTrue();
      }
    });
  });
-}
-     });
-  });
 }

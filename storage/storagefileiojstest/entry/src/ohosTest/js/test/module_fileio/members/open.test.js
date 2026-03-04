@@ -427,9 +427,10 @@ describe('fileio_open', function () {
     try {
       await fileio.open('', 0o2, 0o0200);
       expect(false).assertTrue();
+      done();
     } catch (e) {
       console.log('fileio_test_open_async_013 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -448,7 +449,7 @@ describe('fileio_open', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_open_async_014 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -467,7 +468,7 @@ describe('fileio_open', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_open_async_015 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -487,11 +488,13 @@ describe('fileio_open', function () {
       let fd = await fileio.open(fpath, null, 0o0200);
       expect(isIntNum(fd)).assertTrue();
       fileio.closeSync(fd);
-      fileio.unlinkSync(fpath);
+      expect(false).assertTrue();
       done();
     } catch (e) {
       console.log('fileio_test_open_async_016 has failed for ' + e);
-      expect(false).assertTrue();
+      expect(e.message == 'Invalid flags').assertTrue();
+      fileio.unlinkSync(fpath);
+      done();
     }
   });
 
@@ -515,6 +518,7 @@ describe('fileio_open', function () {
     } catch (e) {
       console.log('fileio_test_open_async_017 has failed for ' + e);
       expect(false).assertTrue();
+      done();
     }
   });
 
@@ -530,14 +534,14 @@ describe('fileio_open', function () {
     let fpath = await nextFileName('fileio_test_open_async_018');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
     try {
-      let fd = await fileio.open(fpath, 0o2, null);
-      expect(isIntNum(fd)).assertTrue();
-      fileio.closeSync(fd);
-      fileio.unlinkSync(fpath);
+      await fileio.open(fpath, 0o2, null);
+      expect(false).assertTrue();
       done();
     } catch (e) {
       console.log('fileio_test_open_async_018 has failed for ' + e);
-      expect(false).assertTrue();
+      expect(e.message == 'Invalid mode').assertTrue();
+      fileio.unlinkSync(fpath);
+      done();
     }
   });
 
@@ -561,6 +565,7 @@ describe('fileio_open', function () {
     } catch (e) {
       console.log('fileio_test_open_async_019 has failed for ' + e);
       expect(false).assertTrue();
+      done();
     }
   });
 
@@ -585,7 +590,7 @@ describe('fileio_open', function () {
       });
     } catch (e) {
       console.log('fileio_test_open_async_020 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -603,7 +608,7 @@ describe('fileio_open', function () {
       fileio.open(null, (err, fd) => {
         if (err) {
           console.log('fileio_test_open_async_021 error: ' + err);
-          expect(err !== null).assertTrue();
+          expect(err.message == 'Invalid path').assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -611,7 +616,7 @@ describe('fileio_open', function () {
       });
     } catch (e) {
       console.log('fileio_test_open_async_021 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -637,7 +642,7 @@ describe('fileio_open', function () {
       });
     } catch (e) {
       console.log('fileio_test_open_async_022 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -655,7 +660,7 @@ describe('fileio_open', function () {
       fileio.open('', 0o2, (err, fd) => {
         if (err) {
           console.log('fileio_test_open_async_023 error: ' + err);
-          expect(err !== null).assertTrue();
+          expect(err.message == 'No such file or directory').assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -689,7 +694,7 @@ describe('fileio_open', function () {
       });
     } catch (e) {
       console.log('fileio_test_open_async_024 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -715,7 +720,7 @@ describe('fileio_open', function () {
       });
     } catch (e) {
       console.log('fileio_test_open_async_025 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -735,17 +740,19 @@ describe('fileio_open', function () {
       fileio.open(fpath, null, (err, fd) => {
         if (err) {
           console.log('fileio_test_open_async_026 error: ' + err);
-          expect(false).assertTrue();
-        } else {
-          expect(isIntNum(fd)).assertTrue();
-          fileio.closeSync(fd);
+          expect(err.message == 'Invalid flags').assertTrue();
           fileio.unlinkSync(fpath);
+          done();
+        } else {
+          expect(false).assertTrue();
           done();
         }
       });
     } catch (e) {
       console.log('fileio_test_open_async_026 has failed for ' + e);
-      expect(false).assertTrue();
+      expect(e.message == 'Invalid flags').assertTrue();
+      fileio.unlinkSync(fpath);
+      done();
     }
   });
 
@@ -791,7 +798,7 @@ describe('fileio_open', function () {
       fileio.open('', 0o2, 0o0200, (err, fd) => {
         if (err) {
           console.log('fileio_test_open_async_028 error: ' + err);
-          expect(err !== null).assertTrue();
+          expect(err.message == 'No such file or directory').assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -825,7 +832,7 @@ describe('fileio_open', function () {
       });
     } catch (e) {
       console.log('fileio_test_open_async_029 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -851,7 +858,7 @@ describe('fileio_open', function () {
       });
     } catch (e) {
       console.log('fileio_test_open_async_030 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -872,16 +879,17 @@ describe('fileio_open', function () {
         if (err) {
           console.log('fileio_test_open_async_031 error: ' + err);
           expect(false).assertTrue();
+          done();
         } else {
-          expect(isIntNum(fd)).assertTrue();
-          fileio.closeSync(fd);
-          fileio.unlinkSync(fpath);
+          expect(false).assertTrue();
           done();
         }
       });
     } catch (e) {
       console.log('fileio_test_open_async_031 has failed for ' + e);
-      expect(false).assertTrue();
+      expect(e.message == 'Invalid flags').assertTrue();
+      fileio.unlinkSync(fpath);
+      done();
     }
   });
 
@@ -930,16 +938,17 @@ describe('fileio_open', function () {
         if (err) {
           console.log('fileio_test_open_async_033 error: ' + err);
           expect(false).assertTrue();
+          done();
         } else {
-          expect(isIntNum(fd)).assertTrue();
-          fileio.closeSync(fd);
-          fileio.unlinkSync(fpath);
+          expect(false).assertTrue();
           done();
         }
       });
     } catch (e) {
       console.log('fileio_test_open_async_033 has failed for ' + e);
-      expect(false).assertTrue();
+      expect(e.message == 'Invalid mode').assertTrue();
+      fileio.unlinkSync(fpath);
+      done();
     }
   });
 
@@ -986,7 +995,7 @@ describe('fileio_open', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_open_sync_001 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -1004,7 +1013,7 @@ describe('fileio_open', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_open_sync_002 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
     }
   });
 
@@ -1022,7 +1031,7 @@ describe('fileio_open', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_open_sync_003 has failed for ' + e);
-      expect(e !== null).assertTrue();
+      expect(e.message == 'Invalid path').assertTrue();
     }
   });
 
@@ -1038,13 +1047,12 @@ describe('fileio_open', function () {
     let fpath = await nextFileName('fileio_test_open_sync_004');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
     try {
-      let fd = fileio.openSync(fpath, 0o2, null);
-      expect(isIntNum(fd)).assertTrue();
-      fileio.closeSync(fd);
-      fileio.unlinkSync(fpath);
+      fileio.openSync(fpath, 0o2, null);
+      expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_open_sync_004 has failed for ' + e);
-      expect(false).assertTrue();
+      fileio.unlinkSync(fpath);
+      expect(e.message == 'Invalid mode').assertTrue();
     }
   });
 

@@ -16,7 +16,7 @@
 import { fileio, nextFileName, describe, it, expect } from '../../Common';
 import { Level } from '@ohos/hypium';
 
-export default function fileioMkdirRmdir()() {
+export default function fileioMkdirRmdir() {
 describe('fileio_mkdir_rmdir', function () {
 
   /**
@@ -275,7 +275,7 @@ describe('fileio_mkdir_rmdir', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_mkdir_promise_error_002: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
      }
    });
 
@@ -293,7 +293,7 @@ describe('fileio_mkdir_rmdir', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_mkdir_promise_error_003: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
      }
    });
 
@@ -312,8 +312,7 @@ describe('fileio_mkdir_rmdir', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_mkdir_promise_error_004: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-       fileio.rmdirSync(fpath);
+       expect(err.message == 'Invalid mode').assertTrue();
      }
    });
 
@@ -373,13 +372,13 @@ describe('fileio_mkdir_rmdir', function () {
        fileio.mkdir(null, (err) => {
          if (err) {
            console.log('fileio_mkdir_callback_error_002: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+           expect(err.message == 'Invalid path').assertTrue();
            done();
          }
        });
      } catch (err) {
        console.log('fileio_mkdir_callback_error_002 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
        done();
      }
    });
@@ -397,13 +396,13 @@ describe('fileio_mkdir_rmdir', function () {
        fileio.mkdir(undefined, (err) => {
          if (err) {
            console.log('fileio_mkdir_callback_error_003: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+           expect(err.message == 'Invalid path').assertTrue();
            done();
          }
        });
      } catch (err) {
        console.log('fileio_mkdir_callback_error_003 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
        done();
      }
    });
@@ -445,13 +444,13 @@ describe('fileio_mkdir_rmdir', function () {
        fileio.mkdir(null, 0o777, (err) => {
          if (err) {
            console.log('fileio_mkdir_callback_mode_error_002: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+           expect(err.message == 'Invalid path').assertTrue();
            done();
          }
        });
      } catch (err) {
        console.log('fileio_mkdir_callback_mode_error_002 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
        done();
      }
    });
@@ -469,13 +468,13 @@ describe('fileio_mkdir_rmdir', function () {
        fileio.mkdir(undefined, 0o777, (err) => {
          if (err) {
            console.log('fileio_mkdir_callback_mode_error_003: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+           expect(err.message == 'Invalid path').assertTrue();
            done();
          }
        });
      } catch (err) {
        console.log('fileio_mkdir_callback_mode_error_003 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
          done();
      }
    });
@@ -494,15 +493,13 @@ describe('fileio_mkdir_rmdir', function () {
        fileio.mkdir(fpath, null, (err) => {
          if (err) {
            console.log('fileio_mkdir_callback_mode_error_004: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-           fileio.rmdirSync(fpath);
+           expect(err.message == 'Invalid mode').assertTrue();
            done();
          }
        });
      } catch (err) {
        console.log('fileio_mkdir_callback_mode_error_004 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-       fileio.rmdirSync(fpath);
+       expect(err.message == 'Invalid mode').assertTrue();
        done();
      }
    });
@@ -521,14 +518,15 @@ describe('fileio_mkdir_rmdir', function () {
        fileio.mkdir(fpath, undefined, (err) => {
          if (err) {
            console.log('fileio_mkdir_callback_mode_error_005: ' + err.message + ', code: ' + err.code);
-           expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-           fileio.rmdirSync(fpath);
-           done;         }
+           expect(err.message == 'Invalid mode').assertTrue();
+           done();       
+          }
+          expect(fileio.rmdirSync(fpath) == null).assertTrue();
+          done();
        });
      } catch (err) {
        console.log('fileio_mkdir_callback_mode_error_005 err: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-       fileio.rmdirSync(fpath);
+       expect(err.message == 'Invalid mode').assertTrue();
        done();
      }
    });
@@ -583,7 +581,7 @@ describe('fileio_mkdir_rmdir', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_mkdir_sync_error_003: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
      }
    });
 
@@ -602,8 +600,7 @@ describe('fileio_mkdir_rmdir', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_mkdir_sync_error_004: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-       fileio.rmdirSync(fpath);
+       expect(err.message == 'Invalid mode').assertTrue();
      }
    });
 
@@ -619,11 +616,10 @@ describe('fileio_mkdir_rmdir', function () {
      let fpath = await nextFileName('fileio_mkdir_sync_error_005');
      try {
        fileio.mkdirSync(fpath, undefined);
-       expect(false).assertTrue();
+       expect(fileio.rmdirSync(fpath) == null).assertTrue();
      } catch (err) {
        console.log('fileio_mkdir_sync_error_005: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
-       fileio.rmdirSync(fpath);
+       expect(false).assertTrue();
      }
    });
 });

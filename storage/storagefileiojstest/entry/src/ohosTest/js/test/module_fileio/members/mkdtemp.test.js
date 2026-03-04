@@ -118,7 +118,7 @@ describe('fileio_mkdtemp', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_mkdtemp_promise_error_001: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'No such file or directory').assertTrue();
+       expect(err.message == 'Invalid argument').assertTrue();
      }
    });
 
@@ -136,7 +136,7 @@ describe('fileio_mkdtemp', function () {
        expect(false).assertTrue();
      } catch (err) {
        console.log('fileio_test_mkdtemp_promise_error_002: ' + err.message + ', code: ' + err.code);
-       expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+       expect(err.message == 'Invalid path').assertTrue();
      }
    });
 
@@ -154,7 +154,7 @@ describe('fileio_mkdtemp', function () {
         expect(false).assertTrue();
       } catch (err) {
         console.log('fileio_test_mkdtemp_promise_error_003: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+        expect(err.message == 'Invalid path').assertTrue();
       }
     });
 
@@ -172,7 +172,7 @@ describe('fileio_mkdtemp', function () {
         expect(false).assertTrue();
       } catch (err) {
         console.log('fileio_test_mkdtemp_sync_error_001: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'No such file or directory').assertTrue();
+        expect(err.message == 'Invalid argument').assertTrue();
       }
     });
 
@@ -190,7 +190,7 @@ describe('fileio_mkdtemp', function () {
         expect(false).assertTrue();
       } catch (err) {
         console.log('fileio_test_mkdtemp_sync_error_002: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+        expect(err.message == 'Invalid path').assertTrue();
       }
     });
 
@@ -208,7 +208,7 @@ describe('fileio_mkdtemp', function () {
         expect(false).assertTrue();
       } catch (err) {
         console.log('fileio_test_mkdtemp_sync_error_003: ' + err.message + ', code: ' + err.code);
-        expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
+        expect(err.message == 'Invalid path').assertTrue();
       }
     });
 
@@ -224,7 +224,7 @@ describe('fileio_mkdtemp', function () {
       fileio.mkdtemp('', function (err, res) {
         if (err) {
           console.log('fileio_test_mkdtemp_callback_error_001: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'No such file or directory').assertTrue();
+          expect(err.message == 'Invalid argument').assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -242,16 +242,22 @@ describe('fileio_mkdtemp', function () {
      * @tc.level  LEVEL2
      */
     it('fileio_test_mkdtemp_callback_error_002', Level.LEVEL2, async function (done) {
-      fileio.mkdtemp(null, function (err, res) {
-        if (err) {
-          console.log('fileio_test_mkdtemp_callback_error_002: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
-      });
+      try {
+        fileio.mkdtemp(null, function (err, res) {
+          if (err) {
+            console.log('fileio_test_mkdtemp_callback_error_002: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid path').assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log('fileio_test_mkdtemp_callback_error_002 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid path').assertTrue();
+        done();
+      }
     });
 
     /**
@@ -263,15 +269,21 @@ describe('fileio_mkdtemp', function () {
      * @tc.level  LEVEL2
      */
     it('fileio_test_mkdtemp_callback_error_003', Level.LEVEL2, async function (done) {
-      fileio.mkdtemp(undefined, function (err, res) {
-        if (err) {
-          console.log('fileio_test_mkdtemp_callback_error_003: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'Invalid path' || err.message == 'Invalid arg').assertTrue();
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
-      });
+      try{
+        fileio.mkdtemp(undefined, function (err, res) {
+          if (err) {
+            console.log('fileio_test_mkdtemp_callback_error_003: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid path').assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log('fileio_test_mkdtemp_callback_error_003 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid path').assertTrue();
+        done();
+      }
     });
 });}

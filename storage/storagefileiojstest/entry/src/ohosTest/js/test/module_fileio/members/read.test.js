@@ -335,6 +335,7 @@ describe('fileio_read', function () {
       expect(null).assertFail();
     } catch (e) {
       console.log('fileio_test_read_sync_011 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
     }
   });
 
@@ -352,6 +353,7 @@ describe('fileio_read', function () {
       expect(null).assertFail();
     } catch (e) {
       console.log('fileio_test_read_sync_012 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
     }
   });
 
@@ -374,6 +376,8 @@ describe('fileio_read', function () {
       fileio.readSync(fd, null);
       expect(null).assertFail();
     } catch (e) {
+      console.log('fileio_test_read_sync_013 has failed for ' + e);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
       expect(fileio.closeSync(fd) == null).assertTrue();
       expect(fileio.unlinkSync(fpath) == null).assertTrue();
     }
@@ -398,6 +402,8 @@ describe('fileio_read', function () {
       fileio.readSync(fd, undefined);
       expect(null).assertFail();
     } catch (e) {
+      console.log('fileio_test_read_sync_014 has failed for ' + e);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
       expect(fileio.closeSync(fd) == null).assertTrue();
       expect(fileio.unlinkSync(fpath) == null).assertTrue();
     }
@@ -420,10 +426,11 @@ describe('fileio_read', function () {
       fd = fileio.openSync(fpath, 0o2);
       expect(isIntNum(fd)).assertTrue();
       fileio.readSync(fd, new ArrayBuffer(4096), null);
-      expect(null).assertFail();
-    } catch (e) {
       expect(fileio.closeSync(fd) == null).assertTrue();
       expect(fileio.unlinkSync(fpath) == null).assertTrue();
+    } catch (e) {
+      console.log('fileio_test_read_sync_015 has failed for ' + e);
+      expect(null).assertFail();
     }
   });
 
@@ -865,7 +872,6 @@ describe('fileio_read', function () {
       });
       expect(readout.offset == 1).assertTrue();
       expect(fileio.closeSync(fd) == null).assertTrue();
-();
       expect(fileio.unlinkSync(fpath) == null).assertTrue();
       done();
     } catch (e) {
@@ -888,6 +894,7 @@ describe('fileio_read', function () {
       expect(null).assertFail();
     } catch (e) {
       console.info('fileio_test_read_async_013 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
       done();
     }
   });
@@ -906,6 +913,7 @@ describe('fileio_read', function () {
       expect(null).assertFail();
     } catch (e) {
       console.info('fileio_test_read_async_014 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
       done();
     }
   });
@@ -929,6 +937,8 @@ describe('fileio_read', function () {
       await fileio.read(fd, null);
       expect(null).assertFail();
     } catch (e) {
+      console.info('fileio_test_read_async_015 has failed for ' + e);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
       expect(fileio.closeSync(fd) == null).assertTrue();
       expect(fileio.unlinkSync(fpath) == null).assertTrue();
       done();
@@ -954,6 +964,8 @@ describe('fileio_read', function () {
       await fileio.read(fd, undefined);
       expect(null).assertFail();
     } catch (e) {
+      console.info('fileio_test_read_async_016 has failed for ' + e);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
       expect(fileio.closeSync(fd) == null).assertTrue();
       expect(fileio.unlinkSync(fpath) == null).assertTrue();
       done();
@@ -976,7 +988,9 @@ describe('fileio_read', function () {
       let fd = fileio.openSync(fpath, 0o2);
       expect(isIntNum(fd)).assertTrue();
       await fileio.read(fd, new ArrayBuffer(4096), null);
-      expect(null).assertFail();
+      expect(fileio.closeSync(fd) == null).assertTrue();
+      expect(fileio.unlinkSync(fpath) == null).assertTrue();
+      done();
     } catch (e) {
       console.info('fileio_test_read_async_017 has failed for ' + e);
       done();
@@ -1030,6 +1044,7 @@ describe('fileio_read', function () {
       });
     } catch (e) {
       console.info('fileio_test_read_async_019 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
       done();
     }
   });
@@ -1054,6 +1069,7 @@ describe('fileio_read', function () {
       });
     } catch (e) {
       console.info('fileio_test_read_async_020 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
       done();
     }
   });
@@ -1086,6 +1102,7 @@ describe('fileio_read', function () {
       });
     } catch (e) {
       console.info('fileio_test_read_async_021 has failed for ' + e);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
       expect(fileio.closeSync(fd) == null).assertTrue();
       expect(fileio.unlinkSync(fpath) == null).assertTrue();
       done();
@@ -1120,6 +1137,7 @@ describe('fileio_read', function () {
       });
     } catch (e) {
       console.info('fileio_test_read_async_022 has failed for ' + e);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
       expect(fileio.closeSync(fd) == null).assertTrue();
       expect(fileio.unlinkSync(fpath) == null).assertTrue();
       done();
@@ -1146,6 +1164,7 @@ describe('fileio_read', function () {
       });
     } catch (e) {
       console.info('fileio_test_read_async_023 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
       done();
     }
   });
@@ -1170,6 +1189,7 @@ describe('fileio_read', function () {
       });
     } catch (e) {
       console.info('fileio_test_read_async_024 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
       done();
     }
   });
@@ -1202,6 +1222,7 @@ describe('fileio_read', function () {
       });
     } catch (e) {
       console.info('fileio_test_read_async_025 has failed for ' + e);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
       expect(fileio.closeSync(fd) == null).assertTrue();
       expect(fileio.unlinkSync(fpath) == null).assertTrue();
       done();
@@ -1236,6 +1257,7 @@ describe('fileio_read', function () {
       });
     } catch (e) {
       console.info('fileio_test_read_async_026 has failed for ' + e);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
       expect(fileio.closeSync(fd) == null).assertTrue();
       expect(fileio.unlinkSync(fpath) == null).assertTrue();
       done();
@@ -1261,11 +1283,12 @@ describe('fileio_read', function () {
       fileio.read(fd, new ArrayBuffer(4096), null, (err, data) => {
         if (err) {
           console.info('fileio_test_read_async_027 error: ' + JSON.stringify(err));
+          expect(null).assertFail();
+          done();
+        } else {
           expect(fileio.closeSync(fd) == null).assertTrue();
           expect(fileio.unlinkSync(fpath) == null).assertTrue();
           done();
-        } else {
-          expect(null).assertFail();
         }
       });
     } catch (e) {
@@ -1294,8 +1317,7 @@ describe('fileio_read', function () {
       fileio.read(fd, new ArrayBuffer(4096), undefined, (err, data) => {
         if (err) {
           console.info('fileio_test_read_async_028 error: ' + JSON.stringify(err));
-          expect(fileio.closeSync(fd) == null).assertTrue();
-          expect(fileio.unlinkSync(fpath) == null).assertTrue();
+          expect(null).assertFail();
           done();
         } else {
           expect(data.bytesRead == FILE_CONTENT.length).assertTrue();

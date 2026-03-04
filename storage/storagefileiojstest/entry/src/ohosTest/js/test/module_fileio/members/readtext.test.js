@@ -211,6 +211,7 @@ describe('fileio_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_readtext_sync_008 has failed for ' + e);
+      expect(e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -228,6 +229,7 @@ describe('fileio_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_readtext_sync_009 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
     }
   });
 
@@ -245,6 +247,7 @@ describe('fileio_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_readtext_sync_010 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
     }
   });
 
@@ -524,6 +527,7 @@ describe('fileio_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_readtext_async_007 has failed for ' + e);
+      expect(e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -542,6 +546,7 @@ describe('fileio_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_readtext_async_008 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -560,6 +565,7 @@ describe('fileio_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileio_test_readtext_async_009 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -620,12 +626,16 @@ describe('fileio_readtext', function () {
    */
   it('fileio_test_readtext_async_012', Level.LEVEL3, async function (done) {
     try {
-      fileio.readText('', {}, (err, str) => {
-        expect(false).assertTrue();
-        done();
+      fileio.readText('', { position: 1 }, (err, str) => {
+        if (err) {
+          console.log('fileio_test_readtext_async_012 error: ' + err);
+          expect(err.message == 'Invalid argument').assertTrue();
+          done();
+        }
       });
     } catch (e) {
       console.log('fileio_test_readtext_async_012 has failed for ' + e);
+      expect(e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -640,12 +650,16 @@ describe('fileio_readtext', function () {
    */
   it('fileio_test_readtext_async_013', Level.LEVEL3, async function (done) {
     try {
-      fileio.readText(null, {}, (err, str) => {
-        expect(false).assertTrue();
-        done();
+      fileio.readText(null, { position: 1 }, (err, str) => {
+        if (err) {
+          console.log('fileio_test_readtext_async_013 error: ' + err);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+        }
       });
     } catch (e) {
       console.log('fileio_test_readtext_async_013 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -660,12 +674,16 @@ describe('fileio_readtext', function () {
    */
   it('fileio_test_readtext_async_014', Level.LEVEL3, async function (done) {
     try {
-      fileio.readText(undefined, {}, (err, str) => {
-        expect(false).assertTrue();
-        done();
+      fileio.readText(undefined, { position: 1 }, (err, str) => {
+        if (err) {
+          console.log('fileio_test_readtext_async_014 error: ' + err);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+        }
       });
     } catch (e) {
       console.log('fileio_test_readtext_async_014 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
       done();
     }
   });
@@ -685,8 +703,9 @@ describe('fileio_readtext', function () {
     try {
       fileio.readText(fpath, null, (err, str) => {
         if (err) {
-          console.log('fileio_test_readtext_async_015 error package: ' + JSON.stringify(err));
+          console.log('fileio_test_readtext_async_015 error package: ' + err);
           expect(false).assertTrue();
+          done();
         }
         expect(str == FILE_CONTENT).assertTrue();
         fileio.unlinkSync(fpath);
@@ -695,6 +714,7 @@ describe('fileio_readtext', function () {
     } catch (e) {
       console.log('fileio_test_readtext_async_015 has failed for ' + e);
       expect(false).assertTrue();
+      done();
     }
   });
 
@@ -713,8 +733,9 @@ describe('fileio_readtext', function () {
     try {
       fileio.readText(fpath, undefined, (err, str) => {
         if (err) {
-          console.log('fileio_test_readtext_async_016 error package: ' + JSON.stringify(err));
+          console.log('fileio_test_readtext_async_016 error package: ' + err);
           expect(false).assertTrue();
+          done();
         }
         expect(str == FILE_CONTENT).assertTrue();
         fileio.unlinkSync(fpath);
@@ -723,6 +744,7 @@ describe('fileio_readtext', function () {
     } catch (e) {
       console.log('fileio_test_readtext_async_016 has failed for ' + e);
       expect(false).assertTrue();
+      done();
     }
   });
 });
