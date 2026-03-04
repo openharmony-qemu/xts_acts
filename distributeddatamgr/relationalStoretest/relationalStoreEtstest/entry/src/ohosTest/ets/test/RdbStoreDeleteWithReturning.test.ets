@@ -1359,7 +1359,7 @@ export default function RdbStoreDeleteWithReturning() {
     })
 
      /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_7700
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_deleteWithReturningAPITest_7700
      * @tc.name   deleteWithReturning035
      * @tc.desc   columns with ""
      * @tc.size   MediumTest
