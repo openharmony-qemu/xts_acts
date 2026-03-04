@@ -530,7 +530,7 @@ export default function PointerComplementTest() {
           let flag: number = 0;
           await pointer.setPointerVisible(false).then(() => {
             flag += 1;
-            console.info(`${caseName} Set pointer visible success, data=`);
+            console.info(`${caseName} Set pointer visible success`);
             expect(flag).assertEqual(1);
             done();
           });
