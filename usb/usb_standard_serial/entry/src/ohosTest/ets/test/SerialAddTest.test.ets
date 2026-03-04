@@ -1122,8 +1122,8 @@ export default function SerialAddTest() {
           serial.DataBits.DATABIT_6, serial.DataBits.DATABIT_5
         ];
         const parities = [
-          serial.Parity.PARITY_NONE, serial.Parity.PARITY_ODD
-          serial.Parity.PARITY_EVEN, serial.Parity.PARITY_MARK
+          serial.Parity.PARITY_NONE, serial.Parity.PARITY_ODD,
+          serial.Parity.PARITY_EVEN, serial.Parity.PARITY_MARK,
           serial.Parity.PARITY_SPACE
         ];
         const stopBits = [serial.StopBits.STOPBIT_1, serial.StopBits.STOPBIT_2];
