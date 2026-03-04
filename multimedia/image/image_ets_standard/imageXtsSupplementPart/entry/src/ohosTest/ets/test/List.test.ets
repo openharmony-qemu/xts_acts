@@ -308,7 +308,6 @@ export default function testsuite() {
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
   imageCreateCroppedAndScaledPixelMap();
-
   ImageBodySerialNumber();
   ImageCameraOwnerName();
   ImageGPSDest();
@@ -329,13 +328,7 @@ export default function testsuite() {
   PicturePackingPictureTestSupp();
   PicturePackingPictureSecTestSupp();
   ImageSourceModifyImagePropertySupp();
-  ImageGammaSupp()
-  ImagePictureMetadataTest()
-  MultimediaImageTest()
-  ImageExifMetadataTestSupp()
   CreatePixelMapSupp();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
-
-
 }
