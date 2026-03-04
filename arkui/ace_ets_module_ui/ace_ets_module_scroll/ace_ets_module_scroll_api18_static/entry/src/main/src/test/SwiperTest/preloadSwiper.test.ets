@@ -109,7 +109,7 @@ it('preloadSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       console.info("[preloadSwiper_static_0100] content3: " +
       JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'))
-        .assertEqual('preloadItems: "100004"');
+        .assertEqual('preloadItems: 100004');
       console.info('[preloadSwiper_static_0100] END');
       done();
     });
