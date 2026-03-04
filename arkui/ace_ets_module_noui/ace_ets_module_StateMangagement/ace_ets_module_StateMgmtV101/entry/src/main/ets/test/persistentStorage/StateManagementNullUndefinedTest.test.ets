@@ -1276,7 +1276,7 @@ export default function stateManagementNullUndefinedTest() {
      * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROPS_PROPERTIES_NULL_DEPRECATED_001
      * @tc.desc   Test deprecated PersistentStorage.PersistProps with null properties array
      * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
+     * @tc.size   SMALLTESTgit 
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
@@ -1324,6 +1324,6 @@ export default function stateManagementNullUndefinedTest() {
         console.info('[PersistentStorage_PersistProps_properties_undefined_001] Expected error caught');
       }
     });
-    
+
   });
 }

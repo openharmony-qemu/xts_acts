@@ -23,6 +23,14 @@ class SampleChild {
 }
 
 @ObservedV2
+class TestSampleClass {
+  @Trace id: number = 0;
+  count: number = 1;
+}
+
+
+
+@ObservedV2
 class Sample {
   @Trace sampleChild: SampleChild = new SampleChild();
 }
