@@ -1,8 +1,8 @@
 
-import hitsNotificationPriorityRefactorNoSystemTest from './hitsNotificationPriorityRefactorNoSystemTest.test'
+import actsNotificationPriorityRefactorNoSystemTest from './ActsNotificationPriorityRefactorNoSystemTest.test'
 
 export default function testsuite() {
 
-  hitsNotificationPriorityRefactorNoSystemTest();
+  actsNotificationPriorityRefactorNoSystemTest();
 
 }
