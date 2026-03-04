@@ -1750,7 +1750,7 @@ export default function RdbStoreUpdateWithReturning() {
     })
 
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_9000
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_updateWithReturningErrAPITest_0100
      * @tc.name  updateWithReturning_Err0100
      * @tc.desc  columns.size == 0, errCode 14800021.
      * @tc.size  MediumTest
