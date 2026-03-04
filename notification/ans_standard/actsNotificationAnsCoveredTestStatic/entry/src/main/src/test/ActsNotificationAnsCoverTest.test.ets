@@ -98,7 +98,7 @@ export default function actsNotificationAnsCoveredTest() {
 
     })
 
-    beforeEach(() => {
+    beforeEach(async () => {
       console.info(`${TAG} afterEach START`)
       await notificationManager.removeAllSlots()
       await Utils.msSleep(1000)
