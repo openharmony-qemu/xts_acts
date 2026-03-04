@@ -281,7 +281,7 @@ export default function rdbStoreAttachEtsunitTest() {
 
         /**
          * @tc.name   testRdbStoreAttach0034
-         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0100
+         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachErrorAPITest_0100
          * @tc.desc   non encrypted database attach non encrypted database
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -313,7 +313,7 @@ export default function rdbStoreAttachEtsunitTest() {
 
         /**
          * @tc.name   testRdbStoreAttach0035
-         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0110atch 
+         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachErrorAPITest_0200 
          * @tc.desc   non encrypted database attach non encrypted database
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -344,7 +344,7 @@ export default function rdbStoreAttachEtsunitTest() {
 
         /**
          * @tc.name   testRdbStoreAttach0036
-         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0111
+         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachErrorAPITest_0300
          * @tc.desc   non encrypted database attach non encrypted database
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -375,7 +375,7 @@ export default function rdbStoreAttachEtsunitTest() {
 
         /**
          * @tc.name   testRdbStoreDetach0001
-         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_DetachAPITest_0100
+         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_DetachErrorAPITest_0100
          * @tc.desc   detach attachName with null or undefined
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -415,7 +415,7 @@ export default function rdbStoreAttachEtsunitTest() {
 
          /**
          * @tc.name   testRdbStoreDetach0002
-         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_DetachAPITest_0200
+         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_DetachErrorAPITest_0200
          * @tc.desc   detach waitTime with null or undefined
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
