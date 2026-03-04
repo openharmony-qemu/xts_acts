@@ -90,14 +90,14 @@ export default function createAssetWithShortTermPermissionTest() {
     }
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_001
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_001
-     * @tc.desc      : call createAssetWithShortTermPermission twice, click ban button, not return assetUri
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_001
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_001
+     * @tc.desc      call createAssetWithShortTermPermission twice, click ban button, not return assetUri
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('createAssetWithShortTermPermission_dialogTest_001', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_001', Level.LEVEL0, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_001';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -133,14 +133,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_002
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_002
-     * @tc.desc      : call createAssetWithShortTermPermission twice, only first time have dialog under 5 min
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_002
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_002
+     * @tc.desc      call createAssetWithShortTermPermission twice, only first time have dialog under 5 min
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('createAssetWithShortTermPermission_dialogTest_002', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_002', Level.LEVEL0, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_002';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -197,14 +197,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_003
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_003
-     * @tc.desc      : call createAssetWithShortTermPermission to create video
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_003
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_003
+     * @tc.desc      call createAssetWithShortTermPermission to create video
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('createAssetWithShortTermPermission_dialogTest_003', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_003', Level.LEVEL0, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_003';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -245,14 +245,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_004
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_004
-     * @tc.desc      : call createAssetWithShortTermPermission to create image with a title length of 251
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_004
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_004
+     * @tc.desc      call createAssetWithShortTermPermission to create image with a title length of 251
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_004', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_004', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_004';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -293,14 +293,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_005
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_005
-     * @tc.desc      : call createAssetWithShortTermPermission to create image with space title 
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_005
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_005
+     * @tc.desc      call createAssetWithShortTermPermission to create image with space title 
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_005', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_005', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_005';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -341,14 +341,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_006
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_006
-     * @tc.desc      : call createAssetWithShortTermPermission to create image with pecial character title
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_006
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_006
+     * @tc.desc      call createAssetWithShortTermPermission to create image with pecial character title
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_006', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_006', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_006';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -390,14 +390,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_007
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_007
-     * @tc.desc      : call createAssetWithShortTermPermission to create image with Chinese title
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_007
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_007
+     * @tc.desc      call createAssetWithShortTermPermission to create image with Chinese title
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_007', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_007', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_007';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -439,14 +439,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_008
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_008
-     * @tc.desc      : call createAssetWithShortTermPermission to create image with asset name overlong 255
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_008
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_008
+     * @tc.desc      call createAssetWithShortTermPermission to create image with asset name overlong 255
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_008', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_008', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_008';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -476,14 +476,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_009
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_009
-     * @tc.desc      : call createAssetWithShortTermPermission to create image with unsupported special characters title
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_009
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_009
+     * @tc.desc      call createAssetWithShortTermPermission to create image with unsupported special characters title
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_009', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_009', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_009';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -518,14 +518,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_010
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_010
-     * @tc.desc      : call createAssetWithShortTermPermission to create image with empty string title
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_010
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_010
+     * @tc.desc      call createAssetWithShortTermPermission to create image with empty string title
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_010', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_010', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_010';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -554,14 +554,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_011
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_011
-     * @tc.desc      : fileNameExtension is jpg but photoType is video
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_011
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_011
+     * @tc.desc      fileNameExtension is jpg but photoType is video
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_011', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_011', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_011';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -589,14 +589,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_012
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_012
-     * @tc.desc      : fileNameExtension is mp4 but photoType is image
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_012
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_012
+     * @tc.desc      fileNameExtension is mp4 but photoType is image
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_012', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_012', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_012';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -624,14 +624,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_013
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_013
-     * @tc.desc      : fileNameExtension is invalid suffix
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_013
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_013
+     * @tc.desc      fileNameExtension is invalid suffix
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_013', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_013', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_013';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
@@ -659,14 +659,14 @@ export default function createAssetWithShortTermPermissionTest() {
     })
 
     /**
-     * @tc.number    : Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_014
-     * @tc.name      : createAssetWithShortTermPermission_dialogTest_014
-     * @tc.desc      : fileNameExtension length is greater than 255
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    Sub_MultiMedia_MediaLibrary_CreateAssetWithShortTermPermission_Test_014
+     * @tc.name      createAssetWithShortTermPermission_dialogTest_014
+     * @tc.desc      fileNameExtension length is greater than 255
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
-    it('createAssetWithShortTermPermission_dialogTest_014', Level.LEVEL1 ,async (done: Function) => {
+    it('createAssetWithShortTermPermission_dialogTest_014', Level.LEVEL1, async (done: Function) => {
       const testNum: string = 'createAssetWithShortTermPermission_dialogTest_014';
       if (!isSupportFileManagement) {
         console.log(`${testNum} :: do not support FileManagement`);
