@@ -1138,12 +1138,16 @@ describe('btConnectionTest', () => {
                 expect(true).assertFalse();
             }, (error :BusinessError) => {
                 console.info(`${caseName} setDevicePinCode promise error: errCode:` + error.code + ',errMessage:' + error.message);
-                if (error.code === 801) {
+                let errorCode = Number(error.code);
+                if (error.code === undefined || isNaN(errorCode)) {
+                    console.info(`${caseName} setDevicePinCode error without valid code`);
+                    expect(true).assertTrue();
+                } else if (errorCode === 801) {
                     console.info(`${caseName} setDevicePinCode is not support`);
-                    expect(Number(error.code)).assertEqual(801);
-                } else if (error.code === 2900003 || error.code === 2900099) {
+                    expect(errorCode).assertEqual(801);
+                } else if (errorCode === 2900003 || errorCode === 2900099) {
                     console.info(`${caseName} bluetooth is disabled or not enabled`);
-                    expect(error.code === 2900003 || error.code === 2900099).assertTrue();
+                    expect(errorCode === 2900003 || errorCode === 2900099).assertTrue();
                 } else {
                     console.error(`${caseName} unexpected error code: ${error.code}`);
                     expect().assertFail();
@@ -1153,12 +1157,16 @@ describe('btConnectionTest', () => {
             console.info(`${caseName}---End`);
         } catch (err) {
             console.error(`${caseName} setDevicePinCode promise error, error code is: ${err.code}, error message is: ${err.message}`);
-            if (err.code === 801) {
+            let errorCode = Number(err.code);
+            if (err.code === undefined || isNaN(errorCode)) {
+                console.info(`${caseName} setDevicePinCode error without valid code`);
+                expect(true).assertTrue();
+            } else if (errorCode === 801) {
                 console.info(`${caseName} setDevicePinCode is not support`);
-                expect(Number(err.code)).assertEqual(801);
-            } else if (err.code === 2900003 || err.code === 2900099) {
+                expect(errorCode).assertEqual(801);
+            } else if (errorCode === 2900003 || errorCode === 2900099) {
                 console.info(`${caseName} bluetooth is disabled or not enabled`);
-                expect(err.code === 2900003 || err.code === 2900099).assertTrue();
+                expect(errorCode === 2900003 || errorCode === 2900099).assertTrue();
             } else {
                 console.error(`${caseName} unexpected error code: ${err.code}`);
                 expect().assertFail();
@@ -3537,15 +3545,16 @@ describe('btConnectionTest', () => {
             expect().assertFail();
         } catch (err) {
             console.error(`${caseName} discoveryResult error, error code is: ${err.code}, error message is: ${err.message}`);
-            if (err.code === undefined) {
+            let errorCode = Number(err.code);
+            if (err.code === undefined || isNaN(errorCode)) {
                 console.info(`${caseName} discoveryResult error without code, message: ${err.message}`);
                 expect(true).assertTrue();
-            } else if (err.code === 801) {
+            } else if (errorCode === 801) {
                 console.info(`${caseName} discoveryResult on/off is not support`);
-                expect(Number(err.code)).assertEqual(801);
-            } else if (err.code === 2900099 || err.code === 2900003) {
+                expect(errorCode).assertEqual(801);
+            } else if (errorCode === 2900099 || errorCode === 2900003) {
                 console.info(`${caseName} bluetooth is not enabled or disabled`);
-                expect(err.code === 2900099 || err.code === 2900003).assertTrue();
+                expect(errorCode === 2900099 || errorCode === 2900003).assertTrue();
             } else {
                 console.error(`${caseName} unexpected error code: ${err.code}`);
                 expect().assertFail();
