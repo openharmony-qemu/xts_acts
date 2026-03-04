@@ -47,7 +47,7 @@ export const Sleep = (ms: int) => {
 
 export default function NewEAWorkerTes2() {
   describe('NewEAWorkerTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -166,10 +166,8 @@ export default function NewEAWorkerTes2() {
           }
           jobs.forEach(j => j.Await());
           expect(count).assertEqual(5);
-          worker.join();
-          while(worker.isAlive()){
-              await Sleep(10);
-          }
+          let job2 = worker.join();
+          job2.Await();
           expect(worker.isAlive()).assertFalse();
         } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);

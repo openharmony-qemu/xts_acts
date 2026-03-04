@@ -14,7 +14,9 @@
  */
 
 import abilityTest from './Ability.test';
+import taskTimeoutTest from './TaskTimeout.test';
 
 export default function testsuite() {
   abilityTest();
+  taskTimeoutTest();
 }

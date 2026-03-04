@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function appVersionCodeJsunit() {
   describe('appVersionCodeTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appVersionCodeTest beforeEach start");
 
 

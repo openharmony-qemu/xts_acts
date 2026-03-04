@@ -851,6 +851,77 @@ static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0300(napi_env env, napi_
     return result;
 }
 
+static napi_value OH_Pasteboard_HasRemoteData0100(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    OH_Pasteboard_ClearData(pasteboard);
+    OH_UdmfData* setData = OH_UdmfData_Create();
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
+    char content[] = "hello world";
+    OH_UdsPlainText_SetContent(plainText, content);
+    OH_UdmfRecord_AddPlainText(record, plainText);
+    OH_UdmfData_AddRecord(setData, record);
+    OH_Pasteboard_SetData(pasteboard, setData);
+    bool res = OH_Pasteboard_HasRemoteData(pasteboard);
+    NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasRemoteData is fail.");
+    napi_create_int32(env, res == false, &result);
+    OH_UdsPlainText_Destroy(plainText);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(setData);
+    OH_Pasteboard_Destroy(pasteboard);
+    return result;
+}
+
+static napi_value OH_Pasteboard_HasRemoteData0200(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    OH_UdmfData* setData = OH_UdmfData_Create();
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    OH_UdsHtml* htmlText = OH_UdsHtml_Create();
+    char html[] = "<div class='disabled'>hello</div>";
+    OH_UdsHtml_SetContent(htmlText, html);
+    OH_UdmfRecord_AddHtml(record, htmlText);
+    OH_UdmfData_AddRecord(setData, record);
+
+    OH_Pasteboard_SetData(pasteboard, setData);
+
+    bool res = OH_Pasteboard_HasRemoteData(pasteboard);
+    NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasRemoteData is fail.");
+    napi_create_int32(env, res == false, &result);
+    OH_UdsHtml_Destroy (htmlText);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(setData);
+    OH_Pasteboard_Destroy(pasteboard);
+    return result;
+}
+
+static napi_value OH_Pasteboard_HasRemoteData0300(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    const char *udmfUri = "file://PasteboardNdkTest/data/storage/el2/base/files/file.txt";
+    OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    OH_UdmfData* setData = OH_UdmfData_Create();
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    OH_UdsFileUri *uFileUri = OH_UdsFileUri_Create();
+    OH_UdsFileUri_SetFileUri(uFileUri, udmfUri);
+    OH_UdmfRecord_AddFileUri(record, uFileUri);
+
+    OH_UdmfData_AddRecord(setData, record);
+    OH_Pasteboard_SetData(pasteboard, setData);
+
+    bool res = OH_Pasteboard_HasRemoteData(pasteboard);
+    NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasRemoteData is fail.");
+    napi_create_int32(env, res == false, &result);
+    OH_UdsFileUri_Destroy(uFileUri);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(setData);
+    OH_Pasteboard_Destroy(pasteboard);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -924,6 +995,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OH_Pasteboard_SyncDelayedDataAsyncTest0200", nullptr, OH_Pasteboard_SyncDelayedDataAsyncTest0200, nullptr,
          nullptr, nullptr, napi_default, nullptr},
         {"OH_Pasteboard_SyncDelayedDataAsyncTest0300", nullptr, OH_Pasteboard_SyncDelayedDataAsyncTest0300, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"OH_Pasteboard_HasRemoteData0100", nullptr, OH_Pasteboard_HasRemoteData0100, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"OH_Pasteboard_HasRemoteData0200", nullptr, OH_Pasteboard_HasRemoteData0200, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"OH_Pasteboard_HasRemoteData0300", nullptr, OH_Pasteboard_HasRemoteData0300, nullptr,
          nullptr, nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

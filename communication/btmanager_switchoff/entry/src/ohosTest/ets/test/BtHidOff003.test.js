@@ -106,9 +106,6 @@ export default function btHidoff003Test() {
             let PERMISSION_TEXT = "允许";
             await sleep(2000);
             await clickTheWindow(PERMISSION_TEXT);
-            gattServer = ble.createGattServer();
-            gattClient = ble.createGattClientDevice("11:22:33:44:55:66");
-
             console.info('beforeAll end');
             done();
         })
@@ -130,8 +127,6 @@ export default function btHidoff003Test() {
         })
         afterAll(async function (done) {
             console.info('afterAll start')
-            gattServer.destroy();
-            gattClient.destroy();
             try {
                 await tryToEnableBt();
             } catch (error) {

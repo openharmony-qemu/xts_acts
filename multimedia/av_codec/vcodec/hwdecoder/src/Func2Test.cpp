@@ -17,6 +17,7 @@
 #include "native_avcodec_videodecoder.h"
 #include "native_averrors.h"
 #include "videodec_api11_sample.h"
+#include "videodec_ndk_sample.h"
 #include "native_avcodec_base.h"
 #include "avcodec_codec_name.h"
 #include "native_avcapability.h"
@@ -75,6 +76,34 @@ const std::vector<OH_NativeBuffer_TransformType> transfromTypes = {
     NATIVEBUFFER_FLIP_H_ROT270,
     NATIVEBUFFER_FLIP_V_ROT270
 };
+
+static bool capConfigCheck(OH_AVCapability *capability, int32_t profile, int32_t level)
+{
+    const int32_t *levels = nullptr;
+    uint32_t levelNum = 0;
+    bool isGetContain = false;
+    bool isSupport = OH_AVCapability_AreProfileAndLevelSupported(capability, profile, level);
+    OH_AVErrCode err = OH_AVCapability_GetSupportedLevelsForProfile(capability, profile, &levels, &levelNum);
+    if (!isSupport && err != AV_ERR_OK) {
+        return true;
+    }
+    if (err != AV_ERR_OK) {
+        cout << "OH_AVCapability_GetSupportedLevelsForProfile false err: " << err << endl;
+        return false;
+    }
+    for (int j = 0; j < levelNum; j++) {
+        if (levels[j] == level) {
+            isGetContain = true;
+            break;
+        }
+    }
+    if (isSupport != isGetContain) {
+        cout << "isSupport != isGetContain isSupport:" << (int32_t)isSupport <<
+            "   isGetContain:" << (int32_t)isGetContain << endl;
+        return false;
+    }
+    return true;
+}
 } // namespace
 
 void HwdecFunc2NdkTest::SetUpTestCase()
@@ -1245,6 +1274,157 @@ HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_RESOLUTION_0010, TestSize.Level2)
         ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
         vDecSample->WaitForEOS();
         ASSERT_LT(0, vDecSample->changeCount);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_ANOTHER_0010
+ * @tc.number VIDEO_DECODE_ANOTHER_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_ANOTHER_0010, TestSize.Level2)
+{
+    if (cap_hevc != nullptr) {
+        auto vDecSample = make_shared<VDecNdkSample>();
+        vDecSample->INP_DIR = INP_DIR_1080_20;
+        vDecSample->DEFAULT_WIDTH = 1920;
+        vDecSample->DEFAULT_HEIGHT = 1080;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+        auto vDecSample2 = make_shared<VDecAPI11Sample>();
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->CreateVideoDecoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Flush());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Stop());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Reset());
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_CAPABILITY_CONFIG_0010
+ * @tc.number VIDEO_CAPABILITY_CONFIG_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(HwdecFunc2NdkTest, VIDEO_CAPABILITY_CONFIG_0010, TestSize.Level0)
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    OH_AVCodec *vdec_ = NULL;
+    if (cap != nullptr) {
+        g_codecName = OH_AVCapability_GetName(cap);
+        vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+        ASSERT_NE(NULL, vdec_);
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_1));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_1b));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_11));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_12));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_13));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_2));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_21));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_22));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_3));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_31));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_32));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_4));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_41));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_42));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_5));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_51));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_52));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_6));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_61));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_62));
+        ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Destroy(vdec_));
+    } else {
+        vdec_ = OH_VideoDecoder_CreateByName(NULL);
+        ASSERT_EQ(NULL, vdec_);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_CAPABILITY_CONFIG_0020
+ * @tc.number VIDEO_CAPABILITY_CONFIG_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(HwdecFunc2NdkTest, VIDEO_CAPABILITY_CONFIG_0020, TestSize.Level0)
+{
+    cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
+    OH_AVCodec *vdec_ = NULL;
+    if (cap_hevc != nullptr) {
+        g_codecNameHEVC = OH_AVCapability_GetName(cap_hevc);
+        vdec_ = OH_VideoDecoder_CreateByName(g_codecNameHEVC.c_str());
+        ASSERT_NE(NULL, vdec_);
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_1));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_2));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_21));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10, HEVC_LEVEL_3));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10_PLUS, HEVC_LEVEL_31));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_4));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_41));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_5));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10, HEVC_LEVEL_51));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10_PLUS, HEVC_LEVEL_52));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_6));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_61));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_62));
+        ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Destroy(vdec_));
+    } else {
+        vdec_ = OH_VideoDecoder_CreateByName(NULL);
+        ASSERT_EQ(NULL, vdec_);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_CAPABILITY_CONFIG_0030
+ * @tc.number VIDEO_CAPABILITY_CONFIG_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(HwdecFunc2NdkTest, VIDEO_CAPABILITY_CONFIG_0030, TestSize.Level0)
+{
+    cap_vvc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VVC, false, HARDWARE);
+    OH_AVCodec *vdec_ = NULL;
+    if (cap_vvc != nullptr) {
+        g_codecNameVVC = OH_AVCapability_GetName(cap_vvc);
+        vdec_ = OH_VideoDecoder_CreateByName(g_codecNameVVC.c_str());
+        ASSERT_NE(NULL, vdec_);
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_10, VVC_LEVEL_1));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12, VVC_LEVEL_2));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12_INTRA, VVC_LEVEL_21));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MULTI_MAIN_10, VVC_LEVEL_3));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_10_444, VVC_LEVEL_31));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12_444, VVC_LEVEL_4));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_16_444, VVC_LEVEL_41));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12_444_INTRA, VVC_LEVEL_5));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_16_444_INTRA, VVC_LEVEL_51));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MULTI_MAIN_10_444, VVC_LEVEL_52));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_10_STILL, VVC_LEVEL_6));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12_STILL, VVC_LEVEL_61));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_10_444_STILL, VVC_LEVEL_62));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12_444_STILL, VVC_LEVEL_63));
+        ASSERT_TRUE(capConfigCheck(cap_vvc, VVC_PROFILE_MAIN_16_444_STILL, VVC_LEVEL_155));
+        ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Destroy(vdec_));
+    } else {
+        vdec_ = OH_VideoDecoder_CreateByName(NULL);
+        ASSERT_EQ(NULL, vdec_);
     }
 }
 } // namespace

@@ -66,8 +66,6 @@
     "MainAbility/pages/CommonMethod/onVisibleAreaChangeModifierUndefined",
     "MainAbility/pages/CommonMethod/visibilityModifierUndefined",
     "MainAbility/pages/CommonMethod/shouldBuiltInRecognizerParallelWithModifierUndefined",
-    "MainAbility/pages/CommonMethod/tabIndexModifierUndefined",
-    "MainAbility/pages/CommonMethod/onGestureRecognizerJudgeBeginModifierUndefined",
-    "MainAbility/pages/CommonMethod/onGestureRecognizerJudgeBeginUndefined"
+    "MainAbility/pages/CommonMethod/tabIndexModifierUndefined"
   ]
 }

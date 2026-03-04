@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function contentModifier() {
   describe('contentModifier', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("contentModifier beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

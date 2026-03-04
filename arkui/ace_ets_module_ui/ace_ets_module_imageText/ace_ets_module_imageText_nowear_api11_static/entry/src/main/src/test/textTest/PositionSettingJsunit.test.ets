@@ -47,7 +47,7 @@ interface Data2 {
 }
 export default function positionSettingJsunit() {
   describe('positionSettingJsunit', () : void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("positionSettingJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")

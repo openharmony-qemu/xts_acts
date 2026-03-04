@@ -21,6 +21,7 @@ import wantAgent from '@ohos.app.ability.wantAgent';
 import { Driver, ON } from '@ohos.UiTest';
 import contextConstant from '@ohos.app.ability.contextConstant';
 import { FailureCode } from '@ohos.app.ability.CompletionHandlerForAtomicService';
+import { AbilityStartFailureCode } from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
@@ -567,6 +568,19 @@ export default function EnumerationStaticTest() {
      */
     it('SUB_Ability_AbilityBase_AbilityConstant_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect('11').assertEqual(abilityConstant.LaunchReason.PRELOAD + '');
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_Static_4300
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_Static_4300
+     * @tc.desc   Test abilityConstant.REASON_MESSAGE_DESKTOP_SHORTCUT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('ReasonMessage_DesktopShortcut').assertEqual(abilityConstant.REASON_MESSAGE_DESKTOP_SHORTCUT);
       done();
     })
 
@@ -1234,6 +1248,32 @@ export default function EnumerationStaticTest() {
        */
       it('SUB_Ability_AbilityBase_FailureCode_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         expect(2).assertEqual(FailureCode.FAILURE_CODE_USER_REFUSE);
+        done();
+      })
+
+      /**
+       * @tc.name   SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0100
+       * @tc.number SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0100
+       * @tc.desc   Test AbilityStartFailureCode AbilityStartFailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        expect(0).assertEqual(AbilityStartFailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION);
+        done();
+      })
+
+      /**
+       * @tc.name   SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0200
+       * @tc.number SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0200
+       * @tc.desc   Test AbilityStartFailureCode AbilityStartFailureCode.FAILURE_CODE_USER_CANCEL
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        expect(1).assertEqual(AbilityStartFailureCode.FAILURE_CODE_USER_CANCEL);
         done();
       })
   })

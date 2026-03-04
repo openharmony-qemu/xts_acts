@@ -14,6 +14,7 @@
  */
 
 import { beforeAll, afterEach, beforeEach, describe, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
@@ -177,6 +178,38 @@ export default function webJsunit() {
     it('GetItemAtIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitGetItemAtIndex', 135300)
       Utils.registerEvent('emitGetItemAtIndex', 'Example Domain', 135380, done);
+      sendEventByKey('webcomponent', 10, '');
+    })
+    /**
+     * @tc.name   testAccessStepNull
+     * @tc.number SUB_ACE_WEBVIEWCONTROLLER_ACCESSSTEP_ERROR_API_0001
+     * @tc.desc   test accessStep null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAccessStepNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitAccessStepNull', 135300)
+      Utils.registerBaseEvent('testAccessStepNull', '401', 26022701, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webcomponent', 10, '');
+    })
+    /**
+     * @tc.name   testAccessStepUndefined
+     * @tc.number SUB_ACE_WEBVIEWCONTROLLER_ACCESSSTEP_ERROR_API_0002
+     * @tc.desc   test accessStep undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAccessStepUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitAccessStepUndefined', 135300)
+      Utils.registerBaseEvent('testAccessStepUndefined', '401', 26022702, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       sendEventByKey('webcomponent', 10, '');
     })
   })

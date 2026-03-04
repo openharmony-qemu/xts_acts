@@ -112,6 +112,14 @@ export default function drawingTsPath3Test() {
         rect = path.getBounds();
         if(rect){
           console.info(msg + ' 0 test successes');
+          console.info(msg + " 1 test rect.left: " + rect.left);
+          console.info(msg + " 1 test rect.top: " + rect.top);
+          console.info(msg + " 1 test rect.right: " + rect.right);
+          console.info(msg + " 1 test rect.bottom: " + rect.bottom);
+          expect(rect.left == 0).assertTrue();
+          expect(rect.top == 0).assertTrue();
+          expect(rect.right == 50).assertTrue();
+          expect(rect.bottom == 40).assertTrue();
         }
         if(rect == undefined){
           console.info(msg + ' 0 test failed');
@@ -123,6 +131,14 @@ export default function drawingTsPath3Test() {
         rect = path.getBounds();
         if(rect){
           console.info(msg + ' 1 test successes');
+          console.info(msg + " 2 test rect.left: " + rect.left);
+          console.info(msg + " 2 test rect.top: " + rect.top);
+          console.info(msg + " 2 test rect.right: " + rect.right);
+          console.info(msg + " 2 test rect.bottom: " + rect.bottom);
+          expect(rect.left == 0).assertTrue();
+          expect(rect.top == 0).assertTrue();
+          expect(rect.right == 400).assertTrue();
+          expect(rect.bottom == 300).assertTrue();
         }
         if(rect == undefined){
           console.info(msg + ' 1 test failed');

@@ -51,17 +51,24 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_0100', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
-      await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'aabbccdd\'')
-        .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0100 data is: ' + JSON.stringify(data));
-          res = JSON.stringify(data);
-        })
-        .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0100 err is: ' + JSON.stringify(err));
-        });
-      expect(res).assertContain('aa start <options>');
-      done();
+      try {
+        let res: string = ""
+        await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'aabbccdd\'')
+          .then(data => {
+            hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0100 data is: ' + JSON.stringify(data));
+            res = JSON.stringify(data);
+          })
+          .catch((err: BusinessError) => {
+            hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0100 err is: ' + JSON.stringify(err));
+          });
+
+        expect(res).assertContain('aa start <options>');
+        done();
+      } catch (e) {
+        hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0100 fail is: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
+      }
     })
 
     /**

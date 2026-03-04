@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function RenderNodeInvalidateJsSuit() {
   describe('RenderNodeInvalidateJsSuit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RenderNodeInvalidateJsSuit beforeEach start");
 
       

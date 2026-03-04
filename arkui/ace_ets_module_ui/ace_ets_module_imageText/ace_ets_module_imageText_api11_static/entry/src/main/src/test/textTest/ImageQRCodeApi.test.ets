@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Image_QRCode_Api() {
   describe('Image_QRCode_Api', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Image_QRCode_Api beforeEach start");
 
 
@@ -85,7 +85,7 @@ export default function Image_QRCode_Api() {
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
       console.info("[Image_QRCode_Api_static_001] obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getDouble('opacity')).assertEqual(0.5);
+      expect(obj.getElement('$attrs').getDouble('contentOpacity')).assertEqual(0.5);
 
       console.info('[Image_QRCode_Api_static_001] END');
       done();

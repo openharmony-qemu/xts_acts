@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ObjectLink2() {
   describe('ObjectLink2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ObjectLink2 beforeEach start");
 
 

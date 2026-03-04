@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function gridAniTrue() {
   describe('gridAniTrue', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("gridAniTrue beforeEach start");
 
       

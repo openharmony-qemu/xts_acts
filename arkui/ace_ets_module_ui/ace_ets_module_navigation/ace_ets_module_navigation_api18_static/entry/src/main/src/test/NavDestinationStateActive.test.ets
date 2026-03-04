@@ -41,7 +41,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function NavDestinationStateActive() {
   describe('NavDestinationStateActive', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation18.static", "EntryAbility")
 

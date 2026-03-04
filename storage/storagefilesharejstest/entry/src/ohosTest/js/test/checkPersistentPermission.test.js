@@ -64,7 +64,7 @@ export default function FileSahre_CheckPersistentPermission_test() {
                 }
             }
             console.info("FileShare_checkPersistentPermission_001 successfully");
-            expect(true).assertTrue();
+            expect(fileShare.OperationMode.READ_MODE === 0b1).assertTrue();
             done();
         }).catch((err) => {
             console.info("FileShare_checkPersistentPermission_001 failed with error message: " + err.message + ", error code: " + err.code);
@@ -123,7 +123,7 @@ export default function FileSahre_CheckPersistentPermission_test() {
                 }
             }
             console.info("FileShare_checkPersistentPermission_002 successfully");
-            expect(true).assertTrue();
+            expect(fileShare.OperationMode.READ_MODE === 0b1).assertTrue();
             done();
         }).catch((err) => {
             console.info("FileShare_checkPersistentPermission_002 failed with error message: " + err.message + ", error code: " + err.code);
@@ -192,5 +192,86 @@ export default function FileSahre_CheckPersistentPermission_test() {
           done();
         }
       });
+
+      /**
+ 	        * @tc.name   FileShare_checkPersistentPermission_004
+ 	        * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0400
+ 	        * @tc.desc   Test checkPersistentPermission() interfaces with null parameter
+ 	        * @tc.type   FUNCTION
+ 	        * @tc.size   MEDIUMTEST
+ 	        * @tc.level  LEVEL3
+ 	        */
+ 	       it('FileShare_checkPersistentPermission_004', Level.LEVEL3, async function (done) {
+ 	         try {
+ 	           fileShare.checkPersistentPermission(null).then(() => {
+ 	             console.info("FileShare_checkPersistentPermission_004 should not succeed");
+ 	             expect(false).assertTrue();
+ 	             done();
+ 	           }).catch((err) => {
+ 	             console.info("FileShare_checkPersistentPermission_004 failed with error message: " + err.message + ", error code: " + err.code);
+ 	             expect(err.code === 401).assertTrue();
+ 	             done();
+ 	           });
+ 	         } catch (e) {
+ 	           console.info('FileShare_checkPersistentPermission_004 has failed for ' + e.message + ", err code: " + e.code);
+ 	           expect(e.code === 401).assertTrue();
+ 	           done();
+ 	         }
+ 	       });
+ 	 
+ 	       /**
+ 	        * @tc.name   FileShare_checkPersistentPermission_005
+ 	        * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0500
+ 	        * @tc.desc   Test checkPersistentPermission() interfaces with undefined parameter
+ 	        * @tc.type   FUNCTION
+ 	        * @tc.size   MEDIUMTEST
+ 	        * @tc.level  LEVEL3
+ 	        */
+ 	       it('FileShare_checkPersistentPermission_005', Level.LEVEL3, async function (done) {
+ 	         try {
+ 	           fileShare.checkPersistentPermission(undefined).then(() => {
+ 	             console.info("FileShare_checkPersistentPermission_005 should not succeed");
+ 	             expect(false).assertTrue();
+ 	             done();
+ 	           }).catch((err) => {
+ 	             console.info("FileShare_checkPersistentPermission_005 failed with error message: " + err.message + ", error code: " + err.code);
+ 	             expect(err.code === 401).assertTrue();
+ 	             done();
+ 	           });
+ 	         } catch (e) {
+ 	           console.info('FileShare_checkPersistentPermission_005 has failed for ' + e.message + ", err code: " + e.code);
+ 	           expect(e.code === 401).assertTrue();
+ 	           done();
+ 	         }
+ 	       });
+ 	 
+ 	       /**
+ 	        * @tc.name   FileShare_checkPersistentPermission_006
+ 	        * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0600
+ 	        * @tc.desc   Test checkPersistentPermission() interfaces with empty array parameter
+ 	        * @tc.type   FUNCTION
+ 	        * @tc.size   MEDIUMTEST
+ 	        * @tc.level  LEVEL3
+ 	        */
+ 	       it('FileShare_checkPersistentPermission_006', Level.LEVEL3, async function (done) {
+ 	         try {
+ 	           let policies = [];
+ 	           fileShare.checkPersistentPermission(policies).then((data) => {
+ 	             console.info("FileShare_checkPersistentPermission_006 successfully");
+ 	             expect(false).assertTrue();
+ 	             done();
+ 	           }).catch((err) => {
+ 	             console.info("FileShare_checkPersistentPermission_006 failed with error message: " + err.message + ", error code: " + err.code);
+ 	             expect(err.code === 401).assertTrue();
+ 	             done();
+ 	           });
+ 	         } catch (e) {
+ 	           console.info('FileShare_checkPersistentPermission_006 has failed for ' + e.message + ", err code: " + e.code);
+ 	           if(e.code === 801){
+ 	             expect(e.message == "The device doesn't support this api").assertTrue();
+ 	           }
+ 	           done();
+ 	         }
+ 	       });
     })
 }

@@ -243,7 +243,7 @@ class TestWorker extends EAWorker {
 
 export default function EAWorkerTest() {
   describe('EAWorkerTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 

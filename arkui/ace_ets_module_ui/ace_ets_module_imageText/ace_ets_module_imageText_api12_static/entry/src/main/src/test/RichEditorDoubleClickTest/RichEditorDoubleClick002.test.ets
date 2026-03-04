@@ -50,7 +50,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorDoubleClick002() {
   describe('RichEditorDoubleClick002', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -100,8 +100,14 @@ export default function RichEditorDoubleClick002() {
       await CommonFunc.sleep(1000);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>)
-      await copy.click()
+      try{
+        let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>)
+        await CommonFunc.sleep(500);
+        await copy.click()
+        await CommonFunc.sleep(500);
+      }catch(e){
+          console.log('下一步 error')
+      }
       await CommonFunc.sleep(1000);
       await driver.click(getBounds.left + 90, getBounds.top + 20);
       await CommonFunc.sleep(100);

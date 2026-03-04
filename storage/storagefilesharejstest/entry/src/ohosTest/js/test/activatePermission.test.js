@@ -43,7 +43,7 @@ export default function FileSahre_ActivatePermission_test() {
             let policies = [policyInfo];
             fileShare.activatePermission(policies).then(() => {
               console.info("FileShare_activatePermission_001 successfully");
-              expect(true).assertTrue();
+              expect(fileShare.OperationMode.READ_MODE === 0b1).assertTrue();
               done();
             }).catch((err) => {
               console.info("FileShare_activatePermission_001 failed with error message: " + err.message + ", error code: " + err.code);
@@ -81,7 +81,7 @@ export default function FileSahre_ActivatePermission_test() {
             let policies = [policyInfo];
             fileShare.activatePermission(policies).then(() => {
               console.info("FileShare_activatePermission_002 successfully");
-              expect(true).assertTrue();
+              expect(fileShare.OperationMode.READ_MODE === 0b1).assertTrue();
               done();
             }).catch((err) => {
               console.info("FileShare_activatePermission_002 failed with error message: " + err.message + ", error code: " + err.code);
@@ -147,5 +147,86 @@ export default function FileSahre_ActivatePermission_test() {
             done();
           }
       });
+
+       /**
+ 	        * @tc.name   FileShare_activatePermission_004
+ 	        * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0400
+ 	        * @tc.desc   Test activatePermission() interfaces with null parameter
+ 	        * @tc.type   FUNCTION
+ 	        * @tc.size   MEDIUMTEST
+ 	        * @tc.level  LEVEL3
+ 	        */
+ 	       it('FileShare_activatePermission_004', Level.LEVEL3, async function (done) {
+ 	         try {
+ 	           fileShare.activatePermission(null).then(() => {
+ 	             console.info("FileShare_activatePermission_004 should not succeed");
+ 	             expect(false).assertTrue();
+ 	             done();
+ 	           }).catch((err) => {
+ 	             console.info("FileShare_activatePermission_004 failed with error message: " + err.message + ", error code: " + err.code);
+ 	             expect(err.code === 401).assertTrue();
+ 	             done();
+ 	           });
+ 	         } catch (e) {
+ 	           console.info('FileShare_activatePermission_004 has failed for ' + e.message + ", err code: " + e.code);
+ 	           expect(e.code === 401).assertTrue();
+ 	           done();
+ 	         }
+ 	       });
+ 	 
+ 	       /**
+ 	        * @tc.name   FileShare_activatePermission_005
+ 	        * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0500
+ 	        * @tc.desc   Test activatePermission() interfaces with undefined parameter
+ 	        * @tc.type   FUNCTION
+ 	        * @tc.size   MEDIUMTEST
+ 	        * @tc.level  LEVEL3
+ 	        */
+ 	       it('FileShare_activatePermission_005', Level.LEVEL3, async function (done) {
+ 	         try {
+ 	           fileShare.activatePermission(undefined).then(() => {
+ 	             console.info("FileShare_activatePermission_005 should not succeed");
+ 	             expect(false).assertTrue();
+ 	             done();
+ 	           }).catch((err) => {
+ 	             console.info("FileShare_activatePermission_005 failed with error message: " + err.message + ", error code: " + err.code);
+ 	             expect(err.code === 401).assertTrue();
+ 	             done();
+ 	           });
+ 	         } catch (e) {
+ 	           console.info('FileShare_activatePermission_005 has failed for ' + e.message + ", err code: " + e.code);
+ 	           expect(e.code === 401).assertTrue();
+ 	           done();
+ 	         }
+ 	       });
+ 	 
+ 	       /**
+ 	        * @tc.name   FileShare_activatePermission_006
+ 	        * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0600
+ 	        * @tc.desc   Test activatePermission() interfaces with empty array parameter
+ 	        * @tc.type   FUNCTION
+ 	        * @tc.size   MEDIUMTEST
+ 	        * @tc.level  LEVEL3
+ 	        */
+ 	       it('FileShare_activatePermission_006', Level.LEVEL3, async function (done) {
+ 	         try {
+ 	           let policies = [];
+ 	           fileShare.activatePermission(policies).then(() => {
+ 	             console.info("FileShare_activatePermission_006 successfully");
+ 	             expect(false).assertTrue();
+ 	             done();
+ 	           }).catch((err) => {
+ 	             console.info("FileShare_activatePermission_006 failed with error message: " + err.message + ", error code: " + err.code);
+               expect(err.code === 401).assertTrue();
+ 	             done();
+ 	           });
+ 	         } catch (e) {
+ 	           console.info('FileShare_activatePermission_006 has failed for ' + e.message + ", err code: " + e.code);
+ 	           if(e.code === 801){
+ 	             expect(e.message == "The device doesn't support this api").assertTrue();
+ 	           }
+ 	           done();
+ 	         }
+ 	       });
     })
 }

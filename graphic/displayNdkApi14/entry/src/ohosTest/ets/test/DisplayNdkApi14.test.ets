@@ -58,7 +58,10 @@ async function ClickButtonDriver(){
   console.info(`come in Driver create`);
   let buttonOne = await driver.findComponent(ON.text('允许'));
   console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
-  await buttonOne.click();
+  if(buttonOne){
+    await buttonOne.click();
+  }
+  
 }
 export default function ActsDisplayNdkApi14Test() {
 
@@ -775,13 +778,15 @@ export default function ActsDisplayNdkApi14Test() {
           };
           let promise = screenshot.capture();
           promise.then((PixelMap: image.PixelMap) => {
-            console.log(caseName + 'Succeeded in saving screenshot. Pixel bytes number: ' + PixelMap.getPixelBytesNumber());
+            console.log(caseName + 'Succeeded in saving screenshot. Pixel bytes number: ' + PixelMap.getPixelBytesNumber()+'PixelMap.isEditable:'+PixelMap.isEditable+'PixelMap.isStrideAlignment:'+PixelMap.isStrideAlignment);
             PixelMap.getImageInfo().then((imageInfo:image.ImageInfo)=>{
               let PixelMapWidth = imageInfo.size.width;
               let PixelMapHeight = imageInfo.size.height;
               console.log(caseName + ' PixelMapWidth:'+ PixelMapWidth + ' ,PixelMapHeight:'+ PixelMapHeight);
               expect(PixelMapWidth).assertLarger(0);
               expect(PixelMapHeight).assertLarger(0);
+              expect(PixelMap.isEditable).assertEqual(false);
+              expect(PixelMap.isStrideAlignment).assertEqual(false);
               PixelMap.release(); // PixelMap使用完后及时释放内存
               done();
             })
@@ -841,7 +846,55 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
 
-
+    /**
+     * @tc.name   testCapture_0100
+     * @tc.number testCapture_0100
+     * @tc.desc   testCapture_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCapture_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testCapture_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        screenshot.capture(null).then(async () => {
+          console.info(msgStr + 'Succeeded in calling capture.');
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed to call capture. Cause: ' + JSON.stringify(err));
+          if (err.code === 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect().assertFail();
+        done()
+      }
+      try {
+        screenshot.capture(undefined).then(async () => {
+          console.info(msgStr + 'Succeeded2 in calling capture.');
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed2 to call capture. Cause: ' + JSON.stringify(err));
+          if (err.code === 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect().assertFail();
+        done()
+      }
+    })
 
   })
 }

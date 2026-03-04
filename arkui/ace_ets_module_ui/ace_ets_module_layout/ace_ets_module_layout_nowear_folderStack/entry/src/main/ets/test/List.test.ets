@@ -17,10 +17,12 @@ import FolderStack3ApiJsunit from './FolderStack/FolderStack3ApiJsunit.test';
 import enumFolderTest from "./FolderStack/enumflodstack.test"
 import FolderStackTest1 from './FolderStack/FolderStackTest1.test.ets';
 import FolderStackTest2 from './FolderStack/FolderStackTest2.test.ets';
+import folderStackNullUndefinedTest from './FolderStack/FolderStackNullUndefined.test';
 
 export default function testsuite() {
   FolderStack3ApiJsunit()
   enumFolderTest()
   FolderStackTest1();
   FolderStackTest2();
+  folderStackNullUndefinedTest();
 }

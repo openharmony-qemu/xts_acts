@@ -424,6 +424,640 @@ export default function effectKitBTest() {
         done();
       })
     })
+    
+    /**
+     * @tc.name   effectKitBTestCreateEffectEnum001
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_001
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTestCreateEffectEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTestCreateEffectEnum001 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+          console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          let pixel = effectKit.createEffect(pixelMap);
+          expect(pixel !== undefined).assertTrue();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   effectKitBTestCreateEffectEnum002
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_002
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTestCreateEffectEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTestCreateEffectEnum002 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+          console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          let pixel = effectKit.createEffect(pixelMap);
+          expect(pixel !== undefined).assertTrue();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   effectKitBTestCreateEffectEnum003
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_003
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTestCreateEffectEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTestCreateEffectEnum003 ';
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info(msgStr + 'alloc pixelMap isEditable ', pixelMap.isEditable)  // false
+        console.info(msgStr + 'alloc pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)  // true
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        let pixel = effectKit.createEffect(pixelMap);
+        expect(pixel !== undefined).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitBTestCreateEffectEnum004
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_004
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTestCreateEffectEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTestCreateEffectEnum004 ';
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info(msgStr + 'alloc pixelMap isEditable ', pixelMap.isEditable)  // true
+        console.info(msgStr + 'alloc pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)  // true
+        expect(pixelMap.isEditable).assertTrue();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        let pixel = effectKit.createEffect(pixelMap);
+        expect(pixel !== undefined).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Promise_one_static_001
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_005
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Promise_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Promise_one_static_001 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then(async (pixelMap) => {
+          console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+          console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          let colorPicker = await effectKit.createColorPicker(pixelMap);
+          expect(colorPicker !== undefined).assertTrue();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Promise_one_static_002
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_006
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Promise_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Promise_one_static_002 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then(async (pixelMap) => {
+          console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+          console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          let colorPicker = await effectKit.createColorPicker(pixelMap);
+          expect(colorPicker !== undefined).assertTrue();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Promise_one_static_003
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_007
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Promise_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Promise_one_static_003 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+        expect(pixelMap.isEditable).assertTrue();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        let colorPicker = await effectKit.createColorPicker(pixelMap);
+        expect(colorPicker !== undefined).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Promise_one_static_004
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_008
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Promise_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Promise_one_static_004 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        let colorPicker = await effectKit.createColorPicker(pixelMap);
+        expect(colorPicker !== undefined).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Promise_two_static_001
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_009
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Promise_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Promise_two_static_001 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then(async (pixelMap) => {
+          console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+          console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
+          expect(colorPicker !== undefined).assertTrue();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Promise_two_static_002
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_010
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Promise_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Promise_two_static_002 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then(async (pixelMap) => {
+          console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+          console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
+          expect(colorPicker !== undefined).assertTrue();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Promise_two_static_003
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_011
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Promise_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Promise_two_static_003 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+        expect(pixelMap.isEditable).assertTrue();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
+        expect(colorPicker !== undefined).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Promise_two_static_004
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_012
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Promise_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Promise_two_static_004 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
+        expect(colorPicker !== undefined).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Callback_one_static_001
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_013
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Callback_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Callback_one_static_001 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then(pixelMap => {
+          console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+          console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+            if (error) {
+              console.error('Failed to create color picker.');
+              expect(false).assertTrue();
+            } else {
+              console.info('Succeeded in creating color picker.');
+              expect(colorPicker !== undefined).assertTrue();
+            }
+          })
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Callback_one_static_002
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_014
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Callback_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Callback_one_static_002 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then(pixelMap => {
+          console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+          console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+            if (error) {
+              console.error('Failed to create color picker.');
+              expect(false).assertTrue();
+            } else {
+              console.info('Succeeded in creating color picker.');
+              expect(colorPicker !== undefined).assertTrue();
+            }
+          })
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Callback_one_static_003
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_015
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Callback_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Callback_one_static_003 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+          if (error) {
+            console.error('Failed to create color picker.');
+            expect(false).assertTrue();
+          } else {
+            console.info('Succeeded in creating color picker.');
+            expect(colorPicker !== undefined).assertTrue();
+          }
+        })
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Callback_one_static_004
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_016
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Callback_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Callback_one_static_004 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+        expect(pixelMap.isEditable).assertTrue();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+          if (error) {
+            console.error('Failed to create color picker.');
+            expect(false).assertTrue();
+          } else {
+            console.info('Succeeded in creating color picker.');
+            expect(colorPicker !== undefined).assertTrue();
+          }
+        })
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Callback_two_static_001
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_017
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Callback_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Callback_two_static_001 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then(pixelMap => {
+          console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+          console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+            if (error) {
+              console.error('Failed to create color picker.');
+              expect(false).assertTrue();
+            } else {
+              console.info('Succeeded in creating color picker.');
+              expect(colorPicker !== undefined).assertTrue();
+            }
+          })
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Callback_two_static_002
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_018
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Callback_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Callback_two_static_002 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then(pixelMap => {
+          console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+          console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+            if (error) {
+              console.error('Failed to create color picker.');
+              expect(false).assertTrue();
+            } else {
+              console.info('Succeeded in creating color picker.');
+              expect(colorPicker !== undefined).assertTrue();
+            }
+          })
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Callback_two_static_003
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_019
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Callback_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Callback_two_static_003 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+          if (error) {
+            console.error('Failed to create color picker.');
+            expect(false).assertTrue();
+          } else {
+            console.info('Succeeded in creating color picker.');
+            expect(colorPicker !== undefined).assertTrue();
+          }
+        })
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitBTest_Callback_two_static_004
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_020
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('effectKitBTest_Callback_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let msgStr = 'www data effectKitBTest_Callback_two_static_004 ';
+        console.log("effectKitTest" + msgStr + 'begin');
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+        expect(pixelMap.isEditable).assertTrue();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+          if (error) {
+            console.error('Failed to create color picker.');
+            expect(false).assertTrue();
+          } else {
+            console.info('Succeeded in creating color picker.');
+            expect(colorPicker !== undefined).assertTrue();
+          }
+        })
+        done();
+      })
 
   })
 }

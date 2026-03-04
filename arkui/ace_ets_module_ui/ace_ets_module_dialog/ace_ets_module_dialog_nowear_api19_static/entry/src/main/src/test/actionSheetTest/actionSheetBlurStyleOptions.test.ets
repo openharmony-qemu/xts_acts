@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function actionSheetBlurStyleOptionsTest() {
   describe('ActionSheetBlurStyleOptionsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActionSheetBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

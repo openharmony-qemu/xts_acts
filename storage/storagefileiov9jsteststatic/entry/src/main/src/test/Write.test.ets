@@ -1142,6 +1142,173 @@ export default function fileIOWrite() {
       }
     });
 
+    /**
+     * @tc.name   fileIO_test_write_async_static_025
+     * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2500
+     * @tc.desc   Test write() interface with empty string for the second parameter. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_write_async_static_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_025 start');
+      let fpath = await Utils.nextFileName('fileIO_test_write_async_static_025');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        let file = fs.openSync(fpath, fs.OpenMode.WRITE_ONLY);
+        expect(await Utils.isIntNum(file.fd)).assertTrue();
+        let bytesWritten = await fs.write(file.fd, "");
+        expect(bytesWritten == 0).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_025 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_write_async_static_026
+     * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2600
+     * @tc.desc   Test write() interface with undefined for the third parameter. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_write_async_static_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_026 start');
+      let fpath = await Utils.nextFileName('fileIO_test_write_async_static_026');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        let file = fs.openSync(fpath, fs.OpenMode.WRITE_ONLY);
+        expect(await Utils.isIntNum(file.fd)).assertTrue();
+        let bytesWritten = await fs.write(file.fd, FILE_CONTENT, undefined);
+        expect(bytesWritten == FILE_CONTENT.length).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_026 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_write_async_static_027
+     * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2700
+     * @tc.desc   Test write() interface with empty string for the second parameter. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_write_async_static_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_027 start');
+      let fpath = await Utils.nextFileName('fileIO_test_write_async_static_027');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        let file = fs.openSync(fpath, fs.OpenMode.WRITE_ONLY);
+        expect(await Utils.isIntNum(file.fd)).assertTrue();
+        fs.write(file.fd, "", (err: BusinessError | null, bytesWritten: long | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_027 has error for' + JSON.stringify(err));
+            expect(false).assertTrue();
+          }
+          expect(bytesWritten == 0).assertTrue();
+          fs.closeSync(file);
+          fs.unlinkSync(fpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_027 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_write_async_static_028
+     * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2800
+     * @tc.desc   Test write() interface with empty string for the second parameter and options. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_write_async_static_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_028 start');
+      let fpath = await Utils.nextFileName('fileIO_test_write_async_static_028');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        let file = fs.openSync(fpath, fs.OpenMode.WRITE_ONLY);
+        expect(await Utils.isIntNum(file.fd)).assertTrue();
+        fs.write(file.fd, "", {}, (err: BusinessError | null, bytesWritten: long | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_028 has error for' + JSON.stringify(err));
+            expect(false).assertTrue();
+          }
+          expect(bytesWritten == 0).assertTrue();
+          fs.closeSync(file);
+          fs.unlinkSync(fpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_028 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_write_sync_static_013
+     * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1300
+     * @tc.desc   Test writeSync() interface with empty string for the second parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_write_sync_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_013 start');
+      let fpath = await Utils.nextFileName('fileIO_test_write_sync_static_013');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        let file = fs.openSync(fpath, fs.OpenMode.WRITE_ONLY);
+        expect(await Utils.isIntNum(file.fd)).assertTrue();
+        let bytesWritten = fs.writeSync(file.fd, "");
+        expect(bytesWritten == 0).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_013 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_write_sync_static_014
+     * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1400
+     * @tc.desc   Test writeSync() interface with undefined for the third parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_write_sync_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_014 start');
+      let fpath = await Utils.nextFileName('fileIO_test_write_sync_static_014');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        let file = fs.openSync(fpath, fs.OpenMode.WRITE_ONLY);
+        expect(await Utils.isIntNum(file.fd)).assertTrue();
+        let bytesWritten = fs.writeSync(file.fd, FILE_CONTENT, undefined);
+        expect(bytesWritten == FILE_CONTENT.length).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_014 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'fileIO_fs_write end');
 

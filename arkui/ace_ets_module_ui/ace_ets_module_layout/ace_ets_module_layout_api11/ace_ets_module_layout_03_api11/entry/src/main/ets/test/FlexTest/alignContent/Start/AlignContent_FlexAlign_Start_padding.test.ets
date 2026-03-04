@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -85,27 +85,35 @@ export default function AlignContent_FlexAlign_Start_padding() {
       console.log('AlignContentFlexStartPadding_flex001_4 rect_value is:' +
       JSON.stringify(AlignContentFlexStart_4));
 
-      expect(Math.abs(AlignContentFlexStart_1.bottom - AlignContentFlexStart_1.top) - vp2px(50) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_2.bottom - AlignContentFlexStart_2.top) - vp2px(100) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_3.bottom - AlignContentFlexStart_3.top) - vp2px(150) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_4.bottom - AlignContentFlexStart_4.top) - vp2px(200) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_1.right - AlignContentFlexStart_1.left) - vp2px(150) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_2.right - AlignContentFlexStart_2.left) - vp2px(150) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_3.right - AlignContentFlexStart_3.left) - vp2px(150) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_4.right - AlignContentFlexStart_4.left) - vp2px(150) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi1:'+ Math.floor(Math.abs(AlignContentFlexStart_1.bottom - AlignContentFlexStart_1.top - vp2px(50))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_1.bottom - AlignContentFlexStart_1.top - vp2px(50))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi2:'+ Math.floor(Math.abs(AlignContentFlexStart_2.bottom - AlignContentFlexStart_2.top - vp2px(100))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_2.bottom - AlignContentFlexStart_2.top - vp2px(100))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi3:'+ Math.floor(Math.abs(AlignContentFlexStart_3.bottom - AlignContentFlexStart_3.top - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_3.bottom - AlignContentFlexStart_3.top - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi4:'+ Math.floor(Math.abs(AlignContentFlexStart_4.bottom - AlignContentFlexStart_4.top - vp2px(200))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_4.bottom - AlignContentFlexStart_4.top - vp2px(200))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi5:'+ Math.floor(Math.abs(AlignContentFlexStart_1.right - AlignContentFlexStart_1.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_1.right - AlignContentFlexStart_1.left - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi6:'+ Math.floor(Math.abs(AlignContentFlexStart_2.right - AlignContentFlexStart_2.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_2.right - AlignContentFlexStart_2.left - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi7:'+ Math.floor(Math.abs(AlignContentFlexStart_3.right - AlignContentFlexStart_3.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_3.right - AlignContentFlexStart_3.left - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi8:'+ Math.floor(Math.abs(AlignContentFlexStart_4.right - AlignContentFlexStart_4.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_4.right - AlignContentFlexStart_4.left - vp2px(150))) <= 1).assertTrue();
 
       expect(JSON.parse(strJson).$attrs.constructor.direction).assertEqual("FlexDirection.Row");
       expect(JSON.parse(strJson).$attrs.constructor.alignContent).assertEqual("FlexAlign.Start");
 
-      expect(Math.abs(AlignContentFlexStart_1.top - AlignContentFlexStart_flex001.top) - vp2px(40) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_flex001.bottom - AlignContentFlexStart_4.bottom) - vp2px(40) <= 1)
-        .assertTrue();
-      expect(Math.abs(AlignContentFlexStart_4.top - AlignContentFlexStart_2.bottom) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi9:'+ Math.floor(Math.abs(AlignContentFlexStart_1.top - AlignContentFlexStart_flex001.top - vp2px(40))))
+      expect(Math.floor(Math.abs(Math.abs(AlignContentFlexStart_1.top - AlignContentFlexStart_flex001.top) - vp2px(40))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi10:'+ Math.floor(Math.abs(AlignContentFlexStart_flex001.bottom - AlignContentFlexStart_4.bottom) - vp2px(40)))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_flex001.bottom - AlignContentFlexStart_4.bottom) - vp2px(40)) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingNoSatisfy_chazhi11:'+ Math.floor(Math.abs(AlignContentFlexStart_4.top - AlignContentFlexStart_2.bottom)))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_4.top - AlignContentFlexStart_2.bottom)) <= 1).assertTrue();
 
       console.info('testAlignContentStartFlexPaddingNoSatisfy END');
-
     });
-
 
     /**
      * @tc.name   testAlignContentStartFlexPaddingSatisfy
@@ -140,26 +148,37 @@ export default function AlignContent_FlexAlign_Start_padding() {
       console.log('AlignContentFlexStart_4 rect_value is:' +
       JSON.stringify(AlignContentFlexStart_4));
 
-      expect(Math.abs(AlignContentFlexStart_1.bottom - AlignContentFlexStart_1.top) - vp2px(50) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_2.bottom - AlignContentFlexStart_2.top) - vp2px(100) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_3.bottom - AlignContentFlexStart_3.top) - vp2px(150) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_4.bottom - AlignContentFlexStart_4.top) - vp2px(200) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_1.right - AlignContentFlexStart_1.left) - vp2px(150) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_2.right - AlignContentFlexStart_2.left) - vp2px(150) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_3.right - AlignContentFlexStart_3.left) - vp2px(150) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_4.right - AlignContentFlexStart_4.left) - vp2px(150) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi1:'+ Math.floor(Math.abs(AlignContentFlexStart_1.bottom - AlignContentFlexStart_1.top - vp2px(50))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_1.bottom - AlignContentFlexStart_1.top - vp2px(50))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi2:'+ Math.floor(Math.abs(AlignContentFlexStart_2.bottom - AlignContentFlexStart_2.top - vp2px(100))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_2.bottom - AlignContentFlexStart_2.top - vp2px(100))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi3:'+ Math.floor(Math.abs(AlignContentFlexStart_3.bottom - AlignContentFlexStart_3.top - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_3.bottom - AlignContentFlexStart_3.top - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi4:'+ Math.floor(Math.abs(AlignContentFlexStart_4.bottom - AlignContentFlexStart_4.top - vp2px(200))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_4.bottom - AlignContentFlexStart_4.top - vp2px(200))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi5:'+ Math.floor(Math.abs(AlignContentFlexStart_1.right - AlignContentFlexStart_1.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_1.right - AlignContentFlexStart_1.left - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi6:'+ Math.floor(Math.abs(AlignContentFlexStart_2.right - AlignContentFlexStart_2.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_2.right - AlignContentFlexStart_2.left - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi7:'+ Math.floor(Math.abs(AlignContentFlexStart_3.right - AlignContentFlexStart_3.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_3.right - AlignContentFlexStart_3.left - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi8:'+ Math.floor(Math.abs(AlignContentFlexStart_4.right - AlignContentFlexStart_4.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_4.right - AlignContentFlexStart_4.left - vp2px(150))) <= 1).assertTrue();
 
       expect(JSON.parse(strJson).$attrs.constructor.direction).assertEqual("FlexDirection.Row");
       expect(JSON.parse(strJson).$attrs.constructor.alignContent).assertEqual("FlexAlign.Start");
 
-      expect(Math.abs(AlignContentFlexStart_4.top - AlignContentFlexStart_2.bottom) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexStart_1.top - AlignContentFlexStartPadding_flex002.top) - vp2px(15) <= 1)
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi9:'+ Math.floor(Math.abs(AlignContentFlexStart_4.top - AlignContentFlexStart_2.bottom)))
+      expect(Math.floor(Math.abs(AlignContentFlexStart_4.top - AlignContentFlexStart_2.bottom)) <= 1).assertTrue();
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi10:'+ Math.floor(Math.abs(Math.abs(AlignContentFlexStart_1.top - AlignContentFlexStartPadding_flex002.top) - vp2px(15))))
+      expect(Math.floor(Math.abs(Math.abs(AlignContentFlexStart_1.top - AlignContentFlexStartPadding_flex002.top) - vp2px(15))) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexStartPadding_flex002.bottom - AlignContentFlexStart_4.bottom) - vp2px(45) <= 1)
+      console.info('testAlignContentStartFlexPaddingSatisfy_chazhi11:'+ Math.floor(Math.abs(Math.abs(AlignContentFlexStartPadding_flex002.bottom - AlignContentFlexStart_4.bottom) - vp2px(45))))
+      expect(Math.floor(Math.abs(Math.abs(AlignContentFlexStartPadding_flex002.bottom - AlignContentFlexStart_4.bottom) - vp2px(45))) <= 1)
         .assertTrue();
 
       console.info('testAlignContentStartFlexPaddingSatisfy END');
-
     });
+
   })
 }

@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RadioIndicatorType() {
   describe('RadioIndicatorType', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RadioIndicatorType beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

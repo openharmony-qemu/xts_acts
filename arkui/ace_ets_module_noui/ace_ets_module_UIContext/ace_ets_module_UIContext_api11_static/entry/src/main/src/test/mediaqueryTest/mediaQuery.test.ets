@@ -29,7 +29,7 @@ import { RecordData } from '@ohos.base';
 
 export default function mediaQueryOffJsunit() {
   describe('mediaQueryOffTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("mediaQueryOffTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")

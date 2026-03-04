@@ -29,7 +29,7 @@ import { Rect } from '@ohos.UiTest'
 export default function popupDirectionTest() {
   describe('popupDirectionTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("popupDirectionTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
 

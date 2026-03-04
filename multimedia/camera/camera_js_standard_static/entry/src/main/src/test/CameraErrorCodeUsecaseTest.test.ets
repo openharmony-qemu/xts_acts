@@ -390,7 +390,7 @@ export default function cameraErrorCodeUsecaseTest() {
       console.info(TAG + 'beforeAll case');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1000);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -399,7 +399,7 @@ export default function cameraErrorCodeUsecaseTest() {
       console.info('beforeEach case');
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info('afterEach case');
       if (isCameraInputOpen && !isEmpty10(mCameraInput!)) {
         await releaseInput();
@@ -409,7 +409,7 @@ export default function cameraErrorCodeUsecaseTest() {
       }
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       console.info('afterAll case');
       if (isCameraInputOpen && !isEmpty10(mCameraInput!)) {

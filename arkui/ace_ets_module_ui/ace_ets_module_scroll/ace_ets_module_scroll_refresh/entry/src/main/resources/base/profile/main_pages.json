@@ -10,7 +10,8 @@
         "MainAbility/pages/Refresh/RefreshingContent",
         "MainAbility/pages/Refresh/maxDownRefresh",
         "MainAbility/pages/Refresh/pullUpToCancelRefresh",
-        "MainAbility/pages/Refresh/pullUpToCancelRefreshModifier"
+        "MainAbility/pages/Refresh/pullUpToCancelRefreshModifier",
+        "MainAbility/pages/Refresh/refreshNullUndefined"
 
     ]
 }

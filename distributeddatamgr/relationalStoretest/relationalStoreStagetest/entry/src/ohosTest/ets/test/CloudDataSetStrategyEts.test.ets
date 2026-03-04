@@ -23,7 +23,7 @@ const TAG = "[CloudData_SetStratgey_Ets_test]";
 export default function cloudDataSetStrategyEtsTest() {
   describe('cloudDataSetStrategyEtsTest', () => {
     let currentDeviceIsWatch = false;
-    beforeAll(async (done: Function) => {
+    beforeAll(async () => {
       console.info('window_layout_test beforeAll begin');
       let deviceTypeInfo = deviceInfo.deviceType;
       currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;

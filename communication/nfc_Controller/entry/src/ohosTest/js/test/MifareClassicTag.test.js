@@ -56,7 +56,7 @@ export default function nfcMifareClassicTag() {
             try{
                 MifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
             } catch (error) {
-                if (error.code == 3100201) {
+                if (error.code === 3100201) {
                     expect(error.code).assertEqual(3100201);
                     console.info('beforeAll mifareClassic error' + error.code + error);
                 } else {
@@ -663,7 +663,7 @@ export default function nfcMifareClassicTag() {
                 try{
                     let getType = MifareClassicTag.getType();
                     console.info("[NFC_test] MifareClassicTag17 getType: " + getType);
-                    expect(getType >= -1).assertTrue();
+                    expect(getType == MifareClassicType.TYPE_PLUS).assertTrue();
                 } catch (error) {
                     console.info('[NFC_test] MifareClassicTag17 getType error' + error)
                     expect().assertFail();

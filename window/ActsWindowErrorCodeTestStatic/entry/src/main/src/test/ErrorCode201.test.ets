@@ -17,6 +17,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 
 import display from '@ohos.display';
+import floatingBall from '@ohos.window.floatingBall';
 import { BusinessError } from '@ohos.base';
 // import { MyCallback } from '../models/MyCallback';
 import window from '@ohos.window'
@@ -261,14 +262,12 @@ export default function ErrorCode201() {
                 hilog.info(domain, tag,caseName+'Succeeded in getMainWindowSync' );
                 windowClass.setWindowTopmost(false).then(() => {
                     hilog.info(domain, tag,caseName+'Succeeded in setting the window to be top most.' );
-                    expect(true).assertTrue();
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.error(domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err!.code}, message: ${err!.message}`);
                     if (err!.code === 801) {
                         done();
                     } else if(err!.code === 201){
-                        expect(true).assertTrue();
                         done();
                     } else {
                         expect(false).assertTrue();
@@ -427,11 +426,163 @@ export default function ErrorCode201() {
             }
         });
 
+        /**
+     * @tc.name   test_Create_oneFloatingBallNoPermissonCorrectParam_Static
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_ERRORCODE_0100
+     * @tc.desc   test_Create_oneFloatingBall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_Create_oneFloatingBallNoPermissonCorrectParam_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let CaseName:string = 'test_Create_oneFloatingBallNoPermissonCorrectParam_Static';
+        let config: floatingBall.FloatingBallConfiguration = {
+          context: context!,
+        };
+        let startParams: floatingBall.FloatingBallParams = {
+          template: floatingBall.FloatingBallTemplate.EMPHATIC,
+          title: 'title',
+          content: 'content'
+        };
+  
+        let issupportFloatingBall: boolean = floatingBall.isFloatingBallEnabled();
+        try {
+          floatingBall.create(config).then((data: floatingBall.FloatingBallController) => {
+            let floatingBallController: floatingBall.FloatingBallController = data;
+            console.info(CaseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
+            floatingBallController.startFloatingBall(startParams).then(() => {
+              console.info(CaseName+' Succeeded in starting floating ball.');
+              expect(issupportFloatingBall).assertEqual(true);
+              floatingBallController.stopFloatingBall().then(() => {
+                console.info(CaseName+ 'Succeeded in stopping floating ball.');
+                done();
+              }).catch((err: Error):void => {
+                console.error(CaseName+ `Failed to stop floating ball. Cause:${err.code}, message:${err.message}`);
+                expect(false).assertTrue();
+                done();
+              });
+            }).catch((err: Error):void => {
+              console.error(CaseName+ ` Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(err.code).assertEqual(201);
+              done();
+            });
+  
+          }).catch((err: Error):void => {
+            console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
+            expect(err.message!=null).assertTrue();
+            if(err.code == 801){
+              expect(issupportFloatingBall).assertEqual(false);
+              done();
+            }else{
+              expect(false).assertTrue();
+              done();
+            }
+  
+          });
+        } catch (error) {
+          let exception: BusinessError = error as BusinessError;
+          console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      })
 
 
+      /**
+         * @tc.number     testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.name       testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.desc       testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+      it('testSetWindowTopmostPromiseErrCode201_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName :string = "testSetWindowTopmostPromiseErrCode201_static_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag,msgStr + 'begin.');
+        try {
+            win!.setWindowTopmost(true).then(() => {
+                hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowTopmost.');
+                expect(false).assertTrue();
+                done()
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.error(domain, tag,msgStr + 'Failed to call setWindowTopmost. Cause: ' + JSON.stringify(err));
+                expect(err.code == 201 || err.code == 801).assertTrue();
+                done()
+            });
+        } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+            expect(false).assertTrue();
+            done()
+        }
+    
+    
+    })
 
+    /**
+    * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_201_static_0100
+    * @tc.name      test_DestroyVirtualScreenErrorcode201_static
+    * @tc.desc      test_DestroyVirtualScreenErrorcode_201 when no permisson
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 3
+    */
+    it('test_DestroyVirtualScreenErrorcode201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_DestroyVirtualScreenErrorcode201 ';
+        try {
+                display.destroyVirtualScreen(0).then(() => {
+                hilog.info(domain, tag,caseName + 'succeeded in destroy virtual screen, data : ');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+                    expect(err!.code === 201).assertTrue();
+                done();
+            })
+        } catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+            expect(err.code === 801).assertTrue();
+            done();
+        }
+    });
 
-
+    /**
+    * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_201_static_0100
+    * @tc.name      test_MakeUniqueErrorcode_201_static
+    * @tc.desc      test_MakeUniqueErrorcode_401 when no permisson
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 3
+    */
+    it('test_MakeUniqueErrorcode_201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_MakeUniqueErrorcode_201_static ';
+        try {
+                display.makeUnique(0).then(()=>{
+                hilog.info(domain, tag,caseName + 'Succeeded in makeUnique');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error) :PromiseLike<void>|undefined => {
+                hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
+                if (err!.code === 801) {
+                    done();
+                } else {
+                    expect(err!.code === 201).assertTrue();
+                    done();
+                }
+            })
+        } catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,caseName + 'error in makeUnique, err : ' + JSON.stringify(err));
+            if (err!.code === 801) {
+                done();
+            } else {
+                expect(err!.code === 201).assertTrue();
+                done();
+            }
+        }
+    });
 
 
 

@@ -119,25 +119,25 @@ export default function ReturningMultiThread() {
         columns: ['name', 'age'],
       }
       let count:number = 200;
-      let trans = await rdbStore?.createTransaction();
-      for (let i = 0; i < 200; ++i) {
-        const valueBucket: relationalStore.ValuesBucket = {
-          'name': 'zhangsan' + i,
-        };
-        trans?.batchInsertWithReturning("test", [valueBucket], config)
-          .then((result:relationalStore.Result)=>{
-            expect(result.changed).assertEqual(1);
-            expect(getRowCount(result?.resultSet)).assertEqual(1);
-            count--;
-            if (count == 0) {
-              trans?.commit();
-              done();
-            }
-          }).catch((e:BusinessError)=>{
-            console.error(TAG + " transBatchInsertWithReturningMultiThread001 failed: " + e);
+      try {
+        let trans = await rdbStore?.createTransaction();
+        for (let i = 0; i < 200; ++i) {
+          const valueBucket: relationalStore.ValuesBucket = {
+            'name': 'zhangsan' + i,
+          };
+          let result = await trans?.batchInsertWithReturning("test", [valueBucket], config)
+          expect(result.changed).assertEqual(1);
+          expect(getRowCount(result?.resultSet)).assertEqual(1);
+          count--;
+          if (count == 0) {
+            await trans?.commit();
             done();
-            expect(true).assertFail();
-        });
+          }
+        }
+      } catch (e) {
+        console.error(TAG + " transBatchInsertWithReturningMultiThread001 failed: " + e);
+        expect(true).assertFail();
+        done();
       }
       console.log(TAG + "************* transBatchInsertWithReturningMultiThread001 end *************");
     })
@@ -191,25 +191,25 @@ export default function ReturningMultiThread() {
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
-      let trans = await rdbStore?.createTransaction();
-      for (let i = 0; i < 200; ++i) {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", 'zhangsan' + i);
-        trans?.deleteWithReturning(predicates, config)
-          .then((result:relationalStore.Result)=>{
-            expect(result.changed).assertEqual(1);
-            expect(getRowCount(result?.resultSet)).assertEqual(1);
-            count--;
-            if (count == 0) {
-              done();
-            }
-          }).catch((e:BusinessError)=>{
-          console.error(TAG + " transStoreDeleteWithReturningMultiThread001 failed: " + e);
-          done();
-          expect(true).assertFail();
-        });
+      try {
+        let trans = await rdbStore?.createTransaction();
+        for (let i = 0; i < 200; ++i) {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", 'zhangsan' + i);
+          let result = await trans?.deleteWithReturning(predicates, config)
+          expect(result.changed).assertEqual(1);
+          expect(getRowCount(result?.resultSet)).assertEqual(1);
+          count--;
+          if (count == 0) {
+            await trans?.commit();
+            done();
+          }
+        }
+      } catch (e) {
+        console.error(TAG + " transStoreDeleteWithReturningMultiThread001 failed: " + e);
+        expect(true).assertFail();
+        done();
       }
-      await trans?.commit();
       console.log(TAG + "************* transStoreDeleteWithReturningMultiThread001 end *************");
     })
     /**
@@ -269,27 +269,27 @@ export default function ReturningMultiThread() {
       const valueBucket: relationalStore.ValuesBucket = {
         'name': 'lisi',
       };
-      let trans = await rdbStore?.createTransaction();
-      for (let i = 0; i < 200; ++i) {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", 'zhangsan' + i);
-        trans?.updateWithReturning(valueBucket, predicates, config)
-          .then((result:relationalStore.Result)=>{
-            expect(result.changed).assertEqual(1);
-            result.resultSet.goToNextRow();
-            expect(result.resultSet.getRow().name).assertEqual("lisi");
-            expect(result.resultSet.goToNextRow()).assertFalse();
-            count--;
-            if (count == 0) {
-              done();
-            }
-          }).catch((e:BusinessError)=>{
-          console.error(TAG + " transStoreUpdateWithReturningMultiThread001 failed: " + e);
-          done();
-          expect(true).assertFail();
-        });
+      try {
+        let trans = await rdbStore?.createTransaction();
+        for (let i = 0; i < 200; ++i) {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", 'zhangsan' + i);
+          let result = await trans?.updateWithReturning(valueBucket, predicates, config);
+          expect(result.changed).assertEqual(1);
+          result.resultSet.goToNextRow();
+          expect(result.resultSet.getRow().name).assertEqual("lisi");
+          expect(result.resultSet.goToNextRow()).assertFalse();
+          count--;
+          if (count == 0) {
+            await trans?.commit();
+            done();
+          }
+        }
+      } catch (e) {
+        console.error(TAG + " transStoreUpdateWithReturningMultiThread001 failed: " + e);
+        expect(true).assertFail();
+        done();
       }
-      await trans?.commit();
       console.log(TAG + "************* transStoreUpdateWithReturningMultiThread001 end *************");
     })
   })

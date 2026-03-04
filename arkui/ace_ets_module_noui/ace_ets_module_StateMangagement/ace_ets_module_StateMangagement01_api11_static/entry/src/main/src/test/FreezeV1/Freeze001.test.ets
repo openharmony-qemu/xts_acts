@@ -61,7 +61,7 @@ function sleep(time: int) : Promise<int>  {
 export default function FreezeV1Test() {
   describe('FreezeV1Test', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FreezeV1Test beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");

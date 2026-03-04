@@ -22,6 +22,7 @@ import settings from '@ohos.settings';
 import { image } from '@kit.ImageKit';
 import { ColorMetrics, screenshot } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -132,6 +133,8 @@ export default function windowPropertiesTest2() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let fileDir: string = '';
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       fileDir = AppStorage.get('filePath') as string;
@@ -1480,9 +1483,11 @@ export default function windowPropertiesTest2() {
           let heightBefore: number = windowClass!.getWindowProperties().windowRect.height;
           console.info(`${caseName} windowHeight: ${heightBefore}, windowWidth: ${widthBefore}`);
           let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
-          console.info(`${caseName} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width}`);
+          console.info(`${caseName} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width},pixelMap.isEditable:${pixelMap.isEditable},pixelMap.isStrideAlignment:${pixelMap.isStrideAlignment}`);
           expect(Math.abs(widthBefore-imageInfo.size.width)).assertLessOrEqual(1);
           expect(Math.abs(heightBefore-imageInfo.size.height)).assertLessOrEqual(1);
+          expect(pixelMap.isEditable).assertEqual(false);
+          expect(pixelMap.isStrideAlignment).assertEqual(false);
           pixelMap.release();
           done();
         }).catch(async (err: BusinessError) => {
@@ -1758,7 +1763,7 @@ export default function windowPropertiesTest2() {
         }
         windowStageStart.on('windowStageEvent', callback)
         // 3、被拉起的主窗minimize
-        if (isPCStatus != '') {
+        if (deviceType === '2in1') {
           await windowClass.minimize();
           await sleep(2000);
         }

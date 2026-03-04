@@ -20,6 +20,7 @@ import commonEvent from '@ohos.commonEventManager';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
 import common from '@ohos.app.ability.common';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestUploadOnetJSUnitTest() {
   describe('requestUploadOneJSUnit', () => {
@@ -51,6 +52,16 @@ export default function requestUploadOnetJSUnitTest() {
         done();
       }
     })
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
+    });
 
     let attachments: Array<request.agent.FormItem> = [{
       name: "uploadTest",
@@ -123,7 +134,7 @@ export default function requestUploadOnetJSUnitTest() {
           } catch (err) {
             console.info('====>SUB_REQUEST_On_Upload_Pause_0100 task not remove: ' + JSON.stringify(task.tid));
           }
-          expect(true).assertTrue();
+          expect(task !== undefined).assertTrue();
           console.info('====>SUB_REQUEST_On_Upload_Pause_0100 background onPause success');
           done();
         }
@@ -632,7 +643,7 @@ export default function requestUploadOnetJSUnitTest() {
           let on_progressCallback = async (pro: request.agent.Progress) => {
             task.off('progress', on_progressCallback);
             console.info("====>SUB_Misc_REQUEST_On_Upload_Progress_0040 pro: " +  JSON.stringify(pro));
-            expect(true).assertTrue();
+            expect(pro.state !== undefined).assertTrue();
             await sleep(100);
             done();
           }
@@ -883,7 +894,7 @@ export default function requestUploadOnetJSUnitTest() {
           let on_completedCallback =async (pro: request.agent.Progress) => {
             task.off('completed', on_completedCallback);
             console.info("====>SUB_Misc_REQUEST_On_Upload_Completed_0040 pro: " + JSON.stringify(pro));
-            expect(true).assertTrue();
+            expect(pro.state !== undefined).assertTrue();
             done();
           }
           try {
@@ -1240,7 +1251,7 @@ export default function requestUploadOnetJSUnitTest() {
               console.info("====>SUB_Misc_REQUEST_Create_Upload_Promise_0060 task1 remove");
               await request.agent.remove(task2.tid);
               console.info("====>SUB_Misc_REQUEST_Create_Upload_Promise_0060 task2 remove");
-              expect(true).assertTrue()
+              expect(task1 !== undefined).assertTrue()
               done();
             } catch (err) {
               console.info("====>SUB_Misc_REQUEST_Create_Upload_Callback_0060 catch err: " + JSON.stringify(err));
@@ -1276,7 +1287,7 @@ export default function requestUploadOnetJSUnitTest() {
         console.info("====>SUB_Misc_REQUEST_Create_Upload_Promise_0060 task1 remove");
         await request.agent.remove(task2.tid);
         console.info("====>SUB_Misc_REQUEST_Create_Upload_Promise_0060 task2 remove");
-        expect(true).assertTrue()
+        expect(task1 !== undefined).assertTrue()
         done();
       } catch (err) {
         console.info("====>SUB_Misc_REQUEST_Create_Upload_Promise_0060 create catch err: " + JSON.stringify(err));
@@ -1311,7 +1322,7 @@ export default function requestUploadOnetJSUnitTest() {
         request.agent.create(baseContext, config_, async (err, task) => {
           let on_failedCallback = async (pro: request.agent.Progress) => {
             task.off('failed', on_failedCallback);
-            expect(true).assertTrue();
+            expect(pro.state !== undefined).assertTrue();
             console.info('====>SUB_REQUEST_On_Upload_Failed_0500 background onFailed success');
             done();
           }
@@ -1494,7 +1505,7 @@ export default function requestUploadOnetJSUnitTest() {
           let on_removeCallback = async (pro: request.agent.Progress) => {
             try {
               task.off('remove', on_removeCallback);
-              expect(true).assertTrue();
+              expect(task !== undefined).assertTrue();
               console.info('====>SUB_REQUEST_On_Upload_Remove_0100 on_removeCallback success');
               done();
             } catch (err) {

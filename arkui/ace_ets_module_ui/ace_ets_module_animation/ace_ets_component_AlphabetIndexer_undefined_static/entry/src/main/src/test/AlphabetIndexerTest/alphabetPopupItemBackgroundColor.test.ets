@@ -27,7 +27,7 @@ import {
 
 export default function AlphabetPopupItemBackgroundColorTest() {
   describe('AlphabetPopupItemBackgroundColorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetPopupItemBackgroundColorTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

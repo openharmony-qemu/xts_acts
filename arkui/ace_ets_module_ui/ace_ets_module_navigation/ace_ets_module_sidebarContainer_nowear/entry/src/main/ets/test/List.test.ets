@@ -25,6 +25,7 @@ import sidebarIconsJsunit from './SideBarContainerTest/sidebarfirst.test'
 import sidebarTypeTest from './SideBarContainerTest/SidebarType.test';
 import SideBarWidth1 from './SideBarContainerTest/SideBarWidth1.test'
 import SideBarWidth2 from './SideBarContainerTest/SideBarWidth2.test';
+import SideBarContainerAttributeNullUndefined from './AttributeNullUndefined/SideBarContainerAttributeNullUndefined.test'
 
 export default function testsuite() {
   SideBarContainer_Attribute();
@@ -39,4 +40,5 @@ export default function testsuite() {
   sidebarTypeTest();
   SideBarWidth1();
   SideBarWidth2();
+  SideBarContainerAttributeNullUndefined();
 }

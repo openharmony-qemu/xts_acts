@@ -341,6 +341,35 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
+     * @tc.name   testOhAvImageGeneratorFetchFrameByTime008
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0800
+     * @tc.desc   Set the right timeUs and options is AV_IMAGE_QUERY_NEXT_SYNC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvImageGeneratorFetchFrameByTime008', Level.LEVEL0,async (done: Function) => {
+      console.info(`testOhAvImageGeneratorFetchFrameByTime008 test start `);
+      let fileDescribe: number = -1;
+      try {
+        let avFileDescriptor: media.AVFileDescriptor = getfile("H264_AAC.mp4");
+        fileDescribe = avFileDescriptor.fd;
+        const timeUs: number = 100;
+        const options: number = 0;
+        console.info(`testOhAvImageGeneratorFetchFrameByTime008 input timeUs: ${timeUs}, options: ${options}`);
+        let result: number = await avimagegenerator.OhAvImageGeneratorFetchFrameByTimeError(fileDescribe, timeUs, options);
+        expect(result).assertEqual(AV_ERR_OK);
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAvImageGeneratorFetchFrameByTime008:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAvImageGeneratorFetchFrameByTime008:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAvImageGeneratorFetchFrameByTime008 test end `);
+      closefile(fileDescribe);
+      done();
+    });
+
+    /**
      * @tc.name   testOhAvImageGeneratorRelease001
      * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVIMAGEGENERATORRELEASE_0100
      * @tc.desc   Set an unreleased pointer.

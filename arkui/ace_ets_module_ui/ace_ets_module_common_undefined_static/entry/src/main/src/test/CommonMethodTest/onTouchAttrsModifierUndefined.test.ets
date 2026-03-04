@@ -40,7 +40,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function OnTouchAttrsModifierUndefinedTest() {
  describe('OnTouchAttrsModifierUndefinedTest', () => {
-  beforeAll(() => {
+  beforeAll(async (): Promise<void> => {
    console.info("OnTouchAttrsModifierUndefinedTest beforeAll start");
 
    await UtilsTest.msSleep(4000)

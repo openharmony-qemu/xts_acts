@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +21,7 @@ import { UiDriver, BY, Driver, ON } from "@ohos.UiTest";
 import Utils from './Utils';
 
 let tokenID = 0;
+const ERR_PARAM_ERROR = 401;
 
 export default function OpenPermissionTest() {
   describe('OpenPermissionTest', () => {
@@ -68,7 +69,7 @@ export default function OpenPermissionTest() {
         });
       } catch (error) {
         console.info('Test_openPermissionOnSetting_0100 error.code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
     })
@@ -96,7 +97,7 @@ export default function OpenPermissionTest() {
         });
       } catch (error) {
         console.info('Test_openPermissionOnSetting_0200 error.code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
     })
@@ -133,7 +134,7 @@ export default function OpenPermissionTest() {
         console.info("Test_openPermissionOnSetting_0300 click over");
       } catch (error) {
         console.info('Test_openPermissionOnSetting_0300 error.code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
     })
@@ -170,7 +171,125 @@ export default function OpenPermissionTest() {
         console.info("Test_openPermissionOnSetting_0400 click over");
       } catch (error) {
         console.info('Test_openPermissionOnSetting_0400 error.code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_openPermissionOnSetting_0500
+     * @tc.number Test_openPermissionOnSetting_0500
+     * @tc.desc   openPermissionOnSetting context is null, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_openPermissionOnSetting_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("Test_openPermissionOnSetting_0500 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let testContext: common.UIAbilityContext | null = null;
+      try {
+        atManager.openPermissionOnSetting(testContext, 'ohos.permission.CAMERA').then((data: abilityAccessCtrl.SelectedResult) => {
+          console.info('Test_openPermissionOnSetting_0500 data:' + data);
+          expect(false).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error('Test_openPermissionOnSetting_0500 err.code:' + JSON.stringify(err));
+          expect(err.code).assertEqual(ERR_PARAM_ERROR);
+          done();
+        });
+      } catch (error) {
+        console.error('Test_openPermissionOnSetting_0500 error.code: ' + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_openPermissionOnSetting_0600
+     * @tc.number Test_openPermissionOnSetting_0600
+     * @tc.desc   openPermissionOnSetting context is undefined, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_openPermissionOnSetting_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("Test_openPermissionOnSetting_0600 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let testContext: common.UIAbilityContext | undefined = undefined;
+      try {
+        atManager.openPermissionOnSetting(testContext, 'ohos.permission.CAMERA').then((data: abilityAccessCtrl.SelectedResult) => {
+          console.info('Test_openPermissionOnSetting_0600 data:' + data);
+          expect(false).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error('Test_openPermissionOnSetting_0600 err.code:' + JSON.stringify(err));
+          expect(err.code).assertEqual(ERR_PARAM_ERROR);
+          done();
+        });
+      } catch (error) {
+        console.error('Test_openPermissionOnSetting_0600 error.code: ' + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_openPermissionOnSetting_0700
+     * @tc.number Test_openPermissionOnSetting_0700
+     * @tc.desc   openPermissionOnSetting permission is null, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_openPermissionOnSetting_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("Test_openPermissionOnSetting_0700 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let context: Context = getContext(globalThis) as common.UIAbilityContext;
+      let testPermission: Permissions | null = null;
+      try {
+        atManager.openPermissionOnSetting(context, testPermission).then((data: abilityAccessCtrl.SelectedResult) => {
+          console.info('Test_openPermissionOnSetting_0700 data:' + data);
+          expect(false).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error('Test_openPermissionOnSetting_0700 err.code:' + JSON.stringify(err));
+          expect(err.code).assertEqual(ERR_PARAM_ERROR);
+          done();
+        });
+      } catch (error) {
+        console.error('Test_openPermissionOnSetting_0700 error.code: ' + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_openPermissionOnSetting_0800
+     * @tc.number Test_openPermissionOnSetting_0800
+     * @tc.desc   openPermissionOnSetting permission is undefined, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_openPermissionOnSetting_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("Test_openPermissionOnSetting_0800 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let context: Context = getContext(globalThis) as common.UIAbilityContext;
+      let testPermission: Permissions | undefined = undefined;
+      try {
+        atManager.openPermissionOnSetting(context, testPermission).then((data: abilityAccessCtrl.SelectedResult) => {
+          console.info('Test_openPermissionOnSetting_0800 data:' + data);
+          expect(false).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error('Test_openPermissionOnSetting_0800 err.code:' + JSON.stringify(err));
+          expect(err.code).assertEqual(ERR_PARAM_ERROR);
+          done();
+        });
+      } catch (error) {
+        console.error('Test_openPermissionOnSetting_0800 error.code: ' + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
     })

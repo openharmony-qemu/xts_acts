@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function menuBackgroundColor() {
   describe('menuBackgroundColor', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("menuBackgroundColor beforeEach start");
 
 

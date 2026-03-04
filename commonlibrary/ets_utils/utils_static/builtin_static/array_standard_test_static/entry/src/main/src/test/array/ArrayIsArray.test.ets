@@ -1119,13 +1119,6 @@ export default function ArrayIsArrayTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('testIsArray0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const extArr1: ExtendedArray<number> = new ExtendedArray<number>([1, 2, 3]);
-    //   const extArr2: ExtendedArray<number> = new ExtendedArray<number>([4, 5, 6]);
-    //   const arr: ExtendedArray<number>[] = [extArr1, extArr2];
-    //   expect(Array.isArray(arr)).assertTrue();
-    // });
 
     /**
      * @tc.name   testIsArray0094

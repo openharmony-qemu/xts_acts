@@ -25,7 +25,7 @@ export default function gestureGestureAttrsTest() {
 
   describe('GestureGestureAttrsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
 

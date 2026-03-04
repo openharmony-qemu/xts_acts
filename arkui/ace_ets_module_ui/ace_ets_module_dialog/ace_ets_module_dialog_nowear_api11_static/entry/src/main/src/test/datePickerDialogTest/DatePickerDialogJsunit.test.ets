@@ -24,7 +24,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function DatePickerDialogJsunit() {
   describe('DatePickerDialogJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DatePickerDialogJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })

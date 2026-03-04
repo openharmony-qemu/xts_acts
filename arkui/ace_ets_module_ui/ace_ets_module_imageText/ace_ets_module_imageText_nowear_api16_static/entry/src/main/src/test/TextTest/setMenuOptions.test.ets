@@ -31,7 +31,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SetMenuOptionsTest() {
   describe('SetMenuOptionsTest', () : void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api16.static", "EntryAbility")
     });

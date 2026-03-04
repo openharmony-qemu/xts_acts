@@ -35,12 +35,10 @@ struct AppearExample {
         .id('button_onAttach2')
       Text('Count' + this.count)
         .fontSize(26)
-        .fontWeight(FontWeight.Bold)
         .id('commonmethod_onAttach')
       if (this.isShow === true) {
         Text('Text for onAttach')
           .fontSize(26)
-          .fontWeight(FontWeight.Bold)
           .onAttach(this.change?() => {
               this.count += 1;
           }: undefined)

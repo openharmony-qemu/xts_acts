@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function imageAddApi2() {
   describe('imageAddApi2', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("imageAddApi2 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -75,7 +75,7 @@ export default function imageAddApi2() {
       console.info('[imageAddApi2_001] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('imageAddApi2');
+      let strJson = inspector.getInspectorByKey('imageEnableAnalyzerTrue');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[imageAddApi2_001] component obj is: " + JSON.stringify(obj));

@@ -25,6 +25,8 @@ import schemaTest from './SchemaJsTest.test.js'
 import singleKvStoreEnumTest from './SingleKvStoreEnumJsTest.test.js'
 import kvStoreBackupPromiseJsunittest from './KvStoreBackupPromiseJsTest.test.js'
 import kvStoreBackupCallbackJsunittest from './KvStoreBackupCallbackJsTest.test.js'
+import DistributedDataKVManagerCoverageAdd from "./DistributedDataKVManagerCoverageAdd.test.js";
+
 export default function testsuite() {
     SingleKvStorePromiseTest()
     deviceKvStoreCallbackTest()
@@ -39,4 +41,5 @@ export default function testsuite() {
     singleKvStoreEnumTest()
     kvStoreBackupPromiseJsunittest()
     kvStoreBackupCallbackJsunittest()
+	DistributedDataKVManagerCoverageAdd()
 }

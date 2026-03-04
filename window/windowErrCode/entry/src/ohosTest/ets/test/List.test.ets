@@ -23,10 +23,13 @@ import windowErrCode1300006 from './windowErrCode1300006.test'
 import windowErrCode1300009 from './windowErrCode1300009.test'
 import windowErrCode1300010 from './windowErrCode1300010.test'
 import windowErrCode201_1 from './windowErrCode201_1.test'
+import windowErrCode401_4 from './WindowErrCode401Four.test'
+
 export default function testsuite() {
   windowErrCode401_1()
   windowErrCode401_2()
   windowErrCode401_3()
+  windowErrCode401_4()
   windowErrCode1300002_1()
   windowErrCode1300002_2()
   windowErrCode1300004()

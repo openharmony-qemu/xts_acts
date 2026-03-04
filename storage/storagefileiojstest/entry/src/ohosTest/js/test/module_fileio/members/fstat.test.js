@@ -1667,4 +1667,128 @@ describe('fileio_fstat', function () {
     done();
   });
 
+  /**
+ 	    * @tc.name   fileio_test_fstat_sync_error_001
+ 	    * @tc.number SUB_DF_FILEIO_FSTATSYNC_ERROR_001
+ 	    * @tc.desc   Test fstatSync() interface with null fd.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fstat_sync_error_001', Level.LEVEL2, async function () {
+ 	     try {
+ 	       fileio.fstatSync(null);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_fstat_sync_error_001: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_fstat_sync_error_002
+ 	    * @tc.number SUB_DF_FILEIO_FSTATSYNC_ERROR_002
+ 	    * @tc.desc   Test fstatSync() interface with undefined fd.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fstat_sync_error_002', Level.LEVEL2, async function () {
+ 	     try {
+ 	       fileio.fstatSync(undefined);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_fstat_sync_error_002: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_fstat_promise_error_001
+ 	    * @tc.number SUB_DF_FILEIO_FSTAT_PROMISE_ERROR_001
+ 	    * @tc.desc   Test fstat() interface with null fd. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fstat_promise_error_001', Level.LEVEL2, async function () {
+ 	     try {
+ 	       await fileio.fstat(null);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_fstat_promise_error_001: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_fstat_promise_error_002
+ 	    * @tc.number SUB_DF_FILEIO_FSTAT_PROMISE_ERROR_002
+ 	    * @tc.desc   Test fstat() interface with undefined fd. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fstat_promise_error_002', Level.LEVEL2, async function () {
+ 	     try {
+ 	       await fileio.fstat(undefined);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_fstat_promise_error_002: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_fstat_callback_error_001
+ 	    * @tc.number SUB_DF_FILEIO_FSTAT_CALLBACK_ERROR_001
+ 	    * @tc.desc   Test fstat() interface with null fd. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fstat_callback_error_001', Level.LEVEL2, async function (done) {
+      try {
+ 	     fileio.fstat(null, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_test_fstat_callback_error_001: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'Invalid fd').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_test_fstat_callback_error_001 res');
+       done();
+      } catch (err) {
+        console.log('fileio_test_fstat_callback_error_001 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid fd').assertTrue();
+        done();
+ 	    }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_fstat_callback_error_002
+ 	    * @tc.number SUB_DF_FILEIO_FSTAT_CALLBACK_ERROR_002
+ 	    * @tc.desc   Test fstat() interface with undefined fd. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fstat_callback_error_002', Level.LEVEL2, async function (done) {
+      try {
+ 	     fileio.fstat(undefined, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_test_fstat_callback_error_002: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'Invalid fd').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_test_fstat_callback_error_002 res');
+       done();
+      } catch (err) {
+        console.log('fileio_test_fstat_callback_error_002 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid fd').assertTrue();
+        done();
+ 	    }
+ 	   });
+
 });}

@@ -471,6 +471,22 @@ export default function api16CertFuncTestUnit() {
         console.log("SUB_Security_CertManager_GetCertificateStorePath_Func_0011: e.code " + err.code);
         expect(err.code).assertEqual(401);
       }
+      try {
+        let userCACurrentPath = certManager.getCertificateStorePath(null);
+        console.log("SUB_Security_CertManager_GetCertificateStorePath_Func_0011: userCACurrentPath " + userCACurrentPath);
+        expect(null).assertFail();
+      } catch (err) {
+        console.log("SUB_Security_CertManager_GetCertificateStorePath_Func_0011: e.code " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let userCACurrentPath = certManager.getCertificateStorePath(undefined);
+        console.log("SUB_Security_CertManager_GetCertificateStorePath_Func_0011: userCACurrentPath " + userCACurrentPath);
+        expect(null).assertFail();
+      } catch (err) {
+        console.log("SUB_Security_CertManager_GetCertificateStorePath_Func_0011: e.code " + err.code);
+        expect(err.code).assertEqual(401);
+      }
       done();
     });
 
@@ -712,6 +728,28 @@ export default function api16CertFuncTestUnit() {
           console.error("Security_CertManager_VerifyPromiseSM3_Func_0011 get err.code: " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_GENERIC);
         });
+        try{
+          await certManager.uninstallPrivateCertificate("");
+          expect(null).assertFail();
+        }catch(err){
+          console.info("Security_CertManager_VerifyPromiseSM3_Func_0011 uninstallPrivateCertificate failed, err.code:"+err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try{
+          await certManager.uninstallPrivateCertificate(null);
+          expect(null).assertFail();
+        }catch(err){
+          console.info("Security_CertManager_VerifyPromiseSM3_Func_0011 uninstallPrivateCertificate failed, err.code:"+err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try{
+          await certManager.uninstallPrivateCertificate(undefined);
+          expect(null).assertFail();
+        }catch(err){
+          console.info("Security_CertManager_VerifyPromiseSM3_Func_0011 uninstallPrivateCertificate failed, err.code:"+err.code);
+          expect(err.code).assertEqual(401);
+        }
+
         await certManager.uninstallPrivateCertificate(keyUri);
         console.info('Security_CertManager_VerifyPromiseSM3_Func_0011 uninstallPrivateCertificate promise success! ')
       } else {
@@ -880,9 +918,16 @@ export default function api16CertFuncTestUnit() {
         console.error(`SUB_Security_CertManager_InstallUserTrustedCertificates_0011 error.code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
       }
-
       try {
         let result: certManager.CMResult = certManager.installUserTrustedCertificateSync(caCert1, certManager.CertScope.CURRENT_USER);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_InstallUserTrustedCertificates_0011 error.code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+      console.info('SUB_Security_CertManager_InstallUserTrustedCertificates_0011 end');
+      try {
+        let result: certManager.CMResult = certManager.installUserTrustedCertificateSync(undefined, certManager.CertScope.CURRENT_USER);
         expect(null).assertFail();
       } catch (error) {
         console.error(`SUB_Security_CertManager_InstallUserTrustedCertificates_0011 error.code: ${error.code}, message: ${error.message}`);

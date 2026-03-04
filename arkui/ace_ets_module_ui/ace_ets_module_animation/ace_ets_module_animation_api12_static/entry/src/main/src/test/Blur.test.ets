@@ -35,7 +35,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function Blur() {
   describe('Blur', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Blur beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
       

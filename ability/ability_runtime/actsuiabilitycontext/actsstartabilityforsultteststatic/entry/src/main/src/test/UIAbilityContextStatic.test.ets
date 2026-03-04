@@ -293,5 +293,36 @@ export default function UIAbilityContextStatic() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startUIServiceExtensionAbility_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_startUIServiceExtensionAbility_Static_0100
+     * @tc.desc   Expect: failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_startUIServiceExtensionAbility_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let tag: string = 'SUB_Ability_AbilityRuntime_startUIServiceExtensionAbility_Static_0100'
+      console.log(`${tag} begin`);
+      let want: Want = {
+        bundleName: 'com.acts.startabilityforresulttest.static',
+        abilityName: 'UIServiceAbility'
+      }
+      context?.startUIServiceExtensionAbility(want)
+        .then(() => {
+          console.log(`${tag} success`);
+          expect().assertFail();
+          done();
+        })
+        .catch((err: Error) => {
+          hilog.info(0x0000, 'testTag', `startUIServiceExtensionAbility faiiled code: ${err.code}, message: ${err.message}`);
+          if( err.code !== 801 ) {
+            expect(err.code).assertEqual(16000001);
+          }
+          done();
+      });
+    })
+
   })
 }

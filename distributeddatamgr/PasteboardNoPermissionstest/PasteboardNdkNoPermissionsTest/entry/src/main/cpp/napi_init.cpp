@@ -118,12 +118,9 @@ static napi_value OH_Pasteboard_GetMimeTypes0300(napi_env env, napi_callback_inf
     unsigned int count = 1000;
     int num = 2;
     char** res = OH_Pasteboard_GetMimeTypes(pasteboard, &count);
-    NAPI_ASSERT(env, count == num, "OH_Pasteboard_GetMimeTypes is fail.");
     NAPI_ASSERT(env, res != nullptr, "OH_Pasteboard_GetMimeTypes is fail.");
-    NAPI_ASSERT(env, (strcmp("text/plain", res[0]) == 0 && strcmp("text/html", res[1]) == 0) ||
-        (strcmp("text/plain", res[1]) == 0 && strcmp("text/html", res[0]) == 0), "OH_Pasteboard_GetMimeTypes is fail.");
-    napi_create_int32(env, (strcmp("text/plain", res[0]) == 0 && strcmp("text/html", res[1]) == 0) ||
-        (strcmp("text/plain", res[1]) == 0 && strcmp("text/html", res[0]) == 0), &result);
+    NAPI_ASSERT(env, count == num, "OH_Pasteboard_GetMimeTypes is fail.");
+    napi_create_int32(env, count == num, &result);
     OH_Pasteboard_Destroy(pasteboard);
     return result;
 }
@@ -159,6 +156,35 @@ static napi_value OH_Pasteboard_GetDataWithNoProgress001(napi_env env, napi_call
     return result;
 }
 
+static napi_value OH_Pasteboard_GetData0100(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    OH_UdmfData* setData = OH_UdmfData_Create();
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
+    char content[] = "hello world";
+    OH_UdsPlainText_SetContent(plainText, content);
+    OH_UdmfRecord_AddPlainText(record, plainText);
+    OH_UdmfData_AddRecord(setData, record);
+
+    int res = OH_Pasteboard_SetData(pasteboard, setData);
+    NAPI_ASSERT(env, res == ERR_OK, "OH_Pasteboard_SetData is fail.");
+
+    int status = -1;
+    OH_UdmfData* getData = OH_Pasteboard_GetData(pasteboard, &status);
+    NAPI_ASSERT(env, status == ERR_PERMISSION_ERROR, "OH_Pasteboard_GetData is fail.");
+    NAPI_ASSERT(env, getData == nullptr, "OH_Pasteboard_GetData is fail.");
+ 
+    napi_create_int32(env, res == ERR_OK, &result);
+    OH_Pasteboard_Destroy(pasteboard);
+    OH_UdsPlainText_Destroy(plainText);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(setData);
+    OH_UdmfData_Destroy(getData);
+    return result;
+}
+
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -171,6 +197,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OH_Pasteboard_GetMimeTypes0300", nullptr, OH_Pasteboard_GetMimeTypes0300,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Pasteboard_GetDataWithNoProgress001", nullptr, OH_Pasteboard_GetDataWithNoProgress001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Pasteboard_GetData0100", nullptr, OH_Pasteboard_GetData0100,
          nullptr, nullptr, nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

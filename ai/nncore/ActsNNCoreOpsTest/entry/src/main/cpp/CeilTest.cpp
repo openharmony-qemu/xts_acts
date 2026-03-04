@@ -62,6 +62,10 @@ struct CeilModel2 {
  */
 int SUBAINNRtFuncNorthCeilBuild01()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 
@@ -95,6 +99,10 @@ int SUBAINNRtFuncNorthCeilBuild01()
  */
 int SUBAINNRtFuncNorthCeilBuild02()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+    
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 

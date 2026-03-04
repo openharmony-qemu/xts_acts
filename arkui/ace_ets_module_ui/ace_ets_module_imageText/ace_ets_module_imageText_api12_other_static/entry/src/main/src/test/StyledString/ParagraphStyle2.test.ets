@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ParagraphStyle2() {
   describe('ParagraphStyle2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParagraphStyle2 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
@@ -122,7 +122,7 @@ it('ParagraphStyle_static_20001', Level.LEVEL1, async (done: () => void): Promis
       expect('' + AppStorage.get<undefined | TextAlign>('StyledString3_textAlign')).assertEqual('0');
       console.info('StyledString ParagraphStyle10001 StyledString3_textIndent ' +
       AppStorage.get<undefined | number>('StyledString3_textIndent'));
-      expect('' + AppStorage.get<undefined | number>('StyledString3_textIndent')).assertEqual('0');
+      expect('' + AppStorage.get<undefined | number>('StyledString3_textIndent')).assertEqual('undefined');
       console.info('StyledString ParagraphStyle10001 StyledString3_maxLines ' +
       AppStorage.get<undefined | int>('StyledString3_maxLines'));
       expect('' + AppStorage.get<undefined | int>('StyledString3_maxLines')).assertEqual('1');

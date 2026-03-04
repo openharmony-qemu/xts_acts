@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -535,5 +535,73 @@ export default function rdbStoreSendableTest() {
       }
       console.log(TAG + "************* testRdbStoreSendable0008 end *************");
     })
+
+    /**
+     * @tc.name   testRdbStoreSendableAsset0001
+     * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0900
+     * @tc.desc   Normal test case of sendableRelationalStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreSendableAsset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* testRdbStoreSendableAsset0001 start *************");
+      try {
+        const sendableAsset: sendableRelationalStore.Asset = sendableRelationalStore.toSendableAsset(asset1);
+        console.log(TAG + "sendableAsset.name:" + JSON.stringify(sendableAsset.name));
+        expect(sendableAsset.name).assertEqual("hangman");
+        console.log(TAG + "sendableAsset.uri:" + JSON.stringify(sendableAsset.uri));
+        expect(sendableAsset.uri).assertEqual("//path/example");
+        console.log(TAG + "sendableAsset.path:" + JSON.stringify(sendableAsset.path));
+        expect(sendableAsset.path).assertEqual("//path/example");
+        console.log(TAG + "sendableAsset.createTime:" + JSON.stringify(sendableAsset.createTime));
+        expect(sendableAsset.createTime).assertEqual("createTime1");
+        console.log(TAG + "sendableAsset.modifyTime:" + JSON.stringify(sendableAsset.modifyTime));
+        expect(sendableAsset.modifyTime).assertEqual("modifyTime1");
+        console.log(TAG + "sendableAsset.size:" + JSON.stringify(sendableAsset.size));
+        expect(sendableAsset.size).assertEqual("size1");
+      } catch (err) {
+        console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
+        expect().assertFail();
+      }
+      console.log(TAG + "************* testRdbStoreSendableAsset0001 end *************");
+    })
+
+    /**
+     * @tc.name   testRdbStoreFromSendableAsset0001
+     * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_1100
+     * @tc.desc   Normal test case of sendableRelationalStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRdbStoreFromSendableAsset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      console.log(TAG + "************* testRdbStoreFromSendableAsset0001 start *************");
+      const asset3: relationalStore.Asset = {
+        name: '',
+        uri: '',
+        path: '',
+        createTime: '',
+        modifyTime: '',
+        size: ''
+      };
+      try {
+        const sendableAsset: sendableRelationalStore.Asset = sendableRelationalStore.toSendableAsset(asset3);
+        console.log(TAG + "sendableAsset:" + JSON.stringify(sendableAsset));
+        const normalAsset: sendableRelationalStore.NonSendableAsset = sendableRelationalStore.fromSendableAsset(sendableAsset);
+        console.log(TAG + "normalAsset:" + JSON.stringify(normalAsset));
+        expect(normalAsset.name).assertEqual("");
+        expect(normalAsset.uri).assertEqual("");
+        expect(normalAsset.path).assertEqual("");
+        expect(normalAsset.createTime).assertEqual("");
+        expect(normalAsset.modifyTime).assertEqual("");
+        expect(normalAsset.size).assertEqual("");
+      } catch (err) {
+        console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
+        expect(null).assertFail();
+      }
+      console.log(TAG + "************* testRdbStoreFromSendableAsset0001 end *************");
+    })
+
   })
 }

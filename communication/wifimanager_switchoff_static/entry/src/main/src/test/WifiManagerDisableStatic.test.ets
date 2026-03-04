@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -26,12 +26,16 @@ export default function wifiDisableTest() {
 
     describe("wifiDisableTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeAll start');
             await Utils.closeWifi();
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
-
+        afterAll(async (): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', 'afterAll start');
+            await Utils.openWifi();
+            hilog.info(domain, tag, '%{public}s', 'afterAll end');
+        })
         /**
          * @tc.name   isMeteredHotspotErrCode2501001Test
          * @tc.number isMeteredHotspotErrCode2501001Test

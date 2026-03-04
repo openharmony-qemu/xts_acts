@@ -7,6 +7,8 @@
     "testability/pages/ScrollPage",
     "testability/pages/webViewController",
     "testability/pages/webViewOnScroll",
-	"testability/pages/scrollByTo"
+	"testability/pages/scrollByTo",
+    "testability/pages/ScrollToError",
+    "testability/pages/ScrollByWithResultError"
   ]
 }

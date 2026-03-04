@@ -19,6 +19,7 @@ import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestSpecialUnitTest() {
   describe('requestSpecialJSTest', () => {
@@ -70,6 +71,9 @@ export default function requestSpecialUnitTest() {
      * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
      */
     beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
       console.info('====>beforeEach removeTasks start');
       await removeTasks();
       console.info('====>beforeEach removeTasks end');
@@ -250,7 +254,7 @@ export default function requestSpecialUnitTest() {
               console.info('====>Download_Test_0300 delete files success');
               await downloadTask.delete();
               console.info('====>Download_Test_0300 delete downloadTask');
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               done();
             } catch (err) {
               console.info("====>Download_Test_0300 fail error: " + JSON.stringify(err));

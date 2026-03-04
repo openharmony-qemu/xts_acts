@@ -258,8 +258,8 @@ export default function UsbCoreEtsTest() {
       expect(typeof(gPipe)).assertEqual("object");
       expect(typeof(gPipe.busNum)).assertEqual("number");
       expect(typeof(gPipe.devAddress)).assertEqual("number");
-      expect(gPipe.busNum > 0).assertTrue;
-      expect(gPipe.devAddress > 0).assertTrue;
+      expect(gPipe.busNum > 0).assertTrue();
+      expect(gPipe.devAddress > 0).assertTrue();
       toClosePipe('testConnectDevice001');
     })
 

@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function typeNodeTextSelectableMode2Test() {
   describe('typeNodeTextSelectableMode2Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("typeNodeTextSelectableMode2Test beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

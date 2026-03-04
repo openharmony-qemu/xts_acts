@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ExtendTrackTest() {
   describe('ExtendTrackTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ExtendTrackTest beforeEach start");
 
 

@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function srcIndexTest() {
   describe('srcIndexTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("srcIndexTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

@@ -41,7 +41,7 @@ export default function CloudFileVersionTest(){
         fileVersion.getHistoryVersionList(uri, limit).then((versionList: Array<cloudSync.HistoryVersion>) => {
           for(let i = 0, len = versionList.length; i < len; i++) {
             console.info("test_cloudSync_FileVersion_001 get history versionId: " + versionList[i].versionId);
-            expect(true).assertTrue();
+            expect(cloudSync.State.RUNNING === 0).assertTrue();
           }
         }).catch((err: BusinessError) => {
           console.error("test_cloudSync_FileVersion_001 get history version failed with error message: " + err.message + ", error code: " + err.code);
@@ -148,7 +148,7 @@ export default function CloudFileVersionTest(){
       try {
         fileVersion.downloadHistoryVersion(uri, versionId, callback).then((fileUri: string) => {
           console.info("test_cloudSync_FileVersion_004 success to begin download, downloadFileUri: " + fileUri);
-          expect(true).assertTrue();
+          expect(cloudSync.State.RUNNING === 0).assertTrue();
         }).catch((err: BusinessError) => {
           console.error("test_cloudSync_FileVersion_004 download history version file failed with error message: " + err.message + ", error code: " + err.code);
         });
@@ -215,7 +215,7 @@ export default function CloudFileVersionTest(){
       try {
         fileVersion.replaceFileWithHistoryVersion(uri, versionUri).then(() => {
           console.info("test_cloudSync_FileVersion_006 replaceFileWithHistoryVersion success");
-          expect(true).assertTrue();
+          expect(cloudSync.State.RUNNING === 0).assertTrue();
         }).catch((err: BusinessError) => {
           console.error("test_cloudSync_FileVersion_006 replaceFileWithHistoryVersion failed with error: " + err.message + ", error code: " + err.code);
           expect(false).assertTrue();
@@ -243,7 +243,7 @@ export default function CloudFileVersionTest(){
       try {
         fileVersion.isFileConflict(uri).then((isConflict) => {
           console.info("test_cloudSync_FileVersion_007 current file is conflict: " + isConflict);
-          expect(true).assertTrue();
+          expect(cloudSync.State.RUNNING === 0).assertTrue();
         }).catch((err: BusinessError) => {
           console.error("test_cloudSync_FileVersion_007 get current file conflict flag failed with error message: " + err.message + ", error code: " + err.code);
         });
@@ -270,7 +270,7 @@ export default function CloudFileVersionTest(){
       try {
         fileVersion.clearFileConflict(uri).then(() => {
           console.info("test_cloudSync_FileVersion_008 clean file conflict flag success");
-          expect(true).assertTrue();
+          expect(cloudSync.State.RUNNING === 0).assertTrue();
         }).catch((err: BusinessError) => {
           console.error("test_cloudSync_FileVersion_008 clean file conflict flag failed with error message: " + err.message + ", error code: " + err.code);
         });

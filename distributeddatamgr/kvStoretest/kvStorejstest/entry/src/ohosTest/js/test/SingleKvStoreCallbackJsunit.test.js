@@ -14,6 +14,8 @@
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
 import factory from '@ohos.data.distributedData'
+import deviceInfo from '@ohos.deviceInfo';
+let currentDeviceIsWatch = false;
 
 const KEY_TEST_INT_ELEMENT = 'key_test_int_2';
 const KEY_TEST_FLOAT_ELEMENT = 'key_test_float_2';
@@ -75,6 +77,11 @@ describe('singleKvStoreCallbackTest', function () {
     }
 
     beforeAll(async function (done) {
+        console.info('beforeAll currentDeviceIsWatch');
+        let deviceTypeInfo = deviceInfo.deviceType;
+        currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+        console.info( "the value of the deviceType is : " + deviceInfo.deviceType + ' currentDeviceIsWatch=' +currentDeviceIsWatch);
+  
         console.info('beforeAll config:'+ JSON.stringify(config));
         await factory.createKVManager(config, function (err, manager) {
             kvManager = manager;
@@ -1883,6 +1890,11 @@ describe('singleKvStoreCallbackTest', function () {
      */
     it('testSingleKvStoreRemoveDeviceData101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testSingleKvStoreRemoveDeviceData101');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             await kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
                 console.info('testSingleKvStoreRemoveDeviceData101 put success');

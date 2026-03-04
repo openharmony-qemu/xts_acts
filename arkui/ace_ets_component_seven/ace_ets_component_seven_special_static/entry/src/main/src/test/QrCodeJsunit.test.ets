@@ -25,7 +25,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function qrCodeJsunit() {
   describe('qrCodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("qrCodeTest beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
@@ -62,7 +62,7 @@ it('test_qrCode_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
       let strJson = inspector.getInspectorByKey('QrCodeColorKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[test_qrCode_static_001] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(Math.abs(obj.getElement('$attrs').getDouble('opacity') - 0.1) < 0.000001).assertTrue();
+      expect(Math.abs(obj.getElement('$attrs').getDouble('contentOpacity') - 0.1) < 0.000001).assertTrue();
       console.info('[test_qrCode_static_001] END');
       done();
     });

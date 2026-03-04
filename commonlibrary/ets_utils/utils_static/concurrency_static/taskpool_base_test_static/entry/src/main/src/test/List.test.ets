@@ -17,11 +17,13 @@ import taskTest from "./Task.test";
 import executeDelayedTest from "./ExecuteDelayed.test";
 import taskGroupTest from "./TaskGroup.test";
 import taskPoolTest from "./TaskPool.test";
+import taskPoolCoverageTest from "./TaskpoolCoverage.test";
 
 
 export default function testsuite() {
   taskTest();
   executeDelayedTest();
   taskGroupTest();
-  taskPoolTest()
+  taskPoolTest();
+  taskPoolCoverageTest();
 }

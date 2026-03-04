@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function repeatVirtualScrollJsunit() {
   describe('repeatVirtualScrollJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("repeatVirtualScrollJsunit beforeEach start");
 
 

@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ObjectArrayTest() {
   describe('ObjectArrayTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ObjectArrayTest beforeEach start");
 
 

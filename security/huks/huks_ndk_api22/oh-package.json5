@@ -4,6 +4,6 @@
   "dependencies": {
   },
   "devDependencies": {
-    "@ohos/hypium": "1.0.24"
+    "@ohos/hypium": "1.0.26"
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,7 @@ import nativeFontNdk from 'libnativeFontNdk.so';
 
 export default function fontTest() {
   describe('FontTest', () => {
+    // cpp1中的用例
     /**
      * @tc.name   testOHDrawingMatchFontDescriptors001
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Drawing_MatchFontDescriptors_001
@@ -544,6 +545,7 @@ export default function fontTest() {
       done();
     });
 
+    // cpp2中的用例
     /**
      * @tc.name   testOHDrawingFontGetPathForGlyph001
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Drawing_FontGetPathForGlyph_001
@@ -1411,6 +1413,1518 @@ export default function fontTest() {
     it('testOHDrawingGetFontFullDescriptorsFromPath001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorsFromPath001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorsFromPath002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorsFromPath002
+      * @tc.desc   test OHDrawingGetFontFullDescriptorsFromPath002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorsFromPath002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorsFromPath002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorsFromPath003
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorsFromPath003
+      * @tc.desc   test OHDrawingGetFontFullDescriptorsFromPath003
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorsFromPath003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorsFromPath003();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorAttributeString001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorAttributeString001
+      * @tc.desc   test OHDrawingGetFontFullDescriptorAttributeString001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorAttributeString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorAttributeString001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorAttributeString002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorAttributeString002
+      * @tc.desc   test OHDrawingGetFontFullDescriptorAttributeString002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorAttributeString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorAttributeString002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorAttributeString003
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorAttributeString003
+      * @tc.desc   test OHDrawingGetFontFullDescriptorAttributeString003
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorAttributeString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorAttributeString003();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorByIndex001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorByIndex001
+      * @tc.desc   test OHDrawingGetFontFullDescriptorByIndex001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorByIndex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorByIndex001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorAttributeInt001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorAttributeInt001
+      * @tc.desc   test OHDrawingGetFontFullDescriptorAttributeInt001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorAttributeInt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorAttributeInt001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorAttributeInt002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorAttributeInt002
+      * @tc.desc   test OHDrawingGetFontFullDescriptorAttributeInt002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorAttributeInt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorAttributeInt002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorFromStream001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorFromStream001
+      * @tc.desc   test OHDrawingGetFontFullDescriptorFromStream001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorFromStream001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorFromStream001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorFromStream002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorFromStream002
+      * @tc.desc   test OHDrawingGetFontFullDescriptorFromStream002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorFromStream002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorFromStream002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetFontFullDescriptorFromStream003
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorFromStream003
+      * @tc.desc   test OHDrawingGetFontFullDescriptorFromStream003
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetFontFullDescriptorFromStream003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorFromStream003();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    // cpp3中的用例
+    /**
+      * @tc.name   testOHDrawingTypographyIsEllipsized001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyIsEllipsized001
+      * @tc.desc   Test OHDrawingTypographyIsEllipsized001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyIsEllipsized001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyIsEllipsized001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyIsEllipsized002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyIsEllipsized002
+      * @tc.desc   Test OHDrawingTypographyIsEllipsized002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyIsEllipsized002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyIsEllipsized002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyIsEllipsized003
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyIsEllipsized003
+      * @tc.desc   Test OHDrawingTypographyIsEllipsized003
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyIsEllipsized003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyIsEllipsized003();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyIsLineUnlimited001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyIsLineUnlimited001
+      * @tc.desc   Test OHDrawingTypographyIsLineUnlimited001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyIsLineUnlimited001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyIsLineUnlimited001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyIsLineUnlimited002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyIsLineUnlimited002
+      * @tc.desc   Test OHDrawingTypographyIsLineUnlimited002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyIsLineUnlimited002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyIsLineUnlimited002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyIsLineUnlimited003
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyIsLineUnlimited003
+      * @tc.desc   Test OHDrawingTypographyIsLineUnlimited003
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyIsLineUnlimited003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyIsLineUnlimited003();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingFontParserGetFontByName001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingFontParserGetFontByName001
+      * @tc.desc   Test OHDrawingFontParserGetFontByName001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingFontParserGetFontByName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingFontParserGetFontByName001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingCreateFontDescriptor001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingCreateFontDescriptor001
+      * @tc.desc   Test OHDrawingCreateFontDescriptor001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingCreateFontDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingCreateFontDescriptor001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyGetLineTextRange001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyGetLineTextRange001
+      * @tc.desc   Test OHDrawingTypographyGetLineTextRange001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyGetLineTextRange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyGetLineTextRange001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyGetLineTextRange002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyGetLineTextRange002
+      * @tc.desc   Test OHDrawingTypographyGetLineTextRange002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyGetLineTextRange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyGetLineTextRange002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyGetLineTextRange003
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyGetLineTextRange003
+      * @tc.desc   Test OHDrawingTypographyGetLineTextRange003
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyGetLineTextRange003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyGetLineTextRange003();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTextVerticalAlignment001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTextVerticalAlignment001
+      * @tc.desc   Test OHDrawingTextVerticalAlignment001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTextVerticalAlignment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTextVerticalAlignment001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTextVerticalAlignment002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTextVerticalAlignment002
+      * @tc.desc   Test OHDrawingTextVerticalAlignment002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTextVerticalAlignment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTextVerticalAlignment002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTypographyStyleAttributeInt002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeInt002
+      * @tc.desc   Test OHDrawingSetTypographyStyleAttributeInt002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTypographyStyleAttributeInt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTypographyStyleAttributeInt002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTypographyStyleAttributeDouble002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDouble002
+      * @tc.desc   Test OHDrawingSetTypographyStyleAttributeDouble002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTypographyStyleAttributeDouble002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTypographyStyleAttributeDouble002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTypographyStyleAttributeDouble003
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDouble003
+      * @tc.desc   Test OHDrawingSetTypographyStyleAttributeDouble003
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTypographyStyleAttributeDouble003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTypographyStyleAttributeDouble003();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetTextStyleAttributeInt001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTextStyleAttributeInt001
+      * @tc.desc   Test OHDrawingGetTextStyleAttributeInt001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetTextStyleAttributeInt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetTextStyleAttributeInt001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetRunGlyphAdvanceByIndex001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetRunGlyphAdvanceByIndex001
+      * @tc.desc   Test OHDrawingGetRunGlyphAdvanceByIndex001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetRunGlyphAdvanceByIndex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetRunGlyphAdvanceByIndex001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingLineTypographyCreateLine007
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingLineTypographyCreateLine007
+      * @tc.desc   Test OHDrawingLineTypographyCreateLine007
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingLineTypographyCreateLine007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingLineTypographyCreateLine007();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingUnregisterFont001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingUnregisterFont001
+      * @tc.desc   Test OHDrawingUnregisterFont001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingUnregisterFont001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingUnregisterFont001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingFontStyleSetGetStyle001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingFontStyleSetGetStyle001
+      * @tc.desc   Test OHDrawingFontStyleSetGetStyle001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingFontStyleSetGetStyle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingFontStyleSetGetStyle001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyStyleIsHintEnabled001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyStyleIsHintEnabled001
+      * @tc.desc   Test OHDrawingTypographyStyleIsHintEnabled001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyStyleIsHintEnabled001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyStyleIsHintEnabled001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyStyleIsHintEnabled002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyStyleIsHintEnabled002
+      * @tc.desc   Test OHDrawingTypographyStyleIsHintEnabled002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyStyleIsHintEnabled002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyStyleIsHintEnabled002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetSystemFontConfigInfo001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetSystemFontConfigInfo001
+      * @tc.desc   Test OHDrawingGetSystemFontConfigInfo001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetSystemFontConfigInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetSystemFontConfigInfo001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTypographyStyleAttributeDouble007
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDouble007
+      * @tc.desc   Test OHDrawingSetTypographyStyleAttributeDouble007
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTypographyStyleAttributeDouble007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTypographyStyleAttributeDouble007();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTypographyStyleAttributeInt005
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeInt005
+      * @tc.desc   Test OHDrawingSetTypographyStyleAttributeInt005
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTypographyStyleAttributeInt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTypographyStyleAttributeInt005();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTextStyleAttributeInt002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTextStyleAttributeInt002
+      * @tc.desc   Test OHDrawingSetTextStyleAttributeInt002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTextStyleAttributeInt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTextStyleAttributeInt002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTextStyleAttributeInt003
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTextStyleAttributeInt003
+      * @tc.desc   Test OHDrawingSetTextStyleAttributeInt003
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTextStyleAttributeInt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTextStyleAttributeInt003();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetTextStyleAttributeInt002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTextStyleAttributeInt002
+      * @tc.desc   Test OHDrawingGetTextStyleAttributeInt002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetTextStyleAttributeInt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetTextStyleAttributeInt002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTypographyStyleAttributeDouble004
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDouble004
+      * @tc.desc   Test OHDrawingSetTypographyStyleAttributeDouble004
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTypographyStyleAttributeDouble004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTypographyStyleAttributeDouble004();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTypographyStyleAttributeDouble005
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDouble005
+      * @tc.desc   Test OHDrawingSetTypographyStyleAttributeDouble005
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTypographyStyleAttributeDouble005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTypographyStyleAttributeDouble005();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTypographyStyleAttributeDouble006
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDouble006
+      * @tc.desc   Test OHDrawingSetTypographyStyleAttributeDouble006
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTypographyStyleAttributeDouble006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTypographyStyleAttributeDouble006();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetTypographyStyleAttributeDouble001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeDouble001
+      * @tc.desc   Test OHDrawingGetTypographyStyleAttributeDouble001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetTypographyStyleAttributeDouble001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetTypographyStyleAttributeDouble001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetTypographyStyleAttributeInt001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeInt001
+      * @tc.desc   Test OHDrawingGetTypographyStyleAttributeInt001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetTypographyStyleAttributeInt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetTypographyStyleAttributeInt001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTypographyStyleAttributeInt003
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeInt003
+      * @tc.desc   Test OHDrawingSetTypographyStyleAttributeInt003
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTypographyStyleAttributeInt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTypographyStyleAttributeInt003();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingSetTypographyStyleAttributeInt004
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeInt004
+      * @tc.desc   Test OHDrawingSetTypographyStyleAttributeInt004
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingSetTypographyStyleAttributeInt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingSetTypographyStyleAttributeInt004();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetTextStyleAttributeDouble001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTextStyleAttributeDouble001
+      * @tc.desc   Test OHDrawingGetTextStyleAttributeDouble001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetTextStyleAttributeDouble001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetTextStyleAttributeDouble001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetTypographyStyleAttributeInt002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeInt002
+      * @tc.desc   Test OHDrawingGetTypographyStyleAttributeInt002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetTypographyStyleAttributeInt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetTypographyStyleAttributeInt002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetTypographyStyleAttributeInt003
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeInt003
+      * @tc.desc   Test OHDrawingGetTypographyStyleAttributeInt003
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetTypographyStyleAttributeInt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetTypographyStyleAttributeInt003();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyStyleGetStrutStyle001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyStyleGetStrutStyle001
+      * @tc.desc   Test OHDrawingTypographyStyleGetStrutStyle001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyStyleGetStrutStyle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyStyleGetStrutStyle001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyTextlineStyleGetFontWeight001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyTextlineStyleGetFontWeight001
+      * @tc.desc   Test OHDrawingTypographyTextlineStyleGetFontWeight001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyTextlineStyleGetFontWeight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyTextlineStyleGetFontWeight001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyTextlineStyleGetFontStyle001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyTextlineStyleGetFontStyle001
+      * @tc.desc   Test OHDrawingTypographyTextlineStyleGetFontStyle001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyTextlineStyleGetFontStyle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyTextlineStyleGetFontStyle001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingTypographyGetTextAlign001
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyGetTextAlign001
+      * @tc.desc   Test OHDrawingTypographyGetTextAlign001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingTypographyGetTextAlign001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingTypographyGetTextAlign001();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+      * @tc.name   testOHDrawingGetTextTabAlignment002
+      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTextTabAlignment002
+      * @tc.desc   Test OHDrawingGetTextTabAlignment002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testOHDrawingGetTextTabAlignment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.oHDrawingGetTextTabAlignment002();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+        
+    // cpp4中的用例
+    /**
+     * @tc.name   testOHDrawingTextStyleGetFontMetrics001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetFontMetrics001
+     * @tc.desc   test OHDrawingTextStyleGetFontMetrics001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetFontMetrics001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetFontMetrics001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetFontMetrics002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetFontMetrics002
+     * @tc.desc   test OHDrawingTextStyleGetFontMetrics002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetFontMetrics002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetFontMetrics002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetFontMetrics003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetFontMetrics003
+     * @tc.desc   test OHDrawingTextStyleGetFontMetrics003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetFontMetrics003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetFontMetrics003();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetFontMetrics004
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetFontMetrics004
+     * @tc.desc   test OHDrawingTextStyleGetFontMetrics004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetFontMetrics004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetFontMetrics004();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetFontMetrics005
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetFontMetrics005
+     * @tc.desc   test OHDrawingTextStyleGetFontMetrics005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetFontMetrics005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetFontMetrics005();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetLineInfo001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetLineInfo001
+     * @tc.desc   test OHDrawingTypographyGetLineInfo001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetLineInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetLineInfo001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetLineInfo002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetLineInfo002
+     * @tc.desc   test OHDrawingTypographyGetLineInfo002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetLineInfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetLineInfo002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetLineInfo003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetLineInfo003
+     * @tc.desc   test OHDrawingTypographyGetLineInfo003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetLineInfo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetLineInfo003();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetLineInfo004
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetLineInfo004
+     * @tc.desc   test OHDrawingTypographyGetLineInfo004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetLineInfo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetLineInfo004();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetLineInfo005
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetLineInfo005
+     * @tc.desc   test OHDrawingTypographyGetLineInfo005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetLineInfo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetLineInfo005();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetShadowWithIndex001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetShadowWithIndex001
+     * @tc.desc   test OHDrawingTextStyleGetShadowWithIndex001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetShadowWithIndex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetShadowWithIndex001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetShadowWithIndex002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetShadowWithIndex002
+     * @tc.desc   test OHDrawingTextStyleGetShadowWithIndex002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetShadowWithIndex002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetShadowWithIndex002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetShadowWithIndex003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetShadowWithIndex003
+     * @tc.desc   test OHDrawingTextStyleGetShadowWithIndex003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetShadowWithIndex003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetShadowWithIndex003();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetShadowWithIndex004
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetShadowWithIndex004
+     * @tc.desc   test OHDrawingTextStyleGetShadowWithIndex004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetShadowWithIndex004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetShadowWithIndex004();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyTextGetHeightBehavior001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyTextGetHeightBehavior001
+     * @tc.desc   test OHDrawingTypographyTextGetHeightBehavior001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyTextGetHeightBehavior001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyTextGetHeightBehavior001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyTextGetHeightBehavior002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyTextGetHeightBehavior002
+     * @tc.desc   test OHDrawingTypographyTextGetHeightBehavior002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyTextGetHeightBehavior002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyTextGetHeightBehavior002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetDecorationStyle001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetDecorationStyle001
+     * @tc.desc   test OHDrawingTextStyleGetDecorationStyle001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetDecorationStyle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetDecorationStyle001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetDecorationStyle002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetDecorationStyle002
+     * @tc.desc   test OHDrawingTextStyleGetDecorationStyle002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetDecorationStyle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetDecorationStyle002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetFontWeight001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetFontWeight001
+     * @tc.desc   test OHDrawingTextStyleGetFontWeight001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetFontWeight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetFontWeight001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetFontWeight002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetFontWeight002
+     * @tc.desc   test OHDrawingTextStyleGetFontWeight002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetFontWeight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetFontWeight002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetFontStyle001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetFontStyle001
+     * @tc.desc   test OHDrawingTextStyleGetFontStyle001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetFontStyle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetFontStyle001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetFontStyle002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetFontStyle002
+     * @tc.desc   test OHDrawingTextStyleGetFontStyle002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetFontStyle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetFontStyle002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetBaseline001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetBaseline001
+     * @tc.desc   test OHDrawingTextStyleGetBaseline001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetBaseline001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetBaseline001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetBaseline002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetBaseline002
+     * @tc.desc   test OHDrawingTextStyleGetBaseline002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetBaseline002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetBaseline002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetHalfLeading001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetHalfLeading001
+     * @tc.desc   test OHDrawingTextStyleGetHalfLeading001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetHalfLeading001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetHalfLeading001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleGetHalfLeading002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleGetHalfLeading002
+     * @tc.desc   test OHDrawingTextStyleGetHalfLeading002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleGetHalfLeading002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleGetHalfLeading002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleIsPlaceholder001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleIsPlaceholder001
+     * @tc.desc   test OHDrawingTextStyleIsPlaceholder001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleIsPlaceholder001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleIsPlaceholder001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextStyleIsPlaceholder002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTextStyleIsPlaceholder002
+     * @tc.desc   test OHDrawingTextStyleIsPlaceholder002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextStyleIsPlaceholder002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextStyleIsPlaceholder002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyStyleGetEffectiveAlignment001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyStyleGetEffectiveAlignment001
+     * @tc.desc   test OHDrawingTypographyStyleGetEffectiveAlignment001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyStyleGetEffectiveAlignment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyStyleGetEffectiveAlignment001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyStyleGetEffectiveAlignment002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyStyleGetEffectiveAlignment002
+     * @tc.desc   test OHDrawingTypographyStyleGetEffectiveAlignment002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyStyleGetEffectiveAlignment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyStyleGetEffectiveAlignment002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyDidExceedMaxLines001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyDidExceedMaxLines001
+     * @tc.desc   test OHDrawingTypographyDidExceedMaxLines001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyDidExceedMaxLines001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyDidExceedMaxLines001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyDidExceedMaxLines002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyDidExceedMaxLines002
+     * @tc.desc   test OHDrawingTypographyDidExceedMaxLines002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyDidExceedMaxLines002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyDidExceedMaxLines002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyDidExceedMaxLines003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyDidExceedMaxLines003
+     * @tc.desc   test OHDrawingTypographyDidExceedMaxLines003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyDidExceedMaxLines003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyDidExceedMaxLines003();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetRectsForRange001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetRectsForRange001
+     * @tc.desc   test OHDrawingTypographyGetRectsForRange001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetRectsForRange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetRectsForRange001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetGlyphPositionAtCoordinate001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetGlyphPositionAtCoordinate001
+     * @tc.desc   test OHDrawingTypographyGetGlyphPositionAtCoordinate001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetGlyphPositionAtCoordinate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetGlyphPositionAtCoordinate001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetGlyphPositionAtCoordinate002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetGlyphPositionAtCoordinate002
+     * @tc.desc   test OHDrawingTypographyGetGlyphPositionAtCoordinate002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetGlyphPositionAtCoordinate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetGlyphPositionAtCoordinate002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetGlyphPositionAtCoordinateWithCluster001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetGlyphPositionAtCoordinateWithCluster001
+     * @tc.desc   test OHDrawingTypographyGetGlyphPositionAtCoordinateWithCluster001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetGlyphPositionAtCoordinateWithCluster001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetGlyphPositionAtCoordinateWithCluster001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetWordBoundary001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetWordBoundary001
+     * @tc.desc   test OHDrawingTypographyGetWordBoundary001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetWordBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetWordBoundary001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetLineMetricsAt001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetLineMetricsAt001
+     * @tc.desc   test OHDrawingTypographyGetLineMetricsAt001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetLineMetricsAt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetLineMetricsAt001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetLineMetricsAt002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetLineMetricsAt002
+     * @tc.desc   test OHDrawingTypographyGetLineMetricsAt002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetLineMetricsAt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetLineMetricsAt002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetLineMetricsAt003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetLineMetricsAt003
+     * @tc.desc   test OHDrawingTypographyGetLineMetricsAt003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetLineMetricsAt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetLineMetricsAt003();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetLineMetricsAt004
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FONT_OHDrawingTypographyGetLineMetricsAt004
+     * @tc.desc   test OHDrawingTypographyGetLineMetricsAt004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetLineMetricsAt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetLineMetricsAt004();
       expect(result).assertEqual(0);
       done();
     });

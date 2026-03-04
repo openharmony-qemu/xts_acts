@@ -111,7 +111,7 @@ export default function applicationContextTest() {
     /**
      * @tc.name   TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguage0200
      * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200
-     * @tc.desc   Application call interface to set language
+     * @tc.desc   Application call interface to set language is ''
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -122,17 +122,14 @@ export default function applicationContextTest() {
       try {
         let applicationContext: common.ApplicationContext = testAbilityContext?.getApplicationContext();
         let language = testAbilityContext.config.language;
+        applicationContext.setLanguage('');
         if (language === 'zh-cn') {
-          applicationContext.setLanguage('en-us');
-          sleep(2000);
-          expect(testAbilityContext.config.language === 'en-us');
+          sleep(1000);
+          expect(testAbilityContext.config.language === 'zh-cn').assertTrue();
         } else {
-          applicationContext.setLanguage('zh-cn');
-          sleep(2000);
-          expect(testAbilityContext.config.language === 'zh-cn');
-        }
-        applicationContext.setLanguage(language);
-        sleep(2000);
+          sleep(1000);
+          expect(testAbilityContext.config.language != '').assertTrue();
+        } 
         done();
       } catch (error) {
         hilog.error(0x0000, 'applicationContextTag', '%{public}s',
@@ -162,6 +159,32 @@ export default function applicationContextTest() {
         hilog.error(0x0000, 'applicationContextTag', '%{public}s',
           'TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguageMode0300 failed ' + JSON.stringify(error));
         expect(error.code).assertEqual(PARAMETER_ERROR);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testSetLanguageEmptyString0100
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0400
+     * @tc.desc   The application parameter is empty string calling the interface to set the language
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetLanguageEmptyString0100', Level.LEVEL0, async (done: Function) => {
+      hilog.info(0x0000, 'applicationContextTag', '%{public}s',
+        'testSetLanguageEmptyString0100 begin');
+      try {
+        let applicationContext: common.ApplicationContext = testAbilityContext?.getApplicationContext();
+        let result = applicationContext.setLanguage('');
+        await sleep(1000)
+        hilog.error(0x0000, 'applicationContextTag', '%{public}s','testSetLanguageEmptyString0100  ' + testAbilityContext?.config?.language);
+        expect(result).assertEqual(undefined);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'applicationContextTag', '%{public}s',
+          'testSetLanguageEmptyString0100 failed ' + JSON.stringify(error));
+        expect().assertFail();
         done();
       }
     });

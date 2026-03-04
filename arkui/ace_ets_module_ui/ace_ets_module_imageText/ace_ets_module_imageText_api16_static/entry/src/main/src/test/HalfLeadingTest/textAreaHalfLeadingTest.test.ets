@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function textAreaHalfLeadingTest() {
   describe('textAreaHalfLeadingTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaHalfLeadingTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

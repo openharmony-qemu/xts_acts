@@ -67,3 +67,4 @@ export const normalAVScreenCaptureCreate: () => number;
 export const normalAVScreenCaptureCreateContentFilter: () => number;
 export const normalAVScreenCaptureAcquireVideoBuffer1: () => number;
 export const normalAVScreenCaptureStrategy1: () => number;
+export const normalMultiDisplayCaptureCapabilityTest: () => number;

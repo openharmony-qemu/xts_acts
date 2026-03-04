@@ -42,7 +42,7 @@ function sleep(time: int):Promise<int> {
 
 export default function Toggle3Jsunit() {
   describe('Toggle3Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

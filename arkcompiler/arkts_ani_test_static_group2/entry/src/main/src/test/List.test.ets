@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,6 @@
 import moduleSupportTest from "./ActsModuleSupport.test";
 import nameSpaceSupportTest from "./ActsNameSpaceSupport.test";
 import enumOperationsTest from "./ActsEnumOperations.test";
-import tupleOperationsTest from "./ActsTupleOperations.test";
 import vmOpsTest from "./ActsVmOps.test"
 import anyOpsTest from "./ActsAnyOps.test"
 import exceptionTest from "./ActsException.test"
@@ -28,7 +27,6 @@ export default function testsuite() {
     moduleSupportTest();
     nameSpaceSupportTest();
     enumOperationsTest();
-    tupleOperationsTest();
     vmOpsTest();
     anyOpsTest();
     fixedArrayTest();

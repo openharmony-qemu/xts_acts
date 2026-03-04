@@ -384,6 +384,151 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetBundleInfoEmptyNamePromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2050
+     * @tc.desc   Test getBundleInfo with empty string bundleName. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoEmptyNamePromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+       let bundleOptions = { userId: userId };
+        await demo.getBundleInfo("", demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, bundleOptions).then(datainfo => {
+            console.info("testGetBundleInfoEmptyNamePromise success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }).catch(err => {
+            console.info("testGetBundleInfoEmptyNamePromise err" + JSON.stringify(err));
+            expect(err).assertEqual(1);
+            done();
+        });
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoNullNamePromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2051
+     * @tc.desc   Test getBundleInfo with null bundleName. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoNullNamePromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+           let bundleOptions = { userId: userId };
+        await demo.getBundleInfo(null, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES ,bundleOptions).then(datainfo => {
+            console.info("testGetBundleInfoNullNamePromise success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }).catch(err => {
+            console.info("testGetBundleInfoNullNamePromise err" + JSON.stringify(err));
+            expect(err).assertEqual(1);
+            done();
+        });
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoUndefinedNamePromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2052
+     * @tc.desc   Test getBundleInfo with undefined bundleName. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoUndefinedNamePromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+       let bundleOptions = { userId: userId };
+        await demo.getBundleInfo(undefined, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, bundleOptions).then(datainfo => {
+            console.info("testGetBundleInfoUndefinedNamePromise success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }).catch(err => {
+            console.info("testGetBundleInfoUndefinedNamePromise err" + JSON.stringify(err));
+            expect(err).assertEqual(1);
+            done();
+        });
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoNullFlagsPromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2053
+     * @tc.desc   Test getBundleInfo with null bundleFlags. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoNullFlagsPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        let bundleOptions = { userId: userId };
+        await demo.getBundleInfo(NAME1, null, bundleOptions).then(datainfo => {
+            console.info("testGetBundleInfoNullFlagsPromise success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }).catch(err => {
+            console.info("testGetBundleInfoNullFlagsPromise err" + JSON.stringify(err));
+            expect(err).assertEqual(1);
+            done();
+        });
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoUndefinedFlagsPromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2054
+     * @tc.desc   Test getBundleInfo with undefined bundleFlags. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoUndefinedFlagsPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+         let bundleOptions = { userId: userId };
+        await demo.getBundleInfo(NAME1, undefined ,bundleOptions).then(datainfo => {
+            console.info("testGetBundleInfoUndefinedFlagsPromise success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }).catch(err => {
+            console.info("testGetBundleInfoUndefinedFlagsPromise err" + JSON.stringify(err));
+            expect(err).assertEqual(1);
+            done();
+        });
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoWithNullOptionsPromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2055
+     * @tc.desc   Test getBundleInfo with null options. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoWithNullOptionsPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        await demo.getBundleInfo(NAME1, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, null).then(datainfo => {
+            console.info("testGetBundleInfoWithNullOptionsPromise success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }).catch(err => {
+            console.info("testGetBundleInfoWithNullOptionsPromise err" + JSON.stringify(err));
+            expect(err).assertEqual(1);
+            done();
+        });
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoWithUndefinedOptionsPromise
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2056
+     * @tc.desc   Test getBundleInfo with undefined options. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoWithUndefinedOptionsPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        await demo.getBundleInfo(NAME1, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, undefined).then(datainfo => {
+            console.info("testGetBundleInfoWithUndefinedOptionsPromise success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }).catch(err => {
+            console.info("testGetBundleInfoWithUndefinedOptionsPromise err" + JSON.stringify(err));
+            expect(err).assertEqual(1);
+            done();
+        });
+    })
+
+    /**
      * @tc.name   testGetBundleInfoInvalidParamCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2140
      * @tc.desc   Test getBundleInfo interfaces with none hap. (by callback)
@@ -402,6 +547,121 @@ describe('ActsBundleManagerTest', function () {
             }
             console.info("testGetBundleInfoInvalidParamCallback success" + JSON.stringify(datainfo));
             expect(datainfo).assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoEmptyNameCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2150
+     * @tc.desc   Test getBundleInfo with empty string bundleName. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoEmptyNameCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        await demo.getBundleInfo("", demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoEmptyNameCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoEmptyNameCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoNullNameCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2151
+     * @tc.desc   Test getBundleInfo with null bundleName. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoNullNameCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        await demo.getBundleInfo(null, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoNullNameCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoNullNameCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoUndefinedNameCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2152
+     * @tc.desc   Test getBundleInfo with undefined bundleName. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoUndefinedNameCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        await demo.getBundleInfo(undefined, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoUndefinedNameCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoUndefinedNameCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoNullFlagsCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2153
+     * @tc.desc   Test getBundleInfo with null bundleFlags. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoNullFlagsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        await demo.getBundleInfo(NAME1, null, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoNullFlagsCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoNullFlagsCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoUndefinedFlagsCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2154
+     * @tc.desc   Test getBundleInfo with undefined bundleFlags. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoUndefinedFlagsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        await demo.getBundleInfo(NAME1, undefined, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoUndefinedFlagsCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoUndefinedFlagsCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
             done();
         }
     })
@@ -653,6 +913,172 @@ describe('ActsBundleManagerTest', function () {
             expect(dataInfo).assertFail();
             done();
         });
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoEmptyNameWithOptionsCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2400
+     * @tc.desc   Test getBundleInfo with empty string bundleName and options. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoEmptyNameWithOptionsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        let bundleOptions = { userId: userId };
+        await demo.getBundleInfo("", demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, bundleOptions, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoEmptyNameWithOptionsCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoEmptyNameWithOptionsCallback success" + JSON.stringify(datainfo));
+            expect(datainfo).assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoNullNameWithOptionsCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2410
+     * @tc.desc   Test getBundleInfo with null bundleName and options. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoNullNameWithOptionsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        let bundleOptions = { userId: userId };
+        await demo.getBundleInfo(null, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, bundleOptions, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoNullNameWithOptionsCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoNullNameWithOptionsCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoUndefinedNameWithOptionsCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2420
+     * @tc.desc   Test getBundleInfo with undefined bundleName and options. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoUndefinedNameWithOptionsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        let bundleOptions = { userId: userId };
+        await demo.getBundleInfo(undefined, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, bundleOptions, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoUndefinedNameWithOptionsCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoUndefinedNameWithOptionsCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoNullFlagsWithOptionsCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2430
+     * @tc.desc   Test getBundleInfo with null bundleFlags and options. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoNullFlagsWithOptionsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        let bundleOptions = { userId: userId };
+        await demo.getBundleInfo(NAME1, null, bundleOptions, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoNullFlagsWithOptionsCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoNullFlagsWithOptionsCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoUndefinedFlagsWithOptionsCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2440
+     * @tc.desc   Test getBundleInfo with undefined bundleFlags and options. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoUndefinedFlagsWithOptionsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        let bundleOptions = { userId: userId };
+        await demo.getBundleInfo(NAME1, undefined, bundleOptions, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoUndefinedFlagsWithOptionsCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoUndefinedFlagsWithOptionsCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoWithNullOptionsCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2450
+     * @tc.desc   Test getBundleInfo with null options. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoWithNullOptionsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        await demo.getBundleInfo(NAME1, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, null, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoWithNullOptionsCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoWithNullOptionsCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   testGetBundleInfoWithUndefinedOptionsCallback
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2460
+     * @tc.desc   Test getBundleInfo with undefined options. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetBundleInfoWithUndefinedOptionsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        await demo.getBundleInfo(NAME1, demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, undefined, OnReceiveEvent);
+        function OnReceiveEvent(err, datainfo) {
+            if (err) {
+                console.info("testGetBundleInfoWithUndefinedOptionsCallback err" + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+                return;
+            }
+            console.info("testGetBundleInfoWithUndefinedOptionsCallback success" + JSON.stringify(datainfo));
+            expect().assertFail();
+            done();
+        }
     })
 
 

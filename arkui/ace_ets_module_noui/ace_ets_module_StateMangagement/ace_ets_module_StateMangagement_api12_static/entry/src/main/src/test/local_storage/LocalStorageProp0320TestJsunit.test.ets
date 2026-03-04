@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function LocalStorageProp0320TestJsunit() {
   describe('LocalStorageProp0320TestJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LocalStorageProp0320TestJsunit beforeEach start");
 
 

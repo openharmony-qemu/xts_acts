@@ -276,6 +276,32 @@ export default function SandboxAPIStaticTest() {
             }
         })
 
+        /**
+         * @tc.name   QueryAppKeyStateTest0100
+         * @tc.number QueryAppKeyStateTest0100
+         * @tc.desc   screenLockFileManager releaseAccess ReleaseStatus.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('QueryAppKeyStateTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            try {
+                let keyStatus = screenLockFileManager.queryAppKeyState();
+                console.info('QueryAppKeyStateTest0100 keyStatus is: ' + keyStatus);
+                expect(keyStatus).assertEqual(screenLockFileManager.KeyStatus.KEY_NOT_EXIST);
+                done();
+            } catch (error) {
+                error = error as BusinessError;
+                if (error.code == 801) {
+                    done();
+                } else {
+                    hilog.info(domain, tag, 'QueryAppKeyStateTest0100 err.code is: ' + error.code)
+                    expect(error.code).assertEqual(29300003);
+                    done();
+                }
+            }
+        })
+
     })
 
 }

@@ -213,5 +213,161 @@ describe('statfs_test', function () {
         done();
       }
     });
+
+    /**
+      * @tc.name   statfs_test_get_free_bytes_callback_005
+      * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0050
+      * @tc.desc   Test getFreeBytes() callback interfaces, When the path is null.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('statfs_test_get_free_bytes_callback_005', Level.LEVEL0, async function (done) {
+        try {
+          statfs.getFreeBytes(null, (err, number) => {
+            expect(err.message == "Invalid path").assertTrue();
+            done();
+          });
+        } catch (e) {
+          console.info('statfs_test_get_free_bytes_callback_005 has failed for ' + e);
+          expect(e.message == "Invalid path").assertTrue();
+          done();
+        }
+      });
+  
+      /**
+      * @tc.name   statfs_test_get_free_bytes_callback_006
+      * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0060
+      * @tc.desc   Test getFreeBytes() callback interfaces, When the path is undefined.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('statfs_test_get_free_bytes_callback_006', Level.LEVEL0, async function (done) {
+        try {
+          statfs.getFreeBytes(undefined, (err, number) => {
+            expect(err.message == "Invalid path").assertTrue();
+            done();
+          });
+        } catch (e) {
+          console.info('statfs_test_get_free_bytes_callback_006 has failed for ' + e);
+          expect(e.message == "Invalid path").assertTrue();
+          done();
+        }
+      });
+  
+      /**
+      * @tc.name   statfs_test_get_free_bytes_promise_005
+      * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0051
+      * @tc.desc   Test getFreeBytes() promise interfaces, When the path is null.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('statfs_test_get_free_bytes_promise_005', Level.LEVEL0, async function (done) {
+        try {
+          await statfs.getFreeBytes(null);
+        } catch (err) {
+          console.info('statfs_test_get_free_bytes_promise_005 has failed for ' + err);
+          expect(err.message == "Invalid path").assertTrue();
+          done();
+        }
+      });
+  
+      /**
+      * @tc.name   statfs_test_get_free_bytes_promise_006
+      * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0061
+      * @tc.desc   Test getFreeBytes() promise interfaces, When the path is undefined.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('statfs_test_get_free_bytes_promise_006', Level.LEVEL0, async function (done) {
+        try {
+          await statfs.getFreeBytes(undefined);
+        } catch (err) {
+          console.info('statfs_test_get_free_bytes_promise_006 has failed for ' + err);
+          expect(err.message == "Invalid path").assertTrue();
+          done();
+        }
+      });
+  
+      /**
+      * @tc.name   statfs_test_get_total_bytes_callback_005
+      * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0050
+      * @tc.desc   Test getTotalBytes() callback interfaces, When the path is null.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('statfs_test_get_total_bytes_callback_005', Level.LEVEL0, async function (done) {
+        try {
+          statfs.getTotalBytes(null, (err, number) => {
+            expect(err.message == "Invalid path").assertTrue();
+            done();
+          });
+        } catch (e) {
+          console.info('statfs_test_get_total_bytes_callback_005 has failed for ' + e);
+          expect(e.message == "Invalid path").assertTrue();
+          done();
+        }
+      });
+  
+      /**
+      * @tc.name   statfs_test_get_total_bytes_callback_006
+      * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0060
+      * @tc.desc   Test getTotalBytes() callback interfaces, When the path is undefined.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('statfs_test_get_total_bytes_callback_006', Level.LEVEL0, async function (done) {
+        try {
+          statfs.getTotalBytes(undefined, (err, number) => {
+            expect(err.message == "Invalid path").assertTrue();
+            done();
+          });
+        } catch (e) {
+          console.info('statfs_test_get_total_bytes_callback_006 has failed for ' + e);
+          expect(e.message == "Invalid path").assertTrue();
+          done();
+        }
+      });
+  
+      /**
+      * @tc.name   statfs_test_get_total_bytes_promise_005
+      * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0051
+      * @tc.desc   Test getTotalBytes() promise interfaces, When the path is null.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('statfs_test_get_total_bytes_promise_005', Level.LEVEL0, async function (done) {
+        try {
+          await statfs.getTotalBytes(null);
+        } catch (err) {
+          console.info('statfs_test_get_total_bytes_promise_005 has failed for ' + err);
+          expect(err.message == "Invalid path").assertTrue();
+          done();
+        }
+      });
+  
+      /**
+      * @tc.name   statfs_test_get_total_bytes_promise_006
+      * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0061
+      * @tc.desc   Test getTotalBytes() promise interfaces, When the path is undefined.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('statfs_test_get_total_bytes_promise_006', Level.LEVEL0, async function (done) {
+        try {
+          await statfs.getTotalBytes(undefined);
+        } catch (err) {
+          console.info('statfs_test_get_total_bytes_promise_006 has failed for ' + err);
+          expect(err.message == "Invalid path").assertTrue();
+          done();
+        }
+      });
 });
 }

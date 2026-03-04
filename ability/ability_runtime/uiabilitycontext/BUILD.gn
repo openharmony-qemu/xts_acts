@@ -19,6 +19,7 @@ group("uiabilitycontext") {
     deps = [
       "actscompletionhandlerforatomicservicetest:ActsCompletionHandlerForAtomicServiceTest",
       "actspluginabilitytest:ActsPluginAbilityTest",
+      "actspluginabilityteststatic:ActsPluginAbilityStaticTest",
       "actsrestartwithwindowrely:ActsRestartWithWindowRely",
       "actsrestartwithwindowtest:ActsRestartWithWindowTest",
       "actssetabilityinstanceinforely:ActsSetAbilityInstanceInfoRely",

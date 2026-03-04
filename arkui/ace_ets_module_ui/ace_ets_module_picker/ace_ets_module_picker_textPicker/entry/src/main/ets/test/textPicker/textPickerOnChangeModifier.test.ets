@@ -65,12 +65,12 @@ export default function textPickerOnChangeModifierTest() {
         let switchButton = await driver.findComponent(ON.id('LunarBtn'));
         await switchButton.click();
         await Utils.sleep(1000);
-        let datePicker = Utils.getComponentRect('TextPicker');
-        let top = datePicker.top
-        let bottom = datePicker.bottom
-        let right = datePicker.right
+        let textPicker = Utils.getComponentRect('TextPicker');
+        let top = textPicker.top
+        let bottom = textPicker.bottom
+        let right = textPicker.right
         let middle = (bottom-top) / 2 + top
-        let left =datePicker.left
+        let left = textPicker.left
         await driver.swipe(Math.round(globalThis.winLeft+(right-left)/2+left), Math.round(globalThis.winTop+middle), Math.round(globalThis.winLeft+(right-left)/2+left),
         Math.round(0));
         await Utils.sleep(5000);
@@ -96,14 +96,11 @@ export default function textPickerOnChangeModifierTest() {
         let switchButton = await driver.findComponent(ON.id('LunarBtn'));
         await switchButton.click();
         await Utils.sleep(1000);
-        let datePicker = Utils.getComponentRect('TextPicker');
-        let top = datePicker.top
-        let bottom = datePicker.bottom
-        let right = datePicker.right
-        let middle = (bottom-top) / 2 + top
-        let left =datePicker.left
-        await driver.swipe(Math.round(globalThis.winLeft+(right-left)/2+left), Math.round(globalThis.winTop+middle), Math.round(globalThis.winLeft+(right-left)/2+left),
-        Math.round(0));
+
+        let textpicker = await driver.findComponent(ON.id('TextPicker'));
+        let textpickerCenter = await textpicker.getBoundsCenter();
+        await driver.mouseScroll(textpickerCenter, true, 10);
+
         await Utils.sleep(5000);
         let strJsonNew:string = getInspectorByKey('onScrollStopOff');
         console.info("TextPicker_OnChange_Modifier_002 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
