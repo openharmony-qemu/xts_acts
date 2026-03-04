@@ -41,6 +41,7 @@ struct TextAreaInputTestExample {
           .copyOption(CopyOptions.LocalDevice)
           .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
             this.text = 'Text--onDragStart'
+            return {} as DragItemInfo
           })
           .onDragEnd((event: DragEvent, extraParams?: string): void => {
             this.text = 'Text--onDragEnd'
