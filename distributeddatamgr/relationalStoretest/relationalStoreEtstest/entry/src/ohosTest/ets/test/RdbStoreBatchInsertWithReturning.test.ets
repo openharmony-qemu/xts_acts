@@ -1893,7 +1893,7 @@ export default function RdbStoreBatchInsertWithReturning() {
     })
 
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_5000
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5000
      * @tc.name batchInsertWithReturningSync039
      * @tc.desc conflict: ON_CONFLICT_NONE, twice batchInsertWithReturningSync.
      * @tc.size MediumTest
@@ -1928,7 +1928,7 @@ export default function RdbStoreBatchInsertWithReturning() {
     })
 
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_5100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5100
      * @tc.name batchInsertWithReturningSync040
      * @tc.desc conflict: ON_CONFLICT_ABORT, twice batchInsertWithReturningSync.
      * @tc.size MediumTest
@@ -1963,7 +1963,7 @@ export default function RdbStoreBatchInsertWithReturning() {
     })
 
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_5600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5600
      * @tc.name batchInsertWithReturning041
      * @tc.desc conflict: ON_CONFLICT_FAIL, twice batchInsertWithReturning.
      * @tc.size MediumTest
@@ -1998,7 +1998,7 @@ export default function RdbStoreBatchInsertWithReturning() {
     })
 
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_5700
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5700
      * @tc.name batchInsertWithReturning042
      * @tc.desc conflict: ON_CONFLICT_IGNORE, twice batchInsertWithReturning.
      * @tc.size MediumTest
@@ -2033,7 +2033,7 @@ export default function RdbStoreBatchInsertWithReturning() {
     })
 
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_5800
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5800
      * @tc.name batchInsertWithReturning043
      * @tc.desc conflict: ON_CONFLICT_ABORT, twice batchInsertWithReturning.
      * @tc.size MediumTest
