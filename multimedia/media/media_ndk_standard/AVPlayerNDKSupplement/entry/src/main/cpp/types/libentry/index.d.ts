@@ -110,3 +110,4 @@ export const AVPlayerSetSeiReceivedCallbackErr: () => number;
 export const AVMediaSourceLoaderCreate: () => number;
 export const AVPlaybackStrategyDestoy: () => number;
 export const AVPlaybackStrategyDestoyErr: () => number;
+export const AVPlayerOnSubtitleInfoUpdate: (fd: media.AVFileDescriptor, subfd: number) => NdkAVPlayerResult;
