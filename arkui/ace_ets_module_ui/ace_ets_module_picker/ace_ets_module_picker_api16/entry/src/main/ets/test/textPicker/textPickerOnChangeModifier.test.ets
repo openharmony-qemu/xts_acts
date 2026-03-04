@@ -96,13 +96,9 @@ export default function textPickerOnChangeModifierTest() {
         let switchButton = await driver.findComponent(ON.id('LunarBtn'));
         await switchButton.click();
         await Utils.sleep(1000);
-        let textPicker = Utils.getComponentRect('TextPicker');
-        let top = textPicker.top
-        let bottom = textPicker.bottom
-        let right = textPicker.right
-        let middle = (bottom-top) / 2 + top
-        let left = textPicker.left
-        await driver.swipe(Math.round((right-left)/2+left), Math.round(middle), Math.round((right-left)/2+left), Math.round(0));
+        let textpicker = await driver.findComponent(ON.id('TextPicker'));
+        let textpickerCenter = await textpicker.getBoundsCenter();
+        await driver.mouseScroll(textpickerCenter, true, 10);
         await Utils.sleep(5000);
         let strJsonNew:string = getInspectorByKey('onScrollStopOff');
         console.info("TextPicker_OnChange_Modifier_002 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
