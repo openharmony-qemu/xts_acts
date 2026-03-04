@@ -1,5 +1,5 @@
-import actsEmitterCovered from './actsEmitterCoveredTest.test';
-import actsNotificationAnsCovered from './actsNotificationAnsCoveredTest.test';
+import actsEmitterCovered from './ActsEmitterCoveredTest.test';
+import actsNotificationAnsCovered from './ActsNotificationAnsCoveredTest.test';
 export default function testsuite() {
   actsEmitterCovered();
   actsNotificationAnsCovered()
