@@ -193,6 +193,11 @@ export default function EsimPublic1() {
             ExpectTrue(data);
             hilog.info(domain, tag, `${caseName} test end`);
             done();
+          }else{
+            hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
+            ExpectFail();
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
           }
         } catch (error) {
           let err = error as BusinessError;
