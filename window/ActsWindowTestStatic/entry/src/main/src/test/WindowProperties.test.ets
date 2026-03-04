@@ -485,7 +485,7 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2950
+        * @tc.number      SUB_BASIC_WMS_SetWindowColorSpace_Callback_static_0100
         * @tc.name        testSetWindowColorSpace_Callback_static_0100
         * @tc.desc        Set the current window to wide gamut mode or default gamut mode
         * @tc.size        MediumTest
@@ -524,7 +524,7 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2950
+        * @tc.number      SUB_BASIC_WMS_setWindowColorSpace_1300002_Promise_static_0100
         * @tc.name        testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200
         * @tc.desc        Set the current window to wide gamut mode or default gamut mode
         * @tc.size        MediumTest
@@ -559,7 +559,7 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2950
+        * @tc.number      SUB_BASIC_WMS_SetWindowColorSpace_Promise_static_0200
         * @tc.name        testSetWindowColorSpace_Promise_static_0200
         * @tc.desc        Set the current window to wide gamut mode or default gamut mode
         * @tc.size        MediumTest
@@ -2257,7 +2257,7 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-        * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2930
+        * @tc.number     SUB_BASIC_WMS_GetWindowColorSpace_STATIC_0100
         * @tc.name       testGetWindowColorSpace_static
         * @tc.desc       Gets the current window gamut mode
         * @tc.size       MediumTest
@@ -2307,7 +2307,7 @@ export default function WindowPropertiesTest() {
 
 
         /**
-        * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2930
+        * @tc.number     SUB_BASIC_WMS_GetWindowColorSpace_WindowStateAbnormal_STATIC_0100
         * @tc.name       testGetWindowColorSpace_WindowStateAbnormal_static
         * @tc.desc       Gets the current window gamut mode
         * @tc.size       MediumTest
@@ -3393,7 +3393,7 @@ export default function WindowPropertiesTest() {
 
         /**
         * @tc.number     SUB_BASIC_WMS_OffFrameMetricsMeasured_ERRORCODE_1300002_static_0100
-        * @tc.name       testOnFrameMetricsMeasured_ERRORCODE_1300002_static
+        * @tc.name       testOffFrameMetricsMeasured_ERRORCODE_1300002_static
         * @tc.desc       验证子窗销毁后注册offFrameMetricsMeasured返回1300002错误码验证
         * @tc.size       MediumTest
         * @tc.type       Function

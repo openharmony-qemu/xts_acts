@@ -587,7 +587,7 @@ export default function ErrorCode201() {
     /**
     * @tc.number    SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static_0200
     * @tc.name      test_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static
-    * @tc.desc      test_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static
+    * @tc.desc      getVisibleWindowInfo测试错误码返回值201覆盖
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 0
@@ -628,8 +628,8 @@ export default function ErrorCode201() {
     });
 
     /**
-    * @tc.name   testGetAllMainWindowInfo_ERRORCODE_201_tatic_0200
-    * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_WINDOWINFO_TEST_ERRORCODE_201_static_0200
+    * @tc.name   testGetAllMainWindowInfo_ERRORCODE_201_static_0200
+    * @tc.number testGetAllMainWindowInfo_ERRORCODE_201_static_0200
     * @tc.desc   getAllMainWindowInfo测试错误码返回值201覆盖
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
@@ -664,7 +664,7 @@ export default function ErrorCode201() {
 
     /**
     * @tc.name   testGetMainWindowSnapshot_ERRORCODE_201_static_0400
-    * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_ERRORCODE_201_static_0400
+    * @tc.number testGetMainWindowSnapshot_ERRORCODE_201_static_0400
     * @tc.desc   getMainWindowSnapshot测试返回值201覆盖
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
