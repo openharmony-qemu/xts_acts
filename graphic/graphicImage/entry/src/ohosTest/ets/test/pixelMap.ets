@@ -59,7 +59,7 @@ export default function imagePixelMapTest() {
         await image.createPixelMapFromSurfaceSync(surfaceId, region);
         console.info('www data ImagePixelMapTest_0100 PixelMap 111 created successfully.');
       } catch(err) {
-        const error = e as BusinessError;
+        const error = err as BusinessError;
         console.error(`www data ImagePixelMapTest_0100 Failed to 111 create PixelMap. 
         Code: ${error.code}, message: ${error.message}`);
         expect().assertFail();
