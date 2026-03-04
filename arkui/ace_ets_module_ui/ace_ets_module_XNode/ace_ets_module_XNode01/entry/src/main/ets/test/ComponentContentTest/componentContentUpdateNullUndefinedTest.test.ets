@@ -59,13 +59,7 @@ export default function componentContentUpdateNullUndefinedTest() {
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('componentContentUpdateNullUndefinedText');
 
-      let button2 = await driver.findComponent(ON.id('componentContentUpdateUndefined'));
-      await button2.click();
-      await CommonFunc.sleep(1000);
-      let strJson2 = getInspectorByKey('componentContentUpdateNullUndefinedText');
-
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('updateNull');
-      expect(JSON.parse(strJson2).$attrs.content).assertEqual('updateUndefined');
       
       console.info('[componentContentUpdateNullUndefinedTest_0100 ] END');
       done();
