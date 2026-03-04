@@ -1392,16 +1392,16 @@ export default function appStorageNullUndefinedTest() {
     });
 
     /**
-     * @tc.name   AppStorage_SetAndLink_defaultValue_null_001
-     * @tc.number SUB_ARUI_APPSTORAGE_SETANDLINK_DEFAULTVALUE_NULL_001
+     * @tc.name   AppStorage_SetAndLink_defaultValue_null_002
+     * @tc.number SUB_ARUI_APPSTORAGE_SETANDLINK_DEFAULTVALUE_NULL_002
      * @tc.desc   Test deprecated AppStorage.SetAndLink with null defaultValue
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
-    it('AppStorage_SetAndLink_defaultValue_null_001', Level.LEVEL2, () => {
-      console.info('[AppStorage_SetAndLink_defaultValue_null_001] START');
+    it('AppStorage_SetAndLink_defaultValue_null_002', Level.LEVEL2, () => {
+      console.info('[AppStorage_SetAndLink_defaultValue_null_002] START');
       try {
         const propName: string = 'testSetAndLinkNullDeprecated';
         const defaultValue: Object | null = null;
@@ -1421,10 +1421,10 @@ export default function appStorageNullUndefinedTest() {
         result.aboutToBeDeleted();
         const deleteResult: boolean = AppStorage.Delete(propName);
         expect(deleteResult).assertTrue();
-        console.info('[AppStorage_SetAndLink_defaultValue_null_001] END');
+        console.info('[AppStorage_SetAndLink_defaultValue_null_002] END');
       } catch (err) {
-        console.error('[AppStorage_SetAndLink_defaultValue_null_001] Error: ' + JSON.stringify(err));
-        console.info('[AppStorage_SetAndLink_defaultValue_null_001] Expected error caught (deprecated API may not support null)');
+        console.error('[AppStorage_SetAndLink_defaultValue_null_002] Error: ' + JSON.stringify(err));
+        console.info('[AppStorage_SetAndLink_defaultValue_null_002] Expected error caught (deprecated API may not support null)');
       }
     });
 
@@ -2009,22 +2009,22 @@ export default function appStorageNullUndefinedTest() {
     // ========== setAndLink Tests (current API) ==========
 
     /**
-     * @tc.name   AppStorage_setAndLink_propName_emptyString_001
-     * @tc.number SUB_ARUI_APPSTORAGE_SETANDLINK_PROPNAME_EMPTYSTRING_001
+     * @tc.name   AppStorage_setAndLink_propName_emptyString_002
+     * @tc.number SUB_ARUI_APPSTORAGE_SETANDLINK_PROPNAME_EMPTYSTRING_002
      * @tc.desc   Test AppStorage.setAndLink with empty string as propName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndLink_propName_emptyString_001', Level.LEVEL2, () => {
-      console.info('[AppStorage_setAndLink_propName_emptyString_001] START');
+    it('AppStorage_setAndLink_propName_emptyString_002', Level.LEVEL2, () => {
+      console.info('[AppStorage_setAndLink_propName_emptyString_002] START');
       try {
         const propName: string = '';
         const defaultValue: number = 100;
 
         // Test setAndLink with empty string propName
         const result: SubscribedAbstractProperty<number> = AppStorage.setAndLink<number>(propName, defaultValue);
-        console.info('[AppStorage_setAndLink_propName_emptyString_001] result: ' + JSON.stringify(result));
+        console.info('[AppStorage_setAndLink_propName_emptyString_002] result: ' + JSON.stringify(result));
 
         // Verify the property was created with empty string as key
         expect(result !== undefined).assertTrue();
@@ -2044,30 +2044,30 @@ export default function appStorageNullUndefinedTest() {
         const deleteResult: boolean = AppStorage.delete(propName);
         expect(deleteResult).assertTrue();
 
-        console.info('[AppStorage_setAndLink_propName_emptyString_001] END');
+        console.info('[AppStorage_setAndLink_propName_emptyString_002] END');
       } catch (err) {
-        console.error('[AppStorage_setAndLink_propName_emptyString_001] Error: ' + JSON.stringify(err));
+        console.error('[AppStorage_setAndLink_propName_emptyString_002] Error: ' + JSON.stringify(err));
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.name   AppStorage_setAndLink_propName_null_001
-     * @tc.number SUB_ARUI_APPSTORAGE_SETANDLINK_PROPNAME_NULL_001
+     * @tc.name   AppStorage_setAndLink_propName_null_002
+     * @tc.number SUB_ARUI_APPSTORAGE_SETANDLINK_PROPNAME_NULL_002
      * @tc.desc   Test AppStorage.setAndLink with null as propName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndLink_propName_null_001', Level.LEVEL2, () => {
-      console.info('[AppStorage_setAndLink_propName_null_001] START');
+    it('AppStorage_setAndLink_propName_null_002', Level.LEVEL2, () => {
+      console.info('[AppStorage_setAndLink_propName_null_002] START');
       try {
         const propName: string | null = null;
         const defaultValue: number = 100;
 
         // Test setAndLink with null propName
         const result: SubscribedAbstractProperty<number> = AppStorage.setAndLink<number>(propName, defaultValue);
-        console.info('[AppStorage_setAndLink_propName_null_001] result: ' + JSON.stringify(result));
+        console.info('[AppStorage_setAndLink_propName_null_002] result: ' + JSON.stringify(result));
 
         // Verify the value
         const getValue: number | null | undefined = AppStorage.get<number>(propName);
@@ -2081,30 +2081,30 @@ export default function appStorageNullUndefinedTest() {
         result.aboutToBeDeleted();
         const deleteResult: boolean = AppStorage.delete(propName);
         expect(deleteResult).assertTrue();
-        console.info('[AppStorage_setAndLink_propName_null_001] END');
+        console.info('[AppStorage_setAndLink_propName_null_002] END');
       } catch (err) {
-        console.error('[AppStorage_setAndLink_propName_null_001] Error: ' + JSON.stringify(err));
-        console.info('[AppStorage_setAndLink_propName_null_001] Expected error caught');
+        console.error('[AppStorage_setAndLink_propName_null_002] Error: ' + JSON.stringify(err));
+        console.info('[AppStorage_setAndLink_propName_null_002] Expected error caught');
       }
     });
 
     /**
-     * @tc.name   AppStorage_setAndLink_propName_undefined_001
-     * @tc.number SUB_ARUI_APPSTORAGE_SETANDLINK_PROPNAME_UNDEFINED_001
+     * @tc.name   AppStorage_setAndLink_propName_undefined_002
+     * @tc.number SUB_ARUI_APPSTORAGE_SETANDLINK_PROPNAME_UNDEFINED_002
      * @tc.desc   Test AppStorage.setAndLink with undefined as propName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndLink_propName_undefined_001', Level.LEVEL2, () => {
-      console.info('[AppStorage_setAndLink_propName_undefined_001] START');
+    it('AppStorage_setAndLink_propName_undefined_002', Level.LEVEL2, () => {
+      console.info('[AppStorage_setAndLink_propName_undefined_002] START');
       try {
         const propName: string | undefined = undefined;
         const defaultValue: number = 100;
 
         // Test setAndLink with undefined propName
         const result: SubscribedAbstractProperty<number> = AppStorage.setAndLink<number>(propName, defaultValue);
-        console.info('[AppStorage_setAndLink_propName_undefined_001] result: ' + JSON.stringify(result));
+        console.info('[AppStorage_setAndLink_propName_undefined_002] result: ' + JSON.stringify(result));
 
         // Verify the value
         const getValue: number | null | undefined = AppStorage.get<number>(propName);
@@ -2118,11 +2118,11 @@ export default function appStorageNullUndefinedTest() {
         result.aboutToBeDeleted();
         const deleteResult: boolean = AppStorage.delete(propName);
         expect(deleteResult).assertTrue();
-        console.info('[AppStorage_setAndLink_propName_undefined_001] END');
+        console.info('[AppStorage_setAndLink_propName_undefined_002] END');
       } catch (err) {
-        console.error('[AppStorage_setAndLink_propName_undefined_001] Error: ' + JSON.stringify(err));
+        console.error('[AppStorage_setAndLink_propName_undefined_002] Error: ' + JSON.stringify(err));
         // Expected: may throw error for undefined propName
-        console.info('[AppStorage_setAndLink_propName_undefined_001] Expected error caught');
+        console.info('[AppStorage_setAndLink_propName_undefined_002] Expected error caught');
       }
     });
 
@@ -2163,22 +2163,22 @@ export default function appStorageNullUndefinedTest() {
     });
 
     /**
-     * @tc.name   AppStorage_setAndLink_defaultValue_undefined_001
-     * @tc.number SUB_ARUI_APPSTORAGE_SETANDLINK_DEFAULTVALUE_UNDEFINED_001
+     * @tc.name   AppStorage_setAndLink_defaultValue_undefined_002
+     * @tc.number SUB_ARUI_APPSTORAGE_SETANDLINK_DEFAULTVALUE_UNDEFINED_002
      * @tc.desc   Test AppStorage.setAndLink with undefined defaultValue (API 12+)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndLink_defaultValue_undefined_001', Level.LEVEL2, () => {
-      console.info('[AppStorage_setAndLink_defaultValue_undefined_001] START');
+    it('AppStorage_setAndLink_defaultValue_undefined_002', Level.LEVEL2, () => {
+      console.info('[AppStorage_setAndLink_defaultValue_undefined_002] START');
       try {
         const propName: string = 'testSetAndLinkUndefined';
         const defaultValue: Object | undefined = undefined;
 
         // Test setAndLink with undefined defaultValue (API 12+ allows undefined)
         const result: SubscribedAbstractProperty<Object | undefined> = AppStorage.setAndLink<Object | undefined>(propName, defaultValue);
-        console.info('[AppStorage_setAndLink_defaultValue_undefined_001] result: ' + JSON.stringify(result));
+        console.info('[AppStorage_setAndLink_defaultValue_undefined_002] result: ' + JSON.stringify(result));
         expect(result !== undefined).assertTrue();
 
         // Verify the property was created with undefined value
@@ -2191,9 +2191,9 @@ export default function appStorageNullUndefinedTest() {
         result.aboutToBeDeleted();
         const deleteResult: boolean = AppStorage.delete(propName);
         expect(deleteResult).assertTrue();
-        console.info('[AppStorage_setAndLink_defaultValue_undefined_001] END');
+        console.info('[AppStorage_setAndLink_defaultValue_undefined_002] END');
       } catch (err) {
-        console.error('[AppStorage_setAndLink_defaultValue_undefined_001] Error: ' + JSON.stringify(err));
+        console.error('[AppStorage_setAndLink_defaultValue_undefined_002] Error: ' + JSON.stringify(err));
         expect().assertFail();
       }
     });

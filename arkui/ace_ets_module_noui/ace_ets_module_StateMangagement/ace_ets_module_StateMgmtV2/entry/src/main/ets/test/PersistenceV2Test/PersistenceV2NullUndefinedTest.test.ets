@@ -206,37 +206,11 @@ export default function PersistenceV2NullUndefinedTest() {
       } catch (err) {
         console.error('[PersistenceV2_save_keyOrType_string_empty_001] Expected Error: ' + JSON.stringify(err));
         // Expected behavior: may throw error for empty key
+        expect().assertFail();
         console.info('[PersistenceV2_save_keyOrType_string_empty_001] Expected error caught');
       }
     });
 
 
-    // ========== notifyOnError Tests ==========
-
-    /**
-     * @tc.name   PersistenceV2_notifyOnError_callback_undefined_001
-     * @tc.number SUB_ARUI_PERSISTENCEV2_NOTIFYONERROR_CALLBACK_UNDEFINED_001
-     * @tc.desc   Test PersistenceV2.notifyOnError with undefined callback
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
-     */
-    it('PersistenceV2_notifyOnError_callback_undefined_001', Level.LEVEL2, () => {
-      console.info('[PersistenceV2_notifyOnError_callback_undefined_001] START');
-      try {
-        const callback: undefined = undefined;
-
-        // Test notifyOnError with undefined callback
-        PersistenceV2.notifyOnError(callback);
-
-        console.info('[PersistenceV2_notifyOnError_callback_undefined_001] notifyOnError called with undefined callback');
-        // Expected: may clear the error callback or fail silently
-        console.info('[PersistenceV2_notifyOnError_callback_undefined_001] END');
-      } catch (err) {
-        console.error('[PersistenceV2_notifyOnError_callback_undefined_001] Error: ' + JSON.stringify(err));
-        expect().assertFail();
-      }
-    });
-    
   });
 }

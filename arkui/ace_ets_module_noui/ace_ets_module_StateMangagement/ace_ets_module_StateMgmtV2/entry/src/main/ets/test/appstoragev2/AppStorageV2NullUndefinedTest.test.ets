@@ -201,24 +201,24 @@ export default function AppStorageV2NullUndefinedTest() {
 
         /**
      * @tc.name   AppStorageV2_connect_null_001
-     * @tc.number SUB_ARKUI_APPSTORAGEV2_CONNECT_PARAM_NULL_001
+     * @tc.number SUB_ARKUI_APPSTORAGEV2_CONNECT_PARAM_NULL_002
      * @tc.desc   Test AppStorageV2.connect with null type parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorageV2_connect_null_001', Level.LEVEL2, () => {
-      console.info('[AppStorageV2_connect_null_001] START');
+    it('AppStorageV2_connect_null_002', Level.LEVEL2, () => {
+      console.info('[AppStorageV2_connect_null_002] START');
       try {
         const result: object | undefined = AppStorageV2.connect<object>(
           null
         );
-        console.info('[AppStorageV2_connect_null_001] result: ' + JSON.stringify(result));
+        console.info('[AppStorageV2_connect_null_002] result: ' + JSON.stringify(result));
         // connect with null type should return undefined or throw error
         expect().assertFail();
-        console.info('[AppStorageV2_connect_null_001] END');
+        console.info('[AppStorageV2_connect_null_002] END');
       } catch (err) {
-        console.error('[AppStorageV2_connect_null_001] Error: ' + JSON.stringify(err));
+        console.error('[AppStorageV2_connect_null_002] Error: ' + JSON.stringify(err));
 
       }
     });
@@ -248,6 +248,6 @@ export default function AppStorageV2NullUndefinedTest() {
       }
     });
 
-    
+
   });
 }
