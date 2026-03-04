@@ -106,7 +106,7 @@ describe('fileio_mkdtemp', function () {
 
    /**
     * @tc.name   fileio_test_mkdtemp_promise_error_001
-    * @tc.number SUB_DF_FILEIO_MKDIR_PROMISE_ERROR_001
+    * @tc.number SUB_DF_FILEIO_MKDTEMP_PROMISE_ERROR_001
     * @tc.desc   Test mkdtemp() interface with empty string prefix. Promise.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
@@ -124,7 +124,7 @@ describe('fileio_mkdtemp', function () {
 
    /**
     * @tc.name   fileio_test_mkdtemp_promise_error_002
-    * @tc.number SUB_DF_FILEIO_MKDIR_PROMISE_ERROR_002
+    * @tc.number SUB_DF_FILEIO_MKDTEMP_PROMISE_ERROR_002
     * @tc.desc   Test mkdtemp() interface with null prefix. Promise.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
@@ -142,7 +142,7 @@ describe('fileio_mkdtemp', function () {
 
     /**
      * @tc.name   fileio_test_mkdtemp_promise_error_003
-     * @tc.number SUB_DF_FILEIO_MKDIR_PROMISE_ERROR_003
+     * @tc.number SUB_DF_FILEIO_MKDTEMP_PROMISE_ERROR_003
      * @tc.desc   Test mkdtemp() interface with undefined prefix. Promise.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

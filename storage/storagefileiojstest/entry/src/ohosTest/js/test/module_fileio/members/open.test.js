@@ -983,7 +983,7 @@ describe('fileio_open', function () {
 
   /**
    * @tc.name   fileio_test_open_sync_001
-   * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0100
+   * @tc.number SUB_DF_FILEIO_TEST_OPEN_SYNC_0100
    * @tc.desc   Test openSync() interfaces. The first parameter is empty string.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
@@ -1001,7 +1001,7 @@ describe('fileio_open', function () {
 
   /**
    * @tc.name   fileio_test_open_sync_002
-   * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0200
+   * @tc.number SUB_DF_FILEIO_TEST_OPEN_SYNC_0200
    * @tc.desc   Test openSync() interfaces. The first parameter is null.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
