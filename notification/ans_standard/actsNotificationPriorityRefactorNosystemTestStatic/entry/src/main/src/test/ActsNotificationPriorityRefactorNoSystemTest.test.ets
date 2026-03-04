@@ -84,7 +84,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
               expect(false).assertTrue()
               done()
             })
-            .catch((err: BusinessError): void => {
+            .catch((err: Error): void => {
               console.error(TAG + `getPriorityEnabledByBundles failed, code is ${err.code}, message is ${err.message}`);
               if (err.code == 801) {
                 expect(err.code).assertEqual(801);
@@ -94,7 +94,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
                 done()
               }
             });
-        }catch(err:BusinessError){
+        }catch(err:Error){
           console.error(TAG + `getPriorityEnabledByBundles trycatch failed, code is ${err.code}, message is ${err.message}`);
           expect(err.code).assertEqual(0);
           done()
@@ -118,7 +118,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
           console.info(TAG + `getPriorityStrategyByBundles success strategies: ${JSON.stringify(strategies)}`);
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError) :void=> {
+        }).catch((err: Error) :void=> {
           console.info(TAG + `getPriorityStrategyByBundles failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err.code).assertEqual(801);
@@ -145,7 +145,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
           console.info(TAG + `isPriorityIntelligentEnabled result: ${result}`);
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.info(TAG + `isPriorityIntelligentEnabled failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err.code).assertEqual(801);
@@ -174,7 +174,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
           console.info(TAG + `setPriorityEnabledByBundles success`);
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError) :void=> {
+        }).catch((err: Error) :void=> {
           console.info(TAG + `setPriorityEnabledByBundles failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err.code).assertEqual(801);
@@ -201,7 +201,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
           console.info(TAG + `setPriorityIntelligentEnabled success`);
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError) :void=> {
+        }).catch((err: Error) :void=> {
           console.info(TAG + `setPriorityIntelligentEnabled failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err.code).assertEqual(801);
@@ -231,7 +231,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
           console.info(TAG + `setPriorityStrategyByBundles success`);
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError) :void=> {
+        }).catch((err: Error) :void=> {
           console.info(TAG + `setPriorityStrategyByBundles failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err.code).assertEqual(801);
