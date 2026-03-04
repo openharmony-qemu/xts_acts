@@ -2711,6 +2711,33 @@ export default function OhAVPlayerNDKTest() {
       done();
     });
     /**
+ 	    * @tc.number testAVMediaSourceDestroy0001
+ 	    * @tc.name   testAVMediaSourceDestroy0001
+ 	    * @tc.desc   OH_AVMediaSource_Destroy
+ 	    * @tc.size   MediumTest
+ 	    * @tc.type   Function
+ 	    * @tc.level  Level 0
+ 	    */
+ 	  it('testAVMediaSourceDestroy0001', Level.LEVEL0, async (done: Function) => {
+ 	    let ret = avplayer.AVMediaSourceDestroy();
+ 	    expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+ 	    done();
+ 	  });
+ 	 
+ 	/**
+ 	  * @tc.number testAVMediaSourceDestroyAbnormal0001
+ 	  * @tc.name   testAVMediaSourceDestroyAbnormal0001
+ 	  * @tc.desc   OH_AVMediaSource_Destroy input nullptr
+ 	  * @tc.size   MediumTest
+ 	  * @tc.type   Function
+ 	  * @tc.level  Level 0
+ 	  */
+ 	  it('testAVMediaSourceDestroyAbnormal0001', Level.LEVEL0, async (done: Function) => {
+ 	    let ret = avplayer.AVMediaSourceDestroyAbnormal();
+ 	    expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
+ 	    done();
+ 	  });
+    /**
      * @tc.number testAVPlayerSetMediaSourceStateError0001
      * @tc.name   testAVPlayerSetMediaSourceStateError0001
      * @tc.desc   OH_AVPlayer_SetMediaSource called in invalid state
