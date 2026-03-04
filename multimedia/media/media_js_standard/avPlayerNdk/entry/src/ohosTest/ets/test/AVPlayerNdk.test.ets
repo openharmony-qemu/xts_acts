@@ -2339,12 +2339,12 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0100
-     * @tc.name       : testOhAvPlayerSetDataSource001
-     * @tc.desc       : test OH_AVPlayer_SetDataSource function
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvPlayerSetDataSource001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0100
+     * @tc.desc   test OH_AVPlayer_SetDataSource function
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('testOhAvPlayerSetDataSource001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = avplayer.AvPlayerSetDataSource();
@@ -2353,12 +2353,12 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0200
-     * @tc.name       : testOhAvPlayerSetDataSource002
-     * @tc.desc       : test OH_AVPlayer_SetDataSource function
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvPlayerSetDataSource002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0200
+     * @tc.desc   test OH_AVPlayer_SetDataSource function
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('testOhAvPlayerSetDataSource002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = avplayer.AvPlayerSetDataSourceError();
@@ -2367,12 +2367,12 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0300
-     * @tc.name       : testOhAvPlayerSetDataSource003
-     * @tc.desc       : test OH_AVPlayer_SetDataSource function
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvPlayerSetDataSource003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0300
+     * @tc.desc   test OH_AVPlayer_SetDataSource function
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('testOhAvPlayerSetDataSource003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = avplayer.AvPlayerSetDataSourceErrorOne();
@@ -2381,12 +2381,12 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0400
-     * @tc.name       : testOhAvPlayerSetDataSource004
-     * @tc.desc       : test OH_AVPlayer_SetDataSource function
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvPlayerSetDataSource004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0400
+     * @tc.desc   test OH_AVPlayer_SetDataSource function
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('testOhAvPlayerSetDataSource004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = avplayer.AvPlayerSetDataSourceErrorTwo();
@@ -2395,12 +2395,12 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0500
-     * @tc.name       : testOhAvPlayerSetDataSource005
-     * @tc.desc       : test OH_AVPlayer_SetDataSource function
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvPlayerSetDataSource005
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETDATASOURCE_0500
+     * @tc.desc   test OH_AVPlayer_SetDataSource function
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('testOhAvPlayerSetDataSource005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = avplayer.AvPlayerSetDataSourceErrorThree();
