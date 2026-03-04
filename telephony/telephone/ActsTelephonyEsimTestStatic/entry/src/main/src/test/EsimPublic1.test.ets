@@ -141,6 +141,36 @@ export default function EsimPublic1() {
         }
       });
 
+      /**
+     * @tc.number    SUB_Telephony_Esim_AddProfile_0900
+     * @tc.name      testTelephonyEsimAddProfile_static_0900
+     * @tc.desc      Starts a page through an ability, on which users can touch the button to download a profile.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testTelephonyEsimAddProfile_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyEsimAddProfile_static_0900';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let data = await eSIM.addProfile(undefined);
+        hilog.info(domain, tag, `${caseName} Fail : the data is:${data}`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName} test end`);
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        if (err?.code === 401) {
+          hilog.error(domain, tag,
+            `${caseName} The current device type does not, promise: err->${JSON.stringify(err)}`);
+          expect(err?.code).assertEqual(801);
+          hilog.error(domain, tag, `${caseName} test end`);
+          done();
+        }
+      }
+    });
+
     /**
      * @tc.number    SUB_Telephony_Esim_IsSupported_0100
      * @tc.name      testTelephonyEsimIsSupported_static_0100
@@ -261,6 +291,33 @@ export default function EsimPublic1() {
           done();
         }
       });
+
+      /**
+     * @tc.number    SUB_Telephony_Esim_IsSupported_0500
+     * @tc.name      testTelephonyEsimIsSupported_static_0500
+     * @tc.desc      Whether embedded subscriptions are currently supported.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it("testTelephonyEsimIsSupported_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyEsimIsSupported_static_0500';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let data: boolean = eSIM.isSupported(undefined);
+        hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
+        ExpectTrue(true);
+        hilog.info(domain, tag, `${caseName} test end`);
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        hilog.error(domain, tag, `${caseName} IsSupported failed, promise: err->${JSON.stringify(err)}`);
+        expect(err?.code).assertEqual(401);
+        hilog.error(domain, tag, `${caseName} test end`);
+        done();
+      }
+    });
 
   });
 }
