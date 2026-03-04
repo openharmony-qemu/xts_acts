@@ -256,7 +256,7 @@ export default function setEntriesTest() {
       const set = new Set([NaN, 1, NaN]);
       const entries = Array.from(set.entries());
 
-      expect(entries).assertDeepEquals([[NaN, NaN], [1, 1]]);
+      expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([[NaN, NaN], [1, 1]]));
       expect(entries.length).assertEqual(2);
       expect(Number.isNaN(entries[0][0])).assertEqual(true);
       expect(Number.isNaN(entries[0][1])).assertEqual(true);
