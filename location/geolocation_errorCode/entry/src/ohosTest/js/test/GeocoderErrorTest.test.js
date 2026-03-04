@@ -1121,7 +1121,7 @@ export default function geolocationTest_GeoErr() {
                                     expect(data.length>0).assertTrue();
                                 }else{
                                     console.info("The device Capability not supported." + JSON.stringify(data));
-                                    expect(data === undefined || data === null).assertFalse();
+                                    expect(true).assertFalse();
                                 }
                             });
                         } catch (err) {
@@ -1133,7 +1133,7 @@ export default function geolocationTest_GeoErr() {
                             geolocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
                                 console.info('SUB_HSS_isGeocoderAvailable_0001: data=' + JSON.stringify(data));
                                 if(data){
-                                    expect(data.length>0).assertFalse();
+                                    expect(true).assertFalse();
                                 }else{
                                     console.info("The device Capability not supported." + JSON.stringify(data));
                                     expect(data === undefined || data === null).assertTrue();
