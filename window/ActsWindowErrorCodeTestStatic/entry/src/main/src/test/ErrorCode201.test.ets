@@ -567,18 +567,20 @@ export default function ErrorCode201() {
                 hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
                 if (err!.code === 801) {
                     done();
+                } else {
+                    expect(err!.code === 201).assertTrue();
+                    done();
                 }
-                expect(err!.code === 201).assertTrue();
-                done();
             })
         } catch (err) {
             err = err as BusinessError;
             hilog.info(domain, tag,caseName + 'error in makeUnique, err : ' + JSON.stringify(err));
             if (err!.code === 801) {
                 done();
+            } else {
+                expect(err!.code === 201).assertTrue();
+                done();
             }
-            expect(err!.code === 201).assertTrue();
-            done();
         }
     });
 
