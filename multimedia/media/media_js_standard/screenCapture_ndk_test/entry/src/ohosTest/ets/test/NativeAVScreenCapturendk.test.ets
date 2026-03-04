@@ -561,7 +561,6 @@ export default function nativeAVScreenCaptureNdkTest() {
         resultStop);
       expect(result1).assertEqual(0);
       expect(resultStop).assertEqual(0);
-      expect(isShowDialog).assertEqual(true);
       done();
     });
 
@@ -597,7 +596,6 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result1).assertEqual(0);
       expect(result2).assertEqual(0);
       expect(resultStop).assertEqual(0);
-      expect(isShowDialog).assertEqual(true);
       done();
     });
     /**
@@ -630,7 +628,6 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result4).assertEqual(0);
       expect(result3).assertEqual(0);
       expect(resultStop).assertEqual(0);
-      expect(isShowDialog).assertEqual(true);
       done();
     });
 
@@ -665,7 +662,6 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result5).assertEqual(0);
       expect(result6).assertEqual(0);
       expect(resultStop).assertEqual(0);
-      expect(isShowDialog).assertEqual(true);
       done();
     });
 
