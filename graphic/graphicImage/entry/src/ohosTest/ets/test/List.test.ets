@@ -34,6 +34,7 @@ import GraphicImagePixelMap2 from './GraphicImagePixelMap2.test';
 import GraphicImagePixelMap3 from './GraphicImagePixelMap2.test';
 import GraphicImagePixelMap4 from './GraphicImagePixelMap2.test';
 import GraphicImagePixelMap5 from './GraphicImagePixelMap5.test';
+import GraphicSendImagePixelMapAdd01 from './GraphicSendImagePixelMapAdd01.test';
 
 export default function testsuite() {
   imagePixelMapTest()
@@ -58,4 +59,5 @@ export default function testsuite() {
   GraphicImagePixelMap3();
   GraphicImagePixelMap4();
   GraphicImagePixelMap5();
+  GraphicSendImagePixelMapAdd01();
 }
