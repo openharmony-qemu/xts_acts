@@ -1,3 +1,19 @@
+/*
+* Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+‘use static’
 import {
   afterAll,
   afterEach,
@@ -718,9 +734,6 @@ function foo3<T extends Long>(p: T): long {
   let dst: long = src;
   return dst;
 }
-function foo4(p: Integral): void {
-  expect(p).not().assertNull();
-}
 class A47 {
   public fld: short;
   constructor(p: Short) {
@@ -813,6 +826,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Boolean = new Boolean(false);
       let c: A = new A(v1, v2);
       c.foo(v1, v2);
+      expect(c.fld_1).assertEqual(v1);
+      expect(c.fld_2).assertEqual(v2);
     });
 
     /**
@@ -1403,6 +1418,9 @@ export default function AssignmentLikeContextsTest() {
       let v3: Byte = new Byte(127 as byte);
       let c: A1 = new A1(v1, v2, v3);
       c.foo(v1, v2, v3);
+      expect(c.fld_1).assertEqual(v1);
+      expect(c.fld_2).assertEqual(v2);
+      expect(c.fld_3).assertEqual(v3);
     });
 
     /**
@@ -1414,13 +1432,14 @@ export default function AssignmentLikeContextsTest() {
      * @tc.level     Level 2
      */
     it("testAssignmentLikeContexts0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-
       let v1: Char = new Char(c'\u0000');
       let v2: Char = new Char(c'X');
       let v3: Char = new Char(c'\uffff');
       let c: A2 = new A2(v1, v2, v3);
       c.foo(v1, v2, v3);
+      expect(c.fld_1).assertEqual(v1);
+      expect(c.fld_2).assertEqual(v2);
+      expect(c.fld_3).assertEqual(v3);
     });
 
     /**
@@ -1436,6 +1455,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Short = new Short((255).toShort());
       let c: A3 = new A3(v1, v2);
       c.foo(v1, v2);
+      expect(c.fld_1).assertEqual(v1);
+      expect(c.fld_2).assertEqual(v2);
     });
 
     /**
@@ -1452,6 +1473,9 @@ export default function AssignmentLikeContextsTest() {
       let v3: Int = new Int(Int.MAX_VALUE);
       let c: A4 = new A4(v1, v2, v3);
       c.foo(v1, v2, v3);
+      expect(c.fld_1).assertEqual(v1);
+      expect(c.fld_2).assertEqual(v2);
+      expect(c.fld_3).assertEqual(v3);
     });
 
     /**
@@ -1467,6 +1491,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Long = new Long((9223372036854775807).toLong());
       let c: A5 = new A5(v1, v2);
       c.foo(v1, v2);
+      expect(c.fld_1).assertEqual(v1);
+      expect(c.fld_2).assertEqual(v2);
     });
 
     /**
@@ -1482,6 +1508,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Float = new Float(Float.MAX_VALUE);
       let c: A6 = new A6(v1, v2);
       c.foo(v1, v2);
+      expect(c.fld_1).assertEqual(v1);
+      expect(c.fld_2).assertEqual(v2);
     });
 
     /**
@@ -1497,6 +1525,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Double = new Double(Double.MAX_VALUE);
       let c: A7 = new A7(v1, v2);
       c.foo(v1, v2);
+      expect(c.fld_1).assertEqual(v1);
+      expect(c.fld_2).assertEqual(v2);
     });
 
     /**
@@ -1513,6 +1543,9 @@ export default function AssignmentLikeContextsTest() {
       let v3: Byte = new Byte(127 as byte);
       let c: A8 = new A8(v1.toShort(), v2.toShort(), v3.toShort());
       c.foo(v1.toShort(), v2.toShort(), v3.toShort());
+      expect(c.fld_1).assertEqual(v1.toShort());
+      expect(c.fld_2).assertEqual(v2.toShort());
+      expect(c.fld_3).assertEqual(v3.toShort());
     });
 
     /**
@@ -1529,6 +1562,9 @@ export default function AssignmentLikeContextsTest() {
       let v3: Byte = new Byte(127 as byte);
       let c: A9 = new A9(v1.toInt(), v2.toInt(), v3.toInt());
       c.foo(v1.toInt(), v2.toInt(), v3.toInt());
+      expect(c.fld_1).assertEqual(v1.toInt());
+      expect(c.fld_2).assertEqual(v2.toInt());
+      expect(c.fld_3).assertEqual(v3.toInt());
     });
 
     /**
@@ -1545,6 +1581,9 @@ export default function AssignmentLikeContextsTest() {
       let v3: Byte = new Byte(127 as byte);
       let c: A10 = new A10(v1.toLong(), v2.toLong(), v3.toLong());
       c.foo(v1.toLong(), v2.toLong(), v3.toLong());
+      expect(c.fld_1).assertEqual(v1.toLong());
+      expect(c.fld_2).assertEqual(v2.toLong());
+      expect(c.fld_3).assertEqual(v3.toLong());
     });
 
     /**
@@ -1561,6 +1600,9 @@ export default function AssignmentLikeContextsTest() {
       let v3: Byte = new Byte(127 as byte);
       let c: A11 = new A11(v1.toFloat(), v2.toFloat(), v3.toFloat());
       c.foo(v1.toFloat(), v2.toFloat(), v3.toFloat());
+      expect(c.fld_1).assertEqual(v1.toFloat());
+      expect(c.fld_2).assertEqual(v2.toFloat());
+      expect(c.fld_3).assertEqual(v3.toFloat());
     });
 
     /**
@@ -1577,6 +1619,9 @@ export default function AssignmentLikeContextsTest() {
       let v3: Byte = new Byte(127 as byte);
       let c: A12 = new A12(v1.toDouble(), v2.toDouble(), v3.toDouble());
       c.foo(v1.toDouble(), v2.toDouble(), v3.toDouble());
+      expect(c.fld_1).assertEqual(v1.toDouble());
+      expect(c.fld_2).assertEqual(v2.toDouble());
+      expect(c.fld_3).assertEqual(v3.toDouble());
     });
 
     /**
@@ -1592,6 +1637,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Short = new Short((255).toShort());
       let c: A13 = new A13(v1.toInt(), v2.toInt());
       c.foo(v1.toInt(), v2.toInt());
+      expect(c.fld_1).assertEqual(v1.toInt());
+      expect(c.fld_2).assertEqual(v2.toInt());
     });
 
     /**
@@ -1607,6 +1654,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Short = new Short((255).toShort());
       let c: A14 = new A14(v1.toLong(), v2.toLong());
       c.foo(v1.toLong(), v2.toLong());
+      expect(c.fld_1).assertEqual(v1.toLong());
+      expect(c.fld_2).assertEqual(v2.toLong());
     });
 
     /**
@@ -1622,6 +1671,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Short = new Short((255).toShort());
       let c: A15 = new A15(v1.toFloat(), v2.toFloat());
       c.foo(v1.toFloat(), v2.toFloat());
+      expect(c.fld_1).assertEqual(v1.toFloat());
+      expect(c.fld_2).assertEqual(v2.toFloat());
     });
 
     /**
@@ -1637,6 +1688,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Short = new Short((255).toShort());
       let c: A16 = new A16(v1.toDouble(), v2.toDouble());
       c.foo(v1.toDouble(), v2.toDouble());
+      expect(c.fld_1).assertEqual(v1.toDouble());
+      expect(c.fld_2).assertEqual(v2.toDouble());
     });
 
     /**
@@ -1653,6 +1706,9 @@ export default function AssignmentLikeContextsTest() {
       let v3: Int = new Int(Int.MAX_VALUE);
       let c: A17 = new A17(v1.toLong(), v2.toLong(), v3.toLong());
       c.foo(v1.toLong(), v2.toLong(), v3.toLong());
+      expect(c.fld_1).assertEqual(v1.toLong());
+      expect(c.fld_2).assertEqual(v2.toLong());
+      expect(c.fld_3).assertEqual(v3.toLong());
     });
 
     /**
@@ -1669,6 +1725,9 @@ export default function AssignmentLikeContextsTest() {
       let v3: Int = new Int(Int.MAX_VALUE);
       let c: A18 = new A18(v1.toFloat(), v2.toFloat(), v3.toFloat());
       c.foo(v1.toFloat(), v2.toFloat(), v3.toFloat());
+      expect(c.fld_1).assertEqual(v1.toFloat());
+      expect(c.fld_2).assertEqual(v2.toFloat());
+      expect(c.fld_3).assertEqual(v3.toFloat());
     });
 
     /**
@@ -1685,6 +1744,9 @@ export default function AssignmentLikeContextsTest() {
       let v3: Int = new Int(Int.MAX_VALUE);
       let c: A19 = new A19(v1.toDouble(), v2.toDouble(), v3.toDouble());
       c.foo(v1.toDouble(), v2.toDouble(), v3.toDouble());
+      expect(c.fld_1).assertEqual(v1.toDouble());
+      expect(c.fld_2).assertEqual(v2.toDouble());
+      expect(c.fld_3).assertEqual(v3.toDouble());
     });
 
     /**
@@ -1700,6 +1762,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Long = new Long((9223372036854775807).toLong());
       let c: A20 = new A20(v1.toFloat(), v2.toFloat());
       c.foo(v1.toFloat(), v2.toFloat());
+      expect(c.fld_1).assertEqual(v1.toFloat());
+      expect(c.fld_2).assertEqual(v2.toFloat());
     });
 
     /**
@@ -1715,6 +1779,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Long = new Long((9223372036854775807).toLong());
       let c: A21 = new A21(v1.toDouble(), v2.toDouble());
       c.foo(v1.toDouble(), v2.toDouble());
+      expect(c.fld_1).assertEqual(v1.toDouble());
+      expect(c.fld_2).assertEqual(v2.toDouble());
     });
 
     /**
@@ -1730,6 +1796,8 @@ export default function AssignmentLikeContextsTest() {
       let v2: Float = new Float(Float.MAX_VALUE);
       let c: A22 = new A22(v1.toDouble(), v2.toDouble());
       c.foo(v1.toDouble(), v2.toDouble());
+      expect(c.fld_1).assertEqual(v1.toDouble());
+      expect(c.fld_2).assertEqual(v2.toDouble());
     });
 
     /**
@@ -1946,7 +2014,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_6200
      * @tc.name      testAssignmentLikeContexts0062
-     * @desc        Assignment contexts of a primitive types: Assignment from short to Short (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from short to Short (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1962,7 +2030,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_6300
      * @tc.name      testAssignmentLikeContexts0063
-     * @desc        Assignment contexts of a primitive types: Assignment from int to Int (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from int to Int (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1978,7 +2046,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_6400
      * @tc.name      testAssignmentLikeContexts0064
-     * @desc        Assignment contexts of a primitive types: Assignment from long to Long (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from long to Long (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1994,7 +2062,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_6500
      * @tc.name      testAssignmentLikeContexts0065
-     * @desc        Assignment contexts of a primitive types: Assignment from float to Float (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from float to Float (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2010,7 +2078,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_6600
      * @tc.name      testAssignmentLikeContexts0066
-     * @desc        Assignment contexts of a primitive types: Assignment from double to Double (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from double to Double (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2026,7 +2094,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_6700
      * @tc.name      testAssignmentLikeContexts0067
-     * @desc        Assignment contexts of a primitive types: Assignment from Char to char (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from Char to char (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2042,7 +2110,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_6800
      * @tc.name      testAssignmentLikeContexts0068
-     * @desc        Assignment contexts of a primitive types: Assignment from Short to short (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from Short to short (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2058,7 +2126,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_6900
      * @tc.name      testAssignmentLikeContexts0069
-     * @desc        Assignment contexts of a primitive types: Assignment from Int to int (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from Int to int (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2074,7 +2142,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_7000
      * @tc.name      testAssignmentLikeContexts0070
-     * @desc        Assignment contexts of a primitive types: Assignment from Long to long (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from Long to long (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2090,7 +2158,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_7100
      * @tc.name      testAssignmentLikeContexts0071
-     * @desc        Assignment contexts of a primitive types: Assignment from Float to float (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from Float to float (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2106,7 +2174,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_7200
      * @tc.name      testAssignmentLikeContexts0072
-     * @desc        Assignment contexts of a primitive types: Assignment from Double to double (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from Double to double (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2122,7 +2190,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_7300
      * @tc.name      testAssignmentLikeContexts0073
-     * @desc        Assignment contexts of a primitive types: Assignment from boolean to Boolean (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from boolean to Boolean (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2138,7 +2206,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_7400
      * @tc.name      testAssignmentLikeContexts0074
-     * @desc        Assignment contexts of a primitive types: Assignment from byte to Byte (FixedArray)
+     * @tc.desc     Assignment contexts of a primitive types: Assignment from byte to Byte (FixedArray)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2154,7 +2222,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_7500
      * @tc.name      testAssignmentLikeContexts0075
-     * @desc        Assignment contexts: Conversion from byte to Byte
+     * @tc.desc     Assignment contexts: Conversion from byte to Byte
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2176,7 +2244,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_7600
      * @tc.name      testAssignmentLikeContexts0076
-     * @desc        Assignment contexts: Conversion from char to Char
+     * @tc.desc     Assignment contexts: Conversion from char to Char
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2198,7 +2266,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_7700
      * @tc.name      testAssignmentLikeContexts0077
-     * @desc        Assignment contexts: Conversion from short to Short
+     * @tc.desc     Assignment contexts: Conversion from short to Short
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2216,7 +2284,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_7800
      * @tc.name      testAssignmentLikeContexts0078
-     * @desc        Assignment contexts: Conversion from int to Int
+     * @tc.desc     Assignment contexts: Conversion from int to Int
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2238,7 +2306,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_7900
      * @tc.name      testAssignmentLikeContexts0079
-     * @desc        Assignment contexts: Conversion from long to Long
+     * @tc.desc     Assignment contexts: Conversion from long to Long
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2256,7 +2324,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_8000
      * @tc.name      testAssignmentLikeContexts0080
-     * @desc        Assignment contexts: Conversion from float to Float
+     * @tc.desc     Assignment contexts: Conversion from float to Float
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2274,7 +2342,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_8100
      * @tc.name      testAssignmentLikeContexts0081
-     * @desc        Assignment contexts: Conversion from double to Double
+     * @tc.desc     Assignment contexts: Conversion from double to Double
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2292,7 +2360,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_8200
      * @tc.name      testAssignmentLikeContexts0082
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'boolean' to 'Object'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'boolean' to 'Object'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2302,12 +2370,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: boolean = false;
       let c: A23 = new A23(new Boolean(v1), new Boolean(v2));
       c.foo(new Boolean(v1), new Boolean(v2));
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_8300
      * @tc.name      testAssignmentLikeContexts0083
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'byte' to 'Object'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'byte' to 'Object'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2318,12 +2388,15 @@ export default function AssignmentLikeContextsTest() {
       let v3: byte = 127 as byte;
       let c: A24 = new A24(new Byte(v1), new Byte(v2), new Byte(v3));
       c.foo(new Byte(v1), new Byte(v2), new Byte(v3));
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
+      expect(c.fld_3).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_8400
      * @tc.name      testAssignmentLikeContexts0084
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'float' to 'Object'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'float' to 'Object'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2333,12 +2406,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: float = Float.MAX_VALUE;
       let c: A25 = new A25(new Float(v1), new Float(v2));
       c.foo(new Float(v1), new Float(v2));
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_8500
      * @tc.name      testAssignmentLikeContexts0085
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'float' to 'Floating'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'float' to 'Floating'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2348,12 +2423,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: float = Float.MAX_VALUE;
       let c: A26 = new A26(new Float(v1) as Floating, new Float(v2) as Floating);
       c.foo(new Float(v1) as Floating, new Float(v2) as Floating);
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_8600
      * @tc.name      testAssignmentLikeContexts0086
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'double' to 'Object'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'double' to 'Object'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2363,12 +2440,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: double = Double.MAX_VALUE;
       let c: A27 = new A27(new Double(v1), new Double(v2));
       c.foo(new Double(v1), new Double(v2));
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_8700
      * @tc.name      testAssignmentLikeContexts0087
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'double' to 'Floating'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'double' to 'Floating'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2378,12 +2457,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: double = Double.MAX_VALUE;
       let c: A28 = new A28(new Double(v1) as Floating, new Double(v2) as Floating);
       c.foo(new Double(v1) as Floating, new Double(v2) as Floating);
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_8800
      * @tc.name      testAssignmentLikeContexts0088
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'char' to 'Object'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'char' to 'Object'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2394,12 +2475,15 @@ export default function AssignmentLikeContextsTest() {
       let v3: char = c'\uffff';
       let c: A29 = new A29(new Char(v1), new Char(v2), new Char(v3));
       c.foo(new Char(v1), new Char(v2), new Char(v3));
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
+      expect(c.fld_3).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_8900
      * @tc.name      testAssignmentLikeContexts0089
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'short' to 'Object'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'short' to 'Object'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2409,12 +2493,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: short = (255).toShort();
       let c: A30 = new A30(new Short(v1), new Short(v2));
       c.foo(new Short(v1), new Short(v2));
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_9000
      * @tc.name      testAssignmentLikeContexts0090
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'short' to 'Integral'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'short' to 'Integral'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2424,12 +2510,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: short = (255).toShort();
       let c: A31 = new A31(new Short(v1) as Integral, new Short(v2) as Integral);
       c.foo(new Short(v1) as Integral, new Short(v2) as Integral);
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_9100
      * @tc.name      testAssignmentLikeContexts0091
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'int' to 'Object'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'int' to 'Object'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2440,12 +2528,15 @@ export default function AssignmentLikeContextsTest() {
       let v3: int = Int.MAX_VALUE;
       let c: A32 = new A32(new Int(v1), new Int(v2), new Int(v3));
       c.foo(new Int(v1), new Int(v2), new Int(v3));
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
+      expect(c.fld_3).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_9200
      * @tc.name      testAssignmentLikeContexts0092
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'int' to 'Integral'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'int' to 'Integral'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2456,12 +2547,15 @@ export default function AssignmentLikeContextsTest() {
       let v3: int = Int.MAX_VALUE;
       let c: A33 = new A33(new Int(v1) as Integral, new Int(v2) as Integral, new Int(v3) as Integral);
       c.foo(new Int(v1) as Integral, new Int(v2) as Integral, new Int(v3) as Integral);
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
+      expect(c.fld_3).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_9300
      * @tc.name      testAssignmentLikeContexts0093
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'long' to 'Object'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'long' to 'Object'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2471,12 +2565,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: long = (9223372036854775807).toLong();
       let c: A34 = new A34(new Long(v1), new Long(v2));
       c.foo(new Long(v1), new Long(v2));
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_9400
      * @tc.name      testAssignmentLikeContexts0094
-     * @desc        Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'long' to 'Integral'
+     * @tc.desc     Invocation contexts allow a boxing conversion followed by a widening reference conversion: Boxing conversion from 'long' to 'Integral'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2486,12 +2582,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: long = (9223372036854775807).toLong();
       let c: A35 = new A35(new Long(v1) as Integral, new Long(v2) as Integral);
       c.foo(new Long(v1) as Integral, new Long(v2) as Integral);
+      expect(c.fld_1).not().assertNull();
+      expect(c.fld_2).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_9500
      * @tc.name      testAssignmentLikeContexts0095
-     * @desc        Invocation call contexts: call assignment from 'boolean' to 'Boolean'
+     * @tc.desc     Invocation call contexts: call assignment from 'boolean' to 'Boolean'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2501,12 +2599,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: boolean = false;
       let c: A36 = new A36(new Boolean(v1), new Boolean(v2));
       c.foo(new Boolean(v1), new Boolean(v2));
+      expect(c.fld_1).assertEqual(new Boolean(v1));
+      expect(c.fld_2).assertEqual(new Boolean(v2));
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_9600
      * @tc.name      testAssignmentLikeContexts0096
-     * @desc        Invocation call contexts: call assignment from 'byte' to 'Byte'
+     * @tc.desc     Invocation call contexts: call assignment from 'byte' to 'Byte'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2517,12 +2617,15 @@ export default function AssignmentLikeContextsTest() {
       let v3: byte = 127 as byte;
       let c: A37 = new A37(new Byte(v1), new Byte(v2), new Byte(v3));
       c.foo(new Byte(v1), new Byte(v2), new Byte(v3));
+      expect(c.fld_1).assertEqual(new Byte(v1));
+      expect(c.fld_2).assertEqual(new Byte(v2));
+      expect(c.fld_3).assertEqual(new Byte(v3));
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_9700
      * @tc.name      testAssignmentLikeContexts0097
-     * @desc        Invocation call contexts: call assignment from 'char' to 'Char'
+     * @tc.desc     Invocation call contexts: call assignment from 'char' to 'Char'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2533,12 +2636,15 @@ export default function AssignmentLikeContextsTest() {
       let v3: char = c'\uffff';
       let c: A38 = new A38(new Char(v1), new Char(v2), new Char(v3));
       c.foo(new Char(v1), new Char(v2), new Char(v3));
+      expect(c.fld_1).assertEqual(new Char(v1));
+      expect(c.fld_2).assertEqual(new Char(v2));
+      expect(c.fld_3).assertEqual(new Char(v3));
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_9800
      * @tc.name      testAssignmentLikeContexts0098
-     * @desc        Invocation call contexts: call assignment from 'short' to 'Short'
+     * @tc.desc     Invocation call contexts: call assignment from 'short' to 'Short'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2548,12 +2654,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: short = (255).toShort();
       let c: A39 = new A39(new Short(v1), new Short(v2));
       c.foo(new Short(v1), new Short(v2));
+      expect(c.fld_1).assertEqual(new Short(v1));
+      expect(c.fld_2).assertEqual(new Short(v2));
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_9900
      * @tc.name      testAssignmentLikeContexts0099
-     * @desc        Invocation call contexts: call assignment from 'int' to 'Int'
+     * @tc.desc     Invocation call contexts: call assignment from 'int' to 'Int'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2564,12 +2672,15 @@ export default function AssignmentLikeContextsTest() {
       let v3: int = Int.MAX_VALUE;
       let c: A40 = new A40(new Int(v1), new Int(v2), new Int(v3));
       c.foo(new Int(v1), new Int(v2), new Int(v3));
+      expect(c.fld_1).assertEqual(new Int(v1));
+      expect(c.fld_2).assertEqual(new Int(v2));
+      expect(c.fld_3).assertEqual(new Int(v3));
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10000
      * @tc.name      testAssignmentLikeContexts0100
-     * @desc        Invocation call contexts: call assignment from 'long' to 'Long'
+     * @tc.desc     Invocation call contexts: call assignment from 'long' to 'Long'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2579,12 +2690,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: long = (9223372036854775807).toLong();
       let c: A41 = new A41(new Long(v1), new Long(v2));
       c.foo(new Long(v1), new Long(v2));
+      expect(c.fld_1).assertEqual(new Long(v1));
+      expect(c.fld_2).assertEqual(new Long(v2));
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10100
      * @tc.name      testAssignmentLikeContexts0101
-     * @desc        Invocation call contexts: call assignment from 'float' to 'Float'
+     * @tc.desc     Invocation call contexts: call assignment from 'float' to 'Float'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2594,12 +2707,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: float = Float.MAX_VALUE;
       let c: A42 = new A42(new Float(v1), new Float(v2));
       c.foo(new Float(v1), new Float(v2));
+      expect(c.fld_1).assertEqual(new Float(v1));
+      expect(c.fld_2).assertEqual(new Float(v2));
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10200
      * @tc.name      testAssignmentLikeContexts0102
-     * @desc        Invocation call contexts: call assignment from 'double' to 'Double'
+     * @tc.desc     Invocation call contexts: call assignment from 'double' to 'Double'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2609,12 +2724,14 @@ export default function AssignmentLikeContextsTest() {
       let v2: double = Double.MAX_VALUE;
       let c: A43 = new A43(new Double(v1), new Double(v2));
       c.foo(new Double(v1), new Double(v2));
+      expect(c.fld_1).assertEqual(new Double(v1));
+      expect(c.fld_2).assertEqual(new Double(v2));
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10300
      * @tc.name      testAssignmentLikeContexts0103
-     * @desc        Assignment contexts allow the use of the identity conversion (basic types and objects)
+     * @tc.desc     Assignment contexts allow the use of the identity conversion (basic types and objects)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2679,7 +2796,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10400
      * @tc.name      testAssignmentLikeContexts0104
-     * @desc        A conversion from a type to that same type is permitted for any type (extended cases)
+     * @tc.desc     A conversion from a type to that same type is permitted for any type (extended cases)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2728,7 +2845,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10500
      * @tc.name      testAssignmentLikeContexts0105
-     * @desc        A conversion from a type to that same type is permitted for any type (generic class with type parameter as class)
+     * @tc.desc     A conversion from a type to that same type is permitted for any type (generic class with type parameter as class)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2742,7 +2859,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10600
      * @tc.name      testAssignmentLikeContexts0106
-     * @desc        A conversion from a type to that same type is permitted for any type (generic class with bounded type parameter)
+     * @tc.desc     A conversion from a type to that same type is permitted for any type (generic class with bounded type parameter)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2756,7 +2873,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10700
      * @tc.name      testAssignmentLikeContexts0107
-     * @desc        Invocation contexts allow an identity conversion (multiple types including functions and arrays)
+     * @tc.desc     Invocation contexts allow an identity conversion (multiple types including functions and arrays)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2794,12 +2911,13 @@ export default function AssignmentLikeContextsTest() {
         c.fld_13,
         c.fld_14
       );
+      expect(c.fld_1).assertEqual(false);
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10800
      * @tc.name      testAssignmentLikeContexts0108
-     * @desc        A value of the null type may be assigned to any reference type (basic reference types)
+     * @tc.desc     A value of the null type may be assigned to any reference type (basic reference types)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2866,7 +2984,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10900
      * @tc.name      testAssignmentLikeContexts0109
-     * @desc        A value of the null type may be assigned to any reference type (system classes and error types)
+     * @tc.desc     A value of the null type may be assigned to any reference type (system classes and error types)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2932,7 +3050,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11000
      * @tc.name      testAssignmentLikeContexts0110
-     * @desc        A value of the null type may be assigned to any reference type (string and utility classes)
+     * @tc.desc     A value of the null type may be assigned to any reference type (string and utility classes)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2984,7 +3102,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11100
      * @tc.name      testAssignmentLikeContexts0111
-     * @desc        Widening primitive type: byte to short/int/long/float/double
+     * @tc.desc     Widening primitive type: byte to short/int/long/float/double
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3007,7 +3125,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11200
      * @tc.name      testAssignmentLikeContexts0112
-     * @desc        Widening primitive type: short to int/long/float/double
+     * @tc.desc     Widening primitive type: short to int/long/float/double
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3028,7 +3146,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11300
      * @tc.name      testAssignmentLikeContexts0113
-     * @desc        Widening primitive type: int to long/float/double
+     * @tc.desc     Widening primitive type: int to long/float/double
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3047,7 +3165,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11400
      * @tc.name      testAssignmentLikeContexts0114
-     * @desc        Widening primitive type: long to float/double
+     * @tc.desc     Widening primitive type: long to float/double
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3064,7 +3182,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11500
      * @tc.name      testAssignmentLikeContexts0115
-     * @desc        Widening primitive type: float to double
+     * @tc.desc     Widening primitive type: float to double
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3079,7 +3197,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11600
      * @tc.name      testAssignmentLikeContexts0116
-     * @desc        Widening reference conversion: array to Object
+     * @tc.desc     Widening reference conversion: array to Object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3093,7 +3211,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11700
      * @tc.name      testAssignmentLikeContexts0117
-     * @desc        Widening reference conversion: multi-dimensional array to Object
+     * @tc.desc     Widening reference conversion: multi-dimensional array to Object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3107,7 +3225,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11800
      * @tc.name      testAssignmentLikeContexts0118
-     * @desc        Widening reference conversion: wrapper type array to Object
+     * @tc.desc     Widening reference conversion: wrapper type array to Object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3145,7 +3263,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11900
      * @tc.name      testAssignmentLikeContexts0119
-     * @desc        Widening reference conversion: wrapper type to Object/Integral/Floating/Comparable
+     * @tc.desc     Widening reference conversion: wrapper type to Object/Integral/Floating/Comparable
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3197,7 +3315,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12000
      * @tc.name      testAssignmentLikeContexts0120
-     * @desc        Widening reference conversion: function and function array to Object
+     * @tc.desc     Widening reference conversion: function and function array to Object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3215,7 +3333,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12100
      * @tc.name      testAssignmentLikeContexts0121
-     * @desc        Widening reference conversion: enum and enum array to Object
+     * @tc.desc     Widening reference conversion: enum and enum array to Object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3233,7 +3351,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12200
      * @tc.name      testAssignmentLikeContexts0122
-     * @desc        Widening reference conversion: interface implementation to Object
+     * @tc.desc     Widening reference conversion: interface implementation to Object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3247,7 +3365,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12300
      * @tc.name      testAssignmentLikeContexts0123
-     * @desc        Widening reference conversion: multi-dimensional function array to Object array (nullable)
+     * @tc.desc     Widening reference conversion: multi-dimensional function array to Object array (nullable)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3261,7 +3379,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12400
      * @tc.name      testAssignmentLikeContexts0124
-     * @desc        Widening reference conversion: generic class with interface type parameter to super generic class
+     * @tc.desc     Widening reference conversion: generic class with interface type parameter to super generic class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3275,7 +3393,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12500
      * @tc.name      testAssignmentLikeContexts0125
-     * @desc        Identity conversion for generic class with nested type parameter
+     * @tc.desc     Identity conversion for generic class with nested type parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3289,7 +3407,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12600
      * @tc.name      testAssignmentLikeContexts0126
-     * @desc        Identity conversion for nullable function type
+     * @tc.desc     Identity conversion for nullable function type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3303,7 +3421,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12700
      * @tc.name      testAssignmentLikeContexts0127
-     * @desc        Widening reference conversion for nested generic class
+     * @tc.desc     Widening reference conversion for nested generic class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3317,7 +3435,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12800
      * @tc.name      testAssignmentLikeContexts0128
-     * @desc        Identity conversion for array of generic objects
+     * @tc.desc     Identity conversion for array of generic objects
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3333,7 +3451,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12900
      * @tc.name      testAssignmentLikeContexts0129
-     * @desc        Assignment contexts allow widening reference conversion followed by unboxing (Byte to byte)
+     * @tc.desc     Assignment contexts allow widening reference conversion followed by unboxing (Byte to byte)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3349,7 +3467,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13000
      * @tc.name      testAssignmentLikeContexts0130
-     * @desc        Assignment contexts allow widening reference conversion followed by unboxing (Short to short)
+     * @tc.desc     Assignment contexts allow widening reference conversion followed by unboxing (Short to short)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3365,7 +3483,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13100
      * @tc.name      testAssignmentLikeContexts0131
-     * @desc        Assignment contexts allow widening reference conversion followed by unboxing (Int to int)
+     * @tc.desc     Assignment contexts allow widening reference conversion followed by unboxing (Int to int)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3381,7 +3499,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13200
      * @tc.name      testAssignmentLikeContexts0132
-     * @desc        Assignment contexts allow widening reference conversion followed by unboxing (Long to long)
+     * @tc.desc     Assignment contexts allow widening reference conversion followed by unboxing (Long to long)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3397,7 +3515,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13300
      * @tc.name      testAssignmentLikeContexts0133
-     * @desc        Assignment contexts allow conversion followed by widening reference conversion (boolean to Object)
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (boolean to Object)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3415,7 +3533,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13400
      * @tc.name      testAssignmentLikeContexts0134
-     * @desc        Assignment contexts allow conversion followed by widening reference conversion (byte to Integral)
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (byte to Integral)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3437,7 +3555,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13500
      * @tc.name      testAssignmentLikeContexts0135
-     * @desc        Assignment contexts allow conversion followed by widening reference conversion (char to Object)
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (char to Object)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3459,7 +3577,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13600
      * @tc.name      testAssignmentLikeContexts0136
-     * @desc        Assignment contexts allow conversion followed by widening reference conversion (short to Object)
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (short to Object)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3477,7 +3595,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13700
      * @tc.name      testAssignmentLikeContexts0137
-     * @desc        Assignment contexts allow conversion followed by widening reference conversion (int to Integral)
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (int to Integral)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3499,7 +3617,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13800
      * @tc.name      testAssignmentLikeContexts0138
-     * @desc        Assignment contexts allow conversion followed by widening reference conversion (long to Object)
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (long to Object)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3517,7 +3635,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13900
      * @tc.name      testAssignmentLikeContexts0139
-     * @desc        Assignment contexts allow conversion followed by widening reference conversion (float to Object)
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (float to Object)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3535,7 +3653,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14000
      * @tc.name      testAssignmentLikeContexts0140
-     * @desc        Assignment contexts allow conversion followed by widening reference conversion (double to Object)
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (double to Object)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3553,7 +3671,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14100
      * @tc.name      testAssignmentLikeContexts0141
-     * @desc        Invocation contexts allow widening reference conversion followed by unboxing (Short to short)
+     * @tc.desc     Invocation contexts allow widening reference conversion followed by unboxing (Short to short)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3568,7 +3686,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14200
      * @tc.name      testAssignmentLikeContexts0142
-     * @desc        Invocation contexts allow widening reference conversion followed by unboxing (Int to int)
+     * @tc.desc     Invocation contexts allow widening reference conversion followed by unboxing (Int to int)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3583,7 +3701,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14300
      * @tc.name      testAssignmentLikeContexts0143
-     * @desc        Invocation contexts allow widening reference conversion followed by unboxing (Long to long)
+     * @tc.desc     Invocation contexts allow widening reference conversion followed by unboxing (Long to long)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3598,7 +3716,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14400
      * @tc.name      testAssignmentLikeContexts0144
-     * @desc        Assignment contexts allow conversion followed by widening reference conversion (float to Floating)
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (float to Floating)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3616,7 +3734,7 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14500
      * @tc.name      testAssignmentLikeContexts0145
-     * @desc        Assignment contexts allow conversion followed by widening reference conversion (double to Floating)
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (double to Floating)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3634,20 +3752,20 @@ export default function AssignmentLikeContextsTest() {
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14600
      * @tc.name      testAssignmentLikeContexts0146
-     * @desc        Invocation contexts allow conversion followed by widening reference conversion (byte to Integral)
+     * @tc.desc     Invocation contexts allow conversion followed by widening reference conversion (byte to Integral)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testAssignmentLikeContexts0146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let param: byte = 64 as byte;
-      foo4(param as Integral);
+      expect(param as Integral).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14700
      * @tc.name      testAssignmentLikeContexts0147
-     * @desc        Invocation contexts allow conversion followed by widening reference conversion (char to Object)
+     * @tc.desc     Invocation contexts allow conversion followed by widening reference conversion (char to Object)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3655,12 +3773,13 @@ export default function AssignmentLikeContextsTest() {
     it("testAssignmentLikeContexts0147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let param: char = c'\u767D'; // 字符 '白'
       foo5(param);
+      expect(param).not().assertNull();
     });
 
     /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14800
      * @tc.name      testAssignmentLikeContexts0148
-     * @desc        Compile-time error for narrowing primitive conversion (int to byte)
+     * @tc.desc     Compile-time error for narrowing primitive conversion (int to byte)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
