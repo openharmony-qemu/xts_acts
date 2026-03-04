@@ -1117,7 +1117,7 @@ export default function relationalStoreErrorCodeTest() {
 
     /**
      * @tc.name   errcode040
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12900
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTablesErrcodeTest_4000
      * @tc.desc   rdbStore.setDistributedTables callback errcode is 14800014
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1146,7 +1146,7 @@ export default function relationalStoreErrorCodeTest() {
 
     /**
      * @tc.name   errcode041
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12900
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTablesErrcodeTest_4100
      * @tc.desc   rdbStore.setDistributedTables callback errcode is 14800014
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1174,7 +1174,7 @@ export default function relationalStoreErrorCodeTest() {
 
     /**
      * @tc.name   errcode042
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12900
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTablesErrcodeTest_4200
      * @tc.desc   rdbStore.setDistributedTables callback errcode is 14800014
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1203,7 +1203,7 @@ export default function relationalStoreErrorCodeTest() {
 
      /**
      * @tc.name   errcode043
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12900
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTablesErrcodeTest_4300
      * @tc.desc   rdbStore.setDistributedTables err param with undefined or null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1259,7 +1259,7 @@ export default function relationalStoreErrorCodeTest() {
 
     /**
      * @tc.name   errcode044
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_14000
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTablesErrcodeTest_4400
      * @tc.desc   rdbStore.setDistributedTables promise enableCloud = true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1287,7 +1287,7 @@ export default function relationalStoreErrorCodeTest() {
 
     /**
      * @tc.name   errcode045
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_14100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTablesErrcodeTest_4500
      * @tc.desc   rdbStore.setDistributedTables promise err param with undefined or null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1330,9 +1330,9 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode045 end *************");
     })
 
-        /**
+    /**
      * @tc.name   errcode046
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_14200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTablesErrcodeTest_4600
      * @tc.desc   rdbStore.setDistributedTables promise err param with undefined or null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
