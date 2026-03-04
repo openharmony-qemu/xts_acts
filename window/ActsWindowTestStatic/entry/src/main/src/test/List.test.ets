@@ -16,27 +16,17 @@ import WindowLayoutTest from "./WindowLayout.test";
 import WindowImmersiveTest from "./WindowImmersive.test";
 import WindowModalTest from "./WindowModal.test";
 import WindowZindexTest from "./WindowZindex.test";
-import WindowTitleTest from "./WindowTitle.test";
 import WindowOrientationTest from "./WindowOrientation.test";
 import WindowPropertiesTest from "./WindowProperties.test";
-import WindowPCTest from "./WindowPC.test";
 import WindowKeyBoardTest from "./WindowKeyBoard.test";
 import WindowFocusTest from "./WindowFocus.test";
-import WindowPCAndEventTest from "./WindowPCAndEventTest.test";
-import WindowPCStaticTest from "./WindowPCStatic.test";
-import WindowEventStatic from "./WindowEventStatic.test";
 export default function testsuite() {
   WindowImmersiveTest();
   WindowLayoutTest();
   WindowModalTest();
   WindowZindexTest();
-  WindowTitleTest();
   WindowOrientationTest();
   WindowPropertiesTest();
-  WindowPCTest();
   WindowKeyBoardTest();
   WindowFocusTest();
-  WindowPCAndEventTest();
-  WindowPCStaticTest();
-  WindowEventStatic();
 }
