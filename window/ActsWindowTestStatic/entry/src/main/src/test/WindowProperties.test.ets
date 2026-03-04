@@ -3979,16 +3979,16 @@ export default function WindowPropertiesTest() {
         });
 
         /**
-        * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_static_0100
+        * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_static_0300
         * @tc.name       testOnOcclusionState_static_0100
         * @tc.desc       验证注册OnOcclusionState监听
         * @tc.size       MediumTest
         * @tc.type       Function
         * @tc.level      Level 2
         */
-        it('testOnOcclusionState_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        it('testOnOcclusionState_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: () => void): Promise<void> => {
-            let caseName: string = 'testOnOcclusionState_static_0100 ';
+            let caseName: string = 'testOnOcclusionState_static_0300 ';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             console.log(caseName + 'begin');
             let windowClass: window.Window = await windowStage!.getMainWindow();
