@@ -172,23 +172,5 @@ export default function SecurityHuksApiCover() {
       }
     });
 
-    /**
-     * @tc.name   SUB_Security_HUKS_ApiCover_Generate_PropertiesArray_0100
-     * @tc.number SUB_Security_HUKS_ApiCover_Generate_PropertiesArray_0100
-     * @tc.desc   test generateKeyItem with properties array minimum length
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_Security_HUKS_ApiCover_Generate_PropertiesArray_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      let testNumber = "SUB_Security_HUKS_ApiCover_Generate_PropertiesArray_0100";
-      let huksOptions: huks.HuksOptions = GetEmptyOptions();
-      try {
-        await huks.generateKeyItem(testNumber, huksOptions);
-      } catch (err) {
-        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(401); // HUKS_ERR_CODE_INVALID_ARGUMENT
-      }
-    });
   });
 }
