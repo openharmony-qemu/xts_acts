@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { router } from '@kit.ArkUI';
 import { Want } from '@kit.AbilityKit';
 import { UiComponent, Driver, Component, ON, BY } from '@ohos.UiTest';
-import CommonFunc from '../../../../main/ets/common/Common';
+import CommonFunc from '../../MainAbility/common/Common';
 
 class TerminationInfoTest {
   static terminatedCode: number = -1;
