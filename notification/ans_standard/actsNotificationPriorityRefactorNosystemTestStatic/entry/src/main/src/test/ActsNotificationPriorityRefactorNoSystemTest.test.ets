@@ -94,9 +94,9 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
                 done()
               }
             });
-        }catch(err:Error){
-          console.error(TAG + `getPriorityEnabledByBundles trycatch failed, code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(0);
+        }catch(err){
+          console.error(TAG + `getPriorityEnabledByBundles trycatch failed, err is ${JSON.stringify(err)}`);
+          expect(false).assertTrue()
           done()
         }
       })
