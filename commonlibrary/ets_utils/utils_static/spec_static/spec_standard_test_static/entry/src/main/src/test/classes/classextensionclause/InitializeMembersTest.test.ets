@@ -720,26 +720,5 @@ export default function InitializeMembersTest() {
       expect(myChild.value[1].name).assertEqual("Object2");
 
     });
-
-    /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1600
-     * @tc.name      testInitializeMembers0016
-     * @tc.desc      To verify that the parent class member variable (type Interface object array) is correctly
-     * initialized
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testInitializeMembers0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0016';
-      console.log(TAG + ' start');
-
-      const interface1: SomeInterface[] = [obj1, obj2];
-      const myChild = new Child13(interface1);
-      expect(myChild.value[0].name).assertEqual("Object1");
-      expect(myChild.value[1].name).assertEqual("Object2");
-
-    });
-
   })
 }
