@@ -29,6 +29,15 @@ import sliderNode from './Slider/sliderNode.test';
 import sliderOnChangeModifierTest from './Slider/sliderOnChangeModifier.test';
 import sliderTrackColorMetricsTest from './SliderTest/sliderTrackColorMetrics.test';
 
+import StackAlignContentNullTest from './StackTest/StackAlignContentNullTest.test';
+import slidenullundeifned from './sliderNullTest/sliderNull.test';
+
+import selectAttributeNullTest from './selectNullTest/SelectAttributeNullTest.test';
+import selectSelectedNullTest from './selectNullTest/SelectSelectedNullTest.test';
+import selectValueNullTest from './selectNullTest/SelectValueNullTest.test';
+
+import radiounllundefined from './radioNullTest/radio.test';
+
 export default function testsuite() {
   SliderOptionValue();
   SliderInterfaceTest();
@@ -44,4 +53,13 @@ export default function testsuite() {
   sliderNode();
   sliderOnChangeModifierTest();
   sliderTrackColorMetricsTest();
+
+  StackAlignContentNullTest();
+  slidenullundeifned();
+
+  selectAttributeNullTest();
+  selectSelectedNullTest();
+  selectValueNullTest();
+
+  radiounllundefined();
 }
