@@ -103,7 +103,7 @@ struct MovingPhotoView1 {
         Stack({ alignContent: Alignment.BottomStart }) {
           if (this.refreshMovingPhoto) {
             MovingPhotoView({
-              movingPhoto: data as photoAccessHelper.MovingPhoto,
+              movingPhoto: this.data as photoAccessHelper.MovingPhoto,
               controller: this.controller,
               imageAIOptions: this.options
             })
@@ -111,7 +111,7 @@ struct MovingPhotoView1 {
               .width(200)
               .height(200)
               .muted(this.flag)
-              .objectFit(this.ImageFit)
+              .objectFit(this.ImageFit as ImageFit)
               .onStart(() => {
                 this.start = "onStart succ"
               })
