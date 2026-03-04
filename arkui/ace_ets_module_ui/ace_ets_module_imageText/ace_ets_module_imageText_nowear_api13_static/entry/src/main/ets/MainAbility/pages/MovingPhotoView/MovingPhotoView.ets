@@ -103,7 +103,7 @@ struct MovingPhotoView1 {
               .width(200)
               .height('20%')
               .muted(this.flag)
-              .objectFit(this.ImageFit)
+              .objectFit(this.ImageFit as ImageFit)
               .onStart(() => {
                 this.start = "onStart succ"
               })
