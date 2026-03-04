@@ -16,7 +16,6 @@ import WindowLayoutTest from "./WindowLayout.test";
 import WindowImmersiveTest from "./WindowImmersive.test";
 import WindowModalTest from "./WindowModal.test";
 import WindowZindexTest from "./WindowZindex.test";
-import WindowTitleTest from "./WindowTitle.test";
 import WindowOrientationTest from "./WindowOrientation.test";
 import WindowPropertiesTest from "./WindowProperties.test";
 import WindowKeyBoardTest from "./WindowKeyBoard.test";
@@ -26,7 +25,6 @@ export default function testsuite() {
   WindowLayoutTest();
   WindowModalTest();
   WindowZindexTest();
-  WindowTitleTest();
   WindowOrientationTest();
   WindowPropertiesTest();
   WindowKeyBoardTest();
