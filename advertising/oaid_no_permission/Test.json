@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-              "ActsCloudOAIDTest.hap"
+              "ActsCloudOAIDNoPermissionTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
