@@ -1135,5 +1135,67 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
         done();
       }
     })
+    /**
+     * @tc.name   CAMERA_GET_ACTIVE_FRAMERATE_001
+     * @tc.number CAMERA_GET_ACTIVE_FRAMERATE_001
+     * @tc.desc   getActiveFrameRate activeFrameRate min
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CAMERA_GET_ACTIVE_FRAMERATE_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'CAMERA_GET_ACTIVE_FRAMERATE_001';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let supportedFrameRatesArray: Array<camera.FrameRateRange> = mVideoOutput.getSupportedFrameRates();
+          console.info(TAG,"rate",supportedFrameRatesArray.length);
+          console.info(TAG,"min",supportedFrameRatesArray[0]['min'], supportedFrameRatesArray[0]['max']);
+          mVideoOutput.setFrameRate(supportedFrameRatesArray[0]['min']+1, supportedFrameRatesArray[0]['max']-1);
+          let activeFrameRate = mVideoOutput.getActiveFrameRate();
+          expect(activeFrameRate["min"] == supportedFrameRatesArray[0]['min']+1).assertTrue()
+          }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
+    /**
+     * @tc.name   CAMERA_GET_ACTIVE_FRAMERATE_002
+     * @tc.number CAMERA_GET_ACTIVE_FRAMERATE_002
+     * @tc.desc   getActiveFrameRate activeFrameRate max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CAMERA_GET_ACTIVE_FRAMERATE_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'CAMERA_GET_ACTIVE_FRAMERATE_002';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let supportedFrameRatesArray: Array<camera.FrameRateRange> = mVideoOutput.getSupportedFrameRates();
+          console.info(TAG,"rate",supportedFrameRatesArray.length);
+          console.info(TAG,"min",supportedFrameRatesArray[0]['min'], supportedFrameRatesArray[0]['max']);
+          mVideoOutput.setFrameRate(supportedFrameRatesArray[0]['min']+1, supportedFrameRatesArray[0]['max']-1);
+          let activeFrameRate = mVideoOutput.getActiveFrameRate();
+          expect(activeFrameRate["max"] == supportedFrameRatesArray[0]['max']-1).assertTrue()
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
   })
 }
