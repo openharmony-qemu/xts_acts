@@ -98,6 +98,9 @@ struct webUserAgentMetadata {
                   this.controller.setUserAgentMetadata(userAgent, metaData);
                   let result =  this.controller.getUserAgentMetadata(userAgent);
                   let versionList = result.getBrandVersionList();
+                  for (let index = 0; index < versionList.length; index++) {
+                    console.log('emitGetBrandVersionListEmpty ' + versionList[index].getBrand())
+                  }
                   Utils.emitEvent(versionList.length, 174350);
                 } catch (error) {
                   console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
