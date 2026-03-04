@@ -1205,7 +1205,7 @@ export default function nativeAVScreenCaptureNdkTest() {
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0004', Level.LEVEL0, async (done: Function) => {
       let expectedResult: number = 0;
-      result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenAndWindow3();
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenAndWindow3();
       expect(result).assertEqual(expectedResult);
       done();
     });
