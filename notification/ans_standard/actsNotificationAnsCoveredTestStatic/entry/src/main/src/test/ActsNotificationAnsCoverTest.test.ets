@@ -642,13 +642,7 @@ export default function actsNotificationAnsCoveredTest() {
 
         let subscriber: commonEventManager.CommonEventSubscriber
         let tmpsubscriber = commonEventManager.createSubscriberSync(subscribeInfo)
-        if (tmpsubscriber !== null) {
-          subscriber = tmpsubscriber
-        } else {
-          console.info(TAG + `tmpsubscriber is null`)
-          expect(false).assertTrue()
-          done()
-        }
+        subscriber = tmpsubscriber as commonEventManager.CommonEventSubscriber
         commonEventManager.subscribe(subscriber,
           (err: BusinessError | null, data: commonEventManager.CommonEventData | undefined) => {
             if (err) {
@@ -762,12 +756,7 @@ export default function actsNotificationAnsCoveredTest() {
               done()
             } else {
               console.info(TAG + `Sub_Notification_Ans_Subscriber_Subscribe_Static_1700_001 success`)
-              if (commonEventSubscriber !== undefined && commonEventSubscriber !== null) {
-                subscriber = commonEventSubscriber
-              } else {
-                expect(false).assertTrue()
-                done()
-              }
+                subscriber = commonEventSubscriber as commonEventManager.CommonEventSubscriber
 
               commonEventManager.subscribe(subscriber,
                 (err: BusinessError | null, data: commonEventManager.CommonEventData | undefined) => {
@@ -934,12 +923,7 @@ export default function actsNotificationAnsCoveredTest() {
             } else {
               console.info(TAG +
                 `Sub_Notification_Ans_Subscriber_Subscribe_Static_1800_001 success ${commonEventSubscriber}`)
-              if (commonEventSubscriber !== undefined && commonEventSubscriber !== null) {
-                subscriber = commonEventSubscriber
-              } else {
-                expect(false).assertTrue()
-                done()
-              }
+              subscriber = commonEventSubscriber as commonEventManager.CommonEventSubscriber
               count = 0;
               commonEventManager.subscribe(subscriber,
                 (err: BusinessError | null, data: commonEventManager.CommonEventData | undefined) => {
