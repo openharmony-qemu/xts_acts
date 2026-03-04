@@ -185,7 +185,7 @@ struct webSetUrlTrustList {
               case 'emitSetUrlTrustListWhitelistUrlLoad': {
                 try {
                   let urlTrustList: string = '{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}'
-                  console.log("==emitSetUrlTrustListWhitelistUrlLoad")
+                  console.log('==emitSetUrlTrustListWhitelistUrlLoad')
                   this.controller.setUrlTrustList(urlTrustList, true, true);
                   this.controller.loadUrl($rawfile('urlTrustList.html'));
                   Utils.emitEvent(true, 174370);
