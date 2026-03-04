@@ -938,5 +938,1649 @@ int VIDEO_HWDEC_CAP_API_0100()
     return SUCCESS_CODE;
 }
 
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_0200
+ * @tc.number VIDEO_HWDEC_CAP_API_0200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_0200()
+{
+    cap = OH_AVCodec_GetCapability(nullptr, false);
+    ASSERT_EQ(cap, nullptr);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_0300
+ * @tc.number VIDEO_HWDEC_CAP_API_0300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_0300()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(cap, nullptr);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_0400
+ * @tc.number VIDEO_HWDEC_CAP_API_0400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_0400()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(nullptr, false, HARDWARE);
+    ASSERT_EQ(cap, nullptr);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_0500
+ * @tc.number VIDEO_HWDEC_CAP_API_0500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_0500()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(cap, nullptr);
+    ASSERT_TRUE(OH_AVCapability_IsHardware(cap));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_0600
+ * @tc.number VIDEO_HWDEC_CAP_API_0600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_0600()
+{
+    ASSERT_FALSE(OH_AVCapability_IsHardware(nullptr));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_0700
+ * @tc.number VIDEO_HWDEC_CAP_API_0700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_0700()
+{
+    ASSERT_EQ(0, OH_AVCapability_GetMaxSupportedInstances(nullptr));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_0800
+ * @tc.number VIDEO_HWDEC_CAP_API_0800
+ * @tc.desc   function test, 不同平台解码器数量不一致, 改为不校验具体数量
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_0800()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(cap, nullptr);
+    string codec_name = OH_AVCapability_GetName(cap);
+    if (codec_name == "OMX.hisi.video.decoder.avc") {
+        ASSERT_LT(1, OH_AVCapability_GetMaxSupportedInstances(cap));
+    } else {
+        ASSERT_EQ(6, OH_AVCapability_GetMaxSupportedInstances(cap));
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_0900
+ * @tc.number VIDEO_HWDEC_CAP_API_0900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_0900()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(cap, nullptr);
+    ASSERT_EQ(g_codecName, OH_AVCapability_GetName(cap));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_1000
+ * @tc.number VIDEO_HWDEC_CAP_API_1000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_1000()
+{
+    const char* name = OH_AVCapability_GetName(nullptr);
+    ASSERT_NE(name, nullptr);
+    ASSERT_EQ(strlen(name), 0);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_3100
+ * @tc.number VIDEO_HWDEC_CAP_API_3100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_3100()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoWidthAlignment(capability, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_3200
+ * @tc.number VIDEO_HWDEC_CAP_API_3200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_3200()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    int32_t alignment = 0;
+    ret = OH_AVCapability_GetVideoWidthAlignment(nullptr, &alignment);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_3300
+ * @tc.number VIDEO_HWDEC_CAP_API_3300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_3300()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    int32_t alignment = 0;
+    ret = OH_AVCapability_GetVideoWidthAlignment(capability, &alignment);
+    cout << "WidthAlignment " << alignment << endl;
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_GE(alignment, 0);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_3400
+ * @tc.number VIDEO_HWDEC_CAP_API_3400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_3400()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoHeightAlignment(capability, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_3500
+ * @tc.number VIDEO_HWDEC_CAP_API_3500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_3500()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    int32_t alignment = 0;
+    ret = OH_AVCapability_GetVideoHeightAlignment(nullptr, &alignment);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_3600
+ * @tc.number VIDEO_HWDEC_CAP_API_3600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_3600()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    int32_t alignment = 0;
+    ret = OH_AVCapability_GetVideoHeightAlignment(capability, &alignment);
+    cout << "HeightAlignment " << alignment << endl;
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_GE(alignment, 0);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_3700
+ * @tc.number VIDEO_HWDEC_CAP_API_3700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_3700()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoWidthRangeForHeight(nullptr, DEFAULT_HEIGHT, &range);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_3800
+ * @tc.number VIDEO_HWDEC_CAP_API_3800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_3800()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoWidthRangeForHeight(capability, DEFAULT_HEIGHT, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_3900
+ * @tc.number VIDEO_HWDEC_CAP_API_3900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_3900()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoWidthRangeForHeight(capability, 0, &range);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_4000
+ * @tc.number VIDEO_HWDEC_CAP_API_4000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_4000()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoWidthRangeForHeight(capability, DEFAULT_HEIGHT, &range);
+    cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_GE(range.minVal, 0);
+    ASSERT_GT(range.maxVal, 0);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_4100
+ * @tc.number VIDEO_HWDEC_CAP_API_4100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_4100()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoHeightRangeForWidth(nullptr, DEFAULT_WIDTH, &range);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_4200
+ * @tc.number VIDEO_HWDEC_CAP_API_4200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_4200()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoHeightRangeForWidth(capability, DEFAULT_WIDTH, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_4300
+ * @tc.number VIDEO_HWDEC_CAP_API_4300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_4300()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoHeightRangeForWidth(capability, 0, &range);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_4400
+ * @tc.number VIDEO_HWDEC_CAP_API_4400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_4400()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoHeightRangeForWidth(capability, DEFAULT_WIDTH, &range);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
+    ASSERT_GE(range.minVal, 0);
+    ASSERT_GT(range.maxVal, 0);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_4500
+ * @tc.number VIDEO_HWDEC_CAP_API_4500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_4500()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    ret = OH_AVCapability_GetVideoWidthRange(nullptr, &range);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_4600
+ * @tc.number VIDEO_HWDEC_CAP_API_4600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_4600()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoWidthRange(capability, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_4700
+ * @tc.number VIDEO_HWDEC_CAP_API_4700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_4700()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoWidthRange(capability, &range);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
+    ASSERT_GE(range.minVal, 0);
+    ASSERT_GT(range.maxVal, 0);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_4800
+ * @tc.number VIDEO_HWDEC_CAP_API_4800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_4800()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    ret = OH_AVCapability_GetVideoHeightRange(nullptr, &range);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_4900
+ * @tc.number VIDEO_HWDEC_CAP_API_4900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_4900()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoHeightRange(capability, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_5000
+ * @tc.number VIDEO_HWDEC_CAP_API_5000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_5000()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange widthRange;
+    OH_AVRange heightRange;
+    SafeMemcpy(&widthRange, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoHeightRange(capability, &heightRange);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    cout << "minval=" << heightRange.minVal << "  maxval=" << heightRange.maxVal << endl;
+    ASSERT_GE(heightRange.minVal, 0);
+    ASSERT_GT(heightRange.maxVal, 0);
+    ret = OH_AVCapability_GetVideoWidthRange(capability, &widthRange);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_GE(widthRange.minVal, 0);
+    ASSERT_GT(widthRange.maxVal, 0);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_1700
+ * @tc.number VIDEO_HWDEC_CAP_API_1700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_1700()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange widthRange;
+    OH_AVRange heightRange;
+    SafeMemcpy(&widthRange, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
+    if (capability) {
+        ret = OH_AVCapability_GetVideoHeightRange(capability, &heightRange);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        cout << "minval=" << heightRange.minVal << "  maxval=" << heightRange.maxVal << endl;
+        ASSERT_GE(heightRange.minVal, 0);
+        ASSERT_GT(heightRange.maxVal, 0);
+        ret = OH_AVCapability_GetVideoWidthRange(capability, &widthRange);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_GE(widthRange.minVal, 0);
+        ASSERT_GT(widthRange.maxVal, 0);
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_5100
+ * @tc.number VIDEO_HWDEC_CAP_API_5100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_5100()
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ASSERT_EQ(false, OH_AVCapability_IsVideoSizeSupported(capability, 0, DEFAULT_HEIGHT));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_5200
+ * @tc.number VIDEO_HWDEC_CAP_API_5200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_5200()
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ASSERT_EQ(false, OH_AVCapability_IsVideoSizeSupported(capability, DEFAULT_WIDTH, 0));
+    return SUCCESS_CODE;
+}
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_5300
+ * @tc.number VIDEO_HWDEC_CAP_API_5300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_5300()
+{
+    ASSERT_EQ(false, OH_AVCapability_IsVideoSizeSupported(nullptr, DEFAULT_WIDTH, DEFAULT_HEIGHT));
+    return SUCCESS_CODE;
+}
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_9400
+ * @tc.number VIDEO_HWDEC_CAP_API_9400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_9400()
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    OH_AVRange heightRange;
+    OH_AVRange widthRange;
+    ASSERT_EQ(AV_ERR_OK, OH_AVCapability_GetVideoHeightRange(capability, &heightRange));
+    ASSERT_EQ(AV_ERR_OK, OH_AVCapability_GetVideoWidthRange(capability, &widthRange));
+    ASSERT_EQ(false, OH_AVCapability_IsVideoSizeSupported(capability, widthRange.maxVal + 1, heightRange.maxVal + 1));
+    return SUCCESS_CODE;
+}
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_5400
+ * @tc.number VIDEO_HWDEC_CAP_API_5400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_5400()
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ASSERT_EQ(true, OH_AVCapability_IsVideoSizeSupported(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_5500
+ * @tc.number VIDEO_HWDEC_CAP_API_5500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_5500()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    ret = OH_AVCapability_GetVideoFrameRateRange(nullptr, &range);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_5600
+ * @tc.number VIDEO_HWDEC_CAP_API_5600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_5600()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoFrameRateRange(capability, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_5700
+ * @tc.number VIDEO_HWDEC_CAP_API_5700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_5700()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoFrameRateRange(capability, &range);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_GE(range.minVal, 0);
+    ASSERT_GT(range.maxVal, 0);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_1600
+ * @tc.number VIDEO_HWDEC_CAP_API_1600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_1600()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
+    if (capability) {
+        ret = OH_AVCapability_GetVideoFrameRateRange(capability, &range);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_GE(range.minVal, 0);
+        ASSERT_GT(range.maxVal, 0);
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_5800
+ * @tc.number VIDEO_HWDEC_CAP_API_5800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_5800()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    ret = OH_AVCapability_GetVideoFrameRateRangeForSize(nullptr, DEFAULT_WIDTH, DEFAULT_HEIGHT, &range);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_5900
+ * @tc.number VIDEO_HWDEC_CAP_API_5900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_5900()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_6000
+ * @tc.number VIDEO_HWDEC_CAP_API_6000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_6000()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, 0, DEFAULT_HEIGHT, &range);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_6100
+ * @tc.number VIDEO_HWDEC_CAP_API_6100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_6100()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, DEFAULT_WIDTH, 0, &range);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_6200
+ * @tc.number VIDEO_HWDEC_CAP_API_6200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_6200()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVRange range;
+    OH_AVRange heightRange;
+    OH_AVRange widthRange;
+    SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoHeightRange(capability, &heightRange);
+    cout << "minval=" << heightRange.minVal << "  maxval=" << heightRange.maxVal << endl;
+    ret = OH_AVCapability_GetVideoWidthRangeForHeight(capability, heightRange.maxVal, &widthRange);
+    cout << "minval=" << widthRange.minVal << "  maxval=" << widthRange.maxVal << endl;
+    ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, 1280, 720, &range);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
+    ASSERT_GE(range.minVal, 0);
+    ASSERT_GT(range.maxVal, 0);
+    ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, &range);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
+    ASSERT_GE(range.minVal, 0);
+    ASSERT_GT(range.maxVal, 0);
+    ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, widthRange.maxVal, heightRange.maxVal, &range);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
+    ASSERT_GE(range.minVal, 0);
+    ASSERT_GT(range.maxVal, 0);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_6300
+ * @tc.number VIDEO_HWDEC_CAP_API_6300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_6300()
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, 0, DEFAULT_HEIGHT, 30));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_6400
+ * @tc.number VIDEO_HWDEC_CAP_API_6400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_6400()
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, 0, 30));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_6500
+ * @tc.number VIDEO_HWDEC_CAP_API_6500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_6500()
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, 0));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_6600
+ * @tc.number VIDEO_HWDEC_CAP_API_6600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_6600()
+{
+    ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(nullptr, DEFAULT_WIDTH, DEFAULT_HEIGHT, 30));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_6700
+ * @tc.number VIDEO_HWDEC_CAP_API_6700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_6700()
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, 30));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_6800
+ * @tc.number VIDEO_HWDEC_CAP_API_6800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_6800()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* pixelFormat = nullptr;
+    uint32_t pixelFormatNum = 0;
+    ret = OH_AVCapability_GetVideoSupportedPixelFormats(nullptr, &pixelFormat, &pixelFormatNum);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_6900
+ * @tc.number VIDEO_HWDEC_CAP_API_6900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_6900()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    uint32_t pixelFormatNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, nullptr, &pixelFormatNum);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_7000
+ * @tc.number VIDEO_HWDEC_CAP_API_7000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_7000()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* pixelFormat = nullptr;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, &pixelFormat, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_7100
+ * @tc.number VIDEO_HWDEC_CAP_API_7100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_7100()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* pixelFormat = nullptr;
+    uint32_t pixelFormatNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, &pixelFormat, &pixelFormatNum);
+    ASSERT_NE(nullptr, pixelFormat);
+    ASSERT_GT(pixelFormatNum, 0);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    for (int i = 0; i < pixelFormatNum; i++) {
+        vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+        ASSERT_NE(nullptr, vdec_);
+        format = OH_AVFormat_Create();
+        ASSERT_NE(nullptr, format);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        ASSERT_GE(pixelFormat[i], 0);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[i]);
+        ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
+        OH_AVFormat_Destroy(format);
+        OH_VideoDecoder_Destroy(vdec_);
+    }
+    vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    ASSERT_NE(nullptr, vdec_);
+    format = OH_AVFormat_Create();
+    ASSERT_NE(nullptr, format);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA + AV_PIXEL_FORMAT_RGBA);
+    ASSERT_NE(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_1200
+ * @tc.number VIDEO_HWDEC_CAP_API_1200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_1200()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* pixelFormat = nullptr;
+    uint32_t pixelFormatNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
+    if (capability) {
+        ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, &pixelFormat, &pixelFormatNum);
+        ASSERT_NE(nullptr, pixelFormat);
+        ASSERT_GT(pixelFormatNum, 0);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        for (int i = 0; i < pixelFormatNum; i++) {
+            vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+            ASSERT_NE(nullptr, vdec_);
+            format = OH_AVFormat_Create();
+            ASSERT_NE(nullptr, format);
+            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+            ASSERT_GE(pixelFormat[i], 0);
+            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[i]);
+            ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
+            OH_AVFormat_Destroy(format);
+            OH_VideoDecoder_Destroy(vdec_);
+        }
+        vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+        ASSERT_NE(nullptr, vdec_);
+        format = OH_AVFormat_Create();
+        ASSERT_NE(nullptr, format);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA + AV_PIXEL_FORMAT_RGBA);
+        ASSERT_NE(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_7200
+ * @tc.number VIDEO_HWDEC_CAP_API_7200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_7200()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* profiles = nullptr;
+    uint32_t profileNum = 0;
+    ret = OH_AVCapability_GetSupportedProfiles(nullptr, &profiles, &profileNum);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_7300
+ * @tc.number VIDEO_HWDEC_CAP_API_7300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_7300()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    uint32_t profileNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedProfiles(capability, nullptr, &profileNum);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_7400
+ * @tc.number VIDEO_HWDEC_CAP_API_7400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_7400()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* profiles = nullptr;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_7500
+ * @tc.number VIDEO_HWDEC_CAP_API_7500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_7500()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_GT(profileNum, 0);
+    ASSERT_NE(nullptr, profiles);
+    for (int i = 0; i < profileNum; i++) {
+        ASSERT_GE(profiles[i], 0);
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_1300
+ * @tc.number VIDEO_HWDEC_CAP_API_1300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_1300()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
+    if (capability) {
+        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_GT(profileNum, 0);
+        ASSERT_NE(nullptr, profiles);
+        for (int i = 0; i < profileNum; i++) {
+            ASSERT_GE(profiles[i], 0);
+        }
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_7600
+ * @tc.number VIDEO_HWDEC_CAP_API_7600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_7600()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* levels = nullptr;
+    uint32_t levelNum = 0;
+    ret = OH_AVCapability_GetSupportedLevelsForProfile(nullptr, AVC_PROFILE_BASELINE, &levels, &levelNum);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_7700
+ * @tc.number VIDEO_HWDEC_CAP_API_7700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_7700()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* levels = nullptr;
+    uint32_t levelNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, 1, &levels, &levelNum);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_7800
+ * @tc.number VIDEO_HWDEC_CAP_API_7800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_7800()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    uint32_t levelNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, AVC_PROFILE_BASELINE, nullptr, &levelNum);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_7900
+ * @tc.number VIDEO_HWDEC_CAP_API_7900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_7900()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* levels = nullptr;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, AVC_PROFILE_BASELINE, &levels, nullptr);
+    ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_8000
+ * @tc.number VIDEO_HWDEC_CAP_API_8000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_8000()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* levels = nullptr;
+    uint32_t levelNum = 0;
+    const int32_t* profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_GT(profileNum, 0);
+    ASSERT_NE(nullptr, profiles);
+    for (int i = 0; i < profileNum; i++) {
+        ASSERT_GE(profiles[i], 0);
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_NE(nullptr, levels);
+        ASSERT_GT(levelNum, 0);
+        for (int j = 0; j < levelNum; j++) {
+            ASSERT_GE(levels[j], 0);
+        }
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_1400
+ * @tc.number VIDEO_HWDEC_CAP_API_1400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_1400()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* levels = nullptr;
+    uint32_t levelNum = 0;
+    uint32_t profileNum = 0;
+    const int32_t* profiles = nullptr;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
+    if (capability) {
+        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_GT(profileNum, 0);
+        ASSERT_NE(nullptr, profiles);
+        for (int i = 0; i < profileNum; i++) {
+            ASSERT_GE(profiles[i], 0);
+            ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
+            ASSERT_EQ(AV_ERR_OK, ret);
+            ASSERT_NE(nullptr, levels);
+            ASSERT_GT(levelNum, 0);
+            for (int j = 0; j < levelNum; j++) {
+                ASSERT_GE(levels[j], 0);
+            }
+        }
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_8100
+ * @tc.number VIDEO_HWDEC_CAP_API_8100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_8100()
+{
+    ASSERT_EQ(false, OH_AVCapability_AreProfileAndLevelSupported(nullptr, AVC_PROFILE_BASELINE, 1));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_8200
+ * @tc.number VIDEO_HWDEC_CAP_API_8200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_8200()
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ASSERT_EQ(false, OH_AVCapability_AreProfileAndLevelSupported(capability, 1, 1));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_CAP_API_8300
+ * @tc.number VIDEO_HWDEC_CAP_API_8300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_CAP_API_8300()
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    ASSERT_NE(nullptr, capability);
+    ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability, AVC_PROFILE_BASELINE, 1));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_ATTIME_API_0010
+ * @tc.number VIDEO_HWDEC_ATTIME_API_0010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+int VIDEO_HWDEC_ATTIME_API_0010()
+{
+    shared_ptr<VDecAPI11Sample> vDecSample = make_shared<VDecAPI11Sample>();
+    const char* INP_DIR_720_30 = "/data/storage/el2/base/files/1280_720_30_10Mb.h264";
+    vDecSample->INP_DIR = INP_DIR_720_30;
+    vDecSample->SF_OUTPUT = true;
+    vDecSample->DEFAULT_WIDTH = 1280;
+    vDecSample->DEFAULT_HEIGHT = 720;
+    vDecSample->DEFAULT_FRAME_RATE = 30;
+    vDecSample->rsAtTime = true;
+    vDecSample->isAPI = true;
+    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecName));
+    vDecSample->WaitForEOS();
+    ASSERT_EQ(AV_ERR_INVALID_VAL, vDecSample->errCount);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_SYNC_API_0010
+ * @tc.number VIDEO_DECODE_SYNC_API_0010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_DECODE_SYNC_API_0010()
+{
+    uint32_t index;
+    ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoDecoder_QueryInputBuffer(nullptr, &index, -1));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_SYNC_API_0020
+ * @tc.number VIDEO_DECODE_SYNC_API_0020
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_DECODE_SYNC_API_0020()
+{
+    uint32_t index;
+    vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    ASSERT_NE(nullptr, vdec_);
+    format = OH_AVFormat_Create();
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Prepare(vdec_));
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Start(vdec_));
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_QueryInputBuffer(vdec_, &index, INT64_MAX));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_SYNC_API_0030
+ * @tc.number VIDEO_DECODE_SYNC_API_0030
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_DECODE_SYNC_API_0030()
+{
+    uint32_t index;
+    vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    ASSERT_NE(nullptr, vdec_);
+    format = OH_AVFormat_Create();
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Prepare(vdec_));
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Start(vdec_));
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_QueryInputBuffer(vdec_, &index, INT64_MIN));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_SYNC_API_0040
+ * @tc.number VIDEO_DECODE_SYNC_API_0040
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_DECODE_SYNC_API_0040()
+{
+    ASSERT_EQ(nullptr, OH_VideoDecoder_GetInputBuffer(nullptr, 1));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_SYNC_API_0050
+ * @tc.number VIDEO_DECODE_SYNC_API_0050
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_DECODE_SYNC_API_0050()
+{
+    uint32_t index;
+    ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoDecoder_QueryOutputBuffer(nullptr, &index, -1));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_SYNC_API_0060
+ * @tc.number VIDEO_DECODE_SYNC_API_0060
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_DECODE_SYNC_API_0060()
+{
+    auto vDecSample = make_shared<VDecAPI11Sample>();
+    vDecSample->enbleSyncMode = 1;
+    vDecSample->syncOutputWaitTime = INT64_MAX;
+    vDecSample->INP_DIR = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
+    ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+    ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+    vDecSample->WaitForEOS();
+    ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_SYNC_API_0070
+ * @tc.number VIDEO_DECODE_SYNC_API_0070
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_DECODE_SYNC_API_0070()
+{
+    auto vDecSample = make_shared<VDecAPI11Sample>();
+    vDecSample->enbleSyncMode = 1;
+    vDecSample->syncOutputWaitTime = INT64_MIN;
+    vDecSample->INP_DIR = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
+    ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+    ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+    vDecSample->WaitForEOS();
+    ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_SYNC_API_0080
+ * @tc.number VIDEO_DECODE_SYNC_API_0080
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_DECODE_SYNC_API_0080()
+{
+    ASSERT_EQ(nullptr, OH_VideoDecoder_GetOutputBuffer(nullptr, 1));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_FORMAT_API_0010
+ * @tc.number VIDEO_HWDEC_FORMAT_API_0010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int VIDEO_HWDEC_FORMAT_API_0010()
+{
+    auto vDecSample = make_shared<VDecAPI11Sample>();
+    OH_AVCapability_GetVideoSupportedNativeBufferFormats(
+        nullptr, &(vDecSample->pixlFormats), &(vDecSample->pixlFormatNum));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_FORMAT_API_0020
+ * @tc.number VIDEO_HWDEC_FORMAT_API_0020
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int VIDEO_HWDEC_FORMAT_API_0020()
+{
+    auto vDecSample = make_shared<VDecAPI11Sample>();
+    const char* avcodecMimeType = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
+    OH_AVCapability* capability = OH_AVCodec_GetCapability(avcodecMimeType, false);
+    OH_AVCapability_GetVideoSupportedNativeBufferFormats(capability, &(vDecSample->pixlFormats), nullptr);
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0010
+ * @tc.number VIDEO_HWDEC_API_ADD_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_API_ADD_0010()
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    ASSERT_NE(vdec_, nullptr);
+    format = OH_AVFormat_Create();
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Prepare(vdec_));
+    uint32_t index = 0;
+    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_QueryOutputBuffer(vdec_, &index, 0));
+    OH_VideoDecoder_Destroy(vdec_);
+    vdec_ = nullptr;
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0020
+ * @tc.number VIDEO_HWDEC_API_ADD_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_API_ADD_0020()
+{
+    ASSERT_EQ(nullptr, OH_AVBuffer_GetNativeBuffer(nullptr));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0030
+ * @tc.number VIDEO_HWDEC_API_ADD_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_API_ADD_0030()
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    OH_AVCodecBufferAttr attr;
+    attr.pts = -1;
+    attr.size = -1;
+    attr.offset = -1;
+    attr.flags = AVCODEC_BUFFER_FLAGS_DISPOSABLE;
+    ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoDecoder_PushInputData(vdec_, 0, attr));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0040
+ * @tc.number VIDEO_HWDEC_API_ADD_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_API_ADD_0040()
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    OH_AVCodecBufferAttr attr;
+    attr.pts = -1;
+    attr.size = -1;
+    attr.offset = -1;
+    attr.flags = AVCODEC_BUFFER_FLAGS_INCOMPLETE_FRAME;
+    ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoDecoder_PushInputData(vdec_, 0, attr));
+    return SUCCESS_CODE;
+}
 } // namespace Media
 } // namespace OHOS
