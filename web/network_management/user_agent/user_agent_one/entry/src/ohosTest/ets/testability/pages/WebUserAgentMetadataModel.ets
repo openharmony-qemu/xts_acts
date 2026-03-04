@@ -87,7 +87,7 @@ struct webUserAgentMetadata {
                   this.controller.setUserAgentMetadata(userAgent, metaData);
                   let result = this.controller.getUserAgentMetadata(userAgent);
                   let model = result.getModel();
-                  if (model != "") {
+                  if (model != '') {
                     Utils.emitEvent(true, 174810);
                   } else {
                     Utils.emitEvent(false, 174810);

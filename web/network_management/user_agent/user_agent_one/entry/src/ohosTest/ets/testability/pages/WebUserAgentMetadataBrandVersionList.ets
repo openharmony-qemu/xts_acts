@@ -250,7 +250,6 @@ struct webUserAgentMetadata {
               }
               case 'emitGetBrandVersionListWithNullMajorVersion': {
                 try {
-                  let userAgent = webView.WebviewController.getDefaultUserAgent();
                   let metaData = new webView.UserAgentMetadata();
                   let brandVersion = new webView.UserAgentBrandVersion();
                   brandVersion.setBrand('TestBrand');
@@ -271,7 +270,6 @@ struct webUserAgentMetadata {
               }
               case 'emitGetBrandVersionListWithUndefinedMajorVersion': {
                 try {
-                  let userAgent = webView.WebviewController.getDefaultUserAgent();
                   let metaData = new webView.UserAgentMetadata();
                   let brandVersion = new webView.UserAgentBrandVersion();
                   brandVersion.setBrand('TestBrand');
@@ -334,13 +332,12 @@ struct webUserAgentMetadata {
               }
               case 'emitGetBrandVersionListWithUndefinedFullVersion': {
                 try {
-                  let userAgent = webView.WebviewController.getDefaultUserAgent();
                   let metaData = new webView.UserAgentMetadata();
                   let brandVersion = new webView.UserAgentBrandVersion();
                   brandVersion.setBrand('TestBrand');
                   brandVersion.setMajorVersion('1.0');
                   brandVersion.setFullVersion(undefined);
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = [brandVersion];
+                  let arrayVersions: webView.UserAgentBrandVersion[] = [brandVersion];
                   metaData.setBrandVersionList(arrayVersions);
                   Utils.emitEvent('no_error', 174470);
                 } catch (error) {

@@ -88,7 +88,7 @@ struct webUserAgentMetadataPlatform {
                   this.controller.setUserAgentMetadata(userAgent, metaData);
                   let result = this.controller.getUserAgentMetadata(userAgent);
                   let platform = result.getPlatform();
-                  if (platform != "") {
+                  if (platform != '') {
                     Utils.emitEvent(true, 174870);
                   } else {
                     Utils.emitEvent(false, 174870);

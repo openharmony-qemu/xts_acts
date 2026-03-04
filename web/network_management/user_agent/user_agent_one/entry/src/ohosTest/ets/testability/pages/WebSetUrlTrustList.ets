@@ -199,7 +199,7 @@ struct webSetUrlTrustList {
               case 'emitSetUrlTrustListWildList': {
                 try {
                   let urlWildcardList: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"*.example.com\", \"path\":\"*\"}]}"
-                  console.log("==emitSetUrlTrustListWildList")
+                  console.log('==emitSetUrlTrustListWildList')
                   this.controller.setUrlTrustList(urlWildcardList, true, true);
                   this.controller.loadUrl($rawfile('urlTrustList.html'));
                   Utils.emitEvent(true, 174380);

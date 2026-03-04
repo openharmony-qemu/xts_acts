@@ -84,7 +84,7 @@ struct webUserAgentMetadata {
                 try {
                   let userAgent = webView.WebviewController.getDefaultUserAgent();
                   let metaData = new webView.UserAgentMetadata();
-                  let emptyArray: Array<webView.UserAgentFormFactor> = [];
+                  let emptyArray: webView.UserAgentFormFactor[] = [];
                   metaData.setFormFactors(emptyArray);
 
                   this.controller.setUserAgentMetadata(userAgent, metaData);
@@ -190,7 +190,6 @@ struct webUserAgentMetadata {
                 }
                 break;
               }
-
             }
           })
       }

@@ -19,9 +19,9 @@ import Utils from './Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
 import { Driver, ON } from '@kit.TestKit';
-// import { accessibility, config } from '@kit.AccessibilityKit';
-// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
-// const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+import { accessibility, config } from '@kit.AccessibilityKit';
+const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webUserAgentMetadata() {
 
@@ -49,15 +49,15 @@ export default function webUserAgentMetadata() {
       done()
     });
 
-    // beforeEach(async (done: Function) => {
-    //   config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-    //     console.info(`enable success`);
-    //   }).catch((err: object) => {
-    //     console.error(`failed to enable, ${err}`);
-    //   })
-    //   console.info("webUserAgentMetadata beforeEach start");
-    //   done();
-    // })
+    beforeEach(async (done: Function) => {
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      })
+      console.info("webUserAgentMetadata beforeEach start");
+      done();
+    })
 
     afterEach(async (done: Function) => {
       console.info("webUserAgentMetadata afterEach start");
@@ -123,7 +123,7 @@ export default function webUserAgentMetadata() {
      */
     it('testSetUserAgentMetadataSecondParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentMetadataSecondParamNull', 174180);
-      Utils.registerBaseEvent('testSetUserAgentMetadataSecondParamNull', '401', 174220, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testSetUserAgentMetadataSecondParamNull', "no_error", 174220, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebUserAgentMetadataButton', 10, '');
@@ -139,7 +139,7 @@ export default function webUserAgentMetadata() {
      */
     it('testSetUserAgentMetadataSecondParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentMetadataSecondParamUndefined', 174180);
-      Utils.registerBaseEvent('testSetUserAgentMetadataSecondParamUndefined', '401', 174230, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testSetUserAgentMetadataSecondParamUndefined', "no_error", 174230, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebUserAgentMetadataButton', 10, '');

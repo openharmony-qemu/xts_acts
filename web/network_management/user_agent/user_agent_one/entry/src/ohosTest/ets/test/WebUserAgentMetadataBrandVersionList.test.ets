@@ -19,9 +19,9 @@ import Utils from './Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
 import { Driver, ON } from '@kit.TestKit';
-// import { accessibility, config } from '@kit.AccessibilityKit';
-// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
-// const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+import { accessibility, config } from '@kit.AccessibilityKit';
+const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webUserAgentMetadataBrandVersionList() {
 
@@ -49,15 +49,15 @@ export default function webUserAgentMetadataBrandVersionList() {
       done()
     });
 
-    // beforeEach(async (done: Function) => {
-    //   config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-    //     console.info(`enable success`);
-    //   }).catch((err: object) => {
-    //     console.error(`failed to enable, ${err}`);
-    //   })
-    //   console.info("WebUserAgentMetadataBrandVersionList beforeEach start");
-    //   done();
-    // })
+    beforeEach(async (done: Function) => {
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      })
+      console.info("WebUserAgentMetadataBrandVersionList beforeEach start");
+      done();
+    })
 
     afterEach(async (done: Function) => {
       console.info("WebUserAgentMetadataBrandVersionList afterEach start");
@@ -90,7 +90,7 @@ export default function webUserAgentMetadataBrandVersionList() {
      */
     it('testGetBrandVersionListEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitGetBrandVersionListEmpty', 174330);
-      Utils.registerBaseEvent('testGetBrandVersionListEmpty', 0, 174350, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testGetBrandVersionListEmpty', 1, 174350, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebUserAgentMetadataBrandVersionListButton', 10, '');
@@ -154,7 +154,7 @@ export default function webUserAgentMetadataBrandVersionList() {
      */
     it('testGetBrandVersionListWithEmptyBrand', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitGetBrandVersionListWithEmptyBrand', 174330);
-      Utils.registerBaseEvent('testGetBrandVersionListWithEmptyBrand', '401', 174390, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testGetBrandVersionListWithEmptyBrand', 'no_error', 174390, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebUserAgentMetadataBrandVersionListButton', 10, '');
@@ -202,7 +202,7 @@ export default function webUserAgentMetadataBrandVersionList() {
      */
     it('testGetBrandVersionListWithEmptyMajorVersion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitGetBrandVersionListWithEmptyMajorVersion', 174330);
-      Utils.registerBaseEvent('testGetBrandVersionListWithEmptyMajorVersion', '401', 174420, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testGetBrandVersionListWithEmptyMajorVersion', 'no_error', 174420, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebUserAgentMetadataBrandVersionListButton', 10, '');
@@ -250,7 +250,7 @@ export default function webUserAgentMetadataBrandVersionList() {
      */
     it('testGetBrandVersionListWithEmptyFullVersion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitGetBrandVersionListWithEmptyFullVersion', 174330);
-      Utils.registerBaseEvent('testGetBrandVersionListWithEmptyFullVersion', '401', 174450, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testGetBrandVersionListWithEmptyFullVersion', 'no_error', 174450, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebUserAgentMetadataBrandVersionListButton', 10, '');

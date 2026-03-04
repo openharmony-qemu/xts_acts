@@ -24,7 +24,7 @@ const EVENT_ID_SET_EMIT_KEY = 174040;
 @Component
 struct WebViewControllerRefresh {
   controller: WebviewController = new webView.WebviewController();
-  @State str: string = "emitRefresh";
+  @State str: string = 'emitRefresh';
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
 
@@ -41,9 +41,9 @@ struct WebViewControllerRefresh {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("WebViewControllerRefresh valueChangeCallBack");
+    console.info('WebViewControllerRefresh valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 1;
@@ -53,14 +53,14 @@ struct WebViewControllerRefresh {
 
   build() {
     Column() {
-      Button("WebViewControllerRefresh click").key('WebViewControllerRefreshButton').onClick(async () => {
+      Button('WebViewControllerRefresh click').key('WebViewControllerRefreshButton').onClick(async () => {
         await waitForExist(() => this.isReceive, 'WebViewControllerRefreshButtonIsReceive', 1, 1000);
         await waitForExist(() => this.isPageEnd, 'WebViewControllerRefreshButtonIsPageEnd', 1, 1000);
-        console.info("key==>" + this.str);
+        console.info('key==>' + this.str);
         this.isReceive = -1;
         switch (this.str) {
 
-          case "emitRefreshTrue": {
+          case 'emitRefreshTrue': {
             try {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('index.html'));
@@ -82,7 +82,7 @@ struct WebViewControllerRefresh {
             break;
           }
 
-          case "emitRefreshFalse": {
+          case 'emitRefreshFalse': {
             try {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('index.html'));
@@ -104,7 +104,7 @@ struct WebViewControllerRefresh {
             break;
           }
 
-          case "emitRefreshNull": {
+          case 'emitRefreshNull': {
             try {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('index.html'));
@@ -126,7 +126,7 @@ struct WebViewControllerRefresh {
             break;
           }
 
-          case "emitRefreshUndefined": {
+          case 'emitRefreshUndefined': {
             try {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('index.html'));
@@ -148,7 +148,7 @@ struct WebViewControllerRefresh {
             break;
           }
 
-          case "emitRefreshNoParam": {
+          case 'emitRefreshNoParam': {
             try {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('index.html'));
@@ -170,7 +170,7 @@ struct WebViewControllerRefresh {
             break;
           }
 
-          case "emitRefreshError17100001": {
+          case 'emitRefreshError17100001': {
             try {
               let testController: WebviewController = new webView.WebviewController();
               testController.refresh(true);
@@ -195,14 +195,14 @@ struct WebViewControllerRefresh {
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .onPageBegin(() => {
-          console.info("onPageBegin");
+          console.info('onPageBegin');
         })
         .onPageEnd(() => {
-          console.info("onPageEnd");
+          console.info('onPageEnd');
           this.isPageEnd = 1;
         })
         .onErrorReceive((event) => {
-          console.info("onErrorReceive: " + JSON.stringify(event));
+          console.info('onErrorReceive: ' + JSON.stringify(event));
         })
     }
   }

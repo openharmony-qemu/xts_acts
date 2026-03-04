@@ -19,9 +19,9 @@ import Utils from './Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
 import { Driver, ON } from '@kit.TestKit';
-// import { accessibility, config } from '@kit.AccessibilityKit';
-// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
-// const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+import { accessibility, config } from '@kit.AccessibilityKit';
+const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webUserAgentMetadataModel() {
 
@@ -49,15 +49,15 @@ export default function webUserAgentMetadataModel() {
       done()
     });
 
-    // beforeEach(async (done: Function) => {
-    //   config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-    //     console.info(`enable success`);
-    //   }).catch((err: object) => {
-    //     console.error(`failed to enable, ${err}`);
-    //   })
-    //   console.info("webTestUserAgentMetadataModel beforeEach start");
-    //   done();
-    // })
+    beforeEach(async (done: Function) => {
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      })
+      console.info("webTestUserAgentMetadataModel beforeEach start");
+      done();
+    })
 
     afterEach(async (done: Function) => {
       console.info("webTestUserAgentMetadataModel afterEach start");

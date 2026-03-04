@@ -70,7 +70,7 @@ struct webUserAgentMetadataFormFactorsEum {
                   let formFactors = result.getFormFactors();
 
                   for(let j = 0; j < formFactors.length; j++) {
-                    console.info("emitSetFormFactorsAutomotive FormFactor:" + formFactors[j]);
+                    console.info('emitSetFormFactorsAutomotive FormFactor:' + formFactors[j]);
                   }
 
                   if (formFactors[0] == webView.UserAgentFormFactor.AUTOMOTIVE) {
@@ -99,7 +99,7 @@ struct webUserAgentMetadataFormFactorsEum {
                   let formFactors = result.getFormFactors();
 
                   for(let j = 0; j < formFactors.length; j++) {
-                    console.info("emitSetFormFactorsDesktop FormFactor:" + formFactors[j]);
+                    console.info('emitSetFormFactorsDesktop FormFactor:' + formFactors[j]);
                   }
 
                   if (formFactors[0] == webView.UserAgentFormFactor.DESKTOP) {
@@ -128,7 +128,7 @@ struct webUserAgentMetadataFormFactorsEum {
                   let formFactors = result.getFormFactors();
 
                   for(let j = 0; j < formFactors.length; j++) {
-                    console.info("emitSetFormFactorsMobile FormFactor:" + formFactors[j]);
+                    console.info('emitSetFormFactorsMobile FormFactor:' + formFactors[j]);
                   }
 
                   if (formFactors[0] == webView.UserAgentFormFactor.MOBILE) {
@@ -157,7 +157,7 @@ struct webUserAgentMetadataFormFactorsEum {
                   let formFactors = result.getFormFactors();
 
                   for(let j = 0; j < formFactors.length; j++) {
-                    console.info("emitSetFormFactorsEInk FormFactor:" + formFactors[j]);
+                    console.info('emitSetFormFactorsEInk FormFactor:' + formFactors[j]);
                   }
 
                   if (formFactors[0] == webView.UserAgentFormFactor.EINK) {
@@ -185,7 +185,7 @@ struct webUserAgentMetadataFormFactorsEum {
                   let result = this.controller.getUserAgentMetadata(userAgent);
                   let formFactors = result.getFormFactors();
                   for(let j = 0; j < formFactors.length; j++) {
-                    console.info("emitSetFormFactorsTABLET FormFactor:" + formFactors[j]);
+                    console.info('emitSetFormFactorsTABLET FormFactor:' + formFactors[j]);
                   }
 
                   if (formFactors[0] == webView.UserAgentFormFactor.TABLET) {
@@ -212,7 +212,7 @@ struct webUserAgentMetadataFormFactorsEum {
                   let result = this.controller.getUserAgentMetadata(userAgent);
                   let formFactors = result.getFormFactors();
                   for(let j = 0; j < formFactors.length; j++) {
-                    console.info("emitSetFormFactorsWATCH FormFactor:" + formFactors[j]);
+                    console.info('emitSetFormFactorsWATCH FormFactor:' + formFactors[j]);
                   }
 
                   if (formFactors[0] == webView.UserAgentFormFactor.WATCH) {
@@ -239,7 +239,7 @@ struct webUserAgentMetadataFormFactorsEum {
                   let result = this.controller.getUserAgentMetadata(userAgent);
                   let formFactors = result.getFormFactors();
                   for(let j = 0; j < formFactors.length; j++) {
-                    console.info("emitSetFormFactorsXR FormFactor:" + formFactors[j]);
+                    console.info('emitSetFormFactorsXR FormFactor:' + formFactors[j]);
                   }
 
                   if (formFactors[0] == webView.UserAgentFormFactor.XR) {
@@ -266,9 +266,10 @@ struct webUserAgentMetadataFormFactorsEum {
                   let result = this.controller.getUserAgentMetadata(userAgent);
                   let formFactors = result.getFormFactors();
                   for(let j = 0; j < formFactors.length; j++) {
-                    console.info("emitSetFormFactorsMultiple FormFactor:" +j + "" + formFactors[j]);
+                    console.info('emitSetFormFactorsMultiple FormFactor:' +j + '' + formFactors[j]);
                   }
-                  if (formFactors[0] == webView.UserAgentFormFactor.MOBILE && formFactors[1] == webView.UserAgentFormFactor.TABLET) {
+                  if (formFactors[0] == webView.UserAgentFormFactor.MOBILE
+                    && formFactors[1] == webView.UserAgentFormFactor.TABLET) {
                     Utils.emitEvent(true, 175110);
                   } else {
                     Utils.emitEvent(false, 175110);
@@ -287,13 +288,13 @@ struct webUserAgentMetadataFormFactorsEum {
                 try {
                   let userAgent = webView.WebviewController.getDefaultUserAgent();
                   let metaData = new webView.UserAgentMetadata();
-                  let emptyArray: Array<webView.UserAgentFormFactor> = [];
+                  let emptyArray: webView.UserAgentFormFactor[] = [];
                   metaData.setFormFactors(emptyArray);
                   this.controller.setUserAgentMetadata(userAgent, metaData);
                   let result = this.controller.getUserAgentMetadata(userAgent);
                   let formFactors = result.getFormFactors();
                   for(let j = 0; j < formFactors.length; j++) {
-                    console.info("emitSetFormFactorsEmpty FormFactor:" +j + "" + formFactors[j]);
+                    console.info('emitSetFormFactorsEmpty FormFactor:' +j + '' + formFactors[j]);
                   }
                   Utils.emitEvent(formFactors.length, 175120);
                 } catch (error) {
@@ -335,8 +336,9 @@ struct webUserAgentMetadataFormFactorsEum {
                   }
                   break;
                 }
-
-              }}})
+              }
+            }
+          })
       }
       Web({ src: $rawfile('userAgent.html'), controller: this.controller })
         .key('webUserAgentMetadataWComponent')

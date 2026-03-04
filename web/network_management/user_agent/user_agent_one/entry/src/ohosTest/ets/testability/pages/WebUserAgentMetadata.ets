@@ -66,9 +66,9 @@ struct webUserAgentMetadata {
                   let userAgent = webView.WebviewController.getDefaultUserAgent();
                   let arrayVersions: Array<webView.UserAgentBrandVersion> = new Array<webView.UserAgentBrandVersion>;
                   let brandVersion:webView.UserAgentBrandVersion = new webView.UserAgentBrandVersion();
-                  brandVersion.setBrand("brand OpenHarmony");
-                  brandVersion.setMajorVersion("major version 1.0");
-                  brandVersion.setFullVersion("blank full version 1.0");
+                  brandVersion.setBrand('brand OpenHarmony');
+                  brandVersion.setMajorVersion('major version 1.0');
+                  brandVersion.setFullVersion('blank full version 1.0');
                   arrayVersions.push(brandVersion);
 
                   let metaData = new webView.UserAgentMetadata();
@@ -115,7 +115,7 @@ struct webUserAgentMetadata {
                 try {
                   let userAgent = webView.WebviewController.getDefaultUserAgent();
                   this.controller.setUserAgentMetadata(userAgent, null);
-                  Utils.emitEvent(false, 174220);
+                  Utils.emitEvent('no_error', 174220);
                 } catch (error) {
                   console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
                   if (Number(error.code) == 401) {
@@ -130,7 +130,7 @@ struct webUserAgentMetadata {
                 try {
                   let userAgent = webView.WebviewController.getDefaultUserAgent();
                   this.controller.setUserAgentMetadata(userAgent, undefined);
-                  Utils.emitEvent(false, 174230);
+                  Utils.emitEvent('no_error', 174230);
                 } catch (error) {
                   console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
                   if (Number(error.code) == 401) {
@@ -145,11 +145,11 @@ struct webUserAgentMetadata {
                 try {
                   let userAgent = webView.WebviewController.getDefaultUserAgent();
 
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = new Array<webView.UserAgentBrandVersion>;
+                  let arrayVersions: webView.UserAgentBrandVersion[] =  [];
                   let brandVersion:webView.UserAgentBrandVersion = new webView.UserAgentBrandVersion();
-                  brandVersion.setBrand("brand OpenHarmony");
-                  brandVersion.setMajorVersion("major version 1.0");
-                  brandVersion.setFullVersion("blank full version 1.0");
+                  brandVersion.setBrand('brand OpenHarmony');
+                  brandVersion.setMajorVersion('major version 1.0');
+                  brandVersion.setFullVersion('blank full version 1.0');
                   arrayVersions.push(brandVersion);
 
                   let metaData = new webView.UserAgentMetadata();
@@ -159,9 +159,9 @@ struct webUserAgentMetadata {
                   let newMetaData  = this.controller.getUserAgentMetadata(userAgent);
                   let versionList = newMetaData.getBrandVersionList();
                   for(let i = 0; i < versionList.length; i++) {
-                    console.info("Brand:" + versionList[i].getBrand());
-                    console.info("MajorVersion " + versionList[i].getMajorVersion());
-                    console.info("FullVersion " + versionList[i].getFullVersion());
+                    console.info('Brand:' + versionList[i].getBrand());
+                    console.info('MajorVersion ' + versionList[i].getMajorVersion());
+                    console.info('FullVersion ' + versionList[i].getFullVersion());
                   }
                   Utils.emitEvent(true, 174240);
                 } catch (error) {
