@@ -60,14 +60,6 @@ let count: int = 0
 let globalscribe: commonEventManager.CommonEventSubscriber;
 let CommonEventSubscriber: commonEventManager.CommonEventSubscriber;
 
-function getRandomNumber(min: int, max: int): Int {
-  return Math.floor(Math.random() * (max - min + 1)) as int + min;
-}
-
-// function getRandomNumber(min: int, max: int): int {
-//   return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-
 
 class Sample {
   constructor() {
