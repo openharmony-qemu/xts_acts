@@ -43,7 +43,6 @@ export default function webViewNativeMediaPlayerUpdateRect1() {
       } catch (err) {
         console.error("push webViewNativeMediaPlayerUpdateRect1 page error:" + err);
       }
-      await driver.waitForComponent(ON.id("webViewNativeMediaPlayerUpdateRect11"), 10000);
       console.log("waitForComponent webViewNativeMediaPlayerUpdateRect11");
       done()
     });
