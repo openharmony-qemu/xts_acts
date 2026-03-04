@@ -12,15 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "@ohos/hypium"
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter';
-import CommonFunc from '../../MainAbility/utils/Common';
-import emitter from '@ohos.events.emitter';
-import { UiComponent, Driver, Component, UiWindow, ON, BY } from "@ohos.UiTest"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import Utils from '../../MainAbility/common/Utils'
+import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import CommonFunc from "../../MainAbility/utils/Common"
+
 export default function ScreenOnVisibleRequestFullWindow() {
   describe('ScreenOnVisibleRequestFullWindow', () => {
-    beforeEach(async (done: Function) => {
+    beforeAll(async () => {
       console.info("ScreenOnVisibleRequestFullWindow beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/AppStorageTest/ScreenOnVisibleRequestFullWindow',
@@ -28,21 +28,21 @@ export default function ScreenOnVisibleRequestFullWindow() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get ScreenOnVisibleRequestFullWindow state pages:" + JSON.stringify(pages));
-        if (!("configuration" == pages.name)) {
-          console.info("get ScreenOnVisibleRequestFullWindow state pages.name:" + JSON.stringify(pages.name));
+        console.info("get ScreenOnVisibleRequestFullWindow state success " + JSON.stringify(pages));
+        if (!("ScreenOnVisibleRequestFullWindow" == pages.name)) {
+          console.info("get ScreenOnVisibleRequestFullWindow state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await CommonFunc.sleep(2000);
-          console.info("push ScreenOnVisibleRequestFullWindow page result:" + JSON.stringify(result));
+          await Utils.sleep(2000);
+          console.info("push ScreenOnVisibleRequestFullWindow page success " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push ScreenOnVisibleRequestFullWindow page error:" + err);
+        console.error("push ScreenOnVisibleRequestFullWindow page error: " + err);
       }
-      done();
     });
+
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      console.info("ScreenOnVisibleRequestFullWindow each called");
+      await Utils.sleep(1000);
+      console.info("ScreenOnVisibleRequestFullWindow after each called");
     });
 
     /**
