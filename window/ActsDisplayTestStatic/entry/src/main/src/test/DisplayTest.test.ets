@@ -2759,9 +2759,11 @@ export default function DisplayTest() {
         hilog.info(0x0000, '[ANI]', msgStr + 'begin');
         
         let captureStatus: boolean = false;
+        let callbackTriggered:boolean = false;
         let callback : Callback<boolean> = (status: boolean) => {
             hilog.info(0x0000, '[ANI]', msgStr + 'capture status: ' + status);
             captureStatus = status;
+            callbackTriggered = true;
         };
         
         let option: display.VirtualScreenConfig = {
@@ -2780,14 +2782,16 @@ export default function DisplayTest() {
             // 注册监听
             display.onCaptureStatusChange(callback);
             hilog.info(0x0000, '[ANI]', msgStr + 'register onCaptureStatusChange success');
-            await Utils.msSleep(500);
+            await Utils.msSleep(1000);
 
             // 销毁虚拟屏
             await display.destroyVirtualScreen(vid);
             hilog.info(0x0000, '[ANI]', msgStr + 'Success in destroyVirtualScreen');
             
             // 验证销毁虚拟屏后返回false
-            await Utils.msSleep(500);
+            while (!callbackTriggered) {
+                await Utils.msSleep(100);
+            }
             hilog.info(0x0000, '[ANI]', msgStr + 'after destroyVirtualScreen, captureStatus: ' + captureStatus);
             expect(captureStatus === false).assertTrue();
             
