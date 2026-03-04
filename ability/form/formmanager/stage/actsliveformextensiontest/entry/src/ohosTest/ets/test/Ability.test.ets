@@ -90,6 +90,7 @@ export default function abilityTest() {
         console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 startAbilityhost end`);
       }).catch((err: BusinessError) => {
         console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 startAbilityhost error: ${JSON.stringify(err)}`);
+        done();
       });
       console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 startAbility end`);
     })
