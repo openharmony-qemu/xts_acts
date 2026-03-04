@@ -60,7 +60,7 @@ group("ans_standard") {
       "actsNotificationWantUriTestStatic:ActsNotificationWantUriStaticTest",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
-      "actsNotificationAnsPrioritySettingRefactoringNoSystem:ActsNotificationAnsPrioritySettingRefactoringNoSystem",
+      "actsNotificationAnsPrioritySettingRefactoringNoSystem:ActsNotificationAnsPrioritySettingRefactoringNoSystemTest",
       "actsNotificationPriorityRefactorNosystemTestStatic:ActsNotificationPriorityRefactorNoSystemStaticTest",
       "actsNotificationAnsCoveredTest:ActsNotificationAnsCoveredTest",
       "actsNotificationAnsCoveredTestStatic:ActsNotificationAnsCoverStaticTest"
