@@ -10,7 +10,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsNotificationAnsPrioritySettingRefactoringNoSystem.hap"
+                "ActsNotificationAnsPrioritySettingRefactoringNoSystemTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
