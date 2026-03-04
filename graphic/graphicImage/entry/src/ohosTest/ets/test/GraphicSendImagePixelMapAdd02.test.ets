@@ -1356,7 +1356,7 @@ export default function GraphicSendImagePixelMapAdd02() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap2_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('sendableImagePixelMapAdd02_0308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let opts: image.InitializationOptions = {
           editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
