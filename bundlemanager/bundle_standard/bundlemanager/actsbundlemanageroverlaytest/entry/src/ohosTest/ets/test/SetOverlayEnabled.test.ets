@@ -183,17 +183,17 @@ export default function setOverlayEnabled() {
     })
 
     /**
-     * @tc.name   SetOverlayEnabledModuleNameIsNull
+     * @tc.name   SetOverlayEnabledModuleNameIsNullx
      * @tc.number Sub_Bms_Framework_Status_OverlayEnable_0200
      * @tc.desc   Failed to set when the incoming moduleName is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SetOverlayEnabledModuleNameIsNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+    it('SetOverlayEnabledModuleNameIsNullx', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       try {
         await overlay.setOverlayEnabled(null, true).then(data => {
-          console.info("SetOverlayEnabledModuleNameIsNull result" + JSON.stringify(data));
+          console.info("SetOverlayEnabledModuleNameIsNullx result" + JSON.stringify(data));
           expect().assertFail();
         })
       } catch (e) {
@@ -203,12 +203,12 @@ export default function setOverlayEnabled() {
 
       try {
         overlay.setOverlayEnabled(null, true, (err, data) => {
-          console.info("SetOverlayEnabledModuleNameIsNull result" + JSON.stringify(data));
-          console.info("SetOverlayEnabledModuleNameIsNull fail" + JSON.stringify(err));
+          console.info("SetOverlayEnabledModuleNameIsNullx result" + JSON.stringify(data));
+          console.info("SetOverlayEnabledModuleNameIsNullx fail" + JSON.stringify(err));
           expect().assertFail();
         });
       } catch (e) {
-        console.info("SetOverlayEnabledModuleNameIsNull callback catch" + JSON.stringify(e));
+        console.info("SetOverlayEnabledModuleNameIsNullx callback catch" + JSON.stringify(e));
         expect(e.code).assertEqual(ERROR_CODE);
       }
     })
