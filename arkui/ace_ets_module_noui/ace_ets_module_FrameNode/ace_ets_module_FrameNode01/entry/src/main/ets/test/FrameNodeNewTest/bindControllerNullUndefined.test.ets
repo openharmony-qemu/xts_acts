@@ -18,7 +18,7 @@ import {Component, Driver, UiWindow, ON, BY, WindowMode, PointerMatrix} from '@o
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function bindControllerNullUndefined() {
-  describe('GetRenderNodeNullTest', () => {
+  describe('bindControllerNullUndefined', () => {
     beforeEach(async (done: Function) => {
       console.info("bindControllerNullUndefined beforeEach start");
       let options: router.RouterOptions = {
