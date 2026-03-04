@@ -19,6 +19,8 @@ import { Want } from '@kit.AbilityKit';
 @Component
 struct EmbeddedComponentPage {
   @State message: string = 'Message: '
+  @State width1:number = 500;
+  @State height1:number = 500;
   private want: Want = {
     bundleName: 'com.example.myapplication',
     abilityName: 'EmbeddedGetWindowAvoidAreaAbility',
@@ -33,15 +35,25 @@ struct EmbeddedComponentPage {
     Row() {
       Column() {
         Text(this.message).fontSize(30)
-        Button()
+        Button('changeVisibleBtn')
           .id('changeVisibleBtn')
           .onClick(() => {
             this.visible = Visibility.Visible;
           })
+          Button('windowSizeChangeWidth')
+          .id('windowSizeChangeWidth')
+          .onClick(() => {
+            this.width1 = 600;
+          })
+          Button('RectChangeHeight')
+          .id('RectChangeHeight')
+          .onClick(() => {
+            this.height1 = 600;
+          })
         EmbeddedComponent(this.want, EmbeddedType.EMBEDDED_UI_EXTENSION)
           .visibility(this.visible)
-          .width('500px')
-          .height('500px')
+          .width(this.width1)
+          .height(this.height1)
           .onTerminated((info)=>{
             this.message = 'Termination: code = ' + info.code + ', want = ' + JSON.stringify(info.want);
           })

@@ -1740,6 +1740,128 @@ export default function extensionWindowPropertiesTest() {
 
 
     })
+    /**
+     * @tc.name   testOnWindowSizeChange
+     * @tc.number SUB_WMS_UEC_OnWindowSizeChange_0100
+     * @tc.desc   testOnWindowSizeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOnWindowSizeChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testOnWindowSizeChange';
+      console.log(caseName + 'start run');
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow('testOnWindowSizeChange');
+        await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentGetWindowAvoidAreaPage');
+        await subWindowClass.showWindow();
+        await sleep(2000);
+        // extensionWindow?.createSubWindowWithOptions
+        let btn = await driver.findComponent(ON.id('windowSizeChange'))
+        console.log(caseName + ' btn : ' + btn);
+        if (btn != null) {
+          await btn.click()
+          await sleep(1000)
+          // 获取接口返回信息
+          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessageText = await errorMessage.getText()
+          console.log(caseName + 'errorMessageText : ' + errorMessageText);
+
+          if (errorMessageText == 'success') {
+            let windowSizeChangeWidth = await driver.findComponent(ON.id('windowSizeChangeWidth'))
+            console.log(caseName + 'windowSizeChangeWidth : ' + windowSizeChangeWidth);
+            await windowSizeChangeWidth.click();
+            await sleep(1000);
+            let flag = await driver.findComponent(ON.id('flag'))
+            console.log(caseName + 'flag : ' + flag);
+            let flagtext = await flag.getText();
+            console.log(caseName + 'flagtext : ' + flagtext);
+            expect(flagtext).assertEqual('true');
+            await subWindowClass.destroyWindow()
+            done();
+          } else if (errorMessageText == '801') {
+            await subWindowClass.destroyWindow()
+            done();
+          } else {
+            expect().assertFail()
+            await subWindowClass.destroyWindow()
+            done();
+          }
+        } else {
+          await subWindowClass.destroyWindow()
+          done();
+        }
+      } catch (exception) {
+        console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+        await subWindowClass?.destroyWindow()
+        expect().assertFail()
+        done()
+      }
+
+
+    })
+    /**
+     * @tc.name   testOnRectChange
+     * @tc.number SUB_WMS_UEC_OnRectChange_0100
+     * @tc.desc   testOnRectChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOnRectChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testOnRectChange';
+      console.log(caseName + 'start run');
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow('testOnRectChange');
+        await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentGetWindowAvoidAreaPage');
+        await subWindowClass.showWindow();
+        await sleep(2000);
+        // extensionWindow?.createSubWindowWithOptions
+        let btn = await driver.findComponent(ON.id('rectChange'))
+        console.log(caseName + ' btn : ' + btn);
+        if (btn != null) {
+          await btn.click()
+          await sleep(1000)
+          // 获取接口返回信息
+          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessageText = await errorMessage.getText()
+          console.log(caseName + 'errorMessageText : ' + errorMessageText);
+
+          if (errorMessageText == 'success') {
+            let RectChangeHeight = await driver.findComponent(ON.id('RectChangeHeight'))
+            console.log(caseName + 'RectChangeHeight : ' + RectChangeHeight);
+            await RectChangeHeight.click();
+            await sleep(1000);
+            let flag = await driver.findComponent(ON.id('flag'))
+            console.log(caseName + 'flag : ' + flag);
+            let flagtext = await flag.getText();
+            console.log(caseName + 'flagtext : ' + flagtext);
+            expect(flagtext).assertEqual('true');
+            await subWindowClass.destroyWindow()
+            done();
+          } else if (errorMessageText == '801') {
+            await subWindowClass.destroyWindow()
+            done();
+          } else {
+            expect().assertFail()
+            await subWindowClass.destroyWindow()
+            done();
+          }
+        } else {
+          await subWindowClass.destroyWindow()
+          done();
+        }
+      } catch (exception) {
+        console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+        await subWindowClass?.destroyWindow()
+        expect().assertFail()
+        done()
+      }
+
+
+    })
 
 
   })
