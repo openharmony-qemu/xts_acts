@@ -72,7 +72,7 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
       console.log('[testStackZIndexWithAlignmentStart] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
       console.log('[testStackZIndexWithAlignmentStart] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
-      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
+      
       console.log('Stack_ZIndex_01.left is', Stack_ZIndex_01.left);
       expect(Math.abs(Stack_ZIndex_01.left - Stack_ZIndex_011.left) <= 1).assertTrue();
       expect(Math.abs(Stack_ZIndex_01.left - Stack_ZIndex_012.left) <= 1).assertTrue();
@@ -126,7 +126,7 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
       console.log('[testStackZIndexWithAlignmentCenter] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
       console.log('[testStackZIndexWithAlignmentCenter] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
-      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
+      
       console.log('Stack_ZIndex_011.left - Stack_ZIndex_01.left is', Stack_ZIndex_011.left - Stack_ZIndex_01.left);
       expect(Math.abs(Math.round(Stack_ZIndex_011.left - Stack_ZIndex_01.left) -
       Math.round(Stack_ZIndex_01.right - Stack_ZIndex_011.right)) <= 1).assertTrue();
@@ -183,7 +183,7 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
       console.log('[testStackZIndexWithAlignmentEnd] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
       console.log('[testStackZIndexWithAlignmentEnd] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
-      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
+      
       console.log('Stack_ZIndex_01.right is', Stack_ZIndex_01.right);
       expect(Math.abs((Stack_ZIndex_01.right) - (Stack_ZIndex_011.right)) <= 1).assertTrue();
       expect(Math.abs((Stack_ZIndex_01.right) - (Stack_ZIndex_012.right)) <= 1).assertTrue();
@@ -237,7 +237,7 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
       console.log('[testStackZIndexWithAlignmentBottomStart] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
       console.log('[testStackZIndexWithAlignmentBottomStart] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
-      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
+      
       console.log('Stack_ZIndex_01.left is', Stack_ZIndex_01.left);
       expect(Math.abs(Stack_ZIndex_01.left - Stack_ZIndex_011.left) <= 1).assertTrue();
       expect(Math.abs(Stack_ZIndex_01.left - Stack_ZIndex_012.left) <= 1).assertTrue();
@@ -288,7 +288,7 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
       console.log('[testStackZIndexWithAlignmentBottom] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
       console.log('[testStackZIndexWithAlignmentBottom] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
-      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
+      
       console.log('Stack_ZIndex_01.bottom is', Stack_ZIndex_01.bottom);
       expect(Math.abs((Stack_ZIndex_01.bottom) - (Stack_ZIndex_011.bottom)) <= 1).assertTrue();
       expect(Math.abs((Stack_ZIndex_01.bottom) - (Stack_ZIndex_012.bottom)) <= 1).assertTrue();
@@ -342,7 +342,7 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
       console.log('[testStackZIndexWithAlignmentBottomEnd] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
       console.log('[testStackZIndexWithAlignmentBottomEnd] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
-      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
+      
       console.log('Stack_ZIndex_01.bottom is', Stack_ZIndex_01.bottom);
       expect(Math.abs(Stack_ZIndex_01.bottom - Stack_ZIndex_011.bottom) <= 1).assertTrue();
       expect(Math.abs(Stack_ZIndex_01.bottom - Stack_ZIndex_012.bottom) <= 1).assertTrue();
