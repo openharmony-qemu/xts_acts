@@ -541,27 +541,27 @@ export default function netfirewallTest() {
           ExpectTrue(rule.appUid != null);
           ExpectTrue(rule.protocol != null);
           if (rule.localIps != undefined) {
-            ExpectTrue(rule.localIps.length() != 0);
+            ExpectTrue(rule.localIps.length != 0);
           } else {
             ExpectFail();
           }
           if (rule.remoteIps != undefined) {
-            ExpectTrue(rule.remoteIps.length() != 0);
+            ExpectTrue(rule.remoteIps.length != 0);
           } else {
             ExpectFail();
           }
           if (rule.localPorts != undefined) {
-            ExpectTrue(rule.localPorts.length() != 0);
+            ExpectTrue(rule.localPorts.length != 0);
           } else {
             ExpectFail();
           }
           if (rule.remotePorts != undefined) {
-            ExpectTrue(rule.remotePorts.length() != 0);
+            ExpectTrue(rule.remotePorts.length != 0);
           } else {
             ExpectFail();
           }
           if (rule.domains != undefined) {
-            ExpectTrue(rule.domains.length() != 0);
+            ExpectTrue(rule.domains.length != 0);
           }
           done();
         }).catch((error : BusinessError) => {
@@ -626,19 +626,19 @@ export default function netfirewallTest() {
           ExpectTrue(rule.type == netFirewall.NetFirewallRuleType.RULE_DOMAIN);
           ExpectTrue(rule.isEnabled == false);
           if (rule.localIps != undefined) {
-            ExpectTrue(rule.localIps.length() == 0);
+            ExpectTrue(rule.localIps.length == 0);
           }
           if (rule.remoteIps != undefined) {
-            ExpectTrue(rule.remoteIps.length() == 0);
+            ExpectTrue(rule.remoteIps.length == 0);
           }
           if (rule.localPorts != undefined) {
-            ExpectTrue(rule.localPorts.length() == 0);
+            ExpectTrue(rule.localPorts.length == 0);
           }
           if (rule.remotePorts != undefined) {
-            ExpectTrue(rule.remotePorts.length() == 0);
+            ExpectTrue(rule.remotePorts.length == 0);
           }
           if (rule.domains != undefined) {
-            ExpectTrue(rule.domains.length() == 0);
+            ExpectTrue(rule.domains.length == 0);
           } else {
             ExpectFail();
           }
