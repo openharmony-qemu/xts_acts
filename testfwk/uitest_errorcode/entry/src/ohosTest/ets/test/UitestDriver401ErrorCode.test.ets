@@ -923,6 +923,18 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
+        await driver.swipe(100, 100, 100, 100, 199)
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_swipe_401 sp = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.swipe(100, 100, 100, 100, 41000)
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_swipe_401 sp = 41000 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
         await driver.swipe(100, 100, 100, 100, null)
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 sp = null error, ${JSON.stringify(error)}`);
@@ -1051,6 +1063,18 @@ export default function uitestEnumTest() {
         console.log(`${TestTag}, testApi9_Driver_drag_401 sp = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
+      try {
+        await driver.drag(100, 100, 100, 100, 199)
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_drag_401 sp = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.drag(100, 100, 100, 100, 41000)
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_drag_401 sp = 41000 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
       console.log(`${TestTag}, testApi9_Driver_drag_401 END`);
     })
 
@@ -1159,6 +1183,18 @@ export default function uitestEnumTest() {
         console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 sp = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
+      try {
+        await driver.swipeBetween({x: 100, y: 100}, {x: 100, y: 100} , 199)
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 sp = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.swipeBetween({x: 100, y: 100}, {x: 100, y: 100} , 41000)
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 sp = 41000 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
       console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 END`);
     })
 
@@ -1218,6 +1254,18 @@ export default function uitestEnumTest() {
         await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100} , undefined, 1500)
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 sp = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100} , 199, 1500)
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 sp = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100} , 41000, 1500)
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 sp = 41000 error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
@@ -1604,6 +1652,20 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
+        await driver.fling({x: 100, y: 100}, {x: 100, y: 100}, 100, 199)
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_fling_401 spe = 199 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling({x: 100, y: 100}, {x: 100, y: 100}, 100, 41000)
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_fling_401 spe = 41000 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
         await driver.fling({x: 100, y: 100}, {x: 100, y: 100}, 100, -1)
         expect().assertFail();
       } catch (error) {
@@ -1657,6 +1719,22 @@ export default function uitestEnumTest() {
       try {
         let points = PointerMatrix.create(1, 1);
         points.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectMultiPointerAction(points, 199)
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_injectMultiPointerAction_401 spe = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectMultiPointerAction(points, 41000)
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_injectMultiPointerAction_401 spe = 41000 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})
         await driver.injectMultiPointerAction(points, -1)
         expect().assertFail();
       } catch (error) {
@@ -1692,6 +1770,18 @@ export default function uitestEnumTest() {
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_flingDir_401 dir = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 199)
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_flingDir_401 dir = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 41000)
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_flingDir_401 dir = 41000 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
       }
       try {
         await driver.fling(UiDirection.DOWN, -1)
@@ -1736,6 +1826,18 @@ export default function uitestEnumTest() {
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_fling_401 spe = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 199, 0)
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_fling_401 spe = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 41000, 0)
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_fling_401 spe = 41000 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
       }
       try {
         await driver.fling(UiDirection.DOWN, 500, null)
@@ -2048,6 +2150,18 @@ export default function uitestEnumTest() {
         await driver.mouseScroll({x: 100, y: 100}, false, 0, 0, 0, undefined)
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 spe = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, 0, 0, 199)
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 spe = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, 0, 0, 41000)
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 spe = 41000 error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
@@ -2385,6 +2499,18 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       try {
+        await driver.mouseMoveWithTrack({x: 100, y: 100}, {x: 100, y: 100}, 199)
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 spe = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.mouseMoveWithTrack({x: 100, y: 100}, {x: 100, y: 100}, 41000)
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 spe = 41000 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
         await driver.mouseMoveWithTrack({x: 100, y: 100}, {x: 100, y: 100}, -1)
         expect().assertFail();
       } catch (error) {
@@ -2446,6 +2572,18 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 199)
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 spe = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 41000)
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 spe = 41000 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
         await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, -1)
         expect().assertFail();
       } catch (error) {
@@ -2504,6 +2642,18 @@ export default function uitestEnumTest() {
         await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, undefined, 1600)
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 spe = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 199, 1600)
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 spe = 199 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 41000, 1600)
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 spe = 41000 error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
@@ -2791,6 +2941,20 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       try {
+        await driver.penSwipe({x: 100, y: 100}, {x: 100, y: 100}, 199, 0.5);
+        console.log(TestTag, `testApi18_Driver_penSwipe_401 199`);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penSwipe_401, sp = 199 error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.penSwipe({x: 100, y: 100}, {x: 100, y: 100}, 41000, 0.5);
+        console.log(TestTag, `testApi18_Driver_penSwipe_401 41000`);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penSwipe_401, sp = 41000 error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
         await driver.penSwipe({x: 100, y: 100}, {x: 100, y: 100}, -1, 0.5);
         expect().assertFail();
       } catch (error) {
@@ -2872,6 +3036,31 @@ export default function uitestEnumTest() {
       try {
         let points = PointerMatrix.create(1, 1);
         points.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectPenPointerAction(points, 199, 0.5);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, spe = 199 error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectPenPointerAction(points, 41000, 0.5);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, spe = 41000 error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectPenPointerAction(points, -1, 0.5);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, spe = -1 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})
         await driver.injectPenPointerAction(points, 600, null);
       } catch (error) {
         console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, pre = null error is, ${JSON.stringify(error)}`);
@@ -2884,6 +3073,24 @@ export default function uitestEnumTest() {
       } catch (error) {
         console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, pre = undefined error is, ${JSON.stringify(error)}`);
         expect().assertFail();
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectPenPointerAction(points, 600, -1);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, pre = -1 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectPenPointerAction(points, 600, 2);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, pre = 2 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi18_Driver_injectPenPointerAction401 END`);
     })
@@ -2911,6 +3118,25 @@ export default function uitestEnumTest() {
         expect().assertFail();
       } catch (error) {
         console.log(TestTag, `testApi20_Driver_crownRotate_801, spe = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(DeviceErrorCode);
+      }
+      try {
+        await driver.crownRotate(300, -1);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_crownRotate_801, spe = -1 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.crownRotate(300, 0);
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_crownRotate_801, spe = 0 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(DeviceErrorCode);
+      }
+      try {
+        await driver.crownRotate(300, 501);
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_crownRotate_801, spe = 501 error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(DeviceErrorCode);
       }
       console.log(`${TestTag}, testApi20_Driver_crownRotate_801 END`);
@@ -3008,6 +3234,18 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       try {
+        await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, 199, 1600);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenDrag_17000007, sp = 199 error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, 41000, 1600);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenDrag_17000007, sp = 41000 error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
         await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, -1, 1600);
         expect().assertFail();
       } catch (error) {
@@ -3074,6 +3312,18 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       try {
+        await driver.isComponentPresentWhenSwipe(ON.text('next page'), {x: 100, y: 100}, {x: 100, y: 100}, 199);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenSwipe_17000007, spe = 199 error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.text('next page'), {x: 100, y: 100}, {x: 100, y: 100}, 41000);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenSwipe_17000007, spe = 41000 error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
         await driver.isComponentPresentWhenSwipe(ON.text('next page'), {x: 100, y: 100}, {x: 100, y: 100}, -1);
         expect().assertFail();
       } catch (error) {
@@ -3123,6 +3373,13 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, -1, 600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, d = -1 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
         await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, 50, null);
       } catch (error) {
         console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, spe = null error is, ${JSON.stringify(error)}`);
@@ -3133,6 +3390,25 @@ export default function uitestEnumTest() {
       } catch (error) {
         console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, spe = undefined error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(17000005);
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, 50, 199);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, spe = 199 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(17000005);
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, 50, 41000);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, spe = 41000 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(17000005);
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, 50, -1);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, spe = -1 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
       }
       console.log(`${TestTag}, testApi22_Driver_touchPadTwoFingersScroll_17000007 END`);
     })
@@ -3210,6 +3486,31 @@ export default function uitestEnumTest() {
       } catch (error) {
         console.log(TestTag, `testApi22_Driver_injectKnucklePointerAction_17000005, spe = undefined error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(17000005);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectKnucklePointerAction(points, 199);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_injectKnucklePointerAction_17000005, spe = 199 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(17000005);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectKnucklePointerAction(points, 41000);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_injectKnucklePointerAction_17000005, spe = 41000 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(17000005);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectKnucklePointerAction(points, -1);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_injectKnucklePointerAction_17000005, spe = -1 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
       }
       console.log(`${TestTag}, testApi22_Driver_injectKnucklePointerAction_17000005 END`);
     })

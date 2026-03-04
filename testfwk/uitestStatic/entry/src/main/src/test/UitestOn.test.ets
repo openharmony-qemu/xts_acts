@@ -317,7 +317,7 @@ export default function uitestOnTest() {
           expect(hint4 == 'welcome').assertTrue();
         }
 
-        let text5 = await driver.findComponent(ON.hint('welcome', MatchPattern.EQUALS));
+        let text5 = await driver.findComponent(ON.hint('welcome', undefined));
         if (text5 == null) {
           let scroll = await driver.findComponent(ON.type('Scroll'))
           if (scroll != null) {
@@ -360,6 +360,20 @@ export default function uitestOnTest() {
           await driver.delayMs(waitUiReadyMs);
           console.log(`${tag}, testGetHint hint7, ${JSON.stringify(hint7)}`)
           expect(hint7).assertEqual('');
+        }
+        let text5 = await driver.findComponent(ON.hint('welcome', MatchPattern.EQUALS));
+        if (text5 == null) {
+          let scroll = await driver.findComponent(ON.type('Scroll'))
+          if (scroll != null) {
+            text5 = await scroll.scrollSearch(ON.hint('welcome', MatchPattern.EQUALS))
+          }
+        }
+        hilog.info(domain, tag, `testGetHint_static text5, ${ JSON.stringify(text5) }`);
+        expect(text5 != null).assertTrue();
+        if (text5 != null) {
+          let hint5 = await text5.getHint();
+          hilog.info(domain, tag, `testGetHint_static hint5 is, ${ hint5 }`);
+          expect(hint5 == 'welcome').assertTrue();
         }
       } catch(error) {
         hilog.info(domain, tag, `testGetHint_static error, ${ JSON.stringify(error) }`);
@@ -427,6 +441,13 @@ export default function uitestOnTest() {
           let text5Des = await text5.getDescription()
           console.log(`${tag},testDescription  text5Des, ${JSON.stringify(text5Des)}`)
           expect(text5Des).assertEqual('toast')
+        }
+        let text6 = await driver.findComponent(ON.description('toast', undefined))
+        expect(text6 != null).assertTrue();
+        if (text6 != null) {
+          let text6Des = await text6.getDescription()
+          console.log(`${TestTag},testDescription  text6Des, ${JSON.stringify(text6Des)}`)
+          expect(text6Des).assertEqual('toast')
         }
       } catch(error) {
         hilog.info(domain, tag, `testDescription_static error, ${ JSON.stringify(error) }`);
@@ -621,7 +642,15 @@ export default function uitestOnTest() {
         if (button6 != null) {
           let bt6Text = await button6.getText();
           hilog.info(domain, tag, `testMatchPattern_static bt6Text, ${ JSON.stringify(bt6Text)}`);
-          expect(bt6Text).assertEqual('toast');
+          expect(bt6Text).assertEqual('');
+        }
+        let button8 = await driver.findComponent(ON.text('next page', undefined));
+        hilog.info(domain, tag, `testMatchPattern_static button8, ${ JSON.stringify(button8)}`);
+        expect(button8 != null).assertTrue()
+        if (button8 != null) {
+          let bt8Text = await button8.getText();
+          hilog.info(domain, tag, `testMatchPattern_static bt8Text, ${ JSON.stringify(bt8Text)}`);
+          expect(bt8Text).assertEqual('next page');
         }
       } catch(error) {
         hilog.info(domain, tag, `testMatchPattern_static error, ${ JSON.stringify(error)}`);
