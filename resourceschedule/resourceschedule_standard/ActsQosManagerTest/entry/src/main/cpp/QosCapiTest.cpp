@@ -16,9 +16,45 @@
 #include "include/QosCapiTest.h"
 #include <cerrno>
 #include <qos/qos.h>
+#include <string>
 #include <thread>
 #include <unistd.h>
 #include "include/OhosCommonTest.h"
+#include "napi/native_api.h"
+
+namespace ActsMindSporeConstants {
+const std::string DEFAULT_TAG = "ActsQosManagerTest";
+const std::string FILES_DIR = "/data/storage/el2/base/haps/entry_test/files/";
+const std::string CACHE_DIR = "/data/storage/el2/base/haps/entry_test/cache/";
+} // namespace ActsMindSporeConstants
+
+int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
+{
+    size_t argc = index + 1;
+    napi_value args[index + 1];
+
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (status != napi_ok || argc <= index) {
+        napi_throw_type_error(env, nullptr, "Argument missing");
+        return defaultValue;
+    }
+
+    napi_valuetype valuetype;
+    napi_typeof(env, args[index], &valuetype);
+    if (valuetype != napi_number) {
+        napi_throw_type_error(env, nullptr, "Argument must be a number");
+        return defaultValue;
+    }
+
+    int32_t result = defaultValue;
+    status = napi_get_value_int32(env, args[index], &result);
+    if (status != napi_ok) {
+        napi_throw_type_error(env, nullptr, "Value is not int32");
+        return defaultValue;
+    }
+
+    return result;
+}
 
 #define OH_NN_SUCCESS 0
 #define INVALID_QOS_VALUE 6
@@ -528,7 +564,8 @@ static int GewuSubmitRequestInvalidSessionTest(OH_QoS_GewuOnResponse cb, void* f
     if (requestResult2.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT) {
         return -1;
     }
-    OH_QoS_GewuSubmitRequestResult requestResult3 = OH_QoS_GewuSubmitRequest(0, nullptr, cb, fakeContext);
+    OH_QoS_GewuSubmitRequestResult requestResult3 =
+        OH_QoS_GewuSubmitRequest(0, nullptr, cb, fakeContext);
     if (requestResult3.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_FAULT) {
         return -1;
     }
