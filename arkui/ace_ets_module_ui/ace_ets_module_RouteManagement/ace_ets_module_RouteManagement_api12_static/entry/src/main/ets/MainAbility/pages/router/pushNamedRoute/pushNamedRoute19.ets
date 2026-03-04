@@ -18,7 +18,7 @@ import router from '@ohos.router';
 import { BusinessError } from '@ohos.base';
 import { Entry, Column, Component,Button,Text,Row,Color,ColumnOptions,ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-initModule ('./pageOne')
+initModule('./pushNamedRoute19')
 
 @Entry({ routeName: 'pushNamedRoute19' })
 @Component
@@ -28,15 +28,16 @@ struct pushNamedRoute19 {
   build() {
     Column() {
       Text('pushNamedRoute19').id('pushNamedRoute19_text1')
-      Text(this.text1).id('pushNamedRoute19_text2')
       Button('pushNamedRoute').onClick((event: ClickEvent) => {
-        initModule ('./pageOne')
+        initModule('./pushNamedRoute19')
         for(let i = 0; i < 32 ; i++){
           this.getUIContext().getRouter().pushNamedRoute({
             name: 'pushNamedRoute19'
           },router.RouterMode.Standard, (err) => {
             if (err) {
               this.text1 = '' +  (err as BusinessError).code
+              console.log('test pushNamedRoute19 ', this.text1)
+              AppStorage.setOrCreate<string>('errcode1', this.text1)
               return;
             }
           })
