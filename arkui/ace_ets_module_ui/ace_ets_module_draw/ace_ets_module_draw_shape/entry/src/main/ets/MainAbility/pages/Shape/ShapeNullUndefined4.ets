@@ -23,7 +23,7 @@ struct ShapeNullUndefined4Test {
   private meshArray: Array<number> = [0, 0, 100, 0, 200, 0, 0, 100, 100, 100, 200, 100, 0, 200, 100, 200, 200, 200]
 
   aboutToAppear(): void {
-    let img: ImageBitmap = new ImageBitmap("resources/base/media/icon.png")
+    let img: ImageBitmap = new ImageBitmap('resources/base/media/icon.png')
     this.context.drawImage(img, 0, 0, 200, 200)
     this.pixelMap = this.context.getPixelMap(0, 0, 200, 200)
   }
