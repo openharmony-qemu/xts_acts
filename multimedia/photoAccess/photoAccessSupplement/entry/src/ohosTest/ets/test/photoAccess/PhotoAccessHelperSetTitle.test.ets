@@ -20,7 +20,6 @@ import common from '@ohos.app.ability.common'
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { dataSharePredicates } from '@kit.ArkData';
 import { JSON } from '@kit.ArkTS';
-import { PhotoSource, RecentPhotoOptions } from '@kit.MediaLibraryKit';
 
 const TAG = LOG_TAG + 'PhotoSetTitleSupp';
 export default function PhotoSetTitleTestSupp() {
