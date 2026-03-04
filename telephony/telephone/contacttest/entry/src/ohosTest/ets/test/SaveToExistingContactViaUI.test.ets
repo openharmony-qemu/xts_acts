@@ -205,10 +205,6 @@ export default function SaveToExistingContactViaUITest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSaveToExistingContactViaUI0100";
       console.info(`${caseName} test start `);
-      if (deviceInfo.deviceType == 'default') {
-        console.log(`${caseName} not support default`);
-        done();
-      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         contact.addContact(context, contactData, async (err: BusinessError, data: number) => {
@@ -276,10 +272,6 @@ export default function SaveToExistingContactViaUITest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSaveToExistingContactViaUI0200";
       console.info(`${caseName} test start `);
-      if (deviceInfo.deviceType == 'default') {
-        console.log(`${caseName} not support default`);
-        done();
-      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         contact.addContact(context, contactData, async (err: BusinessError, data: number) => {
@@ -351,10 +343,6 @@ export default function SaveToExistingContactViaUITest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactSaveToExistingContactViaUI0300";
       console.info(`${caseName} test start `);
-      if (deviceInfo.deviceType == 'default') {
-        console.log(`${caseName} not support default`);
-        done();
-      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         contact.addContact(context, contactData, async (err: BusinessError, data: number) => {

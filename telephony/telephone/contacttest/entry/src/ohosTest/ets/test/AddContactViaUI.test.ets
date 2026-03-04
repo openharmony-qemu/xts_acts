@@ -204,10 +204,6 @@ export default function AddContactViaUITest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactAddContactViaUI0100";
       console.info(`${caseName} test start `);
-      if (deviceInfo.deviceType == 'default') {
-        console.log(`${caseName} not support default`);
-        done();
-      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContactViaUI(context, contactData);
@@ -251,10 +247,6 @@ export default function AddContactViaUITest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactAddContactViaUI0200";
       console.info(`${caseName} test start `);
-      if (deviceInfo.deviceType == 'default') {
-        console.log(`${caseName} not support default`);
-        done();
-      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContactViaUI(context, contactData);
@@ -300,10 +292,6 @@ export default function AddContactViaUITest() {
       await delay(1500);
       const caseName: string = "testTelephonyContactAddContactViaUI0300";
       console.info(`${caseName} test start `);
-      if (deviceInfo.deviceType == 'default') {
-        console.log(`${caseName} not support default`);
-        done();
-      }
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContactViaUI(context, contactDataNull);
