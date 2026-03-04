@@ -3728,6 +3728,80 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2500
+         * @tc.desc   Testing call setAVMetadata(promise) set fastForwardSkipIntervals
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            let metadata: avSession.AVMetadata = {
+                assetId: '121278',
+                fastForwardSkipIntervals: avSession.SkipIntervals.SECONDS_10
+            };
+            try {
+                await session!.setAVMetadata(metadata);
+                console.info('TestLog: Set fastForwardSkipIntervals successfully');
+            } catch (err) {
+                console.info(`TestLog: Set fastForwardSkipIntervals error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
+            let data: avSession.AVMetadata;
+            try {
+                data = await controller!.getAVMetadata();
+                if (data.fastForwardSkipIntervals === metadata.fastForwardSkipIntervals) {
+                    expect(true).assertTrue();
+                } else {
+                    console.info('TestLog: Get fastForwardSkipIntervals failed');
+                    expect(false).assertTrue();
+                }
+            } catch (err) {
+                console.info(`TestLog: Get fastForwardSkipIntervals error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2600
+         * @tc.desc   Testing call setAVMetadata(promise) set rewindSkipIntervals
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            let metadata: avSession.AVMetadata = {
+                assetId: '121278',
+                rewindSkipIntervals: avSession.SkipIntervals.SECONDS_10
+            };
+            try {
+                await session!.setAVMetadata(metadata);
+                console.info('TestLog: Set rewindSkipIntervals successfully');
+            } catch (err) {
+                console.info(`TestLog: Set rewindSkipIntervals error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
+            let data: avSession.AVMetadata;
+            try {
+                data = await controller!.getAVMetadata();
+                if (data.rewindSkipIntervals === metadata.rewindSkipIntervals) {
+                    expect(true).assertTrue();
+                } else {
+                    console.info('TestLog: Get rewindSkipIntervals failed');
+                    expect(false).assertTrue();
+                }
+            } catch (err) {
+                console.info(`TestLog: Get rewindSkipIntervals error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
+            done();
+        })
+
+        /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_SUPPORTEDDRMCAPABILITIES_STATIC_0100
          * @tc.number SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_SUPPORTEDDRMCAPABILITIES_STATIC_0100
          * @tc.desc   Testing call getOutputDevice(supportedDrmCapabilities)
