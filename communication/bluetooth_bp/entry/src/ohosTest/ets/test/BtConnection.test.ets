@@ -25,6 +25,8 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
             console.info("[bluetooth_js] pinRequired on:" + JSON.stringify(data));
             console.info("[bluetooth_js] setDevicePairingConfirmation data.deviceId:" + data.deviceId);
             console.info("[bluetooth_js] setDevicePairingConfirmation data.pinCode:" + data.pinCode);
+            expect(data.deviceId).not().assertUndefined();
+            expect(data.pinCode).not().assertUndefined();
         }
     function onReceiveEvent2(data : Array<string>) {
             console.info('[bluetooth_js] Device' + JSON.stringify(data) +
@@ -34,10 +36,14 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
     function BondStateParam(data : bluetooth.BondStateParam) {
             console.info("[bluetooth_js] bondStateChange on:" + JSON.stringify(data)
             +'bondStateChange deviceId:' + data.deviceId + 'bondStateChange state:' + data.state + 'bondStateChange cause:' + data.cause);
+            expect(data.deviceId).not().assertUndefined();
+            expect(data.state).not().assertUndefined();
         }
     function BondStateParam1(data : bluetooth.BondStateParam) {
             console.info("[bluetooth_js] bondStateChange on:" + JSON.stringify(data)
             +'bondStateChange deviceId:' + data.deviceId + 'bondStateChange state:' + data.state);
+            expect(data.deviceId).not().assertUndefined();
+            expect(data.state).not().assertUndefined();
         }
     function onReceiveEvent1(data : bluetooth.PinRequiredParam) {
             console.info('pin required = '+ JSON.stringify(data));
@@ -60,6 +66,18 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
             bluetooth.offScanModeChange()
         }
     }
+
+    const PROFILE_UUID_HFP_AG = '0000111F-0000-1000-8000-00805F9B34FB';
+    const PROFILE_UUID_HFP_HF = '0000111E-0000-1000-8000-00805F9B34FB';
+    const PROFILE_UUID_HSP_AG = '00001112-0000-1000-8000-00805F9B34FB';
+    const PROFILE_UUID_HSP_HS = '00001108-0000-1000-8000-00805F9B34FB';
+    const PROFILE_UUID_A2DP_SRC = '0000110A-0000-1000-8000-00805F9B34FB';
+    const PROFILE_UUID_A2DP_SINK = '0000110B-0000-1000-8000-00805F9B34FB';
+    const PROFILE_UUID_AVRCP_CT = '0000110E-0000-1000-8000-00805F9B34FB';
+    const PROFILE_UUID_AVRCP_TG = '0000110C-0000-1000-8000-00805F9B34FB';
+    const PROFILE_UUID_HID = '00001124-0000-1000-8000-00805F9B34FB';
+    const PROFILE_UUID_HOGP = '00001812-0000-1000-8000-00805F9B34FB';
+
     async function tryToEnableBt() {
         let sta = btAccess.getState();
         switch (sta) {
@@ -213,6 +231,82 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8800
+     * @tc.desc   Test on pinRequired with null event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.on(null, onReceiveEvent1);
+            expect().assertFail();
+        } catch (err) {
+            console.info("on pinRequired with null errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8900
+     * @tc.desc   Test on pinRequired with undefined event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.on(undefined, onReceiveEvent1);
+            expect().assertFail();
+        } catch (err) {
+            console.info("on pinRequired with undefined errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9000
+     * @tc.desc   Test off pinRequired with null event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.off(null, onReceiveEvent1);
+            expect().assertFail();
+        } catch (err) {
+            console.info("off pinRequired with null errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9100
+     * @tc.desc   Test off pinRequired with undefined event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.off(undefined, onReceiveEvent1);
+            expect().assertFail();
+        } catch (err) {
+            console.info("off pinRequired with undefined errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0200
      * @tc.desc   Test getPairedDevices api10
@@ -330,6 +424,166 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4400
+     * @tc.desc   Test getRemoteDeviceName with undefined parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let ret = bluetooth.getRemoteDeviceName(undefined);
+            console.info('[bluetooth_js] getRemoteDeviceName ret:' + JSON.stringify(ret));
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4500
+     * @tc.desc   Test getRemoteDeviceName with empty string parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let ret = bluetooth.getRemoteDeviceName("");
+            console.info('[bluetooth_js] getRemoteDeviceName ret:' + JSON.stringify(ret));
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4600
+     * @tc.desc   Test getRemoteDeviceName with null and true parameters api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let ret = bluetooth.getRemoteDeviceName(null, true);
+            console.info('[bluetooth_js] getRemoteDeviceName ret:' + JSON.stringify(ret));
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4700
+     * @tc.desc   Test getRemoteDeviceName with undefined and true parameters api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let ret = bluetooth.getRemoteDeviceName(undefined, true);
+            console.info('[bluetooth_js] getRemoteDeviceName ret:' + JSON.stringify(ret));
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4800
+     * @tc.desc   Test getRemoteDeviceName with empty string and true parameters api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let ret = bluetooth.getRemoteDeviceName("", true);
+            console.info('[bluetooth_js] getRemoteDeviceName ret:' + JSON.stringify(ret));
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4900
+     * @tc.desc   Test getRemoteDeviceName with null and false parameters api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let ret = bluetooth.getRemoteDeviceName(null, false);
+            console.info('[bluetooth_js] getRemoteDeviceName ret:' + JSON.stringify(ret));
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5000
+     * @tc.desc   Test getRemoteDeviceName with undefined and false parameters api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let ret = bluetooth.getRemoteDeviceName(undefined, false);
+            console.info('[bluetooth_js] getRemoteDeviceName ret:' + JSON.stringify(ret));
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5100
+     * @tc.desc   Test getRemoteDeviceName with empty string and false parameters api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let ret = bluetooth.getRemoteDeviceName("", false);
+            console.info('[bluetooth_js] getRemoteDeviceName ret:' + JSON.stringify(ret));
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0400
      * @tc.desc   Test pairDevice callback api10
@@ -424,6 +678,44 @@ describe('btConnectionTest', () => {
         done();
     })
 
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5400
+     * @tc.desc   Test setDevicePairingConfirmation with undefined deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            bluetooth.setDevicePairingConfirmation(undefined, true);
+            expect().assertFail();
+        } catch (err) {
+            console.info("setDevicePairingConfirmation errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5500
+     * @tc.desc   Test setDevicePairingConfirmation with empty string deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            bluetooth.setDevicePairingConfirmation("", true);
+            expect().assertFail();
+        } catch (err) {
+            console.info("setDevicePairingConfirmation errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
      /**
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0600
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0600
@@ -438,6 +730,9 @@ describe('btConnectionTest', () => {
             console.info('[bluetooth_js]getRemoteDeviceClass majorClass:' + DeviceClass.majorClass);
             console.info('[bluetooth_js]getRemoteDeviceClass majorMinorClass:' + DeviceClass.majorMinorClass);
             console.info('[bluetooth_js]getRemoteDeviceClass classOfDevice:' + DeviceClass.classOfDevice);
+            expect(DeviceClass.majorClass).not().assertUndefined();
+            expect(DeviceClass.majorMinorClass).not().assertUndefined();
+            expect(DeviceClass.classOfDevice).not().assertUndefined();
         } catch (err) {
             console.info("getRemoteDeviceClass errCode:" + err.code + ",errMessage:" + err.message);
             if (err.code == 801) {
@@ -461,6 +756,46 @@ describe('btConnectionTest', () => {
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             let DeviceClass = bluetooth.getRemoteDeviceClass(null);
+            expect().assertFail();
+        } catch (err) {
+            console.info("getRemoteDeviceClass errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5200
+     * @tc.desc   Test getRemoteDeviceClass with undefined parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let DeviceClass = bluetooth.getRemoteDeviceClass(undefined);
+            console.info('[bluetooth_js]getRemoteDeviceClass majorClass:' + DeviceClass.majorClass);
+            expect().assertFail();
+        } catch (err) {
+            console.info("getRemoteDeviceClass errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5300
+     * @tc.desc   Test getRemoteDeviceClass with empty string parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let DeviceClass = bluetooth.getRemoteDeviceClass("");
+            console.info('[bluetooth_js]getRemoteDeviceClass majorClass:' + DeviceClass.majorClass);
             expect().assertFail();
         } catch (err) {
             console.info("getRemoteDeviceClass errCode:" + err.code + ",errMessage:" + err.message);
@@ -566,6 +901,225 @@ describe('btConnectionTest', () => {
         done();
     })
 
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5800
+     * @tc.desc   Test setDevicePinCode callback with undefined deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setDevicePinCode(undefined, '12345', (err, data) => {
+                console.info('setDevicePinCode callback,device name err:' + JSON.stringify(err) + ',device name:' + JSON.stringify(data));
+            });
+            expect().assertFail();
+        } catch (err) {
+            console.info("setDevicePinCode callback errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5900
+     * @tc.desc   Test setDevicePinCode callback with empty string deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setDevicePinCode("", '12345', (err, data) => {
+                console.info('setDevicePinCode callback,device name err:' + JSON.stringify(err) + ',device name:' + JSON.stringify(data));
+            });
+            expect().assertFail();
+        } catch (err) {
+            console.info("setDevicePinCode callback errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6000
+     * @tc.desc   Test setDevicePinCode callback with undefined code api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setDevicePinCode('11:22:33:44:55:66', undefined, (err, data) => {
+                console.info('setDevicePinCode callback,device name err:' + JSON.stringify(err) + ',device name:' + JSON.stringify(data));
+            });
+            expect().assertFail();
+        } catch (err) {
+            console.info("setDevicePinCode callback errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6100
+     * @tc.desc   Test setDevicePinCode callback with empty string code api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setDevicePinCode('11:22:33:44:55:66', "", (err, data) => {
+                console.info('setDevicePinCode callback,device name err:' + JSON.stringify(err) + ',device name:' + JSON.stringify(data));
+            });
+            expect().assertFail();
+        } catch (err) {
+            console.info("setDevicePinCode callback errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6200
+     * @tc.desc   Test setDevicePinCode promise with undefined deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setDevicePinCode(undefined, '12345').then(() => {
+                console.info('setDevicePinCode success');
+                expect().assertFail();
+            }, (error :BusinessError) => {
+                console.info('setDevicePinCode promise: errCode:' + error.code + ',errMessage' + error.message);
+                expect(Number(error.code)).assertEqual(401);
+            })
+        } catch (err) {
+            console.info("setDevicePinCode promise errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6300
+     * @tc.desc   Test setDevicePinCode promise with empty string deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setDevicePinCode("", '12345').then(() => {
+                console.info('setDevicePinCode success');
+                expect().assertFail();
+            }, (error :BusinessError) => {
+                console.info('setDevicePinCode promise: errCode:' + error.code + ',errMessage' + error.message);
+                expect(Number(error.code)).assertEqual(401);
+            })
+        } catch (err) {
+            console.info("setDevicePinCode promise errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6400
+     * @tc.desc   Test setDevicePinCode promise with undefined code api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setDevicePinCode('11:22:33:44:55:66', undefined).then(() => {
+                console.info('setDevicePinCode success');
+                expect().assertFail();
+            }, (error :BusinessError) => {
+                console.info('setDevicePinCode promise: errCode:' + error.code + ',errMessage' + error.message);
+                expect(Number(error.code)).assertEqual(401);
+            })
+        } catch (err) {
+            console.info("setDevicePinCode promise errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6500
+     * @tc.desc   Test setDevicePinCode promise with empty string code api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setDevicePinCode('11:22:33:44:55:66', "").then(() => {
+                console.info('setDevicePinCode success');
+                expect().assertFail();
+            }, (error :BusinessError) => {
+                console.info('setDevicePinCode promise: errCode:' + error.code + ',errMessage' + error.message);
+                expect(Number(error.code)).assertEqual(401);
+            })
+        } catch (err) {
+            console.info("setDevicePinCode promise errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600
+     * @tc.desc   Test setDevicePinCode promise when bluetooth is disabled (error code 2900003) api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600';
+        console.info(`${caseName}---Start`);
+        try {
+            let currentState = btAccess.getState();
+            console.info(`${caseName} current bluetooth state: ${currentState}`);
+            
+            if (currentState === 2) {
+                btAccess.disableBluetooth();
+                await sleep(3000);
+                let stateAfterDisable = btAccess.getState();
+                console.info(`${caseName} bluetooth state after disable: ${stateAfterDisable}`);
+            }
+            
+            await bluetooth.setDevicePinCode('11:22:33:44:55:66', '12345').then(() => {
+                console.info(`${caseName} setDevicePinCode success, should not reach here`);
+                expect(true).assertFalse();
+            }, (error :BusinessError) => {
+                console.info(`${caseName} setDevicePinCode promise error: errCode:` + error.code + ',errMessage:' + error.message);
+                expect(Number(error.code)).assertEqual(2900003);
+            });
+            
+            console.info(`${caseName}---End`);
+        } catch (err) {
+            console.error(`${caseName} setDevicePinCode promise error, error code is: ${err.code}, error message is: ${err.message}`);
+            expect(Number(err.code)).assertEqual(2900003);
+            console.info(`${caseName}---End`);
+        }
+        done();
+    })
+
      /**
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
@@ -596,6 +1150,82 @@ describe('btConnectionTest', () => {
             }
         }
         bluetooth.off('bondStateChange', BondStateParam1);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8400
+     * @tc.desc   Test on bondStateChange with null event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.on(null, BondStateParam1);
+            expect().assertFail();
+        } catch (err) {
+            console.info("on bondStateChange with null errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8500
+     * @tc.desc   Test on bondStateChange with undefined event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.on(undefined, BondStateParam1);
+            expect().assertFail();
+        } catch (err) {
+            console.info("on bondStateChange with undefined errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8600
+     * @tc.desc   Test off bondStateChange with null event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.off(null, BondStateParam1);
+            expect().assertFail();
+        } catch (err) {
+            console.info("off bondStateChange with null errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8700
+     * @tc.desc   Test off bondStateChange with undefined event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.off(undefined, BondStateParam1);
+            expect().assertFail();
+        } catch (err) {
+            console.info("off bondStateChange with undefined errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
         done();
     })
 
@@ -955,6 +1585,86 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_2900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_2900
+     * @tc.desc   TEST setBluetoothScanMode with undefined duration parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            bluetooth.setBluetoothScanMode(bluetooth.ScanMode.SCAN_MODE_GENERAL_DISCOVERABLE, undefined);
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_3000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_3000
+     * @tc.desc   TEST setBluetoothScanMode with null duration parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            bluetooth.setBluetoothScanMode(bluetooth.ScanMode.SCAN_MODE_GENERAL_DISCOVERABLE, null);
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_3100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_3100
+     * @tc.desc   TEST setBluetoothScanMode with SCAN_MODE_CONNECTABLE api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let state = btAccess.getState();
+            console.info('[bluetooth_js] get bluetooth state: '+ JSON.stringify(state));
+            if(state == 2)
+            {
+                let oldScanMode = bluetooth.getBluetoothScanMode();
+                console.info('[bluetooth_js] ScanMode_3100 oldScanMode = '+ JSON.stringify(oldScanMode));
+                bluetooth.setBluetoothScanMode(bluetooth.ScanMode.SCAN_MODE_CONNECTABLE, 0);
+                let getScanMode = bluetooth.getBluetoothScanMode();
+                console.info('[bluetooth_js] ScanMode_3100 getScanMode = '+ JSON.stringify(getScanMode));
+                expect(true).assertEqual(getScanMode == bluetooth.ScanMode.SCAN_MODE_CONNECTABLE);
+                bluetooth.setBluetoothScanMode(oldScanMode, 0);
+                let getOldScanMode = bluetooth.getBluetoothScanMode();
+                console.info('[bluetooth_js] ScanMode_3100 getOldScanMode = '+ JSON.stringify(getOldScanMode));
+                expect(true).assertEqual(oldScanMode == getOldScanMode);
+            }
+            else
+            {
+                console.info('[bluetooth_js] bluetooth switch off, state is = '+ JSON.stringify(state));
+                expect(true).assertFalse();
+            }
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code == 801) {
+                console.info('[bluetooth_js]setBluetoothScanMode is not support');
+                expect(true).assertTrue();
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+        done();
+    })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0100
      * @tc.desc   TEST bluetoothDeviceFind api10
@@ -980,6 +1690,82 @@ describe('btConnectionTest', () => {
     }
     bluetooth.off('bluetoothDeviceFind', onReceiveEvent2);
     done(); 
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0200
+     * @tc.desc   TEST bluetoothDeviceFind with null event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.on(null, onReceiveEvent2);
+            expect().assertFail();
+        } catch (error) {
+            console.info(`[bluetooth_js]on bluetoothDeviceFind with null error, code is ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(401);
+        }
+        done(); 
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0300
+     * @tc.desc   TEST bluetoothDeviceFind with undefined event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.on(undefined, onReceiveEvent2);
+            expect().assertFail();
+        } catch (error) {
+            console.info(`[bluetooth_js]on bluetoothDeviceFind with undefined error, code is ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(401);
+        }
+        done(); 
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0400
+     * @tc.desc   TEST off bluetoothDeviceFind with null event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.off(null, onReceiveEvent2);
+            expect().assertFail();
+        } catch (error) {
+            console.info(`[bluetooth_js]off bluetoothDeviceFind with null error, code is ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(401);
+        }
+        done(); 
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0500
+     * @tc.desc   TEST off bluetoothDeviceFind with undefined event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.off(undefined, onReceiveEvent2);
+            expect().assertFail();
+        } catch (error) {
+            console.info(`[bluetooth_js]off bluetoothDeviceFind with undefined error, code is ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(401);
+        }
+        done(); 
     })
 
     /**
@@ -1513,6 +2299,96 @@ describe('btConnectionTest', () => {
         }
         done();
     })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2400
+     * @tc.desc   Test setLocalName with undefined parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setLocalName(undefined);
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code == 801) {
+                console.info('[bluetooth_js]setLocalName is not support');
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2500
+     * @tc.desc   Test setLocalName with 2 bytes (minimum length + 1) api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let str = "AB";
+            bluetooth.setLocalName(str);
+            await sleep(1000);
+            let getNewName = bluetooth.getLocalName();
+            console.info('[bluetooth_js] LocalName_2500 NewName = '+ JSON.stringify(getNewName));
+            expect(true).assertEqual(str == getNewName);
+        } catch (err) {
+            console.info("[bluetooth_js]errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(801);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2600
+     * @tc.desc   Test setLocalName when bluetooth is disabled (error code 2900099) api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2600';
+        console.info(`${caseName}---Start`);
+        try {
+            let currentState = btAccess.getState();
+            console.info(`${caseName} current bluetooth state: ${currentState}`);
+            
+            if (currentState === 2) {
+                btAccess.disableBluetooth();
+                await sleep(3000);
+                let stateAfterDisable = btAccess.getState();
+                console.info(`${caseName} bluetooth state after disable: ${stateAfterDisable}`);
+            }
+            
+            bluetooth.setLocalName('TestName');
+            await sleep(1000);
+            console.info(`${caseName} setLocalName should fail when bluetooth is disabled`);
+            expect(true).assertFalse();
+        } catch (err) {
+            console.error(`${caseName} setLocalName error, error code is: ${err.code}, error message is: ${err.message}`);
+            if (err.code === 801) {
+                console.info(`${caseName} setLocalName is not support`);
+                expect(Number(err.code)).assertEqual(801);
+            } else if (err.code === 2900003) {
+                console.info(`${caseName} bluetooth is disabled`);
+                expect(Number(err.code)).assertEqual(2900003);
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+        console.info(`${caseName}---End`);
+        done();
+    })
+
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100
@@ -1552,6 +2428,34 @@ describe('btConnectionTest', () => {
         } catch (err) {
             console.info("getProfileConnectionState errCode:" + err.code + ",errMessage:" + err.message);
             expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0300
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0300
+      * @tc.desc   Test getProfileConnectionState with null parameter
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let result = bluetooth.getProfileConnectionState(null);
+            console.info("getProfileConnectionState with null result:" + result);
+            expect(true).assertEqual(result == 0 || result == 1 || result == 2 || result == 3);
+        } catch (err) {
+            console.info("getProfileConnectionState null errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code === 401) {
+                console.info('[bluetooth_js]getProfileConnectionState null parameter error as expected');
+                expect(Number(err.code)).assertEqual(401);
+            } else if (err.code === 801 || err.code === 2900004) {
+                console.info('[bluetooth_js]getProfileConnectionState is not support or profile not support');
+                expect(true).assertTrue();
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
         }
         done();
     })
@@ -1678,6 +2582,46 @@ describe('btConnectionTest', () => {
         done();
     })
 
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5600
+     * @tc.desc   Test getPairState with undefined parameter api11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let state: bluetooth.BondState = bluetooth.getPairState(undefined);
+            console.log('[bluetooth_js] getPairState: ' + state);
+            expect().assertFail();
+        } catch (err) {
+            console.info("getPairState errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5700
+     * @tc.desc   Test getPairState with empty string parameter api11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let state: bluetooth.BondState = bluetooth.getPairState("");
+            console.log('[bluetooth_js] getPairState: ' + state);
+            expect().assertFail();
+        } catch (err) {
+            console.info("getPairState errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
      /**
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1100
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1100
@@ -1715,6 +2659,132 @@ describe('btConnectionTest', () => {
         try {
             await bluetooth.setRemoteDeviceName('11:22:33:44:55:66', 'RemoteDeviceName').then(() => {
                 console.info('setRemoteDeviceName success');
+            });
+        } catch (err) {
+            console.info("setRemoteDeviceName errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7300
+     * @tc.desc   Test setRemoteDeviceName with null deviceId api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.setRemoteDeviceName(null, 'RemoteDeviceName').then(() => {
+                console.info('setRemoteDeviceName success');
+                expect().assertFail();
+            });
+        } catch (err) {
+            console.info("setRemoteDeviceName errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7400
+     * @tc.desc   Test setRemoteDeviceName with undefined deviceId api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.setRemoteDeviceName(undefined, 'RemoteDeviceName').then(() => {
+                console.info('setRemoteDeviceName success');
+                expect().assertFail();
+            });
+        } catch (err) {
+            console.info("setRemoteDeviceName errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7500
+     * @tc.desc   Test setRemoteDeviceName with empty string deviceId api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.setRemoteDeviceName("", 'RemoteDeviceName').then(() => {
+                console.info('setRemoteDeviceName success');
+                expect().assertFail();
+            });
+        } catch (err) {
+            console.info("setRemoteDeviceName errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7600
+     * @tc.desc   Test setRemoteDeviceName with null name api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.setRemoteDeviceName('11:22:33:44:55:66', null).then(() => {
+                console.info('setRemoteDeviceName success');
+                expect().assertFail();
+            });
+        } catch (err) {
+            console.info("setRemoteDeviceName errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7700
+     * @tc.desc   Test setRemoteDeviceName with undefined name api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.setRemoteDeviceName('11:22:33:44:55:66', undefined).then(() => {
+                console.info('setRemoteDeviceName success');
+                expect().assertFail();
+            });
+        } catch (err) {
+            console.info("setRemoteDeviceName errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7800
+     * @tc.desc   Test setRemoteDeviceName with empty string name api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.setRemoteDeviceName('11:22:33:44:55:66', "").then(() => {
+                console.info('setRemoteDeviceName success');
+                expect().assertFail();
             });
         } catch (err) {
             console.info("setRemoteDeviceName errCode:" + err.code + ",errMessage:" + err.message);
@@ -1901,6 +2971,223 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6700
+     * @tc.desc   Test getRemoteProfileUuids callback with undefined deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let getRemoProUid = () => {
+                return new Promise<void>((resolve,reject) => {
+                    bluetooth.getRemoteProfileUuids(undefined, (err, data:bluetooth.ProfileUuids[])=> {
+                        if (err) {
+                            console.info('getRemoProUid failed' + err);
+                            reject(err.code);
+                        } else
+                        {
+                            console.info('[bluetooth_js]getRemoProUid info:'+JSON.stringify(data));
+                        }
+                        resolve();
+                    });
+                });
+            }
+            await getRemoProUid().then((data) => {
+                console.info("[bluetooth_js]getRemoteProfileUuids done" + data);
+                done();
+            },
+            (e: BusinessError) => {
+                console.info("[bluetooth_js]getRemoteProfileUuids done" + e);
+                expect(401).assertEqual(Number(e));
+                done();
+            })
+        } catch (error) {
+            console.info("[bluetooth_js] error code connection -> " + error.code + " error info connection  -> " + error.message);
+            expect(401).assertEqual(Number(error.code));
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6800
+     * @tc.desc   Test getRemoteProfileUuids callback with empty string deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let getRemoProUid = () => {
+                return new Promise<void>((resolve,reject) => {
+                    bluetooth.getRemoteProfileUuids("", (err, data:bluetooth.ProfileUuids[])=> {
+                        if (err) {
+                            console.info('getRemoProUid failed' + err);
+                            reject(err.code);
+                        } else
+                        {
+                            console.info('[bluetooth_js]getRemoProUid info:'+JSON.stringify(data));
+                        }
+                        resolve();
+                    });
+                });
+            }
+            await getRemoProUid().then((data) => {
+                console.info("[bluetooth_js]getRemoteProfileUuids done" + data);
+                done();
+            },
+            (e: BusinessError) => {
+                console.info("[bluetooth_js]getRemoteProfileUuids done" + e);
+                expect(401).assertEqual(Number(e));
+                done();
+            })
+        } catch (error) {
+            console.info("[bluetooth_js] error code connection -> " + error.code + " error info connection  -> " + error.message);
+            expect(401).assertEqual(Number(error.code));
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6900
+     * @tc.desc   Test getRemoteProfileUuids promise with undefined deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.getRemoteProfileUuids(undefined).then((value: bluetooth.ProfileUuids[]) => {
+                console.info('[bluetooth_js] getRemoteProfileUuids result:' + JSON.stringify(value));
+            });
+        } catch (error) {
+            console.info("[bluetooth_js] error code connection -> " + error.code + " error info connection  -> " + error.message);
+            expect(Number(error.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7000
+     * @tc.desc   Test getRemoteProfileUuids promise with empty string deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.getRemoteProfileUuids("").then((value: bluetooth.ProfileUuids[]) => {
+                console.info('[bluetooth_js] getRemoteProfileUuids result:' + JSON.stringify(value));
+            });
+        } catch (error) {
+            console.info("[bluetooth_js] error code connection -> " + error.code + " error info connection  -> " + error.message);
+            expect(Number(error.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7100
+     * @tc.desc   Test getRemoteProfileUuids promise when bluetooth is disabled (error code 2900003) api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7100';
+        console.info(`${caseName}---Start`);
+        try {
+            let currentState = btAccess.getState();
+            console.info(`${caseName} current bluetooth state: ${currentState}`);
+            
+            if (currentState === 2) {
+                btAccess.disableBluetooth();
+                await sleep(3000);
+                let stateAfterDisable = btAccess.getState();
+                console.info(`${caseName} bluetooth state after disable: ${stateAfterDisable}`);
+            }
+            
+            await bluetooth.getRemoteProfileUuids('44:55:66:77:88:99').then((value: bluetooth.ProfileUuids[]) => {
+                console.info(`${caseName} getRemoteProfileUuids success, should not reach here`);
+                expect(true).assertFalse();
+            });
+        } catch (error) {
+            console.error(`${caseName} getRemoteProfileUuids error, error code is: ${error.code}, error message is: ${error.message}`);
+            if (error.code == 801) {
+                console.info(`${caseName} getRemoteProfileUuids is not support`);
+                expect(Number(error.code)).assertEqual(801);
+            } else {
+                expect(Number(error.code)).assertEqual(2900003);
+            }
+        }
+        console.info(`${caseName}---End`);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7200
+     * @tc.desc   Test getRemoteProfileUuids promise return value validation api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7200';
+        console.info(`${caseName}---Start`);
+        try {
+            await bluetooth.getRemoteProfileUuids('44:55:66:77:88:99').then((value: bluetooth.ProfileUuids[]) => {
+                console.info(`${caseName} getRemoteProfileUuids result: ${JSON.stringify(value)}`);
+                
+                expect(Array.isArray(value)).assertTrue();
+                console.info(`${caseName} return value is array: true`);
+                
+                if (value.length > 0) {
+                    console.info(`${caseName} ProfileUuids array length: ${value.length}`);
+                    
+                    const validProfileUuids = [
+                        PROFILE_UUID_HFP_AG,
+                        PROFILE_UUID_HFP_HF,
+                        PROFILE_UUID_HSP_AG,
+                        PROFILE_UUID_HSP_HS,
+                        PROFILE_UUID_A2DP_SRC,
+                        PROFILE_UUID_A2DP_SINK,
+                        PROFILE_UUID_AVRCP_CT,
+                        PROFILE_UUID_AVRCP_TG,
+                        PROFILE_UUID_HID,
+                        PROFILE_UUID_HOGP
+                    ];
+                    
+                    for (let i = 0; i < value.length; i++) {
+                        console.info(`${caseName} ProfileUuid[${i}]: ${value[i]}`);
+                        expect(typeof value[i]).assertEqual('string');
+                        
+                        const isValidUuid = validProfileUuids.includes(value[i]);
+                        console.info(`${caseName} ProfileUuid[${i}] is valid: ${isValidUuid}`);
+                    }
+                } else {
+                    console.info(`${caseName} ProfileUuids array is empty`);
+                }
+            });
+        } catch (error) {
+            console.error(`${caseName} getRemoteProfileUuids error, error code is: ${error.code}, error message is: ${error.message}`);
+            if (error.code == 801) {
+                console.info(`${caseName} getRemoteProfileUuids is not support`);
+                expect(Number(error.code)).assertEqual(801);
+            } else {
+                expect(Number(error.code)).assertEqual(2900099);
+            }
+        }
+        console.info(`${caseName}---End`);
+        done();
+    })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0100
      * @tc.desc   Test getLastConnectionTime promise.
@@ -1943,6 +3230,48 @@ describe('btConnectionTest', () => {
             console.info("[bluetooth_js] error code getLastConnectionTime -> " + error.code + " error info getLastConnectionTime  -> " + error.message);
             expect(Number(error.code)).assertEqual(401);
             
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0300
+     * @tc.desc   Test getLastConnectionTime promise with undefined deviceId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            await bluetooth.getLastConnectionTime(undefined).then((time: number) => {
+                console.info('[bluetooth_js] getLastConnectionTime result:' + JSON.stringify(time));
+                expect().assertFail();
+            });
+        } catch (error) {
+            console.info("[bluetooth_js] error code getLastConnectionTime -> " + error.code + " error info getLastConnectionTime  -> " + error.message);
+            expect(Number(error.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0400
+     * @tc.desc   Test getLastConnectionTime promise with empty string deviceId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            await bluetooth.getLastConnectionTime("").then((time: number) => {
+                console.info('[bluetooth_js] getLastConnectionTime result:' + JSON.stringify(time));
+                expect().assertFail();
+            });
+        } catch (error) {
+            console.info("[bluetooth_js] error code getLastConnectionTime -> " + error.code + " error info getLastConnectionTime  -> " + error.message);
+            expect(Number(error.code)).assertEqual(401);
         }
         done();
     })
@@ -2023,6 +3352,142 @@ describe('btConnectionTest', () => {
                     expect().assertFail();
                 }
         }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7900
+     * @tc.desc   Test on discoveryResult with null event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
+            console.info('bluetooth discoveryResult callback');
+        }
+        try {
+            bluetooth.on(null, onReceiveEvent);
+            expect().assertFail();
+        } catch (err) {
+            console.info("on discoveryResult with null errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8000
+     * @tc.desc   Test on discoveryResult with undefined event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
+            console.info('bluetooth discoveryResult callback');
+        }
+        try {
+            bluetooth.on(undefined, onReceiveEvent);
+            expect().assertFail();
+        } catch (err) {
+            console.info("on discoveryResult with undefined errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8100
+     * @tc.desc   Test off discoveryResult with null event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
+            console.info('bluetooth discoveryResult callback');
+        }
+        try {
+            bluetooth.off(null, onReceiveEvent);
+            expect().assertFail();
+        } catch (err) {
+            console.info("off discoveryResult with null errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8200
+     * @tc.desc   Test off discoveryResult with undefined event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
+            console.info('bluetooth discoveryResult callback');
+        }
+        try {
+            bluetooth.off(undefined, onReceiveEvent);
+            expect().assertFail();
+        } catch (err) {
+            console.info("off discoveryResult with undefined errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8300
+     * @tc.desc   Test on discoveryResult error code 2900099 api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8300';
+        console.info(`${caseName}---Start`);
+        let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
+            if (data.length > 0) {
+                console.info(`${caseName} discoveryResult result: ${JSON.stringify(data)}`);
+                console.info(`${caseName} discoveryResult deviceId: ${JSON.stringify(data[0].deviceId)}`);
+                console.info(`${caseName} discoveryResult rssi: ${JSON.stringify(data[0].rssi)}`);
+                console.info(`${caseName} discoveryResult deviceName: ${JSON.stringify(data[0].deviceName)}`);
+                console.info(`${caseName} discoveryResult deviceClass: ${JSON.stringify(data[0].deviceClass)}`);
+            }
+        }
+        try {
+            let currentState = btAccess.getState();
+            console.info(`${caseName} current bluetooth state: ${currentState}`);
+            
+            if (currentState === 2) {
+                btAccess.disableBluetooth();
+                await sleep(3000);
+                let stateAfterDisable = btAccess.getState();
+                console.info(`${caseName} bluetooth state after disable: ${stateAfterDisable}`);
+            }
+            
+            bluetooth.on('discoveryResult', onReceiveEvent);
+            await sleep(900);
+            bluetooth.off('discoveryResult', onReceiveEvent);
+            expect().assertFail();
+        } catch (err) {
+            console.error(`${caseName} discoveryResult error, error code is: ${err.code}, error message is: ${err.message}`);
+            if (err.code == 801) {
+                console.info(`${caseName} discoveryResult on/off is not support`);
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+        console.info(`${caseName}---End`);
         done();
     })
 
@@ -2159,14 +3624,132 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1700
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1700
-     * @tc.desc   Test pairDevice callback api10
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0500
+     * @tc.desc   Test connectAllowedProfiles callback with undefined deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let connectAP = () => {
+                return new Promise<void>((resolve,reject) => {
+                    bluetooth.connectAllowedProfiles(undefined, (err, data: void)=> {
+                        if (err) {
+                            console.info('connectAllowedProfiles failed' + JSON.stringify(err));
+                            reject(err.code);
+                        } else
+                        {
+                            console.info('[bluetooth_js]connectAllowedProfiles success');
+                        }
+                        resolve();
+                    });
+                });
+            }
+            await connectAP().then(() => {
+                console.info("[bluetooth_js]connectAllowedProfiles success");
+            },
+            (e: BusinessError) => {
+                console.info("[bluetooth_js]connectAllowedProfiles failed info:" + JSON.stringify(e));
+                expect(Number(e)).assertEqual(401);
+            })
+        } catch (err) {
+            console.info("connectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0600
+     * @tc.desc   Test connectAllowedProfiles callback with empty string deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let connectAP = () => {
+                return new Promise<void>((resolve,reject) => {
+                    bluetooth.connectAllowedProfiles("", (err, data: void)=> {
+                        if (err) {
+                            console.info('connectAllowedProfiles failed' + JSON.stringify(err));
+                            reject(err.code);
+                        } else
+                        {
+                            console.info('[bluetooth_js]connectAllowedProfiles success');
+                        }
+                        resolve();
+                    });
+                });
+            }
+            await connectAP().then(() => {
+                console.info("[bluetooth_js]connectAllowedProfiles success");
+            },
+            (e: BusinessError) => {
+                console.info("[bluetooth_js]connectAllowedProfiles failed info:" + JSON.stringify(e));
+                expect(Number(e)).assertEqual(401);
+            })
+        } catch (err) {
+            console.info("connectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0700
+     * @tc.desc   Test connectAllowedProfiles promise with undefined deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.connectAllowedProfiles(undefined).then(() => {
+                console.info('[bluetooth_js] connectAllowedProfiles success');
+            });
+            expect().assertFail();
+        } catch (err) {
+            console.info("connectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0800
+     * @tc.desc   Test connectAllowedProfiles promise with empty string deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.connectAllowedProfiles("").then(() => {
+                console.info('[bluetooth_js] connectAllowedProfiles success');
+            });
+            expect().assertFail();
+        } catch (err) {
+            console.info("connectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3700
+     * @tc.desc   Test pairDevice callback with null parameter api10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
         let functionPairDevice = async ()=>{
           return new Promise<void>((resolve, reject)=>{
@@ -2189,14 +3772,14 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1800
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1800
-     * @tc.desc   Test pairDevice promise api10
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3800
+     * @tc.desc   Test pairDevice promise with null parameter api10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
         await bluetooth.pairDevice(null).then(() => {
           console.info('[bluetooth_js] pairDevice success');
@@ -2207,6 +3790,124 @@ describe('btConnectionTest', () => {
         expect(Number(e.code)).assertEqual(401);
       }
       done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3900
+     * @tc.desc   Test pairDevice callback with empty string parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3900';
+        console.info(`${caseName}---Start`);
+        try {
+            let functionPairDevice = async ()=>{
+                return new Promise<void>((resolve, reject)=>{
+                    bluetooth.pairDevice("", (error) => {
+                        if (error) {
+                            reject(error)
+                        } else {
+                            resolve();
+                        }
+                    });
+                })
+            }
+            await functionPairDevice();
+            expect(true).assertFalse();
+            console.info(`${caseName}---End`);
+        } catch (e) {
+            console.error(`${caseName} pairDevice callback error, error code is: ${e.code}, error message is: ${e.message}`);
+            expect(Number(e.code)).assertEqual(401);
+            console.info(`${caseName}---End`);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4000
+     * @tc.desc   Test pairDevice promise with empty string parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4000';
+        console.info(`${caseName}---Start`);
+        try {
+            await bluetooth.pairDevice("").then(() => {
+                console.info(`${caseName} pairDevice success, should not reach here`);
+            });
+            expect(true).assertFalse();
+            console.info(`${caseName}---End`);
+        } catch (e) {
+            console.error(`${caseName} pairDevice promise error, error code is: ${e.code}, error message is: ${e.message}`);
+            expect(Number(e.code)).assertEqual(401);
+            console.info(`${caseName}---End`);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4100
+     * @tc.desc   Test pairDevice callback with undefined parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4100';
+        console.info(`${caseName}---Start`);
+        try {
+            let functionPairDevice = async ()=>{
+                return new Promise<void>((resolve, reject)=>{
+                    bluetooth.pairDevice(undefined, (error) => {
+                        if (error) {
+                            reject(error)
+                        } else {
+                            resolve();
+                        }
+                    });
+                })
+            }
+            await functionPairDevice();
+            expect(true).assertFalse();
+            console.info(`${caseName}---End`);
+        } catch (e) {
+            console.error(`${caseName} pairDevice callback error, error code is: ${e.code}, error message is: ${e.message}`);
+            expect(Number(e.code)).assertEqual(401);
+            console.info(`${caseName}---End`);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4200
+     * @tc.desc   Test pairDevice promise with undefined parameter api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4200';
+        console.info(`${caseName}---Start`);
+        try {
+            await bluetooth.pairDevice(undefined).then(() => {
+                console.info(`${caseName} pairDevice success, should not reach here`);
+            });
+            expect(true).assertFalse();
+            console.info(`${caseName}---End`);
+        } catch (e) {
+            console.error(`${caseName} pairDevice promise error, error code is: ${e.code}, error message is: ${e.message}`);
+            expect(Number(e.code)).assertEqual(401);
+            console.info(`${caseName}---End`);
+        }
+        done();
     })
 
     /**
@@ -2250,6 +3951,94 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9200
+     * @tc.desc   Test on batteryChange with null event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        let onReceiveEvent: (data: bluetooth.BatteryInfo) => void = (data: bluetooth.BatteryInfo) => {
+            console.info('BatteryInfo = '+ JSON.stringify(data));
+        }
+        try {
+            bluetooth.on(null, onReceiveEvent);
+            expect().assertFail();
+        } catch (err) {
+            console.info("on batteryChange with null errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9300
+     * @tc.desc   Test on batteryChange with undefined event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        let onReceiveEvent: (data: bluetooth.BatteryInfo) => void = (data: bluetooth.BatteryInfo) => {
+            console.info('BatteryInfo = '+ JSON.stringify(data));
+        }
+        try {
+            bluetooth.on(undefined, onReceiveEvent);
+            expect().assertFail();
+        } catch (err) {
+            console.info("on batteryChange with undefined errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9400
+     * @tc.desc   Test off batteryChange with null event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        let onReceiveEvent: (data: bluetooth.BatteryInfo) => void = (data: bluetooth.BatteryInfo) => {
+            console.info('BatteryInfo = '+ JSON.stringify(data));
+        }
+        try {
+            bluetooth.off(null, onReceiveEvent);
+            expect().assertFail();
+        } catch (err) {
+            console.info("off batteryChange with null errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9500
+     * @tc.desc   Test off batteryChange with undefined event api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        let onReceiveEvent: (data: bluetooth.BatteryInfo) => void = (data: bluetooth.BatteryInfo) => {
+            console.info('BatteryInfo = '+ JSON.stringify(data));
+        }
+        try {
+            bluetooth.off(undefined, onReceiveEvent);
+            expect().assertFail();
+        } catch (err) {
+            console.info("off batteryChange with undefined errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0100
      * @tc.desc   Test getRemoteDeviceTransport
@@ -2270,6 +4059,46 @@ describe('btConnectionTest', () => {
             } else {
                 expect(Number(error.code)).assertEqual(2900099);
             }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0200
+     * @tc.desc   Test getRemoteDeviceTransport with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let btTransport = bluetooth.getRemoteDeviceTransport(null);
+            console.info('[bluetooth_js] getRemoteDeviceTransport get:' + btTransport);
+            expect().assertFail();
+        } catch (error) {
+            console.info(`[bluetooth_js]getRemoteDeviceTransport error, code is ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0300
+     * @tc.desc   Test getRemoteDeviceTransport with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let btTransport = bluetooth.getRemoteDeviceTransport(undefined);
+            console.info('[bluetooth_js] getRemoteDeviceTransport get:' + btTransport);
+            expect().assertFail();
+        } catch (error) {
+            console.info(`[bluetooth_js]getRemoteDeviceTransport error, code is ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(401);
         }
         done();
     })
@@ -2331,6 +4160,7 @@ describe('btConnectionTest', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
+    
     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             bluetooth.onScanModeChange(onReceiveEvent_ScanMode);
