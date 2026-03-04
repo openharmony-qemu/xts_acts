@@ -24,8 +24,8 @@ const TAG = '[PluginComponentTest]';
 struct GetBarRect {
   @State FillColor: string = '#FF000000';
   @State name: string = 'PluginComponentTest';
-  @State StepTips: string = '预置条件：安装plugin_provider.hap,配置沙箱环境,配置方式如下:hdc file recv /system/etc/sandbox/appdata-sandbox.json\n' +
-    '打开导出的appdata-sandbox.json，在"individual"里新增使用方配置,然后执行hdc shell mount -o remount,rw /（失效的话用新指令hdc target mount）\n' +
+  @State StepTips: string = '预置条件：安装plugin_provider.hap(手工仓资源库),配置沙箱环境,配置方式如下:hdc file recv /system/etc/sandbox/appdata-sandbox.json\n' +
+    '打开导出的appdata-sandbox.json，在"individual"里新增使用方配置(配置文件在手工仓资源库PluginComponentTest),然后执行hdc shell mount -o remount,rw /（失效的话用新指令hdc target mount）\n' +
     'hdc file send appdata-sandbox.json /system/etc/sandbox/\n' +
     'hdc shell reboot\n' +
     '操作步骤：1.点击‘测试PluginComponent拉起同应用页面按钮\n' + '预期结果：页面显示123456和使用方图标,证明通信成功“\n';
