@@ -2068,7 +2068,7 @@ export default function RdbStoreBatchInsertWithReturning() {
     })
 
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_5800
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5900
      * @tc.name batchInsertWithReturning044
      * @tc.desc batchInsertWithReturningSync columns is ""
      * @tc.size MediumTest
