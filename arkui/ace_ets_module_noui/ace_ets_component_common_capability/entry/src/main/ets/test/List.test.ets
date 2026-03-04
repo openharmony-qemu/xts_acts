@@ -33,6 +33,7 @@ import pluginComponentManagerNullUndefinedTest from './nullandundefinedcoverage/
 import uiInspectorNullUndefinedTest from './nullandundefinedcoverage/UIInspector/UIInspectorNullUndefined.test';
 import inspectorCreateComponentObserverNullUndefinedTest from './nullandundefinedcoverage/inspector/InspectorCreateComponentObserverNullUndefined.test';
 import embeddedComponentTerminationInfoTest from './EmbeddedComponentTest/EmbeddedComponentTerminationInfo.test';
+import pluginComponentManagerParamTest from './nullandundefinedcoverage/pluginComponentManager/PluginComponentManagerParam.test';
 
 
 export default function testsuite() {
@@ -56,4 +57,5 @@ export default function testsuite() {
   uiInspectorNullUndefinedTest();
   inspectorCreateComponentObserverNullUndefinedTest();
   embeddedComponentTerminationInfoTest();
+  pluginComponentManagerParamTest();
 }
