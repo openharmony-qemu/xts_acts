@@ -287,17 +287,17 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
     handleReadyStateChanged(state: webview.ReadyState): void {
         console.log('handleReadyStateChanged :' + state)
         readyStateList.push(state)
-        if (webview.ReadyState.HAVE_NOTHING.toString() == '0') {
-            Utils.emitEvent(true, 361060)
+        if (webview.ReadyState.HAVE_METADATA.toString() == '1') {
+            Utils.emitEvent(true, 1825)
         }
-        if (webview.ReadyState.HAVE_CURRENT_DATA.toString() == '1') {
-            Utils.emitEvent(true, 361061)
+        if (webview.ReadyState.HAVE_CURRENT_DATA.toString() == '2') {
+            Utils.emitEvent(true, 1826)
         }
         if (webview.ReadyState.HAVE_FUTURE_DATA.toString() == '3') {
-            Utils.emitEvent(true, 361062)
+            Utils.emitEvent(true, 1827)
         }
         if (webview.ReadyState.HAVE_ENOUGH_DATA.toString() == '4') {
-            Utils.emitEvent(true, 361063)
+            Utils.emitEvent(true, 1828)
         }
         if (readyState > 0) {
             this.rawHandler.handleReadyStateChanged(1);
@@ -805,7 +805,7 @@ struct WebComponent {
     build() {
         Column() {
             Row() {
-                Button('NativeMediaPlayer5').key('webViewNativeMediaPlayerReadyStateHandler5').onClick(async () => {
+                Button('NativeMediaPlayer4').key('webViewNativeMediaPlayerRateHandler4').onClick(async () => {
                     console.info('key==>' + this.emitKey)
                     await Utils.waitForExist(()=>this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                     this.isReceive = -1;
@@ -827,90 +827,6 @@ struct WebComponent {
                         return
                     }
                     switch (this.emitKey) {
-                      case 'emitWebViewNativeMediaPlayerHandleReadyStateHaveNothing': {
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayReadyState.html'));
-                        await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                        })
-                        this.controller.runJavaScript('buttonLoad()', (error, result) => {
-                            console.error(`The buttonLoad() return error is: ${error}`);
-                            console.log(`The buttonLoad() return value is: ${result}`);
-                        })
-                        await this.retryPlayingGen(this.emitKey)()
-                        await Utils.sleep(1000)
-                        this.controller.runJavaScript('setReadyState(0)', (error, result) => {
-                            console.error(`The setReadyState(0) return error is: ${error}`);
-                            console.log(`The setReadyState(0) return value is: ${result}`);
-                        })
-                        console.log('video is playing:' + isPlaying)
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerHandleReadyStateHaveCurrentData': {
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayReadyState.html'));
-                        await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                        })
-                        this.controller.runJavaScript('buttonLoad()', (error, result) => {
-                            console.error(`The buttonLoad() return error is: ${error}`);
-                            console.log(`The buttonLoad() return value is: ${result}`);
-                        })
-                        await this.retryPlayingGen(this.emitKey)()
-                        await Utils.sleep(1000)
-                        this.controller.runJavaScript('setReadyState(1)', (error, result) => {
-                            console.error(`The setReadyState(1) return error is: ${error}`);
-                            console.log(`The setReadyState(1) return value is: ${result}`);
-                        })
-                        console.log('video is playing:' + isPlaying)
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerHandleReadyStateHaveFutureData': {
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayReadyState.html'));
-                        await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                        })
-                        this.controller.runJavaScript('buttonLoad()', (error, result) => {
-                            console.error(`The buttonLoad() return error is: ${error}`);
-                            console.log(`The buttonLoad() return value is: ${result}`);
-                        })
-                        await this.retryPlayingGen(this.emitKey)()
-                        await Utils.sleep(1000)
-                        this.controller.runJavaScript('setReadyState(3)', (error, result) => {
-                            console.error(`The setReadyState(3) return error is: ${error}`);
-                            console.log(`The setReadyState(3) return value is: ${result}`);
-                        })
-                        console.log('video is playing:' + isPlaying)
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerHandleReadyStateHaveEnoughData': {
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayReadyState.html'));
-                        await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                        })
-                        this.controller.runJavaScript('buttonLoad()', (error, result) => {
-                            console.error(`The buttonLoad() return error is: ${error}`);
-                            console.log(`The buttonLoad() return value is: ${result}`);
-                        })
-                        await this.retryPlayingGen(this.emitKey)()
-                        await Utils.sleep(1000)
-                        this.controller.runJavaScript('setReadyState(4)', (error, result) => {
-                            console.error(`The setReadyState(4) return error is: ${error}`);
-                            console.log(`The setReadyState(4) return value is: ${result}`);
-                        })
-                        console.log('video is playing:' + isPlaying)
-                        break;
-                      }
                       case 'emitWebViewNativeMediaPlayerHandleVideoSizeChange': {
                         this.isPageEnd = -1;
                         this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'));

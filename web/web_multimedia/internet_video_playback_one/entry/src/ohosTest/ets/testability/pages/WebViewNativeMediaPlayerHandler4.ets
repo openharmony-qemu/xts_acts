@@ -449,10 +449,9 @@ class AVPlayerListenerImpl implements AVPlayerListener {
         console.log('[BrowserShell] onSeeking, handler[' + this.handler + ']')
         this.handler.handleSeeking();
     }
-    onSeekFinished(seekDoneTime: number) {
-        console.log('[BrowserShell] onSeekFinished, handler[' + this.handler + ']')
-        seekList.push(seekDoneTime)
-        this.handler.handleSeekFinished();
+    onSeekFinished() {	 
+        console.log('[BrowserShell] onSeekFinished, handler[' + this.handler + ']')	 
+        this.handler.handleSeekFinished();	 
     }
     onPaused() {
         console.log('[BrowserShell] onPaused, handler[' + this.handler + ']')

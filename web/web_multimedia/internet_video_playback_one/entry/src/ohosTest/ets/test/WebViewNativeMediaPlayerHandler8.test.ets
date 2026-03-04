@@ -52,7 +52,7 @@ export default function webViewNativeMediaPlayerHandler8() {
     })
 
     /**
-     * @tcctc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_3710
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_3710
      * @tc.name testWebViewNativeMediaPlayerHandleFullscreenToggle
      * @tc.desc test NativeMediaPlayerHandleFullscreen with toggle (true and false)
      * @tc.size MediumTest
