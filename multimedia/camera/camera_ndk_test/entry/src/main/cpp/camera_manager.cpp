@@ -628,6 +628,9 @@ Camera_ErrorCode NDKCamera::AddVideoOutput(void)
 
 Camera_ErrorCode NDKCamera::CreateMetadataOutput(void)
 {
+    if (cameraOutputCapability_->supportedMetadataObjectTypes == nullptr) {
+        return CAMERA_SERVICE_FATAL_ERROR;
+    }
     metaDataObjectType_ = cameraOutputCapability_->supportedMetadataObjectTypes[0];
     
     LOG("NDKCamera::CreateMetadataOutput supportedMetadataObjectTypes end.");
