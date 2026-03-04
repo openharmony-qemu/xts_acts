@@ -130,6 +130,7 @@ export default function ReturningMultiThread() {
             expect(getRowCount(result?.resultSet)).assertEqual(1);
             count--;
             if (count == 0) {
+              trans?.commit();
               done();
             }
           }).catch((e:BusinessError)=>{
@@ -138,7 +139,6 @@ export default function ReturningMultiThread() {
             expect(true).assertFail();
         });
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturningMultiThread001 end *************");
     })
 

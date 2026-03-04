@@ -34,6 +34,7 @@ import TextAreaCompressLeadingPunctuationTest from "./textArea/TextAreaCompressL
 import TextInputCompressLeadingPunctuationTest from "./textInput/TextInputCompressLeadingPunctuationTest.test";
 import TextEnumTest from "./text/TextEnum.test";
 import TextMarqueeOptionsTest from './TextMarqueeOptions/TextMarqueeOptions.test';
+import ControllerBaseCreatTest from './TextMarqueeOptions/ControllerBaseCreatTest.test';
 import ScrollToVisibleTest from './ScrollToVisible/ScrollToVisible.test';
 import distanceTest from './distance/DistanceTest.test'
 import hoverEffectTest from './hoverEffect/HoverEffectTest.test'
@@ -58,6 +59,7 @@ import TextAreaTest from "./TextTest/TextAreaTest.test";
 import SelectedDragPreviewStyleTextTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextTest.test'
 import SelectedDragPreviewStyleTextInputTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextInputTest.test'
 import SelectedDragPreviewStyleTextAreaTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextAreaTest.test'
+import SwiperFakeTest from './swiper/SwiperFakeTest.test'
 
 export default function testsuite() {
   IsInRenderStateReturnValueTest(); //此条方在最前面，勿动
@@ -105,5 +107,7 @@ export default function testsuite() {
   SelectedDragPreviewStyleTextAreaTest()
   SelectedDragPreviewStyleTextInputTest()
   TextMarqueeOptionsTest();
+  ControllerBaseCreatTest();
   ScrollToVisibleTest();
+  SwiperFakeTest();
 }

@@ -401,7 +401,7 @@ static napi_value TestListChildrenMainSize026(napi_env env, napi_callback_info i
 {
     NAPI_START(list, ARKUI_NODE_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();
-    auto ret1 = OH_ArkUI_ListChildrenMainSizeOption_Splice(obj, PARAM_0, PARAM_0, SIZE_100000);
+    auto ret1 = OH_ArkUI_ListChildrenMainSizeOption_Splice(obj, PARAM_0, PARAM_0, SIZE_1000);
     auto ret = SetChildrenMainSize(list, obj);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestListChildrenMainSize026",
         "ret = %{public}d, obj = %{public}p", ret, obj);

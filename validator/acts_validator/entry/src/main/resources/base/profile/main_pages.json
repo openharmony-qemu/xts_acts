@@ -182,6 +182,7 @@
     "pages/ArkUI/RadiusRenderStrategy",
     "pages/ArkUI/ImageDownloadInfo",
     "pages/ArkUI/GameAddTest",
-    "pages/ArkUI/AdvancedBlendMode"
+    "pages/ArkUI/AdvancedBlendMode",
+    "pages/ArkUI/AccessibilityCustom"
   ]
 }

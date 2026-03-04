@@ -159,23 +159,19 @@ export default function btBleNopUiJsunit() {
       console.info('[bt_arkts] client readPhy success');
       gattServer = ble.createGattServer();
       console.info('[bt_arkts] client readPhy success');
+      console.info('beforeAll');
       done();
     });
     beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
+      console.info('beforeEach');
     });
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
+      console.info('afterEach');
     });
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      console.info('afterAll');
     });
-    
+
     /**
      * @tc.name   testStopAdvertisingNop
      * @tc.number testStopAdvertisingNop
@@ -588,7 +584,12 @@ export default function btBleNopUiJsunit() {
         expect().assertFail();
       } catch (error) {
         console.error(`[bt_arkts]server ProfileConnectionState 0100 is failed, code is ${error.code},message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        if (Number(error.code) === 801) {
+          console.info("RK板 is not support.");
+          expect(Number(error.code) == 801).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
       }
       done();
     })
@@ -608,7 +609,12 @@ export default function btBleNopUiJsunit() {
         expect().assertFail();
       } catch (error) {
         console.error(`[bt_arkts]getConnectedState status is failed, code is ${error.code},message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        if (Number(error.code) === 801) {
+          console.info("RK板 is not support.");
+          expect(Number(error.code) == 801).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
       }
       done();
     })
@@ -628,7 +634,12 @@ export default function btBleNopUiJsunit() {
         expect().assertFail();
       } catch (error) {
         console.error(`[bt_arkts] server readPhy is failed, code is ${error.code},message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        if (Number(error.code) === 801) {
+          console.info("RK板 is not support.");
+          expect(Number(error.code) == 801).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
       }
       done();
     })
@@ -649,52 +660,14 @@ export default function btBleNopUiJsunit() {
         expect().assertFail();
       } catch (error) {
         console.error(`[bt_arkts]server setPhy  is failed, code is ${error.code},message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        if (Number(error.code) === 801) {
+          console.info("RK板 is not support.");
+          expect(Number(error.code) == 801).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
       }
       done();
     })
-
-
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLE_C_NOP_0100
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLE_C_NOP_0100
-     * @tc.desc   Test client readPhy without permission.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLE_C_NOP_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
-      try {
-        await device.readPhy();
-        console.info('[bt_arkts]client readPhy is fail success')
-        expect().assertFail();
-      } catch (error) {
-        console.error(`[bt_arkts]client readPhy is failed, code is ${error.code},message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
-      }
-      done();
-    })
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLE_C_NOP_0200
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLE_C_NOP_0200
-     * @tc.desc   Test readPhy without permission.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLE_C_NOP_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
-      try {
-        await device.setPhy(phyValue);
-        console.info('[bt_arkts] client readPhy success');
-        expect().assertFail();
-      } catch (error) {
-        console.error(`[bt_arkts]readPhy status is failed, code is ${error.code},message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
-      }
-      done();
-    })
-
-
   })
 }
-

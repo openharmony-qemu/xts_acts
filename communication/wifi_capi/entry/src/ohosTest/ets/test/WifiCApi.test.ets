@@ -18,26 +18,10 @@ import wifiMg from '@ohos.wifiManager';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium";
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
-async function openPhone() {
-    try{
-        let drivers = Driver.create();
-        console.info('[wifi_js] bt driver create:'+ drivers);
-        await drivers.delayMs(900);
-        await drivers.wakeUpDisplay();
-        await drivers.delayMs(3000);
-        await drivers.swipe(1500, 1000, 1500, 100);
-        await drivers.delayMs(5000);
-    } catch (error) {
-        console.info('[wifi_js] driver error info:'+ error);
-    }
-}
-
 export default function wifiCApiTest() {
     describe('wifiCApiTest', () => {
-        beforeAll(async (done : Function) =>  {
+        beforeAll(() => {
             console.info('beforeAll called')
-            await openPhone();
-            done();
         })
         beforeEach(() => {
             console.info('beforeEach case');

@@ -19,12 +19,16 @@ function test_log10_001 (n: string, expected: string, sd: number, rm: Rounding) 
     Decimal.set ({ precision: sd, rounding: rm });
     expect(expected).assertEqual(Decimal.log10(n).valueOf());
 }
+function sleep(ms: number) {
+    return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 export default function DecimalTest015() {
   describe("DecimalTest015", () => {
     beforeAll(() => {
         console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+        await sleep(20);
         console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });
     afterEach(() => {

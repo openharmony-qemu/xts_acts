@@ -865,7 +865,7 @@ export default function ObjectInterfaceTest() {
           console.info("contactsApi_addContact_test_100  keyData = " + JSON.stringify(keyData));
           if (JSON.stringify(keyData) != undefined){
             sleep(500);
-            contact.deleteContact(context,keyData, (keyData) => {
+            contact.deleteContact(context,keyData, () => {
               if (err) {
                 console.info("contactsApi_addContact_test_100  err = " + JSON.stringify(err));
                 expect().assertFail();

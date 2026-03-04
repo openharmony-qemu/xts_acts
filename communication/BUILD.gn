@@ -28,6 +28,8 @@ group("communication") {
       "btmanager_errorcode401:ActsBtManagerErrorCode401JsTest",
       "btmanager_switchoff:ActsBtManagerSwitchOff003JsTest",
       "btmanager_switchoff_static:ActsBtManagerSwitchOff003JsStaticTest",
+      "fusion:ActsFusionJsTest",
+      "fusion_nop:ActsFusionNopTest",
       "dsoftbus/IPCTaiheTestStatic:ActsIPCTaiheStaticTest",
       "dsoftbus/capi_ipc:ActsCAPIIPCTest",
       "dsoftbus/ipc_Static/IPCTaiheServerTestStatic:ActsIPCTaiheServerStaticTest",
