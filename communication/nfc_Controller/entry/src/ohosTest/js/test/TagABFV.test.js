@@ -833,6 +833,58 @@ export default function nfcTagABFVTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_1301
+         * @tc.number SUB_Communication_NFC_nfctage_js_1301
+         * @tc.desc   Obtains the DsfId value of the taginfo.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_1301', Level.LEVEL0, function ()  {
+            let getTagtest ;
+            try {
+                getTagtest = tag.getTagInfo(null);
+                console.info('[NFC_test] tag13 Nfcget tagABFV gettaginfo is: ' + getTagtest)
+                expect(getTagtest instanceof Object).assertTrue();
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect().assertFail();
+                }
+            }
+            console.info('[NFC_test] tag13 test TagInfo data>:' + getTagtest);
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_1302
+         * @tc.number SUB_Communication_NFC_nfctage_js_1302
+         * @tc.desc   Obtains the DsfId value of the taginfo.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_1302', Level.LEVEL0, function ()  {
+            let getTagtest ;
+            try {
+                getTagtest = tag.getTagInfo(undefined);
+                console.info('[NFC_test] tag13 Nfcget tagABFV gettaginfo is: ' + getTagtest)
+                expect(getTagtest instanceof Object).assertTrue();
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect().assertFail();
+                }
+            }
+            console.info('[NFC_test] tag13 test TagInfo data>:' + getTagtest);
+        })
+
+        /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_1400
          * @tc.number SUB_Communication_NFC_nfctage_js_1400
          * @tc.desc   This interface is used to obtain the NFC A tag object.
@@ -1060,6 +1112,76 @@ export default function nfcTagABFVTest() {
                 } else if (error.code === 801) {
                     console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
                     expect(801).assertEqual(error.code)
+                } else {
+                    console.info('nfc registerForegroundDispatch failed');
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2301
+         * @tc.number SUB_Communication_NFC_nfctage_js_2301
+         * @tc.desc   This interface registerForegroundDispatch.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_2301', Level.LEVEL0, function ()  {
+            let elementName = {
+                "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+                "abilityName": "MainAbility",
+                "moduleName": "entry"
+            };
+            let discTech = [1, 2, 4];
+            try {
+                let recvNfcTagFunc = tagInfo => {
+                    console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                    expect(tagInfo != null).assertTrue();
+                }
+                tag.registerForegroundDispatch(null, discTech, recvNfcTagFunc);
+                console.info('[NFC_test] nfc registerForegroundDispatch pass')
+                tag.unregisterForegroundDispatch(null);
+                console.info('[NFC_test] nfc unregisterForegroundDispatch pass')
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('nfc registerForegroundDispatch failed');
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2302
+         * @tc.number SUB_Communication_NFC_nfctage_js_2302
+         * @tc.desc   This interface registerForegroundDispatch.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_2302', Level.LEVEL0, function ()  {
+            let elementName = {
+                "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+                "abilityName": "MainAbility",
+                "moduleName": "entry"
+            };
+            let discTech = [1, 2, 4];
+            try {
+                let recvNfcTagFunc = tagInfo => {
+                    console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                    expect(tagInfo != null).assertTrue();
+                }
+                tag.registerForegroundDispatch(undefined, discTech, recvNfcTagFunc);
+                console.info('[NFC_test] nfc registerForegroundDispatch pass')
+                tag.unregisterForegroundDispatch(undefined);
+                console.info('[NFC_test] nfc unregisterForegroundDispatch pass')
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
+                    expect(401).assertEqual(error.code)
                 } else {
                     console.info('nfc registerForegroundDispatch failed');
                     expect().assertFail();
