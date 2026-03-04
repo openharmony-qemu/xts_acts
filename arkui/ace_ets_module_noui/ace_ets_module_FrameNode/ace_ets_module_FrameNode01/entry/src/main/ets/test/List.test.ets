@@ -81,6 +81,8 @@ import AdoptChildTwoTest from './FrameNodeMethod/AdoptChildTwoTest.test';
 import AdoptChildThreeTest from './FrameNodeMethod/AdoptChildThreeTest.test';
 import AdoptChildTest from './FrameNodeMethod/AdoptChildTest.test';
 import CreateNodeNullUndefinedTest from './FrameNodeMethod/CreateNodeNullUndefinedTest.test';
+import createNodeScrollNullUndefined from './FrameNodeMethod/createNodeScrollNullUndefined.test';
+import bindControllerNullUndefined from './FrameNodeNewTest/bindControllerNullUndefined.test';
 
 import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
 
@@ -95,6 +97,8 @@ import GetInteractionEventBindingInfoNullTest from './FrameNodeMethod/GetInterac
 
 export default function testsuite() {
   CreateNodeNullUndefinedTest();
+  createNodeScrollNullUndefined();
+  bindControllerNullUndefined();
   ConvertPositionNullUndefinedTest();
   ConvertPositionToFromWindowNullTest();
   RemoveAdoptedChildNullTest();
