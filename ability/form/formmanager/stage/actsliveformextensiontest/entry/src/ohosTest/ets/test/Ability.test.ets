@@ -51,7 +51,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100
      * @tc.number SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100
-     * @tc.desc   Start the LiveFormExtensionAbility, and the test is successful.
+     * @tc.desc   Test LiveFormExtensionAbility is created and publishes event successfully
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
