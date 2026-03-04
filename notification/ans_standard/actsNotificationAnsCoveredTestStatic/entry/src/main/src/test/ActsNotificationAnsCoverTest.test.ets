@@ -123,7 +123,7 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
         console.info(`${TAG} addSlot_90 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -156,7 +156,7 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err:Error) {
         console.info(`${TAG} addSlot_91 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -181,7 +181,7 @@ export default function actsNotificationAnsCoveredTest() {
         count++;
         expect(count).assertEqual(1);
         done()
-      }).catch((err: BusinessError):void => {
+      }).catch((err:Error):void => {
         console.info(`${TAG} addSlot_92 Promise errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -206,7 +206,7 @@ export default function actsNotificationAnsCoveredTest() {
         count++;
         expect(count).assertEqual(1);
         done()
-      }).catch((err: BusinessError):void => {
+      }).catch((err: Error):void => {
         console.info(`${TAG} addSlot_93 Promise errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -233,7 +233,7 @@ export default function actsNotificationAnsCoveredTest() {
         expect(false).assertTrue()
         done()
       })
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
         console.info(`${TAG} cancel1  errCode: ${err.code}, errMes: ${err.message}`)
         expect(err?.code).assertEqual(401)
         done()
@@ -249,7 +249,7 @@ export default function actsNotificationAnsCoveredTest() {
         expect(error?.code).assertEqual(401)
         done()
       })
-      } catch (err: BusinessError) {
+      } catch (err:Error) {
         console.info(`${TAG} cancel2  errCode: ${err.code}, errMes: ${err.message}`)
         expect(err?.code).assertEqual(401)
         done()
@@ -279,7 +279,7 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
         console.info(`${TAG} getSlot_40 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -311,7 +311,7 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
         console.info(`${TAG} getSlot_41 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -334,7 +334,7 @@ export default function actsNotificationAnsCoveredTest() {
         console.info(`${TAG} getSlot_42 Promise `)
         expect(data).assertEqual(null)
         done()
-      }).catch((err: BusinessError):void => {
+      }).catch((err: Error):void => {
         console.info(`${TAG} getSlot_42 Promise errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -358,7 +358,7 @@ export default function actsNotificationAnsCoveredTest() {
         console.info(`${TAG} getSlot_43 Promise `)
         expect(data).assertEqual(null)
         done()
-      }).catch((err: BusinessError):void => {
+      }).catch((err: Error):void => {
         console.info(`${TAG} getSlot_43 Promise errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -392,7 +392,7 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err:Error) {
         console.info(`${TAG} removeSlot_40 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -425,7 +425,7 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
         console.info(`${TAG} removeSlot_41 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -451,12 +451,12 @@ export default function actsNotificationAnsCoveredTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.info(`${TAG} removeSlot_42 errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
         })
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
         console.info(`${TAG} removeSlot_42 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -483,12 +483,12 @@ export default function actsNotificationAnsCoveredTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err:Error):void => {
           console.info(`${TAG} removeSlot_43 errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
         })
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
         console.info(`${TAG} removeSlot_43 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -512,7 +512,7 @@ export default function actsNotificationAnsCoveredTest() {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
           expect(data).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(401)
           done()
@@ -545,7 +545,7 @@ export default function actsNotificationAnsCoveredTest() {
               done()
             }
           })
-        } catch (err: BusinessError) {
+        } catch (err: Error) {
           console.info(`${TAG} isSupportTemplate AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(401)
           done()
@@ -577,7 +577,7 @@ export default function actsNotificationAnsCoveredTest() {
               done()
             }
           })
-        } catch (err: BusinessError) {
+        } catch (err: Error) {
           console.info(`${TAG} cancelGroup AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(401)
           done()
@@ -602,12 +602,12 @@ export default function actsNotificationAnsCoveredTest() {
             console.info(`${TAG} cancelGroup Promise success`)
             expect(false).assertTrue()
             done()
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             console.info(`${TAG} cancelGroup Promise err: ${err.code}, errMes: ${err.message}`)
             expect(false).assertTrue()
             done()
           })
-        } catch (err: BusinessError) {
+        } catch (err: Error) {
           console.info(`${TAG} cancelGroup AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(401)
           done()
@@ -717,7 +717,7 @@ export default function actsNotificationAnsCoveredTest() {
               }
             });
           }, 1000);
-        } catch (err: BusinessError) {
+        } catch (err: Error) {
           console.error(TAG + `publish failed, code is ${err.code}, message is ${err.message}`)
         }
       })
@@ -877,7 +877,7 @@ export default function actsNotificationAnsCoveredTest() {
             });
           }, 1000);
 
-        } catch (err: BusinessError) {
+        } catch (err: Error) {
           console.info(TAG +
             `Sub_Notification_Ans_Subscriber_Subscribe_Static_1700_001 failed, catch error code: ${err.code}, message: ${err.message}`)
           expect(false).assertTrue()
@@ -935,7 +935,7 @@ export default function actsNotificationAnsCoveredTest() {
                       console.info(TAG + `setCode_2 success `)
                       count++;
                       expect(count).assertEqual(1);
-                    }).catch((err: BusinessError): void => {
+                    }).catch((err: Error): void => {
                       console.info(TAG + `setCode_2 err, error code: ${err.code}, message: ${err.message}`)
                       expect(false).assertTrue()
                       done()
@@ -944,7 +944,7 @@ export default function actsNotificationAnsCoveredTest() {
                     await subscriber.getCode().then((Code: int) => {
                       console.info(TAG + `getCode_2 success ${Code}`)
                       expect(Code).assertEqual(3)
-                    }).catch((err: BusinessError): void => {
+                    }).catch((err: Error): void => {
                       console.info(TAG + `getCode_2 err, error code: ${err.code}, message: ${err.message}`)
                       expect(false).assertTrue()
                       done()
@@ -958,12 +958,12 @@ export default function actsNotificationAnsCoveredTest() {
                       subscriber.getData().then((data: string) => {
                         console.info(TAG + `getData_2 success ${data}`)
                         expect(data).assertEqual('data03')
-                      }).catch((err: BusinessError): void => {
+                      }).catch((err: Error): void => {
                         console.info(TAG + `getData_2 err, error code: ${err.code}, message: ${err.message}`)
                         expect(false).assertTrue()
                         done()
                       })
-                    }).catch((err: BusinessError): void => {
+                    }).catch((err: Error): void => {
                       console.info(TAG + `setData_2 err, error code: ${err.code}, message: ${err.message}`)
                       expect(false).assertTrue()
                       done()
@@ -974,7 +974,7 @@ export default function actsNotificationAnsCoveredTest() {
                       console.info(TAG + `setCodeAndData_2 success `)
                       count++;
                       expect(count).assertEqual(1);
-                    }).catch((err: BusinessError): void => {
+                    }).catch((err: Error): void => {
                       console.info(TAG + `setCodeAndData_2 err, error code: ${err.code}, message: ${err.message}`)
                       expect(false).assertTrue()
                       done()
@@ -985,7 +985,7 @@ export default function actsNotificationAnsCoveredTest() {
                       console.info(TAG + `getSubscribeInfo_2 success `)
                       count++;
                       expect(count).assertEqual(1);
-                    }).catch((err: BusinessError): void => {
+                    }).catch((err: Error): void => {
                       console.info(TAG + `getSubscribeInfo_2 err, error code: ${err.code}, message: ${err.message}`)
                       expect(false).assertTrue()
                       done()
@@ -997,7 +997,7 @@ export default function actsNotificationAnsCoveredTest() {
                       count++;
                       expect(count).assertEqual(1);
                       done()
-                    }).catch((err: BusinessError): void => {
+                    }).catch((err: Error): void => {
                       console.info(TAG + `finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
                       expect(false).assertTrue()
                       done()
@@ -1018,7 +1018,7 @@ export default function actsNotificationAnsCoveredTest() {
               }
             });
           }, 1000);
-        } catch (err: BusinessError) {
+        } catch (err: Error) {
           console.info(TAG +
             `Sub_Notification_Ans_Subscriber_Subscribe_Static_1800_001 failed, catch error code: ${err.code}, message: ${err.message}`)
           expect(false).assertTrue()
