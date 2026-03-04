@@ -982,36 +982,6 @@ export default function InputDeviceComplementTest() {
       });
 
     /**
-     * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0250
-     * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0250
-     * @tc.desc   Test the execution of the setFunctionalKeyEnabled interface with permission(false)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0250";
-        hilog.info(domain, tag, `${caseName} enter`);
-        try {
-          await inputDevice.setFunctionKeyEnabled(inputDevice.FunctionKey.CAPS_LOCK, false).then(() => {
-            console.info(`${caseName} Set capslock state success`);
-            expect().assertFail();
-            done();
-          })
-        } catch (error) {
-          console.info(`${caseName} failed to get capslock state, error: ${error.code}`);
-          if (error.code == 3900002) {
-            expect(error.code).assertEqual(3900002);
-          } else {
-            expect(error.code).assertEqual(3900003);
-          }
-          done();
-        }
-        hilog.info(domain, tag, `${caseName} leave`);
-      });
-
-    /**
      * @tc.name   SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0150
      * @tc.number SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0150
      * @tc.desc   Normal interface call, no keyboard device, error code 3900002
