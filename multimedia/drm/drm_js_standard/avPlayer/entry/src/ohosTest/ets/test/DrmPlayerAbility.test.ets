@@ -3404,17 +3404,15 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    mediaKeySystem!.setConfigurationString("", "64");
-                }
-                mediaKeySystem!.destroy();
+                mediaKeySystem.setConfigurationString("", "64");
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_2100 failed", err.code);
                 expect(err.code).assertEqual(24700201);
-                mediaKeySystem!.destroy();
-                done();
+                mediaKeySystem.destroy();
             }
+            done();
         })
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_2200
@@ -3428,10 +3426,8 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    mediaKeySystem!.setConfigurationString(null, "64");
-                }
-                mediaKeySystem!.destroy();
+                mediaKeySystem.setConfigurationString(null, "64");
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_2200 failed", err.code);
@@ -3439,6 +3435,7 @@ export default function abilityTest() {
                 mediaKeySystem!.destroy();
                 done();
             }
+            done();
         })
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_2300
@@ -3452,17 +3449,16 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    mediaKeySystem!.setConfigurationString(undefined, "64");
-                }
-                mediaKeySystem!.destroy();
+                mediaKeySystem.setConfigurationString(undefined, "64");
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_2300 failed", err.code);
                 expect(err.code).assertEqual(401);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
+            done();
         })
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_2400
@@ -3476,17 +3472,16 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    mediaKeySystem!.setConfigurationString(drm.PreDefinedConfigName.CONFIG_SESSION_MAX, "");
-                }
-                mediaKeySystem!.destroy();
+                mediaKeySystem.setConfigurationString(drm.PreDefinedConfigName.CONFIG_SESSION_MAX, "");
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_2400 failed", err.code);
                 expect(err.code).assertEqual(24700201);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
+            done();
         })
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_2500
@@ -3500,17 +3495,16 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    mediaKeySystem!.setConfigurationString(drm.PreDefinedConfigName.CONFIG_SESSION_MAX, null);
-                }
-                mediaKeySystem!.destroy();
+                mediaKeySystem.setConfigurationString(drm.PreDefinedConfigName.CONFIG_SESSION_MAX, null);
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_2500 failed", err.code);
                 expect(err.code).assertEqual(401);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
+            done();
         })
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_2600
@@ -3524,17 +3518,16 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    mediaKeySystem!.setConfigurationString(drm.PreDefinedConfigName.CONFIG_SESSION_MAX, undefined);
-                }
-                mediaKeySystem!.destroy();
+                mediaKeySystem.setConfigurationString(drm.PreDefinedConfigName.CONFIG_SESSION_MAX, undefined);
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_2600 failed", err.code);
                 expect(err.code).assertEqual(401);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
+            done();
         })
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_2700
@@ -3548,19 +3541,13 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    mediaKeySystem!.setConfigurationString(drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION, "1.1");
-                    let getCfg = mediaKeySystem!.getConfigurationString("");
-                } else {
-                    let getCfg = mediaKeySystem!.getConfigurationString(drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION);
-                    expect(getCfg).not().assertUndefined();
-                }
-                mediaKeySystem!.destroy();
+                let getCfg = mediaKeySystem.getConfigurationString("");
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_2700 failed", err.code);
                 expect(err.code).assertEqual(24700201);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
         })
@@ -3576,19 +3563,13 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    mediaKeySystem!.setConfigurationString(drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION, "1.1");
-                    let getCfg = mediaKeySystem!.getConfigurationString(null);
-                } else {
-                    let getCfg = mediaKeySystem!.getConfigurationString(drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION);
-                    expect(getCfg).not().assertUndefined();
-                }
+                let getCfg = mediaKeySystem.getConfigurationString(null);
                 mediaKeySystem!.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_2800 failed", err.code);
                 expect(err.code).assertEqual(401);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
         })
@@ -3604,19 +3585,13 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    mediaKeySystem!.setConfigurationString(drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION, "1.1");
-                    let getCfg = mediaKeySystem!.getConfigurationString(undefined);
-                } else {
-                    let getCfg = mediaKeySystem!.getConfigurationString(drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION);
-                    expect(getCfg).not().assertUndefined();
-                }
-                mediaKeySystem!.destroy();
+                let getCfg = mediaKeySystem.getConfigurationString(undefined);
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_2900 failed", err.code);
                 expect(err.code).assertEqual(401);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
         })
@@ -3632,19 +3607,13 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    mediaKeySystem!.setConfigurationString(drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION, "1.1");
-                    let getCfg = mediaKeySystem!.getConfigurationString(undefined);
-                } else {
-                    let getCfg = mediaKeySystem!.getConfigurationString(drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION);
-                    expect(getCfg).not().assertUndefined();
-                }
-                mediaKeySystem!.destroy();
+                let getCfg = mediaKeySystem.getConfigurationString(undefined);
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_3000 failed", err.code);
                 expect(err.code).assertEqual(401);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
         })
@@ -3660,15 +3629,13 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    let getCfg = mediaKeySystem!.getConfigurationByteArray("");
-                    }
-                mediaKeySystem!.destroy();
+                let getCfg = mediaKeySystem.getConfigurationByteArray("");
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_3100 failed", err.code);
                 expect(err.code).assertEqual(24700201);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
         })
@@ -3684,15 +3651,13 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    let getCfg = mediaKeySystem!.getConfigurationByteArray(null);
-                    }
-                mediaKeySystem!.destroy();
+                let getCfg = mediaKeySystem.getConfigurationByteArray(null);
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_3200 failed", err.code);
                 expect(err.code).assertEqual(401);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
         })
@@ -3708,15 +3673,13 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
-                if (isClearPlay) {
-                    let getCfg = mediaKeySystem!.getConfigurationByteArray(undefined);
-                    }
-                mediaKeySystem!.destroy();
+                let getCfg = mediaKeySystem.getConfigurationByteArray(undefined);
+                mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_3300 failed", err.code);
                 expect(err.code).assertEqual(401);
-                mediaKeySystem!.destroy();
+                mediaKeySystem.destroy();
                 done();
             }
         })
@@ -3733,7 +3696,7 @@ export default function abilityTest() {
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
                 let valueArray = stringToUint8Array("ABC");
-                mediaKeySystem!.setConfigurationByteArray("", valueArray);
+                mediaKeySystem.setConfigurationByteArray("", valueArray);
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_3400 failed", err.code);
                 expect(err.code).assertEqual(401);
@@ -3754,7 +3717,7 @@ export default function abilityTest() {
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
                 let valueArray = stringToUint8Array("ABC");
-                mediaKeySystem!.setConfigurationByteArray(null, valueArray);
+                mediaKeySystem.setConfigurationByteArray(null, valueArray);
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_3500 failed", err.code);
                 expect(err.code).assertEqual(401);
@@ -3775,7 +3738,7 @@ export default function abilityTest() {
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             try {
                 let valueArray = stringToUint8Array("ABC");
-                mediaKeySystem!.setConfigurationByteArray(undefined, valueArray);
+                mediaKeySystem.setConfigurationByteArray(undefined, valueArray);
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_3600 failed", err.code);
                 expect(err.code).assertEqual(401);
