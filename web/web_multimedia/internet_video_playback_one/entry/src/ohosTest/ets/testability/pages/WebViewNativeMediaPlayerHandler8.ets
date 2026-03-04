@@ -545,6 +545,7 @@ struct MyComponent {
         .onAreaChange((oldValue: Area, newValue: Area) => {
             this.viewWidth = parseFloat(newValue.width.toString())
             this.viewHeight = parseFloat(newValue.height.toString())
+
             this.onSizeChanged(this.videoWidth, this.videoHeight);
         })
     }

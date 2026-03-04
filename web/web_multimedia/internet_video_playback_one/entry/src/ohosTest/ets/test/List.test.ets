@@ -22,6 +22,8 @@ import WebViewNativeMediaPlayerHandler5 from './WebViewNativeMediaPlayerHandler5
 import WebViewNativeMediaPlayerHandler6 from './WebViewNativeMediaPlayerHandler6.test';
 import WebViewNativeMediaPlayerHandler7 from './WebViewNativeMediaPlayerHandler7.test';
 import WebViewNativeMediaPlayerHandler8 from './WebViewNativeMediaPlayerHandler8.test';
+import WebViewNativeMediaPlayerHandler9 from './WebViewNativeMediaPlayerHandler9.test';
+import WebViewNativeMediaPlayerHandler10 from './WebViewNativeMediaPlayerHandler10.test';
 
 export default function testsuite() {
   WebViewNativeVideoUpdateRect()
@@ -34,5 +36,7 @@ export default function testsuite() {
   WebViewNativeMediaPlayerHandler6()
   WebViewNativeMediaPlayerHandler7()
   WebViewNativeMediaPlayerHandler8()
+  WebViewNativeMediaPlayerHandler9()
+  WebViewNativeMediaPlayerHandler10()
 
 }
