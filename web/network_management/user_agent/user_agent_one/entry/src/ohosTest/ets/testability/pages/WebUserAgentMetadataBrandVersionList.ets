@@ -275,7 +275,7 @@ struct webUserAgentMetadata {
                   brandVersion.setBrand('TestBrand');
                   brandVersion.setMajorVersion(undefined);
                   brandVersion.setFullVersion('1.0.0');
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = [brandVersion];
+                  let arrayVersions: webView.UserAgentBrandVersion[] = [brandVersion];
                   metaData.setBrandVersionList(arrayVersions);
                   Utils.emitEvent('no_error', 174440);
                 } catch (error) {
