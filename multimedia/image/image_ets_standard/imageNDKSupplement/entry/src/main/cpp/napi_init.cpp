@@ -62,6 +62,7 @@
 #include "ImageSourceNativeGetImagePropertyTest.h"
 #include "ImageSourceNativeModifySuppTest.h"
 #include "ImageOHImageSourceInfoCreateTest.h"
+#include "ImageReceiverTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -259,6 +260,12 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHPixelmapNativeReadPixelsTest", OHPixelmapNativeReadPixelsTest),
     DESCRIPTOR("OHImageNativeGetBufferDataValueTest", OHImageNativeGetBufferDataValueTest),
     DESCRIPTOR("OHImageNativeGetColorSpaceTest", OHImageNativeGetColorSpaceTest),
+    DESCRIPTOR("OhImageReceiverNativeGetSize", OhImageReceiverNativeGetSize),
+    DESCRIPTOR("OhInitReceiverOptionsGetCapacity", OhInitReceiverOptionsGetCapacity),
+    DESCRIPTOR("OhInitReceiverOptions", OhInitReceiverOptions),
+    DESCRIPTOR("ImageReceiverNativeSuppTest", ImageReceiverNativeSuppTest),
+    DESCRIPTOR("ImageReceiverNativeGetCapacitySuppTest", ImageReceiverNativeGetCapacitySuppTest),
+    DESCRIPTOR("ComposeOptionsReleaseSuppTest", ComposeOptionsReleaseSuppTest),
 
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
