@@ -3980,7 +3980,7 @@ export default function WindowPropertiesTest() {
 
         /**
         * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_static_0300
-        * @tc.name       testOnOcclusionState_static_0100
+        * @tc.name       testOnOcclusionState_static_0300
         * @tc.desc       验证注册OnOcclusionState监听
         * @tc.size       MediumTest
         * @tc.type       Function
