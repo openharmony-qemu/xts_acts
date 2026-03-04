@@ -123,8 +123,8 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err: Error) {
-        console.info(`${TAG} addSlot_90 errCode: ${err.code}, errMes: ${err.message}`)
+      } catch (err) {
+        console.info(`${TAG} addSlot_90 err: ${JSON.stringify(err)}`)
         expect(false).assertTrue()
         done()
       }
@@ -156,8 +156,8 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err:Error) {
-        console.info(`${TAG} addSlot_91 errCode: ${err.code}, errMes: ${err.message}`)
+      } catch (err) {
+        console.info(`${TAG} addSlot_91 err:${JSON.stringify(err)}`)
         expect(false).assertTrue()
         done()
       }
@@ -233,9 +233,10 @@ export default function actsNotificationAnsCoveredTest() {
         expect(false).assertTrue()
         done()
       })
-      } catch (err: Error) {
+      } catch (err) {
+        err =  err as BusinessError;
         console.info(`${TAG} cancel1  errCode: ${err.code}, errMes: ${err.message}`)
-        expect(err?.code).assertEqual(401)
+        expect(err.code).assertEqual(401)
         done()
       }
       try {
@@ -249,9 +250,10 @@ export default function actsNotificationAnsCoveredTest() {
         expect(error?.code).assertEqual(401)
         done()
       })
-      } catch (err:Error) {
+      } catch (err) {
+        err =  err as BusinessError;
         console.info(`${TAG} cancel2  errCode: ${err.code}, errMes: ${err.message}`)
-        expect(err?.code).assertEqual(401)
+        expect(err.code).assertEqual(401)
         done()
       }
     })
@@ -279,7 +281,8 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err: Error) {
+      } catch (err) {
+        err =  err as BusinessError;
         console.info(`${TAG} getSlot_40 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -311,7 +314,8 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err: Error) {
+      } catch (err) {
+        err =  err as BusinessError;
         console.info(`${TAG} getSlot_41 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -392,7 +396,8 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
+        err =  err as BusinessError;
         console.info(`${TAG} removeSlot_40 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -425,7 +430,8 @@ export default function actsNotificationAnsCoveredTest() {
             done()
           }
         })
-      } catch (err: Error) {
+      } catch (err) {
+        err =  err as BusinessError;
         console.info(`${TAG} removeSlot_41 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -456,7 +462,8 @@ export default function actsNotificationAnsCoveredTest() {
           expect(false).assertTrue()
           done()
         })
-      } catch (err: Error) {
+      } catch (err) {
+        err =  err as BusinessError;
         console.info(`${TAG} removeSlot_42 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -488,7 +495,8 @@ export default function actsNotificationAnsCoveredTest() {
           expect(false).assertTrue()
           done()
         })
-      } catch (err: Error) {
+      } catch (err) {
+        err =  err as BusinessError;
         console.info(`${TAG} removeSlot_43 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -545,7 +553,8 @@ export default function actsNotificationAnsCoveredTest() {
               done()
             }
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err =  err as BusinessError;
           console.info(`${TAG} isSupportTemplate AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(401)
           done()
@@ -577,7 +586,8 @@ export default function actsNotificationAnsCoveredTest() {
               done()
             }
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err =  err as BusinessError;
           console.info(`${TAG} cancelGroup AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(401)
           done()
@@ -607,7 +617,8 @@ export default function actsNotificationAnsCoveredTest() {
             expect(false).assertTrue()
             done()
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err =  err as BusinessError;
           console.info(`${TAG} cancelGroup AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(401)
           done()
@@ -717,7 +728,8 @@ export default function actsNotificationAnsCoveredTest() {
               }
             });
           }, 1000);
-        } catch (err: Error) {
+        } catch (err) {
+          err =  err as BusinessError;
           console.error(TAG + `publish failed, code is ${err.code}, message is ${err.message}`)
         }
       })
@@ -877,7 +889,8 @@ export default function actsNotificationAnsCoveredTest() {
             });
           }, 1000);
 
-        } catch (err: Error) {
+        } catch (err) {
+          err =  err as BusinessError;
           console.info(TAG +
             `Sub_Notification_Ans_Subscriber_Subscribe_Static_1700_001 failed, catch error code: ${err.code}, message: ${err.message}`)
           expect(false).assertTrue()
@@ -1018,7 +1031,8 @@ export default function actsNotificationAnsCoveredTest() {
               }
             });
           }, 1000);
-        } catch (err: Error) {
+        } catch (err) {
+          err =  err as BusinessError;
           console.info(TAG +
             `Sub_Notification_Ans_Subscriber_Subscribe_Static_1800_001 failed, catch error code: ${err.code}, message: ${err.message}`)
           expect(false).assertTrue()
