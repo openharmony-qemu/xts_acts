@@ -364,7 +364,7 @@ export default function UsbApiDeprecatedAddEtsTest() {
 
     /**
      * @tc.name   testRequestRightMaxxString
-     * @tc.number SUB_USB_HostManager_UsbFunc_4700
+     * @tc.number SUB_USB_HostManager_UsbFunc_4800
      * @tc.desc   requestRight input parameter MaxString+1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
