@@ -1794,5 +1794,55 @@ export default function SendableImagePixelMapTest() {
         done();
       }
     });
+    /**
+     * @tc.number    IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_001
+     * @tc.name      IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_001
+     * @tc.desc      writePixelsFromBuffer cover null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_001';
+      let auxBuffer: ArrayBuffer = new ArrayBuffer(10000);
+      let auxSize: Size = { height: 50, width: 50 };
+      let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+      let auxiliaryPicture: image.AuxiliaryPicture | null = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+      try {
+        await auxiliaryPicture.writePixelsFromBuffer(null);
+        expect().assertFail();
+        await auxiliaryPicture?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+    /**
+     * @tc.number    IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_002
+     * @tc.name      IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_002
+     * @tc.desc      writePixelsFromBuffer cover undefined
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_002';
+      let auxBuffer: ArrayBuffer = new ArrayBuffer(10000);
+      let auxSize: Size = { height: 50, width: 50 };
+      let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+      let auxiliaryPicture: image.AuxiliaryPicture | null = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+      try {
+        await auxiliaryPicture.writePixelsFromBuffer(undefined);
+        expect().assertFail();
+        await auxiliaryPicture?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
   });
 }
