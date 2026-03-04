@@ -3548,7 +3548,7 @@ export default function windowErrCode401_3() {
       }
     })
 
-        /**
+    /**
      * @tc.name   testGetLastWindow_0200
      * @tc.number testGetLastWindow_0200
      * @tc.desc   testGetLastWindow_0200
