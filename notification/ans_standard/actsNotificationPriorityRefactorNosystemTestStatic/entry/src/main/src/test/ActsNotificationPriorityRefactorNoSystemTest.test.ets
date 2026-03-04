@@ -48,8 +48,8 @@ let testAbilityContext: common.UIAbilityContext;
 let count :int = 0
 
 
-export default function hitsNotificationPriorityRefactorNoSystemTest() {
-  describe('hitsNotificationPriorityRefactorNoSystemTest', () => {
+export default function actsNotificationPriorityRefactorNoSystemTest() {
+  describe('actsNotificationPriorityRefactorNoSystemTest', () => {
 
     beforeAll(async () => {
       hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'beforeAll start');
