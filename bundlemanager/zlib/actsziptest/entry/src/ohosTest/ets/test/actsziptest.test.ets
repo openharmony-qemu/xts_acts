@@ -1524,7 +1524,7 @@ export default function ActsZipTest() {
 
         /**
          * @tc.name   actsZipTest13x
-         * @tc.number ACTS_ZipTest_13
+         * @tc.number ACTS_ZipTest_13x
          * @tc.desc   test deflate and inflate PARTIAL_FLUSH
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
