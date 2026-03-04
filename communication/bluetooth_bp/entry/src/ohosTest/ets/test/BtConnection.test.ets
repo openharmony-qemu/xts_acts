@@ -4104,6 +4104,26 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0400
+     * @tc.desc   Test getRemoteDeviceTransport with empty string parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let btTransport = bluetooth.getRemoteDeviceTransport("");
+            console.info('[bluetooth_js] getRemoteDeviceTransport get:' + btTransport);
+            expect().assertFail();
+        } catch (error) {
+            console.info(`[bluetooth_js]getRemoteDeviceTransport error, code is ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100
      * @tc.desc   Test pairDevice with common api21
@@ -4131,6 +4151,107 @@ describe('btConnectionTest', () => {
             }
         }
         done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0200
+     * @tc.desc   Test pairDevice with both fields null in BluetoothAddress api21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0200';
+        console.info(`${caseName}---Start`);
+        try {
+            await bluetooth.pairDevice(null).then(() => {
+                console.info(`${caseName} pairDevice success, should not reach here`);
+            });
+            expect(true).assertFalse();
+            console.info(`${caseName}---End`);
+        } catch (err) {
+            console.error(`${caseName} pairDevice error, error code is: ${err.code}, error message is: ${err.message}`);
+            expect(Number(err.code)).assertEqual(401);
+            console.info(`${caseName}---End`);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0300
+     * @tc.desc   Test pairDevice with undefined BluetoothAddress parameter api21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0600';
+        console.info(`${caseName}---Start`);
+        try {
+            await bluetooth.pairDevice(undefined).then(() => {
+                console.info(`${caseName} pairDevice success, should not reach here`);
+            });
+            expect(true).assertFalse();
+            console.info(`${caseName}---End`);
+        } catch (err) {
+            console.error(`${caseName} pairDevice undefined BluetoothAddress error, error code is: ${err.code}, error message is: ${err.message}`);
+            expect(Number(err.code)).assertEqual(401);
+            console.info(`${caseName}---End`);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4300
+     * @tc.desc   Test pairDevice when bluetooth is disabled (error code 2900003) api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4300';
+        console.info(`${caseName}---Start`);
+        try {
+            let currentState = btAccess.getState();
+            console.info(`${caseName} current bluetooth state: ${currentState}`);
+
+            if (currentState === 2) {
+                btAccess.disableBluetooth();
+                await sleep(3000);
+                let stateAfterDisable = btAccess.getState();
+                console.info(`${caseName} bluetooth state after disable: ${stateAfterDisable}`);
+            }
+
+            let functionPairDevice = async ()=>{
+                return new Promise<void>((resolve, reject)=>{
+                    bluetooth.pairDevice("11:22:55:66:33:44", (error) => {
+                        if (error) {
+                            reject(error)
+                        } else {
+                            resolve();
+                        }
+                    });
+                })
+            }
+            await functionPairDevice();
+            expect(true).assertFalse();
+        } catch (err) {
+            console.error(`${caseName} pairDevice error, error code is: ${err.code}, error message is: ${err.message}`);
+            if (err.code === 2900003) {
+                console.info(`${caseName} Got expected error 2900003 (Bluetooth disabled)`);
+                expect(Number(err.code)).assertEqual(2900003);
+            } else if (err.code === 801) {
+                console.info(`${caseName} pairDevice is not supported`);
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                console.error(`${caseName} Unexpected error code: ${err.code}`);
+                expect(Number(err.code)).assertEqual(2900003);
+            }
+            done();
+        }
     })
 
     /**
