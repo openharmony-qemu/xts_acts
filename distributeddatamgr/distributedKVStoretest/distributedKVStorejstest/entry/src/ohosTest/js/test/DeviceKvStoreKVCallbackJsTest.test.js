@@ -16,6 +16,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import factory from '@ohos.data.distributedKVStore'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import abilityFeatureAbility from '@ohos.ability.featureAbility'
+import deviceInfo from '@ohos.deviceInfo';
+let currentDeviceIsWatch = false;
 
 var context = abilityFeatureAbility.getContext();
 const KEY_TEST_INT_ELEMENT = 'key_test_int_2';
@@ -75,6 +77,11 @@ export default function deviceKvStoreCallbackTest(){
         }
 
         beforeAll(async function (done) {
+            console.info('beforeAll currentDeviceIsWatch');
+            let deviceTypeInfo = deviceInfo.deviceType;
+            currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+            console.info( "the value of the deviceType is : " + deviceInfo.deviceType + ' currentDeviceIsWatch=' +currentDeviceIsWatch);
+
             console.info('beforeAll config:'+ JSON.stringify(config));
             kvManager = factory.createKVManager(config)
             await kvManager.getKVStore(TEST_STORE_ID, options).then((store) => {
@@ -1934,6 +1941,11 @@ export default function deviceKvStoreCallbackTest(){
          */
         it('SUB_DDM_DKV_DEVICESTORE_REMOVEDEVICEDATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('SUB_DDM_DKV_DEVICESTORE_REMOVEDEVICEDATA_0100');
+            if (currentDeviceIsWatch) {
+                console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+                done();
+                return;
+            }
             try {
                 await kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
                     console.info('SUB_DDM_DKV_DEVICESTORE_REMOVEDEVICEDATA_0100 put success');
