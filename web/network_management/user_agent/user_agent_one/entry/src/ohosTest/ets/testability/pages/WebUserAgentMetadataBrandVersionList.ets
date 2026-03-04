@@ -72,7 +72,7 @@ struct webUserAgentMetadata {
                   brandVersion2.setBrand('TestBrand2');
                   brandVersion2.setMajorVersion('2.0');
                   brandVersion2.setFullVersion('2.0.0');
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = [brandVersion1, brandVersion2];
+                  let arrayVersions: webView.UserAgentBrandVersion[] = [brandVersion1, brandVersion2];
                   metaData.setBrandVersionList(arrayVersions);
 
                   this.controller.setUserAgentMetadata(userAgent, metaData);
@@ -93,7 +93,7 @@ struct webUserAgentMetadata {
                 try {
                   let userAgent = webView.WebviewController.getDefaultUserAgent();
                   let metaData = new webView.UserAgentMetadata();
-                  let emptyArray: Array<webView.UserAgentBrandVersion> = [];
+                  let emptyArray: webView.UserAgentBrandVersion[] = [];
                   metaData.setBrandVersionList(emptyArray);
                   this.controller.setUserAgentMetadata(userAgent, metaData);
                   let result =  this.controller.getUserAgentMetadata(userAgent);
@@ -151,7 +151,7 @@ struct webUserAgentMetadata {
                   brandVersion2.setBrand('BrandB');
                   brandVersion2.setMajorVersion('2.0');
                   brandVersion2.setFullVersion('2.0.0');
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = [brandVersion1, brandVersion2];
+                  let arrayVersions: webView.UserAgentBrandVersion[] = [brandVersion1, brandVersion2];
                   metaData.setBrandVersionList(arrayVersions);
                   this.controller.setUserAgentMetadata(userAgent, metaData);
                   let result =  this.controller.getUserAgentMetadata(userAgent);
@@ -174,7 +174,7 @@ struct webUserAgentMetadata {
                   brandVersion.setBrand('');
                   brandVersion.setMajorVersion('1.0');
                   brandVersion.setFullVersion('1.0.0');
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = [brandVersion];
+                  let arrayVersions: webView.UserAgentBrandVersion[] = [brandVersion];
                   metaData.setBrandVersionList(arrayVersions);
                   Utils.emitEvent('no_error', 174390);
                 } catch (error) {
@@ -195,7 +195,7 @@ struct webUserAgentMetadata {
                   brandVersion.setBrand(null);
                   brandVersion.setMajorVersion('1.0');
                   brandVersion.setFullVersion('1.0.0');
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = [brandVersion];
+                  let arrayVersions: webView.UserAgentBrandVersion[] = [brandVersion];
                   metaData.setBrandVersionList(arrayVersions);
                   Utils.emitEvent('no_error', 174400);
                 } catch (error) {
@@ -215,7 +215,7 @@ struct webUserAgentMetadata {
                   brandVersion.setBrand(undefined);
                   brandVersion.setMajorVersion('1.0');
                   brandVersion.setFullVersion('1.0.0');
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = [brandVersion];
+                  let arrayVersions: webView.UserAgentBrandVersion[] = [brandVersion];
                   metaData.setBrandVersionList(arrayVersions);
                   Utils.emitEvent('no_error', 174410);
                 } catch (error) {
@@ -235,7 +235,7 @@ struct webUserAgentMetadata {
                   brandVersion.setBrand('TestBrand');
                   brandVersion.setMajorVersion('');
                   brandVersion.setFullVersion('1.0.0');
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = [brandVersion];
+                  let arrayVersions: webView.UserAgentBrandVersion[] = [brandVersion];
                   metaData.setBrandVersionList(arrayVersions);
                   Utils.emitEvent('no_error', 174420);
                 } catch (error) {
@@ -255,7 +255,7 @@ struct webUserAgentMetadata {
                   brandVersion.setBrand('TestBrand');
                   brandVersion.setMajorVersion(null);
                   brandVersion.setFullVersion('1.0.0');
-                  let arrayVersions: Array<webView.UserAgentBrandVersion> = [brandVersion];
+                  let arrayVersions: webView.UserAgentBrandVersion[] = [brandVersion];
                   metaData.setBrandVersionList(arrayVersions);
                   Utils.emitEvent('no_error', 174430);
                 } catch (error) {
