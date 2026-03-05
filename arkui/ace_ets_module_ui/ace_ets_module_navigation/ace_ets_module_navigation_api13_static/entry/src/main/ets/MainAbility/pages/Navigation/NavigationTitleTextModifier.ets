@@ -17,11 +17,13 @@ import { LengthMetrics } from '@kit.ArkUI';
 import { TextModifier } from '@ohos.arkui.modifier';
 import { Entry, Component, NavPathStack, Builder, Navigation, Column, Button, ColumnOptions, ClickEvent, NavigationTitleMode, Text, Color,
   NavigationMode, NavDestination, NavPathInfo, BarStyle, Stack, StackOptions, BlurStyle, Row, Image, Margin, Alignment, $r, Resource, Padding,
-  FontStyle, FontWeight, FlexAlign, Toggle, ShadowOptions, ToggleType, NavigationCommonTitle, NavigationTitleOptions
+  FontStyle, FontWeight, FlexAlign, Toggle, ShadowOptions, ToggleType, NavigationCommonTitle, NavigationTitleOptions, TextAttribute
 } from '@ohos.arkui.component'
-import { State, Provide, Consume, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, Provide, Consume, AppStorage, Observed } from '@ohos.arkui.stateManagement'
+
+@Observed
 class MainTitleTextModifier extends TextModifier {
-  applyNormalAttribute(instance: TextModifier): void {
+  applyNormalAttribute(instance: TextAttribute): void {
       console.log(`testTag mainTitle use style1`);
       instance.fontColor('#FFFFC000')
       instance.fontSize(35)
@@ -31,11 +33,12 @@ class MainTitleTextModifier extends TextModifier {
   }
 }
 
+@Observed
 class SubTitleTextModifier extends TextModifier {
-  applyNormalAttribute(instance: TextModifier): void {
+  applyNormalAttribute(instance: TextAttribute): void {
       console.log(`testTag subTitle use style1`);
       instance.fontColor('#FFFFCEEE')
-      instance.fontSize(15)
+      instance.fontSize(10)
       instance.fontWeight(FontWeight.Bolder)
       instance.fontStyle(FontStyle.Normal)
       instance.textShadow({radius: 5, offsetX: 9} as ShadowOptions)
