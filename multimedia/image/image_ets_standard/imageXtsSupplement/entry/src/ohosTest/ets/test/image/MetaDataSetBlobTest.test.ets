@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,9 +18,11 @@ import { BusinessError } from '@ohos.base';
 import { sleep, isEmpty, getPermission, driveFn } from '../common';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
+import json from '@ohos.util.json';
 
 const TAG = 'MetaDataSetBlobTest.xts'
 let fdNumber: number;
+let imageSourceApi: image.ImageSource;
 
 async function getFd(fileName: string) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -38,7 +40,7 @@ async function getImageSource(path: string): Promise<image.ImageSource> {
 }
 
 async function getPropertiesAbnormalPromiseTest(testName: string, path: string): Promise<image.Metadata> {
-  const imageSourceApi = await getImageSource(path);
+  imageSourceApi = await getImageSource(path);
   let commodityPixelMap: image.PixelMap = await imageSourceApi.createPixelMap();
   let pictureObj: image.Picture = await image.createPicture(commodityPixelMap);
   let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
@@ -61,8 +63,9 @@ export default function MetaDataSetBlobTest() {
       console.info(TAG, 'afterEach case.');
     });
 
-    afterAll(() => {
+    afterAll(async () => {
       console.info(TAG, 'afterAll case.');
+      await imageSourceApi?.release();
     });
 
     /**
@@ -122,24 +125,24 @@ export default function MetaDataSetBlobTest() {
     it('SUB_IMAGE_SOURCE_CREATE_PIXELMAP_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_SOURCE_CREATE_PIXELMAP_TEST_001';
       const path = 'test_exif_v2.jpg';
-      let imageSourceApi = await getImageSource(path);
+      imageSourceApi = await getImageSource(path);
       try {
         imageSourceApi.createPixelMap(async (err: BusinessError, pixelMap: image.PixelMap) => {
           if (err) {
             console.error(TAG, testName, `Failed to create pixelMap.code is ${err.code},message is ${err.message}`);
             await imageSourceApi?.release();
             expect().assertFail();
-            done();
           } else {
             console.info(TAG, testName, 'Succeeded in creating pixelMap object.');
             await imageSourceApi?.release();
             expect(isEmpty(pixelMap.isEditable)).assertFalse();
-            done();
           }
         })
       } catch (error) {
         console.error(TAG, testName, ' setBlob error', error.message, error.code);
         expect().assertFail();
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -155,7 +158,7 @@ export default function MetaDataSetBlobTest() {
     it('SUB_IMAGE_SOURCE_GET_IMAGE_PROPERTIES_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_SOURCE_GET_IMAGE_PROPERTIES_TEST_001';
       const path = 'test_exif_v2.jpg';
-      let imageSourceApi = await getImageSource(path);
+      imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.getImageProperties(null);
         expect().assertFail();
@@ -179,7 +182,7 @@ export default function MetaDataSetBlobTest() {
     it('SUB_IMAGE_SOURCE_GET_IMAGE_PROPERTIES_TEST_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_SOURCE_GET_IMAGE_PROPERTIES_TEST_002';
       const path = 'test_exif_v2.jpg';
-      let imageSourceApi = await getImageSource(path);
+      imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.getImageProperties(undefined);
         expect().assertFail();
@@ -260,7 +263,7 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      let imageSourceApi = await getImageSource(path);
+      imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
@@ -268,21 +271,20 @@ export default function MetaDataSetBlobTest() {
           await metaData.exifMetadata.getProperties(null).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
             expect().assertFail();
-            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName,
               `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
             expect().assertFail();
-            done();
           });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
-          done();
         }
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata getProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -303,29 +305,28 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           await metaData.exifMetadata.getProperties(undefined).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
             expect().assertFail();
-            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName,
               `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
             expect().assertFail();
-            done();
           });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
-          done();
         }
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata getProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -346,29 +347,28 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           await metaData.exifMetadata.setProperties(null).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
             expect().assertFail();
-            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName,
               `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
             expect().assertFail();
-            done();
           });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
-          done();
         }
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata setProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -389,29 +389,28 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           await metaData.exifMetadata.setProperties(undefined).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
             expect().assertFail();
-            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName,
               `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
             expect().assertFail();
-            done();
           });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
-          done();
         }
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata setProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -432,22 +431,22 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           await metaData.exifMetadata.setProperties({ "abc": "abc" });
           expect().assertFail();
-          done();
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
-          done();
         }
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata setProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(7600202);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -468,8 +467,8 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
@@ -622,10 +621,11 @@ export default function MetaDataSetBlobTest() {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
         expect().assertFail();
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -646,8 +646,8 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
@@ -658,10 +658,11 @@ export default function MetaDataSetBlobTest() {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata setBlob error', error.message, error.code);
         expect(Number(error.code)).assertEqual(7600206);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -682,8 +683,8 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
@@ -698,6 +699,8 @@ export default function MetaDataSetBlobTest() {
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata setBlob error', error.message, error.code);
         expect(Number(error.code)).assertEqual(7600206);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -718,29 +721,28 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           await metaData.makerNoteHuaweiMetadata.setProperties(null).then(async () => {
             console.info(TAG, testName, 'Set properties success.');
             expect().assertFail();
-            done();
           }).catch((error: BusinessError) => {
             console.error(TAG, testName,
               `Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
-            done();
           })
         } else {
           console.error(TAG, testName, 'metadata is null. ');
           expect().assertFail();
-          done();
         }
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -761,22 +763,22 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           await metaData.makerNoteHuaweiMetadata.setProperties(undefined);
           expect().assertFail();
-          done();
         } else {
           console.error(TAG, testName, 'metadata is null. ');
           expect().assertFail();
-          done();
         }
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -797,22 +799,22 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           await metaData.makerNoteHuaweiMetadata.setBlob(undefined);
           expect().assertFail();
-          done();
         } else {
           console.error(TAG, testName, 'metadata is null. ');
           expect().assertFail();
-          done();
         }
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setBlob error', error.message, error.code);
         expect(Number(error.code)).assertEqual(7600206);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -833,22 +835,22 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           await metaData.makerNoteHuaweiMetadata.setBlob(null);
           expect().assertFail();
-          done();
         } else {
           console.error(TAG, testName, 'metadata is null. ');
           expect().assertFail();
-          done();
         }
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setBlob error', error.message, error.code);
         expect(Number(error.code)).assertEqual(7600206);
+      } finally {
+        await imageSourceApi?.release();
         done();
       }
     })
@@ -869,8 +871,8 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
+      imageSourceApi = await getImageSource(path);
       try {
-        let imageSourceApi = await getImageSource(path);
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
@@ -917,10 +919,125 @@ export default function MetaDataSetBlobTest() {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName, ' makerNoteHuaweiMetadata clone error', error.message, error.code);
         expect().assertFail();
+      } finally {
+        await imageSourceApi?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_HEIFS_METADATA_SET_BLOB_TEST_001
+     * @tc.name       SUB_IMAGE_SOURCE_HEIFS_METADATA_SET_BLOB_TEST_001
+     * @tc.desc       heifsMetadata -setBlob -null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('IMAGE_HEIFS_METADATA_GET_PROPERTIES_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_HEIFS_METADATA_GET_PROPERTIES_001';
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        const pathUri = 'test_exif_v2.jpg'
+        let array = new ArrayBuffer(30000);
+        let path = `file://${testContext.filesDir}/${pathUri}`;
+        const fd = fs.openSync(path, fs.OpenMode.READ_ONLY);
+        let readLength = await fs.read(fd.fd, array);
+        await fs.close(fd);
+        console.info(TAG, testName, `readLength: ${readLength}`);
+        let ops: image.SourceOptions = {
+          sourceDensity: 98,
+        };
+        imageSourceApi = image.createImageSource(array, ops);
+        let imageData = await imageSourceApi.readImageMetadata();
+        console.info(TAG, testName, 'metadataType');
+        await imageData.heifsMetadata?.setBlob(null);
+        console.info(TAG, testName, 'heifsMetadata success setBlob');
+        expect(isEmpty(imageData)).assertFalse();
+        await imageSourceApi?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' heifsMetadata setBlob error', error.message, error.code);
+        await imageSourceApi?.release();
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_HEIFS_METADATA_SET_BLOB_TEST_002
+     * @tc.name       SUB_IMAGE_SOURCE_HEIFS_METADATA_SET_BLOB_TEST_002
+     * @tc.desc       heifsMetadata -setBlob -undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_IMAGE_SOURCE_HEIFS_METADATA_SET_BLOB_TEST_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_HEIFS_METADATA_SET_BLOB_TEST_002';
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        const pathUri = 'test_exif_v2.jpg'
+        let array = new ArrayBuffer(30000);
+        let path = `file://${testContext.filesDir}/${pathUri}`;
+        const fd = fs.openSync(path, fs.OpenMode.READ_ONLY);
+        let readLength = await fs.read(fd.fd, array);
+        await fs.close(fd);
+        console.info(TAG, testName, `readLength: ${readLength}`);
+        let ops: image.SourceOptions = {
+          sourceDensity: 98,
+        };
+        imageSourceApi = image.createImageSource(array, ops);
+        let imageData = await imageSourceApi.readImageMetadata();
+        console.info(TAG, testName, 'metadataType');
+        await imageData.heifsMetadata?.setBlob(undefined);
+        console.info(TAG, testName, 'heifsMetadata success setBlob');
+        expect(isEmpty(imageData)).assertFalse();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' heifsMetadata setBlob error', error.message, error.code);
+        await imageSourceApi?.release();
+        expect().assertFail();
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_HEIFS_METADATA_CLONE_TEST_001
+     * @tc.name       SUB_IMAGE_SOURCE_HEIFS_METADATA_CLONE_TEST_001
+     * @tc.desc       heifsMetadata -clone
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_IMAGE_SOURCE_HEIFS_METADATA_CLONE_TEST_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_HEIFS_METADATA_CLONE_TEST_001';
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        const pathUri = 'test_exif_v2.jpg'
+        let array = new ArrayBuffer(30000);
+        let path = `file://${testContext.filesDir}/${pathUri}`;
+        const fd = fs.openSync(path, fs.OpenMode.READ_ONLY);
+        let readLength = await fs.read(fd.fd, array);
+        await fs.close(fd);
+        console.info(TAG, testName, `readLength: ${readLength}`);
+        let ops: image.SourceOptions = {
+          sourceDensity: 98,
+        };
+        imageSourceApi = image.createImageSource(array, ops);
+        let imageData = await imageSourceApi.readImageMetadata()
+        console.info(TAG, testName, 'metadataType',json.stringify(imageData.heifsMetadata))
+        let result:image.HeifsMetadata|undefined= await imageData.heifsMetadata?.clone()
+        console.info(TAG, testName, 'heifsMetadata success setBlob');
+        expect(result?.heifsDelayTime).assertEqual(imageData.heifsMetadata?.heifsDelayTime);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' heifsMetadata setBlob error', error.message, error.code);
+        expect(Number(error.code)).assertEqual(7600202);
+      } finally {
+        imageSourceApi?.release();
         done();
       }
     });
