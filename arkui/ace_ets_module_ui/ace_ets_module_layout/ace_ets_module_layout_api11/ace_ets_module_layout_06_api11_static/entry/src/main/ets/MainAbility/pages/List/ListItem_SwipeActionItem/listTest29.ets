@@ -167,7 +167,7 @@ struct ListItemExample29 {
           .key('lSwipe29Action' + item)
         }, (item: number) => item.toString())
       }.height('90%')
-      .width('90%')
+      .width('80%')
 
     }
     .padding(10)
