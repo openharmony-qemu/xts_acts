@@ -19,12 +19,12 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerDialogBgColor {
-  showDialog(color: ResourceColor) {
+  showDialog(color: ResourceColor | undefined) {
     this.getUIContext().showTextPickerDialog({
       // 建议使用 this.getUIContext().showTextPickerDialog()接口
       range: ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'],
       defaultPickerItemHeight: 40,
-      backgroundColor: (color as ResourceColor),
+      backgroundColor: (color as ResourceColor | undefined),
       backgroundBlurStyle: BlurStyle.NONE,
     } as TextPickerDialogOptions)
 }

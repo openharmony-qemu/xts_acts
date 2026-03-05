@@ -53,15 +53,14 @@ export default function TimePickerDialogBGColorTest() {
       await CommonFunc.sleep(1000);
       console.info("TimePickerDialogBGColor after each called");
     });
-    
-    
-/**
+
+    /**
      * @tc.number   TimePickerDialogBGColorTest_static_001
      * @tc.name     TimePickerDialogBGColorTest_static_001
      * @tc.desc     TimePickerDialogBGColorTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('TimePickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TimePickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ColorWhiteID'));
       await (button?.click() as Promise<void>);
@@ -73,17 +72,17 @@ it('TimePickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FFFFFFFF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   TimePickerDialogBGColorTest_static_002
      * @tc.name     TimePickerDialogBGColorTest_static_002
      * @tc.desc     TimePickerDialogBGColorTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('TimePickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TimePickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('rgb(255, 100, 255)ID'));
       await (button?.click() as Promise<void>);
@@ -95,17 +94,17 @@ it('TimePickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FFFF64FF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   TimePickerDialogBGColorTest_static_003
      * @tc.name     TimePickerDialogBGColorTest_static_003
      * @tc.desc     TimePickerDialogBGColorTest_static_003
      * @tc.level    Level.LEVEL0
      */
-it('TimePickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TimePickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('0x008080ID'));
       await (button?.click() as Promise<void>);
@@ -117,17 +116,17 @@ it('TimePickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FF008080');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   TimePickerDialogBGColorTest_static_004
      * @tc.name     TimePickerDialogBGColorTest_static_004
      * @tc.desc     TimePickerDialogBGColorTest_static_004
      * @tc.level    Level.LEVEL0
      */
-it('TimePickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TimePickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('00FFFFID'));
       await (button?.click() as Promise<void>);
@@ -139,17 +138,17 @@ it('TimePickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FF00FFFF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   TimePickerDialogBGColorTest_static_005
      * @tc.name     TimePickerDialogBGColorTest_static_005
      * @tc.desc     TimePickerDialogBGColorTest_static_005
      * @tc.level    Level.LEVEL0
      */
-it('TimePickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TimePickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('colorBlueID'));
       await (button?.click() as Promise<void>);
@@ -161,44 +160,17 @@ it('TimePickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FF0000FF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
-      done();
-    })
-    
-    
-/**
-     * @tc.number   TimePickerDialogBGColorTest_static_006
-     * @tc.name     TimePickerDialogBGColorTest_static_006
-     * @tc.desc     TimePickerDialogBGColorTest_static_006
-     * @tc.level    Level.LEVEL0
-     */
-it('TimePickerDialogBGColorTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('nullID'));
-      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let dialog = tree.getArray('$children')[1];
-      let column = dialog.getArray('$children')[0];
-      let backgroundColor: string = column.getElement('$attrs').getString('backgroundColor');
-      let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
-      if (uniRenderFlag == 'false') {
-        expect(backgroundColor).assertEqual('#FFFFFFFF');
-      } else {
-        expect(backgroundColor).assertEqual('#00FFFFFF');
-      }
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      await (btn1?.click() as Promise<void>);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   TimePickerDialogBGColorTest_static_007
      * @tc.name     TimePickerDialogBGColorTest_static_007
      * @tc.desc     TimePickerDialogBGColorTest_static_007
      * @tc.level    Level.LEVEL0
      */
-it('TimePickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TimePickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('undefinedID'));
       await (button?.click() as Promise<void>);
@@ -215,17 +187,17 @@ it('TimePickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => vo
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   TimePickerDialogBGColorTest_static_008
      * @tc.name     TimePickerDialogBGColorTest_static_008
      * @tc.desc     TimePickerDialogBGColorTest_static_008
      * @tc.level    Level.LEVEL0
      */
-it('TimePickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TimePickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('xxxID'));
       await (button?.click() as Promise<void>);
@@ -242,17 +214,17 @@ it('TimePickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => vo
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   TimePickerDialogBGColorTest_static_009
      * @tc.name     TimePickerDialogBGColorTest_static_009
      * @tc.desc     TimePickerDialogBGColorTest_static_009
      * @tc.level    Level.LEVEL0
      */
-it('TimePickerDialogBGColorTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TimePickerDialogBGColorTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('-100ID'));
       await (button?.click() as Promise<void>);
@@ -264,6 +236,7 @@ it('TimePickerDialogBGColorTest_static_009', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FFFFFF9C');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
   })

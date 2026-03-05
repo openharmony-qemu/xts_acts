@@ -72,6 +72,7 @@ export default function TextPickerDialogBGColorTest() {
       expect(backgroundColor).assertEqual('#FFFFFFFF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
@@ -93,6 +94,7 @@ export default function TextPickerDialogBGColorTest() {
       expect(backgroundColor).assertEqual('#FFFF64FF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
@@ -114,6 +116,7 @@ export default function TextPickerDialogBGColorTest() {
       expect(backgroundColor).assertEqual('#FF008080');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
@@ -135,6 +138,7 @@ export default function TextPickerDialogBGColorTest() {
       expect(backgroundColor).assertEqual('#FF00FFFF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
@@ -156,6 +160,7 @@ export default function TextPickerDialogBGColorTest() {
       expect(backgroundColor).assertEqual('#FF0000FF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
@@ -182,6 +187,7 @@ export default function TextPickerDialogBGColorTest() {
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
@@ -208,6 +214,7 @@ export default function TextPickerDialogBGColorTest() {
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
@@ -229,6 +236,7 @@ export default function TextPickerDialogBGColorTest() {
       expect(backgroundColor).assertEqual('#FFFFFF9C');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
   })
