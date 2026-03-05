@@ -19,6 +19,7 @@ import FontJsunit from './FontTest/FontJsunit.test';
 import StageFontTest from './FontTest/StageFontTest.test';
 import UIFontAliasInfo from './FontTest/UIFontAliasInfo.test';
 import UIfontTest from './FontTest/UIfontTest.test';
+import FontNullUndefinedTest from './FontTest/FontNullUndefined.test';
 
 import ContextGetMeasureUtils from './MeasureTest/ContextGetMeasureUtils.test';
 import GetLayoutTest from './MeasureTest/GetLayoutTest.test';
@@ -68,7 +69,8 @@ export default function testsuite() {
   FontJsunit() 
   StageFontTest() 
   UIFontAliasInfo() 
-  UIfontTest() 
+  UIfontTest()
+  FontNullUndefinedTest()
   // MeasureTest 
   ContextGetMeasureUtils() 
   GetLayoutTest() 
