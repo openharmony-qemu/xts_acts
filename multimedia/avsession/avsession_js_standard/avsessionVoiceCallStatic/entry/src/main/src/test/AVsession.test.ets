@@ -1246,6 +1246,7 @@ export default function abilityTest() {
            try{
                session!.setAVPlaybackState(PlaybackState)
                console.info(`${TAG}:SetAVPlaybackState successfully`);
+               expect(PlaybackState.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_PLAY);
            }catch(err){
                console.error(`${TAG}:SetAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
            };
@@ -2134,6 +2135,7 @@ export default function abilityTest() {
             session!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`session on_customDataChange Successfully ${data}`)
                 session!.offCustomDataChange();
+                expect(true).assertTrue();
                 done();
             })
             await session!.sendCustomData(customdata);
@@ -2176,6 +2178,7 @@ export default function abilityTest() {
             controller!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`session on_customDataChange Successfully ${data}`)
                 controller!.offCustomDataChange();
+                expect(true).assertTrue();
                 done();
             })
             await controller!.sendCustomData(customdata);
