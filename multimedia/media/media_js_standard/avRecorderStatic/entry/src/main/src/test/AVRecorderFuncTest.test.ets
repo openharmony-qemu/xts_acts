@@ -1456,6 +1456,7 @@ export default function avRecorderTest() {
         await commonFun.avRecorderReliabilitTest26(avConfig, avRecorder, RECORDER_TIME, done);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_2600 end')
+      done();
     })
 
     /**
