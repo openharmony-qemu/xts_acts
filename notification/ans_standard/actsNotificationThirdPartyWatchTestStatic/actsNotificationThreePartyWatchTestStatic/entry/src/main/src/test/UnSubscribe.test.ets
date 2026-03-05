@@ -54,7 +54,7 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
             .catch((err: Error) => {
               hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
         }
         await Utils.msSleep(2000);
