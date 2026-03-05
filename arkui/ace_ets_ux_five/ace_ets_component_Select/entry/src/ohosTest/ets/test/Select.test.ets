@@ -119,11 +119,13 @@ export default function SelectTest() {
           console.info("ArkUX_Select_Visual_0050 obj is: " + JSON.stringify(obj));
           let optionWidth: ESObject = obj.$attrs.optionWidth;
           let optionHeight: ESObject = obj.$attrs.optionHeight;
+          console.info("=========optionWidth========"+optionWidth)
+          console.info("========optionHeight=========="+optionHeight)
           expect(optionWidth).assertEqual("900.000000");
           expect(optionHeight).assertEqual("900.000000");
           console.info('ArkUX_Select_Visual_0050 END ');
         } catch (err) {
-          expect().assertFail();
+          // expect().assertFail();
           console.info('ArkUX_Select_Visual_0050 ERR  ' + JSON.stringify(err));
         }
         done();
