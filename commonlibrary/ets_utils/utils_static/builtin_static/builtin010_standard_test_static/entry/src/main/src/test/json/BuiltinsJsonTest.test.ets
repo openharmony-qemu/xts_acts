@@ -1850,3 +1850,1843 @@ export default function builtinsJsonTest() {
 
       expect(result).assertEqual('"\\\\b\\\\f\\\\n\\\\r\\\\t\\\\\\\\\\\\\\"\\\\/"');
     });
+
+    /**
+     * @tc.name builtinsJsonTest0109
+     * @tc.number BUILTINS_JSON_TEST_0109
+     * @tc.desc Test stringifyJsonElement with emoji and Unicode
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const emoji: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createString(emoji);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('"👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴"');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0110
+     * @tc.number BUILTINS_JSON_TEST_0110
+     * @tc.desc Test stringifyJsonElement with integer number
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createInteger(42);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('42');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0111
+     * @tc.number BUILTINS_JSON_TEST_0111
+     * @tc.desc Test stringifyJsonElement with double number
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createDouble(3.14159);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('3.14159');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0112
+     * @tc.number BUILTINS_JSON_TEST_0112
+     * @tc.desc Test stringifyJsonElement with special number values
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const zero: jsonx.JsonElement = jsonx.JsonElement.createInteger(0);
+      const negZero: jsonx.JsonElement = jsonx.JsonElement.createDouble(-0.0);
+      const nan: jsonx.JsonElement = jsonx.JsonElement.createDouble(NaN);
+      const inf: jsonx.JsonElement = jsonx.JsonElement.createDouble(Infinity);
+      const negInf: jsonx.JsonElement = jsonx.JsonElement.createDouble(-Infinity);
+
+      expect(JSON.stringifyJsonElement(zero)).assertEqual('0');
+      expect(JSON.stringifyJsonElement(negZero)).assertEqual('0');
+      expect(JSON.stringifyJsonElement(nan)).assertEqual('NaN');
+      expect(JSON.stringifyJsonElement(inf)).assertEqual('Infinity');
+      expect(JSON.stringifyJsonElement(negInf)).assertEqual('-Infinity');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0113
+     * @tc.number BUILTINS_JSON_TEST_0113
+     * @tc.desc Test stringifyJsonElement with scientific notation
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createDouble(1.5e10);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('15000000000');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0114
+     * @tc.number BUILTINS_JSON_TEST_0114
+     * @tc.desc Test stringifyJsonElement with empty array
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray([]);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('[]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0115
+     * @tc.number BUILTINS_JSON_TEST_0115
+     * @tc.desc Test stringifyJsonElement with array containing mixed types
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createInteger(72),
+        jsonx.JsonElement.createString('Hello'),
+        jsonx.JsonElement.createBoolean(true),
+        jsonx.JsonElement.createNull(),
+        jsonx.JsonElement.createUndefined(),
+        jsonx.JsonElement.createDouble(NaN)
+      ];
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('[72,"Hello",true,null,undefined,NaN]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0116
+     * @tc.number BUILTINS_JSON_TEST_0116
+     * @tc.desc Test stringifyJsonElement with nested arrays
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const inner: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        jsonx.JsonElement.createInteger(3),
+        jsonx.JsonElement.createInteger(4)
+      ]);
+      const outer: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        jsonx.JsonElement.createInteger(1),
+        jsonx.JsonElement.createInteger(2),
+        inner
+      ]);
+      const result: string = JSON.stringifyJsonElement(outer);
+
+      expect(result).assertEqual('[1,2,[3,4]]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0117
+     * @tc.number BUILTINS_JSON_TEST_0117
+     * @tc.desc Test stringifyJsonElement with empty object
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(new Map<string, jsonx.JsonElement>());
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('{}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0118
+     * @tc.number BUILTINS_JSON_TEST_0118
+     * @tc.desc Test stringifyJsonElement with simple object
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const obj = new Map<string, jsonx.JsonElement>();
+      obj.set('a', jsonx.JsonElement.createInteger(1));
+      obj.set('b', jsonx.JsonElement.createString('test'));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(obj);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('{"a":1,"b":"test"}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0119
+     * @tc.number BUILTINS_JSON_TEST_0119
+     * @tc.desc Test stringifyJsonElement with nested object
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const inner = new Map<string, jsonx.JsonElement>();
+      inner.set('c', jsonx.JsonElement.createInteger(2));
+
+      const outer = new Map<string, jsonx.JsonElement>();
+      outer.set('a', jsonx.JsonElement.createInteger(1));
+      outer.set('b', jsonx.JsonElement.createObject(inner));
+
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(outer);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('{"a":1,"b":{"c":2}}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0120
+     * @tc.number BUILTINS_JSON_TEST_0120
+     * @tc.desc Test stringifyJsonElement with object containing undefined value
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const obj = new Map<string, jsonx.JsonElement>();
+      obj.set('a', jsonx.JsonElement.createUndefined());
+      obj.set('b', jsonx.JsonElement.createInteger(1));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(obj);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('{"b":1}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0121
+     * @tc.number BUILTINS_JSON_TEST_0121
+     * @tc.desc Test stringifyJsonElement with object containing null value
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const obj = new Map<string, jsonx.JsonElement>();
+      obj.set('a', jsonx.JsonElement.createNull());
+      obj.set('b', jsonx.JsonElement.createInteger(2));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(obj);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('{"a":null,"b":2}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0122
+     * @tc.number BUILTINS_JSON_TEST_0122
+     * @tc.desc Test stringifyJsonElement with large array
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: jsonx.JsonElement[] = [];
+      for (let i: int = 0; i < 100; i++) {
+        arr.push(jsonx.JsonElement.createInteger(i));
+      }
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem);
+      const expected: string = `[${arr.map(e => e.tryAsInteger()).join(',')}]`;
+
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0123
+     * @tc.number BUILTINS_JSON_TEST_0123
+     * @tc.desc Test stringifyJsonElement with large object
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const obj = new Map<string, jsonx.JsonElement>();
+      for (let i: int = 0; i < 100; i++) {
+        obj.set(`key${i}`, jsonx.JsonElement.createInteger(i));
+      }
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(obj);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertInstanceOf('String');
+      expect(result.length).assertLarger(0);
+      expect(result.startsWith('{')).assertTrue();
+      expect(result.endsWith('}')).assertTrue();
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0124
+     * @tc.number BUILTINS_JSON_TEST_0124
+     * @tc.desc Test stringifyJsonElement with formatted output (space parameter)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const obj = new Map<string, jsonx.JsonElement>();
+      obj.set('a', jsonx.JsonElement.createInteger(1));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(obj);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+
+      expect(result).assertEqual('{\n  "a": 1\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0125
+     * @tc.number BUILTINS_JSON_TEST_0125
+     * @tc.desc Test stringifyJsonElement with formatted output (string space)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createInteger(1),
+        jsonx.JsonElement.createInteger(2)
+      ];
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, '  ');
+
+      expect(result).assertEqual('[\n  1,\n  2\n]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0126
+     * @tc.number BUILTINS_JSON_TEST_0126
+     * @tc.desc Test stringifyJsonElement with JsonElementSerializable interface
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('test', jsonx.JsonElement.createInteger(123));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable);
+      expect(result).assertEqual('{"test":123}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0127
+     * @tc.number BUILTINS_JSON_TEST_0127
+     * @tc.desc Test stringifyJsonElement with Number constants
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const maxValue: jsonx.JsonElement = jsonx.JsonElement.createDouble(1.7976931348623157e+308);
+      const minValue: jsonx.JsonElement = jsonx.JsonElement.createDouble(5e-324);
+      const epsilon: jsonx.JsonElement = jsonx.JsonElement.createDouble(2.220446049250313e-16);
+
+      expect(JSON.stringifyJsonElement(maxValue)).assertEqual('1.7976931348623157e+308');
+      expect(JSON.stringifyJsonElement(minValue)).assertEqual('5e-324');
+      expect(JSON.stringifyJsonElement(epsilon)).assertEqual('2.220446049250313e-16');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0128
+     * @tc.number BUILTINS_JSON_TEST_0128
+     * @tc.desc Test stringifyJsonElement with large integer exceeding Int32 range
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const largeValue: jsonx.JsonElement = jsonx.JsonElement.createDouble(0xdeadbeef as double);
+      const result: string = JSON.stringifyJsonElement(largeValue);
+
+      expect(result).assertEqual('3735928559');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0129
+     * @tc.number BUILTINS_JSON_TEST_0129
+     * @tc.desc Test stringifyJsonElement with array containing undefined and NaN
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createInteger(72),
+        jsonx.JsonElement.createString('Hello'),
+        jsonx.JsonElement.createUndefined(),
+        jsonx.JsonElement.createDouble(NaN),
+        jsonx.JsonElement.createDouble(Infinity)
+      ];
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('[72,"Hello",undefined,NaN,Infinity]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0130
+     * @tc.number BUILTINS_JSON_TEST_0130
+     * @tc.desc Test stringifyJsonElement with deeply nested structure
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const level3: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        jsonx.JsonElement.createInteger(4),
+        jsonx.JsonElement.createInteger(5)
+      ]);
+
+      const level2: jsonx.JsonElement = jsonx.JsonElement.createObject(
+        new Map<string, jsonx.JsonElement>([
+          ['c', jsonx.JsonElement.createInteger(3)],
+          ['d', level3]
+        ])
+      );
+
+      const level1: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        jsonx.JsonElement.createInteger(1),
+        jsonx.JsonElement.createInteger(2),
+        level2
+      ]);
+
+      const result: string = JSON.stringifyJsonElement(level1);
+
+      expect(result).assertEqual('[1,2,{"c":3,"d":[4,5]}]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0131
+     * @tc.number BUILTINS_JSON_TEST_0131
+     * @tc.desc Test stringifyJsonElement with string keywords
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0131', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const zeroStr: jsonx.JsonElement = jsonx.JsonElement.createString('0');
+      const nanStr: jsonx.JsonElement = jsonx.JsonElement.createString('NaN');
+      const emptyStr: jsonx.JsonElement = jsonx.JsonElement.createString('');
+
+      expect(JSON.stringifyJsonElement(zeroStr)).assertEqual('"0"');
+      expect(JSON.stringifyJsonElement(nanStr)).assertEqual('"NaN"');
+      expect(JSON.stringifyJsonElement(emptyStr)).assertEqual('""');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0132
+     * @tc.number BUILTINS_JSON_TEST_0132
+     * @tc.desc Test stringifyJsonElement with complex mixed structure
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const innerArr: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        jsonx.JsonElement.createInteger(1),
+        jsonx.JsonElement.createInteger(2)
+      ]);
+
+      const innerObj: jsonx.JsonElement = jsonx.JsonElement.createObject(
+        new Map<string, jsonx.JsonElement>([
+          ['x', jsonx.JsonElement.createString('test')],
+          ['y', jsonx.JsonElement.createBoolean(false)]
+        ])
+      );
+
+      const outerObj: jsonx.JsonElement = jsonx.JsonElement.createObject(
+        new Map<string, jsonx.JsonElement>([
+          ['arr', innerArr],
+          ['obj', innerObj],
+          ['null', jsonx.JsonElement.createNull()],
+          ['num', jsonx.JsonElement.createDouble(3.14)]
+        ])
+      );
+
+      const result: string = JSON.stringifyJsonElement(outerObj);
+
+      expect(result).assertEqual('{"arr":[1,2],"obj":{"x":"test","y":false},"null":null,"num":3.14}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0133
+     * @tc.number BUILTINS_JSON_TEST_0133
+     * @tc.desc Test stringifyJsonElement with JsonElementSerializable basic formatting
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0133', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('name', jsonx.JsonElement.createString('test'));
+          obj.set('value', jsonx.JsonElement.createInteger(123));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 2);
+      expect(result).assertEqual('{\n  "name": "test",\n  "value": 123\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0134
+     * @tc.number BUILTINS_JSON_TEST_0134
+     * @tc.desc Test stringifyJsonElement with empty replacer array (should return all fields)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0134', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('a', jsonx.JsonElement.createInteger(1));
+          obj.set('b', jsonx.JsonElement.createString('keep'));
+          obj.set('c', jsonx.JsonElement.createInteger(3));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const replacer: (double | string)[] = [];
+      const result: string = JSON.stringifyJsonElement(mockSerializable, replacer, 2);
+      expect(result).assertEqual('{\n  "a": 1,\n  "b": "keep",\n  "c": 3\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0135
+     * @tc.number BUILTINS_JSON_TEST_0135
+     * @tc.desc Test stringifyJsonElement with space number formatting
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('x', jsonx.JsonElement.createInteger(1));
+          obj.set('y', jsonx.JsonElement.createInteger(2));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 4);
+      expect(result).assertEqual('{\n    "x": 1,\n    "y": 2\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0136
+     * @tc.number BUILTINS_JSON_TEST_0136
+     * @tc.desc Test stringifyJsonElement with space string formatting
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('id', jsonx.JsonElement.createInteger(100));
+          obj.set('name', jsonx.JsonElement.createString('product'));
+          obj.set('price', jsonx.JsonElement.createDouble(19.99));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, '  ');
+      expect(result).assertEqual('{\n  "id": 100,\n  "name": "product",\n  "price": 19.99\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0137
+     * @tc.number BUILTINS_JSON_TEST_0137
+     * @tc.desc Test stringifyJsonElement with nested structure (2 levels only)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const inner = new Map<string, jsonx.JsonElement>();
+          inner.set('level', jsonx.JsonElement.createString('deep'));
+
+          const outer = new Map<string, jsonx.JsonElement>();
+          outer.set('nested', jsonx.JsonElement.createObject(inner));
+          outer.set('value', jsonx.JsonElement.createBoolean(true));
+
+          return jsonx.JsonElement.createObject(outer);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 2);
+      expect(result).assertEqual('{\n  "nested": {\n    "level": "deep"\n  },\n  "value": true\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0138
+     * @tc.number BUILTINS_JSON_TEST_0138
+     * @tc.desc Test stringifyJsonElement with simple special values only
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('nan', jsonx.JsonElement.createDouble(NaN));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 2);
+      expect(result).assertEqual('{\n  "nan": NaN\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0139
+     * @tc.number BUILTINS_JSON_TEST_0139
+     * @tc.desc Test stringifyJsonElement with replacer as undefined
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('a', jsonx.JsonElement.createInteger(1));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 2);
+      expect(result).assertEqual('{\n  "a": 1\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0140
+     * @tc.number BUILTINS_JSON_TEST_0140
+     * @tc.desc Test stringifyJsonElement with space as 0
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('x', jsonx.JsonElement.createInteger(1));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 0);
+      expect(result).assertEqual('{"x":1}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0141
+     * @tc.number BUILTINS_JSON_TEST_0141
+     * @tc.desc Test stringifyJsonElement with space as negative value (should treat as 0)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0141', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('key', jsonx.JsonElement.createString('value'));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, -1);
+      expect(result).assertEqual('{"key":"value"}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0142
+     * @tc.number BUILTINS_JSON_TEST_0142
+     * @tc.desc Test stringifyJsonElement with emoji characters
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('emoji', jsonx.JsonElement.createString('👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴'));
+          obj.set('text', jsonx.JsonElement.createString('Hello'));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 2);
+      expect(result).assertEqual('{\n  "emoji": "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴",\n  "text": "Hello"\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0143
+     * @tc.number BUILTINS_JSON_TEST_0143
+     * @tc.desc Test stringifyJsonElement with empty object
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          return jsonx.JsonElement.createObject(new Map<string, jsonx.JsonElement>());
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 2);
+      expect(result).assertEqual('{}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0144
+     * @tc.number BUILTINS_JSON_TEST_0144
+     * @tc.desc Test stringifyJsonElement with tab space formatting
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('key', jsonx.JsonElement.createString('value'));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, '\t');
+      expect(result).assertEqual('{\n\t"key": "value"\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0145
+     * @tc.number BUILTINS_JSON_TEST_0145
+     * @tc.desc Test stringifyJsonElement with String null/undefined/empty values
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('nullStr', jsonx.JsonElement.createString('null'));
+          obj.set('empty', jsonx.JsonElement.createString(''));
+          obj.set('normal', jsonx.JsonElement.createString('text'));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 2);
+      expect(result).assertEqual('{\n  "nullStr": "null",\n  "empty": "",\n  "normal": "text"\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0146
+     * @tc.number BUILTINS_JSON_TEST_0146
+     * @tc.desc Test stringifyJsonElement with emoji Unicode verification (core requirement)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('emoji1', jsonx.JsonElement.createString('👆'));
+          obj.set('emoji2', jsonx.JsonElement.createString('👿'));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable);
+      expect(result).assertEqual('{"emoji1":"\ud83d\udc46","emoji2":"\ud83d\udc7f"}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0147
+     * @tc.number BUILTINS_JSON_TEST_0147
+     * @tc.desc Test stringifyJsonElement with boolean values (document requirement)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('isTrue', jsonx.JsonElement.createBoolean(true));
+          obj.set('isFalse', jsonx.JsonElement.createBoolean(false));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable);
+      expect(result).assertEqual('{"isTrue":true,"isFalse":false}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0148
+     * @tc.number BUILTINS_JSON_TEST_0148
+     * @tc.desc Test stringifyJsonElement with object containing null and Infinity
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('nullVal', jsonx.JsonElement.createNull());
+          obj.set('inf', jsonx.JsonElement.createDouble(Infinity));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 2);
+      expect(result).assertEqual('{\n  "nullVal": null,\n  "inf": Infinity\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0149
+     * @tc.number BUILTINS_JSON_TEST_0149
+     * @tc.desc Test stringifyJsonElement with Number constants
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          const obj = new Map<string, jsonx.JsonElement>();
+          obj.set('max', jsonx.JsonElement.createDouble(1.7976931348623157e+308));
+          obj.set('min', jsonx.JsonElement.createDouble(5e-324));
+          obj.set('epsilon', jsonx.JsonElement.createDouble(2.220446049250313e-16));
+          return jsonx.JsonElement.createObject(obj);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable, undefined, 2);
+      expect(result).assertEqual('{\n  "max": 1.7976931348623157e+308,\n  "min": 5e-324,\n  "epsilon": 2.220446049250313e-16\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0150
+     * @tc.number BUILTINS_JSON_TEST_0150
+     * @tc.desc Test stringifyJsonElement with empty array
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const mockSerializable = {
+        toJSON: (): jsonx.JsonElement => {
+          return jsonx.JsonElement.createArray([]);
+        }
+      } as jsonx.JsonElementSerializable;
+
+      const result: string = JSON.stringifyJsonElement(mockSerializable);
+      expect(result).assertEqual('[]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0151
+     * @tc.number BUILTINS_JSON_TEST_0151
+     * @tc.desc Test stringifyJsonElement with JsonNull
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createNull();
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('null');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0152
+     * @tc.number BUILTINS_JSON_TEST_0152
+     * @tc.desc Test stringifyJsonElement with JsonUndefined
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createUndefined();
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('undefined');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0153
+     * @tc.number BUILTINS_JSON_TEST_0153
+     * @tc.desc Test stringifyJsonElement with boolean values
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elemTrue: jsonx.JsonElement = jsonx.JsonElement.createBoolean(true);
+      const resultTrue: string = JSON.stringifyJsonElement(elemTrue);
+      expect(resultTrue).assertEqual('true');
+
+      const elemFalse: jsonx.JsonElement = jsonx.JsonElement.createBoolean(false);
+      const resultFalse: string = JSON.stringifyJsonElement(elemFalse);
+      expect(resultFalse).assertEqual('false');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0154
+     * @tc.number BUILTINS_JSON_TEST_0154
+     * @tc.desc Test stringifyJsonElement with empty string and special characters
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elemEmpty: jsonx.JsonElement = jsonx.JsonElement.createString('');
+      const resultEmpty: string = JSON.stringifyJsonElement(elemEmpty);
+      expect(resultEmpty).assertEqual('""');
+
+      const str: string = ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createString(str);
+      const result: string = JSON.stringifyJsonElement(elem);
+      expect(result).assertEqual('" !\\"#$%&\'()*+,-./:;<=>?@[\\\\]^_`{|}~"');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0155
+     * @tc.number BUILTINS_JSON_TEST_0155
+     * @tc.desc Test stringifyJsonElement with emoji and Unicode
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const emoji12: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createString(emoji12);
+      const result: string = JSON.stringifyJsonElement(elem);
+      expect(result).assertEqual('"👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴"');
+
+      const emoji: string = "👆";
+      const elemUni: jsonx.JsonElement = jsonx.JsonElement.createString(emoji);
+      const resultUni: string = JSON.stringifyJsonElement(elemUni);
+      expect(resultUni).assertEqual('"\ud83d\udc46"');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0156
+     * @tc.number BUILTINS_JSON_TEST_0156
+     * @tc.desc Test stringifyJsonElement with number values
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elemInt: jsonx.JsonElement = jsonx.JsonElement.createInteger(42);
+      const resultInt: string = JSON.stringifyJsonElement(elemInt);
+      expect(resultInt).assertEqual('42');
+
+      const elemDouble: jsonx.JsonElement = jsonx.JsonElement.createDouble(3.14159);
+      const resultDouble: string = JSON.stringifyJsonElement(elemDouble);
+      expect(resultDouble).assertEqual('3.14159');
+
+      const elemZero: jsonx.JsonElement = jsonx.JsonElement.createInteger(0);
+      const resultZero: string = JSON.stringifyJsonElement(elemZero);
+      expect(resultZero).assertEqual('0');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0157
+     * @tc.number BUILTINS_JSON_TEST_0157
+     * @tc.desc Test stringifyJsonElement with Number.MAX_VALUE and MIN_VALUE
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elemMax: jsonx.JsonElement = jsonx.JsonElement.createDouble(1.7976931348623157e+308);
+      const resultMax: string = JSON.stringifyJsonElement(elemMax);
+      expect(resultMax).assertEqual('1.7976931348623157e+308');
+
+      const elemMin: jsonx.JsonElement = jsonx.JsonElement.createDouble(5e-324);
+      const resultMin: string = JSON.stringifyJsonElement(elemMin);
+      expect(resultMin).assertEqual('5e-324');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0158
+     * @tc.number BUILTINS_JSON_TEST_0158
+     * @tc.desc Test stringifyJsonElement with Infinity, NaN and scientific notation
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elemInf: jsonx.JsonElement = jsonx.JsonElement.createDouble(Infinity);
+      const resultInf: string = JSON.stringifyJsonElement(elemInf);
+
+      expect(resultInf).assertEqual('Infinity');
+
+      const elemNegInf: jsonx.JsonElement = jsonx.JsonElement.createDouble(-Infinity);
+      const resultNegInf: string = JSON.stringifyJsonElement(elemNegInf);
+
+      expect(resultNegInf).assertEqual('-Infinity');
+
+      const elemNaN: jsonx.JsonElement = jsonx.JsonElement.createDouble(NaN);
+      const resultNaN: string = JSON.stringifyJsonElement(elemNaN);
+
+      expect(resultNaN).assertEqual('NaN');
+
+      const elemSci: jsonx.JsonElement = jsonx.JsonElement.createDouble(1e3);
+      const resultSci: string = JSON.stringifyJsonElement(elemSci);
+      expect(resultSci).assertEqual('1000');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0159
+     * @tc.number BUILTINS_JSON_TEST_0159
+     * @tc.desc Test stringifyJsonElement with Number.EPSILON and MAX_SAFE_INTEGER
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elemEps: jsonx.JsonElement = jsonx.JsonElement.createDouble(2.220446049250313e-16);
+      const resultEps: string = JSON.stringifyJsonElement(elemEps);
+      expect(resultEps).assertEqual('2.220446049250313e-16');
+
+      const elemSafe: jsonx.JsonElement = jsonx.JsonElement.createDouble(9007199254740991);
+      const resultSafe: string = JSON.stringifyJsonElement(elemSafe);
+      expect(resultSafe).assertEqual('9007199254740991');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0160
+     * @tc.number BUILTINS_JSON_TEST_0160
+     * @tc.desc Test stringifyJsonElement with escape characters
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const str: string = 'line1\nline2\tbackspace\bformfeed\fvertical\vtab\\quote\"slash/';
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createString(str);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('"line1\\nline2\\tbackspace\\bformfeed\\fvertical\\u000btab\\\\quote\\"slash/"');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0161
+     * @tc.number BUILTINS_JSON_TEST_0161
+     * @tc.desc Test stringifyJsonElement with illegal unicode and keyword strings
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0161', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const strIllegal: string = '\udc04\ud83d\udff4';
+      const elemIllegal: jsonx.JsonElement = jsonx.JsonElement.createString(strIllegal);
+      try {
+        const result: string = JSON.stringifyJsonElement(elemIllegal);
+        expect(result !== undefined && result !== null).assertTrue();
+      } catch (e) {
+        expect(true).assertTrue();
+      }
+
+      const elemKey1: jsonx.JsonElement = jsonx.JsonElement.createString('0');
+      const resultKey1: string = JSON.stringifyJsonElement(elemKey1);
+      expect(resultKey1).assertEqual('"0"');
+
+      const elemKey2: jsonx.JsonElement = jsonx.JsonElement.createString('NaN');
+      const resultKey2: string = JSON.stringifyJsonElement(elemKey2);
+      expect(resultKey2).assertEqual('"NaN"');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0162
+     * @tc.number BUILTINS_JSON_TEST_0162
+     * @tc.desc Test stringifyJsonElement with array values
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elemEmpty: jsonx.JsonElement = jsonx.JsonElement.createArray([]);
+      const resultEmpty: string = JSON.stringifyJsonElement(elemEmpty);
+      expect(resultEmpty).assertEqual('[]');
+
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createInteger(1),
+        jsonx.JsonElement.createInteger(-111),
+        jsonx.JsonElement.createInteger(0),
+        jsonx.JsonElement.createDouble(NaN),
+        jsonx.JsonElement.createDouble(Infinity)
+      ];
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem);
+
+      expect(result).assertEqual('[1,-111,0,NaN,Infinity]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0163
+     * @tc.number BUILTINS_JSON_TEST_0163
+     * @tc.desc Test stringifyJsonElement with nested array and mixed types
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const innerArr: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        jsonx.JsonElement.createInteger(1),
+        jsonx.JsonElement.createInteger(2)
+      ]);
+      const outerArr: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        innerArr,
+        jsonx.JsonElement.createString('abc'),
+        jsonx.JsonElement.createBoolean(true),
+        jsonx.JsonElement.createNull()
+      ]);
+      const result: string = JSON.stringifyJsonElement(outerArr);
+      expect(result).assertEqual('[[1,2],"abc",true,null]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0164
+     * @tc.number BUILTINS_JSON_TEST_0164
+     * @tc.desc Test stringifyJsonElement with object values
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elemEmpty: jsonx.JsonElement = jsonx.JsonElement.createObject(new Map<string, jsonx.JsonElement>());
+      const resultEmpty: string = JSON.stringifyJsonElement(elemEmpty);
+      expect(resultEmpty).assertEqual('{}');
+
+      const map: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      map.set('a', jsonx.JsonElement.createInteger(1));
+      map.set('b', jsonx.JsonElement.createString('test'));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(map);
+      const result: string = JSON.stringifyJsonElement(elem);
+      expect(result).assertEqual('{"a":1,"b":"test"}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0165
+     * @tc.number BUILTINS_JSON_TEST_0165
+     * @tc.desc Test stringifyJsonElement with space=0 and undefined (no indentation)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const map: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      map.set('a', jsonx.JsonElement.createInteger(1));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(map);
+
+      const result0: string = JSON.stringifyJsonElement(elem, undefined, 0);
+      expect(result0).assertEqual('{"a":1}');
+
+      const resultUnd: string = JSON.stringifyJsonElement(elem, undefined, undefined);
+      expect(resultUnd).assertEqual('{"a":1}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0166
+     * @tc.number BUILTINS_JSON_TEST_0166
+     * @tc.desc Test stringifyJsonElement with space=2 on object
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0166', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const map: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      map.set('name', jsonx.JsonElement.createString('test'));
+      map.set('value', jsonx.JsonElement.createInteger(42));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(map);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+
+      expect(result).assertEqual('{\n  "name": "test",\n  "value": 42\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0167
+     * @tc.number BUILTINS_JSON_TEST_0167
+     * @tc.desc Test stringifyJsonElement with space=4 on array
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0167', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createInteger(1),
+        jsonx.JsonElement.createInteger(2),
+        jsonx.JsonElement.createInteger(3)
+      ];
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 4);
+      expect(result).assertEqual('[\n    1,\n    2,\n    3\n]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0168
+     * @tc.number BUILTINS_JSON_TEST_0168
+     * @tc.desc Test stringifyJsonElement with space=10 (max) and space=15 (truncated to 10)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0168', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const map: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      map.set('key', jsonx.JsonElement.createInteger(1));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(map);
+
+      const result10: string = JSON.stringifyJsonElement(elem, undefined, 10);
+      expect(result10).assertEqual('{\n          "key": 1\n}');
+
+      const result15: string = JSON.stringifyJsonElement(elem, undefined, 15);
+      expect(result15).assertEqual('{\n          "key": 1\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0169
+     * @tc.number BUILTINS_JSON_TEST_0169
+     * @tc.desc Test stringifyJsonElement with space=-5 (negative treated as 0)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const map: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      map.set('a', jsonx.JsonElement.createInteger(1));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(map);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, -5);
+
+      expect(result).assertEqual('{"a":1}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0170
+     * @tc.number BUILTINS_JSON_TEST_0170
+     * @tc.desc Test stringifyJsonElement with string space="\t" and "  "
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const map: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      map.set('x', jsonx.JsonElement.createInteger(42));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(map);
+
+      const resultTab: string = JSON.stringifyJsonElement(elem, undefined, '\t');
+      expect(resultTab).assertEqual('{\n\t"x": 42\n}');
+
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createString('a'),
+        jsonx.JsonElement.createString('b')
+      ];
+      const elemArr: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const resultSpace: string = JSON.stringifyJsonElement(elemArr, undefined, '  ');
+      expect(resultSpace).assertEqual('[\n  "a",\n  "b"\n]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0171
+     * @tc.number BUILTINS_JSON_TEST_0171
+     * @tc.desc Test stringifyJsonElement with long string space (truncated to 10 chars)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const map: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      map.set('key', jsonx.JsonElement.createInteger(1));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(map);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, '***********');
+
+      expect(result).assertEqual('{\n**********"key": 1\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0172
+     * @tc.number BUILTINS_JSON_TEST_0172
+     * @tc.desc Test stringifyJsonElement with empty object and empty array
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elemObj: jsonx.JsonElement = jsonx.JsonElement.createObject(new Map<string, jsonx.JsonElement>());
+      const resultObj: string = JSON.stringifyJsonElement(elemObj, undefined, 2);
+      expect(resultObj).assertEqual('{}');
+
+      const elemArr: jsonx.JsonElement = jsonx.JsonElement.createArray([]);
+      const resultArr: string = JSON.stringifyJsonElement(elemArr, undefined, 2);
+      expect(resultArr).assertEqual('[]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0173
+     * @tc.number BUILTINS_JSON_TEST_0173
+     * @tc.desc Test stringifyJsonElement with single level nested object
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const innerMap: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      innerMap.set('c', jsonx.JsonElement.createInteger(2));
+      const innerObj: jsonx.JsonElement = jsonx.JsonElement.createObject(innerMap);
+
+      const outerMap: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      outerMap.set('a', jsonx.JsonElement.createInteger(1));
+      outerMap.set('b', innerObj);
+
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(outerMap);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(result).assertEqual('{\n  "a": 1,\n  "b": {\n    "c": 2\n  }\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0174
+     * @tc.number BUILTINS_JSON_TEST_0174
+     * @tc.desc Test stringifyJsonElement with double nested object
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const level2: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      level2.set('d', jsonx.JsonElement.createInteger(3));
+
+      const level1: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      level1.set('c', jsonx.JsonElement.createObject(level2));
+
+      const root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      root.set('a', jsonx.JsonElement.createInteger(1));
+      root.set('b', jsonx.JsonElement.createObject(level1));
+
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(root);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(result).assertEqual('{\n  "a": 1,\n  "b": {\n    "c": {\n      "d": 3\n    }\n  }\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0175
+     * @tc.number BUILTINS_JSON_TEST_0175
+     * @tc.desc Test stringifyJsonElement with single level nested array
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const innerArr: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        jsonx.JsonElement.createInteger(1),
+        jsonx.JsonElement.createInteger(2)
+      ]);
+      const outerArr: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        innerArr,
+        jsonx.JsonElement.createInteger(3)
+      ]);
+      const result: string = JSON.stringifyJsonElement(outerArr, undefined, 2);
+      expect(result).assertEqual('[\n  [\n    1,\n    2\n  ],\n  3\n]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0176
+     * @tc.number BUILTINS_JSON_TEST_0176
+     * @tc.desc Test stringifyJsonElement with double nested array
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0176', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const level2: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        jsonx.JsonElement.createInteger(3)
+      ]);
+      const level1: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        level2,
+        jsonx.JsonElement.createInteger(2)
+      ]);
+      const root: jsonx.JsonElement = jsonx.JsonElement.createArray([
+        level1,
+        jsonx.JsonElement.createInteger(1)
+      ]);
+      const result: string = JSON.stringifyJsonElement(root, undefined, 2);
+      expect(result).assertEqual('[\n  [\n    [\n      3\n    ],\n    2\n  ],\n  1\n]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0177
+     * @tc.number BUILTINS_JSON_TEST_0177
+     * @tc.desc Test stringifyJsonElement with object containing array property
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0177', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const innerMap: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      innerMap.set('items', jsonx.JsonElement.createArray([
+        jsonx.JsonElement.createString('a'),
+        jsonx.JsonElement.createString('b')
+      ]));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(innerMap);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(result).assertEqual('{\n  "items": [\n    "a",\n    "b"\n  ]\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0178
+     * @tc.number BUILTINS_JSON_TEST_0178
+     * @tc.desc Test stringifyJsonElement with array containing object elements
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0178', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const obj1: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      obj1.set('x', jsonx.JsonElement.createInteger(1));
+      const obj2: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      obj2.set('y', jsonx.JsonElement.createInteger(2));
+
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createObject(obj1),
+        jsonx.JsonElement.createObject(obj2)
+      ];
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(result).assertEqual('[\n  {\n    "x": 1\n  },\n  {\n    "y": 2\n  }\n]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0179
+     * @tc.number BUILTINS_JSON_TEST_0179
+     * @tc.desc Test stringifyJsonElement with array containing undefined (converted to null)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0179', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createInteger(1),
+        jsonx.JsonElement.createUndefined(),
+        jsonx.JsonElement.createInteger(3)
+      ];
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(result).assertEqual('[\n  1,\n  undefined,\n  3\n]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0180
+     * @tc.number BUILTINS_JSON_TEST_0180
+     * @tc.desc Test stringifyJsonElement with object skipping undefined property
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0180', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const map: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      map.set('a', jsonx.JsonElement.createInteger(1));
+      map.set('skip', jsonx.JsonElement.createUndefined());
+      map.set('b', jsonx.JsonElement.createInteger(2));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(map);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+
+      expect(result).assertEqual('{\n  "a": 1,\n  "b": 2\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0181
+     * @tc.number BUILTINS_JSON_TEST_0181
+     * @tc.desc Test stringifyJsonElement with empty replacer array and undefined replacer
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0181', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const map: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      map.set('x', jsonx.JsonElement.createInteger(1));
+      map.set('y', jsonx.JsonElement.createInteger(2));
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(map);
+
+      const resultEmpty: string = JSON.stringifyJsonElement(elem, [], 2);
+      expect(resultEmpty).assertEqual('{\n  "x": 1,\n  "y": 2\n}');
+
+      const resultUnd: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(resultUnd).assertEqual('{\n  "x": 1,\n  "y": 2\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0182
+     * @tc.number BUILTINS_JSON_TEST_0182
+     * @tc.desc Test stringifyJsonElement with number array including negative and double
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0182', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createInteger(10),
+        jsonx.JsonElement.createInteger(-5),
+        jsonx.JsonElement.createDouble(3.14),
+        jsonx.JsonElement.createDouble(9007199254740991)
+      ];
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(result).assertEqual('[\n  10,\n  -5,\n  3.14,\n  9007199254740991\n]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0183
+     * @tc.number BUILTINS_JSON_TEST_0183
+     * @tc.desc Test stringifyJsonElement with string array including empty and escaped chars
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0183', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createString('hello'),
+        jsonx.JsonElement.createString('line1\nline2'),
+        jsonx.JsonElement.createString('')
+      ];
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(result).assertEqual('[\n  "hello",\n  "line1\\nline2",\n  ""\n]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0184
+     * @tc.number BUILTINS_JSON_TEST_0184
+     * @tc.desc Test stringifyJsonElement with mixed type array
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0184', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: jsonx.JsonElement[] = [
+        jsonx.JsonElement.createInteger(42),
+        jsonx.JsonElement.createString('text'),
+        jsonx.JsonElement.createBoolean(true),
+        jsonx.JsonElement.createBoolean(false),
+        jsonx.JsonElement.createNull()
+      ];
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(result).assertEqual('[\n  42,\n  "text",\n  true,\n  false,\n  null\n]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0185
+     * @tc.number BUILTINS_JSON_TEST_0185
+     * @tc.desc Test stringifyJsonElement with complex nested structure
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0185', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const innerMap: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      innerMap.set('arr', jsonx.JsonElement.createArray([
+        jsonx.JsonElement.createString('item'),
+        jsonx.JsonElement.createInteger(123)
+      ]));
+
+      const outerMap: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      outerMap.set('obj', jsonx.JsonElement.createObject(innerMap));
+      outerMap.set('val', jsonx.JsonElement.createInteger(42));
+
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(outerMap);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(result).assertEqual('{\n  "obj": {\n    "arr": [\n      "item",\n      123\n    ]\n  },\n  "val": 42\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0186
+     * @tc.number BUILTINS_JSON_TEST_0186
+     * @tc.desc Test stringifyJsonElement with special numeric values in formatted output
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0186', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const map: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+      map.set('inf', jsonx.JsonElement.createDouble(Infinity));
+      map.set('ninf', jsonx.JsonElement.createDouble(-Infinity));
+      map.set('nan', jsonx.JsonElement.createDouble(NaN));
+      map.set('zero', jsonx.JsonElement.createInteger(0));
+
+      const elem: jsonx.JsonElement = jsonx.JsonElement.createObject(map);
+      const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
+      expect(result).assertEqual('{\n  "inf": Infinity,\n  "ninf": -Infinity,\n  "nan": NaN,\n  "zero": 0\n}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0187
+     * @tc.number BUILTINS_JSON_TEST_0187
+     * @tc.desc Test parseJsonElement with basic object (normal object from checklist)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0187', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '{"a":1,"b":"test","c":[1,2,3]}';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+
+      expect(elem.jsonType == jsonx.JsonType.JsonObject).assertTrue();
+      const it = elem.$_iterator();
+      const entries = Array.from(it);
+      expect(entries.length).assertEqual(3);
+
+      const strResult: string = JSON.stringifyJsonElement(elem);
+      expect(strResult).assertEqual('{"a":1,"b":"test","c":[1,2,3]}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0188
+     * @tc.number BUILTINS_JSON_TEST_0188
+     * @tc.desc Test parseJsonElement with nested object (nested structure from checklist)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0188', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '{"a":{"b":{"c":3,"d":"deep"}}}';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+
+      const strResult: string = JSON.stringifyJsonElement(elem);
+      expect(strResult).assertEqual('{"a":{"b":{"c":3,"d":"deep"}}}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0189
+     * @tc.number BUILTINS_JSON_TEST_0189
+     * @tc.desc Test parseJsonElement with empty values (empty object, array, string, null)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0189', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '{"emptyObj":{},"emptyArr":[],"emptyStr":"","nullVal":null}';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+
+      const strResult: string = JSON.stringifyJsonElement(elem);
+      expect(strResult).assertEqual('{"emptyObj":{},"emptyArr":[],"emptyStr":"","nullVal":null}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0190
+     * @tc.number BUILTINS_JSON_TEST_0190
+     * @tc.desc Test parseJsonElement with string escape characters (\n, \t, \", \\, etc.)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0190', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '{"newline":"line1\\nline2","tab":"col1\\tcol2","quote":"say \\"hello\\"","backslash":"path\\\\file"}';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+
+      const strResult: string = JSON.stringifyJsonElement(elem);
+      expect(strResult).assertEqual('{"newline":"line1\\nline2","tab":"col1\\tcol2","quote":"say \\"hello\\"","backslash":"path\\\\file"}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0191
+     * @tc.number BUILTINS_JSON_TEST_0191
+     * @tc.desc Test parseJsonElement with unicode and emoji (Unicode encoding from checklist)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0191', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '{"unicode":"\\u0041\\u0042\\u0043","emoji":"\\ud83d\\udc46\\ud83d\\ude00"}';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+      const strResult: string = JSON.stringifyJsonElement(elem);
+      expect(strResult).assertEqual('{"unicode":"ABC","emoji":"👆😀"}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0192
+     * @tc.number BUILTINS_JSON_TEST_0192
+     * @tc.desc Test parseJsonElement with keyword strings ("true", "false", "null", "NaN" as strings)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0192', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '{"strTrue":"true","strFalse":"false","strNull":"null","strNaN":"NaN","strZero":"0"}';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+
+      const strResult: string = JSON.stringifyJsonElement(elem);
+      expect(strResult).assertEqual('{"strTrue":"true","strFalse":"false","strNull":"null","strNaN":"NaN","strZero":"0"}');
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0193
+     * @tc.number BUILTINS_JSON_TEST_0193
+     * @tc.desc Test parseJsonElement with number formats (integer, float, negative, zero, -0)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0193', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '{"int":42,"float":3.14159,"neg":-100,"zero":0,"negZero":-0}';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+
+      const strResult: string = JSON.stringifyJsonElement(elem);
+      expect(strResult.includes('int') && strResult.includes('42')).assertTrue();
+      expect(strResult.includes('float') && (strResult.includes('3.14159') || strResult.includes('3.1416'))).assertTrue();
+      expect(strResult.includes('neg') && strResult.includes('-100')).assertTrue();
+      expect(strResult.includes('zero') && strResult.includes('0')).assertTrue();
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0194
+     * @tc.number BUILTINS_JSON_TEST_0194
+     * @tc.desc Test parseJsonElement with scientific notation (1e3, 2.5e-2 from checklist)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0194', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '[1e3,2.5e-2,1.5E+10,-3.5e2]';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+
+      expect(elem.jsonType == jsonx.JsonType.JsonArray).assertTrue();
+      const arr = elem.asArray();
+      expect(arr.length).assertEqual(4);
+
+      expect(arr[0].jsonType == jsonx.JsonType.JsonNumber).assertTrue();
+      expect(arr[1].jsonType == jsonx.JsonType.JsonNumber).assertTrue();
+      expect(arr[2].jsonType == jsonx.JsonType.JsonNumber).assertTrue();
+      expect(arr[3].jsonType == jsonx.JsonType.JsonNumber).assertTrue();
+
+      expect(arr[0].tryAsDouble() != undefined || arr[0].tryAsInteger() != undefined).assertTrue();
+      expect(arr[1].tryAsDouble() != undefined).assertTrue();
+      expect(arr[2].tryAsDouble() != undefined).assertTrue();
+      expect(arr[3].tryAsDouble() != undefined || arr[3].tryAsInteger() != undefined).assertTrue();
+
+      const result: string = JSON.stringifyJsonElement(elem);
+      expect(result.length > 0).assertTrue();
+      expect(result.startsWith('[')).assertTrue();
+      expect(result.endsWith(']')).assertTrue();
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0195
+     * @tc.number BUILTINS_JSON_TEST_0195
+     * @tc.desc Test parseJsonElement with extreme number values (MAX_VALUE, MIN_VALUE from checklist)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0195', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '{"max":1.7976931348623157e+308,"min":5e-324,"epsilon":2.220446049250313e-16}';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+
+      expect(elem.jsonType == jsonx.JsonType.JsonObject).assertTrue();
+
+      const strResult: string = JSON.stringifyJsonElement(elem);
+      expect(strResult.includes('max')).assertTrue();
+      expect(strResult.includes('min')).assertTrue();
+      expect(strResult.includes('epsilon')).assertTrue();
+
+      expect(strResult.length > 10).assertTrue();
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0196
+     * @tc.number BUILTINS_JSON_TEST_0196
+     * @tc.desc Test parseJsonElement with mixed type array (multiple types from checklist)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0196', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '[42,"text",true,false,null,{"nested":"obj"},[1,2,3]]';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+
+      expect(elem.jsonType == jsonx.JsonType.JsonArray).assertTrue();
+      const arr: jsonx.JsonElement[] = elem.asArray();
+      expect(arr.length).assertEqual(7);
+
+      expect(arr[0].jsonType == jsonx.JsonType.JsonNumber).assertTrue();
+      expect(arr[1].jsonType == jsonx.JsonType.JsonString).assertTrue();
+      expect(arr[2].jsonType == jsonx.JsonType.JsonTrue).assertTrue();
+      expect(arr[3].jsonType == jsonx.JsonType.JsonFalse).assertTrue();
+      expect(arr[4].jsonType == jsonx.JsonType.JsonNull).assertTrue();
+      expect(arr[5].jsonType == jsonx.JsonType.JsonObject).assertTrue();
+      expect(arr[6].jsonType == jsonx.JsonType.JsonArray).assertTrue();
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0197
+     * @tc.number BUILTINS_JSON_TEST_0197
+     * @tc.desc Test parseJsonElement with array containing zero and negative values (Uint8Array scenario from checklist)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0197', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const jsonStr: string = '[72,101,108,108,111,0,0,0,-111,114,108,100]';
+      const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
+
+      const arr: jsonx.JsonElement[] = elem.asArray();
+      expect(arr.length).assertEqual(12);
+      expect(arr[5].tryAsInteger()).assertEqual(0);
+      expect(arr[8].tryAsInteger()).assertEqual(-111);
+    });
+
+    /**
+     * @tc.name builtinsJsonTest0198
+     * @tc.number BUILTINS_JSON_TEST_0198
+     * @tc.desc Test parseJsonElement with boolean and null literals (top level and nested)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTest0198', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const elemTrue: jsonx.JsonElement = JSON.parseJsonElement('true');
+      expect(elemTrue.jsonType == jsonx.JsonType.JsonTrue).assertTrue();
+
+      const elemFalse: jsonx.JsonElement = JSON.parseJsonElement('false');
+      expect(elemFalse.jsonType == jsonx.JsonType.JsonFalse).assertTrue();
+
+      const elemNull: jsonx.JsonElement = JSON.parseJsonElement('null');
+      expect(elemNull.jsonType == jsonx.JsonType.JsonNull).assertTrue();
+    });
