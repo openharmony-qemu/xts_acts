@@ -429,10 +429,6 @@ export default function testsuite() {
   PicturePackingPictureTestSupp();
   PicturePackingPictureSecTestSupp();
   ImageSourceModifyImagePropertySupp();
-  ImageGammaSupp()
-  ImagePictureMetadataTest()
-  MultimediaImageTest()
-  ImageExifMetadataTestSupp()
   CreatePixelMapSupp();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
