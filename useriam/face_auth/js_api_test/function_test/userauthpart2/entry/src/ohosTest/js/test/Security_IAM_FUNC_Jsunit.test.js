@@ -353,10 +353,46 @@ export default function userauthTest() {
                 expect(e.code).assertEqual(401);
             }
 
+            //on: invalid parameter
+            try {
+                var authInstance = userAuthNorth.getAuthInstance(challenge, authType, authTrustLevel);
+                authInstance.on(null);
+            } catch (e) {
+                console.log("Security_IAM_Func_0106 no callback fail " + e.code);
+                expect(e.code).assertEqual(401);
+            }
+
+            //on: invalid parameter
+            try {
+                var authInstance = userAuthNorth.getAuthInstance(challenge, authType, authTrustLevel);
+                authInstance.on(undefined);
+            } catch (e) {
+                console.log("Security_IAM_Func_0106 no callback fail " + e.code);
+                expect(e.code).assertEqual(401);
+            }
+
             //off: invalid parameter
             try {
                 var authInstance = userAuthNorth.getAuthInstance(challenge, authType, authTrustLevel);
                 authInstance.off("results");
+            } catch (e) {
+                console.log("Security_IAM_Func_0106 invalid results fail " + e.code);
+                expect(e.code).assertEqual(401);
+            }
+
+            //off: invalid parameter
+            try {
+                var authInstance = userAuthNorth.getAuthInstance(challenge, authType, authTrustLevel);
+                authInstance.off(null);
+            } catch (e) {
+                console.log("Security_IAM_Func_0106 invalid results fail " + e.code);
+                expect(e.code).assertEqual(401);
+            }
+
+            //off: invalid parameter
+            try {
+                var authInstance = userAuthNorth.getAuthInstance(challenge, authType, authTrustLevel);
+                authInstance.off(undefined);
             } catch (e) {
                 console.log("Security_IAM_Func_0106 invalid results fail " + e.code);
                 expect(e.code).assertEqual(401);

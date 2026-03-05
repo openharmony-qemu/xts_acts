@@ -391,6 +391,13 @@ export default function signNormalAccessBiometricExecute() {
         },
         {
           widgetParam: {
+            title: '使用密码验证',
+            navigationButtonText: null,
+          },
+          ret: 401
+        },
+        {
+          widgetParam: {
             title:'abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij' +
             'abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij' +
             'abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij' +
@@ -600,6 +607,46 @@ export default function signNormalAccessBiometricExecute() {
         expect(null).assertFail();
       } catch (e) {
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step1 fail ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        const userAuthInstance = userAuth.getUserAuthInstance(null, widgetParamDefault);
+        userAuthInstance.off();
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step2 success`);
+        expect(null).assertFail();
+      } catch (e) {
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step2 fail ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        const userAuthInstance = userAuth.getUserAuthInstance(undefined, widgetParamDefault);
+        userAuthInstance.off();
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step3 success`);
+        expect(null).assertFail();
+      } catch (e) {
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step3 fail ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        const userAuthInstance = userAuth.getUserAuthInstance(authParamDefault, null);
+        userAuthInstance.off();
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step4 success`);
+        expect(null).assertFail();
+      } catch (e) {
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step4 fail ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        const userAuthInstance = userAuth.getUserAuthInstance(authParamDefault, undefined);
+        userAuthInstance.off();
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step5 success`);
+        expect(null).assertFail();
+      } catch (e) {
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step5 fail ${e.code}`);
         expect(e.code).assertEqual(401);
       }
       done();
