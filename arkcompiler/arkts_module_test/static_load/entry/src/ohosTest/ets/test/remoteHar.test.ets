@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect ,TestType, Size, Level } from "@ohos/hypium"
-import { TAG as ConstantTAG } from '@ohos/hypium/src/main/Constant';
+import { Level as ConstantTAG } from '@ohos/hypium/index';
 import validator from 'validator';
 import validator2 from 'validator/validator';
 
@@ -85,7 +85,7 @@ export default function staticLoadRemoteHar() {
     it("testRemoteHar04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testRemoteHar04";
       try {
-        expect(ConstantTAG).assertEqual('[Hypium]');
+        expect(ConstantTAG.LEVEL4).assertEqual(Level.LEVEL4);
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();

@@ -1546,27 +1546,207 @@ describe('fileio_lstat', function () {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('fileio_test_append_file_sync_000', Level.LEVEL0, async function (done) {
-    let fpath = await nextFileName('fileio_test_append_file_sync_000');
-    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+   it('fileio_test_append_file_sync_000', Level.LEVEL0, async function (done) {
+     let fpath = await nextFileName('fileio_test_append_file_sync_000');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 
+     try {
+       let stat = fileio.lstatSync(fpath);
+       expect(isIntNum(stat.size)).assertTrue();
+ 
+       let fd = fileio.openSync(fpath, 0o2002);
+       expect(isIntNum(fd)).assertTrue();
+       expect(fileio.writeSync(fd, FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
+       expect(fileio.closeSync(fd) == null).assertTrue();
+ 
+       stat = fileio.lstatSync(fpath);
+       expect(stat.size == FILE_CONTENT.length * 2).assertTrue();
+       expect(fileio.unlinkSync(fpath) == null).assertTrue();
+       done();
+     } catch (e) {
+       console.log('fileio_test_append_file_sync_000 has failed for ' + e);
+       expect(null).assertFail();
+     }
+   });
 
-    try {
-      let stat = fileio.lstatSync(fpath);
-      expect(isIntNum(stat.size)).assertTrue();
+   /**
+    * @tc.name   fileio_test_lstat_promise_error_001
+    * @tc.number SUB_DF_FILEIO_LSTAT_PROMISE_ERROR_001
+    * @tc.desc   Test lstat() interface with empty string path. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_lstat_promise_error_001', Level.LEVEL2, async function () {
+     try {
+       await fileio.lstat('');
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_lstat_promise_error_001: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'No such file or directory').assertTrue();
+     }
+   });
 
-      let fd = fileio.openSync(fpath, 0o2002);
-      expect(isIntNum(fd)).assertTrue();
+   /**
+    * @tc.name   fileio_test_lstat_promise_error_002
+    * @tc.number SUB_DF_FILEIO_LSTAT_PROMISE_ERROR_002
+    * @tc.desc   Test lstat() interface with null path. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_lstat_promise_error_002', Level.LEVEL2, async function () {
+     try {
+       await fileio.lstat(null);
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_lstat_promise_error_002: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'Invalid path').assertTrue();
+     }
+   });
 
-      expect(fileio.writeSync(fd, FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
-      expect(fileio.closeSync(fd) == null).assertTrue();
+   /**
+    * @tc.name   fileio_test_lstat_promise_error_003
+    * @tc.number SUB_DF_FILEIO_LSTAT_PROMISE_ERROR_003
+    * @tc.desc   Test lstat() interface with undefined path. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_lstat_promise_error_003', Level.LEVEL2, async function () {
+     try {
+       await fileio.lstat(undefined);
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_lstat_promise_error_003: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'Invalid path').assertTrue();
+     }
+   });
 
-      stat = fileio.lstatSync(fpath);
-      expect(stat.size == FILE_CONTENT.length * 2).assertTrue();
-      expect(fileio.unlinkSync(fpath) == null).assertTrue();
-    } catch (e) {
-      console.log('fileio_test_append_file_sync_000 has failed for ' + e);
-      expect(null).assertFail();
-    }
-    done();
-  });
-});}
+   /**
+    * @tc.name   fileio_test_lstat_callback_error_001
+    * @tc.number SUB_DF_FILEIO_LSTAT_CALLBACK_ERROR_001
+    * @tc.desc   Test lstat() interface with empty string path. Callback.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_lstat_callback_error_001', Level.LEVEL2, async function (done) {
+     try {
+       fileio.lstat('', (err) => {
+         if (err) {
+           console.log('fileio_test_lstat_callback_error_001: ' + err.message + ', code: ' + err.code);
+           expect(err.message == 'No such file or directory').assertTrue();
+           done();
+         }
+       });
+     } catch (err) {
+       console.log('fileio_test_lstat_callback_error_001 err: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'No such file or directory').assertTrue();
+       done();
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_lstat_callback_error_002
+    * @tc.number SUB_DF_FILEIO_LSTAT_CALLBACK_ERROR_002
+    * @tc.desc   Test lstat() interface with null path. Callback.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_lstat_callback_error_002', Level.LEVEL2, async function (done) {
+     try {
+       fileio.lstat(null, (err) => {
+         if (err) {
+           console.log('fileio_test_lstat_callback_error_002: ' + err.message + ', code: ' + err.code);
+           expect(err.message == 'Invalid path').assertTrue();
+           done();
+         }
+       });
+     } catch (err) {
+       console.log('fileio_test_lstat_callback_error_002 err: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'Invalid path').assertTrue();
+       done();
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_lstat_callback_error_003
+    * @tc.number SUB_DF_FILEIO_LSTAT_CALLBACK_ERROR_003
+    * @tc.desc   Test lstat() interface with undefined path. Callback.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_lstat_callback_error_003', Level.LEVEL2, async function (done) {
+     try {
+       fileio.lstat(undefined, (err) => {
+         if (err) {
+           console.log('fileio_test_lstat_callback_error_003: ' + err.message + ', code: ' + err.code);
+           expect(err.message == 'Invalid path').assertTrue();
+           done();
+         }
+       });
+     } catch (err) {
+       console.log('fileio_test_lstat_callback_error_003 err: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'Invalid path').assertTrue();
+       done();
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_lstat_sync_error_001
+    * @tc.number SUB_DF_FILEIO_LSTAT_SYNC_ERROR_001
+    * @tc.desc   Test lstatSync() interface with empty string path.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_lstat_sync_error_001', Level.LEVEL2, async function () {
+     try {
+       fileio.lstatSync('');
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_lstat_sync_error_001: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'No such file or directory').assertTrue();
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_lstat_sync_error_002
+    * @tc.number SUB_DF_FILEIO_LSTAT_SYNC_ERROR_002
+    * @tc.desc   Test lstatSync() interface with null path.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('fileio_test_lstat_sync_error_002', Level.LEVEL2, async function () {
+     try {
+       fileio.lstatSync(null);
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_lstat_sync_error_002: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'The first argument requires type string').assertTrue();
+     }
+   });
+
+   /**
+    * @tc.name   fileio_test_lstat_sync_error_003
+    * @tc.number SUB_DF_FILEIO_LSTAT_SYNC_ERROR_003
+    * @tc.desc   Test lstatSync() interface with undefined path.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_lstat_sync_error_003', Level.LEVEL2, async function () {
+     try {
+       fileio.lstatSync(undefined);
+       expect(false).assertTrue();
+     } catch (err) {
+       console.log('fileio_test_lstat_sync_error_003: ' + err.message + ', code: ' + err.code);
+       expect(err.message == 'The first argument requires type string').assertTrue();
+     }
+   });
+ });
+}

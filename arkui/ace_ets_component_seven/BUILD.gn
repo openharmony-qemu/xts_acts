@@ -139,7 +139,8 @@ group("componentSevenAttrssTest") {
       "ace_ets_component_common_seven_attrs_borderImage_static:ActsAceEtsComponentCommonSevenAttrsBorderImageStaticTest",
       "ace_ets_component_common_seven_attrs_clip_static:ActsAceEtsComponentCommonSevenAttrsClipStaticTest",
       "ace_ets_component_common_seven_attrs_invert_static:ActsAceEtsComponentCommonSevenAttrsInvertStaticTest",
-      "ace_ets_component_common_seven_attrs_linearGradient_static:ActsAceEtsComponentCommonSevenAttrsLinearGradientStaticTest"
+      "ace_ets_component_common_seven_attrs_linearGradient_static:ActsAceEtsComponentCommonSevenAttrsLinearGradientStaticTest",
+      "ace_ets_component_common_seven_undefined_static:ActsAceEtsComponentCommonSevenUndefinedStaticTest",
     ]
   }
 }

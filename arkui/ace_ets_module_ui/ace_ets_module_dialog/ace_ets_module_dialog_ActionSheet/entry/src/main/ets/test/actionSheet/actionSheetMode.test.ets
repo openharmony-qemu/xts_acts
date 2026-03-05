@@ -45,11 +45,11 @@ export default function actionSheetMode() {
      * @tc.number    actionSheetMode_0100
      * @tc.name      actionSheetMode_0100
      * @tc.desc      set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Normal value
-     * @tc.level:    Level 1
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('actionSheetMode_0100', Level.LEVEL1, async (done: Function) => {
+    it('actionSheetMode_0100', Level.LEVEL0, async (done: Function) => {
       console.info('actionSheetMode_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -87,11 +87,11 @@ export default function actionSheetMode() {
      * @tc.number    actionSheetMode_0200
      * @tc.name      actionSheetMode_0200
      * @tc.desc      set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Normal value
-     * @tc.level:    Level 1
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('actionSheetMode_0200', Level.LEVEL1, async (done: Function) => {
+    it('actionSheetMode_0200', Level.LEVEL0, async (done: Function) => {
       console.info('actionSheetMode_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -130,11 +130,11 @@ export default function actionSheetMode() {
      * @tc.number    actionSheetMode_0300
      * @tc.name      actionSheetMode_0300
      * @tc.desc      set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Abnormal value,
-     * @tc.level:    Level 1
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('actionSheetMode_0300', Level.LEVEL1, async (done: Function) => {
+    it('actionSheetMode_0300', Level.LEVEL0, async (done: Function) => {
       console.info('actionSheetMode_0300 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -173,11 +173,11 @@ export default function actionSheetMode() {
      * @tc.number    actionSheetMode_0400
      * @tc.name      actionSheetMode_0400
      * @tc.desc      set  set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Abnormal value
-     * @tc.level:    Level 1
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('actionSheetMode_0400', Level.LEVEL1, async (done: Function) => {
+    it('actionSheetMode_0400', Level.LEVEL0, async (done: Function) => {
       console.info('actionSheetMode_0400 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -217,11 +217,11 @@ export default function actionSheetMode() {
      * @tc.number    actionSheetMode_0500
      * @tc.name      actionSheetMode_0500
      * @tc.desc      set levelMode: 0(LevelMode.EMBEDDED),levelUniqueId: Normal value,immersiveMode:1(imMode: extend)
-     * @tc.level:    Level 1
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('actionSheetMode_0500', Level.LEVEL1, async (done: Function) => {
+    it('actionSheetMode_0500', Level.LEVEL0, async (done: Function) => {
       console.info('actionSheetMode_0500 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -257,11 +257,11 @@ export default function actionSheetMode() {
      * @tc.number    actionSheetMode_0600
      * @tc.name      actionSheetMode_0600
      * @tc.desc      set levelMode: 0(LevelMode.EMBEDDED),levelUniqueId: Normal value,immersiveMode:0(imMode: extend)
-     * @tc.level:    Level 1
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('actionSheetMode_0600', Level.LEVEL1, async (done: Function) => {
+    it('actionSheetMode_0600', Level.LEVEL0, async (done: Function) => {
       console.info('actionSheetMode_0600 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -295,11 +295,11 @@ export default function actionSheetMode() {
      * @tc.number    actionSheetMode_0700
      * @tc.name      actionSheetMode_0700
      * @tc.desc      set levelMode: undefined,levelUniqueId: Normal value
-     * @tc.level:    Level 1
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('actionSheetMode_0700', Level.LEVEL1, async (done: Function) => {
+    it('actionSheetMode_0700', Level.LEVEL0, async (done: Function) => {
       console.info('actionSheetMode_0700 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -336,11 +336,11 @@ export default function actionSheetMode() {
      * @tc.number    actionSheetMode_0800
      * @tc.name      actionSheetMode_0800
      * @tc.desc      set levelMode: null,levelUniqueId: Normal value
-     * @tc.level:    Level 1
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('actionSheetMode_0800', Level.LEVEL1, async (done: Function) => {
+    it('actionSheetMode_0800', Level.LEVEL0, async (done: Function) => {
       console.info('actionSheetMode_0800 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

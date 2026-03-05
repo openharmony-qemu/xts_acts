@@ -204,6 +204,10 @@ import RichEditorDataDetectorOptionsNullTest from './RichEditor/RichEditorDataDe
 import RichEditorInputOptionsNullTest from './RichEditor/RichEditorInputOptionsNull.test';
 import RichEditorLengthOptionsNullTest from './RichEditor/RichEditorLengthOptionsNull.test';
 import RichEditorOtherOptionsNullTest from './RichEditor/RichEditorOtherOptionsNull.test';
+import RichEditorControllerMethodsNullTest from './RichEditor/RichEditorControllerMethodsNull.test';
+import RichEditorSpanMethodsNullTest from './RichEditor/RichEditorSpanMethodsNull.test';
+import RichEditorControllerMethodsNull2Test from './RichEditor/RichEditorControllerMethodsNull2.test';
+import RichEditorStyledStringControllerNullTest from './RichEditor/RichEditorStyledStringControllerNull.test';
 
 export default function testsuite() {
   ActsRichEditorTest();
@@ -398,4 +402,8 @@ export default function testsuite() {
   RichEditorInputOptionsNullTest()
   RichEditorLengthOptionsNullTest()
   RichEditorOtherOptionsNullTest()
+  RichEditorControllerMethodsNullTest()
+  RichEditorSpanMethodsNullTest()
+  RichEditorControllerMethodsNull2Test()
+  RichEditorStyledStringControllerNullTest()
 }

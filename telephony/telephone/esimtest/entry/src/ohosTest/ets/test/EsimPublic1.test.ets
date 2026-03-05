@@ -99,9 +99,8 @@ export default function EsimPublic1() {
           console.info(`${caseName} test end`);
           done();
         } else {
-          expect(isEsimSupport).assertFalse();
           console.info(`${caseName} success : the data is:${isEsimSupport}`);
-          expect(true).assertTrue();
+          expect(!isEsimSupport).assertTrue();
           console.info(`${caseName} test end`);
           done();
         }
@@ -133,6 +132,11 @@ export default function EsimPublic1() {
           expect(data).assertTrue();
           console.info(`${caseName} test end`);
           done();
+        }else {
+          console.info(`${caseName} Fail : the data is:${isEsimSupport}`);
+          expect().assertFail();
+          console.info(`${caseName} test end`);
+          done();
         }
       } catch (err) {
         console.info(`${caseName} IsSupported failed, promise: err->${JSON.stringify(err)}`);
@@ -155,7 +159,7 @@ export default function EsimPublic1() {
       console.info(`${caseName} test start`);
       try {
         let data: boolean = eSIM.isSupported(SLOT_2);
-        console.info(`${caseName} success : the data is:${data}`);
+        console.info(`${caseName} Fail : the data is:${data}`);
         expect().assertFail();
         console.info(`${caseName} test end`);
         done();
@@ -180,7 +184,7 @@ export default function EsimPublic1() {
       console.info(`${caseName} test start`);
       try {
         let data: boolean = eSIM.isSupported(SLOT_3);
-        console.info(`${caseName} success : the data is:${data}`);
+        console.info(`${caseName} Fail : the data is:${data}`);
         expect().assertFail();
         console.info(`${caseName} test end`);
         done();
@@ -204,7 +208,7 @@ export default function EsimPublic1() {
       console.info(`${caseName} test start`);
       try {
         let data: boolean = eSIM.isSupported(SLOT_5);
-        console.info(`${caseName} success : the data is:${data}`);
+        console.info(`${caseName} Fail : the data is:${data}`);
         expect().assertFail();
         console.info(`${caseName} test end`);
         done();
@@ -297,7 +301,7 @@ export default function EsimPublic1() {
       console.info(`${caseName} test start`);
       try {
         let data = await eSIM.addProfile(null);
-        console.info(`${caseName} success : the data is:${data}`);
+        console.info(`${caseName} Fail : the data is:${data}`);
         expect().assertFail();
         console.info(`${caseName} test end`);
         done();

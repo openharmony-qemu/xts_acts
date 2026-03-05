@@ -44,6 +44,7 @@ import SpanJsunitTest from './SpanTest/SpanJsunitTest.test';
 import SpanPageTest from './SpanTest/SpanPageTest.test';
 import SpanTextShadowTest from './SpanTest/SpanTextShadowTest.test';
 import SpanUIJsunitTest from './SpanTest/SpanUIJsunitTest.test';
+import SpanPropertiesNullUndefinedTest from './SpanTest/SpanPropertiesNullUndefinedTest.test';
 
 import SymbolSpanApi1Test from './SymbolSpanTest/SymbolSpanApi1Test.test';
 import SymbolSpanApi2Test from './SymbolSpanTest/SymbolSpanApi2Test.test';
@@ -136,6 +137,7 @@ import TextSelectionPropertiesTest from './TextTest/TextSelectionProperties.test
 import TextSpecialOptionsNullTest from './TextTest/TextSpecialOptionsNull.test';
 import TextLayoutOptionsNullTest from './TextTest/TextLayoutOptionsNull.test';
 import TextSpecialAttrsNullTest from './TextTest/TextSpecialAttrsNull.test';
+import TextMethodsNullTest from './TextTest/TextMethodsNull.test';
 
 
 export default function testsuite() {
@@ -170,6 +172,7 @@ export default function testsuite() {
   SpanPageTest()
   SpanTextShadowTest()
   SpanUIJsunitTest()
+  SpanPropertiesNullUndefinedTest()
   // SymbolSpanTest
   SymbolSpanApi1Test()
   SymbolSpanApi2Test()
@@ -263,4 +266,5 @@ export default function testsuite() {
   TextSpecialOptionsNullTest();
   TextLayoutOptionsNullTest();
   TextSpecialAttrsNullTest();
+  TextMethodsNullTest();
 }

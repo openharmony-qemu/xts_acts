@@ -98,15 +98,15 @@ export default function AppStorageV2NullUndefinedTest() {
     });
 
     /**
-     * @tc.name   AppStorageV2_connect_defaultCreator_null_001
-     * @tc.number SUB_ARKUI_APPSTORAGEV2_CONNECT_PARAM_NULL_002
+     * @tc.name   AppStorageV2_connect_defaultCreator_null_003
+     * @tc.number SUB_ARKUI_APPSTORAGEV2_CONNECT_PARAM_NULL_003
      * @tc.desc   Test AppStorageV2.connect with null defaultCreator
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorageV2_connect_defaultCreator_null_001', Level.LEVEL2, () => {
-      console.info('[AppStorageV2_connect_defaultCreator_null_001] START');
+    it('AppStorageV2_connect_defaultCreator_null_003', Level.LEVEL2, () => {
+      console.info('[AppStorageV2_connect_defaultCreator_null_003] START');
       try {
         AppStorageV2.connect<SampleClass>(
           SampleClass,
@@ -118,12 +118,12 @@ export default function AppStorageV2NullUndefinedTest() {
           'test_key_null_default_creator',
           null
         );
-        console.info('[AppStorageV2_connect_defaultCreator_null_001] result: ' + JSON.stringify(result));
+        console.info('[AppStorageV2_connect_defaultCreator_null_003] result: ' + JSON.stringify(result));
         expect(result?.id).assertEqual(0);
         AppStorageV2.remove('test_key_undefined_default_creator')
-        console.info('[AppStorageV2_connect_defaultCreator_null_001] END');
+        console.info('[AppStorageV2_connect_defaultCreator_null_003] END');
       } catch (err) {
-        console.error('[AppStorageV2_connect_defaultCreator_null_001] Error: ' + JSON.stringify(err));
+        console.error('[AppStorageV2_connect_defaultCreator_null_003] Error: ' + JSON.stringify(err));
         expect().assertFail();
       }
     });
@@ -198,5 +198,56 @@ export default function AppStorageV2NullUndefinedTest() {
         expect().assertFail();
       }
     });
+
+        /**
+     * @tc.name   AppStorageV2_connect_null_002
+     * @tc.number SUB_ARKUI_APPSTORAGEV2_CONNECT_PARAM_NULL_002
+     * @tc.desc   Test AppStorageV2.connect with null type parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('AppStorageV2_connect_null_002', Level.LEVEL2, () => {
+      console.info('[AppStorageV2_connect_null_002] START');
+      try {
+        const result: object | undefined = AppStorageV2.connect<object>(
+          null
+        );
+        console.info('[AppStorageV2_connect_null_002] result: ' + JSON.stringify(result));
+        // connect with null type should return undefined or throw error
+        expect().assertFail();
+        console.info('[AppStorageV2_connect_null_002] END');
+      } catch (err) {
+        console.error('[AppStorageV2_connect_null_002] Error: ' + JSON.stringify(err));
+
+      }
+    });
+
+
+
+    /**
+     * @tc.name   AppStorageV2_remove_emptyString_001
+     * @tc.number SUB_ARKUI_APPSTORAGEV2_REMOVE_PARAM_EMPTYSTRING_001
+     * @tc.desc   Test AppStorageV2.remove with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('AppStorageV2_remove_emptyString_001', Level.LEVEL2, () => {
+      console.info('[AppStorageV2_remove_emptyString_001] START');
+      try {
+        // Test remove with empty string key
+        AppStorageV2.remove('');
+        console.info('[AppStorageV2_remove_emptyString_001] remove called with empty string');
+        // remove with empty string should not crash, may show warning
+        console.info('[AppStorageV2_remove_emptyString_001] END');
+      } catch (err) {
+        console.error('[AppStorageV2_remove_emptyString_001] Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error or show warning
+        expect().assertFail();
+      }
+    });
+
+
   });
 }

@@ -64,6 +64,7 @@
     "pages/Camera/CameraPreviewFormat",
     "pages/Camera/CameraPhotoFormat",
     "pages/Camera/CameraFlash",
+    "pages/Camera/CameraFitRotate",
     "pages/Audio/Audio_index",
     "pages/Audio/AudioInputRoutingWiredHeadset",
     "pages/Audio/AudioInputRoutingTypeC",
@@ -184,6 +185,14 @@
     "pages/ArkUI/GameAddTest",
     "pages/ArkUI/AdvancedBlendMode",
     "pages/ArkUI/AccessibilityCustom",
-    "pages/ArkUI/CapiGrid"
+    "pages/ArkUI/CapiGrid",
+    "pages/ArkUI/PluginComponentTest",
+    "pages/ArkUI/pluginComponent/Test1",
+    "pages/ArkUI/pluginComponent/Test2",
+    "pages/ArkUI/pluginComponent/Test2_2",
+    "pages/ArkUI/pluginComponent/Test3",
+    "pages/ArkUI/pluginComponent/Test4",
+    "pages/ArkUI/pluginComponent/Test5",
+    "pages/ArkUI/pluginComponent/Plugin"
   ]
 }

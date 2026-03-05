@@ -55,13 +55,13 @@ struct RichEditorSpecialOptionsNull {
         // Test 3: customKeyboard with null parameter (API 23+)
         RichEditor(this.options)
           .id('richEditor_customKeyboard_null')
-          .customKeyboard(null)
+          .customKeyboard(null, null)
           .height('5%')
 
         // Test 4: customKeyboard with undefined parameter (API 23+)
         RichEditor(this.options)
           .id('richEditor_customKeyboard_undefined')
-          .customKeyboard(undefined)
+          .customKeyboard(undefined, undefined)
           .height('5%')
       }
 

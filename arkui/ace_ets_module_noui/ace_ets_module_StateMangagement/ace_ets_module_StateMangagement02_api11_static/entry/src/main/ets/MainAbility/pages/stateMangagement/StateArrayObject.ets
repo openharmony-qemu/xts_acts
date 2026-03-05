@@ -113,7 +113,7 @@ struct StateArrayObject {
             this.message.shift()
           })
 
-        ForEach(Array.from(this.message.entries()), (item: [number, MyObject]) => {
+        ForEach(Array.from(this.message.entries()), (item: [int, MyObject]) => {
           Text(`Item${item[1].id}: ${item[1].value} index: ${item[0]}`).fontSize(9)
             .id('stateArrayObject_value_' + item[0]).height('5%')
           Divider()

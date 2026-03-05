@@ -1483,9 +1483,11 @@ export default function windowPropertiesTest2() {
           let heightBefore: number = windowClass!.getWindowProperties().windowRect.height;
           console.info(`${caseName} windowHeight: ${heightBefore}, windowWidth: ${widthBefore}`);
           let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
-          console.info(`${caseName} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width}`);
+          console.info(`${caseName} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width},pixelMap.isEditable:${pixelMap.isEditable},pixelMap.isStrideAlignment:${pixelMap.isStrideAlignment}`);
           expect(Math.abs(widthBefore-imageInfo.size.width)).assertLessOrEqual(1);
           expect(Math.abs(heightBefore-imageInfo.size.height)).assertLessOrEqual(1);
+          expect(pixelMap.isEditable).assertEqual(false);
+          expect(pixelMap.isStrideAlignment).assertEqual(false);
           pixelMap.release();
           done();
         }).catch(async (err: BusinessError) => {

@@ -97,7 +97,7 @@ struct LinkArrayBooleanChild {
           this.value.shift()
         })
 
-      ForEach(Array.from(this.value.entries()), (item: [number,Boolean]) => {
+      ForEach(Array.from(this.value.entries()), (item: [int,Boolean]) => {
         Text(`${item[1]} index:${item[0]}`).fontSize(9).id('LinkArrayBoolean_value_' + `${item[0]}`).height('5%')
         Divider()
       })

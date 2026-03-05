@@ -22,6 +22,8 @@ import ArcSwiperAttributeUndefinedTest from './arcSwiper/ArcSwiperAttributeUndef
 import ArcSwiperAttributeNullTest from './arcSwiper/ArcSwiperAttributeNull.test';
 import SwiperFakeDragTest from './swiper/SwiperFakeDragTest.test';
 import SwiperAttributeNullUndefined from './SwiperAttributeNullUndefined/SwiperAttributeNullUndefined.test';
+import DigitIndicatorNullUndefined from './SwiperAttributeNullUndefined/DigitIndicatorNullUndefined.test';
+import DotIndicatorNullUndefined from './SwiperAttributeNullUndefined/DotIndicatorNullUndefined.test';
 
 export default function testsuite() {
   swiperFillPolicy()
@@ -34,4 +36,6 @@ export default function testsuite() {
   ArcSwiperAttributeUndefinedTest()
   SwiperFakeDragTest()
   SwiperAttributeNullUndefined()
+  DigitIndicatorNullUndefined()
+  DotIndicatorNullUndefined()
 }

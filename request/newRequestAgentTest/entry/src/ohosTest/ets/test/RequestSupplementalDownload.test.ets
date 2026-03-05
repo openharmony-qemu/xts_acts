@@ -18,6 +18,7 @@ import request from '@ohos.request';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import fs from  '@ohos.file.fs';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestSupplementalDownTest() {
   describe('requestSupplementalDownJSTest', () => {
@@ -59,6 +60,16 @@ export default function requestSupplementalDownTest() {
         console.info('====>beforeAll catch err:'+JSON.stringify(err))
         done();
       }
+    });
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
     });
 
     /**

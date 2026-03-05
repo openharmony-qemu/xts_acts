@@ -17,6 +17,7 @@ import request from "@ohos.request";
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
 import common from '@ohos.app.ability.common';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestDownloadOneJSUnitTest() {
   describe('requestDownloadOneJSUnit', () => {
@@ -51,6 +52,16 @@ export default function requestDownloadOneJSUnitTest() {
         }, timeout);
       });
     };
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
+    });
 
     /**
      * @tc.name   SUB_Misc_REQUEST_create_Callback_0140

@@ -96,23 +96,21 @@ export default function abilityTest() {
                 {
                   bundleName: 'com.example.actsstartyunnertest',
                   abilityName: 'MainAbility2'
-                }, () => {
-                console.log("====>startAbility end====>");
+                }, (error: BusinessError) => {
+                  if (error) {
+                    expect().assertFail();
+                    console.log('ACTS_StartAbility_Callback_0100 - timeout');
+                    commonEvent.unsubscribe(Subscriber, () => {
+                      console.log("====>UnSubscribeCallback====>");
+                      flag = false;
+                      expect(startresult).assertEqual(true);
+                      done();
+                    })
+                  }
+                  console.log("====>startAbility end====>");
               })
             })
         })
-      setTimeout(() => {
-        if (flag == true) {
-          expect().assertFail();
-          console.log('ACTS_StartAbility_Callback_0100 - timeout');
-          commonEvent.unsubscribe(Subscriber, () => {
-            console.log("====>UnSubscribeCallback====>");
-            flag = false;
-            expect(startresult).assertEqual(true);
-            done();
-          })
-        }
-      }, START_ABILITY_TIMEOUT);
     })
 
     /**
@@ -146,18 +144,18 @@ export default function abilityTest() {
                 {
                   bundleName: 'com.example.error',
                   abilityName: 'MainAbility2'
-                }, () => {
-                console.log("====>startAbility end====>");
+                }, (error: BusinessError) => {
+                  if (error) {
+                    console.log('ACTS_StartAbility_Callback_0200 - timeout');
+                    commonEvent.unsubscribe(Subscriber, () => {
+                      console.log("====>UnSubscribeCallback====>");
+                      done();
+                    })
+                  }
+                  console.log("====>startAbility end====>");
               })
             })
         })
-      setTimeout(() => {
-        console.log('ACTS_StartAbility_Callback_0200 - timeout');
-        commonEvent.unsubscribe(Subscriber, () => {
-          console.log("====>UnSubscribeCallback====>");
-          done();
-        })
-      }, START_ABILITY_TIMEOUT);
     })
 
     /**
@@ -202,21 +200,19 @@ export default function abilityTest() {
                 })
                 .then(() => {
                   console.log("====>startAbility end====>");
-                })
+                }).catch((error: BusinessError) => {
+                  expect().assertFail();
+                  console.log('ACTS_StartAbility_Promise_0100 - timeout');
+                  commonEvent.unsubscribe(Subscriber, () => {
+                    console.log("====>UnSubscribeCallback====>");
+                    flag = false;
+                    expect(startresult).assertEqual(true);
+                    done();
+                  })
+                });
+
             })
         })
-      setTimeout(() => {
-        if (flag == true) {
-          expect().assertFail();
-          console.log('ACTS_StartAbility_Promise_0100 - timeout');
-          commonEvent.unsubscribe(Subscriber, () => {
-            console.log("====>UnSubscribeCallback====>");
-            flag = false;
-            expect(startresult).assertEqual(true);
-            done();
-          })
-        }
-      }, START_ABILITY_TIMEOUT);
     })
 
     /**
@@ -253,16 +249,16 @@ export default function abilityTest() {
                 })
                 .then(() => {
                   console.log("====>startAbility end====>");
-                })
+                }).catch((error: BusinessError) => {
+                  console.log('ACTS_StartAbility_Promise_0200 - timeout');
+                  commonEvent.unsubscribe(Subscriber, () => {
+                    console.log("====>UnSubscribeCallback====>");
+                    done();
+                  })
+                });
+
             })
         })
-      setTimeout(() => {
-        console.log('ACTS_StartAbility_Promise_0200 - timeout');
-        commonEvent.unsubscribe(Subscriber, () => {
-          console.log("====>UnSubscribeCallback====>");
-          done();
-        })
-      }, START_ABILITY_TIMEOUT);
     })
   })
 }

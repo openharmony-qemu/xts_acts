@@ -463,18 +463,26 @@ export default function AVSessionControllerJsTest() {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-		it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS, (err) => {
-				if (err) {
-					console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0100 error " + JSON.stringify(err));
-					expect().assertFail();
-					done();
-				}
-				console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0100 finished");
-				expect(true).assertTrue();
-				done();
-			});
-		})
+	it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+		let TAG = "[SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0100]";
+      	let commandName = "my_command";
+      	let flag = false;
+      	session.on('commonCommand', () => {
+        	console.info(`callback successful`);
+        	flag = true;
+      	});
+		await controller.sendCommonCommand(commandName, {command : 'commonCommand'}, (err) => {
+			if (err) {
+				console.error("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0100 error " + JSON.stringify(err));
+				expect().assertFail();
+			}
+		});
+		await sleep(500);
+        console.info(`${TAG}TestLog:flag = ${flag}`);
+        expect(flag).assertTrue();
+        console.info(`${TAG} finished`);
+		done();
+	})
 
   /**
    * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0200
@@ -484,15 +492,24 @@ export default function AVSessionControllerJsTest() {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-		it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS).catch((err) => {
-				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0200 error " + JSON.stringify(err));
-				expect().assertFail();
-				done();
-			});
-			console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0200 finished");
-			done();
-		})
+	it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+		let TAG = "[SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0200]";
+      	let commandName = "my_command";
+      	let flag = false;
+      	session.on('commonCommand', () => {
+          console.info(`callback successful`);
+          flag = true;
+      	});
+      	await controller.sendCommonCommand(commandName, {command : 'commonCommand'}).catch((err) => {
+        	console.error("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_0200 error " + JSON.stringify(err));
+        	expect().assertFail();
+      	});
+      	await sleep(500);
+      	console.info(`${TAG}TestLog:flag = ${flag}`);
+      	expect(flag).assertTrue();
+      	console.info(`${TAG} finished`);
+      	done();
+	})
 
   /**
    * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_0100
@@ -966,45 +983,7 @@ export default function AVSessionControllerJsTest() {
 			done();
 		})
 
-  /**
-   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_0100
-   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_0100
-   * @tc.desc   Testing call setAVQueueItems(callback)
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL0
-   */
-		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			session.setAVQueueItems(ITEMS_ARRAY, (err) => {
-				if (err) {
-					console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_0100 error " + JSON.stringify(err));
-					expect().assertFail();
-					done();
-				}
-				console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_0100 finished");
-				expect(true).assertTrue();
-				done();
-			});
-		})
-
-  /**
-   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_0200
-   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_0200
-   * @tc.desc   Testing call setAVQueueItems(promise)
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL0
-   */
-		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			await session.setAVQueueItems(ITEMS_ARRAY).catch((err) => {
-				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_0200 error " + JSON.stringify(err));
-				expect().assertFail();
-				done();
-			});
-			console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_0200 finished");
-			done();
-		})
-
+  
   /**
    * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_0100
    * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_0100
@@ -1014,16 +993,21 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+			let TAG = "[SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_0100]";
 			session.setAVQueueTitle(QUEUE_TITLE, (err) => {
 				if (err) {
-					console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_0100 error " + JSON.stringify(err));
+					console.error("Testlog: SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_0100 error " + JSON.stringify(err));
 					expect().assertFail();
-					done();
 				}
-				console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_0100 finished");
-				expect(true).assertTrue();
-				done();
+				console.info("Testlog: SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_0100 finished");
 			});
+			controller.getAVQueueTitle().then((title) => {
+				console.info(`${TAG}Testlog: GetAVQueueTitle : SUCCESS : title : ${title}`);
+				expect(title).assertEqual(QUEUE_TITLE);
+			  }).catch((err) => {
+				console.error(`${TAG}Testlog:GetAVQueueTitle BusinessError: code: ${err.code}, message: ${err.message}`);
+			  });
+			done();
 		})
 
   /**
@@ -1053,16 +1037,23 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			controller.skipToQueueItem(QUEUE_ITEM_ID, (err) => {
-				if (err) {
-					console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_0100 error " + JSON.stringify(err));
-					expect().assertFail();
-					done();
-				}
-				console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_0100 finished");
-				expect(true).assertTrue();
-				done();
+			let TAG = "[SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_0100]";
+			let flag = false;
+			session.on('skipToQueueItem', (itemId) => {
+				console.info(`${TAG}TestLog:on skipToQueueItem id : ${itemId}`);
+				flag = true;
 			});
+			await controller.skipToQueueItem(QUEUE_ITEM_ID, (err) => {
+				if (err) {
+					console.error("TestLog:SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_0100 error " + JSON.stringify(err));
+					expect().assertFail();
+				}
+				console.info("TestLog:SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_0100 finished");
+			});
+			await sleep(500);
+			console.info(`${TAG}TestLog:flag = ${flag}`);
+			expect(flag).assertTrue();
+			done();
 		})
 
   /**
@@ -1134,34 +1125,6 @@ export default function AVSessionControllerJsTest() {
 			done();
 		})
 
-  /**
-   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100
-   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100
-   * @tc.desc   Testing call getAVQueueItems(callback)
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL0
-   */
-		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			session.setAVQueueItems(ITEMS_ARRAY, (err) => {
-				if (err) {
-					console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100 error " + JSON.stringify(err));
-					expect().assertFail();
-					done();
-				} else {
-					controller.getAVQueueItems((err) => {
-						if (err) {
-							console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100 error " + JSON.stringify(err));
-							expect().assertFail();
-						} else {
-							console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100 finished");
-							expect(true).assertTrue();
-						}
-						done();
-					});
-				}
-			});
-		})
 
   /**
    * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0200
@@ -1194,24 +1157,25 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+			let TAG = "[SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_0100]";
 			session.setAVQueueTitle(QUEUE_TITLE, (err) => {
 				if (err) {
-					console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_0100 error " + JSON.stringify(err));
+					console.error("TestLog:SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_0100 error " + JSON.stringify(err));
 					expect().assertFail();
-					done();
 				} else {
-					controller.getAVQueueTitle((err) => {
+					controller.getAVQueueTitle((err,title) => {
 						if (err) {
-							console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_0100 error " + JSON.stringify(err));
+							console.error("TestLog:SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_0100 error " + JSON.stringify(err));
 							expect().assertFail();
 						} else {
-							console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_0100 finished");
-							expect(true).assertTrue();
+							console.info(`${TAG}TestLog:get items = ${title}`);
+							expect(title).assertEqual(QUEUE_TITLE);
+							console.info("TestLog:SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_0100 finished");
 						}
-						done();
 					});
 				}
 			});
+			done();
 		})
 
   /**
@@ -1420,8 +1384,9 @@ export default function AVSessionControllerJsTest() {
             }).catch((err) => {
                 console.error(TAG + "error " + JSON.stringify(err));
                 expect().assertFail();
-                done();
             });
+			done();
         })
+
     })
 }

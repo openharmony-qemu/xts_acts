@@ -34,6 +34,7 @@
         "MainAbility/pages/Span/SpanPageTest",
         "MainAbility/pages/Span/SpanTextShadowTest",
         "MainAbility/pages/Span/SpanUIJsunit",
+        "MainAbility/pages/Span/SpanPropertiesNullUndefinedTest",
 
         "MainAbility/pages/SymbolSpan/SymbolSpanApi1",
         "MainAbility/pages/SymbolSpan/SymbolSpanApi2",
@@ -123,6 +124,7 @@
         "MainAbility/pages/Text/TextSelectionProperties",
         "MainAbility/pages/Text/TextSpecialOptionsNull",
         "MainAbility/pages/Text/TextLayoutOptionsNull",
-        "MainAbility/pages/Text/TextSpecialAttrsNull"
+        "MainAbility/pages/Text/TextSpecialAttrsNull",
+        "MainAbility/pages/Text/TextMethodsNull"
     ]
 }

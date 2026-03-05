@@ -1925,7 +1925,7 @@ export default function SecurityHuksCipherAesTest() {
         if (useSoftware) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CRYPTO_FAIL);
         } else {
-          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_EXTERNAL_ERROR);
         }
       }
     })

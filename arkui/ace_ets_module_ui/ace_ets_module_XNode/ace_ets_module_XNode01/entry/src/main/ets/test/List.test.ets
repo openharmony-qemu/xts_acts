@@ -104,7 +104,21 @@ import ComponentContentIsDisposedTest from './NodeReturnTest/ComponentContentIsD
 import FrameNodeIsDisposedTest from './NodeReturnTest/FrameNodeIsDisposedTest.test';
 import RenderNodeIsDisposedTest from './NodeReturnTest/RenderNodeIsDisposedTest.test';
 import NodeAdapterIsDisposedTest from './NodeReturnTest/NodeAdapterIsDisposedTest.test';
+
 import graphicsApiNullUndefinedTest from './GraphicsTest/graphicsApiNullUndefinedTest.test';
+import renderNodeApiNullUndefinedTest from './RenderNodeTest/renderNodeApiNullUndefinedTest.test';
+import nodeContentApiNullUndefinedTest from './NodeContent/nodeContentApiNullUndefinedTest.test';
+import builderNodeBuildNullUndefinedTest from './BuilderNodeTest/builderNodeBuildNullUndefinedTest.test';
+import builderNodeUpdateNullUndefinedTest from './BuilderNodeTest/builderNodeUpdateNullUndefinedTest.test';
+import builderNodeReuseNullUndefinedTest from './BuilderNodeTest/builderNodeReuseNullUndefinedTest.test';
+import ReactiveBuilderNodeReuseNullUndefinedTest from './BuilderNodeTest/ReactiveBuilderNodeReuseNullUndefinedTest.test';
+import builderNodeInheritFreezeOptionsFalseTest from './BuilderNodeTest/builderNodeInheritFreezeOptionsFalseTest.test';
+
+import componentContentUpdateNullUndefinedTest from './ComponentContentTest/componentContentUpdateNullUndefinedTest.test';
+import ComponentContentReuseNullUndefinedTest from './ComponentContentTest/ComponentContentReuseNullUndefinedTest.test';
+import ComponentContentInheritFreezeOptionsFalseTest from './ComponentContentTest/ComponentContentInheritFreezeOptionsFalseTest.test';
+import ReactiveComponentContentReuseNullUndefinedTest from './ComponentContentTest/ReactiveComponentContentReuseNullUndefinedTest.test';
+import NodeAdapterApiNullUndefinedTest from './NodeAdapter/NodeAdapterApiNullUndefinedTest.test';
 
 export default function testsuite() {
   arkuiNodeTest();
@@ -198,5 +212,20 @@ export default function testsuite() {
   FrameNodeIsDisposedTest();
   RenderNodeIsDisposedTest();
   NodeAdapterIsDisposedTest();
+
   graphicsApiNullUndefinedTest();
+  renderNodeApiNullUndefinedTest();
+  nodeContentApiNullUndefinedTest();
+  builderNodeBuildNullUndefinedTest();
+  builderNodeUpdateNullUndefinedTest();
+  builderNodeReuseNullUndefinedTest();
+  ReactiveBuilderNodeReuseNullUndefinedTest();
+  builderNodeInheritFreezeOptionsFalseTest();
+
+  componentContentUpdateNullUndefinedTest();
+  ComponentContentReuseNullUndefinedTest();
+  ComponentContentInheritFreezeOptionsFalseTest();
+  ReactiveComponentContentReuseNullUndefinedTest();
+  NodeAdapterApiNullUndefinedTest();
+
 }

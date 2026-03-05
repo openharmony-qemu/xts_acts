@@ -1410,7 +1410,7 @@ export default function KVManagerCoverageAdd(){
         const deathCallback = () => {
           console.info(TAG + 'death callback call');
         }
-        kvManager.on(null, deathCallback);
+        kvManager.off(null, deathCallback);
         expect(null).assertFail();
         done();
       } catch (e) {

@@ -28,6 +28,7 @@ import webEditTextJsunit from './webTest/web.test';
 
 import globalJsunit1 from './globalTest/global1.test';
 import configurationJsunit from './configuration/ConfigurationJsunit.test';
+import ScreenOnVisibleRequestFullWindow from './AppStorageTest/ScreenOnVisibleRequestFullWindow.test';
 
 export default function testsuite() {
   globalJsunit();
@@ -43,4 +44,5 @@ export default function testsuite() {
   webEditTextJsunit()
   globalJsunit1()
   configurationJsunit();
+  ScreenOnVisibleRequestFullWindow();
 }

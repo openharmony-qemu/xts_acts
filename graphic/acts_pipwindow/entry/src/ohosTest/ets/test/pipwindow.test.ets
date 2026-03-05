@@ -136,6 +136,8 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     }
 
     beforeAll(async () => {
+      console.log('beforeAll start..');
+      try {
       isPipWindowEnabled = await isPipWindowSupport(context1);
       console.log('beforeAll isPipEnabled:' + isPipWindowEnabled);
       let windowClass = windowStage.getMainWindowSync();
@@ -143,7 +145,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
-      try {
+      
         let driver = Driver.create();
         let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
         console.log('findComponent allowed: ' + JSON.stringify(allowed));
@@ -3103,7 +3105,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             promise3.then((data) => {
               pipWindowInfo = data;
               console.info(caseName + ' Success in get pip window info. Info windowId: ' + JSON.stringify(pipWindowInfo.windowId) + ' windowSize: ' + JSON.stringify(pipWindowInfo.size));
-
+              expect(pipWindowInfo.windowId).assertLargerOrEqual(0);
+              expect(pipWindowInfo.size.width).assertLargerOrEqual(0);
+              expect(pipWindowInfo.size.height).assertLargerOrEqual(0);
+              expect(pipWindowInfo.size.scale).assertLargerOrEqual(0);
               done();
             }).catch((err: BusinessError) => {
               console.error(`${caseName} Failed to get pip window info. Cause code: ${err.code}, message: ${err.message}`);
@@ -3818,13 +3823,13 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.name   test_on_controlEvent
-     * @tc.number SUB_BASIC_WMS_PIP_WINDOW_ON_CONTROLEVENT_0100
-     * @tc.desc   验证on_controlEvent
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    * @tc.name test_on_controlEvent
+    * @tc.number SUB_BASIC_WMS_PIP_WINDOW_ON_CONTROLEVENT_0100
+    * @tc.desc 验证on_controlEvent
+    * @tc.type FUNCTION
+    * @tc.size MEDIUMTEST
+    * @tc.level LEVEL3
+    */
     it('test_on_controlEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_controlEvent!'
       let pipController: pipWindow.PiPController | undefined = undefined;
@@ -3840,7 +3845,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         contentHeight: 500
       };
       let callback = (control: pipWindow.ControlEventParam) => {
-        console.info(`${message} success in callback, control: ${control}`)
+        console.info(`${message} success in callback, control: ${JSON.stringify(control)}`)
         controlParam = control
       }
       let driver: Driver =
@@ -3873,8 +3878,19 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await sleep(1000);
             expect(controlParam.controlType).assertEqual(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE);
             expect(controlParam.status).assertEqual(pipWindow.PiPControlStatus.PAUSE);
+
+
+            await sleep(1000);
+            let button3 = await driver.findComponent(ON.id('control_play'));
+            console.log(`${message} button3: ${JSON.stringify(button3)}`);
+            await button3.click();
+
+            await sleep(1000);
+
+            expect(controlParam.controlType).assertEqual(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE);
+            expect(controlParam.status).assertEqual(pipWindow.PiPControlStatus.PLAY);
             await pipController.stopPiP();
-            await sleep(10000)
+            await sleep(2000)
             pipController.off('controlEvent', callback);
             done();
           }
@@ -3976,6 +3992,190 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         expect().assertFail();
         done();
       }
+    });
+    /**
+    * @tc.name   test_on_controlEvent_VIDEO_PLAY_01
+    * @tc.number SUB_BASIC_WMS_PIP_WINDOW_ON_CONTROLEVENT_0300
+    * @tc.desc   test_on_controlEvent_VIDEO_PLAY
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('test_on_controlEvent_VIDEO_PLAY_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'test_on_controlEvent_VIDEO_PLAY_01!'
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let controlParam: pipWindow.ControlEventParam;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: 500,
+        contentHeight: 500,
+        controlGroups: [pipWindow.VideoPlayControlGroup.VIDEO_PREVIOUS_NEXT]
+      };
+      let callback = (control: pipWindow.ControlEventParam) => {
+        console.info(`${message} success in callback, control: ${JSON.stringify(control)}`)
+        controlParam = control
+      }
+      let driver: Driver =
+        Driver.create();
+      try {
+        let promise = pipWindow.create(config);
+        promise.then(async (data) => {
+          pipController = data;
+          if (!pipController.isPiPSupported()) {
+
+            done();
+          } else {
+            console.log(`${message} Succeeded in creating pip controller, Data:${data}`)
+            await pipController.startPiP();
+            await sleep(1000);
+            pipController.on('controlEvent', callback);
+            let button1 = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
+            let Bounds = await button1.getBounds()
+            let bottom = Bounds.bottom
+            let BoundsCenter = await button1.getBoundsCenter();
+            let x = BoundsCenter.x;
+            console.log(`${message} BoundsCenter x: ${x}, bottom: ${bottom}`);
+            await driver.findComponent(ON.id('SCBPipSceneOverlay')).then(async (component) => {
+              await component.click();
+              await sleep(1000);
+              let button2 = await driver.findComponent(ON.id('control_play_last'));
+              console.log(`${message} button2: ${JSON.stringify(button2)}`);
+              await button2.click();
+            })
+            await sleep(1000);
+            expect(controlParam.controlType).assertEqual(pipWindow.PiPControlType.VIDEO_PREVIOUS);
+            expect(controlParam.status).assertEqual(-1);
+
+            await sleep(1000);
+            let button3 = await driver.findComponent(ON.id('control_play_next'));
+            console.log(`${message} button3: ${JSON.stringify(button3)}`);
+            await button3.click();
+
+            await sleep(1000);
+
+            expect(controlParam.controlType).assertEqual(pipWindow.PiPControlType.VIDEO_NEXT);
+            expect(controlParam.status).assertEqual(-1);
+            await pipController.stopPiP();
+            await sleep(2000)
+            pipController.off('controlEvent', callback);
+            done();
+          }
+        }).catch((err: BusinessError) => {
+          console.log(`${message} promise Failed to create pipcontroller.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
+          pipController?.off('controlEvent', callback);
+          if (err.code == 801) {
+            expect(err.message != null).assertTrue();
+
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log(`${message} Failed to create pipcontroller.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+        expect().assertFail();
+        done();
+      }
+
+
+    });
+    /**
+     * @tc.name   test_on_controlEvent_VIDEO_PLAY_02
+     * @tc.number SUB_BASIC_WMS_PIP_WINDOW_ON_CONTROLEVENT_0400
+     * @tc.desc   test_on_controlEvent_VIDEO_PLAY_02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_on_controlEvent_VIDEO_PLAY_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'test_on_controlEvent_VIDEO_PLAY_02!'
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let controlParam: pipWindow.ControlEventParam;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: 500,
+        contentHeight: 500,
+        controlGroups: [pipWindow.VideoPlayControlGroup.FAST_FORWARD_BACKWARD]
+      };
+      let callback = (control: pipWindow.ControlEventParam) => {
+        console.info(`${message} success in callback, control: ${JSON.stringify(control)}`)
+        controlParam = control
+      }
+      let driver: Driver =
+        Driver.create();
+      try {
+        let promise = pipWindow.create(config);
+        promise.then(async (data) => {
+          pipController = data;
+          if (!pipController.isPiPSupported()) {
+
+            done();
+          } else {
+            console.log(`${message} Succeeded in creating pip controller, Data:${data}`)
+            await pipController.startPiP();
+            await sleep(1000);
+            pipController.on('controlEvent', callback);
+            let button1 = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
+            let Bounds = await button1.getBounds()
+            let bottom = Bounds.bottom
+            let BoundsCenter = await button1.getBoundsCenter();
+            let x = BoundsCenter.x;
+            console.log(`${message} BoundsCenter x: ${x}, bottom: ${bottom}`);
+            await driver.findComponent(ON.id('SCBPipSceneOverlay')).then(async (component) => {
+              await component.click();
+              await sleep(1000);
+              let button2 = await driver.findComponent(ON.id('control_fast_backward'));
+              console.log(`${message} button2: ${JSON.stringify(button2)}`);
+              await button2.click();
+            })
+            await sleep(1000);
+            expect(controlParam.controlType).assertEqual(pipWindow.PiPControlType.FAST_BACKWARD);
+            expect(controlParam.status).assertEqual(-1);
+
+            await sleep(1000);
+            let button3 = await driver.findComponent(ON.id('control_fast_forward'));
+            console.log(`${message} button3: ${JSON.stringify(button3)}`);
+            await button3.click();
+
+            await sleep(1000);
+
+            expect(controlParam.controlType).assertEqual(pipWindow.PiPControlType.FAST_FORWARD);
+            expect(controlParam.status).assertEqual(-1);
+            await pipController.stopPiP();
+            await sleep(2000)
+            pipController.off('controlEvent', callback);
+            done();
+          }
+        }).catch((err: BusinessError) => {
+          console.log(`${message} promise Failed to create pipcontroller.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
+          pipController?.off('controlEvent', callback);
+          if (err.code == 801) {
+            expect(err.message != null).assertTrue();
+
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log(`${message} Failed to create pipcontroller.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+        expect().assertFail();
+        done();
+      }
+
+
     });
 
     /**
@@ -5726,9 +5926,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             let dragToY = pipWindowCenter.y;
             await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
             await sleep(3000);
+            let expectValue = deviceType == 'tv' ? true : false;
             let isPipActive = await pipController.isPiPActive();
             console.log(tag + caseName + ' isPipActive: ' + isPipActive);
-            expect(isPipActive).assertEqual(false);
+            expect(isPipActive).assertEqual(expectValue);
             await pipController.stopPiP();
             await sleep(5000);
             done();
@@ -5763,9 +5964,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
      */
     it('tesCreate_null_undefined2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'tesCreate_null_undefined2!';
-      let pipController:pipWindow.PiPController| undefined = undefined;
+      let pipController: pipWindow.PiPController | undefined = undefined;
       let mXComponentController = new XComponentController();
-      let config:pipWindow.PiPConfiguration = {
+      let config: pipWindow.PiPConfiguration = {
         context: context1,
         componentController: mXComponentController,
         controlGroups: []
@@ -5795,9 +5996,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
      */
     it('tesCreate_navigation_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'tesCreate_navigation_null!';
-      let pipController:pipWindow.PiPController| undefined = undefined;
+      let pipController: pipWindow.PiPController | undefined = undefined;
       let mXComponentController = new XComponentController();
-      let config:pipWindow.PiPConfiguration = {
+      let config: pipWindow.PiPConfiguration = {
         context: context1,
         componentController: mXComponentController,
         navigationId: ''
@@ -5828,9 +6029,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
      */
     it('tesupdateContentNode_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'tesupdateContentNode_null_undefined!';
-      let pipController:pipWindow.PiPController| undefined = undefined;
+      let pipController: pipWindow.PiPController | undefined = undefined;
       let mXComponentController = new XComponentController();
-      let config:pipWindow.PiPConfiguration = {
+      let config: pipWindow.PiPConfiguration = {
         context: context1,
         componentController: mXComponentController,
         navigationId: ''
@@ -5861,9 +6062,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
      */
     it('TestUpdateContentNodeParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestUpdateContentNodeParameter!';
-      let pipController:pipWindow.PiPController| undefined = undefined;
+      let pipController: pipWindow.PiPController | undefined = undefined;
       let mXComponentController = new XComponentController();
-      let config:pipWindow.PiPConfiguration = {
+      let config: pipWindow.PiPConfiguration = {
         context: context1,
         componentController: mXComponentController,
         navigationId: ''
@@ -5880,6 +6081,77 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           done();
         }
       } else {
+        done();
+      }
+    });
+
+     /**
+     * @tc.name   tesCreate_null_undefined
+     * @tc.number SUB_WMS_CREATE_PARAMETER_0100
+     * @tc.desc   tesCreate_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesCreate_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'tesCreate_null_undefined!'
+      try {
+        await pipWindow.create(null);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${message} Failed, Cause code ${err.code}, message ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        await pipWindow.create(undefined);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+     /**
+     * @tc.name   tesCreate_null
+     * @tc.number SUB_WMS_CREATE_PARAMETER_0300
+     * @tc.desc   tesCreate_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesCreate_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'tesCreate_null!';
+      try {
+        await pipWindow.create(null, null);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+     /**
+     * @tc.name   tesCreate_undefined
+     * @tc.number SUB_WMS_CREATE_PARAMETER_0400
+     * @tc.desc   tesCreate_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesCreate_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'tesCreate_undefined!';
+      try {
+        await pipWindow.create(undefined, undefined);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+        expect(err.code).assertEqual(401);
         done();
       }
     });

@@ -18,6 +18,7 @@ import commonEvent from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestDownloadTwoUnitTest() {
   describe('requestDownloadTwoJSUnit', () => {
@@ -50,6 +51,16 @@ export default function requestDownloadTwoUnitTest() {
         console.info('====>beforeAll requestDownloadTwoJSUnit catch err:'+JSON.stringify(err))
         done();
       }
+    });
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
     });
     
     /**

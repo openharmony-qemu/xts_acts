@@ -25,6 +25,9 @@ import nodeListItemGroup from './frameNodeTest/nodeListItemGroup.test';
 import NodeAdapter001Test from './nodeAdapterTest/NodeAdapter001Test.test';
 import IsOnMainTreeMethodTest from './frameNodeTest/IsOnMainTreeMethodTest.test';
 import isInRenderStateTest from './frameNodeTest/isInRenderStateTest.test';
+import FrameNodeMethodNullUndefinedTest from './frameNodeTest/FrameNodeMethodNullUndefined.test';
+import CustomPropertyNullUndefinedTest from './frameNodeTest/CustomPropertyNullUndefined.test';
+import AddComponentContentNullUndefinedTest from './frameNodeTest/AddComponentContentNullUndefined.test';
 
 export default function testsuite() {
   APIsetOnclickTest();
@@ -40,5 +43,7 @@ export default function testsuite() {
   NodeAdapter001Test()
   IsOnMainTreeMethodTest()
   isInRenderStateTest()
-
+  FrameNodeMethodNullUndefinedTest()
+  CustomPropertyNullUndefinedTest()
+  AddComponentContentNullUndefinedTest()
 }

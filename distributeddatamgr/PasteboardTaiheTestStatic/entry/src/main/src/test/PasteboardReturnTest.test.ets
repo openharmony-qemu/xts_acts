@@ -17,7 +17,7 @@ import { describe, it, expect, TestType, Size, Level} from "../../../hypium/inde
 import hilog from '@ohos.hilog';
 import pasteboard from '@ohos.pasteboard';
 import image from "@ohos.multimedia.image";
-import { BusinessError } from "@ohos.base"
+import { BusinessError, RecordData } from "@ohos.base"
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -196,9 +196,15 @@ export default function pasteboardReturnTest() {
     it('SUB_Pasteboard_Local_Return_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "----------SUB_Pasteboard_Local_Return_Static_0070----------");
       try {
+        let adConfigData: Record<string, RecordData> = {
+          'value': 'test'
+        }
+        let pJson: Record<string, RecordData> = {
+          'customKey': adConfigData
+        }
         let pasteData: pasteboard.PasteData = pasteboard.createData("string", ARRAY_BUFFER);
         let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
-        prop.additions = { 'customKey': { 'value': 'test' } };
+        prop.additions = pJson;
         pasteData.setProperty(prop);
         let newProp: pasteboard.PasteDataProperty = pasteData.getProperty();
         expect(newProp.additions != null).assertTrue();

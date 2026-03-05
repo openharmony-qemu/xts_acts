@@ -1319,6 +1319,7 @@ export default function windowRichSceneTest(context: common.UIAbilityContext, wi
         }
         console.info('Succeeded in obtaining the area. Data:' + JSON.stringify(data));
         expect(!!data).assertTrue();
+        expect(data.visible).assertEqual(false);
         await (windowClass as ohosWindow.Window).destroyWindow();
         done();
       });

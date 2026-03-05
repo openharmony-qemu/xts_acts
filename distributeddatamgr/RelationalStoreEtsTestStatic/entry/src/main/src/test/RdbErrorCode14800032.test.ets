@@ -1484,6 +1484,34 @@ export default function RdbErrorCode14800032() {
       }
       console.info(TAG + "************* testRdbTxnUpdateSyncReadOnly14800032_042 end *************");
     })
+
+     /**
+     * @tc.name   testRdbStoreExecuteSqlErr0200
+     * @tc.number testRdbStoreExecuteSqlErr0200
+     * @tc.desc   resultSet occupies connection, attach failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('testRdbStoreExecuteSqlErr0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
+      console.log(TAG + "************* testRdbStoreExecuteSqlErr0200 start *************");
+      try {
+      await rdbStore!.execute(CREATE_TABLE_TEST4);
+      const record: relationalStore.ValuesBucket = {
+        "name": "lixi",
+        "age": 20 as long,
+      };
+      await (rdbStore as relationalStore.RdbStore).insert("test4", record);
+      await (rdbStore as relationalStore.RdbStore).executeSql("UPDATE test4 SET name = ? WHERE id = "+1, [null]) 
+      expect(null).assertFail();
+      done();
+    } catch(e) {
+      console.log("testRdbStoreExecuteSqlErr0200 err: failed, err: code=" + e.code + " message=" + e.message);
+      expect(14800032).assertEqual(e.code);
+      done();
+    }
+
+  })
   })
 
 }

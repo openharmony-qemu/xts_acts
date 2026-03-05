@@ -1016,7 +1016,8 @@ export default function etsIntlPtsFunTest() {
      */
     it('testDatePrototypeObject001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
-      let value = date.toLocaleString('en-US', {timeZone: 'UTC'});
+      let options: Intl.DateTimeFormatOptions = {timeZone: 'UTC'};
+      let value = date.toLocaleString('en-US', options);
       let zerotime = "10/20/2022, 6:00:00 PM";
       expect(value).assertEqual(zerotime);
     })
@@ -1031,7 +1032,8 @@ export default function etsIntlPtsFunTest() {
      */
     it('testDatePrototypeObject002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
-      let value = date.toLocaleString('en-GB', {timeZone: 'UTC'});
+      let options: Intl.DateTimeFormatOptions = {timeZone: 'UTC'};
+      let value = date.toLocaleString('en-GB', options);
       let zerotime = "20/10/2022, 18:00:00";
       expect(value).assertEqual(zerotime);
     })
@@ -1046,7 +1048,8 @@ export default function etsIntlPtsFunTest() {
      */
     it('testDatePrototypeObject003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
-      let value = date.toLocaleString('ko-KR', {timeZone: 'UTC'});
+      let options: Intl.DateTimeFormatOptions = {timeZone: 'UTC'};
+      let value = date.toLocaleString('ko-KR', options);
       let zerotime = "2022. 10. 20. 오후 6:00:00";
       expect(value).assertEqual(zerotime);
     })
@@ -1061,7 +1064,8 @@ export default function etsIntlPtsFunTest() {
      */
     it('testDatePrototypeObject004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
-      let value = date.toLocaleString('en-GB', { timeZone: 'UTC' });
+      let options: Intl.DateTimeFormatOptions = { timeZone: 'UTC' };
+      let value = date.toLocaleString('en-GB', options);
       console.log('DateTest004 :' + value);
       expect(value).assertEqual('20/10/2022, 18:00:00');
     })
@@ -1076,7 +1080,8 @@ export default function etsIntlPtsFunTest() {
      */
     it('testDatePrototypeObject005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
-      let value = date.toLocaleString('ko-KR', { timeZone: 'UTC' });
+      let options: Intl.DateTimeFormatOptions = { timeZone: 'UTC' };
+      let value = date.toLocaleString('ko-KR', options);
       console.log('DateTest005 :' + value);
       expect(value).assertEqual('2022. 10. 20. 오후 6:00:00');
     })
@@ -1092,7 +1097,8 @@ export default function etsIntlPtsFunTest() {
     it('testDatePrototypeObject006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
       let zerotime = "2022/10/20 下午6:00:00";
-      let value = date.toLocaleString('zh', { timeZone: 'UTC' });
+      let options: Intl.DateTimeFormatOptions = { timeZone: 'UTC' };
+      let value = date.toLocaleString('zh', options);
       expect(value).assertEqual(zerotime);
     })
 
@@ -1106,7 +1112,8 @@ export default function etsIntlPtsFunTest() {
      */
     it('testDatePrototypeObject007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(0);
-      let value = date.toLocaleString('zh', { timeZone: 'UTC' });
+      let options: Intl.DateTimeFormatOptions = { timeZone: 'UTC' };
+      let value = date.toLocaleString('zh', options);
       console.log('DateTest007 :' + value);
       expect(value).assertEqual('1970/1/1 上午12:00:00');
     })
@@ -1121,8 +1128,9 @@ export default function etsIntlPtsFunTest() {
      */
     it('testDatePrototypeObject008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(0);
-      let value = date.toLocaleString('zh', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long',
-        day: 'numeric'});
+      let options: Intl.DateTimeFormatOptions = { timeZone: 'UTC', weekday: 'long',
+        year: 'numeric', month: 'long', day: 'numeric'};
+      let value = date.toLocaleString('zh', options);
       console.log('DateTest008 :' + value);
       expect(value).assertEqual('1970年1月1日星期四');
 
@@ -1138,8 +1146,9 @@ export default function etsIntlPtsFunTest() {
      */
     it('testDatePrototypeObject009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
-      let value = date.toLocaleString('zh', { hour12: false, weekday: 'long', year: 'numeric', month: 'long',
-        day: 'numeric', timeZone: 'UTC' });
+      let options: Intl.DateTimeFormatOptions = { hour12: false, weekday: 'long',
+        year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
+      let value = date.toLocaleString('zh', options);
       console.log('DateTest009 :' + value);
       expect(value).assertEqual('2022年10月20日星期四');
     })
@@ -1154,8 +1163,9 @@ export default function etsIntlPtsFunTest() {
      */
     it('testDatePrototypeObject010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
-      let value = date.toLocaleString('zh', { hour12: true, weekday: 'long', year: 'numeric', month: 'long',
-        day: 'numeric', timeZone: 'UTC'});
+      let options: Intl.DateTimeFormatOptions = { hour12: true, weekday: 'long',
+        year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'};
+      let value = date.toLocaleString('zh', options);
       console.log('DateTest010 :' + value);
       expect(value).assertEqual('2022年10月20日星期四');
     })
