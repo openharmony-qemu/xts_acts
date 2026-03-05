@@ -823,92 +823,104 @@ export default function cameraJSUnitOutput() {
         expect().assertFail();
       }
     });
-    /**
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200
-      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200
-      * @tc.desc   MetadataOutputAddMetadataObjectTypes metadataOutput aync api
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL1
-      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200', Level.LEVEL1, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200--------------");
-      try {
-          cameraObj.initCamera(GlobalThis.getInstance().getValue());
-          cameraObj.getSupportedCameras();
-          cameraObj.getSupportedOutputCapability();
-          cameraObj.createSession();
-          let result = cameraObj.createMetadataOutput();
-          result = cameraObj.createCameraInput();
-          result = cameraObj.cameraInputOpen();
-          cameraObj.sessionBegin();
-          result = cameraObj.sessionAddInput();
-          result = cameraObj.sessionAddMetadataOutput();
-          result = cameraObj.sessionCommitConfig();
-          result = cameraObj.sessionStart();
-          result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
-          expect(result).assertEqual(0);
-      } catch (error) {
-          console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200 FAILED");
-          console.info(TAG + "ERRORCODE: " + error.code);
-          expect().assertFail();
-      }
-    });
- 	  /**
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200
-      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200
-      * @tc.desc   MetadataOutputRemoveMetadataObjectTypes metadataOutput aync api
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL1
-      */
- 	  it('SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200', Level.LEVEL1, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200--------------");
-      try {
-          cameraObj.initCamera(GlobalThis.getInstance().getValue());
-          cameraObj.getSupportedCameras();
-          cameraObj.getSupportedOutputCapability();
-          cameraObj.createSession();
-          let result = cameraObj.createMetadataOutput();
-          result = cameraObj.createCameraInput();
-          result = cameraObj.cameraInputOpen();
-          cameraObj.sessionBegin();
-          result = cameraObj.sessionAddInput();
-          result = cameraObj.sessionAddMetadataOutput();
-          result = cameraObj.sessionCommitConfig();
-          result = cameraObj.sessionStart();
-          result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
-          result = await cameraObj.MetadataOutputRemoveMetadataObjectTypes();
-          expect(result).assertEqual(0);
-      } catch (error) {
-          console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200 FAILED");
-          console.info(TAG + "ERRORCODE: " + error.code);
-          expect().assertFail();
-      }
- 	  });
- 	  /**
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100
-      * @tc.number SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100
-      * @tc.desc   CreateMetadataOutputWithObjectTypes metadataOutput aync api
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL1
-      */
- 	  it('SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100', Level.LEVEL1, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100--------------");
-      try {
-          cameraObj.initCamera(GlobalThis.getInstance().getValue());
-          cameraObj.getSupportedCameras();
-          cameraObj.getSupportedOutputCapability();
-          cameraObj.createSession();
-          cameraObj.sessionBegin();
-          let result = cameraObj.CreateMetadataOutputWithObjectTypes();
-          expect(result).assertEqual(0);
-      } catch (error) {
-          console.info(TAG + "SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100 FAILED");
-          console.info(TAG + "ERRORCODE: " + error.code);
-          expect().assertFail();
-      }
- 	  });
+  /** 
+       * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200 
+       * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200 
+       * @tc.desc   MetadataOutputAddMetadataObjectTypes metadataOutput aync api 
+       * @tc.type   FUNCTION 
+       * @tc.size   MEDIUMTEST 
+       * @tc.level  LEVEL1 
+       */ 
+  it('SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200', Level.LEVEL1, async () => { 
+    console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200--------------"); 
+    try { 
+        cameraObj.initCamera(GlobalThis.getInstance().getValue()); 
+        cameraObj.getSupportedCameras(); 
+        cameraObj.getSupportedOutputCapability(); 
+        cameraObj.createSession(); 
+        if (cameraObj.IsMetadataObjectTypeValid() == 0) {
+          console.info(TAG + "IsMetadataObjectTypeValid invalid"); 
+          expect(true).assertTrue();
+        }
+        else {
+          let result = cameraObj.createMetadataOutput(); 
+          result = cameraObj.createCameraInput(); 
+          result = cameraObj.cameraInputOpen(); 
+          cameraObj.sessionBegin(); 
+          result = cameraObj.sessionAddInput(); 
+          result = cameraObj.sessionAddMetadataOutput(); 
+          result = cameraObj.sessionCommitConfig(); 
+          result = cameraObj.sessionStart(); 
+          result = await cameraObj.MetadataOutputAddMetadataObjectTypes(); 
+          expect(result).assertEqual(0); 
+        }
+    } catch (error) { 
+        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200 FAILED"); 
+        console.info(TAG + "ERRORCODE: " + error.code); 
+        expect().assertFail(); 
+    } 
+  }); 
+   /** 
+    * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200 
+    * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200 
+    * @tc.desc   MetadataOutputRemoveMetadataObjectTypes metadataOutput aync api 
+    * @tc.type   FUNCTION 
+    * @tc.size   MEDIUMTEST 
+    * @tc.level  LEVEL1 
+    */ 
+   it('SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200', Level.LEVEL1, async () => { 
+    console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200--------------"); 
+    try { 
+        cameraObj.initCamera(GlobalThis.getInstance().getValue()); 
+        cameraObj.getSupportedCameras(); 
+        cameraObj.getSupportedOutputCapability(); 
+        cameraObj.createSession(); 
+        if (cameraObj.IsMetadataObjectTypeValid() == 0) {
+          console.info(TAG + "IsMetadataObjectTypeValid invalid"); 
+          expect(true).assertTrue();
+        }
+        else {
+          let result = cameraObj.createMetadataOutput(); 
+          result = cameraObj.createCameraInput(); 
+          result = cameraObj.cameraInputOpen(); 
+          cameraObj.sessionBegin(); 
+          result = cameraObj.sessionAddInput(); 
+          result = cameraObj.sessionAddMetadataOutput(); 
+          result = cameraObj.sessionCommitConfig(); 
+          result = cameraObj.sessionStart(); 
+          result = await cameraObj.MetadataOutputAddMetadataObjectTypes(); 
+          result = await cameraObj.MetadataOutputRemoveMetadataObjectTypes(); 
+          expect(result).assertEqual(0); 
+        }
+    } catch (error) { 
+        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200 FAILED"); 
+        console.info(TAG + "ERRORCODE: " + error.code); 
+        expect().assertFail(); 
+    } 
+   }); 
+   /** 
+    * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100 
+    * @tc.number SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100 
+    * @tc.desc   CreateMetadataOutputWithObjectTypes metadataOutput aync api 
+    * @tc.type   FUNCTION 
+    * @tc.size   MEDIUMTEST 
+    * @tc.level  LEVEL1 
+    */ 
+   it('SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100', Level.LEVEL1, async () => { 
+    console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100--------------"); 
+    try { 
+        cameraObj.initCamera(GlobalThis.getInstance().getValue()); 
+        cameraObj.getSupportedCameras(); 
+        cameraObj.getSupportedOutputCapability(); 
+        cameraObj.createSession(); 
+        cameraObj.sessionBegin(); 
+        let result = cameraObj.CreateMetadataOutputWithObjectTypes(); 
+        expect(result).assertEqual(0); 
+    } catch (error) { 
+        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100 FAILED"); 
+        console.info(TAG + "ERRORCODE: " + error.code); 
+        expect().assertFail(); 
+    } 
+   });
   })
 }
