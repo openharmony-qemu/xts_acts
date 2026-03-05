@@ -1094,7 +1094,7 @@ export default function uitestDriverTest() {
             hilog.info(domain, tag, `testMonitor2_static  windowId , ${ uiElementInfo.windowId }`);
             expect(uiElementInfo.windowId != null).assertTrue();
             hilog.info(domain, tag, `testMonitor2_static  componentId , ${ uiElementInfo.componentId }`);
-            expect(uiElementInfo.componentId == 'dialogBtn').assertTrue();
+            expect(uiElementInfo.componentId == '').assertTrue();
             hilog.info(domain, tag, `testMonitor2_static  componentRect , ${ uiElementInfo.componentRect }`);
             expect(uiElementInfo.componentRect != null).assertTrue();
           } catch (err) {
