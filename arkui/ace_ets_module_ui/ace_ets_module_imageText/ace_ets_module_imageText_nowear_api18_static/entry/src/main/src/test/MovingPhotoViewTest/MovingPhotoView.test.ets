@@ -82,7 +82,7 @@ it('MovingPhotoViewTest_static_0120', Level.LEVEL2, async (done: () => void): Pr
       let button = await driver.findComponent(ON.id('MovingPhotoView_enableAnalyzer'));
       await CommonFunc.sleep(500);
       await (button?.click() as  Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_enableAnalyzerFlag');
         console.log('MovingPhotoViewTest_0120', JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
@@ -106,7 +106,7 @@ it('MovingPhotoViewTest_static_0130', Level.LEVEL2, async (done: () => void): Pr
       let button = await driver.findComponent(ON.id('MovingPhotoView_refreshButton'));
       await CommonFunc.sleep(500);
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_refresh');
