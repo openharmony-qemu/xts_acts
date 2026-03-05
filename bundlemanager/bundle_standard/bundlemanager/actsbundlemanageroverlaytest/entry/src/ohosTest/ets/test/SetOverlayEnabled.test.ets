@@ -321,37 +321,27 @@ export default function setOverlayEnabled() {
     it('SetOverlayEnabledHspModuleTrueCall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done:Function) => {
         const HSP_MODULE_NAME = "hsp";
         try {
-          await overlay.setOverlayEnabled(HSP_MODULE_NAME, true).then(async data => {
-            console.info("SetOverlayEnabledHspModuleFalse promise result" + JSON.stringify(data));
-            expect(true).assertTrue();
-            try {
-              overlay.getOverlayModuleInfo(HSP_MODULE_NAME,(err,data)=>{
-                  if (err) {
-                    console.info("SetOverlayEnabledHspModuleTrueCall promise result" + JSON.stringify(err));
-                    expect().assertFail()
-                  } else {
-                    console.info("SetOverlayEnabledHspModuleTrueCall success promise result" + JSON.stringify(data));
-                    expect(data.state).assertEqual(1);
-                    expect(data.bundleName).assertEqual("ohos.acts.bundle.overlay.test");
-                    expect(data.moduleName).assertEqual("hsp");
-                    expect(data.targetModuleName).assertEqual("entry");
-                    expect(data.priority).assertEqual(1);
-                  }
-              })
-            } catch (e) {
-              console.info("SetOverlayEnabledHspModuleFalse getOverlayModuleInfo error" + JSON.stringify(e));
-              expect().assertFail();
-            }
-          }).catch((err: BusinessError)=> {
-            console.info("SetOverlayEnabledHspModuleFalse Call catch" + JSON.stringify(err));
-            expect().assertFail();
-          });
-  
-        } catch (e) {
-          console.info("SetOverlayEnabledHspModule Call unexpected error" + JSON.stringify(e));
-          expect().assertFail()
-        }
-        done();
+          await overlay.setOverlayEnabled(HSP_MODULE_NAME, true);
+          overlay.getOverlayModuleInfo(HSP_MODULE_NAME,(err,data)=>{
+           if (err) {
+             console.info("SetOverlayEnabledHspModuleTrueCall promise result" + JSON.stringify(err));
+             expect().assertFail()
+             done();
+           } else {
+             console.info("SetOverlayEnabledHspModuleTrueCall success promise result" + JSON.stringify(data));
+             expect(data.state).assertEqual(1);
+             expect(data.bundleName).assertEqual("ohos.acts.bundle.overlay.test");
+             expect(data.moduleName).assertEqual("hsp");
+             expect(data.targetModuleName).assertEqual("entry");
+             expect(data.priority).assertEqual(1);
+             done();
+           }
+         })
+       } catch (err) {
+         console.info("SetOverlayEnabledHspModuleTrueCall Call unexpected error" + JSON.stringify(err));
+         expect().assertFail()
+         done();
+       }
       })
 
 
