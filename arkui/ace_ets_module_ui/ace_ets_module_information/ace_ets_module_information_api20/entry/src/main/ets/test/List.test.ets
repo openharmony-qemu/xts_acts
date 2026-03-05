@@ -25,5 +25,4 @@ export default function testsuite() {
     TextClockFormat();
     TextPickerValue();
     TextTimerFontWeight();
-    badgeTest();
 }

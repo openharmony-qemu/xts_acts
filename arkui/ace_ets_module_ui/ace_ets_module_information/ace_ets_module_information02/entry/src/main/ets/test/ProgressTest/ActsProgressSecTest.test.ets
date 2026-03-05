@@ -3628,7 +3628,8 @@ export default function ActsProgressSecTest() {
       let obj: ESObject = JSON.parse(newJson);
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0100]: " + JSON.stringify(obj.$attrs.ringStyle));
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0100]: " + JSON.stringify(obj.$attrs.ringStyle.strokeWidth));
-      expect(obj.$attrs.ringStyle.strokeWidth).assertEqual("4.00vp");
+      let resourceStrokeWidth :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_progress_thickness').id)
+      expect(obj.$attrs.ringStyle.strokeWidth).assertContain(px2vp(resourceStrokeWidth)+'');
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0100] end");
       done();
     });
@@ -3954,7 +3955,8 @@ export default function ActsProgressSecTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0900]: " + JSON.stringify(obj.$attrs.ringStyle));
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0900]: " + JSON.stringify(obj.$attrs.ringStyle.strokeWidth));
-      expect(obj.$attrs.ringStyle.strokeWidth).assertEqual("4.00vp");
+      let resourceStrokeWidth :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_progress_thickness').id)
+      expect(obj.$attrs.ringStyle.strokeWidth).assertContain(px2vp(resourceStrokeWidth)+'');
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0900] end");
       done();
     });
@@ -3996,7 +3998,8 @@ export default function ActsProgressSecTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1000]: " + JSON.stringify(obj.$attrs.ringStyle));
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1000]: " + JSON.stringify(obj.$attrs.ringStyle.strokeWidth));
-      expect(obj.$attrs.ringStyle.strokeWidth).assertEqual("4.00vp");
+      let resourceStrokeWidth :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_progress_thickness').id)
+      expect(obj.$attrs.ringStyle.strokeWidth).assertContain(px2vp(resourceStrokeWidth)+'');
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1000] end");
       done();
     });
@@ -4080,7 +4083,8 @@ export default function ActsProgressSecTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1200]: " + JSON.stringify(obj.$attrs.ringStyle));
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1200]: " + JSON.stringify(obj.$attrs.ringStyle.strokeWidth));
-      expect(obj.$attrs.ringStyle.strokeWidth).assertEqual("4.00vp");
+      let resourceStrokeWidth :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_progress_thickness').id)
+      expect(obj.$attrs.ringStyle.strokeWidth).assertContain(px2vp(resourceStrokeWidth)+'');
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1200] end");
       done();
     });
@@ -4122,7 +4126,8 @@ export default function ActsProgressSecTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1300]: " + JSON.stringify(obj.$attrs.ringStyle));
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1300]: " + JSON.stringify(obj.$attrs.ringStyle.strokeWidth));
-      expect(obj.$attrs.ringStyle.strokeWidth).assertEqual("4.00vp");
+      let resourceStrokeWidth :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_progress_thickness').id)
+      expect(obj.$attrs.ringStyle.strokeWidth).assertContain(px2vp(resourceStrokeWidth)+'');
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1300] end");
       done();
     });

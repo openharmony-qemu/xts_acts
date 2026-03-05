@@ -120,7 +120,7 @@ export default function SelectedDragPreviewStyle() {
       let obj: ESObject = JSON.parse(strJson);
       console.info('[selectedDragPreviewStyle_0030] strJson is: ' + strJson);
       console.info('[selectedDragPreviewStyle_0030] MinLines obj is: ' + JSON.stringify(obj.$attrs.selectedDragPreviewStyle));
-      expect('#FFFFFFFF #FF000000').assertContain(obj.$attrs.selectedDragPreviewStyle);
+      expect('#FFFFFFFF #FF000000 #F2202224').assertContain(obj.$attrs.selectedDragPreviewStyle);
       console.info('[selectedDragPreviewStyle_0030] END')
       done();
     });

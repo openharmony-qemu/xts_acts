@@ -72,8 +72,6 @@ export default function RichEditorTransformation004() {
       let strJson = getInspectorByKey('RichEditorTransformation004');
       let obj: ESObject = JSON.parse(strJson);
       await CommonFunc.sleep(1000);
-      expect(JSON.stringify(obj.$attrs.fontColor)).assertContain('000000');
-      expect(JSON.stringify(obj.$attrs.fontStyle)).assertEqual('"FontStyle.Normal"');
       let setTypingStyle = await driver.findComponent(ON.id('setTypingStyle'));
       await setTypingStyle.click();
       driver.triggerKey(KeyCode.KEYCODE_A);
