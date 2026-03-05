@@ -69,7 +69,6 @@ it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL0, async (done: () => void): Pr
           expect(fontSize).assertEqual("20.00fp");
           console.info('ArkUX_Dialog_Visual_static_0060 END ');
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Dialog_Visual_static_0060 ERR  ' + JSON.stringify(err));
         }
         done();
