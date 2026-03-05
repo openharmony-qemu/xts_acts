@@ -7072,7 +7072,7 @@ export default function ConnectionPublicTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectTrue(err != null);
+        ExpectTrue(err !== null);
         console.info(`${caseName}---End`);
         done();
       }
