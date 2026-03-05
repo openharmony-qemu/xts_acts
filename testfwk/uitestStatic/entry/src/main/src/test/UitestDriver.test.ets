@@ -1034,6 +1034,16 @@ export default function uitestDriverTest() {
             expect(uiElementInfo.text == 'toastShow').assertTrue();
             hilog.info(domain, tag, `testMonitor1_static  type , ${ uiElementInfo.type }`);
             expect(uiElementInfo.type == 'Toast').assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  windowChangeType , ${ uiElementInfo.windowChangeType }`);
+            expect(uiElementInfo.windowChangeType != null).assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  componentEventType , ${ uiElementInfo.componentEventType }`);
+            expect(uiElementInfo.componentEventType != null).assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  windowId , ${ uiElementInfo.windowId }`);
+            expect(uiElementInfo.windowId != null).assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  windowId , ${ uiElementInfo.componentId }`);
+            expect(uiElementInfo.componentId == 'toastBtn').assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  componentRect , ${ uiElementInfo.componentRect }`);
+            expect(uiElementInfo.componentRect != null).assertTrue();
           } catch (err) {
             hilog.info(domain, tag, `testMonitor1_static  error, ${ JSON.stringify(err) }`);
           }
@@ -1077,6 +1087,16 @@ export default function uitestDriverTest() {
             expect(uiElementInfo.type == 'AlertDialog').assertTrue()
             hilog.info(domain, tag, `testMonitor2_static UIElementInfo type , ${ uiElementInfo.type }`);
             expect(uiElementInfo.text == 'dialogShow').assertTrue()
+            hilog.info(domain, tag, `testMonitor1_static  windowChangeType , ${ uiElementInfo.windowChangeType }`);
+            expect(uiElementInfo.windowChangeType != null).assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  componentEventType , ${ uiElementInfo.componentEventType }`);
+            expect(uiElementInfo.componentEventType != null).assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  windowId , ${ uiElementInfo.windowId }`);
+            expect(uiElementInfo.windowId != null).assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  windowId , ${ uiElementInfo.componentId }`);
+            expect(uiElementInfo.componentId == 'dialogBtn').assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  componentRect , ${ uiElementInfo.componentRect }`);
+            expect(uiElementInfo.componentRect != null).assertTrue();
           } catch (err) {
             hilog.info(domain, tag, `testMonitor2_static callback error, ${ JSON.stringify(err) }`);
           }
