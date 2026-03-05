@@ -126,7 +126,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.assetId === metadata0.assetId) {
                     console.info('TestLog: Get assetId Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get assetId failed: ${value}`);
                     expect(false).assertTrue();
@@ -163,7 +162,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.artist === metadata1.artist) {
                     console.info('TestLog: Get artist Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get artist failed' ${value}`);
                     expect(false).assertTrue();
@@ -200,7 +198,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.author === metadata2.author) {
                     console.info('TestLog: Get author Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get author failed:${value}`);
                     expect(false).assertTrue();
@@ -237,7 +234,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.album === metadata3.album) {
                     console.info('TestLog: Get album Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get album failed:${value}`);
                     expect(false).assertTrue();
@@ -274,7 +270,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.writer === metadata4.writer) {
                     console.info('TestLog: Get writer Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get writer failed:${value}`);
                     expect(false).assertTrue();
@@ -311,7 +306,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.composer === metadata5.composer) {
                     console.info('TestLog: Get composer Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get composer failed:${value}`);
                     expect(false).assertTrue();
@@ -348,7 +342,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.duration === metadata6.duration) {
                     console.info('TestLog: Get duration Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get duration failed:${value}`);
                     expect(false).assertTrue();
@@ -386,7 +379,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.mediaImage === metadata7.mediaImage) {
                     console.info('TestLog: Get mediaImage Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get mediaImage failed:${value}`);
                     expect(false).assertTrue();
@@ -446,7 +438,7 @@ export default function abilityTest() {
                 if (bufferArr0[i] !== bufferArr2[i]) {
                     expect(false).assertTrue();
                 } else {
-                    expect(true).assertTrue();
+                    console.info('TestLog: readPixelsToBuffer Successfully');
                 }
             }
             done();
@@ -481,7 +473,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.publishDate?.getTime() === metadata9?.publishDate?.getTime()) {
                     console.info('TestLog: Get publishDate Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get publishDate failed:${value}`);
                     expect(false).assertTrue();
@@ -521,7 +512,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.subtitle === metadata10.subtitle) {
                     console.info('TestLog: Get subtitle Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get subtitle failed:${value}`);
                     expect(false).assertTrue();
@@ -559,7 +549,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.description === metadata11.description) {
                     console.info('TestLog: Get description Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get description failed:${value}`);
                     expect(false).assertTrue();
@@ -597,7 +586,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.lyric === metadata12.lyric) {
                     console.info('TestLog: Get lyric Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get lyric failed:${value}`);
                     expect(false).assertTrue();
@@ -637,7 +625,6 @@ export default function abilityTest() {
                 } else if (value?.previousAssetId === metadata13.previousAssetId
                     && value?.nextAssetId === metadata13.nextAssetId) {
                     console.info('TestLog: Get assetId Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get assetId failed:${value}`);
                     expect(false).assertTrue();
@@ -675,7 +662,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.filter === metadata16.filter) {
                     console.info('TestLog: Get filter Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get filter failed:${value}`);
                     expect(false).assertTrue();
@@ -713,7 +699,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else if (value?.skipIntervals === metadata17.skipIntervals) {
                     console.info('TestLog: Get skipIntervals Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get skipIntervals failed:${value}`);
                     expect(false).assertTrue();
@@ -757,7 +742,6 @@ export default function abilityTest() {
                     expect(data?.avQueueId).assertEqual(metadata.avQueueId);
                     expect(data?.avQueueImage).assertEqual(metadata.avQueueImage);
                     console.info('TestLog: Get avQueueName、avQueueId、avQueueImage(string) Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info(`TestLog: Get avQueueName、avQueueId、avQueueImage(string) failed:${data}`);
                     expect(false).assertTrue();
@@ -882,7 +866,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.state === avSession.PlaybackState.PLAYBACK_STATE_PLAY) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -921,7 +904,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.speed === 2.6) {
                     console.info('TestLog: Get speed successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get speed failed');
                     expect(false).assertTrue();
@@ -960,7 +942,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.position?.elapsedTime === 10) {
                     console.info('TestLog: Get position successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get position failed');
                     expect(false).assertTrue();
@@ -999,7 +980,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.bufferedTime === 1000) {
                     console.info('TestLog: Get bufferedTime successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get bufferedTime failed');
                     expect(false).assertTrue();
@@ -1076,7 +1056,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.loopMode === avSession.LoopMode.LOOP_MODE_SINGLE) {
                     console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
@@ -1115,7 +1094,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.loopMode === avSession.LoopMode.LOOP_MODE_LIST) {
                     console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
@@ -1154,7 +1132,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.loopMode === avSession.LoopMode.LOOP_MODE_SHUFFLE) {
                     console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
@@ -1193,7 +1170,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.isFavorite === true) {
                     console.info('TestLog: Get isFavorite successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get isFavorite failed');
                     expect(false).assertTrue();
@@ -1231,7 +1207,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.state === avSession.PlaybackState.PLAYBACK_STATE_IDLE) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -1269,7 +1244,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.state === avSession.PlaybackState.PLAYBACK_STATE_BUFFERING) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -1305,7 +1279,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             }else if (value?.loopMode === avSession.LoopMode.LOOP_MODE_CUSTOM) {
                                 console.info('TestLog: Get loopMode successfully');
-                                expect(true).assertTrue();
                             } else {
                                 console.info('TestLog: Get loopMode failed');
                                 expect(false).assertTrue();
@@ -1347,7 +1320,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             }else if (value?.maxVolume === PlaybackState.maxVolume) {
                                 console.info('TestLog: Get maxVolume successfully');
-                                expect(true).assertTrue();
                             } else {
                                 console.info('TestLog: Get maxVolume failed');
                                 expect(false).assertTrue();
@@ -1389,7 +1361,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             }else if (value?.muted === PlaybackState.muted) {
                                 console.info('TestLog: Get muted successfully');
-                                expect(true).assertTrue();
                             } else {
                                 console.info('TestLog: Get muted failed');
                                 expect(false).assertTrue();
@@ -1432,7 +1403,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             }else if (value?.videoWidth === PlaybackState.videoWidth && value?.videoHeight === PlaybackState.videoHeight) {
                                 console.info('TestLog: Get videoWidth & videoHeight successfully');
-                                expect(true).assertTrue();
                             } else {
                                 console.info('TestLog: Get videoWidth & videoHeight failed');
                                 expect(false).assertTrue();
@@ -1474,7 +1444,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             }else if (value?.duration === PlaybackState.duration) {
                                 console.info('TestLog: Get duration successfully');
-                                expect(true).assertTrue();
                             } else {
                                 console.info('TestLog: Get duration failed');
                                 expect(false).assertTrue();
@@ -1545,7 +1514,6 @@ export default function abilityTest() {
 
             if (agentBundleName == wantagentBundleName) {
                 console.info('AVSessionTest : Set LaunchAbility successfully');
-                expect(true).assertTrue();
             } else {
                 console.info('AVSessionTest : Set LaunchAbility failed');
                 expect(false).assertTrue();
@@ -1582,7 +1550,6 @@ export default function abilityTest() {
 
             if (flag) {
                 console.info('TestLog: Session destroyed successful');
-                expect(true).assertTrue();
             } else {
                 console.info('TestLog: Session destroyed failed');
                 expect(false).assertTrue();

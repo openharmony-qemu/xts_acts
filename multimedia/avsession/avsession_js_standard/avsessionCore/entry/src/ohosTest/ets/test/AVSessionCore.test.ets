@@ -1109,9 +1109,11 @@ export default function abilityTest() {
       try{
         await sleep(500);
         avSession.getAVSession(context).then((data) => {
-          session = data;
-          console.info('getAVSession successfully${session.sessionType}');
+          console.info('getAVSession successfully${data.sessionType}');
+          expect(data.sessionType).assertEqual('voice_call');
+          expect(data.sessionId.length).assertEqual(64);
         })
+        await sleep(300);
       } catch (err) {
         console.info('getAVSession failed${err.code} message:${err.message}');
         expect(false).assertTrue()

@@ -126,7 +126,6 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             if (session!.sessionId.length === 64 && controller!.sessionId.length === 64) {
                 console.info('TestLog: Read AVSession & Controler sessionId successfully');
-                expect(true).assertTrue();
             } else {
                 console.info('TestLog: Read sessionId failed');
                 expect(false).assertTrue();
@@ -160,7 +159,6 @@ export default function abilityTest() {
                 data = await controller!.getAVMetadata()
                 if (data.assetId === '121278') {
                     console.info('TestLog: Get assetId Successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get assetId failed');
                     console.info(`TestLog: assetId is: ${data.assetId}`);
@@ -199,7 +197,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata()
                 if (data.artist === metadata1.artist) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get artist Successfully');
                 } else {
                     console.info('TestLog: Get artist failed');
                     expect(false).assertTrue();
@@ -236,7 +234,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata()
                 if (data.author === metadata2.author) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get author Successfully');
                 } else {
                     console.info('TestLog: Get author failed');
                     expect(false).assertTrue();
@@ -273,7 +271,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.album === metadata3.album) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get album Successfully');
                 } else {
                     console.info('TestLog: Get album failed');
                     expect(false).assertTrue();
@@ -311,7 +309,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.writer === metadata4.writer) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get writer Successfully');                    
                 } else {
                     console.info('TestLog: Get writer failed');
                     expect(false).assertTrue();
@@ -348,7 +346,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.composer === metadata5.composer) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get composer Successfully');
                 } else {
                     console.info('TestLog: Get composer failed');
                     expect(false).assertTrue();
@@ -386,7 +384,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.duration === metadata6.duration) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get duration Successfully');
                 } else {
                     console.info('TestLog: Get duration failed');
                     console.info(`TestLog: Get duration is: ${data.duration}`);
@@ -424,7 +422,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.mediaImage === metadata7.mediaImage) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get mediaImage Successfully');
                 } else {
                     console.info('TestLog: Get mediaImage failed');
                     expect(false).assertTrue();
@@ -484,7 +482,7 @@ export default function abilityTest() {
                 if (bufferArr0[i] !== bufferArr2[i]) {
                     expect(false).assertTrue();
                 } else {
-                    expect(true).assertTrue();
+                    console.info('TestLog: readPixelsToBuffer successfully');
                 }
             }
             done();
@@ -514,7 +512,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.publishDate?.getTime() === metadata9.publishDate?.getTime()) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get publishDate Successfully');
                 } else {
                     console.info('TestLog: Get description failed');
                     expect(false).assertTrue();
@@ -551,7 +549,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.subtitle === metadata10.subtitle) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get subtitle Successfully');
                 } else {
                     console.info('TestLog: Get subtitle failed');
                     expect(false).assertTrue();
@@ -589,7 +587,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.description === metadata11.description) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get description Successfully');
                 } else {
                     console.info('TestLog: Get description failed');
                     expect(false).assertTrue();
@@ -626,7 +624,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.lyric === metadata12.lyric) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get lyric Successfully');
                 } else {
                     console.info('TestLog: Get lyric failed');
                     expect(false).assertTrue();
@@ -665,7 +663,7 @@ export default function abilityTest() {
                 data = await controller!.getAVMetadata();
                 if (data.previousAssetId === metadata13.previousAssetId &&
                     data.nextAssetId === metadata13.nextAssetId) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get AssetId Successfully');
                 } else {
                     console.info('TestLog: Get assetId failed');
                     expect(false).assertTrue();
@@ -703,7 +701,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.filter === metadata.filter) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get filter Successfully');
                 } else {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
@@ -740,7 +738,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.filter === metadata.filter) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get filter Successfully');
                 } else {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
@@ -776,7 +774,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.filter === metadata.filter) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get filter Successfully');
                 } else {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
@@ -813,7 +811,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 if (data.skipIntervals === metadata.skipIntervals) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get skipIntervals Successfully');
                 } else {
                     console.info('TestLog: Get skipIntervals failed');
                     expect(false).assertTrue();
@@ -932,7 +930,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.state === avSession.PlaybackState.PLAYBACK_STATE_PLAY) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -970,7 +967,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.speed === 2.6) {
                     console.info('TestLog: Get speed successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get speed failed');
                     expect(false).assertTrue();
@@ -1010,7 +1006,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.position?.elapsedTime === 10) {
                     console.info('TestLog: Get position successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get position failed');
                     expect(false).assertTrue();
@@ -1048,7 +1043,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.bufferedTime === 1000) {
                     console.info('TestLog: Get bufferedTime successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get bufferedTime failed');
                     expect(false).assertTrue();
@@ -1086,7 +1080,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.loopMode === avSession.LoopMode.LOOP_MODE_SEQUENCE) {
                     console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
@@ -1124,7 +1117,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.loopMode === avSession.LoopMode.LOOP_MODE_SINGLE) {
                     console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
@@ -1162,7 +1154,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.loopMode === avSession.LoopMode.LOOP_MODE_LIST) {
                     console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
@@ -1200,7 +1191,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.loopMode === avSession.LoopMode.LOOP_MODE_SHUFFLE) {
                     console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
@@ -1238,7 +1228,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.isFavorite === true) {
                     console.info('TestLog: Get isFavorite successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get isFavorite failed');
                     expect(false).assertTrue();
@@ -1276,7 +1265,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.state === avSession.PlaybackState.PLAYBACK_STATE_INITIAL) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -1314,7 +1302,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.state === avSession.PlaybackState.PLAYBACK_STATE_PREPARE) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -1352,7 +1339,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.state === avSession.PlaybackState.PLAYBACK_STATE_PAUSE) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -1390,7 +1376,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.state === avSession.PlaybackState.PLAYBACK_STATE_FAST_FORWARD) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -1428,7 +1413,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.state === avSession.PlaybackState.PLAYBACK_STATE_REWIND) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -1466,7 +1450,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.state === avSession.PlaybackState.PLAYBACK_STATE_STOP) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -1504,7 +1487,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.state === avSession.PlaybackState.PLAYBACK_STATE_IDLE) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -1542,7 +1524,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.state === avSession.PlaybackState.PLAYBACK_STATE_BUFFERING) {
                     console.info('TestLog: Get State successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
@@ -1580,7 +1561,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.loopMode === avSession.LoopMode.LOOP_MODE_CUSTOM) {
                     console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
@@ -1618,7 +1598,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.maxVolume === PlaybackState.maxVolume) {
                     console.info('TestLog: Get maxVolume successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get maxVolume failed');
                     expect(false).assertTrue();
@@ -1656,7 +1635,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.muted === PlaybackState.muted) {
                     console.info('TestLog: Get muted successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get muted failed');
                     expect(false).assertTrue();
@@ -1696,7 +1674,6 @@ export default function abilityTest() {
                 if (data.videoWidth === PlaybackState.videoWidth &&
                     data.videoHeight === PlaybackState.videoHeight) {
                     console.info('TestLog: Get videoWidth & videoHeight successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get videoWidth & videoHeight failed');
                     expect(false).assertTrue();
@@ -1734,7 +1711,6 @@ export default function abilityTest() {
                 data = await controller!.getAVPlaybackState();
                 if (data.duration === PlaybackState.duration) {
                     console.info('TestLog: Get duration successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get duration failed');
                     expect(false).assertTrue();
@@ -1769,7 +1745,6 @@ export default function abilityTest() {
                 data = await controller!.isActive()
                 if (data) {
                     console.info('TestLog: session is active');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: session is directive');
                     expect(false).assertTrue();
@@ -1815,7 +1790,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else {
                     console.info('TestLog: session deactivate successfully');
-                    expect(true).assertTrue();
                 }
             } catch (err) {
                 console.info(`TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
@@ -1857,7 +1831,6 @@ export default function abilityTest() {
                 } else {
                     if (isActive) {
                         console.info('TestLog: session is active');
-                        expect(true).assertTrue();
                     } else {
                         console.info('TestLog: session is directive');
                         expect(false).assertTrue();
@@ -1910,7 +1883,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                     } else {
                         console.info('TestLog: session deactivate successfully');
-                        expect(true).assertTrue();
                     }
                 }
             })
@@ -1929,7 +1901,6 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             session!.onPlay(() => {
                 console.info('TestLog: Play command callback registration successful');
-                expect(true).assertTrue();
             });
             try {
                 await controller!.sendControlCommand({
@@ -1956,7 +1927,6 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             session!.onPause(() => {
                 console.info('TestLog: Pause command callback registration successful');
-                expect(true).assertTrue();
             });
             try {
                 await controller!.sendControlCommand({
@@ -1983,7 +1953,6 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             session!.onStop(() => {
                 console.info('TestLog: Stop command callback registration successful');
-                expect(true).assertTrue();
             });
             try {
                 await controller!.sendControlCommand({
@@ -2010,7 +1979,6 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             session!.onPlayNext(() => {
                 console.info('TestLog: PlayNext command callback registration successful');
-                expect(true).assertTrue();
             });
             try {
                 await controller!.sendControlCommand({
@@ -2037,7 +2005,6 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             session!.onPlayPrevious(() => {
                 console.info('TestLog: PlayPrevious command callback registration successful');
-                expect(true).assertTrue();
             });
 
             try {
@@ -2065,7 +2032,6 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             session!.onFastForward(() => {
                 console.info('TestLog: FastForward command callback registration successful');
-                expect(true).assertTrue();
             });
 
             try {
@@ -2094,7 +2060,6 @@ export default function abilityTest() {
             session!.onFastForward((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_10) {
                     console.info('TestLog: FastForward command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     expect(false).assertTrue();
                 }
@@ -2126,7 +2091,6 @@ export default function abilityTest() {
             session!.onFastForward((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_15) {
                     console.info('TestLog: FastForward command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     expect(false).assertTrue();
                 }
@@ -2157,7 +2121,6 @@ export default function abilityTest() {
             session!.onFastForward((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_30) {
                     console.info('TestLog: FastForward command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     expect(false).assertTrue();
                 }
@@ -2187,7 +2150,6 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             session!.onRewind(() => {
                 console.info('TestLog: Rewind command callback registration successful');
-                expect(true).assertTrue();
             });
 
             try {
@@ -2215,7 +2177,6 @@ export default function abilityTest() {
             session!.onRewind((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_10) {
                     console.info('TestLog: Rewind command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     expect(false).assertTrue();
                 }
@@ -2246,7 +2207,6 @@ export default function abilityTest() {
             session!.onRewind((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_15) {
                     console.info('TestLog: Rewind command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     expect(false).assertTrue();
                 }
@@ -2277,7 +2237,6 @@ export default function abilityTest() {
             session!.onRewind((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_30) {
                     console.info('TestLog: Rewind command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     expect(false).assertTrue();
                 }
@@ -2309,7 +2268,6 @@ export default function abilityTest() {
             session!.onSeek((callback) => {
                 if (callback === 10) {
                     console.info('TestLog: Seek command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Seek command callback registration failed');
                     expect(false).assertTrue();
@@ -2341,7 +2299,6 @@ export default function abilityTest() {
             session!.onSetSpeed((callback) => {
                 if (callback === 2.6) {
                     console.info('TestLog: SetSpeed command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: SetSpeed command callback registration error');
                     expect(false).assertTrue();
@@ -2374,7 +2331,6 @@ export default function abilityTest() {
             session!.onSetLoopMode((callback) => {
                 if (callback === 1) {
                     console.info('TestLog: Set LoopMode command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Set LoopMode command callback registration error');
                     expect(false).assertTrue();
@@ -2408,7 +2364,6 @@ export default function abilityTest() {
             session!.onToggleFavorite((callback) => {
                 if (callback === 'false') {
                     console.info('TestLog: Set toggleFavorite command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Set toggleFavorite command callback registration error');
                     expect(false).assertTrue();
@@ -2460,7 +2415,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             }
             await Utils.msSleep(500);
             done();
@@ -2482,7 +2436,6 @@ export default function abilityTest() {
 
             let callback2 = () => {
                 console.info('TestLog: Play command registration2 success');
-                expect(true).assertTrue();
             }
 
             session!.onPlay(callback1);
@@ -2536,7 +2489,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             }
             await Utils.msSleep(500);
             done();
@@ -2558,7 +2510,6 @@ export default function abilityTest() {
 
             let callback2 = () => {
                 console.info('TestLog: Pause command registration2 success');
-                expect(true).assertTrue();
             }
 
             session!.onPause(callback1);
@@ -2612,7 +2563,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             };
             await Utils.msSleep(500);
             done();
@@ -2634,7 +2584,6 @@ export default function abilityTest() {
 
             let callback2 = () => {
                 console.info('TestLog: Stop command registration2 success');
-                expect(true).assertTrue();
             }
 
             session!.onStop(callback1)
@@ -2686,7 +2635,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             };
             await Utils.msSleep(500);
             done();
@@ -2709,7 +2657,6 @@ export default function abilityTest() {
 
             let callback2 = () => {
                 console.info('TestLog: PlayNext command registration2 success');
-                expect(true).assertTrue();
             }
 
             session!.onPlayNext(callback1);
@@ -2760,7 +2707,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             }
             await Utils.msSleep(500);
             done();
@@ -2783,7 +2729,6 @@ export default function abilityTest() {
 
             let callback2 = () => {
                 console.info('TestLog: PlayPrevious command registration2 success');
-                expect(true).assertTrue();
             }
 
             session!.onPlayPrevious(callback1);
@@ -2834,7 +2779,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             }
             await Utils.msSleep(500);
             done();
@@ -2857,7 +2801,6 @@ export default function abilityTest() {
 
             let callback2 = () => {
                 console.info('TestLog: FastForward command registration2 success');
-                expect(true).assertTrue();
             }
 
             session!.onFastForward(callback1);
@@ -2907,7 +2850,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             }
             await Utils.msSleep(500);
             done();
@@ -2929,7 +2871,6 @@ export default function abilityTest() {
 
             let callback2 = () => {
                 console.info('TestLog: Rewind command registration2 success');
-                expect(true).assertTrue();
             }
 
             session!.onRewind(callback1);
@@ -2983,7 +2924,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             }
             await Utils.msSleep(500);
             done();
@@ -3008,7 +2948,6 @@ export default function abilityTest() {
             let callback2 = (data: long) => {
                 if (data === 10) {
                     console.info('TestLog: offSeek callback2 registration');
-                    expect(true).assertTrue();
                 }
             }
 
@@ -3064,7 +3003,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             }
             await Utils.msSleep(500);
             done();
@@ -3090,7 +3028,6 @@ export default function abilityTest() {
             let callback2 = (data: double) => {
                 if (data === 2.0) {
                     console.info('TestLog: SetSpend command registration2 success');
-                    expect(true).assertTrue();
                 }
             }
 
@@ -3147,7 +3084,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             }
             await Utils.msSleep(500);
             done();
@@ -3173,7 +3109,6 @@ export default function abilityTest() {
             let callback2 = (data: avSession.LoopMode) => {
                 if (data === 1) {
                     console.info('TestLog: SetLoopMode command registration2 success');
-                    expect(true).assertTrue();
                 }
             }
 
@@ -3230,7 +3165,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch (err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             }
             await Utils.msSleep(500);
             done();
@@ -3256,7 +3190,6 @@ export default function abilityTest() {
             let callback2 = (data: string) => {
                 if (data === 'false') {
                     console.info('TestLog: ToggleFavorite command registration2 success');
-                    expect(true).assertTrue();
                 }
             }
 
@@ -3317,7 +3250,6 @@ export default function abilityTest() {
 
             if (flag) {
                 console.info('TestLog: HandleKeyEvent command callback unRegistration successful');
-                expect(true).assertTrue();
             } else {
                 console.info('TestLog: HandleKeyEvent command callback unRegistration failed');
                 expect(false).assertTrue();
@@ -3345,7 +3277,6 @@ export default function abilityTest() {
             let callback2 = (data: KeyEvent) => {
                 if (data.action === 2) {
                     console.info('TestLog: HandleKeyEvent command registration2 success');
-                    expect(true).assertTrue();
                 }
             }
 
@@ -3384,7 +3315,7 @@ export default function abilityTest() {
                         if (deviceInfo && deviceInfo.castCategory !== undefined && deviceInfo.deviceId !== undefined &&
                             deviceInfo.deviceName !== undefined && deviceInfo.deviceType !== undefined && deviceInfo.ipAddress !== undefined &&
                             deviceInfo.providerId !== undefined && deviceInfo.supportedProtocols !== undefined && deviceInfo.authenticationStatus !== undefined) {
-                            expect(true).assertTrue();
+                            console.info('getOutputDevice deviceInfo successfully.');
                         } else {
                             console.info('getOutputDevice value error.')
                             expect(false).assertTrue();
@@ -3449,7 +3380,6 @@ export default function abilityTest() {
             try {
                 const data = await session!.getController();
                 console.info('TestLog: Get controller successfully');
-                expect(true).assertTrue();
             } catch (err) {
                 console.info('TestLog: Get controller failed');
                 console.info(`TestLog:Get controller BusinessError: ${err.code}, message: ${err.message}`);
@@ -3475,7 +3405,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                     } else {
                         console.info('Get controller successfully');
-                        expect(true).assertTrue();
                     }
                     done();
                 });
@@ -3503,7 +3432,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                     } else {
                         console.info('sendAVKeyEvent Successfully');
-                        expect(true).assertTrue();
                     }
                     done();
                 });
@@ -3527,7 +3455,6 @@ export default function abilityTest() {
             try {
                 await controller!.sendAVKeyEvent(event);
                 console.info('TestLog: sendAVKeyEvent Successfully');
-                expect(true).assertTrue();
             } catch (err) {
                 console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -3636,7 +3563,7 @@ export default function abilityTest() {
             try {
                 const data = await controller!.getAVMetadata();
                 if (data.filter === 4) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get filter successfully');
                 } else {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
@@ -3675,7 +3602,7 @@ export default function abilityTest() {
                 const data = await controller!.getAVMetadata();
                 console.error(`TestLog: ${data.drmSchemes}, : ${metadata.drmSchemes}`);
                 if (data.drmSchemes?.toString() === metadata.drmSchemes?.toString()) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get drmSchemes successfully');
                 } else {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
@@ -3714,7 +3641,7 @@ export default function abilityTest() {
             try {
                 const data = await controller!.getAVMetadata();
                 if (data.singleLyricText === metadata.singleLyricText) {
-                    expect(true).assertTrue();
+                    console.info('TestLog: Get filter successfully');
                 } else {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
@@ -3747,7 +3674,7 @@ export default function abilityTest() {
                             let deviceInfo: avSession.DeviceInfo | undefined = value?.devices[0];
                             console.info(`TestLog: ${value?.devices[0].deviceId}`);
                             if (deviceInfo && Array.isArray(deviceInfo.supportedDrmCapabilities)) {
-                                expect(true).assertTrue();
+                                console.info('TestLog: getOutputDevice deviceInfo successfully.');
                             } else {
                                 console.info('TestLog: getOutputDevice value error.');
                                 expect(false).assertTrue();
@@ -3779,7 +3706,6 @@ export default function abilityTest() {
                 const data = await session!.getAllCastDisplays();
                 if (Array.isArray(data)) {
                     console.info(`TestLog: getAllCastDisplays success: ${JSON.stringify(data)}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: getAllCastDisplays failed');
                     expect(false).assertTrue();

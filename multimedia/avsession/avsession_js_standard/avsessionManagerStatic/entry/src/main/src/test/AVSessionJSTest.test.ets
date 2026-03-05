@@ -130,7 +130,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -173,7 +172,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -257,7 +255,6 @@ export default function abilityTest() {
                 expect(receivedParam['command'] == COMMON_COMMAND_PARAMS['command']).assertTrue();
                 expect(receivedString2 == COMMON_COMMAND_STRING).assertTrue();
                 expect(receivedParam2['command'] == COMMON_COMMAND_PARAMS['command']).assertTrue();
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_STATIC_0200 Common command not received");
                 expect(true).assertFalse();
@@ -295,7 +292,6 @@ export default function abilityTest() {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0100 finished");
                 expect(receivedString == COMMON_COMMAND_STRING).assertTrue();
                 expect(receivedParam['command'] == COMMON_COMMAND_PARAMS['command']).assertTrue();
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0100 failed");
                 expect(true).assertFalse();
@@ -330,7 +326,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0200 finished");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0200 failed");
                 expect(true).assertFalse();

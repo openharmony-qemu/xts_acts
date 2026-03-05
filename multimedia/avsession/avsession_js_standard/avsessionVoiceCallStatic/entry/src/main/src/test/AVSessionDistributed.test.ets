@@ -103,7 +103,6 @@ export default function abilityTest() {
             }catch(err){
                 if (err.message == 'expect true, actualValue is false' || err.code == 6600105){
                     console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
                     expect(false).assertTrue();
@@ -129,7 +128,6 @@ export default function abilityTest() {
                 (0 <= (extras[COMMON_COMMAND_STRING] as number) &&
                     (extras[COMMON_COMMAND_STRING] as number) <= 15)){
                 console.info(`${TAG}: aduio get volume with ${extras[COMMON_COMMAND_STRING]}`);
-                expect(true).assertTrue();
             } else {
                 expect(false).assertTrue();
             }
@@ -151,7 +149,6 @@ export default function abilityTest() {
             try{
                 extras = await controller!.getExtrasWithEvent(COMMON_COMMAND_STRING);
                 console.info(` AUDIO_GET_AVAILABLE_DEVICES ${extras[COMMON_COMMAND_STRING]}`);
-                expect(true).assertTrue();
             }catch(err){
                 console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();

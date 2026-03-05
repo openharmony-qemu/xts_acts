@@ -64,7 +64,6 @@ export default function abilityTest() {
                 } else if (value?.sessionId.length === 64){
                     session = value!;
                     console.info(`TestLog: AVSession :${session!.sessionId}created successfully`);
-                    expect(true).assertTrue()
                 } else {
                     console.info('TestLog: AVSession created failed');
                     expect(false).assertTrue();
