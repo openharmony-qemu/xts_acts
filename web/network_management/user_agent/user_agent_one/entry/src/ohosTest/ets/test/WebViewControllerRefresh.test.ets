@@ -106,7 +106,7 @@ export default function webViewControllerRefresh() {
      */
     it('testRefreshNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitRefreshNull', 174040);
-      Utils.registerBaseEvent('testRefreshNull', '401', 174070, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testRefreshNull', 'no_error', 174070, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebViewControllerRefreshButton', 10, '');
@@ -122,7 +122,7 @@ export default function webViewControllerRefresh() {
      */
     it('testRefreshUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitRefreshUndefined', 174040);
-      Utils.registerBaseEvent('testRefreshUndefined', '401', 174080, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testRefreshUndefined', 'no_error', 174080, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebViewControllerRefreshButton', 10, '');
