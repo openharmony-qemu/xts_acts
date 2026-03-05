@@ -45,8 +45,8 @@ let aTag1 = {
 };
 
 let aTag2 = {
-    "uid": [],
-    "technology": [],
+    "uid": [0x01],
+    "technology": [1],
     "extrasData": [
         {
             "Sak": 0x08, "Atqa": "B000",
