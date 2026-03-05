@@ -6528,42 +6528,8 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrConnectionGetAddressesByNamePromise0100
-     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNamePromise_0100
-     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testNetworkMgrConnectionGetAddressesByNamePromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNamePromise0100';
-      console.info(`${caseName}---Start`);
-      try {
-        let host:string = "127.0.0.1";
-        connection.getAddressesByName(host).then((data:connection.NetAddress[]) => {
-          console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
-          console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
-          ExpectTrue(data.length > 0);
-          ExpectTrue(data[0].address == "127.0.0.1");
-          console.info(`${caseName}---End`);
-          done();
-        }).catch((error:BusinessError) => {
-          console.info(`${caseName} failed to getAddressesByName error:${error.message}`);
-          ExpectFail();
-          console.info(`${caseName}---End`);
-          done();
-        })
-      } catch (err) {
-        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectFail();
-        console.info(`${caseName}---End`);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testNetworkMgrConnectionGetAddressesByNamePromise0100
-     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNamePromise_0100
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNamePromise0200
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNamePromise_0200
      * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7058,8 +7024,8 @@ export default function ConnectionPublicTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrConnectionAddCustomDnsRule01100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule01100';
+    it('testNetworkMgrConnectionAddCustomDnsRule1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule1100';
       console.info(`${caseName}---Start`);
       try {
         connection.addCustomDnsRule("192.168.1.1", null).then((data: void) => {
@@ -7107,37 +7073,6 @@ export default function ConnectionPublicTest() {
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
         ExpectTrue(err != null);
-        console.info(`${caseName}---End`);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testNetworkMgrConnectionAddCustomDnsRule0800
-     * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_0800
-     * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using promise as an asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrConnectionAddCustomDnsRule0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule0800';
-      console.info(`${caseName}---Start`);
-      try {
-        connection.addCustomDnsRule("192.168.1.1", []).then((data: void) => {
-          console.error(`${caseName} data:${JSON.stringify(data)}`);
-          ExpectFail();
-          console.info(`${caseName}---End`);
-          done();
-        }).catch((error: BusinessError) => {
-          console.error(`${caseName} error:${JSON.stringify(error)}`);
-          ExpectFail();
-          console.info(`${caseName}---End`);
-          done();
-        });
-      } catch (err) {
-        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 401);
         console.info(`${caseName}---End`);
         done();
       }
