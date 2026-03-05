@@ -33,7 +33,7 @@ import sim from '@ohos.telephony.sim';
 
 export default function testsuite() {
   AddContactTest();
-  if (deviceInfo.deviceType !== 'wearable') {
+  if (deviceInfo.deviceType !== 'wearable' && deviceInfo.deviceType !== 'default') {
     SelectContactsTest();
     AddContactViaUITest();
     SaveToExistingContactViaUITest();
