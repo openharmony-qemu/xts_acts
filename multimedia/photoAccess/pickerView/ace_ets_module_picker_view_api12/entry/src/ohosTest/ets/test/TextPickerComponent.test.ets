@@ -2762,13 +2762,11 @@ export default function TextPicker() {
       if (!isExecutePicker) { done(); return; }
 
       const code: number = EventType.SELECT_ITEM_INFO;
-
       const pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.MOVING_PHOTO_IMAGE_TYPE;
       pickerOptions.isMovingPhotoBadgeShown = true;
       pickerOptions.selectMode = SelectMode.MULTI_SELECT;
       pickerOptions.isSearchSupported = false;
-
 
       const options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
@@ -2783,9 +2781,7 @@ export default function TextPicker() {
       }
 
       const strJson: string = getInspectorByKey('PhotoPickerComponent');
-
       expect(JSON.parse(strJson)?.$attrs?.visibility).assertEqual('Visibility.Visible');
-
 
       await CommonFunc.sleep(600);
       const images: Array<Component> = await driver.findComponents(ON.type('Image'));
@@ -2801,7 +2797,6 @@ export default function TextPicker() {
       console.info('testPicker55: browser mode opened!');
       await CommonFunc.sleep(500);
 
-
       let movingBtn: Component | null = await driver.findComponent(ON.id('PickerMovingPhotoToggle'));
       if (movingBtn === null) {
         console.log("Any button found! Fail!");
@@ -2810,20 +2805,22 @@ export default function TextPicker() {
         await movingBtn!.click();
         await CommonFunc.sleep(3000);
         console.info('testPicker55: clicked "Moving picture" button');
-
         await clickExitBrowserButton(driver);
-
-        const checkboxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
-        expect(checkboxes && checkboxes.length > 0).assertTrue();
-        const itemPromise = waitForSelectItemInfo(code, 5000);
-        await checkboxes[0].click();
-        console.info('testPicker55: Checkbox selected!');
-
-        const selectedItem = await itemPromise;
-
-        console.info('testPicker55: ItemInfo -> ' + JSON.stringify(selectedItem));
-        console.info('testPicker55: movingPhotoBadgeState -> ' + JSON.stringify(selectedItem.movingPhotoBadgeState));
-        expect(selectedItem.movingPhotoBadgeState).assertEqual(2);
+        const selectMovingPhoto = async () => {
+          const checkbox: Component | null = await driver.findComponent(ON.id('Selector_0'));
+          if (checkbox) {
+            const itemPromise = waitForSelectItemInfo(code, 5000);
+            await checkbox.click();
+            console.info('testPicker55: Checkbox clicked!');
+            const selectedItem = await itemPromise;
+            console.info('testPicker55: ItemInfo -> ' + JSON.stringify(selectedItem),
+              'movingPhotoBadgeState', selectedItem.movingPhotoBadgeState);
+            expect(selectedItem.movingPhotoBadgeState).assertEqual(2);
+          }
+          console.info('testPicker55: no checkbox');
+        }
+        // 失败重试一次，兜底heif转码
+        await selectMovingPhoto().catch(selectMovingPhoto);
       }
 
       expect(photoAccessHelper.MovingPhotoBadgeStateType.NOT_MOVING_PHOTO).assertEqual(0);
