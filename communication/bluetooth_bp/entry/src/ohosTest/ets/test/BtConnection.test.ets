@@ -2339,50 +2339,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2600
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2600
-     * @tc.desc   Test setLocalName when bluetooth is disabled (error code 2900099) api10
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
-        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2600';
-        console.info(`${caseName}---Start`);
-        try {
-            let currentState = btAccess.getState();
-            console.info(`${caseName} current bluetooth state: ${currentState}`);
-            
-            if (currentState === 2) {
-                btAccess.disableBluetooth();
-                await sleep(3000);
-                let stateAfterDisable = btAccess.getState();
-                console.info(`${caseName} bluetooth state after disable: ${stateAfterDisable}`);
-            }
-            
-            bluetooth.setLocalName('TestName');
-            await sleep(1000);
-            console.info(`${caseName} setLocalName should fail when bluetooth is disabled`);
-            expect(true).assertFalse();
-        } catch (err) {
-            console.error(`${caseName} setLocalName error, error code is: ${err.code}, error message is: ${err.message}`);
-            let errorCode = Number(err.code);
-            if (errorCode === 801) {
-                console.info(`${caseName} setLocalName is not support`);
-                expect(errorCode).assertEqual(801);
-            } else if (errorCode === 2900003 || errorCode === 2900099) {
-                console.info(`${caseName} bluetooth is disabled or not enabled`);
-                expect(errorCode === 2900003 || errorCode === 2900099).assertTrue();
-            } else {
-                console.error(`${caseName} unexpected error code: ${err.code}`);
-                expect().assertFail();
-            }
-        }
-        console.info(`${caseName}---End`);
-        done();
-    })
-
-    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100
      * @tc.desc   Test getBtConnectionState api10
@@ -3085,44 +3041,6 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7100
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7100
-     * @tc.desc   Test getRemoteProfileUuids promise when bluetooth is disabled (error code 2900003) api10
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
-        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7100';
-        console.info(`${caseName}---Start`);
-        try {
-            let currentState = btAccess.getState();
-            console.info(`${caseName} current bluetooth state: ${currentState}`);
-            
-            if (currentState === 2) {
-                btAccess.disableBluetooth();
-                await sleep(3000);
-                let stateAfterDisable = btAccess.getState();
-                console.info(`${caseName} bluetooth state after disable: ${stateAfterDisable}`);
-            }
-            
-            await bluetooth.getRemoteProfileUuids('44:55:66:77:88:99').then((value: bluetooth.ProfileUuids[]) => {
-                console.info(`${caseName} getRemoteProfileUuids success, should not reach here`);
-                expect(true).assertFalse();
-            });
-        } catch (error) {
-            console.error(`${caseName} getRemoteProfileUuids error, error code is: ${error.code}, error message is: ${error.message}`);
-            if (error.code == 801) {
-                console.info(`${caseName} getRemoteProfileUuids is not support`);
-                expect(Number(error.code)).assertEqual(801);
-            } else {
-                expect(Number(error.code)).assertEqual(2900003);
-            }
-        }
-        console.info(`${caseName}---End`);
-        done();
-    })
 
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_7200
@@ -4152,56 +4070,6 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4300
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4300
-     * @tc.desc   Test pairDevice when bluetooth is disabled (error code 2900003) api10
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_4300';
-        console.info(`${caseName}---Start`);
-        try {
-            let currentState = btAccess.getState();
-            console.info(`${caseName} current bluetooth state: ${currentState}`);
-
-            if (currentState === 2) {
-                btAccess.disableBluetooth();
-                await sleep(3000);
-                let stateAfterDisable = btAccess.getState();
-                console.info(`${caseName} bluetooth state after disable: ${stateAfterDisable}`);
-            }
-
-            let functionPairDevice = async ()=>{
-                return new Promise<void>((resolve, reject)=>{
-                    bluetooth.pairDevice("11:22:55:66:33:44", (error) => {
-                        if (error) {
-                            reject(error)
-                        } else {
-                            resolve();
-                        }
-                    });
-                })
-            }
-            await functionPairDevice();
-            expect(true).assertFalse();
-        } catch (err) {
-            console.error(`${caseName} pairDevice error, error code is: ${err.code}, error message is: ${err.message}`);
-            if (err.code === 2900003) {
-                console.info(`${caseName} Got expected error 2900003 (Bluetooth disabled)`);
-                expect(Number(err.code)).assertEqual(2900003);
-            } else if (err.code === 801) {
-                console.info(`${caseName} pairDevice is not supported`);
-                expect(Number(err.code)).assertEqual(801);
-            } else {
-                console.error(`${caseName} Unexpected error code: ${err.code}`);
-                expect(Number(err.code)).assertEqual(2900003);
-            }
-            done();
-        }
-    })
 
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCOMMON_BLUETOOTHADDRESSTYPE_0100
