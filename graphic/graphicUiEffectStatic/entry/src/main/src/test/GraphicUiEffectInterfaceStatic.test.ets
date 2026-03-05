@@ -51,7 +51,6 @@ export default function GraphicUiEffectInterfaceStatic() {
         hilog.info(domain, tag, '%{public}s', 'uiEffect createEffect failed.');
         return undefined;
       }
-      expect(true).assertTrue();
       hilog.info(domain, tag, '%{public}s', 'uiEffect createEffect successfully.');
       try {
         let brightnessBlender: uiEffect.BrightnessBlender = uiEffect.createBrightnessBlender({
@@ -68,7 +67,6 @@ export default function GraphicUiEffectInterfaceStatic() {
           hilog.info(domain, tag, '%{public}s', 'uiEffect createBrightnessBlender failed.');
           return undefined;
         }
-        expect(true).assertTrue();
         hilog.info(domain, tag, '%{public}s', 'uiEffect createBrightnessBlender successfully.');
         let result: uiEffect.VisualEffect = visualEffect.backgroundColorBlender(brightnessBlender);
         if (result == undefined) {
@@ -77,7 +75,6 @@ export default function GraphicUiEffectInterfaceStatic() {
         }
         hilog.info(domain, tag, '%{public}s', 'uiEffect backgroundColorBlender successfully.');
         hilog.info(domain, tag, '%{public}s', 'uiEffect test END');
-        expect(true).assertTrue();
       } catch(err){
         console.info('www data err ' + JSON.stringify(err))
         expect().assertFail();
@@ -98,13 +95,12 @@ export default function GraphicUiEffectInterfaceStatic() {
         let msg = " =====uiEffectTest_static_0200==== "
         try {
           let visualEffect: uiEffect.VisualEffect = uiEffect.createEffect()
-          // let filter: uiEffect.Filter = uiEffect.createFilter();
-          console.log(msg + " Succeed in uiEffect.createFilter " + JSON.stringify(visualEffect))
-          expect(true).assertTrue()
+          console.log(msg + " Succeed in uiEffect.createEffect " + JSON.stringify(visualEffect))
+          expect(visualEffect !== undefined).assertTrue();
           done()
         } catch (err) {
-          console.log(msg + " Failed in uiEffect.createFilter " + JSON.stringify(err))
-          console.log(msg + " Failed in uiEffect.createFilter " + err)
+          console.log(msg + " Failed in uiEffect.createEffect " + JSON.stringify(err))
+          console.log(msg + " Failed in uiEffect.createEffect " + err)
           expect().assertFail()
           done()
         }
@@ -123,8 +119,8 @@ export default function GraphicUiEffectInterfaceStatic() {
         let msg = " =====uiEffectTest_static_0300==== "
         try {
           let filter: uiEffect.Filter = uiEffect.createFilter();
-          console.log(msg + " Succeed in uiEffect.createFilter ")
-          expect(true).assertTrue()
+          console.log(msg + " Succeed in uiEffect.createFilter ");
+          expect(filter !== undefined).assertTrue();
           done()
         } catch (err) {
           console.log(msg + " Failed in uiEffect.createFilter " + JSON.stringify(err))
@@ -147,9 +143,10 @@ export default function GraphicUiEffectInterfaceStatic() {
         let msg = " =====uiEffectTest_static_0400==== "
         try {
           let filter: uiEffect.Filter = uiEffect.createFilter();
-          filter.blur(20);
-          console.log(msg + " Succeed in uiEffect.createFilter blur ")
-          expect(true).assertTrue()
+          expect(filter !== undefined).assertTrue();
+          let blur = filter.blur(20);
+          console.log(msg + " Succeed in uiEffect.createFilter blur ", JSON.stringify(blur));
+          expect(blur !== undefined).assertTrue();
           done()
         } catch (err) {
           console.log(msg + " Failed in uiEffect.createFilter " + JSON.stringify(err))

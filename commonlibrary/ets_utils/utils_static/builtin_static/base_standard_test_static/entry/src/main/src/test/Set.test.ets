@@ -109,18 +109,19 @@ export default function SetTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('testSetPrototypeAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   (): void => {
-    //     const TAG = "testSetPrototypeAdd0005";
-    //     try {
-    //       const odds = new Set<string>([]);
-    //       let value = odds.add("c");
-    //       expect(String(value.has("c"))).assertEqual('true');
-    //     } catch (err: BusinessError) {
-    //       console.error(`${TAG} failed, error: ${err.message}`);
-    //       expect(false).assertFail();
-    //     }
-    //   })
+    it('testSetPrototypeAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (): void => {
+        const TAG = "testSetPrototypeAdd0005";
+        try {
+          const odds = new Set<string>([]);
+          let value = odds.add("c");
+          expect(String(value.has("c"))).assertEqual('true');
+        } catch (err) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect(false).assertFail();
+        }
+      })
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0600
      * @tc.name testSetPrototypeClear0001

@@ -224,11 +224,18 @@ import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
 import PicturePackingPixelMapFirTestSupp from './image/PicturePackingPixelMapFir.test';
 import PicturePackingPixelMapSecTestSupp from './image/PicturePackingPixelMapSec.test';
 import ImageGetComponentFirSupp from './Picture/PictureGetComponentFirSupp.test';
-import ImagePictureTest from './image/ImagePictureTest.test';
+import ImagePictureTest from './image/ImagePictureTest.test'; 
 import CrateImageSupp from './image/CreateImageTest.test';
 import CreatePixelMapUsingAllocatorTest from './image/ImageCreatePixelMapUsingAllocatorTest.test';
 import ImageCreatePixelMapFromSurfaceTest from './image/ImageCreatePixelMapFromSurfaceTest.test';
 import ImageCreatePremultipliedPixelMapTest from './image/ImageCreatePremultipliedPixelMapTest.test';
+import ImageGetComponentSuppSec from './image/ImageGetComponenentSuppSec.test';
+import PicturePackToFileTestSupp from './image/PicturePackToFileSupp.test';
+import PicturePackToFileTestSecSupp from './image/PicturePackToFileSuppSec.test';
+import PicturePackToFileTestThrSupp from './image/PicturePackToFileSuppThr.test';
+import PicturePackToFileTestFourSupp from './image/PicturePackToFileSuppFour.test';
+import imageReadImageMetadataTestSupp from './image/ImageReadImageMetadataSupp.test';
+
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -444,4 +451,10 @@ export default function testsuite() {
   CreatePixelMapUsingAllocatorTest();
   ImageCreatePixelMapFromSurfaceTest();
   ImageCreatePremultipliedPixelMapTest();
+  ImageGetComponentSuppSec();
+  PicturePackToFileTestSupp();
+  PicturePackToFileTestSecSupp();
+  PicturePackToFileTestThrSupp();
+  PicturePackToFileTestFourSupp();
+  imageReadImageMetadataTestSupp();
 }

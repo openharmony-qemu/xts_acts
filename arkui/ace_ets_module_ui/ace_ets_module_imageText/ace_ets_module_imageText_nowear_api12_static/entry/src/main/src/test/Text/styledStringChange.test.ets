@@ -45,7 +45,7 @@ export default function styledStringChange() {
       console.info("styledStringChange beforeEach start");
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get styledStringChange state pages:" + "");
         if (!("styledStringChange" == pages.name)) {

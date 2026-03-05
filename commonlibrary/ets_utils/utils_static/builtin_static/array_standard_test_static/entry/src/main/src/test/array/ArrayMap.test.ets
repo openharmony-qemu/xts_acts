@@ -74,9 +74,9 @@ interface BaseI063 {
     innerHTML: string
 }
 
-interface BaseI069 {
-    name: string,
-    age: number
+class BaseI069 {
+  name: string = "";
+  age: number = 1;
 }
 
 interface BaseI071 { }
@@ -588,23 +588,21 @@ export default function ArrayMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    // todo
-    // it('ArrayMapTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const obj = { self: null } as BaseI029;
-    //   obj.self = obj;
-    //   const arr: Array<BaseI029 | int> = [obj, 1];
-    //
-    //   const result = arr.map(item => {
-    //     if (typeof item === 'object') {
-    //       return item.self === item;
-    //     }
-    //     return item;
-    //   });
-    //
-    //   expect(result).assertDeepEquals([true, 1]);
-    //   expect(result.length).assertEqual(2);
-    // });
+      it('ArrayMapTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+        const obj = { self: null } as BaseI029;
+        obj.self = obj;
+        const arr: Array<BaseI029 | int> = [obj, 1];
 
+        const result = arr.map(item => {
+          if (typeof item === 'object') {
+            return (item as BaseI029).self === item;
+          }
+          return item;
+        });
+
+        expect(result).assertDeepEquals([true, 1]);
+        expect(result.length).assertEqual(2);
+      });
     /**
      * @tc.name   ArrayMapTest031
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3100
@@ -1050,16 +1048,15 @@ export default function ArrayMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    // todo
-    // it('ArrayMapTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [
-    //     '{"name":"Alice","age":30}',
-    //     '{"name":"Bob","age":25}'
-    //   ];
-    //   const result = arr.map(json => (JSON.parseJsonElement(json) as BaseI069).age);
-    //
-    //   expect(result).assertDeepEquals([30, 25]);
-    // });
+      it('ArrayMapTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+        const arr = [
+          '{"name":"Alice","age":30}',
+          '{"name":"Bob","age":25}'
+        ];
+        const result = arr.map(json => (JSON.parse<BaseI069>(json,Class.from<BaseI069>()) as BaseI069).age);
+
+        expect(JSON.stringify(result)).assertDeepEquals(JSON.stringify([30, 25]));
+      });
 
     /**
      * @tc.name   ArrayMapTest071

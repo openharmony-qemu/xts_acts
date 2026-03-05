@@ -918,10 +918,12 @@ async function sleep(delay: number): Promise<void> {
 export default function pictureNdkTest() {
   describe('pictureNdkTest', () => {
     let isSupportHdr: boolean = false;
-    fileDir = AppStorage.get('pathDir')
     beforeAll(async () => {
-      isSupportHEIFDecode = 
-        image.createImageSource(fileDir + '/' + 'test.jpg').supportedFormats.includes('image/heic')
+      let filePath = AppStorage.get('pathDir') + '/' + "test.jpg";
+      let imageSource: image.ImageSource = image.createImageSource(filePath);
+      console.info('imageSource is ' + imageSource);
+      isSupportHEIFDecode = imageSource.supportedFormats.includes('image/heic');
+      console.info('isSupportHEIFDecode is ' + isSupportHEIFDecode);
       isSupportVPE = await fs.access("/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so").then((res: boolean) => {
         if (res) {
           console.info("file exists");

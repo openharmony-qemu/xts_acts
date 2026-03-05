@@ -1314,23 +1314,6 @@ export default function ArraySliceTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_070
-     * @tc.name testArraySlice070
-     * @tc.desc Verify slice() on array after concat of arrays with different types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // 问题？
-    // it('testArraySlice070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr1:number[]=[1,2];
-    //   const arr2:string[]=['a','b'];
-    //   const arr:(number|string)[]=arr1.concat(arr2);
-    //   const sliced:(number|string)[]=arr.slice(1,3);
-    //   expect(sliced).assertDeepEquals([2,'a']);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_071
      * @tc.name testArraySlice071
      * @tc.desc Verify slice() on array after repeated push and pop
@@ -2603,22 +2586,6 @@ export default function ArraySliceTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_156
-     * @tc.name testArraySlice156
-     * @tc.desc Verify slice() on array of arrays after flatMap and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // todo
-    // it('testArraySlice156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: number[][] = [[1, 2], [3, 4]];
-    //   const flat: number[] = arr.flatMap(x => x);
-    //   const sliced: number[] = flat.slice(1, 3);
-    //   expect(sliced).assertDeepEquals([2, 3]);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_157
      * @tc.name testArraySlice157
      * @tc.desc Verify slice() on array of strings after map and reverse
@@ -2970,22 +2937,6 @@ export default function ArraySliceTest() {
       const sliced: number[] = arr.slice(-4, -1);
       expect(JSON.stringify(sliced)).assertEqual(JSON.stringify([4, 3, 2]));
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_180
-     * @tc.name testArraySlice180
-     * @tc.desc Verify slice() on array of nested arrays after flatMap and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // todo
-    // it('testArraySlice180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
-    //   const flat: number[] = arr.flatMap(x => x.map(y => y * 2));
-    //   const sliced: number[] = flat.slice(2, 6);
-    //   expect(sliced).assertDeepEquals([6, 8, 10, 12]);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Slice_181

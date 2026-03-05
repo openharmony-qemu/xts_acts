@@ -15,8 +15,9 @@
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { common, UIAbility, Want, dialogRequest, StartOptions, InsightIntentContext,
+import { common, UIAbility, Want, StartOptions, InsightIntentContext,
   OpenLinkOptions, bundleManager } from '@kit.AbilityKit';
+import dialogRequest from '@ohos.app.ability.dialogRequest'
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { BusinessError, commonEventManager, systemParameterEnhance } from '@kit.BasicServicesKit';
 
@@ -122,6 +123,102 @@ export default function errCodeQueryTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0200
+     * @tc.desc   Pass the parameter wrongly as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0200', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0200';
+      try {
+        let want: Want = {
+          deviceId: '',
+          bundleName: 'com.test.actsabilityerrcodequerysecondtest',
+          abilityName: 'TestAbility',
+          moduleName: 'entry_test'
+        };
+        let requestCallback = dialogRequest.getRequestCallback(want);
+        console.log(`[${TAG}] 00000`);
+        console.log(`[${TAG}] requestCallback: ${JSON.stringify(requestCallback)}`);
+        requestCallback.setRequestResult(null);
+        expect().assertFail();
+        done();
+      } catch (paramError) {
+        console.log(`[${TAG}] paramError: ${JSON.stringify(paramError)}`);
+        expect(paramError.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0300
+     * @tc.desc   Pass the parameter as RESULT_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0300', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0300';
+      try {
+        let want: Want = {
+          deviceId: '',
+          bundleName: 'com.test.actsabilityerrcodequerysecondtest',
+          abilityName: 'TestAbility',
+          moduleName: 'entry_test'
+        };
+        let requestCallback = dialogRequest.getRequestCallback(want);
+        console.log(`[${TAG}] requestCallback: ${JSON.stringify(requestCallback)}`);
+        requestCallback.setRequestResult({
+          result:dialogRequest.ResultCode.RESULT_OK,
+          want:{}
+        });
+        console.log(`[${TAG}] setRequestResult succeed`);
+        expect().assertFail();
+        done();
+      } catch (paramError) {
+        console.log(`[${TAG}] paramError: ${JSON.stringify(paramError)}`);
+        expect(paramError.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0400
+     * @tc.desc   Pass the parameter as RESULT_CANCEL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0400', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0400';
+      try {
+        let want: Want = {
+          deviceId: '',
+          bundleName: 'com.test.actsabilityerrcodequerysecondtest',
+          abilityName: 'TestAbility',
+          moduleName: 'entry_test'
+        };
+        let requestCallback = dialogRequest.getRequestCallback(want);
+        console.log(`[${TAG}] requestCallback: ${JSON.stringify(requestCallback)}`);
+        requestCallback.setRequestResult({
+          result:dialogRequest.ResultCode.RESULT_CANCEL,
+          want:{}
+        });
+        console.log(`[${TAG}] setRequestResult succeed`);
+        expect().assertFail();
+        done();
+      } catch (paramError) {
+        console.log(`[${TAG}] paramError: ${JSON.stringify(paramError)}`);
+        expect(paramError.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0100
      * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0100
      * @tc.desc   Pass the parameter wrongly as undefined
@@ -155,6 +252,50 @@ export default function errCodeQueryTest() {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0100';
       try {
         let requestCallback = dialogRequest.getRequestCallback(undefined);
+        console.log(`[${TAG}] requestCallback: ${JSON.stringify(requestCallback)}`);
+        expect().assertFail();
+        done();
+      } catch (paramError) {
+        console.log(`[${TAG}] paramError: ${JSON.stringify(paramError)}`);
+        expect(paramError.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0200
+     * @tc.desc   Pass the parameter wrongly as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0200', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0200';
+      try {
+        let requestInfo = dialogRequest.getRequestInfo(null);
+        console.log(`[${TAG}] requestInfo: ${JSON.stringify(requestInfo)}`);
+        expect().assertFail();
+        done();
+      } catch (paramError) {
+        console.log(`[${TAG}] paramError: ${JSON.stringify(paramError)}`);
+        expect(paramError.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0200
+     * @tc.desc   Pass the parameter wrongly as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0200', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0200';
+      try {
+        let requestCallback = dialogRequest.getRequestCallback(null);
         console.log(`[${TAG}] requestCallback: ${JSON.stringify(requestCallback)}`);
         expect().assertFail();
         done();

@@ -18,6 +18,7 @@ import base from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import backgroundTaskManager from '@ohos.resourceschedule.backgroundTaskManager';
+import EventBusPlus from  '../lib/EventBusPlus'
 
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
@@ -50,7 +51,7 @@ export default function actsDebuggableAaProcessTest() {
       }).catch((err:base.BusinessError) => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s', 'beforeAll err is: ' + JSON.stringify(err));
       });
-      await sleep(2000);
+      await EventBusPlus.onWait('onForeground')
       await requestSuspendDelay();
     })
 
@@ -62,21 +63,14 @@ export default function actsDebuggableAaProcessTest() {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
           'beforeEach ActsDebuggableAaProcessTest hilog -r err is: ' + JSON.stringify(err));
       });
-      await sleep(2000);
     })
 
     afterEach(()=> {
     })
 
     afterAll(async ()=> {
-      await abilityDelegator.executeShellCommand('aa force-stop com.example.timeout').then(data => {
-        hilog.info(0x0000, 'debuggabletest', '%{public}s',
-          'afterAll force-stop data is: ' + JSON.stringify(data));
-      }).catch((err:base.BusinessError) => {
-        hilog.info(0x0000, 'debuggabletest', '%{public}s',
-          'afterAll force-stop err is: ' + JSON.stringify(err));
-      });
-      await sleep(1000);
+      EventBusPlus.emit('terminateTimeout')
+      await EventBusPlus.onWait('onDestroy')
     })
 
     /**

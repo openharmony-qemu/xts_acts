@@ -64,7 +64,7 @@ export default function FileSahre_CheckPersistentPermission_test() {
                 }
             }
             console.info("FileShare_checkPersistentPermission_001 successfully");
-            expect(true).assertTrue();
+            expect(fileShare.OperationMode.READ_MODE === 0b1).assertTrue();
             done();
         }).catch((err) => {
             console.info("FileShare_checkPersistentPermission_001 failed with error message: " + err.message + ", error code: " + err.code);
@@ -123,7 +123,7 @@ export default function FileSahre_CheckPersistentPermission_test() {
                 }
             }
             console.info("FileShare_checkPersistentPermission_002 successfully");
-            expect(true).assertTrue();
+            expect(fileShare.OperationMode.READ_MODE === 0b1).assertTrue();
             done();
         }).catch((err) => {
             console.info("FileShare_checkPersistentPermission_002 failed with error message: " + err.message + ", error code: " + err.code);

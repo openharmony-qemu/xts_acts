@@ -2709,6 +2709,82 @@ static napi_value NAPI_AVPlaybackStrategyDestoyErr(napi_env env, napi_callback_i
     napi_create_int32(env, res, &result);
     return result;
 }
+
+static void OnSubTitleUpdataCb(OH_AVPlayer *player, OH_AVFormat *infoBody, NdkAVPlayerUser *ndkAVPlayerUser)
+{
+    LOG("OnSubTitleUpdataCb called");
+    int32_t duration = 0;
+    bool ret = false;
+    ret = OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_SUBTITLE_UPDATE_INFO_DURATION, &duration);
+    if (ret) {
+        LOG("OnSubTitleUpdataCb duration=%{public}d", duration);
+    } else {
+        LOG("OnSubTitleUpdataCb get duration failed");
+        ndkAVPlayerUser->errorCode = FAIL;
+    }
+    int32_t startTime = 0;
+    ret = OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_SUBTITLE_UPDATE_INFO_START_TIME, &startTime);
+    if (ret) {
+        LOG("OnSubTitleUpdataCb startTime=%{public}d", startTime);
+    } else {
+        LOG("OnSubTitleUpdataCb get startTime failed");
+        ndkAVPlayerUser->errorCode = FAIL;
+    }
+    const char *text = nullptr;
+    ret = OH_AVFormat_GetStringValue(infoBody, OH_PLAYER_SUBTITLE_UPDATE_INFO_TEXT, &text);
+    if (ret && text != nullptr) {
+        LOG("OnSubTitleUpdataCb text=%{public}s", text);
+    } else {
+        LOG("OnSubTitleUpdataCb get text failed");
+        ndkAVPlayerUser->errorCode = FAIL;
+    }
+}
+
+static napi_value NAPI_AVPlayerOnSubtitleInfoUpdate(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 2;
+    napi_value args[PARAM_2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t fd = 0;
+    int64_t offset;
+    int64_t size;
+    ExtractFileDescriptor(env, args[PARAM_0], fd, offset, size);
+    int32_t subtitleFd = 0;
+    napi_get_value_int32(env, args[PARAM_1], &subtitleFd);
+    NdkAVPlayerUser *ndkAVPlayerUser = new NdkAVPlayerUser();
+    ndkAVPlayerUser->onInfoFuncs_.emplace(
+        AV_INFO_TYPE_SUBTITLE_UPDATE, [ndkAVPlayerUser](OH_AVPlayer *player, OH_AVFormat *infoBody) {
+            OnSubTitleUpdataCb(player, infoBody, ndkAVPlayerUser);
+            LOG("OnSubTitleUpdataCb finished");
+        });
+    ndkAVPlayerUser->InitAVPlayer(fd, offset, size);
+    ndkAVPlayerUser->errorCode = OH_AVPlayer_AddFdSubtitleSource(ndkAVPlayerUser->player, subtitleFd, 0, -1);
+    LOG("OH_AVPlayer_AddFdSubtitleSource called in prepared state, errorCode: %{public}d",
+        ndkAVPlayerUser->errorCode);
+    napi_create_object(env, &result);
+    SetInt32NamedProperty(env, result, "result", ndkAVPlayerUser->errorCode);
+    SetUserDataProperty(env, result, "userData", &ndkAVPlayerUser);
+    return result;
+}
+static napi_value NAPI_AVMediaSourceDestroy(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVHttpHeader* header = OH_AVHttpHeader_Create();
+    OH_AVMediaSource *mediaSource = OH_AVMediaSource_CreateWithUrl("http://example.com/video.mp4", header);
+    OH_AVErrCode errCode = OH_AVMediaSource_Destroy(mediaSource);
+    OH_AVHttpHeader_Destroy(header);
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+ 	 
+static napi_value NAPI_AVMediaSourceDestroyAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVErrCode errCode = OH_AVMediaSource_Destroy(nullptr);
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -2844,6 +2920,10 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr},
         {"AVPlayerSetAmplitudeUpdateCallbackError", nullptr, NAPI_AVPlayerSetAmplitudeUpdateCallbackError, nullptr,
             nullptr, nullptr, napi_default, nullptr},
+        {"AVMediaSourceDestroy", nullptr, NAPI_AVMediaSourceDestroy, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"AVMediaSourceDestroyAbnormal", nullptr, NAPI_AVMediaSourceDestroyAbnormal, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"AVLoadingRequestError", nullptr, NAPI_AVLoadingRequestError, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"AVHttpHeaderDestroy", nullptr, NAPI_AVHttpHeaderDestroy, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -2866,6 +2946,8 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"AVPlaybackStrategyDestoyErr", nullptr, NAPI_AVPlaybackStrategyDestoyErr, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"AVPlayerOnSubtitleInfoUpdate", nullptr, NAPI_AVPlayerOnSubtitleInfoUpdate, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     SampleManager::GetInstance()->Export(env, exports);

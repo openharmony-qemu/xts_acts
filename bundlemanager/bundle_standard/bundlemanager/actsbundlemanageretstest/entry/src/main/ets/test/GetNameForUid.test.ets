@@ -114,5 +114,33 @@ export default function getNameForUid() {
         });
     });
 
+    /**
+     * @tc.name   getNameForUid_0500
+     * @tc.number getNameForUid_0500
+     * @tc.desc   Test getNameForUid with null uid param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getNameForUid_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        await bundle.getNameForUid(null).then(data => {
+            expect(data).assertFail();
+        }).catch(err => {
+            console.info("getNameForUid null fail:" + JSON.stringify(err));
+            expect(err).assertEqual(2);
+        });
+        bundle.getNameForUid(null, (err, data) => {
+            if (err) {
+                console.info("getNameForUid err" + JSON.stringify(err));
+                expect(err).assertEqual(2);
+                done();
+                return;
+            }
+            console.info("getNameForUid null result:" + JSON.stringify(data));
+            expect().assertFail();
+            done();
+        });
+    });
+
     });
 }

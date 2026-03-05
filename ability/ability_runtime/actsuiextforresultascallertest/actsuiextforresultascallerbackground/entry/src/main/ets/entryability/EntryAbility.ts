@@ -63,7 +63,16 @@ let setWant = (want) => {
         parameter: 'StartAbilityForResultAsCaller_1300'
       }
     });
-  }
+   } else if (want.parameters.parameter === 'StartAbilityForResultAsCaller_2000') {
+    let commonEventData = {
+      parameters: {
+        str: 'kill'
+      }
+    };
+    commonEvent.publish('kill', commonEventData, (err) => {
+      console.debug('====>[UIExtensionForResultAsCallerUIAbility] 2000 publish2 err:' + JSON.stringify(err));
+    });
+   }
 }
 
 export default class EntryAbility extends UIAbility {

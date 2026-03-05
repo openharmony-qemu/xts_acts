@@ -650,5 +650,79 @@ describe('fileio_access', function () {
  	       done();
  	    }
  	   });
+
+    /**
+      * @tc.name   fileio_test_access_callback_error_004
+      * @tc.number SUB_DF_FILEIO_ACCESS_CALLBACK_ERROR_004
+      * @tc.desc   Test access() interface with empty string path. Callback.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+      it('fileio_test_access_callback_error_004', Level.LEVEL2, async function (done) {
+        fileio.access("", 0, function (err) {
+          if (err) {
+            console.log('fileio_test_access_callback_error_004: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'No such file or directory').assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      });
+    
+      /**
+      * @tc.name   fileio_test_access_callback_error_005
+      * @tc.number SUB_DF_FILEIO_ACCESS_CALLBACK_ERROR_005
+      * @tc.desc   Test access() interface with null path. Callback.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+      it('fileio_test_access_callback_error_005', Level.LEVEL2, async function (done) {
+      try {
+        fileio.access(null, 0, function (err) {
+          if (err) {
+            console.log('fileio_test_access_callback_error_005: ' + err.message + ', code: ' + err.code);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+        done();
+      } catch (err) {
+          console.log('fileio_test_access_callback_error_005 err: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+      }
+      });
+    
+      /**
+      * @tc.name   fileio_test_access_callback_error_006
+      * @tc.number SUB_DF_FILEIO_ACCESS_CALLBACK_ERROR_006
+      * @tc.desc   Test access() interface with undefined path. Callback.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+      it('fileio_test_access_callback_error_006', Level.LEVEL2, async function (done) {
+      try {
+        fileio.access(undefined, 0, function (err) {
+          if (err) {
+            console.log('fileio_test_access_callback_error_006: ' + err.message + ', code: ' + err.code);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+          console.log('fileio_test_access_callback_error_006 err: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+      }
+      });
 });
 }

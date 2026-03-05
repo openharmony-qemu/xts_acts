@@ -2383,6 +2383,1009 @@ export default function WindowLayoutTest() {
         })
 
 
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOASYNC_JS_API_0100
+         * @tc.name        testMoveWindowToAsync_WindowStateAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToAsync_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToAsync_WindowStateAbnormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToAsync_WindowStateAbnormal_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            (win as window.Window).moveWindowToAsync(300, 300).then(() => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300002);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOASYNC_JS_API_0200
+         * @tc.name        testMoveWindowToAsync_WindowTypeAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowTypeAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToAsync_WindowTypeAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToAsync_WindowTypeAbnormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.getMainWindow();
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
+            expect(!!win).assertTrue();
+            (win as window.Window).maximize().then(()=>{
+                (win as window.Window).moveWindowToAsync(300, 300).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    err === err as BusinessError;
+                    if(err!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                        expect(err!.code).assertEqual(1300010);
+                        win.recover().then(()=>{
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in recovering the window.');
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
+                            hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                            hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                            expect(err!.code).assertEqual(801);
+                            done();
+                        });
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                        expect(err!.code).assertEqual(801);
+                        done();
+                    }
+                });
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                expect(err!.code).assertEqual(801);
+                done();
+            })
+                
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOASYNC_JS_API_0300
+         * @tc.name        testMoveWindowToAsync_withMoveConfig_WindowStateAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToAsync_withMoveConfig_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToAsync_withMoveConfig_WindowStateAbnormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToAsync_withMoveConfig_WindowStateAbnormal_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            let moveConfiguration:window.MoveConfiguration = {
+                displayId:0
+            };
+            (win as window.Window).moveWindowToAsync(300, 300, moveConfiguration ).then(() => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300002);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOASYNC_JS_API_0400
+         * @tc.name        testMoveWindowToAsync_withMoveConfig_WindowTypeAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowTypeAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToAsync_withMoveConfig_WindowTypeAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToAsync_withMoveConfig_WindowTypeAbnormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.getMainWindow();
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
+            expect(!!win).assertTrue();
+            (win as window.Window).maximize().then(()=>{
+                let moveConfiguration:window.MoveConfiguration = {
+                    displayId:0
+                };
+                (win as window.Window).moveWindowToAsync(300, 300, moveConfiguration ).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    err === err as BusinessError;
+                    if(err!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                        expect(err!.code).assertEqual(1300010);
+                        win.recover().then(()=>{
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in recovering the window.');
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
+                            hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                            hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                            expect(err!.code).assertEqual(801);
+                            done();
+                        });
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                        expect(err!.code).assertEqual(801);
+                        done();
+                    }
+                });
+            }).catch((err: Error):PromiseLike<void>|undefined =>{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+            })
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOASYNC_JS_API_0500
+         * @tc.name        testMoveWindowToAsync_withMoveConfig_X_Val1000_Y_Val1000_Promise_static_0100
+         * @tc.desc        Move window window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToAsync_withMoveConfig_X_Val1000_Y_Val1000_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToAsync_withMoveConfig_X_Val1000_Y_Val1000_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToAsync_withMoveConfig_X_Val1000_Y_Val1000_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300);
+            let moveConfiguration:window.MoveConfiguration = {
+                displayId:0
+            };
+            (win as window.Window).moveWindowToAsync(1000, 1000, moveConfiguration).then(async () => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                await Utils.msSleep(300);
+                let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
+                expect(properties.windowRect.left).assertEqual(1000);
+                expect(properties.windowRect.top).assertEqual(1000);
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(true).assertFalse();
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOASYNC_JS_API_0600
+         * @tc.name        testMoveWindowToAsync_X_Val1000_Y_Val1000_Promise_static_0100
+         * @tc.desc        Move window window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToAsync_X_Val1000_Y_Val1000_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToAsync_X_Val1000_Y_Val1000_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToAsync_X_Val1000_Y_Val1000_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300);
+            (win as window.Window).moveWindowToAsync(1000, 1000).then(async () => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                await Utils.msSleep(300);
+                let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
+                expect(properties.windowRect.left).assertEqual(1000);
+                expect(properties.windowRect.top).assertEqual(1000);
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(true).assertFalse();
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBAL_JS_API_0100
+         * @tc.name        testMoveWindowToGlobal_WindowStateAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobal_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobal_WindowStateAbnormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToGlobal_WindowStateAbnormal_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            (win as window.Window).moveWindowToGlobal(300, 300).then(() => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300002);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBAL_JS_API_0200
+         * @tc.name        testMoveWindowToGlobal_WindowTypeAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowTypeAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobal_WindowTypeAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobal_WindowTypeAbnormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.getMainWindow();
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
+            expect(!!win).assertTrue();
+            (win as window.Window).maximize().then(()=>{
+                (win as window.Window).moveWindowToGlobal(300, 300).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                   err === err as BusinessError;
+                    if(err!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                        expect(err!.code).assertEqual(1300010);
+                        win.recover().then(()=>{
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in recovering the window.');
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
+                            hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                            hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                            expect(err!.code).assertEqual(801);
+                            done();
+                        });
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                        expect(err!.code).assertEqual(801);
+                        done();
+                    }
+                });
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                expect(err!.code).assertEqual(801);
+                done();
+            }) 
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBAL_JS_API_0300
+         * @tc.name        testMoveWindowToGlobal_withMoveConfig_WindowStateAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobal_withMoveConfig_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobal_withMoveConfig_WindowStateAbnormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToGlobal_withMoveConfig_WindowStateAbnormal_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            let moveConfiguration:window.MoveConfiguration = {
+                displayId:0
+            };
+            (win as window.Window).moveWindowToGlobal(300, 300, moveConfiguration).then(() => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300002);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBAL_JS_API_0400
+         * @tc.name        testMoveWindowToGlobal_withMoveConfig_WindowTypeAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowTypeAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobal_withMoveConfig_WindowTypeAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobal_withMoveConfig_WindowTypeAbnormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.getMainWindow();
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
+            expect(!!win).assertTrue();
+            (win as window.Window).maximize().then(()=>{
+                let moveConfiguration:window.MoveConfiguration = {
+                    displayId:0
+                };
+                (win as window.Window).moveWindowToGlobal(300, 300, moveConfiguration).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    err === err as BusinessError;
+                    if(err!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                        expect(err!.code).assertEqual(1300010);
+                        win.recover().then(()=>{
+                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in recovering the window.');
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
+                            hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                            hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                            expect(err!.code).assertEqual(801);
+                            done();
+                        });
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                        expect(err!.code).assertEqual(801);
+                        done();
+                    }
+                });
+            }).catch((err: Error):PromiseLike<void>|undefined =>{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+            })   
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBAL_JS_API_0500
+         * @tc.name        testMoveWindowToGlobal_withMoveConfig_X_Val1000_Y_Val1000_Promise_static_0100
+         * @tc.desc        Move window window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobal_withMoveConfig_X_Val1000_Y_Val1000_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobal_withMoveConfig_X_Val1000_Y_Val1000_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToGlobal_withMoveConfig_X_Val1000_Y_Val1000_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300);
+            let moveConfiguration:window.MoveConfiguration = {
+                displayId:0
+            };
+            (win as window.Window).moveWindowToGlobal(1000, 1000, moveConfiguration).then(async () => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                await Utils.msSleep(300);
+                let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
+                expect(properties.windowRect.left).assertEqual(1000);
+                expect(properties.windowRect.top).assertEqual(1000);
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(true).assertFalse();
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBAL_JS_API_0600
+         * @tc.name        testMoveWindowToGlobal_X_Val1000_Y_Val1000_Promise_static_0100
+         * @tc.desc        Move window window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobal_X_Val1000_Y_Val1000_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobal_X_Val1000_Y_Val1000_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToGlobal_X_Val1000_Y_Val1000_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300);
+            (win as window.Window).moveWindowToGlobal(1000, 1000).then(async () => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                await Utils.msSleep(300);
+                let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
+                expect(properties.windowRect.left).assertEqual(1000);
+                expect(properties.windowRect.top).assertEqual(1000);
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(true).assertFalse();
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBALDISPLAY_JS_API_0100
+         * @tc.name        testMoveWindowToGlobalDisplay_WindowStateAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobalDisplay_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobalDisplay_WindowStateAbnormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToGlobalDisplay_WindowStateAbnormal_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            (win as window.Window).moveWindowToGlobalDisplay(300, 300).then(() => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300002);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBALDISPLAY_JS_API_0200
+         * @tc.name        testMoveWindowToGlobalDisplay_WindowTypeAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowTypeAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobalDisplay_WindowTypeAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobalDisplay_WindowTypeAbnormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.getMainWindow();
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
+            expect(!!win).assertTrue();
+            (win as window.Window).maximize().then(()=>{
+                (win as window.Window).moveWindowToGlobalDisplay(300, 300).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    err === err as BusinessError;
+                    if(err!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                        expect(err!.code).assertEqual(1300010);
+                        win.recover().then(()=>{
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in recovering the window.');
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
+                            hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                            hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                            expect(err!.code).assertEqual(801);
+                            done();
+                        });
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                        expect(err!.code).assertEqual(801);
+                        done();
+                    }
+                });
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+            })   
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBALDISPLAY_JS_API_0300
+         * @tc.name        testMoveWindowToGlobalDisplay_X_Val1000_Y_Val1000_Promise_static_0100
+         * @tc.desc        Move window window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobalDisplay_X_Val1000_Y_Val1000_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobalDisplay_X_Val1000_Y_Val1000_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToGlobalDisplay_X_Val1000_Y_Val1000_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300);
+            (win as window.Window).moveWindowToGlobalDisplay(1000, 1000).then(async () => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                await Utils.msSleep(300);
+                let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
+                expect(properties.windowRect.left).assertEqual(1000);
+                expect(properties.windowRect.top).assertEqual(1000);
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(true).assertFalse();
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBALDISPLAY_JS_API_0400
+         * @tc.name        testMoveWindowToGlobalDisplay_param_Promise_static_0100
+         * @tc.desc        Move window window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobalDisplay_param_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobalDisplay_param_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToGlobalDisplay_param_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300);
+            const maxInt:int = 2147483647;
+            (win as window.Window).moveWindowToGlobalDisplay(maxInt, maxInt).then(() => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                expect(true).assertFalse();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300016);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            });
+        })
+
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTO_JS_API_0300
+         * @tc.name        testMoveWindowTo_X_Val1000_Y_Val1000_Promise_static
+         * @tc.desc        Move window windowMove
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowTo_X_Val1000_Y_Val1000_Promise_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testMoveWindowTo_X_Val1000_Y_Val1000_Promise_static';
+                let msgStr: string = 'jsunittest ' + caseName + ' ';
+                hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+                let win: window.Window;
+                win = await windowStage!.createSubWindow('testMoveWindowTo_X_Val1000_Y_Val1000_Promise_static');
+                hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+                expect(!!win).assertTrue();
+                await win.setUIContent('pages/Index');
+                await win.showWindow();
+                await Utils.msSleep(300);
+                try {
+                    (win as window.Window).moveWindowTo(1000, 1000).then(async() => {
+                        await Utils.msSleep(200);
+                        hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in moving the window.');
+                        let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                        hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
+                        expect(properties.windowRect.left).assertEqual(1000);
+                        expect(properties.windowRect.top).assertEqual(1000);
+                        done();
+                    }).catch((err: Error): PromiseLike<void> | undefined => {
+                        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to move the window. Cause: ' + JSON.stringify(err));
+                        expect(true).assertFalse();
+                        done();
+                    });
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    hilog.error(0x0000, '[ANI]', msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
+                    expect(true).assertFalse();
+                    done();
+                }
+            })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTO_JS_API_0400
+         * @tc.name        testMoveWindowTo_X_Val300_Y_Val300_Callback_static
+         * @tc.desc        Move window windowMove
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowTo_X_Val300_Y_Val300_Callback_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testMoveWindowTo_X_Val300_Y_Val300_Callback_static';
+                let msgStr: string = 'jsunittest ' + caseName + ' ';
+                hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+                let win: window.Window;
+                win = await windowStage!.createSubWindow('testMoveWindowTo_X_Val300_Y_Val300_Callback_static');
+                hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+                expect(!!win).assertTrue();
+                await win.setUIContent('pages/Index');
+                await win.showWindow();
+                await Utils.msSleep(300);
+                try {
+                    (win as window.Window).moveWindowTo(300, 300, (err: BusinessError<void>|null):void => {
+                        const errCode: number = err!.code;
+                        if (errCode) {
+                            hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                            expect(true).assertFalse();
+                            done()
+                            return;
+                        }
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                        await Utils.msSleep(200);
+                        let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                        hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
+                        expect(properties.windowRect.left).assertEqual(300);
+                        expect(properties.windowRect.top).assertEqual(300);
+                        done();
+                    });
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
+                    expect(true).assertFalse();
+                    done()
+                }
+            })
+
+            /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0300
+         * @tc.name        testResize_Promise_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testResize_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = 'testResize_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testResize_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300)
+            try {
+                (win as window.Window).resize(500, 1000).then(async ()=>{
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
+                    await Utils.msSleep(300)
+                    let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
+                    expect(properties.windowRect.width).assertEqual(500);
+                    expect(properties.windowRect.height).assertEqual(1000);
+                    done();
+                }).catch((err:Error):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size1. Cause:' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done();
+                })
+            } catch (exception) {
+                exception === exception as BusinessError;
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size2. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0400
+         * @tc.name        testResize_Callback_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testResize_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = 'testResize_Callback_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testResize_Callback_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300)
+            try {
+                (win as window.Window).resize(500, 1000, (err: BusinessError<void>|null):void => {
+                    const errCode: number = err!.code;
+                    if (errCode) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
+                        expect(false).assertTrue();
+                        done();
+                        return;
+                    }
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
+                    await Utils.msSleep(300)
+                    let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
+                    expect(properties.windowRect.width).assertEqual(500);
+                    expect(properties.windowRect.height).assertEqual(1000);
+                    done();
+                });
+            } catch (exception) {
+                exception === exception as BusinessError;
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZEASYNC_JS_API_0100
+         * @tc.name        testResizeAsync_Promise_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testResizeAsync_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = 'testResizeAsync_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testResizeAsync_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300);
+            (win as window.Window).resizeAsync(500, 1000).then(async ()=>{
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
+                await Utils.msSleep(300)
+                let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
+                expect(properties.windowRect.width).assertEqual(500);
+                expect(properties.windowRect.height).assertEqual(1000);
+                done();
+            }).catch((err:Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    expect(true).assertFalse();
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            })
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZEASYNC_JS_API_0200
+         * @tc.name        testResizeAsync_WindowStateAbmormal_Promise_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testResizeAsync_WindowStateAbmormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = 'testResizeAsync_WindowStateAbmormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testResizeAsync_WindowStateAbmormal_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.destroyWindow();
+            (win as window.Window).resizeAsync(500, 1000).then(()=>{
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err:Error):PromiseLike<void>|undefined => {
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                     expect(err!.code).assertEqual(1300002);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            })
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZEASYNC_JS_API_0300
+         * @tc.name        testResizeAsync_WindowTypeAbmormal_Promise_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testResizeAsync_WindowTypeAbmormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = 'testResizeAsync_WindowTypeAbmormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.getMainWindow();
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
+            expect(!!win).assertTrue();
+            (win as window.Window).maximize().then(()=>{
+                (win as window.Window).resizeAsync(500, 1000).then(()=>{    
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err:Error):PromiseLike<void>|undefined => {
+                    err === err as BusinessError;
+                    if(err!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                        expect(err!.code).assertEqual(1300010);
+                        win.recover().then(()=>{
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in recovering the window.');
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
+                            hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                            hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                            expect(err!.code).assertEqual(801);
+                            done();
+                        });
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                        expect(err!.code).assertEqual(801);
+                        done();
+                    }
+                });
+            }).catch((err:Error):PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+            })
+            
+                
+        })
+
+
     })
 
 }

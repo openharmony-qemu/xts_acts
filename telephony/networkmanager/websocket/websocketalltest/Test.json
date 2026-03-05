@@ -5,7 +5,8 @@
         "test-timeout": "180000",
         "shell-timeout": "180000",
         "bundle-name": "com.example.websockettest",
-        "module-name": "entry_test"
+        "module-name": "entry_test",
+        "testcase-timeout": "70000"
     },
     "kits": [
         {

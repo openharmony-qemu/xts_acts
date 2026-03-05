@@ -6354,7 +6354,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint8Array([99,122,69,122, 115, 119, 58]);
             that.decodeSync(array)
         } catch (e) {
-            expect(e.toString()).assertEqual("Error: The input string contains unsupported characters")
+            expect(e.toString()).assertEqual("Error: decodeSync: The input string contains unsupported characters")
         }
     })
 
@@ -6372,7 +6372,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint8Array([99, 42, 69,122, 115, 119, 36, 110]);
             that.decodeSync(array)
         } catch (e) {
-            expect(e.toString()).assertEqual("Error: The input string contains unsupported characters")
+            expect(e.toString()).assertEqual("Error: decodeSync: The input string contains unsupported characters")
         }
     })
 
@@ -6390,7 +6390,7 @@ describe('Base64HelperTest', function () {
             var str = "QmFzZTY0IE5vZGU@@";
             that.decodeSync(str)
         } catch (e) {
-            expect(e.toString()).assertEqual("Error: The input string contains unsupported characters")
+            expect(e.toString()).assertEqual("Error: decodeSync: The input string contains unsupported characters")
         }
     })
 
@@ -6408,7 +6408,7 @@ describe('Base64HelperTest', function () {
             var str = "QmFzZTY0IEVuY29k&&&aW5nIGluIE5vZGUua$$$%%%";
             that.decodeSync(str)
         } catch (e) {
-            expect(e.toString()).assertEqual("Error: The input string contains unsupported characters")
+            expect(e.toString()).assertEqual("Error: decodeSync: The input string contains unsupported characters")
         }
     })
 
@@ -6426,7 +6426,7 @@ describe('Base64HelperTest', function () {
             var str = "";
             that.decodeSync(str)
         } catch (e) {
-            expect(e.toString()).assertEqual("Error: prolen is error !")
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be string and the length greater than 0.")
         }
     })
 
@@ -6444,7 +6444,7 @@ describe('Base64HelperTest', function () {
             var str = " ";
             that.decodeSync(str)
         } catch (e) {
-            expect(e.toString()).assertEqual("Error: The input string contains unsupported characters")
+            expect(e.toString()).assertEqual("Error: decodeSync: The input string contains unsupported characters")
         }
     })
 

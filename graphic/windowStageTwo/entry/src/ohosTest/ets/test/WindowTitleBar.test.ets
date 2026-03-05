@@ -2505,6 +2505,61 @@ export default function windowTitleBarTest() {
       
     })
     /**
+     * @tc.name   testSetWindowTitleButtonVisible_0600
+     * @tc.number SUB_BASIC_WMS_StestSetWindowTitleButtonVisible_0600
+     * @tc.desc   切换按钮显隐
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testSetWindowTitleButtonVisible_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testSetWindowTitleButtonVisible_0600";
+      console.log(caseName + "begin");
+      let mainWindow = windowStage.getMainWindowSync();
+      let test = true;
+      if (isFreeWindowMode == true) {
+        try {
+          mainWindow.setWindowTitleButtonVisible(false,false,false);
+          
+          await sleep(1000);
+          let button = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
+          await sleep(200);
+          console.log(`${caseName} button: ${button}`);
+          if(button){
+            test = true
+          }else{
+            test = false
+          }
+          console.log(`${caseName} test1: ${test}`);
+          expect(test).assertFalse();
+         
+          mainWindow.setWindowTitleButtonVisible(true,true,true);
+          await sleep(1000);
+  
+          let button2 = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
+          await sleep(200);
+          console.log(`${caseName} button: ${button2}`);
+          if(button2){
+            test = true
+          }else{
+            test = false
+          }
+          console.log(`${caseName} test2: ${test}`);
+          expect(test).assertTrue();
+  
+          done();
+          
+        } catch (error) {
+          console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
+          expect(true).assertFalse();
+          done();
+        }
+      }else{
+        done();
+      }
+      
+    })
+    /**
      * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_WINDOW_DECORHEIGHT_0100
      * @tc.name    testSetWindowDecorHeight_36
      * @tc.desc    SetWindowDecorHeight入参36
@@ -2573,7 +2628,13 @@ export default function windowTitleBarTest() {
       try {
         mainWindow.setWindowDecorHeight(112);
         console.info(caseName+ ' Succeeded in setting the height');
-        
+        let height =  mainWindow.getWindowDecorHeight();
+        console.info(caseName+ ' Succeeded in getting the height'+height);
+        if(isFreeWindowMode){
+          expect(height).assertEqual(112);
+        }else{
+          expect(height).assertEqual(0);
+        }
         done();
       } catch(e) {
         console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
@@ -2610,6 +2671,7 @@ export default function windowTitleBarTest() {
         done();
       }
     })
+    
 
   })
 }

@@ -54,15 +54,16 @@ export default function stageActionSheet() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+
     /**
-     * @tc.number    testShowActionShee001
-     * @tc.name      testShowActionShee001
+     * @tc.number    SUB_ACE_testShowActionShee_0100
+     * @tc.name      testShowActionShee001 
      * @tc.desc      set api
-     * @tc.level:    Level 2
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('testShowActionShee001', Level.LEVEL2, async (done: Function) => {
+    it('testShowActionShee001', Level.LEVEL0, async (done: Function) => {
       console.info('testShowActionShee001 START');
       setTimeout(() => {
         try {
@@ -89,15 +90,16 @@ export default function stageActionSheet() {
         done();
       }, 500)
     });
+
     /**
-     * @tc.number    testShowActionShee002
+     * @tc.number    SUB_ACE_testShowActionShee_0200
      * @tc.name      testShowActionShee002
      * @tc.desc      set api
-     * @tc.level:    Level 2
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('testShowActionShee002', Level.LEVEL2, async (done: Function) => {
+    it('testShowActionShee002', Level.LEVEL0, async (done: Function) => {
       console.info('testShowActionShee002 START');
       setTimeout(() => {
         try {
@@ -124,15 +126,16 @@ export default function stageActionSheet() {
         done();
       }, 500)
     });
+    
     /**
-     * @tc.number    testShowActionShee003
+     * @tc.number    SUB_ACE_testShowActionShee_0300 
      * @tc.name      testShowActionShee003
      * @tc.desc      set api
-     * @tc.level:    Level 2
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('testShowActionShee003', Level.LEVEL2, async (done: Function) => {
+    it('testShowActionShee003', Level.LEVEL0, async (done: Function) => {
       console.info('testShowActionShee003 START');
       setTimeout(() => {
         try {

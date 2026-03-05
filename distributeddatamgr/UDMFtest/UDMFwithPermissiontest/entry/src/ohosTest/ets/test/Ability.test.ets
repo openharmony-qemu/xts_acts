@@ -23,51 +23,15 @@ export default function dragPerssionNormalTest() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async() => {
      unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
-     let options1 = {
-        intention: unifiedDataChannel.Intention.DRAG
-      };
-      await unifiedDataChannel.deleteData(options1).then((data) => {
-        let size = data.length;
-        console.info(TAG, ` [beforeEach] success to deleteData data.size = ${size}`);
-      }).catch((err) => {
-        console.info(TAG, ` [beforeEach] Failed to deleteData. code is ${err.code},message is ${err.message} `);
-      });
     })
     beforeEach(async() => {
      unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
-     let options1 = {
-        intention: unifiedDataChannel.Intention.DRAG
-      };
-      await unifiedDataChannel.deleteData(options1).then((data) => {
-        let size = data.length;
-        console.info(TAG, ` [beforeEach] success to deleteData data.size = ${size}`);
-      }).catch((err) => {
-        console.info(TAG, ` [beforeEach] Failed to deleteData. code is ${err.code},message is ${err.message} `);
-      });
     })
     afterEach(async() => {
       unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
-      let options1 = {
-        intention: unifiedDataChannel.Intention.DRAG
-      };
-      await unifiedDataChannel.deleteData(options1).then((data) => {
-        let size = data.length;
-        console.info(TAG, ` [beforeEach] success to deleteData data.size = ${size}`);
-      }).catch((err) => {
-        console.info(TAG, ` [beforeEach] Failed to deleteData. code is ${err.code},message is ${err.message} `);
-      });
     })
     afterAll(async() => {
       unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
-      let options1 = {
-        intention: unifiedDataChannel.Intention.DRAG
-      };
-      await unifiedDataChannel.deleteData(options1).then((data) => {
-        let size = data.length;
-        console.info(TAG, ` [beforeEach] success to deleteData data.size = ${size}`);
-      }).catch((err) => {
-        console.info(TAG, ` [beforeEach] Failed to deleteData. code is ${err.code},message is ${err.message} `);
-      });
     })
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0100
@@ -246,7 +210,7 @@ export default function dragPerssionNormalTest() {
      * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async(done: Function) => {
-      let options = {
+      let options:unifiedDataChannel.Options = {
         intention: unifiedDataChannel.Intention.DRAG
       }
       let plainText = new unifiedDataChannel.PlainText();
@@ -266,7 +230,7 @@ export default function dragPerssionNormalTest() {
         console.info(TAG + ` SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000 data = ${data}`);
         expect().assertFail();
         done();
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.error(TAG, `Failed to SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000 code is ${err.code},message is ${err.message} `);
         expect(err != null).assertFail();
         done();

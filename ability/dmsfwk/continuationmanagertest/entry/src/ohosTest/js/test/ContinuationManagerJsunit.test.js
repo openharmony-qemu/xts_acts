@@ -3292,7 +3292,7 @@ export default function continuationManagerTest() {
                 if (err.code != 0) {
                     console.log('testunregister0002 get unregister is faild' + err.code)
                     expect(err.code).assertEqual(-1)
-                    
+
                 }
                 console.log('testunregister0002 get unregister is success' + data)
                 expect(data).assertEqual(undefined)
@@ -4528,6 +4528,114 @@ export default function continuationManagerTest() {
                 done();
             });
             console.info("----------------------testStartContinuationDeviceManager010 end----------------------");
+        })
+
+        /**
+         * @tc.name   testunregisterContinuation010
+         * @tc.number testunregisterContinuation010
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testunregisterContinuation010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregisterContinuation010 start----------------------");
+            try {
+                await continuationManager.unregisterContinuation(undefined).then((data) => {
+                    console.info("testunregisterContinuation010 " + JSON.stringify(data));
+                    expect().assertFail();
+                    done();
+                }).catch((err) => {
+                    console.log('testunregisterContinuation010 err code is' + err.code);
+                    expect().assertFail();
+                    done();
+                });
+            } catch (error) {
+                console.info("testunregisterContinuation010 catch error is" + error.code);
+                expect(error.code).assertEqual(401)
+                done();
+            }
+            console.info("----------------------testunregisterContinuation010 end----------------------");
+        })
+
+        /**
+         * @tc.name   testunregisterContinuation020
+         * @tc.number testunregisterContinuation020
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testunregisterContinuation020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregisterContinuation020 start----------------------");
+            try {
+                await continuationManager.unregisterContinuation(null).then((data) => {
+                    console.info("testunregisterContinuation020 " + JSON.stringify(data));
+                    expect().assertFail();
+                    done();
+                }).catch((err) => {
+                    console.log('testunregisterContinuation020 err code is' + err.code);
+                    expect().assertFail();
+                    done();
+                });
+            } catch (error) {
+                console.info("testunregisterContinuation020 catch error is" + error.code);
+                expect(error.code).assertEqual(401)
+                done();
+            }
+            console.info("----------------------testunregisterContinuation020 end----------------------");
+        })
+
+        /**
+         * @tc.name   testunregisterContinuation030
+         * @tc.number testunregisterContinuation030
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testunregisterContinuation030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregisterContinuation030 start----------------------");
+            try {
+                continuationManager.unregisterContinuation(undefined, (err) => {
+                    if (err != 0) {
+                        console.log('testunregisterContinuation030 err code is' + err.code);
+                        expect().assertFail();
+                    }
+                    console.info("testunregisterContinuation030 success");
+                })
+            } catch (error) {
+                console.info("testunregisterContinuation030 catch error is" + error.code);
+                expect(error.code).assertEqual(401)
+                done();
+            }
+            console.info("----------------------testunregisterContinuation030 end----------------------");
+        })
+
+        /**
+         * @tc.name   testunregisterContinuation040
+         * @tc.number testunregisterContinuation040
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testunregisterContinuation040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregisterContinuation040 start----------------------");
+            try {
+                continuationManager.unregisterContinuation(undefined, (err) => {
+                    if (err != 0) {
+                        console.log('testunregisterContinuation040 err code is' + err.code);
+                        expect().assertFail();
+                    }
+                    console.info("testunregisterContinuation040 success");
+                })
+            } catch (error) {
+                console.info("testunregisterContinuation040 catch error is" + error.code);
+                expect(error.code).assertEqual(401)
+            }
+            console.info("----------------------testunregisterContinuation040 end----------------------");
+            done();
         })
     })
 }

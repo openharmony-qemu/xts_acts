@@ -23,7 +23,7 @@ group("abilitybase") {
       "actsbaseerrorrely:ActsBaseErrorRely",
       "actsbaseerrorrelystatic:ActsBaseErrorRelyStatic",
       "actsmultiinstaceerrcodetest:ActsMultiInstancEerrCodeTest",
-      "actsUIExtensionContentSessionStatic:ActsUIExtensionContentSessionTestStatic",
+      "actsUIExtensionContentSessionStatic:ActsUIExtensionContentSessionStaticTest",
       "uiextensioncontext:ActsUIExtensionErrocodeTest",
     ]
   }

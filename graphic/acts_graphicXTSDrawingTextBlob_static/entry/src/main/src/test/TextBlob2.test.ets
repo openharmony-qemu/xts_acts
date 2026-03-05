@@ -77,7 +77,11 @@ export default function textBlob2Test() {
           x: 100, y: 100
         }];
         font.setSize(30);
-        drawing.TextBlob.makeFromPosText("你好", points.length, points, font);
+        let textblob = drawing.TextBlob.makeFromPosText("你好", points.length, points, font);
+        if (textblob == undefined) {
+          console.info(msg + ' 2 makeFromPosText textblob == undefined for empty string');
+          expect().assertFail();
+        }
         console.info(msg + ' 2 makeFromString succeeded for empty string');
       } catch (e) {
         e = e as BusinessError;
@@ -93,8 +97,12 @@ export default function textBlob2Test() {
         }, {
           x: 300, y: 300
         }];
-        drawing.TextBlob.makeFromPosText("中文魑認識", points.length, points, font);
+        let textblob = drawing.TextBlob.makeFromPosText("中文魑認識", points.length, points, font);
         console.info(msg + ' 3 makeFromString succeeded for empty string');
+        if (textblob == undefined) {
+          console.info(msg + ' 3 makeFromPosText textblob == undefined for empty string');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg +

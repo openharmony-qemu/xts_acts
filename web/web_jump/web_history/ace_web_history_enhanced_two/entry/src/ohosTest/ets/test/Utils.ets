@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,13 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
-import { Driver, ON, PointerMatrix, Component } from '@ohos.UiTest';
-import { ComponentInfo, RectInfo } from './Interfaces';
+import { Driver, ON } from '@ohos.UiTest';
 import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
+import { BusinessError } from '@kit.BasicServicesKit';
+import webview from '@ohos.web.webview';
 
 export default class Utils {
   static sleep(time: number) {
@@ -29,6 +31,10 @@ export default class Utils {
     }).then(() => {
       console.info(`sleep ${time} over...`)
     })
+  }
+
+  static getSystemTime() {
+    return systemDateTime.getTime(true) / 1000
   }
 
   static copyRawFileToSandbox(rawFileName: string): string {
@@ -49,35 +55,6 @@ export default class Utils {
     return rawFilePath
   }
 
-  static getSystemTime() {
-    return systemDateTime.getTime(true) / 1000
-  }
-
-  static getSandboxFileDir() {
-    let sandboxFileDir = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().filesDir + "/"
-    console.log(`[getSandboxFileDir] return ${sandboxFileDir}`);
-    return sandboxFileDir;
-  }
-
-  static getSandboxCacheDir() {
-    let sandboxCacheDir = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().cacheDir + "/"
-    console.log(`[getSandboxCacheDir] return ${sandboxCacheDir}`);
-    return sandboxCacheDir;
-  }
-
-  static createFileToSandboxSync(filePath: string, fileName: string, mode?: number) {
-    try {
-      if (!Utils.isFileExist(filePath)) {
-        fs.mkdirSync(filePath);
-      }
-      fs.openSync(filePath + fileName, mode);
-      console.log("[createFileToSandboxSync] success, sandbox path:" + filePath + fileName);
-    } catch (error) {
-      console.info("[createFileToSandboxSync] api run failed " + error);
-      console.info("[createFileToSandboxSync] api run failed path:" + filePath + fileName);
-    }
-  }
-
   static deleteFile(filePath: string) {
     console.info("[deleteFile] filePath:" + filePath);
     try {
@@ -88,11 +65,11 @@ export default class Utils {
   }
 
   static deleteDir(dirPath: string) {
-    console.info("[deleteDir] dirPath:" + dirPath);
+    console.info("[deleteFile] dirPath:" + dirPath);
     try {
       fs.rmdirSync(dirPath)
     } catch (error) {
-      console.info("[deleteDir] error:" + error);
+      console.info("[deleteFile] error:" + error);
     }
   }
 
@@ -100,8 +77,8 @@ export default class Utils {
     console.info("[listFile] dirPath:" + dirPath);
     try {
       let files = fs.listFileSync(dirPath)
-      for (let i = 0; i < files.length; i++) {
-        console.info(`The name of file: ${files[i]}`);
+      for ( let i = 0; i < files.length; i++) {
+        console.info('The name of file: ${files[i]}');
       }
       return files;
     } catch (error) {
@@ -118,7 +95,7 @@ export default class Utils {
       return fileExist
     } catch (error) {
       console.info("[isFileExist] error:" + error);
-      return false
+      return false;
     }
   }
 
@@ -128,48 +105,14 @@ export default class Utils {
     await component.click();
   }
 
-  static async pinchInComponent(id: string) {
-    let driver: Driver = Driver.create();
-    let image: Component = await driver.findComponent(ON.id(id));
-    await image.pinchIn(0.5);
-  }
-
   static async triggerKey(id: number) {
     let driver = Driver.create();
     await driver.triggerKey(id);
   }
 
-  static async fingerZoom(key: string, isOut: boolean) {
-    let rect = Utils.getComponentRect(key);
-    let centerX = Utils.getRectHorizontalCenterX(rect)
-    let centerY = Utils.getRectVerticalCenterY(rect)
-    let fingerUpCenterY = centerY - 100;
-    let fingerDownCenterY = centerY + 100;
-    let driver: Driver = Driver.create();
-    let pointers: PointerMatrix = PointerMatrix.create(2, 3);
-    pointers.setPoint(0, 0, {
-      x: centerX, y: fingerUpCenterY - (isOut ? 40 : 120)
-    });
-    pointers.setPoint(0, 1, {
-      x: centerX, y: fingerUpCenterY - 80
-    });
-    pointers.setPoint(0, 2, {
-      x: centerX, y: fingerUpCenterY - (isOut ? 120 : 40)
-    });
-    pointers.setPoint(1, 0, {
-      x: centerX, y: fingerDownCenterY + (isOut ? 40 : 120)
-    });
-    pointers.setPoint(1, 1, {
-      x: centerX, y: fingerDownCenterY + 80
-    });
-    pointers.setPoint(1, 2, {
-      x: centerX, y: fingerDownCenterY + (isOut ? 120 : 40)
-    });
-    await driver.injectMultiPointerAction(pointers);
-  }
 
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: number,
-                           done: Function, expectFunction: Function) {
+    done: Function, expectFunction: Function) {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -186,7 +129,7 @@ export default class Utils {
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
-      events_emitter.once(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack);
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
@@ -222,31 +165,87 @@ export default class Utils {
     }
   }
 
-  static getComponentRect(key: string): RectInfo {
-    let strJson = getInspectorByKey(key);
-    let obj: ComponentInfo = JSON.parse(strJson);
-    console.info('[getInspectorByKey] key is: ' + key);
-    return Utils.getComponentRectByObj(obj);
+  static isPC(controller: webview.WebviewController) {
+    let userAgent: string = controller.getUserAgent();
+    console.info("userAgent" + userAgent);
+
+    try {
+      let isPc: boolean = userAgent.includes('PC') || userAgent.toLowerCase().includes('pc') || userAgent.includes("2in1")
+      console.log('device is pc:' + isPc)
+      return isPc
+    } catch (error) {
+      console.info("userAgent error:" + error);
+      return true
+    }
   }
 
-  static getComponentRectByObj(obj: ComponentInfo): RectInfo {
-    console.info('[getInspectorByKey] current component is: ' + obj.$type);
-    let rectInfo: Object[] = JSON.parse('[' + obj.$rect + ']');
-    let rect_value: RectInfo = {
-      left: JSON.parse('[' + rectInfo[0] + ']')[0],
-      top: JSON.parse('[' + rectInfo[0] + ']')[1],
-      right: JSON.parse('[' + rectInfo[1] + ']')[0],
-      bottom: JSON.parse('[' + rectInfo[1] + ']')[1]
-    };
-    console.info(JSON.stringify(rect_value));
-    return rect_value;
+  static async waitForExist<T> (
+    stateGetter: () => T,
+    testsuite: string,
+    expectValue: string | number | boolean | null = null,
+    interval=3000,
+    tryTime=20
+  ):Promise<T>{
+    let nums = 0;
+    let isSuccess = false;
+    while (nums < tryTime) {
+      const currentValue = await new Promise<T>((done) => {
+        setTimeout(()=>done(stateGetter()), 0);
+      })
+
+      if (expectValue == null) {
+        if (currentValue != null) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      } else {
+        if (currentValue == expectValue) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      }
+      await Utils.sleep(interval);
+      nums++;
+      console.log(testsuite + ' debug wait for exist ' + nums + ' times, currentValue: ' + currentValue
+        + ', expectValue ' + expectValue);
+    }
+    if (!isSuccess) {
+      console.log(testsuite + ' debug wait for failed')
+    }
+    const currentValue = await new Promise<T>((result) => {
+      setTimeout(() => result(stateGetter()), 0);
+    });
+    console.log(testsuite + ' debug wait for failed exist ' + currentValue);
+    return currentValue;
   }
 
-  static getRectHorizontalCenterX(rect: RectInfo): number {
-    return Number.parseInt(Number((rect.right - rect.left) / 2 + rect.left).toFixed(0));
-  }
-
-  static getRectVerticalCenterY(rect: RectInfo): number {
-    return Number.parseInt(Number((rect.bottom - rect.top) / 2 + rect.top).toFixed(0));
+  static async waitAndClickComponent(driver: Driver, componentId: string, logFlag: string): Promise<void> {
+    let retryTimes: number = 0;
+    let retry: boolean = true;
+    while (retry && retryTimes <= 3) {
+      retry = false;
+      try {
+        const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+        if (!buttonComponent) {
+          console.error(`${logFlag} error: buttonConmponent is null.`);
+          retry = true;
+          await Utils.sleep(1000);
+          retryTimes++;
+          console.log(logFlag + ' retryTimes = ' + retryTimes);
+        }
+        await buttonComponent.click();
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`${logFlag} ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if (error.code === 17000002) {
+          retry = true;
+          await Utils.sleep(1000);
+          retryTimes++;
+          console.log(logFlag + ' retryTimes = ' + retryTimes);
+        }
+      }
+    }
   }
 }

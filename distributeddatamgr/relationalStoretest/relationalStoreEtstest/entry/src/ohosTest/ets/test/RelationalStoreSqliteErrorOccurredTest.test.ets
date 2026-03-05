@@ -262,6 +262,79 @@ export default function rdbStoreSqliteErrorOccurredTest() {
       }
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0006 end *************");
     })
+
+     /**
+     * @tc.name   testRdbStoreOnsqliteErrorOccurredErrTest0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0700
+     * @tc.desc   1.create db 2.close db 3.OnsqliteErrorOccurred with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('testRdbStoreOnsqliteErrorOccurredErrTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurredErrTest0001 start *************");
+     let exceptionMessage = (exceptionMessage : data_relationalStore.ExceptionMessage) => {
+        expect().assertFail();
+      };
+      try {
+        rdbStore.on(null, exceptionMessage) 
+        expect().assertFail();
+        done();
+      
+      } catch (err) {
+         expect(err.code).assertEqual("401");
+        console.log(TAG + `error is failed code:${err.code},message:${err.message}`);
+        done();
+      }
+
+   try {
+        rdbStore.on(null, exceptionMessage) 
+        expect().assertFail();
+        done();
+      
+      } catch (err) {
+         expect(err.code).assertEqual("401");
+        console.log(TAG + `error is failed code:${err.code},message:${err.message}`);
+        done();
+      }
+      console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurredErrTest0001 end *************");
+    })
+
+     /**
+     * @tc.name   testRdbStoreOnsqliteErrorOccurredErrTest0002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0800
+     * @tc.desc   1.create db 2.close db 3.OnsqliteErrorOccurred with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreOnsqliteErrorOccurredErrTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurredErrTest0002 start *************");
+      let exceptionMessage = (exceptionMessage : data_relationalStore.ExceptionMessage) => {
+        expect().assertFail();
+      };
+      try {
+        rdbStore.off(null, exceptionMessage) 
+        expect().assertFail();
+        done();
+      
+      } catch (err) {
+        expect(err.code).assertEqual("401");
+        console.log(TAG + `error is failed code:${err.code},message:${err.message}`);
+        done();
+      }
+
+      try {
+        rdbStore.off(null, exceptionMessage) 
+        expect().assertFail();
+        done(); 
+      } catch (err) {
+         expect(err.code).assertEqual("401");
+        console.log(TAG + `error is failed code:${err.code},message:${err.message}`);
+        done();
+      }
+      console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurredErrTest0002 end *************");
+    })
     console.log(TAG + "*************Unit Test End*************");
   })
 }

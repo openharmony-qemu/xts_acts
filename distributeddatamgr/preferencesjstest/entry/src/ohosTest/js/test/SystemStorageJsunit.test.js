@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2022-2023 Huawei Device Co., Ltd.
+* Copyright (c) 2022-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -565,5 +565,173 @@ export default function SystemStorageJsunit(){
             console.info(TAG + '************* testClear001 end *************');
         })
 
+        /**
+         * @tc.name   testGetErr001
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemGetErrTest_0100
+         * @tc.desc   get
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testGetErr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            console.info(TAG + '************* testGetErr001 start *************');
+            try {
+                await storage.get(null);
+                console.info(TAG + 'get success');
+                expect().assertFail();
+            } catch (error) {
+                console.info(TAG + 'failed' + error.code + error.message);
+                expect(error.message).assertContain("Wrong argument type")
+            }
+            console.info(TAG + '************* testGetErr001 end *************');
+        })
+
+        /**
+         * @tc.name   testGetErr002
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemGetErrTest_0200
+         * @tc.desc   get
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testGetErr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            console.info(TAG + '************* testGetErr002 start *************');
+            try {
+                await storage.get(undefined);
+                console.info(TAG + 'get success');
+                expect().assertFail();
+            } catch (error) {
+                console.info(TAG + 'failed' + error.code + error.message);
+                expect(error.message).assertContain("Wrong argument type")
+            }
+            console.info(TAG + '************* testGetErr002 end *************');
+        })
+
+        /**
+         * @tc.name   testSetErr001
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemSetErrTest_0100
+         * @tc.desc   set
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testSetErr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            console.info(TAG + '************* testSetErr001 start *************');
+            try {
+                await storage.set(null);
+                console.info(TAG + 'set success');
+                expect().assertFail();
+            } catch (error) {
+                console.info(TAG + 'failed' + error.code + error.message);
+                expect(error.message).assertContain("Wrong argument type")
+            }
+            console.info(TAG + '************* testSetErr001 end *************');
+        })
+
+        /**
+         * @tc.name   testSetErr002
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemSetErrTest_0200
+         * @tc.desc   set
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testSetErr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            console.info(TAG + '************* testSetErr002 start *************');
+            try {
+                await storage.set(undefined);
+                console.info(TAG + 'set success');
+                expect().assertFail();
+            } catch (error) {
+                console.info(TAG + 'failed' + error.code + error.message);
+                expect(error.message).assertContain("Wrong argument type")
+            }
+            console.info(TAG + '************* testSetErr002 end *************');
+        })
+
+        /**
+         * @tc.name   testClearErr001
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemClearErrTest_0100
+         * @tc.desc   clear
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testClearErr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            console.info(TAG + '************* testClearErr001 start *************');
+            try {
+                await storage.clear(null);
+                console.info(TAG + 'clear success');
+                expect().assertFail();
+            } catch (error) {
+                console.info(TAG + 'failed' + error.code + error.message);
+                expect(error.message).assertContain("Wrong argument type")
+            }
+            console.info(TAG + '************* testClearErr001 end *************');
+        })
+
+        /**
+         * @tc.name   testClearErr002
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemClearErrTest_0200
+         * @tc.desc   clear
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testClearErr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            console.info(TAG + '************* testClearErr002 start *************');
+            try {
+                await storage.clear(undefined);
+                console.info(TAG + 'clear success');
+                expect().assertFail();
+            } catch (error) {
+                console.info(TAG + 'failed' + error.code + error.message);
+                expect(error.message).assertContain("Wrong argument type")
+            }
+            console.info(TAG + '************* testClearErr002 end *************');
+        })
+
+        /**
+         * @tc.name   testDeleteErr001
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemDeleteErrTest_0100
+         * @tc.desc   delete
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testDeleteErr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            console.info(TAG + '************* testDeleteErr001 start *************');
+            try {
+                await storage.delete(null);
+                console.info(TAG + 'delete success');
+                expect().assertFail();
+            } catch (error) {
+                console.info(TAG + 'failed' + error.code + error.message);
+                expect(error.message).assertContain("Wrong argument type")
+            }
+            console.info(TAG + '************* testDeleteErr001 end *************');
+        })
+
+        /**
+         * @tc.name   testDeleteErr002
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemDeleteErrTest_0200
+         * @tc.desc   delete
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testDeleteErr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            console.info(TAG + '************* testDeleteErr002 start *************');
+            try {
+                await storage.delete(undefined);
+                console.info(TAG + 'delete success');
+                expect().assertFail();
+            } catch (error) {
+                console.info(TAG + 'failed' + error.code + error.message);
+                expect(error.message).assertContain("Wrong argument type")
+            }
+            console.info(TAG + '************* testDeleteErr002 end *************');
+        })
+        
     })
 }

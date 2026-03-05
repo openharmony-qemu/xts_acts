@@ -59,7 +59,7 @@ export default function MifareClassicErrorTest() {
             try{
                 MifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
             }catch(error){
-                if (error.code == 3100201) {
+                if (error.code === 3100201) {
                     expect(error.code).assertEqual(3100201);
                     console.info('beforeAll mifareClassic error' + error.code + error);
                 } else {
@@ -120,7 +120,7 @@ export default function MifareClassicErrorTest() {
                     MifareClassicTag.authenticateSector('test', 'test', true, (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]mifareClassic2 authenticateSector errcode: " + err);
-                            expect(true).assertEqual(true);
+                            expect(401).assertEqual(err.code);
                         } else {
                             console.info("[NFC_test]mifareClassic2 authenticateSector data: " + data + "json2:" + JSON.stringify(data));
                             expect(data).assertTrue();
@@ -610,10 +610,10 @@ export default function MifareClassicErrorTest() {
                     console.info("[NFC_test]mifareClassic18 getMifareClassic: " + NFCMifareClassicTag);
                     expect(true).assertTrue(NFCMifareClassicTag >= 0);
                 } catch (error) {
-                    if (error.code == 401) {
+                    if (error.code === 401) {
                         console.info("[NFC_test]mifareClassic18 getMifareClassic errorcode: " + error.code);
                         expect(401).assertEqual(error.code)
-                    } else if (error.code == 3100201) {
+                    } else if (error.code === 3100201) {
                         console.info("[NFC_test]mifareClassic18 getMifareClassic errorcode: " + error.code);
                         expect(3100201).assertEqual(error.code)
                     } else {

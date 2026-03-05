@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file expect in compliance with the License.
  * You may obtain a copy of the License at
@@ -8578,5 +8578,168 @@ export default function UDMFApiDescriptorTest() {
       }
       console.log(tag + 'UDMFUtdTest167 end');
     });
+
+    /**
+     * @tc.name   testTypeDescriptorTypeId0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_TypeDescriptorTypeIdTest_0100
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTypeDescriptorTypeId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log('testTypeDescriptorTypeId0100 start');
+      expect(UTD.UniformDataType.TEXT).assertEqual("general.text");
+      let typeObj = UTD.getTypeDescriptor(UTD.UniformDataType.TEXT);
+      typeObj.typeId = "aaa";
+      typeObj.belongingToTypes = ["bbb"];
+      typeObj.description = "ccc";
+      typeObj.referenceURL = "ddd";
+      typeObj.iconFile = "eee";
+      typeObj.filenameExtensions = ["fff"];
+      typeObj.mimeTypes = ["ggg"]
+      console.log("typeId:" + typeObj.typeId);
+      console.log("belongingToTypes:" + typeObj.belongingToTypes);
+      console.log("description:" + typeObj.description);
+      console.log("referenceURL:" + typeObj.referenceURL);
+      console.log("iconFile:" + typeObj.iconFile);
+      console.log("filenameExtensions:" + typeObj.filenameExtensions.toString());
+      console.log("mimeTypes:" + typeObj.mimeTypes.toString());
+      expect(typeObj.typeId).assertEqual("aaa");
+      expect(typeObj.belongingToTypes[0]).assertEqual("bbb");
+      expect(typeObj.description).assertEqual("ccc");
+      expect(typeObj.referenceURL).assertEqual("ddd");
+      expect(typeObj.iconFile).assertEqual("eee");
+      expect(typeObj.filenameExtensions.toString()).assertEqual("fff");
+      expect(typeObj.mimeTypes.toString()).assertEqual("ggg");
+      console.log("testTypeDescriptorTypeId0100 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByFilenameExtensionErr0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByFilenameExtensionErrTest_0100
+     * @tc.desc   parameter to getUniformDataTypesByFilenameExtension()  --parameter is ".xls"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByFilenameExtensionErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log('testGetUniformDataTypesByFilenameExtensionErr0100 start');
+      try {
+        let result = UTD.getUniformDataTypesByFilenameExtension(".xls", "");
+        console.log(tag + "result=====>" + JSON.stringify(result));
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByFilenameExtensionErr0100 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByFilenameExtensionErr0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByFilenameExtensionErrTest_0200
+     * @tc.desc   parameter to getUniformDataTypesByFilenameExtension()  --parameter is ".xls"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByFilenameExtensionErr0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log('testGetUniformDataTypesByFilenameExtensionErr0200 start');
+      try {
+        let result = UTD.getUniformDataTypesByFilenameExtension(".xls", null);
+        console.log(tag + "result=====>" + JSON.stringify(result));
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByFilenameExtensionErr0200 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByFilenameExtensionErr0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByFilenameExtensionErrTest_0300
+     * @tc.desc   parameter to getUniformDataTypesByFilenameExtension()  --parameter is ".xls"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByFilenameExtensionErr0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log('testGetUniformDataTypesByFilenameExtensionErr0300 start');
+      try {
+        let result = UTD.getUniformDataTypesByFilenameExtension(".xls", undefined);
+        console.log(tag + "result=====>" + JSON.stringify(result));
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByFilenameExtensionErr0300 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByMIMETypeErr0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByMIMETypeErrTest_0100
+     * @tc.desc   parameter to getUniformDataTypesByMIMEType() --"image/tiff"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByMIMETypeErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'testGetUniformDataTypesByMIMETypeErr0100 start');
+      try {
+        let result = UTD.getUniformDataTypesByMIMEType("image/tiff", "");
+        console.log(tag + "result=====>" + result);
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByMIMETypeErr0100 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByMIMETypeErr0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByMIMETypeErrTest_0200
+     * @tc.desc   parameter to getUniformDataTypesByMIMEType() --"image/tiff"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByMIMETypeErr0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'testGetUniformDataTypesByMIMETypeErr0200 start');
+      try {
+        let result = UTD.getUniformDataTypesByMIMEType("image/tiff", null);
+        console.log(tag + "result=====>" + result);
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByMIMETypeErr0200 end");
+    });
+
+    /**
+     * @tc.name   testGetUniformDataTypesByMIMETypeErr0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_GetUniformDataTypesByMIMETypeErrTest_0300
+     * @tc.desc   parameter to getUniformDataTypesByMIMEType() --"image/tiff"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetUniformDataTypesByMIMETypeErr0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'testGetUniformDataTypesByMIMETypeErr0300 start');
+      try {
+        let result = UTD.getUniformDataTypesByMIMEType("image/tiff", undefined);
+        console.log(tag + "result=====>" + result);
+        expect().assertFail();
+      } catch (err) {
+        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
+        expect(err.code).assertEqual("401");
+      }
+      console.log(tag + "testGetUniformDataTypesByMIMETypeErr0300 end");
+    });
+
   })
 }

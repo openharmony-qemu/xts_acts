@@ -30,6 +30,8 @@ import ProgressMask from './ProgressTest/ProgressMask.test';
 import ProgressPrivacySensitiveTest from './ProgressTest/ProgressPrivacySensitive.test';
 import ProgressScaleCountTest from './ProgressTest/ProgressScaleCountTest.test';
 import ProgressStyleTest from './ProgressTest/ProgressStyleTest.test';
+import LoadingProgressPropertiesNullUndefinedTest from './ProgressTest/LoadingProgressPropertiesNullUndefinedTest.test';
+import ProgressPropertiesNullUndefinedTest from './ProgressTest/ProgressPropertiesNullUndefinedTest.test';
 
 import TextClockApiTest from './TextClockTest/TextClockApiTest.test';
 import TextClockJsunit from './TextClockTest/TextClockJsunit.test';
@@ -65,6 +67,8 @@ export default function testsuite() {
     ProgressPrivacySensitiveTest()
     ProgressScaleCountTest()
     ProgressStyleTest()
+    LoadingProgressPropertiesNullUndefinedTest()
+    ProgressPropertiesNullUndefinedTest()
     // TextClockTest
     TextClockApiTest()
     TextClockJsunit()

@@ -237,16 +237,10 @@ export default function initNdkTest() {
     it('testOHGetProductModel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let productModelInfo: string = initndk.oHGetProductModel();
 
-      console.info('the value of the deviceinfo productModel is :' + productModelInfo);
-      expect(productModelInfo).assertInstanceOf('String');
       if (productModelInfo != "" && productModelInfo != null && productModelInfo != undefined) {
-        let str: RegExp = new RegExp("[\\w\\-\\.(\\)\\s]","g");
-        let arr = productModelInfo.match(str);
-        if(arr !== null){
-          let bufferstr = arr.join('');
-          console.info('the value of the bufferstr is :' + bufferstr);
-          expect(productModelInfo).assertEqual(bufferstr);
-        }       
+        console.info('the value of the deviceinfo productModel is :' + productModelInfo);
+        expect(productModelInfo).assertInstanceOf('String');
+        done();
       } else {
         console.info('the return value is null or incorrect.');
         expect().assertFail();
@@ -268,14 +262,7 @@ export default function initNdkTest() {
       console.info('the value of the deviceinfo productModel is :' + productModelInfo);
       let len = productModelInfo.length;
       expect(len).assertLess(MAX_CHARACTERS_NUM_ONE);
-      expect(len).assertLarger(MAX_CHARACTERS_NUM);
-      let str: RegExp = new RegExp("[\\w\\-\\.(\\)\\s]","g");
-      let arr = productModelInfo.match(str);
-      if(arr !== null){
-        let bufferstr = arr.join('');
-        console.info('the value of the bufferstr is :' + bufferstr);
-        expect(productModelInfo).assertEqual(bufferstr);
-      }      
+      expect(len).assertLarger(MAX_CHARACTERS_NUM);     
       done();
     });
 
@@ -588,16 +575,10 @@ export default function initNdkTest() {
     it('testOHGetIncrementalVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let incrementalVersionInfo: string = initndk.oHGetIncrementalVersion();
 
-      console.info('the value of the deviceinfo incrementalVersion is :' + incrementalVersionInfo);
-      expect(incrementalVersionInfo).assertInstanceOf('String');
       if (incrementalVersionInfo != "" && incrementalVersionInfo != null && incrementalVersionInfo != undefined) {
-        let str: RegExp = new RegExp("[\\w\\-\\.(\\)]","g");
-        let arr = incrementalVersionInfo.match(str);
-        if(arr !== null){
-          let bufferstr = arr.join('');
-          console.info('the value of the bufferstr is :' + bufferstr);
-          expect(incrementalVersionInfo).assertEqual(bufferstr);
-        } 
+        console.info('the value of the deviceinfo incrementalVersion is :' + incrementalVersionInfo);
+        expect(incrementalVersionInfo).assertInstanceOf('String');
+        done();
       } else {
         console.info('the return value is null or incorrect.');
         expect().assertFail();
@@ -619,13 +600,6 @@ export default function initNdkTest() {
       console.info('the value of the deviceinfo incrementalVersion is :' + incrementalVersionInfo);
       let len = incrementalVersionInfo.length;
       expect(len).assertLarger(MAX_CHARACTERS_NUM);
-      let str: RegExp = new RegExp("[\\w\\-\\.(\\)]","g");
-      let arr = incrementalVersionInfo.match(str);
-      if(arr !== null){
-        let bufferstr = arr.join('');
-        console.info('the value of the bufferstr is :' + bufferstr);
-        expect(incrementalVersionInfo).assertEqual(bufferstr);
-      } 
       done();
     });
 

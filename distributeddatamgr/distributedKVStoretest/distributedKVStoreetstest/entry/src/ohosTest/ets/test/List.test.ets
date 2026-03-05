@@ -35,6 +35,8 @@ import DistributedDataCoverageAdd from './DistributedDataCoverageAdd.test';
 import SingleKvStoreNull from './SingleKvStoreNull.test';
 import DeviceKvStoreNull from './DeviceKvStoreNull.test';
 import QueryNull from './QueryNull.test';
+import DeviceKvStoreGetCoverageAdd from './DeviceKvStoreGetCoverageAdd.test';
+import KVManagerCoverageAdd from './KVManagerCoverageAdd.test';
 
 export default function testsuite() {
   deviceKvStoreCallbackTest();
@@ -59,4 +61,6 @@ export default function testsuite() {
   SingleKvStoreNull();
   DeviceKvStoreNull();
   QueryNull();
+  DeviceKvStoreGetCoverageAdd();
+  KVManagerCoverageAdd();
 }

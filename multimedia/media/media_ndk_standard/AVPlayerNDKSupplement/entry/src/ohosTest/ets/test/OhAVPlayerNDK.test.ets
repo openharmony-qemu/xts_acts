@@ -2711,6 +2711,33 @@ export default function OhAVPlayerNDKTest() {
       done();
     });
     /**
+ 	    * @tc.number testAVMediaSourceDestroy0001
+ 	    * @tc.name   testAVMediaSourceDestroy0001
+ 	    * @tc.desc   OH_AVMediaSource_Destroy
+ 	    * @tc.size   MediumTest
+ 	    * @tc.type   Function
+ 	    * @tc.level  Level 0
+ 	    */
+ 	  it('testAVMediaSourceDestroy0001', Level.LEVEL0, async (done: Function) => {
+ 	    let ret = avplayer.AVMediaSourceDestroy();
+ 	    expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+ 	    done();
+ 	  });
+ 	 
+ 	/**
+ 	  * @tc.number testAVMediaSourceDestroyAbnormal0001
+ 	  * @tc.name   testAVMediaSourceDestroyAbnormal0001
+ 	  * @tc.desc   OH_AVMediaSource_Destroy input nullptr
+ 	  * @tc.size   MediumTest
+ 	  * @tc.type   Function
+ 	  * @tc.level  Level 0
+ 	  */
+ 	  it('testAVMediaSourceDestroyAbnormal0001', Level.LEVEL0, async (done: Function) => {
+ 	    let ret = avplayer.AVMediaSourceDestroyAbnormal();
+ 	    expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
+ 	    done();
+ 	  });
+    /**
      * @tc.number testAVPlayerSetMediaSourceStateError0001
      * @tc.name   testAVPlayerSetMediaSourceStateError0001
      * @tc.desc   OH_AVPlayer_SetMediaSource called in invalid state
@@ -2933,6 +2960,26 @@ export default function OhAVPlayerNDKTest() {
     it('testAVPlaybackStrategyDestoyErr0001', Level.LEVEL0, async (done: Function) => {
       let ret = avplayer.AVPlaybackStrategyDestoyErr();
       expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlayerOnSubtitleInfoUpdate001
+     * @tc.name   testOhAVPlayerOnSubtitleInfoUpdate001
+     * @tc.desc   Set the Subtitle Source of player.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerOnSubtitleInfoUpdate001', Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlayerOnSubtitleInfoUpdate001 test start `);
+      let subtitle = await getFile(`${testContext.filesDir}/srt_2800.srt`);
+      let player = avplayer.AVPlayerOnSubtitleInfoUpdate(fileDescriptor, subtitle.fd);
+      expect(player.result).assertEqual(OH_AVErrCode.AV_ERR_OK);
+      await sleep(2000);
+      expect(avplayer.checkErrorCode(player.userData)).assertEqual(OH_AVErrCode.AV_ERR_OK);
+      await fs.close(subtitle.fd);
+      console.info(`testOhAVPlayerOnSubtitleInfoUpdate001 test end `);
       done();
     });
   });

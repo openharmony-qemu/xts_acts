@@ -127,41 +127,5 @@ export default function BuiltinsNumberIsFiniteTest() {
       console.log(`${caseName} test end`);
       Done()
     })
-
-    /**
-     * @tc.number SUB_BUILTINS_NUMBER_ISFINITE_TEST_0700
-     * @tc.name builtinsNumberIsFiniteTest0700
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('builtinsNumberIsFiniteTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (Done: () => void): Promise<void> => {
-    //   const caseName = 'builtinsNumberIsFiniteTest0700';
-    //   console.log(`${caseName} test start`);
-    //   const num6 = Number.isFinite(null);
-    //   console.log(`${num6}`)
-    //   expect(false).assertEqual(num6)
-    //   console.log(`${caseName} test end`);
-    //   Done()
-    // })
-
-    /**
-     * @tc.number SUB_BUILTINS_NUMBER_ISFINITE_TEST_0800
-     * @tc.name builtinsNumberIsFiniteTest0800
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('builtinsNumberIsFiniteTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (Done: () => void): Promise<void> => {
-    //   const caseName = 'builtinsNumberIsFiniteTest0800';
-    //   console.log(`${caseName} test start`);
-    //   const num7 = Number.isFinite(undefined);
-    //   console.log(`${num7}`)
-    //   expect(false).assertEqual(num7)
-    //   console.log(`${caseName} test end`);
-    //   Done()
-    // })
   })
 }

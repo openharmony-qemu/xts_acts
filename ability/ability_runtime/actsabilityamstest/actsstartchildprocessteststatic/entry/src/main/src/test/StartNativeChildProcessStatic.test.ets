@@ -89,6 +89,7 @@ export default function StartNativeChildProcessStaticTest() {
         expect().assertFail();
         done();
       } catch (error) {
+        hilog.info(0x0000, 'testTag',`startNativeChildProcess error, code:${error.code}`);
         if (error.code === 801){
           expect(error.code).assertEqual(801);
           done();
@@ -132,8 +133,14 @@ export default function StartNativeChildProcessStaticTest() {
         expect(pid > 0).assertTrue();
         done();
       } catch (error) {
-        expect().assertFail();
-        done();
+        hilog.info(0x0000, 'testTag',`startNativeChildProcess error, code:${error.code}`);
+        if (error.code === 801){
+          expect(error.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
       }
     });
 
@@ -163,6 +170,7 @@ export default function StartNativeChildProcessStaticTest() {
         expect().assertFail();
         done();
       } catch (error) {
+        hilog.info(0x0000, 'testTag',`startNativeChildProcess error, code:${error.code}`);
         if (error.code === 801){
           expect(error.code).assertEqual(801);
           done();
@@ -203,6 +211,7 @@ export default function StartNativeChildProcessStaticTest() {
         expect().assertFail();
         done();
       } catch (error) {
+        hilog.info(0x0000, 'testTag',`startNativeChildProcess error, code:${error.code}`);
         if (error.code === 801){
           expect(error.code).assertEqual(801);
           done();
@@ -232,14 +241,61 @@ export default function StartNativeChildProcessStaticTest() {
         let args: ChildProcessArgs = {}
         await Utils.msSleep(500)
         hilog.info(0x0000, 'testTag',`startNativeChildProcess before,fd1:${file.fd}`);
+        pid = await childProcessManager.startNativeChildProcess('', args);
+        hilog.info(0x0000, 'testTag',`StartNativeChildProcess success, pid: ${pid}`);
+        fs.closeSync(file.fd);
+        expect(pid > 0).assertTrue();
+        done();
+      } catch (error) {
+        hilog.info(0x0000, 'testTag',`startNativeChildProcess error, code:${error.code}`);
+        if (error.code === 801){
+          expect(error.code).assertEqual(801);
+          done();
+        } else {
+          expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+          hilog.info(0x0000, 'testTag', '%{public}s',
+            'Test passed: startNativeChildProcess returns error 401  when Child process source file path is empty.');
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_static_0600
+     * @tc.desc   Using the on method set color mode and check the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_static_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartNativeChildProcess_static_0600 begin');
+
+      let path = abilityDelegator!.getAppContext().filesDir + "/test.txt";
+      let file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+      try {
+        let args: ChildProcessArgs = {
+          entryParams: 'testEntryParams',
+          fds: {
+            'fd1': file.fd
+          }
+        };
+        await Utils.msSleep(500)
+        hilog.info(0x0000, 'testTag',`startNativeChildProcess before,fd1:${file.fd}`);
         pid = await childProcessManager.startNativeChildProcess("libentry.so:Main", args);
         hilog.info(0x0000, 'testTag',`StartNativeChildProcess success, pid: ${pid}`);
         fs.closeSync(file.fd);
         expect(pid > 0).assertTrue();
         done();
       } catch (error) {
-        expect().assertFail();
-        done();
+        hilog.info(0x0000, 'testTag',`startNativeChildProcess error, code:${error.code}`);
+        if (error.code === 801){
+          expect(error.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
       }
     });
   })

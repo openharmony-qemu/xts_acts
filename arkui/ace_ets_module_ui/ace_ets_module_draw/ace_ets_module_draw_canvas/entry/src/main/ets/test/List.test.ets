@@ -76,6 +76,19 @@ import canvasSetLineDashNullUndefinedTest from './CanvasNullUndefined/canvasSetL
 import canvasStrokeRectNullUndefinedTest from './CanvasNullUndefined/canvasStrokeRectNullUndefinedTest.test';
 import canvasStrokeTextNullUndefinedTest from './CanvasNullUndefined/canvasStrokeTextNullUndefinedTest.test';
 
+import canvasTransformNullUndefinedTest from './CanvasNullUndefined/canvasTransformNullUndefinedTest.test';
+import canvasTranslateNullUndefinedTest from './CanvasNullUndefined/canvasTranslateNullUndefinedTest.test';
+import canvasSetPixelMapNullUndefinedTest from './CanvasNullUndefined/canvasSetPixelMapNullUndefinedTest.test';
+import canvasTransferFromImageBitmapNullUndefinedTest from './CanvasNullUndefined/canvasTransferFromImageBitmapNullUndefinedTest.test';
+import canvasToDataURLNullUndefinedTest from './CanvasNullUndefined/canvasToDataURLNullUndefinedTest.test';
+import canvasStartImageAnalyzerNullUndefinedTest from './CanvasNullUndefined/canvasStartImageAnalyzerNullUndefinedTest.test';
+import canvasOnAttachNullUndefinedTest from './CanvasNullUndefined/canvasOnAttachNullUndefinedTest.test';
+import canvasOnDetachNullUndefinedTest from './CanvasNullUndefined/canvasOnDetachNullUndefinedTest.test';
+import canvasPatternSetTransformNullUndefinedTest from './CanvasNullUndefined/canvasPatternSetTransformNullUndefinedTest.test';
+import offCanvasToDataURLNullUndefinedTest from './CanvasNullUndefined/offCanvasToDataURLNullUndefinedTest.test';
+import canvasOnReadyNullUndefinedTest from './CanvasNullUndefined/canvasOnReadyNullUndefinedTest.test';
+import canvasMatrixRotateNullUndefinedTest from './CanvasNullUndefined/canvasMatrixRotateNullUndefinedTest.test';
+
 export default function testsuite() {
 
   CanvasAPIUnitTest();
@@ -141,5 +154,18 @@ export default function testsuite() {
   canvasSetLineDashNullUndefinedTest();
   canvasStrokeRectNullUndefinedTest();
   canvasStrokeTextNullUndefinedTest();
+
+  canvasTransformNullUndefinedTest();
+  canvasTranslateNullUndefinedTest();
+  canvasSetPixelMapNullUndefinedTest();
+  canvasTransferFromImageBitmapNullUndefinedTest();
+  canvasToDataURLNullUndefinedTest();
+  canvasStartImageAnalyzerNullUndefinedTest();
+  canvasOnAttachNullUndefinedTest();
+  canvasOnDetachNullUndefinedTest();
+  canvasPatternSetTransformNullUndefinedTest();
+  offCanvasToDataURLNullUndefinedTest();
+  canvasOnReadyNullUndefinedTest();
+  canvasMatrixRotateNullUndefinedTest();
 
 }

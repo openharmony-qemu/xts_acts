@@ -55,6 +55,9 @@
         "name": "ohos.permission.READ_MEDIA"
       },
       {
+        "name": "ohos.permission.GET_WIFI_INFO"
+      },
+      {
         "name": "ohos.permission.PROTECT_SCREEN_LOCK_DATA"
       }
     ]

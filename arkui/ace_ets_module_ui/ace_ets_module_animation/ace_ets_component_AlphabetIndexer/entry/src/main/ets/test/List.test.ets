@@ -22,6 +22,8 @@ import alphabetAlignStyle from './AlphabetIndexerTest/alphabetAlignStyle.test';
 import outliersAlphabet from './AlphabetIndexerTest/outliersAlphabet.test';
 import valueAlphabet from './AlphabetIndexerTest/valueAlphabet.test';
 import PopupAlphaTest from './AlphabetIndexerTest/PopupAlpha.test';
+import AlphabetIndexerAttributeNullUndefined
+  from './AlphabetIndexerAttributeNullUndefined/AlphabetIndexerAttributeNullUndefined.test'
 
 export default function testsuite() {
     AlphabetTest();
@@ -34,4 +36,5 @@ export default function testsuite() {
     valueAlphabet();
     PopupAlphaTest();
     AlphabetIndexerJsunit();
+    AlphabetIndexerAttributeNullUndefined();
 }

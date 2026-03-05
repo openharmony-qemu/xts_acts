@@ -16,6 +16,7 @@
 import cacheDownload from "@ohos.request.cacheDownload";
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestCacheDownloadUnitTest() {
   describe('requestCacheDownloadJSTest', () => {
@@ -24,6 +25,9 @@ export default function requestCacheDownloadUnitTest() {
      * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
      */
     beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
       class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
         headers?: Record<string, string> | undefined = {'Accept': '*/*'}
       }
@@ -105,7 +109,7 @@ export default function requestCacheDownloadUnitTest() {
         console.info("====>SUB_Request_cacheDownload_0100 download success url: " + url);
         cacheDownload.cancel(url);
         console.info("====>SUB_Request_cacheDownload_0100 cancel success url: " + url);
-        expect(true).assertTrue();
+        expect(downloadOptions !== undefined).assertTrue();
         done();
       } catch (err) {
         console.info("====>SUB_Request_cacheDownload_0100 catch err: " + JSON.stringify(err));

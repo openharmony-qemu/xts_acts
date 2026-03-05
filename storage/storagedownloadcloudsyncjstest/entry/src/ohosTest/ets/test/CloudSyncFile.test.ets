@@ -35,9 +35,9 @@ describe('cloud_file_test', () => {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.MultiDownloadProgress) => {
         console.info("batchDownload state：" + pg.state);
+        expect(cloudSync.State.RUNNING === 0).assertTrue();
       };
       fileCache.on('batchDownload', callback);
-      expect(true).assertTrue();
      } catch (err) {
        console.log('Test_CloudFile_State_001 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
@@ -58,10 +58,10 @@ describe('cloud_file_test', () => {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.MultiDownloadProgress) => {
         console.info("batchDownload state：" + pg.state);
+        expect(cloudSync.State.RUNNING === 0).assertTrue();
       };
       fileCache.on('batchDownload', callback);
       fileCache.off('batchDownload', callback);
-      expect(true).assertTrue();
      } catch (err) {
        console.log('Test_CloudFile_State_002 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
@@ -162,7 +162,6 @@ describe('cloud_file_test', () => {
       };
       fileCache.on('batchDownload', callback);
       fileCache.off('batchDownload', callback);
-      expect(true).assertTrue();
      } catch (err) {
        console.log('Test_CloudFile_State_005 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
@@ -191,7 +190,6 @@ describe('cloud_file_test', () => {
       };
       fileCache.on('batchDownload', callback);
       fileCache.off('batchDownload', callback);
-      expect(true).assertTrue();
      } catch (err) {
        console.log('Test_CloudFile_State_006 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
@@ -250,7 +248,6 @@ describe('cloud_file_test', () => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
       fileCache.cleanFileCache(uri);
-      expect(true).assertTrue();
      } catch (err) {
        console.log('Test_CloudFile_State_008 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code == 401 && err.message == 'The input parameter is invalid').assertTrue();

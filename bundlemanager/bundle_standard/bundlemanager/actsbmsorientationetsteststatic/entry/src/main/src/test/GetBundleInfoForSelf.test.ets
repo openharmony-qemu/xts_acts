@@ -46,5 +46,34 @@ export default function getSignatureAInfo() {
         done();
       };
     })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_getSignatureInfo_static_01
+     * @tc.number Sub_Bms_Framework_getSignatureInfo_static_01
+     * @tc.desc   Test getSignatureInfo with Skill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Bms_Framework_getSignatureInfo_static_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        await bundleManager.getBundleInfoForSelf(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
+          bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_SIGNATURE_INFO)
+          .then((data: BundleInfo) => {
+            hilog.info(domain, tag, 'getBundleInfoForSelf  ====> start');
+            let datas = bundleManager.getSignatureInfo(data.appInfo!.uid);
+            expect(data.signatureInfo!.appId).assertEqual(datas.appId);
+            expect(data.signatureInfo!.fingerprint).assertEqual(datas.fingerprint);
+            expect(data.signatureInfo!.appIdentifier).assertEqual(datas.appIdentifier);
+            expect(data.signatureInfo!.certificate).assertEqual(datas.certificate);
+            hilog.info(domain, tag, 'getBundleInfoForSelf  ====> end');
+            done();
+          })
+          .catch((err: Error): void => {
+            console.log('getBundleInfoForSelf  ====> err', JSON.stringify(err));
+            expect(err).assertFail();
+            done();
+          })
+      })
   })
 }
