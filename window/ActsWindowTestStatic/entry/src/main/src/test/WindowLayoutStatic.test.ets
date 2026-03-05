@@ -1446,8 +1446,8 @@ export default function WindowLayoutStaticTest() {
          * @tc.type        Function
          * @tc.level       Level3
          */
-        it('testMaximize_TwoParams_OnlyAcrossDisplay_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testMaximize_TwoParams_OnlyAcrossDisplay_static_002';
+        it('testMaximize_TwoParams_Both_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMaximize_TwoParams_Both_static_002';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
             try {
@@ -3387,8 +3387,8 @@ export default function WindowLayoutStaticTest() {
          * @tc.type        Function
          * @tc.level       Level3
          */
-        it('testIsWindowRectAutoSave_ErrorCode1300002_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testIsWindowRectAutoSave_ErrorCode1300002_static_003';
+        it('testIsWindowRectAutoSave_ErrorCode1300002_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testIsWindowRectAutoSave_ErrorCode1300002_static_002';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
             try {
@@ -3792,11 +3792,11 @@ export default function WindowLayoutStaticTest() {
          * @tc.type        Function
          * @tc.level       Level 3
          */
-        it('testSetContentAspectRatio_Error1300004_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testSetContentAspectRatio_Error1300004_0700';
+        it('testSetContentAspectRatio_Error1300004_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetContentAspectRatio_Error1300004_0500';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-            let subWindow: window.Window = await windowStage!.createSubWindow('testSetContentAspectRatio_Error1300004_0700');
+            let subWindow: window.Window = await windowStage!.createSubWindow('testSetContentAspectRatio_Error1300004_0500');
             expect(!!subWindow).assertTrue();
             await subWindow.setUIContent('pages/index2');
             // await subWindow.showWindow();
@@ -4330,11 +4330,11 @@ export default function WindowLayoutStaticTest() {
          * @tc.type        Function
          * @tc.level       Level 3
          */
-        it('testSetWindowLimits_Error1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testSetWindowLimits_Error1300002_0100';
+        it('testSetWindowLimits_Error1300002_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowLimits_Error1300002_0200';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-            let subWindow: window.Window = await windowStage!.createSubWindow('testSetWindowLimits_Error1300002_0100');
+            let subWindow: window.Window = await windowStage!.createSubWindow('testSetWindowLimits_Error1300002_0200');
             expect(!!subWindow).assertTrue();
             await subWindow.destroyWindow();
             let windowLimits: window.WindowLimits = {
