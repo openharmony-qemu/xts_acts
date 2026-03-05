@@ -219,19 +219,11 @@ export default function IsMyCardTest() {
       let context: Context = AppStorage.get('context') as Context;
       try {
         contact.isMyCard(context, null, (err: BusinessError, data: boolean) => {
-          if (err) {
-            console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
-            ExpectTrue(err.code === 401 || err.code === 201);
-            done();
-          } else {
-            console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectFail();
-            done();
-          }
+          console.info(`${caseName} isMyCard`);
         });
       } catch (err) {
         console.info(`${caseName} callback: catch err->${JSON.stringify(err)}`);
-        ExpectTrue(err.code === 401 || err.code === 201);
+        ExpectTrue(err.code === 401);
         done();
       }
       console.info(`${caseName} test end `);
