@@ -1596,7 +1596,7 @@ export default function ActsZipTest() {
 
         /**
          * @tc.name   actsZipTest13y
-         * @tc.number ACTS_ZipTest_13
+         * @tc.number ACTS_ZipTest_13y
          * @tc.desc   test deflate and inflate SYNC_FLUSH
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1668,7 +1668,7 @@ export default function ActsZipTest() {
 
         /**
          * @tc.name   actsZipTest13z
-         * @tc.number ACTS_ZipTest_13
+         * @tc.number ACTS_ZipTest_13z
          * @tc.desc   test deflate and inflate FULL_FLUSH
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1740,7 +1740,7 @@ export default function ActsZipTest() {
 
         /**
          * @tc.name   actsZipTest13l
-         * @tc.number ACTS_ZipTest_13
+         * @tc.number ACTS_ZipTest_13l
          * @tc.desc   test deflate and inflate BLOCK
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1811,7 +1811,7 @@ export default function ActsZipTest() {
          
         /**
          * @tc.name   actsZipTest13m
-         * @tc.number ACTS_ZipTest_13
+         * @tc.number ACTS_ZipTest_13m
          * @tc.desc   test deflate and inflate TREES
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
