@@ -2490,6 +2490,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.info(`${message} Succeeded setPiPControlEnabled FAST_FORWARD true`);
               pipController.setPiPControlEnabled(pipWindow.PiPControlType.FAST_FORWARD, false)
               console.info(`${message} Succeeded setPiPControlEnabled FAST_FORWARD false`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.FAST_BACKWARD, true)
+              console.info(`${message} Succeeded setPiPControlEnabled FAST_BACKWARD true`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.FAST_BACKWARD, false)
+              console.info(`${message} Succeeded setPiPControlEnabled FAST_BACKWARD false`);
               expect(true).assertTrue();
 
               done();

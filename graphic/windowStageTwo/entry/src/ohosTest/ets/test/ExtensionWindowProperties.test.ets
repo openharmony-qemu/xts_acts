@@ -862,7 +862,7 @@ export default function extensionWindowPropertiesTest() {
             let errorMessage = await driver.findComponent(ON.id('errorMessage'))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
-            if(errorMessageText === 'success'){
+            if(errorMessageText === '401'){
               await subWindowClass.destroyWindow()
               done();
             }else if(errorMessageText === '801'){
