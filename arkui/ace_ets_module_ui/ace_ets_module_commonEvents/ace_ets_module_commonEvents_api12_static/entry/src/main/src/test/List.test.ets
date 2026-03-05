@@ -70,12 +70,12 @@ import gestureDefine10 from './GestureRecognizer/GestureRecognizerIsValid.test'
 
 
 export default function testsuite() {
+  APIPreDragStatusTest();
   APIshouldBuiltInRecognizerParallelWith();
   addGestureApplyGesture();
-  APIPreDragStatusTest();
   ShortcutKeyTABTest();
   ShortcutKeyDPADUPTest();
-  ShortcutKeyDPADDOWNTest(); 
+  ShortcutKeyDPADDOWNTest();
   ShortcutKeyDPADLEFTTest();
   ShortcutKeyDPADRIGHTTest();
   TapGestureHandlerTest();
@@ -104,9 +104,9 @@ export default function testsuite() {
   // TapGestureTemplateTest();
   PanGestureExampleTemplateTest();
   LongPressGestureTemplateTest();
-  onAttachTest(); 
-  GestureRecognizerState(); 
-  typeNodeGestureTest(); 
+  onAttachTest();
+  GestureRecognizerState();
+  typeNodeGestureTest();
   btnMonoLongPress();
   btnMonoTouch();
   gestureDefine1();
