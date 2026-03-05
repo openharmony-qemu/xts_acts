@@ -956,7 +956,7 @@ export default function extensionWindowPropertiesTest() {
     })
     /**
      * @tc.name   testUIExtensionHostCreateSubWindowWithOptions_ErrorCode401_02
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS_ERRORCODE_JS_API_0100
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS_ERRORCODE_JS_API_0200
      * @tc.desc   testUIExtensionHostOnWindowSizeChange_ErrorCode401 when got callback with null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1017,7 +1017,7 @@ export default function extensionWindowPropertiesTest() {
     })
     /**
      * @tc.name   testUIExtensionHostCreateSubWindowWithOptions_ErrorCode401_03
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS_ERRORCODE_JS_API_0100
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS_ERRORCODE_JS_API_0300
      * @tc.desc   testUIExtensionHostOnWindowSizeChange_ErrorCode401 when got callback with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1138,15 +1138,15 @@ export default function extensionWindowPropertiesTest() {
       done()
     })
     /**
-     * @tc.name   testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_1
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS2_ERRORCODE_JS_API_0100
+     * @tc.name   testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS2_ERRORCODE_JS_API_0200
      * @tc.desc   testUIExtensionHostOnWindowSizeChange_ErrorCode401 when got callback with null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName = 'testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_1 ';
+    it('testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_2 ';
       console.log(caseName + 'start run');
       try {
         let options: window.SubWindowOptions = {
@@ -1199,15 +1199,15 @@ export default function extensionWindowPropertiesTest() {
       done()
     })
     /**
-     * @tc.name   testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_2
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS2_ERRORCODE_JS_API_0100
+     * @tc.name   testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS2_ERRORCODE_JS_API_0300
      * @tc.desc   testUIExtensionHostOnWindowSizeChange_ErrorCode401 when got callback with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName = 'testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_2 ';
+    it('testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_3 ';
       console.log(caseName + 'start run');
       try {
         let options: window.SubWindowOptions = {
@@ -1260,15 +1260,15 @@ export default function extensionWindowPropertiesTest() {
       done()
     })
     /**
-     * @tc.name   testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_3
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS2_ERRORCODE_JS_API_0100
+     * @tc.name   testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_4
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS2_ERRORCODE_JS_API_0400
      * @tc.desc   testUIExtensionHostOnWindowSizeChange_ErrorCode401 when got callback with ''
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName = 'testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_3 ';
+    it('testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUIExtensionHostCreateSubWindowWithOptions2_ErrorCode401_4 ';
       console.log(caseName + 'start run');
       try {
         let options: window.SubWindowOptions = {
