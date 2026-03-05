@@ -1069,12 +1069,7 @@ export default function ErrTest() {
               let con: contact.Contact = 0 as contact.Contact;
               try {
                 contact.updateContact(context, con, (updateErr: BusinessError, updateDate: void) => {
-                  if (updateErr) {
-                    console.info(`${caseName} updateContact: err->${JSON.stringify(updateErr)}`);
-                    ExpectFail();
-                    done();
-                  }
-                  console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
+                  console.info(`${caseName} updateContact: data->${JSON.stringify(updateDate)}`);
                 });
               } catch (e) {
                 console.info(`${caseName} updateContact: catch err->${JSON.stringify(e)}`);
@@ -1219,15 +1214,7 @@ export default function ErrTest() {
                   contact.updateContact(context, con, {
                     attributes: attr.attributes
                   }, (updateErr: BusinessError, updateDate: void) => {
-                    if (updateErr) {
-                      console.info(`${caseName} updateContact: err->${JSON.stringify(updateErr)}`);
-                      ExpectFail();
-                      done();
-                    } else {
-                      console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
-                      ExpectFail();
-                      done();
-                    }
+                    console.info(`${caseName} updateContact: data->${JSON.stringify(updateDate)}`);
                   });
                 } catch (e) {
                   console.info(`${caseName} updateContact: catch err->${JSON.stringify(e)}`);

@@ -336,6 +336,74 @@ export default function windowKeyBorad() {
         done();
       }
     });
+    /**
+     * @tc.name   testMainWindow_onkeyboardDidHide
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDDIDHIDE_0100
+     * @tc.desc   主窗监听onkeyboardDidHide后隐藏固定态输入法键盘触发回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMainWindow_onkeyboardDidHide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testMainWindow_onkeyboardDidHide ';
+      console.log(caseName + 'begin');
+      let mainWindow = windowStage.getMainWindowSync();
+      console.info(`${caseName} Succeeded in getting the main window.`);
+      try {
+        if (isFreeWindowMode == true) {
+          done();
+        } else {
+          const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
+            console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+            let displayInfo = display.getDefaultDisplaySync();
+            console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
+            expect(keyboardInfo.beginRect.left).assertEqual(0);
+            expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
+            expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+            expect(keyboardInfo.beginRect.height).assertLarger(0);
+            expect(keyboardInfo.endRect.left).assertEqual(0);
+            expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
+            expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+            expect(keyboardInfo.endRect.height).assertLarger(0);
+            mainWindow.off('keyboardDidShow');
+            await driver.pressBack();
+            await sleep(500);
+          }
+          mainWindow.on('keyboardDidShow', callback1);
+          const callback  = async (keyboardInfo: window.KeyboardInfo) => {
+            console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+            let displayInfo = display.getDefaultDisplaySync();
+            console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
+            expect(keyboardInfo.beginRect.left).assertEqual(0);
+            expect(keyboardInfo.beginRect.top + keyboardInfo.beginRect.height).assertEqual(displayInfo.height);
+            expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+            expect(keyboardInfo.endRect.left).assertEqual(0);
+            expect(keyboardInfo.endRect.top).assertEqual(displayInfo.height);
+            expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+            expect(keyboardInfo.endRect.height).assertLarger(0);
+            mainWindow.off('keyboardDidHide');
+            await sleep(500);
+            done();
+          }
+          mainWindow.on('keyboardDidHide', callback);
+          await sleep(1000);
+          let input = await driver.findComponent(ON.id('textInput'));
+          await sleep(1000);
+          await input.click();
+          await sleep(500);
+
+        }
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+        mainWindow.off('keyboardWillHide');
+        if (err.code === 801) {
+          done();
+        } else {
+          expect().assertFail()
+          done();
+        }
+      }
+    });
 
     /**
      * @tc.name   testSubWindowDestroy_offkeyboardWillHide
@@ -666,6 +734,7 @@ export default function windowKeyBorad() {
       expect(window.WindowAnimationCurve.INTERPOLATION_SPRING).assertEqual(1);
       done();
     })
+    
 
   })
 }

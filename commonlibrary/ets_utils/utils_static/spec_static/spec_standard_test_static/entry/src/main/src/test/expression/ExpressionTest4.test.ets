@@ -1103,7 +1103,7 @@ export default function expressionTest4() {
     it('ExpressionTest0550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const base: string = "character_";
       let result: string = "";
-      let i: number, current: string;
+      let i: int, current: string;
       for (i = 65, current = base + String.fromCharCode(i); i <= 67; i++, current = base + String.fromCharCode(i)) {
         result += current + " ";
       }

@@ -17,6 +17,9 @@ import { describe, beforeAll, it, expect, Level, Size, TestType } from '@ohos/hy
 import { BusinessError } from '@ohos.base';
 import contact from '@ohos.contact';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
+import bundleManager from '@ohos.bundle.bundleManager';
+import account from '@ohos.account.osAccount';
 import Want from '@ohos.app.ability.Want';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 
@@ -176,19 +179,29 @@ let attr: contact.ContactAttributes = {
   ]
 };
 
-let permission = ['ohos.permission.WRITE_CONTACTS']
+async function getPermissions() {
+  console.info('getPermission start');
+  type MyPermissions = "ohos.permission.WRITE_CONTACTS" | "ohos.permission.READ_CONTACTS";
+  let list: MyPermissions[] = ['ohos.permission.WRITE_CONTACTS', 'ohos.permission.READ_CONTACTS'];
+  try {
+    let userId: number = await account.getAccountManager().getOsAccountLocalId();
+    let applicationFlags: number = bundleManager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;
+    let applicationInfo: bundleManager.ApplicationInfo = await bundleManager.getApplicationInfoSync('com.example.contacttest', applicationFlags, userId);
+    let tokenId: number = applicationInfo.accessTokenId;
+    for (let index = 0; index < list.length; index++) {
+      await abilityAccessCtrl.createAtManager().grantUserGrantedPermission(tokenId, list[index], 1);
+    }
+  } catch (err) {
+    console.info(`getPermission error ${JSON.stringify(err)}`);
+  }
+  console.info('getPermission end');
+};
 
 export default function ContactsTest() {
   describe('ContactsTest', async (done: Function) => {
     beforeAll(async (done: Function) => {
       console.info("beforeAll case");
-      await ability()
-      let dr = Driver.create()
-      for (let i = 0; i < permission.length; i++) {
-        let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500)
-        await power?.click()
-        await sleep()
-      }
+      await getPermissions();
       done();
     });
 

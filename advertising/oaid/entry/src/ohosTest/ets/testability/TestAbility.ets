@@ -31,6 +31,8 @@ export default class TestAbility extends UIAbility {
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs
         abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+        globalThis.abilityWant = want;
+ 	    globalThis.abilityContext = this.context;
         hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
         Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
     }
@@ -40,6 +42,8 @@ export default class TestAbility extends UIAbility {
     }
 
     onWindowStageCreate(windowStage: window.WindowStage) {
+        globalThis.windowStage = windowStage;
+ 	    globalThis.abilityContext = this.context;
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onWindowStageCreate');
         windowStage.loadContent('testability/pages/Index', (err, data) => {
             if (err.code) {

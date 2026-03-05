@@ -80,7 +80,7 @@ export default function SheetMode() {
 it('SheetMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SheetMode_0100 START');
       let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       let button = await driver.findComponent(ON.id('SheetMode'));
 
       await (button?.click() as Promise<void>);

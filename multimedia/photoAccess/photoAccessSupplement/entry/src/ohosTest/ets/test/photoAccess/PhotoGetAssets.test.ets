@@ -16,13 +16,10 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level, beforeEach, afterAll, afterEach } from '@ohos/hypium'
 import {
-  photoKeys, fetchOption, getPermission, driveFn, sleep, LOG_TAG, isEmpty
+  getPermission, driveFn, sleep, LOG_TAG, isEmpty
 } from '../common'
 import common from '@ohos.app.ability.common'
 import { dataSharePredicates } from '@kit.ArkData';
-import { fileIo } from '@kit.CoreFileKit';
-import { PhotoSource, RecentPhotoOptions } from '@kit.MediaLibraryKit';
-import assertFail from '@ohos/hypium/src/main/module/assert/assertFail';
 import { JSON, uri } from '@kit.ArkTS';
 import { fileIo as fs, ReadOptions } from '@kit.CoreFileKit';
 
@@ -1491,19 +1488,7 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_001';
-      // let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      // let fetchOptions: photoAccessHelper.FetchOptions = {
-      //   fetchColumns: [],
-      //   predicates: predicates
-      // };
       try {
-        // let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-        //   await PhAccessHelper.getAssets(fetchOptions);
-        // let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        // if (asset === undefined) {
-        //   console.error('asset not exist');
-        //   return;
-        // }
         PhAccessHelper.createDeleteRequest([null], () => {
         });
         expect().assertFail()

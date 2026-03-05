@@ -109,5 +109,186 @@ describe('fileio_opendir_close', function () {
       expect(null).assertFail();
     }
   });
+
+  /**
+   * @tc.name   fileio_opendir_empty_string_000
+   * @tc.number SUB_DF_FILEIO_OPENDIR_EMPTY_STRING_0000
+   * @tc.desc   Test opendir() with empty string parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_opendir_empty_string_000', Level.LEVEL0, async function () {
+    try {
+      await fileio.opendir('');
+      expect(null).assertFail();
+    } catch (e) {
+      console.log('fileio_opendir_empty_string_000 has failed for ' + e);
+      expect(e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_opendir_null_000
+   * @tc.number SUB_DF_FILEIO_OPENDIR_NULL_0000
+   * @tc.desc   Test opendir() with null parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_opendir_null_000', Level.LEVEL0, async function () {
+    try {
+      await fileio.opendir(null);
+      expect(null).assertFail();
+    } catch (e) {
+      console.log('fileio_opendir_null_000 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_opendir_undefined_000
+   * @tc.number SUB_DF_FILEIO_OPENDIR_UNDEFINED_0000
+   * @tc.desc   Test opendir() with undefined parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_opendir_undefined_000', Level.LEVEL0, async function () {
+    try {
+      await fileio.opendir(undefined);
+      expect(null).assertFail();
+    } catch (e) {
+      console.log('fileio_opendir_undefined_000 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_opendir_callback_empty_string_000
+   * @tc.number SUB_DF_FILEIO_OPENDIR_CALLBACK_EMPTY_STRING_0000
+   * @tc.desc   Test opendir(callback) with empty string parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_opendir_callback_empty_string_000', Level.LEVEL0, async function (done) {
+    try {
+      fileio.opendir('', function (error, dd) {
+        expect(error !== null).assertTrue();
+        done();
+      });
+    } catch (e) {
+      console.log('fileio_opendir_callback_empty_string_000 has failed for ' + e);
+      expect(e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_opendir_callback_null_000
+   * @tc.number SUB_DF_FILEIO_OPENDIR_CALLBACK_NULL_0000
+   * @tc.desc   Test opendir(callback) with null parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_opendir_callback_null_000', Level.LEVEL0, async function (done) {
+    try {
+      fileio.opendir(null, function (error, dd) {
+        if (error) {
+          console.log('fileio_opendir_callback_null_000 err: ' + error);
+          expect(error.message == 'Invalid path').assertTrue();
+          done();
+        }
+        expect(null).assertFail();
+        done();
+      });
+    } catch (e) {
+      console.log('fileio_opendir_callback_null_000 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_opendir_callback_undefined_000
+   * @tc.number SUB_DF_FILEIO_OPENDIR_CALLBACK_UNDEFINED_0000
+   * @tc.desc   Test opendir(callback) with undefined parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_opendir_callback_undefined_000', Level.LEVEL0, async function (done) {
+    try {
+      fileio.opendir(undefined, function (error, dd) {
+        if (error) {
+          console.log('fileio_opendir_callback_undefined_000 err: ' + error);
+          expect(error.message == 'Invalid path').assertTrue();
+          done();
+        }
+        expect(null).assertFail();
+        done();
+      });
+    } catch (e) {
+      console.log('fileio_opendir_callback_undefined_000 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_opendirSync_empty_string_000
+   * @tc.number SUB_DF_FILEIO_OPENDIRSYNC_EMPTY_STRING_0000
+   * @tc.desc   Test opendirSync() with empty string parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_opendirSync_empty_string_000', Level.LEVEL0, async function () {
+    try {
+      fileio.opendirSync('');
+      expect(null).assertFail();
+    } catch (e) {
+      console.log('fileio_opendirSync_empty_string_000 has failed for ' + e);
+      expect(e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_opendirSync_null_000
+   * @tc.number SUB_DF_FILEIO_OPENDIRSYNC_NULL_0000
+   * @tc.desc   Test opendirSync() with null parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_opendirSync_null_000', Level.LEVEL0, async function () {
+    try {
+      fileio.opendirSync(null);
+      expect(null).assertFail();
+    } catch (e) {
+      console.log('fileio_opendirSync_null_000 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_opendirSync_undefined_000
+   * @tc.number SUB_DF_FILEIO_OPENDIRSYNC_UNDEFINED_0000
+   * @tc.desc   Test opendirSync() with undefined parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_opendirSync_undefined_000', Level.LEVEL0, async function () {
+    try {
+      fileio.opendirSync(undefined);
+      expect(null).assertFail();
+    } catch (e) {
+      console.log('fileio_opendirSync_undefined_000 has failed for ' + e);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
 });
 }

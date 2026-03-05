@@ -273,6 +273,15 @@ export default function api16CertFuncTestUnit() {
         let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priEccCredData), pwd, alias, level);
         console.info('Security_CertManager_InstallPrivateCertificate_Func_0010 installPrivateCertificate promise success! uri:' + JSON.stringify(result.uri))
         keyUri = result.uri;
+        let signSpec: certManager.CMSignatureSpec = {
+          purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_SIGN,
+          padding: certManager.CmKeyPadding.CM_PADDING_PSS,
+          digest: certManager.CmKeyDigest.CM_DIGEST_SHA256,
+        }
+        certManager.init(keyUri,signSpec,(err:Error,CMHandle:certManager.CMHandle)=>{
+          console.info("Security_CertManager_InstallPrivateCertificate_Func_0010 init success");
+          expect(CMHandle.handle != null).assertTrue();
+        })
       } catch (e) {
         console.log("Security_CertManager_InstallPrivateCertificate_Func_0010: e.code " + e.code);
       }

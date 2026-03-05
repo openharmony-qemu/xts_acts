@@ -30,6 +30,7 @@ import SecurityHuksApiTest from './SecurityHuksApi.test';
 import SecurityHuksKeyGenerateOverrideTest from './SecurityHuksKeyGenerateOverride.test';
 import SecurityHuksSignVerifySM2Test from './SecurityHuksSignVerifySM2.test';
 import SecurityHuksGroupAPI23Test from './SecurityHuksGroupAPI23.test';
+import SecurityHuksApiCover from './SecurityHuksApiCover.test';
 
 export default function testsuite() {
   SecurityHuksAccessControlAsUserTest();
@@ -49,5 +50,6 @@ export default function testsuite() {
   SecurityHuksApiTest();
   SecurityHuksKeyGenerateOverrideTest();
   SecurityHuksSignVerifySM2Test();
-  SecurityHuksGroupAPI23Test()
+  SecurityHuksGroupAPI23Test();
+  SecurityHuksApiCover();
 }

@@ -62,14 +62,16 @@ export default function OhAVRecorderNDKM4aErrTest() { // L2
 
     });
     afterEach(async () => {
-      console.info(`case to afterEach `);
+      console.info(`case to afterEach.`);
+      if (!avRecorderNdkTestBase.isRelease) {
         console.info(`case to releaseAVRecorder isRelease==false`);
         let result = await testapi.releaseAVRecorder();
         expect(result).assertEqual(0);
         await avRecorderNdkTestBase.closeFd(fdObject.fdNumber);
+      }
     });
     afterAll(() => {
-
+      console.info(`case to afterAll.`);
     });
 
     /**

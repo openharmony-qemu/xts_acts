@@ -3963,5 +3963,50 @@ export default function TextPicker() {
         console.info("testPicker75 finish");
         done();
       });
+
+    /**
+      * @tc.name   testPicker76
+      * @tc.number testPicker76
+      * @tc.desc   Testing PhotoPicker showDateOnScrollbar
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testPicker76',Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.showDateOnScrollbar = true;
+      let callback = (event: events_emitter.EventData) => {
+        let expectResult: boolean = pickerOptions.showDateOnScrollbar ?? false;
+        let result: PhotoPickerResult = event?.data?.msg.showDateOnScrollbar;
+        console.info('testPicker76 result event.data.msg=:' + result);
+        console.info('testPicker76 result expect =:' + expectResult);
+        expect(result).assertEqual(expectResult);
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker76 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      router.back();
+      events_emitter.off(event.eventId);
+      console.info("testPicker76 finish");
+      done();
+    });
   })
 }
