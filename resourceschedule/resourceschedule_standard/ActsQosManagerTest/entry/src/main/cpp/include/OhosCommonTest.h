@@ -17,14 +17,7 @@
 #define GE_COMMON_H
 
 #include <stdexcept>
-#include <string>
 #include "napi/native_api.h"
-
-namespace ActsMindSporeConstants {
-extern const std::string FILES_DIR;
-extern const std::string DEFAULT_TAG;
-extern const std::string CACHE_DIR;
-} // namespace ActsMindSporeConstants
 
 int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue);
 
