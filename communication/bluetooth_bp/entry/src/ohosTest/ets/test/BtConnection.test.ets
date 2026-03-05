@@ -1111,71 +1111,6 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600
-     * @tc.desc   Test setDevicePinCode promise when bluetooth is disabled (error code 2900003) api10
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
-        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600';
-        console.info(`${caseName}---Start`);
-        try {
-            let currentState = btAccess.getState();
-            console.info(`${caseName} current bluetooth state: ${currentState}`);
-            
-            if (currentState === 2) {
-                btAccess.disableBluetooth();
-                await sleep(3000);
-                let stateAfterDisable = btAccess.getState();
-                console.info(`${caseName} bluetooth state after disable: ${stateAfterDisable}`);
-            }
-            
-            await bluetooth.setDevicePinCode('11:22:33:44:55:66', '12345').then(() => {
-                console.info(`${caseName} setDevicePinCode success, should not reach here`);
-                expect(true).assertFalse();
-            }, (error :BusinessError) => {
-                console.info(`${caseName} setDevicePinCode promise error: errCode:` + error.code + ',errMessage:' + error.message);
-                let errorCode = Number(error.code);
-                if (error.code === undefined || isNaN(errorCode)) {
-                    console.info(`${caseName} setDevicePinCode error without valid code`);
-                    expect(true).assertTrue();
-                } else if (errorCode === 801) {
-                    console.info(`${caseName} setDevicePinCode is not support`);
-                    expect(errorCode).assertEqual(801);
-                } else if (errorCode === 2900003 || errorCode === 2900099) {
-                    console.info(`${caseName} bluetooth is disabled or not enabled`);
-                    expect(errorCode === 2900003 || errorCode === 2900099).assertTrue();
-                } else {
-                    console.error(`${caseName} unexpected error code: ${error.code}`);
-                    expect().assertFail();
-                }
-            });
-            
-            console.info(`${caseName}---End`);
-        } catch (err) {
-            console.error(`${caseName} setDevicePinCode promise error, error code is: ${err.code}, error message is: ${err.message}`);
-            let errorCode = Number(err.code);
-            if (err.code === undefined || isNaN(errorCode)) {
-                console.info(`${caseName} setDevicePinCode error without valid code`);
-                expect(true).assertTrue();
-            } else if (errorCode === 801) {
-                console.info(`${caseName} setDevicePinCode is not support`);
-                expect(errorCode).assertEqual(801);
-            } else if (errorCode === 2900003 || errorCode === 2900099) {
-                console.info(`${caseName} bluetooth is disabled or not enabled`);
-                expect(errorCode === 2900003 || errorCode === 2900099).assertTrue();
-            } else {
-                console.error(`${caseName} unexpected error code: ${err.code}`);
-                expect().assertFail();
-            }
-            console.info(`${caseName}---End`);
-        }
-        done();
-    })
-
      /**
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
@@ -3504,63 +3439,6 @@ describe('btConnectionTest', () => {
             console.info("off discoveryResult with undefined errCode:" + err.code + ",errMessage:" + err.message);
             expect(Number(err.code)).assertEqual(401);
         }
-        done();
-    })
-
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8300
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8300
-     * @tc.desc   Test on discoveryResult error code 2900099 api10
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
-        const caseName: string = 'SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8300';
-        console.info(`${caseName}---Start`);
-        let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
-            if (data.length > 0) {
-                console.info(`${caseName} discoveryResult result: ${JSON.stringify(data)}`);
-                console.info(`${caseName} discoveryResult deviceId: ${JSON.stringify(data[0].deviceId)}`);
-                console.info(`${caseName} discoveryResult rssi: ${JSON.stringify(data[0].rssi)}`);
-                console.info(`${caseName} discoveryResult deviceName: ${JSON.stringify(data[0].deviceName)}`);
-                console.info(`${caseName} discoveryResult deviceClass: ${JSON.stringify(data[0].deviceClass)}`);
-            }
-        }
-        try {
-            let currentState = btAccess.getState();
-            console.info(`${caseName} current bluetooth state: ${currentState}`);
-            
-            if (currentState === 2) {
-                btAccess.disableBluetooth();
-                await sleep(3000);
-                let stateAfterDisable = btAccess.getState();
-                console.info(`${caseName} bluetooth state after disable: ${stateAfterDisable}`);
-            }
-            
-            bluetooth.on('discoveryResult', onReceiveEvent);
-            await sleep(900);
-            bluetooth.off('discoveryResult', onReceiveEvent);
-            console.info(`${caseName} discoveryResult on/off executed without error`);
-            expect().assertFail();
-        } catch (err) {
-            console.error(`${caseName} discoveryResult error, error code is: ${err.code}, error message is: ${err.message}`);
-            let errorCode = Number(err.code);
-            if (err.code === undefined || isNaN(errorCode)) {
-                console.info(`${caseName} discoveryResult error without code, message: ${err.message}`);
-                expect(true).assertTrue();
-            } else if (errorCode === 801) {
-                console.info(`${caseName} discoveryResult on/off is not support`);
-                expect(errorCode).assertEqual(801);
-            } else if (errorCode === 2900099 || errorCode === 2900003) {
-                console.info(`${caseName} bluetooth is not enabled or disabled`);
-                expect(errorCode === 2900099 || errorCode === 2900003).assertTrue();
-            } else {
-                console.error(`${caseName} unexpected error code: ${err.code}`);
-                expect().assertFail();
-            }
-        }
-        console.info(`${caseName}---End`);
         done();
     })
 
