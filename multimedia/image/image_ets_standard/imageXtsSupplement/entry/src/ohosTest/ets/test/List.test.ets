@@ -226,6 +226,9 @@ import PicturePackingPixelMapSecTestSupp from './image/PicturePackingPixelMapSec
 import ImageGetComponentFirSupp from './Picture/PictureGetComponentFirSupp.test';
 import ImagePictureTest from './image/ImagePictureTest.test'; 
 import CrateImageSupp from './image/CreateImageTest.test';
+import CreatePixelMapUsingAllocatorTest from './image/ImageCreatePixelMapUsingAllocatorTest.test';
+import ImageCreatePixelMapFromSurfaceTest from './image/ImageCreatePixelMapFromSurfaceTest.test';
+import ImageCreatePremultipliedPixelMapTest from './image/ImageCreatePremultipliedPixelMapTest.test';
 import SendableImagePixelMapTest from './image/SendableImageCreatePixelMap.test';
 import ImageGetComponentSuppSec from './image/ImageGetComponenentSuppSec.test';
 import PicturePackToFileTestSupp from './image/PicturePackToFileSupp.test';
@@ -457,6 +460,9 @@ export default function testsuite() {
   ImagePictureTest();
   SendableImagePixelMapTest();
   CrateImageSupp();
+  CreatePixelMapUsingAllocatorTest();
+  ImageCreatePixelMapFromSurfaceTest();
+  ImageCreatePremultipliedPixelMapTest();
   ImageGetComponentSuppSec();
   PicturePackToFileTestSupp();
   PicturePackToFileTestSecSupp();
