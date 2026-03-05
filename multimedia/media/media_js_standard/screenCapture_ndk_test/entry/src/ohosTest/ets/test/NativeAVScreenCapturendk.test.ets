@@ -554,8 +554,8 @@ export default function nativeAVScreenCaptureNdkTest() {
       await Utils.btnPickerTextScreenCapture();
       await Utils.btnTextScreenCapture();
       let result1: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker3();
-
-
+      await Utils.btnPickerTextScreenCapture();
+      await Utils.btnTextScreenCapture();
       let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
       console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
         resultStop);
