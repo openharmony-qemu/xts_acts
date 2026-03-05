@@ -3172,6 +3172,132 @@ static napi_value NAPI_Global_setLoudnessGain2(napi_env env, napi_callback_info 
     napi_create_int32(env, backParam, &result);
     return result;
 }
+
+int ReadAtExt(OH_AVBuffer *data, int32_t length, int64_t pos, void *userData)
+{
+    if (data == nullptr || userData == nullptr) {
+        return -1;
+    }
+    if (length <= 0) {
+        return -1;
+    }
+    std::string filePath = PATH_NO_AUDIO;
+    if (g_currentPathId == 0) {
+        filePath = PATH;
+    }
+    int fd = open(filePath.c_str(), O_RDONLY, PARAM_0666);
+    if (fd == -1) {
+        return -1;
+    }
+    char* buffer = new char[length];
+    int readSize = pread(fd, buffer, length, pos);
+    if (length <= OH_AVBuffer_GetCapacity(data)) {
+        memcpy(reinterpret_cast<void*>(OH_AVBuffer_GetAddr(data)), (void*)buffer, length);
+    }
+    close(fd);
+    delete[] buffer;
+    return readSize;
+}
+
+static OH_AVErrCode GetDataSourceInfo(OH_AVPlayer *player)
+{
+    std::string filePath = PATH_NO_AUDIO;
+    if (g_currentPathId == 0) {
+        filePath = PATH_NO_AUDIO;
+    } else if (g_currentPathId == 1) {
+        filePath = PATH;
+    }
+    int64_t fileSize = GetFileSize(filePath.c_str());
+    OH_AVDataSourceExt* datasrcExt = new OH_AVDataSourceExt;
+    datasrcExt->readAt = ReadAtExt;
+    datasrcExt->size = fileSize;
+    OH_AVErrCode errCode = OH_AVPlayer_SetDataSource(player, datasrcExt, nullptr);
+    return errCode;
+}
+
+static napi_value OhAvPlayerSetDataSource(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    AVPlayerCallback cb = {&AVPlayerOnInfo, &AVPlayerOnError};
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+    waitAvPlayerStateChange(player, AV_IDLE);
+    if (GetDataSourceInfo(player) == AV_ERR_OK) {
+        backParam = SUCCESS;
+    }
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVPlayer_ReleaseSync(player);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetDataSourceError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVErrCode errCode = OH_AVPlayer_SetDataSource(nullptr, nullptr, nullptr);
+    if (errCode != AV_ERR_OK) {
+        backParam = SUCCESS;
+    }
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetDataSourceErrorOne(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    AVPlayerCallback cb = {&AVPlayerOnInfo, &AVPlayerOnError};
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+    waitAvPlayerStateChange(player, AV_IDLE);
+    OH_AVErrCode errCode = OH_AVPlayer_SetDataSource(player, nullptr, nullptr);
+    if (errCode != AV_ERR_OK) {
+        backParam = SUCCESS;
+    }
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVPlayer_ReleaseSync(player);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetDataSourceErrorTwo(napi_env env, napi_callback_info info)
+{
+    std::string filePath = PATH_NO_AUDIO;
+    if (g_currentPathId == 0) {
+        filePath = PATH_NO_AUDIO;
+    } else if (g_currentPathId == 1) {
+        filePath = PATH;
+    }
+    int64_t fileSize = GetFileSize(filePath.c_str());
+    OH_AVDataSourceExt* datasrcExt = new OH_AVDataSourceExt;
+    datasrcExt->readAt = ReadAtExt;
+    datasrcExt->size = fileSize;
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVErrCode errCode = OH_AVPlayer_SetDataSource(nullptr, datasrcExt, nullptr);
+    if (errCode != AV_ERR_OK) {
+        backParam = SUCCESS;
+    }
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetDataSourceErrorThree(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    const char *userData[] = {
+        "Identifies"
+    };
+    OH_AVErrCode errCode = OH_AVPlayer_SetDataSource(nullptr, nullptr, userData);
+    if (errCode != AV_ERR_OK) {
+        backParam = SUCCESS;
+    }
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3344,6 +3470,16 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr},
         {"getPlaybackStatisticMetricsAbnormal", nullptr, NAPI_Global_GetPlaybackStatisticMetricsAbnormal,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AvPlayerSetDataSource", nullptr, OhAvPlayerSetDataSource, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AvPlayerSetDataSourceError", nullptr, OhAvPlayerSetDataSourceError, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AvPlayerSetDataSourceErrorOne", nullptr, OhAvPlayerSetDataSourceErrorOne, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AvPlayerSetDataSourceErrorTwo", nullptr, OhAvPlayerSetDataSourceErrorTwo, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AvPlayerSetDataSourceErrorThree", nullptr, OhAvPlayerSetDataSourceErrorThree, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
