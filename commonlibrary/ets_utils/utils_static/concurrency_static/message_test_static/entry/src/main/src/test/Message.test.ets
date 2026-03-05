@@ -265,7 +265,7 @@ export default function MessageTest() {
           msg.sendToTarget();
           await Sleep(200);
           expect(executed).assertTrue();
-          expect(msg.getWhat()).assertEqual(0);
+          expect(msg.getWhat()).assertEqual(-1000000);
           expect(msg.getObject()).assertUndefined();
           while (!flag) {
             await Utils.msSleep(100)
@@ -316,7 +316,7 @@ export default function MessageTest() {
           msg.sendToTarget();
           await Sleep(1100);
           expect(executed).assertTrue();
-          expect(msg.getWhat()).assertEqual(0);
+          expect(msg.getWhat()).assertEqual(-1000000);
           expect(msg.getObject()).assertUndefined();
           while (!flag) {
             await Utils.msSleep(100)
@@ -369,7 +369,7 @@ export default function MessageTest() {
           message.sendToTarget();
           await Sleep(1200);
           expect(callbackExecuted).assertTrue();
-          expect(message.getWhat()).assertEqual(0);
+          expect(message.getWhat()).assertEqual(-1000000);
           expect(message.getObject()).assertUndefined();
           while (!flag) {
             await Utils.msSleep(100)
@@ -411,7 +411,7 @@ export default function MessageTest() {
           }, worker);
           let message = new concurrency.Message(handler);
           message.sendToTarget();
-          expect(handler.hasMessages(0)).assertEqual(true);
+          expect(handler.hasMessages(-1000000)).assertEqual(false);
           while (!flag) {
             await Utils.msSleep(100)
           }
@@ -456,7 +456,7 @@ export default function MessageTest() {
           let message = new concurrency.Message(handler);
           handler.sendMessage(message);
           console.info('MessageConstructor009--1', message.getWhat())
-          expect(message.getWhat()).assertEqual(0);
+          expect(message.getWhat()).assertEqual(-1000000);
           while (!flag) {
             await Utils.msSleep(100)
             console.info('MessageConstructor009--2', flag)
@@ -2537,7 +2537,7 @@ export default function MessageTest() {
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           handler.sendMessage(message);
-          expect(message.getWhat()).assertEqual(0);
+          expect(message.getWhat()).assertEqual(-1000000);
           while (!flag) {
             await Utils.msSleep(100)
           }
