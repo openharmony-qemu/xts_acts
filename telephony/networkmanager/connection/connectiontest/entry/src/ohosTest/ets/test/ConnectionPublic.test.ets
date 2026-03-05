@@ -6400,15 +6400,14 @@ export default function ConnectionPublicTest() {
         connection.getAddressesByName("",(error:BusinessError,data:connection.NetAddress[]) => {
           if(error) {
             console.info(`${caseName} error: ${JSON.stringify(error)}`);
-            ExpectFail();
+            ExpectTrue(error.code === 2100001);
             console.info(`${caseName}---End`);
             done();
           }
           else {
             console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
             console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
-            ExpectTrue(data.length > 0);
-            ExpectTrue(data[0].address == "127.0.0.1");
+            ExpectFail();
             console.info(`${caseName}---End`);
             done();
           }
@@ -6436,15 +6435,14 @@ export default function ConnectionPublicTest() {
         connection.getAddressesByName(null,(error:BusinessError,data:connection.NetAddress[]) => {
           if(error) {
             console.info(`${caseName} error: ${JSON.stringify(error)}`);
-            ExpectFail();
+            ExpectTrue(error.code === 401);
             console.info(`${caseName}---End`);
             done();
           }
           else {
             console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
             console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
-            ExpectTrue(data.length > 0);
-            ExpectTrue(data[0].address == "127.0.0.1");
+            ExpectFail();
             console.info(`${caseName}---End`);
             done();
           }
@@ -6472,15 +6470,14 @@ export default function ConnectionPublicTest() {
         connection.getAddressesByName(undefined,(error:BusinessError,data:connection.NetAddress[]) => {
           if(error) {
             console.info(`${caseName} error: ${JSON.stringify(error)}`);
-            ExpectFail();
+            ExpectTrue(error.code === 401);
             console.info(`${caseName}---End`);
             done();
           }
           else {
             console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
             console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
-            ExpectTrue(data.length > 0);
-            ExpectTrue(data[0].address == "127.0.0.1");
+            ExpectFail();
             console.info(`${caseName}---End`);
             done();
           }
@@ -6542,13 +6539,12 @@ export default function ConnectionPublicTest() {
         connection.getAddressesByName("").then((data:connection.NetAddress[]) => {
           console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
           console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
-          ExpectTrue(data.length > 0);
-          ExpectTrue(data[0].address == "127.0.0.1");
+          ExpectFail();
           console.info(`${caseName}---End`);
           done();
         }).catch((error:BusinessError) => {
           console.info(`${caseName} failed to getAddressesByName error:${error.message}`);
-          ExpectFail();
+          ExpectTrue(error.code === 2100001);
           console.info(`${caseName}---End`);
           done();
         })
@@ -6575,13 +6571,12 @@ export default function ConnectionPublicTest() {
         connection.getAddressesByName(null).then((data:connection.NetAddress[]) => {
           console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
           console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
-          ExpectTrue(data.length > 0);
-          ExpectTrue(data[0].address == "127.0.0.1");
+          ExpectFail();
           console.info(`${caseName}---End`);
           done();
         }).catch((error:BusinessError) => {
           console.info(`${caseName} failed to getAddressesByName error:${error.message}`);
-          ExpectFail();
+          ExpectTrue(error.code === 401);
           console.info(`${caseName}---End`);
           done();
         })
@@ -6608,13 +6603,12 @@ export default function ConnectionPublicTest() {
         connection.getAddressesByName(undefined).then((data:connection.NetAddress[]) => {
           console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
           console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
-          ExpectTrue(data.length > 0);
-          ExpectTrue(data[0].address == "127.0.0.1");
+          ExpectFail();
           console.info(`${caseName}---End`);
           done();
         }).catch((error:BusinessError) => {
           console.info(`${caseName} failed to getAddressesByName error:${error.message}`);
-          ExpectFail();
+          ExpectTrue(error.code === 401);
           console.info(`${caseName}---End`);
           done();
         })
@@ -6984,7 +6978,7 @@ export default function ConnectionPublicTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectTrue(err != null);
+        ExpectTrue(err !== null);
         console.info(`${caseName}---End`);
         done();
       }
@@ -7010,7 +7004,7 @@ export default function ConnectionPublicTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectTrue(err != null);
+        ExpectTrue(err !== null);
         console.info(`${caseName}---End`);
         done();
       }
