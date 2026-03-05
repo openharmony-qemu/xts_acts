@@ -92,7 +92,7 @@ struct TabBarComponentContent {
           .id('button2')
         Button('set null').margin(1)
           .onClick((e: ClickEvent) => {
-             // this.setUndefinedIndex = 2
+            // this.setUndefinedIndex = 2
           })
           .id('button3')
         Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
