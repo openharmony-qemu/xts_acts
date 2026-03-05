@@ -271,6 +271,46 @@ export default function api16CertFuncTestTwoUnit() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+	
+	/**
+     * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_0000
+     * @tc.number SUB_Security_CertManager_InstallUserTrustedCertificates_0000
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_InstallUserTrustedCertificates_0000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_InstallUserTrustedCertificates_0000 start');
+      try {
+        let result: certManager.CMResult =
+          certManager.installUserTrustedCertificateSync(caCert, certManager.CertScope.GLOBAL_USER);
+        let certUri = result.uri;
+        if (certUri === undefined) {
+          console.error("SUB_Security_CertManager_InstallUserTrustedCertificates_0000 certUri is undefined.");
+          expect(null).assertFail();
+        } else {
+          console.info("SUB_Security_CertManager_InstallUserTrustedCertificates_0000 certUri is " + certUri);
+          expect(certUri.search('oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA;u=0') != -1).assertTrue();
+        }
+        let cmResult: certManager.CMResult = await certManager.getUserTrustedCertificate(certUri);
+        let certInfo = cmResult.certInfo;
+        expect(certInfo?.uri).assertEqual(certUri);
+        expect(certInfo?.certAlias != null).assertTrue();
+        expect(certInfo?.state).assertTrue();
+        expect(certInfo?.issuerName != null).assertTrue();
+        expect(certInfo?.serial).assertEqual("0");
+        expect(certInfo?.notBefore != null).assertTrue();
+        expect(certInfo?.notAfter != null).assertTrue();
+        expect(certInfo?.fingerprintSha256 != null).assertTrue();
+        expect(certInfo?.cert != null).assertTrue();
+        console.info('SUB_Security_CertManager_InstallUserTrustedCertificates_0000 end');
+      }catch(err){
+        console.info("SUB_Security_CertManager_InstallUserTrustedCertificates_0000 failed");
+        expect(null).assertFail();
+      }
+      done();
+    });
 
     /**
      * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_0015
