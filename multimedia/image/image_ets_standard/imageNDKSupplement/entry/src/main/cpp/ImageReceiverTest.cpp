@@ -90,7 +90,7 @@ napi_value ImageReceiverNativeGetCapacitySuppTest(napi_env env, napi_callback_in
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     
     OH_ImageReceiverNative* receiver = nullptr;
-    int32_t *capacity =0;
+    int32_t *capacity = nullptr;
     Image_ErrorCode receiverSurfaceID;
     
     receiverSurfaceID = OH_ImageReceiverNative_GetCapacity(receiver, capacity);
@@ -118,7 +118,7 @@ napi_value ComposeOptionsReleaseSuppTest(napi_env env, napi_callback_info info)
 napi_value OHImageNativeGetComponentTypesSupp(napi_env env, napi_callback_info info)
 {
     Image_ErrorCode errCode;
-    errCode = OH_ImageNative_GetComponentTypes(nullptr,nullptr,nullptr);
+    errCode = OH_ImageNative_GetComponentTypes(nullptr, nullptr, nullptr);
     napi_value ret;
     napi_create_int32(env, errCode, &ret);
     return ret;
@@ -126,7 +126,6 @@ napi_value OHImageNativeGetComponentTypesSupp(napi_env env, napi_callback_info i
 
 napi_value OHPackingOptionsForSequenceGetFrameCountSupp(napi_env env, napi_callback_info info)
 {
-    
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -138,12 +137,12 @@ napi_value OHPackingOptionsForSequenceGetFrameCountSupp(napi_env env, napi_callb
     uint32_t value;
     errCode = OH_PackingOptionsForSequence_Create(&options);
     
-     switch (index) {
+    switch (index) {
     case CASE_INDEX_1:
         errCode = OH_PackingOptionsForSequence_GetFrameCount(options, &value);
         break;
     case CASE_INDEX_2:
-        errCode = OH_PackingOptionsForSequence_GetFrameCount(nullptr,nullptr);
+        errCode = OH_PackingOptionsForSequence_GetFrameCount(nullptr, nullptr);
         break;
     default:
         break;
