@@ -41,6 +41,7 @@ static string g_codecNameHEVC = "";
 constexpr int32_t DEFAULT_WIDTH = 1920;
 constexpr int32_t DEFAULT_HEIGHT = 1080;
 constexpr int32_t DEFAULT_FRAME_RATE = 30;
+constexpr int32_t DEFAULT_REPEAT_START_STOP_BEFORE_EOS = 5;
 constexpr int32_t UHD_RESOLUTION[2] = { 3840, 2160 };
 constexpr int32_t HD_RESOLUTION[2] = { 1104, 622 };
 } // namespace
@@ -114,7 +115,7 @@ int VIDEO_HWDEC_FUNCTION_0400()
     vDecSample->defaultWidth = DEFAULT_WIDTH;
     vDecSample->defaultHeight = DEFAULT_HEIGHT;
     vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDecSurface(g_codecName));
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
     delete vDecSample;
@@ -279,7 +280,7 @@ int VIDEO_HWDEC_FUNCTION_1200()
     vDecSample->defaultHeight = DEFAULT_HEIGHT;
     vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vDecSample->sfOutput = false;
-    vDecSample->repeatStartStopBeforeEos = 5;
+    vDecSample->repeatStartStopBeforeEos = DEFAULT_REPEAT_START_STOP_BEFORE_EOS;
     ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
     ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
@@ -305,7 +306,7 @@ int VIDEO_HWDEC_FUNCTION_1300()
     vDecSample->defaultHeight = DEFAULT_HEIGHT;
     vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vDecSample->sfOutput = false;
-    vDecSample->repeatStartFlushBeforeEos = 5;
+    vDecSample->repeatStartFlushBeforeEos = DEFAULT_REPEAT_START_STOP_BEFORE_EOS;
     ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
     ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
@@ -414,7 +415,7 @@ int SURF_CHANGE_FUNC_001()
     vDecSample->autoSwitchSurface = true;
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->sleepOnFPS = true;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDecSurface(g_codecName));
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
     ASSERT_EQ(AV_ERR_OK, vDecSample->Reset());
@@ -440,7 +441,7 @@ int SURF_CHANGE_FUNC_002()
     vDecSample->sfOutput = true;
     vDecSample->autoSwitchSurface = true;
     vDecSample->sleepOnFPS = true;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDecSurface(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vDecSample->Flush());
     ASSERT_EQ(AV_ERR_OK, vDecSample->SwitchSurface());
     ASSERT_EQ(AV_ERR_OK, vDecSample->Stop());
@@ -487,7 +488,7 @@ int SURF_CHANGE_FUNC_004()
     vDecSample->sfOutput = true;
     vDecSample->autoSwitchSurface = true;
     vDecSample->sleepOnFPS = true;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDecSurface(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vDecSample->RepeatCallSetSurface());
     vDecSample->WaitForEOS();
     return SUCCESS_CODE;

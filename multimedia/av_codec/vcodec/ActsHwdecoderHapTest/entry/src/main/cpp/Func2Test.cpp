@@ -32,11 +32,11 @@ namespace {
 const char* INP_DIR_720_30 = "/data/storage/el2/base/files/1280_720_30_10Mb.h264";
 const char* INP_DIR_1080_30 = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
 const char* INP_DIR_1080_20 = "/data/storage/el2/base/files/1920_1080_20M_30.h265";
-const char* inpDirVivid = "/data/storage/el2/base/files/hlg_vivid_4k.h265";
+const char* INP_DIR_VIVID = "/data/storage/el2/base/files/hlg_vivid_4k.h265";
 const char* INP_DIR_VVC_1080 = "/data/storage/el2/base/files/1920_1080_10bit.vvc";
-const char* INP_DIR_IPB_265_10bit = "/data/storage/el2/base/files/176_144_Main10.h265";
-const char* INP_DIR_IPB_265_8bit = "/data/storage/el2/base/files/720_1280_25_8bit.h265";
-const char* INP_DIR_IPB_264_8bit = "/data/storage/el2/base/files/720_1280_25_avcc.h264";
+const char* INP_DIR_IPB_265_10BIT = "/data/storage/el2/base/files/176_144_Main10.h265";
+const char* INP_DIR_IPB_265_8BIT = "/data/storage/el2/base/files/720_1280_25_8bit.h265";
+const char* INP_DIR_IPB_264_8BIT = "/data/storage/el2/base/files/720_1280_25_avcc.h264";
 
 static OH_AVCapability* cap = nullptr;
 static OH_AVCapability* cap_hevc = nullptr;
@@ -650,7 +650,7 @@ int VIDEO_DECODE_SYNC_HW265_FUNC_0040()
 {
     if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->inpDir = inpDirVivid;
+        vDecSample->inpDir = INP_DIR_VIVID;
         vDecSample->defaultProfile = HEVC_PROFILE_MAIN_10;
         vDecSample->defaultWidth = UHD_WIDTH;
         vDecSample->defaultHeight = UHD_HEIGHT;
@@ -920,7 +920,7 @@ int VIDEO_DECODE_LOW_LATENCY_0001()
 {
     if (cap != nullptr) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->inpDir = INP_DIR_IPB_264_8bit;
+        vDecSample->inpDir = INP_DIR_IPB_264_8BIT;
         vDecSample->defaultWidth = PORTRAIT_WIDTH;
         vDecSample->defaultHeight = PORTRAIT_HEIGHT;
         vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
@@ -946,7 +946,7 @@ int VIDEO_DECODE_LOW_LATENCY_0002()
     if (cap != nullptr) {
         if (OH_AVCapability_IsFeatureSupported(cap, VIDEO_LOW_LATENCY)) {
             auto vDecSample = make_shared<VDecAPI11Sample>();
-            vDecSample->inpDir = INP_DIR_IPB_264_8bit;
+            vDecSample->inpDir = INP_DIR_IPB_264_8BIT;
             vDecSample->defaultWidth = PORTRAIT_WIDTH;
             vDecSample->defaultHeight = PORTRAIT_HEIGHT;
             vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
@@ -973,7 +973,7 @@ int VIDEO_DECODE_LOW_LATENCY_0003()
 {
     if (cap != nullptr) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->inpDir = INP_DIR_IPB_264_8bit;
+        vDecSample->inpDir = INP_DIR_IPB_264_8BIT;
         vDecSample->defaultWidth = PORTRAIT_WIDTH;
         vDecSample->defaultHeight = PORTRAIT_HEIGHT;
         vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
@@ -996,7 +996,7 @@ int VIDEO_DECODE_LOW_LATENCY_0004()
 {
     if (cap_hevc != nullptr) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->inpDir = INP_DIR_IPB_265_8bit;
+        vDecSample->inpDir = INP_DIR_IPB_265_8BIT;
         vDecSample->defaultWidth = PORTRAIT_WIDTH;
         vDecSample->defaultHeight = PORTRAIT_HEIGHT;
         vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
@@ -1022,7 +1022,7 @@ int VIDEO_DECODE_LOW_LATENCY_0005()
     if (cap_hevc != nullptr) {
         if (OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_LOW_LATENCY)) {
             auto vDecSample = make_shared<VDecAPI11Sample>();
-            vDecSample->inpDir = INP_DIR_IPB_265_8bit;
+            vDecSample->inpDir = INP_DIR_IPB_265_8BIT;
             vDecSample->defaultWidth = PORTRAIT_WIDTH;
             vDecSample->defaultHeight = PORTRAIT_HEIGHT;
             vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
@@ -1049,7 +1049,7 @@ int VIDEO_DECODE_LOW_LATENCY_0006()
 {
     if (cap_hevc != nullptr) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->inpDir = INP_DIR_IPB_265_8bit;
+        vDecSample->inpDir = INP_DIR_IPB_265_8BIT;
         vDecSample->defaultWidth = PORTRAIT_WIDTH;
         vDecSample->defaultHeight = PORTRAIT_HEIGHT;
         vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
@@ -1072,7 +1072,7 @@ int VIDEO_DECODE_LOW_LATENCY_0007()
 {
     if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->inpDir = INP_DIR_IPB_265_10bit;
+        vDecSample->inpDir = INP_DIR_IPB_265_10BIT;
         vDecSample->defaultWidth = QCIF_WIDTH;
         vDecSample->defaultHeight = QCIF_HEIGHT;
         vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
@@ -1099,7 +1099,7 @@ int VIDEO_DECODE_LOW_LATENCY_0008()
     if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
         if (OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_LOW_LATENCY)) {
             auto vDecSample = make_shared<VDecAPI11Sample>();
-            vDecSample->inpDir = INP_DIR_IPB_265_10bit;
+            vDecSample->inpDir = INP_DIR_IPB_265_10BIT;
             vDecSample->defaultWidth = QCIF_WIDTH;
             vDecSample->defaultHeight = QCIF_HEIGHT;
             vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
@@ -1127,7 +1127,7 @@ int VIDEO_DECODE_LOW_LATENCY_0009()
 {
     if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->inpDir = INP_DIR_IPB_265_10bit;
+        vDecSample->inpDir = INP_DIR_IPB_265_10BIT;
         vDecSample->defaultWidth = QCIF_WIDTH;
         vDecSample->defaultHeight = QCIF_HEIGHT;
         vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;

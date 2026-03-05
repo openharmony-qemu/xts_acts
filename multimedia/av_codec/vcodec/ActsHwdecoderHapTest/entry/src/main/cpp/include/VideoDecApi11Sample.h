@@ -51,8 +51,8 @@ public:
 class VDecAPI11Sample : public NoCopyable {
 public:
     VDecAPI11Sample();
-    ~VDecAPI11Sample();
-    int32_t RunVideoDec_Surface(std::string codeName = "");
+    ~VDecAPI11Sample() override;
+    int32_t RunVideoDecSurface(std::string codeName = "");
     int32_t RunVideoDec(std::string codeName = "");
     const char* inpDir = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
     const char* outDir = "/data/storage/el2/base/files/VDecTest.yuv";
@@ -67,15 +67,13 @@ public:
     uint32_t originalWidth = 0;
     uint32_t originalHeight = 0;
     uint32_t defaultPixelFormat = AV_PIXEL_FORMAT_NV12;
-    const uint32_t REPEAT_CALL_TIME = 10;
-    const uint32_t MAX_SURF_NUM = 2;
     double defaultFrameRate = 30.0;
     uint32_t defaultRangeFlag = 0;
-    bool BEFORE_EOS_INPUT = false;              // 0800 测试用例
-    bool BEFORE_EOS_INPUT_INPUT = false;        // 0900 测试用例
-    bool afterEosDestroyCodec = true;           // 1000 测试用例 结束不销毁codec
-    uint32_t REPEAT_START_STOP_BEFORE_EOS = 0;  // 1200 测试用例
-    uint32_t REPEAT_START_FLUSH_BEFORE_EOS = 0; // 1300 测试用例
+    bool beforeEosInput = false;            // 0800 测试用例
+    bool beforeEosInputInput = false;       // 0900 测试用例
+    bool afterEosDestroyCodec = true;       // 1000 测试用例 结束不销毁codec
+    uint32_t repeatStartStopBeforeEos = 0;  // 1200 测试用例
+    uint32_t repeatStartFlushBeforeEos = 0; // 1300 测试用例
     uint32_t frameCount_ = 0;
     uint32_t repeatTime = 0;
     uint32_t outFrameCount = 0;
@@ -124,7 +122,7 @@ public:
     int64_t GetSystemTimeUs();
     int32_t CreateVideoDecoder(std::string codeName);
     int32_t SetVideoDecoderCallback();
-    void testAPI();
+    void TestApi();
     int32_t SwitchSurface();
     int32_t RepeatCallSetSurface();
     int32_t Release();

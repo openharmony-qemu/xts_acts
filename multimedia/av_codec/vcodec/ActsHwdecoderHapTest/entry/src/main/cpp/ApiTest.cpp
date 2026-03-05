@@ -1043,8 +1043,8 @@ int VIDEO_HWDEC_CAP_API_0800()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
     ASSERT_NE(cap, nullptr);
-    string codec_name = OH_AVCapability_GetName(cap);
-    if (codec_name == "OMX.hisi.video.decoder.avc") {
+    string codecName = OH_AVCapability_GetName(cap);
+    if (codecName == "OMX.hisi.video.decoder.avc") {
         ASSERT_LT(1, OH_AVCapability_GetMaxSupportedInstances(cap));
     } else {
         ASSERT_EQ(MAX_SUPPORTED_INSTANCES_EXPECTED, OH_AVCapability_GetMaxSupportedInstances(cap));
@@ -2325,7 +2325,7 @@ int VIDEO_HWDEC_ATTIME_API_0010()
     vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vDecSample->rsAtTime = true;
     vDecSample->isAPI = true;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDecSurface(g_codecName));
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_INVALID_VAL, vDecSample->errCount);
     return SUCCESS_CODE;

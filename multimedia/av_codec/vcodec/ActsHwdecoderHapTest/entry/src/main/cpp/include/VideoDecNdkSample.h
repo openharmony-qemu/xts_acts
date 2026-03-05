@@ -52,7 +52,7 @@ class VDecNdkSample : public NoCopyable {
 public:
     VDecNdkSample();
     ~VDecNdkSample() override;
-    int32_t RunVideoDec_Surface(std::string codeName = "");
+    int32_t RunVideoDecSurface(std::string codeName = "");
     int32_t RunVideoDec(std::string codeName = "");
     const char* inpDir = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
     const char* outDir = "/data/storage/el2/base/files/VDecTest.yuv";
@@ -60,8 +60,6 @@ public:
     bool sfOutput = false;
     uint32_t defaultWidth = 1920;
     uint32_t defaultHeight = 1080;
-    const uint32_t REPEAT_CALL_TIME = 10;
-    const uint32_t MAX_SURF_NUM = 2;
     double defaultFrameRate = 30.0;
     bool beforeEosInput = false;            // 0800 测试用例
     bool beforeEosInputInput = false;       // 0900 测试用例
@@ -95,7 +93,7 @@ public:
     int64_t GetSystemTimeUs();
     int32_t CreateVideoDecoder(std::string codeName);
     int32_t SetVideoDecoderCallback();
-    void testAPI();
+    void TestApi();
     int32_t SwitchSurface();
     int32_t RepeatCallSetSurface();
     int32_t Release();
