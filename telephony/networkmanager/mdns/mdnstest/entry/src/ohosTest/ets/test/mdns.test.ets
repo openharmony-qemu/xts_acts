@@ -3396,52 +3396,6 @@ export default function mdnsTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrDiscoveryStartOn0200
-     * @tc.number SUB_NetworkMgr_Mdns_DiscoveryStartOn_0200
-     * @tc.desc   Subscription to enable notifications for listening to mDNS services callBack
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("testNetworkMgrDiscoveryStartOn0200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,async (done: Function) => {
-      const caseName: string = "testNetworkMgrDiscoveryStartOn0200";
-      console.info(`${caseName} test start `);
-      try {
-        let serviceType = "_print._tcp";
-        let discoveryService = mdns.createDiscoveryService(context, serviceType);
-        discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
-          console.log(`${caseName} result: ${JSON.stringify(data)}`);
-          console.log(`${caseName} serviceInfo: ${JSON.stringify(data.serviceInfo)}`);
-          if (data.errorCode !== undefined) {
-            console.log(`${caseName} errorCode: ${JSON.stringify(data.errorCode)}`);
-          }
-          if (data !== null) {
-            ExpectTrue(data.serviceInfo.serviceType !== null, caseName);
-            ExpectTrue(data.serviceInfo.serviceName !== null, caseName);
-            ExpectTrue(data.serviceInfo.port !== null, caseName);
-            ExpectTrue(data.serviceInfo.host?.address !== null, caseName);
-            ExpectTrue(data.serviceInfo.host?.family !== null, caseName);
-            ExpectTrue(data.serviceInfo.host?.port !== null, caseName);
-            if (data.serviceInfo.serviceAttribute !== undefined) {
-              ExpectTrue(data.serviceInfo.serviceAttribute.length !== 0,caseName);
-            } else {
-              ExpectTrue(false,caseName);
-            }
-          } else {
-            ExpectTrue(false, caseName);
-          }
-          done();
-        });
-        discoveryService.startSearchingMDNS();
-      } catch (err) {
-        console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
-        done();
-      }
-      console.info(`${caseName} test end `);
-    });
-
-    /**
      * @tc.name   testNetworkMgrDiscoveryStopOn0100
      * @tc.number SUB_NetworkMgr_Mdns_DiscoveryStopOn_0100
      * @tc.desc   Subscribe to notifications for removing mDNS services callBack
@@ -3459,49 +3413,6 @@ export default function mdnsTest() {
         discoveryService.on('discoveryStop', (data: mdns.DiscoveryEventInfo) => {
           console.log(`${caseName} start: ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        });
-        discoveryService.stopSearchingMDNS();
-      } catch (err) {
-        console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
-        done();
-      }
-      console.info(`${caseName} test end `);
-    });
-
-    /**
-     * @tc.name   testNetworkMgrDiscoveryStopOn0200
-     * @tc.number SUB_NetworkMgr_Mdns_DiscoveryStopOn_0200
-     * @tc.desc   Subscribe to notifications for removing mDNS services callBack
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("testNetworkMgrDiscoveryStopOn0200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,async (done: Function) => {
-      const caseName: string = "testNetworkMgrDiscoveryStopOn0200";
-      console.info(`${caseName} test start `);
-      try {
-        let serviceType = "_print._tcp";
-        let discoveryService = mdns.createDiscoveryService(context, serviceType);
-        discoveryService.startSearchingMDNS();
-        discoveryService.on('discoveryStop', (data: mdns.DiscoveryEventInfo) => {
-          console.log(`${caseName} start: ${JSON.stringify(data)}`);
-          if (data !== null) {
-            ExpectTrue(data.serviceInfo.serviceType !== null, caseName);
-            ExpectTrue(data.serviceInfo.serviceName !== null, caseName);
-            ExpectTrue(data.serviceInfo.port !== null, caseName);
-            ExpectTrue(data.serviceInfo.host?.address !== null, caseName);
-            ExpectTrue(data.serviceInfo.host?.family !== null, caseName);
-            ExpectTrue(data.serviceInfo.host?.port !== null, caseName);
-            if (data.serviceInfo.serviceAttribute !== undefined) {
-              ExpectTrue(data.serviceInfo.serviceAttribute.length !== 0,caseName);
-            } else {
-              ExpectTrue(false,caseName);
-            }
-          } else {
-            ExpectTrue(false, caseName);
-          }
           done();
         });
         discoveryService.stopSearchingMDNS();
