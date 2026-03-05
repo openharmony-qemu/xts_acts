@@ -1,27 +1,33 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
-
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '../../../../hypium/index';
+async function sleep(time: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0);
+    }, time);
+  });
+}
 export default function builtinsContinueTest() {
   describe('BuiltinsStatementContinueTest', (): void => {
-    // // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    // beforeAll((): void => {
-    //   // Presets an action, which is performed only once before all test cases of the test suite start.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // beforeEach(async () : Promise<void> => {
-    //   await Utils.msSleep(100);
-    //   // Presets an action, which is performed before each unit test case starts.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // afterEach((): void => {
-    //   // Presets a clear action, which is performed after each unit test case ends.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: clear action function.
-    // })
-    // afterAll((): void => {
-    //   // Presets a clear action, which is performed after all test cases of the test suite end.
-    //   // This API supports only one parameter: clear action function.
-    // })
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll((): void => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () : Promise<void> => {
+      await sleep(30);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach((): void => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll((): void => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST0100
@@ -257,41 +263,31 @@ export default function builtinsContinueTest() {
      */
     it('BuiltinsStatementContinueTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        let currentStep = 1;
-        let shouldExit = false;
-        while (true) {
-          if (shouldExit) {
-            break;
-          }
-          switch (currentStep) {
+        let index = 0;
+        let processedCount = 0;
+        let skippedCount = 0;
+        
+        while (index < 10) {
+          switch (index) {
+            case 0:
             case 1:
-              console.log('Processing step 1');
-              currentStep = 2;
-              continue;
             case 2:
-              const randomValue = Math.random();
-              if (randomValue < 0.3) {
-                console.log('Skipping step 2 due to random condition');
-                currentStep = 3;
-                continue;
-              }
-              console.log('Processing step 2');
-              currentStep = 3;
-              continue;
-            case 3:
-              console.log('Processing step 3');
-              currentStep = 4;
-              continue;
-            case 4:
-              console.log('Final step completed.');
-              shouldExit = true;
+              // Skip first three indices using continue
+              skippedCount++;
+              index++;
               continue;
             default:
-              console.error(`Invalid step: ${currentStep}`);
+              // Process remaining indices
+              processedCount++;
+              index++;
               break;
           }
         }
-        expect(shouldExit).assertTrue();
+        
+        // Verify that 3 indices were skipped and 7 were processed
+        expect(skippedCount).assertEqual(3);
+        expect(processedCount).assertEqual(7);
+        expect(index).assertEqual(10);
         done();
       });
 

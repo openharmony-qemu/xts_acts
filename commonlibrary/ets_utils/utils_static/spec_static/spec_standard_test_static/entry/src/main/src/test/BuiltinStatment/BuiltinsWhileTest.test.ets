@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -13,31 +13,40 @@
 * limitations under the License.
 */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "../../../hypium/index";
-import { getNumber, MyClass, MyColor, MyObject, shouldContinue } from "./pages/Utils";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { getNumber, MyClass, MyColor, MyObject, shouldContinue } from "../pages/Utils";
+
+async function sleep(time: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0);
+    }, time);
+  });
+}
+type MyUnionType = number | string;
+type Direction = 'up' | 'down' | 'left' | 'right';
 
 export default function builtinsWhileTest() {
   describe('builtinsStatementWhileTest', (): void => {
-    // beforeAll((): void => {
-    //   // Presets an action, which is performed only once before all test cases of the test suite start.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // beforeEach(async () : Promise<void> => {
-    //   await Utils.msSleep(100);
-    //   // Presets an action, which is performed before each unit test case starts.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // afterEach((): void => {
-    //   // Presets a clear action, which is performed after each unit test case ends.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: clear action function.
-    // })
-    // afterAll((): void => {
-    //   // Presets a clear action, which is performed after all test cases of the test suite end.
-    //   // This API supports only one parameter: clear action function.
-    // })
-
+    beforeAll((): void => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () : Promise<void> => {
+      await sleep(30);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach((): void => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll((): void => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_WHILE_TEST_0100
@@ -453,26 +462,26 @@ export default function builtinsWhileTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('builtinsStatementWhileTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   const num: bigint = 3n;
-    //   let current1: bigint = num;
-    //   while (num) {
-    //     if (current1 === 0n) {
-    //       break;
-    //     }
-    //     current1--;
-    //   }
-    //   let current2: bigint = num;
-    //   do {
-    //     if (current2 === 0n) {
-    //       break;
-    //     }
-    //     current2--;
-    //   } while (num);
-    //   expect(0n).assertEqual(current1);
-    //   expect(0n).assertEqual(current2);
-    //   done();
-    // })
+    it('builtinsStatementWhileTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const num: bigint = 3n;
+      let current1: bigint = num;
+      while (num) {
+        if (current1 === 0n) {
+          break;
+        }
+        current1--;
+      }
+      let current2: bigint = num;
+      do {
+        if (current2 === 0n) {
+          break;
+        }
+        current2--;
+      } while (num);
+      expect(0n).assertEqual(current1);
+      expect(0n).assertEqual(current2);
+      done();
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_WHILE_TEST_1700
@@ -515,68 +524,35 @@ export default function builtinsWhileTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('builtinsStatementWhileTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   type MyUnionType = number | string;
-    //   const values: MyUnionType[] = [10, "hello", 20, "world"];
-    //   let index1 = 0;
-    //   while (values[index1]) {
-    //     const currentValue = values[index1];
-    //     if (typeof currentValue === "string" && currentValue === "world") {
-    //       break;
-    //     }
-    //     index1++;
-    //     if (index1 >= values.length) {
-    //       break;
-    //     }
-    //   }
-    //   let index2 = 0;
-    //   do {
-    //     const currentValue = values[index2];
-    //     if (typeof currentValue === "string" && currentValue === "world") {
-    //       break;
-    //     }
-    //     index2++;
-    //     if (index1 >= values.length) {
-    //       break;
-    //     }
-    //     ;
-    //   } while (values[index2]);
-    //   expect(3).assertEqual(index1);
-    //   expect(3).assertEqual(index2);
-    //   done();
-    // })
-
-    /**
-     * @tc.number SUB_BUILTINS_STATEMENT_WHILE_TEST_2100
-     * @tc.name builtinsStatementWhileTest2100
-     * @tc.desc test while and do while
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('builtinsStatementWhileTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   type GenericArray<T> = T[];
-    //   const numberArray: GenericArray<number> = [1, 2, 3, 4, 5];
-    //   let index1 = 0;
-    //   while (numberArray) {
-    //     if (index1 >= numberArray.length) {
-    //       break;
-    //     }
-    //     const currentItem = numberArray[index1];
-    //     index1++;
-    //   }
-    //   let index2 = 0;
-    //   do {
-    //     if (index2 >= numberArray.length) {
-    //       break;
-    //     }
-    //     const currentItem = numberArray[index2];
-    //     index2++;
-    //   } while (numberArray);
-    //   expect(5).assertEqual(index1);
-    //   expect(5).assertEqual(index2);
-    //   done();
-    // })
+    it('builtinsStatementWhileTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const values: MyUnionType[] = [10, "hello", 20, "world"];
+      let index1 = 0;
+      while (values[index1]) {
+        const currentValue = values[index1];
+        if (typeof currentValue === "string" && currentValue === "world") {
+          break;
+        }
+        index1++;
+        if (index1 >= values.length) {
+          break;
+        }
+      }
+      let index2 = 0;
+      do {
+        const currentValue = values[index2];
+        if (typeof currentValue === "string" && currentValue === "world") {
+          break;
+        }
+        index2++;
+        if (index1 >= values.length) {
+          break;
+        }
+        ;
+      } while (values[index2]);
+      expect(3).assertEqual(index1);
+      expect(3).assertEqual(index2);
+      done();
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_WHILE_TEST_2200
@@ -586,44 +562,43 @@ export default function builtinsWhileTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('builtinsStatementWhileTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   type Direction = 'up' | 'down' | 'left' | 'right';
-    //   let currentDirection: Direction = 'up';
-    //   let step1 = 0;
-    //   while (currentDirection) {
-    //     console.log(`当前方向是: ${currentDirection}`);
-    //     if (step1 === 0) {
-    //       currentDirection = 'right';
-    //     } else if (step1 === 1) {
-    //       currentDirection = 'down';
-    //     } else if (step1 === 2) {
-    //       currentDirection = 'left';
-    //     } else {
-    //       console.log('循环结束，已经遍历完所有方向');
-    //       break;
-    //     }
-    //     step1++;
-    //   }
-    //   let step2 = 0;
-    //   do {
-    //     console.log(`当前方向是: ${currentDirection}`);
-    //     // 根据步数改变方向
-    //     if (step2 === 0) {
-    //       currentDirection = 'right';
-    //     } else if (step2 === 1) {
-    //       currentDirection = 'down';
-    //     } else if (step2 === 2) {
-    //       currentDirection = 'left';
-    //     } else {
-    //       console.log('循环结束，已经遍历完所有方向');
-    //       break;
-    //     }
-    //     step2++;
-    //   } while (currentDirection);
-    //   expect(3).assertEqual(step1);
-    //   expect(3).assertEqual(step2);
-    //   done();
-    // })
+    it('builtinsStatementWhileTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let currentDirection: Direction = 'up';
+      let step1 = 0;
+      while (currentDirection) {
+        console.log(`当前方向是: ${currentDirection}`);
+        if (step1 === 0) {
+          currentDirection = 'right';
+        } else if (step1 === 1) {
+          currentDirection = 'down';
+        } else if (step1 === 2) {
+          currentDirection = 'left';
+        } else {
+          console.log('循环结束，已经遍历完所有方向');
+          break;
+        }
+        step1++;
+      }
+      let step2 = 0;
+      do {
+        console.log(`当前方向是: ${currentDirection}`);
+        // 根据步数改变方向
+        if (step2 === 0) {
+          currentDirection = 'right';
+        } else if (step2 === 1) {
+          currentDirection = 'down';
+        } else if (step2 === 2) {
+          currentDirection = 'left';
+        } else {
+          console.log('循环结束，已经遍历完所有方向');
+          break;
+        }
+        step2++;
+      } while (currentDirection);
+      expect(3).assertEqual(step1);
+      expect(3).assertEqual(step2);
+      done();
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_WHILE_TEST_2300
@@ -758,23 +733,6 @@ export default function builtinsWhileTest() {
     })
 
     /**
-     * @tc.number SUB_BUILTINS_STATEMENT_WHILE_TEST_2800
-     * @tc.name builtinsStatementWhileTest2800
-     * @tc.desc test while and do while
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('builtinsStatementWhileTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      while (false) {
-      }
-      ;
-      do {
-      } while (false);
-      done();
-    })
-
-    /**
      * @tc.number SUB_BUILTINS_STATEMENT_WHILE_TEST_2900
      * @tc.name builtinsStatementWhileTest2900
      * @tc.desc test while and do while
@@ -820,25 +778,6 @@ export default function builtinsWhileTest() {
       } while (count2 < maxIterations);
       expect(5).assertEqual(count1);
       expect(5).assertEqual(count2);
-      done();
-    })
-
-    /**
-     * @tc.number SUB_BUILTINS_STATEMENT_WHILE_TEST_3100
-     * @tc.name builtinsStatementWhileTest3100
-     * @tc.desc test while and do while
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('builtinsStatementWhileTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      while (false) {
-        console.log('This is the loop body and it will not be executed.');
-      }
-      ;
-      do {
-        console.log('This is the loop body and it will not be executed a second time.');
-      } while (false);
       done();
     })
 
