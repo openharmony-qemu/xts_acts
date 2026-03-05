@@ -94,15 +94,14 @@ static void CompleteGenericWork(napi_env env, napi_status status, void* data)
     delete context;
 }
 
-static napi_value
-    CreatePrepareFunc(napi_env env, napi_callback_info info, const PrepareFn* handlers, size_t handlerCount)
+static napi_value CreatePrepareFunc(napi_env env, napi_callback_info info, const PrepareFn* handlers, size_t count)
 {
     int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-    if (caseNum < 0 || caseNum >= handlerCount) {
+    if (caseNum < 0 || caseNum >= count) {
         napi_throw_error(env, nullptr, "Invalid case number");
         return nullptr;
     }
-    int resultCode = DispatchByCaseNum(caseNum, handlers, handlerCount);
+    int resultCode = DispatchByCaseNum(caseNum, handlers, count);
     napi_value result;
     napi_create_int32(env, resultCode, &result);
     return result;

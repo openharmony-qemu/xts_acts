@@ -54,33 +54,33 @@ public:
     ~VDecAPI11Sample();
     int32_t RunVideoDec_Surface(std::string codeName = "");
     int32_t RunVideoDec(std::string codeName = "");
-    const char* INP_DIR = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
-    const char* OUT_DIR = "/data/storage/el2/base/files/VDecTest.yuv";
-    const char* OUT_DIR2 = "/data/storage/el2/base/files/VDecTest2.yuv";
-    bool SF_OUTPUT = false;
-    bool TRANSFER_FLAG = false;
-    bool NV21_FLAG = false;
-    bool PREPARE_FLAG = true;
-    bool IS_FIRST_FRAME = true;
-    uint32_t DEFAULT_WIDTH = 1920;
-    uint32_t DEFAULT_HEIGHT = 1080;
+    const char* inpDir = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
+    const char* outDir = "/data/storage/el2/base/files/VDecTest.yuv";
+    const char* outDir2 = "/data/storage/el2/base/files/VDecTest2.yuv";
+    bool sfOutput = false;
+    bool transferFlag = false;
+    bool nv21Flag = false;
+    bool prepareFlag = true;
+    bool isFirstFrame = true;
+    uint32_t defaultWidth = 1920;
+    uint32_t defaultHeight = 1080;
     uint32_t originalWidth = 0;
     uint32_t originalHeight = 0;
-    uint32_t defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    uint32_t REPEAT_CALL_TIME = 10;
-    uint32_t MAX_SURF_NUM = 2;
-    double DEFAULT_FRAME_RATE = 30.0;
-    uint32_t DEFAULT_RANGE_FLAG = 0;
+    uint32_t defaultPixelFormat = AV_PIXEL_FORMAT_NV12;
+    const uint32_t REPEAT_CALL_TIME = 10;
+    const uint32_t MAX_SURF_NUM = 2;
+    double defaultFrameRate = 30.0;
+    uint32_t defaultRangeFlag = 0;
     bool BEFORE_EOS_INPUT = false;              // 0800 测试用例
     bool BEFORE_EOS_INPUT_INPUT = false;        // 0900 测试用例
-    bool AFTER_EOS_DESTORY_CODEC = true;        // 1000 测试用例 结束不销毁codec
+    bool afterEosDestroyCodec = true;           // 1000 测试用例 结束不销毁codec
     uint32_t REPEAT_START_STOP_BEFORE_EOS = 0;  // 1200 测试用例
     uint32_t REPEAT_START_FLUSH_BEFORE_EOS = 0; // 1300 测试用例
     uint32_t frameCount_ = 0;
-    uint32_t repeat_time = 0;
+    uint32_t repeatTime = 0;
     uint32_t outFrameCount = 0;
     bool outputYuvFlag = false;
-    bool NocaleHash = false;
+    bool noCaleHash = false;
     // 解码输出数据预期
     bool needCheckOutputDesc = false;
     bool isResChangeStream = false;
@@ -96,7 +96,7 @@ public:
     bool enableLowLatency = false;
     int lowLatency = 1;
     bool getInputBufferIndexRepeat = false;
-    int32_t enbleSyncMode = 0;
+    int32_t enableSyncMode = 0;
     int64_t syncInputWaitTime = -1;
     int64_t syncOutputWaitTime = -1;
     bool queryOutputBufferEOS = false;
@@ -105,7 +105,7 @@ public:
     bool getOutputBufferIndexNoExisted = false;
     bool abnormalIndexValue = false;
     bool setTransform = false;
-    int32_t DEFAULT_TRANSFORM = 0;
+    int32_t defaultTransform = 0;
     bool needAutoSwitch = true;
     int32_t beforeSwitchTransform = -1;
     int32_t afterSwitchTransform = -2;
@@ -114,7 +114,7 @@ public:
     int32_t Flush();
     int32_t Reset();
     int32_t Prepare();
-    int32_t state_EOS();
+    int32_t StateEos();
     void SetEOS(uint32_t index, OH_AVBuffer* buffer);
     void WaitForEOS();
     int32_t ConfigureVideoDecoder();
@@ -150,7 +150,7 @@ public:
     int32_t SetParameterTransform();
     int32_t SetParameter();
     int32_t GetSurfaceTransform(int32_t surfaceFlag);
-    int32_t SyncOutputFuncEos(uint32_t& last_index,
+    int32_t SyncOutputFuncEos(uint32_t& lastIndex,
                               uint32_t& outFrames,
                               uint32_t& index,
                               OH_AVBuffer* buffer,
@@ -164,7 +164,7 @@ public:
     void CreateSurface();
     void ReleaseInFile();
     void StopInloop();
-    void Flush_buffer();
+    void FlushBuffer();
     void StopOutloop();
     bool IsRender();
     void RenderOutAtTime(uint32_t index);
@@ -192,10 +192,10 @@ public:
     int64_t outTimeArray[2000] = {};
     bool sleepOnFPS = false;
     bool repeatRun = false;
-    int64_t decode_count = 0;
-    int64_t start_time = 0;
+    int64_t decodeCount = 0;
+    int64_t startTime = 0;
     int32_t maxInputSize = 0;
-    int64_t end_time = 0;
+    int64_t endTime = 0;
     bool autoSwitchSurface = false;
     bool is8bitYuv = true;
     std::atomic<bool> isFlushing_{ false };
@@ -208,7 +208,7 @@ public:
     bool useHDRSource = false;
     bool isAPI = false;
     bool outputYuvSurface = false;
-    int32_t DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
+    int32_t defaultProfile = HEVC_PROFILE_MAIN_10;
     int32_t DecodeSetSurface();
     int32_t OpenFile();
     int enbleBlankFrame = 0;

@@ -1,7 +1,21 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 #include "JsonWrapper.h"
+#include <cctype>
 #include <fstream>
 #include <sstream>
-#include <cctype>
 
 bool JsonWrapper::LoadFromFile(const std::string& path)
 {
@@ -41,10 +55,14 @@ std::string JsonWrapper::Trim(const std::string& s)
     return s.substr(start, end - start);
 }
 
+namespace {
+constexpr size_t MIN_QUOTED_STRING_LEN = 2;
+}
+
 std::string JsonWrapper::StripQuotes(const std::string& s)
 {
-    if (s.size() >= 2 && s.front() == '"' && s.back() == '"') {
-        return s.substr(1, s.size() - 2);
+    if (s.size() >= MIN_QUOTED_STRING_LEN && s.front() == '"' && s.back() == '"') {
+        return s.substr(1, s.size() - MIN_QUOTED_STRING_LEN);
     }
     return s;
 }

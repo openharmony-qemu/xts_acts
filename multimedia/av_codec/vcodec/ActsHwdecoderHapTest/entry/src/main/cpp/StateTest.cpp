@@ -34,7 +34,7 @@ namespace Media {
 namespace {
 OH_AVCapability* cap = nullptr;
 VDecNdkSample* vDecSample = nullptr;
-}
+} // namespace
 
 namespace StateTest {
 void SetUp(void)
@@ -49,7 +49,7 @@ void SetUp(void)
     ASSERT_EQ(AV_ERR_OK, ret);
     ret = vDecSample->ConfigureVideoDecoder();
     ASSERT_EQ(AV_ERR_OK, ret);
-    vDecSample->INP_DIR = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
+    vDecSample->inpDir = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
 }
 void TearDown(void)
 {
@@ -179,7 +179,7 @@ int VIDEO_HWDEC_STATE_0500()
  */
 int VIDEO_HWDEC_STATE_0600()
 {
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     int32_t ret = vDecSample->StartVideoDecoder();
     ASSERT_EQ(AV_ERR_OK, ret);
     vDecSample->WaitForEOS();
@@ -203,7 +203,7 @@ int VIDEO_HWDEC_STATE_0600()
 int VIDEO_HWDEC_STATE_0700()
 {
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     ASSERT_EQ(0, vDecSample->errCount);
@@ -226,7 +226,7 @@ int VIDEO_HWDEC_STATE_0800()
 {
     int32_t ret = vDecSample->StartVideoDecoder();
     ASSERT_EQ(AV_ERR_OK, ret);
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     ASSERT_EQ(0, vDecSample->errCount);
@@ -248,7 +248,7 @@ int VIDEO_HWDEC_STATE_0800()
 int VIDEO_HWDEC_STATE_0900()
 {
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     ASSERT_EQ(0, vDecSample->errCount);
@@ -268,7 +268,7 @@ int VIDEO_HWDEC_STATE_0900()
 int VIDEO_HWDEC_STATE_1000()
 {
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     ASSERT_EQ(0, vDecSample->errCount);
@@ -290,7 +290,7 @@ int VIDEO_HWDEC_STATE_1000()
 int VIDEO_HWDEC_STATE_1100()
 {
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     ASSERT_EQ(0, vDecSample->errCount);
@@ -312,7 +312,7 @@ int VIDEO_HWDEC_STATE_1100()
 int VIDEO_HWDEC_STATE_1200()
 {
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     ASSERT_EQ(0, vDecSample->errCount);
@@ -334,7 +334,7 @@ int VIDEO_HWDEC_STATE_1200()
 int VIDEO_HWDEC_STATE_1300()
 {
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     ASSERT_EQ(0, vDecSample->errCount);
@@ -358,7 +358,7 @@ int VIDEO_HWDEC_STATE_1300()
 int VIDEO_HWDEC_STATE_1400()
 {
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     ASSERT_EQ(0, vDecSample->errCount);
@@ -380,7 +380,7 @@ int VIDEO_HWDEC_STATE_1400()
 int VIDEO_HWDEC_STATE_1500()
 {
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     ASSERT_EQ(0, vDecSample->errCount);
@@ -402,7 +402,7 @@ int VIDEO_HWDEC_STATE_1500()
 int VIDEO_HWDEC_STATE_1600()
 {
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     ASSERT_EQ(0, vDecSample->errCount);
@@ -454,7 +454,7 @@ int VIDEO_HWDEC_STATE_1800()
     ASSERT_EQ(AV_ERR_OK, ret);
     ret = vDecSample->Start();
     ASSERT_EQ(AV_ERR_OK, ret);
-    ret = vDecSample->state_EOS();
+    ret = vDecSample->StateEos();
     ASSERT_EQ(AV_ERR_OK, ret);
     return SUCCESS_CODE;
 }
@@ -812,7 +812,7 @@ int VIDEO_HWDEC_STATE_3500()
 {
     vDecSample->inputCallbackFlush = true;
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     return SUCCESS_CODE;
@@ -830,7 +830,7 @@ int VIDEO_HWDEC_STATE_3600()
 {
     vDecSample->inputCallbackStop = true;
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     ASSERT_EQ(AV_ERR_OK, ret);
     vDecSample->WaitForEOS();
     return SUCCESS_CODE;
@@ -848,7 +848,7 @@ int VIDEO_HWDEC_STATE_3700()
 {
     vDecSample->outputCallbackFlush = true;
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     ASSERT_EQ(AV_ERR_OK, ret);
     vDecSample->WaitForEOS();
     return SUCCESS_CODE;
@@ -866,7 +866,7 @@ int VIDEO_HWDEC_STATE_3800()
 {
     vDecSample->outputCallbackStop = true;
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     ASSERT_EQ(AV_ERR_OK, ret);
     vDecSample->WaitForEOS();
     return SUCCESS_CODE;
@@ -882,10 +882,10 @@ int VIDEO_HWDEC_STATE_3800()
  */
 int VIDEO_HWDEC_STATE_3900()
 {
-    vDecSample->SF_OUTPUT = true;
+    vDecSample->sfOutput = true;
     vDecSample->inputCallbackFlush = true;
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
     ASSERT_EQ(AV_ERR_OK, ret);
     return SUCCESS_CODE;
@@ -901,10 +901,10 @@ int VIDEO_HWDEC_STATE_3900()
  */
 int VIDEO_HWDEC_STATE_4000()
 {
-    vDecSample->SF_OUTPUT = true;
+    vDecSample->sfOutput = true;
     vDecSample->inputCallbackStop = true;
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     ASSERT_EQ(AV_ERR_OK, ret);
     vDecSample->WaitForEOS();
     return SUCCESS_CODE;
@@ -920,10 +920,10 @@ int VIDEO_HWDEC_STATE_4000()
  */
 int VIDEO_HWDEC_STATE_4100()
 {
-    vDecSample->SF_OUTPUT = true;
+    vDecSample->sfOutput = true;
     vDecSample->outputCallbackFlush = true;
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     ASSERT_EQ(AV_ERR_OK, ret);
     vDecSample->WaitForEOS();
     return SUCCESS_CODE;
@@ -939,10 +939,10 @@ int VIDEO_HWDEC_STATE_4100()
  */
 int VIDEO_HWDEC_STATE_4200()
 {
-    vDecSample->SF_OUTPUT = true;
+    vDecSample->sfOutput = true;
     vDecSample->outputCallbackStop = true;
     int32_t ret = vDecSample->StartVideoDecoder();
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->afterEosDestroyCodec = false;
     ASSERT_EQ(AV_ERR_OK, ret);
     vDecSample->WaitForEOS();
     return SUCCESS_CODE;

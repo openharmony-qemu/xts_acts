@@ -19,7 +19,7 @@ export default function FuncTest() {
   describe('FuncTest', () => {
 
     beforeAll(() => {
-
+      entry.Func_Test_Prepare(0);
     })
     beforeEach(() => {
 

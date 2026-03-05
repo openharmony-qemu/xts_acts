@@ -1,3 +1,6 @@
+#ifndef COMMONTOOL_H
+#define COMMONTOOL_H
+
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,8 +32,8 @@
 #include <ctime>
 #include <iostream>
 #include <string>
-#include "napi/native_api.h"
 #include "NoCopyable.h"
+#include "napi/native_api.h"
 
 // 自定义断言，如果失败，直接throw runtime_error，最小化逻辑变动
 #ifndef CUSTOM_ASSERT
@@ -147,3 +150,4 @@ void OHPrintf(const char* fmt, ...);
 int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len);
 
 #endif // COMMON_TOOL_H
+#endif // COMMONTOOL_H

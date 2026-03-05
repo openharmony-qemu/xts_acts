@@ -38,7 +38,6 @@ public:
     int32_t Stop();
 };
 
-
 namespace {
 static OH_AVCapability* cap_hevc = nullptr;
 static string g_codecNameAVC = "";
@@ -70,7 +69,6 @@ void HwdecHdr2SdrNdkTest::TearDown()
         vdec_ = nullptr;
     }
 }
-
 
 /**
  * @tc.name   HEVC_HW_HDR2SDR_FUNC_002

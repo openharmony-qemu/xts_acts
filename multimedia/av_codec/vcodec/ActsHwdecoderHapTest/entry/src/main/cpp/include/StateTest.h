@@ -19,10 +19,10 @@
 namespace OHOS {
 namespace Media {
 
-namespace StateTest{
+namespace StateTest {
 void SetUp(void);
 void TearDown(void);
-}
+} // namespace StateTest
 
 int VIDEO_HWDEC_STATE_0100();
 int VIDEO_HWDEC_STATE_0101();

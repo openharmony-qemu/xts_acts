@@ -47,6 +47,10 @@ OH_AVFormat* format;
 constexpr uint32_t DEFAULT_WIDTH = 1920;
 constexpr uint32_t DEFAULT_HEIGHT = 1080;
 constexpr double DEFAULT_FRAME_RATE = 30.0;
+constexpr uint32_t HD_WIDTH = 1280;
+constexpr uint32_t HD_HEIGHT = 720;
+constexpr uint32_t MAX_SUPPORTED_INSTANCES_EXPECTED = 6;
+constexpr int32_t LOOP_COUNT_TWO = 2;
 } // namespace
 
 namespace ApiTest {
@@ -759,7 +763,7 @@ int VIDEO_HWDEC_API_0600()
     cb_.onNeedInputData = VDecNeedInputData;
     ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_SetCallback(vdec_, cb_, static_cast<void*>(signal_)));
     ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Start(vdec_));
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < LOOP_COUNT_TWO; i++) {
         unique_lock<mutex> lock(signal_->inMutex_);
         signal_->inCond_.wait(lock, []() { return signal_->inIdxQueue_.size() > 0; });
         uint32_t index = signal_->inIdxQueue_.front();
@@ -1043,7 +1047,7 @@ int VIDEO_HWDEC_CAP_API_0800()
     if (codec_name == "OMX.hisi.video.decoder.avc") {
         ASSERT_LT(1, OH_AVCapability_GetMaxSupportedInstances(cap));
     } else {
-        ASSERT_EQ(6, OH_AVCapability_GetMaxSupportedInstances(cap));
+        ASSERT_EQ(MAX_SUPPORTED_INSTANCES_EXPECTED, OH_AVCapability_GetMaxSupportedInstances(cap));
     }
     return SUCCESS_CODE;
 }
@@ -1759,7 +1763,7 @@ int VIDEO_HWDEC_CAP_API_6200()
     cout << "minval=" << heightRange.minVal << "  maxval=" << heightRange.maxVal << endl;
     ret = OH_AVCapability_GetVideoWidthRangeForHeight(capability, heightRange.maxVal, &widthRange);
     cout << "minval=" << widthRange.minVal << "  maxval=" << widthRange.maxVal << endl;
-    ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, 1280, 720, &range);
+    ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, HD_WIDTH, HD_HEIGHT, &range);
     ASSERT_EQ(AV_ERR_OK, ret);
     cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
     ASSERT_GE(range.minVal, 0);
@@ -1789,7 +1793,8 @@ int VIDEO_HWDEC_CAP_API_6300()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
     ASSERT_NE(nullptr, capability);
-    ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, 0, DEFAULT_HEIGHT, 30));
+    ASSERT_EQ(false,
+              OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, 0, DEFAULT_HEIGHT, DEFAULT_FRAME_RATE));
     return SUCCESS_CODE;
 }
 
@@ -1805,7 +1810,8 @@ int VIDEO_HWDEC_CAP_API_6400()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
     ASSERT_NE(nullptr, capability);
-    ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, 0, 30));
+    ASSERT_EQ(false,
+              OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, 0, DEFAULT_FRAME_RATE));
     return SUCCESS_CODE;
 }
 
@@ -1835,7 +1841,9 @@ int VIDEO_HWDEC_CAP_API_6500()
  */
 int VIDEO_HWDEC_CAP_API_6600()
 {
-    ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(nullptr, DEFAULT_WIDTH, DEFAULT_HEIGHT, 30));
+    ASSERT_EQ(
+        false,
+        OH_AVCapability_AreVideoSizeAndFrameRateSupported(nullptr, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_FRAME_RATE));
     return SUCCESS_CODE;
 }
 
@@ -1851,7 +1859,9 @@ int VIDEO_HWDEC_CAP_API_6700()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
     ASSERT_NE(nullptr, capability);
-    ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, 30));
+    ASSERT_EQ(true,
+              OH_AVCapability_AreVideoSizeAndFrameRateSupported(
+                  capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_FRAME_RATE));
     return SUCCESS_CODE;
 }
 
@@ -2308,11 +2318,11 @@ int VIDEO_HWDEC_ATTIME_API_0010()
 {
     shared_ptr<VDecAPI11Sample> vDecSample = make_shared<VDecAPI11Sample>();
     const char* INP_DIR_720_30 = "/data/storage/el2/base/files/1280_720_30_10Mb.h264";
-    vDecSample->INP_DIR = INP_DIR_720_30;
-    vDecSample->SF_OUTPUT = true;
-    vDecSample->DEFAULT_WIDTH = 1280;
-    vDecSample->DEFAULT_HEIGHT = 720;
-    vDecSample->DEFAULT_FRAME_RATE = 30;
+    vDecSample->inpDir = INP_DIR_720_30;
+    vDecSample->sfOutput = true;
+    vDecSample->defaultWidth = HD_WIDTH;
+    vDecSample->defaultHeight = HD_HEIGHT;
+    vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vDecSample->rsAtTime = true;
     vDecSample->isAPI = true;
     ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecName));
@@ -2424,9 +2434,9 @@ int VIDEO_DECODE_SYNC_API_0050()
 int VIDEO_DECODE_SYNC_API_0060()
 {
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->enbleSyncMode = 1;
+    vDecSample->enableSyncMode = 1;
     vDecSample->syncOutputWaitTime = INT64_MAX;
-    vDecSample->INP_DIR = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
+    vDecSample->inpDir = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
     ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
     ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
@@ -2446,9 +2456,9 @@ int VIDEO_DECODE_SYNC_API_0060()
 int VIDEO_DECODE_SYNC_API_0070()
 {
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->enbleSyncMode = 1;
+    vDecSample->enableSyncMode = 1;
     vDecSample->syncOutputWaitTime = INT64_MIN;
-    vDecSample->INP_DIR = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
+    vDecSample->inpDir = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
     ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
     ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());

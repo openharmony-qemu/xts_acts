@@ -23,7 +23,7 @@ namespace ApiTest {
 void SetUpTestCase();
 void SetUp();
 void TearDown();
-}
+} // namespace ApiTest
 
 int VIDEO_HWDEC_ILLEGAL_PARA_0100();
 int VIDEO_HWDEC_ILLEGAL_PARA_0200();
