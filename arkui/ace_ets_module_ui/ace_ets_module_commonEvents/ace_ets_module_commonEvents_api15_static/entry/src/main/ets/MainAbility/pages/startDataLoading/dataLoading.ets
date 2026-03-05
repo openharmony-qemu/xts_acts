@@ -35,6 +35,7 @@ import {
   ColumnOptions,
   Component,
   DragEvent,
+  DragItemInfo,
   DropOptions,
   Entry,
   Flex,
