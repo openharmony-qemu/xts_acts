@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -945,8 +945,8 @@ export default function MetaDataSetBlobTest() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it('IMAGE_HEIFS_METADATA_GET_PROPERTIES_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_HEIFS_METADATA_GET_PROPERTIES_001';
+    it('SUB_IMAGE_SOURCE_HEIFS_METADATA_SET_BLOB_TEST_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_HEIFS_METADATA_SET_BLOB_TEST_001';
       try {
         let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         const pathUri = 'test_exif_v2.jpg'
@@ -1998,7 +1998,7 @@ export default function MetaDataSetBlobTest() {
 
     /**
      * @tc.name   SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000007
-     * @tc.number SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000004
+     * @tc.number SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000007
      * @tc.desc   imageSource createPixelMapUsingAllocatorSync the desiredPixelFormat YCBCR_P010
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
