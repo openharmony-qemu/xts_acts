@@ -19,7 +19,7 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct CalendarPickerDialogBGColor {
-  showDialog(color: null|undefined|Color|Double|String|Resource) {
+  showDialog(color: undefined|Color|Int|String|Resource) {
     CalendarPickerDialog.show({
       backgroundColor: (color as undefined|Color|Int|String|Resource),
       backgroundBlurStyle: BlurStyle.NONE,
@@ -54,11 +54,6 @@ struct CalendarPickerDialogBGColor {
         })
         .id('colorBlueID')
 
-      Button('null')
-        .onClick((e: ClickEvent) => {
-          this.showDialog(null)
-        })
-        .id('nullID')
       Button('undefined')
         .onClick((e: ClickEvent) => {
           this.showDialog(undefined)
