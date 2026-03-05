@@ -2555,7 +2555,6 @@ export default function WindowPropertiesTest() {
                 console.log(msgStr + 'Failed to setWindowMask' + JSON.stringify(error.code) + error.message);
                 if (error.code === 801) {
                     console.log(msgStr + '此设备不支持 setWindowMask');
-                    expect(true).assertTrue();
                     done();
                 } else {
                     console.log(msgStr + 'Failed to setWindowMask');
@@ -2606,7 +2605,6 @@ export default function WindowPropertiesTest() {
                 console.log(msgStr + 'Failed to setWindowMask' + JSON.stringify(error.code) + error.message);
                 if (error.code === 801) {
                     console.log(msgStr + '此设备不支持 setWindowMask');
-                    expect(true).assertTrue();
                     done();
                 } else {
                     console.log(msgStr + 'Failed to setWindowMask');

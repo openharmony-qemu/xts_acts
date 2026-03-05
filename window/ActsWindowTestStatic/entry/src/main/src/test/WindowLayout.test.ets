@@ -1220,7 +1220,6 @@ export default function WindowLayoutTest() {
                 let promise = mainWindowClass.setStatusBarColor(ColorMetrics.rgba(1, 1, 1));
                 promise.then(() => {
                     hilog.info(domain, tag,`${message} succeed setStatusBarColor`);
-                    expect(true).assertTrue();
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to setStatusBarColor, Cause code ${err.code}, message ${err.message}`);

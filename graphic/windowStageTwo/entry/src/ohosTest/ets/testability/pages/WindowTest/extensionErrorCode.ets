@@ -81,14 +81,21 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
-
-      Button('createSubWindowWithOptions401')
-        .id('createSubWindowWithOptions401')
+      Button('createSubWindowWithOptions1')
+        .id('createSubWindowWithOptions1')
         .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
-            extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptions401', null)
+            const subWindowConfig: window.SubWindowOptions = {
+              title: 'This is a subwindow',
+              decorEnabled: false,
+              isModal:true,
+              modalityType:window.ModalityType.APPLICATION_MODALITY,
+              maximizeSupported:true,
+              outlineEnabled:true
+            };
+            extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptions1', subWindowConfig)
             console.log('success in page')
             this.message = 'success'
           } catch (err) {
@@ -96,6 +103,114 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
+        Button('createSubWindowWithOptions2')
+        .id('createSubWindowWithOptions2')
+        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            const subWindowConfig: window.SubWindowOptions = {
+              title: 'This is a subwindow',
+              decorEnabled: true,
+              isModal:false,
+              modalityType:window.ModalityType.WINDOW_MODALITY,
+              maximizeSupported:false,
+              outlineEnabled:false
+            };
+            extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptions2', subWindowConfig)
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
+
+      Button('createSubWindowWithOptions401')
+        .id('createSubWindowWithOptions401')
+        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            extensionWindow?.createSubWindowWithOptions('', null)
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
+        Button('createSubWindowWithOptionsnull')
+        .id('createSubWindowWithOptionsnull')
+        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            extensionWindow?.createSubWindowWithOptions(null, null)
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
+        Button('createSubWindowWithOptionsundefined')
+        .id('createSubWindowWithOptionsundefined')
+        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            extensionWindow?.createSubWindowWithOptions(undefined, undefined)
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
+        Button('createSubWindowWithOptions2Null')
+        .id('createSubWindowWithOptions2Null')
+        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            extensionWindow?.createSubWindowWithOptions(null, null,true)
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
+        Button('createSubWindowWithOptions2undefined')
+        .id('createSubWindowWithOptions2undefined')
+        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            extensionWindow?.createSubWindowWithOptions(undefined, undefined,false)
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
+        Button('createSubWindowWithOptions2_')
+        .id('createSubWindowWithOptions2_')
+        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            extensionWindow?.createSubWindowWithOptions('', null,false)
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
+
 
       Button('按钮')
         .id('clickBtn')

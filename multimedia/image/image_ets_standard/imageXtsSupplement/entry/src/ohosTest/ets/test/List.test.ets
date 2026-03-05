@@ -444,8 +444,8 @@ export default function testsuite() {
   ImagCreatePixelMapTest();
  	ImageCreateImageSourceSuppTest();
  	ImageHeifsTest();
- 	SendImageTest();
   MetaDataSetBlobTest();
+ 	SendImageTest();
   ImageGammaSupp()
   CreatePixelMapSupp();
   GetImageInfoSupp();
