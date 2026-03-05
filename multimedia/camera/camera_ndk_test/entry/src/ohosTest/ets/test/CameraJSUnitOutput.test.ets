@@ -838,6 +838,9 @@ export default function cameraJSUnitOutput() {
         cameraObj.getSupportedCameras(); 
         cameraObj.getSupportedOutputCapability(); 
         cameraObj.createSession(); 
+        if (cameraObj.IsMetadataObjectTypeValid() == 0) {
+          expect(true).assertTrue();
+        }
         let result = cameraObj.createMetadataOutput(); 
         result = cameraObj.createCameraInput(); 
         result = cameraObj.cameraInputOpen(); 
@@ -869,6 +872,9 @@ export default function cameraJSUnitOutput() {
         cameraObj.getSupportedCameras(); 
         cameraObj.getSupportedOutputCapability(); 
         cameraObj.createSession(); 
+        if (cameraObj.IsMetadataObjectTypeValid() == 0) {
+          expect(true).assertTrue();
+        }
         let result = cameraObj.createMetadataOutput(); 
         result = cameraObj.createCameraInput(); 
         result = cameraObj.cameraInputOpen(); 
