@@ -599,19 +599,21 @@ int GewuCreateSessionTest()
 int GewuSubmitRequestTest()
 {
     const char* attributes =
-        "{\"model\": "
-        "\"/data/storage/el2/base/haps/entry_test/files/Qwen2.5-0.5B-CPU-Q4\","
+        "{\"model\": \"/data/storage/el2/base/haps/entry_test/files/Qwen2.5-0.5B-CPU-Q4\","
         "\"eval_settings\": {\"backend\": \"cpu\", \"max_ctx\": \"8192\"}}";
     const char* request =
-        "{\"type\":\"ChatComplete\",\"messages\":[{\"role\":\"developer\","
-        "\"content\":\"Your are a helpful "
+        "{\"type\":\"ChatComplete\",\"messages\":[{\"role\":\"developer\",\"content\":\"Your are a helpful "
         "assistant.\"},{\"role\":\"user\",\"content\":\"hi\"}],\"stream\":true}";
     void* fakeContext = reinterpret_cast<void*>(0x1234);
     OH_QoS_GewuOnResponse cb = MockCallback;
     OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(attributes);
-    if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS ||
-        sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL ||
-        sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT) {
+    if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS) {
+        return OH_NN_SUCCESS;
+    }
+    if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL) {
+        return OH_NN_SUCCESS;
+    }
+    if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT) {
         return OH_NN_SUCCESS;
     }
     if (sessionResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
