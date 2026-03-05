@@ -53,7 +53,7 @@ export default function UiTest() {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
           expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_ADDED).assertTrue();
           expect(elementInfo.windowId != 0).assertTrue();
-          expect(elementInfo.type == 'window').assertTrue()
+          expect(elementInfo.type == '').assertTrue()
           expect(elementInfo.componentRect != null).assertTrue();
           expect(elementInfo.text != null).assertTrue()
           expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();

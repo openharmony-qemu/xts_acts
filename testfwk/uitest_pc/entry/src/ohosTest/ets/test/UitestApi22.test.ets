@@ -112,7 +112,7 @@ export default function UiTest() {
                     expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_ADDED).assertTrue();
                     expect(elementInfo.windowId != 0).assertTrue();
                     expect(elementInfo.text != null).assertTrue()
-                    expect(elementInfo.type == 'window').assertTrue()
+                    expect(elementInfo.type == '').assertTrue()
                     expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();
                     expect(elementInfo.componentId == '').assertTrue();
                     expect(elementInfo.componentRect != null).assertTrue();

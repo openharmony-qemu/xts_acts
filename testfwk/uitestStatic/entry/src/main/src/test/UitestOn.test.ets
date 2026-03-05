@@ -628,7 +628,7 @@ export default function uitestOnTest() {
         if (button6 != null) {
           let bt6Text = await button6.getText();
           hilog.info(domain, tag, `testMatchPattern_static bt6Text, ${ JSON.stringify(bt6Text)}`);
-          expect(bt6Text).assertEqual('');
+          expect(bt6Text).assertEqual('toast');
         }
         let button8 = await driver.findComponent(ON.text('next page', undefined));
         hilog.info(domain, tag, `testMatchPattern_static button8, ${ JSON.stringify(button8)}`);

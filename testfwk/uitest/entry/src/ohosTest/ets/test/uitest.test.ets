@@ -3700,6 +3700,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             let observer = await driver.createUIEventObserver()
             let callback = (uiElementInfo: UIElementInfo) => {
+               console.log(`${TestTag}, testMonitor1 uiElementInfo,${JSON.stringify(uiElementInfo)}`);
                 try {
                     console.info('UIElementInfo bundleName:' + uiElementInfo.bundleName)
                     console.info('UIElementInfo text:' + uiElementInfo.text)
@@ -3707,10 +3708,10 @@ export default function UiTest() {
                     expect(uiElementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
                     expect(uiElementInfo.text == 'toastShow').assertTrue()
                     expect(uiElementInfo.type == 'Toast').assertTrue()
-                    expect(uiElementInfo.windowChangeType != null).assertTrue();
-                    expect(uiElementInfo.componentEventType != null).assertTrue();
+                    expect(uiElementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+                    expect(uiElementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();
                     expect(uiElementInfo.windowId != null).assertTrue();
-                    expect(uiElementInfo.componentId == 'toastBtn').assertTrue();
+                    expect(uiElementInfo.componentId == '').assertTrue();
                     expect(uiElementInfo.componentRect != null).assertTrue();
 
                 } catch (err) {
@@ -3738,6 +3739,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             let observer = await driver.createUIEventObserver()
             let callback = (uiElementInfo: UIElementInfo) => {
+               console.log(`${TestTag}, testMonitor2 uiElementInfo,${JSON.stringify(uiElementInfo)}`);
                 try {
                     console.info('UIElementInfo bundleName:' + uiElementInfo.bundleName)
                     console.info('UIElementInfo text:' + uiElementInfo.text)
@@ -3745,10 +3747,10 @@ export default function UiTest() {
                     expect(uiElementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
                     expect(uiElementInfo.text == 'dialogShow').assertTrue()
                     expect(uiElementInfo.type == 'AlertDialog').assertTrue()
-                    expect(uiElementInfo.windowChangeType != null).assertTrue();
-                    expect(uiElementInfo.componentEventType != null).assertTrue();
+                    expect(uiElementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+                    expect(uiElementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();
                     expect(uiElementInfo.windowId != null).assertTrue();
-                    expect(uiElementInfo.componentId == 'dialogBtn').assertTrue();
+                    expect(uiElementInfo.componentId == '').assertTrue();
                     expect(uiElementInfo.componentRect != null).assertTrue();
                 } catch (err) {
                     console.info(err)

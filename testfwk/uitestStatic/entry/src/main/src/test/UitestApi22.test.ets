@@ -74,7 +74,6 @@ export default function uitestDriverTestApi22() {
           expect(elementInfo.componentRect != null).assertTrue();
           expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
           expect(elementInfo.windowId != null).assertTrue();
-          expect(elementInfo.componentRect != null).assertTrue();
         } catch (err) {
           hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static callback error ,${JSON.stringify(err)}`);
         }
