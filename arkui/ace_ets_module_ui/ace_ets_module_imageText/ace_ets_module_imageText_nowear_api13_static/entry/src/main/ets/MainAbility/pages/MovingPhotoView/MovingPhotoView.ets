@@ -81,6 +81,7 @@ struct MovingPhotoView1 {
       let imageFileUri = 'file://com.arkui.ace.imageText.nowear.api13.static/data/storage/el2/base/haps/entry/files/test_mov_1.jpg';
       let videoFileUri = 'file://com.arkui.ace.imageText.nowear.api13.static/data/storage/el2/base/haps/entry/files/test_mov_1.mp4';
       if (context) {
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper | null = photoAccessHelper.getPhotoAccessHelper(context);
         this.data = await photoAccessHelper.MediaAssetManager.loadMovingPhoto(context, imageFileUri, videoFileUri);
       }
       console.info('load moving photo successfully');
