@@ -16,10 +16,10 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { camera } from '@kit.CameraKit';
 import { common } from '@kit.AbilityKit';
-import { cameraErrorCode, isEmpty, sceneMode } from '../common';
+import { driveFn, getPermission, isEmpty } from '../common';
 
-const TAG = "CameraXts.createSessionTest";
-const abnormalMode = -1;
+const TAG = "CameraXts.cameraStatusTest";
+
 let mCameraManager: camera.CameraManager;
 let mCameraDeviceArray: Array<camera.CameraDevice>;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -43,27 +43,53 @@ function getSupportedCameraDeviceArray() {
   return true;
 }
 
-async function createSessionOrAbnormal(done: Function, testName: string, sMode: camera.SceneMode | null | undefined) {
+async function statusOnListen(done: Function, testName: string) {
   console.info(TAG, testName + ' begin.');
   try {
-    let session = mCameraManager.createSession(sMode);
-    expect(isEmpty(session)).assertFalse();
-    console.info(TAG, testName + ' pass.');
-    await session.release();
+    if (isEmpty(mCameraManager)) {
+      console.info(TAG, testName + ' cameraManager is null.');
+      expect().assertFail();
+    } else {
+      mCameraManager.on('cameraStatus', async (error, cameraStatusInfo) => {
+        if (error !== undefined && error.code !== 0) {
+          console.error(TAG, testName + ' on-listen callback error, code: ' + error.code + ', msg: ' + error.message);
+          expect().assertFail();
+        }
+        console.info(TAG, testName + ' on-listen camera: ' + JSON.stringify(cameraStatusInfo.camera) + ', status: ' +
+        JSON.stringify(cameraStatusInfo.status));
+        expect(true).assertTrue();
+      })
+      let cameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[0]);
+      await cameraInput.open();
+      await cameraInput.close();
+    }
     done();
   } catch (error) {
     console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-    expect(error.code == cameraErrorCode.INVALID_ARGUMENT).assertTrue();
+    expect().assertFail();
     done();
   }
 }
 
-export default function createSessionTest() {
-  describe('createSessionTest', () => {
-    beforeAll(() => {
+
+let sleep = (ms: number = 666): Promise<string> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('');
+    }, ms)
+  })
+}
+
+export default function cameraStatusTest() {
+  describe('cameraStatusTest', () => {
+    beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
       getCameraManager();
       getSupportedCameraDeviceArray();
+      await getPermission();
+      await sleep(2000);
+      await driveFn();
+      await sleep(2000);
     });
 
     beforeEach(() => {
@@ -79,81 +105,51 @@ export default function createSessionTest() {
     });
 
     /**
-     * @tc.name   createSession_001
-     * @tc.number CAMERA_MANAGER_CREATE_SESSION_001
-     * @tc.desc   No abnormal scenarios-sceneMode->NORMAL_PHOTO
+     * @tc.name   cameraStatus_listen_001
+     * @tc.number CAMERA_MANAGER_STATUS_LISTEN_001
+     * @tc.desc   No abnormal scenarios-on('cameraStatus')
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createSession_001', Level.LEVEL0, (done: Function) => {
-      const testName = 'createSession_001';
-      createSessionOrAbnormal(done, testName, sceneMode.NORMAL_PHOTO);
+    it('cameraStatus_listen_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'cameraStatus_listen_001';
+      await statusOnListen(done, testName);
+      mCameraManager.off('cameraStatus');
     })
 
     /**
-     * @tc.name   createSession_002
-     * @tc.number CAMERA_MANAGER_CREATE_SESSION_002
-     * @tc.desc   no supported sceneMode: sceneMode->NORMAL_VIDEO
+     * @tc.name   cameraStatus_listen_002
+     * @tc.number CAMERA_MANAGER_STATUS_LISTEN_002
+     * @tc.desc   No abnormal scenarios-off('cameraStatus')
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createSession_002', Level.LEVEL0, (done: Function) => {
-      const testName = 'createSession_002';
-      createSessionOrAbnormal(done, testName, sceneMode.NORMAL_VIDEO);
-    })
-
-    /**
-     * @tc.name   createSession_003
-     * @tc.number CAMERA_MANAGER_CREATE_SESSION_003
-     * @tc.desc   no supported sceneMode: secure_mode->SECURE_PHOTO
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('createSession_003', Level.LEVEL0, (done: Function) => {
-      const testName = 'createSession_003';
-      createSessionOrAbnormal(done, testName, sceneMode.SECURE_PHOTO);
-    })
-
-    /**
-     * @tc.name   createSession_abnormal_001
-     * @tc.number CAMERA_MANAGER_CREATE_SESSION_004
-     * @tc.desc   sceneMode->null -> error_code: 7400101
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('createSession_abnormal_001', Level.LEVEL2, (done: Function) => {
-      const testName = 'createSession_abnormal_001';
-      createSessionOrAbnormal(done, testName, null);
-    })
-
-    /**
-     * @tc.name   createSession_abnormal_002
-     * @tc.number CAMERA_MANAGER_CREATE_SESSION_005
-     * @tc.desc   sceneMode->undefined -> error_code: 7400101
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('createSession_abnormal_002', Level.LEVEL2, (done: Function) => {
-      const testName = 'createSession_abnormal_002';
-      createSessionOrAbnormal(done, testName, undefined);
-    })
-
-    /**
-     * @tc.name   createSession_abnormal_003
-     * @tc.number CAMERA_MANAGER_CREATE_SESSION_006
-     * @tc.desc   abnormal sceneMode -> error_code: 7400101
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('createSession_abnormal_003', Level.LEVEL2, (done: Function) => {
-      const testName = 'createSession_abnormal_003';
-      createSessionOrAbnormal(done, testName, abnormalMode);
+    it('cameraStatus_listen_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'cameraStatus_listen_002';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          await statusOnListen(done, testName);
+          console.info(TAG, testName + ' on-listen passed.');
+          mCameraManager.off('cameraStatus');
+          console.info(TAG, testName + ' off-listen end.');
+          let cameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[0]);
+          console.info(TAG, testName + ' camera open ready.');
+          await cameraInput.open();
+          console.info(TAG, testName + ' state not changed.');
+          await cameraInput.close();
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }
