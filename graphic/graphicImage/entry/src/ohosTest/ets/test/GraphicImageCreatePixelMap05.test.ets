@@ -103,7 +103,7 @@ export default function GraphicImageCreatePixelMap05() {
         done();
       } catch(error){
         console.error(msgStr + `Failed to getMetaData. code is ${error.code}, message is ${error.message}`);
-        expect(error.code === 7600201).assertTrue();
+        expect(Number(error.code) === 7600201).assertTrue();
         done();
       }
     });
@@ -125,7 +125,7 @@ export default function GraphicImageCreatePixelMap05() {
           done();
         } catch(error){
           console.error(msgStr + `wFailed to getMetaData. code is ${error.code}, message is ${error.message}`);
-          expect(error.code === 7600201).assertTrue();
+          expect(Number(error.code) === 7600201).assertTrue();
           done();
         }
       });
@@ -440,16 +440,17 @@ export default function GraphicImageCreatePixelMap05() {
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
-          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+          editable: true, srcPixelFormat: image.PixelMapFormat.RGBA_8888, pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
         }
         let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
-        let pixelMap = image.createPixelMapSync(color, opts);
+        let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
         try {
           pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
           console.info('www data GraphicImageCreatePixelMap05_1300 pass',
             pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
-          expect(pixelMap.isStrideAlignment).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertTrue();
         }catch(err){
           console.info('www data GraphicImageCreatePixelMap05_1300 error', JSON.stringify(err));
           expect().assertFail();
@@ -459,7 +460,7 @@ export default function GraphicImageCreatePixelMap05() {
           console.info('www data GraphicImageCreatePixelMap05_1300 pass',
             pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
-          expect(pixelMap.isStrideAlignment).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertTrue();
         }catch(err){
           console.info('www data GraphicImageCreatePixelMap05_1300 error', JSON.stringify(err));
           expect().assertFail();

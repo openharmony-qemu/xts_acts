@@ -35,47 +35,51 @@ export default function GraphicImageCreatePixelMap03() {
      */
     it('createUnpremultipliedPixelMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-      try {
-        // Create source pixel map with isEditable: true
-        const srcOpts: image.InitializationOptions = {
-          size: { width: 4, height: 6 },
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          editable: true,
-          alphaType: image.AlphaType.PREMUL
-        };
-        const colorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
+        try {
+          // Create source pixel map with isEditable: true
+          const srcOpts: image.InitializationOptions = {
+            size: { width: 4, height: 6 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            editable: true,
+            alphaType: image.AlphaType.PREMUL
+          };
+          const colorBuffer = new ArrayBuffer(4 * 6 * 4);
+          const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts, image.AllocatorType.DMA);
 
-        // Create destination pixel map with isEditable: true
-        const dstOpts: image.InitializationOptions = {
-          size: { width: 4, height: 6 },
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          editable: true,
-          alphaType: image.AlphaType.UNPREMUL
-        };
-        const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts);
+          // Create destination pixel map with isEditable: true
+          const dstOpts: image.InitializationOptions = {
+            size: { width: 4, height: 6 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            editable: true,
+            alphaType: image.AlphaType.UNPREMUL
+          };
+          const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
+          const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts, image.AllocatorType.DMA);
 
-        console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
-        console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
+          console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
+          console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
+          console.info(`${LOG_PREFIX} srcPixelMap isStrideAlignment: ${srcPixelMap.isStrideAlignment}`);
+          console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
 
-        expect(srcPixelMap.isEditable).assertEqual(true);
-        expect(dstPixelMap.isEditable).assertEqual(true);
+          expect(srcPixelMap.isEditable).assertTrue();
+          expect(dstPixelMap.isEditable).assertTrue();
+          expect(srcPixelMap.isStrideAlignment).assertTrue();
+          expect(dstPixelMap.isStrideAlignment).assertTrue();
 
-        // Test createUnpremultipliedPixelMap with Promise
-        await image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap);
+          // Test createUnpremultipliedPixelMap with Promise
+          await image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap);
 
-        console.info(`${LOG_PREFIX} createUnpremultipliedPixelMap001 success`);
-        done();
-      } catch (error) {
-        const err = error as BusinessError;
-        console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap001 error: ${error}, code: ${err.code}`);
-        expect(false).assertTrue();
-        done();
-      }
-    });
+          console.info(`${LOG_PREFIX} createUnpremultipliedPixelMap001 success`);
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap001 error: ${error}, code: ${err.code}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
 
     /**
      * @tc.name    createUnpremultipliedPixelMap002
@@ -87,47 +91,49 @@ export default function GraphicImageCreatePixelMap03() {
      */
     it('createUnpremultipliedPixelMap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-      try {
-        // Create source pixel map with isEditable: false
-        const srcOpts: image.InitializationOptions = {
-          size: { width: 4, height: 6 },
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          editable: false,
-          alphaType: image.AlphaType.PREMUL
-        };
-        const colorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
-        
-        // Create destination pixel map with isEditable: false
-        const dstOpts: image.InitializationOptions = {
-          size: { width: 4, height: 6 },
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          editable: false,
-          alphaType: image.AlphaType.UNPREMUL
-        };
-        const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts);
-        
-        console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
-        console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
-        
-        expect(srcPixelMap.isEditable).assertEqual(false);
-        expect(dstPixelMap.isEditable).assertEqual(false);
-        
-        // Test createUnpremultipliedPixelMap with Promise
-        await image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap);
-        
-        expect(false).assertTrue();
-        done();
-      } catch (error) {
-        const err = error as BusinessError;
-        console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap002 error: ${error}, code: ${err.code}`);
-        expect(error).assertEqual(62980248); // Pixelmap not allow modify
-        done();
-      }
-    });
+        try {
+          // Create source pixel map with isEditable: false
+          const srcOpts: image.InitializationOptions = {
+            size: { width: 4, height: 6 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            editable: false,
+            alphaType: image.AlphaType.PREMUL
+          };
+          const colorBuffer = new ArrayBuffer(4 * 6 * 4);
+          const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
+
+          // Create destination pixel map with isEditable: false
+          const dstOpts: image.InitializationOptions = {
+            size: { width: 4, height: 6 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            editable: false,
+            alphaType: image.AlphaType.UNPREMUL
+          };
+          const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
+          const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts);
+
+          console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
+          console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
+
+          expect(srcPixelMap.isEditable).assertFalse();
+          expect(dstPixelMap.isEditable).assertFalse();
+          expect(srcPixelMap.isStrideAlignment).assertFalse();
+          expect(dstPixelMap.isStrideAlignment).assertFalse();
+
+          // Test createUnpremultipliedPixelMap with Promise
+          await image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap);
+
+          expect(false).assertTrue();
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap002 error: ${error}, code: ${err.code}`);
+          expect(error).assertEqual(62980248); // Pixelmap not allow modify
+          done();
+        }
+      });
 
     /**
      * @tc.name    createUnpremultipliedPixelMap003
@@ -490,8 +496,8 @@ export default function GraphicImageCreatePixelMap03() {
           alphaType: image.AlphaType.PREMUL
         };
         const colorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
-        
+        const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts, image.AllocatorType.DMA);
+
         // Create destination pixel map with isEditable: true
         const dstOpts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -501,14 +507,18 @@ export default function GraphicImageCreatePixelMap03() {
           alphaType: image.AlphaType.UNPREMUL
         };
         const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts);
-        
+        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts, image.AllocatorType.DMA);
+
         console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
-        
-        expect(srcPixelMap.isEditable).assertEqual(true);
-        expect(dstPixelMap.isEditable).assertEqual(true);
-        
+        console.info(`${LOG_PREFIX} srcPixelMap isStrideAlignment: ${srcPixelMap.isStrideAlignment}`);
+        console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
+
+        expect(srcPixelMap.isEditable).assertTrue();
+        expect(dstPixelMap.isEditable).assertTrue();
+        expect(srcPixelMap.isStrideAlignment).assertTrue();
+        expect(dstPixelMap.isStrideAlignment).assertTrue();
+
         // Test createUnpremultipliedPixelMap with AsyncCallback
         image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap, (err) => {
           if (err) {
@@ -546,7 +556,7 @@ export default function GraphicImageCreatePixelMap03() {
         };
         const colorBuffer = new ArrayBuffer(4 * 6 * 4);
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
-        
+
         // Create destination pixel map with isEditable: false
         const dstOpts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -557,13 +567,17 @@ export default function GraphicImageCreatePixelMap03() {
         };
         const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
         const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts);
-        
+
         console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
-        
-        expect(srcPixelMap.isEditable).assertEqual(false);
-        expect(dstPixelMap.isEditable).assertEqual(false);
-        
+        console.info(`${LOG_PREFIX} srcPixelMap isStrideAlignment: ${srcPixelMap.isStrideAlignment}`);
+        console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
+
+        expect(srcPixelMap.isEditable).assertFalse();
+        expect(dstPixelMap.isEditable).assertFalse();
+        expect(srcPixelMap.isStrideAlignment).assertFalse();
+        expect(dstPixelMap.isStrideAlignment).assertFalse();
+
         // Test createUnpremultipliedPixelMap with AsyncCallback
         image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap, (err) => {
           if (err) {
