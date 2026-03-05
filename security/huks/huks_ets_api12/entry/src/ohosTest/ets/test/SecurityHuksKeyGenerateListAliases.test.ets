@@ -14,11 +14,11 @@
  */
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { DeleteParam, SetParam } from './utils/huks/HuksOptionsUtils.ets';
-import { HuksMaxAliasLength } from './utils/huks/HuksCommonUtils.ets';
-import { GetDataBySize } from './utils/common/CommonUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
-import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
+import { DeleteParam, SetParam } from './utils/huks/HuksOptionsUtils';
+import { HuksMaxAliasLength } from './utils/huks/HuksCommonUtils';
+import { GetDataBySize } from './utils/common/CommonUtils';
+import { Logger } from './utils/common/Logger';
+import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils';
 
 export default function SecurityHUKSKeyGenerateListAliasesTest() {
   let DEOption: huks.HuksOptions;
