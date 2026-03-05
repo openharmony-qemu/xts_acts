@@ -18,6 +18,7 @@ add_library(entry SHARED
     FuncTest.cpp
     VideodecApi11SampleTest.cpp
     SecurecTest.cpp
+    JsonWrapper.cpp
 )
 
 target_link_libraries(entry PUBLIC

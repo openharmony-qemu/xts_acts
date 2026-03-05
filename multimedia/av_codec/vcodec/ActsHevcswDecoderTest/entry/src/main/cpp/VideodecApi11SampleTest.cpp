@@ -17,17 +17,16 @@
 #include <sstream>
 #include <random>
 #include "Videodec_api11_sample.h"
-#include "nlohmann/json.hpp"
 #include "include/SecurecTest.h"
 #include <native_image/native_image.h>
 #include <native_drawing/drawing_rect.h>
 #include <CryptoArchitectureKit/crypto_digest.h>
 #include <native_window/external_window.h>
 #include <include/FuncTest.h>
+#include "include/JsonWrapper.h"
 using namespace OHOS;
 using namespace OHOS::Media;
 using namespace std;
-using namespace nlohmann;
 #define SHA512_DIGEST_LENGTH 64
 
 namespace {
@@ -259,20 +258,20 @@ void VDecAPI11Sample::Flush_buffer()
 
 std::vector<uint8_t> VDecAPI11Sample::LoadHashFile()
 {
-    std::ifstream f("/data/storage/el2/base/haps/entry_test/files/hash_val.json", ios::in);
     std::vector<uint8_t> ret;
-    if (f) {
-        json data = json::parse(f);
-        std::__fs::filesystem::path filePath = INP_DIR;
-        std::string pixFmt = defualtPixelFormat == AV_PIXEL_FORMAT_NV12 ? "nv12" : "nv21";
-        std::string fileName = filePath.filename();
-        std::string hashValue = data[fileName.c_str()][pixFmt];
-        std::stringstream ss(hashValue);
-        std::string item;
-        while (getline(ss, item, ',')) {
-            if (!item.empty()) {
-                ret.push_back(stol(item, nullptr, SIXTEEN));
-            }
+    JsonWrapper jsonData;
+    if (!jsonData.LoadFromFile("/data/storage/el2/base/haps/entry_test/files/hash_val.json")) {
+        return ret;
+    }
+    std::__fs::filesystem::path filePath = INP_DIR;
+    std::string pixFmt = defualtPixelFormat == AV_PIXEL_FORMAT_NV12 ? "nv12" : "nv21";
+    std::string fileName = filePath.filename();
+    std::string hashValue = jsonData.GetString(fileName, pixFmt);
+    std::stringstream ss(hashValue);
+    std::string item;
+    while (std::getline(ss, item, ',')) {
+        if (!item.empty()) {
+            ret.push_back(stol(item, nullptr, SIXTEEN));
         }
     }
     return ret;
