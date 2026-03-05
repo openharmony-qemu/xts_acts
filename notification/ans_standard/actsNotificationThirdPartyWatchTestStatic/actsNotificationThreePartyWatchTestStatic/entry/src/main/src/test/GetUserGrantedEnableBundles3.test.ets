@@ -52,7 +52,7 @@ export default function actsNotificationAnsThreePartyGetUserGrantedEnableBundles
           }
         }
         hilog.info(0x000, TAG, "Test completed successfully");
-      } catch (err: Error) {
+      } catch (err) {
         err = err as BusinessError
         console.error(TAG + " Test failed: " + ` ${err.code}, ${err.message}`);
         if (err.code === 201) {
