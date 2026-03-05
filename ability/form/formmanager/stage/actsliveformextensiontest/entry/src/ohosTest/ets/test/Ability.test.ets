@@ -28,7 +28,7 @@ let liveFormSubscriber: commonEventManager.CommonEventSubscriber;
 let finishFormEvent: string = "FMS_FormTestFinish_commonEvent";
  
 function sleep(time: number): Promise<void> {
-    return new Promise((resolve)=>setTimeout(resolve,time));
+    return new Promise((resolve) => setTimeout(resolve, time));
 }
 
 export default function abilityTest() {
@@ -90,6 +90,7 @@ export default function abilityTest() {
         console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 startAbilityhost end`);
       }).catch((err: BusinessError) => {
         console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 startAbilityhost error: ${JSON.stringify(err)}`);
+        expect().assertFail();
         done();
       });
       console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 startAbility end`);
