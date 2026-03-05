@@ -494,6 +494,17 @@ export default function nfcIsoDepTagTest() {
                 console.info('[NFC_test]0900  hceServicestart afterInvoke hceElementName：  ' + hceElementName.moduleName)
                 console.info('[NFC_test]0900 hceServicestart success ')
                 hceService.on("hceCmd", apduCallback)
+                hceService.on("hceCmd", (err, data) => {
+                    if (err) {
+                        console.info('[NFC_test]0900 apduCallback err is: ' + err);
+                    } else {
+                        if (data.length > 0) {
+                            expect(data.length > 0).assertTrue();
+                        } else {
+                            expect(data).assertDeepEquals([]);
+                        }
+                    }
+                })
                 console.info('[NFC_test]0900 hceServiceon success ')
                 sleep(900)
                 hceService.off("hceCmd", apduCallback)
