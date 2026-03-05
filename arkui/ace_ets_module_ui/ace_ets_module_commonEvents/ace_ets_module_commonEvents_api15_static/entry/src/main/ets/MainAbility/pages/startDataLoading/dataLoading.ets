@@ -109,6 +109,9 @@ struct ImageExample {
           .border({ width: 1 })
           .visibility(this.AVisible)
           .draggable(true)
+          .onDragStart((event:DragEvent, extraParams?:String|undefined):DragItemInfo => {
+            return {} as DragItemInfo
+          })
       }
 
       Column() {

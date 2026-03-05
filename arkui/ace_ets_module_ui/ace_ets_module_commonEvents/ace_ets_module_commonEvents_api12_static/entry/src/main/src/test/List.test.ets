@@ -70,9 +70,9 @@ import gestureDefine10 from './GestureRecognizer/GestureRecognizerIsValid.test'
 
 
 export default function testsuite() {
-  APIPreDragStatusTest();
   APIshouldBuiltInRecognizerParallelWith();
   addGestureApplyGesture();
+  APIPreDragStatusTest();
   ShortcutKeyTABTest();
   ShortcutKeyDPADUPTest();
   ShortcutKeyDPADDOWNTest(); 

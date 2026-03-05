@@ -63,7 +63,7 @@ export default function APIPreDragStatusTest() {
         if (!("APIPreDragStatus" == pages.name)) {
           console.info("get APIPreDragStatusTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(4000);
         }
       } catch (err) {
         console.error("push APIPreDragStatusTest page error:" + err);
