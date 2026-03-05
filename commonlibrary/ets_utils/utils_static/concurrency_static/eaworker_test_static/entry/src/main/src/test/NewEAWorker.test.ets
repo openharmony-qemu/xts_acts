@@ -64,6 +64,8 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'getWorkerIdTest001';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        let emptyId = worker.getWorkerId();
+        expect(emptyId).assertEqual(undefined);
         try {
           worker.start();
           let workerId1 = worker.getWorkerId();

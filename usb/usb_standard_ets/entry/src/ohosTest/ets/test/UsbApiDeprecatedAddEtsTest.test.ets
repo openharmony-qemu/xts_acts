@@ -15,6 +15,7 @@
 
 import usb from '@ohos.usb';
 import { BusinessError } from '@ohos.base'
+import Buffer from '@ohos.buffer'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
 const TAG = "[UsbApiDeprecatedAddEtsTest]";
@@ -206,6 +207,13 @@ USBDeviceFeature4 = {
   configs: [USBConfigFeature3],
 }
 
+function generateLargeData(sizeInBytes: number): string {
+  const char = 'A';
+  const charSizeInBytes = Buffer.byteLength(char);
+  const repeatTimes = Math.floor(sizeInBytes / charSizeInBytes);
+  return char.repeat(repeatTimes);
+}
+
 export default function UsbApiDeprecatedAddEtsTest() {
   describe('UsbApiDeprecatedAddEtsTest', () => {
     
@@ -238,6 +246,42 @@ export default function UsbApiDeprecatedAddEtsTest() {
       console.info(TAG, 'usb testHasRightNoString begin');
       let ret = usb.hasRight("");
       console.info(TAG, 'usb testHasRightNoString ret: ' + ret);
+      expect(ret).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.name   testHasRightMaxString
+     * @tc.number SUB_USB_HostManager_UsbFunc_4500
+     * @tc.desc   hasRight input parameter MaxString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHasRightMaxString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testHasRightMaxString begin');
+      let largeData = generateLargeData(200 * 1024 - 4);
+      console.info(TAG, 'usb testHasRightMaxString largeData: ' + Buffer.byteLength(largeData));
+      let ret = usb.hasRight(largeData);
+      console.info(TAG, 'usb testHasRightMaxString ret: ' + ret);
+      expect(ret).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.name   testHasRightMaxxString
+     * @tc.number SUB_USB_HostManager_UsbFunc_4600
+     * @tc.desc   hasRight input parameter MaxString+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHasRightMaxxString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testHasRightMaxxString begin');
+      let largeData = generateLargeData(201 * 1024 - 4);
+      console.info(TAG, 'usb testHasRightMaxxString largeData: ' + Buffer.byteLength(largeData));
+      let ret = usb.hasRight(largeData);
+      console.info(TAG, 'usb testHasRightMaxxString ret: ' + ret);
       expect(ret).assertFalse();
       done();
     })
@@ -296,6 +340,42 @@ export default function UsbApiDeprecatedAddEtsTest() {
       console.info(TAG, 'usb testRequestRightNoString begin');
       let ret = await usb.requestRight("");
       console.info(TAG, 'usb testRequestRightNoString ret: ' + ret);
+      expect(ret).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.name   testRequestRightMaxString
+     * @tc.number SUB_USB_HostManager_UsbFunc_4700
+     * @tc.desc   requestRight input parameter MaxString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRequestRightMaxString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testRequestRightMaxString begin');
+      let largeData = generateLargeData(200 * 1024 - 4);
+      console.info(TAG, 'usb testRequestRightMaxString largeData: ' + Buffer.byteLength(largeData));
+      let ret = await usb.requestRight(largeData);
+      console.info(TAG, 'usb testRequestRightMaxString ret: ' + ret);
+      expect(ret).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.name   testRequestRightMaxxString
+     * @tc.number SUB_USB_HostManager_UsbFunc_4800
+     * @tc.desc   requestRight input parameter MaxString+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRequestRightMaxxString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testRequestRightMaxxString begin');
+      let largeData = generateLargeData(201 * 1024 - 4);
+      console.info(TAG, 'usb testRequestRightMaxxString largeData: ' + Buffer.byteLength(largeData));
+      let ret = await usb.requestRight(largeData);
+      console.info(TAG, 'usb testRequestRightMaxxString ret: ' + ret);
       expect(ret).assertFalse();
       done();
     })

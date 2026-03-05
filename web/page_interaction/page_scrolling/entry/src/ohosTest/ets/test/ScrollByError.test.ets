@@ -82,10 +82,15 @@ export default function scrollByError() {
      * @tc.size   MEDIUMTEST
      * @tc.levell  LEVEL2
      */
-    it('testScrollByDeltaXUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testScrollByDeltaXUndefined", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testScrollByDeltaXUndefined", "401", 179562, done);
-      sendEventByKey('scrollByErrorButton', 10, '');
+    it('testScrollByDeltaXUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let emitKey = 'testScrollByDeltaXUndefined';
+      let tcName = 'testScrollByDeltaXUndefined'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "401", 179562, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "scrollByErrorButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
 
@@ -97,10 +102,15 @@ export default function scrollByError() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testScrollByDeltaYNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testScrollByDeltaYNull", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testScrollByDeltaYNull", "401", 179563, done);
-      sendEventByKey('scrollByErrorButton', 10, '');
+    it('testScrollByDeltaYNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let emitKey = 'testScrollByDeltaYNull';
+      let tcName = 'testScrollByDeltaYNull'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "401", 179563, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "scrollByErrorButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
 
@@ -112,10 +122,15 @@ export default function scrollByError() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testScrollByDeltaYUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testScrollByDeltaYUndefined", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testScrollByDeltaYUndefined", "401", 179564, done);
-      sendEventByKey('scrollByErrorButton', 10, '');
+    it('testScrollByDeltaYUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let emitKey = 'testScrollByDeltaYUndefined';
+      let tcName = 'testScrollByDeltaYUndefined'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "401", 179564, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "scrollByErrorButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
 
@@ -128,10 +143,15 @@ export default function scrollByError() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testScrollByDurationNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testScrollByDurationNull", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testScrollByDurationNull", "401", 179565, done);
-      sendEventByKey('scrollByErrorButton', 10, '');
+    it('testScrollByDurationNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let emitKey = 'testScrollByDurationNull';
+      let tcName = 'testScrollByDurationNull'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "401", 179565, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "scrollByErrorButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /**
@@ -142,10 +162,15 @@ export default function scrollByError() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testScrollByDurationUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testScrollByDurationUndefined", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testScrollByDurationUndefined", "401", 179566, done);
-      sendEventByKey('scrollByErrorButton', 10, '');
+    it('testScrollByDurationUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let emitKey = 'testScrollByDurationUndefined';
+      let tcName = 'testScrollByDurationUndefined'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "401", 179566, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "scrollByErrorButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

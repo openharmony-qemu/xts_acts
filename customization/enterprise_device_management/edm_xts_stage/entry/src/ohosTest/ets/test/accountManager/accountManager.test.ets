@@ -16,6 +16,7 @@
 import { describe, beforeAll, afterAll, it, expect, Level } from "@ohos/hypium";
 import { ENTINFO1, SELFWANT, SELFHAPNAME, DEFAULT_USER_ID, INVALID_USER_ID, appIdsInit,
   INVALID_WANT, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1 } from "../commom.ets";
+import { Driver, ON } from '@kit.TestKit';
 
 import accountManager from '@ohos.enterprise.accountManager';
 import adminManager from '@ohos.enterprise.adminManager';
@@ -33,10 +34,33 @@ export default function accountManagerTest() {
     })
 
     afterAll(async (done: Function) => {
-      let osAccountManager = osAccount.getAccountManager();
-      localIds.forEach((localId) => {
-        osAccountManager.removeOsAccount(localId);
-      })
+      let authorizationManager: osAccount.AuthorizationManager = osAccount.getAuthorizationManager();
+      let privilege: string = 'ohos.privilege.manage_local_accounts';
+      let options: osAccount.AcquireAuthorizationOptions = {
+        challenge: new Uint8Array([1, 2, 3]),
+        isReuseNeeded: true,
+        isInteractionAllowed: true,
+      };
+      try {
+        setTimeout(async () => {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.text("确定"));
+          if (allowed) {
+            let point = await allowed.getBoundsCenter();
+            await driver.click(point.x, point.y);
+          }
+        }, 2000);
+        let result = await authorizationManager.acquireAuthorization(privilege, options);
+        let rmOptions: osAccount.RemoveOsAccountOptions = {
+          token: result.token
+        }
+        let osAccountManager = osAccount.getAccountManager();
+        localIds.forEach((localId) => {
+          osAccountManager.removeOsAccount(localId, rmOptions);
+        })
+      } catch (err) {
+        console.error(`acquireAuthorization exception: code is ${err.code}, message is ${err.message}`);
+      }
 
       console.info(' --- resetDomainAccountPolicy  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);

@@ -78,10 +78,18 @@ export default function PerfTestTest() {
       expect(res1.maximum).assertLargerOrEqual(0)
       expect(res1.minimum).assertLargerOrEqual(0)
       expect(res1.roundValues.length).assertLargerOrEqual(5)
+      console.log(`testPerfTestCalculate res2 , ${JSON.stringify(res2)}`);
       expect(res2.average).assertLargerOrEqual(0)
+      expect(res2.metric).assertEqual(PerfMetric.CPU_LOAD)
+      console.log(`testPerfTestCalculate res3 , ${JSON.stringify(res3)}`);
       expect(res3.average).assertLargerOrEqual(0)
+      expect(res3.metric).assertEqual(PerfMetric.CPU_USAGE)
+      console.log(`testPerfTestCalculate res4 , ${JSON.stringify(res4)}`);
       expect(res4.average).assertLargerOrEqual(0)
+      expect(res4.metric).assertEqual(PerfMetric.MEMORY_RSS)
+      console.log(`testPerfTestCalculate res5 , ${JSON.stringify(res5)}`);
       expect(res5.average).assertLargerOrEqual(0)
+      expect(res5.metric).assertEqual(PerfMetric.MEMORY_PSS)
       done()
     })
 
@@ -121,7 +129,9 @@ export default function PerfTestTest() {
       await perfTest.run()
       let res1 = perfTest.getMeasureResult(PerfMetric.PAGE_SWITCH_COMPLETE_TIME)
       perfTest.destroy()
+      console.log(`testPerfTestPageSwitch res1 , ${JSON.stringify(res1)}`);
       expect(res1.average).assertLargerOrEqual(0)
+      expect(res1.metric).assertEqual(PerfMetric.PAGE_SWITCH_COMPLETE_TIME)
       await stopApplication('com.perftestScene.acts')
       done()
     })
@@ -170,7 +180,9 @@ export default function PerfTestTest() {
       await perfTest.run()
       let res1 = perfTest.getMeasureResult(PerfMetric.LIST_SWIPE_FPS)
       perfTest.destroy()
+      console.log(`testPerfTestListSwipe res1 , ${JSON.stringify(res1)}`);
       expect(res1.average).assertLargerOrEqual(0)
+      expect(res1.metric).assertEqual(PerfMetric.LIST_SWIPE_FPS)
       done()
     })
 
@@ -332,8 +344,12 @@ export default function PerfTestTest() {
       perfTest.destroy()
       await stopApplication('com.perftestScene.acts')
       expect(res1.average).assertLargerOrEqual(0)
+      console.log(`testPerfTest_Start res6 , ${JSON.stringify(res6)}`);
       expect(res6.average).assertLargerOrEqual(0)
+      expect(res6.metric).assertEqual(PerfMetric.APP_START_RESPONSE_TIME)
+      console.log(`testPerfTest_Start res7 , ${JSON.stringify(res7)}`);
       expect(res7.average).assertLargerOrEqual(0)
+      expect(res7.metric).assertEqual(PerfMetric.APP_START_COMPLETE_TIME)
       done()
     })
 

@@ -59,6 +59,7 @@ export default function MindSporeModelTest() {
       }
       console.info("[rawfile_copy_to_sandbox] sandbox path:" + dir);
       await Utils.sleep(500)
+      done();
     });
 
     beforeEach(async () => {

@@ -57,10 +57,6 @@
         "reason": "ceshi"
       },
       {
-        "name": "ohos.permission.ACTIVITY_MOTION",
-        "reason": "ceshi"
-      },
-      {
         "name": "ohos.permission.DETECT_GESTURE",
         "reason": "ceshi"
       }

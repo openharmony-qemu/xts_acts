@@ -81,6 +81,8 @@ import AdoptChildTwoTest from './FrameNodeMethod/AdoptChildTwoTest.test';
 import AdoptChildThreeTest from './FrameNodeMethod/AdoptChildThreeTest.test';
 import AdoptChildTest from './FrameNodeMethod/AdoptChildTest.test';
 import CreateNodeNullUndefinedTest from './FrameNodeMethod/CreateNodeNullUndefinedTest.test';
+import createNodeScrollNullUndefined from './FrameNodeMethod/createNodeScrollNullUndefined.test';
+import bindControllerNullUndefined from './FrameNodeNewTest/bindControllerNullUndefined.test';
 
 import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
 
@@ -94,6 +96,14 @@ import SetCrossLanguageOptionsNullTest from './FrameNodeMethod/SetCrossLanguageO
 import GetInteractionEventBindingInfoNullTest from './FrameNodeMethod/GetInteractionEventBindingInfoNullTest.test';
 
 export default function testsuite() {
+  CreateNodeNullUndefinedTest();
+  createNodeScrollNullUndefined();
+  bindControllerNullUndefined();
+  ConvertPositionNullUndefinedTest();
+  ConvertPositionToFromWindowNullTest();
+  RemoveAdoptedChildNullTest();
+  SetCrossLanguageOptionsNullTest();
+  GetInteractionEventBindingInfoNullTest();
   APIdisposeTreeTest();
   APImarkNodeGroupTest();
   APIPanGestureisisBeginTest();
@@ -167,10 +177,4 @@ export default function testsuite() {
   GraphicsFourBoundaryTest();
   FrameNodeConvertPositionTest();
   FrameNodeConvertPositionErrorCodeTest();
-  CreateNodeNullUndefinedTest();
-  ConvertPositionNullUndefinedTest();
-  ConvertPositionToFromWindowNullTest();
-  RemoveAdoptedChildNullTest();
-  SetCrossLanguageOptionsNullTest();
-  GetInteractionEventBindingInfoNullTest();
 }

@@ -426,11 +426,10 @@ export default function RdbStoreNullUndefinedTest() {
         expect(err.code == 401).assertTrue();
       }
       try{
-        (rdbStore as relationalStore.RdbStore).query(predicates, []).then(async (resultSet: relationalStore.ResultSet) => {
-          console.info(TAG + `ResultSet column names: ${resultSet.getColumnName(1)}}`);
-          expect(resultSet.getColumnName(1) == "data1").assertTrue()
-          resultSet.close();
-        })
+        let resultSet: relationalStore.ResultSet = await (rdbStore as relationalStore.RdbStore).query(predicates, [])
+        console.info(TAG + `ResultSet column names: ${resultSet.getColumnName(1)}}`);
+        expect(resultSet.getColumnName(1) == "data1").assertTrue()
+        resultSet.close();
       }catch(err) {
         console.error(TAG +`RdbStore_Null_Undefind_Test_0007 failed3:${err.message} code:${err.code}`);
       }
@@ -578,49 +577,49 @@ export default function RdbStoreNullUndefinedTest() {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0010 start *************");
       let PRIKey = [1];
       try{
-        rdbStore.getModifyTime(null, "data1", PRIKey);
+        await rdbStore.getModifyTime(null, "data1", PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed1:${err.message} code:${err.code}`);
         expect(err.code == 401).assertTrue();
       }
       try{
-        rdbStore.getModifyTime(undefined, "data1", PRIKey);
+        await rdbStore.getModifyTime(undefined, "data1", PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed2:${err.message} code:${err.code}`);
         expect(err.code == 401).assertTrue();
       }
       try{
-        rdbStore.getModifyTime("", "data1", PRIKey);
+        await rdbStore.getModifyTime("", "data1", PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed3:${err.message} code:${err.code}`);
         expect(err.code == 401).assertTrue();
       }
       try{
-        rdbStore.getModifyTime("test", null, PRIKey);
+        await rdbStore.getModifyTime("test", null, PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed4:${err.message} code:${err.code}`);
         expect(err.code == 401).assertTrue();
       }
       try{
-        rdbStore.getModifyTime("test", undefined, PRIKey);
+        await rdbStore.getModifyTime("test", undefined, PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed5:${err.message} code:${err.code}`);
         expect(err.code == 401).assertTrue();
       }
       try{
-        rdbStore.getModifyTime("test", "", PRIKey);
+        await rdbStore.getModifyTime("test", "", PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed6:${err.message} code:${err.code}`);
         expect(err.code == 401).assertTrue();
       }
       try{
-        rdbStore.getModifyTime("test", "data1", []);
+        await rdbStore.getModifyTime("test", "data1", []);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed7:${err.message} code:${err.code}`);
@@ -637,17 +636,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0011 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert("", valueBucket2, (error: BusinessError, rowId: number) => {
           console.info(TAG +`Insert is successful, rowId = ${rowId}`);
+          done();
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG +`Insert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info("************* RdbStore_Null_Undefind_Test_0011 end *************");
     })
@@ -660,17 +660,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0012 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert(null, valueBucket2, (error: BusinessError, rowId: number) => {
           console.info(TAG +`Insert is successful, rowId = ${rowId}`);
+          done();
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG +`RdbStore_Null_Undefind_Test_0012, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info("************* RdbStore_Null_Undefind_Test_0012 end *************");
     })
@@ -683,17 +684,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0013 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert(undefined, valueBucket2, (error: BusinessError, rowId: number) => {
           console.info(TAG +`Insert is successful, rowId = ${rowId}`);
+          done();
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG +`Insert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info("************* RdbStore_Null_Undefind_Test_0013 end *************");
     })
@@ -706,17 +708,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0014 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert("test", null, (error: BusinessError, rowId: number) => {
           console.info(TAG +`Insert is successful, rowId = ${rowId}`);
+          done();
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG +`Insert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info("************* RdbStore_Null_Undefind_Test_0014 end *************");
     })
@@ -729,17 +732,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0015 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert("test", undefined, (error: BusinessError, rowId: number) => {
           console.info(TAG +`Insert is successful, rowId = ${rowId}`);
+          done();
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG +`Insert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info("************* RdbStore_Null_Undefind_Test_0015 end *************");
     })
@@ -752,18 +756,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0016 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert("", valueBucket2, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE,
           (err: BusinessError, rowId: number) => {
             console.info(TAG+ `Insert is successful, rowId = ${rowId}`);
+            done();
           });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
 
       console.info("************* RdbStore_Null_Undefind_Test_0016 end *************");
@@ -777,18 +782,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0017 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert(null, valueBucket2, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE,
           (err: BusinessError, rowId: number) => {
             console.info(TAG+ `Insert is successful, rowId = ${rowId}`);
+            done();
           });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info("************* RdbStore_Null_Undefind_Test_0017 end *************");
     })
@@ -801,18 +807,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0018 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert(undefined, valueBucket2, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE,
           (err: BusinessError, rowId: number) => {
             console.info(TAG+ `Insert is successful, rowId = ${rowId}`);
+            done();
           });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
 
       console.info("************* RdbStore_Null_Undefind_Test_0018 end *************");
@@ -827,18 +834,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0019 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert("test", null, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE,
           (err: BusinessError, rowId: number) => {
             console.info(TAG+ `Insert is successful, rowId = ${rowId}`);
+            done();
           });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
 
       console.info("************* RdbStore_Null_Undefind_Test_0019 end *************");
@@ -853,18 +861,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0020 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert("test", undefined, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE,
           (err: BusinessError, rowId: number) => {
             console.info(TAG+ `Insert is successful, rowId = ${rowId}`);
+            done();
           });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info("************* RdbStore_Null_Undefind_Test_0020 end *************");
     })
@@ -877,18 +886,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0021 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert("test", valueBucket2, relationalStore.ConflictResolution.ON_CONFLICT_ABORT,
           (err: BusinessError, rowId: number) => {
             console.info(TAG+ `Insert is successful, rowId = ${rowId}`);
             expect(rowId == 2).assertTrue();
+            done();
           });
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info("************* RdbStore_Null_Undefind_Test_0021 end *************");
     })
@@ -901,18 +911,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0022 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).insert("test", valueBucket2, relationalStore.ConflictResolution.ON_CONFLICT_FAIL,
           (err: BusinessError, rowId: number) => {
             console.info(TAG+ `Insert is successful, rowId = ${rowId}`);
             expect(rowId == 2).assertTrue();
+            done();
           });
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info("************* RdbStore_Null_Undefind_Test_0022 end *************");
     })
@@ -939,7 +950,6 @@ export default function RdbStoreNullUndefinedTest() {
       }catch(error){
         console.error(TAG + `Insert is failed1, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
       }
       try{
         (rdbStore as relationalStore.RdbStore).insert(null, valueBucket2, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((rowId: number) => {
@@ -949,7 +959,6 @@ export default function RdbStoreNullUndefinedTest() {
       }catch(error){
         console.error(TAG + `Insert is failed2, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
       }
       try{
         (rdbStore as relationalStore.RdbStore).insert(undefined, valueBucket2, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((rowId: number) => {
@@ -959,7 +968,6 @@ export default function RdbStoreNullUndefinedTest() {
       }catch(error){
         console.error(TAG + `Insert is failed3, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
       }
       try{
         (rdbStore as relationalStore.RdbStore).insert("test", null, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((rowId: number) => {
@@ -969,7 +977,6 @@ export default function RdbStoreNullUndefinedTest() {
       }catch(error){
         console.error(TAG + `Insert is failed3, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
       }
       try{
         (rdbStore as relationalStore.RdbStore).insert("test", undefined, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((rowId: number) => {
@@ -979,7 +986,6 @@ export default function RdbStoreNullUndefinedTest() {
       }catch(error){
         console.error(TAG + `Insert is failed3, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
       }
       console.info("************* RdbStore_Null_Undefind_Test_0023 end *************");
     })
@@ -1161,17 +1167,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0030 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).batchInsert("", valueBuckets, (err, insertNum) => {
           console.info(TAG +`batchInsert is successful, the number of values that were inserted = ${insertNum}`);
+          done();
         })
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0030 end *************");
     })
@@ -1184,17 +1191,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0031 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).batchInsert(null, valueBuckets, (err, insertNum) => {
           console.info(TAG +`batchInsert is successful, the number of values that were inserted = ${insertNum}`);
+          done()
         })
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0031 end *************");
     })
@@ -1207,17 +1215,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0032 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).batchInsert(undefined, valueBuckets, (err, insertNum) => {
           console.info(TAG +`batchInsert is successful, the number of values that were inserted = ${insertNum}`);
+          done();
         })
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0032 end *************");
     })
@@ -1230,17 +1239,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0033 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).batchInsert("test", null, (err, insertNum) => {
           console.info(TAG +`batchInsert is successful, the number of values that were inserted = ${insertNum}`);
+          done();
         })
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0033 end *************");
     })
@@ -1253,17 +1263,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0034 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).batchInsert("test", undefined, (err, insertNum) => {
           console.info(TAG +`batchInsert is successful, the number of values that were inserted = ${insertNum}`);
+          done();
         })
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0034 end *************");
     })
@@ -1444,19 +1455,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0038 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).update(null, predicates, (error, rows) => {
           console.info(TAG + `Updated row count: ${rows}`);
+          done();
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0038 end *************");
     })
@@ -1469,19 +1481,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0039 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).update(undefined, predicates, (error, rows) => {
           console.info(TAG + `Updated row count: ${rows}`);
+          done()
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0039 end *************");
     })
@@ -1494,19 +1507,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0040 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).update(valueBucket2, null, (error, rows) => {
           console.info(TAG + `Updated row count: ${rows}`);
+          done()
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0040 end *************");
     })
@@ -1519,19 +1533,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0041 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).update(valueBucket2, undefined, (error, rows) => {
           console.info(TAG + `Updated row count: ${rows}`);
+          done()
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0041 end *************");
     })
@@ -1544,19 +1559,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0042 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).update(null, predicates,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE, (error, rows) => {
           console.info(TAG + `Updated row count: ${rows}`);
+          done();
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0042 end *************");
     })
@@ -1569,19 +1585,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0044 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).update(undefined, predicates,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE, (error, rows) => {
           console.info(TAG + `Updated row count: ${rows}`);
+          done()
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0044 end *************");
     })
@@ -1594,19 +1611,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0045 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).update(valueBucket2, null, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE, (error, rows) => {
           console.info(TAG + `Updated row count: ${rows}`);
+          done();
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0045 end *************");
     })
@@ -1619,19 +1637,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0046 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).update(valueBucket2, undefined, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE, (error, rows) => {
           console.info(TAG + `Updated row count: ${rows}`);
+          done()
         });
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401);
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0046 end *************");
     })
@@ -2174,18 +2193,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0065 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).delete(null, (error, rows) => {
           console.info(TAG + `Delete rows: ${rows}`);
+          done();
         });
       }catch (error) {
         console.error(TAG + `Delete failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue()
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0065 end *************");
     })
@@ -2198,18 +2218,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0066 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).delete(undefined, (error, rows) => {
           console.info(TAG + `Delete rows: ${rows}`);
+          done();
         });
       }catch (error) {
         console.error(TAG + `Delete failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue()
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0066 end *************");
     })
@@ -2273,19 +2294,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0069 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).query(null, async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
+          done();
         });
         expect().assertFail();
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0069 end *************");
     })
@@ -2298,19 +2320,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0070 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).query(undefined, async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
+          done();
         });
         expect().assertFail();
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0070 end *************");
     })
@@ -2323,7 +2346,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0071 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -2335,7 +2358,6 @@ export default function RdbStoreNullUndefinedTest() {
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
       }
 
       try{
@@ -2346,6 +2368,7 @@ export default function RdbStoreNullUndefinedTest() {
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0071 end *************");
     })
@@ -2358,18 +2381,20 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0072 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
         (rdbStore as relationalStore.RdbStore).query(undefined, ["dat1", "dat2", "dat3", "dat4", "dat5"], async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
+          done();
         });
         expect().assertFail();
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0072 end *************");
     })
@@ -2382,7 +2407,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0073 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -2390,10 +2415,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, null, async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0073 end *************");
     })
@@ -2406,7 +2433,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0074 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -2414,10 +2441,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, undefined, async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0074 end *************");
     })
@@ -2430,7 +2459,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0075 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -2438,10 +2467,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, [], async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0075 end *************");
     })
@@ -2454,17 +2485,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0076 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).querySql("", async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0076 end *************");
     })
@@ -2477,17 +2509,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0077 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).querySql(null, async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0077 end *************");
     })
@@ -2500,17 +2533,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0078 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).querySql(undefined, async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0078 end *************");
     })
@@ -2523,17 +2557,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0079 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).querySql("",['zhangsan'], async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0079 end *************");
     })
@@ -2546,17 +2581,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0080 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).querySql(null,['zhangsan'], async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0080 end *************");
     })
@@ -2569,17 +2605,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0081 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).querySql(undefined,['zhangsan'], async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0081 end *************");
     })
@@ -2592,17 +2629,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0082 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).querySql("SELECT * FROM test WHERE data1 = ?", null, async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0082 end *************");
     })
@@ -2615,17 +2653,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0083 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).querySql("SELECT * FROM test WHERE data1 = ?", undefined, async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0083 end *************");
     })
@@ -2638,17 +2677,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0084 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).querySql("SELECT * FROM test WHERE data1 = ?", [], async (err, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0084 end *************");
     })
@@ -2661,7 +2701,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0085 start *************");
       let PRIKey = [1, 4, 2, 3];
       try{
@@ -2669,11 +2709,12 @@ export default function RdbStoreNullUndefinedTest() {
           let size = modifyTime.size;
           console.info(TAG + `ResultSet column size: ${size}}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0085 end *************");
     })
@@ -2686,7 +2727,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0086 start *************");
       let PRIKey = [1, 4, 2, 3];
       try{
@@ -2694,11 +2735,12 @@ export default function RdbStoreNullUndefinedTest() {
           let size = modifyTime.size;
           console.info(TAG + `ResultSet column size: ${size}}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0086 end *************");
     })
@@ -2711,7 +2753,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0087 start *************");
       let PRIKey = [1, 4, 2, 3];
       try{
@@ -2719,11 +2761,12 @@ export default function RdbStoreNullUndefinedTest() {
           let size = modifyTime.size;
           console.info(TAG + `ResultSet column size: ${size}}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0087 end *************");
     })
@@ -2736,7 +2779,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0088 start *************");
       let PRIKey = [1, 4, 2, 3];
       try{
@@ -2744,11 +2787,12 @@ export default function RdbStoreNullUndefinedTest() {
           let size = modifyTime.size;
           console.info(TAG + `ResultSet column size: ${size}}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0088 end *************");
     })
@@ -2761,7 +2805,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0089 start *************");
       let PRIKey = [1, 4, 2, 3];
       try{
@@ -2769,11 +2813,12 @@ export default function RdbStoreNullUndefinedTest() {
           let size = modifyTime.size;
           console.info(TAG + `ResultSet column size: ${size}}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0089 end *************");
     })
@@ -2786,7 +2831,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0090 start *************");
       let PRIKey = [1, 4, 2, 3];
       try{
@@ -2794,11 +2839,12 @@ export default function RdbStoreNullUndefinedTest() {
           let size = modifyTime.size;
           console.info(TAG + `ResultSet column size: ${size}}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0090 end *************");
     })
@@ -2811,7 +2857,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0091 start *************");
       let PRIKey = [];
       try{
@@ -2819,11 +2865,12 @@ export default function RdbStoreNullUndefinedTest() {
           let size = modifyTime.size;
           console.info(TAG + `ResultSet column size: ${size}}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0091 end *************");
     })
@@ -2836,7 +2883,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0092 start *************");
       let PRIKey = [];
       try{
@@ -2844,11 +2891,12 @@ export default function RdbStoreNullUndefinedTest() {
           let size = modifyTime.size;
           console.info(TAG + `ResultSet column size: ${size}}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0092 end *************");
     })
@@ -2861,7 +2909,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0093 start *************");
       let PRIKey = [];
       try{
@@ -2869,11 +2917,12 @@ export default function RdbStoreNullUndefinedTest() {
           let size = modifyTime.size;
           console.info(TAG + `ResultSet column size: ${size}}`);
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0093 end *************");
     })
@@ -2886,17 +2935,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0094 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData('', 1, (error) => {
           console.info(TAG + 'clean dirty data succeeded');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `clean dirty data failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0094 end *************");
     })
@@ -2909,17 +2959,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0095 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData(null, 1, (error) => {
           console.info(TAG + 'clean dirty data succeeded');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `clean dirty data failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0095 end *************");
     })
@@ -2932,17 +2983,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0096 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData(undefined, 1, (error) => {
           console.info(TAG + 'clean dirty data succeeded');
           expect().assertFail();
+          done()
         });
       }catch (error) {
         console.error(TAG + `clean dirty data failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0096 end *************");
     })
@@ -2955,17 +3007,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0097 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData("test", null, (error) => {
           console.info(TAG + 'clean dirty data succeeded');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `clean dirty data failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0097 end *************");
     })
@@ -2978,17 +3031,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0096 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData("test", undefined, (error) => {
           console.info(TAG + 'clean dirty data succeeded');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `clean dirty data failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0098 end *************");
     })
@@ -3001,17 +3055,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0099 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData('', (error) => {
           console.info(TAG + 'clean dirty data succeeded');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(`clean dirty data failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0099 end *************");
     })
@@ -3024,17 +3079,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0100 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData(null, (error) => {
           console.info(TAG + 'clean dirty data succeeded');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(`clean dirty data failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0100 end *************");
     })
@@ -3047,17 +3103,18 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0101 start *************");
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData(undefined, (error) => {
           console.info(TAG + 'clean dirty data succeeded');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(`clean dirty data failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0101 end *************");
     })
@@ -3130,18 +3187,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0103 start *************");
       const SQL_DELETE_TABLE = "DELETE FROM test WHERE data1 = 'zhangsan'";
       try{
         (rdbStore as relationalStore.RdbStore).executeSql("", (error) => {
           console.info(TAG + 'Delete table done.');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0103 end *************");
     })
@@ -3154,18 +3212,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0104 start *************");
       const SQL_DELETE_TABLE = "DELETE FROM test WHERE data1 = 'zhangsan'";
       try{
         (rdbStore as relationalStore.RdbStore).executeSql(null, (error) => {
           console.info(TAG + 'Delete table done.');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0104 end *************");
     })
@@ -3178,18 +3237,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0105 start *************");
       const SQL_DELETE_TABLE = "DELETE FROM test WHERE data1 = 'zhangsan'";
       try{
         (rdbStore as relationalStore.RdbStore).executeSql(undefined, (error) => {
           console.info(TAG + 'Delete table done.');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0105 end *************");
     })
@@ -3202,18 +3262,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0106 start *************");
       const SQL_DELETE_TABLE = "DELETE FROM test WHERE name = ?";
       try{
         (rdbStore as relationalStore.RdbStore).executeSql("", ['zhangsan'], (error) => {
           console.info(TAG + 'Delete table done.');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0106 end *************");
     })
@@ -3226,18 +3287,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0107 start *************");
       const SQL_DELETE_TABLE = "DELETE FROM test WHERE name = ?";
       try{
         (rdbStore as relationalStore.RdbStore).executeSql(null, ['zhangsan'], (error) => {
           console.info(TAG + 'Delete table done.');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0107 end *************");
     })
@@ -3250,18 +3312,19 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0108 start *************");
       const SQL_DELETE_TABLE = "DELETE FROM test WHERE name = ?";
       try{
         (rdbStore as relationalStore.RdbStore).executeSql(undefined, ['zhangsan'], (error) => {
           console.info(TAG + 'Delete table done.');
           expect().assertFail();
+          done();
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0108 end *************");
     })
@@ -3292,7 +3355,7 @@ export default function RdbStoreNullUndefinedTest() {
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0109 end *************");
     })
@@ -3323,6 +3386,7 @@ export default function RdbStoreNullUndefinedTest() {
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0110 end *************");
     })
@@ -3417,7 +3481,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0112 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3425,11 +3489,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0112 end *************");
     })
@@ -3442,7 +3507,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0113 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3450,11 +3515,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnNames[1] == "data1").assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0113 end *************");
     })
@@ -3467,7 +3533,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0114 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3475,11 +3541,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0114 end *************");
     })
@@ -3491,7 +3558,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0115 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3499,11 +3566,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnNames[1] == "data1").assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0115 end *************");
     })
@@ -3516,7 +3584,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0116 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3524,11 +3592,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column rowCount: ${resultSet.rowCount}`);
           expect(resultSet.rowCount == 1).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0116 end *************");
     })
@@ -3541,7 +3610,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0117 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3549,11 +3618,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column rowIndex: ${resultSet.rowIndex}`);
           expect(resultSet.rowIndex == -1).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0117 end *************");
     })
@@ -3566,7 +3636,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0118 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3574,11 +3644,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column isAtFirstRow: ${resultSet.isAtFirstRow}`);
           expect(resultSet.isAtFirstRow == false).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0118 end *************");
     })
@@ -3591,7 +3662,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0119 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3599,11 +3670,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column isAtLastRow: ${resultSet.isAtLastRow}`);
           expect(resultSet.isAtLastRow == false).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0119 end *************");
     })
@@ -3616,7 +3688,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0120 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3624,11 +3696,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column isEnded: ${resultSet.isEnded}`);
           expect(resultSet.isEnded == false).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0120 end *************");
     })
@@ -3641,7 +3714,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0121 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3649,11 +3722,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column isStarted: ${resultSet.isStarted}`);
           expect(resultSet.isStarted == false).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0121 end *************");
     })
@@ -3666,7 +3740,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0122 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3674,11 +3748,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, async (error, resultSet) => {
           console.info(TAG + `ResultSet column isClosed: ${resultSet.isClosed}`);
           expect(resultSet.isClosed == false).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0122 end *************");
     })
@@ -3691,7 +3766,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0123 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3700,11 +3775,12 @@ export default function RdbStoreNullUndefinedTest() {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           console.info(TAG + `ResultSet column names1: ${resultSet.columnNames[1]}`);
           expect(resultSet.columnNames[1] == "data2").assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0123 end *************");
     })
@@ -3717,7 +3793,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0124 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3725,11 +3801,12 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).query(predicates, ["data1", "data2", "data3", "data4", "data5"], async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 5).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0124 end *************");
     })
@@ -3817,7 +3894,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0128 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3825,11 +3902,12 @@ export default function RdbStoreNullUndefinedTest() {
         rdbStore.querySql("SELECT * FROM test", async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnNames[1] == "data1").assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0128 end *************");
     })
@@ -3842,7 +3920,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0129 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3850,11 +3928,12 @@ export default function RdbStoreNullUndefinedTest() {
         rdbStore.querySql("SELECT * FROM test", async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0129 end *************");
     })
@@ -3867,7 +3946,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0130 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3875,11 +3954,12 @@ export default function RdbStoreNullUndefinedTest() {
         rdbStore.querySql("SELECT * FROM test WHERE data1 = ?", ["zhangsan"], async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0130 end *************");
     })
@@ -3892,7 +3972,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0131 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3900,11 +3980,12 @@ export default function RdbStoreNullUndefinedTest() {
         rdbStore.querySql("SELECT * FROM test WHERE data1 = ?", ["zhangsan"], async (error, resultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnNames[1] == "data1").assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0131 end *************");
     })
@@ -3917,7 +3998,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0132 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3925,11 +4006,12 @@ export default function RdbStoreNullUndefinedTest() {
         rdbStore.querySql("SELECT * FROM test WHERE data1 = 'zhangsan'").then(async (resultSet: relationalStore.ResultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnNames[1] == "data1").assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0132 end *************");
     })
@@ -3942,7 +4024,7 @@ export default function RdbStoreNullUndefinedTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('RdbStore_Null_Undefind_Test_0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RdbStore_Null_Undefind_Test_0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* RdbStore_Null_Undefind_Test_0133 start *************");
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
@@ -3950,11 +4032,12 @@ export default function RdbStoreNullUndefinedTest() {
         rdbStore.querySql("SELECT * FROM test WHERE data1 = 'zhangsan'").then(async (resultSet: relationalStore.ResultSet) => {
           console.info(TAG + `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
           expect(resultSet.columnCount == 9).assertTrue();
+          done();
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
         expect().assertFail();
-        return;
+        done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0133 end *************");
     })

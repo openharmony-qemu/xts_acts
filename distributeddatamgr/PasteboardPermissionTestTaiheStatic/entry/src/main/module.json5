@@ -44,18 +44,6 @@
           }
         ]
       }
-    ],
-    "requestPermissions":[
-      {
-        "name": 'ohos.permission.READ_PASTEBOARD',
-        "reason": "$string:app_name",
-        "usedScene": {
-          "abilities": [
-            "FormAbility"
-          ],
-          "when":"inuse"
-        }
-      }
     ]
   }
 }

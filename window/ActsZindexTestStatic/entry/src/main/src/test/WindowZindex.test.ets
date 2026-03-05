@@ -1274,6 +1274,7 @@ export default function WindowZindexTest() {
             try {
               window.shiftAppWindowFocus(subWinId, mainWinId).then(() => {
                 console.info(msgStr + 'Succeeded in shifting app window focus');
+                await (subWin as window.Window).destroyWindow();
                 done();
               }).catch((err: Error) => {
                 if (err.code != 801) {
@@ -1284,6 +1285,7 @@ export default function WindowZindexTest() {
                   console.log(msgStr + JSON.stringify(err))
                   expect(err.code).assertEqual(801);
                 }
+                await (subWin as window.Window).destroyWindow();
                 done();
               });
             } catch (err) {
@@ -1295,10 +1297,10 @@ export default function WindowZindexTest() {
                 console.log(msgStr + JSON.stringify(err))
                 expect(err.code).assertEqual(801);
               }
+              await (subWin as window.Window).destroyWindow();
+              done();
             }
             await Utils.msSleep(500);
-            await (subWin as window.Window).destroyWindow();
-            done();
           })
           .catch((err: Error) => {
             if (err.code != 1300002) {
@@ -1852,9 +1854,10 @@ export default function WindowZindexTest() {
                 await terminateAbility(caseName);
                 done()
             }).catch((err: Error):PromiseLike<void>|undefined => {
-                hilog.error(domain, tag,msgStr + 'Failed to call setWindowModal. Cause: ' + JSON.stringify(err));
+                hilog.error(domain, tag,msgStr + 'Failed to call setWindowModal. Cause: ' + err.message + err.code);
                 expect(err.code).assertEqual(801);
                 expect(err.message!==null).assertTrue();
+                await terminateAbility(caseName);
                 done()
             });
 
@@ -1866,6 +1869,52 @@ export default function WindowZindexTest() {
             done()
         }
     })
+
+
+    /**
+     * @tc.name   test_OH_OnWindowHighlightChange_One_Static
+     * @tc.number SUB_BASIC_ONWINDOWHIGHLIGHTCHANGE_STATIC_0100
+     * @tc.desc   test_OH_OnWindowHighlightChange_One_Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_OH_OnWindowHighlightChange_One_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let msg = 'test_OH_OnWindowHighlightChange_One_Static ';
+        let flag: boolean = false;
+        let cb1 = (isBool: boolean) => {
+          console.log(msg + 'windowHighlightChange, isBool = ' + isBool)
+          flag = isBool
+        }
+        try {
+          windowClass!.onWindowHighlightChange(cb1)
+          windowClass!.onWindowHighlightChange(cb1)
+  
+          let win1 = await windowStage!.createSubWindow('win1');
+          await win1.setUIContent('pages/index2');
+          console.log(msg + 'getWindowLimits, minWidth = ' + win1.getWindowLimits().minWidth+' , minHeight:'+win1.getWindowLimits().minHeight);
+          await win1.resize(win1.getWindowLimits().minWidth ?? 0 + 100, win1.getWindowLimits().minHeight ?? 0 + 100)
+  
+          await win1.showWindow()
+          await Utils.msSleep(300);
+          console.log(msg + '1 flag = ' + flag);
+          expect(flag).assertFalse()
+  
+          await win1.destroyWindow()
+          await Utils.msSleep(300);
+          console.log(msg + '2 flag = ' + flag);
+          expect(flag).assertTrue()
+  
+          windowClass!.offWindowHighlightChange()
+          done()
+        }catch (exception) {
+          console.error(msg + `Failed to create the subwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          if (exception.code == 801) {
+            done()
+          }
+        }
+  
+      })
 
 
       

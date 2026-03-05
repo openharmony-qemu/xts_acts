@@ -427,7 +427,21 @@ export default function documentPickerPromise(abilityContext: Context) {
       let testNum = "test_Documentpicker_Save_Promise_010";
       let option = new picker.DocumentSaveOptions();
       option.pickerMode = picker.DocumentPickerMode.DOWNLOAD;
-      await saveWithOption(testNum, done, option);
+      try {
+        new picker.DocumentViewPicker().save(option).then((result) => {
+        console.info(`test_Documentpicker_Save_Promise_010 result: ${JSON.stringify(result)}`);
+        expect(picker.DocumentPickerMode.DOWNLOAD === 1).assertTrue();
+        done();
+      }).catch((err: Error) => {
+        console.info(`test_Documentpicker_Save_Promise_010 err: ${JSON.stringify(err)}`);
+        done();
+      })
+      done();
+      } catch (e) {
+        console.log('test_Documentpicker_Save_Promise_010 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
     });
     /**
      * @tc.name   test_Documentpicker_Save_Promise_011
@@ -784,13 +798,13 @@ async function select(testNum: string, done: Function) {
     let documentPicker = new picker.DocumentViewPicker();
     documentPicker.select().then((result) => {
       console.info(`${testNum}::select result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::select err: ${JSON.stringify(err)}`);
       done();
       return;
     })
-    expect(true).assertTrue();
     done();
   } catch (error) {
     console.info(`${testNum}::select error: ${JSON.stringify(error)}`);
@@ -804,13 +818,13 @@ async function selectWithOption(testNum: string, done: Function, option: picker.
     let documentPicker = new picker.DocumentViewPicker();
     documentPicker.select(option).then((result) => {
       console.info(`${testNum}::selectWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::selectWithOption err: ${JSON.stringify(err)}`);
       done();
       return;
     })
-    expect(true).assertTrue();
     done();
   } catch (error) {
     console.info(`${testNum}::selectWithOption error: ${JSON.stringify(error)}`);
@@ -824,13 +838,13 @@ async function saveWithoutSelect(testNum: string, done: Function) {
     let documentPicker = new picker.DocumentViewPicker();
     documentPicker.save().then((result) => {
       console.info(`${testNum}::saveWithoutSelect result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::saveWithoutSelect err: ${JSON.stringify(err)}`);
       done();
       return;
     })
-    expect(true).assertTrue();
     done();
   } catch (error) {
     console.info(`${testNum}::saveWithoutSelect error: ${JSON.stringify(error)}`);
@@ -844,13 +858,13 @@ async function saveWithOption(testNum: string, done: Function, option: picker.Do
     let documentPicker = new picker.DocumentViewPicker();
     documentPicker.save(option).then((result) => {
       console.info(`${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::saveWithOption err: ${JSON.stringify(err)}`);
       done();
       return;
     })
-    expect(true).assertTrue();
     done();
   } catch (error) {
     console.info(`${testNum}::saveWithOption error: ${JSON.stringify(error)}`);

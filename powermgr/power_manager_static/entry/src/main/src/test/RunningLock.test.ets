@@ -739,5 +739,61 @@ export default function RunningLockTest() {
           done();
         }
       })
+
+    /**
+     * @tc.name   testRunningLockTest_static_2200
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0220
+     * @tc.desc   Create lock promise when lock name is ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testRunningLockTest_static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_2200';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let lock: runningLock.RunningLock = await runningLock.create("", runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL);
+          hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+          expect(lock).not().assertUndefined();
+          done();
+        } catch (e) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_2300
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0230
+     * @tc.desc   Create lock callback when lock name is ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testRunningLockTest_static_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_2300';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          runningLock.create("", runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL,
+            (error: BusinessError | null, lock: runningLock.RunningLock | undefined) => {
+              if (lock !== null && lock !== undefined) {
+                hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+                expect(lock).not().assertUndefined();
+                done();
+              } else {
+                hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(error)}`);
+                expect().assertFail();
+                done();
+              }
+            })
+        } catch (e) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
+      })
   })
 }

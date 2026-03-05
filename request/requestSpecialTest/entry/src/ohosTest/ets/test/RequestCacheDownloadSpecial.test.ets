@@ -15,9 +15,20 @@
 
 import cacheDownload from "@ohos.request.cacheDownload";
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestCacheDownloadSpecialTest() {
   describe('requestCacheDownloadSpecialJSTest', () => {
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
+    });
 
     console.info('====>requestCacheDownloadSpecialJSTest Test start');
     /**

@@ -1005,7 +1005,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelsetUiContentCallback_0200', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1149,7 +1149,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelsetUiContentPromise_0100', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1293,7 +1293,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelsetUiContentPromise_0300', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1437,7 +1437,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelsetUiContentCallback_0500', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1581,7 +1581,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelsetUiContentCallback_0700', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1725,7 +1725,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelsetUiContentPromise_0500', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1869,7 +1869,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelsetUiContentPromise_0700', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2013,7 +2013,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelresizeCallback_0200', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2157,7 +2157,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelresizeCallback_0400', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2301,7 +2301,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelresizePromise_0200', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2445,7 +2445,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelresizePromise_0400', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2589,7 +2589,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelmoveToCallback_0200', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2733,7 +2733,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelmoveToCallback_0400', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2877,7 +2877,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelmoveToPromise_0200', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3021,7 +3021,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelmoveToPromise_0400', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3165,7 +3165,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PaneladjustPanelRect_0200', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3309,7 +3309,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelupdateRegion_0100', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3453,7 +3453,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelsetImmersiveEffec_0100', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3597,7 +3597,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelgetSystemPanelCurrentInsetsPromise_0100', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3741,7 +3741,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelsetSystemPanelButtonColorPromise_0100', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3885,7 +3885,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_PanelsetSystemPanelButtonColorPromise_0300', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea10.click();
       await driver.delayMs(1000);
 
       let unSubscriberCallback = (err: BusinessError) => {

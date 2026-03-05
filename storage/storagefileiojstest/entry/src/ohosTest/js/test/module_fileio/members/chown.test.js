@@ -443,5 +443,89 @@ describe('fileio_chown', function () {
        console.log('fileio_test_chown_callback_error_003 res');
        done();
  	   });
+
+	/**
+	* @tc.name   fileio_test_chown_callback_error_004
+	* @tc.number SUB_DF_FILEIO_CHOWN_CALLBACK_ERROR_004
+	* @tc.desc   Test chown() interface with null path. Callback.
+	* @tc.type   FUNCTION
+	* @tc.size   MEDIUMTEST
+	* @tc.level  LEVEL2
+	*/
+	it('fileio_test_chown_callback_error_004', Level.LEVEL2, async function (done) {
+		let fpath = await nextFileName('fileio_test_chown_promise_error_007');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+		fileio.chown(fpath, null, 1000, function (err) {
+		if (err) {
+			console.log('fileio_test_chown_callback_error_004: ' + err.message + ', code: ' + err.code);
+			expect(err.message == 'No such file or directory').assertTrue();
+		}
+		});
+	console.log('fileio_test_chown_callback_error_004 res');
+	done();
+	});
+	
+	/**
+	* @tc.name   fileio_test_chown_callback_error_005
+	* @tc.number SUB_DF_FILEIO_CHOWN_CALLBACK_ERROR_005
+	* @tc.desc   Test chown() interface with undefined path. Callback.
+	* @tc.type   FUNCTION
+	* @tc.size   MEDIUMTEST
+	* @tc.level  LEVEL2
+	*/
+	it('fileio_test_chown_callback_error_005', Level.LEVEL2, async function (done) {
+		let fpath = await nextFileName('fileio_test_chown_callback_error_005');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+		fileio.chown(fpath, undefined, 1000, function (err) {
+		if (err) {
+			console.log('fileio_test_chown_callback_error_005: ' + err.message + ', code: ' + err.code);
+			expect(err.message == 'No such file or directory').assertTrue();
+		}
+		});
+	console.log('fileio_test_chown_callback_error_005 res');
+	done();
+	});
+
+	/**
+	* @tc.name   fileio_test_chown_callback_error_006
+	* @tc.number SUB_DF_FILEIO_CHOWN_CALLBACK_ERROR_006
+	* @tc.desc   Test chown() interface with null path. Callback.
+	* @tc.type   FUNCTION
+	* @tc.size   MEDIUMTEST
+	* @tc.level  LEVEL2
+	*/
+	it('fileio_test_chown_callback_error_006', Level.LEVEL2, async function (done) {
+		let fpath = await nextFileName('fileio_test_chown_callback_error_006');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+		fileio.chown(fpath, 1000, null, function (err) {
+		if (err) {
+			console.log('fileio_test_chown_callback_error_006: ' + err.message + ', code: ' + err.code);
+			expect(err.message == 'No such file or directory').assertTrue();
+		}
+		});
+	console.log('fileio_test_chown_callback_error_006 res');
+	done();
+	});
+	
+	/**
+	* @tc.name   fileio_test_chown_callback_error_007
+	* @tc.number SUB_DF_FILEIO_CHOWN_CALLBACK_ERROR_007
+	* @tc.desc   Test chown() interface with undefined path. Callback.
+	* @tc.type   FUNCTION
+	* @tc.size   MEDIUMTEST
+	* @tc.level  LEVEL2
+	*/
+	it('fileio_test_chown_callback_error_007', Level.LEVEL2, async function (done) {
+		let fpath = await nextFileName('fileio_test_chown_callback_error_007');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+		fileio.chown(fpath, 1000, undefined, function (err) {
+		if (err) {
+			console.log('fileio_test_chown_callback_error_007: ' + err.message + ', code: ' + err.code);
+			expect(err.message == 'No such file or directory').assertTrue();
+		}
+		});
+	console.log('fileio_test_chown_callback_error_007 res');
+	done();
+	});
 });
 }

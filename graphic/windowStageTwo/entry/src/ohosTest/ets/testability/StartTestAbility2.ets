@@ -50,6 +50,8 @@ export default class StartTestAbility2 extends UIAbility {
   public onWindowStageDestroy(): void {
     // Main window is destroyed, release UI related resources
     hilog.info(domain, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+    let res1:boolean = AppStorage.delete('windowStageStartTest2');
+    hilog.info(domain, 'testTag', '%{public}s', 'Ability onWindowStageDestroy,delete windowStageStartTest2 res1:'+res1);
   }
 
   public onForeground(): void {

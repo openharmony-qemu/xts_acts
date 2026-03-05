@@ -86,7 +86,7 @@ export default function TimePickerJsunit() {
       console.info("[TimePickerJsunit_0100] hour1: " + JSON.stringify(hour1));
       expect(hour1).assertEqual('hour:8');
       await driver.swipe(Math.round(left + (right - left) / 6), Math.round(top + (bottom - top) / 2),
-        Math.round(left + (right - left) / 6), Math.round(top));
+        Math.round(left + (right - left) / 6), Math.round(0));
       await CommonFunc.sleep(6000);
       let hour2 = await hour.getText();
       console.info("[TimePickerJsunit_0100] hour2: " + JSON.stringify(hour2));
@@ -94,7 +94,7 @@ export default function TimePickerJsunit() {
 
       // Verify hour
       await driver.swipe(Math.round(left + (right - left) / 2), Math.round(top + (bottom - top) / 2),
-        Math.round(left + (right - left) / 2), Math.round(top + (bottom - top) * 0.75));
+        Math.round(left + (right - left) / 2), Math.round(0));
       await CommonFunc.sleep(6000);
       let hour3 = await hour.getText();
       console.info("[TimePickerJsunit_0100] hour3: " + JSON.stringify(hour3));
@@ -106,7 +106,7 @@ export default function TimePickerJsunit() {
       console.info("[TimePickerJsunit_0100] minute1: " + JSON.stringify(minute1));
       expect(minute1).assertEqual('minute:0');
       await driver.swipe(Math.round(left + (right - left) * 5 / 6), Math.round(top + (bottom - top) / 2),
-        Math.round(left + (right - left) * 5 / 6), Math.round(top + (bottom - top) * 0.75));
+        Math.round(left + (right - left) * 5 / 6), Math.round(0));
       await CommonFunc.sleep(6000);
       let minute2 = await minute.getText();
       console.info("[TimePickerJsunit_0100] minute2: " + JSON.stringify(minute2));
@@ -176,7 +176,7 @@ export default function TimePickerJsunit() {
       let hour1 = await hour.getText();
       console.info("[TimePickerJsunit_0300] hour1: " + JSON.stringify(hour1));
       await driver.swipe(Math.round(left + (right - left) / 4), Math.round(top + (bottom - top) / 2),
-        Math.round(left + (right - left) / 4), Math.round(top + (bottom - top) * 0.75));
+        Math.round(left + (right - left) / 4), Math.round(0));
       await CommonFunc.sleep(6000);
       let hourComponent = await driver.findComponent(ON.id('hour'));
       let hour2 = await hourComponent.getText();
@@ -188,7 +188,7 @@ export default function TimePickerJsunit() {
       let minute1 = await minute.getText();
       console.info("[TimePickerJsunit_0300] minute1: " + JSON.stringify(minute1));
       await driver.swipe(Math.round(left + (right - left) * 0.75), Math.round(top + (bottom - top) / 2),
-        Math.round(left + (right - left) * 0.75), Math.round(top + (bottom - top) * 0.75));
+        Math.round(left + (right - left) * 0.75), Math.round(0));
       await CommonFunc.sleep(6000);
       let minute2 = await minute.getText();
       console.info("[TimePickerJsunit_0300] minute2: " + JSON.stringify(minute2));

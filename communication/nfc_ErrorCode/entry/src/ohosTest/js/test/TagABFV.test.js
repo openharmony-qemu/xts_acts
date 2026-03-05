@@ -224,21 +224,21 @@ export default function nfcTagABFVErrorTest() {
                 console.info("[NFC_test]06 getBarcodeTag data is " + data);
                 expect().assertFail();
             }catch(error){
-                if (error.code == 201) {
+                if (error.code === 201) {
                     console.info("[NFC_test]06 getBarcodeTag error is " + error + "/" + error.code);
-                    expect(true).assertTrue();
-                } else if (error.code == 401) {
+                    expect(201).assertEqual(error.code);
+                } else if (error.code === 401) {
                     console.info("[NFC_test]06 getBarcodeTag error is " + error + "/" + error.code);
-                    expect(true).assertTrue();
-                } else if (error.code == 801) {
+                    expect(401).assertEqual(error.code);
+                } else if (error.code === 801) {
                     console.info("[NFC_test]06 getBarcodeTag error is " + error + "/" + error.code);
-                    expect(true).assertTrue();
-                } else if (error.code == 3100201) {
+                    expect(801).assertEqual(error.code);
+                } else if (error.code === 3100201) {
                     console.info("[NFC_test]06 getBarcodeTag error is " + error + "/" + error.code);
-                    expect(true).assertTrue();
-                } else if (error.code == 3100204) {
+                    expect(3100201).assertEqual(error.code);
+                } else if (error.code === 3100204) {
                     console.info("[NFC_test]06 getBarcodeTag error is " + error + "/" + error.code);
-                    expect(true).assertTrue();
+                    expect(3100204).assertEqual(error.code);
                 } else {
                     console.info("[NFC_test]06 getBarcodeTag error is " + error + "/" + error.code);
                     expect().assertFail();
@@ -279,10 +279,10 @@ export default function nfcTagABFVErrorTest() {
                 console.info('[NFC_test]08 nfc unregisterForegroundDispatch pass')
                 expect().assertFail();
             } catch (error) {
-                if (error.code == 201) {
+                if (error.code === 201) {
                     console.info('[NFC_test]08 nfc unregisterForegroundDispatch error' + error + "/" + error.code);
                     expect(201).assertEqual(error.code);
-                } else if (error.code == 401) {
+                } else if (error.code === 401) {
                     console.info('[NFC_test]08 nfc unregisterForegroundDispatch error' + error + "/" + error.code);
                     expect(401).assertEqual(error.code);
                 } else {

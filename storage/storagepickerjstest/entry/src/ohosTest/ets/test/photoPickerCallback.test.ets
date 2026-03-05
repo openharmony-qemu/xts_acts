@@ -276,9 +276,9 @@ async function select(testNum: string, done: Function, isSelectOriginal: boolean
         return;
       }
       console.info(`${testNum}::select result: ${JSON.stringify(result)}`);
+      expect(result.photoUris.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -300,9 +300,9 @@ async function selectWithOption(testNum: string, done: Function, option: picker.
 
       }
       console.info(`${testNum}::selectWithOption result: ${JSON.stringify(result)}`);
+      expect(result.photoUris.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -322,9 +322,9 @@ async function saveWithoutSelect(testNum: string, done: Function) {
         return;
       }
       console.info(`${testNum}::saveWithoutSelect result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -344,9 +344,9 @@ async function saveWithOption(testNum: string, done: Function, option: picker.Ph
         return;
       }
       console.info(`${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {

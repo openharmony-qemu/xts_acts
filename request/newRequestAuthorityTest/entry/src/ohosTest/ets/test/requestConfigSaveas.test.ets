@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, beforeEach, Level } from '@ohos/hypium';
 import request from '@ohos.request';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import fs from  '@ohos.file.fs';
 import statistics from '@ohos.net.statistics';
 import wantAgent, { WantAgent } from '@ohos.app.ability.wantAgent';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestConfigSavesTest() {
   describe('requestConfigSavesTest', () => {
@@ -60,6 +61,16 @@ export default function requestConfigSavesTest() {
         console.info('====>beforeAll catch err:'+JSON.stringify(err))
         done();
       }
+    });
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
     });
 
     /**

@@ -186,6 +186,36 @@ export default function StatisticsTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testNetworkManagerGetIfaceRxBytesAsync0600
+     * @tc.number SUB_NetworkManager_GetIfaceRxBytes_Async_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkManagerGetIfaceRxBytesAsync0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = 'testNetworkManagerGetIfaceRxBytesAsync0600';
+      try {
+        statistics.getIfaceRxBytes("", (err, data) => {
+          if (err) {
+            console.log(`${caseName} getIfaceRxBytes fail ${JSON.stringify(err)}`);
+            expect(err != undefined).assertTrue();
+            ExpectTrue(err.code == 2103012);
+            done();
+          } else {
+            console.log(`${caseName} getIfaceRxBytes success ${JSON.stringify(data)}`);
+            expectFalse();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log(`${caseName} getIfaceRxBytes into catch ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+    });
     
     /**
      * @tc.name   testNetworkManagerGetIfaceRxBytesPromise0100
@@ -322,6 +352,33 @@ export default function StatisticsTest() {
       } catch (err) {
         console.log(`${caseName} getIfaceRxBytes into catch ${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkManagerGetIfaceRxBytesPromise0600
+     * @tc.number SUB_NetworkManager_GetIfaceRxBytes_Promise_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkManagerGetIfaceRxBytesPromise0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = 'testNetworkManagerGetIfaceRxBytesPromise0600';
+      try {
+        statistics.getIfaceRxBytes("").then((data) => {
+          console.log(`${caseName} getIfaceRxBytes success ${JSON.stringify(data)}`);
+          expectFalse();
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} getIfaceRxBytes fail ${JSON.stringify(err)}`);
+          ExpectTrue(err.code == 2103012);
+          done();
+        });
+      } catch (err) {
+        console.log(`${caseName} getIfaceRxBytes into catch ${JSON.stringify(err)}`);
+        ExpectTrue(false);
         done();
       }
     });
@@ -474,6 +531,35 @@ export default function StatisticsTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testNetworkManagerGetIfaceTxBytesAsync0600
+     * @tc.number SUB_NetworkManager_GetIfaceTxBytes_Async_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkManagerGetIfaceTxBytesAsync0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = 'testNetworkManagerGetIfaceTxBytesAsync0600';
+      try {
+        statistics.getIfaceTxBytes("", (err, data) => {
+          if (err) {
+            console.log(`${caseName} getIfaceTxBytes fail ${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 2103012);
+            done();
+          } else {
+            console.log(`${caseName} getIfaceTxBytes success ${JSON.stringify(data)}`);
+            expectFalse();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log(`${caseName} getIfaceTxBytes into catch ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+    });
     
     /**
      * @tc.name   testNetworkManagerGetIfaceTxBytesPromise0100
@@ -610,6 +696,33 @@ export default function StatisticsTest() {
       } catch (err) {
         console.log(`${caseName} getIfaceTxBytes into catch ${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkManagerGetIfaceTxBytesPromise0600
+     * @tc.number SUB_NetworkManager_GetIfaceTxBytes_Promise_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkManagerGetIfaceTxBytesPromise0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = 'testNetworkManagerGetIfaceTxBytesPromise0600';
+      try {
+        statistics.getIfaceTxBytes("").then((data) => {
+          console.log(`${caseName} getIfaceTxBytes success ${JSON.stringify(data)}`);
+          expectFalse();
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} getIfaceTxBytes fail ${JSON.stringify(err)}`);
+          ExpectTrue(err.code == 2103012);
+          done();
+        });
+      } catch (err) {
+        console.log(`${caseName} getIfaceTxBytes into catch ${JSON.stringify(err)}`);
+        ExpectTrue(false);
         done();
       }
     });

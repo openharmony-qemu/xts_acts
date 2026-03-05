@@ -421,7 +421,7 @@ export default function AVPlayerSeekNdk() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_1800', Level.LEVEL0, async (done: Function) => {
-      fileNameTest = "audio_2video.avi";
+      fileNameTest = "h264_1280x720_30.mp4";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
       let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
