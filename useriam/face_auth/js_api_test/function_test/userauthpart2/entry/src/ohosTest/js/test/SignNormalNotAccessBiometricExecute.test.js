@@ -207,7 +207,7 @@ export default function signNormalNotAccessBiometricExecute() {
       console.info("SUB_Security_IAM_authWidget_API_0150 start");
       const reuseMode1 = [userAuth.ReuseMode.AUTH_TYPE_IRRELEVANT,userAuth.ReuseMode.CALLER_IRRELEVANT_AUTH_TYPE_RELEVANT,userAuth.ReuseMode.CALLER_IRRELEVANT_AUTH_TYPE_IRRELEVANT]
 
-      for (let index = 0; idx0<reuseMode1.length; idx0++) {
+      for (let idx0 = 0; idx0<reuseMode1.length; idx0++) {
         let reuseUnlockResult = {
           reuseMode: reuseMode1[idx0],
           reuseDuration: 120000,
