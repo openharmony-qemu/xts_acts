@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { image } from '@kit.ImageKit';
+import { image, } from '@kit.ImageKit';
 import { BusinessError } from '@ohos.base';
-import { sleep, isEmpty, getPermission, driveFn } from '../common';
+import {isEmpty } from '../common';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import json from '@ohos.util.json';
@@ -23,6 +23,12 @@ import json from '@ohos.util.json';
 const TAG = 'MetaDataSetBlobTest.xts'
 let fdNumber: number;
 let imageSourceApi: image.ImageSource;
+let pixelMaps: image.PixelMap;
+let imageSource: image.ImageSource;
+let testContext: common.UIAbilityContext;
+let path: string;
+let file: fs.File;
+
 
 async function getFd(fileName: string) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -53,6 +59,9 @@ export default function MetaDataSetBlobTest() {
   describe('MetaDataSetBlobTest', () => {
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
+      testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      path = `file://${testContext.filesDir}/test.jpg`;
+      file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
     });
 
     beforeEach(() => {
@@ -1038,6 +1047,1014 @@ export default function MetaDataSetBlobTest() {
         expect(Number(error.code)).assertEqual(7600202);
       } finally {
         imageSourceApi?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00010
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00010
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00010';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.UNKNOWN };
+        console.warn(TAG, testName, ' createImageSource success');
+        imageSource = image.createImageSource(path, sourceOptions);
+        console.warn(TAG, testName, ' createImageSource success');
+        let res = await imageSource.getImageInfo();
+        console.warn(TAG, testName, ' createImageSource success');
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.warn(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00011
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00011
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is ARGB_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00011', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00011';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.BGRA_8888 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success',JSON.stringify(res));
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00012
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00012
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is RGB_565
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00012', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00012';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_565 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00013
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00013
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is RGBA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00013', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00013';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_8888 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00014
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00014
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is BGRA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00014', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00014';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.BGRA_8888 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00015
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00015
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is RGB_888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00015', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00015';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_888 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00016
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00016
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is ALPHA_8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00016', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00016';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ALPHA_8 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00017
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00017
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is RGBA_F16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00017', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00017';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_F16 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00018
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00018
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is NV21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00018', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00018';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV21 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00019
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00019
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is NV12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00019', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00019';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV12 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00020
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00020
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is RGBA_1010102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00020', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00020';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_1010102 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00021
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00021
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is YCBCR_P010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00021', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00021';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCBCR_P010 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00022
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00022
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is YCRCB_P010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00022', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00022';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCRCB_P010 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00023
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00023
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is ASTC_4x4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00023', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00023';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ASTC_4x4 };
+        imageSource = image.createImageSource(path, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00007
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00007
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00007';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.UNKNOWN };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00008
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00008
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is ARGB_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00008';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ARGB_8888 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00009
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00009
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is RGB_565
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00009';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_565 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00010
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00010
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is RGBA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00010';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_8888 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00011
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00011
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is BGRA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00011', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00011';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.BGRA_8888 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00012
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00012
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is RGB_888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00012', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00012';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_888 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00013
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00013
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is ALPHA_8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00013', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00013';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ALPHA_8 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00014
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00014
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is RGBA_F16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00014', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00014';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_F16 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00015
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00015
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is NV21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00015', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00015';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV21 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00016
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00016
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is NV12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00016', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00016';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV12 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00017
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00017
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is RGBA_1010102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00017', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00017';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_1010102 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00018
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00018
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is YCBCR_P010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00018', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00018';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCBCR_P010 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00019
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00019
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is YCRCB_P010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00019', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00019';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCRCB_P010 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00020
+     * @tc.number SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00020
+     * @tc.desc   image createImageSource the sourcePixelFormat parameter is ASTC_4x4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00020', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00020';
+      try {
+        let sourceOptions: image.SourceOptions =
+          { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ASTC_4x4 };
+        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let res = await imageSource.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        console.info(TAG, testName, ' createImageSource success');
+      } catch (error) {
+        console.error(TAG, testName, ' createImageSource error', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        await imageSource?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000001
+     * @tc.number SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000001
+     * @tc.desc   imageSource createPixelMapUsingAllocatorSync the desiredPixelFormat is true the cropAndScaleStrategy is CROP_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000001';
+      const formats = [
+        image.PixelMapFormat.RGBA_8888,
+        image.PixelMapFormat.BGRA_8888,
+        image.PixelMapFormat.NV21,
+        image.PixelMapFormat.ASTC_4x4
+      ];
+      for (const format of formats) {
+        try {
+          let imageSource = image.createImageSource(path);
+          let decodingOptions: image.DecodingOptions = {
+            editable: true,
+            desiredSize: { width: 200, height: 200 },
+            rotate: 10,
+            desiredPixelFormat: format,
+            desiredRegion: { size: { width: 100, height: 100 }, x: 0, y: 0 },
+            cropAndScaleStrategy: image.CropAndScaleStrategy.CROP_FIRST,
+            index: 0
+          };
+          pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+          expect(isEmpty(pixelMaps)).assertFalse();
+          console.warn(TAG, testName, format, ' createPixelMap success', JSON.stringify(pixelMaps));
+          let res = await pixelMaps.getImageInfo();
+          console.warn(TAG, testName, format, ' createPixelMap success', JSON.stringify(res));
+          expect(res.pixelFormat == format).assertTrue();
+          console.warn(TAG, testName, format, ' createPixelMap success', JSON.stringify(res));
+        } catch (error) {
+          console.error(TAG, testName, format, ' createPixelMap error', error);
+          expect().assertFail();
+        } finally {
+          await pixelMaps?.release();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000002
+     * @tc.number SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000002
+     * @tc.desc   imageSource createPixelMapUsingAllocatorSync the editable is true the isEditable is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000002';
+      try {
+        let imageSource = image.createImageSource(path);
+        let decodingOptions: image.DecodingOptions = {
+          editable: true,
+          desiredSize: { width: 200, height: 200 },
+          rotate: 10,
+          desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
+          desiredRegion: { size: { width: 200, height: 200 }, x: 0, y: 0 },
+          cropAndScaleStrategy: image.CropAndScaleStrategy.CROP_FIRST,
+          index: 0
+        };
+        pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        expect(pixelMaps.isEditable).assertTrue();
+        console.info(TAG, testName, ' createPixelMap success');
+      } catch (error) {
+        console.error(TAG, testName, ' createPixelMap error', error);
+        expect().assertFail();
+      } finally {
+        await pixelMaps?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000003
+     * @tc.number SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000003
+     * @tc.desc   imageSource createPixelMapUsingAllocatorSync the editable is false the isEditable is false the cropAndScaleStrategy is CROP_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000003';
+      try {
+        let imageSource = image.createImageSource(path);
+        let decodingOptions: image.DecodingOptions = {
+          editable: false,
+          desiredSize: { width: 200, height: 200 },
+          rotate: 10,
+          desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
+          desiredRegion: { size: { width: 200, height: 200 }, x: 0, y: 0 },
+          cropAndScaleStrategy: image.CropAndScaleStrategy.CROP_FIRST,
+          index: 0
+        };
+        pixelMaps = await imageSource.createPixelMapUsingAllocator(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        expect(pixelMaps.isEditable).assertFalse()
+        console.info(TAG, testName, ' createPixelMap success');
+      } catch (error) {
+        console.error(TAG, testName, ' createPixelMap error', error);
+        expect().assertFail();
+      } finally {
+        await pixelMaps?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000004
+     * @tc.number SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000004
+     * @tc.desc   imageSource createPixelMapUsingAllocatorSync the desiredPixelFormat UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000004';
+      try {
+        let imageSource = image.createImageSource(path);
+        let decodingOptions: image.DecodingOptions = {
+          editable: true,
+          rotate: 10,
+          desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
+          index: 0
+        };
+        pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        let res = await pixelMaps.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
+        console.info(TAG, testName, image.PixelMapFormat.UNKNOWN, ' createPixelMap success');
+      } catch (error) {
+        console.error(TAG, testName, image.PixelMapFormat.UNKNOWN, ' createPixelMap error', error,
+          JSON.stringify(error));
+        expect().assertFail();
+      } finally {
+        await pixelMaps?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000005
+     * @tc.number SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000005
+     * @tc.desc   imageSource createPixelMapUsingAllocatorSync the desiredPixelFormat emu
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000005';
+      const formats = [
+        image.PixelMapFormat.ARGB_8888,
+        image.PixelMapFormat.RGBA_F16,
+      ];
+      for (const format of formats) {
+        try {
+          let imageSource = image.createImageSource(path);
+          let decodingOptions: image.DecodingOptions = {
+            editable: true,
+            rotate: 10,
+            desiredPixelFormat: format,
+            index: 0
+          };
+          pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+          let res = await pixelMaps.getImageInfo();
+          expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
+          console.info(TAG, testName, format, ' createPixelMap success');
+        } catch (error) {
+          console.error(TAG, testName, format, ' createPixelMap error', error,
+            JSON.stringify(error));
+          expect().assertFail();
+        } finally {
+          await pixelMaps?.release();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000006
+     * @tc.number SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000006
+     * @tc.desc   imageSource createPixelMapUsingAllocatorSync the desiredPixelFormat RGBA_1010102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000006';
+      try {
+        let imageSource = image.createImageSource(path);
+        let decodingOptions: image.DecodingOptions = {
+          editable: true,
+          rotate: 10,
+          desiredPixelFormat: image.PixelMapFormat.RGBA_1010102,
+          index: 0
+        };
+        pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        let res = await pixelMaps.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
+        console.info(TAG, testName, image.PixelMapFormat.RGBA_1010102, ' createPixelMap success');
+      } catch (error) {
+        console.error(TAG, testName, image.PixelMapFormat.RGBA_1010102, ' createPixelMap error', error,
+          JSON.stringify(error));
+        expect().assertFail();
+      } finally {
+        await pixelMaps?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000007
+     * @tc.number SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000004
+     * @tc.desc   imageSource createPixelMapUsingAllocatorSync the desiredPixelFormat YCBCR_P010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000007';
+      try {
+        let imageSource = image.createImageSource(path);
+        let decodingOptions: image.DecodingOptions = {
+          editable: true,
+          rotate: 10,
+          desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
+          index: 0
+        };
+        pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        let res = await pixelMaps.getImageInfo();
+        expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
+        console.info(TAG, testName, image.PixelMapFormat.YCBCR_P010, ' createPixelMap success');
+      } catch (error) {
+        console.error(TAG, testName, image.PixelMapFormat.YCBCR_P010, ' createPixelMap error', error,
+          JSON.stringify(error));
+        expect().assertFail();
+      } finally {
+        await pixelMaps?.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000008
+     * @tc.number SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000008
+     * @tc.desc   imageSource createPixelMapUsingAllocatorSync the desiredPixelFormat ALPHA_8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000008';
+      try {
+        let imageSource = image.createImageSource(path);
+        let decodingOptions: image.DecodingOptions = {
+          editable: true,
+          rotate: 10,
+          desiredPixelFormat: image.PixelMapFormat.ALPHA_8,
+          index: 0
+        };
+        pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        expect().assertFail();
+        console.info(TAG, testName, image.PixelMapFormat.ALPHA_8, ' createPixelMap success');
+      } catch (error) {
+        console.error(TAG, testName, image.PixelMapFormat.ALPHA_8, ' createPixelMap error', error,
+          JSON.stringify(error));
+        expect(Number(error.code)).assertEqual(7700301);
+      } finally {
+        await pixelMaps?.release();
         done();
       }
     });
