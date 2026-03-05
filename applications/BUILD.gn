@@ -19,5 +19,6 @@ group("applications") {
     "settingsdata:settingsdata",
     "intelligentScene_ets_Nop:ActsIntelligentSceneNopEtsTest",
     "intelligentScene_ets:ActsIntelligentSceneEtsTest",
+    "intelligentScene_ets_static:ActsIntelligentSceneEtsStaticTest",
   ]
 }
