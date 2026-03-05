@@ -364,6 +364,15 @@ static napi_value CreateMetadataOutput(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value IsMetadataObjectTypeValid(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    bool ret = ndkCamera_->IsMetadataObjectTypeValid();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value CreateMetadataOutputWithObjectTypes(napi_env env, napi_callback_info info)
 {
     size_t argc;
