@@ -337,6 +337,7 @@ export default function inputMethodTest() {
           console.info(`====>${CASE_NAME} finishTextPreviewCallback2`); 
           count += 1;
           expect(count).assertEqual(2);
+          inputMethod.getController().off('finishTextPreview');
           done();
         }catch(err){
           console.info(`====>${CASE_NAME} finishTextPreviewCallback2 catch err`)
