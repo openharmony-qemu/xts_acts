@@ -60,6 +60,7 @@ export default function DialogTest() {
           expect(fontSize).assertEqual("20.00fp");
           console.info('ArkUX_Dialog_Visual_0060 END ');
         } catch (err) {
+          expect().assertFail();
           console.info('ArkUX_Dialog_Visual_0060 ERR  ' + JSON.stringify(err));
         }
         done();
