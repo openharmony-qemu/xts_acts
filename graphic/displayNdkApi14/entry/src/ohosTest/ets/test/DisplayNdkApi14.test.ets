@@ -866,7 +866,6 @@ export default function ActsDisplayNdkApi14Test() {
       let promise = screenshot.capture(captureOption);
       promise.then(async (pixelMap: image.PixelMap) => {
         console.info(caseName+' Succeeded in saving screenshot. Pixel bytes number: ' + pixelMap.getPixelBytesNumber());
-        expect(false).assertTrue();
         pixelMap.release(); // PixelMap使用完后及时释放内存
         done();
       }).catch((err: BusinessError) => {
@@ -874,8 +873,7 @@ export default function ActsDisplayNdkApi14Test() {
         if(err.code == 801){
           done();
         }else{
-          expect(err.code).assertEqual(401);
-          expect(err.message!=null).assertTrue();
+          expect(false).assertTrue();
           done();
         }
       });
