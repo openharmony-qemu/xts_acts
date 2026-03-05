@@ -171,7 +171,7 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
         let tempColor = commonKEYColorArr[i];
         let systemBarProperties: ohosWindow.SystemBarProperties = {
           statusBarColor: tempColor,
-          isStatusBarLightIcon: true,
+          isStatusBarLightIcon: false,
           statusBarContentColor: tempColor,
           navigationBarColor: tempColor,
           isNavigationBarLightIcon: false,

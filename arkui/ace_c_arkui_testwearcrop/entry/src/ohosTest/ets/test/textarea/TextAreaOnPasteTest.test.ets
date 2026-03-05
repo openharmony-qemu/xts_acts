@@ -45,7 +45,7 @@ export default function textAreaOnPasteTest() {
       await Utils.sleep(500)
       let component4 = await driver.findComponent(ON.text('全选'));
       await Utils.sleep(500)
-      await component4.click();
+      await component4?.click();
       await Utils.sleep(500)
       let component1 = await driver.findComponent(ON.text('剪切'));
       await Utils.sleep(500)

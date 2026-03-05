@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -12,30 +12,36 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from "../../../hypium/index";
-
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '../../../../hypium/index';
+async function sleep(time: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0);
+    }, time);
+  });
+}
 export default function builtinsBlockTest() {
   describe('BuiltinsStatementBlockTest', (): void => {
-    // // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    // beforeAll((): void => {
-    //   // Presets an action, which is performed only once before all test cases of the test suite start.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // beforeEach(async () : Promise<void> => {
-    //   await Utils.msSleep(100);
-    //   // Presets an action, which is performed before each unit test case starts.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // afterEach((): void => {
-    //   // Presets a clear action, which is performed after each unit test case ends.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: clear action function.
-    // })
-    // afterAll((): void => {
-    //   // Presets a clear action, which is performed after all test cases of the test suite end.
-    //   // This API supports only one parameter: clear action function.
-    // })
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll((): void => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () : Promise<void> => {
+      await sleep(30);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach((): void => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll((): void => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
 
     /**
      * @tc.number SUB_BUILDINS_STATEMENT_BLOCK_TEST_0100

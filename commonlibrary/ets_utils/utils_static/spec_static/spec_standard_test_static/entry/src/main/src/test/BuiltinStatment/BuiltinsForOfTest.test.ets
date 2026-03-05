@@ -12,8 +12,8 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
-import Utils from './Util.test';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index';
+import Utils from '../Util.test';
 
 import {
   processArray,
@@ -21,30 +21,36 @@ import {
   processSet,
   processSetWithIterator,
   processString
-} from './pages/ThrowMethod';
-
+} from '../pages/ThrowMethod';
+async function sleep(time: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0);
+    }, time);
+  });
+}
 export default function builtinsForOfTest() {
   describe('builtinsStatementForOfTest', (): void => {
-    // // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    // beforeAll((): void => {
-    //   // Presets an action, which is performed only once before all test cases of the test suite start.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // beforeEach(async () : Promise<void> => {
-    //   await Utils.msSleep(100);
-    //   // Presets an action, which is performed before each unit test case starts.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // afterEach((): void => {
-    //   // Presets a clear action, which is performed after each unit test case ends.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: clear action function.
-    // })
-    // afterAll((): void => {
-    //   // Presets a clear action, which is performed after all test cases of the test suite end.
-    //   // This API supports only one parameter: clear action function.
-    // })
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll((): void => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () : Promise<void> => {
+      await sleep(30);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach((): void => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll((): void => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_FOR_OF_TEST_0100
      * @tc.name builtinsStatementForOfTest0100

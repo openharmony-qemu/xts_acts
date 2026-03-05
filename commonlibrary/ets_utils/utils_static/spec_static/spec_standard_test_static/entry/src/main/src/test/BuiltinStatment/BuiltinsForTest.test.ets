@@ -13,32 +13,38 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
-import { animal, MyObjects, Person, task, update } from './pages/Utils';
-import Utils from './Util.test';
-
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index';
+import { animal, MyObjects, Person, task, update } from '../pages/Utils';
+import Utils from '../Util.test';
+async function sleep(time: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0);
+    }, time);
+  });
+}
 export default function builtinsForTest() {
   describe('BuiltinsStatementForTest', (): void => {
-    // // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    // beforeAll((): void => {
-    //   // Presets an action, which is performed only once before all test cases of the test suite start.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // beforeEach(async () : Promise<void> => {
-    //   await Utils.msSleep(100);
-    //   // Presets an action, which is performed before each unit test case starts.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // afterEach((): void => {
-    //   // Presets a clear action, which is performed after each unit test case ends.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: clear action function.
-    // })
-    // afterAll((): void => {
-    //   // Presets a clear action, which is performed after all test cases of the test suite end.
-    //   // This API supports only one parameter: clear action function.
-    // })
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll((): void => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () : Promise<void> => {
+      await sleep(30);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach((): void => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll((): void => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_FOR_TEST_1000
      * @tc.name builtinsStatementForTest_1000
@@ -924,33 +930,6 @@ export default function builtinsForTest() {
         expect(0).assertEqual(i);
         done();
       })
-
-
-    // 无效用例
-    // /**
-    //  * @tc.number SUB_BUILTINS_STATEMENT_FOR_TEST_5300
-    //  * @tc.name builtinsStatementForTest_5300
-    //  * @tc.desc test builtins
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('builtinsStatementForInitTest_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: () => void): Promise<void> => {
-    //     const Tag: string = 'builtinsStatementForInitTest_5300'
-    //     console.info(`${Tag}`, '%{public}s', 'it begin');
-    //     let count: number = 0;
-    //     let i = 0;
-    //     let def: string = 'ssddsd'
-    //     //异常场景表达式为函数返回值
-    //     for (i = 0; Object(def); i++) {
-    //       count++
-    //       break
-    //     }
-    //     expect(1).assertEqual(count);
-    //     expect(0).assertEqual(i);
-    //     done();
-    //   })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_FOR_TEST_5400

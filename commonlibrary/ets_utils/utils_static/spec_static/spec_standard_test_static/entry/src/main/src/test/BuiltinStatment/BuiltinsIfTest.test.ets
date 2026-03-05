@@ -13,31 +13,42 @@
 * limitations under the License.
 */
 import { BusinessError } from '@ohos.base';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
-import { condition, Ob, St, Arr, Big, Inter, Colour, cd } from './pages/Function';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index';
+import { condition, Ob, St, Arr, Big, Inter, Colour, cd } from '../pages/Function';
+
+async function sleep(time: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0);
+    }, time);
+  });
+}
+type ID = string | number;
+type Direction = 'north' | 'south' | 'east' | 'west';
+type tuple = [string, number, boolean];
 
 export default function builtinsIfTest() {
   describe('BuiltinsStatementIfTest', (): void => {
-    // // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    // beforeAll((): void => {
-    //   // Presets an action, which is performed only once before all test cases of the test suite start.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // beforeEach(async () : Promise<void> => {
-    //   await Utils.msSleep(100);
-    //   // Presets an action, which is performed before each unit test case starts.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // afterEach((): void => {
-    //   // Presets a clear action, which is performed after each unit test case ends.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: clear action function.
-    // })
-    // afterAll((): void => {
-    //   // Presets a clear action, which is performed after all test cases of the test suite end.
-    //   // This API supports only one parameter: clear action function.
-    // })
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll((): void => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () : Promise<void> => {
+      await sleep(30);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach((): void => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll((): void => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_IF_TEST_1001
@@ -640,21 +651,20 @@ export default function builtinsIfTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('builtinsStatementIfTest1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   type Tuple = [string, number, boolean];
-    //   let t: Tuple = ['a', 1, true];
-    //   let a: number = 0;
-    //   try {
-    //     if (t) {
-    //       a++;
-    //     } else {
-    //       a--;
-    //     }
-    //   } catch (e) {
-    //   }
-    //   expect(1).assertEqual(a);
-    //   done();
-    // })
+    it('builtinsStatementIfTest1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let t: tuple = ['a', 1, true];
+      let a: number = 0;
+      try {
+        if (t) {
+          a++;
+        } else {
+          a--;
+        }
+      } catch (e) {
+      }
+      expect(1).assertEqual(a);
+      done();
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_IF_TEST_1028
@@ -664,21 +674,20 @@ export default function builtinsIfTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('builtinsStatementIfTest1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   type ID = string | number;
-    //   let i: ID = 10;
-    //   let a: number = 0;
-    //   try {
-    //     if (i) {
-    //       a++;
-    //     } else {
-    //       a--;
-    //     }
-    //   } catch (e) {
-    //   }
-    //   expect(1).assertEqual(a);
-    //   done();
-    // })
+    it('builtinsStatementIfTest1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let i: ID = 10;
+      let a: number = 0;
+      try {
+        if (i) {
+          a++;
+        } else {
+          a--;
+        }
+      } catch (e) {
+      }
+      expect(1).assertEqual(a);
+      done();
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_IF_TEST_1029
@@ -688,21 +697,20 @@ export default function builtinsIfTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('builtinsStatementIfTest1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   type Direction = 'north' | 'south' | 'east' | 'west';
-    //   let d: Direction = 'north';
-    //   let a: number = 0;
-    //   try {
-    //     if (d) {
-    //       a++;
-    //     } else {
-    //       a--;
-    //     }
-    //   } catch (e) {
-    //   }
-    //   expect(1).assertEqual(a);
-    //   done();
-    // })
+    it('builtinsStatementIfTest1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let d: Direction = 'north';
+      let a: number = 0;
+      try {
+        if (d) {
+          a++;
+        } else {
+          a--;
+        }
+      } catch (e) {
+      }
+      expect(1).assertEqual(a);
+      done();
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_IF_TEST_1031
@@ -1314,21 +1322,20 @@ export default function builtinsIfTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('builtinsStatementIfTest1058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   type Tuple = [string, number, boolean];
-    //   let a: Tuple = ['a', 1, true];
-    //   let b: number = 0;
-    //   try {
-    //     if (!a) {
-    //       b++;
-    //     } else if (a) {
-    //       b--;
-    //     }
-    //   } catch (e) {
-    //   }
-    //   expect(-1).assertEqual(b);
-    //   done();
-    // })
+    it('builtinsStatementIfTest1058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let a: tuple = ['a', 1, true];
+      let b: number = 0;
+      try {
+        if (!a) {
+          b++;
+        } else if (a) {
+          b--;
+        }
+      } catch (e) {
+      }
+      expect(-1).assertEqual(b);
+      done();
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_IF_TEST_1059
@@ -1338,21 +1345,20 @@ export default function builtinsIfTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('builtinsStatementIfTest1059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   type ID = string | number;
-    //   let a: ID = 10;
-    //   let b: number = 0;
-    //   try {
-    //     if (!a) {
-    //       b++;
-    //     } else if (a) {
-    //       b--;
-    //     }
-    //   } catch (e) {
-    //   }
-    //   expect(-1).assertEqual(b);
-    //   done();
-    // })
+    it('builtinsStatementIfTest1059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let a: ID = 10;
+      let b: number = 0;
+      try {
+        if (!a) {
+          b++;
+        } else if (a) {
+          b--;
+        }
+      } catch (e) {
+      }
+      expect(-1).assertEqual(b);
+      done();
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_IF_TEST_1060
@@ -1362,21 +1368,20 @@ export default function builtinsIfTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('builtinsStatementIfTest1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   type Direction = 'north' | 'south' | 'east' | 'west';
-    //   let a: Direction = 'north';
-    //   let b: number = 0;
-    //   try {
-    //     if (!a) {
-    //       b++;
-    //     } else if (a) {
-    //       b--;
-    //     }
-    //   } catch (e) {
-    //   }
-    //   expect(-1).assertEqual(b);
-    //   done();
-    // })
+    it('builtinsStatementIfTest1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let a: Direction = 'north';
+      let b: number = 0;
+      try {
+        if (!a) {
+          b++;
+        } else if (a) {
+          b--;
+        }
+      } catch (e) {
+      }
+      expect(-1).assertEqual(b);
+      done();
+    })
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_IF_TEST_1061
