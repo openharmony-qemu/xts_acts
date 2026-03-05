@@ -1988,7 +1988,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2019,7 +2019,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2048,7 +2048,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2080,7 +2080,7 @@ export default function mdnsTest() {
 
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2471,7 +2471,7 @@ export default function mdnsTest() {
         mdns.resolveLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} falil ${JSON.stringify(error)}`);
-            ExpectTrue(error.code === 401, caseName);
+            ExpectTrue(number(err.code) === 401, caseName);
             done();
           } else {
             console.log(`${caseName} success ${JSON.stringify(data)}`);
@@ -2931,7 +2931,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2971,7 +2971,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3000,7 +3000,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code ==401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3029,7 +3029,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code ==401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3112,7 +3112,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3154,7 +3154,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3185,7 +3185,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-         ExpectTrue(err.code == 401, caseName);
+         ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3216,7 +3216,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-         ExpectTrue(err.code == 401, caseName);
+         ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3525,7 +3525,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3554,7 +3554,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3585,7 +3585,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3616,7 +3616,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(err.code == 401, caseName);
+        ExpectTrue(number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
