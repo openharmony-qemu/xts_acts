@@ -22,7 +22,7 @@ export default function contentStartOffsetTest() {
   describe('ActsContentStartOffsetTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('ContentStartOffsetTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll20.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility');
     })
 
     beforeEach(async (): Promise<void> => {

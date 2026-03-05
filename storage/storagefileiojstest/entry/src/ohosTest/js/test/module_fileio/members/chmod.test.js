@@ -362,5 +362,57 @@ describe('fileio_chmod', function () {
  	       done();
  	    }
  	   });
+
+	/**
+	* @tc.name   fileio_test_chmod_callback_error_004
+	* @tc.number SUB_DF_FILEIO_CHMOD_CALLBACK_ERROR_004
+	* @tc.desc   Test chmod() interface with null path. Callback.
+	* @tc.type   FUNCTION
+	* @tc.size   MEDIUMTEST
+	* @tc.level  LEVEL2
+	*/
+	it('fileio_test_chmod_callback_error_004', Level.LEVEL2, async function (done) {
+		let fpath = await nextFileName('fileio_test_chmod_callback_error_004');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+		try {
+			fileio.chmod(fpath, null, function (err) {
+			if (err) {
+				console.log('fileio_test_chmod_callback_error_004: ' + err.message + ', code: ' + err.code);
+				expect(err.message == 'No such file or directory').assertTrue();
+			}
+			});
+		console.log('fileio_test_chmod_callback_error_004 res');
+		done();
+		} catch (err) {
+			expect(false).assertTrue();
+			done();
+		}
+	});
+	
+	/**
+	* @tc.name   fileio_test_chmod_callback_error_005
+	* @tc.number SUB_DF_FILEIO_CHMOD_CALLBACK_ERROR_005
+	* @tc.desc   Test chmod() interface with undefined path. Callback.
+	* @tc.type   FUNCTION
+	* @tc.size   MEDIUMTEST
+	* @tc.level  LEVEL2
+	*/
+	it('fileio_test_chmod_callback_error_005', Level.LEVEL2, async function (done) {
+		let fpath = await nextFileName('fileio_test_chmod_callback_error_005');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+		try {
+			fileio.chmod(fpath, undefined, function (err) {
+			if (err) {
+				console.log('fileio_test_chmod_callback_error_005: ' + err.message + ', code: ' + err.code);
+				expect(err.message == 'No such file or directory').assertTrue();
+			}
+			});
+		console.log('fileio_test_chmod_callback_error_005 res');
+		done();
+		} catch (err) {
+			expect(false).assertTrue();
+			done();
+		}
+	});
 });
 }

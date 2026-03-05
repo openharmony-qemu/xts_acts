@@ -1544,23 +1544,22 @@ export default function DataView1Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const bigIntVal = 0x123456789ABCDEFn;
-    //   const high32 = Number((bigIntVal >> 32n) & 0xFFFFFFFFn);
-    //   const low32 = Number(bigIntVal & 0xFFFFFFFFn);
-    //   const test: BigIntSplitReadTest = {
-    //     view64: new DataView(buffer),
-    //     view32: new DataView(buffer),
-    //     bigIntVal,
-    //     high32,
-    //     low32
-    //   };
-    //   test.view64.setBigUint64(0, bigIntVal);
-    //   expect(test.view32.getUint32(0)).assertEqual(high32);
-    //   expect(test.view32.getUint32(4)).assertEqual(low32);
-    // });
+    it('DataView1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const bigIntVal = 81985529216486900n;
+      const high32 = Number((bigIntVal >> 32n) & 4294967295n);
+      const low32 = Number(bigIntVal & 4294967295n);
+      const test: BigIntSplitReadTest = {
+        view64: new DataView(buffer),
+        view32: new DataView(buffer),
+        bigIntVal,
+        high32,
+        low32
+      };
+      test.view64.setBigUint64(0, bigIntVal);
+      expect(test.view32.getUint32(0)).assertEqual(high32);
+      expect(test.view32.getUint32(4)).assertEqual(low32);
+    });
 
     /**
      * @tc.name   DataView1Test079

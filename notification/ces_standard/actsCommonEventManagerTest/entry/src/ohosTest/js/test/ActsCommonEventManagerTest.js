@@ -33,13 +33,11 @@ export default function ActsCommonEventManagerTest() {
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_1800', Level.LEVEL3, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1800 START`)
-
       let subscriber
       let count = 0
       let subscribeInfo = {
         events: ["event08"]
       }
-
       try {
         commonEventManager.createSubscriber(subscribeInfo, async (err, commonEventSubscriber) => {
           if (err) {

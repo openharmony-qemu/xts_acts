@@ -38,8 +38,7 @@ const uint32_t BACKGROUND_COLOR = 0x2AA1A6B1;
 } // namespace ConstIde
 
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
-static ArkUI_NativeNodeAPI_1 *nodeAPI_ = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
-    OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
+static ArkUI_NativeNodeAPI_1 *nodeAPI_ = nullptr;
 ArkUI_ContextHandle g_contextHandle = nullptr;
 int g_dragCount = PARAM_10;
 ArkUI_NodeHandle swiper = nullptr;
@@ -52,7 +51,7 @@ ArkUI_NodeHandle buttonText6 = nullptr;
 ArkUI_NodeHandle buttonText7 = nullptr;
 ArkUI_NodeHandle buttonText8 = nullptr;
 ArkUI_NodeHandle buttonText9 = nullptr;
-ArkUI_NodeHandle root_ = nodeAPI_->createNode(ARKUI_NODE_COLUMN);
+ArkUI_NodeHandle root_ = nullptr;
 ArkUI_NumberValue value[] = {0};
 ArkUI_AttributeItem item = {.value = value, .size = 1};
 typedef void (*FakeCallback)(uint64_t nanoTimestamp, uint32_t frameCount, void *userData);
@@ -427,6 +426,8 @@ namespace ArkUICapiTest {
     if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "CreateNativeNode napi_get_cb_info failed");
     }
+    nodeAPI_ = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
+    root_ = nodeAPI_->createNode(ARKUI_NODE_COLUMN);
     ArkUI_NodeContentHandle nodeContentHandle = nullptr;
     OH_ArkUI_GetNodeContentFromNapiValue(env, args[ConstIde::NUMBER_0], &nodeContentHandle);
     OH_ArkUI_GetContextFromNapiValue(env, args[1], &g_contextHandle);

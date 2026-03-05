@@ -14,95 +14,86 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
-import hilog from '@ohos.hilog';
-import router from '@ohos.router';
 import commonEventManager from '@ohos.commonEventManager';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import Utils from './Utils.test';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-const TAG = "ACTS_LiveFormExtension";
+const DELEGATOR: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+ 
+let liveFormSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+    events: ['LiveFormExtensionAbility_Create'],
+};
+ 
+let liveFormSubscriber: commonEventManager.CommonEventSubscriber;
+ 
+let finishFormEvent: string = "FMS_FormTestFinish_commonEvent";
+ 
+function sleep(time: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
-    let globalScribe: commonEventManager.CommonEventSubscriber | undefined = undefined;
-
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     })
 
     beforeEach(async () => {
-      hilog.info(0x0000, TAG, 'beforeEach start');
-
-      let options: router.RouterOptions = {
-        url: 'testAbility/pages/LaunchPage',
-      }
-      try {
-        await router.pushUrl(options);
-        await Utils.sleep(500);
-        hilog.info(0x0000, TAG, 'push page succeed');
-      } catch (err) {
-        hilog.info(0x0000, TAG, `push page error: ${err}`);
-      }
-
-      // max wait 8s
-      setTimeout(async () => {
-        if (globalScribe !== undefined) {
-          Utils.unsubscribe(globalScribe)
-        }
-      }, 8000);
+      liveFormSubscriber = await commonEventManager.createSubscriber(liveFormSubscribeInfo);
+      await sleep(1000);
     })
 
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
+      commonEventManager.unsubscribe(liveFormSubscriber);
     })
 
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
      * @tc.name   SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100
      * @tc.number SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100
-     * @tc.desc   Start the LiveFormExtensionAbility, and the test is successful.
+     * @tc.desc   Test LiveFormExtensionAbility is created and publishes event successfully
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100', Level.LEVEL0, async () => {
-      // Defines a test case. This API supports three parameters:
-      // test case name, filter parameter, and test case function.
-      const newTag = 'SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 == ';
-
-      let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['ACTS_LiveFormExtension_OnRemoteReady'],
-      };
-
-      await commonEventManager.createSubscriber(subscribeInfo).then(async (data) => {
-        hilog.info(0x0000, TAG, `createSubscriber data: ${JSON.stringify(data)}`);
-        globalScribe = data;
-        commonEventManager.subscribe(globalScribe, async (err, data) => {
-          hilog.info(0x0000, newTag, `SubscribeInfoCallback: ${JSON.stringify(data)}`);
-
-          let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-          await abilityDelegator.executeShellCommand('aa dump -e').then((data) => {
-            hilog.info(0x0000, newTag, `data: ${JSON.stringify(data)}`);
-            let output = JSON.stringify(data);
-            try {
-              expect(output).assertContain('LiveFormExtAbility');
-            } catch {
-              expect().assertFail();
-            }
-          });
+    it('SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100', Level.LEVEL0, async (done: Function) => {
+      console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 start`);
+      let liveFormCallBack = (_:BusinessError, data: commonEventManager.CommonEventPublishData) => {
+        console.info("====>SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 data:====>" + JSON.stringify(data));
+        expect(data.code).assertEqual(0);
+        
+        commonEventManager.publish(finishFormEvent, data, async (err) => {
+          console.info('SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 publish' + JSON.stringify(err));
+          await sleep(2000);
+          done();
         });
-      }).catch((error: BusinessError) => {
-        hilog.info(0x0000, newTag, `createSubscriber err: ${JSON.stringify(error)}`);
+      }
+
+      commonEventManager.subscribe(liveFormSubscriber, liveFormCallBack);
+      console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 startAbility start`);
+      await DELEGATOR.startAbility({
+        bundleName: "com.example.formsystemhost",
+        abilityName: "EntryAbility",
+        parameters: {
+            "formId" : "0",
+            "name" : "widget",
+            "bundle" : "com.example.getformsinfotest",
+            "ability" : "EntryFormAbility",
+            "moduleName" : "entry",
+            "updateFormSize" : true,
+            "isTestFormId": true,
+            "testFormId": "0",
+            "newDimension" : 3,
+            "isLiveForm" : true,
+        }
+      }).then(() => {
+        console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 startAbilityhost end`);
+      }).catch((err: BusinessError) => {
+        console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 startAbilityhost error: ${JSON.stringify(err)}`);
         expect().assertFail();
-      })
+        done();
+      });
+      console.log(`SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 startAbility end`);
     })
   })
 }

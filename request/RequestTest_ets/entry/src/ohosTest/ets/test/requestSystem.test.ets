@@ -17,6 +17,7 @@ import request from '@system.request';
 import fileio from '@ohos.fileio'
 import featureAbility from '@ohos.ability.featureAbility';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "@ohos/hypium";
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestSystemJSUnit() {
   describe('requestSystemJSUnit', () => {
@@ -44,6 +45,16 @@ export default function requestSystemJSUnit() {
         done();
       }
     })
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
+    });
 
     /**
      * @tc.name   SUB_REQUESTSYSTEM_UPLOAD_API_0001

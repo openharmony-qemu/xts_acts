@@ -16,9 +16,29 @@ import progressUndefined from './ProgressTest/progressUndefined.test';
 import progressModifierUndefined from './ProgressTest/progressModifierUndefined.test';
 import timePickerUndefined from './TimePickerTest/timePickerUndefined.test';
 import timePickerModifierUndefined from './TimePickerTest/timePickerModifierUndefined.test';
+import DataPanelUndefinedTest from './DataPanelTest/dataPanelUndefined.test'
+import DataPanelAttrsModifierUndefinedTest from './DataPanelTest/dataPanelAttrsModifierUndefined.test'
+import GaugeUndefinedTest from './GaugeTest/gaugeUndefined.test';
+import GaugeAttrsModifierUndefinedTest from './GaugeTest/gaugeAttrsModifierUndefined.test';
+import ImageUndefinedTest from './ImageTest/imageUndefined.test';
+import ImageAttrsModifierUndefinedTest from './ImageTest/imageAttrsModifierUndefined.test';
+import ImageOnfinishUndefinedTest from './ImageTest/imageOnfinishUndefined.test';
+import ImageAttrsModifierOnfinishUndefinedTest from './ImageTest/imageAttrsModifierOnfinishUndefined.test';
+import ImageOnErrorUndefinedTest from './ImageTest/imageOnErrorUndefined.test';
+import ImageAttrsModifierOnErrorUndefinedTest from './ImageTest/imageAttrsModifierOnErrorUndefined.test';
 export default function testsuite() {
   progressUndefined()
   timePickerUndefined()
   progressModifierUndefined()
   timePickerModifierUndefined()
+  DataPanelUndefinedTest();
+  DataPanelAttrsModifierUndefinedTest();
+  GaugeUndefinedTest();
+  GaugeAttrsModifierUndefinedTest();
+  ImageUndefinedTest();
+  ImageAttrsModifierUndefinedTest();
+  ImageOnfinishUndefinedTest();
+  ImageAttrsModifierOnfinishUndefinedTest();
+  ImageOnErrorUndefinedTest();
+  ImageAttrsModifierOnErrorUndefinedTest();
 }

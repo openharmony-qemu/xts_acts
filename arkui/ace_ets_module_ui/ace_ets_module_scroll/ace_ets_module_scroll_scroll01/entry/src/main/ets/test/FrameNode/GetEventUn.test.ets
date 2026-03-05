@@ -73,5 +73,38 @@ export default function GetEventUn() {
       console.info('[GetEventUn_0100] END');
       done();
     });
+
+    /**
+     * @tc.name   GetEventUn_0200
+     * @tc.number GetEventUn_002
+     * @tc.desc   Set null for the typeNode.getEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GetEventUn_0200', Level.LEVEL1, async (done: Function) => {
+      console.info('[GetEventUn_0200] START');
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      let btn: Component = await driver.findComponent(ON.id('getEvent_null'));
+      await btn.click();
+      console.info("[GetEventUn_0200] Click getEvent_null.");
+      await CommonFunc.sleep(1500);
+      console.info("[GetEventUn_0200] getEventGridNull: " + AppStorage.get('getEventGridNull'));
+      expect(AppStorage.get('getEventGridNull')).assertEqual(undefined);
+      console.info("[GetEventUn_0200] getEventScrollNull: " + AppStorage.get('getEventScrollNull'));
+      expect(AppStorage.get('getEventScrollNull')).assertEqual(undefined);
+      console.info("[GetEventUn_0200] getEventListNull: " + AppStorage.get('getEventListNull'));
+      expect(AppStorage.get('getEventListNull')).assertEqual(undefined);
+      console.info("[GetEventUn_0200] getEventWaterFlowNull: " + AppStorage.get('getEventWaterFlowNull'));
+      expect(AppStorage.get('getEventWaterFlowNull')).assertEqual(undefined);
+
+      AppStorage.delete('getEventGridNull')
+      AppStorage.delete('getEventScrollNull')
+      AppStorage.delete('getEventListNull')
+      AppStorage.delete('getEventWaterFlowNull')
+      console.info('[GetEventUn_0200] END');
+      done();
+    });
   })
 }

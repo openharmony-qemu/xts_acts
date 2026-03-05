@@ -2,6 +2,12 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import util from '@ohos.util';
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function TextEncoderTest() {
   describe('TextEncoderTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -9,10 +15,11 @@ export default function TextEncoderTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
+      await sleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

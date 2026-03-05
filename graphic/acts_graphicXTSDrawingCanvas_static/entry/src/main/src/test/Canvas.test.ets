@@ -405,6 +405,60 @@ export default function drawingTsCanvasTest() {
       }
     })
     /**
+     * @tc.name   testCanvasDrawColorNormal2Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0505
+     * @tc.desc   testCanvasDrawColorNormal2Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCanvasDrawColorNormal2Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawColorNormal2Static';
+      let canvas = new drawing.Canvas(pixel!);
+      let itemList: drawing.BlendMode[] = [
+        drawing.BlendMode.CLEAR,
+        drawing.BlendMode.SRC,
+        drawing.BlendMode.DST,
+        drawing.BlendMode.SRC_OVER,
+        drawing.BlendMode.DST_OVER,
+        drawing.BlendMode.SRC_IN,
+        drawing.BlendMode.DST_IN,
+        drawing.BlendMode.SRC_OUT,
+        drawing.BlendMode.DST_OUT,
+        drawing.BlendMode.SRC_ATOP,
+        drawing.BlendMode.DST_ATOP,
+        drawing.BlendMode.XOR,
+        drawing.BlendMode.PLUS,
+        drawing.BlendMode.MODULATE,
+        drawing.BlendMode.SCREEN,
+        drawing.BlendMode.OVERLAY,
+        drawing.BlendMode.DARKEN,
+        drawing.BlendMode.LIGHTEN,
+        drawing.BlendMode.COLOR_DODGE,
+        drawing.BlendMode.COLOR_BURN,
+        drawing.BlendMode.HARD_LIGHT,
+        drawing.BlendMode.SOFT_LIGHT,
+        drawing.BlendMode.DIFFERENCE,
+        drawing.BlendMode.EXCLUSION,
+        drawing.BlendMode.MULTIPLY,
+        drawing.BlendMode.HUE,
+        drawing.BlendMode.SATURATION,
+        drawing.BlendMode.COLOR,
+        drawing.BlendMode.LUMINOSITY
+      ];
+      for (let i = 0; i < 28; i++) {
+        try {
+          canvas.drawColor(255, 0, 10, 10,  itemList[i]);
+          console.log(msg + "drawColor success step: " + i)
+          console.log(msg + "drawColor success drawing.BlendMode: " + itemList[i])
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `drawVertices errorCode is:  ${e.code} + errormsg is: ${e.message} step: ${i}`);
+          expect().assertFail();
+        }
+      }
+    })
+    /**
      * @tc.name   testCanvasDrawColorNullStatic
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0501
      * @tc.desc   testCanvasDrawColorNull

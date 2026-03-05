@@ -26,6 +26,8 @@ import onNavigationModeChangeUndefined from './NavigationTest/onNavigationModeCh
 import onNavigationModeChangeModifierUndefined from './NavigationTest/onNavigationModeChange_ModifierUndefined.test';
 import customNavContentTransitionUndefined from './NavigationTest/customNavContentTransitionUndefined.test';
 import customNavContentTransitionModifierUndefined from './NavigationTest/customNavContentTransition_ModifierUndefined.test';
+import getParamByNameUndefined from './NavigationTest/getParamByNameUndefined.test';
+import getParamByNameModifierUndefined from './NavigationTest/getParamByName_ModifierUndefined.test';
 // swiperTest
 import indicatorUndefined from './swiperTest/indicatorUndefined.test';
 import indicatorInteractiveUndefined from './swiperTest/indicatorInteractiveUndefined.test';
@@ -152,4 +154,19 @@ export default function testsuite() {
   durationModifierUndefined()
   indexUndefined()
   indexModifierUndefined()
+  titleMode()
+  navigationUndefined()
+  naviDestinationUndefined()
+  navigationModifierUndefined()
+  naviDestinationModifierUndefined()
+  navDestinationUndefinedTest()
+  hideToolBarUndefined()
+  modeUndefined()
+  onTitleModeChangeUndefined()
+  onNavigationModeChangeUndefined()
+  onNavigationModeChangeModifierUndefined()
+  customNavContentTransitionUndefined()
+  customNavContentTransitionModifierUndefined()
+  getParamByNameUndefined()
+  getParamByNameModifierUndefined()
 }

@@ -1235,5 +1235,21 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_MULTIDISPLAY_CAPABILITY_0501
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_MULTIDISPLAY_CAPABILITY_0501
+     * @tc.desc   normalMultiDisplayCaptureCapabilityTest 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_MULTIDISPLAY_CAPABILITY_0501', Level.LEVEL0, async (done: Function) => {
+      console.info(Tag + "normalMultiDisplayCaptureCapabilityTest-------------before click:");
+      let result: number = myScreenCaptureNdk.normalMultiDisplayCaptureCapabilityTest();
+      console.info(Tag + "normalMultiDisplayCaptureCapabilityTest-------------res:" + result);
+      expect(result).assertEqual(3);
+      done();
+    });
   })
 }

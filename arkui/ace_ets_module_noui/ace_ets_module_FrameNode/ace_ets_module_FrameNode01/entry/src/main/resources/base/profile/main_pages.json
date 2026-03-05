@@ -67,6 +67,14 @@
         "MainAbility/pages/FrameNode/frameNodeApi",	
         "MainAbility/pages/FrameNodeNew/GraphicsFourBoundary",
         "MainAbility/pages/FrameNodeMethod/FrameNodeConvertPosition",
-        "MainAbility/pages/FrameNodeMethod/FrameNodeConvertPositionErrorCode"
+        "MainAbility/pages/FrameNodeMethod/FrameNodeConvertPositionErrorCode",
+        "MainAbility/pages/FrameNodeMethod/CreateNodeNullUndefinedTest",
+        "MainAbility/pages/FrameNodeMethod/createNodeScrollNullUndefined",
+        "MainAbility/pages/FrameNodeNew/bindControllerNullUndefined",
+        "MainAbility/pages/FrameNodeMethod/ConvertPositionNullUndefinedTest",
+        "MainAbility/pages/FrameNodeMethod/ConvertPositionToFromWindowNullTest",
+        "MainAbility/pages/FrameNodeMethod/RemoveAdoptedChildNullTest",
+        "MainAbility/pages/FrameNodeMethod/SetCrossLanguageOptionsNullTest",
+        "MainAbility/pages/FrameNodeMethod/GetInteractionEventBindingInfoNullTest"
     ]
 }

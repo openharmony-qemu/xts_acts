@@ -160,6 +160,34 @@ export async function closeFd(fdNumber: number) {
   }
 }
 
+export async function createMovingPhoto(testNum: string, context: Context, titleName: string) {
+  let photoAsset: photoAccessHelper.PhotoAsset | undefined = undefined;
+  try {
+    let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+    let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+    let extension: string = 'jpg';
+    let options: photoAccessHelper.CreateOptions = {
+      title: titleName,
+      subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO
+    }
+    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+      photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+    console.log(`${testNum} :: create assetChangeRequest success`);
+    let imageUri = context.filesDir + '/test_mov_1.jpg';
+    let videoUri = context.filesDir + '/test_mov_1.mp4';
+    console.info(testNum, imageUri, videoUri);
+    assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUri);
+    assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
+    console.log(`${testNum} :: add resource success`);
+    await phAccessHelper.applyChanges(assetChangeRequest);
+    console.log(`${testNum} :: applyChange success`);
+    photoAsset = assetChangeRequest.getAsset();
+  } catch (error) {
+    console.error(`${testNum} :: create moving photo failed, error is ${error}`);
+  }
+  return photoAsset;
+}
+
 export async function getPermission(name = 'ohos.acts.multimedia.photoAccess.supp.xts'): Promise<void> {
   try {
     console.info(TAG, 'getPermission start', name);

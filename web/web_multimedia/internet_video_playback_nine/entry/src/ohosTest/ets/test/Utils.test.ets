@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,6 +19,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
+import webview from '@ohos.web.webview';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class Utils {
@@ -31,69 +32,83 @@ export default class Utils {
       console.info(`sleep ${time} over...`)
     })
   }
-  
+
   static getSystemTime() {
-      return systemDateTime.getTime(true) / 1000
+    return systemDateTime.getTime(true) / 1000
   }
-  
+
   static deletFile(filePath: string) {
-      console.info("[deleteFile] filePath:" + filePath);
-      try {
-          fs.unlinkSync(filePath)
-      } catch (error) {
-          console.info("[deleteFile] error:" + error);
-      }
+    console.info("[deleteFile] filePath:" + filePath);
+    try {
+      fs.unlinkSync(filePath)
+    } catch (error) {
+      console.info("[deleteFile] error:" + error);
+    }
   }
-  
+
+  static isPC(controller: webview.WebviewController) {
+    let userAgent: string = controller.getUserAgent();
+    console.info("userAgent" + userAgent);
+
+    try {
+      let isPc: boolean = userAgent.includes('PC') || userAgent.toLowerCase().includes('pc') || userAgent.includes("2in1")
+      console.log('device is pc:' + isPc)
+      return isPc
+    } catch (error) {
+      console.info("userAgent error:" + error);
+      return true
+    }
+  }
+
   static deleteDir(dirPath: string) {
-      console.info("[deleteFile] dirPath:" + dirPath);
-      try {
-          fs.rmdirSync(dirPath)
-      } catch (error) {
-          console.info("[deleteFile] error:" + error);
-      }
+    console.info("[deleteFile] dirPath:" + dirPath);
+    try {
+      fs.rmdirSync(dirPath)
+    } catch (error) {
+      console.info("[deleteFile] error:" + error);
+    }
   }
-  
+
   static listFile(dirPath: string): string[] {
-      console.info("[listFile] dirPath:" + dirPath);
-      try {
-          let files = fs.listFileSync(dirPath)
-          for ( let i = 0; i < files.length; i++) {
-              console.info('The name of file: ${files[i]}');
-          }
-          return files;
-      } catch (error) {
-          console.info("[listFile] error:" + error);
-          return [];
+    console.info("[listFile] dirPath:" + dirPath);
+    try {
+      let files = fs.listFileSync(dirPath)
+      for ( let i = 0; i < files.length; i++) {
+        console.info('The name of file: ${files[i]}');
       }
+      return files;
+    } catch (error) {
+      console.info("[listFile] error:" + error);
+      return [];
+    }
   }
-  
+
   static isFileExist(filePath: string): boolean {
-      console.info("[isFileExist] filePath:" + filePath);
-      try {
-          let fileExist = fs.accessSync(filePath)
-          console.info("[isFileExist] return:" + fileExist);
-          return fileExist
-      } catch (error) {
-          console.info("[isFileExist] error:" + error);
-          return false;
-      }
+    console.info("[isFileExist] filePath:" + filePath);
+    try {
+      let fileExist = fs.accessSync(filePath)
+      console.info("[isFileExist] return:" + fileExist);
+      return fileExist
+    } catch (error) {
+      console.info("[isFileExist] error:" + error);
+      return false;
+    }
   }
 
   static async clickComponent(id: string) {
-      let driver = Driver.create();
-      let component = await driver.findComponent(ON.id(id));
-      await component.click();
+    let driver = Driver.create();
+    let component = await driver.findComponent(ON.id(id));
+    await component.click();
   }
-  
+
   static async triggerKey(id: number) {
-      let driver = Driver.create();
-      await driver.triggerKey(id);
+    let driver = Driver.create();
+    await driver.triggerKey(id);
   }
-  
-  
-  static registerBaseEvent(testCaseName: string, expected: Object, eventId: number, 
-                           done: Function, expectFunction: Function) {
+
+
+  static registerBaseEvent(testCaseName: string, expected: Object, eventId: number,
+    done: Function, expectFunction: Function) {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -115,17 +130,17 @@ export default class Utils {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
   }
-  
+
   static registerEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
-      Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-      });
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
+      expect(backData?.data?.ACTION).assertEqual(expected);
+    });
   }
-  
+
   static registerContainEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
-      Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertContain(expected);
-      });
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
+      expect(backData?.data?.ACTION).assertContain(expected);
+    });
   }
 
   static emitEvent(actualValue: boolean | string | number | object, eventId: number) {
@@ -144,6 +159,48 @@ export default class Utils {
     } catch (err) {
       console.info("webFlag emit action state err: " + JSON.stringify(err));
     }
+  }
+
+  static async waitForExist<T> (
+    stateGetter: () => T,
+    testsuite: string,
+    expectValue: string | number | boolean | null = null,
+    interval=3000,
+    tryTime=20
+  ):Promise<T>{
+    let nums = 0;
+    let isSuccess = false;
+    while (nums < tryTime) {
+      const currentValue = await new Promise<T>((done) => {
+        setTimeout(()=>done(stateGetter()), 0);
+      })
+
+      if (expectValue == null) {
+        if (currentValue != null) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      } else {
+        if (currentValue == expectValue) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      }
+      await Utils.sleep(interval);
+      nums++;
+      console.log(testsuite + ' debug wait for exist ' + nums + ' times, currentValue: ' + currentValue
+        + ', expectValue ' + expectValue);
+    }
+    if (!isSuccess) {
+      console.log(testsuite + ' debug wait for failed')
+    }
+    const currentValue = await new Promise<T>((result) => {
+      setTimeout(() => result(stateGetter()), 0);
+    });
+    console.log(testsuite + ' debug wait for failed exist ' + currentValue);
+    return currentValue;
   }
 
   static async waitAndClickComponent(driver: Driver, componentId: string): Promise<void> {

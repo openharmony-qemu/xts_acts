@@ -56,7 +56,14 @@
         "MainAbility/pages/List/ListFlingCallback",
         "MainAbility/pages/List/ListScrollEdgeCallback",
         "MainAbility/pages/List/listFrictionRes",
+        "MainAbility/pages/ListItem/swipeActionNullUndefined",
         "MainAbility/pages/ListItem/listItemNullUndefined",
-        "MainAbility/pages/ListItemGroup/listItemGroupNullUndefined"
+        "MainAbility/pages/ListItemGroup/listItemGroupNullUndefined",
+        "MainAbility/pages/listDefault/childrenMainSizeNullUndefined",
+        "MainAbility/pages/listDefault/listEventNullUndefined",
+        "MainAbility/pages/listDefault/listScrollerNullUndefined",
+        "MainAbility/pages/listDefault/listDefault1",
+        "MainAbility/pages/listDefault/listDefault2",
+        "MainAbility/pages/listDefault/listDefault3"
     ]
 }

@@ -1357,5 +1357,38 @@ export default function RdbStoreDeleteWithReturning() {
       console.log(TAG + "************* deleteWithReturning034 end *************");
       done();
     })
+
+     /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_deleteWithReturningAPITest_7700
+     * @tc.name   deleteWithReturning035
+     * @tc.desc   columns with ""
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+     it('deleteWithReturning035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* deleteWithReturning035 start *************");
+      let predicates = new relationalStore.RdbPredicates("test");
+      const config: relationalStore.ReturningConfig = {
+        columns: [""],
+        maxReturningCount: undefined
+      }
+      try {
+        await rdbStore?.deleteWithReturning(predicates, config);
+        expect().assertFail();
+      } catch (e) {
+        console.error(TAG + `deleteWithReturning035 failed. code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(14800021);
+      }
+
+      try {
+        await rdbStore?.deleteWithReturningSync(predicates, config);
+        expect().assertFail();
+      } catch (e) {
+        console.error(TAG + `deleteWithReturning035 failed. code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(14800021);
+      }
+      console.log(TAG + "************* deleteWithReturning035 end *************");
+    })
   })
 }

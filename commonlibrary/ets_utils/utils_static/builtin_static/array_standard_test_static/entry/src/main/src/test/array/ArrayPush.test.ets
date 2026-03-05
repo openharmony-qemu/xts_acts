@@ -579,31 +579,12 @@ export default function ArrayPushTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // todo
-    // it('testArrayPush0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: SelfArray24 = [];
-    //   const len = arr.push(arr);
-    //   expect(len).assertEqual(1);
-    //   expect(arr[0]).assertEqual(arr);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0025
-     * @tc.name testArrayPush0025
-     * @tc.desc Verify push Symbol elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArrayPush0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const s1 = Symbol('s1');
-    //   const s2 = Symbol('s2');
-    //   const arr: symbol[] = [];
-    //   const len = arr.push(s1, s2);
-    //   expect(len).assertEqual(2);
-    //   expect(arr[0]).assertEqual(s1);
-    //   expect(arr[1]).assertEqual(s2);
-    // });
+    it('testArrayPush0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const arr: SelfArray24 = [];
+      const len = arr.push(arr);
+      expect(len).assertEqual(1);
+      expect(arr[0]).assertEqual(arr);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0026
@@ -862,24 +843,6 @@ export default function ArrayPushTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0042
-     * @tc.name testArrayPush0042
-     * @tc.desc Verify push Symbol elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArrayPush0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const s1 = Symbol('a');
-    //   const s2 = Symbol('b');
-    //   const arr: symbol[] = [];
-    //   const len = arr.push(s1, s2);
-    //   expect(len).assertEqual(2);
-    //   expect(arr[0]).assertEqual(s1);
-    //   expect(arr[1]).assertEqual(s2);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0043
      * @tc.name testArrayPush0043
      * @tc.desc Verify push function references
@@ -959,13 +922,12 @@ export default function ArrayPushTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // todo
-    // it('testArrayPush0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: SelfArray47 = [];
-    //   const len = arr.push(arr);
-    //   expect(len).assertEqual(1);
-    //   expect(arr[0]).assertEqual(arr);
-    // });
+    it('testArrayPush0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const arr: SelfArray47 = [];
+      const len = arr.push(arr);
+      expect(len).assertEqual(1);
+      expect(arr[0]).assertEqual(arr);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0048
@@ -1080,24 +1042,6 @@ export default function ArrayPushTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0055
-     * @tc.name testArrayPush0055
-     * @tc.desc Verify push Symbol values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArrayPush0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const s1 = Symbol('s1');
-    //   const s2 = Symbol('s2');
-    //   const arr: symbol[] = [];
-    //   const len = arr.push(s1, s2);
-    //   expect(len).assertEqual(2);
-    //   expect(arr[0]).assertEqual(s1);
-    //   expect(arr[1]).assertEqual(s2);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0056
      * @tc.name testArrayPush0056
      * @tc.desc Verify push function references
@@ -1186,22 +1130,6 @@ export default function ArrayPushTest() {
       expect(arr[0]).assertDeepEquals([] as number[]);
       expect(JSON.stringify(arr[1])).assertEqual(JSON.stringify([1]));
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0061
-     * @tc.name testArrayPush0061
-     * @tc.desc Verify push recursive array (array contains itself)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // todo
-    // it('testArrayPush0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: SelfArray61 = [];
-    //   const len = arr.push(arr);
-    //   expect(len).assertEqual(1);
-    //   expect(arr[0]).assertEqual(arr);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0062
@@ -1394,14 +1322,13 @@ export default function ArrayPushTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // todo
-    // it('testArrayPush0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: SelfArray73 = [];
-    //   const len = arr.push(arr, 1);
-    //   expect(len).assertEqual(2);
-    //   expect(arr[0]).assertEqual(arr);
-    //   expect(arr[1]).assertEqual(1);
-    // });
+    it('testArrayPush0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const arr: SelfArray73 = [];
+      const len = arr.push(arr, 1);
+      expect(len).assertEqual(2);
+      expect(arr[0]).assertEqual(arr);
+      expect(arr[1]).assertEqual(1);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0074
@@ -1644,12 +1571,12 @@ export default function ArrayPushTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // todo
-    // it('testArrayPush0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: SelfArray88 = [];
-    //   arr.push(arr);
-    //   expect(arr[0]).assertEqual(arr);
-    // });
+    it('testArrayPush0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const arr: SelfArray88 = [];
+      arr.push(arr);
+      expect(arr[0]).assertEqual(arr);
+    });
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0089
@@ -1986,12 +1913,11 @@ export default function ArrayPushTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // todo
-    // it('testArrayPush0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: SelfArray110 = [];
-    //   arr.push(arr);
-    //   expect(arr[0]).assertEqual(arr);
-    // });
+    it('testArrayPush0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const arr: SelfArray110 = [];
+      arr.push(arr);
+      expect(arr[0]).assertEqual(arr);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Push_0111

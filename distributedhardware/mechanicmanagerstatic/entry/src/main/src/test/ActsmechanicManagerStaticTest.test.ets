@@ -43,14 +43,21 @@ export default function ActsmechanicManagerStaticTest() {
       async (done: () => void): Promise<void> => {
         const LOG_NAME = `SUB_DH_MechanicManager_on_AttachStateChange_0100`;
         hilog.info(domain, tag, `======>${LOG_NAME} begin======`);
-        let flag = 0;
         try {
+          let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+            console.info(`'SUB_DH_MechanicManager_on_0800 callback result: ' ${JSON.stringify(result)}`);
+            expect(result.state).assertEqual(mechanicManager.AttachState.ATTACHED);
+            expect(result.state).assertEqual(mechanicManager.AttachState.DETACHED);
+            expect(result.mechInfo.mechId == 0).assertTrue();
+            expect(result.mechInfo.mechDeviceType == 0).assertTrue();
+            expect(result.mechInfo.mechName == 'Osmo Mobile 7P').assertTrue();
+            done();
+          };
           hilog.info(domain, tag, '注册连接状态变化事件的回调监听');
-          mechanicManager.onAttachStateChange((result: mechanicManager.AttachStateChangeInfo) => {
-            hilog.info(domain, tag, `'result:' ${result}`);
+          mechanicManager.onAttachStateChange((callback: mechanicManager.AttachStateChangeInfo) => {
+            hilog.info(domain, tag, `'result:' ${callback}`);
           });
           hilog.info(domain, tag, '注册连接状态变化事件的回调监听成功');
-          expect(flag == 0).assertTrue();
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', '注册连接状态变化事件的回调监听失败 failed for ' + err);
           const e = err as BusinessError;
@@ -168,7 +175,7 @@ export default function ActsmechanicManagerStaticTest() {
           hilog.info(domain, tag, "====>setCameraTrackingEnabled err:" + JSON.stringify(err));
           const e = err as BusinessError;
           hilog.info(domain, tag, `setCameraTrackingEnabled err.code: ${e.code}`);
-          expect(e.code == 33300001 || e.code == 33300002 || e.code == 33300003).assertTrue()
+          expect(e.code == 33300001).assertTrue()
         }
         hilog.info(domain, tag, `======>${LOG_NAME} end======`);
         done();
@@ -195,7 +202,7 @@ export default function ActsmechanicManagerStaticTest() {
           hilog.info(domain, tag, "====>setCameraTrackingEnabled err:" + JSON.stringify(err));
           const e = err as BusinessError;
           hilog.info(domain, tag, `setCameraTrackingEnabled err.code: ${e.code}`);
-          expect(e.code == 33300001 || e.code == 33300002 || e.code == 33300003).assertTrue()
+          expect(e.code == 33300001).assertTrue()
         }
         hilog.info(domain, tag, `======>${LOG_NAME} end======`);
         done();
@@ -222,7 +229,59 @@ export default function ActsmechanicManagerStaticTest() {
           hilog.info(domain, tag, "====>getCameraTrackingEnabled err:" + JSON.stringify(err));
           const e = err as BusinessError;
           hilog.info(domain, tag, `getCameraTrackingEnabled err.code: ${e.code}`);
-          expect(e.code == 33300001 || e.code == 33300002).assertTrue()
+          expect(e.code == 33300001).assertTrue()
+        }
+        hilog.info(domain, tag, `======>${LOG_NAME} end======`);
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_getCameraTrackingEnabled_0200
+     * @tc.number SUB_DH_MechanicManager_getCameraTrackingEnabled_0200
+     * @tc.desc   Enables or disables camera tracking,getCameraTrackingEnabled接口调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DH_MechanicManager_getCameraTrackingEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const LOG_NAME = `SUB_DH_MechanicManager_getCameraTrackingEnabled_0200`;
+        hilog.info(domain, tag, `======>${LOG_NAME} begin======`);
+        try {
+          let enabled = mechanicManager.getCameraTrackingEnabled();
+          hilog.info(domain, tag, `'current tracking status:' ${enabled}`);
+          expect(enabled).assertEqual(true);
+        } catch (err) {
+          hilog.info(domain, tag, "====>getCameraTrackingEnabled err:" + JSON.stringify(err));
+          const e = err as BusinessError;
+          hilog.info(domain, tag, `getCameraTrackingEnabled err.code: ${e.code}`);
+          expect(e.code == 33300001).assertTrue()
+        }
+        hilog.info(domain, tag, `======>${LOG_NAME} end======`);
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_getCameraTrackingEnabled_0300
+     * @tc.number SUB_DH_MechanicManager_getCameraTrackingEnabled_0300
+     * @tc.desc   Enables or disables camera tracking,getCameraTrackingEnabled接口调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DH_MechanicManager_getCameraTrackingEnabled_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const LOG_NAME = `SUB_DH_MechanicManager_getCameraTrackingEnabled_0300`;
+        hilog.info(domain, tag, `======>${LOG_NAME} begin======`);
+        try {
+          let enabled = mechanicManager.getCameraTrackingEnabled();
+          hilog.info(domain, tag, `'current tracking status:' ${enabled}`);
+          expect(enabled).assertEqual(false);
+        } catch (err) {
+          hilog.info(domain, tag, "====>getCameraTrackingEnabled err:" + JSON.stringify(err));
+          const e = err as BusinessError;
+          hilog.info(domain, tag, `getCameraTrackingEnabled err.code: ${e.code}`);
+          expect(e.code == 33300001).assertTrue()
         }
         hilog.info(domain, tag, `======>${LOG_NAME} end======`);
         done();
@@ -240,14 +299,19 @@ export default function ActsmechanicManagerStaticTest() {
       async (done: () => void): Promise<void> => {
         const LOG_NAME = `SUB_DH_MechanicManager_onTrackingStateChange_0100`;
         hilog.info(domain, tag, `======>${LOG_NAME} begin======`);
-        let flag = 0;
         try {
+          let callback = (result: mechanicManager.TrackingEventInfo) => {
+            console.info(`'SUB_DH_MechanicManager_on_0700 callback result' ${JSON.stringify(result)}`);
+            expect(result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_USER_ENABLED).assertTrue();
+            expect(result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_USER_DISABLED).assertTrue();
+            expect(result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_LAYOUT_CHANGED).assertTrue();
+            done();
+          };
           hilog.info(domain, tag, '注册跟踪事件监听');
-          mechanicManager.onTrackingStateChange((result: mechanicManager.TrackingEventInfo) => {
-            hilog.info(domain, tag, `'result:' ${result}`);
+          mechanicManager.onTrackingStateChange((callback: mechanicManager.TrackingEventInfo) => {
+            hilog.info(domain, tag, `'result:' ${callback}`);
           });
           hilog.info(domain, tag, '注册跟踪事件监听成功');
-          expect(flag == 0).assertFail();
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', '注册跟踪事件监听失败 failed for ' + err);
           const e = err as BusinessError;
@@ -328,16 +392,18 @@ export default function ActsmechanicManagerStaticTest() {
       async (done: () => void): Promise<void> => {
         const LOG_NAME = `SUB_DH_MechanicManager_getCameraTrackingLayout_0100`;
         hilog.info(domain, tag, `======>${LOG_NAME} begin======`);
-        let flag = 0;
         try {
           let layout = mechanicManager.getCameraTrackingLayout();
           hilog.info(domain, tag, `'Query layout successful, current layout:' ${layout}`);
-          expect(flag == 0).assertFail();
+          expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.DEFAULT);
+          expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.LEFT);
+          expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.MIDDLE);
+          expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.RIGHT);
         } catch (err) {
           hilog.info(domain, tag, "====>getCameraTrackingLayout err:" + JSON.stringify(err));
           const e = err as BusinessError;
           hilog.info(domain, tag, `getCameraTrackingLayout err.code: ${e.code}`);
-          expect(e.code == 33300001 || e.code == 33300002).assertTrue()
+          expect(e.code == 33300001).assertTrue()
         }
         hilog.info(domain, tag, `======>${LOG_NAME} end======`);
         done();

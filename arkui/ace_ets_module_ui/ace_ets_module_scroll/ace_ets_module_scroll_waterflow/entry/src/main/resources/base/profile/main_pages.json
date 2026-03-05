@@ -17,6 +17,8 @@
         "MainAbility/pages/WaterFlow/WaterFlowContentSize",
         "MainAbility/pages/WaterFlow/WaterFlowFillPolicyModifier",
         "MainAbility/pages/waterFlowDefault/waterFlowDefault1",
-        "MainAbility/pages/waterFlowDefault/waterFlowDefault2"
+        "MainAbility/pages/waterFlowDefault/waterFlowDefault2",
+        "MainAbility/pages/waterFlowDefault/waterFlowEventNullUndefined",
+        "MainAbility/pages/waterFlowDefault/sectionsNullUndefined"
     ]
 }

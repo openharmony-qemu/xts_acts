@@ -22,6 +22,7 @@ import SpecTypeTest from "./Types/Types.test";
 import SpecTypeTest1 from "./Types/Types1.test";
 import EqualityExpressions from "./Types/EqualityExpressions.test.ets";
 import ClassLateInitizationTest from "./Class/Class.test";
+import UnionTest from "./Union/Unionnormalization.test";
 
 export default function testsuite() {
   builtinsBlockTest();
@@ -48,5 +49,5 @@ export default function testsuite() {
   SpecTypeTest1();
   ClassLateInitizationTest();
   EqualityExpressions();
-  
+  UnionTest();
 }

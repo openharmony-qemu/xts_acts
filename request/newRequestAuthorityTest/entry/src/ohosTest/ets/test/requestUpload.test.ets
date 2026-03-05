@@ -20,6 +20,7 @@ import commonEvent from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestUploadJSUnit() {
   describe('requestUploadJSUnit', () => {
@@ -58,8 +59,11 @@ export default function requestUploadJSUnit() {
     /**
      * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
      */
-    beforeEach(() => {
-      console.info('====>beforeEach: Prerequisites is executed.');
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
     });
 
     /**
@@ -225,7 +229,7 @@ export default function requestUploadJSUnit() {
       try {
         let task = await request.agent.create(baseContext, config);
         await request.agent.remove(task.tid);
-        expect(true).assertEqual(true);
+        expect(task !== undefined).assertEqual(true);
         console.info("====>SUB_Misc_REQUEST_Remove_Upload_Promise_0010 remove success: " + task);
         console.info("-----------------------SUB_Misc_REQUEST_Remove_Upload_Promise_0010 end-----------------------");
         done();
@@ -254,7 +258,7 @@ export default function requestUploadJSUnit() {
               console.info("====>SUB_Misc_REQUEST_Start_Upload_Callback_0010 upload start err: " + JSON.stringify(err));
               expect().assertFail();
             }
-            expect(true).assertEqual(true);
+            expect(task !== undefined).assertEqual(true);
             console.info("====>SUB_Misc_REQUEST_Start_Upload_Callback_0010 upload start success: " + task);
             console.info("-----------------------SUB_Misc_REQUEST_Start_Upload_Callback_0010 end-----------------------");
             await sleep(100);
@@ -280,7 +284,7 @@ export default function requestUploadJSUnit() {
       try {
         let task = await request.agent.create(baseContext, config);
         await task.start();
-        expect(true).assertEqual(true);
+        expect(task !== undefined).assertEqual(true);
         console.info("====>SUB_Misc_REQUEST_Start_Upload_Promise_0010 upload start success: " + JSON.stringify(task));
         console.info("-----------------------SUB_Misc_REQUEST_Start_Upload_Promise_0010 end-----------------------");
         await sleep(100);
@@ -312,7 +316,7 @@ export default function requestUploadJSUnit() {
                 console.info("====>SUB_Misc_REQUEST_Pause_Upload_Callback_0010 upload pause err: " + JSON.stringify(err));
                 expect().assertFail();
               }
-              expect(true).assertEqual(true);
+              expect(task !== undefined).assertEqual(true);
               console.info("====>SUB_Misc_REQUEST_Pause_Upload_Callback_0010 upload pause success: " + task);
               console.info("-----------------------SUB_Misc_REQUEST_Pause_Upload_Callback_0010 end-----------------------");
               await sleep(100);
@@ -342,7 +346,7 @@ export default function requestUploadJSUnit() {
         try {
           console.info("====>SUB_Misc_REQUEST_Pause_Upload_Promise_0010 upload start: " + JSON.stringify(err));
           await task.pause();
-          expect(true).assertEqual(true);
+          expect(task !== undefined).assertEqual(true);
           console.info("====>SUB_Misc_REQUEST_Pause_Upload_Promise_0010 upload pause success: " + task);
           console.info("-----------------------SUB_Misc_REQUEST_Pause_Upload_Promise_0010 end-----------------------");
           done();
@@ -376,7 +380,7 @@ export default function requestUploadJSUnit() {
                   console.info("====>SUB_Misc_REQUEST_Resume_Upload_Callback_0010 upload resume err: " + JSON.stringify(err));
                   expect().assertFail();
                 }
-                expect(true).assertEqual(true);
+                expect(task !== undefined).assertEqual(true);
                 console.info("====>SUB_Misc_REQUEST_Resume_Upload_Callback_0010 upload resume success: " + task);
                 console.info("-----------------------SUB_Misc_REQUEST_Resume_Upload_Callback_0010 end-----------------------");
                 await sleep(100);
@@ -409,7 +413,7 @@ export default function requestUploadJSUnit() {
           console.info("====>SUB_Misc_REQUEST_Resume_Upload_Promise_0010 pause: " + JSON.stringify(err));
           try {
             await task.resume();
-            expect(true).assertEqual(true);
+            expect(task !== undefined).assertEqual(true);
             console.info("====>SUB_Misc_REQUEST_Resume_Upload_Promise_0010 upload resume success: " + task);
             console.info("-----------------------SUB_Misc_REQUEST_Resume_Upload_Promise_0010 end-----------------------");
             done();
@@ -442,7 +446,7 @@ export default function requestUploadJSUnit() {
                 console.info("====>SUB_Misc_REQUEST_Stop_Upload_Callback_0010 upload stop err: " + JSON.stringify(err));
                 expect().assertFail() ;
               }
-              expect(true).assertEqual(true);
+              expect(task !== undefined).assertEqual(true);
               console.info("====>SUB_Misc_REQUEST_Stop_Upload_Callback_0010 upload stop success: " + task);
               console.info("-----------------------SUB_Misc_REQUEST_Stop_Upload_Callback_0010 end-----------------------");
               await sleep(100);
@@ -472,7 +476,7 @@ export default function requestUploadJSUnit() {
         console.info("====>SUB_Misc_REQUEST_Stop_Upload_Promise_0010 start: " + JSON.stringify(err));
         try {
           await task.stop();
-          expect(true).assertEqual(true);
+          expect(task !== undefined).assertEqual(true);
           console.info("====>SUB_Misc_REQUEST_Stop_Upload_Promise_0010 upload stop success: " + task);
           done();
         } catch (err) {

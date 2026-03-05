@@ -26,6 +26,20 @@
         "MainAbility/pages/CommonAttrs/OffsetNullUndefined",
         "MainAbility/pages/CommonAttrs/ChainModeNullUndefined",
         "MainAbility/pages/CommonAttrs/UseSizeTypeNullUndefined",
-        "MainAbility/pages/CommonAttrs/MarkAnchorNullUndefined"
+        "MainAbility/pages/CommonAttrs/MarkAnchorNullUndefined",
+        "MainAbility/pages/CommonCustom/LayoutChildLayoutNull",
+        "MainAbility/pages/CommonCustom/LayoutChildLayoutUndefined",
+        "MainAbility/pages/CommonCustom/LayoutChildMeasureNull",
+        "MainAbility/pages/CommonCustom/LayoutChildMeasureUndefined",
+        "MainAbility/pages/CommonCustom/LayoutlableLayoutNull",
+        "MainAbility/pages/CommonCustom/LayoutlableLayoutUndefined",
+        "MainAbility/pages/CommonCustom/LayoutlableMeasureNull",
+        "MainAbility/pages/CommonCustom/LayoutlableMeasureUndefined",
+        "MainAbility/pages/CommonAttrs/LayoutGravityNullUndefined",
+        "MainAbility/pages/CommonAttrs/IgnoreLayoutSafeAreaNullUndefined",
+        "MainAbility/pages/CommonAttrs/ExpandSafeAreaNullUndefined",
+
+        "MainAbility/pages/CommonCustom/MediaQueryMatchMediaNullUndefined",
+        "MainAbility/pages/CommonCustom/MediaQueryMatchMediaSyncNullUndefined"
     ]
 }

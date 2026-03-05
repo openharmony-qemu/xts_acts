@@ -3392,6 +3392,7 @@ export default function windowPCTest() {
         windowClass.setDragKeyFramePolicy(keyFramePolicy).then((ret: window.KeyFramePolicy) => {
           console.info(`${message} Succeeded in setting key frame: ${JSON.stringify(ret)}`);
           expect(ret.enable).assertEqual(keyFramePolicy.enable);
+          expect(ret.enable).assertEqual(true);
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
@@ -3677,7 +3678,7 @@ export default function windowPCTest() {
         let windowClass: window.Window = windowStage.getMainWindowSync();
         windowClass.setDragKeyFramePolicy(keyFramePolicy).then((ret: window.KeyFramePolicy) => {
           console.info(`${message} Succeeded in setting key frame: ${JSON.stringify(ret)}`);
-          expect(ret.enable).assertEqual(keyFramePolicy.enable);
+          expect(ret.enable).assertEqual(false);
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);

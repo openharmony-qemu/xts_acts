@@ -221,5 +221,31 @@ export default function uitestEnumTest() {
       }
       console.log(`${TestTag}, testApi9_PointerMatrix_setPoint_401 END`);
     })
+
+    /**
+     * @tc.name   testApi9_UiWindow_False
+     * @tc.number UiTest_uitest401_0106
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi9_UiWindow_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi9_UiWindow_False start`);
+      let driver = Driver.create()
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)
+      try {
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts', active: false, focused: false})
+        console.log(TestTag, `testApi9_UiWindow_False, window, ${JSON.stringify(window)}`);
+        expect(window).assertNull();
+      } catch (error) {
+        console.log(TestTag, `testApi9_UiWindow_False, error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      await stopApplication('com.uitestScene.acts')
+      console.log(`${TestTag}, testApi9_UiWindow_False END`);
+    })
+
   })
 }

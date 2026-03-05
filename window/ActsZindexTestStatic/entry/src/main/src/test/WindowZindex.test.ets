@@ -1136,49 +1136,49 @@ export default function WindowZindexTest() {
         console.log(msgStr + 'begin');
         try {
             subWin = await windowStage!.createSubWindow('testShiftAppWindowFocus_SubWindow_SourceWinFocus')
+            await Utils.msSleep(500)
+            expect(!!subWin).assertTrue();
+            await (subWin as window.Window).resize(500, 500);
+            await (subWin as window.Window).setUIContent("pages/index2");
+            await (subWin as window.Window).showWindow();
+            await Utils.msSleep(500)
+            await Utils.msSleep(500)
+            await Utils.msSleep(500)
+            let mainWin = windowStage!.getMainWindowSync();
+            let mainWinId = mainWin.getWindowProperties().id;
+            let subWinId = (subWin as window.Window).getWindowProperties().id;
+            try {
+            window.shiftAppWindowFocus(subWinId, mainWinId).then(() => {
+                console.info(msgStr + 'Succeeded in shifting app window focus');
+                done();
+            }).catch((err: Error) => {
+                if (err.code != 801) {
+                console.error(msgStr + `Failed to shift app window focus. Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+                } else {
+                console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                console.log(msgStr + JSON.stringify(err))
+                expect(err.code).assertEqual(801);
+                }
+                done();
+            });
+            await Utils.msSleep(500)
+            } catch (err) {
+            if (err.code != 801) {
+                console.error(msgStr + `Failed to shift app window focus. out catch Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+            } else {
+                console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                console.log(msgStr + JSON.stringify(err))
+                expect(err.code).assertEqual(801);
+            }
+            done()
+            }
+            await (subWin as window.Window).destroyWindow();
         } catch(err){
             console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
-          };
-        await Utils.msSleep(500)
-        expect(!!subWin).assertTrue();
-        await (subWin as window.Window).resize(500, 500);
-        await (subWin as window.Window).setUIContent("pages/index2");
-        await (subWin as window.Window).showWindow();
-        await Utils.msSleep(500)
-        await Utils.msSleep(500)
-        await Utils.msSleep(500)
-        let mainWin = windowStage!.getMainWindowSync();
-        let mainWinId = mainWin.getWindowProperties().id;
-        let subWinId = (subWin as window.Window).getWindowProperties().id;
-        try {
-          window.shiftAppWindowFocus(subWinId, mainWinId).then(() => {
-            console.info(msgStr + 'Succeeded in shifting app window focus');
-            done();
-          }).catch((err: Error) => {
-            if (err.code != 801) {
-              console.error(msgStr + `Failed to shift app window focus. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
-            } else {
-              console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-              console.log(msgStr + JSON.stringify(err))
-              expect(err.code).assertEqual(801);
-            }
-            done();
-          });
-          await Utils.msSleep(500)
-        } catch (err) {
-          if (err.code != 801) {
-            console.error(msgStr + `Failed to shift app window focus. out catch Cause code: ${err.code}, message: ${err.message}`);
-            expect().assertFail();
-          } else {
-            console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-            console.log(msgStr + JSON.stringify(err))
-            expect(err.code).assertEqual(801);
-          }
-          done()
-        }
-        await (subWin as window.Window).destroyWindow();
+        };
       })
       /**
        * @tc.name   testShiftAppWindowFocus_SubWindow_SourceWinNotFocus
@@ -1193,51 +1193,52 @@ export default function WindowZindexTest() {
         let msgStr = 'jsunittest ' + caseName + ' ';
         console.log(msgStr + 'begin');
         try {
-            subWin = await windowStage!.createSubWindow('testShiftAppWindowFocus_SubWindow_SourceWinNotFocus')
+            let subWin: window.Window = await windowStage!.createSubWindow('testShiftAppWindowFocus_SubWindow_SourceWinNotFocus')
+            await Utils.msSleep(500);
+            expect(!!subWin).assertTrue();
+            await (subWin as window.Window).resize(500, 500);
+            await (subWin as window.Window).setUIContent("pages/index2");
+            await (subWin as window.Window).showWindow();
+            await Utils.msSleep(500)
+            await Utils.msSleep(500)
+            await Utils.msSleep(500)
+            let mainWin = windowStage!.getMainWindowSync();
+            let mainWinId = mainWin.getWindowProperties().id;
+            let subWinId = (subWin as window.Window).getWindowProperties().id;
+            try {
+              window.shiftAppWindowFocus(mainWinId, subWinId).then(() => {
+                console.info(msgStr + 'Succeeded in shifting app window focus');
+                expect().assertFail();
+                done();
+              }).catch((err: Error) => {
+                if (err.code != 801) {
+                  console.error(msgStr + `Failed to shift app window focus. Cause code: ${err.code}, message: ${err.message}`);
+                  expect(err.code).assertEqual(1300002);
+                } else {
+                  console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                  console.log(msgStr + JSON.stringify(err))
+                  expect(err.code).assertEqual(801);
+                }
+                done();
+              });
+              await Utils.msSleep(500)
+            } catch (err) {
+              if (err.code != 801) {
+                console.error(msgStr + `Failed to shift app window focus. out catch Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+              } else {
+                console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                console.log(msgStr + JSON.stringify(err))
+                expect(err.code).assertEqual(801);
+              }
+              done();
+            }
+            await (subWin as window.Window).destroyWindow();
         } catch(err) {
             console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
         };
-        await Utils.msSleep(500);
-        expect(!!subWin).assertTrue();
-        await (subWin as window.Window).resize(500, 500);
-        await (subWin as window.Window).setUIContent("pages/index2");
-        await (subWin as window.Window).showWindow();
-        await Utils.msSleep(500)
-        await Utils.msSleep(500)
-        await Utils.msSleep(500)
-        let mainWin = windowStage!.getMainWindowSync();
-        let mainWinId = mainWin.getWindowProperties().id;
-        let subWinId = (subWin as window.Window).getWindowProperties().id;
-        try {
-          window.shiftAppWindowFocus(mainWinId, subWinId).then(() => {
-            console.info(msgStr + 'Succeeded in shifting app window focus');
-            expect().assertFail();
-            done();
-          }).catch((err: Error) => {
-            if (err.code != 801) {
-              console.error(msgStr + `Failed to shift app window focus. Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(1300002);
-            } else {
-              console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-              console.log(msgStr + JSON.stringify(err))
-              expect(err.code).assertEqual(801);
-            }
-            done();
-          });
-          await Utils.msSleep(500)
-        } catch (err) {
-          if (err.code != 801) {
-            console.error(msgStr + `Failed to shift app window focus. out catch Cause code: ${err.code}, message: ${err.message}`);
-            expect().assertFail();
-          } else {
-            console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-            console.log(msgStr + JSON.stringify(err))
-            expect(err.code).assertEqual(801);
-          }
-          done();
-        }
-        await (subWin as window.Window).destroyWindow();
+        
       })
 
 
@@ -1273,6 +1274,7 @@ export default function WindowZindexTest() {
             try {
               window.shiftAppWindowFocus(subWinId, mainWinId).then(() => {
                 console.info(msgStr + 'Succeeded in shifting app window focus');
+                await (subWin as window.Window).destroyWindow();
                 done();
               }).catch((err: Error) => {
                 if (err.code != 801) {
@@ -1283,6 +1285,7 @@ export default function WindowZindexTest() {
                   console.log(msgStr + JSON.stringify(err))
                   expect(err.code).assertEqual(801);
                 }
+                await (subWin as window.Window).destroyWindow();
                 done();
               });
             } catch (err) {
@@ -1294,10 +1297,10 @@ export default function WindowZindexTest() {
                 console.log(msgStr + JSON.stringify(err))
                 expect(err.code).assertEqual(801);
               }
+              await (subWin as window.Window).destroyWindow();
+              done();
             }
             await Utils.msSleep(500);
-            await (subWin as window.Window).destroyWindow();
-            done();
           })
           .catch((err: Error) => {
             if (err.code != 1300002) {
@@ -1462,6 +1465,456 @@ export default function WindowZindexTest() {
             
         }
     })
+
+
+    /**
+       * @tc.name   test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0100
+       * @tc.number test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0100
+       * @tc.desc   开启/关闭窗口获焦能力后，主窗查询focusable属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+    it('test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let msgStr = ' test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0100 ';
+        console.info(msgStr + ' begin ');
+        try {
+          let windowClass = windowStage!.getMainWindowSync();
+          let promise = windowClass.setWindowFocusable(false);
+          promise.then(() => {
+            console.info('Succeeded in setWindowFocusable.');
+            let windowProperties = windowClass.getWindowProperties()
+            console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
+            expect(windowProperties.focusable).assertEqual(false);
+            let promise2 = windowClass.setWindowFocusable(true);
+            promise2.then(() => {
+              console.info('Succeeded in setWindowFocusable.');
+              let windowProperties2 = windowClass.getWindowProperties()
+              console.info(`${msgStr} windowProperties2: ${JSON.stringify(windowProperties2)}`);
+              expect(windowProperties2.focusable).assertEqual(true);
+              done();
+            }).catch((err: Error) => {
+              console.error(`${msgStr} Failed2 to setWindowFocusable. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code === 801) {
+                expect(err.message!=null).assertTrue();
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          }).catch((err: Error) => {
+            console.error(`${msgStr} Failed1 to setWindowFocusable. Cause code: ${err.code}, message: ${err.message}`);
+            if (err.code === 801) {
+              expect(err.message!=null).assertTrue();
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.error(msgStr + ' Failed. Cause: ' + JSON.stringify(error));
+          expect().assertFail();
+          done();
+        }
+      })
+
+      /**
+       * @tc.name   test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0200
+       * @tc.number test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0200
+       * @tc.desc   开启/关闭窗口获焦能力后，子窗查询focusable属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let msgStr = ' test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0200 ';
+        console.info(msgStr + ' begin ');
+        const windowClass = await windowStage!.createSubWindow('test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0200');
+        try {
+          let promise = windowClass.setWindowFocusable(false);
+          promise.then(() => {
+            console.info('Succeeded in setWindowFocusable.');
+            let windowProperties = windowClass.getWindowProperties()
+            console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
+            expect(windowProperties.focusable).assertEqual(false);
+            let promise2 = windowClass.setWindowFocusable(true);
+            promise2.then(() => {
+              console.info('Succeeded in setWindowFocusable.');
+              let windowProperties2 = windowClass.getWindowProperties()
+              console.info(`${msgStr} windowProperties2: ${JSON.stringify(windowProperties2)}`);
+              expect(windowProperties2.focusable).assertEqual(true);
+              await windowClass.destroyWindow();
+              done();
+            }).catch(async (err: Error) => {
+              console.error(`${msgStr} Failed2 to setWindowFocusable. Cause code: ${err.code}, message: ${err.message}`);
+              await windowClass.destroyWindow();
+              if (err.code === 801) {
+                expect(err.message!=null).assertTrue();
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          }).catch(async (err: Error) => {
+            console.error(`${msgStr} Failed1 to setWindowFocusable. Cause code: ${err.code}, message: ${err.message}`);
+            await windowClass.destroyWindow();
+            if (err.code === 801) {
+              expect(err.message!=null).assertTrue();
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.error(msgStr + ' Failed. Cause: ' + JSON.stringify(error));
+          await windowClass.destroyWindow();
+          expect().assertFail();
+          done();
+        }
+      })
+
+      /**
+       * @tc.name   test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0300
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_FOCUSABLE_0300
+       * @tc.desc   开启/关闭窗口获焦能力后，dialog窗查询focusable属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let msgStr = ' test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0300 ';
+        console.info(msgStr + ' begin ');
+        let config: window.Configuration = {
+          name: "modalWindow",
+          windowType: window.WindowType.TYPE_DIALOG,
+          ctx: context
+        };
+        let windowClass = await window.createWindow(config);
+        try {
+          let promise = windowClass.setWindowFocusable(false);
+          promise.then(async () => {
+            console.info('Succeeded in setWindowFocusable.');
+            let windowProperties = windowClass!.getWindowProperties()
+            console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
+            expect(windowProperties.focusable).assertEqual(false);
+            let promise2 = windowClass!.setWindowFocusable(true);
+            promise2.then(() => {
+              console.info('Succeeded in setWindowFocusable.');
+              let windowProperties2 = windowClass!.getWindowProperties()
+              console.info(`${msgStr} windowProperties2: ${JSON.stringify(windowProperties2)}`);
+              expect(windowProperties2.focusable).assertEqual(true);
+              await windowClass.destroyWindow();
+              done();
+            }).catch((err: Error) => {
+              console.error(`${msgStr} Failed2 to setWindowFocusable. Cause code: ${err.code}, message: ${err.message}`);
+              await windowClass.destroyWindow();
+              if (err.code === 801) {
+                expect(err.message!=null).assertTrue();
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          }).catch(async (err: Error) => {
+            console.error(`${msgStr} Failed1 to setWindowFocusable. Cause code: ${err.code}, message: ${err.message}`);
+            await windowClass.destroyWindow();
+            if (err.code === 801) {
+              expect(err.message!=null).assertTrue();
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.error(msgStr + ' Failed. Cause: ' + JSON.stringify(error));
+          await windowClass.destroyWindow();
+          expect().assertFail();
+          done();
+        }
+      })
+
+
+      /**
+       * @tc.name   test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0400
+       * @tc.number test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0400
+       * @tc.desc   开启/关闭窗口获焦能力后，dialog窗查询focusable属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let msgStr = ' test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0400 ';
+        console.info(msgStr + ' begin ');
+        let config: window.Configuration = {
+          name: "test_GETWINDOWPROPERTIES_FOCUSABLE_STATIC_0400",
+          windowType: window.WindowType.TYPE_DIALOG,
+          ctx: context
+        };
+        let windowClass = await window.createWindow(config);
+        try {
+
+          windowClass.setWindowFocusable(false, (err: Error | null) => {
+            hilog.info(domain, tag,msgStr + 'window setWindowFocusable callback err ：' + JSON.stringify(err));
+            if (err?.code !== 0) {
+                expect().assertFail();
+                done();
+            }
+            console.info('Succeeded in setWindowFocusable.');
+            let windowProperties = windowClass!.getWindowProperties()
+            console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
+            expect(windowProperties.focusable).assertEqual(false);
+            await windowClass.destroyWindow();
+            done();
+          });
+        } catch (error) {
+          console.error(msgStr + ' Failed. Cause: ' + JSON.stringify(error));
+          await windowClass.destroyWindow();
+          expect().assertFail();
+          done();
+        }
+      })
+
+
+      /**
+         * @tc.number     testsetExclusivelyHighlightedFalse_1300002_static
+         * @tc.name       testsetExclusivelyHighlightedFalse_1300002_static
+         * @tc.desc       testsetExclusivelyHighlighted_False_1300002
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+      it('testsetExclusivelyHighlightedFalse_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName:string = "testsetExclusivelyHighlightedFalse_1300002_static";
+        let msgStr:string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag,msgStr + 'begin.');
+        let config: window.Configuration = {
+            name: "test",
+            windowType: window.WindowType.TYPE_DIALOG,
+            ctx: context!
+        };
+        let windowClass:window.Window = await window.createWindow(config);
+        await Utils.msSleep(300);
+        try {
+            await windowClass.destroyWindow();
+            let promise = windowClass.setExclusivelyHighlighted(false);
+            promise.then(() => {
+                hilog.info(domain, tag,'Succeeded in setting the window to be exclusively highlight.');
+                expect(false).assertTrue();
+                done()
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.error(domain, tag,`Failed to set the window to be exclusively highlight. Cause code: ${err.code}, message: ${err.message}`);
+                if(err.code === 801){
+                    done();
+                }else{
+                    expect(err.code).assertEqual(1300002);
+                    done()
+                }
+            });
+
+        } catch (e) {
+            e = e as BusinessError;
+            hilog.info(domain, tag,msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+            expect(false).assertTrue();
+            done()
+        }
+
+    })
+
+    /**
+         * @tc.number     SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_static_0300
+         * @tc.name       test_ISWINDOWHIGHLIGHTED_static_0300
+         * @tc.desc       test_ISWINDOWHIGHLIGHTED_static_0300
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+    it('test_ISWINDOWHIGHLIGHTED_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_ISWINDOWHIGHLIGHTED_static_0300';
+        hilog.info(domain, tag,caseName + 'begin');
+
+        let subWin = await windowStage!.createSubWindow('test_ISWINDOWHIGHLIGHTED_static_0300');
+        try{
+            subWin.setExclusivelyHighlighted(true);
+            subWin.resize(800, 1000);
+            await subWin.setUIContent('pages/index2');
+            await subWin.showWindow();
+            await Utils.msSleep(300);
+
+            let highlight = subWin.isWindowHighlighted();
+            hilog.info(domain, tag,`${caseName} :subWin window isWindowHighlighted1 `+ highlight);
+            expect(highlight).assertEqual(true);
+            
+            let highlight1 = windowClass!.isWindowHighlighted();
+            hilog.info(domain, tag,`${caseName} :mainWindow window isWindowHighlighted1 `+ highlight1);
+            expect(highlight1).assertEqual(false);
+
+            await subWin.destroyWindow();
+            
+            done();
+        } catch(err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,`${caseName} :sub window setExclusivelyHighlighted fail1:`+err.code);
+            expect(err.code).assertEqual(801);
+            done()
+        }
+    });
+
+
+    /**
+         * @tc.name   testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300
+         * @tc.number SUB_BASIC_WMS_WINDOW_ON_UIEXTENSION_SECURElIMITCHANGE_ERROECODE_static_0300
+         * @tc.desc   testOffuiExtensionLimitChange_DestoryedSubWindow
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+    it('testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let caseName:string = 'testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300';
+        let subWindowClass:window.Window = await windowStage!.createSubWindow('testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300');
+        await subWindowClass.destroyWindow();
+        try {
+            subWindowClass.offUiExtensionSecureLimitChange();
+            expect(true).assertFail();
+            done()
+        } catch (error) {
+            error = error as BusinessError;
+            console.error(`${caseName} Failed. Cause: ${JSON.stringify(error)}`);
+            if (error.code === 801) {
+                expect(error.message !== null).assertTrue();
+                done();
+            } else {
+                expect(error.code).assertEqual(1300002);
+                expect(error.message !== null).assertTrue();
+                done();
+            }
+        }
+    })
+
+    /**
+         * @tc.number     SUB_BASIC_WMS_ISWINDOWFOCUSED_static_0100
+         * @tc.name       test_ISWINDOWFOCUSED_static_0100
+         * @tc.desc       test_ISWINDOWFOCUSED_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+    it('test_ISWINDOWFOCUSED_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_ISWINDOWFOCUSED_static_0100';
+        hilog.info(domain, tag,caseName + 'begin');
+
+        let subWin = await windowStage!.createSubWindow('test_ISWINDOWFOCUSED_static_0100');
+        try{
+            subWin.resize(800, 1000);
+            await subWin.setUIContent('pages/index2');
+            await subWin.showWindow();
+            await Utils.msSleep(300);
+
+            let isFocused = subWin.isFocused();
+            hilog.info(domain, tag,`${caseName} :subWin window isWindowisFocused `+ isFocused);
+            expect(isFocused).assertEqual(true);
+            
+            let isFocused1 = windowClass!.isFocused();
+            hilog.info(domain, tag,`${caseName} :mainWindow window isWindowisFocused1 `+ isFocused1);
+            expect(isFocused1).assertEqual(false);
+
+            await subWin.destroyWindow();
+            
+            done();
+        } catch(err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,`${caseName} :sub window isFocused fail1:`+err.code);
+            expect(err.code).assertEqual(801);
+            done()
+        }
+    });
+
+
+    /**
+         * @tc.number     testSetWindowModalPromiseTrue_static_0100
+         * @tc.name       testSetWindowModalPromiseTrue_static_0100
+         * @tc.desc       testSetWindowModalPromiseTrue_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+    it('testSetWindowModalPromiseTrue_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName:string = "testSetWindowModalPromiseTrue_static_0100";
+        let msgStr:string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag,msgStr + 'begin.');
+        let windowStageStart:window.WindowStage = await startAbility(caseName, context!);
+        try {
+            windowStageStart.setWindowModal(true).then(() => {
+                hilog.info(domain, tag,msgStr + 'Succeeded in calling removeStartingWindow.');
+                await terminateAbility(caseName);
+                done()
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.error(domain, tag,msgStr + 'Failed to call setWindowModal. Cause: ' + err.message + err.code);
+                expect(err.code).assertEqual(801);
+                expect(err.message!==null).assertTrue();
+                await terminateAbility(caseName);
+                done()
+            });
+
+        } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+            expect(exception.code).assertEqual(1300002);
+            expect(exception.message!==null).assertTrue();
+            done()
+        }
+    })
+
+
+    /**
+     * @tc.name   test_OH_OnWindowHighlightChange_One_Static
+     * @tc.number SUB_BASIC_ONWINDOWHIGHLIGHTCHANGE_STATIC_0100
+     * @tc.desc   test_OH_OnWindowHighlightChange_One_Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_OH_OnWindowHighlightChange_One_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let msg = 'test_OH_OnWindowHighlightChange_One_Static ';
+        let flag: boolean = false;
+        let cb1 = (isBool: boolean) => {
+          console.log(msg + 'windowHighlightChange, isBool = ' + isBool)
+          flag = isBool
+        }
+        try {
+          windowClass!.onWindowHighlightChange(cb1)
+          windowClass!.onWindowHighlightChange(cb1)
+  
+          let win1 = await windowStage!.createSubWindow('win1');
+          await win1.setUIContent('pages/index2');
+          console.log(msg + 'getWindowLimits, minWidth = ' + win1.getWindowLimits().minWidth+' , minHeight:'+win1.getWindowLimits().minHeight);
+          await win1.resize(win1.getWindowLimits().minWidth ?? 0 + 100, win1.getWindowLimits().minHeight ?? 0 + 100)
+  
+          await win1.showWindow()
+          await Utils.msSleep(300);
+          console.log(msg + '1 flag = ' + flag);
+          expect(flag).assertFalse()
+  
+          await win1.destroyWindow()
+          await Utils.msSleep(300);
+          console.log(msg + '2 flag = ' + flag);
+          expect(flag).assertTrue()
+  
+          windowClass!.offWindowHighlightChange()
+          done()
+        }catch (exception) {
+          console.error(msg + `Failed to create the subwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          if (exception.code == 801) {
+            done()
+          }
+        }
+  
+      })
 
 
       

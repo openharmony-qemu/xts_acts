@@ -191,5 +191,210 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0700 is end---------------")
       done();
     })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0800
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0800
+     * @tc.desc   metadataBinding submitMetadata is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_MetadataBinding_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0800 is start---------------")
+      try {
+        metadataBinding.submitMetadata("")
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_0800 metadataBinding.submitMetadata is success')
+        expect().assertFail()
+      } catch (error) {
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_0800 metadataBinding.submitMetadata is failed' + JSON.stringify(error))
+        expect(error.code == 32100001).assertTrue()
+      }
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0800 is end---------------")
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0900
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0900
+     * @tc.desc   metadataBinding submitMetadata is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_MetadataBinding_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0900 is start---------------")
+      try {
+        metadataBinding.submitMetadata(null)
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_0900 metadataBinding.submitMetadata is success')
+        expect().assertFail()
+      } catch (error) {
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_0900 metadataBinding.submitMetadata is failed' + JSON.stringify(error))
+        expect(error.code == 401).assertTrue()
+      }
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0900 is end---------------")
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_1000
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_1000
+     * @tc.desc   metadataBinding submitMetadata is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1000 is start---------------")
+      try {
+        metadataBinding.submitMetadata(undefined)
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1000 metadataBinding.submitMetadata is success')
+        expect().assertFail()
+      } catch (error) {
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1000 metadataBinding.submitMetadata is failed' + JSON.stringify(error))
+        expect(error.code == 401).assertTrue()
+      }
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1000 is end---------------")
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_1100
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_1100
+     * @tc.desc   metadataBinding on is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1100 is start---------------")
+      try {
+        metadataBinding.on('operationSubmitMetadata', "", (data) => {
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1100 metadataBinding.on is success' + data)
+        })
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1100 metadataBinding.on is success')
+      } catch (error) {
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1100 metadataBinding.on is failed catch' + JSON.stringify(error))
+        expect(error.code == 32100004).assertTrue()
+      }
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1100 is end---------------")
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_1200
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_1200
+     * @tc.desc   metadataBinding on is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1200 is start---------------")
+      try {
+        metadataBinding.on('operationSubmitMetadata', null, (data) => {
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1200 metadataBinding.on is success' + data)
+          expect().assertFail()
+        })
+      } catch (error) {
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1200 metadataBinding.on is failed catch' + JSON.stringify(error))
+        expect(error.code == 401).assertTrue()
+      }
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1200 is end---------------")
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_1300
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_1300
+     * @tc.desc   metadataBinding on is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1300 is start---------------")
+      try {
+        metadataBinding.on('operationSubmitMetadata', undefined, (data) => {
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1300 metadataBinding.on is success' + data)
+          expect().assertFail()
+        })
+      } catch (error) {
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1300 metadataBinding.on is failed catch' + JSON.stringify(error))
+        expect(error.code == 401).assertTrue()
+      }
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1300 is end---------------")
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_1400
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_1400
+     * @tc.desc   metadataBinding off is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 is start---------------")
+      try {
+        metadataBinding.off('operationSubmitMetadata', "", (data) => {
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 metadataBinding.off is success' + data)
+        })
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 metadataBinding.off is success')
+      } catch (error) {
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 metadataBinding.off is failed' + JSON.stringify(error))
+        expect().assertFail()
+      }
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 is end---------------")
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_1500
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_1500
+     * @tc.desc   metadataBinding off is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1500 is start---------------")
+      try {
+        metadataBinding.off('operationSubmitMetadata', null, (data) => {
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1500 metadataBinding.off is success' + data)
+          expect().assertFail()
+        })
+      } catch (error) {
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1500 metadataBinding.off is failed' + JSON.stringify(error))
+        expect(error.code == 401).assertTrue()
+      }
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1500 is end---------------")
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_1600
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_1600
+     * @tc.desc   metadataBinding off is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1600 is start---------------")
+      try {
+        metadataBinding.off('operationSubmitMetadata', undefined, (data) => {
+          console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1600 metadataBinding.off is success' + data)
+          expect().assertFail()
+        })
+      } catch (error) {
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1600 metadataBinding.off is failed' + JSON.stringify(error))
+        expect(error.code == 401).assertTrue()
+      }
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1600 is end---------------")
+      done();
+    })
   })
 }

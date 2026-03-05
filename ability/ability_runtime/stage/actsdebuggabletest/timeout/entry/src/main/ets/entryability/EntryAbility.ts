@@ -16,6 +16,7 @@
 import hilog from '@ohos.hilog';
 import Ability from '@ohos.app.ability.UIAbility';
 import Window from '@ohos.window';
+import EventBusPlus from '../lib/EventBusPlus'
 
 export default class EntryAbility extends Ability {
   onCreate(want, launchParam) {
@@ -23,11 +24,17 @@ export default class EntryAbility extends Ability {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
     hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:' + JSON.stringify(launchParam) ?? '');
+    EventBusPlus.emit('timeoutOnCreate')
+    EventBusPlus.onWait('terminateTimeout')
+    .then(() => {
+      this.context.terminateSelf();
+    })
   }
 
-  onDestroy() {
+  async onDestroy() {
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+    await EventBusPlus.emit('onDestroy');
   }
 
   onWindowStageCreate(windowStage: Window.WindowStage) {
@@ -52,10 +59,11 @@ export default class EntryAbility extends Ability {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
-  onForeground() {
+  async onForeground() {
     // Ability has brought to foreground
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
+    await EventBusPlus.emit('onForeground')
   }
 
   onBackground() {

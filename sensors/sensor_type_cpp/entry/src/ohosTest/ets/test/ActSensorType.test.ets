@@ -98,9 +98,9 @@ export default function sensorTypeNdkTest() {
      * @tc.desc   SENSOR_TYPE_ACCELEROMETER test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testSensor_typeNdkTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSensor_typeNdkTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       TAG = "testSensor_typeNdkTest020"
       try {
         console.info(TAG + "===> START");
@@ -362,9 +362,9 @@ export default function sensorTypeNdkTest() {
      * @tc.desc   OH_SensorInfo_GetName test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testSensor_typeNdkTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSensor_typeNdkTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       TAG = "testSensor_typeNdkTest140"
       try {
         console.info(TAG + "===> START");
@@ -582,9 +582,9 @@ export default function sensorTypeNdkTest() {
      * @tc.desc   OH_Sensor_DestroySubscriptionId test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL1
      */
-    it('testSensor_typeNdkTest240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSensor_typeNdkTest240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       TAG = "testSensor_typeNdkTest240"
       try {
         console.info(TAG + "===> START");
@@ -648,9 +648,9 @@ export default function sensorTypeNdkTest() {
      * @tc.desc   OH_Sensor_DestroySubscriptionAttribute test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL2
      */
-    it('testSensor_typeNdkTest270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSensor_typeNdkTest270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       TAG = "testSensor_typeNdkTest270"
       try {
         console.info(TAG + "===> START");

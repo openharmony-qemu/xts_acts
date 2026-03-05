@@ -56,7 +56,8 @@ export default function MindSporeContextTest() {
         console.info("[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed" + error);
       }
       console.info("[rawfile_copy_to_sandbox] sandbox path:" + dir);
-      await Utils.sleep(500)
+      await Utils.sleep(500);
+      done();
     });
 
     beforeEach(async () => {

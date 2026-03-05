@@ -22,7 +22,7 @@ export default function scrollBarMarginModifierTest() {
   describe('ActsScrollBarMarginModifierTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('TextLineSpacingTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll20.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility');
     })
     beforeEach(async (): Promise<void> => {
       console.info('TextLineSpacingTest beforeEach start');

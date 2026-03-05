@@ -11,7 +11,8 @@
         {
             "test-file-name": [
                 "ActsBmsEtsUnPermissionTest.hap",
-                "bmsJstest1.hap"
+                "bmsJstest1.hap",
+                "bmsThirdBundleTest7.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

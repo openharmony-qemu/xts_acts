@@ -268,6 +268,7 @@ group("componentAttrssTest") {
         "ace_ets_component_common_attrss_layoutWeight_nowear_static:ActsAceEtsComponentCommonAttrsLayoutWeightNowearStaticTest",
         "ace_ets_component_common_attrss_onDisAppear_nowear_static:ActsAceEtsComponentCommonAttrsOnDisAppearNowearStaticTest",
         "ace_ets_component_common_attrss_zIndex_nowear_static:ActsAceEtsComponentCommonAttrsZIndexNowearStaticTest",
+        "ace_ets_component_common_attrss_undefined_static:ActsAceEtsComponentCommonAttrsUndefinedStaticTest",
       ]
     }
   }

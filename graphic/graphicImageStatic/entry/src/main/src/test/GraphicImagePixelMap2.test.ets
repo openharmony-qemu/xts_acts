@@ -243,9 +243,12 @@ export default function graphicImagePixelMap2() {
         if (pixelMap != undefined) {
           pixelMap!.clone().then((clonePixelMap: image.PixelMap) => {
             console.info('Succeeded clone pixelmap.');
-            expect(clonePixelMap !== undefined).assertTrue();
+            console.info('www data graphicImagePixelMap2_static_0600 ', clonePixelMap.isEditable,
+              clonePixelMap.isStrideAlignment);
+            expect(clonePixelMap.isEditable).assertTrue();
+            expect(clonePixelMap.isStrideAlignment).assertFalse();
           }).catch((error) => {
-            console.error(`Failed to clone pixelmap. code is ${error.code}, message is ${error.message}`);
+            console.error(`www data Failed to clone pixelmap. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
           })
         }
@@ -265,10 +268,13 @@ export default function graphicImagePixelMap2() {
         if (pixelMap != undefined) {
           try {
             let clonePixelMap:image.PixelMap = pixelMap!.cloneSync();
-            expect(clonePixelMap !== undefined).assertTrue();
+            console.info('www data graphicImagePixelMap2_static_0700 ', clonePixelMap.isEditable,
+              clonePixelMap.isStrideAlignment);
+            expect(clonePixelMap.isEditable).assertTrue();
+            expect(clonePixelMap.isStrideAlignment).assertFalse();
           } catch(e) {
             let error = e as BusinessError;
-            console.error(`clone pixelmap error. code is ${error.code}, message is ${error.message}`);
+            console.error(`www data clone pixelmap error. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
           }
         }
@@ -360,7 +366,7 @@ export default function graphicImagePixelMap2() {
             console.error("www data Failed to set the metadata.code ", error);
             expect().assertFail();
           })
-        } 
+        }
         done();
       })
 
@@ -391,7 +397,7 @@ export default function graphicImagePixelMap2() {
             console.error("www data Failed to set the metadata.code 22", error.code);
             expect(Number(error.code) == 62980302).assertTrue();
           })
-        } 
+        }
         done();
       })
 
@@ -427,7 +433,7 @@ export default function graphicImagePixelMap2() {
             console.error("www data Failed to set the metadata.code 44", error.code);
             expect().assertFail();
           })
-        } 
+        }
         done();
       })
 
@@ -472,7 +478,72 @@ export default function graphicImagePixelMap2() {
         }
         done();
       })
-      
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_1500
+     * @tc.number graphicImagePixelMap2_static_1500
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'www data graphicImagePixelMap2_static_1500';
+        const options: image.InitializationOptions = {
+          pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }
+        const pixelMap = image.createPixelMapSync(options);
+        if (pixelMap != undefined) {
+          console.info(msgStr + 'Succeeded in creating pixelMap object.');
+          try {
+            let staticMetadata = pixelMap!.getMetadata(image.HdrMetadataKey.HDR_DYNAMIC_METADATA);
+            console.info(msgStr + ` getMetadata:${staticMetadata}`);
+            expect().assertFail();
+          } catch (error) {
+            error = error as BusinessError;
+            console.error(msgStr + 'pixelmap create failed' + error.code);
+            expect(error.code).assertEqual(62980302);
+          }
+        } else {
+          console.error(msgStr + 'Failed to create pixelMap.');
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_1600
+     * @tc.number graphicImagePixelMap2_static_1600
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'www data graphicImagePixelMap2_static_1600';const options: image.InitializationOptions = {
+          pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }
+        const pixelMap = image.createPixelMapSync(options);
+        if (pixelMap != undefined) {
+          console.info(msgStr + 'Succeeded in creating pixelMap object.');
+          try {
+            let staticMetadata = pixelMap!.getMetadata(image.HdrMetadataKey.HDR_GAINMAP_METADATA);
+            console.info(msgStr + ` getMetadata:${staticMetadata}`);
+            expect().assertFail();
+          } catch (error) {
+            error = error as BusinessError;
+            console.error(msgStr + 'pixelmap create failed' + error.code);
+            expect(error.code).assertEqual(62980302);
+          }
+        } else {
+          console.error(msgStr + 'Failed to create pixelMap.');
+          expect().assertFail();
+        }
+        done();
+      })
+
     /**
      * @tc.name   graphicImagePixelMap2_static_1700
      * @tc.number graphicImagePixelMap2_static_1700
@@ -1080,6 +1151,558 @@ export default function graphicImagePixelMap2() {
           })
         } catch (err) {
           expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_4100
+     * @tc.number graphicImagePixelMap2_static_4100
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.UNKNOWN,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_4100 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_4100 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_4100 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_4200
+     * @tc.number graphicImagePixelMap2_static_4200
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.ARGB_8888,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_4200 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ARGB_8888);
+          expect(imgInfo.isHdr).assertFalse();
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_4200 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.ARGB_8888);
+          expect(imgInfoPromise.isHdr).assertFalse();
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_4200 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.ARGB_8888);
+              expect(imageInfoCallback?.isHdr).assertFalse();
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_4300
+     * @tc.number graphicImagePixelMap2_static_4300
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGB_565,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_4300 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGB_565);
+          expect(imgInfo.alphaType).assertEqual(image.AlphaType.OPAQUE);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_4300 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.RGB_565);
+          expect(imgInfoPromise.alphaType).assertEqual(image.AlphaType.OPAQUE);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_4300 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGB_565);
+              expect(imageInfoCallback?.alphaType).assertEqual(image.AlphaType.OPAQUE);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_4400
+     * @tc.number graphicImagePixelMap2_static_4400
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888,
+            size: { height: 4, width: 6 }, alphaType: image.AlphaType.UNPREMUL }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_4400 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+          expect(imgInfo.alphaType).assertEqual(image.AlphaType.UNPREMUL);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_4400 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+          expect(imgInfoPromise.alphaType).assertEqual(image.AlphaType.UNPREMUL);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_4400 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+              expect(imageInfoCallback?.alphaType).assertEqual(image.AlphaType.UNPREMUL);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_4500
+     * @tc.number graphicImagePixelMap2_static_4500
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.BGRA_8888,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_4500 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.BGRA_8888);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_4500 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.BGRA_8888);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_4500 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.BGRA_8888);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_4600
+     * @tc.number graphicImagePixelMap2_static_4600
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGB_888,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_4600 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGB_888);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_4600 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.RGB_888);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_4600 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGB_888);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_4700
+     * @tc.number graphicImagePixelMap2_static_4700
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_4700 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_8);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_4700 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_8);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_4700 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_8);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_4800
+     * @tc.number graphicImagePixelMap2_static_4800
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_F16,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_4800 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_F16);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_4800 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_F16);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_4800 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_F16);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_4900
+     * @tc.number graphicImagePixelMap2_static_4900
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.NV21,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_4900 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.NV21);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_4900 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.NV21);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_4900 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.NV21);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_5000
+     * @tc.number graphicImagePixelMap2_static_5000
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.NV12,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_5000 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.NV12);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_5000 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.NV12);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_5000 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.NV12);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_5100
+     * @tc.number graphicImagePixelMap2_static_5100
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.YCBCR_P010,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_5100 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.YCBCR_P010);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_5100 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.YCBCR_P010);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_5100 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.YCBCR_P010);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_5200
+     * @tc.number graphicImagePixelMap2_static_5200
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.YCRCB_P010,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_5200 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.YCRCB_P010);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_5200 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.YCRCB_P010);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_5200 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.YCRCB_P010);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_5300
+     * @tc.number graphicImagePixelMap2_static_5300
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.ASTC_4x4,
+            size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap2_static_5300 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ASTC_4x4);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap2_static_5300 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.ASTC_4x4);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap2_static_5300 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.ASTC_4x4);
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_5400
+     * @tc.number graphicImagePixelMap2_static_5400
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (pixelMap != undefined) {
+          try {
+            const color: ArrayBuffer = new ArrayBuffer(96);
+            let opts: image.InitializationOptions = {
+              editable: false,
+              srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+              pixelFormat: image.PixelMapFormat.BGRA_8888,
+              size: { height: 4, width: 6 }
+            }
+            let pixelMap: image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts,
+              image.AllocatorType.DMA);
+            let clonePixelMap:image.PixelMap = pixelMap!.cloneSync();
+            console.info('www data graphicImagePixelMap2_static_5400 ', clonePixelMap.isEditable,
+              clonePixelMap.isStrideAlignment);
+            expect(clonePixelMap.isEditable).assertFalse();
+            expect(clonePixelMap.isStrideAlignment).assertTrue();
+          } catch(e) {
+            let error = e as BusinessError;
+            console.error(`www data clone pixelmap error. code is ${error.code}, message is ${error.message}`);
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_5500
+     * @tc.number graphicImagePixelMap2_static_5500
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (pixelMap != undefined) {
+          try {
+            const color: ArrayBuffer = new ArrayBuffer(96);
+            let opts: image.InitializationOptions = {
+              editable: false,
+              srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+              pixelFormat: image.PixelMapFormat.BGRA_8888,
+              size: { height: 4, width: 6 }
+            }
+            let pixelMap: image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts,
+              image.AllocatorType.DMA);
+            let clonePixelMap:image.PixelMap = await pixelMap!.clone();
+            console.info('www data graphicImagePixelMap2_static_5500 ', clonePixelMap.isEditable,
+              clonePixelMap.isStrideAlignment);
+            expect(clonePixelMap.isEditable).assertFalse();
+            expect(clonePixelMap.isStrideAlignment).assertTrue();
+          } catch(e) {
+            let error = e as BusinessError;
+            console.error(`www data clone pixelmap error. code is ${error.code}, message is ${error.message}`);
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_5600
+     * @tc.number graphicImagePixelMap2_static_5600
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const options: image.InitializationOptions = {
+          pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }
+        const pixelMap = image.createPixelMapSync(options);
+        console.info('www data ' + pixelMap.isStrideAlignment)
+        if (pixelMap?.isStrideAlignment) {
+          console.info('www data graphicImagePixelMap2_static_5600 Succeeded in creating pixelMap object.');
+          // HDR_METADATA_TYPE
+          await pixelMap!.setMetadata(image.HdrMetadataKey.HDR_DYNAMIC_METADATA, image.HdrMetadataType.BASE).then(() => {
+            console.info('www data graphicImagePixelMap2_static_5600 Succeeded in setting pixelMap metadata.');
+            expect().assertFail();
+          }).catch((error) => {
+            console.error("www data graphicImagePixelMap2_static_5600 Failed to set the metadata.code ", error.code);
+            expect(error.code).assertEqual(62980302);
+          })
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap2_static_5700
+     * @tc.number graphicImagePixelMap2_static_5700
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap2_static_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const options: image.InitializationOptions = {
+          pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }
+        const pixelMap = image.createPixelMapSync(options);
+        console.info('www data graphicImagePixelMap2_static_5700 ' + pixelMap.isStrideAlignment)
+        if (pixelMap?.isStrideAlignment) {
+          console.info('www data graphicImagePixelMap2_static_5700 Succeeded in creating pixelMap object.');
+          await pixelMap!.setMetadata(image.HdrMetadataKey.HDR_GAINMAP_METADATA, image.HdrMetadataType.BASE).then(() => {
+            console.info('www data graphicImagePixelMap2_static_5700 Succeeded in setting pixelMap metadata.');
+            expect().assertFail();
+          }).catch((error) => {
+            console.error("www data graphicImagePixelMap2_static_5700 Failed to set the metadata.code ", error.code);
+            expect(error.code).assertEqual(62980302);
+          })
         }
         done();
       })

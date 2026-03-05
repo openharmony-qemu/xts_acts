@@ -1363,5 +1363,35 @@ export default function ArkListTest() {
         expect(err.code).assertEqual(401);
       }
     });
+
+    /**
+     * @tc.name   testListCase013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_1300
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number>()
+      list.add(2);
+      list.add(4);
+      list.add(5);
+      list.add(4);
+      list.replaceAllElements((value: number) => {
+        if (value === 5) {
+          return value * 2;
+        }
+        return value;
+      }, null);
+      expect(JSON.stringify(list)).assertEqual('{"0":2,"1":4,"2":10,"3":4}');
+      list.replaceAllElements((value: number) => {
+        if (value === 10) {
+          return value * 2;
+        }
+        return value + 3;
+      }, undefined);
+      expect(JSON.stringify(list)).assertEqual('{"0":5,"1":7,"2":20,"3":7}');
+    });
   });
 }
