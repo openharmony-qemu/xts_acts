@@ -103,7 +103,7 @@ export default function GraphicImageCreatePixelMap05() {
         done();
       } catch(error){
         console.error(msgStr + `Failed to getMetaData. code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 7600201).assertTrue();
+        expect(error.code === 7600201).assertTrue();
         done();
       }
     });
