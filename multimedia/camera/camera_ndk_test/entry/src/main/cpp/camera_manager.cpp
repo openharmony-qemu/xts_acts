@@ -640,9 +640,12 @@ Camera_ErrorCode NDKCamera::CreateMetadataOutput(void)
     return ret_;
 }
 
-bool NDKCamera::IsMetadataObjectTypeValid() {
-    if (cameraOutputCapability_->supportedMetadataObjectTypes == nullptr) return false;
-    else return true;
+bool NDKCamera::IsMetadataObjectTypeValid()
+{
+    if (cameraOutputCapability_->supportedMetadataObjectTypes == nullptr) {
+        return false;
+    }
+    return true;
 }
 
 Camera_ErrorCode NDKCamera::IsCameraMuted(void)
