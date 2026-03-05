@@ -628,6 +628,9 @@ Camera_ErrorCode NDKCamera::AddVideoOutput(void)
 
 Camera_ErrorCode NDKCamera::CreateMetadataOutput(void)
 {
+    if (cameraOutputCapability_->supportedMetadataObjectTypes == nullptr) {
+        return CAMERA_SERVICE_FATAL_ERROR;
+    }
     metaDataObjectType_ = cameraOutputCapability_->supportedMetadataObjectTypes[0];
     
     LOG("NDKCamera::CreateMetadataOutput supportedMetadataObjectTypes end.");
@@ -641,6 +644,14 @@ Camera_ErrorCode NDKCamera::CreateMetadataOutput(void)
         return CAMERA_INVALID_ARGUMENT;
     }
     return ret_;
+}
+
+bool NDKCamera::IsMetadataObjectTypeValid()
+{
+    if (cameraOutputCapability_->supportedMetadataObjectTypes == nullptr) {
+        return false;
+    }
+    return true;
 }
 
 Camera_ErrorCode NDKCamera::IsCameraMuted(void)
