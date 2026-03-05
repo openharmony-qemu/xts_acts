@@ -2700,7 +2700,7 @@ export default function applicationManagerTest() {
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_NOTIFICATION_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_CONTROL_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_GESTURE_CONTROL);
- 	      kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
         applicationManager.setKioskFeatures(SELFWANT, kioskFeatures);
         expect(false).assertTrue();
       } catch (error) {
@@ -2723,7 +2723,7 @@ export default function applicationManagerTest() {
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_NOTIFICATION_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_CONTROL_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_GESTURE_CONTROL);
- 	      kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         applicationManager.setKioskFeatures(SELFWANT, kioskFeatures);
         expect(false).assertTrue();
@@ -2750,7 +2750,7 @@ export default function applicationManagerTest() {
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_NOTIFICATION_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_CONTROL_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_GESTURE_CONTROL);
- 	      kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
         applicationManager.setKioskFeatures(null, kioskFeatures);
         expect(false).assertTrue();
       } catch (error) {
