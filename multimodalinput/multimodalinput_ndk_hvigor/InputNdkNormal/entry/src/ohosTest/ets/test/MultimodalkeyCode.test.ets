@@ -644,6 +644,54 @@ export default function MultimodalkeycodeTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_KeyCodeNdk_2700
+     * @tc.number SUB_MMI_Input_Api_KeyCodeNdk_2700
+     * @tc.desc   KeyCode Enumerated Value Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_KeyCodeNdk_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_KeyCodeNdk_2700';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.KeyCode27();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue()
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_KeyCodeNdk_2800
+     * @tc.number SUB_MMI_Input_Api_KeyCodeNdk_2800
+     * @tc.desc   KeyCode Enumerated Value Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_KeyCodeNdk_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_KeyCodeNdk_2800';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.KeyCode28();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue()
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });    
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_PointerStyleNdk_0100
      * @tc.number SUB_MMI_Input_Api_PointerStyleNdk_0100
      * @tc.desc   PointerStyle Enumerated Value Test
