@@ -52,7 +52,8 @@ export default function actsNotificationAnsThreePartyGetUserGrantedEnableBundles
           }
         }
         hilog.info(0x000, TAG, "Test completed successfully");
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
+        err = err as BusinessError
         console.error(TAG + " Test failed: " + ` ${err.code}, ${err.message}`);
         if (err.code === 201) {
           expect(err.code).assertEqual(201);
