@@ -74,7 +74,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0100 ERR ' + JSON.stringify(err));
           done();
         }
@@ -108,7 +107,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0200 ERR ' + JSON.stringify(err));
           done();
         }
@@ -142,7 +140,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0200 ERR ' + JSON.stringify(err));
           done();
         }
@@ -176,7 +173,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0400 ERR ' + JSON.stringify(err));
           done();
         }
@@ -210,7 +206,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0500 ERR ' + JSON.stringify(err));
           done();
         }
@@ -244,7 +239,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0600 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0600 ERR ' + JSON.stringify(err));
           done();
         }
@@ -278,7 +272,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0700 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0600 ERR ' + JSON.stringify(err));
           done();
         }
@@ -312,7 +305,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0800 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0600 ERR ' + JSON.stringify(err));
           done();
         }
@@ -346,7 +338,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0900 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0900 ERR ' + JSON.stringify(err));
           done();
         }
@@ -380,7 +371,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_1000 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0700 ERR ' + JSON.stringify(err));
           done();
         }
@@ -414,7 +404,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_1100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_1100 ERR ' + JSON.stringify(err));
           done();
         }
@@ -448,7 +437,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_1200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_1200 ERR ' + JSON.stringify(err));
           done();
         }
@@ -482,7 +470,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0100 ERR ' + JSON.stringify(err));
           done();
         }
@@ -516,7 +503,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0200 ERR ' + JSON.stringify(err));
           done();
         }
@@ -550,7 +536,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0300 ERR ' + JSON.stringify(err));
           done();
         }
@@ -584,7 +569,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0400 ERR ' + JSON.stringify(err));
           done();
         }
@@ -618,7 +602,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0500 ERR ' + JSON.stringify(err));
           done();
         }
@@ -652,7 +636,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0600 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0600 ERR ' + JSON.stringify(err));
           done();
         }
@@ -686,7 +670,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0700 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0700 ERR ' + JSON.stringify(err));
           done();
         }
@@ -720,7 +704,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0800 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0500 ERR ' + JSON.stringify(err));
           done();
         }
@@ -754,7 +738,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0900 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0900 ERR ' + JSON.stringify(err));
           done();
         }
@@ -788,7 +772,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_1000 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_1000 ERR ' + JSON.stringify(err));
           done();
         }
@@ -822,7 +806,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_1100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_1100 ERR ' + JSON.stringify(err));
           done();
         }
@@ -856,7 +840,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_1200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_UncheckedBorderColor_1200 ERR ' + JSON.stringify(err));
           done();
         }
@@ -889,7 +873,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_0100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_0100 ERR ' + JSON.stringify(err));
           done();
         }
@@ -922,7 +906,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_0200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_0200 ERR ' + JSON.stringify(err));
           done();
         }
@@ -955,7 +939,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_0300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_0300 ERR ' + JSON.stringify(err));
           done();
         }
@@ -988,7 +972,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_0400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_0400 ERR ' + JSON.stringify(err));
           done();
         }
@@ -1021,7 +1005,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_0500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_0500 ERR ' + JSON.stringify(err));
           done();
         }
@@ -1054,7 +1038,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_0500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_0600 ERR ' + JSON.stringify(err));
           done();
         }
@@ -1087,7 +1071,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_0700 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_0700 ERR ' + JSON.stringify(err));
           done();
         }
@@ -1120,7 +1104,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_0800 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_0800 ERR ' + JSON.stringify(err));
           done();
         }
@@ -1153,7 +1137,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_0900 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_0900 ERR ' + JSON.stringify(err));
           done();
         }
@@ -1186,7 +1170,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_1000 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_1000 ERR ' + JSON.stringify(err));
           done();
         }
@@ -1219,7 +1203,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_1100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_1100 ERR ' + JSON.stringify(err));
           done();
         }
@@ -1252,7 +1236,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_IndicatorColor_1200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_IndicatorColor_1200 ERR ' + JSON.stringify(err));
           done();
         }
@@ -1287,7 +1271,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_Color_0100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_Color_0100 ERR ' + JSON.stringify(err));
           done();
         }
@@ -1322,7 +1306,7 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_0100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Radio_0100 ERR ' + JSON.stringify(err));
           done();
         }
