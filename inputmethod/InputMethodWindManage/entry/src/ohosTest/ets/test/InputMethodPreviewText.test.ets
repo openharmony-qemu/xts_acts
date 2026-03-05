@@ -83,9 +83,9 @@ export default function inputMethodTest() {
     afterEach(
       async () => {
         try {
-          await inputMethod.getController().detach();
           inputMethod.getController().off('setPreviewText');
           inputMethod.getController().off('finishTextPreview');
+          await inputMethod.getController().detach();
           console.info(`clsoe inputMethod success`);
         } catch (error) {
           console.info(`clsoe inputMethod fail, error: [${error.code}, ${error.message}]`);
@@ -337,7 +337,6 @@ export default function inputMethodTest() {
           console.info(`====>${CASE_NAME} finishTextPreviewCallback2`); 
           count += 1;
           expect(count).assertEqual(2);
-          inputMethod.getController().off('finishTextPreview');
           done();
         }catch(err){
           console.info(`====>${CASE_NAME} finishTextPreviewCallback2 catch err`)
