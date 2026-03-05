@@ -1225,7 +1225,7 @@ export default function deviceSettingsTest() {
     it("test_device_settings_set_value_for_account_0800", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        deviceSettings.setValueForAccount(SELFWANT, -1, 100, 'deviceName');
+        deviceSettings.setValueForAccount(SELFWANT, -1, 100, 'test');
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 801).assertTrue();
