@@ -875,15 +875,15 @@ export default function ImageGetComponentSupp() {
     })
 
     /**
-     * @tc.name   IMAGE_GET_BUFFER_DATA_TEST_001
-     * @tc.number IMAGE_GET_BUFFER_DATA_TEST_001
+     * @tc.name   IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001
+     * @tc.number IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001
      * @tc.desc   getBufferData  返回值属性
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('IMAGE_GET_BUFFER_DATA_TEST_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_001';
+    it('IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
