@@ -1151,7 +1151,7 @@ export default function imageReadImageMetadataTestSupp() {
      */
     it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_052', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_052';
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      const imageSourceApi = await getImageSource('test_exif_readWrite_jpg_v2.jpg');
       try {
         await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
@@ -1180,7 +1180,7 @@ export default function imageReadImageMetadataTestSupp() {
      */
     it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_053', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_053';
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      const imageSourceApi = await getImageSource('test_exif_readWrite_jpg_v2.jpg');
       try {
         await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
@@ -1210,7 +1210,7 @@ export default function imageReadImageMetadataTestSupp() {
      */
     it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_054', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_054';
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      const imageSourceApi = await getImageSource('test_exif_readWrite_jpg_v2.jpg');
       try {
         await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
