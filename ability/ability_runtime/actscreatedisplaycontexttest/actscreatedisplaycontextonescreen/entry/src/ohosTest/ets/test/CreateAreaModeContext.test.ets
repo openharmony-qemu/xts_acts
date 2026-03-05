@@ -107,6 +107,78 @@ export default function abilityTest() {
       done();
       console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000]: end');
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100
+     * @tc.number SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100
+     * @tc.desc   Create a Context through the application, then create an Application Context and create a Display Context to obtain the Application Info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100', Level.LEVEL0, async () => {
+      console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: start');
+      try {
+        let displayContext: common.Context | undefined = uiAbilityContext?.createAreaModeContext(1);
+        compareInfo(displayContext);
+        expect().assertFail();
+      } catch (err) {
+        console.error('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: ' + err);
+        expect().assertFail();
+      }
+      console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: end');
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200
+     * @tc.number SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200
+     * @tc.desc   Retrieve the resourceManager property from the displayContext created by UIAbilityContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200', Level.LEVEL0, async (done: Function) => {
+      console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200]: start');
+      try {
+        let displayContext: Context | undefined = uiAbilityContext?.createModuleContext('entry_test');
+        if (displayContext != undefined) {
+          console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200]: uiAbilityContext' +
+          JSON.stringify(displayContext));
+          await resourceManagerTest(displayContext).then((data) => {
+            console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200] data : ' + data);
+            expect(true).assertEqual(data);
+          });
+        } else {
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200]: ' + err);
+        expect().assertFail();
+      }
+      done();
+      console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200]: end');
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateAreaModeContext_1300
+     * @tc.number SUB_Ability_AbilityRuntime_CreateAreaModeContext_1300
+     * @tc.desc   Create a Context through the application, then create an Application Context and create a Display Context to obtain the Application Info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CreateAreaModeContext_1300', Level.LEVEL0, async () => {
+      console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1300]: start');
+      try {
+        let displayContext: common.Context | undefined = uiAbilityContext?.createModuleContext('entry_test');
+        compareInfo(displayContext);
+        expect().assertFail();
+      } catch (err) {
+        console.error('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: ' + err);
+        expect().assertFail();
+      }
+      console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: end');
+    })
   })
 }
 
@@ -166,4 +238,47 @@ export async function resourceManagerTest(displayContext: Context): Promise<bool
   }
   console.log(`DisplayContextTest resourceManagerTest end, result: ${result}`);
   return result;
+}
+
+
+function compareInfo(displayContext: Context) {
+  let appInfoName: string = JSON.stringify(uiAbilityContext?.applicationInfo.name);
+  let appDisplayInfoName: string = JSON.stringify(displayContext.applicationInfo.name);
+  expect(appInfoName).assertEqual(appDisplayInfoName);
+  console.log(`DisplayContextTest resourceManager.getStringValue, appDisplayInfoName: ${appDisplayInfoName}`);
+  let appInfoLabelId: number | undefined = uiAbilityContext?.applicationInfo.labelId;
+  let appDisplayInfoLabelId: number = displayContext.applicationInfo.labelId;
+  expect(appInfoLabelId).assertEqual(appDisplayInfoLabelId);
+  let appInfoDescription: string = JSON.stringify(uiAbilityContext?.applicationInfo.description);
+  let appDisplayInfoDescription: string = JSON.stringify(displayContext.applicationInfo.description);
+  expect(appInfoDescription).assertEqual(appDisplayInfoDescription);
+  expect(uiAbilityContext?.applicationInfo.descriptionId).assertEqual(displayContext.applicationInfo.descriptionId);
+  expect(uiAbilityContext?.applicationInfo.enabled).assertEqual(displayContext.applicationInfo.enabled);
+  expect(uiAbilityContext?.applicationInfo.label).assertEqual(displayContext.applicationInfo.label);
+  expect(uiAbilityContext?.applicationInfo.icon).assertEqual(displayContext.applicationInfo.icon);
+  expect(uiAbilityContext?.applicationInfo.iconId).assertEqual(displayContext.applicationInfo.iconId);
+  expect(JSON.stringify(uiAbilityContext?.applicationInfo.permissions)).assertEqual(JSON.stringify(displayContext.applicationInfo.permissions));
+  expect(uiAbilityContext?.applicationInfo.process).assertEqual(displayContext.applicationInfo.process);
+  expect(uiAbilityContext?.applicationInfo.codePath).assertEqual(displayContext.applicationInfo.codePath);
+  expect(JSON.stringify(uiAbilityContext?.applicationInfo.metadataArray)).assertEqual(JSON.stringify(displayContext.applicationInfo.metadataArray));
+  expect(uiAbilityContext?.applicationInfo.removable).assertEqual(displayContext.applicationInfo.removable);
+  expect(uiAbilityContext?.applicationInfo.accessTokenId).assertEqual(displayContext.applicationInfo.accessTokenId);
+  expect(uiAbilityContext?.applicationInfo.uid).assertEqual(displayContext.applicationInfo.uid);
+  expect(JSON.stringify(uiAbilityContext?.applicationInfo.iconResource)).assertEqual(JSON.stringify(displayContext.applicationInfo.iconResource));
+  expect(JSON.stringify(uiAbilityContext?.applicationInfo.labelResource)).assertEqual(JSON.stringify(displayContext.applicationInfo.labelResource));
+  expect(JSON.stringify(uiAbilityContext?.applicationInfo.descriptionResource)).assertEqual(JSON.stringify(displayContext.applicationInfo.descriptionResource));
+  expect(uiAbilityContext?.applicationInfo.appDistributionType).assertEqual(displayContext.applicationInfo.appDistributionType);
+  expect(uiAbilityContext?.applicationInfo.systemApp).assertEqual(displayContext.applicationInfo.systemApp);
+  expect(uiAbilityContext?.applicationInfo.appProvisionType).assertEqual(displayContext.applicationInfo.appProvisionType);
+  expect(uiAbilityContext?.applicationInfo.bundleType).assertEqual(displayContext.applicationInfo.bundleType);
+  expect(uiAbilityContext?.applicationInfo.debug).assertEqual(displayContext.applicationInfo.debug);
+  expect(uiAbilityContext?.applicationInfo.dataUnclearable).assertEqual(displayContext.applicationInfo.dataUnclearable);
+  expect(uiAbilityContext?.applicationInfo.nativeLibraryPath).assertEqual(displayContext.applicationInfo.nativeLibraryPath);
+  expect(JSON.stringify(uiAbilityContext?.applicationInfo.multiAppMode)).assertEqual(JSON.stringify(displayContext.applicationInfo.multiAppMode));
+  expect(uiAbilityContext?.applicationInfo.appIndex).assertEqual(displayContext.applicationInfo.appIndex);
+  expect(uiAbilityContext?.applicationInfo.installSource).assertEqual(displayContext.applicationInfo.installSource);
+  expect(uiAbilityContext?.applicationInfo.releaseType).assertEqual(displayContext.applicationInfo.releaseType);
+  expect(uiAbilityContext?.applicationInfo.cloudFileSyncEnabled).assertEqual(displayContext.applicationInfo.cloudFileSyncEnabled);
+  expect(uiAbilityContext?.applicationInfo.flags).assertEqual(displayContext.applicationInfo.flags);
+  expect(displayContext.applicationInfo.name).assertEqual('com.acts.createdisplaycontext');
 }
