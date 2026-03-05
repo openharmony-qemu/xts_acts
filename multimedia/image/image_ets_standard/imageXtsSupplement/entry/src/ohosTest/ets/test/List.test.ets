@@ -236,6 +236,7 @@ import ImagCreatePixelMapTest from './image/ImagCreatePixelMapTest.test';
 import ImageCreateImageSourceSuppTest from './image/ImageCreateImageSourceTests.test';
 import ImageHeifsTest from './image/ImageHeifMetadataTest.test';
 import SendImageTest from './image/SendImageTest.test';
+import MetaDataSetBlobTest from './image/MetaDataSetBlobTest.test';
 
 
 export default function testsuite() {
@@ -443,6 +444,7 @@ export default function testsuite() {
   ImagCreatePixelMapTest();
  	ImageCreateImageSourceSuppTest();
  	ImageHeifsTest();
+  MetaDataSetBlobTest();
  	SendImageTest();
   ImageGammaSupp()
   CreatePixelMapSupp();
