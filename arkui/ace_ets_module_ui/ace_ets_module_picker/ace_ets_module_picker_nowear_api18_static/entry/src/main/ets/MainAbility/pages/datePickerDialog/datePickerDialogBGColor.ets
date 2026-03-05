@@ -19,7 +19,7 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct DatePickerDialogBGColor {
-  showDialog(color: null|undefined|Color|Double|String|Resource) {
+  showDialog(color: undefined|Color|Int|String|Resource) {
   this.getUIContext().showDatePickerDialog({
     start: new Date('2000-1-1'),
     end: new Date('2100-12-31'),
