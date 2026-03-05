@@ -90,7 +90,7 @@ export default function webUserAgentMetadataBrandVersionList() {
      */
     it('testGetBrandVersionListEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitGetBrandVersionListEmpty', 174330);
-      Utils.registerBaseEvent('testGetBrandVersionListEmpty', 1, 174350, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testGetBrandVersionListEmpty', 2, 174350, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebUserAgentMetadataBrandVersionListButton', 10, '');
