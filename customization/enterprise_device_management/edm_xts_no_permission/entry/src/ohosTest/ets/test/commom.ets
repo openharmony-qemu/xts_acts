@@ -200,7 +200,7 @@ const MARKET_APPS: Array<string> = [
 function getErrorCode(err: BusinessError): number | undefined {
   if (err && typeof err === 'object') {
     if (err && err.code) {
-      const code = errr.code;
+      const code = err.code;
       if (typeof code === 'string' && !isNaN(Number(code))) {
         return Number(code);
       }
