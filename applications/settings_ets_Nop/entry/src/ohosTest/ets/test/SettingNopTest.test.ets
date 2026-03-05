@@ -20,16 +20,6 @@ import CommonFunc from './Common';
 
 export default function SettingNopTest() {
   describe('SettingNopTest', () => {
-    beforeEach(async (done: Function) => {
-      try {
-        console.info(`setting nop before start...`);
-        await CommonFunc.sleep(2000);
-        console.info(`setting nop before end...`);
-      } catch (err) {
-        console.info(`setting nop before error: ${err}`);
-      }
-
-    });
     /**
      * @tc.name   Setting_nop_test_0100
      * @tc.number SUB_Setting_nop_test_0100
