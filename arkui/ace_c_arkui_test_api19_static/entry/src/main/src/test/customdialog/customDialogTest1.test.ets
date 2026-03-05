@@ -30,7 +30,7 @@ export default function customDialogTest1() {
     let PAGE_TAG = 'customDialogTest1';
     beforeEach(async (): Promise<void> => {
       await Utils.pushPage(`customdialog/${PAGE_TAG}`, false);
-      await Utils.sleep(100);
+      await Utils.sleep(1000);
     });
 
     
@@ -42,7 +42,7 @@ export default function customDialogTest1() {
      */
     it('customDialogTest1_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('customDialogTest1_0010  START');
-      await Utils.sleep(500);
+      await Utils.sleep(5000);
       let driver: Driver = Driver.create();
       let btn:Component = await driver.findComponent(ON.id('buttonId')) as Component;
       await btn.click();
