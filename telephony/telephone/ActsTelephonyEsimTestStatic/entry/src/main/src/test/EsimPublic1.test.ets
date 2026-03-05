@@ -223,7 +223,7 @@ export default function EsimPublic1() {
         try {
           let data: boolean = eSIM.isSupported(SLOT_2);
           hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
-          ExpectTrue(true);
+          ExpectFail();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         } catch (error) {
@@ -250,7 +250,7 @@ export default function EsimPublic1() {
         try {
           let data: boolean = eSIM.isSupported(SLOT_3);
           hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
-          ExpectTrue(true);
+          ExpectFail();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         } catch (error) {
