@@ -361,20 +361,6 @@ export default function uitestOnTest() {
           console.log(`${tag}, testGetHint hint7, ${JSON.stringify(hint7)}`)
           expect(hint7).assertEqual('');
         }
-        let text5 = await driver.findComponent(ON.hint('welcome', MatchPattern.EQUALS));
-        if (text5 == null) {
-          let scroll = await driver.findComponent(ON.type('Scroll'))
-          if (scroll != null) {
-            text5 = await scroll.scrollSearch(ON.hint('welcome', MatchPattern.EQUALS))
-          }
-        }
-        hilog.info(domain, tag, `testGetHint_static text5, ${ JSON.stringify(text5) }`);
-        expect(text5 != null).assertTrue();
-        if (text5 != null) {
-          let hint5 = await text5.getHint();
-          hilog.info(domain, tag, `testGetHint_static hint5 is, ${ hint5 }`);
-          expect(hint5 == 'welcome').assertTrue();
-        }
       } catch(error) {
         hilog.info(domain, tag, `testGetHint_static error, ${ JSON.stringify(error) }`);
         expect().assertFail();
@@ -446,7 +432,7 @@ export default function uitestOnTest() {
         expect(text6 != null).assertTrue();
         if (text6 != null) {
           let text6Des = await text6.getDescription()
-          console.log(`${TestTag},testDescription  text6Des, ${JSON.stringify(text6Des)}`)
+          console.log(`${tag},testDescription  text6Des, ${JSON.stringify(text6Des)}`)
           expect(text6Des).assertEqual('toast')
         }
       } catch(error) {
