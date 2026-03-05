@@ -514,7 +514,7 @@ struct WebViewControllerVideoMedia {
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("playVideo()");
                   let nums=1;
-                  let tryTime=400
+                  let tryTime=200
                   while(nums < tryTime) {
                     await Utils.sleep(1000);
                     //播放状态
