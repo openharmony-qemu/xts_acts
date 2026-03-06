@@ -215,6 +215,18 @@ export class KeyboardDelegate {
           console.info(TAG + '====>Sub_Misc_inputMethod_onSelectByMovement_0120 event:' + data.event);
           that.Sub_Misc_inputMethod_onSelectByMovement_0120();
           break;
+        case 121:
+          console.info(TAG + '====>Sub_Misc_inputMethod_onSelectByMovement_0121 event:' + data.event);
+          that.Sub_Misc_inputMethod_onSelectByMovement_0121();
+          break;
+        case 122:
+          console.info(TAG + '====>Sub_Misc_inputMethod_onSelectByMovement_0122 event:' + data.event);
+          that.Sub_Misc_inputMethod_onSelectByMovement_0122();
+          break;
+        case 123:
+          console.info(TAG + '====>Sub_Misc_inputMethod_onSelectByMovement_0123 event:' + data.event);
+          that.Sub_Misc_inputMethod_onSelectByMovement_0123();
+          break;
         case 130:
           console.info(TAG + '====>Sub_Misc_inputMethod_offSelectByRange_0130 event:' + data.event);
           that.Sub_Misc_inputMethod_offSelectByRange_0130();
@@ -690,14 +702,21 @@ export class KeyboardDelegate {
   async inputMethodAbility_test_038() {
     console.info(TAG + '====>receive inputMethodAbility_test_038 data');
     let commonEventPublishData;
-    this.InputClient.getEditorAttribute((err, value) => {
+    this.InputClient.getEditorAttribute((err, Attribute) => {
       if (err) {
         console.info(TAG + '====>inputMethodAbility_test_038 getEditorAttribute err:' + JSON.stringify(err));
         commonEventPublishData = {
           data: "FAILED"
         };
       } else {
-        console.info(TAG + '====>inputMethodAbility_test_038 getEditorAttribute value:' + JSON.stringify(value));
+        console.info(TAG + '====>inputMethodAbility_test_038 getEditorAttribute value:' + JSON.stringify(Attribute));
+        let value = typeof(Attribute.enterKeyType) === 'number' && typeof(Attribute.inputPattern) === 'number' &&
+         typeof(Attribute.isTextPreviewSupported) === 'boolean' && typeof(Attribute.bundleName) === 'string' &&
+         typeof(Attribute.immersiveMode) === 'number' && typeof(Attribute.windowId) === 'number' &&
+         typeof(Attribute.displayId) === 'number' && typeof(Attribute.placeholder) === 'string' &&
+         typeof(Attribute.abilityName) === 'string' && typeof(Attribute.capitalizeMode) === 'number' &&
+         typeof(Attribute.gradientMode) === 'number' && typeof(Attribute.extraConfig) === 'object'; 
+        console.info(TAG + '====>inputMethodAbility_test_038 getEditorAttribute:' + JSON.stringify(value));
         if (value) {
           commonEventPublishData = {
             data: "SUCCESS"
@@ -715,8 +734,15 @@ export class KeyboardDelegate {
   async inputMethodAbility_test_039() {
     console.info(TAG + '====>receive inputMethodAbility_test_039 data');
     let commonEventPublishData;
-    let value = await this.InputClient.getEditorAttribute();
-    console.info(TAG + '====>inputMethodAbility_test_039 getEditorAttribute value:' + JSON.stringify(value));
+    let Attribute = await this.InputClient.getEditorAttribute();
+    console.info(TAG + '====>inputMethodAbility_test_039 getEditorAttribute value:' + JSON.stringify(Attribute));
+    let value = typeof(Attribute.enterKeyType) === 'number' && typeof(Attribute.inputPattern) === 'number' &&
+     typeof(Attribute.isTextPreviewSupported) === 'boolean' && typeof(Attribute.bundleName) === 'string' &&
+     typeof(Attribute.immersiveMode) === 'number' && typeof(Attribute.windowId) === 'number' &&
+     typeof(Attribute.displayId) === 'number' && typeof(Attribute.placeholder) === 'string' &&
+     typeof(Attribute.abilityName) === 'string' && typeof(Attribute.capitalizeMode) === 'number' &&
+     typeof(Attribute.gradientMode) === 'number' && typeof(Attribute.extraConfig) === 'object'; 
+    console.info(TAG + '====>inputMethodAbility_test_039 getEditorAttribute:' + JSON.stringify(value));
     if (value) {
       commonEventPublishData = {
         data: "SUCCESS"
@@ -1217,6 +1243,42 @@ export class KeyboardDelegate {
     }
   }
 
+  async Sub_Misc_inputMethod_onSelectByMovement_0121() {
+    console.info(TAG + '====>receive Sub_Misc_inputMethod_onSelectByMovement_0121 success');
+    let movement = { direction: inputMethodEngine.CURSOR_UP };
+    try {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onSelectByMovement_0121 onSelectByMovement start');
+      await this.InputClient.selectByMovement(movement);
+    } catch (err) {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onSelectByMovement_0121 onSelectByMovement catch err:' +
+      JSON.stringify(err));
+    }
+  }
+
+  async Sub_Misc_inputMethod_onSelectByMovement_0122() {
+    console.info(TAG + '====>receive Sub_Misc_inputMethod_onSelectByMovement_0122 success');
+    let movement = { direction: inputMethodEngine.CURSOR_LEFT };
+    try {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onSelectByMovement_0122 onSelectByMovement start');
+      await this.InputClient.selectByMovement(movement);
+    } catch (err) {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onSelectByMovement_0122 onSelectByMovement catch err:' +
+      JSON.stringify(err));
+    }
+  }
+
+  async Sub_Misc_inputMethod_onSelectByMovement_0123() {
+    console.info(TAG + '====>receive Sub_Misc_inputMethod_onSelectByMovement_0123 success');
+    let movement = { direction: inputMethodEngine.CURSOR_RIGHT };
+    try {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onSelectByMovement_0123 onSelectByMovement start');
+      await this.InputClient.selectByMovement(movement);
+    } catch (err) {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onSelectByMovement_0123 onSelectByMovement catch err:' +
+      JSON.stringify(err));
+    }
+  }
+
   async Sub_Misc_inputMethod_offSelectByRange_0130() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_offSelectByRange_0130 success');
     let timeCount = 0;
@@ -1462,6 +1524,13 @@ export class KeyboardDelegate {
     let attribute = this.InputClient.getEditorAttributeSync();
     console.info(TAG + '====>Sub_Misc_inputMethod_getEditorAttribute_sync_0233 getEditorAttributeSync: ' +
     JSON.stringify(attribute));
+    let value = typeof(attribute.enterKeyType) === 'number' && typeof(attribute.inputPattern) === 'number' &&
+     typeof(attribute.isTextPreviewSupported) === 'boolean' && typeof(attribute.bundleName) === 'string' &&
+     typeof(attribute.immersiveMode) === 'number' && typeof(attribute.windowId) === 'number' &&
+     typeof(attribute.displayId) === 'number' && typeof(attribute.placeholder) === 'string' &&
+     typeof(attribute.abilityName) === 'string' && typeof(attribute.capitalizeMode) === 'number' &&
+     typeof(attribute.gradientMode) === 'number' && typeof(attribute.extraConfig) === 'object';
+    console.info(TAG + '====>inputMethodEngine_test_039 getEditorAttribute:' + JSON.stringify(value));
     if (attribute.bundleName === 'com.acts.inputmethodengine.test') {
       commonEventPublishData = {
         data: "SUCCESS"
