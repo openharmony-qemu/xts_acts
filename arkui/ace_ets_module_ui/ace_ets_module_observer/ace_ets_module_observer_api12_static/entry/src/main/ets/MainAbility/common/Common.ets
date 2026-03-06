@@ -67,14 +67,16 @@ export default class CommonFunc {
     let rectInfo = parts.map((part: string) => {
       return part.split(",").map((item: string):double => parseFloat(item.trim()));
     });
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
-      "windowRect Top: " + AppStorage.get<number>("winTop"));
-    return {
-      "left": Number(rectInfo[0][0] ?? 0),
-      "top": Number(rectInfo[0][1] ?? 0),
-      "right": Number(rectInfo[1][0] ?? 0),
-      "bottom": Number(rectInfo[1][1] ?? 0)
-    } as RectValue
+    CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
+    CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
+    CommonFunc.rect_right = Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
+    CommonFunc.rect_bottom = Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
+    return CommonFunc.rect_value = {
+      "left": CommonFunc.rect_left,
+      "top": CommonFunc.rect_top,
+      "right": CommonFunc.rect_right,
+      "bottom": CommonFunc.rect_bottom
+    }
   }
 
   // static setScreenOrientation(orientation: screen.Orientation) {
