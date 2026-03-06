@@ -25,7 +25,7 @@ using namespace std;
 using namespace OHOS;
 using namespace Media;
 
-static OH_AVCapability* cap_hevc = nullptr;
+OH_AVCapability* g_capHevc = nullptr;
 std::string g_codecNameHevc = "";
 
 namespace {
@@ -45,8 +45,8 @@ const char* const OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30 =
 
 void HevcSwdecFuncNdkTest::SetUpTestCase()
 {
-    cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, SOFTWARE);
-    g_codecNameHevc = OH_AVCapability_GetName(cap_hevc);
+    g_capHevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, SOFTWARE);
+    g_codecNameHevc = OH_AVCapability_GetName(g_capHevc);
     cout << "g_codecNameHevc: " << g_codecNameHevc << endl;
 }
 
@@ -138,7 +138,7 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
 int VideoDecodeSyncSs265Func0010Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
-    if (cap_hevc != nullptr) {
+    if (g_capHevc != nullptr) {
         shared_ptr<VDecAPI11Sample> vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
         vDecSample->defaultWidth = DEFAULT_WIDTH;
@@ -173,7 +173,7 @@ int VideoDecodeSyncSs265Func0010Test()
 int VideoDecodeSyncSs265Func0020Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
-    if (cap_hevc != nullptr) {
+    if (g_capHevc != nullptr) {
         shared_ptr<VDecAPI11Sample> vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
         vDecSample->defaultWidth = DEFAULT_WIDTH;
@@ -209,7 +209,7 @@ int VideoDecodeSyncSs265Func0020Test()
 int VideoSwdecH265BlankFrame0010Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
-    if (cap_hevc != nullptr) {
+    if (g_capHevc != nullptr) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
         vDecSample->defaultWidth = DEFAULT_WIDTH;
