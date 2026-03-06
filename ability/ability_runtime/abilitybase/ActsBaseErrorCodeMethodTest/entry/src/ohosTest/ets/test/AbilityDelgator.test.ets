@@ -1103,44 +1103,44 @@ export default function openLinkTest() {
     })
     
     /**
-     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4500
-     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4500
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4502
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4502
      * @tc.desc   Test addAbilityStageMonitor with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_AbilityDelegatorError_4500', Level.LEVEL0, async (done: Function)=> {
-      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4500 start');
+    it('SUB_Ability_AbilityBase_AbilityDelegatorError_4502', Level.LEVEL0, async (done: Function)=> {
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4502 start');
       try {
         abilityDelegator.addAbilityStageMonitor(null, (err, data)=>{
           expect().assertFail();
           done();
         });
       } catch (err) {
-        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_4500 ${err?.code}`);
+        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_4502 ${err?.code}`);
         try{expect(err?.code).assertEqual(401);}catch(e){}
         done();
       }
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4501
-     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4501
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4503
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4503
      * @tc.desc   Test addAbilityStageMonitor with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_AbilityDelegatorError_4501', Level.LEVEL0, async (done: Function)=> {
-      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4501 start');
+    it('SUB_Ability_AbilityBase_AbilityDelegatorError_4503', Level.LEVEL0, async (done: Function)=> {
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4503 start');
       try {
         abilityDelegator.addAbilityStageMonitor(undefined, (err, data)=>{
           expect().assertFail();
           done();
         });
       } catch (err) {
-        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_4501 ${err?.code}`);
+        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_4503 ${err?.code}`);
         try{expect(err?.code).assertEqual(401);}catch(e){}
         done();
       }

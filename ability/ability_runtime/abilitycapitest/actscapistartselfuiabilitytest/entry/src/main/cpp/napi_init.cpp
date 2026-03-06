@@ -469,15 +469,14 @@ static napi_value WantNdk_1700(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_WantNdk_1700 errCode=%{public}d", errCode);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_WantNdk_1700 fd=%{public}d", fd);
     if (ret == ABILITY_BASE_ERROR_CODE_NO_ERROR) {
-      napi_value result;
-      napi_create_int32(env, fd, &result);
-      return result;
-    }else{
-      napi_value result;
-      napi_create_int32(env, ret, &result);
-      return result;
+        napi_value result;
+        napi_create_int32(env, fd, &result);
+        return result;
+    } else {
+        napi_value result;
+        napi_create_int32(env, ret, &result);
+        return result;
     }
-
 }
 
 static napi_value WantNdk_1800(napi_env env, napi_callback_info info)
