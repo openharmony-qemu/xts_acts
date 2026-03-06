@@ -45,7 +45,7 @@ let para: Record<string,string> = {
   'detachNodeAdapter': 'start',
 };
 let storage: LocalStorage = new LocalStorage(para);
-
+  
 class MyNodeAdapter extends NodeAdapter {
   uiContext: UIContext = new UIContext();
   cachePool: Array<FrameNode> = new Array<FrameNode>();
