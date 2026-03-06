@@ -30,13 +30,19 @@ export default function HitraceMeterTest() {
      */
     it("DFX_DFR_HitraceMeter_Static_0100", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       console.info("-------DFX_DFR_HitraceMeter_0100 start--------");
-      for (let i = 0; i < 3; i++) {
-        console.info("DFX_DFR_HitraceMeter_Static_0100 i = " + i)
-        console.info("DFX_DFR_HitraceMeter_Static_0100 " + JSON.stringify(i) + " finishTrace start");
-        hiTraceMeter.finishTrace("test-" + JSON.stringify(i), 111 + i);
-        console.info("DFX_DFR_HitraceMeter_Static_0100 " + JSON.stringify(i) + "finishTrace end");
+      try {
+        for (let i = 0; i < 3; i++) {
+          console.info("DFX_DFR_HitraceMeter_Static_0100 i = " + i)
+          console.info("DFX_DFR_HitraceMeter_Static_0100 " + JSON.stringify(i) + " finishTrace start");
+          hiTraceMeter.finishTrace("test-" + JSON.stringify(i), 111 + i);
+          console.info("DFX_DFR_HitraceMeter_Static_0100 " + JSON.stringify(i) + "finishTrace end");
+        }
+        done();
+      } catch (error) {
+        console.error(`error code: ${error.code}, error msg: ${error.message}`);
+        expect(false).assertTrue()
+        done()
       }
-      expect(true).assertTrue();
       console.info("DFX_DFR_HitraceMeter_Static_0100 end");
       done();
     })
@@ -55,7 +61,6 @@ export default function HitraceMeterTest() {
       try {
         console.info("DFX_DFR_HitraceMeter_Static_0200 1 start");
         hiTraceMeter.startTrace("test2", 222);
-        expect(true).assertTrue();
         console.info("DFX_DFR_HitraceMeter_Static_0200 1 success");
       } catch (err) {
         console.info("DFX_DFR_HitraceMeter_Static_0200 1 fail!");
@@ -80,7 +85,6 @@ export default function HitraceMeterTest() {
       try {
         console.info("DFX_DFR_HitraceMeter_Static_0300 1 start")
         hiTraceMeter.finishTrace("test3", 111);
-        expect(true).assertTrue();
         console.info("DFX_DFR_HitraceMeter_Static_0300 1 success");
       } catch (err) {
         console.info("DFX_DFR_HitraceMeter_Static_0300 1 fail!");
@@ -101,12 +105,17 @@ export default function HitraceMeterTest() {
      */
     it("DFX_DFR_HitraceMeter_Static_0400", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       console.info("-------DFX_DFR_HitraceMeter_Static_0400 start--------");
-      for (let i = 0; i < 3; i++) {
-        console.info("DFX_DFR_HitraceMeter_Static_0400 :" + i);
-        hiTraceMeter.traceByValue("test4-" + JSON.stringify(i), 3 + i);
+      try {
+        for (let i = 0; i < 3; i++) {
+          console.info("DFX_DFR_HitraceMeter_Static_0400 :" + i);
+          hiTraceMeter.traceByValue("test4-" + JSON.stringify(i), 3 + i);
+        }
+      } catch (err) {
+        console.info("DFX_DFR_HitraceMeter_Static_0400 1 fail!");
+        console.info("DFX_DFR_HitraceMeter_Static_0400 1 err = " + err);
+        expect(false).assertTrue();
       }
-      expect(true).assertTrue();
-      console.info("DFX_DFR_HitraceMeter_Static_0400 end");
+      console.info("------DFX_DFR_HitraceMeter_Static_0400 end------");
       done();
     })
 
@@ -125,7 +134,6 @@ export default function HitraceMeterTest() {
       try {
         console.info("DFX_DFR_HitraceMeter_Static_0500 1 start")
         hiTraceMeter.traceByValue("test5", 5);
-        expect(true).assertTrue();
         console.info("DFX_DFR_HitraceMeter_Static_0500 1 success")
       } catch (err) {
         console.info("DFX_DFR_HitraceMeter_Static_0500 1 fail!");
@@ -156,7 +164,6 @@ export default function HitraceMeterTest() {
           'key=value');
         hiTraceMeter.traceByValue(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL, 'myTestCountTrace', traceCount);
         hiTraceMeter.finishAsyncTrace(hiTraceMeter.HiTraceOutputLevel.MAX, 'myTestAsyncTrace', 1001);
-        expect(true).assertTrue();
         console.info("DFX_DFR_HitraceMeter_Static_0600 1 success");
       } catch (err) {
         console.info("DFX_DFR_HitraceMeter_Static_0600 1 fail!");
@@ -212,7 +219,6 @@ export default function HitraceMeterTest() {
         hiTraceMeter.finishSyncTrace(hiTraceMeter.HiTraceOutputLevel.DEBUG);
         hiTraceMeter.startSyncTrace(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL, 'myTestAsyncTrace2');
         hiTraceMeter.finishSyncTrace(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL);
-        expect(true).assertTrue();
         console.info("DFX_DFR_HitraceMeter_Static_0800 1 success");
       } catch (err) {
         console.info("DFX_DFR_HitraceMeter_Static_0800 1 fail!");

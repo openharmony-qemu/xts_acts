@@ -678,7 +678,6 @@ describe('hiSysEventErrcodeTest', function () {
 		setTimeout(() => {
 			try {
 				hiSysEvent.removeWatcher("")
-				expect(true).assertTrue()
 				console.info('testHiSysEventApi44 end')
 				done()
 			}catch (err) {
@@ -714,7 +713,6 @@ describe('hiSysEventErrcodeTest', function () {
 		setTimeout(() => {
 			try {
 				hiSysEvent.removeWatcher(watcher11)
-				expect(true).assertTrue()
 				console.info('testHiSysEventApi45 end')
 				done()
 			}catch (err) {

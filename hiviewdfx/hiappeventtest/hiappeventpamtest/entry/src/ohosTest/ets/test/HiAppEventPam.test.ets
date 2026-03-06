@@ -568,7 +568,6 @@ export default function HiAppEventPamTest() {
         };
         hiAppEvent.setEventParam(eventParams, "test_domain", "").then(() => {
           console.log('testHiAppEventSetPam12 Event parameters set successfully.');
-          expect(true).assertTrue()
           done()
         }).catch((error: BusinessError) => {
           console.error('testHiAppEventSetPam12 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
@@ -1135,7 +1134,6 @@ export default function HiAppEventPamTest() {
             }
           }else {
               console.info('file not exists,skip testcase');
-              expect(true).assertTrue();
               done();
             }
       });
@@ -1165,7 +1163,6 @@ export default function HiAppEventPamTest() {
             })
           }else {
               console.info('file not exists,skip testcase');
-              expect(true).assertTrue();
               done();
             }
       });
@@ -1196,7 +1193,6 @@ export default function HiAppEventPamTest() {
               })
           }else {
           console.info('file not exists,skip testcase');
-          expect(true).assertTrue();
           done();
         }
     });

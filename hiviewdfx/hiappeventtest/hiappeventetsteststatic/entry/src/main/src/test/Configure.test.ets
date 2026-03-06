@@ -41,7 +41,6 @@ export default function configureTest() {
         hiAppEvent.configure({
           maxStorage: '100M'
         })
-        expect(true).assertTrue()
       } catch (err) {
         hilog.info(domain, tag, `testConfigure001 err ,err code is ${err.code}, err message is ${err.message}`)
         expect().assertFail();

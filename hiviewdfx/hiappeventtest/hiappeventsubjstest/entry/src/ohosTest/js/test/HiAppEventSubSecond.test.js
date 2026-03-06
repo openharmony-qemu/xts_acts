@@ -286,12 +286,10 @@ describe('HiAppEventSubSecondTest', function () {
             }, (err) => {
                 if (err) {
                     console.error(`HiAppEventSub37 > code: ${err.code}, message: ${err.message}`);
-                    expect(true).assertTrue()
                     done()
                     return;
                 } else {
                     console.log(`success to write event`);
-                    expect(true).assertTrue()
                     done()
                 }
             });

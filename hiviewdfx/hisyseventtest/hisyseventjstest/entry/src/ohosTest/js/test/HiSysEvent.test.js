@@ -961,7 +961,6 @@ describe('hiSysEventJsTest', function () {
 		try {
 			hiSysEvent.addWatcher(watcher119)
 			hiSysEvent.removeWatcher(watcher119)
-			expect(true).assertTrue()
 			console.info('testHiSysEventApi19 end')
 			done();
 		} catch (err) {
@@ -1037,7 +1036,6 @@ describe('hiSysEventJsTest', function () {
 				}
 				hiSysEvent.addWatcher(watcher[i])
 			}
-			expect(true).assertTrue()
 		}catch (err) {
 			console.error(`testHiSysEventApi21 > addWatcher error code: ${err.code}, error msg: ${err.message}`)
 			expect(false).assertTrue()

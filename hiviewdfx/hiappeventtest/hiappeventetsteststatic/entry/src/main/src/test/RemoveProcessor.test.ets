@@ -43,7 +43,6 @@ export default function removeProcessorTest() {
         hiAppEvent.removeProcessor(processorId)
         hiAppEvent.removeProcessor(processorId)
         hiAppEvent.removeProcessor(-1)
-        expect(true).assertTrue()
         done()
       }
       catch (err) {

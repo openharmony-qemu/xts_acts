@@ -37,7 +37,6 @@ export default function JsLeakWatcherTest() {
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0100 enable success')
         jsLeakWatcher.enable(false);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0100 enable false success')
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0100 fail!");
@@ -63,7 +62,6 @@ export default function JsLeakWatcherTest() {
         let obj: Object = new Object();
         jsLeakWatcher.watch(obj, 'test_watch')
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0200 watch success')
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0200 fail!");
@@ -125,7 +123,6 @@ export default function JsLeakWatcherTest() {
       try {
         jsLeakWatcher.watch(undefined, 'test_watch')
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0400 watch undefined')
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcher_Interface_0400 > err code: ${err.code}, err msg: ${err.message}`)

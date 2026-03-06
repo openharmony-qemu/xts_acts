@@ -54,7 +54,6 @@ describe("HitraceMeterTest", function () {
         try {
             console.info("DFX_DFR_HitraceMeter_0200 1 start");
             hiTraceMeter.startTrace("test2", 222);
-            expect(true).assertTrue();
             console.info("DFX_DFR_HitraceMeter_0200 1 success");
         } catch (err) {
             console.info("DFX_DFR_HitraceMeter_0200 1 fail!");
@@ -115,7 +114,6 @@ describe("HitraceMeterTest", function () {
         try {
             console.info("DFX_DFR_HitraceMeter_0300 1 start")
             hiTraceMeter.finishTrace("test3", 111);
-            expect(true).assertTrue();
             console.info("DFX_DFR_HitraceMeter_0300 1 success");
         } catch (err) {
             console.info("DFX_DFR_HitraceMeter_0300 1 fail!");
@@ -194,7 +192,6 @@ describe("HitraceMeterTest", function () {
         try {
             console.info("DFX_DFR_HitraceMeter_0500 1 start")
             hiTraceMeter.traceByValue("test5", 5);
-            expect(true).assertTrue();
             console.info("DFX_DFR_HitraceMeter_0500 1 success")
         } catch (err) {
             console.info("DFX_DFR_HitraceMeter_0500 1 fail!");
@@ -258,7 +255,6 @@ describe("HitraceMeterTest", function () {
             hiTraceMeter.traceByValue(hiTraceMeter.HiTraceOutputLevel.DEBUG, 'myTestCountTrace', traceCount);
             hilog.info(0x0000, 'testTrace', 'myTraceTest running, taskId: 1001');
             hiTraceMeter.finishAsyncTrace(hiTraceMeter.HiTraceOutputLevel.DEBUG, 'myTestAsyncTrace', 1001);
-            expect(true).assertTrue();
             console.info("DFX_DFR_HitraceMeter_0600 1 success");
         } catch (err) {
             console.info("DFX_DFR_HitraceMeter_0600 1 fail!");

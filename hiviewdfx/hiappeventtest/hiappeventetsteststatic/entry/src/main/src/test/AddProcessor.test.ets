@@ -119,7 +119,6 @@ export default function addProcessorTest() {
                 let processorId = hiAppEvent.addProcessor(processor);
                 hilog.info(domain, tag, `testHiAppEvent010 > processorId: ${processorId}`)
                 hiAppEvent.removeProcessor(processorId)
-                expect(true).assertTrue()
                 done()
             }
             catch (err) {

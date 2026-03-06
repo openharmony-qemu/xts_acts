@@ -62,7 +62,6 @@ export default function HidebugrawTest() {
           console.info(`TestTag success and generated file path is ${filename}`)
           let filename1 = await hidebug.dumpJsRawHeapData()
           console.info(`TestTag success and generated file path is ${filename1}`)
-          expect(true).assertTrue();
           done();
         }
         done();
@@ -91,7 +90,6 @@ export default function HidebugrawTest() {
           console.info(`TestTag success and generated file path is ${filename}`)
           let filename1 = await hidebug.dumpJsRawHeapData()
           console.info(`TestTag success and generated file path is ${filename1}`)
-          expect(true).assertTrue();
           done();
         }
         done();

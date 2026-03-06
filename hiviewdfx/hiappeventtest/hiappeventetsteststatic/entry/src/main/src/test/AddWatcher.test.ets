@@ -289,7 +289,6 @@ export default function addWatcherTest() {
                 }
             }
             hiAppEvent.removeWatcher({ name: "watcher2" })
-            expect(true).assertTrue();
             done();
         } catch (err) {
         err = err as BusinessError;
@@ -329,7 +328,6 @@ export default function addWatcherTest() {
                 }
             });
             hiAppEvent.removeWatcher({ name: "watcher3" })
-            expect(true).assertTrue();
             done();
         } catch (err) {
         err = err as BusinessError;
@@ -607,7 +605,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       hilog.info(logDomain, tag, "HiAppEventSub_result" + result)
@@ -753,7 +750,7 @@ export default function addWatcherTest() {
       if (holder != null) {
         let eventPkg = holder.takeNext();
         if (eventPkg == null) {
-          expect(true).assertTrue()
+            hilog.info(logDomain, tag, 'hiappevent cnm');
         }
         hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
         hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
@@ -761,7 +758,6 @@ export default function addWatcherTest() {
         for (const eventInfo of eventPkg!.data) {
           hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
         }
-        expect(true).assertTrue()
       }
       setTimeout(() => {
         hiAppEvent.removeWatcher({name:"watcher2"})
@@ -802,7 +798,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       expect(result != null).assertTrue();
@@ -903,7 +898,6 @@ export default function addWatcherTest() {
             for (const eventInfo of eventPkg!.data) {
               hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
             }
-            expect(true).assertTrue()
           }
         })
         expect(result == null).assertTrue();
@@ -968,7 +962,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       hilog.info(logDomain, tag, "HiAppEventSub_result" + result)
@@ -1027,7 +1020,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       hilog.info(logDomain, tag, "HiAppEventSub_result" + result)
@@ -1125,7 +1117,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       hilog.info(logDomain, tag, "HiAppEventSub_result" + result)
@@ -1223,7 +1214,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       hilog.info(logDomain, tag, "HiAppEventSub_result" + result)
@@ -1321,7 +1311,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       hilog.info(logDomain, tag, "HiAppEventSub_result" + result)
@@ -1419,7 +1408,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       hilog.info(logDomain, tag, "HiAppEventSub_result" + result)
@@ -1513,7 +1501,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       hilog.info(logDomain, tag, "HiAppEventSub_result" + result)
@@ -1595,7 +1582,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       hilog.info(logDomain, tag, "HiAppEventSub_result" + result)
@@ -1684,7 +1670,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       expect(result != null).assertTrue();
@@ -1742,7 +1727,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       expect(result != null).assertTrue();
@@ -1800,7 +1784,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       expect(result != null).assertTrue();
@@ -1861,7 +1844,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       expect(result != null).assertTrue();
@@ -1920,7 +1902,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       expect(result != null).assertTrue();
@@ -1979,7 +1960,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       expect(result != null).assertTrue();
@@ -2034,7 +2014,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       expect(result != null).assertTrue();
@@ -2095,7 +2074,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       expect(result != null).assertTrue();
@@ -2153,7 +2131,6 @@ export default function addWatcherTest() {
           for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
-          expect(true).assertTrue()
         }
       })
       expect(result != null).assertTrue();
@@ -2263,8 +2240,13 @@ export default function addWatcherTest() {
      */
     it('HiAppEventSub27', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub27 start')
-      hiAppEvent.clearData()
-      expect(true).assertTrue()
+      try {
+        hiAppEvent.clearData()
+      } catch (error) {
+	    console.error(`error code: ${error.code}, error msg: ${error.message}`);
+		expect(false).assertTrue()
+		done()
+	  }
       hilog.info(logDomain, tag, 'HiAppEventSub27 end')
       done();
     })
@@ -2301,8 +2283,13 @@ export default function addWatcherTest() {
      */
     it('HiAppEventSub31', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'HiAppEventSub31 start')
-      let holder: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("testConstructor");
-      expect(true).assertTrue()
+      try {
+        let holder: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("testConstructor");
+	  } catch (error) {
+		console.error(`error code: ${error.code}, error msg: ${error.message}`);
+		expect(false).assertTrue()
+		done()
+	  }
       hilog.info(logDomain, tag, 'HiAppEventSub31 end')
       done();
     })
