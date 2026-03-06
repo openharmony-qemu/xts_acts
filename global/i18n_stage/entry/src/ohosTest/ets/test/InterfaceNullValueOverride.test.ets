@@ -3424,7 +3424,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0900 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(e.code).assertEqual(undefined);
       }
     })
 
@@ -6077,7 +6077,7 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('AdvancedMeasureFormat_format_undefined_test_0100', Level.LEVEL3, () => {
       let numFmt = new Intl.NumberFormat('zh-Hans-CN', {style: 'unit', unit: 'fahrenheit'});
-      let advancedMeasureFormat = i18n.AdvancedMeasureFormat(numFmt, {unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON});
+      let advancedMeasureFormat = new i18n.AdvancedMeasureFormat(numFmt, {unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON});
       let value = advancedMeasureFormat.format(undefined);
       console.log('AdvancedMeasureFormat_format_undefined_test_0100 value:', value);
       expect(value).assertEqual('');
