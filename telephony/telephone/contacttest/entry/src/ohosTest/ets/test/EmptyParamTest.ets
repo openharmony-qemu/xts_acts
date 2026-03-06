@@ -216,7 +216,7 @@ export default function EmptyParamTest() {
             done();
         } catch (error) {
             console.info("contactsApi_delete_empty_test_700: raw_contact delete error = " + error);
-            expect.(error.code === 401).assertTrue();
+            expect(error.code === 401).assertTrue();
             done();
         }
     });
@@ -237,10 +237,10 @@ export default function EmptyParamTest() {
             contact.deleteContact(undefined, key, (err: BusinessError) => {
                 if (err) {
                     console.info("contactsApi_delete_empty_test_800: delete success");
-                    expect.(err.code === 401).assertTrue();
+                    expect(err.code === 401).assertTrue();
                     done();
                 } else {
-                    console.info("contactsApi_delete_empty_test_600: delete success");
+                    console.info("contactsApi_delete_empty_test_800: delete success");
                     expect().assertFail();
                     done();
                 }
@@ -341,11 +341,11 @@ export default function EmptyParamTest() {
             contact.queryContacts(null, (err: BusinessError) => {
                 if (err) {
                     console.error(`contactsApi_query_empty_test_1200: contact query err = ${err.code}, ${err.message}`);
-                    expect(error.code === 401).assertTrue();
+                    expect(err.code === 401).assertTrue();
                     done();
                 } else {
                     console.info("contactsApi_query_empty_test_1200: query success");
-                    expect.assertFail();
+                    expect().assertFail();
                     done();
                 }
             });
@@ -517,7 +517,7 @@ export default function EmptyParamTest() {
                 }
             });
         } catch (error) {
-            console.info("contactsApi_query_empty_test_1800: contact query error = ${error.code}, ${error.message}`);
+            console.info(`contactsApi_query_empty_test_1800: contact query error = ${error.code}, ${error.message}`);
             expect(error.code === 401).assertTrue();
             done();
         }
@@ -661,11 +661,11 @@ export default function EmptyParamTest() {
         try {
             contact.queryKey(null, null, (err: BusinessError, key:string) => {
                 if (err) {
-                    console.error(`contactsApi_query_empty_test_2500: query err = ${err.code}, ${err.message}`);
+                    console.error(`contactsApi_query_empty_test_2500: contact query err = ${err.code}, ${err.message}`);
                     expect(err.code === 401).assertTrue();
                     done();
                 } else {
-                    console.error("contactsApi_query_empty_test_2500: query success: " + key);
+                    console.info("contactsApi_query_empty_test_2500: query success: " + key);
                     expect().assertFail();
                     done();
                 }
@@ -718,7 +718,7 @@ export default function EmptyParamTest() {
             contact.queryMyCard(null, (err: BusinessError, card: contact.Contact) => {
                 if (err) {
                     console.error(`contactsApi_query_empty_test_2800: contact query err = ${err.code}, ${err.message}`);
-                    expect.(err.code === 401).assertTrue();
+                    expect(err.code === 401).assertTrue();
                     done();
                 } else {
                     console.info("contactsApi_query_empty_test_2800: query success");
@@ -794,10 +794,10 @@ export default function EmptyParamTest() {
     it("contactsApi_update_empty_test_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let contactDataError: contact.Contact = {};
-            contact.updateContact(null, contactDataError, (err: BusinessError, card: contact.Contact) => {
+            contact.updateContact(null, contactDataError, (err: BusinessError) => {
                 if (err) {
                     console.error(`contactsApi_update_empty_test_3100: contact update err = ${err.code}, ${err.message}`);
-                    expect.(err.code === 401).assertTrue();
+                    expect(err.code === 401).assertTrue();
                     done();
                 } else {
                     console.info("contactsApi_update_empty_test_3100: update success");
@@ -823,7 +823,7 @@ export default function EmptyParamTest() {
     it("contactsApi_update_empty_test_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let contactDataError: contact.Contact = {};
-            contact.updateContact(null, contactDataError, null, (err: BusinessError, card: contact.Contact) => {
+            contact.updateContact(null, contactDataError, null, (err: BusinessError) => {
                 if (err) {
                     console.error(`contactsApi_update_empty_test_3200: contact update err = ${err.code}, ${err.message}`);
                     expect(err.code === 401).assertTrue();
@@ -884,7 +884,7 @@ export default function EmptyParamTest() {
                 }
             });
         } catch (error) {
-            console.info("contactsApi_is_local_contact_empty_test_3400: isLocalContact error = ${error.code}, ${error.message}`);
+            console.info(`contactsApi_is_local_contact_empty_test_3400: isLocalContact error = ${error.code}, ${error.message}`);
             expect(error.code === 401).assertTrue();
             done();
         }
