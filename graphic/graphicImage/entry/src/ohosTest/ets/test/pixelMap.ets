@@ -150,8 +150,8 @@ export default function imagePixelMapTest() {
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } }
       try {
         let pixelMap = await sendableImage.createPixelMapFromSurface(surfaceId, region);
-        console.info('www data ImagePixelMapTest_0200 success', sendableImage.isEditable, 
-        sendableImage.isStrideAlignment);
+        console.info('www data ImagePixelMapTest_0200 success', pixelMap.isEditable, 
+        pixelMap.isStrideAlignment);
  	      expect(pixelMap.isEditable).assertFalse();
  	      expect(pixelMap.isStrideAlignment).assertTrue();
       } catch(err) {
