@@ -2500,5 +2500,814 @@ export default function windowErrCode401_3() {
       }
     })
 
+    /**
+     * @tc.name   testCreate_0400
+     * @tc.number testCreate_0400
+     * @tc.desc   testCreate_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCreate_0400', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testCreate_0400";
+      try {
+        ohosWindow.create(null, 'id', ohosWindow.WindowType.TYPE_STATUS_BAR, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1001);
+          } else {
+            console.log(caseName + ' create success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1001);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        ohosWindow.create(undefined, 'id', ohosWindow.WindowType.TYPE_STATUS_BAR, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1001);
+          } else {
+            console.log(caseName + ' create success2');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1001);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        ohosWindow.create(context, '', ohosWindow.WindowType.TYPE_STATUS_BAR, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed3, err: ' + JSON.stringify(err));
+          } else {
+            console.log(caseName + ' create success3');
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed3. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect().assertFail();
+      }
+      try {
+        ohosWindow.create(context, null, ohosWindow.WindowType.TYPE_STATUS_BAR, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed4, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+          } else {
+            console.log(caseName + ' create success4');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed4. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        ohosWindow.create(context, undefined, ohosWindow.WindowType.TYPE_STATUS_BAR, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed5, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+            done()
+          } else {
+            console.log(caseName + ' create success5');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed5. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testFind_0100
+     * @tc.number testFind_0100
+     * @tc.desc   testFind_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFind_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testFind_0100";
+      try {
+        ohosWindow.find(null, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+            done();
+          } else {
+            console.log(caseName + ' success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        ohosWindow.find('', async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1001);
+            done();
+          } else {
+            console.log(caseName + ' success1');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        ohosWindow.find(undefined, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+            done();
+          } else {
+            console.log(caseName + ' success2');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testFind_0200
+     * @tc.number testFind_0200
+     * @tc.desc   testFind_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFind_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testFind_0200";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        await ohosWindow.find(null);
+        console.info(msgStr + 'Succeeded');
+        expect().assertFail();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await ohosWindow.find('');
+        console.info(msgStr + 'Succeeded1');
+        expect().assertFail();
+      } catch (exception) {
+        console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1001);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await ohosWindow.find(undefined);
+        console.info(msgStr + 'Succeeded2.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testMoveTo_0100
+     * @tc.number testMoveTo_0100
+     * @tc.desc   testMoveTo_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMoveTo_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testMoveTo_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = windowStage.getMainWindowSync()
+      try {
+        await windowClass.moveTo(null, 1);
+        console.info(msgStr + 'Succeeded');
+        expect().assertFail();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await windowClass.moveTo(1, null);
+        console.info(msgStr + 'Succeeded2');
+        expect().assertFail();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await windowClass.moveTo(undefined, 1);
+        console.info(msgStr + 'Succeeded3.');
+        expect().assertFail();
+      } catch (exception) {
+        console.error(msgStr + 'Failed3. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await windowClass.moveTo(1, undefined);
+        console.info(msgStr + 'Succeeded4.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed4. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testMoveTo_0200
+     * @tc.number testMoveTo_0200
+     * @tc.desc   testMoveTo_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMoveTo_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testMoveTo_0200";
+      let windowClass = windowStage.getMainWindowSync()
+      try {
+        windowClass.moveTo(null, 1, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+            expect(errCode).assertEqual(1003);
+          } else {
+            console.log(caseName + ' success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.moveTo(1, null, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
+            expect(errCode).assertEqual(1003);
+          } else {
+            console.log(caseName + ' success1');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.moveTo(1, undefined, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+            expect(errCode).assertEqual(1003);
+          } else {
+            console.log(caseName + ' success2');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.moveTo(undefined, 1, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed3, err: ' + JSON.stringify(err));
+            expect(errCode).assertEqual(1003);
+            done();
+          } else {
+            console.log(caseName + ' success3');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed3. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testResetSize_0100
+     * @tc.number testResetSize_0100
+     * @tc.desc   testResetSize_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testResetSize_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testResetSize_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = windowStage.getMainWindowSync()
+      try {
+        await windowClass.resetSize(null, null);
+        console.info(msgStr + 'Succeeded');
+        expect().assertFail();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await windowClass.resetSize(undefined, undefined);
+        console.info(msgStr + 'Succeeded2.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testResetSize_0200
+     * @tc.number testResetSize_0200
+     * @tc.desc   testResetSize_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testResetSize_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testResetSize_0200";
+      let windowClass = windowStage.getMainWindowSync()
+      try {
+        windowClass.resetSize(null, null, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+            done();
+          } else {
+            console.log(caseName + ' success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.resetSize(undefined, undefined, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+            done();
+          } else {
+            console.log(caseName + ' success2');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testLoadContent_0300
+     * @tc.number testLoadContent_0300
+     * @tc.desc   testLoadContent_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLoadContent_0300', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testLoadContent_0300";
+      let windowClass = windowStage.getMainWindowSync()
+      try {
+        windowClass.loadContent(null,  async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+          } else {
+            console.log(caseName + ' success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.loadContent('',  async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(401);
+          } else {
+            console.log(caseName + ' success1');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(401);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.loadContent(undefined, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+            done();
+          } else {
+            console.log(caseName + ' success2');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testLoadContent_0400
+     * @tc.number testLoadContent_0400
+     * @tc.desc   testLoadContent_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLoadContent_0400', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testLoadContent_0400";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = windowStage.getMainWindowSync()
+      try {
+        await windowClass.loadContent(null);
+        console.info(msgStr + 'Succeeded');
+        expect().assertFail();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await windowClass.loadContent('');
+        console.info(msgStr + 'Succeeded1');
+        expect().assertFail();
+      } catch (exception) {
+        console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await windowClass.loadContent(undefined);
+        console.info(msgStr + 'Succeeded2.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testLoadContentByName_0200
+     * @tc.number testLoadContentByName_0200
+     * @tc.desc   testLoadContentByName_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLoadContentByName_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testLoadContentByName_0200";
+      let windowClass = windowStage.getMainWindowSync()
+      try {
+        windowClass.loadContentByName(null, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+          } else {
+            console.log(caseName + ' success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.loadContentByName('', async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(401);
+          } else {
+            console.log(caseName + ' success1');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(401);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.loadContentByName(undefined, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+            done();
+          } else {
+            console.log(caseName + ' success2');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetBackgroundColor_0100
+     * @tc.number testSetBackgroundColor_0100
+     * @tc.desc   testSetBackgroundColor_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetBackgroundColor_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testSetBackgroundColor_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = windowStage.getMainWindowSync()
+      try {
+        await windowClass.setBackgroundColor(null);
+        console.info(msgStr + 'Succeeded');
+        expect().assertFail();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await windowClass.setBackgroundColor('');
+        console.info(msgStr + 'Succeeded1');
+        expect().assertFail();
+      } catch (exception) {
+        console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await windowClass.setBackgroundColor(undefined);
+        console.info(msgStr + 'Succeeded2.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(1003);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testSetBackgroundColor_0200
+     * @tc.number testSetBackgroundColor_0200
+     * @tc.desc   testSetBackgroundColor_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetBackgroundColor_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testSetBackgroundColor_0200";
+      let windowClass = windowStage.getMainWindowSync()
+      try {
+        windowClass.setBackgroundColor(null, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+          } else {
+            console.log(caseName + ' success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.setBackgroundColor('', async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+          } else {
+            console.log(caseName + ' success1');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.setBackgroundColor(undefined, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+            done();
+          } else {
+            console.log(caseName + ' success2');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(1003);
+        expect(err.message!=null).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testLoadContentByName_0100
+     * @tc.number testLoadContentByName_0100
+     * @tc.desc   testLoadContentByName_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLoadContentByName_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testLoadContentByName_0100";
+      let windowClass = windowStage.getMainWindowSync()
+      let storage: LocalStorage = new LocalStorage();
+      try {
+        windowClass.loadContentByName('', storage, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(401);
+          } else {
+            console.log(caseName + ' success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(401);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.loadContentByName(null, storage, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(401);
+          } else {
+            console.log(caseName + ' success1');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(401);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.loadContentByName(undefined, storage, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(401);
+          } else {
+            console.log(caseName + ' success2');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(401);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.loadContentByName('pages/Index', null, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed3, err: ' + JSON.stringify(err));
+            expect().assertFail();
+          } else {
+            console.log(caseName + ' success3');
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed3. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect().assertFail();
+      }
+      try {
+        windowClass.loadContentByName('pages/Index', undefined, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed4, err: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          } else {
+            console.log(caseName + ' success4');
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed4. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
   })
 }
