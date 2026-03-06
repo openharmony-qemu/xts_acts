@@ -3353,6 +3353,10 @@ export default function AVSession() {
                 expect(deviceInfo.modelName).assertEqual("");
                 console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo.supportedPullClients}`);
                 expect(deviceInfo.supportedPullClients).assertEqual(undefined);
+                console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo.supportedProtocols}`);
+                expect(deviceInfo.supportedProtocols).assertEqual(0);
+                console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo.supportedDrmCapabilities}`);
+                expect(deviceInfo.supportedDrmCapabilities).not().assertEqual(undefined);
             }).catch((err) => {
                 console.info(`${TAG}Get device BusinessError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
