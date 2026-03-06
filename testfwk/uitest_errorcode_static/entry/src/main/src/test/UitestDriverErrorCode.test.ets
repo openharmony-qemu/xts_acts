@@ -151,5 +151,580 @@ export default function uitestDriverErrorTest() {
       }
       hilog.info(domain, tag, `test_driver_pressHome_static end`);
     })
+
+    /**
+     * @tc.name   test_driver_delayMs_401_static
+     * @tc.number uitestDriverErrorTest_006
+     * @tc.desc   pressHome 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_delayMs_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_delayMs_401_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await driver.delayMs(-1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_delayMs_401_static error is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_delayMs_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_waitForComponent_401_static
+     * @tc.number uitestDriverErrorTest_007
+     * @tc.desc   waitForComponent 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_waitForComponent_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_waitForComponent_401_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await driver.waitForComponent(ON.text('next page'), -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_waitForComponent_401_static error is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_waitForComponent_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_triggerKey_401_static
+     * @tc.number uitestDriverErrorTest_008
+     * @tc.desc   triggerKey 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_triggerKey_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_triggerKey_401_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await driver.triggerKey(-1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_triggerKey_401_static error is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_triggerKey_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_triggerKeyWithId_401_static
+     * @tc.number uitestDriverErrorTest_009
+     * @tc.desc   triggerKey 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_triggerKeyWithId_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_triggerKeyWithId_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.triggerKey(-1, 0);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_triggerKeyWithId_401_static keycode = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.triggerKey(0, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_triggerKeyWithId_401_static id = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_triggerKeyWithId_401_static end`);
+    })
+
+
+    /**
+     * @tc.name   test_driver_triggerCombineKeys_401_static
+     * @tc.number uitestDriverErrorTest_010
+     * @tc.desc   triggerCombineKeys 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_triggerCombineKeys_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_triggerCombineKeys_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.triggerCombineKeys(-1, 0, 0);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_triggerCombineKeys_401_static keycode1 = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.triggerCombineKeys(0, -1, 0);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_triggerCombineKeys_401_static keycode2 = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.triggerCombineKeys(0, 0, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_triggerCombineKeys_401_static id = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_triggerCombineKeys_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_click_401_static
+     * @tc.number uitestDriverErrorTest_011
+     * @tc.desc   click 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_click_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_click_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.click(-1, 100);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_click_401_static x = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.click(100, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_click_401_static y = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_click_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_doubleClick_401_static
+     * @tc.number uitestDriverErrorTest_012
+     * @tc.desc   click 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_doubleClick_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_doubleClick_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.doubleClick(-1, 100);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_doubleClick_401_static x = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.doubleClick(100, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_doubleClick_401_static y = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_doubleClick_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_swipe_401_static
+     * @tc.number uitestDriverErrorTest_013
+     * @tc.desc   click 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_swipe_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_swipe_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.swipe(-1, 100, 100, 100, 600);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_swipe_401_static startx = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.swipe(100, -1, 100, 100, 600);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_swipe_401_static starty = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.swipe(100, 100, -1, 100, 600);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_swipe_401_static endx = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.swipe(100, 100, 100, -1, 600);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_swipe_401_static endy = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.swipe(100, 100, 100, 100, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_swipe_401_static speed = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.swipe(100, 100, 100, 100, 199);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_swipe_401_static speed = 199 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.swipe(100, 100, 100, 100, 41000);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_swipe_401_static speed = 41000 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, `test_driver_swipe_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_drag_401_static
+     * @tc.number uitestDriverErrorTest_014
+     * @tc.desc   click 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_drag_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_drag_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.drag(-1, 100, 100, 100, 600);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_drag_401_static startx = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.drag(100, -1, 100, 100, 600);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_drag_401_static starty = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.drag(100, 100, -1, 100, 600);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_drag_401_static endx = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.drag(100, 100, 100, -1, 600);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_drag_401_static endy = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.drag(100, 100, 100, 100, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_drag_401_static speed = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.drag(100, 100, 100, 100, 199);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_drag_401_static speed = 199 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.drag(100, 100, 100, 100, 41000);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_drag_401_static speed = 41000 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, `test_driver_drag_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_waitForIdle_401_static
+     * @tc.number uitestDriverErrorTest_015
+     * @tc.desc   click 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_waitForIdle_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_waitForIdle_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.waitForIdle(-1, 100);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_waitForIdle_401_static idleTime = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.waitForIdle(100, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_waitForIdle_401_static timeout = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_waitForIdle_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_fling_401_static
+     * @tc.number uitestDriverErrorTest_016
+     * @tc.desc   click 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_fling_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_fling_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.fling({x: -1, y: 100}, {x: 100, y: 100}, 100, 200);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static from.x = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling({x: 100, y: -1}, {x: 100, y: 100}, 100, 200);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static from.y = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling({x: 100, y: 100, displayId: -1}, {x: 100, y: 100}, 100, 200);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static from.id = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: -1, y: 100}, 100, 200);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static to.x = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: -1}, 100, 200);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static to.y = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: -1}, 100, 200);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static to.id = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 100, 200);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static diff.id = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, -1, 200);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static stepLen = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, 100, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static speed = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, 100, 199);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static speed = 199 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, 100, 41000);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_fling_401_static speed = 41000 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, `test_driver_fling_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_injectMultiPointerAction_401_static
+     * @tc.number uitestDriverErrorTest_017
+     * @tc.desc   injectMultiPointerAction 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_injectMultiPointerAction_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_injectMultiPointerAction_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        let pointer = PointerMatrix.create(1,1);
+        pointer.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectMultiPointerAction(pointer, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_injectMultiPointerAction_401_static speed = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        let pointer = PointerMatrix.create(1,1);
+        pointer.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectMultiPointerAction(pointer, 199);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_injectMultiPointerAction_401_static 199 = -1 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        let pointer = PointerMatrix.create(1,1);
+        pointer.setPoint(0, 0, {x: 100, y: 100})
+        await driver.injectMultiPointerAction(pointer, 41000);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_injectMultiPointerAction_401_static 41000 = -1 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, `test_driver_injectMultiPointerAction_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_flingWithId_401_static
+     * @tc.number uitestDriverErrorTest_018
+     * @tc.desc   fling 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_flingWithId_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_flingWithId_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.fling(UiDirection.DOWN, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithId_401_static speed = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 199);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithId_401_static speed = 199 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 41000);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithId_401_static speed = 41000 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, `test_driver_flingWithId_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_flingWithIdSpeed_401_static
+     * @tc.number uitestDriverErrorTest_019
+     * @tc.desc   fling 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_flingWithIdSpeed_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.fling(UiDirection.DOWN, -1, 0);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static speed = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 199, 0);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static speed = 199 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 41000, 0);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static speed = 41000 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 200, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static id = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_driver_flingWithIdSpeed_401_static
+     * @tc.number uitestDriverErrorTest_019
+     * @tc.desc   fling 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_driver_flingWithIdSpeed_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.fling(UiDirection.DOWN, -1, 0);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static speed = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 199, 0);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static speed = 199 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 41000, 0);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static speed = 41000 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, 200, -1);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static id = -1 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static end`);
+    })
+
   })
 }
