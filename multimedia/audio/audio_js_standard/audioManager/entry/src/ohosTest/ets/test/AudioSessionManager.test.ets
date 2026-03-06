@@ -181,5 +181,46 @@ export default function audioSessionManagerTest() {
       }
       done();
     })
+    /**
+     * @tc.name   AUDIOSESSIONMANAGER_SELECTMEDIAINPUTDEVICE_1343
+     * @tc.number AUDIOSESSIONMANAGER_SELECTMEDIAINPUTDEVICE_1343
+     * @tc.desc   selectMediaInputDevice with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSESSIONMANAGER_SELECTMEDIAINPUTDEVICE_1343', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager: audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.selectMediaInputDevice(null);
+        console.info(`${TagFrmwk}: FAIL`);
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOSESSIONMANAGER_SELECTMEDIAINPUTDEVICE_1344
+     * @tc.number AUDIOSESSIONMANAGER_SELECTMEDIAINPUTDEVICE_1344
+     * @tc.desc   selectMediaInputDevice with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSESSIONMANAGER_SELECTMEDIAINPUTDEVICE_1344', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager: audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.selectMediaInputDevice(undefined);
+        console.info(`${TagFrmwk}: PASS`);
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
   })
 }

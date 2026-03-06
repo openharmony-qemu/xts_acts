@@ -2561,5 +2561,115 @@ export default function audioLoopBack() {
         console.error(`AudioLoopback Created : ERROR : ${err}`);
       });
     })
+    /**
+     * @tc.name   AUDIOLOOPBACK_SETVOLUME_1403
+     * @tc.number AUDIOLOOPBACK_SETVOLUME_1403
+     * @tc.desc   setVolume with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOLOOPBACK_SETVOLUME_1403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioLoopback: audio.AudioLoopback;
+        await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+          console.info('AudioLoopback Created : SUCCESS');
+          audioLoopback = data;
+          audioLoopback.setVolume(null);
+          console.info(`${TagFrmwk}: FAIL`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioLoopback Created : ERROR : ${err}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800104);
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOLOOPBACK_SETVOLUME_1404
+     * @tc.number AUDIOLOOPBACK_SETVOLUME_1404
+     * @tc.desc   setVolume with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOLOOPBACK_SETVOLUME_1404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioLoopback: audio.AudioLoopback;
+
+        await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+          audioLoopback = data;
+          console.info('AudioLoopback Created : SUCCESS');
+          audioLoopback.setVolume(undefined);
+          console.info(`${TagFrmwk}: FAIL`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioLoopback Created : ERROR : ${err}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800104);
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOLOOPBACK_OFF_STATUSCHANGE_1405
+     * @tc.number AUDIOLOOPBACK_OFF_STATUSCHANGE_1405
+     * @tc.desc   off_statusChange with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOLOOPBACK_OFF_STATUSCHANGE_1405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioLoopback: audio.AudioLoopback;
+        await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+          audioLoopback = data;
+          console.info('AudioLoopback Created : SUCCESS');
+          audioLoopback.off('statusChange', null);
+        }).catch((err: BusinessError) => {
+          console.error(`AudioLoopback Created : ERROR : ${err}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800104);
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOLOOPBACK_OFF_STATUSCHANGE_1406
+     * @tc.number AUDIOLOOPBACK_OFF_STATUSCHANGE_1406
+     * @tc.desc   off_statusChange with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOLOOPBACK_OFF_STATUSCHANGE_1406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioLoopback: audio.AudioLoopback;
+
+        await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+          audioLoopback = data;
+          console.info('AudioLoopback Created : SUCCESS');
+          audioLoopback.off('statusChange', undefined);
+          console.info(`${TagFrmwk}: FAIL`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioLoopback Created : ERROR : ${err}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800104);
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);expect(false).assertTrue();
+      }
+      done();
+    });
   })
 }

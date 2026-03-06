@@ -15054,5 +15054,814 @@ export default function audioRendererTest() {
  	    console.info('afterAll called')
  	    done();
  	  })
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIORENDERER_1305
+     * @tc.number AUDIO_CREATEAUDIORENDERER_1305
+     * @tc.desc   createAudioRenderer with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIORENDERER_1305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audio.createAudioRenderer(null, (err, renderer) => {
+          if (err) {
+            console.info(`${TagFrmwk}: createAudioRenderer with null/undefined options: PASS :${err.message}, ${err.code}`);
+            expect(Number((err as BusinessError).code)).assertEqual(6800301);
+          } else {
+            console.info(`${TagFrmwk}: createAudioRenderer with null/undefined options: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIORENDERER_1306
+     * @tc.number AUDIO_CREATEAUDIORENDERER_1306
+     * @tc.desc   createAudioRenderer with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIORENDERER_1306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audio.createAudioRenderer(undefined, (err, renderer) => {
+          if (err) {
+            console.info(`${TagFrmwk}: createAudioRenderer with null/undefined options: PASS :${err.message}, ${err.code}`);
+            expect(Number((err as BusinessError).code)).assertEqual(6800301);
+          } else {
+            console.info(`${TagFrmwk}: createAudioRenderer with null/undefined options: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIORENDERER_1307
+     * @tc.number AUDIO_CREATEAUDIORENDERER_1307
+     * @tc.desc   createAudioRenderer with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIORENDERER_1307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audio.createAudioRenderer(null);
+        console.info(`${TagFrmwk}: createAudioRenderer with null/undefined options: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800301);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIORENDERER_1308
+     * @tc.number AUDIO_CREATEAUDIORENDERER_1308
+     * @tc.desc   createAudioRenderer with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIORENDERER_1308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audio.createAudioRenderer(undefined);
+        console.info(`${TagFrmwk}: createAudioRenderer with null/undefined options: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800301);
+      }
+      done();
+    });
+    /**
+     * @tc.name   AUDIORENDERER_WRITE_1365
+     * @tc.number AUDIORENDERER_WRITE_1365
+     * @tc.desc   write with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_WRITE_1365', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // 采样率。
+        channels: audio.AudioChannel.CHANNEL_2, // 通道。
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // 采样格式。
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // 编码格式。
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC, // 音频流使用类型：音乐。根据业务场景配置，参考StreamUsage。
+        rendererFlags: 0 // 音频渲染器标志。
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audio.createAudioRenderer(audioRendererOptions,(err, data) => {
+          if (err) {
+            console.error(`AudioRenderer Created: Error: ${err}`);
+          } else {
+            audioRenderer = data;
+            audioRenderer.write(null, (err, bytesWritten) => {
+              if (err) {
+                console.info(`${TagFrmwk}: PASS :${err.message}, ERRORCODE${err.code}`);
+                audioRenderer.release();
+                expect(Number((err as BusinessError).code)).assertEqual(6800101);
+                done();
+              } else {
+                console.info(`${TagFrmwk}: FAIL`);
+                audioRenderer.release();
+                expect(false).assertTrue();
+                done();
+              }
+            });
+          }
+        });
+
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_WRITE_1366
+     * @tc.number AUDIORENDERER_WRITE_1366
+     * @tc.desc   write with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_WRITE_1366', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audio.createAudioRenderer(audioRendererOptions,(err, data) => {
+          if (err) {
+            console.error(`AudioRenderer Created: Error: ${err}`);
+          } else {
+            audioRenderer = data;
+            audioRenderer.write(undefined, (err, bytesWritten) => {
+              if (err) {
+                console.info(`${TagFrmwk}: PASS :${err.message}, ERRORCODE${err.code}`);
+                audioRenderer.release();
+                expect(Number((err as BusinessError).code)).assertEqual(6800101);
+                done();
+              } else {
+                console.info(`${TagFrmwk}: FAIL`);
+                audioRenderer.release();
+                expect(false).assertTrue();
+                done();
+              }
+            });
+          }
+        });
+
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_WRITE_1367
+     * @tc.number AUDIORENDERER_WRITE_1367
+     * @tc.desc   write with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_WRITE_1367', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        await audioRenderer.write(null);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_WRITE_1368
+     * @tc.number AUDIORENDERER_WRITE_1368
+     * @tc.desc   write with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_WRITE_1368', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        await audioRenderer.write(undefined);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_SETSPEED_1369
+     * @tc.number AUDIORENDERER_SETSPEED_1369
+     * @tc.desc   setSpeed with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_SETSPEED_1369', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        audioRenderer.setSpeed(null);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_SETSPEED_1370
+     * @tc.number AUDIORENDERER_SETSPEED_1370
+     * @tc.desc   setSpeed with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_SETSPEED_1370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        audioRenderer.setSpeed(undefined);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_SETVOLUME_1371
+     * @tc.number AUDIORENDERER_SETVOLUME_1371
+     * @tc.desc   setVolume with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_SETVOLUME_1371', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audio.createAudioRenderer(audioRendererOptions,(err, data) => {
+          if (err) {
+            console.error(`AudioRenderer Created: Error: ${err}`);
+          } else {
+            audioRenderer = data;
+            audioRenderer.setVolume(null, (err) => {
+              if (err) {
+                console.info(`${TagFrmwk}: PASS :${err.message}, ERRORCODE${err.code}`);
+                audioRenderer.release();
+                expect(Number((err as BusinessError).code)).assertEqual(6800101);
+                done();
+              } else {
+                console.info(`${TagFrmwk}: FAIL`);
+                audioRenderer.release();
+                expect(false).assertTrue();
+                done();
+              }
+            });
+          }
+        });
+
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_SETVOLUME_1372
+     * @tc.number AUDIORENDERER_SETVOLUME_1372
+     * @tc.desc   setVolume with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_SETVOLUME_1372', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audio.createAudioRenderer(audioRendererOptions,(err, data) => {
+          if (err) {
+            console.error(`AudioRenderer Created: Error: ${err}`);
+          } else {
+            audioRenderer = data;
+            audioRenderer.setVolume(undefined, (err) => {
+              if (err) {
+                console.info(`${TagFrmwk}: PASS :${err.message}, ERRORCODE${err.code}`);
+                audioRenderer.release();
+                expect(Number((err as BusinessError).code)).assertEqual(6800101);
+                done();
+              } else {
+                console.info(`${TagFrmwk}: FAIL`);
+                audioRenderer.release();
+                expect(false).assertTrue();
+                done();
+              }
+            });
+          }
+        });
+
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_SETVOLUME_1373
+     * @tc.number AUDIORENDERER_SETVOLUME_1373
+     * @tc.desc   setVolume with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_SETVOLUME_1373', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        await audioRenderer.setVolume(null);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_SETVOLUME_1374
+     * @tc.number AUDIORENDERER_SETVOLUME_1374
+     * @tc.desc   setVolume with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_SETVOLUME_1374', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        await audioRenderer.setVolume(undefined);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_SETVOLUMEWITHRAMP_1375
+     * @tc.number AUDIORENDERER_SETVOLUMEWITHRAMP_1375
+     * @tc.desc   setVolumeWithRamp with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_SETVOLUMEWITHRAMP_1375', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        audioRenderer.setVolumeWithRamp(1.0, null);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_SETVOLUMEWITHRAMP_1376
+     * @tc.number AUDIORENDERER_SETVOLUMEWITHRAMP_1376
+     * @tc.desc   setVolumeWithRamp with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_SETVOLUMEWITHRAMP_1376', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        audioRenderer.setVolumeWithRamp(1.0, undefined);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_ON_MARKREACH_1379
+     * @tc.number AUDIORENDERER_ON_MARKREACH_1379
+     * @tc.desc   on_markReach with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_ON_MARKREACH_1379', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let callback = (position: number) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        audioRenderer.on('markReach', null, callback);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_ON_MARKREACH_1380
+     * @tc.number AUDIORENDERER_ON_MARKREACH_1380
+     * @tc.desc   on_markReach with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_ON_MARKREACH_1380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let callback = (position: number) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        audioRenderer.on('markReach', undefined, callback);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_ON_PERIODREACH_1383
+     * @tc.number AUDIORENDERER_ON_PERIODREACH_1383
+     * @tc.desc   on_periodReach with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_ON_PERIODREACH_1383', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let callback = (position: number) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        audioRenderer.on('periodReach', null, callback);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_ON_PERIODREACH_1384
+     * @tc.number AUDIORENDERER_ON_PERIODREACH_1384
+     * @tc.desc   on_periodReach with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_ON_PERIODREACH_1384', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let callback = (position: number) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        audioRenderer.on('periodReach', undefined, callback);
+        console.info(`${TagFrmwk}: FAIL`);
+        audioRenderer.release();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
   })
 }
