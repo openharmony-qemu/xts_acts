@@ -22,7 +22,7 @@
 #include <native_drawing/drawing_rect.h>
 #include <CryptoArchitectureKit/crypto_digest.h>
 #include <native_window/external_window.h>
-#include <include/FuncTest.h>
+#include "include/FuncTest.h"
 #include "include/JsonWrapper.h"
 using namespace OHOS;
 using namespace OHOS::Media;
@@ -57,8 +57,7 @@ constexpr int32_t MAX_RANGE = 1920;
 constexpr int32_t MIN_FRANGE = 1;
 constexpr int32_t MAX_FRANGE = 30;
 constexpr int32_t EVEN_NUMBER = 2;
-OH_CryptoDigest *g_c; //SHA512_CTX g_c;
-//Crypto_DataBlob *g_out; //uint8_t g_md[SHA512_DIGEST_LENGTH];
+OH_CryptoDigest *g_c;
 VDecAPI11Sample *dec_sample = nullptr;
 
 void clearIntqueue(std::queue<uint32_t> &q)
@@ -83,18 +82,8 @@ public:
         OH_NativeImage_SetOnFrameAvailableListener(image, listener_);
     };
     ~ConsumerListenerBuffer() { OH_NativeImage_UnsetOnFrameAvailableListener(image); }
-//    void OnBufferAvailable() override
-//    {
-//        sptr<SurfaceBuffer> buffer;
-//        int32_t flushFence;
-//        cs->AcquireBuffer(buffer, flushFence, timestamp, damage);
-//        cs->ReleaseBuffer(buffer, -1);
-//    }
 
 private:
-//    int64_t timestamp = 0;
-//    Rect damage = {};
-//    sptr<Surface> cs {nullptr};
     static void OnFrameAvailableStatic(void *ctx) {
         auto *self = static_cast<ConsumerListenerBuffer *>(ctx);
         self->OnFrameAvailable();
@@ -270,9 +259,9 @@ std::vector<uint8_t> VDecAPI11Sample::LoadHashFile()
     std::stringstream ss(hashValue);
     std::string item;
     while (std::getline(ss, item, ',')) {
-        if (!item.empty()) {
-            ret.push_back(stol(item, nullptr, SIXTEEN));
-        }
+    if (!item.empty()) {
+        ret.push_back(stol(item, nullptr, SIXTEEN));
+    }
     }
     return ret;
 }
@@ -391,20 +380,13 @@ int32_t VDecAPI11Sample::ConfigureVideoDecoder()
 
 void VDecAPI11Sample::CreateSurface()
 {
-    cNativeImage[0] = OH_ConsumerSurface_Create(); //cs[0] = Surface::CreateSurfaceAsConsumer();
-    impl->consumerListenerBuffer[0] = new ConsumerListenerBuffer(cNativeImage[0], OUT_DIR); //sptr<IBufferConsumerListener> listener = new ConsumerListenerBuffer(cs[0], OUT_DIR);
-    pNativeWindow[0] = OH_NativeImage_AcquireNativeWindow(cNativeImage[0]); //cs[0]->RegisterConsumerListener(listener);
-    //auto p = cs[0]->GetProducer();
-    //ps[0] = Surface::CreateSurfaceAsProducer(p);
-    //nativeWindow[0] = CreateNativeWindowFromSurface(&ps[0]);
+    cNativeImage[0] = OH_ConsumerSurface_Create();
+    impl->consumerListenerBuffer[0] = new ConsumerListenerBuffer(cNativeImage[0], OUT_DIR);
+    pNativeWindow[0] = OH_NativeImage_AcquireNativeWindow(cNativeImage[0]);
     if (autoSwitchSurface) {
-        cNativeImage[1] = OH_ConsumerSurface_Create(); //cs[1] = Surface::CreateSurfaceAsConsumer();
-        impl->consumerListenerBuffer[1] = new ConsumerListenerBuffer(cNativeImage[1], OUT_DIR2); //sptr<IBufferConsumerListener> listener2 = new ConsumerListenerBuffer(cs[1], OUT_DIR2);
+        cNativeImage[1] = OH_ConsumerSurface_Create();
+        impl->consumerListenerBuffer[1] = new ConsumerListenerBuffer(cNativeImage[1], OUT_DIR2);
         pNativeWindow[1] = OH_NativeImage_AcquireNativeWindow(cNativeImage[1]);
-        //cs[1]->RegisterConsumerListener(listener2);
-        //auto p2 = cs[1]->GetProducer();
-        //ps[1] = Surface::CreateSurfaceAsProducer(p2);
-        //nativeWindow[1] = CreateNativeWindowFromSurface(&ps[1]);
     }
 }
 
@@ -639,12 +621,6 @@ int32_t VDecAPI11Sample::StartVideoDecoder()
 
 void VDecAPI11Sample::testAPI()
 {
-//    cs[0] = Surface::CreateSurfaceAsConsumer();
-//    sptr<IBufferConsumerListener> listener = new ConsumerListenerBuffer(cs[0], OUT_DIR);
-//    cs[0]->RegisterConsumerListener(listener);
-//    auto p = cs[0]->GetProducer();
-//    ps[0] = Surface::CreateSurfaceAsProducer(p);
-//    nativeWindow[0] = CreateNativeWindowFromSurface(&ps[0]);
     cNativeImage[0] = OH_ConsumerSurface_Create();
     impl->consumerListenerBuffer[0] = new ConsumerListenerBuffer(cNativeImage[0], OUT_DIR);
     pNativeWindow[0] = OH_NativeImage_AcquireNativeWindow(cNativeImage[0]);
@@ -942,7 +918,7 @@ int32_t VDecAPI11Sample::CheckAttrFlag(OH_AVCodecBufferAttr attr)
         cout << "AVCODEC_BUFFER_FLAGS_EOS" << endl;
         AutoSwitchSurface();
         Crypto_DataBlob g_out = { .data = nullptr, .len = 0 };
-        OH_CryptoDigest_Final(g_c, &g_out); //SHA512_Final(g_md, &g_c);
+        OH_CryptoDigest_Final(g_c, &g_out);
         OH_DigestCrypto_Destroy(g_c);
         if (!SF_OUTPUT) {
             if (!MdCompare(g_out.data)) {
@@ -989,7 +965,7 @@ void VDecAPI11Sample::OutputFuncTest()
     if (outputYuvFlag) {
         outFile = fopen(OUT_DIR, "wb");
     }
-    OH_CryptoDigest_Create("SHA512", &g_c);//SHA512_Init(&g_c);
+    OH_CryptoDigest_Create("SHA512", &g_c);
     bool flag = true;
     while (flag) {
         if (!isRunning_.load()) {
