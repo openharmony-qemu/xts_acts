@@ -226,23 +226,6 @@ export default function ArrayOfTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0009
-     * @tc.name testArrayOf0009
-     * @tc.desc Verify Array.of() differs from Array() for single number parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayOf0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arrOf: number[] = Array.of<number>(5);
-      const arrConstructor: number[] = Array<number>(5).fill(0);
-      expect(arrOf.length).assertEqual(1);
-      expect(arrConstructor.length).assertEqual(5);
-      expect(arrOf[0]).assertEqual(5);
-      expect(arrConstructor[0]).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0010
      * @tc.name testArrayOf0010
      * @tc.desc Verify Array.of() creates array with null element

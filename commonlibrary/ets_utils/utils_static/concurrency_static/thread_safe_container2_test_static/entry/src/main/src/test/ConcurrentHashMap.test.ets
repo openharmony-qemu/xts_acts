@@ -212,11 +212,10 @@ export default function ConcurrentHashMapTest() {
     it("constructor_With_ArrayLike_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arrKeys: Number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       let arrValues: string[] = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-      let array = Array<[Number, string]>(10);
-      for (let i = 0; i < 10; i++) {
-        let arrKV: [Number, string] = [arrKeys[i], arrValues[i]]
-        array[i] = arrKV;
-      }
+      let array = new Array<[Number, string]>(10, (i) => { 
+        let arrKV: [Number, string] = [arrKeys[i], arrValues[i]] 
+        return arrKV
+      });
       let arrayLike = array as ArrayLike<[Number, string]>;
       let concurrentHashMap:  containers.ConcurrentHashMap<Number, string> = new  containers.ConcurrentHashMap<Number, string>(arrayLike);
       expect(String(concurrentHashMap.get(0))).assertEqual('zero');
