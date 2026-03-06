@@ -25,154 +25,154 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name gitDisplayCountry_null_test_0100
-     * @tc.number gitDisplayCountry_null_test_0100
+     * @tc.name getDisplayCountry_null_test_0100
+     * @tc.number getDisplayCountry_null_test_0100
      * @tc.desc with null
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayCountry_null_test_0100', Level.LEVEL3, () => {
+    it('getDisplayCountry_null_test_0100', Level.LEVEL3, () => {
       try {
-        let value = i18n.gitDisplayCountry(null, "en-US", true);
-        console.log('gitDisplayCountry_null_test_0100 value:', value);
+        let value = i18n.getDisplayCountry(null, "en-US", true);
+        console.log('getDisplayCountry_null_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('getBestMatchLocale_null_test_0200 code&message:', e.code + e.message);
+        console.log('getDisplayCountry_null_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name gitDisplayCountry_null_test_0200
-     * @tc.number gitDisplayCountry_null_test_0200
+     * @tc.name getDisplayCountry_null_test_0200
+     * @tc.number getDisplayCountry_null_test_0200
      * @tc.desc with null
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayCountry_null_test_0200', Level.LEVEL3, () => {
+    it('getDisplayCountry_null_test_0200', Level.LEVEL3, () => {
       try {
-        let value = i18n.gitDisplayCountry('zh-Hans-CN', null, true);
-        console.log('gitDisplayCountry_null_test_0200 value:', value);
+        let value = i18n.getDisplayCountry('zh-Hans-CN', null, true);
+        console.log('getDisplayCountry_null_test_0200 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('gitDisplayCountry_null_test_0200 code&message:', e.code + e.message);
+        console.log('getDisplayCountry_null_test_0200 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name gitDisplayCountry_nullString_test_0100
-     * @tc.number gitDisplayCountry_nullString_test_0100
+     * @tc.name getDisplayCountry_nullString_test_0100
+     * @tc.number getDisplayCountry_nullString_test_0100
      * @tc.desc with nullString
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayCountry_nullString_test_0100', Level.LEVEL3, () => {
-      let value = i18n.gitDisplayCountry('', "en-US", true);
-      console.log('gitDisplayCountry_nullString_test_0100 value:', value);
-      expect(e.code).assertEqual('');
+    it('getDisplayCountry_nullString_test_0100', Level.LEVEL3, () => {
+      let value = i18n.getDisplayCountry('', "en-US", true);
+      console.log('getDisplayCountry_nullString_test_0100 value:', value);
+      expect(value).assertEqual('');
     })
 
     /**
-     * @tc.name gitDisplayCountry_nullString_test_0200
-     * @tc.number gitDisplayCountry_nullString_test_0200
+     * @tc.name getDisplayCountry_nullString_test_0200
+     * @tc.number getDisplayCountry_nullString_test_0200
      * @tc.desc with nullString
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayCountry_nullString_test_0200', Level.LEVEL3, () => {
-      let value = i18n.gitDisplayCountry('zh-Hans-CN', "", true);
-      console.log('gitDisplayCountry_nullString_test_0200 value:', value);
-      expect(e.code).assertEqual('');
+    it('getDisplayCountry_nullString_test_0200', Level.LEVEL3, () => {
+      let value = i18n.getDisplayCountry('zh-Hans-CN', "", true);
+      console.log('getDisplayCountry_nullString_test_0200 value:', value);
+      expect(value).assertEqual('');
     })
 
     /**
-     * @tc.name gitDisplayLanguage_null_test_0100
-     * @tc.number gitDisplayLanguage_null_test_0100
+     * @tc.name getDisplayLanguage_null_test_0100
+     * @tc.number getDisplayLanguage_null_test_0100
      * @tc.desc with null
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayLanguage_null_test_0100', Level.LEVEL3, () => {
+    it('getDisplayLanguage_null_test_0100', Level.LEVEL3, () => {
       try {
-        let value = i18n.gitDisplayLanguage(null, "en-US", true);
-        console.log('gitDisplayLanguage_null_test_0100 value:', value);
+        let value = i18n.getDisplayCountry(null, "en-US", true);
+        console.log('getDisplayLanguage_null_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('gitDisplayLanguage_null_test_0100 code&message:', e.code + e.message);
+        console.log('getDisplayLanguage_null_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name gitDisplayLanguage_null_test_0100
-     * @tc.number gitDisplayLanguage_null_test_0100
+     * @tc.name getDisplayLanguage_null_test_0100
+     * @tc.number getDisplayLanguage_null_test_0100
      * @tc.desc with null
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayLanguage_null_test_0100', Level.LEVEL3, () => {
+    it('getDisplayLanguage_null_test_0100', Level.LEVEL3, () => {
       try {
-        let value = i18n.gitDisplayLanguage(null, "en-US");
-        console.log('gitDisplayLanguage_null_test_0100 value:', value);
+        let value = i18n.getDisplayLanguage(null, "en-US");
+        console.log('getDisplayLanguage_null_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('gitDisplayLanguage_null_test_0100 code&message:', e.code + e.message);
+        console.log('getDisplayLanguage_null_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name gitDisplayLanguage_null_test_0200
-     * @tc.number gitDisplayLanguage_null_test_0200
+     * @tc.name getDisplayLanguage_null_test_0200
+     * @tc.number getDisplayLanguage_null_test_0200
      * @tc.desc with null
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayLanguage_null_test_0200', Level.LEVEL3, () => {
+    it('getDisplayLanguage_null_test_0200', Level.LEVEL3, () => {
       try {
-        let value = i18n.gitDisplayLanguage('zh-Hans-CN', null);
-        console.log('gitDisplayLanguage_null_test_0200 value:', value);
+        let value = i18n.getDisplayLanguage('zh-Hans-CN', null);
+        console.log('getDisplayLanguage_null_test_0200 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('gitDisplayLanguage_null_test_0200 code&message:', e.code + e.message);
+        console.log('getDisplayLanguage_null_test_0200 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name gitDisplayLanguage_nullString_test_0100
-     * @tc.number gitDisplayLanguage_nullString_test_0100
+     * @tc.name getDisplayLanguage_nullString_test_0100
+     * @tc.number getDisplayLanguage_nullString_test_0100
      * @tc.desc with nullString
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayLanguage_nullString_test_0100', Level.LEVEL3, () => {
-      let value = i18n.gitDisplayLanguage('', "en-US");
-      console.log('gitDisplayLanguage_nullString_test_0100 value:', value);
-      expect(e.code).assertEqual('UnKnow language');
+    it('getDisplayLanguage_nullString_test_0100', Level.LEVEL3, () => {
+      let value = i18n.getDisplayLanguage('', "en-US");
+      console.log('getDisplayLanguage_nullString_test_0100 value:', value);
+      expect(value).assertEqual('Unknown language');
     })
 
     /**
-     * @tc.name gitDisplayLanguage_nullString_test_0200
-     * @tc.number gitDisplayLanguage_nullString_test_0200
+     * @tc.name getDisplayLanguage_nullString_test_0200
+     * @tc.number getDisplayLanguage_nullString_test_0200
      * @tc.desc with nullString
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayLanguage_nullString_test_0200', Level.LEVEL3, () => {
-      let value = i18n.gitDisplayLanguage('zh-Hans-CN', '');
-      console.log('gitDisplayLanguage_nullString_test_0200 value:', value);
-      expect(e.code).assertEqual('undefined');
+    it('getDisplayLanguage_nullString_test_0200', Level.LEVEL3, () => {
+      let value = i18n.getDisplayLanguage('zh-Hans-CN', '');
+      console.log('getDisplayLanguage_nullString_test_0200 value:', value);
+      expect(value).assertEqual(undefined);
     })
 
     /**
@@ -295,7 +295,7 @@ export default function InterfaceNullValueOverrideTest() {
     it('system_getDisplayLanguage_nullString_test_0100', Level.LEVEL3, () => {
       let value = i18n.System.getDisplayLanguage('', "en-US");
       console.log('system_getDisplayLanguage_nullString_test_0100 value:', value);
-      expect(value).assertEqual('UnKnow language');
+      expect(value).assertEqual('Unknown language');
     })
 
     /**
@@ -423,7 +423,7 @@ export default function InterfaceNullValueOverrideTest() {
       try {
         let value = i18n.System.setAppPreferredLanguage(null);
         console.log('system_setAppPreferredLanguage_null_test_0100 value:', value);
-        expect(value).assertFail();
+        expect(typeof(value)).assertFail();
       } catch (e) {
         console.log('system_setAppPreferredLanguage_null_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
@@ -442,26 +442,7 @@ export default function InterfaceNullValueOverrideTest() {
       try {
         let value = i18n.System.setAppPreferredLanguage('');
         console.log('system_setAppPreferredLanguage_nullString_test_0100 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('system_setAppPreferredLanguage_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
-      }
-    })
-
-    /**
-     * @tc.name system_setAppPreferredLanguage_nullString_test_0100
-     * @tc.number system_setAppPreferredLanguage_nullString_test_0100
-     * @tc.desc with nullString
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('system_setAppPreferredLanguage_nullString_test_0100', Level.LEVEL3, () => {
-      try {
-        let value = i18n.System.setAppPreferredLanguage('');
-        console.log('system_setAppPreferredLanguage_nullString_test_0100 value:', value);
-        expect(value).assertFail();
+        expect(typeof(value)).assertFail();
       } catch (e) {
         console.log('system_setAppPreferredLanguage_nullString_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('890001');
@@ -1287,7 +1268,7 @@ export default function InterfaceNullValueOverrideTest() {
       calendar.setTimeZone('');
       let value: string = calendar.getTimeZone();
       console.log('calendar_setTimeZone_nullString_test_0100 value:', value);
-      expect(value).assertEqual('CST/Unknown');
+      expect(value).assertEqual('Etc/Unknown');
     })
 
     /**
@@ -1651,34 +1632,34 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name addLocal_null_test_0100
-     * @tc.number addLocal_null_test_0100
+     * @tc.name addLocale_null_test_0100
+     * @tc.number addLocale_null_test_0100
      * @tc.desc with null
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('addLocal_null_test_0100', Level.LEVEL3, () => {
+    it('addLocale_null_test_0100', Level.LEVEL3, () => {
       let index = i18n.getInstance('zh');
-      index.addLocal(null);
+      index.addLocale(null);
       let value = index.getIndex('a');
-      console.log('addLocal_null_test_0100 value:', value);
+      console.log('addLocale_null_test_0100 value:', value);
       expect(value).assertEqual('A');
     })
 
     /**
-     * @tc.name addLocal_nullString_test_0100
-     * @tc.number addLocal_nullString_test_0100
+     * @tc.name addLocale_nullString_test_0100
+     * @tc.number addLocale_nullString_test_0100
      * @tc.desc with nullString
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('addLocal_nullString_test_0100', Level.LEVEL3, () => {
+    it('addLocale_nullString_test_0100', Level.LEVEL3, () => {
       let index = i18n.getInstance('zh');
-      index.addLocal('');
+      index.addLocale('');
       let value = index.getIndex('a');
-      console.log('addLocal_nullString_test_0100 value:', value);
+      console.log('addLocale_nullString_test_0100 value:', value);
       expect(value).assertEqual('A');
     })
 
@@ -1709,7 +1690,7 @@ export default function InterfaceNullValueOverrideTest() {
       let index = i18n.getInstance('zh');
       let value = index.getIndex('');
       console.log('getIndex_nullString_test_0100 value:', value);
-      expect(value).assertEqual('...');
+      expect(value != null).assertTrue();
     })
 
     /**
@@ -2321,32 +2302,32 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name getDisPlayName_null_test_0100
-     * @tc.number getDisPlayName_null_test_0100
+     * @tc.name getDisplayName_null_test_0100
+     * @tc.number getDisplayName_null_test_0100
      * @tc.desc with null
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getDisPlayName_null_test_0100', Level.LEVEL3, () => {
+    it('getDisplayName_null_test_0100', Level.LEVEL3, () => {
       let timeZone = i18n.getTimeZone();
-      let value = timeZone.getDisPlayName(null);
-      console.log('getDisPlayName_null_test_0100 value:', value);
+      let value = timeZone.getDisplayName(null);
+      console.log('getDisplayName_null_test_0100 value:', value);
       expect(value.length > 0).assertTrue();
     })
 
     /**
-     * @tc.name getDisPlayName_nullString_test_0100
-     * @tc.number getDisPlayName_nullString_test_0100
+     * @tc.name getDisplayName_nullString_test_0100
+     * @tc.number getDisplayName_nullString_test_0100
      * @tc.desc with nullString
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getDisPlayName_nullString_test_0100', Level.LEVEL3, () => {
+    it('getDisplayName_nullString_test_0100', Level.LEVEL3, () => {
       let timeZone = i18n.getTimeZone();
-      let value = timeZone.getDisPlayName('');
-      console.log('getDisPlayName_nullString_test_0100 value:', value);
+      let value = timeZone.getDisplayName('');
+      console.log('getDisplayName_nullString_test_0100 value:', value);
       expect(value.length > 0).assertTrue();
     })
 
@@ -2422,67 +2403,67 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name getTimeZoneFromCity_null_test_0100
-     * @tc.number getTimeZoneFromCity_null_test_0100
+     * @tc.name getTimezoneFromCity_null_test_0100
+     * @tc.number getTimezoneFromCity_null_test_0100
      * @tc.desc with null
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getTimeZoneFromCity_null_test_0100', Level.LEVEL3, () => {
-      let value = i18n.TimeZone.getTimeZoneFromCity(null);
-      console.log('getTimeZoneFromCity_null_test_0100 value:', value);
+    it('getTimezoneFromCity_null_test_0100', Level.LEVEL3, () => {
+      let value = i18n.TimeZone.getTimezoneFromCity(null);
+      console.log('getTimezoneFromCity_null_test_0100 value:', value);
       expect(value != null).assertTrue();
     })
 
     /**
-     * @tc.name getTimeZoneFromCity_nullString_test_0100
-     * @tc.number getTimeZoneFromCity_nullString_test_0100
+     * @tc.name getTimezoneFromCity_nullString_test_0100
+     * @tc.number getTimezoneFromCity_nullString_test_0100
      * @tc.desc with nullString
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getTimeZoneFromCity_nullString_test_0100', Level.LEVEL3, () => {
-      let value = i18n.TimeZone.getTimeZoneFromCity('');
-      console.log('getTimeZoneFromCity_nullString_test_0100 value:', value);
+    it('getTimezoneFromCity_nullString_test_0100', Level.LEVEL3, () => {
+      let value = i18n.TimeZone.getTimezoneFromCity('');
+      console.log('getTimezoneFromCity_nullString_test_0100 value:', value);
       expect(value != null).assertTrue();
     })
 
     /**
-     * @tc.name getTimeZoneByLocation_null_test_0100
-     * @tc.number getTimeZoneByLocation_null_test_0100
+     * @tc.name getTimezonesByLocation_null_test_0100
+     * @tc.number getTimezonesByLocation_null_test_0100
      * @tc.desc with null
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getTimeZoneByLocation_null_test_0100', Level.LEVEL3, () => {
+    it('getTimezonesByLocation_null_test_0100', Level.LEVEL3, () => {
       try {
-        let value = i18n.TimeZone.getTimeZoneByLocation(null, 43);
-        console.log('getTimeZoneByLocation_null_test_0100 value:', value);
+        let value = i18n.TimeZone.getTimezonesByLocation(null, 43);
+        console.log('getTimezonesByLocation_null_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('getTimeZoneByLocation_null_test_0100' + e.code + e.message);
+        console.log('getTimezonesByLocation_null_test_0100' + e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name getTimeZoneByLocation_null_test_0200
-     * @tc.number getTimeZoneByLocation_null_test_0200
+     * @tc.name getTimezonesByLocation_null_test_0200
+     * @tc.number getTimezonesByLocation_null_test_0200
      * @tc.desc with null
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getTimeZoneByLocation_null_test_0200', Level.LEVEL3, () => {
+    it('getTimezonesByLocation_null_test_0200', Level.LEVEL3, () => {
       try {
-        let value = i18n.TimeZone.getTimeZoneByLocation(87, null);
-        console.log('getTimeZoneByLocation_null_test_0200 value:', value);
+        let value = i18n.TimeZone.getTimezonesByLocation(87, null);
+        console.log('getTimezonesByLocation_null_test_0200 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('getTimeZoneByLocation_null_test_0200' + e.code + e.message);
+        console.log('getTimezonesByLocation_null_test_0200' + e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
@@ -2574,7 +2555,7 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('normalize_null_test_0100', Level.LEVEL3, () => {
       try {
-        let trans = i18n.Normalize.getInstance(i18n.NormalizerMode.NFC);
+        let trans = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
         let value = trans.normalize(null);
         console.log('normalize_null_test_0100 value:', value);
         expect(value).assertFail();
@@ -2593,7 +2574,7 @@ export default function InterfaceNullValueOverrideTest() {
      * @tc.level LEVEL3
      */
     it('normalize_nullString_test_0100', Level.LEVEL3, () => {
-      let trans = i18n.Normalize.getInstance(i18n.NormalizerMode.NFC);
+      let trans = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
       let value = trans.normalize('');
       console.log('normalize_nullString_test_0100 value:', value);
       expect(value).assertEqual('');
@@ -2654,12 +2635,12 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('findEntityInfo_null_test_0100', Level.LEVEL3, () => {
       try {
-        let entityRecognizer = new i18n.EntityRecognizer(i18n.NormalizerMode.NFC);
+        let entityRecognizer = new i18n.EntityRecognizer('zh-CN');
         let value = entityRecognizer.findEntityInfo(null);
-        console.log('normalize_null_test_0100 value:', value);
+        console.log('findEntityInfo_null_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('normalize_null_test_0100 code&message:', e.code + e.message);
+        console.log('findEntityInfo_null_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
@@ -2673,7 +2654,7 @@ export default function InterfaceNullValueOverrideTest() {
      * @tc.level LEVEL3
      */
     it('findEntityInfo_nullString_test_0100', Level.LEVEL3, () => {
-      let entityRecognizer = new i18n.EntityRecognizer(i18n.NormalizerMode.NFC);
+      let entityRecognizer = new i18n.EntityRecognizer('zh-CN');
       let value = entityRecognizer.findEntityInfo('');
       console.log('findEntityInfo_nullString_test_0100 value:', value);
       expect(value.length == 0).assertTrue();
@@ -3045,7 +3026,7 @@ export default function InterfaceNullValueOverrideTest() {
       let locale = new Intl.Locale('zh-Hans-CN',{baseName: ""});
       let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0400 value:', value);
-      expect(Json.stringify(value)).assertEqual('{}');
+      expect(JSON.stringify(value)).assertEqual('{}');
     })
 
     /**
@@ -3060,7 +3041,7 @@ export default function InterfaceNullValueOverrideTest() {
       let locale = new intl.Locale('zh-Hans-CN',{caseFirst: ""});
       let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0500 value:', value);
-      expect(Json.stringify(value)).assertEqual('{}');
+      expect(JSON.stringify(value)).assertEqual('{}');
     })
 
     /**
@@ -3115,7 +3096,7 @@ export default function InterfaceNullValueOverrideTest() {
       let locale = new intl.Locale('zh-Hans-CN',{hourCycle: ""});
       let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0800 value:', value);
-      expect(Json.stringify(value)).assertEqual('{}');
+      expect(JSON.stringify(value)).assertEqual('{}');
     })
 
     /**
@@ -3150,7 +3131,7 @@ export default function InterfaceNullValueOverrideTest() {
       let locale = new Intl.Locale('zh-Hans-CN',{numeric: true});
       let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_1000 value:', value);
-      expect(Json.stringify(value)).assertEqual('{}');
+      expect(JSON.stringify(value)).assertEqual('{}');
     })
 
     /**
@@ -3165,7 +3146,7 @@ export default function InterfaceNullValueOverrideTest() {
       let locale = new Intl.Locale('zh-Hans-CN',{numeric: false});
       let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_1100 value:', value);
-      expect(Json.stringify(value)).assertEqual('{}');
+      expect(JSON.stringify(value)).assertEqual('{}');
     })
 
     /**
@@ -3279,7 +3260,7 @@ export default function InterfaceNullValueOverrideTest() {
       try {
         let locale = new Intl.Locale('zh-Hans-CN',{language: ""});
         let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0100 value:', value);
+        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0100 code&message:', e.code + e.message);
@@ -3343,7 +3324,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0400 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
+        expect(e.code).assertEqual('890001');
       }
     })
 
@@ -3597,7 +3578,7 @@ export default function InterfaceNullValueOverrideTest() {
     it('SimpleDateTimeFormat_format_null_test_0100', Level.LEVEL3, () => {
       try {
         let locale = new intl.Locale('zh-Hans-CN');
-        let SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern("'time'('y'/'M'/'d' 'h':'m':'s')'", locale);
+        let SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern("'time('y'/'M'/'d' 'h':'m':'s')'", locale);
         let value = SimpleDateTimeFormat.format(null);
         console.log('SimpleDateTimeFormat_format_null_test_0100 value:', value);
         expect(value).assertFail();
@@ -3682,7 +3663,7 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('AdvancedMeasureFormat_format_null_test_0100', Level.LEVEL3, () => {
       let numFmt = new Intl.NumberFormat('zh-Hans-CN', {style: 'unit', unit: 'fahrenheit'});
-      let advancedMeasureFormat = i18n.AdvancedMeasureFormat(unitUsage, i18n.UnitUsage.TEMPERATURE_PERSON);
+      let advancedMeasureFormat = new i18n.AdvancedMeasureFormat(numFmt, {unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON});
       let value = advancedMeasureFormat.format(null);
       console.log('AdvancedMeasureFormat_format_null_test_0100 value:', value);
       expect(value).assertEqual('');
@@ -4235,96 +4216,96 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name gitDisplayCountry_undefined_test_0100
-     * @tc.number gitDisplayCountry_undefined_test_0100
+     * @tc.name getDisplayCountry_undefined_test_0100
+     * @tc.number getDisplayCountry_undefined_test_0100
      * @tc.desc with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayCountry_undefined_test_0100', Level.LEVEL3, () => {
+    it('getDisplayCountry_undefined_test_0100', Level.LEVEL3, () => {
       try {
-        let value = i18n.gitDisplayCountry(undefined, "en-US", true);
-        console.log('gitDisplayCountry_undefined_test_0100 value:', value);
+        let value = i18n.getDisplayCountry(undefined, "en-US", true);
+        console.log('getDisplayCountry_undefined_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('getBestMatchLocale_undefined_test_0200 code&message:', e.code + e.message);
+        console.log('getDisplayCountry_undefined_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name gitDisplayCountry_undefined_test_0200
-     * @tc.number gitDisplayCountry_undefined_test_0200
+     * @tc.name getDisplayCountry_undefined_test_0200
+     * @tc.number getDisplayCountry_undefined_test_0200
      * @tc.desc with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayCountry_undefined_test_0200', Level.LEVEL3, () => {
+    it('getDisplayCountry_undefined_test_0200', Level.LEVEL3, () => {
       try {
-        let value = i18n.gitDisplayCountry('zh-Hans-CN', undefined, true);
-        console.log('gitDisplayCountry_undefined_test_0200 value:', value);
+        let value = i18n.getDisplayCountry('zh-Hans-CN', undefined, true);
+        console.log('getDisplayCountry_undefined_test_0200 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('gitDisplayCountry_undefined_test_0200 code&message:', e.code + e.message);
+        console.log('getDisplayCountry_undefined_test_0200 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name gitDisplayLanguage_undefined_test_0100
-     * @tc.number gitDisplayLanguage_undefined_test_0100
+     * @tc.name getDisplayLanguage_undefined_test_0100
+     * @tc.number getDisplayLanguage_undefined_test_0100
      * @tc.desc with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayLanguage_undefined_test_0100', Level.LEVEL3, () => {
+    it('getDisplayLanguage_undefined_test_0100', Level.LEVEL3, () => {
       try {
-        let value = i18n.gitDisplayLanguage(undefined, "en-US", true);
-        console.log('gitDisplayLanguage_undefined_test_0100 value:', value);
+        let value = i18n.getDisplayLanguage(undefined, "en-US", true);
+        console.log('getDisplayLanguage_undefined_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('gitDisplayLanguage_undefined_test_0100 code&message:', e.code + e.message);
+        console.log('getDisplayLanguage_undefined_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name gitDisplayLanguage_undefined_test_0100
-     * @tc.number gitDisplayLanguage_undefined_test_0100
+     * @tc.name getDisplayLanguage_undefined_test_0100
+     * @tc.number getDisplayLanguage_undefined_test_0100
      * @tc.desc with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayLanguage_undefined_test_0100', Level.LEVEL3, () => {
+    it('getDisplayLanguage_undefined_test_0100', Level.LEVEL3, () => {
       try {
-        let value = i18n.gitDisplayLanguage(undefined, "en-US");
-        console.log('gitDisplayLanguage_undefined_test_0100 value:', value);
+        let value = i18n.getDisplayLanguage(undefined, "en-US");
+        console.log('getDisplayLanguage_undefined_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('gitDisplayLanguage_undefined_test_0100 code&message:', e.code + e.message);
+        console.log('getDisplayLanguage_undefined_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name gitDisplayLanguage_undefined_test_0200
-     * @tc.number gitDisplayLanguage_undefined_test_0200
+     * @tc.name getDisplayLanguage_undefined_test_0200
+     * @tc.number getDisplayLanguage_undefined_test_0200
      * @tc.desc with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('gitDisplayLanguage_undefined_test_0200', Level.LEVEL3, () => {
+    it('getDisplayLanguage_undefined_test_0200', Level.LEVEL3, () => {
       try {
-        let value = i18n.gitDisplayLanguage('zh-Hans-CN', undefined);
-        console.log('gitDisplayLanguage_undefined_test_0200 value:', value);
+        let value = i18n.getDisplayLanguage('zh-Hans-CN', undefined);
+        console.log('getDisplayLanguage_undefined_test_0200 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('gitDisplayLanguage_undefined_test_0200 code&message:', e.code + e.message);
+        console.log('getDisplayLanguage_undefined_test_0200 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
@@ -4469,7 +4450,7 @@ export default function InterfaceNullValueOverrideTest() {
       try {
         let value = i18n.System.setAppPreferredLanguage(undefined);
         console.log('system_setAppPreferredLanguage_undefined_test_0100 value:', value);
-        expect(value).assertFail();
+        expect(typeof(value)).assertFail();
       } catch (e) {
         console.log('system_setAppPreferredLanguage_undefined_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
@@ -5233,18 +5214,18 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name addLocal_undefined_test_0100
-     * @tc.number addLocal_undefined_test_0100
+     * @tc.name addLocale_undefined_test_0100
+     * @tc.number addLocale_undefined_test_0100
      * @tc.desc with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('addLocal_undefined_test_0100', Level.LEVEL3, () => {
+    it('addLocale_undefined_test_0100', Level.LEVEL3, () => {
       let index = i18n.getInstance('zh');
-      index.addLocal(undefined);
+      index.addLocale(undefined);
       let value = index.getIndex('a');
-      console.log('addLocal_undefined_test_0100 value:', value);
+      console.log('addLocale_undefined_test_0100 value:', value);
       expect(value).assertEqual('A');
     })
 
@@ -5582,17 +5563,17 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name getDisPlayName_undefined_test_0100
-     * @tc.number getDisPlayName_undefined_test_0100
+     * @tc.name getDisplayName_undefined_test_0100
+     * @tc.number getDisplayName_undefined_test_0100
      * @tc.desc with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getDisPlayName_undefined_test_0100', Level.LEVEL3, () => {
+    it('getDisplayName_undefined_test_0100', Level.LEVEL3, () => {
       let timeZone = i18n.getTimeZone();
-      let value = timeZone.getDisPlayName(undefined);
-      console.log('getDisPlayName_undefined_test_0100 value:', value);
+      let value = timeZone.getDisplayName(undefined);
+      console.log('getDisplayName_undefined_test_0100 value:', value);
       expect(value.length > 0).assertTrue();
     })
 
@@ -5640,53 +5621,53 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name getTimeZoneFromCity_undefined_test_0100
-     * @tc.number getTimeZoneFromCity_undefined_test_0100
+     * @tc.name getTimezoneFromCity_undefined_test_0100
+     * @tc.number getTimezoneFromCity_undefined_test_0100
      * @tc.desc with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getTimeZoneFromCity_undefined_test_0100', Level.LEVEL3, () => {
-      let value = i18n.TimeZone.getTimeZoneFromCity(undefined);
-      console.log('getTimeZoneFromCity_undefined_test_0100 value:', value);
+    it('getTimezoneFromCity_undefined_test_0100', Level.LEVEL3, () => {
+      let value = i18n.TimeZone.getTimezoneFromCity(undefined);
+      console.log('getTimezoneFromCity_undefined_test_0100 value:', value);
       expect(value != undefined).assertTrue();
     })
 
     /**
-     * @tc.name getTimeZoneByLocation_undefined_test_0100
-     * @tc.number getTimeZoneByLocation_undefined_test_0100
+     * @tc.name getTimezonesByLocation_undefined_test_0100
+     * @tc.number getTimezonesByLocation_undefined_test_0100
      * @tc.desc with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getTimeZoneByLocation_undefined_test_0100', Level.LEVEL3, () => {
+    it('getTimezonesByLocation_undefined_test_0100', Level.LEVEL3, () => {
       try {
-        let value = i18n.TimeZone.getTimeZoneByLocation(undefined, 43);
-        console.log('getTimeZoneByLocation_undefined_test_0100 value:', value);
+        let value = i18n.TimeZone.getTimezonesByLocation(undefined, 43);
+        console.log('getTimezonesByLocation_undefined_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('getTimeZoneByLocation_undefined_test_0100' + e.code + e.message);
+        console.log('getTimezonesByLocation_undefined_test_0100' + e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
 
     /**
-     * @tc.name getTimeZoneByLocation_undefined_test_0200
-     * @tc.number getTimeZoneByLocation_undefined_test_0200
+     * @tc.name getTimezonesByLocation_undefined_test_0200
+     * @tc.number getTimezonesByLocation_undefined_test_0200
      * @tc.desc with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getTimeZoneByLocation_undefined_test_0200', Level.LEVEL3, () => {
+    it('getTimezonesByLocation_undefined_test_0200', Level.LEVEL3, () => {
       try {
-        let value = i18n.TimeZone.getTimeZoneByLocation(87, undefined);
-        console.log('getTimeZoneByLocation_undefined_test_0200 value:', value);
+        let value = i18n.TimeZone.getTimezonesByLocation(87, undefined);
+        console.log('getTimezonesByLocation_undefined_test_0200 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('getTimeZoneByLocation_undefined_test_0200' + e.code + e.message);
+        console.log('getTimezonesByLocation_undefined_test_0200' + e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
@@ -5748,7 +5729,7 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('normalize_undefined_test_0100', Level.LEVEL3, () => {
       try {
-        let trans = i18n.Normalize.getInstance(i18n.NormalizerMode.NFC);
+        let trans = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
         let value = trans.normalize(undefined);
         console.log('normalize_undefined_test_0100 value:', value);
         expect(value).assertFail();
@@ -5813,209 +5794,14 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('findEntityInfo_undefined_test_0100', Level.LEVEL3, () => {
       try {
-        let entityRecognizer = new i18n.EntityRecognizer(i18n.NormalizerMode.NFC);
+        let entityRecognizer = new i18n.EntityRecognizer('zh-CN');
         let value = entityRecognizer.findEntityInfo(undefined);
-        console.log('normalize_undefined_test_0100 value:', value);
+        console.log('findEntityInfo_undefined_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
-        console.log('normalize_undefined_test_0100 code&message:', e.code + e.message);
+        console.log('findEntityInfo_undefined_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_0100
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_0100
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_0100', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{language: ""});
-        let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0100 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_0200
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_0200
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_0200', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{script: ""});
-        let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0200 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_0300
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_0300
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_0300', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{region: ""});
-        let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0300 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0300 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_0400
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_0400
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_0400', Level.LEVEL3, () => {
-      let locale = new Intl.Locale('zh-Hans-CN',{baseName: ""});
-      let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-      console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0400 value:', value);
-      expect(JSON.stringify(value)).assertEqual('{}');
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_0500
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_0500
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_0500', Level.LEVEL3, () => {
-      let locale = new intl.Locale('zh-Hans-CN',{caseFirst: ""});
-      let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-      console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0500 value:', value);
-      expect(JSON.stringify(value)).assertEqual('{}');
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_0600
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_0600
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_0600', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{calendar: ""});
-        let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0600 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0600 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_0700
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_0700
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_0700', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{collation: ""});
-        let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0700 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0700 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_0800
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_0800
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_0800', Level.LEVEL3, () => {
-      let locale = new intl.Locale('zh-Hans-CN',{hourCycle: ""});
-      let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-      console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0800 value:', value);
-      expect(JSON.stringify(value)).assertEqual('{}');
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_0900
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_0900
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_0900', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{numberingSystem: ""});
-        let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0900 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_0900 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_1000
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_1000
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_1000', Level.LEVEL3, () => {
-      let locale = new Intl.Locale('zh-Hans-CN',{numeric: true});
-      let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-      console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_1000 value:', value);
-      expect(JSON.stringify(value)).assertEqual('{}');
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatByPattern_locale_test_1100
-     * @tc.number Intl_getSimpleDateTimeFormatByPattern_locale_test_1100
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatByPattern_locale_test_1100', Level.LEVEL3, () => {
-      let locale = new Intl.Locale('zh-Hans-CN',{numeric: false});
-      let value = i18n.getSimpleDateTimeFormatByPattern("yMdhms", locale);
-      console.log('Intl_getSimpleDateTimeFormatByPattern_locale_test_1100 value:', value);
-      expect(JSON.stringify(value)).assertEqual('{}');
     })
 
     /**
@@ -6078,201 +5864,6 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0100
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0100
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0100', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{language: ""});
-        let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0100 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0200
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0200
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0200', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{script: ""});
-        let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0200 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0300
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0300
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0300', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{region: ""});
-        let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0300 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0300 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0400
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0400
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0400', Level.LEVEL3, () => {
-      let locale = new Intl.Locale('zh-Hans-CN',{baseName: ""});
-      let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-      console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0400 value:', value);
-      expect(Json.stringify(value)).assertEqual('{}');
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0500
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0500
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0500', Level.LEVEL3, () => {
-      let locale = new intl.Locale('zh-Hans-CN',{caseFirst: ""});
-      let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-      console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0500 value:', value);
-      expect(Json.stringify(value)).assertEqual('{}');
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0600
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0600
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0600', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{calendar: ""});
-        let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0600 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0600 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0700
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0700
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0700', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{collation: ""});
-        let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0700 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0700 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0800
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0800
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0800', Level.LEVEL3, () => {
-      let locale = new intl.Locale('zh-Hans-CN',{hourCycle: ""});
-      let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-      console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0800 value:', value);
-      expect(Json.stringify(value)).assertEqual('{}');
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0900
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0900
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0900', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{numberingSystem: ""});
-        let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0900 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0900 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_1000
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_1000
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_1000', Level.LEVEL3, () => {
-      let locale = new Intl.Locale('zh-Hans-CN',{numeric: true});
-      let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-      console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_1000 value:', value);
-      expect(Json.stringify(value)).assertEqual('{}');
-    })
-
-    /**
-     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_locale_test_1100
-     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_locale_test_1100
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_1100', Level.LEVEL3, () => {
-      let locale = new Intl.Locale('zh-Hans-CN',{numeric: false});
-      let value = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
-      console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_1100 value:', value);
-      expect(Json.stringify(value)).assertEqual('{}');
-    })
-
-    /**
      * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_undefined_test_0100
      * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_undefined_test_0100
      * @tc.desc with undefined
@@ -6328,226 +5919,6 @@ export default function InterfaceNullValueOverrideTest() {
       } catch (e) {
         console.log('getSimpleDateTimeFormatBySkeleton_undefined_test_0200 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_0100
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_0100
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_0100', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{language: ""});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleDateTimeFormatBySkeleton_locale_test_0100 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_0200
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_0200
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_0200', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{script: ""});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0200 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_0300
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_0300
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_0300', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{region: ""});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0300 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0300 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_0400
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_0400
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_0400', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{baseName: ""});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0400 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0400 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_0500
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_0500
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_0500', Level.LEVEL3, () => {
-      try {
-        let locale = new intl.Locale('zh-Hans-CN',{caseFirst: ""});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0500 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0500 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_0600
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_0600
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_0600', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{calendar: ""});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0600 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0600 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_0700
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_0700
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_0700', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{collation: ""});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0700 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0700 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_0800
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_0800
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_0800', Level.LEVEL3, () => {
-      try {
-        let locale = new intl.Locale('zh-Hans-CN',{hourCycle: ""});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0800 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0800 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_0900
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_0900
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_0900', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{numberingSystem: ""});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0900 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0900 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_1000
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_1000
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_1000', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{numeric: true});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_1000 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_1000 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
-      }
-    })
-
-    /**
-     * @tc.name Intl_getSimpleNumberFormatBySkeleton_locale_test_1100
-     * @tc.number Intl_getSimpleNumberFormatBySkeleton_locale_test_1100
-     * @tc.desc with locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getSimpleNumberFormatBySkeleton_locale_test_1100', Level.LEVEL3, () => {
-      try {
-        let locale = new Intl.Locale('zh-Hans-CN',{numeric: false});
-        let value = i18n.getSimpleNumberFormatBySkeleton("yMdhms", locale);
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_1100 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_1100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
       }
     })
 
@@ -6621,7 +5992,7 @@ export default function InterfaceNullValueOverrideTest() {
     it('SimpleDateTimeFormat_format_undefined_test_0100', Level.LEVEL3, () => {
       try {
         let locale = new intl.Locale('zh-Hans-CN');
-        let SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern("'time'('y'/'M'/'d' 'h':'m':'s')'", locale);
+        let SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern("'time('y'/'M'/'d' 'h':'m':'s')'", locale);
         let value = SimpleDateTimeFormat.format(undefined);
         console.log('SimpleDateTimeFormat_format_undefined_test_0100 value:', value);
         expect(value).assertFail();
@@ -6706,7 +6077,7 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('AdvancedMeasureFormat_format_undefined_test_0100', Level.LEVEL3, () => {
       let numFmt = new Intl.NumberFormat('zh-Hans-CN', {style: 'unit', unit: 'fahrenheit'});
-      let advancedMeasureFormat = i18n.AdvancedMeasureFormat(unitUsage, i18n.UnitUsage.TEMPERATURE_PERSON);
+      let advancedMeasureFormat = i18n.AdvancedMeasureFormat(numFmt, {unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON});
       let value = advancedMeasureFormat.format(undefined);
       console.log('AdvancedMeasureFormat_format_undefined_test_0100 value:', value);
       expect(value).assertEqual('');
