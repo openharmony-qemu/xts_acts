@@ -3555,5 +3555,182 @@ describe('resMgrTest', function () {
         })
     })
 
+    /**
+     * @tc.name getResourceManager_null_test_0100
+     * @tc.number getResourceManager_null_test_0100
+     * @tc.desc callback with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getResourceManager_null_test_0100', Level.LEVEL3, async function (done) {
+        try {
+            resourceManager.getResourceManager(null, (error, value) => {
+                try {
+                    console.log('getResourceManager_null_test_0100 value:' + value);
+                    expect(value != null).assertTrue();
+                } catch (e) {
+                    console.log('getResourceManager_null_test_0100 e:' + e);
+                }
+                done();
+            })
+        } catch (error) {
+            console.log('getResourceManager_null_test_0100 error:' + error.code);
+            expect(error.code).assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name getResourceManager_null_test_0200
+     * @tc.number getResourceManager_null_test_0200
+     * @tc.desc promise with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getResourceManager_null_test_0200', Level.LEVEL3, async function (done) {
+        try {
+            resourceManager.getResourceManager(null).then((value) => {
+                try {
+                    console.log('getResourceManager_null_test_0200 value:' + value);
+                    expect(value != null).assertTrue();
+                } catch (e) {
+                    console.log('getResourceManager_null_test_0200 then:' + e);
+                }
+                done();
+            }).catch((error) => {
+                try {
+                    expect(error).assertFail();
+                } catch (e) {
+                    console.log('getResourceManager_null_test_0200 catch:' + e);
+                }
+                done();
+            })
+        } catch (error) {
+            console.log('getResourceManager_null_test_0200 error:' + error.code);
+            expect(error.code).assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name getResourceManager_undefined_test_0100
+     * @tc.number getResourceManager_undefined_test_0100
+     * @tc.desc callback with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getResourceManager_undefined_test_0100', Level.LEVEL3, async function (done) {
+        try {
+            resourceManager.getResourceManager(undefined, (error, value) => {
+                try {
+                    console.log('getResourceManager_undefined_test_0100 value:' + value);
+                    expect(value != null).assertTrue();
+                } catch (e) {
+                    console.log('getResourceManager_undefined_test_0100 e:' + e);
+                }
+                done();
+            })
+        } catch (error) {
+            console.log('getResourceManager_undefined_test_0100 error:' + error.code);
+            expect(error.code).assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name getResourceManager_undefined_test_0200
+     * @tc.number getResourceManager_undefined_test_0200
+     * @tc.desc promise with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getResourceManager_undefined_test_0200', Level.LEVEL3, async function (done) {
+        try {
+            resourceManager.getResourceManager(undefined).then((value) => {
+                try {
+                    console.log('getResourceManager_undefined_test_0200 value:' + value);
+                    expect(value != null).assertTrue();
+                } catch (e) {
+                    console.log('getResourceManager_undefined_test_0200 then:' + e);
+                }
+                done();
+            }).catch((error) => {
+                try {
+                    expect(error).assertFail();
+                } catch (e) {
+                    console.log('getResourceManager_undefined_test_0200 catch:' + e);
+                }
+                done();
+            })
+        } catch (error) {
+            console.log('getResourceManager_undefined_test_0200 error:' + error.code);
+            expect(error.code).assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name getResourceManager_void_test_0100
+     * @tc.number getResourceManager_void_test_0100
+     * @tc.desc callback with void
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getResourceManager_void_test_0100', Level.LEVEL3, async function (done) {
+        try {
+            resourceManager.getResourceManager('', (error, value) => {
+                try {
+                    console.log('getResourceManager_void_test_0100 value:' + value);
+                    expect(value != null).assertTrue();
+                } catch (e) {
+                    console.log('getResourceManager_void_test_0100 e:' + e);
+                }
+                done();
+            })
+        } catch (error) {
+            console.log('getResourceManager_void_test_0100 error:' + error.code);
+            expect(error.code).assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name getResourceManager_void_test_0200
+     * @tc.number getResourceManager_void_test_0200
+     * @tc.desc promise with void
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getResourceManager_void_test_0200', Level.LEVEL3, async function (done) {
+        try {
+            resourceManager.getResourceManager('').then((value) => {
+                try {
+                    console.log('getResourceManager_void_test_0200 value:' + value);
+                    expect(value != null).assertTrue();
+                } catch (e) {
+                    console.log('getResourceManager_void_test_0200 then:' + e);
+                }
+                done();
+            }).catch((error) => {
+                try {
+                    expect(error).assertFail();
+                } catch (e) {
+                    console.log('getResourceManager_void_test_0200 catch:' + e);
+                }
+                done();
+            })
+        } catch (error) {
+            console.log('getResourceManager_void_test_0200 error:' + error.code);
+            expect(error.code).assertFail();
+            done();
+        }
+    })
+
     console.log('*************end ResmgrTest*************');
 })}
