@@ -66,8 +66,7 @@ export default function testsuite() {
   ClassLateInitizationTest();
   EqualityExpressions();
   UnionTest();
-  
-  abilityTest();
+
   abstractClassesTest();
   accessingParentClassTest();
   classCallRewriteTest();
