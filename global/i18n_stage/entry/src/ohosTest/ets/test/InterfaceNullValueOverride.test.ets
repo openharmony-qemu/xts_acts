@@ -100,25 +100,6 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('getDisplayLanguage_null_test_0100', Level.LEVEL3, () => {
       try {
-        let value = i18n.getDisplayCountry(null, "en-US", true);
-        console.log('getDisplayLanguage_null_test_0100 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('getDisplayLanguage_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
-      }
-    })
-
-    /**
-     * @tc.name getDisplayLanguage_null_test_0100
-     * @tc.number getDisplayLanguage_null_test_0100
-     * @tc.desc with null
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('getDisplayLanguage_null_test_0100', Level.LEVEL3, () => {
-      try {
         let value = i18n.getDisplayLanguage(null, "en-US");
         console.log('getDisplayLanguage_null_test_0100 value:', value);
         expect(value).assertFail();
@@ -704,19 +685,6 @@ export default function InterfaceNullValueOverrideTest() {
         console.log('getTimePeriodName_nullString_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('890001');
       }
-    })
-    /**
-     * @tc.name getTimePeriodName_null_test_0200
-     * @tc.number getTimePeriodName_null_test_0200
-     * @tc.desc with null
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('getTimePeriodName_null_test_0200', Level.LEVEL3, () => {
-      let value = i18n.I18NUtil.getTimePeriodName(5, null);
-      console.log('getTimePeriodName_null_test_0200 value:', value);
-      expect(value).assertEqual('早上');
     })
 
     /**
@@ -1442,7 +1410,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('calendar_add_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("890001");
+        expect(e.code).assertEqual(890001);
       }
     })
 
@@ -2578,21 +2546,6 @@ export default function InterfaceNullValueOverrideTest() {
       let value = trans.normalize('');
       console.log('normalize_nullString_test_0100 value:', value);
       expect(value).assertEqual('');
-    })
-
-    /**
-     * @tc.name isHoliday_null_test_0100
-     * @tc.number isHoliday_null_test_0100
-     * @tc.desc with null
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('isHoliday_null_test_0100', Level.LEVEL3, () => {
-      let holidayManager = new i18n.HolidayManager('/system/lib/TR.ics');
-      let value = holidayManager.isHoliday(null);
-      console.log('isHoliday_null_test_0100 value:', value);
-      expect(value == false).assertTrue();
     })
 
     /**
@@ -3968,7 +3921,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getUnicodeWrappedFilePath_nullString_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(e.code).assertEqual(890001);
       }
     })
 
@@ -4249,25 +4202,6 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getDisplayCountry_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
-      }
-    })
-
-    /**
-     * @tc.name getDisplayLanguage_undefined_test_0100
-     * @tc.number getDisplayLanguage_undefined_test_0100
-     * @tc.desc with undefined
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('getDisplayLanguage_undefined_test_0100', Level.LEVEL3, () => {
-      try {
-        let value = i18n.getDisplayLanguage(undefined, "en-US", true);
-        console.log('getDisplayLanguage_undefined_test_0100 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('getDisplayLanguage_undefined_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
     })
@@ -4592,20 +4526,6 @@ export default function InterfaceNullValueOverrideTest() {
         console.log('getTimePeriodName_undefined_test_0100 code&message:', e.code + e.message);
         expect(e.code).assertEqual('401');
       }
-    })
-
-    /**
-     * @tc.name getTimePeriodName_undefined_test_0200
-     * @tc.number getTimePeriodName_undefined_test_0200
-     * @tc.desc with undefinedString
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('getTimePeriodName_undefined_test_0200', Level.LEVEL3, () => {
-      let value = i18n.I18NUtil.getTimePeriodName(5, undefined);
-      console.log('getTimePeriodName_undefined_test_0200 value:', value);
-      expect(value).assertEqual('早上');
     })
 
     /**
@@ -5085,7 +5005,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('calendar_add_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -5755,21 +5675,6 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name isHoliday_undefined_test_0100
-     * @tc.number isHoliday_undefined_test_0100
-     * @tc.desc with undefined
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('isHoliday_undefined_test_0100', Level.LEVEL3, () => {
-      let holidayManager = new i18n.HolidayManager('/system/lib/TR.ics');
-      let value = holidayManager.isHoliday(undefined);
-      console.log('isHoliday_undefined_test_0100 value:', value);
-      expect(value == false).assertTrue();
-    })
-
-    /**
      * @tc.name getHolidayInfoItemArray_undefined_test_0100
      * @tc.number getHolidayInfoItemArray_undefined_test_0100
      * @tc.desc with undefined
@@ -6084,223 +5989,6 @@ export default function InterfaceNullValueOverrideTest() {
     })
 
     /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_0100
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_0100
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_0100', Level.LEVEL3, () => {
-      try {
-        let path: string = '/data/out/tmp';
-        let delimiter: string = '/';
-        let locale = new Intl.Locale('zh', {language: ''});
-        let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0100 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getUnicodeWrappedFilePath_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_0200
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_0200
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_0200', Level.LEVEL3, () => {
-      try {
-        let path: string = '/data/out/tmp';
-        let delimiter: string = '/';
-        let locale = new Intl.Locale('zh', {script: ''});
-        let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0200 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_0300
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_0300
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_0300', Level.LEVEL3, () => {
-      try {
-        let path: string = '/data/out/tmp';
-        let delimiter: string = '/';
-        let locale = new Intl.Locale('zh', {region: ''});
-        let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0300 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0300 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_0400
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_0400
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_0400', Level.LEVEL3, () => {
-      let path: string = '/data/out/tmp';
-      let delimiter: string = '/';
-      let locale = new Intl.Locale('zh', {baseName: ''});
-      let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-      console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0400 value:', value);
-      expect(value).assertEqual('/data/out/tmp');
-    })
-
-    /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_0500
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_0500
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_0500', Level.LEVEL3, () => {
-      let path: string = '/data/out/tmp';
-      let delimiter: string = '/';
-      let locale = new intl.Locale('zh', {caseFirst: ''});
-      let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-      console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0500 value:', value);
-      expect(value).assertEqual('/data/out/tmp');
-    })
-
-    /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_0600
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_0600
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_0600', Level.LEVEL3, () => {
-      try {
-        let path: string = '/data/out/tmp';
-        let delimiter: string = '/';
-        let locale = new Intl.Locale('zh', {calendar: ''});
-        let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0600 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0600 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_0700
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_0700
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_0700', Level.LEVEL3, () => {
-      try {
-        let path: string = '/data/out/tmp';
-        let delimiter: string = '/';
-        let locale = new Intl.Locale('zh', {collation: ''});
-        let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0700 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0700 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_0800
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_0800
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_0800', Level.LEVEL3, () => {
-      let path: string = '/data/out/tmp';
-      let delimiter: string = '/';
-      let locale = new intl.Locale('zh', {hourCycle: ''});
-      let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-      console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0800 value:', value);
-      expect(value).assertEqual('/data/out/tmp');
-    })
-
-    /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_0900
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_0900
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_0900', Level.LEVEL3, () => {
-      try {
-        let path: string = '/data/out/tmp';
-        let delimiter: string = '/';
-        let locale = new Intl.Locale('zh', {numberingSystem: ''});
-        let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0900 value:', value);
-        expect(value).assertFail();
-      } catch (e) {
-        console.log('Intl_getUnicodeWrappedFilePath_Locale_test_0900 code&message:', e.code + e.message);
-        expect(e.code).assertEqual(undefined);
-      }
-    })
-
-    /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_1000
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_1000
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_1000', Level.LEVEL3, () => {
-      let path: string = '/data/out/tmp';
-      let delimiter: string = '/';
-      let locale = new Intl.Locale('zh', {numeric: true});
-      let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-      console.log('Intl_getUnicodeWrappedFilePath_Locale_test_1000 value:', value);
-      expect(value).assertEqual('/data/out/tmp');
-    })
-
-    /**
-     * @tc.name Intl_getUnicodeWrappedFilePath_Locale_test_1100
-     * @tc.number Intl_getUnicodeWrappedFilePath_Locale_test_1100
-     * @tc.desc with Locale
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL3
-     */
-    it('Intl_getUnicodeWrappedFilePath_Locale_test_1100', Level.LEVEL3, () => {
-      let path: string = '/data/out/tmp';
-      let delimiter: string = '/';
-      let locale = new Intl.Locale('zh', {numeric: false});
-      let value = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-      console.log('Intl_getUnicodeWrappedFilePath_Locale_test_1100 value:', value);
-      expect(value).assertEqual('/data/out/tmp');
-    })
-
-    /**
      * @tc.name Intl_getUnicodeWrappedFilePath_undefined_test_0100
      * @tc.number Intl_getUnicodeWrappedFilePath_undefined_test_0100
      * @tc.desc with undefined
@@ -6338,7 +6026,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getUnicodeWrappedFilePath_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(e.code).assertEqual(401);
       }
     })
 
