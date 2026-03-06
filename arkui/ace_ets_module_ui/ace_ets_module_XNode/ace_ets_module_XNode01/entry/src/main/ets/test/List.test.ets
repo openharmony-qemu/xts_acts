@@ -223,9 +223,9 @@ export default function testsuite() {
   builderNodeInheritFreezeOptionsFalseTest();
 
   componentContentUpdateNullUndefinedTest();
-  ComponentContentReuseNullUndefinedTest();
   ComponentContentInheritFreezeOptionsFalseTest();
   ReactiveComponentContentReuseNullUndefinedTest();
   NodeAdapterApiNullUndefinedTest();
+  ComponentContentReuseNullUndefinedTest();
 
 }

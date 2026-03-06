@@ -63,6 +63,7 @@ export default function componentContentUpdateNullUndefinedTest() {
 
       let strJson1 = getInspectorByKey('componentContentUpdateNullUndefinedText');
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('updateNull');
+      await CommonFunc.sleep(2000);
       
       console.info('[componentContentUpdateNullUndefinedTest_0100 ] END');
       done();

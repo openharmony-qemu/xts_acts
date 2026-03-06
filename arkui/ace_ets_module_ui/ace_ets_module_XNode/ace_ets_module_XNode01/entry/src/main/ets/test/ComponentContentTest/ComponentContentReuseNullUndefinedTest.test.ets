@@ -56,6 +56,7 @@ export default function ComponentContentReuseNullUndefinedTest() {
 
       let strJson1 = getInspectorByKey('ComponentContentReuseNullUndefinedList');
       expect(JSON.parse(strJson1).$type).assertEqual('List');
+      await CommonFunc.sleep(2000);
       
       console.info('[ComponentContentReuseNullUndefinedTest_0100 ] END');
       done();
