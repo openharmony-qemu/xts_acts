@@ -438,16 +438,36 @@ export default function adsTest1() {
     })
 
     /**
-    * @tc.name testParseAdResponseErrorParam
-    * @tc.number SUB_CLOUD_ADS_INTERACTION_LISTENER_1100
-    * @tc.desc testParseAdResponseErrorParam.
-    * @tc.size LargeTest
-    * @tc.type Function
-    * @tc.level LEVEL2
-    */
+     * @tc.name testParseAdResponseErrorParam
+     * @tc.number SUB_CLOUD_ADS_INTERACTION_LISTENER_1100
+     * @tc.desc testParseAdResponseErrorParam.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
     it("testParseAdResponseErrorParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       try {
         advertising.parseAdResponse(undefined, undefined, undefined);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, `testParseAdResponseErrorParam failed, ERROR= ${e}`);
+        expect(e != null).assertEqual(true);
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name testParseAdResponseErrorParam
+     * @tc.number SUB_CLOUD_ADS_INTERACTION_LISTENER_1200
+     * @tc.desc testParseAdResponseErrorParam.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testParseAdResponseNullParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        advertising.parseAdResponse(null, null, null);
         done();
       } catch (e) {
         hilog.error(Domain, TAG, `testParseAdResponseErrorParam failed, ERROR= ${e}`);
