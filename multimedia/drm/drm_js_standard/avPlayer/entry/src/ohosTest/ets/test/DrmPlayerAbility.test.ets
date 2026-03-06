@@ -818,7 +818,9 @@ export default function abilityTest() {
                 if(cstatus! != drm.CertificateStatus.CERT_STATUS_PROVISIONED){
                     drmsys!.generateKeySystemRequest().then(async (drmRequest) => {
                         console.info("XX DRM_AVPLAYER_0100 success", drmRequest.data ,drmRequest.defaultURL);
-                        let provisionRequestStr = byteToString(drmRequest.data);
+                        expect(drmRequest.data).assertNotNull();
+                        expect(drmRequest.defaultURL).assertNotNull();
+                        let provisionRequestStr = = byteToString(drmRequest.data);
                         let provisionResponseStr = await getHttpData(drmRequest.defaultURL, provisionRequestStr);
                         let provisionResponseByte = stringToUint8Array(provisionResponseStr);
                         drmsys!.processKeySystemResponse(provisionResponseByte).then(() => {
@@ -848,7 +850,7 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /**
+/**
          * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0200
          * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0200
          * @tc.desc   获取许可证,正常参数
@@ -875,7 +877,6 @@ export default function abilityTest() {
                 done();
                 expect(false).assertEqual(true);
             }
-
             let responseArray:Uint8Array;
             let base64 = new util.Base64();
             let uint8pssh = base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
@@ -883,10 +884,12 @@ export default function abilityTest() {
                 name: "optionalDataName",
                 value: "optionalDataValue"
             }];
-
             try {
                 session!.generateMediaKeyRequest("video/mp4",uint8pssh,drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE, optionalData).then(async (licenseRequestData) => {
                     console.info("XX DRM_AVPLAYER_0200 generateMediaKeyRequest success",licenseRequestData.mediaKeyRequestType,licenseRequestData.data,licenseRequestData.defaultURL);
+                    expect(licenseRequestData.mediaKeyRequestType).assertNotNull();
+                    expect(licenseRequestData.data).assertNotNull();
+                    expect(licenseRequestData.defaultURL).assertNotNull();
                     if(isClearPlay){
                         responseArray = new Uint8Array([0x30, 0x64, 0x6E, 0x5A, 0x32, 0x4E, 0x57, 0x74, 0x76, 0x4D, 0x47, 0x34, 0x34, 0x4E, 0x6A, 0x42, 0x30, 0x4D, 0x32, 0x77, 0x33, 0x4E, 0x67, 0x3D, 0x3D, 0x3A, 0x59, 0x7A, 0x56, 0x78, 0x63, 0x48, 0x64, 0x70, 0x61, 0x6D, 0x30, 0x34, 0x59, 0x57, 0x45, 0x34, 0x5A, 0x48, 0x6B, 0x79, 0x4D, 0x67, 0x3D, 0x3D]);
                     } else {
