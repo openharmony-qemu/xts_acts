@@ -16,6 +16,7 @@ import { describe, it, expect, beforeAll, Level, Size, TestType } from '@ohos/hy
 import mdns from '@ohos.net.mdns';
 import { BusinessError } from '@ohos.base';
 import ethernet from '@ohos.net.ethernet';
+import { commom } from '@kit.AbilityKit';
 
 let context: Context;
 const ExpectTrue: (n: boolean, caseName: string) => void = (n: boolean, caseName: string) => {
