@@ -616,7 +616,7 @@ int32_t VDecAPI11Sample::StartVideoDecoder()
         return ret;
     }
     if (enbleSyncMode == 0) {
-        ret = StartDecoder(); 
+        ret = StartDecoder();
     } else {
         ret = StartSyncDecoder();
     }
