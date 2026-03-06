@@ -45,7 +45,7 @@ async function addCard() {
     let context: Context = AppStorage.get('context') as Context;
     if (!context) {
         console.warn('addCard: no context available');
-        retrun -1;
+        return -1;
     }
     let DAHelper: dataShare.DataShareHelper = await dataShare.createDataShareHelper(context, 'datashare:///com.ohos.contactsdataability');
     let insertValues: Record<string, string | number> = {
@@ -95,7 +95,7 @@ async function deleteCard() {
       await DAHelper.delete('datashare:///com.ohos.contactsdataability/profile/raw_contact', DataSharePredicates1);
       return del
   } catch (err) {
-      console.log(`deleteCard: err-> ${JSON.stringfy(err)}`);
+      console.log(`deleteCard: err-> ${JSON.stringify(err)}`);
       return 0;
   }
 }
