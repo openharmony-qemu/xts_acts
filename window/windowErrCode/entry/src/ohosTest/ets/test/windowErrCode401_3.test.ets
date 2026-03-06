@@ -2629,7 +2629,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(1003);
+            expect(err.code).assertEqual(1001);
             done();
           } else {
             console.log(caseName + ' success1');
