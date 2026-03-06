@@ -19,10 +19,8 @@ import contact from '@ohos.contact';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
-import { Component, Driver, On, ON } from '@ohos.UiTest';
 import dataShare from '@ohos.data.dataShare';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
-import effectKit from '@ohos.effectKit';
 
 async function getPermissions() {
   console.info('getPermission start');
@@ -45,9 +43,12 @@ async function getPermissions() {
 async function addCard() {
   try {
     let context: Context = AppStorage.get('context') as Context;
+    if (!context) {
+        console.warn('deleteCard: no context available');
+    }
     let DAHelper: dataShare.DataShareHelper = await dataShare.createDataShareHelper(context, 'datashare:///com.ohos.contactsdataability');
     let insertValues: Record<string, string | number> = {
-      'display_name': 'displayName',
+      'display_name': 'testDisplayName',
     };
     let data:number = await DAHelper.insert(
       'datashare:///com.ohos.contactsdataability/profile/raw_contact',
@@ -81,6 +82,7 @@ async function deleteCard() {
   let context: Context = AppStorage.get('context') as Context;
   if (!context) {
     console.warn('deleteCard: no context available');
+    return 0;
   }
   try {
       let DAHelper: dataShare.DataShareHelper = await dataShare.createDataShareHelper(context, 'datashare:///com.ohos.contactsdataability');
@@ -93,6 +95,7 @@ async function deleteCard() {
       return del
   } catch (err) {
       console.log(`deleteCard: err-> ${JSON,stringfy(err)}`);
+      return 0;
   }
 }
 
@@ -108,24 +111,25 @@ export default function EmptyParamCardTest() {
         afterEach(async (done: Function) => {
             try {
                 let data:numuber = await deleteCard();
-                console.log(`afterEach catch success: ${data}`);
+                console.info(`afterEach catch success: ${data}`);
                 done();
             } catch (error) {
-                console.log(`afterEach catch error: ${JSON.stringify(error)}`);
+                console.info(`afterEach catch error: ${JSON.stringify(error)}`);
                 done();
             }
         });
 
     /**
-     * @tc.name   contactApi_isMyCard_empty_test_3400
-     * @tc.number contactApi_isMyCard_empty_test_3400
+     * @tc.name   contactsApi_isMyCard_empty_test_3400
+     * @tc.number contactsApi_isMyCard_empty_test_3400
      * @tc.desc   Function test with undefined context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('contactApi_isMyCard_empty_test_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        const caseName: string = "contactApi_isMyCard_empty_test_3400";
+    it("contactsApi_isMyCard_empty_test_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_isMyCard_empty_test_3400";
+        let cardId: number = await addCard();
         console.info(`${caseName} test start`);
         console.info(`${caseName} cardId: ${cardId}`);
         try {
@@ -141,26 +145,25 @@ export default function EmptyParamCardTest() {
     });
 
     /**
-     * @tc.name   contactApi_isMyCard_empty_test_3500
-     * @tc.number contactApi_isMyCard_empty_test_3500
+     * @tc.name   contactsApi_isMyCard_empty_test_3500
+     * @tc.number contactsApi_isMyCard_empty_test_3500
      * @tc.desc   Function test with undefined contact ID (callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('contactApi_isMyCard_empty_test_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        const caseName: string = "contactApi_isMyCard_empty_test_3500";
+    it("contactsApi_isMyCard_empty_test_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_isMyCard_empty_test_3500";
         console.info(`${caseName} test start`);
-        console.info(`${caseName} cardId: ${cardId}`);
         try {
             let context: Context = AppStorage.get('context') as Context;
             contact.isMyCard(context, undefined, (err: BusinessError, result: boolean) => {
                 if (err) {
-                    console.error(`${caseName} : isMyCard err = ${JSON.stringify(result)}`);
+                    console.error(`${caseName} : isMyCard err = ${err.code}, ${error.message}`);
                     done();
                 } else {
-                    console.error(`${caseName} : result = ${JSON.stringify(result)}`);
-                    expect.assertFail();
+                    console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+                    expect().assertFail();
                     done();
                 }
             });
@@ -172,40 +175,40 @@ export default function EmptyParamCardTest() {
     });
 
     /**
-     * @tc.name   contactApi_saveToExistingContactViaUI_empty_test_3800
-     * @tc.number contactApi_saveToExistingContactViaUI_empty_test_3800
+     * @tc.name   contactsApi_saveToExistingContactViaUI_empty_test_3800
+     * @tc.number contactsApi_saveToExistingContactViaUI_empty_test_3800
      * @tc.desc   Function test with undefined context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('contactApi_saveToExistingContactViaUI_empty_test_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        const caseName: string = "contactApi_saveToExistingContactViaUI_empty_test_3800";
+    it("contactsApi_saveToExistingContactViaUI_empty_test_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_saveToExistingContactViaUI_empty_test_3800";
         console.info(`${caseName} test start`);
         try {
             let testContact: contact.Contact = {};
             const result = await contact.saveToExistingContactViaUI(undefined, testContact);
             console.info(`${caseName} : result = ${JSON.stringify(result)}`);
-            expect(result).assertTrue();
+            expect().assertFail();
             done();
         } catch (error) {
-            console.info(`${caseName} : isMyCard error = ${error.code}, ${error.message}`);
+            console.info(`${caseName} : saveToExistingContactViaUI error = ${error.code}, ${error.message}`);
             expect(error.code == 401).assertTrue();
             done();
         }
     });
 
     /**
-     * @tc.name   contactApi_saveToExistingContactViaUI_empty_test_3900
-     * @tc.number contactApi_saveToExistingContactViaUI_empty_test_3900
+     * @tc.name   contactsApi_saveToExistingContactViaUI_empty_test_3900
+     * @tc.number contactsApi_saveToExistingContactViaUI_empty_test_3900
      * @tc.desc   Function test with undefined context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('contactApi_saveToExistingContactViaUI_empty_test_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:
+    it("contactsApi_saveToExistingContactViaUI_empty_test_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:
     Function) => {
-        const caseName: string = "contactApi_saveToExistingContactViaUI_empty_test_3900";
+        const caseName: string = "contactsApi_saveToExistingContactViaUI_empty_test_3900";
         console.info(`${caseName} test start`);
         try {
             let context: Context = AppStorage.get('context') as Context;
@@ -221,15 +224,15 @@ export default function EmptyParamCardTest() {
     });
 
     /**
-     * @tc.name   contactApi_addContactViaUI_empty_test_4200
-     * @tc.number contactApi_addContactViaUI_empty_test_4200
+     * @tc.name   contactsApi_addContactViaUI_empty_test_4200
+     * @tc.number contactsApi_addContactViaUI_empty_test_4200
      * @tc.desc   Function test with undefined context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('contactApi_addContactViaUI_empty_test_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        const caseName: string = "contactApi_addContactViaUI_empty_test_4200";
+    it("contactsApi_addContactViaUI_empty_test_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_addContactViaUI_empty_test_4200";
         console.info(`${caseName} test start`);
         try {
             let testContact: contact.Contact = {};
@@ -239,21 +242,21 @@ export default function EmptyParamCardTest() {
             done();
         } catch (error) {
             console.info(`${caseName} : addContactViaUI error = ${error.code}, ${error.message}`);
-            expect(error == 401).assertTrue();
+            expect(error.code == 401).assertTrue();
             done();
         }
     });
 
     /**
-     * @tc.name   contactApi_addContactViaUI_empty_test_4300
-     * @tc.number contactApi_addContactViaUI_empty_test_4300
-     * @tc.desc   Function test with undefined context
+     * @tc.name   contactsApi_addContactViaUI_empty_test_4300
+     * @tc.number contactsApi_addContactViaUI_empty_test_4300
+     * @tc.desc   Function test with undefined contact object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('contactApi_addContactViaUI_empty_test_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        const caseName: string = "contactApi_addContactViaUI_empty_test_4300";
+    it("contactsApi_addContactViaUI_empty_test_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_addContactViaUI_empty_test_4300";
         console.info(`${caseName} test start`);
         try {
             let context: Context = AppStorage.get('context') as Context;
@@ -269,37 +272,37 @@ export default function EmptyParamCardTest() {
     });
 
     /**
-     * @tc.name   contactApi_queryContactsCount_empty_test_4500
-     * @tc.number contactApi_queryContactsCount_empty_test_4500
+     * @tc.name   contactsApi_queryContactsCount_empty_test_4500
+     * @tc.number contactsApi_queryContactsCount_empty_test_4500
      * @tc.desc   Function test with undefined context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('contactApi_queryContactsCount_empty_test_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        const caseName: string = "contactApi_queryContactsCount_empty_test_4500";
+    it("contactsApi_queryContactsCount_empty_test_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_queryContactsCount_empty_test_4500";
         console.info(`${caseName} test start`);
         try {
-            const count = await contact.queryContactCount(undefined);
+            const count = await contact.queryContactsCount(undefined);
             console.info(`${caseName} : count = ${JSON.stringify(count)}`);
             done();
         } catch (error) {
-            console.info(`${caseName} : queryContactCount error = ${error.code}, ${error.message}`);
+            console.info(`${caseName} : queryContactsCount error = ${error.code}, ${error.message}`);
             expect(error != null).assertTrue();
             done();
         }
     });
 
     /**
-     * @tc.name   contactApi_addContacts_empty_test_4600
-     * @tc.number contactApi_addContacts_empty_test_4600
-     * @tc.desc   Function test with undefined context
+     * @tc.name   contactsApi_addContacts_empty_test_4600
+     * @tc.number contactsApi_addContacts_empty_test_4600
+     * @tc.desc   Function test with null context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('contactApi_addContacts_empty_test_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        const caseName: string = "contactApi_addContacts_empty_test_4600";
+    it("contactsApi_addContacts_empty_test_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_addContacts_empty_test_4600";
         console.info(`${caseName} test start`);
         try {
             let testContacts: Array<contact.Contact> = [];
@@ -314,15 +317,15 @@ export default function EmptyParamCardTest() {
     });
 
     /**
-     * @tc.name   contactApi_addContacts_empty_test_4700
-     * @tc.number contactApi_addContacts_empty_test_4700
-     * @tc.desc   Function test with undefined context
+     * @tc.name   contactsApi_addContacts_empty_test_4700
+     * @tc.number contactsApi_addContacts_empty_test_4700
+     * @tc.desc   Function test with null contacts array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('contactApi_addContacts_empty_test_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        const caseName: string = "contactApi_addContacts_empty_test_4700";
+    it("contactsApi_addContacts_empty_test_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_addContacts_empty_test_4700";
         console.info(`${caseName} test start`);
         try {
             let context: Context = AppStorage.get('context') as Context;
@@ -336,7 +339,7 @@ export default function EmptyParamCardTest() {
             done();
         }
     });
-    
+
     })
 }
 
