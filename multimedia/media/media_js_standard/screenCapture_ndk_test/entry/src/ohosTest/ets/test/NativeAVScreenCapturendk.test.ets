@@ -541,7 +541,7 @@ export default function nativeAVScreenCaptureNdkTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PICKER_0100
      * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PICKER_0100
-     * @tc.desc   OH_AVScreenCapture_StrategyForPrivacyMaskMode 1
+     * @tc.desc   OH_AVScreenCapture_PresentPicker 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -563,6 +563,23 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(resultStop).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_PresentPicker_0001
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_PresentPicker_0001
+     * @tc.desc   OH_AVScreenCapture_PresentPicker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_PresentPicker_0001', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCapturePresentPickerErr1-------------start :");
+      let result: number = myScreenCaptureNdk.normalAVScreenCapturePresentPickerErr1();
+      console.info(Tag + "normalAVScreenCapturePresentPickerErr1-------------res:" + result);
+      expect(result).assertEqual(0);
+      done();
+    });
+
 
     /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401

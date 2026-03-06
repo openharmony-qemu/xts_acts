@@ -2463,6 +2463,28 @@ static napi_value normalAVScreenCaptureExcludePickerWindows1(napi_env env, napi_
     return retValue;
 }
 
+static napi_value normalAVScreenCapturePresentPickerErr1(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCapture is not nullptr");
+    }
+    uint32_t windowCount = 1;
+    const int32_t *excludWindowIDs = nullptr;
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_PresentPicker(screenCaptureNormal);
+    if (screenCaptureNormal) {
+        OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
 static napi_value normalAVScreenCaptureStrategyForCornerWrapMode1(napi_env env, napi_callback_info info)
 {
     OH_AVScreenCaptureHighlightConfig highlightConfig;
@@ -2719,6 +2741,8 @@ static napi_value Init(napi_env env, napi_value exports)
             normalAVScreenCaptureStrategyForPresenPicker1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureStrategyForPresenPicker3", nullptr,
             normalAVScreenCaptureStrategyForPresenPicker3, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCapturePresentPickerErr1", nullptr, normalAVScreenCapturePresentPickerErr1,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureWindows1", nullptr, normalAVScreenCaptureExcludePickerWindows1,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalScreenAndWindow1", nullptr, normalAVScreenCaptureSetPickerModeScreenAndWindow1,

@@ -63,6 +63,7 @@ export const normalAVScreenCaptureExcludePickerWindows: () => number;
 export const normalAVScreenCaptureExcludePickerWindows2: () => number;
 export const normalAVScreenCaptureStrategyForPresenPicker1: () => number;
 export const normalAVScreenCaptureStrategyForPresenPicker3: () => number;
+export const normalAVScreenCapturePresentPickerErr1: () => number;
 export const normalScreenAndWindow1: () => number;
 export const normalAVScreenCaptureWindows1: () => number;
 export const normalAVScreenCaptureStrategyForCornerWrapMode1: () => number;
