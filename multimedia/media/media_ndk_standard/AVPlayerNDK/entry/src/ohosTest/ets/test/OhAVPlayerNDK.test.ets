@@ -1087,5 +1087,26 @@ export default function OhAVPlayerNDKTest() { // L2
       done();
     });
 
+    /**
+     * @tc.name   testohAvPlayerErrCodeEnum001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_ERRCODE_0100
+     * @tc.desc   Stop playing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testohAvPlayerErrCodeEnum001', Level.LEVEL0,async (done: Function) => {
+      console.info(`testohAvPlayerErrCodeEnum001 test start `);
+      try {
+        let result: number = avplayer.ohAvPlayerErrCodeEnum();
+        console.info(`testOhAvPlayerNDK test result :${result}`);
+        expect(0).assertEqual(result);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testohAvPlayerErrCodeEnum001:${error}`);
+      }
+      console.info(`testohAvPlayerErrCodeEnum001 test end `);
+      done();
+    });
+
   });
 }

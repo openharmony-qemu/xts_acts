@@ -588,6 +588,17 @@ static napi_value OhAvPlayerStop(napi_env env, napi_callback_info info)
 }
 
 
+static napi_value ohAvPlayerErrCodeEnum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t timeout = 5;
+    int32_t res = 1;
+    if (OH_AVErrCode::AV_ERR_TIMEOUT == timeout) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -632,6 +643,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OhCloseFile", nullptr, OhCloseFile, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OhAvPlayerSetFdPathSourceTwo", nullptr, OhAvPlayerSetFdPathSourceTwo, nullptr, nullptr, nullptr, napi_default,
          nullptr},
+        {"ohAvPlayerErrCodeEnum", nullptr, ohAvPlayerErrCodeEnum, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
