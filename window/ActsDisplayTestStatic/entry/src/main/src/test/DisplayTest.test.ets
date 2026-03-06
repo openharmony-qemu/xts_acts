@@ -3386,7 +3386,7 @@ export default function DisplayTest() {
             hilog.info(domain, tag,caseName + 'Succeeded in capture')
             expect(false).assertTrue()
             done()
-        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+        }).catch((err: Error):PromiseLike<void>|undefined => {
             hilog.info(domain, tag,caseName + 'Failed to capture, err: ' + err.code);
             if (err.code === 801) {
             done();
