@@ -114,10 +114,11 @@ describe('rdbStoreDistributedTest', function () {
      */
     it('testRdbStoreDistributed0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed002 start *************");
+        let num = 1;
         try {
             await rdbStore.setDistributedTables([])
             console.info(TAG + "set none to be distributed table success");
-            expect(rdbStore).assertEqual(rdbStore)
+            expect(num).assertEqual(1)
         } catch (err) {
             console.info(TAG + "set none to be distributed table failed");
             expect(null).assertFail();
@@ -136,10 +137,11 @@ describe('rdbStoreDistributedTest', function () {
      */
     it('testRdbStoreDistributed0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed003 start *************");
+        let num = 1;
         try {
             await rdbStore.setDistributedTables(['employee'])
             console.info(TAG + "set employee to be distributed table success");
-            expect(rdbStore).assertEqual(rdbStore)
+            expect(num).assertEqual(1)
         } catch (err) {
             console.info(TAG + "set employee to be distributed table failed");
             expect(null).assertFail();
@@ -158,10 +160,11 @@ describe('rdbStoreDistributedTest', function () {
      */
     it('testRdbStoreDistributed0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed004 start *************");
+        let num = 1;
         try {
             await rdbStore.setDistributedTables(['employee', 'product'])
             console.info(TAG + "set employee and product to be distributed table success");
-            expect(rdbStore).assertEqual(rdbStore)
+            expect(num).assertEqual(1)
         } catch (err) {
             console.info(TAG + "set employee and product to be distributed table failed");
             expect(null).assertFail();

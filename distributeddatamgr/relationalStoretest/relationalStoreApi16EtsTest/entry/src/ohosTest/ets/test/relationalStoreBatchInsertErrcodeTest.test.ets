@@ -578,6 +578,6 @@ export default function relationalStoreBatchInsertErrcodeTest() {
         done();
       }
       console.log(TAG + "************* testRdbStorebatchInsertWithConflictResolutionSyncErrcode0700 end *************");
-    })
+    })     
   })
 }
