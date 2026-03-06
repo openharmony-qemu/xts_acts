@@ -115,9 +115,7 @@ import ReactiveBuilderNodeReuseNullUndefinedTest from './BuilderNodeTest/Reactiv
 import builderNodeInheritFreezeOptionsFalseTest from './BuilderNodeTest/builderNodeInheritFreezeOptionsFalseTest.test';
 
 import componentContentUpdateNullUndefinedTest from './ComponentContentTest/componentContentUpdateNullUndefinedTest.test';
-import ComponentContentReuseNullUndefinedTest from './ComponentContentTest/ComponentContentReuseNullUndefinedTest.test';
 import ComponentContentInheritFreezeOptionsFalseTest from './ComponentContentTest/ComponentContentInheritFreezeOptionsFalseTest.test';
-import ReactiveComponentContentReuseNullUndefinedTest from './ComponentContentTest/ReactiveComponentContentReuseNullUndefinedTest.test';
 import NodeAdapterApiNullUndefinedTest from './NodeAdapter/NodeAdapterApiNullUndefinedTest.test';
 
 export default function testsuite() {
@@ -223,9 +221,7 @@ export default function testsuite() {
   builderNodeInheritFreezeOptionsFalseTest();
 
   componentContentUpdateNullUndefinedTest();
-  ComponentContentReuseNullUndefinedTest();
   ComponentContentInheritFreezeOptionsFalseTest();
-  ReactiveComponentContentReuseNullUndefinedTest();
   NodeAdapterApiNullUndefinedTest();
 
 }

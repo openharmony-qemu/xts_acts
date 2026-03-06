@@ -92,9 +92,7 @@ export default function RichEditorParticiple001() {
       let select = await (driver.findComponent(ON.id('select')) as Promise<Component>)
       await select.click()
       await CommonFunc.sleep(1000);
-
-      await (driver.findComponent(ON.text('复制')) as Promise<Component>)
-      await CommonFunc.sleep(1000);
+      
       let obj = inspector.getInspectorByKey('select');
       let Obj1 = JSON.parseJsonElement(obj);
       expect(Obj1.getString('$type')).assertEqual('Button');

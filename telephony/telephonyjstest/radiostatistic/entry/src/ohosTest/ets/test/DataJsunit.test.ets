@@ -201,7 +201,7 @@ export default function dataJsunit() {
       let caseName = 'Telephony_Data_DefaultCellularDataSimId_DATA_GET_SimId';
       console.log(`==========> ${caseName} Test start ==========>`);
       console.log("Result: "+ data.getDefaultCellularDataSimId());
-      expect(true).assertTrue();
+      expect(data.getDefaultCellularDataSimId != null).assertTrue();
       console.log(`==========> ${caseName} Test end ==========>`);
       done();
     });

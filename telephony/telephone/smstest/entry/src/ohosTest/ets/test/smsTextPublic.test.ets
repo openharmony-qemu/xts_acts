@@ -60,7 +60,7 @@ export default function smsTextPublic() {
   beforeAll(async (done: Function) => {
     console.log('getPermission beforeAll');
     await getPermissions();
-		done();
+    done();
   });
 
   describe('smsTextPublic', () => {
@@ -78,13 +78,13 @@ export default function smsTextPublic() {
      * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTelephonySmsMmsCreateMessage1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonySmsMmsCreateMessage1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage1000';
       console.info(`${caseName} test start`);
       try {
-        sms.createMessage(rawArrayNull, '').then(shortMessage => {
+        sms.createMessage(pdu, "").then(shortMessage => {
           console.info(`${caseName} success:${JSON.stringify(shortMessage)}`);
           expectFalse(true, caseName);
           done();
@@ -107,13 +107,13 @@ export default function smsTextPublic() {
      * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use callback for asynchronous callback. version 10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTelephonySmsMmsCreateMessage1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonySmsMmsCreateMessage1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage1100';
       console.info(`${caseName} test start`);
       try {
-        sms.createMessage(pdu, '', (err: BusinessError, shortMessage: sms.ShortMessage) => {
+        sms.createMessage(pdu, "", (err: BusinessError, shortMessage: sms.ShortMessage) => {
           if (err) {
             console.info(`${caseName} fail :${JSON.stringify(err)}`);
             expectTrue(err.code == 8300001, caseName);
@@ -144,7 +144,7 @@ export default function smsTextPublic() {
       let caseName: string = 'testTelephonySmsMmsCreateMessage1200'
       console.info(`${caseName} test start`);
       try {
-        sms.createMessage(rawArrayNull, '').then(shortMessage => {
+        sms.createMessage(rawArrayNull, specification).then(shortMessage => {
           console.info(`${caseName} success:${JSON.stringify(shortMessage)}`);
           expectFalse(true, caseName);
           done();
@@ -207,6 +207,108 @@ export default function smsTextPublic() {
       } catch (err) {
         console.info(`${caseName} err:${err}`);
         expectFalse(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonySmsMmsSendMessage0200
+     * @tc.number SUB_Telephony_SmsMms_SendMessage_0200
+     * @tc.desc   Send a text message. version 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySmsMmsSendMessage0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySmsMmsSendMessage0200';
+      console.info(`${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expectTrue(hasSim, caseName);
+        if (hasSim) {
+          let sendCallback: AsyncCallback<sms.ISendShortMessageCallback> = (err: BusinessError, data: sms.ISendShortMessageCallback) => {
+            if (err) {
+              console.info(`${caseName} sendCallback: err->${JSON.stringify(err)}`);
+              expectFalse(true, caseName);
+              done();
+            } else {
+              console.info(`${caseName} sendCallback: data->${JSON.stringify(data)}`);
+              expectTrue(data.result == 1, caseName);
+              done();
+            }
+          };
+          let deliveryCallback: AsyncCallback<sms.IDeliveryShortMessageCallback> = (err: BusinessError, data: sms.IDeliveryShortMessageCallback) => {
+            console.info(`deliveryCallback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          };
+          let options: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '短信内容',
+            destinationHost: telphoneErr,
+            serviceCenter: telphoneErr,
+            sendCallback: sendCallback,
+            deliveryCallback: deliveryCallback
+          };
+          sms.sendMessage(null);
+        } else {
+          console.info(`${caseName} no sim`);
+          expectFalse(true, caseName);
+          done();
+        }
+      } catch (err) {
+        console.info(`${caseName} success, err:${err}`);
+        expectTrue(err.code == 401, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonySmsMmsSendMessage0300
+     * @tc.number SUB_Telephony_SmsMms_SendMessage_0300
+     * @tc.desc   Send a text message. version 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySmsMmsSendMessage0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySmsMmsSendMessage0300';
+      console.info(`${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expectTrue(hasSim, caseName);
+        if (hasSim) {
+          let sendCallback: AsyncCallback<sms.ISendShortMessageCallback> = (err: BusinessError, data: sms.ISendShortMessageCallback) => {
+            if (err) {
+              console.info(`${caseName} sendCallback: err->${JSON.stringify(err)}`);
+              expectFalse(true, caseName);
+              done();
+            } else {
+              console.info(`${caseName} sendCallback: data->${JSON.stringify(data)}`);
+              expectTrue(data.result == 1, caseName);
+              done();
+            }
+          };
+          let deliveryCallback: AsyncCallback<sms.IDeliveryShortMessageCallback> = (err: BusinessError, data: sms.IDeliveryShortMessageCallback) => {
+            console.info(`deliveryCallback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          };
+          let options: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '短信内容',
+            destinationHost: telphoneErr,
+            serviceCenter: telphoneErr,
+            sendCallback: sendCallback,
+            deliveryCallback: deliveryCallback
+          };
+          sms.sendMessage(undefined);
+        } else {
+          console.info(`${caseName} no sim`);
+          expectFalse(true, caseName);
+          done();
+        }
+      } catch (err) {
+        console.info(`${caseName} success, err:${err}`);
+        expectTrue(err.code == 401, caseName);
         done();
       }
       console.info(`${caseName} test end`);
@@ -1212,9 +1314,9 @@ export default function smsTextPublic() {
      * @tc.desc   Get the default SIM card slot ID for sending text messages. Use Promise asynchronous callback. version 7
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTelephonySmsMmsGetDefaultSmsSlotId0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonySmsMmsGetDefaultSmsSlotId0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsGetDefaultSmsSlotId0200';
       console.info(`${caseName} test start`);
       try {
@@ -1396,7 +1498,7 @@ export default function smsTextPublic() {
         });
       } catch (err) {
         console.info(`${caseName} err:${err.code}`);
-        expectTrue(err.code == 8300003, caseName);
+        expectFalse(true, caseName);
         done();
       }
       console.info(`${caseName} test end`);
@@ -1414,10 +1516,10 @@ export default function smsTextPublic() {
       let caseName: string = 'testTelephonySmsMmsCreateMessage1400'
       console.info(`${caseName} test start`);
       try {
-        sms.createMessage(null, "[0x1]", (err: BusinessError, shortMessage: sms.ShortMessage) => {
+        sms.createMessage(null, specification, (err: BusinessError, shortMessage: sms.ShortMessage) => {
           if (err) {
             console.info(`${caseName} fail:${JSON.stringify(err)}`);
-            expectTrue(err.code == 401, caseName);
+            expectFalse(true, caseName);
             done();
           } else {
             console.info(`${caseName} success :${JSON.stringify(shortMessage)}`);
@@ -1456,7 +1558,7 @@ export default function smsTextPublic() {
         });
       } catch (err) {
         console.info(`${caseName} err:${err}`);
-        expectTrue(err.code == 8300003, caseName);
+        expectFalse(true, caseName);
         done();
       }
       console.info(`${caseName} test end`);
@@ -1474,17 +1576,197 @@ export default function smsTextPublic() {
       let caseName: string = 'testTelephonySmsMmsCreateMessage1600'
       console.info(`${caseName} test start`);
       try {
-        sms.createMessage(null, "[0x1]").then(shortMessage => {
+        sms.createMessage(null, specification).then(shortMessage => {
           console.info(`${caseName} success:${JSON.stringify(shortMessage)}`);
           expectFalse(true, caseName);
           done();
         }).catch((err: BusinessError) => {
-          expectTrue(err.code == 401, caseName);
+          expectFalse(true, caseName);
           console.info(`${caseName} fail :${JSON.stringify(err)}`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err:${err}`);
+        expectTrue(err.code == 401, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonySmsMmsCreateMessage1700
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_1700
+     * @tc.desc   Send a text message. 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySmsMmsCreateMessage1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySmsMmsCreateMessage1700'
+      console.info(`${caseName} test start`);
+      try {
+        sms.createMessage(undefined, specification, (err: BusinessError, shortMessage: sms.ShortMessage) => {
+          if (err) {
+            console.info(`${caseName} fail:${JSON.stringify(err)}`);
+            expectFalse(true, caseName);
+            done();
+          } else {
+            console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
+            expectFalse(true, caseName);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} success, err:${err}`);
+        expectTrue(err.code == 401, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonySmsMmsCreateMessage1800
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_1800
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use callback for asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySmsMmsCreateMessage1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySmsMmsCreateMessage1800';
+      console.info(`${caseName} test start`);
+      try {
+        sms.createMessage(pdu, null, (err: BusinessError, shortMessage: sms.ShortMessage) => {
+          if (err) {
+            console.info(`${caseName} fail:${JSON.stringify(err)}`);
+            expectFalse(true, caseName);
+            done();
+          } else {
+            console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
+            expectFalse(true, caseName);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} success, err:${err}`);
+        expectTrue(err.code == 401, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonySmsMmsCreateMessage1900
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_1900
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use callback for asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySmsMmsCreateMessage1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySmsMmsCreateMessage1900';
+      console.info(`${caseName} test start`);
+      try {
+        sms.createMessage(pdu, undefined, (err: BusinessError, shortMessage: sms.ShortMessage) => {
+          if (err) {
+            console.info(`${caseName} fail:${JSON.stringify(err)}`);
+            expectFalse(true, caseName);
+            done();
+          } else {
+            console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
+            expectFalse(true, caseName);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} success, err:${err}`);
+        expectTrue(err.code == 401, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonySmsMmsCreateMessage2000
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_2000
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySmsMmsCreateMessage2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySmsMmsCreateMessage2000';
+      console.info(`${caseName} test start`);
+      try {
+        sms.createMessage(pdu, null).then(shortMessage => {
+          console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
+          expectFalse(true, caseName);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail:${JSON.stringify(err)}`);
+          expectFalse(true, caseName);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} success, err:${err}`);
+        expectTrue(err.code == 401, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonySmsMmsCreateMessage2100
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_2100
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySmsMmsCreateMessage2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySmsMmsCreateMessage2100';
+      console.info(`${caseName} test start`);
+      try {
+        sms.createMessage(pdu, undefined).then(shortMessage => {
+          console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
+          expectFalse(true, caseName);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail:${JSON.stringify(err)}`);
+          expectFalse(true, caseName);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} success, err:${err}`);
+        expectTrue(err.code == 401, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonySmsMmsCreateMessage2200
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_2200
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySmsMmsCreateMessage2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySmsMmsCreateMessage2200'
+      console.info(`${caseName} test start`);
+      try {
+        sms.createMessage(undefined, specification).then(shortMessage => {
+          console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
+          expectFalse(true, caseName);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail:${JSON.stringify(err)}`);
+          expectFalse(true, caseName);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
@@ -1595,5 +1877,82 @@ export default function smsTextPublic() {
       }
       console.info(`${caseName} test end`);
     });
+
+    /**
+     * @tc.name   testTelephonySmsMmsSendShortMessage3300
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_3300
+     * @tc.desc   401 Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySmsMmsSendShortMessage3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessage3300';
+      console.info(`${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expectTrue(hasSim, caseName);
+        if (hasSim) {
+          sms.sendShortMessage(undefined, (err: BusinessError) => {
+            if (err) {
+              console.info(`${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expectFalse(true, caseName);
+              done();
+            } else {
+              console.info(`${caseName}: fail`);
+              expectFalse(true, caseName);
+              done();
+            }
+          });
+        } else {
+          console.info(`${caseName} no sim`);
+          expectFalse(true, caseName);
+          done();
+        }
+      } catch (err) {
+        console.info(`${caseName} success, err:${err}`);
+        expectTrue(err.code == 401, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonySmsMmsSendShortMessage3400
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_3400
+     * @tc.desc   401 Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySmsMmsSendShortMessage3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessage3400';
+      console.info(`${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expectTrue(hasSim, caseName);
+        if (hasSim) {
+          sms.sendShortMessage(undefined).then(() => {
+            console.info(`${caseName} fail`);
+            expectFalse(true, caseName);
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expectFalse(true, caseName);
+            done();
+          });
+        } else {
+          console.info(`${caseName} no sim`);
+          expectFalse(true, caseName);
+          done();
+        }
+      } catch (err) {
+        console.info(`${caseName} success, err:${err}`);
+        expectTrue(err.code == 401, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
   });
 }

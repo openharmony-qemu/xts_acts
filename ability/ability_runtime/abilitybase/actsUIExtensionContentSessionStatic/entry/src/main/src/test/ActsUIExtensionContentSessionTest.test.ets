@@ -37,6 +37,7 @@ const PARAM_FAIL: string = 'fail';
 const PARAM_TRUE: string = 'true';
 const PARAM_FALSE: string = 'false';
 const EVENT_TERMINATE: string = 'terminate';
+const SUCCESS: int = 0;
 const ERROR_CODE_401: int = 401;
 const ERROR_CODE_1600050: int = 16000050;
 const TEST_RESULT_KEY: string = 'result';
@@ -152,6 +153,269 @@ export default function ActsUIExtensionContentSessionTest() {
             }
             hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB result:` + result);
             expect(result).assertEqual(ERROR_CODE_1600050);
+            commonEventManager.publish(EVENT_TERMINATE,() => {});
+            commonEventManager.unsubscribe(subscriber, (err, data) => {
+              done();
+            });
+          });
+          testAbilityContext?.startAbility({
+            bundleName: BUNDLE_NAME,
+            abilityName: ABILITY_NAME,
+            parameters:{
+              'caseTag': TEST_CASE_NAME
+            } as Record<string, RecordData>
+          }, (err: BusinessError | null, data)=>{
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility ${err?.code}`);
+          })
+        });
+      } else if (mpEnable === PARAM_FALSE) {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} function not enable.`);
+        expect(mpEnable).assertEqual(PARAM_FALSE);
+        done();
+      } else {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wrong param.`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
+    });
+
+    /**
+     * @tc.number  SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_static_0600
+     * @tc.name    SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_static_0600
+     * @tc.desc    Test load content by empty name and valid storage.
+     */
+    it('SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_static_0600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_static_0600';
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
+
+      if (mpEnable === PARAM_TRUE) {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [TEST_CASE_NAME + '_event']
+        };
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub = subscriber;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} createSubscriber success`);
+          commonEventManager.subscribe(sub, (err: BusinessError|null,
+            eventData: commonEventManager.CommonEventData|undefined ) => {
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB` + JSON.stringify(eventData));
+            let result: int = 0;
+            if (eventData?.parameters?.[TEST_RESULT_KEY]) {
+              result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
+            }
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB result:` + result);
+            expect(result).assertEqual(SUCCESS);
+            commonEventManager.publish(EVENT_TERMINATE,() => {});
+            commonEventManager.unsubscribe(subscriber, (err, data) => {
+              done();
+            });
+          });
+          testAbilityContext?.startAbility({
+            bundleName: BUNDLE_NAME,
+            abilityName: ABILITY_NAME,
+            parameters:{
+              'caseTag': TEST_CASE_NAME
+            } as Record<string, RecordData>
+          }, (err: BusinessError | null, data)=>{
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility ${err?.code}`);
+          })
+        });
+      } else if (mpEnable === PARAM_FALSE) {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} function not enable.`);
+        expect(mpEnable).assertEqual(PARAM_FALSE);
+        done();
+      } else {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wrong param.`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
+    });
+
+    /**
+     * @tc.number  SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_static_0800
+     * @tc.name    SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_static_0800
+     * @tc.desc    Test load content by valid name only.
+     */
+    it('SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_static_0800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_static_0800';
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
+
+      if (mpEnable === PARAM_TRUE) {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [TEST_CASE_NAME + '_event']
+        };
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub = subscriber;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} createSubscriber success`);
+          commonEventManager.subscribe(sub, (err: BusinessError|null,
+            eventData: commonEventManager.CommonEventData|undefined ) => {
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB` + JSON.stringify(eventData));
+            let result: int = 0;
+            if (eventData?.parameters?.[TEST_RESULT_KEY]) {
+              result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
+            }
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB result:` + result);
+            expect(result).assertEqual(SUCCESS);
+            commonEventManager.publish(EVENT_TERMINATE,() => {});
+            commonEventManager.unsubscribe(subscriber, (err, data) => {
+              done();
+            });
+          });
+          testAbilityContext?.startAbility({
+            bundleName: BUNDLE_NAME,
+            abilityName: ABILITY_NAME,
+            parameters:{
+              'caseTag': TEST_CASE_NAME
+            } as Record<string, RecordData>
+          }, (err: BusinessError | null, data)=>{
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility ${err?.code}`);
+          })
+        });
+      } else if (mpEnable === PARAM_FALSE) {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} function not enable.`);
+        expect(mpEnable).assertEqual(PARAM_FALSE);
+        done();
+      } else {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wrong param.`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
+    });
+
+    /**
+     * @tc.number  Sub_UIExtensionContentSession_errorCode_static_1300
+     * @tc.name    Sub_UIExtensionContentSession_errorCode_static_1300
+     * @tc.desc    getUIExtensionWindowProxy function test with rect values validation (width>0, height>0)
+     */
+    it('Sub_UIExtensionContentSession_errorCode_static_1300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const TEST_CASE_NAME: string = 'Sub_UIExtensionContentSession_errorCode_static_1300';
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
+
+      if (mpEnable === PARAM_TRUE) {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [TEST_CASE_NAME + '_event']
+        };
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub = subscriber;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} createSubscriber success`);
+          commonEventManager.subscribe(sub, (err: BusinessError|null,
+            eventData: commonEventManager.CommonEventData|undefined ) => {
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB` + JSON.stringify(eventData));
+            let result: int = 0;
+            if (eventData?.parameters?.[TEST_RESULT_KEY]) {
+              result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
+            }
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB result:` + result);
+            expect(result).assertEqual(SUCCESS);
+            commonEventManager.publish(EVENT_TERMINATE,() => {});
+            commonEventManager.unsubscribe(subscriber, (err, data) => {
+              done();
+            });
+          });
+          testAbilityContext?.startAbility({
+            bundleName: BUNDLE_NAME,
+            abilityName: ABILITY_NAME,
+            parameters:{
+              'caseTag': TEST_CASE_NAME
+            } as Record<string, RecordData>
+          }, (err: BusinessError | null, data)=>{
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility ${err?.code}`);
+          })
+        });
+      } else if (mpEnable === PARAM_FALSE) {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} function not enable.`);
+        expect(mpEnable).assertEqual(PARAM_FALSE);
+        done();
+      } else {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wrong param.`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
+    });
+
+    /**
+     * @tc.number  Sub_UIExtensionContentSession_SetWindowPrivacyMode_static_0100
+     * @tc.name    Sub_UIExtensionContentSession_SetWindowPrivacyMode_static_0100
+     * @tc.desc    Test setWindowPrivacyMode promise 
+     */
+    it('Sub_UIExtensionContentSession_SetWindowPrivacyMode_static_0100', TestType.FUNCTION | Size.MEDIUMTEST
+      | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      const TEST_CASE_NAME: string = 'Sub_UIExtensionContentSession_SetWindowPrivacyMode_static_0100';
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
+
+      if (mpEnable === PARAM_TRUE) {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [TEST_CASE_NAME + '_event']
+        };
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub = subscriber;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} createSubscriber success`);
+          commonEventManager.subscribe(sub, (err, eventData) => {
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB` + JSON.stringify(eventData));
+            let result: int = 0;
+            if (eventData?.parameters?.[TEST_RESULT_KEY]) {
+              result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
+            }
+            expect(result).assertEqual(SUCCESS);
+            commonEventManager.publish(EVENT_TERMINATE,() => {});
+            commonEventManager.unsubscribe(subscriber, (err, data) => {
+              done();
+            });
+          });
+          testAbilityContext?.startAbility({
+            bundleName: BUNDLE_NAME,
+            abilityName: ABILITY_NAME,
+            parameters:{
+              'caseTag': TEST_CASE_NAME
+            } as Record<string, RecordData>
+          }, (err: BusinessError | null, data)=>{
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility ${err?.code}`);
+          })
+        });
+      } else if (mpEnable === PARAM_FALSE) {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} function not enable.`);
+        expect(mpEnable).assertEqual(PARAM_FALSE);
+        done();
+      } else {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wrong param.`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
+    });
+
+    /**
+     * @tc.number  Sub_UIExtensionContentSession_SetWindowPrivacyMode_static_0200
+     * @tc.name    Sub_UIExtensionContentSession_SetWindowPrivacyMode_static_0200
+     * @tc.desc    Test setWindowPrivacyMode callback 
+     */
+    it('Sub_UIExtensionContentSession_SetWindowPrivacyMode_static_0200', TestType.FUNCTION | Size.MEDIUMTEST
+      | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      const TEST_CASE_NAME: string = 'Sub_UIExtensionContentSession_SetWindowPrivacyMode_static_0200';
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
+
+      if (mpEnable === PARAM_TRUE) {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [TEST_CASE_NAME + '_event']
+        };
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub = subscriber;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} createSubscriber success`);
+          commonEventManager.subscribe(sub, (err, eventData) => {
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB` + JSON.stringify(eventData));
+            let result: int = 0;
+            if (eventData?.parameters?.[TEST_RESULT_KEY]) {
+              result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
+            }
+            expect(result).assertEqual(SUCCESS);
             commonEventManager.publish(EVENT_TERMINATE,() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {
               done();

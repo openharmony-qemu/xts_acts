@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import runningLock from '@ohos.runningLock';
 import deviceInfo from '@ohos.deviceInfo';
+import runningLock from '@ohos.runningLock';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
 export default function RunningLockTest() {

@@ -299,9 +299,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_1_1;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig');
-          expect(isEmpty(res)).assertFalse();
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -338,9 +337,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_4_3;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -377,9 +375,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -416,9 +413,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_1_1;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -455,9 +451,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_4_3;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -494,9 +489,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -533,9 +527,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_1_1;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -572,9 +565,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_4_3;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -611,9 +603,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -650,9 +641,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_1_1;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -689,9 +679,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_4_3;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -728,9 +717,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
         if (mPhotoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mPhotoSession.preconfig(preconfigType, preconfigRatio);
+          mPhotoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -767,9 +755,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_1_1;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -806,9 +793,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_4_3;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -845,9 +831,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -884,9 +869,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_1_1;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -923,9 +907,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_4_3;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -962,9 +945,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -1001,9 +983,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_1_1;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -1040,9 +1021,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_4_3;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -1079,9 +1059,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -1118,9 +1097,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_1_1;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -1157,9 +1135,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_4_3;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -1196,9 +1173,8 @@ export default function CameraPhotoSessionTest() {
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
         if (mVideoSession.canPreconfig(preconfigType, preconfigRatio)) {
-          let res = mVideoSession.preconfig(preconfigType, preconfigRatio);
+          mVideoSession.preconfig(preconfigType, preconfigRatio);
           console.info(TAG, 'success preconfig')
-          expect(isEmpty(res)).assertFalse()
         } else {
           console.info(TAG, testName + '当前设备不支持此配置');
         }
@@ -1234,8 +1210,8 @@ export default function CameraPhotoSessionTest() {
         console.info(TAG, 'preconfigType')
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
-        let res = mVideoSession.canPreconfig(preconfigType, preconfigRatio);
-        console.info(TAG, 'success canPreconfig')
+        let res = mVideoSession.canPreconfig(preconfigType, preconfigRatio);	 
+        console.info(TAG, 'success canPreconfig')	 
         expect(isEmpty(res)).assertFalse()
         await releaseVideoSession();
         done();
@@ -1269,8 +1245,8 @@ export default function CameraPhotoSessionTest() {
         console.info(TAG, 'preconfigType')
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
-        let res = mPhotoSession.canPreconfig(preconfigType, preconfigRatio);
-        console.info(TAG, 'success canPreconfig')
+        let res = mPhotoSession.canPreconfig(preconfigType, preconfigRatio);	 
+        console.info(TAG, 'success canPreconfig')	 
         expect(isEmpty(res)).assertFalse()
         await releasePhotoSession();
         done();

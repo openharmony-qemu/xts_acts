@@ -311,11 +311,10 @@ export default function HasCard2PublicTest() {
     it('testTelephonyCallManagerIsEmergencyPhoneNumber1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1100';
       console.info(`${caseName} test start`);
-      const phoneNumber: string = "";
       const options: call.EmergencyNumberOptions = {
         slotId: 0
       };
-      call.isEmergencyPhoneNumber(phoneNumber, options, (err: BusinessError, data: boolean) => {
+      call.isEmergencyPhoneNumber("", options, (err: BusinessError, data: boolean) => {
         if (err) {
           console.info(`${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
           ExpectTrue(err.code == 8300001);
@@ -326,7 +325,7 @@ export default function HasCard2PublicTest() {
           done();
         }
       });
-      console.info(`${caseName} test start`);
+      console.info(`${caseName} test end`);
     });
 
     /**
@@ -416,6 +415,71 @@ export default function HasCard2PublicTest() {
     });
 
     /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber1600
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1600
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerIsEmergencyPhoneNumber1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1600';
+      console.info(`${caseName} test start`);
+      const options: call.EmergencyNumberOptions = {
+        slotId: 0
+      };
+      try {
+        call.isEmergencyPhoneNumber(undefined, options, (err: BusinessError, data: boolean) => {
+          if (err) {
+            console.info(`${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} isEmergencyPhoneNumber fail, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log(`${caseName} : isEmergencyPhoneNumber: err->` + JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber1700
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1700
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerIsEmergencyPhoneNumber1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1700';
+      console.info(`${caseName} test start`);
+      try {
+        call.isEmergencyPhoneNumber("110", null, (err: BusinessError, data: boolean) => {
+          if (err) {
+            console.info(`${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} isEmergencyPhoneNumber fail, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log(`${caseName} : isEmergencyPhoneNumber: err->` + JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
      * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber1800
      * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1800
      * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
@@ -451,6 +515,37 @@ export default function HasCard2PublicTest() {
     });
 
     /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber1900
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1900
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerIsEmergencyPhoneNumber1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1900';
+      console.info(`${caseName} test start`);
+      try {
+        call.isEmergencyPhoneNumber("110", undefined, (err: BusinessError, data: boolean) => {
+          if (err) {
+            console.info(`${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} isEmergencyPhoneNumber fail, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log(`${caseName} : isEmergencyPhoneNumber: err->` + JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
      * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber2000
      * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2000
      * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
@@ -480,6 +575,37 @@ export default function HasCard2PublicTest() {
       }else{
         console.info(`${caseName}：Not support dual SIM cards.`);
         ExpectTrue(true);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber2100
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2100
+     * @tc.desc   Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerIsEmergencyPhoneNumber2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber2100';
+      console.info(`${caseName} test start`);
+      try {
+        call.isEmergencyPhoneNumber(undefined, (err: BusinessError, data: boolean) => {
+          if (err) {
+            console.info(`${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} isEmergencyPhoneNumber fail, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log(`${caseName} : isEmergencyPhoneNumber: err->` + JSON.stringify(err));
+        ExpectTrue(err.code == 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -608,6 +734,88 @@ export default function HasCard2PublicTest() {
         ExpectFail();
         done();
       });
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber3400
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_3400
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerIsEmergencyPhoneNumber3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber3400';
+      console.info(`${caseName} test start`);
+      call.isEmergencyPhoneNumber("").then((data: boolean) => {
+        console.info(`${caseName} isEmergencyPhoneNumber fail, promise: data->${JSON.stringify(data)}`);
+        ExpectFail();
+        done();
+      }).catch((err: BusinessError) => {
+        console.info(`${caseName} isEmergencyPhoneNumber, promise: err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 8300001);
+        done();
+      });
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber3500
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_3500
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerIsEmergencyPhoneNumber3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber3500';
+      console.info(`${caseName} test start`);
+      try {
+        call.isEmergencyPhoneNumber(undefined).then((data: boolean) => {
+          console.info(`${caseName} isEmergencyPhoneNumber fail, promise: data->${JSON.stringify(data)}`);
+          ExpectFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} isEmergencyPhoneNumber fail, promise: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+        console.log(`${caseName} : isEmergencyPhoneNumber: err->` + JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+
+    /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber3600
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_3600
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerIsEmergencyPhoneNumber3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber3600';
+      console.info(`${caseName} test start`);
+      try {
+        call.isEmergencyPhoneNumber(null).then((data: boolean) => {
+          console.info(`${caseName} isEmergencyPhoneNumber fail, promise: data->${JSON.stringify(data)}`);
+          ExpectFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} isEmergencyPhoneNumber fail, promise: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+        console.log(`${caseName} : isEmergencyPhoneNumber: err->` + JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
       console.info(`${caseName} test end`);
     });
 
@@ -1161,5 +1369,170 @@ export default function HasCard2PublicTest() {
       }
       console.info(`${caseName} test end`);
     });
+
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber2000
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_2000
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerFormatPhoneNumber2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber2000';
+      console.info(`${caseName} test start`);
+      let options: call.NumberFormatOptions = {
+        countryCode: "CN"
+      };
+      try {
+        call.formatPhoneNumber("", options, (err: BusinessError, data: string) => {
+          if (err) {
+            console.info(`${caseName} formatPhoneNumber success, err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 8300001);
+            done();
+          } else {
+            console.info(`${caseName} formatPhoneNumber fail, data-> ${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}  fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber2100
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_2100
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerFormatPhoneNumber2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber2100';
+      console.info(`${caseName} test start`);
+      let options: call.NumberFormatOptions = {
+        countryCode: "CN"
+      };
+      try {
+        call.formatPhoneNumber(undefined, options, (err: BusinessError, data: string) => {
+          if (err) {
+            console.info(`${caseName} formatPhoneNumber fail, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} formatPhoneNumber fail, data-> ${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}  success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber2200
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_2200
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerFormatPhoneNumber2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber2200';
+      console.info(`${caseName} test start`);
+      try {
+        call.formatPhoneNumber(phoneNumber, undefined, (err: BusinessError, data: string) => {
+          if (err) {
+            console.info(`${caseName} formatPhoneNumber fail, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} formatPhoneNumber fail, data-> ${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}  fail, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber2300
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_2300
+     * @tc.desc   Formatting the phone numbers. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerFormatPhoneNumber2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber2300';
+      console.info(`${caseName} test start`);
+      try {
+        call.formatPhoneNumber(undefined, (err: BusinessError, data: string) => {
+          if (err) {
+            console.info(`${caseName} formatPhoneNumber fail, err-> ${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} formatPhoneNumber fail, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}  success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber2400
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_2400
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerFormatPhoneNumber2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber2400';
+      console.info(`${caseName} test start`);
+      let options: call.NumberFormatOptions = {
+        countryCode: "CN"
+      };
+      try {
+        call.formatPhoneNumber(null, options, (err: BusinessError, data: string) => {
+          if (err) {
+            console.info(`${caseName} formatPhoneNumber fail, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} formatPhoneNumber fail, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}  success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
   });
 }

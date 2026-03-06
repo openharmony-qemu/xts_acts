@@ -14,10 +14,10 @@
  */
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
-import { MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils.ets';
-import { BuildSignVerifyData, GetNoDigestSignOptions, SignVerify, SignVerifyData } from './utils/huks/SignVerifyUtils.ets';
-import { GetSm2GenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
+import { MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
+import { BuildSignVerifyData, GetNoDigestSignOptions, SignVerify, SignVerifyData } from './utils/huks/SignVerifyUtils';
+import { GetSm2GenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { Logger } from './utils/common/Logger';
 
 
 export default function SecurityHuksSignVerifySM2Test() {

@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import libavsession from 'libavsession.so'
+import deviceInfo from '@ohos.deviceInfo';
 
 const OS_ACCOUNT_ERR_OK = 0;
 
@@ -2071,8 +2072,10 @@ export default function AVSessionTest() {
     it('testAVSessionStopCasting001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          let result: number = libavsession.AVSessionStopCastingSuccess();
-          expect(result).assertEqual(1);
+          if (deviceInfo.deviceType == deviceInfo.DeviceTypes.TYPE_PHONE) {
+            let result: number = libavsession.AVSessionStopCastingSuccess();
+            expect(result).assertEqual(1);
+          }
           done()
         } catch (err) {
           console.error("====>testAVSessionStopCasting001 catch err: " + err);

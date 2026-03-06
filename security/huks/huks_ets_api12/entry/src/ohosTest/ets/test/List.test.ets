@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import SecurityHuksAccessControlAsUserTest from './SecurityHuksAccessControlAsUser.test';
+import SecurityHuksAccessControlAsUserTest from './SecurityHuksAccessControlMultiUser.test';
 import SecurityHuksCipherSM4Test from './SecurityHuksCipherSM4.test';
 import SecurityHuksKeyGenerateListAliasesTest from './SecurityHuksKeyGenerateListAliases.test';
 import SecurityHuksCmacTest from './SecurityHuksCmac.test';
@@ -23,14 +23,16 @@ import SecurityHuksCipherDESTest from './SecurityHuksCipherDES.test';
 import SecurityHuksCipher3DESTest from './SecurityHuksCipher3DES.test';
 import SecurityHuksImportTest from './SecurityHuksImport.test';
 import SecurityHuksKeyAttestationTest from './SecurityHuksKeyAttestation.test';
-import SecurityHuksInterfaceErrorCodeTest from './SecurityHuksInterfaceErrorCode.test';
 import SecurityHuksWrapKeyTest from './SecurityHuksWrapKey.test';
 import SecurityHuksAccessControlUserAuthTest from './SecurityHuksAccessControlUserAuth.test';
-import SecurityHuksApiTest from './SecurityHuksApi.test';
+import SecurityHuksApiTest from './SecurityHuksApiCoverEnum.test';
 import SecurityHuksKeyGenerateOverrideTest from './SecurityHuksKeyGenerateOverride.test';
 import SecurityHuksSignVerifySM2Test from './SecurityHuksSignVerifySM2.test';
-import SecurityHuksGroupAPI23Test from './SecurityHuksGroupAPI23.test';
-import SecurityHuksApiCover from './SecurityHuksApiCover.test';
+import SecurityHuksGroupAPI23Test from './SecurityHuksAccessControlGroup.test';
+import SecurityHuksApiCoverInterfaceErrorCodeCallback from './SecurityHuksApiCoverInterfaceErrorCodeCallback.test';
+import SecurityHuksApiCoverInterfaceErrorCode from './SecurityHuksApiCoverInterfaceErrorCode.test';
+import SecurityHuksApiCoverInterfaceParamCallback from './SecurityHuksApiCoverInterfaceParamCallback.test';
+import SecurityHuksApiCoverInterfaceParam from './SecurityHuksApiCoverInterfaceParam.test';
 
 export default function testsuite() {
   SecurityHuksAccessControlAsUserTest();
@@ -44,12 +46,14 @@ export default function testsuite() {
   SecurityHuksCipher3DESTest();
   SecurityHuksImportTest();
   SecurityHuksKeyAttestationTest();
-  SecurityHuksInterfaceErrorCodeTest();
   SecurityHuksWrapKeyTest();
   SecurityHuksAccessControlUserAuthTest();
   SecurityHuksApiTest();
   SecurityHuksKeyGenerateOverrideTest();
   SecurityHuksSignVerifySM2Test();
   SecurityHuksGroupAPI23Test();
-  SecurityHuksApiCover();
+  SecurityHuksApiCoverInterfaceErrorCodeCallback();
+  SecurityHuksApiCoverInterfaceErrorCode();
+  SecurityHuksApiCoverInterfaceParam();
+  SecurityHuksApiCoverInterfaceParamCallback();
 }

@@ -30,6 +30,7 @@ import ImageContentEmpty from './ImageContentTest/ImageContentEmpty.test';
 import ImageOnError from './ImageErrorTest/ImageOnError.test';
 
 export default function testsuite() {
+  textAreaInputTest();
   ContentTypeTest1();
   ContentTypeTest2();
   symbolGlyphFontScaleTest();
@@ -44,5 +45,4 @@ export default function testsuite() {
   ImageContentEmpty();
   ImageOnError();
   HapticFeedbackModeTest();
-  textAreaInputTest();
 }

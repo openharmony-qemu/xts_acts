@@ -93,7 +93,7 @@ it('Grid_ReachStartAndEnd4_static_0500', Level.LEVEL0, async (done: () => void):
       await (button1?.click() as Promise<void>)
 
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ReachStartAndEnd_grid')
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
         (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`}`)).toInt(),
         (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
@@ -101,7 +101,7 @@ it('Grid_ReachStartAndEnd4_static_0500', Level.LEVEL0, async (done: () => void):
         1000);
       await CommonFunc.sleep(2000);
 
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
         (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`}`)).toInt(),
         (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
