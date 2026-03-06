@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import WebViewNativeMediaPlayerHandler5 from './WebViewNativeMediaPlayerHandler5.test';
 import WebViewNativeVideoUpdateRect from './WebViewNativeMediaUpdateRect.test';
 import WebViewNativeMediaPlayerEnableFalse from './WebViewNativeMediaPlayerEnableFalse.test';
 import WebViewNativeMediaPlayerHandlerEnhanced from './WebViewNativeMediaPlayerHandlerEnhanced.test';
@@ -24,9 +23,9 @@ import WebViewNativeMediaPlayerHandler7 from './WebViewNativeMediaPlayerHandler7
 import WebViewNativeMediaPlayerHandler8 from './WebViewNativeMediaPlayerHandler8.test';
 import WebViewNativeMediaPlayerHandler9 from './WebViewNativeMediaPlayerHandler9.test';
 import WebViewNativeMediaPlayerHandler10 from './WebViewNativeMediaPlayerHandler10.test';
+import WebViewNativeMediaPlayerHandler5 from './WebViewNativeMediaPlayerHandler5.test';
 
 export default function testsuite() {
-  WebViewNativeMediaPlayerHandler5()
   WebViewNativeVideoUpdateRect()
   WebViewNativeMediaPlayerEnableFalse()
   WebViewNativeMediaPlayerHandlerEnhanced()
@@ -38,5 +37,6 @@ export default function testsuite() {
   WebViewNativeMediaPlayerHandler8()
   WebViewNativeMediaPlayerHandler9()
   WebViewNativeMediaPlayerHandler10()
+  WebViewNativeMediaPlayerHandler5()
 
 }
