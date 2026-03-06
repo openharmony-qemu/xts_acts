@@ -431,7 +431,7 @@ export default function NetworkManagerMdnsTest() {
             discoveryService.startSearchingMDNS();
             await sleep(500);
             removeTheService(localServiceInfo);
-            ExpectTrue(true);
+            ExpectTrue(data != null);
             done();
           }
         });
