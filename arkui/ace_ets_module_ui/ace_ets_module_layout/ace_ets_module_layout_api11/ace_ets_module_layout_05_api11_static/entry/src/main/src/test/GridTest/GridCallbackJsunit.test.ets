@@ -81,7 +81,7 @@ it('GridCallbackJsunit_static_1000', Level.LEVEL0, async (done: () => void): Pro
       let height = bottom -top
       console.log('[GridCallbackJsunit_static_1000] grid 2 top:' + top +" bottom:" + bottom + "left: " + left + " right:" + right)
       let driver = Driver.create()
-      driver.swipe((Math.round((left + width/2))).toInt(), (Math.round(top + height * 0.6)).toInt(), (Math.round((left + width/2))).toInt(), (Math.round(top + height * 0.1)).toInt());
+      await driver.swipe((Math.round((left + width/2))).toInt(), (Math.round(top + height * 0.6)).toInt(), (Math.round((left + width/2))).toInt(), (Math.round(top + height * 0.1)).toInt());
       await CommonFunc.sleep(2000);
       let onReachStartText = await (driver!.findComponent(ON.id('onReachStartText')) as Promise<Component>);
 
