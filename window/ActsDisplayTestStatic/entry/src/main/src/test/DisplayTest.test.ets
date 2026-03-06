@@ -3234,7 +3234,7 @@ export default function DisplayTest() {
     });
 
         /**
-    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6190
     * @tc.name      testCaptureStatusChange_VirtualScreenCreateDestroy_static_0200
     * @tc.desc      testCaptureStatusChange returns true when create virtual screen and false when destroy virtual screen
     * @tc.size      MediumTest
