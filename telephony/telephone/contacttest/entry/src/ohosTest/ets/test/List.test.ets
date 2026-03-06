@@ -49,4 +49,5 @@ export default function testsuite() {
   ContactsTest()
   AddContactsTest();
   EmptyParamTest();
+  EmptyParamCardTest();
 }

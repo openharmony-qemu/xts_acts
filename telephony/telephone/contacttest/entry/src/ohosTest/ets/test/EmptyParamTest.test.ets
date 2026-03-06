@@ -151,7 +151,7 @@ export default function EmptyParamTest() {
     it("contactsApi_select_empty_test_300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('context') as Context;
-            const contactData: contact.Contact = {name: { fullName: "测试"}， phoneNumbers: [{ phoneNumber: "13800000000" }] };
+            const contactData: contact.Contact = {name: { fullName: "测试"}, phoneNumbers: [{ phoneNumber: "13800000000" }] };
             await contact.addContact(context, contactData);
             const options: contact.ContactSelectionOptions = {};
             contact.selectContacts(options).then((contacts: contact.Contact[]) => {
@@ -186,7 +186,7 @@ export default function EmptyParamTest() {
     it("contactsApi_select_empty_test_400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('context') as Context;
-            const contactData: contact.Contact = {name: { fullName: "测试"}， phoneNumbers: [{ phoneNumber: "13800000000" }] };
+            const contactData: contact.Contact = {name: { fullName: "测试"}, phoneNumbers: [{ phoneNumber: "13800000000" }] };
             await contact.addContact(context, contactData);
             const options: contact.ContactSelectionOptions = {};
             contact.selectContacts(options, (err: BusinessError, contacts: contact.Contact[]) => {
@@ -841,7 +841,7 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('null') as Context;
-            const card = await contact.queryMyCard(context, null).then(() => {
+            const card = await contact.queryMyCard(context).then(() => {
                 console.info("contactsApi_query_empty_test_2700: query success");
                 done();
             }).catch((error: BusinessError) => {
