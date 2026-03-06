@@ -99,9 +99,7 @@
         "MainAbility/pages/BuilderNode/builderNodeInheritFreezeOptionsFalse",
 
         "MainAbility/pages/ComponentContent/componentContentUpdateNullUndefined",
-        "MainAbility/pages/ComponentContent/ComponentContentReuseNullUndefined",
         "MainAbility/pages/ComponentContent/ComponentContentInheritFreezeOptionsFalse",
-        "MainAbility/pages/ComponentContent/ReactiveComponentContentReuseNullUndefined",
         "MainAbility/pages/NodeAdapter/NodeAdapterApiNullUndefined"
     ]
 }
