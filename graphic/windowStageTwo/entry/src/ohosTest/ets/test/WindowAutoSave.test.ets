@@ -1853,11 +1853,10 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse();
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertFalse();
+            expect(true).assertFalse();
             done();
           }
         })

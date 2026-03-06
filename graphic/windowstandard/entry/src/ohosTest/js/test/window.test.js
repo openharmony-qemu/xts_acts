@@ -1028,7 +1028,7 @@ export default function window_test() {
                         expect(data != null).assertTrue();
                         data.on('windowSizeChange', windowSizeChangeCallback);
                         data.off('windowSizeChange');
-                        expect(true).assertTrue()
+                        
                         done()
                     }
                 })
@@ -4024,7 +4024,7 @@ export default function window_test() {
             } catch (error) {
                 console.log('www data Failed to obtain the window limits of window. Cause: ' + JSON.stringify(error));
                 if (error.code == 801) {
-                    expect(true).assertTrue()
+                    
                     done()
                 } else {
                     expect().assertFail();
@@ -4062,7 +4062,7 @@ export default function window_test() {
                                         expect().assertFail()
                                     }
                                     console.info(msgStr + 'Succeeded in minimizing the window.');
-                                    expect(true).assertTrue()
+                                    
                                     wnd.destroy((err) => {
                                         if (err.code) {
                                             console.error(msgStr + ' Failed to destroy the window. err:' + JSON.stringify(err));
@@ -4130,7 +4130,7 @@ export default function window_test() {
                                 let promise = wnd.minimize();
                                 promise.then(() => {
                                     console.info(msgStr + 'Succeeded in minimizing the window.');
-                                    expect(true).assertTrue()
+                                    
                                     wnd.destroy((err) => {
                                         if (err.code) {
                                             console.error(msgStr + ' Failed to destroy the window. err:' + JSON.stringify(err));
@@ -4210,7 +4210,7 @@ export default function window_test() {
                     expect().assertFail()
                     done();
                 } else {
-                    expect(true).assertTrue()
+                    
                     console.log(msgStr + "failed to test enum value" + JSON.stringify(err))
                     done()
                 }

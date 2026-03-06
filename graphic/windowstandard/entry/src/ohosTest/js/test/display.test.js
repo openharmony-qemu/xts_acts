@@ -506,9 +506,7 @@ describe('display_test', function () {
         } catch (error) {
             if (error.code) {
                 expect().assertFail()
-            } else {
-                expect(true).assertTrue()
-            }
+            } 
             done()
         }
     })

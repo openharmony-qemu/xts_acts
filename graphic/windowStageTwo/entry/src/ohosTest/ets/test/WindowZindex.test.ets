@@ -1694,7 +1694,6 @@ export default function windowZindexTest() {
             }).catch((err: BusinessError) => {
               if (err.code == 801) {
                 console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-                expect(false).assertFalse();
                 done();
               } else {
                 console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
@@ -1746,7 +1745,6 @@ export default function windowZindexTest() {
           }).catch((err: BusinessError) => {
             if (err.code == 801) {
               console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-              expect(false).assertFalse();
               done();
             } else {
               console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
@@ -1790,7 +1788,6 @@ export default function windowZindexTest() {
             subWindowClass.setResizeByDragEnabled(enabled, async (err) => {
               if (err.code == 801) {
                 console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-                expect(false).assertFalse();
                 done();
               } else if (err.code && err.code != 801) {
                 console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
