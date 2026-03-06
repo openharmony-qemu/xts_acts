@@ -240,7 +240,7 @@ describe('statfs_test', function () {
 
     /**
       * @tc.name   statfs_test_get_free_bytes_callback_005
-      * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0050
+      * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_CALLBACK_0050
       * @tc.desc   Test getFreeBytes() callback interfaces, When the path is null.
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
