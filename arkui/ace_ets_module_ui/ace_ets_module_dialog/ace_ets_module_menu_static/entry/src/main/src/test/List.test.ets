@@ -26,6 +26,7 @@ import onWillAppearOpenTest from './OpenMenuTest/onWillAppearOpenTest.test'
 import onWillDisappearOpenTest from './OpenMenuTest/onWillDisappearOpenTest.test'
 import updateMenuTest from './UpdateMenuTest/updateMenuTest.test'
 import bindContextMenuTest from './BindContextMenuTest/bindContextMenuTest.test'
+import ContextMenuOptionsTest from './CommonTest/ContextMenuOptions.test'
 
 export default function testsuite() {
   maskTest();
@@ -41,4 +42,5 @@ export default function testsuite() {
   onWillDisappearOpenTest();
   updateMenuTest();
   bindContextMenuTest();
+  ContextMenuOptionsTest();
 }
