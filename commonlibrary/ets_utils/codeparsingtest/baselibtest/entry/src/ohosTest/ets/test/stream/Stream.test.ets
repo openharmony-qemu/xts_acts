@@ -3405,7 +3405,7 @@ export default function StreamTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('Cannot read property byteLength of undefined');
+        expect(err.message).assertEqual('Parameter error. The type of cannot be empty string');
       }
     })
 
