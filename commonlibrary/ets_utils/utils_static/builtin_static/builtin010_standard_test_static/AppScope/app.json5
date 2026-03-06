@@ -14,7 +14,7 @@
 */
 {
   "app": {
-    "bundleName": "builtin009.standard.test.static",
+    "bundleName": "builtin010.standard.test.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
