@@ -11,6 +11,7 @@
     "MainAbility/pages/bindMenu/onWillAppear",
     "MainAbility/pages/bindMenu/onWillDisappear",
     "MainAbility/pages/bindContextMenu/bindContextMenu",
-    "MainAbility/pages/Common/ContextMenuOptions"
+    "MainAbility/pages/bindContextMenu/ContextMenuOptions",
+    "MainAbility/pages/promptAction/promptAction"
   ]
 }
