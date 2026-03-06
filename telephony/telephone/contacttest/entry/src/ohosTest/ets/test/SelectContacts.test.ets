@@ -633,6 +633,76 @@ export default function SelectContactsTest() {
       console.info(`${caseName} test end `);
     })
 
+        /**
+     * @tc.name   contactsApi_select_empty_test_300
+     * @tc.number contactsApi_select_empty_test_300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_select_empty_test_300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            const contactData: contact.Contact = {name: { fullName: "测试"}, phoneNumbers: [{ phoneNumber: "13800000000" }] };
+            await contact.addContact(context, contactData);
+            const options: contact.ContactSelectionOptions = {};
+            contact.selectContacts(options).then((contacts: contact.Contact[]) => {
+                console.info("contactsApi_select_empty_test_300: contacts = " + contacts.length);
+                expect(contacts.length > 0).assertTrue();
+                done();
+            });
+            try {
+                let driver: Driver = Driver.create();
+                let onType1: On = ON.text('测试');
+                let onType2: On = ON.text('完成');
+                await getComponent(driver, onType1);
+                await getComponent(driver, onType2);
+            } catch (err) {
+                console.error(`contactsApi_select_empty_test_300 get component catch: err->${JSON.stringify(err)}`);
+            }
+        } catch (error) {
+            console.info("contactsApi_select_empty_test_300: raw_contact insert error = " + error);
+            expect().assertFail();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_select_empty_test_400
+     * @tc.number contactsApi_select_empty_test_400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_select_empty_test_400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            const contactData: contact.Contact = {name: { fullName: "测试"}, phoneNumbers: [{ phoneNumber: "13800000000" }] };
+            await contact.addContact(context, contactData);
+            const options: contact.ContactSelectionOptions = {};
+            contact.selectContacts(options, (err: BusinessError, contacts: contact.Contact[]) => {
+                console.info("contactsApi_select_empty_test_400: contacts = " + contacts.length);
+                expect(contacts.length > 0).assertTrue();
+                done();
+            });
+            try {
+                let driver: Driver = Driver.create();
+                let onType1: On = ON.text('测试');
+                let onType2: On = ON.text('完成');
+                await getComponent(driver, onType1);
+                await getComponent(driver, onType2);
+            } catch (err) {
+                console.error(`contactsApi_select_empty_test_400 get component catch: err->${JSON.stringify(err)}`);
+            }
+        } catch (error) {
+            console.info("contactsApi_select_empty_test_400: raw_contact insert error = " + error);
+            expect().assertFail();
+            done();
+        }
+    });
+
     /**
      * @tc.name   testTelephonyContactSelectContacts1200
      * @tc.number SUB_Telephony_Contact_SelectContacts_1200
