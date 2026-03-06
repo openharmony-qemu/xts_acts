@@ -231,7 +231,7 @@ export default function QosCapiTest() {
       const result = libQosManagerOps.GewuApiTest(3);
       expect(result).assertEqual(0);
     })
-
+4
     /**
      * @tc.name   GewuErrorCodeTest
      * @tc.number SUB_RESOURCESCHEDULE_QOS_0500
