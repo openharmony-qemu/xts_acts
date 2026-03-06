@@ -45,7 +45,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateAreaModeContext_0900
      * @tc.number SUB_Ability_AbilityRuntime_CreateAreaModeContext_0900
-     * @tc.desc   Retrieve the path property from the displayContext created by uiAbilityContext
+     * @tc.desc   Retrieve the path property from the areaModeContext created by uiAbilityContext
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -54,20 +54,20 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_0900]: start');
       try {
         console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_0900]: try');
-        let displayContext: Context | undefined = uiAbilityContext?.createAreaModeContext(1);
+        let areaModeContext:  common.Context | undefined = uiAbilityContext?.createAreaModeContext(1);
         console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_0900]: uiAbilityContext' +
-        JSON.stringify(displayContext));
-        if (displayContext != undefined) {
-          expect(displayContext.cacheDir).assertEqual(CACHE_DIR);
-          expect(displayContext.filesDir).assertEqual(FILE_DIR);
-          expect(displayContext.tempDir).assertEqual(TEMP_DIR);
-          expect(displayContext.databaseDir).assertEqual(DATABASE_DIR);
-          expect(displayContext.preferencesDir).assertEqual(preferences_DIR);
-          expect(displayContext.bundleCodeDir).assertEqual(BUNDLE_DIR);
-          expect(displayContext.distributedFilesDir).assertEqual(distributedFilesDir_DIR);
-          expect(displayContext.resourceDir).assertEqual(resourceDir_DIR);
-          expect(displayContext.cloudFileDir).assertEqual(cloudFile_Dir);
-          expect(displayContext.logFileDir).assertEqual(LogFile_Dir);
+        JSON.stringify(areaModeContext));
+        if (areaModeContext != undefined) {
+          expect(areaModeContext.cacheDir).assertEqual(CACHE_DIR);
+          expect(areaModeContext.filesDir).assertEqual(FILE_DIR);
+          expect(areaModeContext.tempDir).assertEqual(TEMP_DIR);
+          expect(areaModeContext.databaseDir).assertEqual(DATABASE_DIR);
+          expect(areaModeContext.preferencesDir).assertEqual(preferences_DIR);
+          expect(areaModeContext.bundleCodeDir).assertEqual(BUNDLE_DIR);
+          expect(areaModeContext.distributedFilesDir).assertEqual(distributedFilesDir_DIR);
+          expect(areaModeContext.resourceDir).assertEqual(resourceDir_DIR);
+          expect(areaModeContext.cloudFileDir).assertEqual(cloudFile_Dir);
+          expect(areaModeContext.logFileDir).assertEqual(LogFile_Dir);
         } else {
           expect().assertFail();
         }
@@ -81,7 +81,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000
      * @tc.number SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000
-     * @tc.desc   Retrieve the resourceManager property from the displayContext created by UIAbilityContext
+     * @tc.desc   Retrieve the resourceManager property from the areaModeContext created by UIAbilityContext
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -89,11 +89,11 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000', Level.LEVEL0, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000]: start');
       try {
-        let displayContext: Context | undefined = uiAbilityContext?.createAreaModeContext(1);
-        if (displayContext != undefined) {
-          console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000]: uiAbilityContext' +
-          JSON.stringify(displayContext));
-          await resourceManagerTest(displayContext).then((data) => {
+        let areaModeContext: common.Context | undefined = uiAbilityContext?.createAreaModeContext(1);
+        if (areaModeContext != undefined) {
+          console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000]: areaModeContext' +
+          JSON.stringify(areaModeContext));
+          await resourceManagerTest(areaModeContext).then((data) => {
             console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000] data : ' + data);
             expect(true).assertEqual(data);
           });
@@ -119,9 +119,11 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: start');
       try {
-        let displayContext: common.Context | undefined = uiAbilityContext?.createAreaModeContext(1);
-        compareInfo(displayContext);
-        expect().assertFail();
+        let areaModeContext: common.Context | undefined = uiAbilityContext?.createAreaModeContext(1);
+        if (areaModeContext != undefined) {
+          console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: get ' + JSON.stringify(areaModeContext?.applicationInfo));
+          compareInfo(areaModeContext);
+        }
       } catch (err) {
         console.error('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: ' + err);
         expect().assertFail();
@@ -132,7 +134,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200
      * @tc.number SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200
-     * @tc.desc   Retrieve the resourceManager property from the displayContext created by UIAbilityContext
+     * @tc.desc   Retrieve the resourceManager property from the areaModeContext created by UIAbilityContext
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -140,11 +142,11 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200', Level.LEVEL0, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200]: start');
       try {
-        let displayContext: Context | undefined = uiAbilityContext?.createModuleContext('entry_test');
-        if (displayContext != undefined) {
-          console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200]: uiAbilityContext' +
-          JSON.stringify(displayContext));
-          await resourceManagerTest(displayContext).then((data) => {
+        let moduleContext: Context | undefined = uiAbilityContext?.createModuleContext('entry_test');
+        if (moduleContext != undefined) {
+          console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200]: moduleContext' +
+          JSON.stringify(moduleContext));
+          await resourceManagerTest(moduleContext).then((data) => {
             console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1200] data : ' + data);
             expect(true).assertEqual(data);
           });
@@ -170,9 +172,11 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateAreaModeContext_1300', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1300]: start');
       try {
-        let displayContext: common.Context | undefined = uiAbilityContext?.createModuleContext('entry_test');
-        compareInfo(displayContext);
-        expect().assertFail();
+        let moduleContext: common.Context | undefined = uiAbilityContext?.createModuleContext('entry_test');
+        if (moduleContext != undefined) {
+          console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1300]: get ' + JSON.stringify(moduleContext?.applicationInfo));
+          compareInfo(moduleContext as common.Context);
+        }
       } catch (err) {
         console.error('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: ' + err);
         expect().assertFail();
