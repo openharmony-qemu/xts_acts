@@ -20,6 +20,8 @@
 #include <EGL/eglext.h>
 #include <EGL/eglplatform.h>
 #include <GLES3/gl3.h>
+#include <hilog/log.h>
+
 #define NO_ERR 0
 #define SUCCESS 1
 #define FAIL (-1)
@@ -36,6 +38,8 @@
 #define GL_VERSION_15 0x0F
 #define GL_MAJOR_VERSION_MARK 0x0A
 #define EGL_SIZE 0xFFFF
+
+const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 
 typedef struct _MyEGLWindow {
     EGLDisplay eglDisplay;
@@ -1236,6 +1240,7 @@ static napi_value EglDestroySyncAbnormal(napi_env env, napi_callback_info info)
 
 static napi_value EglClientWaitSync(napi_env env, napi_callback_info info)
 {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "eglndk", "case EglClientWaitSync in");
     (void)info;
     MyEGLWindow myEGLWindow = {EGL_NO_DISPLAY, EGL_NO_SURFACE, EGL_NO_CONTEXT};
     createMyEglWindow(env, &myEGLWindow);
@@ -1243,10 +1248,16 @@ static napi_value EglClientWaitSync(napi_env env, napi_callback_info info)
         const EGLAttrib attr[] = {EGL_NONE};
         EGLSync eglSync = eglCreateSync(myEGLWindow.eglDisplay, EGL_SYNC_FENCE, attr);
         NAPI_ASSERT(env, eglSync != EGL_NO_SYNC, "eglCreateSync error");
-        EGLBoolean Ret = eglClientWaitSync(myEGLWindow.eglDisplay, eglSync, 0x00, EGL_FOREVER);
-        NAPI_ASSERT(env, Ret == EGL_TRUE, "eglClientWaitSync error");
-        Ret = eglDestroySync(myEGLWindow.eglDisplay, eglSync);
-        NAPI_ASSERT(env, Ret == EGL_TRUE, "eglDestroySync error");
+
+        EGLint waitResult = eglClientWaitSync(myEGLWindow.eglDisplay, eglSync, 0x00, EGL_FOREVER);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "eglndk", "eglClientWaitSync waitResult: %{public}zu",
+            waitResult);
+        EGLint eglError = eglGetError();
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "eglndk", "eglGetError: %{public}zu", eglError);
+        NAPI_ASSERT(env, waitResult == EGL_CONDITION_SATISFIED, "eglClientWaitSync error");
+
+        EGLBoolean ret = eglDestroySync(myEGLWindow.eglDisplay, eglSync);
+        NAPI_ASSERT(env, ret == EGL_TRUE, "eglDestroySync error");
     }
     destroyMyEglWindow(env, &myEGLWindow);
     napi_value result = nullptr;
