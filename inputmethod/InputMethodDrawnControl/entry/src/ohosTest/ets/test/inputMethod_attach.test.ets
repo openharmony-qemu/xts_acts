@@ -1914,7 +1914,7 @@ export default function inputMethodTest() {
       try {
         let inputAttribute: inputMethod.InputAttribute = {
           textInputType: inputMethod.TextInputType.TEXT,
-          enterKeyType: inputMethod.EnterKeyType.GO
+          enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
         }
         let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
         let attachOptions: inputMethod.AttachOptions = {
