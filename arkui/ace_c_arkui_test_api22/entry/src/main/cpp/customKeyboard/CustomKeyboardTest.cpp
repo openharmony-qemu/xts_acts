@@ -42,12 +42,8 @@ namespace ArkUICapiTest {
 
         auto column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
 
-        auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
-        ArkUI_AttributeItem textItem = {.string = "TextArea"};
-        nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &textItem);
-
         auto textArea = nodeAPI->createNode(ARKUI_NODE_TEXT_AREA);
-        ArkUI_AttributeItem id_textArea = {.string = "TextArea"};
+        ArkUI_AttributeItem id_textArea = {.string = "TextAreaTest"};
         nodeAPI->setAttribute(textArea, NODE_ID, &id_textArea);
         
         auto button = nodeAPI->createNode(ARKUI_NODE_BUTTON);
@@ -68,8 +64,6 @@ namespace ArkUICapiTest {
         ArkUI_NumberValue focusValue[] = {{.i32 = 1}};
         ArkUI_AttributeItem focusItem = {focusValue, 1};
         nodeAPI->setAttribute(textArea, NODE_DEFAULT_FOCUS, &focusItem);
-
-        nodeAPI->addChild(column, text);
         nodeAPI->addChild(column, textArea);
     
         std::string id(xComponentID);

@@ -58,8 +58,13 @@ export default function customKeyboardSearchTest() {
       console.info('[customKeyboardSearchTest_0010] START');
 
       let driver:Driver = Driver.create();
-      let button: Component = await driver.findComponent(ON.id('BtnDelete'));
-      let text = await button.getText();
+      let searchTest: Component = await driver.findComponent(ON.id('searchTest'));
+      await CommonFunc.sleep(500);
+      await searchTest.click();
+      await CommonFunc.sleep(1000);
+      let buttonTest: Component = await driver.findComponent(ON.id('SearchBtnDelete'));
+      await CommonFunc.sleep(1000);
+      let text = await buttonTest.getText();
       
       console.info('[customKeyboardSearchTest_0010] textContent: ' + text);
       expect(text).assertEqual('delete');

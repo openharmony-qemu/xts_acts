@@ -37,23 +37,17 @@ export default function customKeyboardTest() {
      */
     it('customKeyboardTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[customKeyboardTest_001] START');
-
       await Utils.sleep(100);
       let driver:Driver = Driver.create();
-      let textArea: Component = await driver.findComponent(ON.id('TextArea'));
-      let point = await textArea.getBoundsCenter();
-      console.info('[customKeyboardTest_001] Point X: ' + point.x);
-      console.info('[customKeyboardTest_001] Point Y: ' + point.y);
-      await driver.click(point.x, point.y);
-
+      let textAreaTest: Component = await driver.findComponent(ON.id('TextAreaTest'));
       await Utils.sleep(500);
-
+      await textAreaTest.click();
+      await Utils.sleep(1000);
       let buttonText: Component = await driver.findComponent(ON.id('ButtonText'));
+      await Utils.sleep(1000);
       let text = await buttonText.getText();
-
       console.info('[customKeyboardTest_001] Text: ' + text);
       expect(text).assertEqual('get');
-
       console.info('[customKeyboardTest_001] END');
       done();
     })
