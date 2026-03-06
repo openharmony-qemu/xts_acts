@@ -127,19 +127,29 @@ struct CircleNullUndefined3Test {
       .justifyContent(FlexAlign.SpaceEvenly)
 
       Row() {
-        // Valid parameters (对照) - false
+        // Valid parameters - true
         Circle()
-          .width(80)
+          .width(60)
+          .height(40)
+          .stroke(Color.Green)
+          .strokeWidth(2)
+          .strokeLineJoin(LineJoinStyle.Miter)
+          .antiAlias(true)
+          .id('Circle_antiAlias_true')
+
+        // Valid parameters - false
+        Circle()
+          .width(60)
           .height(40)
           .stroke(Color.Green)
           .strokeWidth(2)
           .strokeLineJoin(LineJoinStyle.Miter)
           .antiAlias(false)
-          .id('Circle_antiAlias_valid')
+          .id('Circle_antiAlias_false')
 
         // antiAlias with null
         Circle()
-          .width(80)
+          .width(60)
           .height(40)
           .stroke(Color.Green)
           .strokeWidth(2)
@@ -149,7 +159,7 @@ struct CircleNullUndefined3Test {
 
         // antiAlias with undefined
         Circle()
-          .width(80)
+          .width(60)
           .height(40)
           .stroke(Color.Green)
           .strokeWidth(2)

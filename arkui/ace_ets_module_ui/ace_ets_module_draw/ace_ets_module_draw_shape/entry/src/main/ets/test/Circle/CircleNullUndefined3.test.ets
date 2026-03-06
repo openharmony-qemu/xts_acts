@@ -227,10 +227,27 @@ export default function CircleNullUndefined3Test() {
     it('CircleAntiAliasValid_0100', Level.LEVEL0, async () => {
       console.info('[CircleAntiAliasValid_0100] START');
 
-      let strJson = getInspectorByKey('Circle_antiAlias_valid');
+      let strJson = getInspectorByKey('Circle_antiAlias_false');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$attrs.antiAlias).assertEqual('false');
       console.info('[CircleAntiAliasValid_0100] END');
+    })
+
+    /**
+     * @tc.name   CircleAntiAliasValid_0200
+     * @tc.number SUB_ARKUI_CIRCLE_ANTIALIAS_VALID_0200
+     * @tc.desc   Test Circle antiAlias method with valid true parameter, should work correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('CircleAntiAliasValid_0200', Level.LEVEL0, async () => {
+      console.info('[CircleAntiAliasValid_0200] START');
+
+      let strJson = getInspectorByKey('Circle_antiAlias_true');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      expect(obj.$attrs.antiAlias).assertEqual('true');
+      console.info('[CircleAntiAliasValid_0200] END');
     })
   })
 }
