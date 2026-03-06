@@ -1357,7 +1357,7 @@ export default function windowModalTest() {
           expect(btnText).assertEqual('Modality')
           windowClass.destroyWindow()
         }).catch((err: BusinessError) => {
-          onsole.info(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}.`);
+          console.info(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}.`);
           if(err.code === 801){
             done();
           }
