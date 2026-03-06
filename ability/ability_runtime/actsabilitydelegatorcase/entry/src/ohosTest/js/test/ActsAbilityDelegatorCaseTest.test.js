@@ -334,27 +334,19 @@ export default function actsStServiceAbilityTest() {
          */
         it('ACTS_ASetShowOnLockScreen_0300', Level.LEVEL0, async function (done) {
             console.log("ACTS_ASetShowOnLockScreen_0300 --- start")
-            var currentAlertTimeout = 0;
             let flag = false;
             try {
-                currentAlertTimeout = setTimeout(mySetTimeout, gSetTimeout);
-                function mySetTimeout() {
-                    console.log('ACTS_ASetShowOnLockScreen_0300====<end mySetTimeout')
-                    done();
-                }
                 var context = featureAbility.getContext()
                 var result = context.setShowOnLockScreen(false,
                     (err) => {
-                        clearTimeout(currentAlertTimeout);
                         console.info("ACTS_ASetShowOnLockScreen_0300====err>"
                             + JSON.stringify(err) + " , err= " + err);
-                        flag = true();
+                        flag = true;
                         expect(flag).assertTrue();
                         done()
                     }
                 );
             } catch (error) {
-                clearTimeout(currentAlertTimeout);
                 console.log("ACTS_ASetShowOnLockScreen_0300 : error = " + error);
                 console.info('ACTS_ASetShowOnLockScreen_0300====<end catch (error)');
                 done();
@@ -371,25 +363,17 @@ export default function actsStServiceAbilityTest() {
          */
         it('ACTS_ASetShowOnLockScreen_0400', Level.LEVEL0, async function (done) {
             console.log("ACTS_ASetShowOnLockScreen_0400 --- start")
-            var currentAlertTimeout = 0;
             let flag = false;
             try {
-                currentAlertTimeout = setTimeout(mySetTimeout, gSetTimeout);
-                function mySetTimeout() {
-                    console.log('ACTS_ASetShowOnLockScreen_0400====<end mySetTimeout')
-                    done();
-                }
                 var context = featureAbility.getContext()
                 var result = context.setShowOnLockScreen(false).then(() => {
-                    clearTimeout(currentAlertTimeout);
                     console.info("ACTS_ASetShowOnLockScreen_0400====then>");
-                    flag = true();
+                    flag = true;
                     expect(flag).assertTrue();
                     done()
                 }
                 );
             } catch (error) {
-                clearTimeout(currentAlertTimeout);
                 console.log("ACTS_ASetShowOnLockScreen_0400 : error = " + error);
                 console.info('ACTS_ASetShowOnLockScreen_0400====<end catch (error)');
                 done();
@@ -473,27 +457,19 @@ export default function actsStServiceAbilityTest() {
          */
         it('ACTS_ASetWakeUpScreen_0300', Level.LEVEL0, async function (done) {
           console.log("ACTS_ASetWakeUpScreen_0300 --- start")
-          var currentAlertTimeout = 0;
           let flag = false;
           try {
-              currentAlertTimeout = setTimeout(mySetTimeout, gSetTimeout);
-              function mySetTimeout() {
-                  console.log('ACTS_ASetWakeUpScreen_0300====<end mySetTimeout')
-                  done();
-              }
               var context = featureAbility.getContext()
               var result = context.setWakeUpScreen(false,
                   (err) => {
-                      clearTimeout(currentAlertTimeout);
                       console.info("ACTS_ASetWakeUpScreen_0300====err>"
                           + JSON.stringify(err) + " , err= " + err);
-                      flag = true();
+                      flag = true;
                       expect(flag).assertTrue();
                       done()
                   }
               );
           } catch (error) {
-              clearTimeout(currentAlertTimeout);
               console.log("ACTS_ASetWakeUpScreen_0300 : error = " + error);
               console.info('ACTS_ASetWakeUpScreen_0300====<end catch (error)');
               done();
@@ -510,25 +486,17 @@ export default function actsStServiceAbilityTest() {
        */
       it('ACTS_ASetWakeUpScreen_0400', Level.LEVEL0, async function (done) {
           console.log("ACTS_ASetWakeUpScreen_0400 --- start")
-          var currentAlertTimeout = 0;
           let flag = false;
           try {
-              currentAlertTimeout = setTimeout(mySetTimeout, gSetTimeout);
-              function mySetTimeout() {
-                  console.log('ACTS_ASetWakeUpScreen_0400====<end mySetTimeout')
-                  done();
-              }
               var context = featureAbility.getContext()
               var result = context.setWakeUpScreen(false).then(() => {
-                  clearTimeout(currentAlertTimeout);
                   console.info("ACTS_ASetWakeUpScreen_0400====then>");
-                  flag = true();
+                  flag = true;
                   expect(flag).assertTrue();
                   done()
               }
               );
           } catch (error) {
-              clearTimeout(currentAlertTimeout);
               console.log("ACTS_ASetWakeUpScreen_0400 : error = " + error);
               console.info('ACTS_ASetWakeUpScreen_0400====<end catch (error)');
               done();
