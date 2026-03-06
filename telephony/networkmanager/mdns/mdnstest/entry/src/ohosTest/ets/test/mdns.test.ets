@@ -1044,7 +1044,7 @@ export default function mdnsTest() {
             if (data.serviceAttribute !== undefined) {
               ExpectTrue(data.serviceAttribute.length !== 0,caseName);
             } else {
-              ExpectTrue(false,caseName);
+              ExpectTrue(false, caseName);
             }
           } else {
             ExpectTrue(false, caseName);
@@ -3259,7 +3259,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(Number(err.code)  === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
