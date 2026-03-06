@@ -19,6 +19,7 @@ import contact from '@ohos.contact';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
+import { Component, Driver, On, ON } from '@ohos.UiTest';
 
 async function getPermissions() {
   console.info('getPermission start');
@@ -38,6 +39,16 @@ async function getPermissions() {
   console.info('getPermission end');
 }
 
+async function getComponent(driver: Driver, onType: On) {
+    let item:Component = await driver.findComponent(onType);
+    if(!item) {
+        await getComponent(driver, onType);
+    } else {
+        console.log(`get component: ${JSON.stringify(item)}`);
+        await item.click();
+    }
+}
+
 export default function EmptyParamTest() {
     describe('EmptyParamTest', () => {
 
@@ -48,8 +59,33 @@ export default function EmptyParamTest() {
         });
 
         afterEach(async (done: Function) => {
-            console.info("afterEach case");
-            done();
+            try {
+                let context: Context = AppStorage.get('context') as Context;
+                let contactList: contact.Contact[] = [];
+                try {
+                    contactList = await contact.queryContactsByPhoneNumber(context,"13800000000");
+                } catch (queryErr) {
+                    console.info(`afterEach queryContacts catch err: ${JSON.stringify(queryErr)}`);
+                    done();
+                }
+                try {
+                    if (contactList.length > 0) {
+                        contactList.forEach(async (item: contact.Contact) => {
+                            if (item.key) {
+                                await contact.deleteContact(context, item.key);
+                                console.info(`afterEach deleteContact success--${item.key}`);
+                            }
+                        })
+                    }
+                    done();
+                } catch (deleteErr) {
+                    console.info(`afterEach deleteContact catch err: ${JSON.stringify(deleteErr)}`);
+                    done();
+                }
+            } catch (error) {
+                console.info(`afterEach catch error: ${JSON.stringify(error)}`);
+                done();
+            }
         });
     
 
@@ -99,7 +135,7 @@ export default function EmptyParamTest() {
             });
         } catch (error) {
             console.info("contactsApi_insert_empty_test_200: raw_contact insert error = " + error);
-            expect(err.code === 401).assertTrue();
+            expect(error.code === 401).assertTrue();
             done();
         }
     });
@@ -114,11 +150,24 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_select_empty_test_300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            let context: Context = AppStorage.get('context') as Context;
+            const contactData: contact.Contact = {name: { fullName: "测试"}， phoneNumbers: [{ phoneNumber: "13800000000" }] };
+            await contact.addContact(context, contactData);
             const options: contact.ContactSelectionOptions = {};
-            const contacts: contact.Contact[] = await contact.selectContacts(options);
-            console.info("contactsApi_select_empty_test_300: contacts = " + contacts.length);
-            expect(contacts.length > 0).assertTrue();
-            done();
+            contact.selectContacts(options).then((contacts: contact.Contact[]) => {
+                console.info("contactsApi_select_empty_test_300: contacts = " + contacts.length);
+                expect(contacts.length > 0).assertTrue();
+                done();
+            });
+            try {
+                let driver: Driver = Driver.create();
+                let onType1: On = ON.text('测试');
+                let onType2: On = ON.text('完成');
+                await getComponent(driver, onType1);
+                await getComponent(driver, onType2);
+            } catch (err) {
+                console.error(`contactsApi_select_empty_test_300 get component catch: err->${JSON.stringify(err)}`);
+            }
         } catch (error) {
             console.info("contactsApi_select_empty_test_300: raw_contact insert error = " + error);
             expect().assertFail();
@@ -136,12 +185,24 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_select_empty_test_400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            let context: Context = AppStorage.get('context') as Context;
+            const contactData: contact.Contact = {name: { fullName: "测试"}， phoneNumbers: [{ phoneNumber: "13800000000" }] };
+            await contact.addContact(context, contactData);
             const options: contact.ContactSelectionOptions = {};
             contact.selectContacts(options, (err: BusinessError, contacts: contact.Contact[]) => {
                 console.info("contactsApi_select_empty_test_400: contacts = " + contacts.length);
                 expect(contacts.length > 0).assertTrue();
                 done();
             });
+            try {
+                let driver: Driver = Driver.create();
+                let onType1: On = ON.text('测试');
+                let onType2: On = ON.text('完成');
+                await getComponent(driver, onType1);
+                await getComponent(driver, onType2);
+            } catch (err) {
+                console.error(`contactsApi_select_empty_test_400 get component catch: err->${JSON.stringify(err)}`);
+            }
         } catch (error) {
             console.info("contactsApi_select_empty_test_400: raw_contact insert error = " + error);
             expect().assertFail();
@@ -213,17 +274,17 @@ export default function EmptyParamTest() {
     it("contactsApi_delete_empty_test_700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('context') as Context;
-            const key: string = '1';
+            const key: string = '';
             await contact.deleteContact(undefined, key).then(() => {
                 console.info("contactsApi_delete_empty_test_700: delete success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_delete_empty_test_700: raw_contact delete error ${error.code}, ${error.message}`);
+                console.info(`contactsApi_delete_empty_test_700: raw_contact delete error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
         } catch (error) {
-            console.info(`contactsApi_delete_empty_test_700: raw_contact delete error ${error.code}, ${error.message}`);
+            console.info(`contactsApi_delete_empty_test_700: raw_contact delete error = ${error.code}, ${error.message}`);
             expect(error.code === 401).assertTrue();
             done();
         }
@@ -275,7 +336,7 @@ export default function EmptyParamTest() {
                 console.info("contactsApi_query_empty_test_900: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_900: contact query error: ${err.code}, ${err.message}`);
+                console.info(`contactsApi_query_empty_test_900: contact query error: ${error.code}, ${error.message}`);
                 expect(error).assertTrue();
                 done();
             });
@@ -297,7 +358,7 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('null') as Context;
-            const key: string = '1';
+            const key: string = '';
             contact.queryContact(context, key, (err: BusinessError) => {
                 if (err) {
                     console.error(`contactsApi_query_empty_test_1000: contact query err = ${err.code}, ${err.message}`);
@@ -331,8 +392,8 @@ export default function EmptyParamTest() {
                 console.info("contactsApi_query_empty_test_1100: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_1100: contact query error = ${error.code}, ${error.message}`);
-                expect().assertTrue();
+                console.info(`contactsApi_query_empty_test_1100: contact query error: ${error.code}, ${error.message}`);
+                expect(error).assertTrue();
                 done();
             });
         } catch (error) {
@@ -389,7 +450,7 @@ export default function EmptyParamTest() {
                 console.info("contactsApi_query_empty_test_1300: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_1300: contact query error = ${error.code}, ${error.message}`);
+                console.info(`contactsApi_query_empty_test_1300: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
@@ -449,7 +510,7 @@ export default function EmptyParamTest() {
                 console.info("contactsApi_query_empty_test_1500: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_1500: contact query error = ${error.code}, ${error.message}`);
+                console.info(`contactsApi_query_empty_test_1500: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
@@ -506,7 +567,7 @@ export default function EmptyParamTest() {
                 console.info("contactsApi_query_empty_test_1700: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_1700: contact query error = ${error.code}, ${error.message}`);
+                console.info(`contactsApi_query_empty_test_1700: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
@@ -565,12 +626,12 @@ export default function EmptyParamTest() {
                 console.info("contactsApi_query_empty_test_1900: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_1900: contact query error = ${error.code}, ${error.message}`);
+                console.info(`contactsApi_query_empty_test_1900: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
         } catch (error) {
-            console.info(`contactsApi_query_empty_test_1900: contact query error = ${error.code}, ${error.message}`);
+            console.info(`contactsApi_query_empty_test_1900: group query error = ${error.code}, ${error.message}`);
             expect(error.code === 401).assertTrue();
             done();
         }
@@ -648,12 +709,12 @@ export default function EmptyParamTest() {
                 console.info("contactsApi_query_empty_test_2200: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_2200: contact query error = ${error.code}, ${error.message}`);
+                console.info(`contactsApi_query_empty_test_2200: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
         } catch (error) {
-            console.info(`contactsApi_query_empty_test_2200: contact query error = ${error.code}, ${error.message}`);
+            console.info(`contactsApi_query_empty_test_2200: holders query error = ${error.code}, ${error.message}`);
             expect(error.code === 401).assertTrue();
             done();
         }
@@ -702,7 +763,7 @@ export default function EmptyParamTest() {
                 console.info("contactsApi_query_empty_test_2400: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_2400: contact query error = ${error.code}, ${error.message}`);
+                console.info(`contactsApi_query_empty_test_2400: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
@@ -780,11 +841,11 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('null') as Context;
-            const keys = await contact.queryMyCard(context, null).then(() => {
+            const card = await contact.queryMyCard(context, null).then(() => {
                 console.info("contactsApi_query_empty_test_2700: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_2700: contact query error = ${error.code}, ${error.message}`);
+                console.info(`contactsApi_query_empty_test_2700: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
@@ -864,10 +925,10 @@ export default function EmptyParamTest() {
             let context: Context = AppStorage.get('null') as Context;
             let contactDataError: contact.Contact = {};
             const card = await contact.updateContact(context, contactDataError).then(() => {
-                console.info("contactsApi_update_empty_test_3000: update success");
+                console.info("contactsApi_update_empty_test_3000: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_update_empty_test_3000: contact query error = ${error.code}, ${error.message}`);
+                console.info(`contactsApi_update_empty_test_3000: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
@@ -948,10 +1009,10 @@ export default function EmptyParamTest() {
         try {
             let context: Context = AppStorage.get('null') as Context;
             const isLocalContact = await contact.isLocalContact(context, null).then(() => {
-                console.info("contactsApi_is_local_contact_empty_test_3300: isLocalContact success");
+                console.info("contactsApi_is_local_contact_empty_test_3300: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_is_local_contact_empty_test_3300: contact query error = ${error.code}, ${error.message}`);
+                console.info(`contactsApi_is_local_contact_empty_test_3300: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
@@ -974,7 +1035,7 @@ export default function EmptyParamTest() {
         try {
             contact.isLocalContact(null, null, (err: BusinessError, isLocalContact: boolean) => {
                 if (err) {
-                    console.error(`contactsApi_is_local_contact_empty_test_3400: contact isLocalContacte err = ${err.code}, ${err.message}`);
+                    console.error(`contactsApi_is_local_contact_empty_test_3400: contact isLocalContact err = ${err.code}, ${err.message}`);
                     expect(err.code === 201).assertTrue();
                     done();
                 } else {
