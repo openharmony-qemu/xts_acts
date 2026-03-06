@@ -72,10 +72,10 @@ public:
     bool beforeEosInput = false;              // 0800 测试用例
     bool beforeEosInputInput = false;        // 0900 测试用例
     bool afterEosDestroyCodec = true;        // 1000 测试用例 结束不销毁codec
-    uint32_t afterEosDestroyCodec = 0;  // 1200 测试用例
+    uint32_t repeatStartStopBeforeEos = 0;  // 1200 测试用例
     uint32_t repeatStartFlushBeforeEos = 0; // 1300 测试用例
     uint32_t frameCount_ = 0;
-    uint32_t repeat_time = 0;
+    uint32_t repeatTime = 0;
     uint32_t outFrameCount = 0;
     bool outputYuvFlag = false;
     // 解码输出数据预期
@@ -110,7 +110,7 @@ public:
     int64_t GetSystemTimeUs();
     int32_t CreateVideoDecoder(std::string codeName);
     int32_t SetVideoDecoderCallback();
-    void testApi();
+    void TestApi();
     int32_t SwitchSurface();
     int32_t RepeatCallSetSurface();
     int32_t Release();

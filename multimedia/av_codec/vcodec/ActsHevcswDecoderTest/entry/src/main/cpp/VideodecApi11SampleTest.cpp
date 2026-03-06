@@ -623,7 +623,7 @@ int32_t VDecAPI11Sample::StartVideoDecoder()
     return ret;
 }
 
-void VDecAPI11Sample::testApi()
+void VDecAPI11Sample::TestApi()
 {
     cNativeImage[0] = OH_ConsumerSurface_Create();
     impl->consumerListenerBuffer[0] = new ConsumerListenerBuffer(cNativeImage[0], outDir);
@@ -667,8 +667,8 @@ void VDecAPI11Sample::InFuncTest()
         FlushBuffer();
         OH_VideoDecoder_Start(vdec_);
     }
-    if (afterEosDestroyCodec > 0) {
-        afterEosDestroyCodec--;
+    if (repeatStartStopBeforeEos > 0) {
+        repeatStartStopBeforeEos--;
         OH_VideoDecoder_Stop(vdec_);
         FlushBuffer();
         inFile_->clear();
@@ -783,7 +783,7 @@ int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer *buffer)
         bufferSize = (uint32_t)(((ch[zero] & 0xFF)) | ((ch[one] & 0xFF) << EIGHT) | ((ch[two] & 0xFF) << SIXTEEN) |
                                      ((ch[three] & 0xFF) << TWENTY_FOUR));
     }
-    if (bufferSize >= (defaultWidth * defaultHeight * THREE) >> 1) {
+    if (bufferSize >= ((defaultWidth * defaultHeight * THREE) >> 1)) {
         cout << "read bufferSize abnormal. buffersize = " << bufferSize << endl;
         return 1;
     }

@@ -25,7 +25,7 @@ using namespace std;
 using namespace OHOS;
 using namespace Media;
 
-OH_AVCapability* cap_hevc = nullptr;
+static OH_AVCapability* cap_hevc = nullptr;
 std::string g_codecNameHevc = "";
 
 namespace {

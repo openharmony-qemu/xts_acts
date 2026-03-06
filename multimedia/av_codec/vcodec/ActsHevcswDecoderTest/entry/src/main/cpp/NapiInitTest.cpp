@@ -15,7 +15,6 @@
 #include "napi/native_api.h"
 #include "include/FuncTest.h"
 #include "include/Videodec_api11_sample.h"
-#include "nlohmann/json.hpp"
 #include <iostream>
 #include <vector>
 #include <functional>
