@@ -100,7 +100,7 @@ bool JsonWrapper::ParseTopLevel()
     return true;
 }
  	 
-std::unordered_map<std::string, std::string> JsonWrapper::ParseInnerObject(size_t& pos) 
+std::unordered_map<std::string, std::string> JsonWrapper::ParseInnerObject(size_t& pos)
 {
     std::unordered_map<std::string, std::string> map;
     SkipWhitespace(pos);

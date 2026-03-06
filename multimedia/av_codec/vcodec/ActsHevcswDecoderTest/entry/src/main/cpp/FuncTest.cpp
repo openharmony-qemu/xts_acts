@@ -25,7 +25,7 @@ using namespace std;
 using namespace OHOS;
 using namespace Media;
 
-OH_AVCapability* cap_hevc = nullptr;
+OH_AVCapability* capHevc = nullptr;
 std::string g_codecNameHevc = "";
 
 namespace {
@@ -37,13 +37,13 @@ constexpr int ERROR_CODE_NEGATIVE_TWO = -2;
 constexpr int SUCCESS_CODE = 0;
 }
 
-const char* const OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30 = 
+const char* const OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30 =
     "/data/storage/el2/base/haps/entry_test/files/1920_1080_30.h265";
 
 void HevcSwdecFuncNdkTest::SetUpTestCase()
 {
-    cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, SOFTWARE);
-    g_codecNameHevc = OH_AVCapability_GetName(cap_hevc);
+    capHevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, SOFTWARE);
+    g_codecNameHevc = OH_AVCapability_GetName(capHevc);
     cout << "g_codecNameHevc: " << g_codecNameHevc << endl;
 }
 
@@ -135,25 +135,25 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
 int VideoDecodeSyncSs265Func0010Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
-    if (cap_hevc != nullptr) {
+    if (capHevc != nullptr) {
         shared_ptr<VDecAPI11Sample> vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->INP_DIR = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
         vDecSample->DEFAULT_WIDTH = 1920;
-        vDecSample->DEFAULT_HEIGHT = 1080;
+        vDecSample->g_defaultHeight = 1080;
         vDecSample->DEFAULT_FRAME_RATE = 30;
         vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
         vDecSample->enbleSyncMode = 1;
-        if(vDecSample->CreateVideoDecoder(g_codecNameHevc) != AV_ERR_OK) {
+        if (vDecSample->CreateVideoDecoder(g_codecNameHevc) != AV_ERR_OK) {
             return -1;
         }
-        if(vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
+        if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
             return -1;
         };
-        if(vDecSample->StartVideoDecoder() != AV_ERR_OK) {
+        if (vDecSample->StartVideoDecoder() != AV_ERR_OK) {
             return -1;
         }
         vDecSample->WaitForEOS();
-        if(vDecSample->errCount != AV_ERR_OK) {
+        if (vDecSample->errCount != AV_ERR_OK) {
             return -1;
         }
         return 0;
@@ -170,25 +170,25 @@ int VideoDecodeSyncSs265Func0010Test()
 int VideoDecodeSyncSs265Func0020Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
-    if (cap_hevc != nullptr) {
+    if (capHevc != nullptr) {
         shared_ptr<VDecAPI11Sample> vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->INP_DIR = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
         vDecSample->DEFAULT_WIDTH = 1920;
-        vDecSample->DEFAULT_HEIGHT = 1080;
+        vDecSample->g_defaultHeight = 1080;
         vDecSample->DEFAULT_FRAME_RATE = 30;
         vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV21;
         vDecSample->enbleSyncMode = 1;
-        if(vDecSample->CreateVideoDecoder(g_codecNameHevc) != AV_ERR_OK) {
+        if (vDecSample->CreateVideoDecoder(g_codecNameHevc) != AV_ERR_OK) {
             return -1;
         }
-        if(vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
+        if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
             return -1;
         }
-        if(vDecSample->StartVideoDecoder() != AV_ERR_OK) {
+        if (vDecSample->StartVideoDecoder() != AV_ERR_OK) {
             return -1;
         }
         vDecSample->WaitForEOS();
-        if(vDecSample->errCount != AV_ERR_OK) {
+        if (vDecSample->errCount != AV_ERR_OK) {
             return -1;
         }
         return 0;
@@ -206,19 +206,19 @@ int VideoDecodeSyncSs265Func0020Test()
 int VideoSwdecH265BlankFrame0010Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
-    if (cap_hevc != nullptr) {
+    if (capHevc != nullptr) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->INP_DIR = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
         vDecSample->DEFAULT_WIDTH = 1920;
-        vDecSample->DEFAULT_HEIGHT = 1080;
+        vDecSample->g_defaultHeight = 1080;
         vDecSample->DEFAULT_FRAME_RATE = 30;
-        vDecSample->SF_OUTPUT = false;
+        vDecSample->g_sfOutput = false;
         vDecSample->enbleBlankFrame = 1;
-        if(vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
             return -1;
         }
         vDecSample->WaitForEOS();
-        if(vDecSample->errCount != AV_ERR_OK) {
+        if (vDecSample->errCount != AV_ERR_OK) {
             return -1;
         }
         return 0;

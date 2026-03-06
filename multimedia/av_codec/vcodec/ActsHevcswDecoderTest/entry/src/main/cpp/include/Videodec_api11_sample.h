@@ -26,14 +26,7 @@
 #include <queue>
 #include <string>
 #include <unordered_map>
-//#include "securec.h"
-//#include "native_avcodec_videodecoder.h"
 #include "Nocopyable.h"
-//#include "native_avmemory.h"
-//#include "native_avformat.h"
-//#include "native_averrors.h"
-//#include "window.h"
-//#include "iconsumer_surface.h"
 #include <multimedia/player_framework/native_avcodec_videodecoder.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <native_image/native_image.h>
@@ -58,24 +51,24 @@ public:
     class Impl;
     Impl* impl;
     VDecAPI11Sample();
-    ~VDecAPI11Sample();
-    int32_t RunVideoDec_Surface(std::string codeName = "");
+    ~VDecAPI11Sample() override;
+    int32_t RunVideoDecSurface(std::string codeName = "");
     int32_t RunVideoDec(std::string codeName = "");
     const char *INP_DIR = "/data/test/media/1920_1080_30.h265";
     const char *OUT_DIR = "/data/test/media/VDecTest.yuv";
     const char *OUT_DIR2 = "/data/test/media/VDecTest2.yuv";
-    bool SF_OUTPUT = false;
-    bool TRANSFER_FLAG = false;
+    bool g_sfOutput = false;
+    bool g_transferFlag = false;
     bool NV21_FLAG = false;
     bool PREPARE_FLAG = true;
     bool IS_FIRST_FRAME = true;
     uint32_t DEFAULT_WIDTH = 1920;
-    uint32_t DEFAULT_HEIGHT = 1080;
+    uint32_t g_defaultHeight = 1080;
     uint32_t defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
     uint32_t REPEAT_CALL_TIME = 10;
     uint32_t MAX_SURF_NUM = 2;
     double DEFAULT_FRAME_RATE = 30.0;
-    uint32_t DEFAULT_RANGE_FLAG = 0;
+    uint32_t g_defaultRangeFlag = 0;
     bool BEFORE_EOS_INPUT = false;              // 0800 测试用例
     bool BEFORE_EOS_INPUT_INPUT = false;        // 0900 测试用例
     bool AFTER_EOS_DESTORY_CODEC = true;        // 1000 测试用例 结束不销毁codec
@@ -109,7 +102,7 @@ public:
     int32_t Prepare();
     int32_t StartDecoder();
     int32_t StartSyncDecoder();
-    int32_t state_EOS();
+    int32_t StateEOS();
     void SetEOS(uint32_t index, OH_AVBuffer *buffer);
     void WaitForEOS();
     int32_t ConfigureVideoDecoder();
@@ -158,7 +151,7 @@ public:
     int64_t decode_count = 0;
     int64_t start_time = 0;
     int32_t maxInputSize = 0;
-    int64_t end_time = 0;
+    int64_t endTime_ = 0;
     bool autoSwitchSurface = false;
     std::atomic<bool> isFlushing_ { false };
     int32_t switchSurfaceFlag = 0;
@@ -168,7 +161,7 @@ public:
     bool outputCallbackFlush = false;
     bool outputCallbackStop = false;
     bool useHDRSource = false;
-    bool NocaleHash = false;
+    bool nocaleHash = false;
     bool isAPI = false;
     int32_t DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
     int32_t DecodeSetSurface();

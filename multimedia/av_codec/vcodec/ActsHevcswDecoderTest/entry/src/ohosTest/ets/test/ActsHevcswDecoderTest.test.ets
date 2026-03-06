@@ -44,50 +44,44 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   VIDEO_DECODE_SYNC_SW265_FUNC_0010
-     * @tc.number VIDEO_DECODE_SYNC_SW265_FUNC_0010
+     * @tc.name   VideoDecodeSyncSs265Func0010Test
+     * @tc.number VideoDecodeSyncSs265Func0010Test
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('VideoDecodeSyncSs265Func0010Test', Level.LEVEL1, async (done: Function) => {
-      Log.info(`-----> start VideoDecodeSyncSs265Func0010Test ${typeof hevcswDecoderNapi}`)
       const result: number = await hevcswDecoderNapi.runFuncTest(0);
-      Log.info(`-----> result is ${result}`)
       expect(result).assertEqual(0)
       done();
     })
 
     /**
-     * @tc.name   VIDEO_DECODE_SYNC_SW265_FUNC_0020
-     * @tc.number VIDEO_DECODE_SYNC_SW265_FUNC_0020
+     * @tc.name   VideoDecodeSyncSs265Func0020Test
+     * @tc.number VideoDecodeSyncSs265Func0020Test
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('VideoDecodeSyncSs265Func0020Test', Level.LEVEL1, async (done: Function) => {
-      Log.info(`-----> start VideoDecodeSyncSs265Func0010Test ${typeof hevcswDecoderNapi}`)
       const result: number = await hevcswDecoderNapi.runFuncTest(1);
       expect(result).assertEqual(0)
-      Log.info(`-----> result is ${result}`)
       done();
     })
 
     /**
-     * @tc.name   VIDEO_SWDEC_H265_BLANK_FRAME_0010
-     * @tc.number VIDEO_SWDEC_H265_BLANK_FRAME_0010
+     * @tc.name   VideoSwdecH265BlankFrame0010Test
+     * @tc.number VideoSwdecH265BlankFrame0010Test
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('VideoSwdecH265BlankFrame0010Test', Level.LEVEL1, async (done: Function) => {
-      Log.info(`-----> start VideoDecodeSyncSs265Func0010Test ${typeof hevcswDecoderNapi}`)
       const result: number = await hevcswDecoderNapi.runFuncTest(2);
       expect(result).assertEqual(0)
-      Log.info(`-----> result is ${result}`)
       done();
     })
   })

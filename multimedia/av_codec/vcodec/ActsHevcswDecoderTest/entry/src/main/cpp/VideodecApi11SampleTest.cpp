@@ -75,7 +75,8 @@ void clearBufferqueue(std::queue<OH_AVCodecBufferAttr> &q)
 
 class ConsumerListenerBuffer {
 public:
-    ConsumerListenerBuffer(OH_NativeImage *image, std::string_view name) : image(image) {
+    ConsumerListenerBuffer(OH_NativeImage *image, std::string_view name) : image(image)
+    {
         listener_.onFrameAvailable = &ConsumerListenerBuffer::OnFrameAvailableStatic;
         listener_.context = this;
         
@@ -84,12 +85,14 @@ public:
     ~ConsumerListenerBuffer() { OH_NativeImage_UnsetOnFrameAvailableListener(image); }
 
 private:
-    static void OnFrameAvailableStatic(void *ctx) {
+    static void OnFrameAvailableStatic(void *ctx)
+    {
         auto *self = static_cast<ConsumerListenerBuffer *>(ctx);
         self->OnFrameAvailable();
     }
     
-    void OnFrameAvailable() {
+    void OnFrameAvailable()
+    {
         OHNativeWindowBuffer *buffer;
         int32_t flushFence;
         OH_NativeImage_AcquireNativeWindowBuffer(image, &buffer, &flushFence);
@@ -108,7 +111,8 @@ public:
     ConsumerListenerBuffer *consumerListenerBuffer[2] = {};
 };
 
-VDecAPI11Sample::VDecAPI11Sample() {
+VDecAPI11Sample::VDecAPI11Sample()
+{
     this->impl = new Impl();
 }
 
@@ -153,7 +157,7 @@ void VdecAPI11FormatChanged(OH_AVCodec *codec, OH_AVFormat *format, void *userDa
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_PIC_WIDTH, &picWidth);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_PIC_HEIGHT, &picHeight);
     dec_sample->DEFAULT_WIDTH = currentWidth;
-    dec_sample->DEFAULT_HEIGHT = currentHeight;
+    dec_sample->g_defaultHeight = currentHeight;
     dec_sample->stride_ = stride;
     dec_sample->sliceHeight_ = sliceHeight;
     dec_sample->picWidth_ = picWidth;
@@ -362,7 +366,7 @@ int32_t VDecAPI11Sample::ConfigureVideoDecoder()
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_MAX_INPUT_SIZE, maxInputSize);
     }
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, g_defaultHeight);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, defualtPixelFormat);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
     if (useHDRSource) {
@@ -390,9 +394,9 @@ void VDecAPI11Sample::CreateSurface()
     }
 }
 
-int32_t VDecAPI11Sample::RunVideoDec_Surface(string codeName)
+int32_t VDecAPI11Sample::RunVideoDecSurface(string codeName)
 {
-    SF_OUTPUT = true;
+    g_sfOutput = true;
     int err = AV_ERR_OK;
     CreateSurface();
     if (!pNativeWindow[0]) {
@@ -432,7 +436,7 @@ int32_t VDecAPI11Sample::RunVideoDec_Surface(string codeName)
 
 int32_t VDecAPI11Sample::RunVideoDec(string codeName)
 {
-    SF_OUTPUT = false;
+    g_sfOutput = false;
     int err = CreateVideoDecoder(codeName);
     if (err != AV_ERR_OK) {
         cout << "Failed to create video decoder" << endl;
@@ -631,7 +635,7 @@ void VDecAPI11Sample::testAPI()
 
     OH_AVFormat *format = OH_AVFormat_Create();
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, g_defaultHeight);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
     OH_VideoDecoder_SetParameter(vdec_, format);
@@ -779,7 +783,7 @@ int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer *buffer)
         bufferSize = (uint32_t)(((ch[zero] & 0xFF)) | ((ch[one] & 0xFF) << EIGHT) | ((ch[two] & 0xFF) << SIXTEEN) |
                                      ((ch[three] & 0xFF) << TWENTY_FOUR));
     }
-    if (bufferSize >= DEFAULT_WIDTH * DEFAULT_HEIGHT * THREE >> 1) {
+    if (bufferSize >= DEFAULT_WIDTH * g_defaultHeight * THREE >> 1) {
         cout << "read bufferSize abnormal. buffersize = " << bufferSize << endl;
         return 1;
     }
@@ -878,7 +882,7 @@ void VDecAPI11Sample::CheckOutputDescription()
             std::cout << "stride:" << stride << " sliceHeight:" << sliceHeight << std::endl;
             errCount++;
         }
-        if (picWidth != DEFAULT_WIDTH || picHeight != DEFAULT_HEIGHT) {
+        if (picWidth != DEFAULT_WIDTH || picHeight != g_defaultHeight) {
             std::cout << "picWidth:" << picWidth << " picHeight:" << picHeight << std::endl;
             errCount++;
         }
@@ -920,7 +924,7 @@ int32_t VDecAPI11Sample::CheckAttrFlag(OH_AVCodecBufferAttr attr)
         Crypto_DataBlob g_out = { .data = nullptr, .len = 0 };
         OH_CryptoDigest_Final(g_c, &g_out);
         OH_DigestCrypto_Destroy(g_c);
-        if (!SF_OUTPUT) {
+        if (!g_sfOutput) {
             if (!MdCompare(g_out.data)) {
                 errCount++;
             }
@@ -951,7 +955,7 @@ void VDecAPI11Sample::GetStride()
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_PIC_WIDTH, &picWidth);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_PIC_HEIGHT, &picHeight);
     dec_sample->DEFAULT_WIDTH = currentWidth;
-    dec_sample->DEFAULT_HEIGHT = currentHeight;
+    dec_sample->g_defaultHeight = currentHeight;
     dec_sample->stride_ = stride;
     dec_sample->sliceHeight_ = sliceHeight;
     dec_sample->picWidth_ = picWidth;
@@ -1016,7 +1020,7 @@ void VDecAPI11Sample::SyncOutputFunc()
     if (outputYuvFlag) {
         outFile = fopen(OUT_DIR, "wb");
     }
-    OH_CryptoDigest_Create("SHA512",&g_c);
+    OH_CryptoDigest_Create("SHA512", &g_c);
     bool flag = true;
     while (flag) {
         if (!isRunning_.load()) {
@@ -1075,7 +1079,7 @@ int32_t VDecAPI11Sample::SyncOutputFuncEos(OH_AVCodecBufferAttr attr, uint32_t i
 
 void VDecAPI11Sample::ProcessOutputData(OH_AVBuffer *buffer, uint32_t index)
 {
-    if (!SF_OUTPUT) {
+    if (!g_sfOutput) {
         uint8_t *bufferAddr = OH_AVBuffer_GetAddr(buffer);
         uint32_t cropSize = (picWidth_ * picHeight_ * THREE) >> 1;
         uint8_t *cropBuffer = new uint8_t[cropSize];
@@ -1137,7 +1141,7 @@ void VDecAPI11Sample::RenderOutAtTime(uint32_t index)
     }
 }
 
-int32_t VDecAPI11Sample::state_EOS()
+int32_t VDecAPI11Sample::StateEOS()
 {
     uint32_t index;
     unique_lock<mutex> lock(signal_->inMutex_);
