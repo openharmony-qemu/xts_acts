@@ -30,6 +30,7 @@ import StackSafeAreaTest from './Stack/StackSafeAreaTest.ets'
 import StackChildAlignmentTest from './Stack/StackChildAlignmentTest.ets'
 import StackBackgroundTest from './Stack/StackBackgroundTest.ets'
 import stackAlignContentJsunit from './Stack/stack.test.ets';
+import StackAlignContentNullUndefinedTest from './Stack/StackAlignContentNullUndefined.test';
 
 export default function testsuite() {
   stackAlignChange();
@@ -50,4 +51,5 @@ export default function testsuite() {
   StackChildAlignmentTest();
   StackBackgroundTest();
   stackAlignContentJsunit();
+  StackAlignContentNullUndefinedTest();
 }

@@ -18,6 +18,7 @@
         "MainAbility/pages/Stack/StackSafeArea",
         "MainAbility/pages/Stack/StackChildAlignment",
         "MainAbility/pages/Stack/StackBackground",
-        "MainAbility/pages/Stack/stackPage"
+        "MainAbility/pages/Stack/stackPage",
+        "MainAbility/pages/Stack/StackAlignContentNullUndefined"
     ]
 }
