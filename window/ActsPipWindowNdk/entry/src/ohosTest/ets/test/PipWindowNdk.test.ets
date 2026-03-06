@@ -185,8 +185,8 @@ export default function PipWindowNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCreatePip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      let caseName = 'testCreatePip';
+    it('testDestroyPipConfig', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'testDestroyPipConfig';
       try{
         let mainWindow = windowStage.getMainWindowSync();
         let properties = mainWindow.getWindowProperties();
