@@ -21,7 +21,8 @@ import {
   DragEvent,
   Text,
   CopyOptions,
-  TextArea
+  TextArea,
+  DragItemInfo
 } from '@ohos.arkui.component'
 import { State, } from '@ohos.arkui.stateManagement'
 
@@ -39,8 +40,9 @@ struct TextAreaInputTestExample {
           .width('90%')
           .margin(20)
           .copyOption(CopyOptions.LocalDevice)
-          .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
+          .onDragStart((event: DragEvent, extraParams?: string) => {
             this.text = 'Text--onDragStart'
+            return {} as DragItemInfo
           })
           .onDragEnd((event: DragEvent, extraParams?: string): void => {
             this.text = 'Text--onDragEnd'
