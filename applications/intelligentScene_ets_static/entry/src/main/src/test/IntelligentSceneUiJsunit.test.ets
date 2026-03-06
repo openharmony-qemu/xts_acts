@@ -69,7 +69,6 @@ export default function intelligentSceneJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-
     it('Test_isDoNotDisturbEnabled_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
