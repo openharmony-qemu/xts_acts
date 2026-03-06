@@ -15,7 +15,6 @@
 import WebViewNativeVideoUpdateRect from './WebViewNativeMediaUpdateRect.test';
 import WebViewNativeMediaPlayerEnableFalse from './WebViewNativeMediaPlayerEnableFalse.test';
 import WebViewNativeMediaPlayerHandlerEnhanced from './WebViewNativeMediaPlayerHandlerEnhanced.test';
-import WebViewNativeMediaPlayerHandler4 from './WebViewNativeMediaPlayerHandler4.test';
 import WebViewNativeMediaPlayerHandlerEnhanced2 from './WebViewNativeMediaPlayerHandlerEnhanced2.test';
 import WebViewNativeMediaPlayerHandlerEnhancedSetMuted from './WebViewNativeMediaPlayerHandlerEnhancedSetMuted.test';
 import WebViewNativeMediaPlayerHandler6 from './WebViewNativeMediaPlayerHandler6.test';
@@ -24,6 +23,7 @@ import WebViewNativeMediaPlayerHandler8 from './WebViewNativeMediaPlayerHandler8
 import WebViewNativeMediaPlayerHandler9 from './WebViewNativeMediaPlayerHandler9.test';
 import WebViewNativeMediaPlayerHandler10 from './WebViewNativeMediaPlayerHandler10.test';
 import WebViewNativeMediaPlayerHandler5 from './WebViewNativeMediaPlayerHandler5.test';
+import WebViewNativeMediaPlayerHandler4 from './WebViewNativeMediaPlayerHandler4.test';
 
 export default function testsuite() {
   WebViewNativeVideoUpdateRect()
@@ -31,12 +31,12 @@ export default function testsuite() {
   WebViewNativeMediaPlayerHandlerEnhanced()
   WebViewNativeMediaPlayerHandlerEnhanced2()
   WebViewNativeMediaPlayerHandlerEnhancedSetMuted()
-  WebViewNativeMediaPlayerHandler4()
   WebViewNativeMediaPlayerHandler6()
   WebViewNativeMediaPlayerHandler7()
   WebViewNativeMediaPlayerHandler8()
   WebViewNativeMediaPlayerHandler9()
   WebViewNativeMediaPlayerHandler10()
   WebViewNativeMediaPlayerHandler5()
+  WebViewNativeMediaPlayerHandler4()
 
 }
