@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import { BusinessError } from '@ohos.base';
 import { Entry, Component, Column, ColumnOptions, Text, Button, ClickEvent } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -26,7 +26,6 @@ struct pushUrl3 {
   build() {
     Column() {
       Text('pushUrl3').id('pushUrl3_text1')
-      Text(this.text1).id('pushUrl3_text2')
       Button('pushUrl').onClick((event: ClickEvent) => {
         for(let i=0;i<33;i++){
           try {
@@ -36,6 +35,8 @@ struct pushUrl3 {
               .catch((err:Error) => {
                 console.info('error url3:'+err.code)
                 this.text1 = '' +  err.code
+                console.log('test pushUrl3 ', this.text1)
+                AppStorage.setOrCreate<string>('errcode1', this.text1)
               })
           } catch (err) {
             console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);

@@ -60,4 +60,5 @@ export default function testsuite() {
   GraphicImagePixelMap4();
   GraphicImagePixelMap5();
   GraphicSendImagePixelMapAdd02();
+  GraphicImageCreatePixelMap04();
 }

@@ -2767,6 +2767,24 @@ static napi_value NAPI_AVPlayerOnSubtitleInfoUpdate(napi_env env, napi_callback_
     SetUserDataProperty(env, result, "userData", &ndkAVPlayerUser);
     return result;
 }
+static napi_value NAPI_AVMediaSourceDestroy(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVHttpHeader* header = OH_AVHttpHeader_Create();
+    OH_AVMediaSource *mediaSource = OH_AVMediaSource_CreateWithUrl("http://example.com/video.mp4", header);
+    OH_AVErrCode errCode = OH_AVMediaSource_Destroy(mediaSource);
+    OH_AVHttpHeader_Destroy(header);
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+ 	 
+static napi_value NAPI_AVMediaSourceDestroyAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVErrCode errCode = OH_AVMediaSource_Destroy(nullptr);
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -2902,6 +2920,10 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr},
         {"AVPlayerSetAmplitudeUpdateCallbackError", nullptr, NAPI_AVPlayerSetAmplitudeUpdateCallbackError, nullptr,
             nullptr, nullptr, napi_default, nullptr},
+        {"AVMediaSourceDestroy", nullptr, NAPI_AVMediaSourceDestroy, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"AVMediaSourceDestroyAbnormal", nullptr, NAPI_AVMediaSourceDestroyAbnormal, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"AVLoadingRequestError", nullptr, NAPI_AVLoadingRequestError, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"AVHttpHeaderDestroy", nullptr, NAPI_AVHttpHeaderDestroy, nullptr, nullptr, nullptr, napi_default, nullptr},

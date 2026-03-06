@@ -114,6 +114,12 @@ import builderNodeReuseNullUndefinedTest from './BuilderNodeTest/builderNodeReus
 import ReactiveBuilderNodeReuseNullUndefinedTest from './BuilderNodeTest/ReactiveBuilderNodeReuseNullUndefinedTest.test';
 import builderNodeInheritFreezeOptionsFalseTest from './BuilderNodeTest/builderNodeInheritFreezeOptionsFalseTest.test';
 
+import componentContentUpdateNullUndefinedTest from './ComponentContentTest/componentContentUpdateNullUndefinedTest.test';
+import ComponentContentReuseNullUndefinedTest from './ComponentContentTest/ComponentContentReuseNullUndefinedTest.test';
+import ComponentContentInheritFreezeOptionsFalseTest from './ComponentContentTest/ComponentContentInheritFreezeOptionsFalseTest.test';
+import ReactiveComponentContentReuseNullUndefinedTest from './ComponentContentTest/ReactiveComponentContentReuseNullUndefinedTest.test';
+import NodeAdapterApiNullUndefinedTest from './NodeAdapter/NodeAdapterApiNullUndefinedTest.test';
+
 export default function testsuite() {
   arkuiNodeTest();
   arkuiNodeEventTest();
@@ -215,5 +221,11 @@ export default function testsuite() {
   builderNodeReuseNullUndefinedTest();
   ReactiveBuilderNodeReuseNullUndefinedTest();
   builderNodeInheritFreezeOptionsFalseTest();
+
+  componentContentUpdateNullUndefinedTest();
+  ComponentContentReuseNullUndefinedTest();
+  ComponentContentInheritFreezeOptionsFalseTest();
+  ReactiveComponentContentReuseNullUndefinedTest();
+  NodeAdapterApiNullUndefinedTest();
 
 }

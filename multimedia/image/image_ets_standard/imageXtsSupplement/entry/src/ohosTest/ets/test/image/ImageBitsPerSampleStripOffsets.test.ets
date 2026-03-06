@@ -310,12 +310,22 @@ export default function ImageBitsPerSampleStripOffsetsSupp() {
       };
       try {
         let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.stripOffsets);
+        if (resultFir.exifMetadata != undefined && resultFir.exifMetadata?.stripOffsets != undefined) {
+          console.info(TAG,testName,`testReadImageMetadata FirResult is:`, JSON.stringify(resultFir.exifMetadata?.stripOffsets));
+        } else {
+          console.info(TAG, testName, `Failed to read ImageMetadata`);
+          expect().assertFail();
+        }
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.stripOffsets);
-        expect(result.exifMetadata?.stripOffsets).assertContain('1');
-      }catch (err) {
+        if (result.exifMetadata != undefined && result.exifMetadata?.stripOffsets != undefined) {
+          console.info(TAG,testName,`testReadImageMetadata result is:`, JSON.stringify(result.exifMetadata?.stripOffsets));
+          expect(result.exifMetadata?.stripOffsets[0]).assertEqual(1);
+        } else {
+          console.info(TAG, testName, `Failed to read ImageMetadata`);
+          expect().assertFail();
+        }
+      } catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
       }

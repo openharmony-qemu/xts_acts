@@ -15,7 +15,7 @@
 
 import { RenderNode, FrameNode, NodeController, ShapeMask, edgeColors, edgeWidths, borderStyles,
   borderRadiuses,
-  LengthMetrics} from '@kit.ArkUI';
+  LengthMetrics,ColorMetrics} from '@kit.ArkUI';
 
 class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
@@ -108,11 +108,13 @@ struct graphicsApiNullUndefined {
           .margin({
             top: LengthMetrics.percent(null),
           })
+          .backgroundColor(ColorMetrics.numeric(null))
         NodeContainer(this.myNodeController1)
           .id('graphicsApiNullUndefinedSecond')
           .margin({
             top: LengthMetrics.percent(undefined),
           })
+          .backgroundColor(ColorMetrics.numeric(undefined))
       }
     }.width('100%').height('100%')
   }

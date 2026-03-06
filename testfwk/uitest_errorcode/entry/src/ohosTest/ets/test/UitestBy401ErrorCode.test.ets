@@ -98,6 +98,12 @@ export default function uitestEnumTest() {
         console.log(`${TestTag}, testApi8_BY_id_5 id = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
+      try {
+        BY.id(-1);
+      } catch (error) {
+        console.log(`${TestTag}, testApi8_BY_id_5 id = -1 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
       console.log(`${TestTag}, testApi8_BY_id_5 END`);
     })
 

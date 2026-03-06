@@ -37,6 +37,8 @@
     "testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsFalsePage",
     "testability/pages/WindowTest/extensionCreateSubWindowWithFalseOpt",
     "testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsTruePage",
-    "testability/pages/WindowTest/extensionCreateSubWindowWithTrueOpt"
+    "testability/pages/WindowTest/extensionCreateSubWindowWithTrueOpt",
+    "testability/pages/WindowTest/EmbeddedComponentGetWindowAvoidAreaPage",
+    "testability/pages/WindowTest/extensionGetWindowAvoidArea"
   ]
 }

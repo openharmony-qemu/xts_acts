@@ -158,9 +158,25 @@ export default function WindowImmersiveTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
                     expect(avoidArea.visible).assertTrue();
                     expect(avoidArea.topRect != null).assertTrue();
+                    expect(avoidArea.topRect.left != null).assertTrue();
+                    expect(avoidArea.topRect.top != null).assertTrue();
+                    expect(avoidArea.topRect.width != null).assertTrue();
+                    expect(avoidArea.topRect.height != null).assertTrue();
                     expect(avoidArea.rightRect != null).assertTrue();
+                    expect(avoidArea.rightRect.left != null).assertTrue();
+                    expect(avoidArea.rightRect.top != null).assertTrue();
+                    expect(avoidArea.rightRect.width != null).assertTrue();
+                    expect(avoidArea.rightRect.height != null).assertTrue();
                     expect(avoidArea.bottomRect != null).assertTrue();
+                    expect(avoidArea.bottomRect.left != null).assertTrue();
+                    expect(avoidArea.bottomRect.top != null).assertTrue();
+                    expect(avoidArea.bottomRect.width != null).assertTrue();
+                    expect(avoidArea.bottomRect.height != null).assertTrue();
                     expect(avoidArea.leftRect != null).assertTrue();
+                    expect(avoidArea.leftRect.left != null).assertTrue();
+                    expect(avoidArea.leftRect.top != null).assertTrue();
+                    expect(avoidArea.leftRect.width != null).assertTrue();
+                    expect(avoidArea.leftRect.height != null).assertTrue();
                     done();
                 } catch (exception) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the area. Cause:' + JSON.stringify(exception));
@@ -595,7 +611,6 @@ export default function WindowImmersiveTest() {
                 };
                 await mainWsync.setWindowSystemBarProperties(systemBarProperties).then(() => {
                     hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1 success step:' + i);
-                    expect(true).assertTrue();
                     if (i == commonRGBColorArr.length - 1) {
                         hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1 finished step:' + i);
                         done()
@@ -603,7 +618,7 @@ export default function WindowImmersiveTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1  error : ' + JSON.stringify(err));
                     if (err.code == 801) {
-                        expect(true).assertTrue();
+                        hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1  error');
                     } else {
                         expect().assertFail()
                     }
@@ -1114,6 +1129,606 @@ export default function WindowImmersiveTest() {
                 done();
             }
         });
+
+        /**
+          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_SYSTEMBAR_ENABLE_API_0200
+          * @tc.name        test_setWindowSystemBarEnable_static_0100
+          * @tc.desc        test_setWindowSystemBarEnable_static_0100
+          * @tc.size        MediumTest
+          * @tc.type        Function
+          * @tc.level       Level3
+          */
+        it('test_setWindowSystemBarEnable_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let CaseName:string = 'test_setWindowSystemBarEnable_static_0100';
+            let names: Array<'status' | 'navigation'> = ['status', 'navigation'];
+            let mainWsync: window.Window = windowStage!.getMainWindowSync();
+            await mainWsync.showWindow();
+            await Utils.msSleep(300);
+            let promise = mainWsync.setWindowSystemBarEnable(names);
+            promise.then(()=>{
+                hilog.info(0x0000, '[ANI]',CaseName + ' setWindowSystemBarEnable success ');
+                done();
+            }).catch((err:Error):PromiseLike<void>|undefined=>{
+                hilog.error(0x0000, '[ANI]',CaseName + ' setWindowSystemBarEnable failed,casued: err.code '+err.code +' ,err.message: '+err.message);
+                expect(err.code).assertEqual(1300002);
+                done();
+            })
+        })
+
+        /**
+          * @tc.number       testSetSpecificSystemBarEnabledPromise_static_0200
+          * @tc.name         testSetSpecificSystemBarEnabled_static_0100
+          * @tc.desc         testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100
+          * @tc.size         MediumTest
+          * @tc.type         Function
+          * @tc.level        Level 3
+          */
+        it('testSetSpecificSystemBarEnabled_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testSetSpecificSystemBarEnabled_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let mainWsync: window.Window = windowStage!.getMainWindowSync();
+            await mainWsync.showWindow();
+            mainWsync!.setSpecificSystemBarEnabled('navigationIndicator',false,false).then(()=>{
+                hilog.info(0x0000, '[ANI]',caseName + ' setWindowSystemBarEnable success ');
+                done();
+            }).catch((err:Error):PromiseLike<void>|undefined=>{
+                hilog.error(0x0000, '[ANI]',caseName + ' setWindowSystemBarEnable failed,casued: err.code '+err.code +' ,err.message: '+err.message);
+                expect(err!.code).assertEqual(1300002);
+                done();
+            })
+        })
+
+        /**
+                  * @tc.number      SUB_BASIC_WMS_GET_WINDOW_AVOID_AERA_IGNORING_VISIBILITY_STATIC_0200
+                  * @tc.name        testGetWindowAvoidAreaIgnoringVisibility_1300002_static_0300
+                  * @tc.desc        testGetWindowAvoidArea_1300002_static_0300
+                  * @tc.size        MediumTest
+                  * @tc.type        Function
+                  * @tc.level       Level 3
+                  */
+                it('testGetWindowAvoidAreaIgnoringVisibility_1300002_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+                    let caseName:string = 'testGetWindowAvoidAreaIgnoringVisibility_1300002_static_0300';
+                    let msgStr:string = 'jsunittest ' + caseName + ' ';
+                    hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+                    let win: window.Window = await windowStage!.createSubWindow('testGetWindowAvoidAreaIgnoringVisibility_1300002_static_0300');
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+                    expect(!!win).assertTrue();
+                    await win.destroyWindow();
+                    try {
+                        let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_SYSTEM;
+                        let avoidArea:window.AvoidArea = win.getWindowAvoidAreaIgnoringVisibility(type);
+                        expect(false).assertTrue();
+                        done();
+                    } catch (exception) {
+                        exception === exception as BusinessError;
+                        if(exception!.code !== 801){
+                            hilog.error(0x0000, '[ANI]',msgStr + 'Failed to get the window AvoidArea. Cause:' + JSON.stringify(exception));
+                            expect(exception!.code).assertEqual(1300002);
+                            done();
+                        }else{
+                            hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                            hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
+                            expect(exception!.code).assertEqual(801);
+                            done();
+                        }
+                    }
+                })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_AVOID_AERA_IGNORING_VISIBILITY_STATIC_0300
+         * @tc.name        estGetWindowAvoidAreaIgnoringVisibility_Type_System_static_0100
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('estGetWindowAvoidAreaIgnoringVisibility_Type_System_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'estGetWindowAvoidAreaIgnoringVisibility_Type_System_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            try {
+                let tempWnd: window.Window = windowStage!.getMainWindowSync();
+                expect(!!tempWnd).assertTrue();
+                try {
+                    let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_SYSTEM;
+                    let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidAreaIgnoringVisibility(type);
+                    hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect != null).assertTrue();
+                    expect(avoidArea.topRect.left != null).assertTrue();
+                    expect(avoidArea.topRect.top != null).assertTrue();
+                    expect(avoidArea.topRect.width != null).assertTrue();
+                    expect(avoidArea.topRect.height != null).assertTrue();
+                    expect(avoidArea.rightRect != null).assertTrue();
+                    expect(avoidArea.rightRect.left != null).assertTrue();
+                    expect(avoidArea.rightRect.top != null).assertTrue();
+                    expect(avoidArea.rightRect.width != null).assertTrue();
+                    expect(avoidArea.rightRect.height != null).assertTrue();
+                    expect(avoidArea.bottomRect != null).assertTrue();
+                    expect(avoidArea.bottomRect.left != null).assertTrue();
+                    expect(avoidArea.bottomRect.top != null).assertTrue();
+                    expect(avoidArea.bottomRect.width != null).assertTrue();
+                    expect(avoidArea.bottomRect.height != null).assertTrue();
+                    expect(avoidArea.leftRect != null).assertTrue();
+                    expect(avoidArea.leftRect.left != null).assertTrue();
+                    expect(avoidArea.leftRect.top != null).assertTrue();
+                    expect(avoidArea.leftRect.width != null).assertTrue();
+                    expect(avoidArea.leftRect.height != null).assertTrue();
+                    done();
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    if(exception!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to get the window AvoidArea. Cause:' + JSON.stringify(exception));
+                        expect(true).assertFalse();
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
+                        expect(exception!.code).assertEqual(801);
+                        done();
+                    }
+                };
+            } catch (exception) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+            };
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_AVOID_AERA_IGNORING_VISIBILITY_STATIC_0400
+         * @tc.name        estGetWindowAvoidAreaIgnoringVisibility_Type_Cutout_static_0100
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('estGetWindowAvoidAreaIgnoringVisibility_Type_Cutout_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'estGetWindowAvoidAreaIgnoringVisibility_Type_Cutout_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            try {
+                let tempWnd: window.Window = windowStage!.getMainWindowSync();
+                expect(!!tempWnd).assertTrue();
+                try {
+                    let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_CUTOUT;
+                    let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidAreaIgnoringVisibility(type);
+                    hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect != null).assertTrue();
+                    expect(avoidArea.rightRect != null).assertTrue();
+                    expect(avoidArea.bottomRect != null).assertTrue();
+                    expect(avoidArea.leftRect != null).assertTrue();
+                    done();
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    if(exception!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to get the window AvoidArea. Cause:' + JSON.stringify(exception));
+                        expect(true).assertFalse();
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
+                        expect(exception!.code).assertEqual(801);
+                        done();
+                    }
+                };
+            } catch (exception) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+            };
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_AVOID_AERA_IGNORING_VISIBILITY_STATIC_0500
+         * @tc.name        estGetWindowAvoidAreaIgnoringVisibility_Type_System_Gesture_static_0100
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('estGetWindowAvoidAreaIgnoringVisibility_Type_System_Gesture_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'estGetWindowAvoidAreaIgnoringVisibility_Type_System_Gesture_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            try {
+                let tempWnd: window.Window = windowStage!.getMainWindowSync();
+                expect(!!tempWnd).assertTrue();
+                try {
+                    let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_SYSTEM_GESTURE;
+                    let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidAreaIgnoringVisibility(type);
+                    hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect != null).assertTrue();
+                    expect(avoidArea.rightRect != null).assertTrue();
+                    expect(avoidArea.bottomRect != null).assertTrue();
+                    expect(avoidArea.leftRect != null).assertTrue();
+                    done();
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    if(exception!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to get the window AvoidArea. Cause:' + JSON.stringify(exception));
+                        expect(true).assertFalse();
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
+                        expect(exception!.code).assertEqual(801);
+                        done();
+                    }
+                };
+            } catch (exception) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+            };
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_AVOID_AERA_IGNORING_VISIBILITY_STATIC_0600
+         * @tc.name        estGetWindowAvoidAreaIgnoringVisibility_Type_Keyboard_static_0100
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('estGetWindowAvoidAreaIgnoringVisibility_Type_Keyboard_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'estGetWindowAvoidAreaIgnoringVisibility_Type_Keyboard_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            try {
+                let tempWnd: window.Window = windowStage!.getMainWindowSync();
+                expect(!!tempWnd).assertTrue();
+                try {
+                    let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_KEYBOARD;
+                    let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidAreaIgnoringVisibility(type);
+                    hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect != null).assertTrue();
+                    expect(avoidArea.rightRect != null).assertTrue();
+                    expect(avoidArea.bottomRect != null).assertTrue();
+                    expect(avoidArea.leftRect != null).assertTrue();
+                    done();
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    if(exception!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to get the window AvoidArea. Cause:' + JSON.stringify(exception));
+                        expect(exception!.code).assertEqual(1300016);
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
+                        expect(exception!.code).assertEqual(801);
+                        done();
+                    }
+                };
+            } catch (exception) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+            };
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_AVOID_AERA_IGNORING_VISIBILITY_STATIC_0700
+         * @tc.name        estGetWindowAvoidAreaIgnoringVisibility_Type_Navigation_Indicator_static_0100
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('estGetWindowAvoidAreaIgnoringVisibility_Type_Navigation_Indicator_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'estGetWindowAvoidAreaIgnoringVisibility_Type_Navigation_Indicator_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            try {
+                let tempWnd: window.Window = windowStage!.getMainWindowSync();
+                expect(!!tempWnd).assertTrue();
+                try {
+                    let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR;
+                    let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidAreaIgnoringVisibility(type);
+                    hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect != null).assertTrue();
+                    expect(avoidArea.rightRect != null).assertTrue();
+                    expect(avoidArea.bottomRect != null).assertTrue();
+                    expect(avoidArea.leftRect != null).assertTrue();
+                    done();
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    if(exception!.code !== 801){
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to get the window AvoidArea. Cause:' + JSON.stringify(exception));
+                        expect(exception!.code).assertEqual(1300016);
+                        done();
+                    }else{
+                        hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
+                        expect(exception!.code).assertEqual(801);
+                        done();
+                    }
+                };
+            } catch (exception) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+            };
+        })
+
+         /**
+          * @tc.number       SUB_BASIC_WMS_SET_SYSTEM_AVOID_AERA_ENABLED_STATIC_0100
+          * @tc.name         testSetSystemAvoidAreaEnabled_1300002_static_0100
+          * @tc.desc         testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+          * @tc.size         MediumTest
+          * @tc.type         Function
+          * @tc.level        Level 3
+          */
+        it('testSetSystemAvoidAreaEnabled_1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSetSystemAvoidAreaEnabled_1300002_static_0100";
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testSetSystemAvoidAreaEnabled_1300002_static_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context!,
+            };
+            let win: window.Window  | undefined;
+            try {
+                win = await window.createWindow(windowConfig);
+                expect(!!win).assertTrue();
+                await win.destroyWindow();
+            } catch (err) {
+                hilog.error(0x0000, '[ANI]', msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            win!.setSystemAvoidAreaEnabled(true).then(()=>{
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in  setSystemAvoidAreaEnabled true.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err:Error):PromiseLike<void>|undefined=>{
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setSystemAvoidAreaEnabled. Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300002);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            })
+        })
+
+        /**
+         * @tc.number       SUB_BASIC_WMS_SET_SYSTEM_AVOID_AERA_ENABLED_STATIC_0200
+         * @tc.name         testSetSystemAvoidAreaEnabled_1300004_static_0100
+         * @tc.desc         testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
+         */
+        it('testSetSystemAvoidAreaEnabled_1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSetSystemAvoidAreaEnabled_1300004_static_0100";
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testSetSystemAvoidAreaEnabled_1300004_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300);
+            win!.setSystemAvoidAreaEnabled(true).then(()=>{
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setSystemAvoidAreaEnabled true.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err:Error):PromiseLike<void>|undefined=>{
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setSystemAvoidAreaEnabled. Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300004);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            })
+        })
+
+        /**
+         * @tc.number       SUB_BASIC_WMS_SET_SYSTEM_AVOID_AERA_ENABLED_STATIC_0300
+         * @tc.name         testSetSystemAvoidAreaEnabled_static_0100
+         * @tc.desc         testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
+         */
+        it('testSetSystemAvoidAreaEnabled_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSetSystemAvoidAreaEnabled_static_0100";
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testSetSystemAvoidAreaEnabled_static_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context!,
+            };
+            let win: window.Window  | undefined;
+            try {
+                win = await window.createWindow(windowConfig);
+                expect(!!win).assertTrue();
+                await win.setUIContent('pages/Index');
+                await win.showWindow();
+                await Utils.msSleep(300);
+            } catch (err) {
+                hilog.error(0x0000, '[ANI]', msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            win!.setSystemAvoidAreaEnabled(true).then(()=>{
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in  setSystemAvoidAreaEnabled true.');
+                let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_SYSTEM;
+                let avoidArea:window.AvoidArea = win!.getWindowAvoidArea(type);
+                hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
+                let enable:boolean = win!.isSystemAvoidAreaEnabled()
+                hilog.info(0x0000, '[ANI]',msgStr + 'isSystemAvoidAreaEnabled: ' + JSON.stringify(enable));
+                expect(avoidArea.visible).assertTrue();
+                expect(enable).assertTrue();
+                expect(avoidArea.topRect != null).assertTrue();
+                expect(avoidArea.topRect.left != null).assertTrue();
+                expect(avoidArea.topRect.top != null).assertTrue();
+                expect(avoidArea.topRect.width != null).assertTrue();
+                expect(avoidArea.topRect.height != null).assertTrue();
+                expect(avoidArea.rightRect != null).assertTrue();
+                expect(avoidArea.rightRect.left != null).assertTrue();
+                expect(avoidArea.rightRect.top != null).assertTrue();
+                expect(avoidArea.rightRect.width != null).assertTrue();
+                expect(avoidArea.rightRect.height != null).assertTrue();
+                expect(avoidArea.bottomRect != null).assertTrue();
+                expect(avoidArea.bottomRect.left != null).assertTrue();
+                expect(avoidArea.bottomRect.top != null).assertTrue();
+                expect(avoidArea.bottomRect.width != null).assertTrue();
+                expect(avoidArea.bottomRect.height != null).assertTrue();
+                expect(avoidArea.leftRect != null).assertTrue();
+                expect(avoidArea.leftRect.left != null).assertTrue();
+                expect(avoidArea.leftRect.top != null).assertTrue();
+                expect(avoidArea.leftRect.width != null).assertTrue();
+                expect(avoidArea.leftRect.height != null).assertTrue();
+                done();
+            }).catch((err:Error):PromiseLike<void>|undefined=>{
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setSystemAvoidAreaEnabled. Cause:' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            })
+        })
+
+
+        /**
+         * @tc.number       SUB_BASIC_WMS_SET_IS_SYSTEM_AVOID_AERA_ENABLED_STATIC_0100
+         * @tc.name         testIsSetSystemAvoidAreaEnabled_static_0100
+         * @tc.desc         testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
+         */
+        it('testIsSetSystemAvoidAreaEnabled_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testIsSetSystemAvoidAreaEnabled_static_0100";
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testIsSetSystemAvoidAreaEnabled_static_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context!,
+            };
+            let win: window.Window  | undefined;
+            try {
+                win = await window.createWindow(windowConfig);
+                expect(!!win).assertTrue();
+                await win.setUIContent('pages/Index');
+                await win.showWindow();
+                await Utils.msSleep(300);
+            } catch (err) {
+                hilog.error(0x0000, '[ANI]', msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            win!.setSystemAvoidAreaEnabled(false).then(()=>{
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in  setSystemAvoidAreaEnabled false.');
+                let enable:boolean = win!.isSystemAvoidAreaEnabled()
+                hilog.info(0x0000, '[ANI]',msgStr + 'isSystemAvoidAreaEnabled: ' + JSON.stringify(enable));
+                expect(enable).assertFalse();
+                done();
+            }).catch((err:Error):PromiseLike<void>|undefined=>{
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setSystemAvoidAreaEnabled. Cause:' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            })
+        })
+
+        /**
+         * @tc.number       SUB_BASIC_WMS_SET_IS_SYSTEM_AVOID_AERA_ENABLED_STATIC_0200
+         * @tc.name         testIsSetSystemAvoidAreaEnabled_1300002_static_0100
+         * @tc.desc         testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
+         */
+        it('testIsSetSystemAvoidAreaEnabled_1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testIsSetSystemAvoidAreaEnabled_1300002_static_0100";
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testIsSetSystemAvoidAreaEnabled_1300002_static_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context!,
+            };
+            let win: window.Window  | undefined;
+            try {
+                win = await window.createWindow(windowConfig);
+                expect(!!win).assertTrue();
+                await win.destroyWindow();
+            } catch (err) {
+                hilog.error(0x0000, '[ANI]', msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            try{
+                win!.isSystemAvoidAreaEnabled();
+            }catch(err){
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to get isSystemAvoidAreaEnabled. Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300002);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            }
+        })
+
+        /**
+         * @tc.number       SUB_BASIC_WMS_SET_IS_SYSTEM_AVOID_AERA_ENABLED_STATIC_0300
+         * @tc.name         testIsSetSystemAvoidAreaEnabled_1300004_static_0100
+         * @tc.desc         testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
+         */
+        it('testIsSetSystemAvoidAreaEnabled_1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testIsSetSystemAvoidAreaEnabled_1300004_static_0100";
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testIsSetSystemAvoidAreaEnabled_1300004_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300);
+            try{
+                win!.isSystemAvoidAreaEnabled();
+            }catch(err){
+                err === err as BusinessError;
+                if(err!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to get isSystemAvoidAreaEnabled. Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300004);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    expect(err!.code).assertEqual(801);
+                    done();
+                }
+            }
+        })
 
 
     })

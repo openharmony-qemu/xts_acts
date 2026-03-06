@@ -1032,6 +1032,27 @@ export default function deviceSettingsTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   test_device_settings_get_value_for_account_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_FOR_ACCOUNT_JS_0700
+     * @tc.desc   test deviceSettings getValueForAccount not support item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_get_value_for_account_0700", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.getValueForAccount(SELFWANT, -1, 100);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
   
     /**
      * @tc.name   test_device_settings_set_value_for_account_0100
@@ -1188,6 +1209,27 @@ export default function deviceSettingsTest() {
         if (nameBefore != "") {
           deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, 100, nameBefore);
         }
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_value_for_account_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_FOR_ACCOUNT_JS_0800
+     * @tc.desc   test deviceSettings setValueForAccount not support item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_for_account_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, -1, 100, 'test');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 801).assertTrue();
+      } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();

@@ -253,7 +253,7 @@ export default function uiUtilsNullUndefinedTest() {
           console.info('[UIUtils_addMonitor_null_target_001] monitorCallback called');
         };
 
-        UIUtils.addMonitor(null, path, monitorCallback);
+        UIUtils.addMonitor(null, path, monitorCallback, null);
         console.info('[UIUtils_addMonitor_null_target_001] addMonitor called with null target');
         // 对于不支持的类型，会抛出运行时错误
         expect().assertFail();
@@ -275,11 +275,11 @@ export default function uiUtilsNullUndefinedTest() {
       console.info('[UIUtils_addMonitor_undefined_target_001] START');
       try {
         const target: object | undefined = undefined;
-        const path: string = 'testPath';
+        const path: string = '';
         const monitorCallback: (monitorValue: object) => void = (monitorValue: object) => {
           console.info('[UIUtils_addMonitor_undefined_target_001] monitorCallback called');
         };
-        UIUtils.addMonitor(target, path, monitorCallback);
+        UIUtils.addMonitor(target, path, monitorCallback, undefined);
         console.info('[UIUtils_addMonitor_undefined_target_001] addMonitor called with undefined target');
         // 对于不支持的类型，会抛出运行时错误
         expect().assertFail();
@@ -505,6 +505,32 @@ export default function uiUtilsNullUndefinedTest() {
         console.error('[UIUtils_clearMonitor_undefined_path_001] Error: ' + JSON.stringify(err));
       }
     });
+
+  /**
+     * @tc.name   UIUtils_clearMonitor_empty_path_001
+     * @tc.number SUB_ARUI_UIUTILS_CLEARMONITOR_PARAM_EMPTY_PATH_001
+     * @tc.desc   Test UIUtils.clearMonitor with empty path
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('UIUtils_clearMonitor_empty_path_001', Level.LEVEL2, () => {
+      console.info('[UIUtils_clearMonitor_empty_path_001] START');
+      try {
+        class TestClass {
+          public testValue: number = 100;
+        }
+        const target: TestClass = new TestClass();
+        const path: string | undefined = '';
+        UIUtils.clearMonitor(target, path);
+        // 对于不支持的类型，会抛出运行时错误
+        expect().assertFail();
+        console.info('[UIUtils_clearMonitor_empty_path_001] END');
+      } catch (err) {
+        console.error('[UIUtils_clearMonitor_empty_path_001] Error: ' + JSON.stringify(err));
+      }
+    });
+
 
     // ==================== canBeObserved Tests ====================
 

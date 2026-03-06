@@ -37,43 +37,52 @@ export default function imagePixelMapTest() {
      * @tc.level  LEVEL1
      */
     it("ImagePixelMapTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
-      let curSceneMode: camera.SceneMode = camera?.SceneMode?.NORMAL_PHOTO
-      if(curSceneMode == undefined) {
-        console.info('The product does not support this feature');
-        done();
-      } else {
-        let atManager = abilityAccessCtrl.createAtManager();
-        atManager.requestPermissionsFromUser(getContext(), [
-          'ohos.permission.CAMERA',
-          'ohos.permission.MICROPHONE'
-        ]).then((): void => {
-          AppStorage.setOrCreate<boolean>('isShow', true)
-        }).catch((error: BusinessError): void => {
-        })
-
-        let driver: Driver = Driver.create();
-        await driver.delayMs(1000);
-        let button1 = await driver.findComponent(ON.text('允许'));
-        await driver.delayMs(1000);
-        await button1.click();
-        await driver.delayMs(1000);
-        let button2 = await driver.findComponent(ON.text('允许'));
-        await driver.delayMs(1000);
-        await button2.click();
-        await driver.delayMs(1000);
-        let options :router.RouterOptions= {
-          url: 'MainAbility/pages/index/indexPixel',
-        }
-        let result = await router.replace(options);
-        await driver.delayMs(4000);
-        let button3 = await driver.findComponent(ON.id('createPixelMapFromSurfaceSync'));
-        await button3.click();
-        await driver.delayMs(1000);
-        let strJson = getInspectorByKey('createPixelMapFromSurfaceSync');
-        let obj :ESObject = JSON.parse(strJson);
-        expect(obj.$attrs.content).assertEqual('pass');
-        done();
+      let driver: Driver = Driver.create();
+      await driver.delayMs(1000);
+      let options :router.RouterOptions= {
+        url: 'MainAbility/pages/second/second',
       }
+      let result = await router.push(options);
+      await driver.delayMs(4000);
+      let button3 = await driver.findComponent(ON.id('getSurfaceId'));
+      await button3.click();
+      await driver.delayMs(1000);
+      let strJson = getInspectorByKey('getSurfaceId');
+      console.info('www data strJson surfaceId 111 ', strJson);
+      let obj :ESObject = JSON.parse(strJson);
+      console.info('www data strJson surfaceId 222 ', JSON.stringify(obj));
+      console.info('www data strJson surfaceId 333 ', obj.$attrs.content);
+      let surfaceId: string = obj.$attrs.content;
+      console.info('www data strJson surfaceId 444 ', surfaceId);
+      let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } }
+      try {
+        let pixelMap = image.createPixelMapFromSurfaceSync(surfaceId, region);
+        console.info('www data ImagePixelMapTest_0100 success', pixelMap.isEditable, pixelMap.isStrideAlignment);
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+      } catch(err) {
+        console.info('www data ImagePixelMapTest_0100 error', JSON.stringify(err));
+        expect().assertFail();
+      }
+      try {
+        let pixelMap = await image.createPixelMapFromSurface(surfaceId, region);
+        console.info('www data ImagePixelMapTest_0100 success', pixelMap.isEditable, pixelMap.isStrideAlignment);
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+      } catch(err) {
+        console.info('www data ImagePixelMapTest_0100 error', JSON.stringify(err));
+        expect().assertFail();
+      }
+      try {
+        let pixelMap = await image.createPixelMapFromSurface(surfaceId);
+        console.info('www data ImagePixelMapTest_0100 success', pixelMap.isEditable, pixelMap.isStrideAlignment);
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+      } catch(err) {
+        console.info('www data ImagePixelMapTest_0100 error', JSON.stringify(err));
+        expect().assertFail();
+      }
+      done();
     });
 
     /**

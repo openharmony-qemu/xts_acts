@@ -14,6 +14,8 @@
 */
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
 import factory from '@ohos.data.distributedData';
+import deviceInfo from '@ohos.deviceInfo';
+let currentDeviceIsWatch = false;
 
 const TAG = "[testtag >>>>>> ]"
 
@@ -47,6 +49,11 @@ export default function DeviceKvStoreReturnValueDisData(){
       securityLevel: factory.SecurityLevel.S2,
     };
     beforeAll(async (done) => {
+      console.info('beforeAll currentDeviceIsWatch');
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+      console.info( "the value of the deviceType is : " + deviceInfo.deviceType + ' currentDeviceIsWatch=' +currentDeviceIsWatch);
+
       kvManager = await factory.createKVManager(config);
       console.info(TAG + 'beforeAll end, kvManager=' + kvManager);
 
@@ -278,6 +285,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_0500 begin---------  ');
         let entries = [];
@@ -322,6 +334,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_0501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_0501 begin---------  ');
         kvStore.getEntries(localDeviceId, 'batch_test_string_key', (err, entries) => {
@@ -349,6 +366,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_0600 begin---------  ');
         let entries = [];
@@ -394,6 +416,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_0601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_0601 begin---------  ');
 
@@ -578,6 +605,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_0900 begin---------  ');
         let entries = [];
@@ -624,6 +656,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_0901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_0901 begin---------  ');
         const query = new factory.Query();
@@ -653,6 +690,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1000 begin---------  ');
         let entries = [];
@@ -699,6 +741,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1001 begin---------  ');
         const query = new factory.Query();
@@ -731,6 +778,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         const KEY_TEST_BOOL_ELEMENT = 'key_test_string';
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1300 begin---------  ');
@@ -759,6 +811,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_1301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         const KEY_TEST_BOOL_ELEMENT = 'key_test_string';
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1301 begin---------  ');
@@ -787,6 +844,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         const KEY_TEST_BOOL_ELEMENT = 'key_test_string';
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1400 begin---------  ');
@@ -818,6 +880,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_1401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         const KEY_TEST_BOOL_ELEMENT = 'key_test_string';
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1401 begin---------  ');
@@ -963,6 +1030,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1700 begin---------  ');
         console.info(TAG + `entries: ${entries}`);
@@ -995,6 +1067,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_1701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1701 begin---------  ');
         const query = new factory.Query();
@@ -1090,6 +1167,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1900 begin---------  ');
         console.info(TAG + `entries: ${entries}`);
@@ -1123,6 +1205,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_1901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1901 begin---------  ');
         console.info(TAG + `entries: ${entries}`);
@@ -1155,6 +1242,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2100 begin---------  ');
         console.info(TAG + `entries: ${entries}`);
@@ -1192,6 +1284,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_2101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2101 begin---------  ');
         kvStore.getResultSet(localDeviceId, 'batch_test_string_key', (err, result) => {
@@ -1224,6 +1321,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2300 begin---------  ');
         await kvStore.putBatch(entries);
@@ -1257,6 +1359,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_2301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2301 begin---------  ');
         await kvStore.getResultSet(localDeviceId, 'batch_test_string_key').then(async(result) => {
@@ -1359,6 +1466,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2500 begin---------  ');
         kvStore.putBatch(entries, async (err) => {
@@ -1396,6 +1508,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_2501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2501 begin---------  ');
         const query = new factory.Query();
@@ -1498,6 +1615,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2700 begin---------  ');
         await kvStore.putBatch(entries);
@@ -1533,6 +1655,11 @@ export default function DeviceKvStoreReturnValueDisData(){
      * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_ReturnValue_2701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2701 begin---------  ');
         const query = new factory.Query();

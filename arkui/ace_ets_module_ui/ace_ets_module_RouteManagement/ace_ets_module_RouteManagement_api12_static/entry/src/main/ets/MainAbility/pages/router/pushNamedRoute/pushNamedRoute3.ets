@@ -18,6 +18,8 @@ import router from '@ohos.router';
 import { BusinessError } from '@ohos.base';
 import { Entry, Column, Component,Button,Text,Row,Color,ColumnOptions,ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
+initModule('./pushNamedRoute3')
+
 @Entry({ routeName: 'pushNamedRoute3' })
 @Component
 struct pushNamedRoute3 {
@@ -28,6 +30,7 @@ struct pushNamedRoute3 {
       Text('pushNamedRoute3').id('pushNamedRoute3_text1')
       Text(this.text1).id('pushNamedRoute3_text2')
       Button('pushNamedRoute').onClick((event: ClickEvent) => {
+        initModule('./pushNamedRoute3')
         for(let i=0;i<33;i++){
           try {
             this.getUIContext().getRouter().pushNamedRoute({
@@ -35,6 +38,8 @@ struct pushNamedRoute3 {
             }).then(){}
               .catch((err:Error) => {
                 this.text1 = '' +  (err as Error).code
+                console.log('test pushNamedRoute3 ', this.text1)
+                AppStorage.setOrCreate<string>('errcode1', this.text1)
               })
           } catch (err) {
             console.error(`pushNamedRoute failed, code is ${(err as Error).code}, message is ${(err as Error).message}`);

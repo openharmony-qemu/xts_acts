@@ -97,7 +97,6 @@ export default function WindowFocusTest() {
                         if(err.code == 801){
                             done();
                         }else if(err.code == 1300002){
-                            expect(true).assertTrue();
                             done();
                         } else{
                             expect(false).assertTrue();
@@ -162,7 +161,6 @@ export default function WindowFocusTest() {
                         if(err.code == 801){
                             done();
                         }else if(err.code == 1300004){
-                            expect(true).assertTrue();
                             done();
                         } else{
                             expect(false).assertTrue();

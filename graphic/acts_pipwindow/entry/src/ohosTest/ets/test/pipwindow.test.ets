@@ -2490,6 +2490,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.info(`${message} Succeeded setPiPControlEnabled FAST_FORWARD true`);
               pipController.setPiPControlEnabled(pipWindow.PiPControlType.FAST_FORWARD, false)
               console.info(`${message} Succeeded setPiPControlEnabled FAST_FORWARD false`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.FAST_BACKWARD, true)
+              console.info(`${message} Succeeded setPiPControlEnabled FAST_BACKWARD true`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.FAST_BACKWARD, false)
+              console.info(`${message} Succeeded setPiPControlEnabled FAST_BACKWARD false`);
               expect(true).assertTrue();
 
               done();
@@ -6081,6 +6085,77 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           done();
         }
       } else {
+        done();
+      }
+    });
+
+     /**
+     * @tc.name   tesCreate_null_undefined
+     * @tc.number SUB_WMS_CREATE_PARAMETER_0100
+     * @tc.desc   tesCreate_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesCreate_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'tesCreate_null_undefined!'
+      try {
+        await pipWindow.create(null);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${message} Failed, Cause code ${err.code}, message ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        await pipWindow.create(undefined);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+     /**
+     * @tc.name   tesCreate_null
+     * @tc.number SUB_WMS_CREATE_PARAMETER_0300
+     * @tc.desc   tesCreate_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesCreate_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'tesCreate_null!';
+      try {
+        await pipWindow.create(null, null);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+     /**
+     * @tc.name   tesCreate_undefined
+     * @tc.number SUB_WMS_CREATE_PARAMETER_0400
+     * @tc.desc   tesCreate_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesCreate_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'tesCreate_undefined!';
+      try {
+        await pipWindow.create(undefined, undefined);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+        expect(err.code).assertEqual(401);
         done();
       }
     });

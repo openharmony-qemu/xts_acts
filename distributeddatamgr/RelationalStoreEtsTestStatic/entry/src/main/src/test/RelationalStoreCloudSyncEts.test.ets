@@ -590,5 +590,476 @@ export default function relationalStoreCloudSyncEts() {
       console.log(tag +
         "************* SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0200 end *************");
     });
+
+     /**
+     * @tc.name   testRdbStoreCloudSync0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_0100
+     * @tc.desc   cloudSync without tables SYNC_MODE_NATIVE_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(tag + '************* testRdbStoreCloudSync0001 start *************');
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      try {
+         rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST,
+          (progressDetail: data_relationalStore.ProgressDetails) => {
+            console.info(`progress: ${progressDetail}`);
+            expect(typeof(progressDetail) === "object").assertTrue();
+          }, (err) => {
+            console.log(tag + "cloudSync success");
+            done();
+          });
+      } catch (err) {
+        console.log(tag + "testRdbStoreCloudSync0001 err.code" + err.code + "err.message" + err.message);
+        expect(801).assertEqual(err.code)
+        done();
+      }
+      console.log(tag + '************* testRdbStoreCloudSync0001 end *************');
+        
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_0200
+     * @tc.desc   cloudSync without tables SYNC_MODE_TIME_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(tag + '************* testRdbStoreCloudSync0002 start *************');
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      try {
+         rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST,
+          (progressDetail: data_relationalStore.ProgressDetails) => {
+            console.info(`progress: ${progressDetail}`);
+            expect(typeof(progressDetail) === "object").assertTrue();
+          }, (err) => {
+            console.log(tag + "cloudSync success");
+            done();
+          });
+      } catch (err) {
+        console.log(tag + "testRdbStoreCloudSync0002 err.code" + err.code + "err.message" + err.message);
+        expect(801).assertEqual(err.code)
+        done();
+      }
+      console.log(tag + '************* testRdbStoreCloudSync0002 end *************');
+            
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_0300
+     * @tc.desc   cloudSync without tables SYNC_MODE_PUSH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(tag + '************* testRdbStoreCloudSync0002 start *************');
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      try {
+         rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PUSH,
+          (progressDetail: data_relationalStore.ProgressDetails) => {
+            console.info(`progress: ${progressDetail}`);
+            expect(typeof(progressDetail) === "object").assertTrue();
+          }, (err) => {
+            console.log(tag + "cloudSync success");
+            done();
+          });
+      } catch (err) {
+        console.log(tag + "testRdbStoreCloudSync0003 err.code" + err.code + "err.message" + err.message);
+        expect(801).assertEqual(err.code)
+        done();
+      }
+      console.log(tag + '************* testRdbStoreCloudSync0002 end *************');
+                
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0004
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_0400
+     * @tc.desc   cloudSync without tables SYNC_MODE_PULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        console.log(tag + '************* testRdbStoreCloudSync0002 start *************');
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        try {
+           rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PULL,
+            (progressDetail: data_relationalStore.ProgressDetails) => {
+              console.info(`progress: ${progressDetail}`);
+              expect(typeof(progressDetail) === "object").assertTrue();
+            }, (err) => {
+              console.log(tag + "cloudSync success");
+              done();
+            });
+        } catch (err) {
+          console.log(tag + "testRdbStoreCloudSync0004 err.code" + err.code + "err.message" + err.message);
+          expect(801).assertEqual(err.code)
+          done();
+        }
+        console.log(tag + '************* testRdbStoreCloudSync0004 end *************');
+                  
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0005
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_0500
+     * @tc.desc   cloudSync without tables SYNC_MODE_PULL, SYNC_MODE_PUSH promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+          console.log(tag + '************* testRdbStoreCloudSync0005 start *************');
+          rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+          await rdbStore!.execute(CREATE_TABLE_TEST);
+          try {
+            await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PULL,
+              (progressDetail: data_relationalStore.ProgressDetails) => {
+                console.info(`progress: ${progressDetail}`);
+                expect(typeof(progressDetail) === "object").assertTrue();
+              });
+              console.log(tag + "cloudSync success");
+              done();
+          } catch (err) {
+            console.log(tag + "testRdbStoreCloudSync0005 err.code" + err.code + "err.message" + err.message);
+            expect(14800000).assertEqual(err.code)
+            done();
+          }
+
+          try {
+            await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PUSH,
+              (progressDetail: data_relationalStore.ProgressDetails) => {
+                console.info(`progress: ${progressDetail}`);
+                expect(typeof(progressDetail) === "object").assertTrue();
+              });
+              console.log(tag + "cloudSync success");
+              done();
+          } catch (err) {
+            console.log(tag + "testRdbStoreCloudSync0005 err.code" + err.code + "err.message" + err.message);
+            expect(14800000).assertEqual(err.code)
+            done();
+          }
+          console.log(tag + '************* testRdbStoreCloudSync0005 end *************');
+                    
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0006
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_0600
+     * @tc.desc   cloudSync without tables SYNC_MODE_TIME_FIRST promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        console.log(tag + '************* testRdbStoreCloudSync0006 start *************');
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        try {
+          await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST,
+            (progressDetail: data_relationalStore.ProgressDetails) => {
+              console.info(`progress: ${progressDetail}`);
+              expect(typeof(progressDetail) === "object").assertTrue();
+            });
+            console.log(tag + "cloudSync success");
+            done();
+        } catch (err) {
+          console.log(tag + "testRdbStoreCloudSync0006 err.code" + err.code + "err.message" + err.message);
+          expect(801).assertEqual(err.code)
+          done();
+        }
+      console.log(tag + '************* testRdbStoreCloudSync0006 end *************');
+                
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0007
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_0700
+     * @tc.desc   cloudSync without tables SYNC_MODE_NATIVE_FIRST promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(tag + '************* testRdbStoreCloudSync0007 start *************');
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      try {
+        await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST,
+          (progressDetail: data_relationalStore.ProgressDetails) => {
+            console.info(`progress: ${progressDetail}`);
+            expect(typeof(progressDetail) === "object").assertTrue();
+          });
+          console.log(tag + "cloudSync success");
+          done();
+      } catch (err) {
+        console.log(tag + "testRdbStoreCloudSync0007 err.code" + err.code + "err.message" + err.message);
+        expect(801).assertEqual(err.code)
+        done();
+      }
+    console.log(tag + '************* testRdbStoreCloudSync0007 end *************');
+              
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0008
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_0800
+     * @tc.desc   cloudSync with tables SYNC_MODE_NATIVE_FIRST promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(tag + '************* testRdbStoreCloudSync0008 start *************');
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      try {
+        await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST, ['test'], 
+          (progressDetail: data_relationalStore.ProgressDetails) => {
+            console.info(`progress: ${progressDetail}`);
+            expect(typeof(progressDetail) === "object").assertTrue();
+          });
+          console.log(tag + "cloudSync success");
+          done();
+      } catch (err) {
+        console.log(tag + "testRdbStoreCloudSync0008 err.code" + err.code + "err.message" + err.message);
+        expect(801).assertEqual(err.code)
+        done();
+      }
+      console.log(tag + '************* testRdbStoreCloudSync0008 end *************');
+                  
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0009
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_0900
+     * @tc.desc   cloudSync with tables SYNC_MODE_TIME_FIRST promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(tag + '************* testRdbStoreCloudSync0009 start *************');
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      try {
+        await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST, ['test'], 
+          (progressDetail: data_relationalStore.ProgressDetails) => {
+            console.info(`progress: ${progressDetail}`);
+            expect(typeof(progressDetail) === "object").assertTrue();
+          });
+          console.log(tag + "cloudSync success");
+          done();
+      } catch (err) {
+        console.log(tag + "testRdbStoreCloudSync0009 err.code" + err.code + "err.message" + err.message);
+        expect(801).assertEqual(err.code)
+        done();
+      }
+      console.log(tag + '************* testRdbStoreCloudSync0009 end *************');
+                      
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0010
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_1100
+     * @tc.desc   cloudSync with tables SYNC_MODE_PUSH,SYNC_MODE_PULL  promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        console.log(tag + '************* testRdbStoreCloudSync0010 start *************');
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        try {
+          await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PUSH, ['test'], 
+            (progressDetail: data_relationalStore.ProgressDetails) => {
+              console.info(`progress: ${progressDetail}`);
+              expect(typeof(progressDetail) === "object").assertTrue();
+            });
+            console.log(tag + "cloudSync success");
+            done();
+        } catch (err) {
+          console.log(tag + "testRdbStoreCloudSync0010 err.code" + err.code + "err.message" + err.message);
+          expect(14800000).assertEqual(err.code)
+          done();
+        }
+
+        try {
+          await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PULL, ['test'], 
+            (progressDetail: data_relationalStore.ProgressDetails) => {
+              console.info(`progress: ${progressDetail}`);
+              expect(typeof(progressDetail) === "object").assertTrue();
+            });
+            console.log(tag + "cloudSync success");
+            done();
+        } catch (err) {
+          console.log(tag + "testRdbStoreCloudSync0010 err.code" + err.code + "err.message" + err.message);
+          expect(14800000).assertEqual(err.code)
+          done();
+        }
+        console.log(tag + '************* testRdbStoreCloudSync0010 end *************');
+                        
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0011
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_1500
+     * @tc.desc   cloudSync with tables SYNC_MODE_PULL,SYNC_MODE_PUSH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+      it('testRdbStoreCloudSync0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        console.log(tag + '************* testRdbStoreCloudSync0011 start *************');
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        try {
+           rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PULL, ['test'], 
+            (progressDetail: data_relationalStore.ProgressDetails) => {
+              console.info(`progress: ${progressDetail}`);
+              expect(typeof(progressDetail) === "object").assertTrue();
+            }, (err) => {
+              console.log(tag + "cloudSync success");
+              done();
+            });
+        } catch (err) {
+          console.log(tag + "testRdbStoreCloudSync0011 err.code" + err.code + "err.message" + err.message);
+          expect(801).assertEqual(err.code)
+          done();
+        }
+
+        try {
+          rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PUSH, ['test'], 
+           (progressDetail: data_relationalStore.ProgressDetails) => {
+             console.info(`progress: ${progressDetail}`);
+             expect(typeof(progressDetail) === "object").assertTrue();
+           }, (err) => {
+             console.log(tag + "cloudSync success");
+             done();
+           });
+       } catch (err) {
+         console.log(tag + "testRdbStoreCloudSync0011 err.code" + err.code + "err.message" + err.message);
+         expect(801).assertEqual(err.code)
+         done();
+       }
+        console.log(tag + '************* testRdbStoreCloudSync0011 end *************');
+                  
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0012
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_1200
+     * @tc.desc   cloudSync with tables SYNC_MODE_NATIVE_FIRST, SYNC_MODE_TIME_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(tag + '************* testRdbStoreCloudSync0012 start *************');
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      try {
+         rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST, ['test'], 
+          (progressDetail: data_relationalStore.ProgressDetails) => {
+            console.info(`progress: ${progressDetail}`);
+            expect(typeof(progressDetail) === "object").assertTrue();
+          }, (err) => {
+            console.log(tag + "cloudSync success");
+            done();
+          });
+      } catch (err) {
+        console.log(tag + "testRdbStoreCloudSync0012 err.code" + err.code + "err.message" + err.message);
+        expect(801).assertEqual(err.code)
+        done();
+      }
+
+      try {
+        rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST, ['test'], 
+         (progressDetail: data_relationalStore.ProgressDetails) => {
+           console.info(`progress: ${progressDetail}`);
+           expect(typeof(progressDetail) === "object").assertTrue();
+         }, (err) => {
+           console.log(tag + "cloudSync success");
+           done();
+         });
+     } catch (err) {
+       console.log(tag + "testRdbStoreCloudSync0012 err.code" + err.code + "err.message" + err.message);
+       expect(801).assertEqual(err.code)
+       done();
+     }
+      console.log(tag + '************* testRdbStoreCloudSync0012 end *************');
+                
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0013
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_1300
+     * @tc.desc   cloudSync with tables [] callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(tag + '************* testRdbStoreCloudSync0013 start *************');
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      try {
+         rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST, [], 
+          (progressDetail: data_relationalStore.ProgressDetails) => {
+            console.info(`progress: ${progressDetail}`);
+            expect(typeof(progressDetail) === "object").assertTrue();
+          }, (err) => {
+            console.log(tag + "cloudSync success");
+            done();
+          });
+      } catch (err) {
+        console.log(tag + "testRdbStoreCloudSync0013 err.code" + err.code + "err.message" + err.message);
+        expect(401).assertEqual(err.code)
+        done();
+      }
+      console.log(tag + '************* testRdbStoreCloudSync0013 end *************');
+                
+    })
+
+    /**
+     * @tc.name   testRdbStoreCloudSync0014
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncAPITest_1400
+     * @tc.desc   cloudSync with tables [] promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreCloudSync0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        console.log(tag + '************* testRdbStoreCloudSync0014 start *************');
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        try {
+           await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST, [], 
+            (progressDetail: data_relationalStore.ProgressDetails) => {
+              console.info(`progress: ${progressDetail}`);
+              expect(typeof(progressDetail) === "object").assertTrue();
+            });
+            done();
+        } catch (err) {
+          console.log(tag + "testRdbStoreCloudSync0014 err.code" + err.code + "err.message" + err.message);
+          expect(401).assertEqual(err.code)
+          done();
+        }
+        console.log(tag + '************* testRdbStoreCloudSync0014 end *************');
+                  
+    })
+
   })
 }
