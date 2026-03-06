@@ -1780,7 +1780,7 @@ export default function AccessTokenTest() {
           let PermissionStateChangeInfo: abilityAccessCtrl.PermissionStateChangeInfo = data;
           expect(abilityAccessCtrl.PermissionStateChangeType.PERMISSION_REVOKED_OPER).assertEqual(PermissionStateChangeInfo.change);
           expect(tokenID).assertEqual(PermissionStateChangeInfo.tokenID);
-          expect(testpermissionName).assertEqual(PermissionStateChangeInfo.permissionName);
+          expect('ohos.permission.DISTRIBUTED_DATASYNC').assertEqual(PermissionStateChangeInfo.permissionName);
         });
         atManager.off('selfPermissionStateChange', permissionList);
         done();
