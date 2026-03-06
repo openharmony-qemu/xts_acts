@@ -466,6 +466,56 @@ export default function ActsCellularDataAbnormalTest() {
         console.info(`${caseName}---End`);
       }
     });
+
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabledSync0300
+     * @tc.number testTelephonyDataIsCellularDataRoamingEnabledSync0300
+     * @tc.desc   testTelephonyDataIsCellularDataRoamingEnabledSync0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTelephonyDataIsCellularDataRoamingEnabledSync0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabledSync0300';
+      console.info(`${caseName} test start `);
+      try {
+        let isEnabled: boolean = Boolean(cellular.isCellularDataRoamingEnabledSync(null));
+        console.info(`${caseName} success isCellularDataRoamingEnabledSync : `+isEnabled);
+        ExpectTrue(isEnabled == false);
+        done();
+        console.info(`${caseName}---End`);
+      } catch (error) {
+        console.info(`${caseName} catch err is :` +JSON.stringify(error));
+        ExpectFail();
+        done();
+        console.info(`${caseName}---End`);
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabledSync0400
+     * @tc.number testTelephonyDataIsCellularDataRoamingEnabledSync0400
+     * @tc.desc   testTelephonyDataIsCellularDataRoamingEnabledSync0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTelephonyDataIsCellularDataRoamingEnabledSync0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabledSync0400';
+      console.info(`${caseName} test start `);
+      try {
+        let isEnabled: boolean = Boolean(cellular.isCellularDataRoamingEnabledSync(undefined));
+        console.info(`${caseName} success isCellularDataRoamingEnabledSync : `+isEnabled);
+        ExpectTrue(isEnabled == false);
+        done();
+        console.info(`${caseName}---End`);
+      } catch (error) {
+        console.info(`${caseName} catch err is :` +JSON.stringify(error));
+        ExpectFail();
+        done();
+        console.info(`${caseName}---End`);
+      }
+    });    
   });
 }
 
