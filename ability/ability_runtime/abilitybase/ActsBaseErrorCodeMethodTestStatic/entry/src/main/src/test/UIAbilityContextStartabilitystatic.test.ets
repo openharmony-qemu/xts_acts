@@ -824,7 +824,7 @@ export default function UiAbilityContextStartAbilityStatic() {
             hilog.info(0x0000, tag, TAG + "startAbilityByType003 success:");
           }
         }))
-        await Utils.msSleep(500);
+        await Utils.msSleep(200);
         expect(g_code).assertEqual(16000050);
         done();
       } catch (Error) {
@@ -857,7 +857,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         }).catch((error: Error): void => {
           hilog.info(0x0000, tag, TAG + "startAbilityByType004 fail, err:" + JSON.stringify(error));
         })
-        await Utils.msSleep(500);
+        await Utils.msSleep(200);
         expect(g_code).assertEqual(16000050);
         done();
       } catch (Error) {

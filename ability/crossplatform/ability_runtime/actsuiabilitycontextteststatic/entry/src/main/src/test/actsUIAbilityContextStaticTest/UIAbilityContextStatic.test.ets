@@ -558,7 +558,7 @@ export default function UIAbilityContextStatic() {
         }).catch((error: Error): void => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start failed. Cause: ' + JSON.stringify(error));
         })
-        await Utils.msSleep(1000);
+        await Utils.msSleep(500);
         let AbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext
         await Utils.msSleep(2000);
         let isTerminating: boolean = AbilityContext.isTerminating();

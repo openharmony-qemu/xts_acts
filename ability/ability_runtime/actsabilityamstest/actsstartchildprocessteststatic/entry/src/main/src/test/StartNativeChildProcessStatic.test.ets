@@ -76,7 +76,7 @@ export default function StartNativeChildProcessStaticTest() {
           entryParams: 'testEntryParams',
           fds: {
             'fd1': file.fd
-          }
+          } as Record<string, int>
         };
         let options: ChildProcessOptions = {
           isolationMode: false
@@ -120,7 +120,7 @@ export default function StartNativeChildProcessStaticTest() {
           entryParams: 'testEntryParams',
           fds: {
             'fd1': file.fd
-          }
+          } as Record<string, int>
         };
         let options: ChildProcessOptions = {
           isolationMode: true
@@ -201,7 +201,7 @@ export default function StartNativeChildProcessStaticTest() {
           entryParams: 'testEntryParams',
           fds: {
             'fd1': file.fd
-          }
+          } as Record<string, int>
         };
         await Utils.msSleep(500)
         hilog.info(0x0000, 'testTag',`startNativeChildProcess before,fd1:${file.fd}`);
@@ -278,7 +278,7 @@ export default function StartNativeChildProcessStaticTest() {
           entryParams: 'testEntryParams',
           fds: {
             'fd1': file.fd
-          }
+          } as Record<string, int>
         };
         await Utils.msSleep(500)
         hilog.info(0x0000, 'testTag',`startNativeChildProcess before,fd1:${file.fd}`);
