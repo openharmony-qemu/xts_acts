@@ -30,6 +30,7 @@ interface CapabilityData {
   capability: Capability[];
 }
 
+const DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED = 801;
 export default function NativeDisplayManagerTest() {
   describe('NativeDisplayManagerTest', () => {
 
@@ -311,6 +312,32 @@ export default function NativeDisplayManagerTest() {
           expect(false).assertTrue();
           done();
         }
+      }
+    })
+    /**
+     * @tc.name   testIsFold0100
+     * @tc.number SUB_ARKUI_OH_NativeDisplayManager_IsFoldable_0100
+     * @tc.desc   Test the OH_NativeDisplayManager_IsFoldable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsFold0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testIsFold0100';
+      try {
+        let result = windowndkapi20.IsFoldable();
+        console.log(caseName + ' :' + result);
+        if(result ===true){
+          done()
+        }else{
+          expect(result).assertEqual(false);
+          done();
+        }
+        
+      } catch (err) {
+        console.log(caseName + ': fail:' + err + ' ' + err.code);
+        expect(false).assertTrue();
+        done();
       }
     })
   })

@@ -1376,7 +1376,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         // 调用setWindowDecorVisible接口
         try {
           wnd.setWindowDecorVisible(isVisible);
-          expect(true).assertTrue()
+          
           done()
 
         } catch (exception) {
@@ -1412,7 +1412,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         expect(wnd != null).assertTrue();
         try {
           wnd.setWindowDecorHeight(height);
-          expect(true).assertTrue()
+          
           done()
         } catch (exception) {
           console.error(msgStr + ' Failed to set the height of window decor. Cause: ' + JSON.stringify(exception));
@@ -1452,12 +1452,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         });
         (tempWnd as ohosWindow.Window).getWindowDecorHeight()
         console.log(msgStr + 'windowStage.getMainWindow, tempWnd: ' + tempWnd);
-        expect(true).assertTrue()
+        
         done()
       } catch (exception) {
         console.error(msgStr + ' Failed to get the height of window decor. Cause: ' + JSON.stringify(exception));
         if (exception.code == 801 || exception.code == 1300002) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1488,12 +1488,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         promise.then((data: ohosWindow.Window) => {
           let windowClass: ohosWindow.Window = data;
           console.log(msgStr + ' Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
-          expect(true).assertTrue()
+          
           done()
         }).catch((err: BusinessError) => {
           console.error(msgStr + ' www data111 Failed to create the subwindow. Cause: ' + JSON.stringify(err));
           if (err.code == 801 || err.code == 1300002) {
-            expect(true).assertTrue()
+            
             done()
           } else {
             expect().assertFail();
@@ -1503,7 +1503,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       } catch (exception) {
         console.error(msgStr + ' www data222 Failed to create the subwindow. Cause: ' + JSON.stringify(exception));
         if (exception.code == 801 || exception.code == 1300002) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1527,12 +1527,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         expect(wnd != null).assertTrue();
         try {
           wnd.keepKeyboardOnFocus(true);
-          expect(true).assertTrue()
+          
           done()
         } catch (exception) {
           console.error(msgStr + ' Failed to keep keyboard onFocus. Cause: ' + JSON.stringify(exception));
           if (exception.code == 801 || exception.code == 1300004) {
-            expect(true).assertTrue()
+            
             done()
           } else {
             expect().assertFail();
@@ -1563,7 +1563,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         }).catch((error: BusinessError) => {
           console.log(msgStr + 'Failed to shift app window focus1. Cause:' + JSON.stringify(error));
           if (error.code == 801 || error.code == 1300002) {
-            expect(true).assertTrue()
+            
             done()
           } else {
             expect().assertFail();
@@ -1630,7 +1630,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         try {
           let systemBarProperty = wnd.getWindowSystemBarProperties();
           console.info('Success in obtaining system bar properties. Property: ' + JSON.stringify(systemBarProperty));
-          expect(true).assertTrue()
+          
           done()
         } catch (exception) {
           console.error(msgStr + ' Failed to get system bar properties. Cause: ' + JSON.stringify(exception));
@@ -1782,7 +1782,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         }).catch((error: BusinessError) => {
           console.log(tag + 'www data Failed to setWindowLimits. Cause: ' + JSON.stringify(error));
           if (error.code == 801) {
-            expect(true).assertTrue()
+            
             done()
           } else {
             expect().assertFail();
@@ -1815,7 +1815,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
           let promise = wnd.enableLandscapeMultiWindow()
           promise.then(() => {
             console.info(msgStr + ' Succeeded in making multi-window become landscape.');
-            expect(true).assertTrue()
+            
             done()
           }).catch((err: BusinessError) => {
             console.error(msgStr + ' Failed to make multi-window become landscape. Cause: ' + JSON.stringify(err));
@@ -1847,7 +1847,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
           let promise = wnd.disableLandscapeMultiWindow()
           promise.then(() => {
             console.info(msgStr + ' Succeeded in making multi-window become not landscape.');
-            expect(true).assertTrue()
+            
             done()
           }).catch((err: BusinessError) => {
             console.error(msgStr + ' Failed to make multi-window become not landscape. Cause: ' + JSON.stringify(err));

@@ -177,6 +177,36 @@ export default function PipWindowNdkTest() {
         done();
       }
     })
+    /**
+     * @tc.name   testDestroyPipConfig
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_Destroy_0100
+     * @tc.desc   验证销毁画中画控制器	OH_PictureInPicture_CreatePip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDestroyPipConfig', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'testDestroyPipConfig';
+      try{
+        let mainWindow = windowStage.getMainWindowSync();
+        let properties = mainWindow.getWindowProperties();
+        console.log(`${caseName} properties: ${JSON.stringify(properties)}`);
+        let mainWindowId = properties.id;
+        console.log(`${caseName} mainWindowId: ${JSON.stringify(mainWindowId)}`);
+        let result = testNapi.testDestroyPipConfig(mainWindowId);
+        console.log(`${caseName} result: ${JSON.stringify(result)}`);
+        if (result === 801) {
+          done()
+        } else {
+          expect(result).assertEqual(0);
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName} error: ${JSON.stringify(err)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
 
     /**
      * @tc.name   testCreatePip_ControllerId_Nullptr
@@ -195,6 +225,36 @@ export default function PipWindowNdkTest() {
         let mainWindowId = properties.id;
         console.log(`${caseName} mainWindowId: ${JSON.stringify(mainWindowId)}`);
         let result = testNapi.testCreatePip_ControllerId_Nullptr(mainWindowId);
+        console.log(`${caseName} result: ${JSON.stringify(result)}`);
+        if (result === 801) {
+          done()
+        } else {
+          expect(result).assertEqual(1300016);
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName} error: ${JSON.stringify(err)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testDestroyPip_ControllerId_Nullptr
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_Destroy_ERRORCODE_0100
+     * @tc.desc   验证销毁画中画控制器,controllerid传nullptr报错误码1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDestroyPip_ControllerId_Nullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'testDestroyPip_ControllerId_Nullptr';
+      try{
+        let mainWindow = windowStage.getMainWindowSync();
+        let properties = mainWindow.getWindowProperties();
+        console.log(`${caseName} properties: ${JSON.stringify(properties)}`);
+        let mainWindowId = properties.id;
+        console.log(`${caseName} mainWindowId: ${JSON.stringify(mainWindowId)}`);
+        let result = testNapi.testDestroyPip_ControllerId_Nullptr();
         console.log(`${caseName} result: ${JSON.stringify(result)}`);
         if (result === 801) {
           done()
@@ -351,9 +411,11 @@ export default function PipWindowNdkTest() {
         console.log(`${caseName} mainWindowId: ${JSON.stringify(mainWindowId)}`);
         let result = testNapi.testStopPipRepeat(mainWindowId);
         console.log(`${caseName} result: ${JSON.stringify(result)}`);
-        if (result === 801 || result === 1300015) {
+        if (result === 801) {
           done()
-        } else {
+        } else if(result === 1300015){
+          done();
+        }else {
           expect(result).assertEqual(1300012);
           done();
         }

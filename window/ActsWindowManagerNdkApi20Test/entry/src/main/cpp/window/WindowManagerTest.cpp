@@ -196,6 +196,7 @@ static void InitPushDisplay(napi_property_descriptor* desc)
         XL("GetDisplaySourceMode003", NativeDisplayManagerTest::GetDisplaySourceMode003),
         XL("GetDisplaySourceMode", NativeDisplayManagerTest::GetDisplaySourceMode),
         XL("GetFoldDisplayMode", NativeDisplayManagerTest::GetFoldDisplayMode),
+        XL("IsFoldable", NativeDisplayManagerTest::IsFoldable),
         XL("DisplayManagerErrorCode401", NativeDisplayManagerErrorCodeTest::DisplayManagerErrorCode401),
         XL("DisplayManagerErrorCode801", NativeDisplayManagerErrorCodeTest::DisplayManagerErrorCode801),
         XL("DisplayManagerErrorCode1400001", NativeDisplayManagerErrorCodeTest::DisplayManagerErrorCode1400001),
@@ -209,7 +210,7 @@ static void InitPushDisplay(napi_property_descriptor* desc)
 
 static void InitPushWindow2(napi_property_descriptor* desc)
 {
-    int32_t offset = 123;
+    int32_t offset = 124;
     napi_property_descriptor descTemp[] = {
         XL("test_OH_WindowManager_GetAllMainWindowInfo_0200",
             Window::Test_OH_WindowManager_GetAllMainWindowInfo_0200),
@@ -235,7 +236,7 @@ static void InitPushWindow2(napi_property_descriptor* desc)
 
 static void InitPushWindow3(napi_property_descriptor* desc)
 {
-    int32_t offset = 131;
+    int32_t offset = 132;
     napi_property_descriptor descTemp[] = {
         XL("testLockCursorwithOutofRange",
             Window::TestLockCursorwithOutofRange),
@@ -253,7 +254,7 @@ static void InitPushWindow3(napi_property_descriptor* desc)
 
 static void InitPushWindow4(napi_property_descriptor* desc)
 {
-    int32_t offset = 135;
+    int32_t offset = 136;
     napi_property_descriptor descTemp[] = {
         XL("testSetWindowBrightness",
             Window::TestSetWindowBrightness),
@@ -273,7 +274,7 @@ static void InitPushWindow4(napi_property_descriptor* desc)
 
 static void InitPushDisplay2(napi_property_descriptor* desc)
 {
-    int32_t offset = 140;
+    int32_t offset = 141;
     napi_property_descriptor descTemp[] = {
         XL("testCaptureScreenPixelmapBoundaryValue",
             Display::TestCaptureScreenPixelmapBoundaryValue),
@@ -298,7 +299,7 @@ static void InitPushDisplay2(napi_property_descriptor* desc)
 
 static void InitPushWindowPip4(napi_property_descriptor* desc)
 {
-    int32_t offset = 148;
+    int32_t offset = 149;
     napi_property_descriptor descTemp[] = {
         XL("testSetPipMainWindowIdBoundaryValue", WindowPip::TestSetPipMainWindowIdBoundaryValue),
         XL("testSetPipRectBoundaryValue", WindowPip::TestSetPipRectBoundaryValue),
@@ -341,7 +342,7 @@ static napi_value Init(napi_env env, napi_value exports)
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "env or exports is null");
         return nullptr;
     }
-    napi_property_descriptor desc[171] = {};
+    napi_property_descriptor desc[172] = {};
     InitPushWindow(desc);
     InitPushWindowPip1(desc);
     InitPushWindowPip2(desc);

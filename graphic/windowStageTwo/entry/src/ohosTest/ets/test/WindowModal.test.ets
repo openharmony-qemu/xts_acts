@@ -1136,7 +1136,6 @@ export default function windowModalTest() {
           }).catch((err: BusinessError) => {
             if (err.code == 801) {
               console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-              expect(false).assertFalse()
             } else {
               console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
               expect().assertFail()
@@ -1188,7 +1187,6 @@ export default function windowModalTest() {
           }).catch((err: BusinessError) => {
             if (err.code == 801) {
               console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-              expect(false).assertFalse()
             } else {
               console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
               expect().assertFail()
@@ -1221,10 +1219,8 @@ export default function windowModalTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse()
           } else if (err.code == 1300004) {
             console.error(`${message} Unauthorized operation.`);
-            expect(false).assertFalse()
           } else {
             console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail()
@@ -1264,7 +1260,6 @@ export default function windowModalTest() {
           }).catch((err: BusinessError) => {
             if (err.code == 401) {
               console.info(`${message} Parameter error.`);
-              expect(false).assertFalse()
             } else {
               console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
               expect().assertFail()
@@ -1315,7 +1310,6 @@ export default function windowModalTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 1300002) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse()
           } else {
             console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail()
@@ -1363,9 +1357,12 @@ export default function windowModalTest() {
           expect(btnText).assertEqual('Modality')
           windowClass.destroyWindow()
         }).catch((err: BusinessError) => {
-          if (err.code == 401 || err.code == 801) {
+          console.info(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}.`);
+          if(err.code === 801){
+            done();
+          }
+          else if (err.code === 401) {
             console.info(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}.`);
-            expect(false).assertFalse()
           } else {
             console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail()
@@ -1374,7 +1371,6 @@ export default function windowModalTest() {
       } catch (exception) {
         if (exception.code == 801) {
           console.info(`${message} Failed to set subwindow modal. Cause code: ${exception.code}, message: ${exception.message}.`);
-          expect(false).assertFalse()
         } else {
           console.error(`${message} Failed to create the subWindow. Cause code: ${exception.code}, message: ${exception.message}`);
           expect().assertFail()
@@ -1406,7 +1402,6 @@ export default function windowModalTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 401) {
             console.info(`${message}  Parameter error.`);
-            expect(false).assertFalse()
           } else {
             console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail()
@@ -1415,7 +1410,6 @@ export default function windowModalTest() {
       } catch (exception) {
         if (exception.code == 401) {
           console.info(`${message}  Parameter error.`);
-          expect(false).assertFalse()
         } else {
           console.error(`${message} Failed to create the subWindow. Cause code: ${exception.code}, message: ${exception.message}`);
           expect().assertFail()
@@ -1488,7 +1482,6 @@ export default function windowModalTest() {
         await terminateAbility(message);
         if (exception.code == 801) {
           console.error(`${message} Capability not supported. Failed to call the API due to limited device capabilities`);
-          expect(false).assertFalse();
           done();
         } else {
           console.error(`${message} Failed to set window modal. Cause code: ${exception.code}, message: ${exception.message}`)
@@ -1557,7 +1550,6 @@ export default function windowModalTest() {
         await terminateAbility(message);
         if (exception.code == 801) {
           console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-          expect(false).assertFalse();
           done();
         } else {
           console.error(`${message} Failed to set window modal. Cause code: ${exception.code}, message: ${exception.message}`)

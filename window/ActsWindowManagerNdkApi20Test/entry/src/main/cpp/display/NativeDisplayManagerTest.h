@@ -23,6 +23,7 @@ napi_value GetDisplaySourceMode001(napi_env env, napi_callback_info info);
 napi_value GetDisplaySourceMode002(napi_env env, napi_callback_info info);
 napi_value GetDisplaySourceMode003(napi_env env, napi_callback_info info);
 napi_value GetDisplaySourceMode(napi_env env, napi_callback_info info);
+napi_value IsFoldable(napi_env env, napi_callback_info info);
 napi_value GetFoldDisplayMode(napi_env env, napi_callback_info info);
 };
 
