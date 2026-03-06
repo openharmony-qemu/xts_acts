@@ -30,6 +30,8 @@ export default function SettingNopTest() {
      */
     it('Setting_nop_test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
       console.info('Setting_nop_test_0100 START');
+      await CommonFunc.sleep(2000);
+      console.info('Setting_nop_test_0100 sleep end');
       let strJson = getInspectorByKey('settingsId1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[Setting_nop_test_0100] strJson:" + JSON.stringify(obj));
@@ -48,6 +50,8 @@ export default function SettingNopTest() {
      */
     it('Setting_nop_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
       console.info('Setting_nop_test_0200 START');
+      await CommonFunc.sleep(2000);
+      console.info('Setting_nop_test_0100 sleep end');
       let strJson = getInspectorByKey('settingsId2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[Setting_nop_test_0200] strJson:" + JSON.stringify(obj));
@@ -66,6 +70,8 @@ export default function SettingNopTest() {
      */
     it('Setting_nop_test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
       console.info('Setting_nop_test_0300 START');
+      await CommonFunc.sleep(2000);
+      console.info('Setting_nop_test_0100 sleep end');
       let strJson = getInspectorByKey('settingsId3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[Setting_nop_test_0300] strJson:" + JSON.stringify(obj));
