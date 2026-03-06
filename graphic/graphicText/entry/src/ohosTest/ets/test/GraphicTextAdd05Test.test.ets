@@ -1511,6 +1511,79 @@ export default function GraphicTextAdd05Test() {
         }
       });
 
+    /**
+     * @tc.name   testGraphicTextAdd05_getRectsForRange
+     * @tc.number testGraphicTextAdd05_getRectsForRange
+     * @tc.desc   getRectsForRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGraphicTextAdd05_getRectsForRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done:Function)=> {
+      let msg  = "====www data testGraphicTextAdd05_getRectsForRange===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let range: text.Range = { start: 0, end: 1};
+        let rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT,
+          text.RectHeightStyle.INCLUDE_LINE_SPACE_MIDDLE);
+        console.info(msg + 'rects success ', JSON.stringify(rects))
+        expect(rects.length > 0).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'rects error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGraphicTextAdd05_createTruncatedLine
+     * @tc.number testGraphicTextAdd05_createTruncatedLine
+     * @tc.desc   test createTruncatedLine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGraphicTextAdd05_createTruncatedLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text with very long content');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+
+          const lines: text.TextLine[] = paragraph.getTextLines();
+          const truncatedLine1: text.TextLine = lines[0].createTruncatedLine(100,text.EllipsisMode.MULTILINE_START,'');
+          console.info(`${LOG_PREFIX} createTruncatedLineEllipsisEmpty success`, JSON.stringify(truncatedLine1));
+          expect(truncatedLine1 !== undefined).assertTrue();
+          const truncatedLine2: text.TextLine = lines[0].createTruncatedLine(100,text.EllipsisMode.MULTILINE_MIDDLE,'');
+          console.info(`${LOG_PREFIX} createTruncatedLineEllipsisEmpty success`, JSON.stringify(truncatedLine2));
+          expect(truncatedLine2).assertUndefined();
+          done();
+        } catch (err) {
+          console.info(`${LOG_PREFIX} createTruncatedLineEllipsisEmpty error `, JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
   })
 }
 
