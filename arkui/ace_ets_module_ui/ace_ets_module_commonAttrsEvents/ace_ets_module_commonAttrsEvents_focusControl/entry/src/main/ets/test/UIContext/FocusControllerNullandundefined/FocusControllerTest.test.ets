@@ -189,6 +189,9 @@ export default function focusControllerTest() {
       await CommonFunc.sleep(1000);
       let result = JSON.stringify(AppStorage.get('set_key_mode_undefined'));
       expect(result).assertEqual('"success"');
+      let FocusControllerClearFocus = await driver.findComponent(ON.id('FocusControllerClearFocus'));
+      await FocusControllerClearFocus.click();
+      await CommonFunc.sleep(1000);
       console.info('[set_key_processing_mode_undefined_007] END');
       done();
     });

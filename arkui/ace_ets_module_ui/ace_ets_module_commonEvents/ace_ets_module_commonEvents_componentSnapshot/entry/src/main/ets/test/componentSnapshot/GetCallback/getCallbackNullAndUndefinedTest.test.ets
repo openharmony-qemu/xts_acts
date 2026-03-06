@@ -23,7 +23,7 @@ export default function getCallbackNullAndUndefined() {
     beforeAll(async () => {
       console.info("getCallbackNullAndUndefined beforeAll start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/ComponentSnapshot/GetCallback/GetCallbackNullAndUndefined',
+        url: 'MainAbility/pages/componentSnapshot/GetCallback/GetCallbackNullAndUndefined',
       }
       try {
         router.clear();

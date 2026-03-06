@@ -170,6 +170,22 @@ struct UIContextFocusControllerTestPage {
           }
         })
 
+      Button('Test clear')
+        .id('FocusControllerClearFocus')
+        .width('90%')
+        .height('5%')
+        .margin({ top: '1%' })
+        .onClick(() => {
+          try {
+            let uiContext = this.getUIContext();
+            uiContext.getFocusController().setAutoFocusTransfer(true);
+            uiContext.getFocusController().setKeyProcessingMode(undefined);
+            this.getUIContext().getFocusController().clearFocus()
+          } catch (err) {
+            console.log('clear' + err)
+          }
+        })
+
       Divider()
         .width('90%')
         .height('1%')

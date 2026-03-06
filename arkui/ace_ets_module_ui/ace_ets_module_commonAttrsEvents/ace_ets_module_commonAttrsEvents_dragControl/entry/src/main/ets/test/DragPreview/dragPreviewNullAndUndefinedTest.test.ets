@@ -61,7 +61,7 @@ export default function dragPreviewNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetApi11FirstParamNull'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewApi11FirstParamNullV1001] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('api11FirstParamNull');
@@ -84,7 +84,7 @@ export default function dragPreviewNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetApi11FirstParamUndefined'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewApi11FirstParamUndefinedV1002] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('api11FirstParamUndefined');
@@ -107,7 +107,7 @@ export default function dragPreviewNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetApi11FirstParamEmptyString'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewApi11FirstParamEmptyStringV1003] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('api11FirstParamEmptyString');
@@ -130,7 +130,7 @@ export default function dragPreviewNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetApi15OnlyForLiftingTrue'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewApi15OnlyForLiftingTrueV1004] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('api15OnlyForLiftingTrue');
@@ -153,7 +153,7 @@ export default function dragPreviewNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetApi15DelayCreatingFalse'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewApi15DelayCreatingFalseV1005] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('api15DelayCreatingFalse');
@@ -176,7 +176,7 @@ export default function dragPreviewNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetApi15FirstParamNull'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewApi15FirstParamNullV1006] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('api15FirstParamNull');
@@ -199,7 +199,7 @@ export default function dragPreviewNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetApi15FirstParamUndefined'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewApi15FirstParamUndefinedV1007] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('api15FirstParamUndefined');
@@ -222,7 +222,7 @@ export default function dragPreviewNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetApi15SecondParamNull'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewApi15SecondParamNullV1008] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('api15SecondParamNull');
@@ -245,7 +245,7 @@ export default function dragPreviewNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetApi15SecondParamUndefined'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewApi15SecondParamUndefinedV1009] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('api15SecondParamUndefined');
@@ -268,7 +268,7 @@ export default function dragPreviewNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetApi15FirstParamEmptyString'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewApi15FirstParamEmptyStringV1010] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('api15FirstParamEmptyString');

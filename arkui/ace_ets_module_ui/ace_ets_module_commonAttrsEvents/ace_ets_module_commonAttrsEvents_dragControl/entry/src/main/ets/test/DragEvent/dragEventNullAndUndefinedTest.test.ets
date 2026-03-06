@@ -99,7 +99,7 @@ export default function dragEventNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetOnDropDisableTrue'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[onDropDisableDataPrefetchTrueV1003] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('onDropDisableTrue');
@@ -122,7 +122,7 @@ export default function dragEventNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetOnDropDisableFalse'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[onDropDisableDataPrefetchFalseV1004] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('onDropDisableFalse');
@@ -145,7 +145,7 @@ export default function dragEventNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetOnDropSecondParamNull'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[onDropSecondParamNullV1005] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('onDropSecondParamNull');
@@ -168,7 +168,7 @@ export default function dragEventNullAndUndefinedTest() {
       let target = await driver.findComponent(ON.id('targetOnDropSecondParamUndefined'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[onDropSecondParamUndefinedV1006] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('onDropSecondParamUndefined');

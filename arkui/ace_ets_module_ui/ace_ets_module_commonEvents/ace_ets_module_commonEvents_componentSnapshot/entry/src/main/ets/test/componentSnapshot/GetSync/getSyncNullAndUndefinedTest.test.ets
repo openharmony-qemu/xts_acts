@@ -23,7 +23,7 @@ export default function getSyncNullAndUndefined() {
     beforeAll(async () => {
       console.info("getSyncNullAndUndefined beforeAll start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/ComponentSnapshot/GetSync/GetSyncNullAndUndefined',
+        url: 'MainAbility/pages/componentSnapshot/GetSync/GetSyncNullAndUndefined',
       }
       try {
         router.clear();

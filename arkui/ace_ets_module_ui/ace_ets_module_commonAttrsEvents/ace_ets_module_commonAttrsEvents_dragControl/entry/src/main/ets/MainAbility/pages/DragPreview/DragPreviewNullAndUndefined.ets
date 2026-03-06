@@ -26,7 +26,7 @@ struct DragPreviewPropertyTest {
         .textAlign(TextAlign.Center)
 
       Text(this.resultText)
-        .id('resultText')
+        .id('resultText2')
         .width('90%')
         .height('5%')
 

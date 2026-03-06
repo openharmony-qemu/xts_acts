@@ -23,7 +23,7 @@ export default function getPromiseNullAndUndefined() {
     beforeAll(async () => {
       console.info("getPromiseNullAndUndefined beforeAll start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/ComponentSnapshot/GetPromise/GetPromiseNullAndUndefined',
+        url: 'MainAbility/pages/componentSnapshot/GetPromise/GetPromiseNullAndUndefined',
       }
       try {
         router.clear();

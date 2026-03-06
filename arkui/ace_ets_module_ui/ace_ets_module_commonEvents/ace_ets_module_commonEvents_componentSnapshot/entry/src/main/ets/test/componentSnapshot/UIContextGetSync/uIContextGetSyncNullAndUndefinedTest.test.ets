@@ -23,7 +23,7 @@ export default function uIContextGetSyncNullAndUndefinedTest() {
     beforeAll(async () => {
       console.info("uIContextGetSyncNullAndUndefinedTest beforeAll start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/ComponentSnapshot/UIContextGetSync/UIContextGetSyncNullAndUndefined',
+        url: 'MainAbility/pages/componentSnapshot/UIContextGetSync/UIContextGetSyncNullAndUndefined',
       }
       try {
         router.clear();

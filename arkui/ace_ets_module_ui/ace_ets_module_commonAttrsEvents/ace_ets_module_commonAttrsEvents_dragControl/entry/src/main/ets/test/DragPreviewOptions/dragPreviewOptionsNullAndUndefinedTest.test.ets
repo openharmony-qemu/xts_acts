@@ -61,7 +61,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetModeEnableDefaultShadow'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsModeEnableDefaultShadowV1001] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('modeEnableDefaultShadow');
@@ -84,7 +84,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetModeEnableDefaultRadius'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsModeEnableDefaultRadiusV1002] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('modeEnableDefaultRadius');
@@ -107,7 +107,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetModeEnableDragItemGrayEffect'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsModeEnableDragItemGrayEffectV1003] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('modeEnableDragItemGrayEffect');
@@ -130,7 +130,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetModeEnableMultiTileEffect'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsModeEnableMultiTileEffectV1004] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('modeEnableMultiTileEffect');
@@ -153,7 +153,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetModeEnableTouchPointCalculation'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsModeEnableTouchPointCalculationV1005] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('modeEnableTouchPointCalculation');
@@ -176,7 +176,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetNumberBadgeTrue'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsNumberBadgeTrueV1006] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('numberBadgeTrue');
@@ -199,7 +199,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetNumberBadgeFalse'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsNumberBadgeFalseV1007] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('numberBadgeFalse');
@@ -222,7 +222,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetIsMultiSelectionEnabledFalse'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsIsMultiSelectionEnabledFalseV1008] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('isMultiSelectionEnabledFalse');
@@ -245,7 +245,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetDefaultAnimationBeforeLiftingFalse'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsDefaultAnimationBeforeLiftingFalseV1009] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('defaultAnimationBeforeLiftingFalse');
@@ -268,7 +268,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetEnableHapticFeedbackTrue'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsEnableHapticFeedbackTrueV1010] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('enableHapticFeedbackTrue');
@@ -291,7 +291,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetEnableHapticFeedbackFalse'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsEnableHapticFeedbackFalseV1011] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('enableHapticFeedbackFalse');
@@ -314,7 +314,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetEnableEdgeAutoScrollTrue'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsEnableEdgeAutoScrollTrueV1012] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('enableEdgeAutoScrollTrue');
@@ -337,7 +337,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetEnableEdgeAutoScrollFalse'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsEnableEdgeAutoScrollFalseV1013] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('enableEdgeAutoScrollFalse');
@@ -360,7 +360,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetIsLiftingDisabledTrue'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsIsLiftingDisabledTrueV1014] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('isLiftingDisabledTrue');
@@ -383,7 +383,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetFirstParamNull'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsFirstParamNullV1015] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('firstParamNull');
@@ -406,7 +406,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetFirstParamUndefined'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsFirstParamUndefinedV1016] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('firstParamUndefined');
@@ -429,7 +429,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetSecondParamNull'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsSecondParamNullV1017] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('secondParamNull');
@@ -452,7 +452,7 @@ export default function dragPreviewOptionsNullAndUndefined() {
       let target = await driver.findComponent(ON.id('targetSecondParamUndefined'));
       await source.dragTo(target);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultText3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dragPreviewOptionsSecondParamUndefinedV1018] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('secondParamUndefined');

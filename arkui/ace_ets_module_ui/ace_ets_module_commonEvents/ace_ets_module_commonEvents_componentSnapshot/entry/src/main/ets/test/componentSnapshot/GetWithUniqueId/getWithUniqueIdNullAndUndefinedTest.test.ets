@@ -23,7 +23,7 @@ export default function getWithUniqueIdNullAndUndefinedTest() {
     beforeAll(async () => {
       console.info("getWithUniqueIdNullAndUndefinedTest beforeAll start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/ComponentSnapshot/GetWithUniqueId/GetWithUniqueIdNullAndUndefined',
+        url: 'MainAbility/pages/componentSnapshot/GetWithUniqueId/GetWithUniqueIdNullAndUndefined',
       }
       try {
         router.clear();

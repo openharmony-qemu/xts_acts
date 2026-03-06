@@ -23,7 +23,7 @@ export default function createFromBuilderNullAndUndefined() {
     beforeAll(async () => {
       console.info("createFromBuilderNullAndUndefined beforeAll start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/ComponentSnapshot/CreateFromBuilder/CreateFromBuilderNullAndUndefined',
+        url: 'MainAbility/pages/componentSnapshot/CreateFromBuilder/CreateFromBuilderNullAndUndefined',
       }
       try {
         router.clear();
