@@ -218,6 +218,33 @@ static napi_value TestCreatePip(napi_env env, napi_callback_info info)
     napi_create_int32(env, ret, &result);
     return result;
 }
+static napi_value TestDestroyPipConfig(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    uint32_t mainWindowId;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_get_value_uint32(env, args[0], &mainWindowId);
+    OH_LOG_INFO(LOG_APP, "TestCreatePip mainWindowId =%{public}d.", mainWindowId);
+    napi_value result;
+    PictureInPicture_PipControlGroup controlGroup[1] = {
+        PictureInPicture_PipControlGroup::VIDEO_PLAY_FAST_FORWARD_BACKWARD
+    };
+    PictureInPicture_PipTemplateType pipTemplateType = PictureInPicture_PipTemplateType::VIDEO_PLAY;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    OH_PictureInPicture_SetPipMainWindowId(pipConfig, mainWindowId);
+    OH_PictureInPicture_SetPipTemplateType(pipConfig, pipTemplateType);
+    OH_PictureInPicture_SetPipRect(pipConfig, NINE, SIXTEEN);
+    OH_PictureInPicture_SetPipControlGroup(pipConfig, controlGroup, 1);
+    OH_PictureInPicture_SetPipNapiEnv(pipConfig, env);
+    uint32_t controllerId = 0;
+    OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
+    int32_t ret = OH_PictureInPicture_DestroyPipConfig(&pipConfig);
+    OH_LOG_INFO(LOG_APP, "TestCreatePip ret=%{public}d", ret);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
 
 static napi_value TestCreatePip_ControllerId_Nullptr(napi_env env, napi_callback_info info)
 {
@@ -243,6 +270,16 @@ static napi_value TestCreatePip_ControllerId_Nullptr(napi_env env, napi_callback
     int32_t ret = OH_PictureInPicture_CreatePip(pipConfig, nullptr);
     OH_LOG_INFO(LOG_APP, "TestCreatePip_ControllerId_Nullptr ret=%{public}d", ret);
     OH_PictureInPicture_DestroyPipConfig(&pipConfig);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+static napi_value TestDestroyPip_ControllerId_Nullptr(napi_env env, napi_callback_info info)
+{
+    
+    napi_value result;
+    
+    int32_t ret = OH_PictureInPicture_DestroyPipConfig(nullptr);
+    OH_LOG_INFO(LOG_APP, "TestCreatePip_ControllerId_Nullptr ret=%{public}d", ret);
     napi_create_int32(env, ret, &result);
     return result;
 }
@@ -1721,8 +1758,11 @@ static napi_value pipWindowInit(napi_env env, napi_value exports)
         { "testPipControlStatusEnum", nullptr, TestPipControlStatusEnum,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testCreatePip", nullptr, TestCreatePip, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testDestroyPipConfig", nullptr, TestDestroyPipConfig, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testCreatePip_ControllerId_Nullptr", nullptr, TestCreatePip_ControllerId_Nullptr,
             nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testDestroyPip_ControllerId_Nullptr", nullptr, TestDestroyPip_ControllerId_Nullptr,
+        nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testCreatePip_SetPipMainWindowId_Zero", nullptr, TestCreatePip_SetPipMainWindowId_Zero,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testCreatePip_SetErrPipTemplateType", nullptr, TestCreatePip_SetErrPipTemplateType,

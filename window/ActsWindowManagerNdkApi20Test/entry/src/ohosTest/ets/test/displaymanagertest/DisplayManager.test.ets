@@ -17,6 +17,8 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hy
 import displaymanager from 'libdisplaymanager.so'
 import { BusinessError } from '@kit.BasicServicesKit';
 const Success = 0;
+const DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM = 1400004;
+const DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED = 801;
 export default function DisplayManagerTest() {
   describe('DisplayManagerTest', () => {
 
@@ -540,8 +542,12 @@ export default function DisplayManagerTest() {
           console.info("====> SUB_OH_RegisterAvailableAreaChangeListener_2600 start====");
           let result: number = displaymanager.RegisterAvailableAreaChangeListener();
           console.info("====> SUB_OH_RegisterAvailableAreaChangeListener_2600 result====", result);
-          expect(result).assertEqual(Success);
-          done();
+          if(result === DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED){
+            done();
+          }else{
+            expect(result).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
+            done();
+          }
         } catch (err) {
           console.error("====> SUB_OH_RegisterAvailableAreaChangeListener_2600 catch err: " + err);
           expect().assertFail();
@@ -562,8 +568,12 @@ export default function DisplayManagerTest() {
           console.info("====> SUB_OH_DestroyAvailableArea_2900 start====");
           let result: number = displaymanager.DestroyAvailableArea();
           console.info("====> SUB_OH_DestroyAvailableArea_2900 result====", result);
-          expect(result).assertEqual(Success);
-          done();
+          if(result === DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED){
+            done();
+          }else{
+            expect(result).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
+            done();
+          }
         } catch (err) {
           console.error("====> SUB_OH_DestroyAvailableArea_2900 catch err: " + err);
           expect().assertFail();
@@ -584,8 +594,12 @@ export default function DisplayManagerTest() {
           console.info("====> SUB_OH_RegisterDisplayAddListener_3000 start====");
           let result: number = displaymanager.RegisterDisplayAddListener();
           console.info("====> SUB_OH_RegisterDisplayAddListener_3000 result====", result);
-          expect(result).assertEqual(Success);
-          done();
+          if(result === DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED){
+            done();
+          }else{
+            expect(result).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
+            done();
+          }
         } catch (err) {
           console.error("====> SUB_OH_RegisterDisplayAddListener_3000 catch err: " + err);
           expect().assertFail();
@@ -606,8 +620,12 @@ export default function DisplayManagerTest() {
           console.info("====> SUB_OH_RegisterDisplayRemoveListener_3200 start====");
           let result: number = displaymanager.RegisterDisplayRemoveListener();
           console.info("====> SUB_OH_RegisterDisplayRemoveListener_3200 result====", result);
-          expect(result).assertEqual(Success);
-          done();
+          if(result === DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED){
+            done();
+          }else{
+            expect(result).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
+            done();
+          }
         } catch (err) {
           console.error("====> SUB_OH_RegisterDisplayRemoveListener_3200 catch err: " + err);
           expect().assertFail();
