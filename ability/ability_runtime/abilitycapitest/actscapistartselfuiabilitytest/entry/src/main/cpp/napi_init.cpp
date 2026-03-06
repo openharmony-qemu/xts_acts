@@ -465,12 +465,18 @@ static napi_value WantNdk_1700(napi_env env, napi_callback_info info)
     AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
     AbilityBase_ErrorCode errCode = OH_AbilityBase_AddWantFd(want, "fd", NULL);
     int32_t fd = 100;
-    OH_AbilityBase_GetWantFd(want, "fd", &fd);
+    AbilityBase_ErrorCode ret = OH_AbilityBase_GetWantFd(want, "fd", &fd);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_WantNdk_1700 errCode=%{public}d", errCode);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_WantNdk_1700 fd=%{public}d", fd);
-    napi_value result;
-    napi_create_int32(env, fd, &result);
-    return result;
+    if (ret == ABILITY_BASE_ERROR_CODE_NO_ERROR) {
+        napi_value result;
+        napi_create_int32(env, fd, &result);
+        return result;
+    } else {
+        napi_value result;
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
 }
 
 static napi_value WantNdk_1800(napi_env env, napi_callback_info info)

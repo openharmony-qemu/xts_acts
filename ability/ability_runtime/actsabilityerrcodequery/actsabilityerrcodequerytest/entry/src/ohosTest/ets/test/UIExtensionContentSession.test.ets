@@ -1252,5 +1252,190 @@ export default function UIExtensionContentSessionTest() {
           }
         })
     })
+
+    
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_2900
+     * @tc.number Sub_UIExtensionContentSession_errorCode_2900
+     * @tc.desc   session.loadContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_UIExtensionContentSession_errorCode_2900', Level.LEVEL0, (done: Function) => {
+      let tag: string = `Sub_UIExtensionContentSession_errorCode_2900`;
+      commonEventManager.createSubscriber(ACTS_EVENT)
+        .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+          subscriber = commonEventSubscriber;
+          let unSubscribeCallback = () => {
+            setTimeout(async () => {
+              console.info(`====>${tag} unSubscribeCallback`);
+              done();
+            }, 1000);
+          }
+          let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
+            console.log("subscribeCallBack success")
+            if (data.event == 'ACTS_TEST_DESTROY') {
+              expect(data?.parameters?.result).assertEqual(401)
+              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
+            }
+          }
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
+            }
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
+        })
+    })
+
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_3000
+     * @tc.number Sub_UIExtensionContentSession_errorCode_3000
+     * @tc.desc   session.loadContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_UIExtensionContentSession_errorCode_3000', Level.LEVEL0, (done: Function) => {
+      let tag: string = `Sub_UIExtensionContentSession_errorCode_3000`;
+      commonEventManager.createSubscriber(ACTS_EVENT)
+        .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+          subscriber = commonEventSubscriber;
+          let unSubscribeCallback = () => {
+            setTimeout(async () => {
+              console.info(`====>${tag} unSubscribeCallback`);
+              done();
+            }, 1000);
+          }
+          let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
+            console.log("subscribeCallBack success")
+            if (data.event == 'ACTS_TEST_DESTROY') {
+              expect(data?.parameters?.result).assertEqual(0)
+              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
+            }
+          }
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
+            }
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
+        })
+    })
+    
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_3100
+     * @tc.number Sub_UIExtensionContentSession_errorCode_3100
+     * @tc.desc   session.loadContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_UIExtensionContentSession_errorCode_3100', Level.LEVEL0, (done: Function) => {
+      let tag: string = `Sub_UIExtensionContentSession_errorCode_3100`;
+      commonEventManager.createSubscriber(ACTS_EVENT)
+        .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+          subscriber = commonEventSubscriber;
+          let unSubscribeCallback = () => {
+            setTimeout(async () => {
+              console.info(`====>${tag} unSubscribeCallback`);
+              done();
+            }, 1000);
+          }
+          let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
+            console.log(tag + "subscribeCallBack success " + JSON.stringify(data))
+            if (data.event == 'ACTS_TEST_DESTROY') {
+              expect(data?.parameters?.result).assertEqual(401)
+              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
+            }
+          }
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
+            }
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
+        })
+    })
+
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_3200
+     * @tc.number Sub_UIExtensionContentSession_errorCode_3200
+     * @tc.desc   session.loadContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_UIExtensionContentSession_errorCode_3200', Level.LEVEL0, (done: Function) => {
+      let tag: string = `Sub_UIExtensionContentSession_errorCode_3200`;
+      commonEventManager.createSubscriber(ACTS_EVENT)
+        .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+          subscriber = commonEventSubscriber;
+          let unSubscribeCallback = () => {
+            setTimeout(async () => {
+              console.info(`====>${tag} unSubscribeCallback`);
+              done();
+            }, 1000);
+          }
+          let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
+            console.log(tag + "subscribeCallBack success " + JSON.stringify(data))
+            if (data.event == 'ACTS_TEST_DESTROY') {
+              expect(data?.parameters?.result).assertEqual(401)
+              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
+            }
+          }
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
+            }
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
+        })
+    })
   })
 }

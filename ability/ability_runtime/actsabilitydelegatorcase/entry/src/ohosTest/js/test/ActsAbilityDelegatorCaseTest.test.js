@@ -24,8 +24,8 @@ export default function actsStServiceAbilityTest() {
     describe('ActsStServiceAbilityTest', function () {
         let gSetTimeout = 1000
         beforeAll(async (done) => {
-            console.debug('= ACTS_AbeforeAll 1812 ====<begin');
-            console.debug('= ACTS_AbeforeAll ====<end');
+            console.info('= ACTS_AbeforeAll 1812 ====<begin');
+            console.info('= ACTS_AbeforeAll ====<end');
             done();
         })
         beforeEach(async (done) => {
@@ -72,7 +72,7 @@ export default function actsStServiceAbilityTest() {
             } catch (error) {
                 clearTimeout(currentAlertTimeout);
                 console.log("ACTS_AExecuteShellCommand_Callback_0100 : error = " + error);
-                console.debug('ACTS_AExecuteShellCommand_Callback_0100====<end catch (error)');
+                console.info('ACTS_AExecuteShellCommand_Callback_0100====<end catch (error)');
                 done();
             }
 
@@ -112,7 +112,7 @@ export default function actsStServiceAbilityTest() {
             } catch (error) {
                 clearTimeout(currentAlertTimeout);
                 console.log("ACTS_AExecuteShellCommand_Callback_0100 : error = " + error);
-                console.debug('ACTS_AExecuteShellCommand_Callback_0100====<end catch (error)');
+                console.info('ACTS_AExecuteShellCommand_Callback_0100====<end catch (error)');
                 done();
             }
         })
@@ -138,7 +138,7 @@ export default function actsStServiceAbilityTest() {
                 var result = context.getDisplayOrientation(
                     (err, DisplayOrientation) => {
                         clearTimeout(currentAlertTimeout);
-                        console.debug("ACTS_AGetDisplayOrientation_0100====DisplayOrientation>"
+                        console.info("ACTS_AGetDisplayOrientation_0100====DisplayOrientation>"
                             + JSON.stringify(DisplayOrientation) + " , err= " + err);
                         expect(DisplayOrientation == bundle.DisplayOrientation.UNSPECIFIED
                             || (DisplayOrientation != bundle.DisplayOrientation.LANDSCAPE
@@ -151,7 +151,7 @@ export default function actsStServiceAbilityTest() {
             } catch (error) {
                 clearTimeout(currentAlertTimeout);
                 console.log("ACTS_AGetDisplayOrientation_0100 : error = " + error);
-                console.debug('ACTS_AGetDisplayOrientation_0100====<end catch (error)');
+                console.info('ACTS_AGetDisplayOrientation_0100====<end catch (error)');
                 done();
             }
         })
@@ -176,7 +176,7 @@ export default function actsStServiceAbilityTest() {
                 var context = featureAbility.getContext()
                 var result = await context.getDisplayOrientation().then((data) => {
                     clearTimeout(currentAlertTimeout);
-                    console.debug("ACTS_AGetDisplayOrientation_0200====DisplayOrientation>"
+                    console.info("ACTS_AGetDisplayOrientation_0200====DisplayOrientation>"
                         + JSON.stringify(DisplayOrientation) + " , err= " + err);
                     expect(DisplayOrientation == bundle.DisplayOrientation.UNSPECIFIED
                         || (DisplayOrientation != bundle.DisplayOrientation.LANDSCAPE
@@ -189,7 +189,7 @@ export default function actsStServiceAbilityTest() {
             } catch (error) {
                 clearTimeout(currentAlertTimeout);
                 console.log("ACTS_AGetDisplayOrientation_0200 : error = " + error);
-                console.debug('ACTS_AGetDisplayOrientation_0200====<end catch (error)');
+                console.info('ACTS_AGetDisplayOrientation_0200====<end catch (error)');
                 done();
             }
         })
@@ -215,7 +215,7 @@ export default function actsStServiceAbilityTest() {
                 var result = context.setDisplayOrientation(bundle.DisplayOrientation.UNSPECIFIED,
                     (err) => {
                         clearTimeout(currentAlertTimeout);
-                        console.debug("ACTS_ASetDisplayOrientation_0100====err>"
+                        console.info("ACTS_ASetDisplayOrientation_0100====err>"
                             + JSON.stringify(err) + " , err= " + err);
                         done()
                     }
@@ -223,7 +223,7 @@ export default function actsStServiceAbilityTest() {
             } catch (error) {
                 clearTimeout(currentAlertTimeout);
                 console.log("ACTS_ASetDisplayOrientation_0100 : error = " + error);
-                console.debug('ACTS_ASetDisplayOrientation_0100====<end catch (error)');
+                console.info('ACTS_ASetDisplayOrientation_0100====<end catch (error)');
                 done();
             }
         })
@@ -254,7 +254,7 @@ export default function actsStServiceAbilityTest() {
             } catch (error) {
                 clearTimeout(currentAlertTimeout);
                 console.log("ACTS_ASetDisplayOrientation_0200 : error = " + error);
-                console.debug('ACTS_ASetDisplayOrientation_0200====<end catch (error)');
+                console.info('ACTS_ASetDisplayOrientation_0200====<end catch (error)');
                 done();
             }
         })
@@ -280,7 +280,7 @@ export default function actsStServiceAbilityTest() {
                 var result = context.setShowOnLockScreen(true,
                     (err) => {
                         clearTimeout(currentAlertTimeout);
-                        console.debug("ACTS_ASetShowOnLockScreen_0100====err>"
+                        console.info("ACTS_ASetShowOnLockScreen_0100====err>"
                             + JSON.stringify(err) + " , err= " + err);
                         done()
                     }
@@ -288,7 +288,7 @@ export default function actsStServiceAbilityTest() {
             } catch (error) {
                 clearTimeout(currentAlertTimeout);
                 console.log("ACTS_ASetShowOnLockScreen_0100 : error = " + error);
-                console.debug('ACTS_ASetShowOnLockScreen_0100====<end catch (error)');
+                console.info('ACTS_ASetShowOnLockScreen_0100====<end catch (error)');
                 done();
             }
         })
@@ -313,14 +313,69 @@ export default function actsStServiceAbilityTest() {
                 var context = featureAbility.getContext()
                 var result = context.setShowOnLockScreen(true).then(() => {
                     clearTimeout(currentAlertTimeout);
-                    console.debug("ACTS_ASetShowOnLockScreen_0200====then>");
+                    console.info("ACTS_ASetShowOnLockScreen_0200====then>");
                     done()
                 }
                 );
             } catch (error) {
                 clearTimeout(currentAlertTimeout);
                 console.log("ACTS_ASetShowOnLockScreen_0200 : error = " + error);
-                console.debug('ACTS_ASetShowOnLockScreen_0200====<end catch (error)');
+                console.info('ACTS_ASetShowOnLockScreen_0200====<end catch (error)');
+                done();
+            }
+        })
+        /**
+         * @tc.name   ACTS_ASetShowOnLockScreen_0300
+         * @tc.number ACTS_ASetShowOnLockScreen_0300
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_ASetShowOnLockScreen_0300', Level.LEVEL0, async function (done) {
+            console.log("ACTS_ASetShowOnLockScreen_0300 --- start")
+            let flag = false;
+            try {
+                var context = featureAbility.getContext()
+                var result = context.setShowOnLockScreen(false,
+                    (err) => {
+                        console.info("ACTS_ASetShowOnLockScreen_0300====err>"
+                            + JSON.stringify(err) + " , err= " + err);
+                        flag = true;
+                        expect(flag).assertTrue();
+                        done()
+                    }
+                );
+            } catch (error) {
+                console.log("ACTS_ASetShowOnLockScreen_0300 : error = " + error);
+                console.info('ACTS_ASetShowOnLockScreen_0300====<end catch (error)');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_ASetShowOnLockScreen_0400
+         * @tc.number ACTS_ASetShowOnLockScreen_0400
+         * @tc.desc   Check the return type of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_ASetShowOnLockScreen_0400', Level.LEVEL0, async function (done) {
+            console.log("ACTS_ASetShowOnLockScreen_0400 --- start")
+            let flag = false;
+            try {
+                var context = featureAbility.getContext()
+                var result = context.setShowOnLockScreen(false).then(() => {
+                    console.info("ACTS_ASetShowOnLockScreen_0400====then>");
+                    flag = true;
+                    expect(flag).assertTrue();
+                    done()
+                }
+                );
+            } catch (error) {
+                console.log("ACTS_ASetShowOnLockScreen_0400 : error = " + error);
+                console.info('ACTS_ASetShowOnLockScreen_0400====<end catch (error)');
                 done();
             }
         })
@@ -346,7 +401,7 @@ export default function actsStServiceAbilityTest() {
                 var result = context.setWakeUpScreen(true,
                     (err) => {
                         clearTimeout(currentAlertTimeout);
-                        console.debug("ACTS_ASetWakeUpScreen_0100====err>"
+                        console.info("ACTS_ASetWakeUpScreen_0100====err>"
                             + JSON.stringify(err) + " , err= " + err);
                         done()
                     }
@@ -354,7 +409,7 @@ export default function actsStServiceAbilityTest() {
             } catch (error) {
                 clearTimeout(currentAlertTimeout);
                 console.log("ACTS_ASetWakeUpScreen_0100 : error = " + error);
-                console.debug('ACTS_ASetWakeUpScreen_0100====<end catch (error)');
+                console.info('ACTS_ASetWakeUpScreen_0100====<end catch (error)');
                 done();
             }
         })
@@ -379,17 +434,74 @@ export default function actsStServiceAbilityTest() {
                 var context = featureAbility.getContext()
                 var result = context.setWakeUpScreen(true).then(() => {
                     clearTimeout(currentAlertTimeout);
-                    console.debug("ACTS_ASetWakeUpScreen_0200====then>");
+                    console.info("ACTS_ASetWakeUpScreen_0200====then>");
                     done()
                 }
                 );
             } catch (error) {
                 clearTimeout(currentAlertTimeout);
                 console.log("ACTS_ASetWakeUpScreen_0200 : error = " + error);
-                console.debug('ACTS_ASetWakeUpScreen_0200====<end catch (error)');
+                console.info('ACTS_ASetWakeUpScreen_0200====<end catch (error)');
                 done();
             }
         })
+
+        
+        /**
+         * @tc.name   ACTS_ASetWakeUpScreen_0300
+         * @tc.number ACTS_ASetWakeUpScreen_0300
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_ASetWakeUpScreen_0300', Level.LEVEL0, async function (done) {
+          console.log("ACTS_ASetWakeUpScreen_0300 --- start")
+          let flag = false;
+          try {
+              var context = featureAbility.getContext()
+              var result = context.setWakeUpScreen(false,
+                  (err) => {
+                      console.info("ACTS_ASetWakeUpScreen_0300====err>"
+                          + JSON.stringify(err) + " , err= " + err);
+                      flag = true;
+                      expect(flag).assertTrue();
+                      done()
+                  }
+              );
+          } catch (error) {
+              console.log("ACTS_ASetWakeUpScreen_0300 : error = " + error);
+              console.info('ACTS_ASetWakeUpScreen_0300====<end catch (error)');
+              done();
+          }
+      })
+
+      /**
+       * @tc.name   ACTS_ASetWakeUpScreen_0400
+       * @tc.number ACTS_ASetWakeUpScreen_0400
+       * @tc.desc   Check the return type of the interface (by promise)
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('ACTS_ASetWakeUpScreen_0400', Level.LEVEL0, async function (done) {
+          console.log("ACTS_ASetWakeUpScreen_0400 --- start")
+          let flag = false;
+          try {
+              var context = featureAbility.getContext()
+              var result = context.setWakeUpScreen(false).then(() => {
+                  console.info("ACTS_ASetWakeUpScreen_0400====then>");
+                  flag = true;
+                  expect(flag).assertTrue();
+                  done()
+              }
+              );
+          } catch (error) {
+              console.log("ACTS_ASetWakeUpScreen_0400 : error = " + error);
+              console.info('ACTS_ASetWakeUpScreen_0400====<end catch (error)');
+              done();
+          }
+      })
 
         /**
          * @tc.name   ACTS_ATestRunner_0200
@@ -400,11 +512,11 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('ACTS_ATestRunner_0200', Level.LEVEL0, async function (done) {
-            console.debug('ACTS_ATestRunner_0200====<begin');
+            console.info('ACTS_ATestRunner_0200====<begin');
             let sa = '-b';
             try {
                 var AbilityDelegatorArgs = abilityDelegatorRegistry.getArguments()
-                console.debug("ACTS_ATestRunner_0200====>getArguments is====>" + JSON.stringify(AbilityDelegatorArgs));
+                console.info("ACTS_ATestRunner_0200====>getArguments is====>" + JSON.stringify(AbilityDelegatorArgs));
                 expect(AbilityDelegatorArgs.bundleName).assertEqual('com.amsst.actsabilitydelegatorcasetest')
                 expect(AbilityDelegatorArgs.parameters["-b"]).assertEqual("com.amsst.actsabilitydelegatorcasetest")
                 expect(AbilityDelegatorArgs.parameters["-p"]).assertEqual("com.amsst.actsabilitydelegatorcasetest")
@@ -414,7 +526,7 @@ export default function actsStServiceAbilityTest() {
                 expect(AbilityDelegatorArgs.parameters["moduleName"]).assertEqual("")
                 expect(AbilityDelegatorArgs.testCaseNames).assertEqual('')
                 expect(AbilityDelegatorArgs.testRunnerClassName).assertEqual('OpenHarmonyTestRunner')
-                console.debug('ACTS_ATestRunner_0200====<end');
+                console.info('ACTS_ATestRunner_0200====<end');
                 done();
             } catch (error) {
                 console.log("ACTS_ATestRunner_0200 : error = " + error);
@@ -431,7 +543,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0100', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0100====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0100====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             try {
                 abilityDelegator.setMockList(undefined);
@@ -453,7 +565,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0200', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0200====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0200====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             try {
                 abilityDelegator.setMockList(null);
@@ -475,7 +587,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0300', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0300====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0300====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             try {
                 abilityDelegator.setMockList();
@@ -497,7 +609,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0400', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0400====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0400====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             try {
                 abilityDelegator.setMockList(undefined, undefined);
@@ -519,7 +631,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0500', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0500====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0500====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             try {
                 abilityDelegator.setMockList("test1");
@@ -542,7 +654,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0600', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0600====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0600====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             let mockList = {
                 1: "1",
@@ -563,7 +675,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0700', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0700====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0700====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             let mockList = {};
             abilityDelegator.setMockList(mockList);
@@ -579,7 +691,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0800', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0800====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0800====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             let mockList = {
                 "test1": "1",
@@ -601,7 +713,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0900', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0900====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0900====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             let mockList = {
                 "-1": "1",
@@ -620,7 +732,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1000', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1000====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1000====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             let mockList = {
                 "zhong": "1",
@@ -639,7 +751,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1100', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1100====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1100====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             let mockList = {
                 "你好": "1",
@@ -658,7 +770,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1200', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1200====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1200====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             let mockList = {
                 "%￥#": "1",
@@ -677,7 +789,7 @@ export default function actsStServiceAbilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1300', Level.LEVEL0, async function (done) {
-            console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1300====<begin');
+            console.info('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1300====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
             try {
                 abilityDelegator.setMockList(1);
