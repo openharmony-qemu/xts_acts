@@ -3234,7 +3234,7 @@ export default function DisplayTest() {
     });
 
         /**
-    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5180
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
     * @tc.name      testCaptureStatusChange_VirtualScreenCreateDestroy_static_0200
     * @tc.desc      testCaptureStatusChange returns true when create virtual screen and false when destroy virtual screen
     * @tc.size      MediumTest
@@ -3330,15 +3330,15 @@ export default function DisplayTest() {
     });
 
             /**
-        * @tc.name   testConvertRelativeToGlobalCoordinatewithPositionOutofRange_static
-        * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_static_0100
-        * @tc.desc   验证convertRelativeToGlobalCoordinate接口position超出int32报1400004
+        * @tc.name   testConvertRelativeToGlobalCoordinatewithPosition_Normal_0100_static
+        * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_NORMAL_static_0100
+        * @tc.desc   验证convertRelativeToGlobalCoordinate接口
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL3
         */
-        it('testConvertRelativeToGlobalCoordinatewithPositionOutofRange_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName:string = "testConvertRelativeToGlobalCoordinatewithPositionOutofRange_static";
+        it('testConvertRelativeToGlobalCoordinatewithPosition_Normal_0100_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testConvertRelativeToGlobalCoordinatewithPosition_Normal_0100_static";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
             let relativePosition: display.RelativePosition = {
