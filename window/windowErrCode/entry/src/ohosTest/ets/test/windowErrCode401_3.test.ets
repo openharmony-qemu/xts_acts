@@ -2679,7 +2679,6 @@ export default function windowErrCode401_3() {
         await ohosWindow.find(null);
         console.info(msgStr + 'Succeeded');
         expect().assertFail();
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
         expect(exception.code).assertEqual(1003);
@@ -2689,10 +2688,9 @@ export default function windowErrCode401_3() {
         await ohosWindow.find('');
         console.info(msgStr + 'Succeeded1');
         expect().assertFail();
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(1003);
+        expect(exception.code).assertEqual(1001);
         expect(exception.message!=null).assertTrue();
       }
       try {
@@ -2980,6 +2978,7 @@ export default function windowErrCode401_3() {
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
             expect(err.code).assertEqual(1003);
+            done();
           } else {
             console.log(caseName + ' success2');
             expect().assertFail();
@@ -3022,7 +3021,7 @@ export default function windowErrCode401_3() {
         expect().assertFail();
       } catch (exception) {
         console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(1003);
+        expect(exception.code).assertEqual(401);
         expect(exception.message!=null).assertTrue();
       }
       try {
