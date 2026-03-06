@@ -125,6 +125,40 @@ struct CircleNullUndefined3Test {
       }
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
+
+      Row() {
+        // Valid parameters (对照) - false
+        Circle()
+          .width(80)
+          .height(40)
+          .stroke(Color.Green)
+          .strokeWidth(2)
+          .strokeLineJoin(LineJoinStyle.Miter)
+          .antiAlias(false)
+          .id('Circle_antiAlias_valid')
+
+        // antiAlias with null
+        Circle()
+          .width(80)
+          .height(40)
+          .stroke(Color.Green)
+          .strokeWidth(2)
+          .strokeLineJoin(LineJoinStyle.Miter)
+          .antiAlias(null)
+          .id('Circle_antiAlias_null')
+
+        // antiAlias with undefined
+        Circle()
+          .width(80)
+          .height(40)
+          .stroke(Color.Green)
+          .strokeWidth(2)
+          .strokeLineJoin(LineJoinStyle.Miter)
+          .antiAlias(undefined)
+          .id('Circle_antiAlias_undefined')
+      }
+      .width('100%')
+      .justifyContent(FlexAlign.SpaceEvenly)
     }
     .width('100%')
     .height('100%')
