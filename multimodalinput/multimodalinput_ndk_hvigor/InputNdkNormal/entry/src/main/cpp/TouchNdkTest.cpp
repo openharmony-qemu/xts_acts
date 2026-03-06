@@ -571,12 +571,16 @@ static napi_value KeyCode19(napi_env env, napi_callback_info info)
     int32_t keyCode3 = 2729;
     int32_t keyCode4 = 2730;
     int32_t keyCode5 = 2731;
+    int32_t keyCode6 = 2732;
+    int32_t keyCode7 = 2733;
     napi_create_int32(env,
                       (Input_KeyCode::KEYCODE_KBDINPUTASSIST_NEXT == keyCode1 &&
                       Input_KeyCode::KEYCODE_KBDINPUTASSIST_PREVGROUP == keyCode2 &&
                       Input_KeyCode::KEYCODE_KBDINPUTASSIST_NEXTGROUP == keyCode3 &&
                       Input_KeyCode::KEYCODE_KBDINPUTASSIST_ACCEPT == keyCode4 &&
-                      Input_KeyCode::KEYCODE_KBDINPUTASSIST_CANCEL == keyCode5) ? 1 : 0, &result);
+                      Input_KeyCode::KEYCODE_KBDINPUTASSIST_CANCEL == keyCode5 &&
+                      Input_KeyCode::KEYCODE_MOUSE_ASSISTANT == keyCode6 &&
+                      Input_KeyCode::KEYCODE_MOUSE_INTELLIGENCE_SELECTION == keyCode7) ? 1 : 0, &result);
     return result;
 }
 
