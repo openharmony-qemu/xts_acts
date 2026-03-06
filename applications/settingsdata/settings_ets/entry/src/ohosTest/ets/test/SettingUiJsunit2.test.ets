@@ -16,6 +16,7 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import settings from '@ohos.settings';
 import { BusinessError } from '@ohos.base';
+import uitest from '@ohos.UiTest';
 import { mContext } from '../testability/TestAbility';
 import { deviceInfo } from '@kit.BasicServicesKit';
 import CommonFunc from './Common';
@@ -39,8 +40,16 @@ function isDeviceTablet(): boolean {
   return deviceType === 'tablet';
 }
 
+function isDevicePC(): boolean {
+  return deviceType === '2in1';
+}
+
 function isDeviceSupportInputMethod(): boolean {
   return isDevicePhone() || isDeviceTablet();
+}
+
+function isDeviceSupportOpenNetWork(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
 }
 
 export default function settingUiJsunit() {
@@ -1691,7 +1700,16 @@ export default function settingUiJsunit() {
       try{
         let value = await settings.openNetworkManagerSettings(mContext);
         console.info("[open_manager_settings_120] result is:" + value);
-        expect(value).assertTrue();
+        if (!isDeviceSupportOpenNetWork()) {
+          console.info("[open_manager_settings_120] sleep 1s");
+          await CommonFunc.sleep(1000);
+          let driver = await uitest.Driver.create();
+          let textComponent = await driver.findComponent(uitest.ON.text('设置网络'));
+          console.info("[open_manager_settings_120] text = " + textComponent);
+          expect(textComponent === undefined || textComponent === null).assertTrue();
+        } else {
+          expect(value).assertTrue();
+        }
         done();
       }catch (err) {
         console.error("[open_manager_settings_120] error = " + err);
@@ -3316,7 +3334,6 @@ export default function settingUiJsunit() {
       console.info("[openInputMethodSettings_valid_param] text = " + textComponent);
       if (!isDeviceSupportInputMethod()) {
         expect(textComponent === undefined || textComponent === null).assertTrue();
-        return;
       } else {
         expect(code).assertEqual(0);
       }
