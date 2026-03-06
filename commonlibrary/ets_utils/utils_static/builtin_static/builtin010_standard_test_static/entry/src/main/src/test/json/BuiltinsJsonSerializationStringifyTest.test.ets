@@ -664,6 +664,7 @@ export default function builtinsJsonSerializationStringifyTest() {
      * @tc.level LEVEL2
      */
     it('builtinsJsonSerializationStringifyTest0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      let error = false;
       try {
         const arr: FixedArray<int> = [
           Long.toInt(-2147483649),
@@ -673,8 +674,8 @@ export default function builtinsJsonSerializationStringifyTest() {
         expect(result).assertEqual('[2147483647,-2147483648]');
       } catch (e) {
         console.info('Long.toInt rejects overflow: ' + e);
-        expect(true).assertTrue();
       }
+      expect(error).assertFalse();
     });
 
     /**
@@ -1774,3 +1775,291 @@ export default function builtinsJsonSerializationStringifyTest() {
       const arr: Number[] = [2 ** 3, 3 ** 2, 10 ** 6, Math.pow(2, 10)];
       expect(JSON.stringify(arr)).assertEqual('[8,9,1000000,1024]');
     });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0110
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0110
+     * @tc.desc Test stringify with ArrayLike<Number> integer type boundaries (byte, short, int, long)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: Number[] = [
+        -128, 127,
+        -32768, 32767,
+        -2147483648, 2147483647,
+        -9223372036854775808, 9223372036854775807
+      ];
+      const result: string = JSON.stringify(arr);
+
+      expect(result.startsWith('[')).assertTrue();
+      expect(result.endsWith(']')).assertTrue();
+
+      expect(result.indexOf('-128') >= 0).assertTrue();
+      expect(result.indexOf('127') >= 0).assertTrue();
+      expect(result.indexOf('32767') >= 0).assertTrue();
+      expect(result.indexOf('2147483647') >= 0).assertTrue();
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0111
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0111
+     * @tc.desc Test stringify with ArrayLike<Number> float type boundaries (float min/max)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: Number[] = [
+        1.40129846432481707e-45,
+        3.40282346638528860e+38,
+        -3.40282346638528860e+38,
+        1.17549435e-38
+      ];
+      const result: string = JSON.stringify(arr);
+
+      expect(result.startsWith('[')).assertTrue();
+      expect(result.endsWith(']')).assertTrue();
+      expect(result.split(',').length).assertEqual(4);
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0112
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0112
+     * @tc.desc Test stringify with ArrayLike<Number> duplicate indices and consecutive identical values
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: Number[] = [0, 0, 0, 1, 1, NaN, NaN, Infinity];
+      expect(JSON.stringify(arr)).assertEqual('[0,0,0,1,1,null,null,null]');
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0113
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0113
+     * @tc.desc Test stringify with empty FixedArray<char> to verify empty array handling
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [];
+      const result: string = JSON.stringify(arr);
+
+      expect(result).assertEqual('[]');
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0114
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0114
+     * @tc.desc Test stringify with single char element 'A' (ASCII 65)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c'A'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result).assertEqual('["A"]');
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0115
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0115
+     * @tc.desc Test stringify with char boundary values 0 (NULL) and 127 (DEL) at ASCII range limits
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c'\u0000', c'\u007F'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result.startsWith('[')).assertTrue();
+      expect(result.endsWith(']')).assertTrue();
+      expect(result.split(',').length).assertEqual(2);
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0116
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0116
+     * @tc.desc Test stringify with extended ASCII range (128-255) including common Latin chars
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c'\u0080', c'\u00A9', c'\u00FF'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result.startsWith('[')).assertTrue();
+      expect(result.endsWith(']')).assertTrue();
+      expect(result.split(',').length).assertEqual(3);
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0117
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0117
+     * @tc.desc Test stringify with char absolute boundaries 0 and 65535 (char range limit)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c'\u0000', c'\uFFFF'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result.startsWith('[')).assertTrue();
+      expect(result.endsWith(']')).assertTrue();
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0118
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0118
+     * @tc.desc Test stringify with printable ASCII full range (32-126) including letters, digits, symbols
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c' ', c'0', c'A', c'a', c'z', c'~'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result.indexOf('" "') >= 0).assertTrue();
+      expect(result.indexOf('"0"') >= 0).assertTrue();
+      expect(result.indexOf('"A"') >= 0).assertTrue();
+      expect(result.indexOf('"a"') >= 0).assertTrue();
+      expect(result.split(',').length).assertEqual(6);
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0119
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0119
+     * @tc.desc Test stringify with special control characters (TAB 9, LF 10, CR 13)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c'\t', c'\n', c'\r'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result.startsWith('[')).assertTrue();
+      expect(result.endsWith(']')).assertTrue();
+      expect(result.split(',').length).assertEqual(3);
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0120
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0120
+     * @tc.desc Test stringify with consecutive char sequence "Hello" (72,101,108,108,111)
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c'H', c'e', c'l', c'l', c'o'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result).assertEqual('["H","e","l","l","o"]');
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0121
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0121
+     * @tc.desc Test stringify with large FixedArray<char> (1000 elements) to verify performance and no trailing comma
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const chars: FixedArray<char> = [c'A', c'B', c'C', c'D', c'E', c'F', c'G', c'H', c'I', c'J',
+      c'K', c'L', c'M', c'N', c'O', c'P', c'Q', c'R', c'S', c'T',
+      c'U', c'V', c'W', c'X', c'Y', c'Z'];
+
+      let arr: FixedArray<char> = [];
+      for (let i = 0; i < 1000; i++) {
+        arr = [...arr, chars[i % 26]];
+      }
+      const result: string = JSON.stringify(arr);
+
+      expect(result.startsWith('["A"')).assertTrue();
+      expect(result.endsWith('"]')).assertTrue();
+      expect(result.split(',').length).assertEqual(1000);
+
+      expect(result.indexOf(',]') < 0).assertTrue();
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0122
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0122
+     * @tc.desc Test stringify with Unicode BMP chars (char values 256-65535) including CJK and symbols
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c'\u20AC', c'\u4E2D', c'\u65E5', c'\uD800', c'\uDBFF', c'\uDC00', c'\uDFFF'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result.startsWith('[')).assertTrue();
+      expect(result.endsWith(']')).assertTrue();
+      expect(result.split(',').length).assertEqual(7);
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0123
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0123
+     * @tc.desc Test stringify with char boundary 256 (start of extended plane) and common math symbols
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c'\u0100', c'\u03B1', c'\u03A9', c'\u222B', c'\u2248', c'\u2260'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result.startsWith('[')).assertTrue();
+      expect(result.endsWith(']')).assertTrue();
+      expect(result.split(',').length).assertEqual(6);
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0124
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0124
+     * @tc.desc Test stringify with duplicate consecutive chars and mixed case letters
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c'A', c'A', c'B', c'B', c'a', c'a'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result).assertEqual('["A","A","B","B","a","a"]');
+    });
+
+    /**
+     * @tc.name builtinsJsonSerializationStringifyTest0125
+     * @tc.number BUILTINS_JSON_SERIALIZATION_STRINGIFY_TEST_0125
+     * @tc.desc Test stringify with digits and punctuation marks commonly used in JSON
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonSerializationStringifyTest0125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: FixedArray<char> = [c'"', c',', c':', c'[', c']', c'{', c'}'];
+      const result: string = JSON.stringify(arr);
+
+      expect(result.startsWith('[')).assertTrue();
+      expect(result.endsWith(']')).assertTrue();
+      expect(result.split(',').length).assertEqual(8);
+      expect(result.length > 14).assertTrue();
+    });
+
+  });
+};

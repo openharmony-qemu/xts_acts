@@ -1933,3 +1933,244 @@ export default function builtinsJsonTypeStringifiersTest() {
       expect(stringified.endsWith("\"")).assertTrue();
       expect(stringified).assertContain("k1:value1");
     });
+
+    /**
+     * @tc.name  builtinsJsonTypeStringifiersTest0106
+     * @tc.number  BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0106
+     * @tc.desc  Test JSON.stringify with large tree-like string (document section 3 treeString)
+     * @tc.type  FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const size = 100;
+      let treeString = "[";
+      for (let i = 0; i < size; i++) {
+        treeString += '{"a":1},';
+      }
+      treeString += '{"a":1}]';
+
+      const result = JSON.stringify(treeString);
+
+      expect(result.startsWith("\"")).assertTrue();
+      expect(result.endsWith("\"")).assertTrue();
+      expect(result).assertContain("\\\"");
+      expect(result.length).assertLarger(treeString.length);
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0107
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0107
+     * @tc.desc Test stringify with basic string value
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result: string = JSON.stringify("Hello");
+
+      expect(result).assertEqual('"Hello"');
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0108
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0108
+     * @tc.desc Test stringify with number values including special ones
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      expect(JSON.stringify(0 as double)).assertEqual('0');
+      expect(JSON.stringify(-0 as double)).assertEqual('0');
+      expect(JSON.stringify(NaN as double)).assertEqual('null');
+      expect(JSON.stringify(Infinity as double)).assertEqual('null');
+      expect(JSON.stringify(-Infinity as double)).assertEqual('null');
+      expect(JSON.stringify(123.456 as double)).assertEqual('123.456');
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0109
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0109
+     * @tc.desc Test stringify with boolean values
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      expect(JSON.stringify(true)).assertEqual('true');
+      expect(JSON.stringify(false)).assertEqual('false');
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0110
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0110
+     * @tc.desc Test stringify with null and undefined
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      expect(JSON.stringify(null)).assertEqual('null');
+      expect(JSON.stringify(undefined)).assertEqual('undefined');
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0111
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0111
+     * @tc.desc Test stringify with empty array
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: number[] = [];
+      const result: string = JSON.stringify(arr);
+
+      expect(result).assertEqual('[]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0112
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0112
+     * @tc.desc Test stringify with array containing various number types
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: number[] = [0, -0, NaN, Infinity, -Infinity, 42, 3.14, 1e3];
+      const result: string = JSON.stringify(arr);
+
+      expect(result).assertEqual('[0,0,null,null,null,42,3.14,1000]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0113
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0113
+     * @tc.desc Test stringify with nested arrays
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const deep: number[] = [4];
+      const middle: number[] = [3, ...deep];
+      const outer: number[] = [2, ...middle];
+      const nested: number[][] = [[1], outer];
+
+      const result: string = JSON.stringify(nested);
+      expect(result).assertEqual('[[1],[2,3,4]]');
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0114
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0114
+     * @tc.desc Test stringify with special characters in string
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const str: string = 'Hello\nWorld\t!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+      const result: string = JSON.stringify(str);
+
+      expect(result).assertEqual('"Hello\\nWorld\\t!\\"#$%&\'()*+,-./:;<=>?@[\\\\]^_`{|}~"');
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0115
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0115
+     * @tc.desc Test stringify with emoji and Unicode
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const emoji: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
+      const result: string = JSON.stringify(emoji);
+
+      expect(result).assertEqual('"👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴"');
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0116
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0116
+     * @tc.desc Test stringify with large array
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const largeArray: number[] = [];
+      for (let i: int = 0; i < 100; i++) {
+        largeArray.push(i);
+      }
+      const result: string = JSON.stringify(largeArray);
+      const expected: string = `[${largeArray.join(',')}]`;
+
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0117
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0117
+     * @tc.desc Test stringify with large object
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const tempObj: Record<string, double> = {};
+      for (let i: int = 0; i < 100; i++) {
+        tempObj[`key${i}`] = Int.toDouble(i);
+      }
+      const largeObj: Object = tempObj;
+
+      const result: string = JSON.stringify(largeObj);
+
+      expect(result).assertInstanceOf('String');
+      expect(result.length).assertLarger(0);
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0118
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0118
+     * @tc.desc Test stringify with hexadecimal and octal numbers
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const hexNum: double = 0xCAFEBABE as double;
+      const octNum: double = 0o777 as double;
+
+      expect(JSON.stringify(hexNum)).assertEqual('3405691582');
+      expect(JSON.stringify(octNum)).assertEqual('511');
+    });
+
+    /**
+     * @tc.name builtinsJsonTypeStringifiersTest0119
+     * @tc.number BUILTINS_JSON_TYPE_STRINGIFIERS_TEST_0119
+     * @tc.desc Test stringify with keywords as strings
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('builtinsJsonTypeStringifiersTest0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const keywords: string[] = ["0", "NaN", "null", "undefined", "true", "false"];
+      const results: string[] = [];
+      for (let i: int = 0; i < keywords.length; i++) {
+        results.push(JSON.stringify(keywords[i]));
+      }
+
+      expect(results[0]).assertEqual('"0"');
+      expect(results[1]).assertEqual('"NaN"');
+      expect(results[2]).assertEqual('"null"');
+      expect(results[3]).assertEqual('"undefined"');
+      expect(results[4]).assertEqual('"true"');
+      expect(results[5]).assertEqual('"false"');
+    });
+
+  });
+};
