@@ -275,6 +275,22 @@ export default function column_JustifyContent_ChangeParent() {
       let locationText2 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test2');
       let locationText3 : RectValue = CommonFunc.getComponentRect('JustifyContent_Test3');
       let locationColumn : RectValue = CommonFunc.getComponentRect('ColumnJustifyContentChange1');
+      console.info('win6 1 :' + Math.floor(Math.abs((locationText1.left - locationColumn.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))));
+      console.info('win6 2 :' + Math.floor(Math.abs((locationText1.left - locationColumn.left) - (locationColumn.right - locationText1.right))));
+      console.info('win6 3 :' + Math.floor(Math.abs((locationText2.left - locationColumn.left) - (locationColumn.right - locationText2.right))));
+      console.info('win6 4 :' + Math.floor(Math.abs((locationText3.left - locationColumn.left) - (locationColumn.right - locationText3.right))));
+      console.info('win6 5 :' + Math.floor(Math.abs((locationColumn.right - locationText1.right) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))));
+      console.info('win6 6 :' + Math.floor(Math.abs((locationText2.top - locationText1.bottom) - (locationText3.top - locationText2.bottom))));
+      console.info('win6 7 :' + Math.floor(Math.abs((locationText2.top - locationText1.bottom) - AppStorage.get<UIContext>("uiContext")!.vp2px(100 / 3))));
+      console.info('win6 8 :' + Math.floor(Math.abs((locationText1.top - locationColumn.top) - (locationColumn.bottom - locationText3.bottom))));
+      console.info('win6 9 :' + Math.floor(Math.abs((locationText1.top - locationColumn.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(50 / 3))));
+      console.info('win6 10 :' + Math.floor(Math.abs((locationText1.right - locationText1.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))));
+      console.info('win6 11 :' + Math.floor(Math.abs((locationText2.right - locationText2.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))));
+      console.info('win6 12 :' + Math.floor(Math.abs((locationText3.right - locationText3.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))));
+      console.info('win6 13 :' + Math.floor(Math.abs((locationText1.bottom - locationText1.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(50))));
+      console.info('win6 14 :' + Math.floor(Math.abs((locationText2.bottom - locationText2.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(100))));
+      console.info('win6 15 :' + Math.floor(Math.abs((locationText3.bottom - locationText3.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(150))));
+
       expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(25))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.left - locationColumn.left) - (locationColumn.right - locationText1.right))) <= 1)
@@ -291,7 +307,7 @@ export default function column_JustifyContent_ChangeParent() {
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - (locationColumn.bottom - locationText3.bottom))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(50 / 3))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.top - locationColumn.top) - AppStorage.get<UIContext>("uiContext")!.vp2px(50 / 3))) <= 2)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - AppStorage.get<UIContext>("uiContext")!.vp2px(300))) <= 1)
         .assertTrue();

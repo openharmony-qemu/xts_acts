@@ -192,6 +192,7 @@ it('getAttrsTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
       expect(obj.getElement('$attrs').getString('content')).assertContain('"left":{"unit":1,"value":3}');
       console.info('[getAttrsTest_static_0500] END');
       done();
+      
     });
     
     
