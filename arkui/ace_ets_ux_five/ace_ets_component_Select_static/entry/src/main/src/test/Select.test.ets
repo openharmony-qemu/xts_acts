@@ -140,8 +140,8 @@ it('ArkUX_Select_Visual_static_0050', Level.LEVEL0, async (done: () => void): Pr
           expect(Math.abs(parseFloat(optionWidth) - parseFloat(900.000000)) <= 1).assertTrue()
           expect(Math.abs(parseFloat(optionHeight) - parseFloat(900.000000)) <= 1).assertTrue()
           
-          // expect(optionWidth).assertEqual("900.000000");
-          // expect(optionHeight).assertEqual("900.000000");
+          expect(Math.floor(Math.abs(Number(optionWidth) - 900)) <= 1).assertTrue();
+          expect(Math.floor(Math.abs(Number(optionHeight) - 900)) <= 1).assertTrue();
           console.info('ArkUX_Select_Visual_static_0050 END ');
         } catch (err) {
           // expect().assertFail();
