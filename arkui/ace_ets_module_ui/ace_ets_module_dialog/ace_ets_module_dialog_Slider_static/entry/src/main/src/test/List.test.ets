@@ -13,7 +13,11 @@
  * limitations under the License.
  */
 import trackColorMetricsTest from './slider/trackColorMetrics.test';
+import SliderTest from './slider/slider.test';
+import SliderCustomContentOptionsTest from './slider/sliderCustomContentOptions.test';
 
 export default function testsuite() {
     trackColorMetricsTest();
+    SliderTest();
+    SliderCustomContentOptionsTest();
 }

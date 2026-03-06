@@ -36,7 +36,7 @@ export default function PromptActionTest() {
       await UtilsTest.startAbility("com.arkui.ace.dialog.button.static", "EntryAbility");
 
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/PromptAction/promptAction',
+        url: 'MainAbility/pages/promptAction/promptAction',
       };
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router;
