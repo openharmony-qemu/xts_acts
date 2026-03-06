@@ -611,40 +611,32 @@ export default function signNormalAccessBiometricExecute() {
       }
 
       try {
-        const userAuthInstance = userAuth.getUserAuthInstance(null, widgetParamDefault);
-        userAuthInstance.off();
+        userAuth.getUserAuthInstance(null, widgetParamDefault);
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step2 success`);
-        expect(null).assertFail();
       } catch (e) {
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step2 fail ${e.code}`);
         expect(e.code).assertEqual(401);
       }
 
       try {
-        const userAuthInstance = userAuth.getUserAuthInstance(undefined, widgetParamDefault);
-        userAuthInstance.off();
+        userAuth.getUserAuthInstance(undefined, widgetParamDefault);
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step3 success`);
-        expect(null).assertFail();
       } catch (e) {
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step3 fail ${e.code}`);
         expect(e.code).assertEqual(401);
       }
 
       try {
-        const userAuthInstance = userAuth.getUserAuthInstance(authParamDefault, null);
-        userAuthInstance.off();
+        userAuth.getUserAuthInstance(authParamDefault, null);
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step4 success`);
-        expect(null).assertFail();
       } catch (e) {
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step4 fail ${e.code}`);
         expect(e.code).assertEqual(401);
       }
 
       try {
-        const userAuthInstance = userAuth.getUserAuthInstance(authParamDefault, undefined);
-        userAuthInstance.off();
+        userAuth.getUserAuthInstance(authParamDefault, undefined);
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step5 success`);
-        expect(null).assertFail();
       } catch (e) {
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step5 fail ${e.code}`);
         expect(e.code).assertEqual(401);

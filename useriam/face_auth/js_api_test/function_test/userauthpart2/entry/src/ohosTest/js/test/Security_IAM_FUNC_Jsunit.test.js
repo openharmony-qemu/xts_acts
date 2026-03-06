@@ -356,19 +356,25 @@ export default function userauthTest() {
             //on: invalid parameter
             try {
                 var authInstance = userAuthNorth.getAuthInstance(challenge, authType, authTrustLevel);
-                authInstance.on(null);
+                authInstance.on(null, {
+                    callback: function (result) {
+                    }
+                });
             } catch (e) {
-                console.log("Security_IAM_Func_0106 no callback fail " + e.code);
-                expect(e.code).assertEqual(401);
+                console.log("Security_IAM_Func_0106 no callback fail on null " + e.code);
+                expect(e.code).assertEqual(12500005);
             }
 
             //on: invalid parameter
             try {
                 var authInstance = userAuthNorth.getAuthInstance(challenge, authType, authTrustLevel);
-                authInstance.on(undefined);
+                authInstance.on(undefined, {
+                    callback: function (result) {
+                    }
+                });
             } catch (e) {
-                console.log("Security_IAM_Func_0106 no callback fail " + e.code);
-                expect(e.code).assertEqual(401);
+                console.log("Security_IAM_Func_0106 no callback fail on undefined" + e.code);
+                expect(e.code).assertEqual(12500005);
             }
 
             //off: invalid parameter
@@ -385,8 +391,8 @@ export default function userauthTest() {
                 var authInstance = userAuthNorth.getAuthInstance(challenge, authType, authTrustLevel);
                 authInstance.off(null);
             } catch (e) {
-                console.log("Security_IAM_Func_0106 invalid results fail " + e.code);
-                expect(e.code).assertEqual(401);
+                console.log("Security_IAM_Func_0106 invalid results fail off null" + e.code);
+                expect(e.code).assertEqual(12500005);
             }
 
             //off: invalid parameter
@@ -394,8 +400,8 @@ export default function userauthTest() {
                 var authInstance = userAuthNorth.getAuthInstance(challenge, authType, authTrustLevel);
                 authInstance.off(undefined);
             } catch (e) {
-                console.log("Security_IAM_Func_0106 invalid results fail " + e.code);
-                expect(e.code).assertEqual(401);
+                console.log("Security_IAM_Func_0106 invalid results fail off undefined" + e.code);
+                expect(e.code).assertEqual(12500005);
             }
 
             //off: more parameter
