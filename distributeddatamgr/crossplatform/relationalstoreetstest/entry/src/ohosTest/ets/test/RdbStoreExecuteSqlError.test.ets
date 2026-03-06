@@ -235,20 +235,20 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("testGetRdbStoreError001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
-        console.info(TAG + "************* testGetRdbStoreError001 start *************");
+    it("testGetRdbStoreError0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
+        console.info(TAG + "************* testGetRdbStoreError0100 start *************");
         try {
           relationalStore.getRdbStore(null, STORE_CONFIG, async (err: BusinessError) => {
-            console.info(`testGetRdbStoreError001 faied.`);
+            console.info(`testGetRdbStoreError0100 faied.`);
             expect(!err).assertFail();
             done();
           });
         } catch (err) {
-          console.error(TAG + `testGetRdbStoreError001, errcode:${JSON.stringify(err)}`);
+          console.error(TAG + `testGetRdbStoreError0100, errcode:${JSON.stringify(err)}`);
           expect(err.code).assertEqual('401')
           done();
         }
-        console.info(TAG + "************* testGetRdbStoreError001 end   *************");
+        console.info(TAG + "************* testGetRdbStoreError0100 end   *************");
       });
 
     /**
@@ -1811,9 +1811,9 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
    */
-   it('SUB_DistributedData_RelationalStore_queryLockedRow_0300',
+   it('SUB_DistributedData_RelationalStore_queryLockedRow_0400',
    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-     console.info(TAG + "-----SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0300 start-----")
+     console.info(TAG + "-----SUB_DistributedData_RelationalStore_queryLockedRow_0400 start-----")
      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
      let predicates = new relationalStore.RdbPredicates("EMPLOYEE");
      predicates.equalTo("NAME", "Rose");
@@ -1827,7 +1827,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
       })
 
      }
-     console.info(TAG + "-----SUB_DistributedData_RelationalStore_queryLockedRow_0300 end-----")
+     console.info(TAG + "-----SUB_DistributedData_RelationalStore_queryLockedRow_0400 end-----")
    })
 
     /**
