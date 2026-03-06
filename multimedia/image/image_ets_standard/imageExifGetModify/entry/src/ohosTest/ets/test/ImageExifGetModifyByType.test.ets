@@ -274,16 +274,12 @@ export default function imageExifGetModifyByTypeTest() {
         }
         try {
           let expectedValue = rule.newExpectValue;
-          let actualValue: string | number | object | number[] | undefined | null | ArrayBuffer;
-          if (typeMetadata == "exifMetadata" && exifValue.exifMetadata != undefined) {
-            actualValue = exifValue.exifMetadata![imageMetadatakey[i]];
-          } else if (typeMetadata == "makerNoteHuaweiMetadata" && exifValue.makerNoteHuaweiMetadata != undefined) {
-            actualValue = exifValue.makerNoteHuaweiMetadata![imageMetadatakey[i]];
-          } else {
+          if (exifValue[typeMetadata] == undefined) {
             await imageSourceApiGet?.release();
             console.info(`${testNum} Not meeting the conditions.`);
             return false;
           }
+          let actualValue: string | number | object | number[] | undefined | null | ArrayBuffer = exifValue[typeMetadata]![imageMetadatakey[i]];
 
           if (actualValue instanceof ArrayBuffer) {
             if (!compareArrayBuffer(actualValue, expectedValue)) {
@@ -325,23 +321,15 @@ export default function imageExifGetModifyByTypeTest() {
         try {
           const expectedValue = rule.oldExpectValue;
 
-          let actualValue1: string | null;
-          let actualValue2: string | null;
-          if (typeMetadata == "exifMetadata" && exifValue.exifMetadata != undefined) {
-            let exifRecord1: Record<string, string | null> = await exifValue.exifMetadata!.getProperties(metadataKeys);
-            let exifRecord2: Record<string, string | null> = await exifValue.exifMetadata!.getAllProperties();
-            actualValue1 = exifRecord1[metadataKeys[i]];
-            actualValue2 = exifRecord2[metadataKeys[i]];
-          } else if (typeMetadata == "makerNoteHuaweiMetadata" && exifValue.makerNoteHuaweiMetadata != undefined) {
-            let exifRecord1: Record<string, string | null> = await exifValue.makerNoteHuaweiMetadata!.getProperties(metadataKeys);
-            let exifRecord2: Record<string, string | null> = await exifValue.makerNoteHuaweiMetadata!.getAllProperties();
-            actualValue1 = exifRecord1[metadataKeys[i]];
-            actualValue2 = exifRecord2[metadataKeys[i]];
-          } else {
+          if (exifValue[typeMetadata] == undefined) {
             await imageSourceApiGet?.release();
             console.info(`${testNum} Not meeting the conditions.`);
             return false;
           }
+          let exifRecord1: Record<string, string | null> = await exifValue[typeMetadata]!.getProperties(metadataKeys);
+          let exifRecord2: Record<string, string | null> = await exifValue[typeMetadata]!.getAllProperties();
+          let actualValue1: string | null = exifRecord1[metadataKeys[i]];
+          let actualValue2: string | null = exifRecord2[metadataKeys[i]];
 
           const verifyValue = (actualValue: string | null): boolean => {
             if (!compareValues(actualValue, expectedValue)) {
@@ -781,6 +769,33 @@ export default function imageExifGetModifyByTypeTest() {
         await imageSourceApi?.release();
       }
       return result;
+    }
+
+    const testReadImageMetadataByType = async (
+      testNum: string,
+      fileName: string,
+      type: string,
+      metadataTypes?: Array<image.MetadataType> | undefined,
+      inde?: number | undefined
+    ): Promise<image.ImageMetadata | undefined> => {
+      const imageSourceApi = await getImageSource(fileName, type);
+      let imageValue: image.ImageMetadata | undefined = undefined;
+      try {
+        if (metadataTypes === undefined && inde === undefined) {
+          imageValue = await imageSourceApi.readImageMetadataByType();
+        } else if (inde === undefined) {
+          imageValue = await imageSourceApi.readImageMetadataByType(metadataTypes);
+        } else {
+          imageValue = await imageSourceApi.readImageMetadataByType(metadataTypes, inde);
+        }
+        console.info(`${testNum} readImageMetadataByType successfully for imageValue : ${JSON.stringify(imageValue)}` );
+      } catch (error) {
+        console.error(`${testNum} Error readImageMetadataByType: ${error}`);
+        return undefined;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      return imageValue;
     }
 
     /**
@@ -3681,6 +3696,590 @@ export default function imageExifGetModifyByTypeTest() {
         done();
       }
     });
-    
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0100
+     * @tc.desc        Verify reading EXIF_METADATA from JPEG file
+     *                 1.Create image source from test_exif_arraybuffer_jpg_v3.jpg using fd
+     *                 2.Call readImageMetadataByType with specified metadata types
+     *                 3.Verify metadata types are supported and returned correctly
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0100";
+      let result = true;
+      let fileName = "test_exif_arraybuffer_jpg_v3.jpg";
+      const imageValue = await testReadImageMetadataByType(testTag, fileName, "fd");
+      if (!imageValue) {
+        console.error(`${testTag} imageValue is null or undefined`);
+        result = false;
+      } else {
+        if (imageValue.exifMetadata) {
+          console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.exifMetadata)}`);
+          result = result && compareValues(imageValue.exifMetadata["imageWidth"], 0);
+          result = result && compareValues(imageValue.exifMetadata["bitsPerSample"], [1,1,1]);
+          result = result && compareValues(imageValue.exifMetadata["make"], '华为');
+        }
+        if (imageValue.makerNoteHuaweiMetadata) {
+          console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.makerNoteHuaweiMetadata)}`);
+          result = result && compareValues(imageValue.makerNoteHuaweiMetadata["captureMode"], 1);
+        }
+      }
+      console.info(`${testTag} testReadImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0200
+     * @tc.desc        Verify reading EXIF_METADATA from JPEG file
+     *                 1.Create image source from test_exif_arraybuffer_jpg_v3.jpg using fd
+     *                 2.Call readImageMetadataByType with specified metadata types
+     *                 3.Verify metadata types are supported and returned correctly
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0200";
+      let result = true;
+      let fileName = "test_exif_arraybuffer_jpg_v3.jpg";
+      let metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA
+      ];
+      const imageValue = await testReadImageMetadataByType(testTag, fileName, "fd", metadataTypes);
+      if (!imageValue) {
+        console.error(`${testTag} imageValue is null or undefined`);
+        result = false;
+      } else {
+        if (imageValue.exifMetadata) {
+          console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.exifMetadata)}`);
+          result = result && compareValues(imageValue.exifMetadata["imageWidth"], 0);
+          result = result && compareValues(imageValue.exifMetadata["bitsPerSample"], [1,1,1]);
+          result = result && compareValues(imageValue.exifMetadata["make"], '华为');
+        }
+      }
+      console.info(`${testTag} testReadImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0300
+     * @tc.desc        Verify reading EXIF_METADATA from JPEG file
+     *                 1.Create image source from test_exif_readOnly_heic_v2.heic using fd
+     *                 2.Call readImageMetadataByType with specified metadata types
+     *                 3.Verify metadata types are supported and returned correctly
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0300", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0300";
+      let result = true;
+      let fileName = "test_exif_readOnly_heic_v2.heic";
+      let metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA
+      ];
+      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+        console.info(testTag + "device is not support heif encode");
+        done();
+      } else {
+        const imageValue = await testReadImageMetadataByType(testTag, fileName, "fd", metadataTypes);
+        if (!imageValue) {
+          console.error(`${testTag} imageValue is null or undefined`);
+          result = false;
+        } else {
+          if (imageValue.exifMetadata) {
+            console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.exifMetadata)}`);
+          result = result && compareValues(imageValue.exifMetadata["imageWidth"], 0);
+          result = result && compareValues(imageValue.exifMetadata["bitsPerSample"], [1,1,1]);
+          result = result && compareValues(imageValue.exifMetadata["make"], '华为');
+          }
+        }
+        console.info(`${testTag} testReadImageMetadataByType result is: ${result}`);
+        expect(result).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0400
+     * @tc.desc        Verify reading EXIF_METADATA from PNG file
+     *                 1.Create image source from test_exif_readOnly_png_v2.png using fd
+     *                 2.Call readImageMetadataByType with EXIF_METADATA type and index 0
+     *                 3.Verify exifMetadata values (imageWidth=0, bitsPerSample=[1,1,1], make='华为')
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0400", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0400";
+      let result = true;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA
+      ];
+      const imageValue = await testReadImageMetadataByType(testTag, "test_exif_readOnly_png_v2.png", "fd", metadataTypes, 0);
+      if (!imageValue) {
+        console.error(`${testTag} imageValue is null or undefined`);
+        result = false;
+      } else {
+        if (imageValue.exifMetadata) {
+          console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.exifMetadata)}`);
+          result = result && compareValues(imageValue.exifMetadata["imageWidth"], 0);
+          result = result && compareValues(imageValue.exifMetadata["bitsPerSample"], [1,1,1]);
+          result = result && compareValues(imageValue.exifMetadata["make"], '华为');
+        }
+      }
+      console.info(`${testTag} testReadImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0500
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0500
+     * @tc.desc        Verify reading EXIF_METADATA from WEBP file
+     *                 1.Create image source from test_exif_matedata_webp.webp using fd
+     *                 2.Call readImageMetadataByType with EXIF_METADATA type and index 0
+     *                 3.Verify exifMetadata values (imageWidth=3456, bitsPerSample=[8,8,8], make='华为')
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0500", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0500";
+      let result = true;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA
+      ];
+      const imageValue = await testReadImageMetadataByType(testTag, "test_exif_matedata_webp.webp", "fd", metadataTypes, 0);
+      if (!imageValue) {
+        console.error(`${testTag} imageValue is null or undefined`);
+        result = false;
+      } else {
+        if (imageValue.exifMetadata) {
+          console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.exifMetadata)}`);
+          result = result && compareValues(imageValue.exifMetadata["imageWidth"], 3456);
+          result = result && compareValues(imageValue.exifMetadata["bitsPerSample"], [8,8,8]);
+          result = result && compareValues(imageValue.exifMetadata["make"], '华为');
+        }
+      }
+      console.info(`${testTag} testReadImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0600
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0600
+     * @tc.desc        Verify reading EXIF_METADATA from DNG file
+     *                 1.Create image source from test_exif_v2.dng using fd
+     *                 2.Call readImageMetadataByType with EXIF_METADATA type and index 0
+     *                 3.Verify that the EXIF metadata values are consistent with the expected values.
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0600", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0600";
+      let result = true;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA
+      ];
+      const imageValue = await testReadImageMetadataByType(testTag, "test_exif_v2.dng", "fd", metadataTypes, 0);
+      if (!imageValue) {
+        console.error(`${testTag} imageValue is null or undefined`);
+        result = false;
+      } else {
+        if (imageValue.exifMetadata) {
+          console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.exifMetadata)}`);
+          result = result && compareValues(imageValue.exifMetadata["imageWidth"], 256);
+          result = result && compareValues(imageValue.exifMetadata["bitsPerSample"], [8,8,8]);
+          result = result && compareValues(imageValue.exifMetadata["make"], 'HUAWEI');
+        }
+      }
+      console.info(`${testTag} testReadImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0700
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0700
+     * @tc.desc        Verify reading duplicate metadata types from JPEG file with index parameter
+     *                 1.Create image source from test_exif_arraybuffer_jpg_v3.jpg using fd
+     *                 2.Call readImageMetadataByType with duplicate EXIF_METADATA and EXIF_METADATA types and index 0
+     *                 3.Verify metadata is returned correctly despite duplicate types in the request
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0700", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0700";
+      let result = true;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA,
+        image.MetadataType.EXIF_METADATA
+      ];
+      const imageValue = await testReadImageMetadataByType(testTag, "test_exif_arraybuffer_jpg_v3.jpg", "fd", metadataTypes, 0);
+      if (!imageValue) {
+        console.error(`${testTag} imageValue is null or undefined`);
+        result = false;
+      } else {
+        console.info(`${testTag} imageValue: ${JSON.stringify(imageValue)}`);
+        if (imageValue.exifMetadata) {
+          console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.exifMetadata)}`);
+          result = result && compareValues(imageValue.exifMetadata["imageWidth"], 0);
+          result = result && compareValues(imageValue.exifMetadata["bitsPerSample"], [1,1,1]);
+          result = result && compareValues(imageValue.exifMetadata["make"], '华为');
+        }
+      }
+      console.info(`${testTag} testReadImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0800
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0800
+     * @tc.desc        Verify reading EXIF_METADATA and HEIFS_METADATA from HEIC file with index parameter
+     *                 1.Check if device supports HEIC format decoding
+     *                 2.Create image source from test_exif_arraybuffer_jpg_v3.jpg using fd
+     *                 3.Call readImageMetadataByType with EXIF_METADATA and HEIFS_METADATA types and index 0
+     *                 4.Verify that the EXIF metadata values are consistent with the expected values.
+     *                 5.Verify HEIFS_METADATA is undefined (not supported for HEIC)
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0800", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0800";
+      let result = true;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA,
+        image.MetadataType.HEIFS_METADATA
+      ];
+      const imageValue = await testReadImageMetadataByType(testTag, "test_exif_arraybuffer_jpg_v3.jpg", "fd", metadataTypes, 0);
+      if (!imageValue) {
+        console.error(`${testTag} imageValue is null or undefined`);
+        result = false;
+      } else {
+        if (imageValue.exifMetadata) {
+          console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.exifMetadata)}`);
+          result = result && compareValues(imageValue.exifMetadata["imageWidth"], 0);
+          result = result && compareValues(imageValue.exifMetadata["bitsPerSample"], [1,1,1]);
+          result = result && compareValues(imageValue.exifMetadata["make"], '华为');
+        }
+        console.info(`${testTag} imageValue.heifsMetadata: ${JSON.stringify(imageValue.heifsMetadata)}`);
+        result = result && (imageValue.heifsMetadata === undefined);
+      }
+      console.info(`${testTag} testReadImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0900
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0900
+     * @tc.desc        Verify reading metadata with invalid metadata type included in the array
+     *                 1.Create image source from test_exif_arraybuffer_jpg_v3.jpg using fd
+     *                 2.Call readImageMetadataByType with EXIF_METADATA and invalid type (20) and index 0
+     *                 3.Verify valid EXIF metadata is still returned correctly
+     *                 4.Verify that the EXIF metadata values are consistent with the expected values.
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0900", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0900";
+      let result = true;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA,
+        20 as image.MetadataType
+      ];
+      const imageValue = await testReadImageMetadataByType(testTag, "test_exif_arraybuffer_jpg_v3.jpg", "fd", metadataTypes, 0);
+      if (!imageValue) {
+        console.error(`${testTag} imageValue is null or undefined`);
+        result = false;
+      } else {
+          console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.exifMetadata)}`);
+          result = result && compareValues(imageValue.exifMetadata!["imageWidth"], 0);
+          result = result && compareValues(imageValue.exifMetadata!["bitsPerSample"], [1,1,1]);
+          result = result && compareValues(imageValue.exifMetadata!["make"], '华为');
+      }
+      console.info(`${testTag} testReadImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_1000
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_1000
+     * @tc.desc        Verify reading HEIFS_METADATA from multi-frame HEIC file
+     *                 1.Check if device supports HEIC format decoding
+     *                 2.Create image source from test_exif_by_type_heifs.heic using fd
+     *                 3.Get frame count and iterate through all frames
+     *                 4.Call readImageMetadataByType with HEIFS_METADATA type for each frame
+     *                 5.Verify heifsMetadata is returned correctly for all frames (heifsDelayTime=40)
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_1000", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_1000";
+      let result = true;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.HEIFS_METADATA
+      ];
+      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+        console.info(`${testTag} device is not support decode heif!`);
+        done();
+      } else {
+        const imageSourceApi = await getImageSource("heif.heic", "fd");
+        let frameCount = await imageSourceApi.getFrameCount();
+        console.info(`${testTag} image frame count: ${frameCount}`);
+        for (let i = 0; i < frameCount; i++) {
+          const imageValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType(metadataTypes, i);
+          if (!imageValue) {
+            console.error(`${testTag} imageValue is null or undefined`);
+            result = false;
+          } else {
+            if (imageValue.heifsMetadata !== undefined) {
+              console.info(`${testTag} imageValue.heifsMetadata: ${JSON.stringify(imageValue.heifsMetadata)}`);
+              result = result && imageValue.heifsMetadata!["heifsDelayTime"] === 40;
+            }
+          }
+        }
+        await imageSourceApi?.release();
+        console.info(`${testTag} readImageMetadataByType result is: ${result}`);
+        expect(result).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0100
+     * @tc.desc        Verify error handling when reading EXIF metadata with negative index from JPEG
+     *                 1.Create image source from test_exif_readWrite_jpg_v2.jpg using fd
+     *                 2.Call readImageMetadataByType with EXIF_METADATA type and invalid index -1
+     *                 3.Verify PROPERTY_NOT_EXIST error is thrown
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0100";
+      let result: boolean = false;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA
+      ];
+      const imageSourceApi = await getImageSource("test_exif_readWrite_jpg_v2.jpg", "fd");
+      try {
+        const imageValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType(metadataTypes, -1);
+        console.info(`${testTag} readImageMetadataByType successfully for key: ${metadataTypes}, imageValue: ${JSON.stringify(imageValue)}`);
+      } catch (error) {
+        result = handleError(testTag, error as GenericError | Array<GenericError>, PROPERTY_NOT_EXIST);
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} readImageMetadataByType error result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0200
+     * @tc.desc        Verify error handling when reading EXIF metadata with invalid index from JPEG
+     *                 1.Create image source from test_exif_readWrite_jpg_v2.jpg using fd
+     *                 2.Call readImageMetadataByType with EXIF_METADATA type and invalid index 3
+     *                 3.Verify PROPERTY_NOT_EXIST error is thrown for out-of-bounds index
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0200";
+      let result: boolean = false;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA
+      ];
+      const imageSourceApi = await getImageSource("test_exif_readWrite_jpg_v2.jpg", "fd");
+      try {
+        const imageValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType(metadataTypes, 3);
+        console.info(`${testTag} readImageMetadataByType successfully for key: ${metadataTypes}, imageValue: ${JSON.stringify(imageValue)}`);
+      } catch (error) {
+        result = handleError(testTag, error as GenericError | Array<GenericError>, PROPERTY_NOT_EXIST);
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} readImageMetadataByType error result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0300
+     * @tc.desc        Verify error handling when reading with only invalid metadata type
+     *                 1.Create image source from test_exif_readWrite_jpg_v2.jpg using fd
+     *                 2.Call readImageMetadataByType with only invalid type (20) and index 0
+     *                 3.Verify READ_FAILED error is thrown when no valid metadata types provided
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0300", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0300";
+      let result: boolean = false;
+      const metadataTypes: Array<image.MetadataType> = [
+        20 as image.MetadataType
+      ];
+      const imageSourceApi = await getImageSource("test_exif_readWrite_jpg_v2.jpg", "fd");
+      try {
+        const imageValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType(metadataTypes, 0);
+        console.info(`${testTag} readImageMetadataByType successfully for key: ${metadataTypes}, imageValue: ${imageValue}`);
+      } catch (error) {
+        result = handleError(testTag, error as GenericError | Array<GenericError>, READ_FAILED);
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} readImageMetadataByType error result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0400
+     * @tc.desc        Verify error handling when reading mismatched metadata type from image
+     *                 1.Create image source from test_exif_readWrite_jpg_v2.jpg using fd
+     *                 2.Call readImageMetadataByType with HEIFS_METADATA type (not supported by JPEG) and index 0
+     *                 3.Verify UNSUPPORTED_IMAGE_FORMATS error is thrown for mismatched metadata type
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0400", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0400";
+      let result: boolean = false;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.HEIFS_METADATA
+      ];
+      const imageSourceApi = await getImageSource("test_exif_readWrite_jpg_v2.jpg", "fd");
+      try {
+        const imageValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType(metadataTypes, 0);
+        console.info(`${testTag} readImageMetadataByType successfully for key: ${metadataTypes}, imageValue: ${imageValue}`);
+      } catch (error) {
+        result = handleError(testTag, error as GenericError | Array<GenericError>, UNSUPPORTED_IMAGE_FORMATS);
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} readImageMetadataByType error result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0500
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0500
+     * @tc.desc        Verify error handling when reading metadata after releasing image source
+     *                 1.Create image source from test_exif_readWrite_jpg_v2.jpg using fd
+     *                 2.Release the image source
+     *                 3.Call readImageMetadataByType with EXIF_METADATA type and index 0
+     *                 4.Verify PROPERTY_NOT_EXIST error is thrown for released source
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0500", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0500";
+      let result: boolean = false;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA
+      ];
+      const imageSourceApi = await getImageSource("test_exif_readWrite_jpg_v2.jpg", "fd");
+      try {
+        await imageSourceApi.release();
+        const imageValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType(metadataTypes, 0);
+        console.info(`${testTag} readImageMetadataByType successfully for key: ${metadataTypes}, imageValue: ${imageValue}`);
+      } catch (error) {
+        result = handleError(testTag, error as GenericError | Array<GenericError>, PROPERTY_NOT_EXIST);
+      }
+      console.info(`${testTag} readImageMetadataByType error result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0600
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0600
+     * @tc.desc        Verify error handling when reading metadata from image file without EXIF data
+     *                 1.Create image source from test_exif_empty_jpg_v4.jpg using fd
+     *                 2.Call readImageMetadataByType with EXIF_METADATA type and index 0
+     *                 3.Verify READ_FAILED error is thrown for image without EXIF metadata
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0600", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0600";
+      let result: boolean = false;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA
+      ];
+      const imageSourceApi = await getImageSource("test_exif_empty_jpg_v4.jpg", "fd");
+      try {
+        const imageValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType(metadataTypes, 0);
+        console.info(`${testTag} readImageMetadataByType successfully for key: ${metadataTypes}, imageValue: ${imageValue}`);
+      } catch (error) {
+        result = handleError(testTag, error as GenericError | Array<GenericError>, READ_FAILED);
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} readImageMetadataByType error result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0700
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0700
+     * @tc.desc        Verify error handling when reading metadata from unsupported image format
+     *                 1.Create image source from test.ico using fd
+     *                 2.Call readImageMetadataByType with EXIF_METADATA type and index 0
+     *                 3.Verify UNSUPPORTED_IMAGE_FORMATS error is thrown for ICO format
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0700", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0700";
+      let result: boolean = false;
+      const metadataTypes: Array<image.MetadataType> = [
+        image.MetadataType.EXIF_METADATA
+      ];
+      const imageSourceApi = await getImageSource("test.ico", "fd");
+      try {
+        const imageValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType(metadataTypes, 0);
+        console.info(`${testTag} readImageMetadataByType successfully for key: ${metadataTypes}, imageValue: ${imageValue}`);
+      } catch (error) {
+        result = handleError(testTag, error as GenericError | Array<GenericError>, UNSUPPORTED_IMAGE_FORMATS);
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} readImageMetadataByType error result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
   });
 }
