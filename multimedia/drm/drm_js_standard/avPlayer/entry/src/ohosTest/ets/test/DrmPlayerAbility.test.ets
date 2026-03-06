@@ -850,7 +850,7 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-/**
+        /**
          * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0200
          * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0200
          * @tc.desc   获取许可证,正常参数
