@@ -694,14 +694,21 @@ export class KeyboardController {
   async inputMethodEngine_test_038(): Promise<void> {
     console.info(TAG + '====>receive inputMethodEngine_test_038 data');
     let commonEventPublishData;
-    this.TextInputClient.getEditorAttribute((err, value) => {
+    this.TextInputClient.getEditorAttribute((err, Attribute) => {
       if (err) {
         console.info(TAG + '====>inputMethodEngine_test_038 getEditorAttribute err:' + JSON.stringify(err));
         commonEventPublishData = {
           data: 'FAILED'
         };
       } else {
-        console.info(TAG + '====>inputMethodEngine_test_038 getEditorAttribute value:' + JSON.stringify(value));
+        console.info(TAG + '====>inputMethodEngine_test_038 getEditorAttribute value:' + JSON.stringify(Attribute));
+        let value = typeof(Attribute.enterKeyType) === 'number' && typeof(Attribute.inputPattern) === 'number' &&
+         typeof(Attribute.isTextPreviewSupported) === 'boolean' && typeof(Attribute.bundleName) === 'string' &&
+         typeof(Attribute.immersiveMode) === 'number' && typeof(Attribute.windowId) === 'number' &&
+         typeof(Attribute.displayId) === 'number' && typeof(Attribute.placeholder) === 'string' &&
+         typeof(Attribute.abilityName) === 'string' && typeof(Attribute.capitalizeMode) === 'number' &&
+         typeof(Attribute.gradientMode) === 'number' && typeof(Attribute.extraConfig) === 'object';
+        console.info(TAG + '====>inputMethodEngine_test_039 getEditorAttribute:' + JSON.stringify(value));
         if (value) {
           commonEventPublishData = {
             data: 'SUCCESS'
@@ -719,7 +726,14 @@ export class KeyboardController {
   async inputMethodEngine_test_039(): Promise<void> {
     console.info(TAG + '====>receive inputMethodEngine_test_039 data');
     let commonEventPublishData;
-    let value = await this.TextInputClient.getEditorAttribute();
+    let Attribute = await this.TextInputClient.getEditorAttribute();
+    console.info(TAG + '====>inputMethodEngine_test_039 getEditorAttribute:' + JSON.stringify(Attribute));
+    let value = typeof(Attribute.enterKeyType) === 'number' && typeof(Attribute.inputPattern) === 'number' &&
+     typeof(Attribute.isTextPreviewSupported) === 'boolean' && typeof(Attribute.bundleName) === 'string' &&
+     typeof(Attribute.immersiveMode) === 'number' && typeof(Attribute.windowId) === 'number' &&
+     typeof(Attribute.displayId) === 'number' && typeof(Attribute.placeholder) === 'string' &&
+     typeof(Attribute.abilityName) === 'string' && typeof(Attribute.capitalizeMode) === 'number' &&
+     typeof(Attribute.gradientMode) === 'number' && typeof(Attribute.extraConfig) === 'object';
     console.info(TAG + '====>inputMethodEngine_test_039 getEditorAttribute:' + JSON.stringify(value));
     if (value) {
       commonEventPublishData = {
@@ -1792,7 +1806,8 @@ export class KeyboardController {
       return new Promise((resolve, reject) => {
         this.InputClient.on('attachOptionsDidChange', (newAttachOptions) => {
           console.info(TAG + '====> Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0100 newAttachOptions is ' + JSON.stringify(newAttachOptions));
-          resolve(newAttachOptions.requestKeyboardReason === inputmethodengine.RequestKeyboardReason.TOUCH);
+          resolve(newAttachOptions.requestKeyboardReason === inputmethodengine.RequestKeyboardReason.TOUCH &&
+           newAttachOptions.isSimpleKeyboardEnabled === false);
           this.InputClient.off('attachOptionsDidChange');
         });
       });
