@@ -54,26 +54,26 @@ public:
     ~VDecAPI11Sample() override;
     int32_t RunVideoDecSurface(std::string codeName = "");
     int32_t RunVideoDec(std::string codeName = "");
-    const char *INP_DIR = "/data/test/media/1920_1080_30.h265";
-    const char *OUT_DIR = "/data/test/media/VDecTest.yuv";
-    const char *OUT_DIR2 = "/data/test/media/VDecTest2.yuv";
-    bool g_sfOutput = false;
-    bool g_transferFlag = false;
-    bool NV21_FLAG = false;
-    bool PREPARE_FLAG = true;
-    bool IS_FIRST_FRAME = true;
-    uint32_t DEFAULT_WIDTH = 1920;
-    uint32_t g_defaultHeight = 1080;
+    const char *inpDir = "/data/test/media/1920_1080_30.h265";
+    const char *outDir = "/data/test/media/VDecTest.yuv";
+    const char *outDir2 = "/data/test/media/VDecTest2.yuv";
+    bool sfOutput = false;
+    bool transferFlag = false;
+    bool nv21Flag = false;
+    bool prepareFlag = true;
+    bool isFirstFrame = true;
+    uint32_t defaultWidth = 1920;
+    uint32_t defaultHeight = 1080;
     uint32_t defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    uint32_t REPEAT_CALL_TIME = 10;
-    uint32_t MAX_SURF_NUM = 2;
-    double DEFAULT_FRAME_RATE = 30.0;
-    uint32_t g_defaultRangeFlag = 0;
-    bool BEFORE_EOS_INPUT = false;              // 0800 测试用例
-    bool BEFORE_EOS_INPUT_INPUT = false;        // 0900 测试用例
-    bool AFTER_EOS_DESTORY_CODEC = true;        // 1000 测试用例 结束不销毁codec
-    uint32_t REPEAT_START_STOP_BEFORE_EOS = 0;  // 1200 测试用例
-    uint32_t REPEAT_START_FLUSH_BEFORE_EOS = 0; // 1300 测试用例
+    uint32_t repeatCallTime = 10;
+    uint32_t maxSurfNum = 2;
+    double defaultFrameRate = 30.0;
+    uint32_t defaultRangeFlag = 0;
+    bool beforeEosInput = false;              // 0800 测试用例
+    bool beforeEosInputInput = false;        // 0900 测试用例
+    bool afterEosDestroyCodec = true;        // 1000 测试用例 结束不销毁codec
+    uint32_t afterEosDestroyCodec = 0;  // 1200 测试用例
+    uint32_t repeatStartFlushBeforeEos = 0; // 1300 测试用例
     uint32_t frameCount_ = 0;
     uint32_t repeat_time = 0;
     uint32_t outFrameCount = 0;
@@ -110,7 +110,7 @@ public:
     int64_t GetSystemTimeUs();
     int32_t CreateVideoDecoder(std::string codeName);
     int32_t SetVideoDecoderCallback();
-    void testAPI();
+    void testApi();
     int32_t SwitchSurface();
     int32_t RepeatCallSetSurface();
     int32_t Release();
@@ -134,7 +134,7 @@ public:
     void CreateSurface();
     void ReleaseInFile();
     void StopInloop();
-    void Flush_buffer();
+    void FlushBuffer();
     void StopOutloop();
     bool IsRender();
     void RenderOutAtTime(uint32_t index);
@@ -148,10 +148,10 @@ public:
     int64_t outTimeArray[2000] = {};
     bool sleepOnFPS = false;
     bool repeatRun = false;
-    int64_t decode_count = 0;
-    int64_t start_time = 0;
+    int64_t decodeCount = 0;
+    int64_t startTime = 0;
     int32_t maxInputSize = 0;
-    int64_t endTime_ = 0;
+    int64_t endTime = 0;
     bool autoSwitchSurface = false;
     std::atomic<bool> isFlushing_ { false };
     int32_t switchSurfaceFlag = 0;

@@ -41,7 +41,7 @@ public:
 
 typedef struct OH_AVCapability OH_AVCapability;
 
-extern OH_AVCapability *capHevc;
+extern OH_AVCapability *cap_hevc;
 extern std::string g_codecNameHevc;
 
 int VideoDecodeSyncSs265Func0010Test();

@@ -25,7 +25,7 @@ using namespace std;
 using namespace OHOS;
 using namespace Media;
 
-OH_AVCapability* capHevc = nullptr;
+OH_AVCapability* cap_hevc = nullptr;
 std::string g_codecNameHevc = "";
 
 namespace {
@@ -35,6 +35,9 @@ constexpr size_t PRINTF_BUFFER_SIZE = 1024;
 constexpr int ERROR_CODE_NEGATIVE_ONE = -1;
 constexpr int ERROR_CODE_NEGATIVE_TWO = -2;
 constexpr int SUCCESS_CODE = 0;
+constexpr int32_t DEFAULT_WIDTH = 1920;
+constexpr int32_t DEFAULT_HEIGHT = 1080;
+constexpr int32_t DEFAULT_FRAME_RATE = 30;
 }
 
 const char* const OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30 =
@@ -42,8 +45,8 @@ const char* const OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30 =
 
 void HevcSwdecFuncNdkTest::SetUpTestCase()
 {
-    capHevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, SOFTWARE);
-    g_codecNameHevc = OH_AVCapability_GetName(capHevc);
+    cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, SOFTWARE);
+    g_codecNameHevc = OH_AVCapability_GetName(cap_hevc);
     cout << "g_codecNameHevc: " << g_codecNameHevc << endl;
 }
 
@@ -135,12 +138,12 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
 int VideoDecodeSyncSs265Func0010Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
-    if (capHevc != nullptr) {
+    if (cap_hevc != nullptr) {
         shared_ptr<VDecAPI11Sample> vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->INP_DIR = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
-        vDecSample->DEFAULT_WIDTH = 1920;
-        vDecSample->g_defaultHeight = 1080;
-        vDecSample->DEFAULT_FRAME_RATE = 30;
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
         vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
         vDecSample->enbleSyncMode = 1;
         if (vDecSample->CreateVideoDecoder(g_codecNameHevc) != AV_ERR_OK) {
@@ -170,12 +173,12 @@ int VideoDecodeSyncSs265Func0010Test()
 int VideoDecodeSyncSs265Func0020Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
-    if (capHevc != nullptr) {
+    if (cap_hevc != nullptr) {
         shared_ptr<VDecAPI11Sample> vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->INP_DIR = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
-        vDecSample->DEFAULT_WIDTH = 1920;
-        vDecSample->g_defaultHeight = 1080;
-        vDecSample->DEFAULT_FRAME_RATE = 30;
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
         vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV21;
         vDecSample->enbleSyncMode = 1;
         if (vDecSample->CreateVideoDecoder(g_codecNameHevc) != AV_ERR_OK) {
@@ -206,13 +209,13 @@ int VideoDecodeSyncSs265Func0020Test()
 int VideoSwdecH265BlankFrame0010Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
-    if (capHevc != nullptr) {
+    if (cap_hevc != nullptr) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->INP_DIR = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
-        vDecSample->DEFAULT_WIDTH = 1920;
-        vDecSample->g_defaultHeight = 1080;
-        vDecSample->DEFAULT_FRAME_RATE = 30;
-        vDecSample->g_sfOutput = false;
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->sfOutput = false;
         vDecSample->enbleBlankFrame = 1;
         if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
             return -1;
