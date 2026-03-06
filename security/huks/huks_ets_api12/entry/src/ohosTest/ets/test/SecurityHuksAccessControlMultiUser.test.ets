@@ -14,9 +14,9 @@
  */
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { GenParam } from './utils/huks/HuksOptionsUtils.ets';
-import { StringToUint8Array } from './utils/common/CommonUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
+import { GenParam } from './utils/huks/HuksOptionsUtils';
+import { StringToUint8Array } from './utils/common/CommonUtils';
+import { Logger } from './utils/common/Logger';
 
 export default function SecurityHUKSAccessControlAsUserTest() {
 

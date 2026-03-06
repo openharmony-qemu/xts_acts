@@ -14,11 +14,11 @@
  */
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils.ets';
-import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils.ets';
-import { Cipher, CipherData, GetEcbNoPaddingOptions } from './utils/huks/CipherUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
-import { Get3DesGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
+import { MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
+import { Cipher, CipherData, GetEcbNoPaddingOptions } from './utils/huks/CipherUtils';
+import { Logger } from './utils/common/Logger';
+import { Get3DesGenerateOptions } from './utils/huks/GenerateKeyUtils';
 
 
 export default function SecurityHuksCipher3DESTest() {

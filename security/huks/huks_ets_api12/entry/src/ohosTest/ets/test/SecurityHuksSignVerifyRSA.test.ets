@@ -14,12 +14,12 @@
  */
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
-import { CheckSoftware, CheckWearable, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils.ets';
-import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils.ets';
-import { GetNoDigestNoPaddingSignOptions, GetNoDigestPkcs1SignOptions, SignVerify, SignVerifyData } from './utils/huks/SignVerifyUtils.ets';
-import { GetRsaGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
-import { GetSha256Options } from './utils/huks/DeriveAgreeUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
+import { CheckSoftware, CheckWearable, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
+import { GetNoDigestNoPaddingSignOptions, GetNoDigestPkcs1SignOptions, SignVerify, SignVerifyData } from './utils/huks/SignVerifyUtils';
+import { GetRsaGenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { GetSha256Options } from './utils/huks/DeriveAgreeUtils';
+import { Logger } from './utils/common/Logger';
 
 
 export default function SecurityHuksSignVerifyRSATest() {

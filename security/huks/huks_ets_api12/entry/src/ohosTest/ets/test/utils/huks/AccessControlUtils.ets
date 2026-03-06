@@ -117,3 +117,30 @@ export function GetChallengeCustomOptions(): huks.HuksOptions {
   };
   return huksOptions;
 }
+
+export function GetStorageLevelDeOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE),
+    )
+  };
+  return huksOptions;
+}
+
+export function GetStorageLevelCeOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE),
+    )
+  };
+  return huksOptions;
+}
+
+export function GetStorageLevelEceOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE),
+    )
+  };
+  return huksOptions;
+}
