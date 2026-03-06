@@ -18,6 +18,7 @@ import settings from '@ohos.settings';
 import { BusinessError } from '@ohos.base';
 import { mContext } from '../testability/TestAbility';
 import { deviceInfo } from '@kit.BasicServicesKit';
+import CommonFunc from './Common';
 
 interface myObj {
   aa: string
@@ -3307,9 +3308,14 @@ export default function settingUiJsunit() {
         console.error("[openInputMethodSettings_valid_param] error = " + err);
         code = err?.code;
       }
+      console.info("[openInputMethodSettings_valid_param] sleep 1s");
+      await CommonFunc.sleep(1000);
+      let driver = await uitest.Driver.create();
       console.info("[openInputMethodSettings_valid_param] code = " + code);
+      let textComponent = await driver.findComponent(uitest.ON.text('输入法管理'));
+      console.info("[openInputMethodSettings_valid_param] text = " + textComponent);
       if (!isDeviceSupportInputMethod()) {
-        expect(code === undefined).assertTrue();
+        expect(textComponent === undefined || textComponent === null).assertTrue();
         return;
       } else {
         expect(code).assertEqual(0);
@@ -3527,8 +3533,13 @@ export default function settingUiJsunit() {
         console.error("[openInputMethodDetail_valid_param] error = " + err);
         code = err.code;
       }
+      console.info("[openInputMethodDetail_valid_param] sleep 1s");
+      await CommonFunc.sleep(1000);
+      let driver = await uitest.Driver.create();
+      let textComponent = await driver.findComponent(uitest.ON.text('输入法'));
+      console.info("[openInputMethodSettings_valid_param] text = " + textComponent);
       if (!isDeviceSupportInputMethod()) {
-        expect(code === undefined).assertTrue();
+        expect(textComponent === undefined || textComponent === null).assertTrue();
       } else {
         expect(code).assertEqual(0);
       }
