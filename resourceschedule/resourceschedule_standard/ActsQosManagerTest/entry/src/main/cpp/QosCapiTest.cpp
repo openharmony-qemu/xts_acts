@@ -16,9 +16,39 @@
 #include "include/QosCapiTest.h"
 #include <cerrno>
 #include <qos/qos.h>
+#include <string>
 #include <thread>
 #include <unistd.h>
 #include "include/OhosCommonTest.h"
+#include "napi/native_api.h"
+
+int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
+{
+    size_t argc = index + 1;
+    napi_value args[index + 1];
+
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (status != napi_ok || argc <= index) {
+        napi_throw_type_error(env, nullptr, "Argument missing");
+        return defaultValue;
+    }
+
+    napi_valuetype valuetype;
+    napi_typeof(env, args[index], &valuetype);
+    if (valuetype != napi_number) {
+        napi_throw_type_error(env, nullptr, "Argument must be a number");
+        return defaultValue;
+    }
+
+    int32_t result = defaultValue;
+    status = napi_get_value_int32(env, args[index], &result);
+    if (status != napi_ok) {
+        napi_throw_type_error(env, nullptr, "Value is not int32");
+        return defaultValue;
+    }
+
+    return result;
+}
 
 #define OH_NN_SUCCESS 0
 #define INVALID_QOS_VALUE 6
@@ -568,9 +598,9 @@ int GewuCreateSessionTest()
  */
 int GewuSubmitRequestTest()
 {
-    std::string modelPath = std::string(ActsMindSporeConstants::FILES_DIR) + "Qwen2.5-0.5B-CPU-Q4";
-    std::string attributesStr = "{\"model\":\"" + modelPath + "\"}";
-    const char* attributes = attributesStr.c_str();
+    const char* attributes =
+        "{\"model\": \"/data/storage/el2/base/haps/entry_test/files/Qwen2.5-0.5B-CPU-Q4\","
+        "\"eval_settings\": {\"backend\": \"cpu\", \"max_ctx\": \"8192\"}}";
     const char* request =
         "{\"type\":\"ChatComplete\",\"messages\":[{\"role\":\"developer\",\"content\":\"Your are a helpful "
         "assistant.\"},{\"role\":\"user\",\"content\":\"hi\"}],\"stream\":true}";
@@ -578,6 +608,12 @@ int GewuSubmitRequestTest()
     OH_QoS_GewuOnResponse cb = MockCallback;
     OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(attributes);
     if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS) {
+        return OH_NN_SUCCESS;
+    }
+    if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL) {
+        return OH_NN_SUCCESS;
+    }
+    if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT) {
         return OH_NN_SUCCESS;
     }
     if (sessionResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {

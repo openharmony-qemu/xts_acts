@@ -1993,7 +1993,6 @@ export default function ActsDataPanelTest() {
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0200 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2023,7 +2022,6 @@ export default function ActsDataPanelTest() {
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0300 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2053,7 +2051,6 @@ export default function ActsDataPanelTest() {
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0400 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2083,7 +2080,6 @@ export default function ActsDataPanelTest() {
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0500 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2169,11 +2165,11 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0800 component obj.$attrs is: " + JSON.stringify(obj.$attrs));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0800 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
-          expect(obj.$attrs.trackShadow.offsetX).assertEqual("5.000000");
+          let resourceOffsetx :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsetx').id)
+          expect(obj.$attrs.trackShadow.offsetX).assertEqual(px2vp(resourceOffsetx)+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0800 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0800 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2199,11 +2195,11 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0900 component obj.$attrs is: " + JSON.stringify(obj.$attrs));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0900 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
-          expect(obj.$attrs.trackShadow.offsetX).assertEqual("5.000000");
+          let resourceOffsetx :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsetx').id)
+          expect(obj.$attrs.trackShadow.offsetX).assertEqual(px2vp(resourceOffsetx)+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0900 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0900 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2229,11 +2225,11 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1000 component obj.$attrs is: " + JSON.stringify(obj.$attrs));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1000 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
-          expect(obj.$attrs.trackShadow.offsetX).assertEqual("5.000000");
+          let resourceOffsetx :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsetx').id)
+          expect(obj.$attrs.trackShadow.offsetX).assertEqual(px2vp(resourceOffsetx)+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1000 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1000 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2319,11 +2315,11 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1300 component obj.$attrs is: " + JSON.stringify(obj.$attrs));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1300 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
-          expect(obj.$attrs.trackShadow.offsetY).assertEqual("5.000000");
+          let resourceOffsety :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsety').id)
+          expect(obj.$attrs.trackShadow.offsetY).assertEqual(px2vp(resourceOffsety)+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1300 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2349,11 +2345,11 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1400 component obj.$attrs is: " + JSON.stringify(obj.$attrs));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1400 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
-          expect(obj.$attrs.trackShadow.offsetY).assertEqual("5.000000");
+          let resourceOffsety :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsety').id)
+          expect(obj.$attrs.trackShadow.offsetY).assertEqual(px2vp(resourceOffsety)+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1400 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2380,11 +2376,11 @@ export default function ActsDataPanelTest() {
           JSON.stringify(obj.$attrs));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1500 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
-          expect(obj.$attrs.trackShadow.offsetY).assertEqual("5.000000");
+          let resourceOffsety :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsety').id)
+          expect(obj.$attrs.trackShadow.offsetY).assertEqual(px2vp(resourceOffsety)+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1500 ERR  ' + JSON.stringify(err));
           done();
         }

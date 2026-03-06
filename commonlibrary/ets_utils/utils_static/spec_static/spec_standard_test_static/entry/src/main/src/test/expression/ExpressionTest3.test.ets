@@ -834,7 +834,7 @@ export default function expressionTest3() {
     it('ExpressionTest0368', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: string = "";
       let i: number, char1: string;
-      for (i = 0, char1 = "a"; i < 3; i++, char1 = String.fromCharCode(char1.charCodeAt(0) + 1)) {
+      for (i = 0, char1 = "a"; i < 3; i++, char1 = String.fromCharCode(char1.charCodeAt(0).toInt() + 1)) {
         result += char1;
       }
       expect(result).assertEqual("abc");
@@ -1541,7 +1541,7 @@ export default function expressionTest3() {
      */
     it('ExpressionTest0415', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: string = "";
-      let i: number, currentChar: string;
+      let i: int, currentChar: string;
       for (i = 65, currentChar = String.fromCharCode(i); i <= 67; i++, currentChar = String.fromCharCode(i)) {
         result += currentChar;
       }

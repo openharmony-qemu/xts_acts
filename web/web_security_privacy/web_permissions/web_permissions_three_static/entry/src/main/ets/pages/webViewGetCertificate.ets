@@ -35,7 +35,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base'
 function Uint8ArrayToString(dataArray: Uint8Array) {
   let dataString = ''
   for (let i = 0; i < dataArray.length; i++) {
-    dataString += String.fromCharCode(dataArray[i])
+    dataString += String.fromCharCode(dataArray[i].toInt())
   }
   return dataString
 }

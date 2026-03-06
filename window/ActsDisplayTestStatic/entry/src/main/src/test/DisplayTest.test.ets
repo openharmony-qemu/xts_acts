@@ -241,6 +241,110 @@ export default function DisplayTest() {
                 done();
             });
         });
+        
+        /**
+    * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0340
+    * @tc.name        testGetDefaultDisplaySync_SyncFunction_static_0200
+    * @tc.desc        To test the sync function of obtaining the target display by id
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 1
+    */
+    it('testGetDefaultDisplaySync_SyncFunction_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, '[ANI]','testGetDefaultDisplaySync_SyncFunction_static_0200 begin');
+        try {
+            let dsp:display.Display = display.getDefaultDisplaySync();
+            hilog.info(0x0000, '[ANI]','displayTest getDefaultDisplaySyncTest1: ' + JSON.stringify(dsp));
+            expect(dsp.id !== null).assertTrue();
+            expect(dsp.refreshRate !== null).assertTrue();
+            expect(dsp.width !== null).assertTrue();
+            expect(dsp.height !== null).assertTrue();
+            expect(dsp.rotation !== null).assertTrue();
+            expect(dsp.densityDPI !== null).assertTrue();
+            expect(dsp.name !== null).assertTrue();
+            expect(dsp.alive).assertTrue();
+            expect(dsp.state !== null).assertTrue();
+            expect(dsp.densityPixels !== null).assertTrue();
+            expect(dsp.scaledDensity !== null).assertTrue();
+            expect(dsp.xDPI !== null).assertTrue();
+            expect(dsp.yDPI !== null).assertTrue();
+            done();
+        } catch (err) {
+            hilog.error(0x0000, '[ANI]','getDefaultDisplaySyncTest1 error ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5180
+    * @tc.name      testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100
+    * @tc.desc      testCaptureStatusChange returns true when create virtual screen and false when destroy virtual screen
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level3
+    */
+    it('testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName : string = 'testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        
+        let captureStatus: boolean = false;
+        let callbackTriggered:boolean = false;
+        let callback : Callback<boolean> = (status: boolean) => {
+            hilog.info(0x0000, '[ANI]', msgStr + 'capture status: ' + status);
+            captureStatus = status;
+            callbackTriggered = true;
+        };
+        
+        let option: display.VirtualScreenConfig = {
+            name: 'screen01',
+            width: 100,
+            height: 2340,
+            density: 2,
+            surfaceId: ''
+        };
+        
+        try {        
+            // 创建虚拟屏
+            let vid = await display.createVirtualScreen(option);
+            hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
+            await Utils.msSleep(3000);
+            
+            // 注册监听
+            display.onCaptureStatusChange(callback);
+            hilog.info(0x0000, '[ANI]', msgStr + 'register onCaptureStatusChange success');
+            await Utils.msSleep(1000);
+
+            // 销毁虚拟屏
+            await display.destroyVirtualScreen(vid);
+            hilog.info(0x0000, '[ANI]', msgStr + 'Success in destroyVirtualScreen');
+            
+            // 验证销毁虚拟屏后返回false
+            await Utils.msSleep(3000);
+            while (!callbackTriggered) {
+                await Utils.msSleep(100);
+            }
+            hilog.info(0x0000, '[ANI]', msgStr + 'after destroyVirtualScreen, captureStatus: ' + captureStatus);
+            expect(captureStatus === false).assertTrue();
+            
+            // 注销监听（传入callback参数）
+            display.offCaptureStatusChange(callback);
+            hilog.info(0x0000, '[ANI]', msgStr + 'offCaptureStatusChange success');
+            
+            done();
+        }
+        catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + JSON.stringify(err));
+            if (err.code === 801) {
+                hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
+            }
+            expect(err.code === 801).assertTrue();
+            done();
+        }
+    });
+
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0440
          * @tc.name        tesGetAllDisplays_Callback_static_0100
@@ -2710,107 +2814,6 @@ export default function DisplayTest() {
             }
         }
     })
-
-    /**
-    * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0340
-    * @tc.name        testGetDefaultDisplaySync_SyncFunction_static_0200
-    * @tc.desc        To test the sync function of obtaining the target display by id
-    * @tc.size        MediumTest
-    * @tc.type        Function
-    * @tc.level       Level 1
-    */
-    it('testGetDefaultDisplaySync_SyncFunction_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-        hilog.info(0x0000, '[ANI]','testGetDefaultDisplaySync_SyncFunction_static_0200 begin');
-        try {
-            let dsp:display.Display = display.getDefaultDisplaySync();
-            hilog.info(0x0000, '[ANI]','displayTest getDefaultDisplaySyncTest1: ' + JSON.stringify(dsp));
-            expect(dsp.id !== null).assertTrue();
-            expect(dsp.refreshRate !== null).assertTrue();
-            expect(dsp.width !== null).assertTrue();
-            expect(dsp.height !== null).assertTrue();
-            expect(dsp.rotation !== null).assertTrue();
-            expect(dsp.densityDPI !== null).assertTrue();
-            expect(dsp.name !== null).assertTrue();
-            expect(dsp.alive).assertTrue();
-            expect(dsp.state !== null).assertTrue();
-            expect(dsp.densityPixels !== null).assertTrue();
-            expect(dsp.scaledDensity !== null).assertTrue();
-            expect(dsp.xDPI !== null).assertTrue();
-            expect(dsp.yDPI !== null).assertTrue();
-            done();
-        } catch (err) {
-            hilog.error(0x0000, '[ANI]','getDefaultDisplaySyncTest1 error ' + JSON.stringify(err));
-            expect().assertFail();
-            done();
-        }
-    })
-
-    /**
-    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5180
-    * @tc.name      testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100
-    * @tc.desc      testCaptureStatusChange returns true when create virtual screen and false when destroy virtual screen
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level3
-    */
-    it('testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        let caseName : string = 'testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100';
-        let msgStr : string = 'jsunittest ' + caseName + ' ';
-        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
-        
-        let captureStatus: boolean = false;
-        let callbackTriggered:boolean = false;
-        let callback : Callback<boolean> = (status: boolean) => {
-            hilog.info(0x0000, '[ANI]', msgStr + 'capture status: ' + status);
-            captureStatus = status;
-            callbackTriggered = true;
-        };
-        
-        let option: display.VirtualScreenConfig = {
-            name: 'screen01',
-            width: 100,
-            height: 2340,
-            density: 2,
-            surfaceId: ''
-        };
-        
-        try {        
-            // 创建虚拟屏
-            let vid = await display.createVirtualScreen(option);
-            hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
-
-            // 注册监听
-            display.onCaptureStatusChange(callback);
-            hilog.info(0x0000, '[ANI]', msgStr + 'register onCaptureStatusChange success');
-            await Utils.msSleep(1000);
-
-            // 销毁虚拟屏
-            await display.destroyVirtualScreen(vid);
-            hilog.info(0x0000, '[ANI]', msgStr + 'Success in destroyVirtualScreen');
-            
-            // 验证销毁虚拟屏后返回false
-            while (!callbackTriggered) {
-                await Utils.msSleep(100);
-            }
-            hilog.info(0x0000, '[ANI]', msgStr + 'after destroyVirtualScreen, captureStatus: ' + captureStatus);
-            expect(captureStatus === false).assertTrue();
-            
-            // 注销监听（传入callback参数）
-            display.offCaptureStatusChange(callback);
-            hilog.info(0x0000, '[ANI]', msgStr + 'offCaptureStatusChange success');
-            
-            done();
-        }
-        catch (err) {
-            err = err as BusinessError;
-            hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + JSON.stringify(err));
-            if (err.code === 801) {
-                hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
-            }
-            expect(err.code === 801).assertTrue();
-            done();
-        }
-    });
 
     /**
     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190

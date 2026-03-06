@@ -21,7 +21,6 @@ import { FakerDataUtil } from '../utils/FakerDataUtil.test';
 import { CommonConstants } from '../constants/CommonConstants.test'
 import { WantAgent } from '@ohos.wantAgent';
 import { BusinessError } from '@kit.BasicServicesKit';
-import assertFail from '@ohos/hypium/src/main/module/assert/assertFail';
 
 const TAG = 'avMusicTemplateTest';
 

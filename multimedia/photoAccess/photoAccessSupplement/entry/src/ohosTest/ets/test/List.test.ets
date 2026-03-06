@@ -61,6 +61,7 @@ import photoFetchResultGetObjectByPositionTestSupp from './photoAccess/PhotoFetc
 import requestImageTest from './photoAccess/RequestImage.test';
 import PhotoGetAssetsTestSupp from './photoAccess/PhotoGetAssets.test';
 import PhotoAssertHelperSuppTest from './photoAccess/PhotoAssertHelperSuppTest.test';
+import PhotoSetTitleTestSupp from './photoAccess/PhotoAccessHelperSetTitle.test';
 import SendAblePhotoAssertHelperSuppTest from './photoAccess/SendAblePhotoAssertHelperSuppTest.test';
 
 export default function testsuite() {
@@ -121,6 +122,6 @@ export default function testsuite() {
   SendAblePhotoAssertHelperSuppTest();
   PhotoAssertHelperSuppTest();
   requestImageTest();
+  PhotoSetTitleTestSupp();
   PhotoGetAssetsTestSupp();
-
 }

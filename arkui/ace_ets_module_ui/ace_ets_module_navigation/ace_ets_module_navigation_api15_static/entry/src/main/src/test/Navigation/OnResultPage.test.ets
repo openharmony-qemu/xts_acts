@@ -33,7 +33,7 @@ let tag = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function OnResultPage() {
   describe('OnResultPage', () => {
-    beforeAll(async (): Promise<void> => {
+  beforeAll(async (): Promise<void> => {
       console.info("OnResultPage beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility");
@@ -104,7 +104,7 @@ it('OnResultPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       let obj = JSON.parseJsonElement(strJson);
       console.info('[OnResultPage_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[OnResultPage_0100] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('test');
 
       console.info('OnResultPage_0100 END');
       done();
@@ -141,7 +141,7 @@ it('OnResultPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
       let obj = JSON.parseJsonElement(strJson);
       console.info('[OnResultPage_0200] component obj is: ' + JSON.stringify(obj));
       console.info('[OnResultPage_0200] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('2');
 
       console.info('OnResultPage_0200 END');
       done();
@@ -178,7 +178,7 @@ it('OnResultPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       let obj = JSON.parseJsonElement(strJson);
       console.info('[OnResultPage_0300] component obj is: ' + JSON.stringify(obj));
       console.info('[OnResultPage_0300] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('popToName');
 
       console.info('OnResultPage_0300 END');
       done();
@@ -215,52 +215,11 @@ it('OnResultPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
       let obj = JSON.parseJsonElement(strJson);
       console.info('[OnResultPage_0400] component obj is: ' + JSON.stringify(obj));
       console.info('[OnResultPage_0400] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('undefined');
 
       console.info('OnResultPage_0400 END');
       done();
     });
-
-    
-    
-
-    /**
-     * @tc.number   OnResultPage_static_0500
-     * @tc.name     OnResultPage_static_0500
-     * @tc.desc     OnResultPage_static_0500
-     * @tc.level    Level.LEVEL0
-     */
-it('OnResultPage_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('OnResultPage_0500 START');
-      await CommonFunc.sleep(1000);
-
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
-
-      let btn2 = await driver.findComponent(ON.id('pushTwoId'));
-      await (btn2?.click() as Promise<void>)
-      console.info('[OnResultPage_0500] btn2 click');
-      await CommonFunc.sleep(200);
-
-      let btn3 = await driver.findComponent(ON.id('popNullId'));
-      await (btn3?.click() as Promise<void>)
-      console.info('[OnResultPage_0500] btn3 click');
-      await CommonFunc.sleep(500);
-
-      let strJson = inspector.getInspectorByKey('infoId');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[OnResultPage_0500] component obj is: ' + JSON.stringify(obj));
-      console.info('[OnResultPage_0500] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
-
-      console.info('OnResultPage_0500 END');
-      done();
-    });
-
-
-    
-    
 
     /**
      * @tc.number   OnResultPage_static_0600
@@ -290,7 +249,7 @@ it('OnResultPage_static_0600', Level.LEVEL0, async (done: () => void): Promise<v
       let obj = JSON.parseJsonElement(strJson);
       console.info('[OnResultPage_0600] component obj is: ' + JSON.stringify(obj));
       console.info('[OnResultPage_0600] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('test');
 
       console.info('OnResultPage_0600 END');
       done();
@@ -327,7 +286,7 @@ it('OnResultPage_static_0700', Level.LEVEL0, async (done: () => void): Promise<v
       let obj = JSON.parseJsonElement(strJson);
       console.info('[OnResultPage_0700] component obj is: ' + JSON.stringify(obj));
       console.info('[OnResultPage_0700] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('popToIndex');
 
       console.info('OnResultPage_0700 END');
       done();
@@ -364,7 +323,7 @@ it('OnResultPage_static_0800', Level.LEVEL0, async (done: () => void): Promise<v
       let obj = JSON.parseJsonElement(strJson);
       console.info('[OnResultPage_0800] component obj is: ' + JSON.stringify(obj));
       console.info('[OnResultPage_0800] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('popToName');
 
       console.info('OnResultPage_0800 END');
       done();

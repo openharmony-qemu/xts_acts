@@ -160,7 +160,8 @@ struct webResourceResponsePage {
                 let arrayBuffer = new ArrayBuffer(200);
                 let size:number = 200;
                 let fileName = schemeMap.get(request.getRequestUrl()) as string;
-                let context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+                let context: common.UIAbilityContext | undefined =
+                  AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext | undefined;
                 let response = new web_webview.WebSchemeHandlerResponse();
                 response.setStatus(200)
                 response.setStatusText("OK")

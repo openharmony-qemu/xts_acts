@@ -611,7 +611,6 @@ export default function WindowImmersiveTest() {
                 };
                 await mainWsync.setWindowSystemBarProperties(systemBarProperties).then(() => {
                     hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1 success step:' + i);
-                    expect(true).assertTrue();
                     if (i == commonRGBColorArr.length - 1) {
                         hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1 finished step:' + i);
                         done()
@@ -619,7 +618,7 @@ export default function WindowImmersiveTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1  error : ' + JSON.stringify(err));
                     if (err.code == 801) {
-                        expect(true).assertTrue();
+                        hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1  error');
                     } else {
                         expect().assertFail()
                     }
@@ -1148,7 +1147,6 @@ export default function WindowImmersiveTest() {
             let promise = mainWsync.setWindowSystemBarEnable(names);
             promise.then(()=>{
                 hilog.info(0x0000, '[ANI]',CaseName + ' setWindowSystemBarEnable success ');
-                expect(true).assertTrue();
                 done();
             }).catch((err:Error):PromiseLike<void>|undefined=>{
                 hilog.error(0x0000, '[ANI]',CaseName + ' setWindowSystemBarEnable failed,casued: err.code '+err.code +' ,err.message: '+err.message);
@@ -1173,7 +1171,6 @@ export default function WindowImmersiveTest() {
             await mainWsync.showWindow();
             mainWsync!.setSpecificSystemBarEnabled('navigationIndicator',false,false).then(()=>{
                 hilog.info(0x0000, '[ANI]',caseName + ' setWindowSystemBarEnable success ');
-                expect(true).assertTrue();
                 done();
             }).catch((err:Error):PromiseLike<void>|undefined=>{
                 hilog.error(0x0000, '[ANI]',caseName + ' setWindowSystemBarEnable failed,casued: err.code '+err.code +' ,err.message: '+err.message);

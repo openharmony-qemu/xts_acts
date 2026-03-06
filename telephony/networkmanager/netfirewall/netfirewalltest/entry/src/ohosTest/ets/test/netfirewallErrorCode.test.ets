@@ -541,7 +541,7 @@ export default function NetfirewallErrorCode01() {
           page: 1,
           pageSize: 10,
           orderField: netFirewall.NetFirewallOrderField.ORDER_BY_RULE_NAME,
-          orderType: netFirewall.NetFirewallOrderType.ORDER_ASC
+          orderType: netFirewall.NetFirewallOrderType.ORDER_DESC
         };
         netFirewall.getNetFirewallRules(555, ruleParam).then((result: netFirewall.FirewallRulePage) => {
           console.info(`${caseName} result:`, JSON.stringify(result));
@@ -594,7 +594,6 @@ export default function NetfirewallErrorCode01() {
         done();
       }
     })
-
 
     /**
      * @tc.name   testTelephonyNetfirewallErrCo0900
@@ -855,7 +854,7 @@ export default function NetfirewallErrorCode01() {
       const caseName: string = 'testTelephonyNetfirewallErrCo1700';
       console.info(`${caseName}---Start`);
       try{
-        netFirewall.getNetFirewallRule(undefined, 1).then((rule: netFirewall.NetFirewallRule) => {
+        netFirewall.getNetFirewallRule(undefined, undefined).then((rule: netFirewall.NetFirewallRule) => {
           console.info(`${caseName} result:`, JSON.stringify(rule));
           ExpectTrue(false);
           done();
@@ -963,7 +962,12 @@ export default function NetfirewallErrorCode01() {
           action: netFirewall.FirewallRuleAction.RULE_ALLOW,
           type: netFirewall.NetFirewallRuleType.RULE_IP,
           isEnabled: false,
-          appUid: 20001
+          appUid: 20001,
+          domains: [
+            {
+              isWildcard: true,
+              domain: "www.baidu.com"
+          }]
         };
         await netFirewall.updateNetFirewallRule(ipRuleUpd).then(() => {
           console.info(`${caseName}update firewall rule success.`);
@@ -985,6 +989,7 @@ export default function NetfirewallErrorCode01() {
         done();
       }
     })
+
     /**
      * @tc.name   testTelephonyNetfirewallErrCo2100
      * @tc.number SUB_Telephony_Netfirewall_ErrCo_2100
@@ -1400,6 +1405,325 @@ export default function NetfirewallErrorCode01() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testTelephonyNetfirewallErrCo3400
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_3400
+     * @tc.desc   removeNetFirewallRule Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyNetfirewallErrCo3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testTelephonyNetfirewallErrCo3400';
+      console.info(`${caseName}---Start`);
+      try{
+        netFirewall.removeNetFirewallRule(null, null).then(() => {
+          console.info(`${caseName} delete firewall rule success.`);
+          ExpectTrue(false);
+          done();
+        }).catch((error : BusinessError) => {
+          console.error(`${caseName} delete firewall rule failed: ` + JSON.stringify(error));
+          ExpectTrue(error.code == 401);
+          done();
+        });
+      }catch (err){
+        console.log(`${caseName} --test end`);
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testTelephonyNetfirewallErrCo3500
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_3500
+     * @tc.desc   addNetFirewallRule Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyNetfirewallErrCo3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testTelephonyNetfirewallErrCo3500';
+      console.info(`${caseName}---Start`);
+      try{
+        netFirewall.addNetFirewallRule(null).then((result: number) => {
+          console.info(`${caseName} rule Id: `, result);
+          ExpectTrue(false);
+          done();
+        }, (err: BusinessError) => {
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(err));
+          ExpectTrue(err.code == 401);
+          done();
+        });
+      }catch (err){
+        console.log(`${caseName} --test end`);
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testTelephonyNetfirewallErrCo3600
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_3600
+     * @tc.desc   updateNetFirewallRule Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyNetfirewallErrCo3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testTelephonyNetfirewallErrCo3600';
+      console.info(`${caseName}---Start`);
+      try{
+        netFirewall.updateNetFirewallRule(null).then(() => {
+          console.info(`${caseName} update firewall rule success.`);
+          ExpectTrue(false);
+          done();
+        }, (err: BusinessError) => {
+          console.error(`${caseName} update firewall rule failed: `, JSON.stringify(err));
+          ExpectTrue(err.code == 401);
+          done();
+        });
+      }catch (err){
+        console.log(`${caseName} --test end`);
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testTelephonyNetfirewallErrCo3700
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_3700
+     * @tc.desc   getNetFirewallRules Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyNetfirewallErrCo3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testTelephonyNetfirewallErrCo3700';
+      console.info(`${caseName}---Start`);
+      try{
+        netFirewall.getNetFirewallRules(null, null).then((result: netFirewall.FirewallRulePage) => {
+          console.info(`${caseName} result:`, JSON.stringify(result));
+          ExpectTrue(false);
+          done();
+        }, (error: BusinessError) => {
+          console.error("get firewall rules failed: " + JSON.stringify(error));
+          ExpectTrue(error.code == 401);
+          done();
+        });
+      }catch (err){
+        console.log(`${caseName} --test end`);
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testTelephonyNetfirewallErrCo3800
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_3800
+     * @tc.desc   updateNetFirewallRule The specified user does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyNetfirewallErrCo3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testTelephonyNetfirewallErrCo3800';
+      console.info(`${caseName}---Start`);
+      try{
+        let ipRuleUpd: netFirewall.NetFirewallRule = {
+          userId:555,
+          id: 1,
+          name: "rule2",
+          description: "rule1 description update",
+          direction: netFirewall.NetFirewallRuleDirection.RULE_OUT,
+          action: netFirewall.FirewallRuleAction.RULE_ALLOW,
+          type: netFirewall.NetFirewallRuleType.RULE_DOMAIN,
+          isEnabled: true,
+          appUid: 20001,
+          localIps: [
+            {
+              family: 1,
+              type: 1,
+              address: "",
+              mask: 24
+            },{
+              family: 1,
+              type: 2,
+              startIp: "",
+              endIp: ""
+            }],
+          remoteIps:[
+            {
+              family: 1,
+              type: 1,
+              address: "",
+              mask: 24
+            },{
+              family: 1,
+              type: 2,
+              startIp: "",
+              endIp: ""
+            }],
+          localPorts: [
+            {
+              startPort: 1000,
+              endPort: 1000
+            },{
+              startPort: 2000,
+              endPort: 2001
+            }],
+          remotePorts: [
+            {
+              startPort: 443,
+              endPort: 443
+            }],
+          domains: [
+            {
+              isWildcard: false,
+              domain: ""
+            }
+          ],
+          dns: {
+            primaryDns: "",
+            standbyDns: "",
+          }
+        };
+        await netFirewall.updateNetFirewallRule(ipRuleUpd).then(() => {
+          console.info(`${caseName}update firewall rule success.`);
+          ExpectTrue(false);
+          done();
+        }, (err: BusinessError) => {
+          console.log(`${caseName}update firewall rule failed: `, JSON.stringify(err));
+          ExpectTrue(err.code == 2100001);
+          done();
+        }).catch((err:BusinessError)=>{
+          console.log(`${caseName} update firewall rule failed: `,JSON.stringify(err));
+          ExpectTrue(false);
+          done();
+        });
+      }catch (err){
+        console.log(`${caseName} --test end`);
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(err.code == 2100001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testTelephonyNetfirewallErrCo3900
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_3900
+     * @tc.desc   updateNetFirewallRule The specified user does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyNetfirewallErrCo3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testTelephonyNetfirewallErrCo3900';
+      console.info(`${caseName}---Start`);
+      try{
+        let ipRuleUpd: netFirewall.NetFirewallRule = {
+          userId:555,
+          id: 1,
+          name: "rule2",
+          description: "rule1 description update",
+          direction: netFirewall.NetFirewallRuleDirection.RULE_OUT,
+          action: netFirewall.FirewallRuleAction.RULE_ALLOW,
+          type: netFirewall.NetFirewallRuleType.RULE_DNS,
+          isEnabled: true,
+          appUid: 20001,
+          localIps: [],
+          remoteIps:[],
+          localPorts: [],
+          remotePorts: [],
+          domains: [],
+          dns: {
+            primaryDns: "4.4.4.4",
+            standbyDns: "8.8.8.8",
+          },
+        };
+        await netFirewall.updateNetFirewallRule(ipRuleUpd).then(() => {
+          console.info(`${caseName}update firewall rule success.`);
+          ExpectTrue(false);
+          done();
+        }, (err: BusinessError) => {
+          console.log(`${caseName}update firewall rule failed: `, JSON.stringify(err));
+          ExpectTrue(err.code == 29400000);
+          done();
+        }).catch((err:BusinessError)=>{
+          console.log(`${caseName} update firewall rule failed: `,JSON.stringify(err));
+          ExpectTrue(false);
+          done();
+        });
+      }catch (err){
+        console.log(`${caseName} --test end`);
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(err.code == 29400000);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testTelephonyNetfirewallErrCo4000
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_4000
+     * @tc.desc   getNetFirewallPolicy Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyNetfirewallErrCo4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testTelephonyNetfirewallErrCo4000';
+      console.info(`${caseName}---Start`);
+      try{
+        netFirewall.getNetFirewallPolicy(null).then((result: netFirewall.NetFirewallPolicy) => {
+          console.info(`${caseName} firewall policy: `, JSON.stringify(result));
+          ExpectTrue(false);
+          done();
+        }, (error: BusinessError) => {
+          console.error(`${caseName} get firewall policy failed: `, JSON.stringify(error));
+          ExpectTrue(error.code == 401);
+          done();
+        });
+      }catch (err){
+        console.log(`${caseName} --test end`);
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testTelephonyNetfirewallErrCo4100
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_4100
+     * @tc.desc   getNetFirewallRule Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyNetfirewallErrCo4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testTelephonyNetfirewallErrCo4100';
+      console.info(`${caseName}---Start`);
+      try{
+        netFirewall.getNetFirewallRule(null, null).then((rule: netFirewall.NetFirewallRule) => {
+          console.info(`${caseName} result:`, JSON.stringify(rule));
+          ExpectTrue(false);
+          done();
+        }).catch((error : BusinessError) => {
+          console.error(` ${caseName} get firewall rules failed: ` + JSON.stringify(error));
+          ExpectTrue(error.code == 401);
+          done();
+        });
+      }catch (err){
+        console.log(`${caseName} --test end`);
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+    })
+
   })
 }
 

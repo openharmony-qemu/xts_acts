@@ -1032,6 +1032,27 @@ export default function deviceSettingsTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   test_device_settings_get_value_for_account_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_FOR_ACCOUNT_JS_0700
+     * @tc.desc   test deviceSettings getValueForAccount not support item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_get_value_for_account_0700", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.getValueForAccount(SELFWANT, -1, 100);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
   
     /**
      * @tc.name   test_device_settings_set_value_for_account_0100
@@ -1193,14 +1214,35 @@ export default function deviceSettingsTest() {
       done();
     });
 
-   /**
-    * @tc.name   test_device_settings_get_floating_navigation_0100
-    * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_FLOATING_NAVIGATION_JS_0100
-    * @tc.desc   test deviceSettings getFloatingNavigatio without admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+    /**
+     * @tc.name   test_device_settings_set_value_for_account_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_FOR_ACCOUNT_JS_0800
+     * @tc.desc   test deviceSettings setValueForAccount not support item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_for_account_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, -1, 100, 'test');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+      
+    /**
+     * @tc.name   test_device_settings_get_floating_navigation_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_FLOATING_NAVIGATION_JS_0100
+     * @tc.desc   test deviceSettings getFloatingNavigatio without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_device_settings_get_floating_navigation_0100", Level.LEVEL2, async (done: Function) => {
       try {
         deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100);
@@ -1212,14 +1254,14 @@ export default function deviceSettingsTest() {
       done();
     });
  	 
-   /**
-    * @tc.name   test_device_settings_get_floating_navigation_0200
-    * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_FLOATING_NAVIGATION_JS_0200
-    * @tc.desc   test deviceSettings getFloatingNavigatio with normal admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+    /**
+     * @tc.name   test_device_settings_get_floating_navigation_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_FLOATING_NAVIGATION_JS_0200
+     * @tc.desc   test deviceSettings getFloatingNavigatio with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_device_settings_get_floating_navigation_0200", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
@@ -1234,14 +1276,14 @@ export default function deviceSettingsTest() {
       done();
     });
 
-   /**
-    * @tc.name   test_device_settings_get_floating_navigation_0300
-    * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_FLOATING_NAVIGATION_JS_0300
-    * @tc.desc   test deviceSettings getFloatingNavigation with null admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+    /**
+     * @tc.name   test_device_settings_get_floating_navigation_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_FLOATING_NAVIGATION_JS_0300
+     * @tc.desc   test deviceSettings getFloatingNavigation with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_device_settings_get_floating_navigation_0300", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
@@ -1256,14 +1298,14 @@ export default function deviceSettingsTest() {
       done();
     });
  	 
-   /**
-    * @tc.name   test_device_settings_set_floating_navigation_0100
-    * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0100
-    * @tc.desc   test deviceSettings setFloatingNavigation without admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+    /**
+     * @tc.name   test_device_settings_set_floating_navigation_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0100
+     * @tc.desc   test deviceSettings setFloatingNavigation without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_device_settings_set_floating_navigation_0100", Level.LEVEL2, async (done: Function) => {
       try {
         deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '0');
@@ -1275,14 +1317,14 @@ export default function deviceSettingsTest() {
       done();
     });
  	 
-   /**
-    * @tc.name   test_device_settings_set_floating_navigation_0200
-    * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0200
-    * @tc.desc   test deviceSettings setFloatingNavigation with normal admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+    /**
+     * @tc.name   test_device_settings_set_floating_navigation_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0200
+     * @tc.desc   test deviceSettings setFloatingNavigation with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_device_settings_set_floating_navigation_0200", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
@@ -1297,14 +1339,14 @@ export default function deviceSettingsTest() {
       done();
     });
  	 
-   /**
-    * @tc.name   test_device_settings_set_floating_navigation_0300
-    * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0300
-    * @tc.desc   test deviceSettings setFloatingNavigation, Incorrect parameters
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+    /**
+     * @tc.name   test_device_settings_set_floating_navigation_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0300
+     * @tc.desc   test deviceSettings setFloatingNavigation, Incorrect parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_device_settings_set_floating_navigation_0300", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
@@ -1319,14 +1361,14 @@ export default function deviceSettingsTest() {
       done();
     });
  	 
-   /**
-    * @tc.name   test_device_settings_set_floating_navigation_0400
-    * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0400
-    * @tc.desc   test deviceSettings setFloatingNavigation with null admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+    /**
+     * @tc.name   test_device_settings_set_floating_navigation_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0400
+     * @tc.desc   test deviceSettings setFloatingNavigation with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_device_settings_set_floating_navigation_0400", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
@@ -1341,14 +1383,14 @@ export default function deviceSettingsTest() {
       done();
     });
 
-   /**
-    * @tc.name   test_device_settings_set_floating_navigation_0500
-    * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0500
-    * @tc.desc   test deviceSettings setFloatingNavigation
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+    /**
+     * @tc.name   test_device_settings_set_floating_navigation_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0500
+     * @tc.desc   test deviceSettings setFloatingNavigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_device_settings_set_floating_navigation_0500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {

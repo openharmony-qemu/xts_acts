@@ -17,10 +17,12 @@ import AccessTokenApiTest from './AccessTokenApiTest.test'
 import AccessTokenTest from './AccessTokenTest.test'
 import RequestPermissionOnSettingTest from './RequestPermissionOnSettingTest.test'
 import RequestPermissionFromUserTest from './RequestPermissionFromUserTest.test'
+import RequestPermissionHookTest from './RequestPermissionHookTest.test'
 
 export default function testsuite() {
-	RequestPermissionOnSettingTest()
-	AccessTokenTest()
-	AccessTokenApiTest()
-	RequestPermissionFromUserTest()
+	RequestPermissionOnSettingTest();
+	AccessTokenTest();
+	AccessTokenApiTest();
+	RequestPermissionFromUserTest();
+	RequestPermissionHookTest();
 }

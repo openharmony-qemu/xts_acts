@@ -271,6 +271,48 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Delete_009
+   * @tc.number SUB_STORAGE_File_Delete_0900
+   * @tc.desc   Function of API, error code: 202 The test file or dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_Delete_009', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_Delete_009');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.delete(null);
+      console.info('File_Delete_009 , success');
+      done();
+    } catch(err) {
+      console.info('File_Delete_009 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_Delete_010
+   * @tc.number SUB_STORAGE_File_Delete_1000
+   * @tc.desc   Function of API, error code: 202 The test file or dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_Delete_010', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_Delete_010');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.delete(undefined);
+      console.info('File_Delete_010 , success');
+      done();
+    } catch(err) {
+      console.info('File_Delete_010 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
    * @tc.name   File_writeText_001
    * @tc.number SUB_STORAGE_File_writeText_0100
    * @tc.desc   Function of API, write to file(app path).The test file is not exist.
@@ -706,6 +748,52 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_012
+   * @tc.number SUB_STORAGE_File_writeText_1200
+   * @tc.desc   Defferent encoding(UTF-8).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_writeText_012', Level.LEVEL0, async function (done) {
+    file.writeText({
+      uri: 'internal://cache/File_writeText_012',
+      text: 'hello',
+      append: false,
+      encoding: 'UTF-8',
+      success: function () {
+        console.info('File_writeText_012 call writeText success.');
+        file.readText({
+          uri: 'internal://cache/File_writeText_012',
+          encoding: 'UTF-8',
+          success: function (data) {
+            console.info('File_writeText_012 call readText success. Content: ' );
+            file.delete({
+              uri: 'internal://cache/File_writeText_012',
+              success: function () {
+                console.info('File_writeText_012 delete success');
+                done();
+              },
+              fail: function (data, code) {
+                console.info('File_writeText_012 delete fail, code: ' + code + ', data: ' + data);
+                expect(null).assertFail();
+              },
+            });
+          },
+          fail: function (data, code) {
+            console.info('File_writeText_012 call readText fail, code: ' + code + ', data: ' + data);
+            expect(null).assertFail();
+          },
+        });
+      },
+      fail: function (data, code) {
+        console.info('File_writeText_012 call writeText fail, code: ' + code + ', data: ' + data);
+        expect(null).assertFail();
+      },
+    });
+  });
+
+  /**
    * @tc.name   File_writeText_013
    * @tc.number SUB_STORAGE_File_writeText_1300
    * @tc.desc   Function of API, write file out of package, Virtual path, save the dir authority.The test file is exist.
@@ -730,6 +818,48 @@ describe('fileTest', function () {
         console.info('writeText completed');
       }
     });
+  });
+
+  /**
+   * @tc.name   File_writeText_014
+   * @tc.number SUB_STORAGE_File_writeText_1400
+   * @tc.desc   Function of API, error code: 300.The file path is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_writeText_014', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_writeText_014');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.writeText(null);
+      console.info('File_writeText_014 , success');
+      done();
+    } catch(err) {
+      console.info('File_writeText_014 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_writeText_015
+   * @tc.number SUB_STORAGE_File_writeText_1500
+   * @tc.desc   Function of API, error code: 300.The file path is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_writeText_015', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_writeText_015');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.writeText(undefined);
+      console.info('File_writeText_015 , success');
+      done();
+    } catch(err) {
+      console.info('File_writeText_015 , err: ' + err);
+      done();
+    }
   });
 
   /**
@@ -1194,6 +1324,48 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_013
+   * @tc.number SUB_STORAGE_File_writeArrayBuffer_1300
+   * @tc.desc   Function of API, out of package, Virtual path, save the dir authority.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_writeArrayBuffer_013", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_writeArrayBuffer_013');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.writeArrayBuffer(null);
+      console.info('File_writeArrayBuffer_013 , success');
+      done();
+    } catch(err) {
+      console.info('File_writeArrayBuffer_013 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_writeArrayBuffer_014
+   * @tc.number SUB_STORAGE_File_writeArrayBuffer_1400
+   * @tc.desc   Function of API, out of package, Virtual path, save the dir authority.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_writeArrayBuffer_014", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_writeArrayBuffer_014');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.writeArrayBuffer(undefined);
+      console.info('File_writeArrayBuffer_014 , success');
+      done();
+    } catch(err) {
+      console.info('File_writeArrayBuffer_014 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
    * @tc.name   File_readText_001
    * @tc.number SUB_STORAGE_File_readText_0100
    * @tc.desc   Function of API, readText, app path.
@@ -1449,6 +1621,48 @@ describe('fileTest', function () {
     } catch (e) {
       console.info("File_readText_008 has failed for " + e);
       expect(null).assertFail();
+    }
+  });
+
+  /**
+   * @tc.name   File_readText_009
+   * @tc.number SUB_STORAGE_File_readText_0900
+   * @tc.desc   Function of API, virtual path.Test whether the files returned are equal.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_readText_009", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_readText_009');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.readText(null);
+      console.info('File_readText_009 , success');
+      done();
+    } catch(err) {
+      console.info('File_readText_009 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_readText_010
+   * @tc.number SUB_STORAGE_File_readText_1000
+   * @tc.desc   Function of API, virtual path.Test whether the files returned are equal.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_readText_010", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_readText_010');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.readText(undefined);
+      console.info('File_readText_010 , success');
+      done();
+    } catch(err) {
+      console.info('File_readText_010 , err: ' + err);
+      done();
     }
   });
 
@@ -1747,6 +1961,48 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_read_array_buffer_010
+   * @tc.number SUB_STORAGE_File_read_array_buffer_1000
+   * @tc.desc   Function of API, virtual path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_read_array_buffer_010", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_read_array_buffer_010');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.readArrayBuffer(null);
+      console.info('File_read_array_buffer_010 , success');
+      done();
+    } catch(err) {
+      console.info('File_read_array_buffer_010 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_read_array_buffer_011
+   * @tc.number SUB_STORAGE_File_read_array_buffer_1100
+   * @tc.desc   Function of API, virtual path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_read_array_buffer_011", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_read_array_buffer_011');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.readArrayBuffer(undefined);
+      console.info('File_read_array_buffer_011 , success');
+      done();
+    } catch(err) {
+      console.info('File_read_array_buffer_011 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
    * @tc.name   File_access_001
    * @tc.number SUB_STORAGE_File_access_0100
    * @tc.desc   Function of API, access, cache path.The test file is exist.
@@ -2025,6 +2281,48 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_access_009
+   * @tc.number SUB_STORAGE_File_access_0900
+   * @tc.desc   Function of API, virtual path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_access_009", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_access_009');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.access(null);
+      console.info('File_access_009 , success');
+      done();
+    } catch(err) {
+      console.info('File_access_009 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_access_010
+   * @tc.number SUB_STORAGE_File_access_1000
+   * @tc.desc   Function of API, virtual path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_access_010", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_access_010');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.access(undefined);
+      console.info('File_access_010 , success');
+      done();
+    } catch(err) {
+      console.info('File_access_010 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
    * @tc.name   File_mkdir_001
    * @tc.number SUB_STORAGE_File_mkdir_0100
    * @tc.desc   Function of API, mkdir, app path.
@@ -2237,6 +2535,30 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_mkdir_009
+   * @tc.number SUB_STORAGE_File_mkdir_0900
+   * @tc.desc   Function of API, mkdir, recursive not set value.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_mkdir_009', Level.LEVEL0, async function (done) {
+    file.mkdir({
+      uri: 'internal://app/test/File_mkdir_009',
+      recursive: false,
+      success: function () {
+        console.info('File_mkdir_009 call mkdir success.');
+        expect(null).assertFail();
+      },
+      fail: function (data, code) {
+        console.info('File_mkdir_009 , code: ' + code + ', data: ' + data);
+        expect(code == 300).assertTrue();
+        done();
+      },
+    });
+  });
+
+  /**
    * @tc.name   File_mkdir_010
    * @tc.number SUB_STORAGE_File_mkdir_1000
    * @tc.desc   Function of API, out of package, out of package, Virtual path, save the dir authority.
@@ -2260,6 +2582,48 @@ describe('fileTest', function () {
         console.info('mkdir completed');
       }
     });
+  });
+
+  /**
+   * @tc.name   File_mkdir_011
+   * @tc.number SUB_STORAGE_File_mkdir_1100
+   * @tc.desc   Function of API, out of package, out of package, Virtual path, save the dir authority.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_mkdir_011", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_mkdir_011');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.mkdir(null);
+      console.info('File_mkdir_011 , success');
+      done();
+    } catch(err) {
+      console.info('File_mkdir_011 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_mkdir_012
+   * @tc.number SUB_STORAGE_File_mkdir_1200
+   * @tc.desc   Function of API, out of package, out of package, Virtual path, save the dir authority.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_mkdir_012", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_mkdir_012');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.mkdir(undefined);
+      console.info('File_mkdir_012 , success');
+      done();
+    } catch(err) {
+      console.info('File_mkdir_012 , err: ' + err);
+      done();
+    }
   });
 
   /**
@@ -2553,6 +2917,48 @@ describe('fileTest', function () {
         console.info('rmdir completed');
       }
     });
+  });
+
+  /**
+   * @tc.name   File_rmdir_011
+   * @tc.number SUB_STORAGE_File_rmdir_1100
+   * @tc.desc   Function of API, out of package, Virtual path, save the dir authority.The test dir is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_rmdir_011", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_rmdir_011');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.rmdir(null);
+      console.info('File_rmdir_011 , success');
+      done();
+    } catch(err) {
+      console.info('File_rmdir_011 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_rmdir_012
+   * @tc.number SUB_STORAGE_File_rmdir_1200
+   * @tc.desc   Function of API, out of package, Virtual path, save the dir authority.The test dir is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("File_rmdir_012", Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_rmdir_012');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.rmdir(undefined);
+      console.info('File_rmdir_012 , success');
+      done();
+    } catch(err) {
+      console.info('File_rmdir_012 , err: ' + err);
+      done();
+    }
   });
 
   /**
@@ -2935,6 +3341,48 @@ describe('fileTest', function () {
         console.info('move completed');
       }
     });
+  });
+
+  /**
+   * @tc.name   File_Move_015
+   * @tc.number SUB_STORAGE_File_Move_1500
+   * @tc.desc   Function of API, error code: 202.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_Move_015', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_Move_015');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.move(null);
+      console.info('File_Move_015 , success');
+      done();
+    } catch(err) {
+      console.info('File_Move_015 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_Move_016
+   * @tc.number SUB_STORAGE_File_Move_1600
+   * @tc.desc   Function of API, error code: 202.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_Move_016', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_Move_016');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.move(undefined);
+      console.info('File_Move_016 , success');
+      done();
+    } catch(err) {
+      console.info('File_Move_016 , err: ' + err);
+      done();
+    }
   });
 
   /**
@@ -3368,6 +3816,48 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_015
+   * @tc.number SUB_STORAGE_File_Copy_1500
+   * @tc.desc   Function of API, error code: 202.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_Copy_015', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_Copy_015');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.copy(null);
+      console.info('File_Copy_015 , success');
+      done();
+    } catch(err) {
+      console.info('File_Copy_015 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_Copy_016
+   * @tc.number SUB_STORAGE_File_Copy_1600
+   * @tc.desc   Function of API, error code: 202 The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_Copy_016', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_Copy_016');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.copy(undefined);
+      console.info('File_Copy_016 , success');
+      done();
+    } catch(err) {
+      console.info('File_Copy_016 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
    * @tc.name   File_List_001
    * @tc.number SUB_STORAGE_File_List_0100
    * @tc.desc   Function of API, list.The test file and dir are exist.
@@ -3741,6 +4231,48 @@ describe('fileTest', function () {
         console.info('list completed');
       }
     });
+  });
+
+  /**
+   * @tc.name   File_List_013
+   * @tc.number SUB_STORAGE_File_List_1300
+   * @tc.desc   Function of API, error code:202
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_List_013', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_List_013');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.list(null);
+      console.info('File_List_013 , success');
+      done();
+    } catch(err) {
+      console.info('File_List_013 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_List_014
+   * @tc.number SUB_STORAGE_File_List_1400
+   * @tc.desc   Function of API, error code:202
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_List_014', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_List_014');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.list(undefined);
+      console.info('File_List_014 , success');
+      done();
+    } catch(err) {
+      console.info('File_List_014 , err: ' + err);
+      done();
+    }
   });
 
   /**
@@ -4203,6 +4735,49 @@ describe('fileTest', function () {
       }
     });
   });
+
+  /**
+   * @tc.name   File_Get_015
+   * @tc.number SUB_STORAGE_File_Get_1500
+   * @tc.desc   Function of API, uri = null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_Get_015', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_Get_015');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.get(null);
+      console.info('File_Get_015 , success');
+      done();
+    } catch(err) {
+      console.info('File_Get_015 , err: ' + err);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   File_Get_016
+   * @tc.number SUB_STORAGE_File_Get_1600
+   * @tc.desc   Function of API, uri = undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_Get_016', Level.LEVEL0, async function (done) {
+    try {
+      let srcFpath = await fileName('File_Get_016');
+      expect(prepareFile(srcFpath, 'test')).assertTrue();
+      file.get(undefined);
+      console.info('File_Get_016 , success');
+      done();
+    } catch(err) {
+      console.info('File_Get_016 , err: ' + err);
+      done();
+    }
+  });
+
    /**
     * @tc.name   File_Document_Choose_001
     * @tc.number SUB_STORAGE_Document_Choose_0100

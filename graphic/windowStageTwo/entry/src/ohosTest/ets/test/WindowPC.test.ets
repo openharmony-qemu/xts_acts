@@ -1395,14 +1395,14 @@ export default function windowPCTest() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801 || err.code == 401) {
+          if (err.code == 801) {
             console.error(`The device not support setSupportedWindowModes`);
             
             done();
-          } else {
-            expect().assertFail();
+          } else  {
+            expect(err.code).assertEqual(401);
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1411,6 +1411,7 @@ export default function windowPCTest() {
       }
       ;
     });
+    
 
     /**
      * @tc.name   test_setSupportedWindowModes_onlySplit
@@ -1581,7 +1582,76 @@ export default function windowPCTest() {
       ;
 
     });
-
+/**
+     * @tc.name   test_setSupportedWindowModes_null
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0800
+     * @tc.desc   传参[]，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setSupportedWindowModes_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const message = 'test_setSupportedWindowModes_null'
+        let windowStageStart = await startAbility(message, context)
+        let promise = windowStageStart.setSupportedWindowModes(null);
+        promise.then(() => {
+          console.info('Succeed in setting window support modes');
+          expect().assertFail()
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+          if (err.code == 801) {
+            console.error(`The device not support setSupportedWindowModes`);
+            
+            done();
+          } else  {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+      ;
+    });
+    /**
+     * @tc.name   test_setSupportedWindowModes_undefined
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0900
+     * @tc.desc   传参[]，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setSupportedWindowModes_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const message = 'test_setSupportedWindowModes_undefined'
+        let windowStageStart = await startAbility(message, context)
+        let promise = windowStageStart.setSupportedWindowModes(undefined);
+        promise.then(() => {
+          console.info('Succeed in setting window support modes');
+          expect().assertFail()
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+          if (err.code == 801) {
+            console.error(`The device not support setSupportedWindowModes`);
+            
+            done();
+          } else  {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+      ;
+    });
 
     /**
      * @tc.name   test_on_windowWillClose_resolve_true

@@ -71,6 +71,15 @@ async function statusOnListen(done: Function, testName: string) {
   }
 }
 
+
+let sleep = (ms: number = 666): Promise<string> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('');
+    }, ms)
+  })
+}
+
 export default function cameraStatusTest() {
   describe('cameraStatusTest', () => {
     beforeAll(async () => {
@@ -78,7 +87,9 @@ export default function cameraStatusTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       await getPermission();
+      await sleep(2000);
       await driveFn();
+      await sleep(2000);
     });
 
     beforeEach(() => {

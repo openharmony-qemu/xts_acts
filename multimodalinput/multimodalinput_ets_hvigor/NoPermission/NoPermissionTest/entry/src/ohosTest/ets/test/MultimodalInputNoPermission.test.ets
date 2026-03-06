@@ -52,7 +52,7 @@ export default function MultimodalInputNoPermissionTest() {
           done();
         }).catch((error: BusinessError) => {
           console.info(`${caseName} Set capslock state failed, error=${JSON.stringify(error)}`);
-          ExpectTrue(error.code == 201);
+          expect(error.code).assertEqual(201);
           done();
         });
       } catch (error) {
@@ -81,7 +81,7 @@ export default function MultimodalInputNoPermissionTest() {
         done();
       } catch (error) {
         console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-        ExpectTrue(error.code == 201);
+        expect(error.code).assertEqual(201);
         done();
       }
     });
@@ -103,7 +103,7 @@ export default function MultimodalInputNoPermissionTest() {
         done();
       } catch (error) {
         console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-        ExpectTrue(error.code == 201);
+        expect(error.code).assertEqual(201);
         done();
       }
     });

@@ -793,5 +793,74 @@ export default function PerfStatEtsTest() {
       }
       console.log(TAG + "************* testRdbStorePerfStat0022 end *************");
     })
+
+     /**
+     * @tc.name   testRdbStorePerfStatErrTest0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_2300
+     * @tc.desc   1. Register callback for perfStat with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('testRdbStorePerfStatErrTest0001',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+      console.log(TAG + "************* testRdbStorePerfStatErrTest0001 start *************");
+      let observer = (SqlExeInfo : relationalStore.SqlExecutionInfo) => {
+        expect().assertFail();
+      };
+      try {
+          rdbStore?.on(null, observer);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.log(TAG + "err:" + err.code +err.message);
+          expect(err.code).assertEqual("401");
+          done();
+        }
+        try {
+          rdbStore?.on(undefined, observer);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.log(TAG + "err:" + err.code +err.message);
+          expect(err.code).assertEqual("401");
+          done();
+        }
+      console.log(TAG + "************* testRdbStorePerfStatErrTest0001 end *************");
+    })
+
+    /**
+     * @tc.name   testRdbStorePerfStatErrTest0002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_2400
+     * @tc.desc   1. Register callback for perfStat off with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStorePerfStatErrTest0002',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:Function) => {
+      console.log(TAG + "************* testRdbStorePerfStatErrTest0002 start *************");
+      let observer = (SqlExeInfo : relationalStore.SqlExecutionInfo) => {
+        expect().assertFail();
+      };
+      try {
+        rdbStore?.off(null, observer);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "err:" + err.code +err.message);
+        expect(err.code).assertEqual("401");
+        done();
+      }
+      try {
+        rdbStore?.off(undefined, observer);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "err:" + err.code +err.message);
+        expect(err.code).assertEqual("401");
+        done();
+      }
+      console.log(TAG + "************* testRdbStorePerfStatErrTest0002 end *************");
+    })
+
   })
 }

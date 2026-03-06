@@ -51,6 +51,16 @@
           }
         ]
       }
-    ]
+    ],
+    "extensionAbilities": [
+	    {
+	        "description": "inputPanelTest",
+	        "icon": "$media:icon",
+	        "name": "inputMethodControlService",
+	        "srcEntrance": "./ets/InputMethodDrawnControl/InputMethodControlService.ts",
+	        "type": "inputMethod",
+	        "visible": true
+	    }
+	  ]
   }
 }
