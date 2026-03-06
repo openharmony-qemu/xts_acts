@@ -1210,8 +1210,9 @@ export default function CameraPhotoSessionTest() {
         console.info(TAG, 'preconfigType')
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
-        mVideoSession.canPreconfig(preconfigType, preconfigRatio);
-        console.info(TAG, 'success canPreconfig')
+        let res = mVideoSession.canPreconfig(preconfigType, preconfigRatio);	 
+        console.info(TAG, 'success canPreconfig')	 
+        expect(isEmpty(res)).assertFalse()
         await releaseVideoSession();
         done();
       } catch (err) {
@@ -1244,8 +1245,9 @@ export default function CameraPhotoSessionTest() {
         console.info(TAG, 'preconfigType')
         let preconfigRatio = camera.PreconfigRatio.PRECONFIG_RATIO_16_9;
         console.info(TAG, 'preconfigRatio')
-        mPhotoSession.canPreconfig(preconfigType, preconfigRatio);
-        console.info(TAG, 'success canPreconfig')
+        let res = mPhotoSession.canPreconfig(preconfigType, preconfigRatio);	 
+        console.info(TAG, 'success canPreconfig')	 
+        expect(isEmpty(res)).assertFalse()
         await releasePhotoSession();
         done();
       } catch (err) {
