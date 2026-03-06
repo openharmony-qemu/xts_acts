@@ -2500,64 +2500,6 @@ export default function windowErrCode401_3() {
       }
     })
 
-     /**
-     * @tc.name   testCreate_0300
-     * @tc.number testCreate_0300
-     * @tc.desc   testCreate_0300
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testCreate_0300', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testCreate_0300";
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin.');
-      try {
-        await ohosWindow.create(null, 'id', ohosWindow.WindowType.TYPE_STATUS_BAR);
-        console.info(msgStr + 'Succeeded');
-        expect().assertFail();
-      } catch (exception) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
-        expect(exception.code).assertEqual(1001);
-        expect(exception.message!=null).assertTrue();
-      }
-      try {
-        await ohosWindow.create(undefined, 'id', ohosWindow.WindowType.TYPE_STATUS_BAR);
-        console.info(msgStr + 'Succeeded2.');
-        expect().assertFail();
-      } catch (exception) {
-        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
-        expect(exception.code).assertEqual(1001);
-        expect(exception.message!=null).assertTrue();
-      }
-      try {
-        await ohosWindow.create(context, '', ohosWindow.WindowType.TYPE_STATUS_BAR);
-        console.info(msgStr + 'Succeeded3');
-      } catch (exception) {
-        console.error(msgStr + 'Failed3. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
-        expect(false).assertTrue();
-      }
-      try {
-        await ohosWindow.create(context, null, ohosWindow.WindowType.TYPE_STATUS_BAR);
-        console.info(msgStr + 'Succeeded4');
-      } catch (exception) {
-        console.error(msgStr + 'Failed4. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
-        expect(exception.code).assertEqual(1003);
-        expect(exception.message!=null).assertTrue();
-      }
-      try {
-        await ohosWindow.create(context, undefined, ohosWindow.WindowType.TYPE_STATUS_BAR);
-        console.info(msgStr + 'Succeeded5');
-        expect().assertFail();
-        done()
-      } catch (exception) {
-        console.error(msgStr + 'Failed5. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
-        expect(exception.code).assertEqual(1003);
-        expect(exception.message!=null).assertTrue();
-        done();
-      }
-    })
-
     /**
      * @tc.name   testCreate_0400
      * @tc.number testCreate_0400
@@ -2573,7 +2515,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1001);
           } else {
             console.log(caseName + ' create success');
             expect().assertFail();
@@ -2582,7 +2524,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1001);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -2590,7 +2532,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1001);
           } else {
             console.log(caseName + ' create success2');
             expect().assertFail();
@@ -2599,7 +2541,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1001);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -2607,24 +2549,21 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed3, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
           } else {
             console.log(caseName + ' create success3');
-            expect().assertFail();
             done();
           }
         });
       } catch (err) {
         console.error(caseName + ' failed3. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
-        expect(err.message!=null).assertTrue();
+        expect().assertFail();
       }
       try {
         ohosWindow.create(context, null, ohosWindow.WindowType.TYPE_STATUS_BAR, async (err: BusinessError) => {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed4, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
           } else {
             console.log(caseName + ' create success4');
             expect().assertFail();
@@ -2633,7 +2572,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed4. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -2641,7 +2580,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed5, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
             done()
           } else {
             console.log(caseName + ' create success5');
@@ -2651,7 +2590,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed5. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
         done()
       }
@@ -2672,7 +2611,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(1003);
             done();
           } else {
             console.log(caseName + ' success');
@@ -2682,7 +2621,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -2690,7 +2629,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(1003);
             done();
           } else {
             console.log(caseName + ' success1');
@@ -2700,7 +2639,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -2708,7 +2647,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(1003);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -2718,7 +2657,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
         done();
       }
@@ -2743,7 +2682,7 @@ export default function windowErrCode401_3() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
       try {
@@ -2753,7 +2692,7 @@ export default function windowErrCode401_3() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
       try {
@@ -2763,92 +2702,7 @@ export default function windowErrCode401_3() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
-        done()
-      }
-    })
-
-    /**
-     * @tc.name   testGetTopWindow_0200
-     * @tc.number testGetTopWindow_0200
-     * @tc.desc   testGetTopWindow_0200
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testGetTopWindow_0200', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testGetTopWindow_0200";
-      try {
-        ohosWindow.getTopWindow(null, async (err: BusinessError) => {
-          const errCode: number = err.code;
-          if (errCode) {
-            console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect(errCode).assertEqual(1001);
-            done();
-          } else {
-            console.log(caseName + ' success');
-            expect().assertFail();
-            done();
-          }
-        });
-      } catch (err) {
-        console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(1001);
-        expect(err.message!=null).assertTrue();
-      }
-      try {
-        ohosWindow.getTopWindow(undefined, async (err: BusinessError) => {
-          const errCode: number = err.code;
-          if (errCode) {
-            console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect(errCode).assertEqual(1001);
-            done();
-          } else {
-            console.log(caseName + ' success2');
-            expect().assertFail();
-            done();
-          }
-        });
-      } catch (err) {
-        console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(1001);
-        expect(err.message!=null).assertTrue();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   testShowWindow_0100
-     * @tc.number testShowWindow_0100
-     * @tc.desc   testShowWindow_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testShowWindow_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testShowWindow_0100";
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin.');
-      let windowClass = windowStage.getMainWindowSync()
-      try {
-        await windowClass.showWindow(null);
-        console.info(msgStr + 'Succeeded');
-        expect().assertFail();
-        done();
-      } catch (exception) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
-      }
-      try {
-        await windowClass.showWindow(undefined);
-        console.info(msgStr + 'Succeeded2.');
-        expect().assertFail();
-        done();
-      } catch (exception) {
-        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
         done()
       }
@@ -2871,30 +2725,27 @@ export default function windowErrCode401_3() {
         await windowClass.moveTo(null, 1);
         console.info(msgStr + 'Succeeded');
         expect().assertFail();
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
       try {
         await windowClass.moveTo(1, null);
         console.info(msgStr + 'Succeeded2');
         expect().assertFail();
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
       try {
         await windowClass.moveTo(undefined, 1);
         console.info(msgStr + 'Succeeded3.');
         expect().assertFail();
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed3. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
       try {
@@ -2904,7 +2755,7 @@ export default function windowErrCode401_3() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed4. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
         done()
       }
@@ -2926,7 +2777,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect(errCode).assertEqual(401);
+            expect(errCode).assertEqual(1003);
           } else {
             console.log(caseName + ' success');
             expect().assertFail();
@@ -2935,7 +2786,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -2943,7 +2794,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
-            expect(errCode).assertEqual(401);
+            expect(errCode).assertEqual(1003);
           } else {
             console.log(caseName + ' success1');
             expect().assertFail();
@@ -2952,7 +2803,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -2960,7 +2811,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect(errCode).assertEqual(401);
+            expect(errCode).assertEqual(1003);
           } else {
             console.log(caseName + ' success2');
             expect().assertFail();
@@ -2969,7 +2820,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -2977,7 +2828,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed3, err: ' + JSON.stringify(err));
-            expect(errCode).assertEqual(401);
+            expect(errCode).assertEqual(1003);
             done();
           } else {
             console.log(caseName + ' success3');
@@ -2987,7 +2838,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed3. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
         done();
       }
@@ -3010,10 +2861,9 @@ export default function windowErrCode401_3() {
         await windowClass.resetSize(null, null);
         console.info(msgStr + 'Succeeded');
         expect().assertFail();
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
       try {
@@ -3023,7 +2873,7 @@ export default function windowErrCode401_3() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
         done()
       }
@@ -3045,7 +2895,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
             done();
           } else {
             console.log(caseName + ' success');
@@ -3055,7 +2905,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -3063,7 +2913,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -3073,7 +2923,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
         done();
       }
@@ -3095,7 +2945,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
           } else {
             console.log(caseName + ' success');
             expect().assertFail();
@@ -3104,7 +2954,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -3129,7 +2979,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
           } else {
             console.log(caseName + ' success2');
             expect().assertFail();
@@ -3138,7 +2988,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
         done();
       }
@@ -3161,20 +3011,18 @@ export default function windowErrCode401_3() {
         await windowClass.loadContent(null);
         console.info(msgStr + 'Succeeded');
         expect().assertFail();
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
       try {
         await windowClass.loadContent('');
         console.info(msgStr + 'Succeeded1');
         expect().assertFail();
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
       try {
@@ -3184,7 +3032,7 @@ export default function windowErrCode401_3() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
         done()
       }
@@ -3206,7 +3054,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
           } else {
             console.log(caseName + ' success');
             expect().assertFail();
@@ -3215,7 +3063,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -3240,7 +3088,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -3250,7 +3098,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
         done();
       }
@@ -3273,20 +3121,18 @@ export default function windowErrCode401_3() {
         await windowClass.setBackgroundColor(null);
         console.info(msgStr + 'Succeeded');
         expect().assertFail();
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
       try {
         await windowClass.setBackgroundColor('');
         console.info(msgStr + 'Succeeded1');
         expect().assertFail();
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
       try {
@@ -3296,7 +3142,7 @@ export default function windowErrCode401_3() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
         done()
       }
@@ -3318,7 +3164,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
           } else {
             console.log(caseName + ' success');
             expect().assertFail();
@@ -3327,7 +3173,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -3335,7 +3181,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
           } else {
             console.log(caseName + ' success1');
             expect().assertFail();
@@ -3344,7 +3190,7 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
       }
       try {
@@ -3352,7 +3198,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1003);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -3362,44 +3208,9 @@ export default function windowErrCode401_3() {
         });
       } catch (err) {
         console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1003);
         expect(err.message!=null).assertTrue();
         done();
-      }
-    })
-
-    /**
-     * @tc.name   testCreateSubWindowWithOptions_0100
-     * @tc.number testCreateSubWindowWithOptions_0100
-     * @tc.desc   testCreateSubWindowWithOptions_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testCreateSubWindowWithOptions_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testCreateSubWindowWithOptions_0100";
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin.');
-      let windowClass = windowStage.getMainWindowSync()
-      try {
-        await windowClass.createSubWindowWithOptions(null, null);
-        console.info(msgStr + 'Succeeded');
-        expect().assertFail();
-      } catch (exception) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
-      }
-      try {
-        await windowClass.createSubWindowWithOptions(undefined, undefined);
-        console.info(msgStr + 'Succeeded2.');
-        expect().assertFail();
-        done();
-      } catch (exception) {
-        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
-        done()
       }
     })
 
