@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On } from '@kit.TestKit'
+import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On, WindowChangeType } from '@kit.TestKit'
 import ability_featureAbility from '@ohos.ability.featureAbility';
 import { BusinessError } from '@ohos.base';
 import display from '@ohos.display';
@@ -156,6 +156,9 @@ export default function UiTest() {
                     expect(elementInfo.type == 'Button').assertTrue()
                     expect(elementInfo.componentEventType == 1).assertTrue();
                     expect(elementInfo.componentId).assertEqual('toastBtn');
+                    expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+                    expect(elementInfo.windowId != null).assertTrue();
+                    expect(elementInfo.componentRect != null).assertTrue();
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsClickMonitor callback error ,${JSON.stringify(err)}`);
                 }
@@ -3696,14 +3699,21 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let observer = await driver.createUIEventObserver()
-            let callback = (UiElementInfo: UIElementInfo) => {
+            let callback = (uiElementInfo: UIElementInfo) => {
+               console.log(`${TestTag}, testMonitor1 uiElementInfo,${JSON.stringify(uiElementInfo)}`);
                 try {
-                    console.info('UIElementInfo bundleName:' + UiElementInfo.bundleName)
-                    console.info('UIElementInfo text:' + UiElementInfo.text)
-                    console.info('UIElementInfo type:' + UiElementInfo.type)
-                    expect(UiElementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-                    expect(UiElementInfo.text == 'toastShow').assertTrue()
-                    expect(UiElementInfo.type == 'Toast').assertTrue()
+                    console.info('UIElementInfo bundleName:' + uiElementInfo.bundleName)
+                    console.info('UIElementInfo text:' + uiElementInfo.text)
+                    console.info('UIElementInfo type:' + uiElementInfo.type)
+                    expect(uiElementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
+                    expect(uiElementInfo.text == 'toastShow').assertTrue()
+                    expect(uiElementInfo.type == 'Toast').assertTrue()
+                    expect(uiElementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+                    expect(uiElementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();
+                    expect(uiElementInfo.windowId != null).assertTrue();
+                    expect(uiElementInfo.componentId == '').assertTrue();
+                    expect(uiElementInfo.componentRect != null).assertTrue();
+
                 } catch (err) {
                     console.info(err)
                 }
@@ -3728,14 +3738,20 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let observer = await driver.createUIEventObserver()
-            let callback = (UiElementInfo: UIElementInfo) => {
+            let callback = (uiElementInfo: UIElementInfo) => {
+               console.log(`${TestTag}, testMonitor2 uiElementInfo,${JSON.stringify(uiElementInfo)}`);
                 try {
-                    console.info('UIElementInfo bundleName:' + UiElementInfo.bundleName)
-                    console.info('UIElementInfo text:' + UiElementInfo.text)
-                    console.info('UIElementInfo type:' + UiElementInfo.type)
-                    expect(UiElementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-                    expect(UiElementInfo.text == 'dialogShow').assertTrue()
-                    expect(UiElementInfo.type == 'AlertDialog').assertTrue()
+                    console.info('UIElementInfo bundleName:' + uiElementInfo.bundleName)
+                    console.info('UIElementInfo text:' + uiElementInfo.text)
+                    console.info('UIElementInfo type:' + uiElementInfo.type)
+                    expect(uiElementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
+                    expect(uiElementInfo.text == 'dialogShow').assertTrue()
+                    expect(uiElementInfo.type == 'AlertDialog').assertTrue()
+                    expect(uiElementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+                    expect(uiElementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();
+                    expect(uiElementInfo.windowId != null).assertTrue();
+                    expect(uiElementInfo.componentId == '').assertTrue();
+                    expect(uiElementInfo.componentRect != null).assertTrue();
                 } catch (err) {
                     console.info(err)
                 }

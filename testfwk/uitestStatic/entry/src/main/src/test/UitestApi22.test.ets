@@ -63,6 +63,7 @@ export default function uitestDriverTestApi22() {
         hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static elementInfo.text,${elementInfo.text}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static elementInfo.componentId,${elementInfo.componentRect}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
@@ -70,6 +71,9 @@ export default function uitestDriverTestApi22() {
           expect(elementInfo.type == 'Button').assertTrue()
           expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_CLICKED).assertTrue();
           expect(elementInfo.componentId).assertEqual('toastBtn');
+          expect(elementInfo.componentRect != null).assertTrue();
+          expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+          expect(elementInfo.windowId != null).assertTrue();
         } catch (err) {
           hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static callback error ,${JSON.stringify(err)}`);
         }

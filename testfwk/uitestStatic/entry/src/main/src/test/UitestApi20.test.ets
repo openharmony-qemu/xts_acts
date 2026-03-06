@@ -136,6 +136,13 @@ export default function uitestEnumTest() {
         console.log(`${TestTag}, test_origin originText7: ${JSON.stringify(originText7)}`);
         expect(originText7).assertEqual('next page')
       }
+      let button8 = await driver!.findComponent(ON.originalText('next page', undefined))
+      expect(button8 != null).assertTrue()
+      if (button8 != null) {
+        let originText8 = await button8!.getOriginalText();
+        console.log(`${TestTag}, test_origin originText8: ${JSON.stringify(originText8)}`);
+        expect(originText8).assertEqual('next page')
+      }
       await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, `test_origin_static end`);
     })
