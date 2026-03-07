@@ -805,6 +805,99 @@ export default function AVScreenCaptureRecorderTest() {
       expect(mediaTestBase.isTestSucceeded()).assertTrue();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTUREPRIVACYMASKMODE_0200 end')
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_001
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_001', Level.LEVEL0, async (done: Function) => {
+      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
+      if (captureRecorder != null) {
+        videoPlayer.on(null, (error: BusinessError) => {
+        console.error(`video error called, error: ${error}`);
+        });
+        } else {
+            console.error('createAVScreenCaptureRecorder fail');
+            this.testFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+          expect().assertFail();
+        });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_002
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_002', Level.LEVEL0, async (done: Function) => {
+      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
+      if (captureRecorder != null) {
+        videoPlayer.on(undefined, (error: BusinessError) => {
+        console.error(`video error called, error: ${error}`);
+        });
+        } else {
+            console.error('createAVScreenCaptureRecorder fail');
+            this.testFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+          expect().assertFail();
+        });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_003
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_003
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_003', Level.LEVEL0, async (done: Function) => {
+      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
+      if (captureRecorder != null) {
+        videoPlayer.on(undefined, (error: BusinessError) => {
+        console.error(`video error called, error: ${error}`);
+        });
+        } else {
+            console.error('createAVScreenCaptureRecorder fail');
+            this.testFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+          expect().assertFail();
+        });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_004
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_004
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_004', Level.LEVEL0, async (done: Function) => {
+      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
+      if (captureRecorder != null) {
+        videoPlayer.on(undefined, (error: BusinessError) => {
+        console.error(`video error called, error: ${error}`);
+        });
+        } else {
+            console.error('createAVScreenCaptureRecorder fail');
+            this.testFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+          expect().assertFail();
+        });
+    })
   })
 }
 

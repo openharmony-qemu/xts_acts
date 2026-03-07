@@ -5045,5 +5045,245 @@ export default function AVPlayerTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_111
+     * @tc.number avPlayerNullUndefinedTest_111
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_111', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setPlaybackRange(null, 6000, media.SeekMode.SEEK_CLOSEST).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_112
+     * @tc.number avPlayerNullUndefinedTest_112
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_112', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setPlaybackRange(undefined, 6000, media.SeekMode.SEEK_CLOSEST).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_113
+     * @tc.number avPlayerNullUndefinedTest_113
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_113', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setPlaybackRange(0, null, media.SeekMode.SEEK_CLOSEST).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_114
+     * @tc.number avPlayerNullUndefinedTest_114
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_114', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setPlaybackRange(0, undefined, media.SeekMode.SEEK_CLOSEST).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_115
+     * @tc.number avPlayerNullUndefinedTest_115
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_115', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setVideoWindowSize(null, 1080).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_116
+     * @tc.number avPlayerNullUndefinedTest_116
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_116', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setVideoWindowSize(undefined, 1080).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_117
+     * @tc.number avPlayerNullUndefinedTest_117
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_117', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setVideoWindowSize(1920, null).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_118
+     * @tc.number avPlayerNullUndefinedTest_118
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_118', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setVideoWindowSize(1920, undefined).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_119
+     * @tc.number avPlayerNullUndefinedTest_119
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_119', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(5400108);
+          });
+            avPlayer.setPlaybackRate(null);
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_120
+     * @tc.number avPlayerNullUndefinedTest_120
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_120', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(5400108);
+          });
+            avPlayer.setPlaybackRate(undefined);
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_121
+     * @tc.number avPlayerNullUndefinedTest_121
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_121', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+            avPlayer.setLoudnessGain(null);
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_122
+     * @tc.number avPlayerNullUndefinedTest_122
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_122', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      let playbackInfo: media.PlaybackInfo;
+      try {
+            playbackInfo = await avPlayer.getPlaybackInfo();
+            console.info(`AVPlayer getPlaybackInfo = ${JSON.stringify(playbackInfo)}`);
+            except(playbackInfo.SERVER_IP_ADDRESS).not().assertUndefined;
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect(err.code).assertEqual(5400102);
+      }
+      done();
+    });
   })
 }

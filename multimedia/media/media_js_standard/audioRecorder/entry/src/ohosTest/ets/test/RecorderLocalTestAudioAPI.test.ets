@@ -1388,5 +1388,49 @@ export default function RecorderLocalTestAudioAPI() {
         done();
       }
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+      try {
+        audioRecorder.on(null, () => {
+          console.info('prepare called');
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0002
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0002', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+      try {
+        audioRecorder.on(undefined, () => {
+          console.info('prepare called');
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      }
+      done();
+    });
   })
 }

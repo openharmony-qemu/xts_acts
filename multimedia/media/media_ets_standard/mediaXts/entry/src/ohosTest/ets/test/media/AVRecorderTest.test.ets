@@ -23,6 +23,8 @@ import { LOG_TAG, MediaErrorCode, SLEEP_TIME_20, SLEEP_TIME_200, SLEEP_TIME_500,
 import { audio } from '@kit.AudioKit';
 import { sleep } from '../common';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
+import { audio } from '@kit.AudioKit'
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 const TAG = LOG_TAG + 'AVRecorderTest';
 
@@ -5460,6 +5462,328 @@ export default function AVRecorderTest() {
       await initConfigAndPreparedPromise(media.AudioSourceType.AUDIO_SOURCE_TYPE_DEFAULT);
       await getCurrentAudioCapturerInfoPromise(done);
       offCallback(['audioCapturerChange']);
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_001
+     * @tc.number AvRecorderNullUndefinedTest_001
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_001', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.on(null, async (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+              console.info('case state has changed, new state is: ' + state + ', and reason is: ');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_002
+     * @tc.number AvRecorderNullUndefinedTest_002
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_002', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.on(undefined, async (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+              console.info('case state has changed, new state is: ' + state + ', and reason is: ');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+  
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_003
+     * @tc.number AvRecorderNullUndefinedTest_003
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_003', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.on('stateChange', null => {
+              console.info('case state has changed, new state is: ' + state + ', and reason is: ');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_004
+     * @tc.number AvRecorderNullUndefinedTest_004
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_004', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.on('stateChange', undefined => {
+              console.info('case state has changed, new state is: ' + state + ', and reason is: ');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_005
+     * @tc.number AvRecorderNullUndefinedTest_005
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_005', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.on(null, (err: BusinessError) => {
+                console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_006
+     * @tc.number AvRecorderNullUndefinedTest_006
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_006', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.on(undefined, (err: BusinessError) => {
+                console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_007
+     * @tc.number AvRecorderNullUndefinedTest_007
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_007', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.off(null, async (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+              console.info('case state has changed, new state is: ' + state + ', and reason is: ');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_008
+     * @tc.number AvRecorderNullUndefinedTest_008
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_008', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.off(undefined, async (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+              console.info('case state has changed, new state is: ' + state + ', and reason is: ');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_009
+     * @tc.number AvRecorderNullUndefinedTest_009
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_009', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.off(null, (err: BusinessError) => {
+                console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_010
+     * @tc.number AvRecorderNullUndefinedTest_010
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_010', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.off(undefined, (err: BusinessError) => {
+                console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_011
+     * @tc.number AvRecorderNullUndefinedTest_011
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_011', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.off(null,  (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
+                console.info('audioCapturerChange called');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_012
+     * @tc.number AvRecorderNullUndefinedTest_012
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_012', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.off(undefined,  (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
+                console.info('audioCapturerChange called');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_013
+     * @tc.number AvRecorderNullUndefinedTest_013
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_013', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.off(null, (asset: photoAccessHelper.PhotoAsset) => {
+              console.info('photoAssetAvailable called');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AvRecorderNullUndefinedTest_014
+     * @tc.number AvRecorderNullUndefinedTest_014
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AvRecorderNullUndefinedTest_014', Level.LEVEL2, async (done: Function) => {
+      await createAvRecorderPromise();
+      try {
+            if (mAvRecord != null){
+              mAvRecord.off(undefined, (asset: photoAccessHelper.PhotoAsset) => {
+              console.info('photoAssetAvailable called');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
       done();
     })
   })

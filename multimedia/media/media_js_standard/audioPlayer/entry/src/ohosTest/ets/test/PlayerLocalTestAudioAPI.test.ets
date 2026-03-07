@@ -765,5 +765,349 @@ export default function PlayerLocalTestAudioAPI() {
         audioPlayer.src = fdPath;
       }
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0100', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+            audioPlayer.seek(null); 
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0200
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0200', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+            audioPlayer.seek(undefined); 
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0300
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0300', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+            audioPlayer.setVolume(null); 
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0400
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0400', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+            audioPlayer.setVolume(undefined); 
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0500
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0500', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              audioPlayer.on(null, (infoType: media.BufferingInfoType, value: number) => {
+                console.info('audio bufferingInfo type:');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0600
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0600', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              audioPlayer.on(undefined, (infoType: media.BufferingInfoType, value: number) => {
+                console.info('audio bufferingInfo type:');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0700
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0700', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              audioPlayer.on(null, (infoType: media.BufferingInfoType, value: number) => {
+                console.info('audio bufferingInfo type: ');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0800
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0800', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              audioPlayer.on(null, () => {
+                console.info('audio set source called');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0900
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_0900', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              audioPlayer.on(undefined, () => {
+                console.info('audio set source called');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1000
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1000', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              avPlayer.on(null, (time:number) => {
+                console.info('timeUpdate called,and new time is :' + time);
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1100', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              avPlayer.on(undefined, (time:number) => {
+                console.info('timeUpdate called,and new time is :' + time);
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1200
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1200', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              avPlayer.on(null, (info: audio.InterruptEvent) => {
+              console.info('audioInterrupt called,and InterruptEvent info is:');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1300
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1300', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              avPlayer.on(undefined, (info: audio.InterruptEvent) => {
+              console.info('audioInterrupt called,and InterruptEvent info is:');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1400
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1400', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              avPlayer.on(undefined, (info: audio.InterruptEvent) => {
+              console.info('audioInterrupt called,and InterruptEvent info is:');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1500
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1500', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              avPlayer.on(null, (error: BusinessError) => {
+              console.info('audioInterrupt called,and InterruptEvent info is:');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1600
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_NULL_UNDERFINED_1600', Level.LEVEL0,async (done: Function) => {
+      initAudioPlayer();
+      try {
+            if (audioPlayer != null){
+              avPlayer.on(undefined, (error: BusinessError) => {
+              console.info('audioInterrupt called,and InterruptEvent info is:');
+              });
+            }
+      } catch (err) {
+        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
   })
 }

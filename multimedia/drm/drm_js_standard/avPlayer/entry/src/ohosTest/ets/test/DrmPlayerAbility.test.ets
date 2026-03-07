@@ -3477,7 +3477,7 @@ export default function abilityTest() {
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_2400 failed", err.code);
-                expect(err.code).assertEqual(24700201);
+                expect(err.code).assertEqual(401);
                 mediaKeySystem.destroy();
                 done();
             }
@@ -3699,7 +3699,7 @@ export default function abilityTest() {
                 mediaKeySystem.setConfigurationByteArray("", valueArray);
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_3400 failed", err.code);
-                expect(err.code).assertEqual(401);
+                expect(err.code).assertEqual(24700201);
                 mediaKeySystem.destroy();
                 done();
             }
@@ -4008,6 +4008,7 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
+            let offlineReleaseResponse = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
             mediaKeySession.processOfflineReleaseResponse(null, offlineReleaseResponse).then(() => {
             console.info('processOfflineReleaseResponse');
             mediaKeySystem.destroy();
@@ -4030,6 +4031,7 @@ export default function abilityTest() {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
+            let offlineReleaseResponse = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
             mediaKeySession.processOfflineReleaseResponse(undefined, offlineReleaseResponse).then(() => {
             console.info('processOfflineReleaseResponse');
             mediaKeySystem.destroy();
