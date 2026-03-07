@@ -10279,6 +10279,83 @@ export default function ActsZipTest() {
         })
 
         /**
+         * @tc.name   actsZipTest154
+         * @tc.number ACTS_ZipTest_154
+         * @tc.desc   test inflateGetHeader with missing GzHeader property values
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('actsZipTest154', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================actsZipTest154 start==================");
+
+            let zip = zlib.createZipSync();
+            await zip.inflateInit2(ZStreamComplete, 28).then(data => {
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                expect(errData).assertFail();
+            })
+            try {
+                await zip.inflateGetHeader(ZStreamComplete, gzHeader_isText_false).then(data => {
+                    console.info('inflateGetHeader with isText false success');
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                expect().assertFail();
+            }
+
+            try {
+                await zip.inflateGetHeader(ZStreamComplete, gzHeader_hcrc_true).then(data => {
+                    console.info('inflateGetHeader with hcrc true success');
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                expect().assertFail();
+            }
+
+            try {
+                await zip.inflateGetHeader(ZStreamComplete, gzHeader_done_false).then(data => {
+                    console.info('inflateGetHeader with done false success');
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                expect().assertFail();
+            }
+            console.info("==================actsZipTest154 end==================");
+            done();        
+        })
+
+        /**
+         * @tc.name   actsZipTest155
+         * @tc.number ACTS_ZipTest_155
+         * @tc.desc   test inflateGetHeader with complete GzHeader property values
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('actsZipTest155', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================actsZipTest155 start==================");
+            let zip = zlib.createZipSync();
+            await zip.inflateInit2(ZStreamComplete, 28).then(data => {
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                expect(errData).assertFail();
+            })
+
+            try {
+                await zip.inflateGetHeader(ZStreamComplete, gzHeader_complete).then(data => {
+                    console.info('inflateGetHeader with gzHeader_complete success');
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                expect().assertFail();
+            }
+            console.info("==================actsZipTest155 end==================");
+            done();
+            
+        })
+
+        /**
          * @tc.name   actsZipTest99
          * @tc.number ACTS_ZipTest_99
          * @tc.desc   test inflateGetDictionary
@@ -18611,6 +18688,67 @@ export default function ActsZipTest() {
                 expect().assertFail();
             })
             console.info("==================compress2LevelEnum end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   actsZipTest152
+         * @tc.number ACTS_ZipTest_152
+         * @tc.desc   test inflateSetDictionary with null first parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('actsZipTest152', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
+            console.info("==================actsZipTest152 start==================");
+             let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateSetDictionary(null, arrayBufferIn).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================actsZipTest152 end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   actsZipTest153
+         * @tc.number ACTS_ZipTest_153
+         * @tc.desc   test inflatePrime with null first parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('actsZipTest153', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
+            console.info("==================actsZipTest153 start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflatePrime(null, 5, 2).then(data => {
+                    console.info('inflatePrime with null strm success')
+                    expect(data).assertFail()
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
             done();
         })
     })
