@@ -3568,7 +3568,7 @@ describe('resMgrTest', function () {
             resourceManager.getResourceManager(null, (error, value) => {
                 try {
                     console.log('getResourceManager_null_test_0100 value:' + value);
-                    expect(value != null).assertTrue();
+                    expect(value !== null).assertTrue();
                 } catch (e) {
                     console.log('getResourceManager_null_test_0100 e:' + e);
                 }
@@ -3594,7 +3594,7 @@ describe('resMgrTest', function () {
             resourceManager.getResourceManager(null).then((value) => {
                 try {
                     console.log('getResourceManager_null_test_0200 value:' + value);
-                    expect(value != null).assertTrue();
+                    expect(value !== null).assertTrue();
                 } catch (e) {
                     console.log('getResourceManager_null_test_0200 then:' + e);
                 }
@@ -3627,7 +3627,7 @@ describe('resMgrTest', function () {
             resourceManager.getResourceManager(undefined, (error, value) => {
                 try {
                     console.log('getResourceManager_undefined_test_0100 value:' + value);
-                    expect(value != null).assertTrue();
+                    expect(value !== null).assertTrue();
                 } catch (e) {
                     console.log('getResourceManager_undefined_test_0100 e:' + e);
                 }
@@ -3653,7 +3653,7 @@ describe('resMgrTest', function () {
             resourceManager.getResourceManager(undefined).then((value) => {
                 try {
                     console.log('getResourceManager_undefined_test_0200 value:' + value);
-                    expect(value != null).assertTrue();
+                    expect(value !== null).assertTrue();
                 } catch (e) {
                     console.log('getResourceManager_undefined_test_0200 then:' + e);
                 }
@@ -3686,7 +3686,7 @@ describe('resMgrTest', function () {
             resourceManager.getResourceManager('', (error, value) => {
                 try {
                     console.log('getResourceManager_void_test_0100 value:' + value);
-                    expect(value != null).assertTrue();
+                    expect(value !== null).assertTrue();
                 } catch (e) {
                     console.log('getResourceManager_void_test_0100 e:' + e);
                 }
@@ -3712,7 +3712,7 @@ describe('resMgrTest', function () {
             resourceManager.getResourceManager('').then((value) => {
                 try {
                     console.log('getResourceManager_void_test_0200 value:' + value);
-                    expect(value != null).assertTrue();
+                    expect(value !== null).assertTrue();
                 } catch (e) {
                     console.log('getResourceManager_void_test_0200 then:' + e);
                 }
