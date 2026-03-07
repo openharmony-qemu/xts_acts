@@ -1171,7 +1171,7 @@ export default function displayTest() {
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -1252,7 +1252,7 @@ export default function displayTest() {
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           expect(err.code).assertEqual(801);
         } else {
           expect(err.code).assertEqual(401);

@@ -348,7 +348,7 @@ export default function ErrorCode201() {
                     done()
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                      hilog.info(domain, tag,caseName + 'Failed to capture, err: ' + JSON.stringify(err));
-                     if (err.code == 801) {
+                     if (err.code === 801) {
                         expect(err.code).assertEqual(801);
                      } else {
                         expect(err.code).assertEqual(201);

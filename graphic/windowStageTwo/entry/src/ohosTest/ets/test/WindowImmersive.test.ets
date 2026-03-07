@@ -2712,7 +2712,7 @@ export default function windowImmersiveTest() {
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
-              if (err.code == 801) {
+              if (err.code === 801) {
                 expect(err.code).assertEqual(801);
              } else {
                 expect(err.code).assertEqual(1300002);
@@ -2767,7 +2767,7 @@ export default function windowImmersiveTest() {
               console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
               await subWindowClass?.destroyWindow();
               await sleep(1000);
-              if (err.code == 801) {
+              if (err.code === 801) {
                 expect(err.code).assertEqual(801);
               } else {
                 expect(err.code).assertEqual(1300004);
@@ -2989,7 +2989,7 @@ export default function windowImmersiveTest() {
             await dialogWindowClass?.destroyWindow();
             console.info(`${message} after destroyWindow`);
             await sleep(1000);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801);
             } else {
               expect(err.code).assertEqual(1300004);
@@ -3040,7 +3040,7 @@ export default function windowImmersiveTest() {
             done();
           } catch (err) {
             console.error(`${message} Failed to assert isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801);
             } else {
               expect(err.code).assertEqual(1300002);

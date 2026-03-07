@@ -1571,7 +1571,7 @@ export default function windowZindexTest() {
         done();
       } catch (err) {
         console.log(`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
-        if (err.code == 801) {
+        if (err.code === 801) {
           expect(err.code).assertEqual(801);
         } else {
           expect(err.code).assertEqual(1300004);
