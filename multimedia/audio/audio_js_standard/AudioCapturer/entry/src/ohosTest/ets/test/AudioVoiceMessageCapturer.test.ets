@@ -501,7 +501,6 @@ export default function audioCapturerVoiceMessage() {
       }
       await getFd("capture_js-44100-2C-16B_voice_message.pcm");
       await recPromise(AudioCapturerOptions, AudioRendererOptions, done);
-      expect(true).assertTrue();
       done();
     })
 
