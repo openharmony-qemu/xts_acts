@@ -81,7 +81,10 @@ const adDisplayOptions: advertising.AdDisplayOptions = {
   useMobileDataReminder: false,
   mute: true,
   audioFocusType: 1,
-  unDefineValue: undefined
+  unDefineValue: undefined,
+  numberValue: 1,
+  strValue: 'strVal',
+  boolVal: false
 };
 
 const advertisement: advertising.Advertisement = {
@@ -93,7 +96,11 @@ const advertisement: advertising.Advertisement = {
   ]),
   rewarded: false,
   shown: false,
-  uniqueId: "5bb42294"
+  uniqueId: "5bb42294",
+  obj: {
+    test: 'test',
+    value: false,
+  }
 };
 
 export default function adsTest() {
@@ -173,6 +180,7 @@ export default function adsTest() {
       adSearchKeyword: 'key',
       isTest: false,
       unDefineValue: undefined,
+      numberValue: 1,
     };
 
     /**
@@ -710,8 +718,7 @@ export default function adsTest() {
             done();
           }
         };
-        adLoaderListener.onAdLoadFailure(undefined, undefined);
-        adLoaderListener.onAdLoadSuccess(undefined);
+
         const advertisements: advertising.Advertisement[] = [{
           adType: 7,
           clicked: false,
@@ -724,6 +731,10 @@ export default function adsTest() {
           uniqueId: "5bb42294"
         } as advertising.Advertisement];
         adLoaderListener.onAdLoadSuccess(advertisements);
+        adLoaderListener.onAdLoadFailure(undefined, undefined);
+        adLoaderListener.onAdLoadFailure(null, null);
+        adLoaderListener.onAdLoadSuccess(undefined);
+        adLoaderListener.onAdLoadSuccess(null);
       } catch (e) {
         hilog.error(Domain, TAG, 'testAdLoaderListenerErrorParam error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
         expect(e.code).assertLarger(0);
@@ -752,8 +763,7 @@ export default function adsTest() {
             done();
           }
         };
-        adLoaderListener.onAdLoadFailure(undefined, undefined);
-        adLoaderListener.onAdLoadSuccess(undefined);
+
         const advertisements: advertising.Advertisement[] = [{
           adType: 7,
           clicked: false,
@@ -767,7 +777,12 @@ export default function adsTest() {
         } as advertising.Advertisement];
         let ads: Map<string, Array<advertising.Advertisement>> = new Map();
         ads.set('key', advertisements);
+        adLoaderListener.onAdLoadFailure(undefined, undefined);
+        adLoaderListener.onAdLoadFailure(null, null);
         adLoaderListener.onAdLoadSuccess(ads);
+        adLoaderListener.onAdLoadSuccess(undefined);
+        adLoaderListener.onAdLoadSuccess(null);
+
       } catch (e) {
         hilog.error(Domain, TAG, 'testMultiAdLoaderListenerErrorParam error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
         expect(e.code).assertLarger(0);
@@ -797,6 +812,7 @@ export default function adsTest() {
           isTest: true,
           emptyValue: '',
           isNotTest: false,
+          numVal: 1
         };
         const advertisementChange: advertising.Advertisement = {
           adType: 7,
@@ -842,13 +858,39 @@ export default function adsTest() {
       }
     })
 
+    /**
+     * @tc.name testShowAdNullParam
+     * @tc.number SUB_CLOUD_AD_SHOW_AD_2400
+     * @tc.desc testShowAdNullParam.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testShowAdNullParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        hilog.info(Domain, TAG, 'testShowAdNullParam enter testShowAd');
+        advertising.showAd(null, null, null);
+        await Utils.sleep(2000);
+        hilog.info(Domain, TAG, 'testShowAdNullParam enter done');
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, 'testShowAdNullParam error, error code is ${public}d, error message is ${public}s.', e.code, e.message);
+        expect(e.code == 401).assertTrue();
+        done();
+      }
+    })
+
 
     const adOptionChaneParam: advertising.AdOptions = {
       adContentClassification: 'A',
       nonPersonalizedAd: 1,
       tagForChildProtection: 1,
       isTest: false,
-      unDefineValue: undefined
+      unDefineValue: undefined,
+      strValue: 'strVal',
+      numberVal: 1,
+      isNotTest: true,
+      emptyValue: '',
     };
 
     const adRequestChangeParam: advertising.AdRequestParams = {
@@ -862,11 +904,12 @@ export default function adsTest() {
       unDefineValue: undefined,
       emptyValue: '',
       isNotTest: true,
+      numVal: 1
     };
 
     /**
      * @tc.name testLoadAdChangeParam
-     * @tc.number SUB_CLOUD_ADS_LOAD_AD_2400
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_2500
      * @tc.desc testLoadAdChangeParam.
      * @tc.size LargeTest
      * @tc.type Function
@@ -894,7 +937,7 @@ export default function adsTest() {
 
     /**
      * @tc.name testLoadAdErrorParam
-     * @tc.number SUB_CLOUD_ADS_LOAD_AD_2500
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_2600
      * @tc.desc testLoadAdErrorParam.
      * @tc.size LargeTest
      * @tc.type Function
@@ -912,10 +955,30 @@ export default function adsTest() {
       }
     })
 
+    /**
+     * @tc.name testLoadAdNullParam
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_2700
+     * @tc.desc testLoadAdNullParam.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testLoadAdNullParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let load = new advertising.AdLoader(context);
+        hilog.info(Domain, TAG, 'testLoadAdNullParam loadAd');
+        load.loadAd(null, null, null);
+      } catch (e) {
+        hilog.error(Domain, TAG, 'testLoadAdNullParam error, error code is ${public}d, error message is ${public}s.', e.code, e.message);
+        expect(e.code).assertLarger(0);
+        done();
+      }
+    })
+
 
     /**
      * @tc.name testMultiLoadAdChangeParam
-     * @tc.number SUB_CLOUD_ADS_LOAD_AD_2600
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_2800
      * @tc.desc testMultiLoadAdChangeParam.
      * @tc.size LargeTest
      * @tc.type Function
@@ -943,14 +1006,19 @@ export default function adsTest() {
           adSearchKeyword: 'key',
           isNotTest: true,
           isTest: false,
-          emptyValue: ''
+          emptyValue: '',
+          numVal: 1
         }];
         const adOptionChange: advertising.AdOptions = {
           adContentClassification: 'A',
           nonPersonalizedAd: 1,
           tagForChildProtection: 1,
           isTest: false,
-          unDefineValue: undefined
+          unDefineValue: undefined,
+          numVal: 1,
+          istNotTest: true,
+          strVal: 'str',
+          emptyKey: ''
         };
         let load = new advertising.AdLoader(context);
         hilog.info(Domain, TAG, 'testMultiLoadAdChangeParam loadAdWithMultiSlots');
@@ -965,7 +1033,7 @@ export default function adsTest() {
 
     /**
      * @tc.name testMultiLoadErrorParam
-     * @tc.number SUB_CLOUD_ADS_LOAD_AD_2700
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_2900
      * @tc.desc testMultiLoadErrorParam.
      * @tc.size LargeTest
      * @tc.type Function
@@ -985,10 +1053,32 @@ export default function adsTest() {
       }
     })
 
+    /**
+     * @tc.name testMultiLoadNullParam
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_3000
+     * @tc.desc testMultiLoadNullParam.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testMultiLoadNullParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
+      hilog.info(Domain, TAG, 'testMultiLoadNullParam start');
+      try {
+        let load = new advertising.AdLoader(context);
+        hilog.info(Domain, TAG, 'testMultiLoadNullParam loadAdWithMultiSlots');
+        load.loadAdWithMultiSlots(null, null, null);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, `testMultiLoadNullParam failed, ERROR= ${e.code}`);
+        expect(e.code).assertLarger(0);
+        done();
+      }
+    })
+
 
     /**
      * @tc.name testMultiLoadAdEmptyParam
-     * @tc.number SUB_CLOUD_ADS_LOAD_AD_2800
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_3100
      * @tc.desc testMultiLoadAdEmptyParam.
      * @tc.size LargeTest
      * @tc.type Function
@@ -1028,11 +1118,12 @@ export default function adsTest() {
       isNotTest: true,
       unDefineValue: undefined,
       emptyValue: '',
+      numVal: 1
     };
 
     /**
      * @tc.name testGetAdRequestBodyChangeParam
-     * @tc.number SUB_CLOUD_ADS_GET_BODY_2900
+     * @tc.number SUB_CLOUD_ADS_GET_BODY_3200
      * @tc.desc testGetAdRequestBodyChangeParam.
      * @tc.size LargeTest
      * @tc.type Function
@@ -1053,7 +1144,7 @@ export default function adsTest() {
 
     /**
      * @tc.name testGetAdRequestBodyErrorParam
-     * @tc.number SUB_CLOUD_ADS_GET_BODY_3000
+     * @tc.number SUB_CLOUD_ADS_GET_BODY_3300
      * @tc.desc testGetAdRequestBodyErrorParam.
      * @tc.size LargeTest
      * @tc.type Function
@@ -1073,8 +1164,29 @@ export default function adsTest() {
     })
 
     /**
+     * @tc.name testGetAdRequestBodyNullParam
+     * @tc.number SUB_CLOUD_ADS_GET_BODY_3400
+     * @tc.desc testGetAdRequestBodyNullParam.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testGetAdRequestBodyNullParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await advertising.getAdRequestBody(null, null).then((data: string) => {
+          hilog.info(Domain, TAG, `testGetAdRequestBodyNullParam result = ${JSON.stringify(JSON.parse(data))}`);
+          expect(data != null).assertEqual(true);
+        })
+      } catch (error) {
+        hilog.error(Domain, TAG, `testGetAdRequestBodyNullParam failed, ERROR= ${error.code}`);
+        expect(error.code).assertLarger(0);
+        done();
+      }
+    })
+
+    /**
      * @tc.name testGetAdRequestBodyEmptyParam
-     * @tc.number SUB_CLOUD_ADS_GET_BODY_3100
+     * @tc.number SUB_CLOUD_ADS_GET_BODY_3500
      * @tc.desc testGetAdRequestBodyEmptyParam.
      * @tc.size LargeTest
      * @tc.type Function
@@ -1096,7 +1208,7 @@ export default function adsTest() {
 
     /**
      * @tc.name tesRegisterWebAdInterfaceErrorParam
-     * @tc.number SUB_CLOUD_AD_REGISTER_WEB_INTERFACE_3200
+     * @tc.number SUB_CLOUD_AD_REGISTER_WEB_INTERFACE_3600
      * @tc.desc tesRegisterWebAdInterfaceErrorParam.
      * @tc.size LargeTest
      * @tc.type Function
@@ -1113,11 +1225,30 @@ export default function adsTest() {
       }
     })
 
+    /**
+     * @tc.name tesRegisterWebAdInterfaceNullParam
+     * @tc.number SUB_CLOUD_AD_REGISTER_WEB_INTERFACE_3700
+     * @tc.desc tesRegisterWebAdInterfaceNullParam.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("tesRegisterWebAdInterfaceNullParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        advertising.registerWebAdInterface(null, null);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, 'tesRegisterWebAdInterfaceNullParam error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+        expect(e.code).assertLarger(0);
+        done();
+      }
+    })
+
 
 
     /**
      * @tc.name tesRegisterWebAdInterfaceErrorThreeParam
-     * @tc.number SUB_CLOUD_AD_REGISTER_WEB_INTERFACE_3300
+     * @tc.number SUB_CLOUD_AD_REGISTER_WEB_INTERFACE_3800
      * @tc.desc tesRegisterWebAdInterfaceErrorThreeParam.
      * @tc.size LargeTest
      * @tc.type Function
@@ -1134,10 +1265,29 @@ export default function adsTest() {
       }
     })
 
+    /**
+     * @tc.name tesRegisterWebAdInterfaceNullThreeParam
+     * @tc.number SUB_CLOUD_AD_REGISTER_WEB_INTERFACE_3900
+     * @tc.desc tesRegisterWebAdInterfaceNullThreeParam.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("tesRegisterWebAdInterfaceNullThreeParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        advertising.registerWebAdInterface(null, null, false);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, 'tesRegisterWebAdInterfaceNullThreeParam error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+        expect(e.code).assertLarger(0);
+        done();
+      }
+    })
+
 
     /**
      * @tc.name testDeleteWebAdInterfaceErrorParam
-     * @tc.number SUB_CLOUD_AD_DELETE_WEB_INTERFACE_3400
+     * @tc.number SUB_CLOUD_AD_DELETE_WEB_INTERFACE_4000
      * @tc.desc testDeleteWebAdInterfaceErrorParam.
      * @tc.size LargeTest
      * @tc.type Function
