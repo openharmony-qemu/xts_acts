@@ -213,7 +213,7 @@ describe('SystemParameterTest', function () {
     let TAG  = '====>';
 
     /**
-     * @tc.name   testRegisterSensortest001
+     * @tc.name   SUB_SENSORS_Sensor_Supplemental_0010
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0010
      * @tc.desc   getSingleSensorByDeviceSync get null param.
      * @tc.type   FUNCTION
@@ -237,7 +237,7 @@ describe('SystemParameterTest', function () {
     })
 
     /**
-     * @tc.name   testRegisterSensortest002
+     * @tc.name   SUB_SENSORS_Sensor_Supplemental_0020
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0020
      * @tc.desc   getSingleSensorByDeviceSync get undefined.
      * @tc.type   FUNCTION
@@ -261,7 +261,7 @@ describe('SystemParameterTest', function () {
     })
 
     /**
-     * @tc.name   getSensorListByDeviceSync001
+     * @tc.name   SUB_SENSORS_Sensor_Supplemental_0030
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0030
      * @tc.desc   getSensorListByDeviceSync get null.
      * @tc.type   FUNCTION
@@ -284,7 +284,7 @@ describe('SystemParameterTest', function () {
     })
 
     /**
-     * @tc.name   getSensorListByDeviceSync002
+     * @tc.name   SUB_SENSORS_Sensor_Supplemental_0040
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0040
      * @tc.desc   getSensorListByDeviceSync get undefined.
      * @tc.type   FUNCTION
@@ -307,7 +307,7 @@ describe('SystemParameterTest', function () {
     })
 
     /**
-     * @tc.name getGeomagneticField001
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0050
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0050
      * @tc.desc getGeomagneticField with callback and null locationOptions.
      * @tc.type FUNCTION
@@ -330,7 +330,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticField002
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0060
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0060
      * @tc.desc getGeomagneticField with callback and null locationOptions.
      * @tc.type FUNCTION
@@ -353,7 +353,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticField003
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0070
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0070
      * @tc.desc getGeomagneticField with undefined timeMillis parameter.
      * @tc.type FUNCTION
@@ -376,7 +376,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticField004
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0080
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0080
      * @tc.desc getGeomagneticField with undefined timeMillis parameter.
      * @tc.type FUNCTION
@@ -399,7 +399,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticInfo001
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0090
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0090
      * @tc.desc getGeomagneticInfo with callback and null locationOptions.
      * @tc.type FUNCTION
@@ -422,7 +422,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticInfo002
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0100
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0100
      * @tc.desc getGeomagneticInfo with callback and undefined locationOptions.
      * @tc.type FUNCTION
@@ -445,7 +445,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticInfo003
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0110
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0110
      * @tc.desc getGeomagneticInfo with null locationOptions parameter.
      * @tc.type FUNCTION
@@ -467,7 +467,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticInfo004
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0120
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0120
      * @tc.desc getGeomagneticInfo with undefined locationOptions parameter.
      * @tc.type FUNCTION
@@ -489,7 +489,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name   getAltitude001
+     * @tc.name   SUB_SENSORS_Sensor_Supplemental_0130
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0130
      * @tc.desc   getAltitude get null.
      * @tc.type   FUNCTION
@@ -512,7 +512,7 @@ describe('SystemParameterTest', function () {
     })
 
     /**
-     * @tc.name   getAltitude002
+     * @tc.name   SUB_SENSORS_Sensor_Supplemental_0140
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0140
      * @tc.desc   getAltitude get undefined.
      * @tc.type   FUNCTION
@@ -535,7 +535,7 @@ describe('SystemParameterTest', function () {
     })
 
     /**
-     * @tc.name   getAltitude003
+     * @tc.name   SUB_SENSORS_Sensor_Supplemental_0150
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0150
      * @tc.desc   getAltitude get null.
      * @tc.type   FUNCTION
@@ -557,7 +557,7 @@ describe('SystemParameterTest', function () {
     })
 
     /**
-     * @tc.name   getAltitude004
+     * @tc.name   SUB_SENSORS_Sensor_Supplemental_0160
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0160
      * @tc.desc   getAltitude get undefined.
      * @tc.type   FUNCTION
@@ -579,7 +579,7 @@ describe('SystemParameterTest', function () {
     })
 
     /**
-     * @tc.name getDeviceAltitude001
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0170
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0170
      * @tc.desc getDeviceAltitude with callback and null seaPressure.
      * @tc.type FUNCTION
@@ -602,7 +602,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getDeviceAltitude002
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0180
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0180
      * @tc.desc getDeviceAltitude with callback and undefined seaPressure.
      * @tc.type FUNCTION
@@ -625,7 +625,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getDeviceAltitude003
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0190
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0190
      * @tc.desc getDeviceAltitude with null seaPressure parameter.
      * @tc.type FUNCTION
@@ -647,7 +647,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getDeviceAltitude004
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0200
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0200
      * @tc.desc getDeviceAltitude with undefined seaPressure parameter.
      * @tc.type FUNCTION
@@ -669,7 +669,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticDip001
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0210
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0210
      * @tc.desc getGeomagneticDip with callback and null inclinationMatrix.
      * @tc.type FUNCTION
@@ -692,7 +692,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticDip002
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0220
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0220
      * @tc.desc getGeomagneticDip with callback and undefined inclinationMatrix.
      * @tc.type FUNCTION
@@ -715,7 +715,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticDip003
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0230
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0230
      * @tc.desc getGeomagneticDip with callback and empty arr parameter.
      * @tc.type FUNCTION
@@ -738,7 +738,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticDip004
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0240
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0240
      * @tc.desc getGeomagneticDip with null inclinationMatrix parameter.
      * @tc.type FUNCTION
@@ -760,7 +760,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticDip005
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0250
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0250
      * @tc.desc getGeomagneticDip with undefined inclinationMatrix parameter.
      * @tc.type FUNCTION
@@ -782,7 +782,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getGeomagneticDip006
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0260
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0260
      * @tc.desc getGeomagneticDip with empty arr parameter.
      * @tc.type FUNCTION
@@ -804,7 +804,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getInclination001
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0270
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0270
      * @tc.desc getInclination with callback and null inclinationMatrix.
      * @tc.type FUNCTION
@@ -827,7 +827,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getInclination002
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0280
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0280
      * @tc.desc getInclination with callback and undefined inclinationMatrix.
      * @tc.type FUNCTION
@@ -850,7 +850,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getInclination003
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0290
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0290
      * @tc.desc getInclination with callback and empty arr parameter.
      * @tc.type FUNCTION
@@ -873,7 +873,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getInclination004
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0300
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0300
      * @tc.desc getInclination with null inclinationMatrix parameter.
      * @tc.type FUNCTION
@@ -895,7 +895,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getInclination005
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0310
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0310
      * @tc.desc getInclination with undefined inclinationMatrix parameter.
      * @tc.type FUNCTION
@@ -917,7 +917,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getInclination006
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0320
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0320
      * @tc.desc getInclination with empty arr parameter.
      * @tc.type FUNCTION
@@ -939,7 +939,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleModify001
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0330
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0330
      * @tc.desc getAngleModify with callback and null currentRotationMatrix.
      * @tc.type FUNCTION
@@ -962,7 +962,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleModify002
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0340
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0340
      * @tc.desc getAngleModify with callback and undefined currentRotationMatrix.
      * @tc.type FUNCTION
@@ -985,7 +985,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleModify003
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0350
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0350
      * @tc.desc getAngleModify with callback and empty arr parameter.
      * @tc.type FUNCTION
@@ -1008,7 +1008,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleModify004
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0360
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0360
      * @tc.desc getAngleModify with null currentRotationMatrix parameter.
      * @tc.type FUNCTION
@@ -1030,7 +1030,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleModify005
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0370
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0370
      * @tc.desc getAngleModify with undefined currentRotationMatrix parameter.
      * @tc.type FUNCTION
@@ -1052,7 +1052,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleModify006
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0380
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0380
      * @tc.desc getAngleModify with empty arr parameter.
      * @tc.type FUNCTION
@@ -1074,7 +1074,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleVariation001
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0390
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0390
      * @tc.desc getAngleVariation with callback and null currentRotationMatrix.
      * @tc.type FUNCTION
@@ -1097,7 +1097,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleVariation002
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0400
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0400
      * @tc.desc getAngleVariation with callback and undefined currentRotationMatrix.
      * @tc.type FUNCTION
@@ -1120,7 +1120,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleVariation003
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0410
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0410
      * @tc.desc getAngleVariation with callback and empty arr parameter.
      * @tc.type FUNCTION
@@ -1143,7 +1143,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleVariation004
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0420
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0420
      * @tc.desc getAngleVariation with null preRotationMatrix parameter.
      * @tc.type FUNCTION
@@ -1165,7 +1165,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleVariation005
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0430
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0430
      * @tc.desc getAngleVariation with undefined preRotationMatrix parameter.
      * @tc.type FUNCTION
@@ -1187,7 +1187,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getAngleVariation006
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0440
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0440
      * @tc.desc getAngleVariation with empty arr parameter.
      * @tc.type FUNCTION
@@ -1209,7 +1209,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name createRotationMatrix001
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0450
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0450
      * @tc.desc createRotationMatrix with callback and null gravity.
      * @tc.type FUNCTION
@@ -1232,7 +1232,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name createRotationMatrix002
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0460
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0460
      * @tc.desc createRotationMatrix with callback and null gravity.
      * @tc.type FUNCTION
@@ -1255,7 +1255,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name createRotationMatrix003
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0470
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0470
      * @tc.desc createRotationMatrix with callback and empty arr parameter.
      * @tc.type FUNCTION
@@ -1278,7 +1278,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name createRotationMatrix004
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0480
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0480
      * @tc.desc createRotationMatrix with null gravity and geomagnetic parameters.
      * @tc.type FUNCTION
@@ -1300,7 +1300,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name createRotationMatrix005
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0490
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0490
      * @tc.desc createRotationMatrix with undefined gravity and geomagnetic parameters.
      * @tc.type FUNCTION
@@ -1322,7 +1322,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name createRotationMatrix006
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0500
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0500
      * @tc.desc createRotationMatrix with empty arr parameter.
      * @tc.type FUNCTION
@@ -1344,7 +1344,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getRotationMatrix001
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0510
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0510
      * @tc.desc getRotationMatrix with callback and null rotationVector.
      * @tc.type FUNCTION
@@ -1367,7 +1367,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getRotationMatrix002
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0520
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0520
      * @tc.desc getRotationMatrix with callback and undefined rotationVector.
      * @tc.type FUNCTION
@@ -1390,7 +1390,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getRotationMatrix003
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0530
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0530
      * @tc.desc getRotationMatrix with callback and empty arr parameter.
      * @tc.type FUNCTION
@@ -1413,7 +1413,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getRotationMatrix004
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0540
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0540
      * @tc.desc getRotationMatrix with null rotationVector parameter.
      * @tc.type FUNCTION
@@ -1435,7 +1435,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getRotationMatrix005
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0550
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0550
      * @tc.desc getRotationMatrix with undefined rotationVector parameter.
      * @tc.type FUNCTION
@@ -1457,7 +1457,7 @@ describe('SystemParameterTest', function () {
     });
 
     /**
-     * @tc.name getRotationMatrix006
+     * @tc.name SUB_SENSORS_Sensor_Supplemental_0560
      * @tc.number SUB_SENSORS_Sensor_Supplemental_0560
      * @tc.desc getRotationMatrix with empty arr parameter.
      * @tc.type FUNCTION
