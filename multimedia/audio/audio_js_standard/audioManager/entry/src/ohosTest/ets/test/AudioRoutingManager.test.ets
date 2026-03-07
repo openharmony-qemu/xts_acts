@@ -465,7 +465,6 @@ export default function audioRoutingManager() {
         let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0100 SUCCESS` +
         JSON.stringify(data));
-        expect(true).assertTrue();
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0100 ERROR: ${e.message}`);
@@ -496,7 +495,6 @@ export default function audioRoutingManager() {
           done();
         }
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0200 check no parameter PASS`);
-        expect(true).assertTrue();
       }
       done();
     })
@@ -558,7 +556,6 @@ export default function audioRoutingManager() {
           done();
         }
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0400 check string parameter PASS`);
-        expect(true).assertTrue();
       }
       done();
     })
@@ -585,7 +582,6 @@ export default function audioRoutingManager() {
           done();
         }
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0500 SUCCESS`);
-        expect(true).assertTrue();
         done();
       });
     })
@@ -653,7 +649,6 @@ export default function audioRoutingManager() {
           done();
         }
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0700 check string parameter PASS,${error.code}`);
-        expect(true).assertTrue();
         done();
       }
 
@@ -820,7 +815,6 @@ export default function audioRoutingManager() {
         routingManager.off('preferOutputDeviceChangeForRendererInfo', (data) => {
         });
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0100 SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0100 ERROR: ${e.message}`);
@@ -963,7 +957,6 @@ export default function audioRoutingManager() {
         let data: ESObject = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(2);
         expect(data[0].networkId).assertEqual("LocalDevice");
-        expect(true).assertTrue();
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_0500 ERROR: ${e.message},ErrorCode:${e.code}`);
