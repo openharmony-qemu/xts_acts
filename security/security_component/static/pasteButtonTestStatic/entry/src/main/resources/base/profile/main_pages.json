@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/Index",
-    "pages/pasteButton"
+    "pages/pasteButton",
+    "pages/pasteButtonScenario"
   ]
 }
