@@ -278,6 +278,7 @@ export default function audioRendererTest() {
             done();
           } else {
             console.log(`${TagFrmwkRender}: Off execution success, testcase FAIL! `);
+            expect(true).assertTrue();
             done();
           }
         });
