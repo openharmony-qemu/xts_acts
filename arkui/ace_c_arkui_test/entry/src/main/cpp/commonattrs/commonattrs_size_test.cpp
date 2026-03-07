@@ -181,7 +181,7 @@ static napi_value TestCommonAttrsSize012(napi_env env, napi_callback_info info)
     nodeAPI->setAttribute(text, NODE_SIZE, &value_item);
     auto ret = nodeAPI->resetAttribute(text, NODE_SIZE);
     ASSERT_EQ(ret, SUCCESS);
-    //ASSERT_EQ(nodeAPI->getAttribute(text, NODE_SIZE)->value[PARAM_0].f32, PARAM_0);
+    
     NAPI_END;
 }
 
