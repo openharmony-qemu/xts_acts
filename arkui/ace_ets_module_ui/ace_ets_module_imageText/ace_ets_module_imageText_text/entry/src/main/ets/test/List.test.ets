@@ -138,6 +138,7 @@ import TextSpecialOptionsNullTest from './TextTest/TextSpecialOptionsNull.test';
 import TextLayoutOptionsNullTest from './TextTest/TextLayoutOptionsNull.test';
 import TextSpecialAttrsNullTest from './TextTest/TextSpecialAttrsNull.test';
 import TextMethodsNullTest from './TextTest/TextMethodsNull.test';
+import TextEditMenuOptionsNullTest from './TextTest/TextEditMenuOptionsNull.test';
 
 
 export default function testsuite() {
@@ -267,4 +268,5 @@ export default function testsuite() {
   TextLayoutOptionsNullTest();
   TextSpecialAttrsNullTest();
   TextMethodsNullTest();
+  TextEditMenuOptionsNullTest();
 }

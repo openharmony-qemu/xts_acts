@@ -971,6 +971,31 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
+     * @tc.number   ActsOsAccountIsOsAccountConstraintEnabled_0200
+     * @tc.name     ActsOsAccountIsOsAccountConstraintEnabled_0200
+     * @tc.desc     Checks whether the given constraint is enabled IsOsAccountConstraintEnabled promise
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL0
+     */
+    it('ActsOsAccountIsOsAccountConstraintEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>ActsOsAccountIsOsAccountConstraintEnabled_0200 start====");
+        try {
+          let isEnabled: boolean = await accountManager.isOsAccountConstraintEnabled("constraint.fun");
+          hilog.info(0x0000, tag, "====>isOsAccountConstraintEnabled data: "+ JSON.stringify(isEnabled));
+          expect(isEnabled).assertFalse();
+          hilog.info(0x0000, tag, "====>ActsOsAccountIsOsAccountConstraintEnabled_0200 end====");
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(0x0000, tag, "====>isOsAccountConstraintEnabled err: "+ JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
      * @tc.number   ActsOsAccountGetOsAccountName_0100
      * @tc.name     ActsOsAccountGetOsAccountName_0100
      * @tc.desc     Gets the name of the OS account to which the caller belongs GetOsAccountName promise
@@ -992,5 +1017,42 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           done();
         }
       });
+
+    /**
+     * @tc.name   OsAccountPermissionCheck_0100
+     * @tc.number OsAccountPermissionCheck_0100
+     * @tc.desc   check updateAccountInfo interface meeting ohos.permission.MANAGE_LOCAL_ACCOUNTS permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('OsAccountPermissionCheck_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>start====");
+      let key = '';
+      let oldDomainInfo: osAccount.DomainAccountInfo = {
+        domain: key,
+        accountName: 'testAccount'
+      };
+      let newDomainInfo: osAccount.DomainAccountInfo = {
+        domain: 'testDomain',
+        accountName: 'newTestAccountName'
+      };
+      try {
+        hilog.info(0x0000, tag, "====>start updateAccountInfo");
+        await osAccount.DomainAccountManager.updateAccountInfo(oldDomainInfo, newDomainInfo);
+        hilog.info(0x0000, tag, "====>run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>catch err: " + JSON.stringify(err));
+        if (err.code === 801) {
+          hilog.info(0x0000, tag, "====>Current device not support API: updateAccountInfo");
+        } else {
+          expect(err.code).assertEqual(12300003);
+        }
+        done();
+      }
+    });
   });
 }

@@ -14,7 +14,7 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import audio from '@ohos.multimedia.audio';
 import { BusinessError } from '@ohos.base';
 import { Driver } from '@ohos.UiTest';
@@ -43,6 +43,143 @@ export default function audioLoopBack() {
       console.info(TAG + 'afterEach called')
     })
 
+    /**
+     * @tc.name   AUDIOLOOPBACK_SETVOLUME_1403
+     * @tc.number AUDIOLOOPBACK_SETVOLUME_1403
+     * @tc.desc   setVolume with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOLOOPBACK_SETVOLUME_1403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioLoopback: audio.AudioLoopback;
+        await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+          console.info('AUDIOLOOPBACK_SETVOLUME_1403 AudioLoopback Created : SUCCESS');
+          audioLoopback = data;
+          audioLoopback.setVolume(null);
+          console.info(`AUDIOLOOPBACK_SETVOLUME_1403: FAIL`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`AUDIOLOOPBACK_SETVOLUME_1403 AudioLoopback Created : ERROR : ${err}`);
+          if (201 == Number(err.code)) {
+            expect(Number(err.code)).assertEqual(201);
+            done();
+          } else {
+            expect(Number(err.code)).assertEqual(6800104);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`AUDIOLOOPBACK_SETVOLUME_1403: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOLOOPBACK_SETVOLUME_1404
+     * @tc.number AUDIOLOOPBACK_SETVOLUME_1404
+     * @tc.desc   setVolume with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOLOOPBACK_SETVOLUME_1404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioLoopback: audio.AudioLoopback;
+
+        await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+          audioLoopback = data;
+          console.info('AUDIOLOOPBACK_SETVOLUME_1404 AudioLoopback Created : SUCCESS');
+          audioLoopback.setVolume(undefined);
+          console.info(`AUDIOLOOPBACK_SETVOLUME_1404: FAIL`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`AUDIOLOOPBACK_SETVOLUME_1404 AudioLoopback Created : ERROR : ${err}`);
+          if (201 == Number(err.code)) {
+            expect(Number(err.code)).assertEqual(201);
+            done();
+          } else {
+            expect(Number(err.code)).assertEqual(6800104);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`AUDIOLOOPBACK_SETVOLUME_1404: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOLOOPBACK_OFF_STATUSCHANGE_1405
+     * @tc.number AUDIOLOOPBACK_OFF_STATUSCHANGE_1405
+     * @tc.desc   off_statusChange with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOLOOPBACK_OFF_STATUSCHANGE_1405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioLoopback: audio.AudioLoopback;
+        await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+          audioLoopback = data;
+          console.info('AUDIOLOOPBACK_OFF_STATUSCHANGE_1405 AudioLoopback Created : SUCCESS');
+          audioLoopback.off('statusChange', null);
+          console.info(`AUDIOLOOPBACK_OFF_STATUSCHANGE_1405: FAIL`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`AUDIOLOOPBACK_OFF_STATUSCHANGE_1405 AudioLoopback Created : ERROR : ${err}`);
+          if (201 == Number(err.code)) {
+            expect(Number(err.code)).assertEqual(201);
+            done();
+          } else {
+            expect(Number(err.code)).assertEqual(6800104);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`AUDIOLOOPBACK_OFF_STATUSCHANGE_1405: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOLOOPBACK_OFF_STATUSCHANGE_1406
+     * @tc.number AUDIOLOOPBACK_OFF_STATUSCHANGE_1406
+     * @tc.desc   off_statusChange with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOLOOPBACK_OFF_STATUSCHANGE_1406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioLoopback: audio.AudioLoopback;
+
+        await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+          audioLoopback = data;
+          console.info('AUDIOLOOPBACK_OFF_STATUSCHANGE_1406 AudioLoopback Created : SUCCESS');
+          audioLoopback.off('statusChange', undefined);
+          console.info(`AUDIOLOOPBACK_OFF_STATUSCHANGE_1406: FAIL`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`AUDIOLOOPBACK_OFF_STATUSCHANGE_1406 AudioLoopback Created : ERROR : ${err}`);
+          if (201 == Number(err.code)) {
+            expect(Number(err.code)).assertEqual(201);
+            done();
+          } else {
+            expect(Number(err.code)).assertEqual(6800104);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`AUDIOLOOPBACK_OFF_STATUSCHANGE_1406: FAIL :${(err as BusinessError).message}`);expect(false).assertTrue();
+        expect(false).assertTrue();
+      }
+      done();
+    });
 
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ISAUDIOLOOPBACKSUPPORTED_0100
@@ -2560,6 +2697,6 @@ export default function audioLoopBack() {
       }).catch((err: BusinessError) => {
         console.error(`AudioLoopback Created : ERROR : ${err}`);
       });
-    })
+    })    
   })
 }

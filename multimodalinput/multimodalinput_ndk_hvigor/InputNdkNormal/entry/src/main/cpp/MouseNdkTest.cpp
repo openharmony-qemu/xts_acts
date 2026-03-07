@@ -126,8 +126,13 @@ static napi_value QueryAuthorizedStatus1(napi_env env, napi_callback_info info)
     Input_InjectionStatus status;
     Input_Result retResult = OH_Input_QueryAuthorizedStatus(&status);
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_QueryAuthorizedStatus_0100 retResult:%{public}d", retResult);
-    napi_create_int32(env,
-        (retResult == INPUT_SUCCESS && (status == UNAUTHORIZED || status == AUTHORIZING)) ? 1 : 0, &result);
+    if (status == UNAUTHORIZED) {
+        napi_create_int32(env, retResult == INPUT_SUCCESS && status == UNAUTHORIZED ? 1 : 0, &result);
+    } else if (status == AUTHORIZING) {
+        napi_create_int32(env, retResult == INPUT_SUCCESS && status == AUTHORIZING ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, 0, &result);
+    }
     return result;
 }
 
@@ -202,8 +207,13 @@ static napi_value GetPointerStyle1(napi_env env, napi_callback_info info)
     int32_t pointerStyle = -1;
     int32_t circleStyle = 41;
     Input_Result retResult = OH_Input_GetPointerStyle(windowId, &pointerStyle);
-    napi_create_int32(env, (retResult == INPUT_SUCCESS && (pointerStyle == 0 || pointerStyle == circleStyle))
-    ? 1 : 0, &result);
+    if (pointerStyle == 0) {
+        napi_create_int32(env, (retResult == INPUT_SUCCESS && pointerStyle == 0) ? 1 : 0, &result);
+    } else if (pointerStyle == circleStyle) {
+        napi_create_int32(env, (retResult == INPUT_SUCCESS && pointerStyle == circleStyle) ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, 0, &result);
+    }
     return result;
 }
 

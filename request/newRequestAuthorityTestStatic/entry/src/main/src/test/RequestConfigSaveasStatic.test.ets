@@ -2951,5 +2951,75 @@ export default function requestConfigSavesStaticTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0100
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0100
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0100 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        title: '',
+        text:''
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_downloadConfigSaves_Supplemental_0100.txt',
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        headers: {'Accept': '*/*'},
+        priority: 0,
+        extras:{'Accept': '*/*'},
+        multipart: false
+      };
+      try {
+        let time = new Date().getTime();
+        let filter: request.agent.Filter = {
+          before: time - 500,
+          after: time - 1000,
+          state: request.agent.State.REMOVED,
+          action: request.agent.Action.DOWNLOAD,
+          mode: request.agent.Mode.BACKGROUND,
+        };
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        let taskInfo = await request.agent.show(task!.tid);
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0100 ttaskInfo: ${JSON.stringify(taskInfo)}`);
+        let tasksData:Array<string>  = await request.agent.search(filter);
+        expect(taskInfo.saveas !== undefined).assertTrue();
+        expect(taskInfo.url !== undefined).assertTrue();
+        expect(taskInfo.data !== undefined).assertTrue();
+        expect(taskInfo.tid !== undefined).assertTrue();
+        expect(taskInfo.title !== undefined).assertTrue();
+        expect(taskInfo.description !== undefined).assertTrue();
+        expect(taskInfo.action !== undefined).assertTrue();
+        expect(taskInfo.mode !== undefined).assertTrue();
+        expect(taskInfo.priority !== undefined).assertTrue();
+        expect(taskInfo.mimeType !== undefined).assertTrue();
+        expect(taskInfo.progress !== undefined).assertTrue();
+        expect(taskInfo.gauge !== undefined).assertTrue();
+        expect(taskInfo.ctime !== undefined).assertTrue();
+        expect(taskInfo.mtime !== undefined).assertTrue();
+        expect(taskInfo.retry !== undefined).assertTrue();
+        expect(taskInfo.tries !== undefined).assertTrue();
+        expect(taskInfo.reason !== undefined).assertTrue();
+        expect(taskInfo.extras !== undefined).assertTrue();
+        expect(taskInfo.faults !== undefined).assertTrue();
+        done();
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0100 create success");
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0100 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
   });
 };
