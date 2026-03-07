@@ -5563,14 +5563,14 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_promise_for_content_001
      * @tc.number SOUND_POOL_FUNC_TEST_357
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_001', Level.LEVEL0, async (done: Function) => {
       try {
-        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_001 error: ${error}`);
         done();
@@ -5581,14 +5581,14 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_promise_for_content_002
      * @tc.number SOUND_POOL_FUNC_TEST_358
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_002', Level.LEVEL0, async (done: Function) => {
       try {
-        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_002 error: ${error}`);
         done();
@@ -5599,14 +5599,14 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_promise_for_content_003
      * @tc.number SOUND_POOL_FUNC_TEST_359
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_003', Level.LEVEL0, async (done: Function) => {
       try {
-        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_003 error: ${error}`);
         done();
@@ -5617,14 +5617,14 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_promise_for_content_004
      * @tc.number SOUND_POOL_FUNC_TEST_360
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_004', Level.LEVEL0, async (done: Function) => {
       try {
-        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_004 error: ${error}`);
         done();
@@ -5635,14 +5635,14 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_promise_for_content_005
      * @tc.number SOUND_POOL_FUNC_TEST_361
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_005', Level.LEVEL0, async (done: Function) => {
       try {
-        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_005 error: ${error}`);
         done();
@@ -5653,14 +5653,14 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_promise_for_content_006
      * @tc.number SOUND_POOL_FUNC_TEST_362
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_006', Level.LEVEL0, async (done: Function) => {
       try {
-        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_006 error: ${error}`);
         done();
