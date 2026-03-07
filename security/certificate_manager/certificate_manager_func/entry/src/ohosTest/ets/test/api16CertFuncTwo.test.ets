@@ -1071,7 +1071,7 @@ export default function api16CertFuncTestTwoUnit() {
         await certManager.getUkeyCertificate(undefined, ukeyInfo1);
         expect(null).assertFail();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_Ukey_0600 Failed1 to get detail of USB key certificate. index: ${stepindex} Code: ${err.code}, message: ${err.message}`)
+        console.error(`SUB_Security_CertManager_Ukey_0600 Failed1 to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
         expect(err.code).assertEqual(401);
       }
       
