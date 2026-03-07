@@ -1202,7 +1202,9 @@ describe('resMgrTest', function () {
                 expect(value !== null).assertTrue();
                 done();
             })
-            mgr.release();
+            let result = mgr.release();
+            console.log('release_test_001 result:' + result);
+            expect(value).assertEqual(undefined);
         })
     })
 
@@ -3565,7 +3567,7 @@ describe('resMgrTest', function () {
      */
     it('getResourceManager_null_test_0100', Level.LEVEL3, async function (done) {
         try {
-            resourceManager.getResourceManager(null, (error, value) => {
+            resmgr.getResourceManager(null, (error, value) => {
                 try {
                     console.log('getResourceManager_null_test_0100 value:' + value);
                     expect(value !== null).assertTrue();
@@ -3591,7 +3593,7 @@ describe('resMgrTest', function () {
      */
     it('getResourceManager_null_test_0200', Level.LEVEL3, async function (done) {
         try {
-            resourceManager.getResourceManager(null).then((value) => {
+            resmgr.getResourceManager(null).then((value) => {
                 try {
                     console.log('getResourceManager_null_test_0200 value:' + value);
                     expect(value !== null).assertTrue();
@@ -3624,7 +3626,7 @@ describe('resMgrTest', function () {
      */
     it('getResourceManager_undefined_test_0100', Level.LEVEL3, async function (done) {
         try {
-            resourceManager.getResourceManager(undefined, (error, value) => {
+            resmgr.getResourceManager(undefined, (error, value) => {
                 try {
                     console.log('getResourceManager_undefined_test_0100 value:' + value);
                     expect(value !== null).assertTrue();
@@ -3650,7 +3652,7 @@ describe('resMgrTest', function () {
      */
     it('getResourceManager_undefined_test_0200', Level.LEVEL3, async function (done) {
         try {
-            resourceManager.getResourceManager(undefined).then((value) => {
+            resmgr.getResourceManager(undefined).then((value) => {
                 try {
                     console.log('getResourceManager_undefined_test_0200 value:' + value);
                     expect(value !== null).assertTrue();
@@ -3683,7 +3685,7 @@ describe('resMgrTest', function () {
      */
     it('getResourceManager_void_test_0100', Level.LEVEL3, async function (done) {
         try {
-            resourceManager.getResourceManager('', (error, value) => {
+            resmgr.getResourceManager('', (error, value) => {
                 try {
                     console.log('getResourceManager_void_test_0100 value:' + value);
                     expect(value !== null).assertTrue();
@@ -3709,7 +3711,7 @@ describe('resMgrTest', function () {
      */
     it('getResourceManager_void_test_0200', Level.LEVEL3, async function (done) {
         try {
-            resourceManager.getResourceManager('').then((value) => {
+            resmgr.getResourceManager('').then((value) => {
                 try {
                     console.log('getResourceManager_void_test_0200 value:' + value);
                     expect(value !== null).assertTrue();
