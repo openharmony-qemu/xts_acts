@@ -1374,15 +1374,15 @@ export default function CrateImageSupp() {
       done();
     });
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_GET_IMAGE_INFO_TEST_055
-     * @tc.name       SUB_MEDIA_IMAGE_GET_IMAGE_INFO_TEST_055
+     * @tc.number     SUB_MEDIA_IMAGE_getImageInfo_TEST_055
+     * @tc.name       SUB_MEDIA_IMAGE_getImageInfo_TEST_055
      * @tc.desc       getImageInfo cover size
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_GET_IMAGE_INFO_TEST_055', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_GET_IMAGE_INFO_TEST_055';
+    it('SUB_MEDIA_IMAGE_getImageInfo_TEST_055', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_getImageInfo_TEST_055';
       try {
         const imageSourceApi = await getImageSource('test_exif_v2.jpg');
         imageSourceApi.getImageInfo(0, async (error: BusinessError, imageInfo: image.ImageInfo) => {
@@ -1406,15 +1406,15 @@ export default function CrateImageSupp() {
       }
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_56
-     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_56
+     * @tc.number     SUB_MEDIA_createAlphaPixelmap_TEST_56
+     * @tc.name       SUB_MEDIA_createAlphaPixelmap_TEST_56
      * @tc.desc       createAlphaPixelmap cover isEditable
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_56', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_56';
+    it('SUB_MEDIA_createAlphaPixelmap_TEST_56', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_createAlphaPixelmap_TEST_56';
       let imageSourceApi: image.ImageSource | null = null;
       try{
         let decodeOpts: image.DecodingOptions = {
