@@ -82,7 +82,7 @@ export default function btManagerError003Test() {
             try {
                 let name: string = connection.getRemoteDeviceName("00:11:22:33:44:55");
                 hilog.info(domain, tag, "getRemoteDeviceName:" + name);
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -109,7 +109,7 @@ export default function btManagerError003Test() {
             try {
                 let aliasName: string = connection.getRemoteDeviceName("00:11:22:33:44:55", true);
                 hilog.info(domain, tag, "getRemoteDeviceName alias is true:" + aliasName);
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -138,7 +138,7 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "getRemoteDeviceClass result:" + JSON.stringify(deviceClass));
                 hilog.info(domain, tag, "getRemoteDeviceClass result majorClass:" + deviceClass.majorClass);
                 hilog.info(domain, tag, "getRemoteDeviceClass result majorMinorClass:" + deviceClass.majorMinorClass);
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -164,7 +164,7 @@ export default function btManagerError003Test() {
         it("setBluetoothScanModeErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 0);
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -191,7 +191,7 @@ export default function btManagerError003Test() {
             try {
                 let devices: Array<string> = connection.getPairedDevices();
                 hilog.info(domain, tag, "getPairedDevices result:" + JSON.stringify(devices));
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -218,7 +218,7 @@ export default function btManagerError003Test() {
             try {
                 gattClientDevice!.close();
                 hilog.info(domain, tag, 'gattClientDevice close success');
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -245,7 +245,7 @@ export default function btManagerError003Test() {
             try {
                 gattServerDevice!.close();
                 hilog.info(domain, tag, 'gattServerDevice close success');
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -272,7 +272,7 @@ export default function btManagerError003Test() {
             try {
                 gattClientDevice!.connect();
                 hilog.info(domain, tag, 'gattClientDevice connect success');
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -299,7 +299,7 @@ export default function btManagerError003Test() {
             try {
                 gattClientDevice!.disconnect();
                 hilog.info(domain, tag, 'gattClientDevice disconnect success');
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -326,7 +326,7 @@ export default function btManagerError003Test() {
             try {
                 ble.stopAdvertising();
                 hilog.info(domain, tag, 'stopAdvertising success');
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -353,7 +353,7 @@ export default function btManagerError003Test() {
             try {
                 ble.stopBLEScan();
                 hilog.info(domain, tag, 'stopBLEScan success');
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -380,7 +380,7 @@ export default function btManagerError003Test() {
             try {
                 let a2dpProfile = a2dp.createA2dpSrcProfile();
                 let state = a2dpProfile.getPlayingState('11:22:33:44:55:66');
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -408,7 +408,7 @@ export default function btManagerError003Test() {
                 let a2dpProfile = a2dp.createA2dpSrcProfile();
                 let devices = a2dpProfile.getConnectedDevices();
                 hilog.info(domain, tag, "address of connected devices list:" + devices);
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -436,7 +436,7 @@ export default function btManagerError003Test() {
                 let a2dpProfile = a2dp.createA2dpSrcProfile();
                 let state = a2dpProfile.getConnectionState("11:22:33:AA:BB:FF");
                 hilog.info(domain, tag, "the connection state:" + state);
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -464,7 +464,7 @@ export default function btManagerError003Test() {
                 await access.addPersistentDeviceId('00:00:00:00:00:00').then(() => {
                     hilog.info(domain, tag, 'addPersistentDeviceId success');
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -492,7 +492,7 @@ export default function btManagerError003Test() {
                 await access.deletePersistentDeviceId('00:00:00:00:00:00').then(() => {
                     hilog.info(domain, tag, 'deletePersistentDeviceId success');
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -519,7 +519,7 @@ export default function btManagerError003Test() {
             try {
                 let macs: string[] = access.getPersistentDeviceIds();
                 hilog.info(domain, tag, "getPersistentDeviceIds result:" + JSON.stringify(macs));
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -546,7 +546,7 @@ export default function btManagerError003Test() {
             try {
                 let isValidRandom = access.isValidRandomDeviceId("00:00:00:00:00:00");
                 hilog.info(domain, tag, "isValidRandomDeviceId result:" + JSON.stringify(isValidRandom));
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -573,7 +573,7 @@ export default function btManagerError003Test() {
             try {
                 let connectionState = connection.getProfileConnectionState();
                 hilog.info(domain, tag, "getProfileConnectionState result:" + connectionState);
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -632,7 +632,7 @@ export default function btManagerError003Test() {
                 await connection.pairDevice('11:22:33:44:55:66').then(() => {
                     hilog.info(domain, tag, 'pairDevice success');
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -658,7 +658,7 @@ export default function btManagerError003Test() {
         it("setDevicePairingConfirmation2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.setDevicePairingConfirmation("00:11:22:33:44:55", true);
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -745,7 +745,7 @@ export default function btManagerError003Test() {
             try {
                 let scanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "getBluetoothScanMode = " + JSON.stringify(scanMode));
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -771,7 +771,7 @@ export default function btManagerError003Test() {
         it("startBluetoothDiscovery2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.startBluetoothDiscovery();
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -797,7 +797,7 @@ export default function btManagerError003Test() {
         it("stopBluetoothDiscovery2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.stopBluetoothDiscovery();
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -823,7 +823,7 @@ export default function btManagerError003Test() {
         it("isBluetoothDiscovering2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let result = connection.isBluetoothDiscovering();
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -882,7 +882,7 @@ export default function btManagerError003Test() {
                 await connection.getRemoteProfileUuids('11:22:33:44:55:66').then(()=> {
                     hilog.info(domain, tag, "getRemoteProfileUuids_promise success");
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -941,7 +941,7 @@ export default function btManagerError003Test() {
                 await connection.connectAllowedProfiles('11:22:33:44:55:66').then(() => {
                     hilog.info(domain, tag, 'connectAllowedProfiles success');
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -969,7 +969,7 @@ export default function btManagerError003Test() {
                 await connection.getRemoteDeviceBatteryInfo('11:22:33:44:55:66').then(() => {
                     hilog.info(domain, tag, 'getRemoteDeviceBatteryInfo success');
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -997,7 +997,7 @@ export default function btManagerError003Test() {
                 await connection.setRemoteDeviceName('11:22:33:44:55:66', "RemoteDeviceName").then(() => {
                     hilog.info(domain, tag, "setRemoteDeviceName success");
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1025,7 +1025,7 @@ export default function btManagerError003Test() {
                 await connection.getLastConnectionTime('11:22:33:44:55:66').then((time) => {
                     hilog.info(domain, tag, "getLastConnectionTime success");
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1051,7 +1051,7 @@ export default function btManagerError003Test() {
         it("startBLEScan2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 ble.startBLEScan([{}]);
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1119,7 +1119,7 @@ export default function btManagerError003Test() {
             };
             try {
                 ble.startAdvertising(setting, advData, advResponse);
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1150,7 +1150,7 @@ export default function btManagerError003Test() {
                 await bleScanner.stopScan().then(() => {
                     hilog.info(domain, tag, 'bleScanner stopScan success');
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err){
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1195,7 +1195,7 @@ export default function btManagerError003Test() {
                 await bleScanner.startScan([scanFilter]).then(() => {
                     hilog.info(domain, tag, 'bleScanner startScan success');
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err){
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1377,7 +1377,7 @@ export default function btManagerError003Test() {
                 await ble.disableAdvertising(advertisingDisableParams).then(() => {
                     hilog.info(domain, tag, 'disableAdvertising promise success');
                 });
-                expect(true).assertFalse();
+                expect().assertFail();
             } catch (err){
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
