@@ -90,7 +90,6 @@ export default function audioManagerTest() {
       try {
         let data = audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER)
         console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`GETSYSTEMVOLUMEINDB error ${error.message}, code ${error.code}`);
@@ -287,7 +286,6 @@ export default function audioManagerTest() {
         await audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER)
           .then((data) => {
             console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
-            expect(true).assertTrue();
             done();
           })
           .catch((error: BusinessError) => {
@@ -319,7 +317,6 @@ export default function audioManagerTest() {
             .then((data) => {
               console.info(`${env.AudioVolumeType[index]} getSystemVolumeInDb :SUCCESS ${data}`);
               // db1.add(data);
-              expect(true).assertTrue();
               done();
             })
             .catch((error: BusinessError) => {
@@ -388,7 +385,7 @@ export default function audioManagerTest() {
             })
             .catch((error: BusinessError) => {
               if (index == 'DEFAULT' || index == 'MAX' || index == 'INVALID' || index == 'NONE' || index == 'WAKEUP' ||
-                index == 'DISPLAY_PORT' || index == 'REMOTE_CAST' || index == 'HDMI' || index == 'REMOTE_DAUDIO' || 
+                index == 'DISPLAY_PORT' || index == 'REMOTE_CAST' || index == 'HDMI' || index == 'REMOTE_DAUDIO' ||
                 index == 'LINE_DIGITAL' || index == 'ACCESSORY') {
                 console.log(`${index} getSystemVolumeInDb :${error.code} ${error.message}`);
               } else {
@@ -609,7 +606,6 @@ export default function audioManagerTest() {
         await audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.MIC)
           .then((data) => {
             console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
-            expect(true).assertTrue();
             done();
           })
           .catch((error: BusinessError) => {
