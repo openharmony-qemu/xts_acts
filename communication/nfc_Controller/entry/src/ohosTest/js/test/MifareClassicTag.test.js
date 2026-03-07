@@ -707,6 +707,39 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_0503
+         * @tc.number SUB_Communication_NFC_mifareClassic_js_0503
+         * @tc.desc   Test writeSingleBlock api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareClassic_js_0503', Level.LEVEL0, async function (done) {
+            let array = [];
+            if (MifareClassicTag != null && MifareClassicTag != undefined) {
+                try {
+                    await MifareClassicTag.writeSingleBlock(undefined, array).then((data) => {
+                        console.info("[NFC_test] MifareClassicTag5 writeSingleBlock1 data: " + data + "json5:" + JSON.stringify(data));
+                        expect(data).assertInstanceOf('Number')
+                        done();
+                    });
+                } catch (err) {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareClassicTag5 writeSingleBlock1 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareClassicTag5 writeSingleBlock1 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            } else {
+                console.info("[NFC_test]MifareClassicTag5 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0600
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0600
          * @tc.desc   Test writeSingleBlock api.
@@ -1614,7 +1647,7 @@ export default function nfcMifareClassicTag() {
         it('SUB_Communication_NFC_mifareClassic_js_1302', Level.LEVEL0, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
                 try {
-                    await MifareClassicTag.restoreFromBlock(null).then((data) => {
+                    await MifareClassicTag.restoreFromBlock(undefined).then((data) => {
                         console.info("[NFC_test] MifareClassicTag13 restoreFromBlock2 data: " + data);
                         done();
                     });
