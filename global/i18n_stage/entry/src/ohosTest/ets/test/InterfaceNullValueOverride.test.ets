@@ -39,7 +39,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getDisplayCountry_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -58,7 +58,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getDisplayCountry_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -105,7 +105,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getDisplayLanguage_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -124,7 +124,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getDisplayLanguage_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -171,7 +171,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getDisplayCountry_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -190,7 +190,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getDisplayCountry_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -223,7 +223,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getDisplayCountry_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -242,7 +242,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getDisplayLanguage_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -261,7 +261,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getDisplayLanguage_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -294,7 +294,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getDisplayLanguage_nullString_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -313,7 +313,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getSystemCountries_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -346,7 +346,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_isSuggested_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -407,7 +407,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(typeof(value)).assertFail();
       } catch (e) {
         console.log('system_setAppPreferredLanguage_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -426,7 +426,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(typeof(value)).assertFail();
       } catch (e) {
         console.log('system_setAppPreferredLanguage_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -459,7 +459,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getSimplifiedLanguage_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -650,7 +650,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getTimePeriodName_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -683,7 +683,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getTimePeriodName_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -2413,7 +2413,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getTimezonesByLocation_null_test_0100' + e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -2432,7 +2432,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getTimezonesByLocation_null_test_0200' + e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -2529,7 +2529,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('normalize_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -2594,7 +2594,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('findEntityInfo_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -2824,7 +2824,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleDateTimeFormatByPattern_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -2844,7 +2844,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleDateTimeFormatByPattern_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -2864,7 +2864,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleDateTimeFormatByPattern_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -2883,7 +2883,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleDateTimeFormatByPattern_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -2903,7 +2903,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleDateTimeFormatByPattern_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -3118,7 +3118,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleDateTimeFormatBySkeleton_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3138,7 +3138,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleDateTimeFormatBySkeleton_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -3158,7 +3158,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleDateTimeFormatBySkeleton_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3177,7 +3177,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleDateTimeFormatBySkeleton_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3197,7 +3197,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleDateTimeFormatBySkeleton_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -3277,7 +3277,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0400 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -3297,7 +3297,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0500 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -3357,7 +3357,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_0800 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -3397,7 +3397,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_1000 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -3417,7 +3417,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_locale_test_1100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -3437,7 +3437,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3457,7 +3457,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -3477,7 +3477,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleNumberFormatBySkeleton_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3496,7 +3496,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleNumberFormatBySkeleton_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3516,7 +3516,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleNumberFormatBySkeleton_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -3537,7 +3537,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('SimpleDateTimeFormat_format_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3558,7 +3558,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('SimpleNumberFormat_format_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3580,7 +3580,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('StyledNumberFormat_format_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3602,7 +3602,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('StyledDateTimeFormat_format_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3856,7 +3856,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getUnicodeWrappedFilePath_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -3877,7 +3877,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getUnicodeWrappedFilePath_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4183,7 +4183,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getDisplayCountry_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4202,7 +4202,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getDisplayCountry_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4221,7 +4221,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getDisplayLanguage_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4240,7 +4240,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getDisplayLanguage_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4259,7 +4259,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getDisplayCountry_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4278,7 +4278,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getDisplayCountry_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4297,7 +4297,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getDisplayLanguage_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4316,7 +4316,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getDisplayLanguage_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4335,7 +4335,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_getSystemCountries_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4354,7 +4354,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('system_isSuggested_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4387,7 +4387,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(typeof(value)).assertFail();
       } catch (e) {
         console.log('system_setAppPreferredLanguage_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4524,7 +4524,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getTimePeriodName_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5569,7 +5569,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getTimezonesByLocation_undefined_test_0100' + e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5588,7 +5588,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getTimezonesByLocation_undefined_test_0200' + e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5655,7 +5655,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('normalize_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5705,7 +5705,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('findEntityInfo_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5725,7 +5725,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleDateTimeFormatByPattern_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5745,7 +5745,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleDateTimeFormatByPattern_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5764,7 +5764,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleDateTimeFormatByPattern_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5784,7 +5784,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleDateTimeFormatBySkeleton_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5804,7 +5804,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleDateTimeFormatBySkeleton_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5823,7 +5823,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleDateTimeFormatBySkeleton_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5843,7 +5843,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('Intl_getSimpleNumberFormatBySkeleton_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5863,7 +5863,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleNumberFormatBySkeleton_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5882,7 +5882,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getSimpleNumberFormatBySkeleton_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5903,7 +5903,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('SimpleDateTimeFormat_format_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5924,7 +5924,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('SimpleNumberFormat_format_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5946,7 +5946,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('StyledNumberFormat_format_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -5968,7 +5968,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('StyledDateTimeFormat_format_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual('401');
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
