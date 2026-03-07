@@ -1161,6 +1161,141 @@ export default function XmlTest_06() {
       });
 
     /**
+     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1200
+     * @tc.name      getNamespaceTest0012
+     * @tc.desc      Test passing numeric prefix
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('getNamespaceTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'getNamespaceTest0012';
+        console.log(TAG + ' start');
+
+        try{
+          let strXml =
+            '<?xml version="1.0" encoding="UTF-8"?>\n' +
+              '<root xmlns:123="http://example.com/num">\n' +
+              '  <123:item>Numeric prefix</123:item>\n' +
+              '</root>'
+          let textEncoder = new util.TextEncoder();
+          let arrBuffer = textEncoder.encodeInto(strXml);
+          let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+
+          let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:false, tokenValueCallbackFunction:func02}
+          that.parseXml(options);
+
+          expect().assertFail()
+
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1300
+     * @tc.name      getNamespaceTest0013
+     * @tc.desc      Test passing object prefix
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('getNamespaceTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'getNamespaceTest0013';
+        console.log(TAG + ' start');
+
+        try{
+          let strXml =
+            '<?xml version="1.0" encoding="UTF-8"?>\n' +
+              '<root xmlns:{}="http://example.com/obj">\n' +
+              '  <{}:item>Object prefix simulation</{}:item>\n' +
+              '</root>'
+          let textEncoder = new util.TextEncoder();
+          let arrBuffer = textEncoder.encodeInto(strXml);
+          let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+
+          let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:false, tokenValueCallbackFunction:func02}
+          that.parseXml(options);
+
+          expect().assertFail()
+
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1400
+     * @tc.name      getNamespaceTest0014
+     * @tc.desc      Test passing array prefix
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('getNamespaceTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'getNamespaceTest0014';
+        console.log(TAG + ' start');
+
+        try{
+          let strXml =
+            '<?xml version="1.0" encoding="UTF-8"?>\n' +
+              '<root xmlns:[]="http://example.com/arr">\n' +
+              '  <[]:item>Array prefix simulation</[]:item>\n' +
+              '</root>'
+          let textEncoder = new util.TextEncoder();
+          let arrBuffer = textEncoder.encodeInto(strXml);
+          let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+
+          let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:false, tokenValueCallbackFunction:func02}
+          that.parseXml(options);
+
+          expect().assertFail()
+
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1500
+     * @tc.name      getNamespaceTest0015
+     * @tc.desc      Test passing prefix with illegal characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('getNamespaceTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'getNamespaceTest0015';
+        console.log(TAG + ' start');
+
+        try{
+          let strXml =
+            '<?xml version="1.0" encoding="UTF-8"?>\n' +
+              '<root xmlns:ns@1="http://example.com/arr">\n' +
+              '  <ns@1:item>Prefix with illegal characters</ns@1:item>\n' +
+              '</root>'
+          let textEncoder = new util.TextEncoder();
+          let arrBuffer = textEncoder.encodeInto(strXml);
+          let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+
+          let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:false, tokenValueCallbackFunction:func02}
+          that.parseXml(options);
+
+          expect().assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1600
      * @tc.name      getNamespaceTest0016
      * @tc.desc      Test passing prefix not bound in current node and ancestor nodes
@@ -1185,6 +1320,42 @@ export default function XmlTest_06() {
         that.parseXml(options);
 
         expect(str).assertContain(" ")
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1700
+     * @tc.name      getNamespaceTest0017
+     * @tc.desc      Test parsing incomplete XML
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('getNamespaceTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'getNamespaceTest0017';
+        console.log(TAG + ' start');
+
+        try{
+          let strXml =
+            '<?xml version="1.0" encoding="UTF-8"?>\n' +
+              '<root xmlns:ns="http://example.com/incomplete\n' +
+              '  <ns:item>Unclosed node\n' +
+              '  <child>Content</child\n' +
+              '</root>'
+          let textEncoder = new util.TextEncoder();
+          let arrBuffer = textEncoder.encodeInto(strXml);
+          let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+
+          let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:false, tokenValueCallbackFunction:func02}
+          that.parseXml(options);
+          console.warn(str);
+
+          expect().assertFail()
+
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
 
       });
 
