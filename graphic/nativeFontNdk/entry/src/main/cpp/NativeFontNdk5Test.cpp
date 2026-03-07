@@ -1321,8 +1321,8 @@ napi_value OHDrawingGetFontUnicodeArrayFromFile001(napi_env env, napi_callback_i
         fontSrc, index, &unicodeArray, &arrayLength);
 
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
-    NAPI_ASSERT_NO_MES(unicodeArray != nullptr || arrayLength == ZERO_LENGTH);
-    NAPI_ASSERT_NO_MES(arrayLength >= 0);
+    NAPI_ASSERT_NO_MES(unicodeArray != nullptr);
+    NAPI_ASSERT_NO_MES(arrayLength > 0);
 
     if (unicodeArray != nullptr) {
         free(unicodeArray);
@@ -1423,9 +1423,9 @@ napi_value OHDrawingGetFontUnicodeArrayFromBuffer001(napi_env env, napi_callback
         fontBuffer, bufferSize, index, &unicodeArray, &arrayLength);
 
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
-    NAPI_ASSERT_NO_MES(unicodeArray != nullptr || arrayLength == 0);
-    NAPI_ASSERT_NO_MES(arrayLength >= 0);
-
+    NAPI_ASSERT_NO_MES(unicodeArray != nullptr);
+    NAPI_ASSERT_NO_MES(arrayLength > 0);
+    
     if (unicodeArray != nullptr && arrayLength > 0) {
         for (int32_t i = 0; i < arrayLength; i++) {
             int32_t codePoint = unicodeArray[i];
@@ -1581,7 +1581,8 @@ napi_value OHDrawingGetFontPathsByType001(napi_env env, napi_callback_info info)
 
     OH_Drawing_String* fontPaths = OH_Drawing_GetFontPathsByType(fontType, &pathCount);
 
-    NAPI_ASSERT_NO_MES(fontPaths != nullptr || pathCount == 0);
+    NAPI_ASSERT_NO_MES(fontPaths != nullptr);
+    NAPI_ASSERT_NO_MES(pathCount > 0);
 
     if (fontPaths != nullptr) {
         for (size_t i = 0; i < pathCount; i++) {
@@ -1633,14 +1634,15 @@ napi_value OHDrawingGetFontPathsByType003(napi_env env, napi_callback_info info)
         size_t pathCount = 0;
         OH_Drawing_String* fontPaths = OH_Drawing_GetFontPathsByType(fontTypes[i], &pathCount);
 
-        NAPI_ASSERT_NO_MES(fontPaths != nullptr || pathCount == 0);
-
         if (fontPaths != nullptr) {
+            NAPI_ASSERT_NO_MES(pathCount > 0);
             // 使用SafeFreeStringData释放每个字符串
             for (size_t j = 0; j < pathCount; j++) {
                 SafeFreeStringData(&fontPaths[j]);
             }
             free(fontPaths);
+        } else {
+            NAPI_ASSERT_NO_MES(pathCount == 0);
         }
     }
 
