@@ -210,7 +210,6 @@ describe('SystemParameterTest', function () {
 
     
 
-    let TAG  = '====>';
 
     /**
      * @tc.name   SUB_SENSORS_Sensor_Supplemental_0010
