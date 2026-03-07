@@ -2576,14 +2576,14 @@ export default function audioLoopBack() {
           console.info('AudioLoopback Created : SUCCESS');
           audioLoopback = data;
           audioLoopback.setVolume(null);
-          console.info(`${TagFrmwk}: FAIL`);
+          console.info(`AUDIOLOOPBACK_SETVOLUME_1403: FAIL`);
           expect(false).assertTrue();
         }).catch((err: BusinessError) => {
           console.error(`AudioLoopback Created : ERROR : ${err}`);
           expect(Number((err as BusinessError).code)).assertEqual(6800104);
         });
       } catch (err) {
-        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        console.info(`AUDIOLOOPBACK_SETVOLUME_1403: FAIL :${(err as BusinessError).message}`);
         expect(false).assertTrue();
       }
       done();
@@ -2605,14 +2605,14 @@ export default function audioLoopBack() {
           audioLoopback = data;
           console.info('AudioLoopback Created : SUCCESS');
           audioLoopback.setVolume(undefined);
-          console.info(`${TagFrmwk}: FAIL`);
+          console.info(`AUDIOLOOPBACK_SETVOLUME_1404: FAIL`);
           expect(false).assertTrue();
         }).catch((err: BusinessError) => {
           console.error(`AudioLoopback Created : ERROR : ${err}`);
           expect(Number((err as BusinessError).code)).assertEqual(6800104);
         });
       } catch (err) {
-        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        console.info(`AUDIOLOOPBACK_SETVOLUME_1404: FAIL :${(err as BusinessError).message}`);
         expect(false).assertTrue();
       }
       done();
@@ -2638,7 +2638,7 @@ export default function audioLoopBack() {
           expect(Number((err as BusinessError).code)).assertEqual(6800104);
         });
       } catch (err) {
-        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        console.info(`AUDIOLOOPBACK_OFF_STATUSCHANGE_1405: FAIL :${(err as BusinessError).message}`);
         expect(false).assertTrue();
       }
       done();
@@ -2660,14 +2660,14 @@ export default function audioLoopBack() {
           audioLoopback = data;
           console.info('AudioLoopback Created : SUCCESS');
           audioLoopback.off('statusChange', undefined);
-          console.info(`${TagFrmwk}: FAIL`);
+          console.info(`AUDIOLOOPBACK_OFF_STATUSCHANGE_1405: FAIL`);
           expect(false).assertTrue();
         }).catch((err: BusinessError) => {
           console.error(`AudioLoopback Created : ERROR : ${err}`);
           expect(Number((err as BusinessError).code)).assertEqual(6800104);
         });
       } catch (err) {
-        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);expect(false).assertTrue();
+        console.info(`AUDIOLOOPBACK_OFF_STATUSCHANGE_1405: FAIL :${(err as BusinessError).message}`);expect(false).assertTrue();
       }
       done();
     });

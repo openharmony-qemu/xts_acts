@@ -1258,10 +1258,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_OFF_DEVICECHANGE_1310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioRoutingManager.off('deviceChange', undefined);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_OFF_DEVICECHANGE_1310: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_OFF_DEVICECHANGE_1310: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1278,10 +1278,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_OFF_AVAILABLEDEVICECHANGE_1312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioRoutingManager.off('availableDeviceChange', undefined);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_OFF_AVAILABLEDEVICECHANGE_1312: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_OFF_AVAILABLEDEVICECHANGE_1312: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1299,16 +1299,16 @@ export default function audioRoutingManager() {
       try {
         audioRoutingManager.getPreferOutputDeviceForRendererInfo(null, (err, device) => {
           if (err) {
-            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1313: PASS :${err.message}`);
             expect(Number((err as BusinessError).code)).assertEqual(401);
           } else {
-            console.info(`${TagFrmwk}: FAIL`);
+            console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1313: FAIL`);
             expect(false).assertTrue();
           }
           done();
         });
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1313: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
         done();
       }
@@ -1326,16 +1326,16 @@ export default function audioRoutingManager() {
       try {
         audioRoutingManager.getPreferOutputDeviceForRendererInfo(undefined, (err, device) => {
           if (err) {
-            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1314: PASS :${err.message}`);
             expect(Number((err as BusinessError).code)).assertEqual(401);
           } else {
-            console.info(`${TagFrmwk}: FAIL`);
+            console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1314: FAIL`);
             expect(false).assertTrue();
           }
           done();
         });
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1314: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
         done();
       }
@@ -1352,10 +1352,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1315', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await audioRoutingManager.getPreferOutputDeviceForRendererInfo(null);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1315: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1315: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1372,10 +1372,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1316', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await audioRoutingManager.getPreferOutputDeviceForRendererInfo(undefined);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1316: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1316: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1392,10 +1392,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1317', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(null);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1317: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1317: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1412,10 +1412,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1318', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(undefined);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1318: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1318: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1432,10 +1432,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_OFF_PREFEROUTPUTDEVICECHANGEFORRENDERERINFO_1322', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioRoutingManager.off('preferOutputDeviceChangeForRendererInfo', undefined);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_OFF_PREFEROUTPUTDEVICECHANGEFORRENDERERINFO_1322: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_OFF_PREFEROUTPUTDEVICECHANGEFORRENDERERINFO_1322: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1453,16 +1453,16 @@ export default function audioRoutingManager() {
       try {
         audioRoutingManager.getPreferredInputDeviceForCapturerInfo(null, (err, device) => {
           if (err) {
-            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1323: PASS :${err.message}`);
             expect(Number((err as BusinessError).code)).assertEqual(401);
           } else {
-            console.info(`${TagFrmwk}: FAIL`);
+            console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1323: FAIL`);
             expect(false).assertTrue();
           }
           done();
         });
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1323: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
         done();
       }
@@ -1480,16 +1480,16 @@ export default function audioRoutingManager() {
       try {
         audioRoutingManager.getPreferredInputDeviceForCapturerInfo(undefined, (err, device) => {
           if (err) {
-            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1324: PASS :${err.message}`);
             expect(Number((err as BusinessError).code)).assertEqual(401);
           } else {
-            console.info(`${TagFrmwk}: FAIL`);
+            console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1324: FAIL`);
             expect(false).assertTrue();
           }
           done();
         });
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1324: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
         done();
       }
@@ -1506,10 +1506,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1325', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(null);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1325: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1325: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1526,10 +1526,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1326', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(undefined);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1326: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1326: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1546,13 +1546,13 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1327', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         let callback = (audioDeviceDescriptors: audio.AudioDeviceDescriptors) => {
-          console.info(`${TagFrmwk}: callback called`);
+          console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1327: callback called`);
         };
         audioRoutingManager.on('preferredInputDeviceChangeForCapturerInfo', null, callback);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1327: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1327: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1569,13 +1569,13 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1328', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         let callback = (audioDeviceDescriptors: audio.AudioDeviceDescriptors) => {
-          console.info(`${TagFrmwk}: callback called`);
+          console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1328: callback called`);
         };
         audioRoutingManager.on('preferredInputDeviceChangeForCapturerInfo', undefined, callback);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1328: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1328: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1592,10 +1592,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioRoutingManager.off('preferredInputDeviceChangeForCapturerInfo', undefined);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1330: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1330: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1612,10 +1612,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1331', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(null);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1331: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1331: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -1632,10 +1632,10 @@ export default function audioRoutingManager() {
     it('AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1332', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(undefined);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1332: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1332: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();

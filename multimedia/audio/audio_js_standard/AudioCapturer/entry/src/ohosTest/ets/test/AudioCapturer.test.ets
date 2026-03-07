@@ -5261,18 +5261,18 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(null, (err, capturer) => {
           if (err) {
-            console.info(`${TagFrmwk}: createAudioCapturer with null/undefined options: PASS :${err.message},${err.code}`);
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: createAudioCapturer with null/undefined options: PASS :${err.message},${err.code}`);
             expect(Number((err as BusinessError).code)).assertEqual(6800101);
             done();
           } else {
-            console.info(`${TagFrmwk}: createAudioCapturer with null/undefined options: FAIL`);
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: createAudioCapturer with null/undefined options: FAIL`);
             expect(false).assertTrue();
             done();
           }
           done();
         });
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: PASS :${(err as BusinessError).message}`);
         expect(false).assertTrue();
         done();
       }
@@ -5290,16 +5290,16 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(undefined, (err, capturer) => {
           if (err) {
-            console.info(`${TagFrmwk}: createAudioCapturer with null/undefined options: PASS :${err.message}`);
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: createAudioCapturer with null/undefined options: PASS :${err.message}`);
             expect(Number((err as BusinessError).code)).assertEqual(6800101);
           } else {
-            console.info(`${TagFrmwk}: createAudioCapturer with null/undefined options: FAIL`);
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1302: createAudioCapturer with null/undefined options: FAIL`);
             expect(false).assertTrue();
           }
           done();
         });
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1302: PASS :${(err as BusinessError).message}`);
         expect(false).assertTrue();
         done();
       }
@@ -5316,10 +5316,10 @@ export default function audioCapturer() {
     it('AUDIO_CREATEAUDIOCAPTURER_1303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await audio.createAudioCapturer(null);
-        console.info(`${TagFrmwk}: createAudioCapturer with null/undefined options: FAIL`);
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1303: createAudioCapturer with null/undefined options: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1303: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(6800101);
       }
       done();
@@ -5336,10 +5336,10 @@ export default function audioCapturer() {
     it('AUDIO_CREATEAUDIOCAPTURER_1304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await audio.createAudioCapturer(undefined);
-        console.info(`${TagFrmwk}: createAudioCapturer with null/undefined options: FAIL`);
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1304: createAudioCapturer with null/undefined options: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1304: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(6800101);
       }
       done();
@@ -5377,16 +5377,16 @@ export default function audioCapturer() {
       await audio.createAudioCapturer(audioCapturerOptions).then((data) => {
         audioCapturer = data;
         console.info('AUDIO_CAPTURER_READ_NULL_001 AudioCapturer Created : SUCCESS');
-        await audioCapturer.read(null, false).then(() => {
+        audioCapturer.read(null, false).then(() => {
           console.info('AUDIO_CAPTURER_READ_NULL_001 Succeeded in doing read.');
           expect(false).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.error(`AUDIO_CAPTURER_READ_NULL_001 Failed to read. Code: ${err.code}, message: ${err.message}`);
-          expect(Number(err.code).assertEqual(6800101));
+          expect(Number(err.code)).assertEqual(6800101);
           done();
         });
-        await audioCapturer.release();
+        audioCapturer.release();
       }).catch((err: BusinessError) => {
         console.error(`AUDIO_CAPTURER_READ_NULL_001 AudioCapturer Created : ERROR : ${err}`);
       });
@@ -5425,16 +5425,16 @@ export default function audioCapturer() {
       await audio.createAudioCapturer(audioCapturerOptions).then((data) => {
         audioCapturer = data;
         console.info('AUDIO_CAPTURER_READ_NULL_002 AudioCapturer Created : SUCCESS');
-        await audioCapturer.read(undefined, false).then(() => {
+        audioCapturer.read(undefined, false).then(() => {
           console.info('AUDIO_CAPTURER_READ_NULL_002 Succeeded in doing read.');
           expect(false).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.error(`AUDIO_CAPTURER_READ_NULL_002 Failed to read. Code: ${err.code}, message: ${err.message}`);
-          expect(Number(err.code).assertEqual(6800101));
+          expect(Number(err.code)).assertEqual(6800101);
           done();
         });
-        await audioCapturer.release();
+        audioCapturer.release();
       }).catch((err: BusinessError) => {
         console.error(`AUDIO_CAPTURER_READ_NULL_002 AudioCapturer Created : ERROR : ${err}`);
       });
@@ -5481,7 +5481,7 @@ export default function audioCapturer() {
           audioCapturer.read(null, false, (err: BusinessError, buffer: ArrayBuffer) => {
             if (err) {
               console.error(`AUDIO_CAPTURER_READ_NULL_003 Failed to read. Code: ${err.code}, message: ${err.message}`);
-              expect(err).assertEqual(6800101);
+              expect(Number(err.code)).assertEqual(6800101);
               done();
             } else {
               console.info('AUDIO_CAPTURER_READ_NULL_003 Succeeded in doing read.');
@@ -5531,7 +5531,7 @@ export default function audioCapturer() {
           audioCapturer.read(undefined, false, (err: BusinessError, buffer: ArrayBuffer) => {
             if (err) {
               console.error(`AUDIO_CAPTURER_READ_NULL_004 Failed to read. Code: ${err.code}, message: ${err.message}`);
-              expect(err).assertEqual(6800101);
+              expect(Number(err.code)).assertEqual(6800101);
               done();
             } else {
               console.info('AUDIO_CAPTURER_READ_NULL_004 Succeeded in doing read.');

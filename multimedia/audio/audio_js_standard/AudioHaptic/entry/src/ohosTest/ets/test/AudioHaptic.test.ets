@@ -2196,7 +2196,9 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0300", TestType.Function | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try{
+        let id = 0;
         let audioFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
+        let hapticFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
         let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
         let testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
         audioFd = testContext.resourceManager.getRawFdSync('notification.ogg')
@@ -2227,7 +2229,9 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0400", TestType.Function | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try{
+        let id = 0;
         let audioFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
+        let hapticFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
         let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
         let testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
         audioFd = testContext.resourceManager.getRawFdSync('notification.ogg')
@@ -2257,12 +2261,13 @@ export default function AudioHapticTest() {
      * @tc.level  LEVEL2
      */
     it('AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1415', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       try {
         await audioHapticManager.unregisterSource(null);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1415: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1415: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -2277,12 +2282,13 @@ export default function AudioHapticTest() {
      * @tc.level  LEVEL2
      */
     it('AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1416', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       try {
         await audioHapticManager.unregisterSource(undefined);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1416: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1416: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -2297,12 +2303,13 @@ export default function AudioHapticTest() {
      * @tc.level  LEVEL2
      */
     it('AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1417', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       try {
         audioHapticManager.setAudioLatencyMode(null, audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1417: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1417: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -2317,12 +2324,13 @@ export default function AudioHapticTest() {
      * @tc.level  LEVEL2
      */
     it('AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1418', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       try {
         audioHapticManager.setAudioLatencyMode(undefined, audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1418: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1418: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -2337,12 +2345,13 @@ export default function AudioHapticTest() {
      * @tc.level  LEVEL2
      */
     it('AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1419', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       try {
         audioHapticManager.setStreamUsage(null, audio.StreamUsage.STREAM_USAGE_MEDIA);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1419: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1419: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -2357,12 +2366,13 @@ export default function AudioHapticTest() {
      * @tc.level  LEVEL2
      */
     it('AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       try {
         audioHapticManager.setStreamUsage(undefined, audio.StreamUsage.STREAM_USAGE_MEDIA);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1420: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1420: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -2377,12 +2387,13 @@ export default function AudioHapticTest() {
      * @tc.level  LEVEL2
      */
     it('AUDIOHAPTICMANAGER_CREATEPLAYER_1421', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       try {
         await audioHapticManager.createPlayer(1, null);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOHAPTICMANAGER_CREATEPLAYER_1421: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOHAPTICMANAGER_CREATEPLAYER_1421: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -2397,12 +2408,13 @@ export default function AudioHapticTest() {
      * @tc.level  LEVEL2
      */
     it('AUDIOHAPTICMANAGER_CREATEPLAYER_1422', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       try {
         await audioHapticManager.createPlayer(1, undefined);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOHAPTICMANAGER_CREATEPLAYER_1422: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOHAPTICMANAGER_CREATEPLAYER_1422: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();

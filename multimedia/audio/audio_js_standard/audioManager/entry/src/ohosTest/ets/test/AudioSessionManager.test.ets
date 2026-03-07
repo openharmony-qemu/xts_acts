@@ -194,9 +194,9 @@ export default function audioSessionManagerTest() {
       let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         await audioSessionManager.selectMediaInputDevice(null);
-        console.info(`${TagFrmwk}: FAIL`);
+        console.info(`AUDIOSESSIONMANAGER_SELECTMEDIAINPUTDEVICE_1343: FAIL`);
       } catch (err) {
-        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        console.info(`AUDIOSESSIONMANAGER_SELECTMEDIAINPUTDEVICE_1343: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
       }
       done();
@@ -215,9 +215,9 @@ export default function audioSessionManagerTest() {
       let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         await audioSessionManager.selectMediaInputDevice(undefined);
-        console.info(`${TagFrmwk}: PASS`);
+        console.info(`AUDIOSESSIONMANAGER_SELECTMEDIAINPUTDEVICE_1344: PASS`);
       } catch (err) {
-        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        console.info(`AUDIOSESSIONMANAGER_SELECTMEDIAINPUTDEVICE_1344: FAIL :${(err as BusinessError).message}`);
         expect(false).assertTrue();
       }
       done();
