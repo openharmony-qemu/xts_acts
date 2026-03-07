@@ -786,7 +786,7 @@ export default function AVScreenCaptureRecorderTest() {
             console.error('excludePickerWindows null failed, error: ' + err.message);
           });
 
-          await captureRecorder.excludePickerWindows([]).then(() => {
+          captureRecorder.excludePickerWindows([]).then(() => {
             console.info('excludePickerWindows [] success');
           }).catch((err: BusinessError) => {
             captureRecorder.release();
