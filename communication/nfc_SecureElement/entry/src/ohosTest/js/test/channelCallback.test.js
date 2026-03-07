@@ -1058,7 +1058,7 @@ export default function channelCallbacktest() {
                                 (err, result) => {
                                     if(err) {
                                         console.info("[NFC_test]12 failed to get openLogicalChannel:" + JSON.stringify(err));
-                                        reject(err);
+                                        reject(err.code);
                                     } else {
                                         console.info("[NFC_test]12 openLogicalChannel data != null " + result);                                      
                                     }
