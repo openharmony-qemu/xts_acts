@@ -442,7 +442,6 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
         console.info(`setAudioSessionScene AUDIO_SESSION_SCENE_MEDIA value PASS`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`setAudioSessionScene AUDIO_SESSION_SCENE_MEDIA value Error :${err.message}`);
         expect(false).assertTrue();
@@ -462,7 +461,6 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.on('audioSessionStateChanged', sessionStateChangedEvent);
         console.info(`on audioSessionStateChanged registration PASS`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`on audioSessionStateChanged registration Error :${err.message}`);
         expect(false).assertTrue();
@@ -470,7 +468,6 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.off('audioSessionStateChanged', sessionStateChangedEvent);
         console.info(`off audioSessionStateChanged unregistration PASS`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`off audioSessionStateChanged unregistration Error :${err.message}`);
         expect(false).assertTrue();
@@ -490,7 +487,6 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.on('audioSessionStateChanged', sessionStateChangedEvent);
         console.info(`on audioSessionStateChanged registration PASS`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`on audioSessionStateChanged registration Error :${err.message}`);
         expect(false).assertTrue();
@@ -498,7 +494,6 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.off('audioSessionStateChanged');
         console.info(`off audioSessionStateChanged all function unregistration PASS`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`off audioSessionStateChanged all function unregistration Error :${err.message}`);
         expect(false).assertTrue();
@@ -527,7 +522,6 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.setDefaultOutputDevice(audio.DeviceType.DEFAULT);
         console.info(`setDefaultOutputDevice DEFAULT value PASS`);
-        expect(true).assertTrue();
       } catch (err) {
         if (err.code != audio.AudioErrors.ERROR_SYSTEM) {
           console.info(`setDefaultOutputDevice DEFAULT value Error :${err.message}`);
@@ -538,7 +532,6 @@ export default function audioSessionManagerTest() {
       try {
         let data = await sessionManager.getDefaultOutputDevice();
         console.info(`getDefaultOutputDevice success`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`getDefaultOutputDevice value failed, Error :${err.message}`);
         expect(false).assertTrue();
@@ -558,7 +551,6 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.on('currentOutputDeviceChanged', sessionDeviceChangedChangedEvent);
         console.info(`on currentOutputDeviceChanged registration PASS`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`on currentOutputDeviceChanged registration Error :${err.message}`);
         expect(false).assertTrue();
@@ -566,7 +558,6 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.off('currentOutputDeviceChanged', sessionDeviceChangedChangedEvent);
         console.info(`off currentOutputDeviceChanged unregistration PASS`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`off currentOutputDeviceChanged unregistration Error :${err.message}`);
         expect(false).assertTrue();
@@ -586,7 +577,6 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.on('currentOutputDeviceChanged', sessionDeviceChangedChangedEvent);
         console.info(`on currentOutputDeviceChanged registration PASS`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`on currentOutputDeviceChanged registration Error :${err.message}`);
         expect(false).assertTrue();
@@ -594,14 +584,13 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.off('currentOutputDeviceChanged');
         console.info(`off currentOutputDeviceChanged all function unregistration PASS`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`off currentOutputDeviceChanged all function unregistration Error :${err.message}`);
         expect(false).assertTrue();
       }
       done();
     })
-    
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETAUDIOSESSIONSCENE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETAUDIOSESSIONSCENE_0100
@@ -845,7 +834,6 @@ export default function audioSessionManagerTest() {
           console.info(`devices of currentInputDeviceChanged: ${event.devices} `);
           console.info(`changeReason of currentInputDeviceChanged: ${event.changeReason} `);
         });
-        expect(true).assertTrue();
         done();
       } catch (err) {
         expect(false).assertTrue();

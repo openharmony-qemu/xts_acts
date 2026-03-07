@@ -201,7 +201,6 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen.setVolumeWithRamp(1, 1000);
         console.info(`${Tag}: setVolumeWithRamp 1,1000 :SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag}: setVolumeWithRamp catch error: ${error.code}, ${error.message}`);
@@ -228,7 +227,6 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen.setVolumeWithRamp(0, 100)
         console.info(`${Tag}: setVolumeWithRamp 0,100 : SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
@@ -255,7 +253,6 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen.setVolumeWithRamp(0.5, 10)
         console.info(`${Tag}: setVolumeWithRamp 0.5,10 : SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
@@ -282,7 +279,6 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen.setVolumeWithRamp(0.5, 10)
         console.info(`${Tag}: setVolumeWithRamp 0.5,10 : SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
@@ -309,7 +305,6 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen.setVolumeWithRamp(0, 10)
         console.info(`${Tag}: setVolumeWithRamp 0,10 : SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
@@ -549,7 +544,6 @@ export default function audioRendererEnhanceTest() {
           }
           await sleep(20);
         }
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag} setVolumeWithRamp : error ${error.message}, ${error.code}`);
@@ -578,7 +572,6 @@ export default function audioRendererEnhanceTest() {
           }
           await audioRen.setVolumeWithRamp(0, 1);
           console.info(`${Tag}: attachVolumeRamp renderPlay: SUCCESS`);
-          expect(true).assertTrue();
           done();
         } catch (err) {
           console.log(`${Tag}: attachVolumeRamp on renderPlay: error.code:${err.code}, error.message:${err.message}`);
