@@ -84,6 +84,24 @@ async function prepareAVTranscoder(done: Function, testName: string) {
   }
 }
 
+async function prepareAVTranscoderTest(done: Function, testName: string) {
+  if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+    console.info(TAG, testName + ' This device does not support transcoding.');
+    done();
+    return;
+  }
+  if (mTranscoder !== undefined) {
+    await mTranscoder.prepare(avTranscoderConfig).then(() => {
+      console.info(TAG, testName + ' prepare success.');
+      expect(true).assertTrue();
+    }).catch((error: BusinessError) => {
+      console.error(TAG, testName + ' Failed to prepare AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
+      expect().assertFail();
+      done();
+    });
+  }
+}
+
 async function startAVTranscoder(done: Function, testName: string) {
   if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
     console.info(TAG, testName + ' This device does not support transcoding.');
