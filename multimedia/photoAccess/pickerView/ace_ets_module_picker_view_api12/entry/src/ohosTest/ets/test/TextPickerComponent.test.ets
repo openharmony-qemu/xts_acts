@@ -2629,6 +2629,12 @@ export default function TextPicker() {
       pickerController.addData(DataType.SET_BADGE_CONFIGS, uris);
       await CommonFunc.sleep(1000);
       pickerController.deleteData(DataType.SET_BADGE_CONFIGS, uris);
+      await CommonFunc.sleep(1000);
+      pickerController.setData(DataType.SET_BADGE_CONFIGS, []);
+      await CommonFunc.sleep(1000);
+      pickerController.addData(DataType.SET_BADGE_CONFIGS, []);
+      await CommonFunc.sleep(1000);
+      pickerController.deleteData(DataType.SET_BADGE_CONFIGS, []);
       let code: number = EventType.PHOTO_PICKER_INFO;
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
@@ -2849,7 +2855,7 @@ export default function TextPicker() {
     /**
      * @tc.name   testPicker54
      * @tc.number testPicker54
-     * @tc.desc   Testing setData(SET_SELECTED_INFO)
+     * @tc.desc   Testing setData(SET_SELECTED_INFO, SET_ITEM_CLICK_RESULT)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
