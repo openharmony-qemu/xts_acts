@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -106,19 +106,15 @@ export default function wifiDisableTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 2501001);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    done();
                 }
             })
             done();
@@ -209,19 +205,15 @@ export default function wifiDisableTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 2501001);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    done();
                 }
             })
             done();
@@ -270,19 +262,15 @@ export default function wifiDisableTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 2501001);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    done();
                 }
             })
             done();
