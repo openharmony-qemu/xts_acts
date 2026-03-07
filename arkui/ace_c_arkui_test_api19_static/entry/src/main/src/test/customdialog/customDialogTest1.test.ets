@@ -42,19 +42,19 @@ export default function customDialogTest1() {
      */
     it('customDialogTest1_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('customDialogTest1_0010  START');
-      await Utils.sleep(5000);
+      await Utils.sleep(500);
       let driver: Driver = Driver.create();
       let btn:Component = await driver.findComponent(ON.id('buttonId')) as Component;
       await btn.click();
       console.info("[customDialogTest1_0010] openDialog");
-      await Utils.sleep(1000);
+      await Utils.sleep(100);
       let btn1:Component = await driver.findComponent(ON.id('button1')) as Component;
       expect(btn1!= null).assertTrue()
       await btn1.click();
 
       console.info("[customDialogTest1_0010] updateDialog");
       await Utils.sleep(1000);
-      // await driver.triggerKey(2070)
+      await driver.triggerKey(2070)
       console.info('customDialogTest1_0010  END');
       done()
     })
