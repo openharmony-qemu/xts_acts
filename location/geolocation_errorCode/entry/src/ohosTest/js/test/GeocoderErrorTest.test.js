@@ -54,12 +54,18 @@ async function applyPermission() {
         console.info('[permission] case accessTokenID is ' + tokenID);
         let permissionName1 = 'ohos.permission.LOCATION';
         let permissionName2 = 'ohos.permission.LOCATION_IN_BACKGROUND';
+        let permissionName3 = 'ohos.permission.APPROXIMATELY_LOCATION';
         await atManager.grantUserGrantedPermission(tokenID, permissionName1, 1).then((result) => {
             console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
         }).catch((err) => {
             console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
         });
         await atManager.grantUserGrantedPermission(tokenID, permissionName2, 1).then((result) => {
+            console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
+        }).catch((err) => {
+            console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
+        });
+        await atManager.grantUserGrantedPermission(tokenID, permissionName3, 1).then((result) => {
             console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
         }).catch((err) => {
             console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
@@ -562,6 +568,13 @@ export default function geolocationTest_GeoErr() {
             } else {
                 try {
                     let wlanBssidArray = ["02:1b:32:23:ea:91", "02:1b:32:23:ea:93"];
+                    let bssid = geolocationm.getCurrentWifiBssidForLocating();
+                    console.info("getCurrentWifiBssidForLocating_0100" + bssid);
+                    if(bssid){
+                        wlanBssidArray.push(bssid);
+                    } else{
+                        console.info("get bssid fail");
+                    }
                     let rssiThreshold = -100;
                     let needStartScan = true;
                     geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
@@ -768,6 +781,13 @@ export default function geolocationTest_GeoErr() {
             } else {
                 try {
                     let wlanBssidArray = ["02:1b:32:23:ea:91", "02:1b:32:23:ea:93"];
+                    let bssid = geolocationm.getCurrentWifiBssidForLocating();
+                    console.info("getCurrentWifiBssidForLocating_0100" + bssid);
+                    if(bssid){
+                        wlanBssidArray.push(bssid);
+                    } else{
+                        console.info("get bssid fail");
+                    }
                     let rssiThreshold = -100;
                     let needStartScan = true;
                     geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
@@ -1777,7 +1797,7 @@ export default function geolocationTest_GeoErr() {
                         }
                     }).catch((error) => {
                         console.error("promise, SUB_HSS_getActiveGeofences_0001 error=" + error.code);
-                        expect(error.code).assertEqual(201);
+                        expect(error.code).assertEqual(801);
                     });
                 } catch (error) {
                     console.error("SUB_HSS_getActiveGeofences_0001: errCode" + error.code + ", errMessage" + error.message);
