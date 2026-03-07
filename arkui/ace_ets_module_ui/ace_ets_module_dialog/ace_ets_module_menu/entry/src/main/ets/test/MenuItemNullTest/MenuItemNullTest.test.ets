@@ -23,7 +23,7 @@ export default function MenuItemNullTest() {
 
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/MenuItemNull/MenuItemNull.ets',
+        url: 'MainAbility/pages/MenuItemNull/MenuItemNull',
       }
       try {
         router.clear();
