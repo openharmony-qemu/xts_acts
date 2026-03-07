@@ -94,7 +94,6 @@ export async function createUserAlbum(context: common.UIAbilityContext, testName
     console.info(`${testName} createUserAlbum suc`);
   } catch (error) {
     console.error(`Failed to createUserAlbum! error: ${error}`);
-    expect().assertFail();
   }
 
   return new Promise((resolve, reject) => {

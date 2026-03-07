@@ -311,7 +311,7 @@ export default function requestImageTest() {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_0002';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       try {
-        let photoAsset = {uri : '',photoType:1,displayName:''} as photoAccessHelper.PhotoAsset;
+        let photoAsset = {uri : '',photoType:2,displayName:''} as photoAccessHelper.PhotoAsset;
         let requestOptions : photoAccessHelper.RequestOptions = {
           deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
           sourceMode: photoAccessHelper.SourceMode.ORIGINAL_MODE,
@@ -514,7 +514,7 @@ export default function requestImageTest() {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_QUICK_REQUEST_IMAGE_0002';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       try {
-        let photoAsset = {uri : '',photoType:1,displayName:''} as photoAccessHelper.PhotoAsset;
+        let photoAsset = {uri : '',photoType:2,displayName:''} as photoAccessHelper.PhotoAsset;
         let requestOptions : photoAccessHelper.RequestOptions = {
           deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
           sourceMode: photoAccessHelper.SourceMode.ORIGINAL_MODE,
@@ -753,7 +753,7 @@ export default function requestImageTest() {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_DATA_0002';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       try {
-        let photoAsset = {uri : '',photoType:1,displayName:''} as photoAccessHelper.PhotoAsset;
+        let photoAsset = {uri : '',photoType:2,displayName:''} as photoAccessHelper.PhotoAsset;
         let requestOptions : photoAccessHelper.RequestOptions = {
           deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
           sourceMode: photoAccessHelper.SourceMode.ORIGINAL_MODE,
@@ -4969,7 +4969,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_VIDEO_ASSET_REQUEST_0116
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_VIDEO_ASSET_REQUEST_0116
-     * @tc.desc      createVideoAssetRequest-success
+     * @tc.desc      createVideoAssetRequest-success-属性覆盖
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -4980,7 +4980,7 @@ export default function requestImageTest() {
       try {
         let fileUri = testContext.filesDir + '/test_mov_1.mp4';
         let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createVideoAssetRequest(testContext, fileUri);
-        expect(isEmpty(assetChangeRequest)).assertFalse();
+        expect(isEmpty(assetChangeRequest.comment)).assertFalse();
         done();
       }
       catch (error) {
@@ -5015,6 +5015,29 @@ export default function requestImageTest() {
         done();
       }
     });
-
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_000001
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_000001
+     * @tc.desc      getAlbums-第三个参数为undefined
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_000001', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_000001';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      try {
+        const albums = await phAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM, sendablePhotoAccessHelper.AlbumSubtype.IMAGE, undefined);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
     });
   }
