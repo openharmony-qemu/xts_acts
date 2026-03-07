@@ -54,6 +54,52 @@ async function createPictureSUPP(context : Context): Promise<image.Picture> {
   return pictureObj;
 }
 
+async function createPixelMapTest(context : Context):Promise<image.PixelMap> {
+  const param: image.InitializationOptions = {
+    alphaType: image.AlphaType.UNKNOWN,
+    editable: true,
+    srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+    pixelFormat: image.PixelMapFormat.RGBA_8888,
+    scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+    size: { height: 50, width: 50 }
+  };
+  const allocatorType = image.AllocatorType.AUTO;
+  let pixelMap = image.createPixelMapUsingAllocatorSync(param, allocatorType);
+  console.info(TAG,'Succeeded in creating pixelMap object.',JSON.stringify(pixelMap));
+  return pixelMap;
+}
+
+async function createPixelMapSUPP(context : Context):Promise<image.PixelMap> {
+  const param: image.InitializationOptions = {
+    alphaType: image.AlphaType.UNKNOWN,
+    editable: false,
+    srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+    pixelFormat: image.PixelMapFormat.RGBA_8888,
+    scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+    size: { height: 50, width: 50 }
+  };
+  const allocatorType = image.AllocatorType.AUTO;
+  let pixelMap = image.createPixelMapUsingAllocatorSync(param, allocatorType);
+  console.info(TAG,'Succeeded in creating pixelMap object.',JSON.stringify(pixelMap));
+  return pixelMap;
+}
+
+async function createSendAblePixelMapTest(context : Context):Promise<sendableImage.PixelMap> {
+  const color: ArrayBuffer = new ArrayBuffer(96);
+  let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
+  let sendablePixelMap : sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
+  console.info(TAG,'Succeeded in creating sendablePixelMap object.',JSON.stringify(sendablePixelMap));
+  return sendablePixelMap;
+}
+
+async function createSendAblePixelMapSUPP(context : Context):Promise<sendableImage.PixelMap> {
+  const color: ArrayBuffer = new ArrayBuffer(96);
+  let opts: image.InitializationOptions = { editable: false, pixelFormat: 3, size: { height: 4, width: 6 } }
+  let sendablePixelMap : sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
+  console.info(TAG,'Succeeded in creating sendablePixelMap object.',JSON.stringify(sendablePixelMap));
+  return sendablePixelMap;
+}
+
 export default function SendableImagePixelMapTest() {
   describe('SendableImagePixelMapTest', () => {
     let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -1386,12 +1432,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1413,12 +1458,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1440,12 +1484,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1467,12 +1510,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1494,12 +1536,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1521,12 +1562,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1548,12 +1588,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1575,12 +1614,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1602,12 +1640,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1629,12 +1666,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1656,12 +1692,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1683,12 +1718,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1710,12 +1744,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1737,12 +1770,11 @@ export default function SendableImagePixelMapTest() {
         };
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1761,12 +1793,11 @@ export default function SendableImagePixelMapTest() {
       try {
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(null);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
         done();
       }
     });
@@ -1785,12 +1816,385 @@ export default function SendableImagePixelMapTest() {
       try {
         let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(undefined);
         expect().assertFail();
-        await picture?.release();
-        await res?.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code)).assertEqual(7600201);
+        await picture?.release();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_010
+     * @tc.name      SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_010
+     * @tc.desc      createCroppedAndScaledPixelMap isEditable cover true
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_010', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_010";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createPixelMapTest(context);
+      const imageInfo = pixelMapObj.getImageInfoSync();
+      const region: image.Region = {
+        size: { width: imageInfo.size.width / 2, height: imageInfo.size.height / 2 },
+        x: imageInfo.size.width / 4,
+        y: imageInfo.size.height / 4
+      };
+      const scaleX: number = 2.0;
+      const scaleY: number = 2.0;
+      try {
+        let res = await pixelMapObj.createCroppedAndScaledPixelMap(region, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
+        expect(res.isEditable).assertTrue();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_011
+     * @tc.name      SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_011
+     * @tc.desc      createCroppedAndScaledPixelMap isEditable cover false
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_011', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_011";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createPixelMapSUPP(context);
+      const imageInfo = pixelMapObj.getImageInfoSync();
+      const region: image.Region = {
+        size: { width: imageInfo.size.width / 2, height: imageInfo.size.height / 2 },
+        x: imageInfo.size.width / 4,
+        y: imageInfo.size.height / 4
+      };
+      const scaleX: number = 2.0;
+      const scaleY: number = 2.0;
+      try {
+        let res = await pixelMapObj.createCroppedAndScaledPixelMap(region, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
+        expect(res.isEditable).assertFalse();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_012
+     * @tc.name      SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_012
+     * @tc.desc      createCroppedAndScaledPixelMap isStrideAlignment cover false
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_012', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_012";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createPixelMapTest(context);
+      const imageInfo = pixelMapObj.getImageInfoSync();
+      const region: image.Region = {
+        size: { width: imageInfo.size.width / 2, height: imageInfo.size.height / 2 },
+        x: imageInfo.size.width / 4,
+        y: imageInfo.size.height / 4
+      };
+      const scaleX: number = 2.0;
+      const scaleY: number = 2.0;
+      try {
+        let res = await pixelMapObj.createCroppedAndScaledPixelMap(region, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
+        expect(res.isStrideAlignment).assertFalse();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_010
+     * @tc.name      SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_010
+     * @tc.desc      createCroppedAndScaledPixelMapSync isEditable cover true
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_010', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_010";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createPixelMapTest(context);
+      const imageInfo = pixelMapObj.getImageInfoSync();
+      const region: image.Region = {
+        size: { width: imageInfo.size.width / 2, height: imageInfo.size.height / 2 },
+        x: imageInfo.size.width / 4,
+        y: imageInfo.size.height / 4
+      };
+      const scaleX: number = 2.0;
+      const scaleY: number = 2.0;
+      try {
+        let res = pixelMapObj.createCroppedAndScaledPixelMapSync(region, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
+        expect(res.isEditable).assertTrue();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_011
+     * @tc.name      SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_011
+     * @tc.desc      createCroppedAndScaledPixelMapSync isEditable cover false
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_011', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_011";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createPixelMapSUPP(context);
+      const imageInfo = pixelMapObj.getImageInfoSync();
+      const region: image.Region = {
+        size: { width: imageInfo.size.width / 2, height: imageInfo.size.height / 2 },
+        x: imageInfo.size.width / 4,
+        y: imageInfo.size.height / 4
+      };
+      const scaleX: number = 2.0;
+      const scaleY: number = 2.0;
+      try {
+        let res = pixelMapObj.createCroppedAndScaledPixelMapSync(region, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
+        expect(res.isEditable).assertFalse();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_012
+     * @tc.name      SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_012
+     * @tc.desc      createCroppedAndScaledPixelMapSync isStrideAlignment cover false
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_012', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_SYNC_012";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createPixelMapTest(context);
+      const imageInfo = pixelMapObj.getImageInfoSync();
+      const region: image.Region = {
+        size: { width: imageInfo.size.width / 2, height: imageInfo.size.height / 2 },
+        x: imageInfo.size.width / 4,
+        y: imageInfo.size.height / 4
+      };
+      const scaleX: number = 2.0;
+      const scaleY: number = 2.0;
+      try {
+        let res = pixelMapObj.createCroppedAndScaledPixelMapSync(region, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
+        expect(res.isStrideAlignment).assertFalse();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_003
+     * @tc.name      SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_003
+     * @tc.desc      convertFromPixelMap isEditable cover true
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_003', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_003";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createPixelMapTest(context);
+      try {
+        let res : sendableImage.PixelMap = sendableImage.convertFromPixelMap(pixelMapObj);
+        expect(res.isEditable).assertTrue();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_004
+     * @tc.name      SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_004
+     * @tc.desc      convertFromPixelMap isEditable cover false
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_004', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_004";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createPixelMapSUPP(context);
+      try {
+        let res : sendableImage.PixelMap = sendableImage.convertFromPixelMap(pixelMapObj);
+        expect(res.isEditable).assertFalse();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_005
+     * @tc.name      SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_005
+     * @tc.desc      convertFromPixelMap isStrideAlignment cover false
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_005', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_SENDABLE_IMAGE_CONVERT_FROM_PIXEL_MAP_005";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createPixelMapTest(context);
+      try {
+        let res : sendableImage.PixelMap = sendableImage.convertFromPixelMap(pixelMapObj);
+        expect(res.isStrideAlignment).assertFalse();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_003
+     * @tc.name      SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_003
+     * @tc.desc      convertToPixelMap isEditable cover true
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_003', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_003";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createSendAblePixelMapTest(context);
+      try {
+        let res = sendableImage.convertToPixelMap(pixelMapObj);
+        expect(res.isEditable).assertTrue();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_004
+     * @tc.name      SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_004
+     * @tc.desc      convertToPixelMap isEditable cover false
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_004', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_004";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createSendAblePixelMapSUPP(context);
+      try {
+        let res = sendableImage.convertToPixelMap(pixelMapObj);
+        expect(res.isEditable).assertFalse();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_005
+     * @tc.name      SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_005
+     * @tc.desc      convertToPixelMap isStrideAlignment cover false
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_005', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_SENDABLE_IMAGE_CONVERT_TO_PIXEL_MAP_005";
+      console.info(TAG, `start：${testName}`);
+      let pixelMapObj = await createSendAblePixelMapTest(context);
+      try {
+        let res = sendableImage.convertToPixelMap(pixelMapObj);
+        expect(res.isStrideAlignment).assertFalse();
+        await pixelMapObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_MAIN_PIXEL_MAP_003
+     * @tc.name      SUB_IMAGE_PICTURE_GET_MAIN_PIXEL_MAP_003
+     * @tc.desc      getMainPixelmap isEditable cover false
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_MAIN_PIXEL_MAP_003', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_MAIN_PIXEL_MAP_003";
+      console.info(TAG, `start：${testName}`);
+      let imageSource = await getImageSource('test_exif_v2.jpg');
+      let commodityPixelMap: image.PixelMap = await imageSource.createPixelMap();
+      let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
+      try {
+        let res = pictureObj.getMainPixelmap();
+        expect(res.isEditable).assertFalse();
+        await pictureObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_MAIN_PIXEL_MAP_004
+     * @tc.name      SUB_IMAGE_PICTURE_GET_MAIN_PIXEL_MAP_004
+     * @tc.desc      getMainPixelmap isStrideAlignment cover false
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_MAIN_PIXEL_MAP_004', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_MAIN_PIXEL_MAP_004";
+      console.info(TAG, `start：${testName}`);
+      let imageSource = await getImageSource('test_exif_v2.jpg');
+      let commodityPixelMap: image.PixelMap = await imageSource.createPixelMap();
+      let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
+      try {
+        let res = pictureObj.getMainPixelmap();
+        expect(res.isStrideAlignment).assertFalse();
+        await pictureObj?.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
         done();
       }
     });
