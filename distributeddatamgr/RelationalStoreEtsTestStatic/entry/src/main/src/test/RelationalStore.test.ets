@@ -2170,17 +2170,17 @@ export default function relationalStoreTest() {
 
 
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrTest_0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrTest_0100
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0100
      * @tc.desc   executeSync table with ""
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrTest_0100',
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0100',
        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
          console.info(tag +
-           "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrTest_0100 start *************");
+           "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0100 start *************");
          const record: relationalStore.ValuesBucket = {
            "name": "Jim",
            "age": 30 as long,
@@ -2196,21 +2196,21 @@ export default function relationalStoreTest() {
            expect(err.code).assertEqual(14800021);
            done()
          }
-         console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrTest_0100 end *************");
+         console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0100 end *************");
     })
 
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrTest_0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrTest_0200
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0200
      * @tc.desc   executeSync table with ""
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrTest_0200',
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0200',
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
           console.info(tag +
-            "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrTest_0200 start *************");
+            "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0200 start *************");
           const record: relationalStore.ValuesBucket = {
             "name": "Jim",
             "age": 30 as long,
@@ -2235,22 +2235,22 @@ export default function relationalStoreTest() {
             expect(err.code).assertEqual(14800021);
 
           }
-          console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrTest_0200 end *************");
+          console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0200 end *************");
       
      })
 
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0100
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrorEtsTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrorEtsTest_0100
      * @tc.desc   executeSql  with "" callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0100',
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrorEtsTest_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(tag +
-        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0100 start *************");
+        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrorEtsTest_0100 start *************");
       try {
           (rdbStore as relationalStore.RdbStore)!.executeSql("", (err: BusinessError | null) => {
           if(err){
@@ -2266,7 +2266,7 @@ export default function relationalStoreTest() {
         expect(err.code).assertEqual(401);
         done()
       }
-      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0100 end *************");
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrorEtsTest_0100 end *************");
     })
 
     
@@ -2438,17 +2438,17 @@ export default function relationalStoreTest() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0100
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0100
      * @tc.desc   execute  with "" promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0100',
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(tag +
-        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0100 start *************");
+        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0100 start *************");
       try {
           await (rdbStore as relationalStore.RdbStore)!.execute("") 
           expect(null).assertFail();
@@ -2458,21 +2458,21 @@ export default function relationalStoreTest() {
         expect(err.code).assertEqual(14800021);
         done()
       }
-      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0100 end *************");
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0100 end *************");
     })
 
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0200
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0200
      * @tc.desc   execute  with null or undefined promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0200',
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0200',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(tag +
-        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0200 start *************");
+        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0200 start *************");
         const record: relationalStore.ValuesBucket = {
           "name": "zhangsan2",
           "age": 20 as long,
@@ -2496,21 +2496,21 @@ export default function relationalStoreTest() {
         expect(err.code).assertEqual(14800000);
         done()
       }
-      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0200 end *************");
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0200 end *************");
     })
 
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0300
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0300
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0300
      * @tc.desc   execute  with "" promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0300',
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0300',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(tag +
-        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0300 start *************");
+        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0300 start *************");
       try {
          let textId = await rdbStore!.beginTrans()
           await (rdbStore as relationalStore.RdbStore)!.execute("", textId, [18 as long]) 
@@ -2521,7 +2521,7 @@ export default function relationalStoreTest() {
         expect(err.code).assertEqual(801);
         done()
       }
-      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0300 end *************");
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0300 end *************");
     })
 
     /**
