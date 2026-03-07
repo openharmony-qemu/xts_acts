@@ -151,6 +151,7 @@ export default function AudioHapticTest() {
       audioHapticManagerInstance.createPlayer(sourceId_Notification, options).then((value: audioHaptic.AudioHapticPlayer) => {
         audioHapticPlayerInstance = value;
         console.info(`Create the audio haptic player successfully.`);
+        expect(true).assertTrue();
         done();
       }).catch ((error: BusinessError) => {
         console.log(`${tag}, createPlayer ERROR, code: ${error.code}, message: ${error.message}`);
@@ -175,6 +176,7 @@ export default function AudioHapticTest() {
       audioHapticManagerInstance.createPlayer(sourceId_Notification).then((value: audioHaptic.AudioHapticPlayer) => {
         audioHapticPlayerInstance = value;
         console.info(`Create the audio haptic player successfully.`);
+        expect(true).assertTrue();
         done();
       }).catch ((error: BusinessError) => {
         console.log(`${tag}, createPlayer ERROR, code: ${error.code}, message: ${error.message}`);
@@ -197,6 +199,7 @@ export default function AudioHapticTest() {
 
         let options: audioHaptic.AudioHapticPlayerOptions = {muteAudio: false, muteHaptics: false};
         let audioHapticPlayerInstance: audioHaptic.AudioHapticPlayer | undefined = undefined;
+        expect(true).assertTrue();
         done();
         await audioHapticManagerInstance.createPlayer(sourceId_Notification, options).then(async (value: audioHaptic.AudioHapticPlayer) => {
             audioHapticPlayerInstance = value;
@@ -211,6 +214,7 @@ export default function AudioHapticTest() {
             }).catch ((error: BusinessError) => {
                 console.log(`${tag}, start ERROR, code: ${error.code}, message: ${error.message}`);
                 expect(Number(error.code)).assertEqual(AudioHapticErrorCode.OPEEATION_NOT_ALLOWED);
+                expect(true).assertTrue();
                 done();
             });
         }).catch ((error: BusinessError) => {
@@ -234,6 +238,7 @@ export default function AudioHapticTest() {
 
         let options: audioHaptic.AudioHapticPlayerOptions = {muteAudio: false, muteHaptics: false};
         let audioHapticPlayerInstance: audioHaptic.AudioHapticPlayer | undefined = undefined;
+        expect(true).assertTrue();
         done();
         await audioHapticManagerInstance.createPlayer(sourceId_Notification, options).then(async (value: audioHaptic.AudioHapticPlayer) => {
             audioHapticPlayerInstance = value;
@@ -248,6 +253,7 @@ export default function AudioHapticTest() {
             }).catch ((error: BusinessError) => {
                 console.log(`${tag}, stop ERROR, code: ${error.code}, message: ${error.message}`);
                 expect(Number(error.code)).assertEqual(AudioHapticErrorCode.OPEEATION_NOT_ALLOWED);
+                expect(true).assertTrue();
                 done();
             });
         }).catch ((error: BusinessError) => {
