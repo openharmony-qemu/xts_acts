@@ -1645,7 +1645,11 @@ export default function windowLayoutTest() {
             }).catch((err: BusinessError) => {
               console.error(caseName + `Failed to set window draggable. Cause code: ${err.code}, message: ${err.message}`);
               console.error(caseName + `err.code == 1300002 || err.code == 801: ${err.code == 1300002 || err.code == 801}`);
-              expect(err.code == 1300002 || err.code == 801).assertTrue();
+              if (err.code == 801) {
+                expect(err.code).assertEqual(801);
+              } else {
+                expect(err.code).assertEqual(1300002);
+              }
               done();
             })
           } catch (exception) {

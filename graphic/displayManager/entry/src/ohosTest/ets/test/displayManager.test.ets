@@ -1171,8 +1171,13 @@ export default function displayTest() {
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-        expect(err.code == 801 || err.code == 401).assertTrue();
-        done();
+        if (err.code == 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect(err.code).assertEqual(401);
+          done();
+        }
       }
     });
     /**
@@ -1247,7 +1252,11 @@ export default function displayTest() {
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-        expect(err.code == 401 || err.code == 801).assertTrue()
+        if (err.code == 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
         done();
       }
     });

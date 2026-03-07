@@ -1571,7 +1571,11 @@ export default function windowZindexTest() {
         done();
       } catch (err) {
         console.log(`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
-        expect(err.code == 1300004 || err.code == 801).assertTrue();
+        if (err.code == 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(1300004);
+        }
         done();
       }
     });

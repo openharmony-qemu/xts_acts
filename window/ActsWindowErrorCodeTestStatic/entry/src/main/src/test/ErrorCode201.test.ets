@@ -348,13 +348,18 @@ export default function ErrorCode201() {
                     done()
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                      hilog.info(domain, tag,caseName + 'Failed to capture, err: ' + JSON.stringify(err));
-                     expect(err.code == 801 || err.code == 201).assertTrue()
-                     done();
+                     if (err.code == 801) {
+                        expect(err.code).assertEqual(801);
+                     } else {
+                        expect(err.code).assertEqual(201);
+                     }
+                    done();
                  })
             } catch (exception) {
                 exception = exception as BusinessError;
                 hilog.error(domain, tag,caseName + 'Failed to pick Code: ' + JSON.stringify(exception.code)+':msg:'+ JSON.stringify(exception.message));
                 expect(exception.message!=null).assertTrue();
+                
                 expect(exception.code == 801 || exception.code == 201).assertTrue()
                 done()
             };
