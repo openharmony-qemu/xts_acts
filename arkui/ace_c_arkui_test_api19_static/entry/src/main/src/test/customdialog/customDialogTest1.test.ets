@@ -54,7 +54,7 @@ export default function customDialogTest1() {
 
       console.info("[customDialogTest1_0010] updateDialog");
       await Utils.sleep(1000);
-      
+
       await driver.triggerKey(2070)
       console.info('customDialogTest1_0010  END');
       done()
