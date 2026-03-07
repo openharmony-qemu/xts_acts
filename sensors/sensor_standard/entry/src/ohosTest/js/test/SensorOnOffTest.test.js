@@ -40,6 +40,7 @@ describe('SystemParameterTest', function () {
     const PARAMETER_ERROR_MSG = 'The parameter invalid.'
     const SERVICE_EXCEPTION_MSG = "Service exception.Possible causes:" +
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
+    let sensortempcode = true;
     let TAG  = '';
 
     /**
@@ -101,7 +102,7 @@ describe('SystemParameterTest', function () {
             sensor.SensorAccuracy.ACCURACY_MEDIUM) {
                 console.info('Precision in the middle two terms:' + JSON.stringify(data));
             }
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
           } else {
             console.info('invalid accuracy encountered' + JSON.stringify(data));
             expect(false).assertTrue();

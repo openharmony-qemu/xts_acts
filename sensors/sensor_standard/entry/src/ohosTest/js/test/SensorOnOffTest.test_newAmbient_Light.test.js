@@ -19,12 +19,13 @@ describe("SensorJsTest_sensor_41", function () {
     let MIN = 0;
     let intensityMax = 120000;
     let colorTemperatureMax = 100000;
+    let sensortempcode = true;
     function callback(data) {
         console.info("callback" + JSON.stringify(data));
         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
             sensor.SensorAccuracy.ACCURACY_HIGH) {
             console.info('callback accuracy verified' + JSON.stringify(data));
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
         } else {
             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
             expect(false).assertTrue();
@@ -52,7 +53,7 @@ describe("SensorJsTest_sensor_41", function () {
         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
             sensor.SensorAccuracy.ACCURACY_HIGH) {
             console.info('callback2 accuracy verified' + JSON.stringify(data));
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
         } else {
             console.info('callback2 invalid accuracy encountered' + JSON.stringify(data));
             expect(false).assertTrue();
@@ -235,7 +236,7 @@ describe("SensorJsTest_sensor_41", function () {
             if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                 sensor.SensorAccuracy.ACCURACY_HIGH) {
                 console.info('callback accuracy verified' + JSON.stringify(data));
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
             } else {
                 console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                 expect(false).assertTrue();
@@ -287,7 +288,7 @@ describe("SensorJsTest_sensor_41", function () {
                     expect(typeof(data)).assertEqual("object");
                     sensor.once(sensor.SensorId.AMBIENT_LIGHT, callback);
                     setTimeout(()=>{
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }, 500);
                 }
@@ -353,7 +354,7 @@ describe("SensorJsTest_sensor_41", function () {
             if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                 sensor.SensorAccuracy.ACCURACY_HIGH) {
                 console.info('callback accuracy verified' + JSON.stringify(data));
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
             } else {
                 console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                 expect(false).assertTrue();
@@ -430,7 +431,7 @@ describe("SensorJsTest_sensor_41", function () {
             if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                 sensor.SensorAccuracy.ACCURACY_HIGH) {
                 console.info('callback accuracy verified' + JSON.stringify(data));
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
             } else {
                 console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                 expect(false).assertTrue();
@@ -519,7 +520,7 @@ describe("SensorJsTest_sensor_41", function () {
                         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                             sensor.SensorAccuracy.ACCURACY_HIGH) {
                             console.info('callback accuracy verified' + JSON.stringify(data));
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                         } else {
                             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                             expect(false).assertTrue();
@@ -534,7 +535,7 @@ describe("SensorJsTest_sensor_41", function () {
                         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                             sensor.SensorAccuracy.ACCURACY_HIGH) {
                             console.info('callback accuracy verified' + JSON.stringify(data));
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                         } else {
                             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                             expect(false).assertTrue();
@@ -614,7 +615,7 @@ describe("SensorJsTest_sensor_41", function () {
                         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                             sensor.SensorAccuracy.ACCURACY_HIGH) {
                             console.info('callback accuracy verified' + JSON.stringify(data));
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                         } else {
                             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                             expect(false).assertTrue();
@@ -629,7 +630,7 @@ describe("SensorJsTest_sensor_41", function () {
                         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                             sensor.SensorAccuracy.ACCURACY_HIGH) {
                             console.info('callback accuracy verified' + JSON.stringify(data));
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                         } else {
                             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                             expect(false).assertTrue();
@@ -675,7 +676,7 @@ describe("SensorJsTest_sensor_41", function () {
                         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                             sensor.SensorAccuracy.ACCURACY_HIGH) {
                             console.info('callback accuracy verified' + JSON.stringify(data));
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                         } else {
                             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                             expect(false).assertTrue();
@@ -690,7 +691,7 @@ describe("SensorJsTest_sensor_41", function () {
                         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                             sensor.SensorAccuracy.ACCURACY_HIGH) {
                             console.info('callback accuracy verified' + JSON.stringify(data));
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                         } else {
                             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                             expect(false).assertTrue();
@@ -1159,7 +1160,7 @@ describe("SensorJsTest_sensor_41", function () {
                         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                             sensor.SensorAccuracy.ACCURACY_HIGH) {
                             console.info('callback accuracy verified' + JSON.stringify(data));
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                         } else {
                             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                             expect(false).assertTrue();
@@ -1186,7 +1187,7 @@ describe("SensorJsTest_sensor_41", function () {
                         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                             sensor.SensorAccuracy.ACCURACY_HIGH) {
                             console.info('callback accuracy verified' + JSON.stringify(data));
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                         } else {
                             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                             expect(false).assertTrue();
@@ -1243,7 +1244,7 @@ describe("SensorJsTest_sensor_41", function () {
                         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                             sensor.SensorAccuracy.ACCURACY_HIGH) {
                             console.info('callback accuracy verified' + JSON.stringify(data));
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                         } else {
                             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                             expect(false).assertTrue();

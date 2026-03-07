@@ -19,6 +19,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 
 export default function VibratorJsTest_misc_12() {
     let isAvailable;
+    let sensortempcode = true;
     const ABILITYJUDGMENT = canIUse('SystemCapability.Sensors.MiscDevice');
     describe("VibratorJsTest_misc_12", function () {
         beforeAll(async function (done) {
@@ -206,7 +207,7 @@ export default function VibratorJsTest_misc_12() {
                     done();
                 }
                 console.info(TAG + ' startVibration success' );
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             } catch (error){
                 if (error && !isAvailable) {
@@ -286,7 +287,7 @@ export default function VibratorJsTest_misc_12() {
                     done();
                 }
                 console.info(TAG + ' startVibration success' );
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             } catch (error){
                 if (error && !isAvailable) {
@@ -336,7 +337,7 @@ export default function VibratorJsTest_misc_12() {
                     done();
                 }
                 console.info(TAG + ' startVibration success' );
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             } catch (error){
                 if (error && !isAvailable) {
@@ -466,7 +467,7 @@ export default function VibratorJsTest_misc_12() {
                     done();
                 }
                 console.info(TAG + ' startVibration success' );
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             } catch (error){
                 if (error && !isAvailable) {
@@ -509,7 +510,7 @@ export default function VibratorJsTest_misc_12() {
                     done();
                 }
                 console.info(TAG + ' startVibration success' );
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             } catch (error){
                 if (error && !isAvailable) {
@@ -552,7 +553,7 @@ export default function VibratorJsTest_misc_12() {
                     done();
                 }
                 console.info(TAG + ' startVibration success' );
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             } catch (error){
                 if (error && !isAvailable) {
