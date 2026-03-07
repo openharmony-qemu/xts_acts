@@ -716,7 +716,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getBestMatchLocale_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -735,7 +735,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getBestMatchLocale_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("890001");
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -754,7 +754,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getThreeLetterLanguage_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -773,7 +773,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getThreeLetterLanguage_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("890001");
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -792,7 +792,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getThreeLetterRegion_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -811,7 +811,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getThreeLetterRegion_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("890001");
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -832,7 +832,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getUnicodeWrappedFilePath_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -853,7 +853,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getUnicodeWrappedFilePath_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -874,7 +874,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getUnicodeWrappedFilePath_null_test_0300 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -896,7 +896,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getUnicodeWrappedFilePath_nullString_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("890001");
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -1366,7 +1366,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('calendar_add_null_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -1388,7 +1388,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('calendar_add_null_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4571,7 +4571,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getBestMatchLocale_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4590,7 +4590,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getThreeLetterLanguage_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4609,7 +4609,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getThreeLetterRegion_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4630,7 +4630,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getUnicodeWrappedFilePath_undefined_test_0100 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4651,7 +4651,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getUnicodeWrappedFilePath_undefined_test_0200 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
@@ -4672,7 +4672,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('getUnicodeWrappedFilePath_undefined_test_0300 code&message:', e.code + e.message);
-        expect(e.code).assertEqual("401");
+        expect(Number(e.code)).assertEqual(401);
       }
     })
 
