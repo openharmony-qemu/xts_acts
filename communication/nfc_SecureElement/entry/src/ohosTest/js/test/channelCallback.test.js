@@ -1039,14 +1039,14 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1203
-         * @tc.number SUB_Communication_Ese_LogicalChannel_js_1203
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1204
+         * @tc.number SUB_Communication_Ese_LogicalChannel_js_1204
          * @tc.desc   open LogicalChannel Send an APDU command to the SE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_Ese_LogicalChannel_js_1203', Level.LEVEL0, async function (done) {
+        it('SUB_Communication_Ese_LogicalChannel_js_1204', Level.LEVEL0, async function (done) {
             let array = [];
             try {
                 if (getReader == undefined) {
