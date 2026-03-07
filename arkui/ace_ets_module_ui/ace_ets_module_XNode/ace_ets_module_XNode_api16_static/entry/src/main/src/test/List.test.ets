@@ -37,4 +37,5 @@ export default function testsuite() {
   postFrameCallbackTest();
   setCrossLanguageOptionsErrorCodeTest();
   resourceColorErrorCodeTest();
+  //BindControllerErrorCodeTest();
 }

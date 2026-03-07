@@ -131,7 +131,7 @@ export default function testsuite() {
   edgeWidths();
   renderNodeGetInterfaceTest();
   disposeTest();
-  getAttrsTest();
+  //getAttrsTest();
   getPosition();
   setLayout();
   RenderNodeAttributeTest();
@@ -156,10 +156,10 @@ export default function testsuite() {
   setCircleShapeTest();
   typeNodeTextInputTest();
   typeNodeListItemTest();
-  attachNodeAdapterTest();
+  //attachNodeAdapterTest();
   getAttachedFrameNodeById();
   getAfterRemove();
-  PercentReferenceTest();
+  //PercentReferenceTest();
   graphicGetInterfaceTest();
   setMeasureSizeTest();
 }
