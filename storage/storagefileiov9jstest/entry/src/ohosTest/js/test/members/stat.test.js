@@ -1276,6 +1276,66 @@ describe('fileIO_fs_stat', function () {
     }
   });
 
+   /**
+   * @tc.name   fileIO_stat_async_012
+   * @tc.number SUB_DF_FILEIO_STAT_ASYNC_1200
+   * @tc.desc   Test stat() interface. Promise.then().catch()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+   it('fileIO_stat_async_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      let stat = await fileIO.stat(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_stat_async_012 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_async_013
+   * @tc.number SUB_DF_FILEIO_STAT_ASYNC_1300
+   * @tc.desc   Test stat() interface. Promise.then().catch()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_async_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      let stat = await fileIO.stat(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_stat_async_013 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_async_014
+   * @tc.number SUB_DF_FILEIO_STAT_ASYNC_1400
+   * @tc.desc   Test stat() interface. Promise.then().catch()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_async_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      let stat = await fileIO.stat("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_stat_async_014 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
   /**
    * @tc.name   fileIO_stat_async_ino_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_INO_0000
