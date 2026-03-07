@@ -16,7 +16,7 @@
 import {
   fileIO, FILE_CONTENT, prepareFile, nextFileName, describe, it, expect,
 } from '../Common';
-import { Level } from '@ohos/hypium';
+ import { Level, TestType, Size } from '@ohos/hypium';
 
 export default function fileIOCreateStream() {
 describe('fileIO_fs_createStream', function () {
@@ -403,6 +403,138 @@ describe('fileIO_fs_createStream', function () {
     } catch (e) {
       console.log('fileIO_test_create_stream_sync_015 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_sync_016
+  * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1600
+  * @tc.desc   Test createStreamSync() interface. Path is empty string.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_sync_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_create_stream_sync_016');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStreamSync("", 'r');
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_sync_016 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900002);
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_sync_017
+  * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1700
+  * @tc.desc   Test createStreamSync() interface. Path is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_sync_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_create_stream_sync_017');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStreamSync(null, 'r');
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create _stream_sync_017 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_sync_018
+  * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1800
+  * @tc.desc   Test createStreamSync() interface. Path is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_sync_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_create_stream_sync_018');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStreamSync(undefined, 'r');
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_sync_018 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_sync_019
+  * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1900
+  * @tc.desc   Test createStreamSync() interface. Mode is empty string.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_sync_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_create_stream_sync_019');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStreamSync(fpath, "");
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_sync_019 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_sync_020
+  * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_2000
+  * @tc.desc   Test createStreamSync() interface. Mode is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_sync_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_create_stream_sync_020');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStreamSync(fpath, null);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_sync_020 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_sync_021
+  * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_2100
+  * @tc.desc   Test createStreamSync() interface. Mode is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_sync_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_create_stream_sync_021');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStreamSync(fpath, undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_sync_021 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
     }
   });
 
@@ -1012,6 +1144,312 @@ describe('fileIO_fs_createStream', function () {
     } catch (e) {
       console.log('fileIO_test_create_stream_async_021 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_022
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2200
+  * @tc.desc   Test createStream() interface. Promise. Path is empty string.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_022');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      await fileIO.createStream("", 'r');
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_022 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900002);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_023
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2300
+  * @tc.desc   Test createStream() interface. Promise. Path is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_023');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      await fileIO.createStream(null, 'r');
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_023 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_024
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2400
+  * @tc.desc   Test createStream() interface. Promise. Path is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_024');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      await fileIO.createStream(undefined, 'r');
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_024 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_025
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2500
+  * @tc.desc   Test createStream() interface. Promise. Mode is empty string.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_025');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      await fileIO.createStream(fpath, "");
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_025 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_026
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2600
+  * @tc.desc   Test createStream() interface. Promise. Mode is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_026');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      await fileIO.createStream(fpath, null);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_026 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_027
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2700
+  * @tc.desc   Test createStream() interface. Promise. Mode is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_027');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      await fileIO.createStream(fpath, undefined);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_027 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_028
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2800
+  * @tc.desc   Test createStream() interface. Callback. Path is empty string.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_028');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStream("", 'r', (err) => {
+        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        done();
+      });
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_028 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900002);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_029
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2900
+  * @tc.desc   Test createStream() interface. Callback. Path is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_029');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStream(null, 'r', (err) => {
+        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        done();
+      });
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_029 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_030
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3000
+  * @tc.desc   Test createStream() interface. Callback. Path is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_030');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStream(undefined, 'r', (err) => {
+        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        done();
+      });
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_030 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_031
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3100
+  * @tc.desc   Test createStream() interface. Callback. Mode is empty string.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_031');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStream(fpath, "", (err) => {
+        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        done();
+      });
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_031 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_032
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3200
+  * @tc.desc   Test createStream() interface. Callback. Mode is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_032');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStream(fpath, null, (err) => {
+        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        done();
+      });
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_032 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_create_stream_async_033
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3300
+  * @tc.desc   Test createStream() interface. Callback. Mode is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_create_stream_async_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_033');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createStream(fpath, undefined, (err) => {
+        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        done();
+      });
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_create_stream_async_033 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
     }
   });
 });
