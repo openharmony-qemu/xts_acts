@@ -2414,6 +2414,7 @@ export default function DataObjectErrTest() {
       try {
         g_object.on('status', statusCallback1)
         g_object.off(null, statusCallback1)
+        expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to off status20. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual('401');
@@ -2768,7 +2769,7 @@ export default function DataObjectErrTest() {
         g_object.off(undefined, (sessionId: string, fields: Array<string>) => {
           console.log(TAG + "change" + sessionId);
         });
-        console.log(TAG + 'on Success');
+        console.log(TAG + 'off Success');
       } catch (err) {
         console.error(TAG + 'fail: error code = ' + err.code);
         expect().assertFail();
@@ -2803,7 +2804,7 @@ export default function DataObjectErrTest() {
         g_object.off(null, (sessionId: string, fields: Array<string>) => {
           console.log(TAG + "change" + sessionId);
         });
-        console.log(TAG + 'on Success');
+        console.log(TAG + 'off Success');
       } catch (err) {
         console.error(TAG + 'fail: error code = ' + err.code);
         expect().assertFail();
