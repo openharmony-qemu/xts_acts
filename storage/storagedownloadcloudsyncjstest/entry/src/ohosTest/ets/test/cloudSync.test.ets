@@ -1051,7 +1051,7 @@ describe('cloud_sync_test', () => {
       fileSync.on(null, callback);
      } catch (err) {
        console.log('test_cloudSync_State_040 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 401).assertTrue();
+       expect(err.code === 401).assertTrue();
        done();
      }
    });
@@ -1075,7 +1075,7 @@ describe('cloud_sync_test', () => {
       fileSync.on(undefined, callback);
      } catch (err) {
        console.log('test_cloudSync_State_041 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 401).assertTrue();
+       expect(err.code === 401).assertTrue();
        done();
      }
    });
@@ -1100,7 +1100,7 @@ describe('cloud_sync_test', () => {
       fileSync.off(null, callback);
      } catch (err) {
        console.log('test_cloudSync_State_042 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 401).assertTrue();
+       expect(err.code === 401).assertTrue();
        done();
      }
    });
@@ -1125,7 +1125,7 @@ describe('cloud_sync_test', () => {
       fileSync.off(undefined, callback);
      } catch (err) {
        console.log('test_cloudSync_State_043 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 401).assertTrue();
+       expect(err.code === 401).assertTrue();
        done();
      }
    });
@@ -1149,7 +1149,7 @@ describe('cloud_sync_test', () => {
       fileCache.on(null, callback);
      } catch (err) {
        console.log('test_cloudSync_State_044 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 13900020).assertTrue();
+       expect(err.code === 13900020).assertTrue();
        done();
      }
    });
@@ -1173,7 +1173,7 @@ describe('cloud_sync_test', () => {
       fileCache.on(undefined, callback);
      } catch (err) {
        console.log('test_cloudSync_State_045 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 13900020).assertTrue();
+       expect(err.code === 13900020).assertTrue();
        done();
      }
    });
@@ -1199,7 +1199,7 @@ describe('cloud_sync_test', () => {
       fileCache.on(null, callback);
      } catch (err) {
        console.log('test_cloudSync_State_046 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 13900020).assertTrue();
+       expect(err.code === 13900020).assertTrue();
        done();
      }
    });
@@ -1225,7 +1225,7 @@ describe('cloud_sync_test', () => {
       fileCache.on(undefined, callback);
      } catch (err) {
        console.log('test_cloudSync_State_047 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 13900020).assertTrue();
+       expect(err.code === 13900020).assertTrue();
        done();
      }
    });
@@ -1250,7 +1250,7 @@ describe('cloud_sync_test', () => {
       fileCache.off(null, callback);
      } catch (err) {
        console.log('test_cloudSync_State_048 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 13900020).assertTrue();
+       expect(err.code === 13900020).assertTrue();
        done();
      }
    });
@@ -1275,7 +1275,7 @@ describe('cloud_sync_test', () => {
       fileCache.off(undefined, callback);
      } catch (err) {
        console.log('test_cloudSync_State_049 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 13900020).assertTrue();
+       expect(err.code === 13900020).assertTrue();
        done();
      }
    });
@@ -1307,7 +1307,7 @@ describe('cloud_sync_test', () => {
       });
      } catch (err) {
        console.log('test_cloudSync_State_050 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 13900020).assertTrue();
+       expect(err.code === 13900020).assertTrue();
        done();
      }
    });
@@ -1339,7 +1339,7 @@ describe('cloud_sync_test', () => {
       });
      } catch (err) {
        console.log('test_cloudSync_State_051 has failed for ' + err.message + ', code: ' + err.code);
-       expect(err.code == 13900020).assertTrue();
+       expect(err.code === 13900020).assertTrue();
        done();
      }
    });
