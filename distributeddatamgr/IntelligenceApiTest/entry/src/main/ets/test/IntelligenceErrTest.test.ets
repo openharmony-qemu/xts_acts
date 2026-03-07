@@ -57,13 +57,12 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest0100
-     * @tc.number intelligenceApiErrTest0100
-     * @tc.desc   intelligenceApiErrTest0100
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_0100
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-
     it("intelligenceApiErrTest0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "intelligenceApiErrTest0100 start");
       if (currentDeviceIsPc) {
@@ -95,8 +94,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest0200
-     * @tc.number intelligenceApiErrTest0200
-     * @tc.desc   intelligenceApiErrTest0200
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_0200
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -133,8 +132,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest0300
-     * @tc.number intelligenceApiErrTest0300
-     * @tc.desc   intelligenceApiErrTest0300
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_0300
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -171,8 +170,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest0400
-     * @tc.number intelligenceApiErrTest0400
-     * @tc.desc   intelligenceApiErrTest0400
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_0400
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -208,8 +207,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest0500
-     * @tc.number intelligenceApiErrTest0500
-     * @tc.desc   intelligenceApiErrTest0500
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_0500
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -251,8 +250,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest0600
-     * @tc.number intelligenceApiErrTest0600
-     * @tc.desc   intelligenceApiErrTest0600
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_0600
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -295,8 +294,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest0700
-     * @tc.number intelligenceApiErrTest0700
-     * @tc.desc   intelligenceApiErrTest0700
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_0700
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -339,8 +338,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest0800
-     * @tc.number intelligenceApiErrTest0800
-     * @tc.desc   intelligenceApiErrTest0800
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_0800
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -388,8 +387,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest0900
-     * @tc.number intelligenceApiErrTest0900
-     * @tc.desc   intelligenceApiErrTest0900
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_0900
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -437,8 +436,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest1000
-     * @tc.number intelligenceApiErrTest1000
-     * @tc.desc   intelligenceApiErrTest1000
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_1000
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -486,8 +485,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest1100
-     * @tc.number intelligenceApiErrTest1100
-     * @tc.desc   intelligenceApiErrTest1100
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_1100
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -535,8 +534,8 @@ export default function intelligenceErrTest() {
 
     /**
      * @tc.name   intelligenceApiErrTest1200
-     * @tc.number intelligenceApiErrTest1200
-     * @tc.desc   intelligenceApiErrTest1200
+     * @tc.number SUB_DistributedData_Intelligence_SDK_Promise_Err_Test_1200
+     * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

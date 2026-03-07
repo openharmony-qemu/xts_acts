@@ -384,7 +384,7 @@ export default function storagePromiseTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testGetPromiseErr0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('testPutPromiseErr0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       try {
         await mPref.put(undefined, "defaultValue");
         console.info("testPutPromiseErr0300" + mPref);

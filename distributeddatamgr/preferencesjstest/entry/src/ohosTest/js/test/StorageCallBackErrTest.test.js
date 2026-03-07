@@ -186,24 +186,24 @@ export default function storageCallBackTest() {
 
 
     /**
-     * @tc.name   testDeleteStorageCallBackTestErr0300
+     * @tc.name   testDeleteStorageCallBackTestErr0400
      * @tc.number SUB_DistributedData_Preference_SDK_Storage_CallBack_Err_Test_0700
      * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDeleteStorageCallBackTestErr0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('testDeleteStorageCallBackTestErr0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       try {
         data_storage.deleteStorage(undefined, function (err, storage) {
           if (err) {
-            console.info("Failed to get the storage. path: testDeleteStorageCallBackTestErr0300" );
+            console.info("Failed to get the storage. path: testDeleteStorageCallBackTestErr0400" );
             expect().assertFail();
             return;
           }
         })
       } catch (err) {
-        console.info("testDeleteStorageCallBackTestErr0300 fail: " + err.message + "code: " + err.code);
+        console.info("testDeleteStorageCallBackTestErr0400 fail: " + err.message + "code: " + err.code);
         expect("401").assertEqual(err.code);
       }
     })
@@ -570,24 +570,24 @@ export default function storageCallBackTest() {
 
 
     /**
-     * @tc.name   testGetCallBackTestErr0500
+     * @tc.name   testPutCallBackTestErr0500
      * @tc.number SUB_DistributedData_Preference_SDK_Storage_CallBack_Err_Test_2300
      * @tc.desc   interface test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testGetCallBackTestErr0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('testPutCallBackTestErr0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       try {
         mPref.put(KEY_TEST_STRING_ELEMENT, undefined, function (err, ret) {
           if (err) {
-            console.info("Failed to get the storage. path: testGetCallBackTestErr0500" );
+            console.info("Failed to get the storage. path: testPutCallBackTestErr0500" );
             expect().assertFail();
             return;
           }
         })
       } catch (err) {
-        console.info("testGetCallBackTestErr0500 fail: " + err.message + "code: " + err.code);
+        console.info("testPutCallBackTestErr0500 fail: " + err.message + "code: " + err.code);
         expect("401").assertEqual(err.code);
       }
     })
