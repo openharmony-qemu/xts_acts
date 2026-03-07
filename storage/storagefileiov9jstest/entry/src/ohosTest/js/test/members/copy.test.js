@@ -1303,11 +1303,9 @@ it('fileIO_copy_copy_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, a
   try {
     fileIO.copy("", dstDirUriLocal, (err) => {
     console.log('fileIO_copy_copy_040 has err for ' + err.message + ', code: ' + err.code);
-    //expect(false).assertTrue();
     done();
     });
     console.log('fileIO_copy_copy_040 has err for 2222');
-    //expect(false).assertTrue();
     fileIO.unlinkSync(fpath);
     fileIO.unlinkSync(fpathTarget);
     done();
