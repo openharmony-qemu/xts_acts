@@ -1070,7 +1070,7 @@ export default function channelCallbacktest() {
                         console.info("[NFC_test]12 openBasicChannel done");
                     })
                     .catch(err => {
-                        if (err.code === 3300101) {
+                        if (err === 3300101) {
                             console.info("[NFC_test]12 openLogicalChannel_callback occurs exception:" + err.code + "---" + err);
                             expect(3300101).assertEqual(err.code);
                         } else {
@@ -1369,7 +1369,7 @@ export default function channelCallbacktest() {
                     let getPromise = Session.openLogicalChannel(array);
                     await getPromise.then((data) => {
                         console.info("[NFC_test]14  openLogicalChannel data: " + data);
-                    }).catch((error)=> {
+                    }).catch((err)=> {
                         if (err.code === 3300101) {
                             console.info("[NFC_test]14 openLogicalChannel exception:" + err.code + "---" + err);
                             expect(3300101).assertEqual(err.code);
