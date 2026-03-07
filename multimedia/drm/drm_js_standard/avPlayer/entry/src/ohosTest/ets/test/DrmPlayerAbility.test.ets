@@ -888,7 +888,7 @@ export default function abilityTest() {
                 session!.generateMediaKeyRequest("video/mp4",uint8pssh,drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE, optionalData).then(async (licenseRequestData) => {
                     console.info("XX DRM_AVPLAYER_0200 generateMediaKeyRequest success",licenseRequestData.mediaKeyRequestType,licenseRequestData.data,licenseRequestData.defaultURL);
                     expect(licenseRequestData.mediaKeyRequestType).not().assertUndefined();
-                    expect(licenseRequestData.data).not.assertUndefined();
+                    expect(licenseRequestData.data).not().assertUndefined();
                     expect(licenseRequestData.defaultURL).not().assertUndefined();
                     if(isClearPlay){
                         responseArray = new Uint8Array([0x30, 0x64, 0x6E, 0x5A, 0x32, 0x4E, 0x57, 0x74, 0x76, 0x4D, 0x47, 0x34, 0x34, 0x4E, 0x6A, 0x42, 0x30, 0x4D, 0x32, 0x77, 0x33, 0x4E, 0x67, 0x3D, 0x3D, 0x3A, 0x59, 0x7A, 0x56, 0x78, 0x63, 0x48, 0x64, 0x70, 0x61, 0x6D, 0x30, 0x34, 0x59, 0x57, 0x45, 0x34, 0x5A, 0x48, 0x6B, 0x79, 0x4D, 0x67, 0x3D, 0x3D]);
