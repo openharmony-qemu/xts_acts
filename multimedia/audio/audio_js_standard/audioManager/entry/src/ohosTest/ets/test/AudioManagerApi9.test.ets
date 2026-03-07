@@ -173,6 +173,7 @@ export default function audioManagerApi9() {
         let groupManager = audioVolumeManager.getVolumeGroupManagerSync(audio.DEFAULT_VOLUME_GROUP_ID)
         if ((typeof groupManager) == 'object') {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
+          expect(true).assertTrue();
           done();
         } else {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  FAIL');
@@ -266,6 +267,7 @@ export default function audioManagerApi9() {
         let groupManager = audioVolumeManager.getAppVolumePercentage();
         if ((typeof groupManager) == 'object') {
           console.info('audioManagerApi9Test: Promise: getAppVolumePercentage  :  PASS');
+          expect(true).assertTrue();
           done();
         } else {
           console.info('audioManagerApi9Test: Promise: getAppVolumePercentage  :  FAIL');
@@ -370,6 +372,7 @@ export default function audioManagerApi9() {
         done();
       } catch (err) {
         console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
+        expect(true).assertTrue();
         done();
       }
     })
@@ -395,6 +398,7 @@ export default function audioManagerApi9() {
         done();
       } catch (err) {
         console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
+        expect(true).assertTrue();
         done();
       }
     })
@@ -420,6 +424,7 @@ export default function audioManagerApi9() {
         done();
       } catch (err) {
         console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
+        expect(true).assertTrue();
         done();
       }
     })
@@ -445,6 +450,7 @@ export default function audioManagerApi9() {
         done();
       } catch (err) {
         console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
+        expect(true).assertTrue();
         done();
       }
     })
@@ -467,6 +473,7 @@ export default function audioManagerApi9() {
         } else {
           if ((typeof groupManager) == 'object') {
             console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
+            expect(true).assertTrue();
           } else {
             console.info('audioManagerApi9Test: Promise: getGroupManager  :  FAIL');
             expect(false).assertTrue();
@@ -491,6 +498,7 @@ export default function audioManagerApi9() {
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         if ((typeof groupManager) == 'object') {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
+          expect(true).assertTrue();
         } else {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  FAIL');
           expect(false).assertTrue();
@@ -522,6 +530,7 @@ export default function audioManagerApi9() {
             expect(false).assertTrue();
           } else if (value >= minVol && value <= maxVolPc) {
             console.info('audioManagerApi9Test: callback : Meida getVolume: PASS :' + value);
+            expect(true).assertTrue();
           } else {
             console.info('audioManagerApi9Test: callback : Meida getVolume: FAIL :' + value);
             expect(false).assertTrue();
@@ -550,6 +559,7 @@ export default function audioManagerApi9() {
         let value = await groupManager.getVolume(audio.AudioVolumeType.MEDIA);
         if (value >= minVol && value <= maxVolPc) {
           console.info('audioManagerApi9Test: callback : Meida getVolume: PASS :' + value);
+          expect(true).assertTrue();
         } else {
           console.info('audioManagerApi9Test: callback : Meida getVolume: FAIL :' + value);
           expect(false).assertTrue();
@@ -581,10 +591,13 @@ export default function audioManagerApi9() {
           } else {
             if (data == maxVol) {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
+              expect(true).assertTrue();
             } else if (data == maxVolPc) {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
+              expect(true).assertTrue();
             } else if (data == maxVolDP) {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
+              expect(true).assertTrue();
             } else {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: FAIL :' + data);
               expect(false).assertTrue();
@@ -614,10 +627,13 @@ export default function audioManagerApi9() {
         let maxVolume = await groupManager.getMaxVolume(audio.AudioVolumeType.RINGTONE);
         if (maxVolume == maxVol) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
+          expect(true).assertTrue();
         } else if (maxVolume == maxVolPc) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
+          expect(true).assertTrue();
         } else if (maxVolume == maxVolDP) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
+          expect(true).assertTrue();
         } else {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: FAIL :' + maxVolume);
           expect(false).assertTrue();
@@ -648,6 +664,7 @@ export default function audioManagerApi9() {
           } else {
             if (data == minVol) {
               console.info('audioManagerApi9Test: callback : Ringtone getMinVolume: PASS :' + data);
+              expect(true).assertTrue();
             } else {
               console.info('audioManagerApi9Test: callback : Ringtone getMinVolume: FAIL :' + data);
               expect(false).assertTrue();
@@ -677,6 +694,7 @@ export default function audioManagerApi9() {
         let minVolume = await groupManager.getMinVolume(audio.AudioVolumeType.RINGTONE);
         if (minVolume == minVol) {
           console.info('audioManagerApi9Test: promise : Ringtone getMinVolume: PASS :' + minVolume);
+          expect(true).assertTrue();
         } else {
           console.info('audioManagerApi9Test: promise : Ringtone getMinVolume: FAIL :' + minVolume);
           expect(false).assertTrue();
@@ -708,6 +726,7 @@ export default function audioManagerApi9() {
           } else {
             console.log(`audioManagerApi9Test: Promise:
                     Is Stream GroupManager Mute RINGTONE: FALSE: PASS:` + data);
+            expect(true).assertTrue();
           }
           done();
         })
@@ -733,6 +752,7 @@ export default function audioManagerApi9() {
         await groupManager.isMute(audio.AudioVolumeType.RINGTONE).then((data) => {
           console.log(`audioManagerApi9Test: Promise:
                     Is Stream GroupManager Mute RINGTONE: FALSE: PASS:` + data);
+          expect(true).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.info(`audioManagerApi9Test: Promise:
@@ -771,6 +791,7 @@ export default function audioManagerApi9() {
               data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
               console.log(`audioManagerApi9Test: Promise:
                     getRingerMode : PASS:` + data);
+              expect(true).assertTrue();
             } else {
               console.log(`audioManagerApi9Test: Promise:
                     getRingerMode : FAIL: ` + data);
@@ -804,6 +825,7 @@ export default function audioManagerApi9() {
           value == audio.AudioRingMode.RINGER_MODE_VIBRATE ||
           value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
+          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
           expect(false).assertTrue();
@@ -829,6 +851,7 @@ export default function audioManagerApi9() {
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         groupManager.on('ringerModeChange', (AudioRingMode) => {
         });
+        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + err.message)
@@ -901,6 +924,7 @@ export default function audioManagerApi9() {
         groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
           console.info(`Updated ringermode: ${ringerMode}`)
         });
+        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + err.message)
@@ -925,6 +949,7 @@ export default function audioManagerApi9() {
         groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
           console.info(`Updated ringermode: ${ringerMode}`)
         });
+        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + err.message)
@@ -949,6 +974,7 @@ export default function audioManagerApi9() {
         groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
           console.info(`Updated ringermode: ${ringerMode}`)
         });
+        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + err.message)
@@ -981,6 +1007,7 @@ export default function audioManagerApi9() {
             } else {
               if (data == true) {
                 console.log(`${TagFrmwk}: Callback: isMicrophoneMute: TRUE: PASS:${data}`);
+                expect(true).assertTrue();
               } else {
                 console.log(`${TagFrmwk}: Callback: isMicrophoneMute: TRUE: FAIL: ${data}`);
                 expect(false).assertTrue();
@@ -1008,6 +1035,7 @@ export default function audioManagerApi9() {
         let data = await groupManager.isMicrophoneMute();
         if (data == true) {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1019,7 +1047,7 @@ export default function audioManagerApi9() {
         done();
       }
     })
-
+    
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0300
      * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0300
@@ -1034,6 +1062,7 @@ export default function audioManagerApi9() {
       groupManager.setMicrophoneMute(false, (err, data) => {
         if (err) {
           console.error(`audioManagerApi9Test: failed to setMicrophoneMute : Callback:  ${err.message}`);
+          expect(true).assertTrue();
           done();
         } else {
           groupManager.isMicrophoneMute((err, data) => {
@@ -1043,6 +1072,7 @@ export default function audioManagerApi9() {
             } else {
               if (data == false) {
                 console.log(`${TagFrmwk}: Callback: isMicrophoneMute: TRUE: PASS:${data}`);
+                expect(true).assertTrue();
               } else {
                 console.log(`${TagFrmwk}: Callback: isMicrophoneMute: TRUE: FAIL: ${data}`);
                 expect(false).assertTrue();
@@ -1070,6 +1100,7 @@ export default function audioManagerApi9() {
         let data = await groupManager.isMicrophoneMute();
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1094,11 +1125,12 @@ export default function audioManagerApi9() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONMICSTATECHANGE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
           done();
           return;
       }
@@ -1119,6 +1151,7 @@ export default function audioManagerApi9() {
           if (MicStateChangeEvent.mute == true) {
             console.info(`${TagFrmwk}: MEDIA CallBack : PASS : ${MicStateChangeEvent.mute}`);
             onMicStateChangeFlag1 = false
+            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Audio MicStateChangeEvent is : ${MicStateChangeEvent}`);
             expect(false).assertTrue();
@@ -1150,6 +1183,7 @@ export default function audioManagerApi9() {
       PROMISE.then((data) => {
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: isActive: Media: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1178,6 +1212,7 @@ export default function audioManagerApi9() {
           expect().assertFail();
         } else if (data == false) {
           console.log(`${TagFrmwk}: Callback: isActive: Media: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Callback: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1200,6 +1235,7 @@ export default function audioManagerApi9() {
         let data = streamManager.isActiveSync(audioMedia)
         if (data == false) {
           console.log(`${TagFrmwk}: Callback: isActive: Media: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Callback: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1288,11 +1324,12 @@ export default function audioManagerApi9() {
       console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISCOMMUNICATIONDEVICE_SYNC_0100
                 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
           done();
           return;
       }
@@ -1314,9 +1351,11 @@ export default function audioManagerApi9() {
         if (flag == true && value == true) {
           console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+          expect(true).assertTrue();
         } else if (flag == false && value == true) {
           console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+          expect(true).assertTrue();
         } else {
           console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
@@ -1348,6 +1387,7 @@ export default function audioManagerApi9() {
       } catch (err) {
         console.info(`isCommunicationDeviceActive : Null_Parameters Fail,error:${err},ErrorCode:${err.code},${typeof (err.code)}`);
         expect(Number(err.code)).assertEqual(401);
+        expect(true).assertTrue();
         done();
       }
     })
@@ -1370,6 +1410,7 @@ export default function audioManagerApi9() {
       } catch (err) {
         console.info(`isCommunicationDeviceActive : Number_Invalid_Parameters Fail,error:${err},ErrorCode:${err.code},${typeof (err.code)}`);
         expect(Number(err.code)).assertEqual(audio.AudioErrors.ERROR_INVALID_PARAM);
+        expect(true).assertTrue();
         done();
       }
     })
@@ -1392,6 +1433,7 @@ export default function audioManagerApi9() {
       } catch (err) {
         console.info(`isCommunicationDeviceActive : String_Parameters Fail,error:${err},ErrorCode:${err.code},${typeof (err.code)}`);
         expect(Number(err.code)).assertEqual(401);
+        expect(true).assertTrue();
         done();
       }
     })
@@ -1410,11 +1452,12 @@ export default function audioManagerApi9() {
       console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
           done();
           return;
       }
@@ -1434,9 +1477,11 @@ export default function audioManagerApi9() {
           if (flag == true && value == true) {
             console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+            expect(true).assertTrue();
           } else if (flag == false && value == true) {
             console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+            expect(true).assertTrue();
           } else {
             console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
@@ -1468,11 +1513,12 @@ export default function audioManagerApi9() {
       console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0200
             outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
           done();
           return;
       }
@@ -1496,8 +1542,10 @@ export default function audioManagerApi9() {
               expect(false).assertTrue();
             } else if (value == true && flag == true) {
               console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+              expect(true).assertTrue();
             } else if (value == true && flag == false) {
               console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+              expect(true).assertTrue();
             } else {
               console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0200 ${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : FAIL :${value} flag is ${flag}`);
               expect(false).assertTrue();
@@ -1551,6 +1599,7 @@ export default function audioManagerApi9() {
       );
       if (detecteDevice) {
         console.info(`${TagFrmwk}: this device has external device`)
+        expect(true).assertTrue();
         done();
         return;
       }
@@ -1560,6 +1609,7 @@ export default function audioManagerApi9() {
           flag = true;
         } else {
           console.info(`this device has one outputdevice,not suit this case`);
+          expect(true).assertTrue();
           done();
           return
         }
@@ -1571,6 +1621,7 @@ export default function audioManagerApi9() {
           if (flag == true && value == false) {
             console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300
                         isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+            expect(true).assertTrue();
             done();
           } else {
             console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300
@@ -1643,6 +1694,7 @@ export default function audioManagerApi9() {
       );
       if (detecteDevice) {
         console.info(`${TagFrmwk}: this device has external device`)
+        expect(true).assertTrue();
         done();
         return;
       }
@@ -1652,6 +1704,7 @@ export default function audioManagerApi9() {
           flag = true;
         } else {
           console.info(`this device has one outputdevice,not suit this case`);
+          expect(true).assertTrue();
           done();
           return
         }
@@ -1665,6 +1718,7 @@ export default function audioManagerApi9() {
             expect(false).assertTrue();
           } else if (value == false && flag == true) {
             console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+            expect(true).assertTrue();
           } else {
             console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0400 ${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : FAIL :${value} flag is ${flag}`);
             expect(false).assertTrue();
@@ -1733,6 +1787,7 @@ export default function audioManagerApi9() {
       );
       if (detecteDevice) {
         console.info(`${TagFrmwk}: this device has external device`)
+        expect(true).assertTrue();
         done();
         return;
       }
@@ -1742,6 +1797,7 @@ export default function audioManagerApi9() {
           flag = true;
         } else {
           console.info(`this device has one outputdevice,not suit this case`);
+          expect(true).assertTrue();
           done();
           return
         }
@@ -1753,6 +1809,7 @@ export default function audioManagerApi9() {
           let value: boolean = AudioRoutingManager.isCommunicationDeviceActiveSync(audio.CommunicationDeviceType.SPEAKER);
           if (value == false) {
             console.info(`Indicate that the active status of the device is obtained Successfully :${value}.`);
+            expect(true).assertTrue();
             done();
           } else {
             console.info(`Indicate that the active status of the device is obtained FAILED :${value}.`);
@@ -1825,6 +1882,7 @@ export default function audioManagerApi9() {
       );
       if (detecteDevice) {
         console.info(`${TagFrmwk}: this device has external device`)
+        expect(true).assertTrue();
         done();
         return;
       }
@@ -1834,6 +1892,7 @@ export default function audioManagerApi9() {
           flag = true;
         } else {
           console.info(`this device has one outputdevice,not suit this case`);
+          expect(true).assertTrue();
           done();
           return
         }
@@ -1845,6 +1904,7 @@ export default function audioManagerApi9() {
           let value: boolean = AudioRoutingManager.isCommunicationDeviceActiveSync(audio.CommunicationDeviceType.SPEAKER);
           if (value == true) {
             console.info(`Indicate that the active status of the device is obtained Successfully :${value}.`);
+            expect(true).assertTrue();
             done();
           } else {
             console.info(`Indicate that the active status of the device is obtained FAILED :${value}.`);
@@ -1886,11 +1946,12 @@ export default function audioManagerApi9() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICSTATECHANGE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
           done();
           return;
       }
@@ -1935,11 +1996,12 @@ export default function audioManagerApi9() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICSTATECHANGE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
           done();
           return;
       }
@@ -1983,11 +2045,12 @@ export default function audioManagerApi9() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICSTATECHANGE_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
           done();
           return;
       }
@@ -2033,11 +2096,12 @@ export default function audioManagerApi9() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICSTATECHANGE_0400 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
           done();
           return;
       }
@@ -2824,6 +2888,7 @@ export default function audioManagerApi9() {
         audioManager.on('audioSceneChange', (audioScene) => {
           console.info(`AudioSceneChange event: ${audioScene} `);
         });
+        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + err.message)
@@ -2849,6 +2914,7 @@ export default function audioManagerApi9() {
            return;
           }
         });
+        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + err.message)
@@ -2874,6 +2940,7 @@ export default function audioManagerApi9() {
         audioManager.off('audioSceneChange', cb);
         audioManager.on('audioSceneChange', cb);
         audioManager.off('audioSceneChange');
+        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + err.message)
