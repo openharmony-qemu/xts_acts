@@ -37,6 +37,15 @@ let avTranscoderConfig: media.AVTranscoderConfig = {
   videoCodec: media.CodecMimeType.VIDEO_AVC,
 };
 
+let avTranscoderTestConfig: media.AVTranscoderConfig = {
+  audioBitrate: 200000,
+  audioCodec: media.CodecMimeType.AUDIO_AAC,
+  fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+  videoBitrate: 3000000,
+  videoCodec: media.CodecMimeType.VIDEO_AVC,
+  enableBFrame: true,
+};
+
 function openFileFailed() {
   console.info(TAG, 'openFileFailed case file fail');
 }
@@ -91,12 +100,49 @@ async function prepareAVTranscoderTest(done: Function, testName: string) {
     return;
   }
   if (mTranscoder !== undefined) {
-    await mTranscoder.prepare(avTranscoderConfig).then(() => {
+    await mTranscoder.prepare(avTranscoderTestConfig).then(() => {
       console.info(TAG, testName + ' prepare success.');
       expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG, testName + ' Failed to prepare AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
       expect().assertFail();
+      done();
+    });
+  }
+}
+
+async function prepareAVTranscoderTestError(done: Function, testName: string) {
+  if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+    console.info(TAG, testName + ' This device does not support transcoding.');
+    done();
+    return;
+  }
+  if (mTranscoder !== undefined) {
+    await mTranscoder.prepare(avTranscoderTestConfig).then(() => {
+      console.error(TAG, testName + ' Failed to prepare AVTranscoder.');
+      expect(true).assertFail();
+    }).catch((error: BusinessError) => {
+      console.info(TAG, testName + ' prepare Failed. assert True. code: ' + error.code + ', msg: ' + error.message);
+      expect(true).assertTrue();
+      done();
+    });
+  }
+}
+
+async function prepareAVTranscoderTestErrorWithConfig(done: Function, testName: string,
+  testConfig: media.AVTranscoderConfig | undefined | null) {
+  if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+    console.info(TAG, testName + ' This device does not support transcoding.');
+    done();
+    return;
+  }
+  if (mTranscoder !== undefined) {
+    await mTranscoder.prepare(testConfig).then(() => {
+      console.error(TAG, testName + ' Failed to prepare AVTranscoder.');
+      expect(true).assertFail();
+    }).catch((error: BusinessError) => {
+      console.info(TAG, testName + ' prepare Failed. assert True. code: ' + error.code + ', msg: ' + error.message);
+      expect(true).assertTrue();
       done();
     });
   }
@@ -325,6 +371,27 @@ export default function AVTranscoderTest() {
     })
 
     /**
+     * @tc.name   createAVTranscoder_002
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of create AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createAVTranscoder_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'createAVTranscoder_002';
+      let avTranscoder: media.AVTranscoder | undefined = undefined;
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        console.info(TAG, testName + ' This device does not support transcoding.');
+        done();
+        return;
+      }
+      avTranscoder = await media.createAVTranscoder();
+      expect(avTranscoder != undefined).assertTrue();
+      done();
+    })
+
+    /**
      * @tc.name   prepare_001
      * @tc.number AV_TRANSCODER_TEST_002
      * @tc.desc   Test normal scene of prepare AVTranscoder.
@@ -336,6 +403,249 @@ export default function AVTranscoderTest() {
       const testName = 'prepare_001';
       await createAVTranscoder(done, testContext, testName);
       await prepareAVTranscoder(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_002
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_002';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.AUDIO_VORBIS;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.VIDEO_MPEG2;
+      avTranscoderTestConfig.fileFormat = media.ContainerFormatType.CFT_MPEG_4A;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTest(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_003
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_003';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.AUDIO_FLAC;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.VIDEO_H263;
+      avTranscoderTestConfig.fileFormat = media.ContainerFormatType.CFT_MP3;
+      avTranscoderTestConfig.enableBFrame = false;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_004
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_004';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.AUDIO_MP3;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.VIDEO_MPEG4;
+      avTranscoderTestConfig.fileFormat = media.ContainerFormatType.CFT_WAV;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_005
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_005';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.AUDIO_G711MU;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.VIDEO_VP8;
+      avTranscoderTestConfig.fileFormat = media.ContainerFormatType.CFT_AMR;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_006
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_006';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.AUDIO_AMR_NB;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.VIDEO_HEVC;
+      avTranscoderTestConfig.fileFormat = media.ContainerFormatType.CFT_AAC;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_007
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_007';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.AUDIO_AMR_WB;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.AUDIO_AAC;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_008
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_008';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.VIDEO_H263;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.AUDIO_VORBIS;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_009
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_009';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.VIDEO_AVC;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.AUDIO_FLAC;
+      avTranscoderTestConfig.enableBFrame = false;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_010
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_010';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.VIDEO_MPEG2;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.AUDIO_MP3;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_011
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_011', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_011';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.VIDEO_MPEG4;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.AUDIO_G711MU;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_012
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_012', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_012';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.VIDEO_VP8;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.AUDIO_AMR_NB;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_013
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_013', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_013';
+      avTranscoderTestConfig.audioCodec = media.CodecMimeType.VIDEO_HEVC;
+      avTranscoderTestConfig.videoCodec = media.CodecMimeType.AUDIO_AMR_WB;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestError(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_014
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_014', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_014';
+      let TestConfig: media.AVTranscoderConfig | undefined = undefined;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestErrorWithConfig(done, testName, TestConfig);
+      done();
+    })
+
+    /**
+     * @tc.name   prepare_015
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('prepare_015', Level.LEVEL0, async (done: Function) => {
+      const testName = 'prepare_015';
+      let TestConfig: media.AVTranscoderConfig | null = null;
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderTestErrorWithConfig(done, testName, TestConfig);
       done();
     })
 
