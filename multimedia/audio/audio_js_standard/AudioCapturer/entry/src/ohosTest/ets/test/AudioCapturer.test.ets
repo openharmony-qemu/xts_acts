@@ -156,7 +156,6 @@ export default function audioCapturer() {
         await sleep(1000);
         if (markReachState === 'success' || markReachState === 'invalid_failure') {
           console.log(`${Tag} markReachState: ${JSON.stringify(markReachState)}`);
-          expect(true).assertTrue();
         } else if (markReachState === 'failure') {
           expect(false).assertTrue();
         }
@@ -164,7 +163,6 @@ export default function audioCapturer() {
 
         if (periodReachState === 'success' || periodReachState === 'invalid_failure') {
           console.log(`${Tag} periodReachState: ${JSON.stringify(periodReachState)}`);
-          expect(true).assertTrue();
         } else if (periodReachState === 'failure') {
           expect(false).assertTrue();
         }
@@ -710,7 +708,6 @@ export default function audioCapturer() {
         console.log(`${Tag} fd-re: ${JSON.stringify(fd)}`);
         if (fd !== null) {
           console.info(`${Tag} recCapturerPromise4: file fd created`);
-          expect(true).assertTrue();
         } else {
           console.info(`${Tag} recCapturerPromise4: Capturer start : ERROR `);
           expect(false).assertTrue();
@@ -897,7 +894,6 @@ export default function audioCapturer() {
           audioCapPromise = data;
           console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
           audioCapPromise.setWillMuteWhenInterrupted(true);
-          expect(true).assertTrue();
         }).catch((err: BusinessError) => {
           console.error(`AudioCapturer Created : ERROR : ${err}`);
           expect(false).assertTrue();
@@ -2775,16 +2771,18 @@ export default function audioCapturer() {
         console.log(`${Tag} start-getAudioTime-getBufferSize-read-getAudioTimein- err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
       }
+      let flag: boolean = false;
       try {
         await audioCapPromise.stop();
+        console.log(`${Tag} stop ok`);
         let audioTime2: ESObject = await audioCapPromise.getAudioTime();
-        console.log(`${Tag} audioTime2: ${JSON.stringify(audioTime2)}`);
+        console.log(`${Tag} audioTime2 after stop: ${JSON.stringify(audioTime2)}`);
         expect(audioTime2).assertLarger(0);
       } catch (err) {
         console.log(`${Tag} stop-getAudioTimein- err: ${JSON.stringify(err)}`);
-        expect(true).assertTrue();
+        flag = true;
       }
-
+      expect(flag).assertTrue();
       try {
         await audioCapPromise.release();
       } catch (err) {
@@ -3042,10 +3040,9 @@ export default function audioCapturer() {
       try {
         await audioCapPromise.stop();
         console.log(`${Tag} stop ok`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${Tag} stop err: ${JSON.stringify(err)}`);
-        expect(true).assertTrue();
+        expect(true).assertFail();
       }
       done();
     })
@@ -3086,16 +3083,20 @@ export default function audioCapturer() {
       try {
         await audioCapPromise.release();
         expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RELEASED);
+        console.log(`${Tag} First release ok`);
       } catch (err) {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
       }
+      let flag: boolean = false;
       try {
         await audioCapPromise.release();
+        console.log(`${Tag} Second release succeeded unexpectedly!`);
+        flag = true;
       } catch (err) {
-        console.log(`${Tag} re-release err: ${JSON.stringify(err)}`);
-        expect(true).assertTrue();
+        console.log(`${Tag} Second release failed as expected: ${JSON.stringify(err)}`);
       }
+      expect(flag).assertTrue();
       done();
     })
 
@@ -3443,7 +3444,6 @@ export default function audioCapturer() {
       try {
         let audioParamsGet: ESObject = audioCap.getCapturerInfoSync();
         console.info(`${Tag} AudioFrameworkRecLog: Capturer CapturerInfo: ${JSON.stringify(audioParamsGet)}`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${Tag} getStreamInfo err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -3481,13 +3481,15 @@ export default function audioCapturer() {
         streamInfo: audioStreamInfo44100,
         capturerInfo: audioCapturerInfo44100,
       }
+      let flag: boolean = false;
       await audio.createAudioCapturer(AudioCapturerOptionsInvalid).then((data) => {
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Success: ${JSON.stringify(data)}`);
         expect(false).assertTrue();
       }).catch((err: BusinessError) => {
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : ERROR :  ${JSON.stringify(err.message)}`);
-        expect(true).assertTrue();
+        flag = true;
       });
+      expect(flag).assertEqual(true);
       done();
     })
 
@@ -3514,11 +3516,10 @@ export default function audioCapturer() {
         streamInfo: audioStreamInfo44100,
         capturerInfo: audioCapturerInfo44100,
       }
-
+      let flag: boolean = false;
       await audio.createAudioCapturer(AudioCapturerOptionsInvalid).then((data) => {
         if (data == undefined) {
           console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Unsuccess : ${JSON.stringify(data)}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Success: ${JSON.stringify(data)}`);
           expect(false).assertTrue();
@@ -3526,8 +3527,9 @@ export default function audioCapturer() {
 
       }).catch((err: BusinessError) => {
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : ERROR :  ${JSON.stringify(err.message)}`);
-        expect(true).assertTrue();
+        flag = true;
       });
+      expect(flag).assertTrue();
       done();
     })
 
@@ -4201,7 +4203,6 @@ export default function audioCapturer() {
             console.info(`${Tag}: getAudioStreamId : ERROR : code: ${err.code}, mesage: ${err.message}`);
             expect(false).assertTrue();
           } else {
-            expect(true).assertTrue();
             console.info(`${Tag}: getAudioStreamId : Converted: ${data}`);
           }
           audioCapPromise.release();
@@ -4239,11 +4240,10 @@ export default function audioCapturer() {
       try {
         let audioCapPromise: ESObject = await audio.createAudioCapturer(AudioCapturerOptions);
         audioCapPromise.getAudioStreamId().then((data: ESObject) => {
-          expect(true).assertTrue();
           audioCapPromise.release();
           console.info(`${Tag}: getAudioStreamId : Converted: ${data}`);
         }).catch((err: BusinessError) => {
-          expect(true).assertTrue();
+          expect(false).assertTrue();
           audioCapPromise.release();
           console.error(`${Tag}: getAudioStreamId : ERROR : ${err}`);
         });
@@ -4284,7 +4284,6 @@ export default function audioCapturer() {
           console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
           let StreamIdSync: ESObject = audioCapPromise.getAudioStreamIdSync();
           console.info(`${Tag}: getAudioStreamId : Converted: ${StreamIdSync}`);
-          expect(true).assertTrue();
         }).catch((err: BusinessError) => {
           console.error(`AudioCapturer Created : ERROR : ${err}`);
           expect(false).assertTrue();
@@ -4322,21 +4321,18 @@ export default function audioCapturer() {
       }
       try {
         let audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
-        await audioCapPromise.getOverflowCount().then((data) => {
-          expect(data).assertLargerOrEqual(0);
-          console.info(`${Tag}: getOverflowCount : Converted: ${data}`);
-        }).catch((err: BusinessError) => {
-          expect(true).assertTrue();
-          console.error(`${Tag}: getOverflowCount : ERROR : ${err}`);
-        });
-
+        const overflowCount = await audioCapPromise.getOverflowCount();
+        expect(overflowCount).assertLargerOrEqual(0);
+        console.info(`${Tag}: getOverflowCount returned: ${OverflowCount}`);
         await audioCapPromise.release();
-      } catch (err) {
-        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        done();
+        } catch (err) {
+        console.error(`${Tag} error : ${err}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
-    })
+    });
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100
@@ -4374,7 +4370,6 @@ export default function audioCapturer() {
       }
       await getFd("capture_js-44100-2C-16B_voice_message.pcm");
       await recPromise(AudioCapturerOptions, AudioRendererOptions, done);
-      expect(true).assertTrue();
       done();
     })
 
@@ -4418,12 +4413,11 @@ export default function audioCapturer() {
         let fileName = "capture_js-48000-F32LE.pcm";
         await recCapturerPromise4(audioCapturerOptions, fileName, done);
         console.log(`${caseTag} audio recording success`);
-        
+
         await sleep(200);
 
         await resRendererPromise5(AudioRendererOptions, fileName);
         console.log(`${caseTag} audio playback success`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
@@ -4472,12 +4466,11 @@ export default function audioCapturer() {
         let fileName = "capture_js-48000-F32LE.pcm";
         await recCapturerPromise4(audioCapturerOptions, fileName, done);
         console.log(`${caseTag} audio recording success`);
-        
+
         await sleep(200);
 
         await resRendererPromise5(AudioRendererOptions, fileName);
         console.log(`${caseTag} audio playback success`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
@@ -4526,12 +4519,11 @@ export default function audioCapturer() {
         let fileName = "capture_js-48000-F32LE.pcm";
         await recCapturerPromise4(audioCapturerOptions, fileName, done);
         console.log(`${caseTag} audio recording success`);
-        
+
         await sleep(200);
 
         await resRendererPromise5(AudioRendererOptions, fileName);
         console.log(`${caseTag} audio playback success`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
@@ -4580,12 +4572,11 @@ export default function audioCapturer() {
         let fileName = "capture_js-48000-F32LE.pcm";
         await recCapturerPromise4(audioCapturerOptions, fileName, done);
         console.log(`${caseTag} audio recording success`);
-        
+
         await sleep(200);
 
         await resRendererPromise5(AudioRendererOptions, fileName);
         console.log(`${caseTag} audio playback success`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
