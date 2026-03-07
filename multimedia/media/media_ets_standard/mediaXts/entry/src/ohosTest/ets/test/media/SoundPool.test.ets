@@ -128,7 +128,7 @@ function createSoundPoolCallbackForContent(content: audio.ContentType, maxStream
   });
 }
 
-function createSoundPoolPromiseForContent(content: audio.ContentType, maxStreams: number, done: Function) {
+async function createSoundPoolPromiseForContent(content: audio.ContentType, maxStreams: number, done: Function) {
   audioRendererInfo.content = content;
   console.info(TAG, `Start to createSoundPoolPromiseForContent.`);
   await media.createSoundPool(maxStreams, audioRendererInfo).then((soundPool_: media.SoundPool) => {
@@ -5461,7 +5461,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_for_content_001', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_001 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5473,7 +5479,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_for_content_002', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_002 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5485,7 +5497,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_for_content_003', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_003 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5497,7 +5515,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_for_content_004', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_004 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5509,7 +5533,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_for_content_005', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_005 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5521,7 +5551,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_for_content_006', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_006 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5533,7 +5569,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_001', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
+      try {
+        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_001 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5545,7 +5587,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_002', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
+      try {
+        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_002 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5557,7 +5605,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_003', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
+      try {
+        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_003 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5569,7 +5623,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_004', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
+      try {
+        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_004 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5581,7 +5641,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_005', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
+      try {
+        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_005 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
 
     /**
@@ -5593,7 +5659,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_for_content_006', Level.LEVEL0, async (done: Function) => {
-      createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
+      try {
+        createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_006 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
   })
 }
