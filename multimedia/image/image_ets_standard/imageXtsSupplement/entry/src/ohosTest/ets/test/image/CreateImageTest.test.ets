@@ -17,11 +17,40 @@ import { image } from '@kit.ImageKit';
 import { PixelMapFormat } from '@kit.MediaLibraryKit';
 import { resourceManager } from '@kit.LocalizationKit';
 import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@ohos.base';
+import { fileIo as fs } from '@kit.CoreFileKit';
+import { application } from '@kit.AbilityKit';
 
 const TAG = 'ImageXts.CreateImageTest';
 
+let fdNumber: number;
+async function getFd(fileName: string) {
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let filePath = `file://${testContext.filesDir}/${fileName}`;
+  console.info(TAG, 'image case filePath is ' + filePath);
+  const fileInfo = await fs.open(filePath);
+  fdNumber = fileInfo.fd
+}
+
+async function getImageSource(path: string): Promise<image.ImageSource> {
+  await getFd(path);
+  const imageSourceApi = image.createImageSource(fdNumber);
+  console.info(TAG, "createImageSource: " + JSON.stringify(imageSourceApi.getImageInfoSync()));
+  return imageSourceApi;
+}
+
+async function imageArray(): Promise<[Uint8Array, Uint8Array, Uint8Array]> {
+  let appContext: Context= AppStorage.get('testContext') as common.UIAbilityContext;
+  let testContext = await application.createModuleContext(appContext, "entry_test");
+  let imageArray = testContext.resourceManager.getMediaContentSync($r('app.media.startIcon').id);
+  let splitBuff1 = imageArray.slice(0, imageArray.byteLength / 2);
+  let splitBuff2 = imageArray.slice(imageArray.byteLength / 2);
+  return [splitBuff1,splitBuff2,imageArray]
+}
+
 export default function CrateImageSupp() {
   describe('CrateImageSupp', () => {
+    const CROP_FIRST = image.CropAndScaleStrategy.CROP_FIRST;
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case');
     });
@@ -1298,9 +1327,175 @@ export default function CrateImageSupp() {
         done();
       }
     })
+    /**
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_054
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_054
+     * @tc.desc       CreateIncrementalSource cover sourcePixelFormat
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_054', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_054';
+      const pixelFormats = [
+        image.PixelMapFormat.RGBA_8888,
+      ];
+      for (const format of pixelFormats) {
+        let resourceId = $r('app.media.startIcon').id;
+        console.info(TAG, testName, 'Resource ID:', resourceId);
+        let imageData = await imageArray();
+        console.info(TAG, testName, 'Image data loaded, length:', imageData[2].byteLength);
+        let imageSourceIncrementalSApi: image.ImageSource | null = null;
+        try {
+          let sourceOptions: image.SourceOptions = {
+            sourceDensity: 120,
+            sourcePixelFormat: format,
+            sourceSize: {
+              height: 100,
+              width: 100
+            }
+          };
+          imageSourceIncrementalSApi = image.CreateIncrementalSource(
+            new ArrayBuffer(imageData[2].byteLength), sourceOptions
+          );
+          await imageSourceIncrementalSApi.updateData(imageData[0], false, 0, imageData[0].byteLength);
+          await imageSourceIncrementalSApi.updateData(imageData[1], true, 0, imageData[1].byteLength);
+          console.warn(TAG, testName, `Testing format ${format} succeeded`);
+          expect(imageSourceIncrementalSApi.getImageInfoSync().pixelFormat == format).assertTrue();
+        } catch (error) {
+          console.error(TAG, testName, `Error with format ${format}:`, JSON.stringify(error));
+          expect().assertFail();
+        } finally {
+          if (imageSourceIncrementalSApi) {
+            await imageSourceIncrementalSApi.release();
+          }
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_GET_IMAGE_INFO_TEST_055
+     * @tc.name       SUB_MEDIA_IMAGE_GET_IMAGE_INFO_TEST_055
+     * @tc.desc       getImageInfo cover size
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_GET_IMAGE_INFO_TEST_055', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_GET_IMAGE_INFO_TEST_055';
+      try {
+        const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        imageSourceApi.getImageInfo(0, async (error: BusinessError, imageInfo: image.ImageInfo) => {
+          if (error) {
+            console.error(TAG,testName,`Failed to obtain the image information.code is ${error.code}, message is ${error.message}`);
+            expect().assertFail();
 
-
-
+          } else {
+            console.info(TAG,testName,'Succeeded in obtaining the image information.', JSON.stringify(imageInfo.size));
+            expect(imageInfo.size.height).assertEqual(226);
+            expect(imageInfo.size.width).assertEqual(472);
+          }
+          await imageSourceApi.release();
+          done();
+        });
+      } catch (error) {
+        console.error(TAG, testName,
+          `Failed to obtain the image information.code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_56
+     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_56
+     * @tc.desc       createAlphaPixelmap cover isEditable
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_56', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_56';
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: true,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded ', pixelMap.isEditable);
+        expect(pixelMap.isEditable).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
+        console.error(TAG, testName,
+          `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
+        expect().assertFail();
+      }
+      await imageSourceApi?.release();
+      done();
+    })
+    /**
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_57
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_57
+     * @tc.desc       CreateIncrementalSource cover sourcePixelFormat
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_57', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_57';
+      const pixelFormats = [
+        image.PixelMapFormat.ARGB_8888,
+        image.PixelMapFormat.RGB_565,
+        image.PixelMapFormat.BGRA_8888,
+        image.PixelMapFormat.RGB_888,
+        image.PixelMapFormat.ALPHA_8,
+        image.PixelMapFormat.RGBA_F16,
+        image.PixelMapFormat.NV21,
+        image.PixelMapFormat.NV12,
+        image.PixelMapFormat.RGBA_1010102,
+        image.PixelMapFormat.YCBCR_P010,
+        image.PixelMapFormat.ASTC_4x4
+      ];
+      for (const format of pixelFormats) {
+        let resourceId = $r('app.media.startIcon').id;
+        console.info(TAG, testName, 'Resource ID:', resourceId);
+        let imageData = await imageArray();
+        console.info(TAG, testName, 'Image data loaded, length:', imageData[2].byteLength);
+        let imageSourceIncrementalSApi: image.ImageSource | null = null;
+        try {
+          let sourceOptions: image.SourceOptions = {
+            sourceDensity: 120,
+            sourcePixelFormat: format,
+            sourceSize: {
+              height: 100,
+              width: 100
+            }
+          };
+          imageSourceIncrementalSApi = image.CreateIncrementalSource(
+            new ArrayBuffer(imageData[2].byteLength), sourceOptions
+          );
+          await imageSourceIncrementalSApi.updateData(imageData[0], false, 0, imageData[0].byteLength);
+          await imageSourceIncrementalSApi.updateData(imageData[1], true, 0, imageData[1].byteLength);
+          console.warn(TAG, testName, `Testing format ${format} succeeded`,imageSourceIncrementalSApi.getImageInfoSync().pixelFormat);
+          expect(imageSourceIncrementalSApi.getImageInfoSync().pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
+        } catch (error) {
+          console.error(TAG, testName, `Error with format ${format}:`, JSON.stringify(error));
+          expect().assertFail();
+        } finally {
+          if (imageSourceIncrementalSApi) {
+            await imageSourceIncrementalSApi.release();
+          }
+        }
+      }
+      done();
+    });
 
   })
 }
