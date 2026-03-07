@@ -20,4 +20,7 @@ ohos_js_app_static_suite("ActsGetAllAccountsNoParameterStaticTest") {
   hap_name = "ActsGetAllAccountsNoParameterStaticTest"
   part_name = "os_account"
   subsystem_name = "account"
+  deps = [ 
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountsceneaccessible:ActsAccountSceneAccessible"
+  ]
 }
