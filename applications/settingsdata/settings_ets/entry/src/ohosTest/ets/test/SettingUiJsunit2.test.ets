@@ -3973,7 +3973,7 @@ export default function settingUiJsunit() {
 
     /**
      * @tc.name   settings_set_value_sync_no_domain_value_empty
-     * @tc.number settings_set_value_sync_no_domain_key_undefined
+     * @tc.number settings_set_value_sync_no_domain_value_empty
      * @tc.desc   MediumTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
