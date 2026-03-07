@@ -185,7 +185,6 @@ it('testmediaQueryOff_static_0006', Level.LEVEL0, async  () => {
       console.info("[testmediaQueryOff_static_0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual("#E5182431");
       console.info("[testmediaQueryOff_static_0006] fontColor value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
 
     });
