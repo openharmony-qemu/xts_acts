@@ -460,7 +460,7 @@ export default function nfcTagABFVTest() {
         it('SUB_Communication_NFC_nfctage_js_0202', Level.LEVEL0, function ()  {
             let NfcBTag;
             try {
-                NfcBTag = tag.getNfcBTag(null);
+                NfcBTag = tag.getNfcBTag(undefined);
             } catch (err) {
                 if (err.code === 401) {
                     console.info('Nfcget tagABFV err' + err);
@@ -579,7 +579,7 @@ export default function nfcTagABFVTest() {
         it('SUB_Communication_NFC_nfctage_js_0401', Level.LEVEL0, function ()  {
             let NfcVTag;
             try {
-                NfcVTag = tag.getNfcVTag(vTag);
+                NfcVTag = tag.getNfcVTag(null);
             } catch (err) {
                 if (err.code === 401) {
                     console.info('Nfcget tagABFV err' + err);
@@ -602,7 +602,7 @@ export default function nfcTagABFVTest() {
         it('SUB_Communication_NFC_nfctage_js_0402', Level.LEVEL0, function ()  {
             let NfcVTag;
             try {
-                NfcVTag = tag.getNfcVTag(vTag);
+                NfcVTag = tag.getNfcVTag(undefined);
             } catch (err) {
                 if (err.code === 401) {
                     console.info('Nfcget tagABFV err' + err);
@@ -1932,7 +1932,7 @@ export default function nfcTagABFVTest() {
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2601 ERROR :  " + err + " - " + err.code);
                     expect(401).assertEqual(err.code);
                 } else {
-                    onsole.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2601 Fail :  ");
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2601 Fail :  ");
                     expect().assertFail();
                 }
             }
@@ -1955,7 +1955,7 @@ export default function nfcTagABFVTest() {
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2600 ERROR :  " + err + " - " + err.code);
                     expect(401).assertEqual(err.code);
                 } else {
-                    onsole.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2600 Fail :  ");
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2600 Fail :  ");
                     expect().assertFail();
                 }
             }

@@ -441,9 +441,9 @@ export default function channelCallbacktest() {
                     })
                     .catch(error => {
                         console.info("[NFC_test]10 openBasicChannel failed" + error + "--error.code--" + error.code);
-                        if (error === 401) {
-                            console.info("[NFC_test]10 openBasicChannel failed" + error);
-                            expect(401).assertEqual(error);
+                        if (error.code === 401) {
+                            console.info("[NFC_test]10 openBasicChannel failed" + error.code);
+                            expect(401).assertEqual(error.code);
                         } else {
                             console.info("[NFC_test]10 openLogicalChannel occurs exception:" + error);
                             expect().assertFail();
@@ -494,9 +494,9 @@ export default function channelCallbacktest() {
                     })
                     .catch(error => {
                         console.info("[NFC_test]10 openBasicChannel failed" + error + "--error.code--" + error.code);
-                        if (error === 401) {
-                            console.info("[NFC_test]10 openBasicChannel failed" + error);
-                            expect(401).assertEqual(error);
+                        if (error.code === 401) {
+                            console.info("[NFC_test]10 openBasicChannel failed" + error.code);
+                            expect(401).assertEqual(error.code);
                         } else {
                             console.info("[NFC_test]10 openLogicalChannel occurs exception:" + error);
                             expect().assertFail();
@@ -513,14 +513,14 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1001
-         * @tc.number SUB_Communication_Ese_LogicalChannel_js_1001
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1003
+         * @tc.number SUB_Communication_Ese_LogicalChannel_js_1003
          * @tc.desc   open LogicalChannel Check whether the channel is closed.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_Ese_LogicalChannel_js_1000', Level.LEVEL0, async function (done) {
+        it('SUB_Communication_Ese_LogicalChannel_js_1003', Level.LEVEL0, async function (done) {
             let array = [];
             try {
                 if (getReader == undefined) {
@@ -528,7 +528,7 @@ export default function channelCallbacktest() {
                 } else {
                     function LogicalChannel_callback(){
                         return new Promise((resolve, reject) => {
-                            Session.openLogicalChannel(null, array,
+                            Session.openLogicalChannel(array, null,
                                 (err, result) => {
                                     if(err) {
                                         console.info("[NFC_test]10 openLogicalChannel data == null" + err);
@@ -548,9 +548,9 @@ export default function channelCallbacktest() {
                     })
                     .catch(error => {
                         console.info("[NFC_test]10 openBasicChannel failed" + error + "--error.code--" + error.code);
-                        if (error === 401) {
-                            console.info("[NFC_test]10 openBasicChannel failed" + error);
-                            expect(401).assertEqual(error);
+                        if (error.code === 401) {
+                            console.info("[NFC_test]10 openBasicChannel failed" + error.code);
+                            expect(401).assertEqual(error.code);
                         } else {
                             console.info("[NFC_test]10 openLogicalChannel occurs exception:" + error);
                             expect().assertFail();
@@ -953,7 +953,7 @@ export default function channelCallbacktest() {
                             expect(401).assertEqual(err.code);
                         } else {
                             console.info("[NFC_test]12 openLogicalChannel_callback occurs exception:" + err.code + "---" + err);
-                            expect.assertFail();
+                            expect().assertFail();
                         }
                         done();
                     })
@@ -1025,7 +1025,7 @@ export default function channelCallbacktest() {
                             expect(401).assertEqual(err.code);
                         } else {
                             console.info("[NFC_test]12 openLogicalChannel_callback occurs exception:" + err.code + "---" + err);
-                            expect.assertFail();
+                            expect().assertFail();
                         }
                         done();
                     })
@@ -1075,7 +1075,7 @@ export default function channelCallbacktest() {
                             expect(3300101).assertEqual(err.code);
                         } else {
                             console.info("[NFC_test]12 openLogicalChannel_callback occurs exception:" + err.code + "---" + err);
-                            expect.assertFail();
+                            expect().assertFail();
                         }
                         done();
                     })
@@ -1313,7 +1313,7 @@ export default function channelCallbacktest() {
                     expect(401).assertEqual(err.code);
                 } else {
                     console.info("[NFC_test]14 openLogicalChannel exception:" + err.code + "---" + err);
-                    expect.assertFail();
+                    expect().assertFail();
                 }
                 done();
             }
@@ -1346,7 +1346,7 @@ export default function channelCallbacktest() {
                     expect(401).assertEqual(err.code);
                 } else {
                     console.info("[NFC_test]14 openLogicalChannel exception:" + err.code + "---" + err);
-                    expect.assertFail();
+                    expect().assertFail();
                 }
                 done();
             }
@@ -1375,8 +1375,9 @@ export default function channelCallbacktest() {
                             expect(3300101).assertEqual(err.code);
                         } else {
                             console.info("[NFC_test]14 openLogicalChannel exception:" + err.code + "---" + err);
-                            expect.assertFail();
+                            expect().assertFail();
                         }
+                        done();
                     });
                 }
             } catch (err) {
@@ -1385,7 +1386,7 @@ export default function channelCallbacktest() {
                     expect(401).assertEqual(err.code);
                 } else {
                     console.info("[NFC_test]14 openLogicalChannel exception:" + err.code + "---" + err);
-                    expect.assertFail();
+                    expect().assertFail();
                 }
                 done();
             }
