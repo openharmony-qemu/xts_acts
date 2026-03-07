@@ -1591,7 +1591,7 @@ describe('fileIO_create_randomAccessFile', function () {
             expect(false).assertTrue();
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_031 has failed for ' + err);
-            expect(err.code === 13900020 && err.message === 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -1613,7 +1613,7 @@ describe('fileIO_create_randomAccessFile', function () {
             expect(false).assertTrue();
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_032 has failed for ' + err);
-            expect(err.code === 13900020 && err.message === 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -1635,7 +1635,7 @@ describe('fileIO_create_randomAccessFile', function () {
             expect(false).assertTrue();
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_033 has failed for ' + err);
-            expect(err.code === 13900020 && err.message === 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -1679,7 +1679,7 @@ describe('fileIO_create_randomAccessFile', function () {
             expect(false).assertTrue();
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_035 has failed for ' + err);
-            expect(err.code === 13900020 && err.message === 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -1701,7 +1701,7 @@ describe('fileIO_create_randomAccessFile', function () {
             expect(false).assertTrue();
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_036 has failed for ' + err);
-            expect(err.code === 13900020 && err.message === 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -1723,7 +1723,7 @@ describe('fileIO_create_randomAccessFile', function () {
             expect(false).assertTrue();
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_037 has failed for ' + err);
-            expect(err.code === 13900002 && err.message === 'No such file or directory').assertTrue();
+            expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
         }
     });
 
@@ -1746,7 +1746,7 @@ describe('fileIO_create_randomAccessFile', function () {
               });
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_038 has failed for ' + err);
-            expect(err.code === 13900020 && err.message === 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -1769,7 +1769,7 @@ describe('fileIO_create_randomAccessFile', function () {
               });
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_039 has failed for ' + err);
-            expect(err.code === 13900020 && err.message === 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -1787,7 +1787,7 @@ describe('fileIO_create_randomAccessFile', function () {
             fs.createRandomAccessFile("dsjvdahkd", (err) => {
                 if (err) {
                   console.error("fileIO_create_randomaccessfile_async_040 error message: " + err.message + ", error code: " + err.code);
-                  expect(err.code === 13900002 && err.message === 'No such file or directory').assertTrue();
+                  expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
                 } 
               });
         } catch (err) {
@@ -1810,7 +1810,7 @@ describe('fileIO_create_randomAccessFile', function () {
             fs.createRandomAccessFile("", (err) => {
                 if (err) {
                   console.error("fileIO_create_randomaccessfile_async_041 error message: " + err.message + ", error code: " + err.code);
-                  expect(err.code === 13900002 && err.message === 'No such file or directory').assertTrue();
+                  expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
                 } 
               });
         } catch (err) {
@@ -1838,7 +1838,7 @@ describe('fileIO_create_randomAccessFile', function () {
               });
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_042 has failed for ' + err);
-            expect(err.code === 13900020 && err.message === 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -1861,7 +1861,7 @@ describe('fileIO_create_randomAccessFile', function () {
               });
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_043 has failed for ' + err);
-            expect(err.code === 13900020 && err.message === 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -1886,7 +1886,7 @@ describe('fileIO_create_randomAccessFile', function () {
               });
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_async_044 has failed for ' + err);
-            expect(err.code === 13900020 && err.message === 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -1931,7 +1931,7 @@ describe('fileIO_create_randomAccessFile', function () {
             fs.createRandomAccessFile("", fs.OpenMode.READ_ONLY, (err) => {
                 if (err) {
                   console.error("fileIO_create_randomaccessfile_async_046 error message: " + err.message + ", error code: " + err.code);
-                  expect(err.code === 13900002 && err.message === 'No such file or directory').assertTrue();
+                  expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
                 }
               });
         } catch (err) {

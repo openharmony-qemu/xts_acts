@@ -1291,7 +1291,7 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_async_012 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -1311,7 +1311,7 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_async_013 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -1331,7 +1331,7 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_async_014 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });

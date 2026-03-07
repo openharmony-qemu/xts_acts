@@ -746,7 +746,7 @@ describe('fileIO_fs_readLines', function () {
             });
         } catch (e) {
             console.log('fileIO_test_readLines_async_018 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code === 13900020 && e.message === 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -767,7 +767,7 @@ describe('fileIO_fs_readLines', function () {
             }, (err, readerIterator) => {
                 if (err) {
                     console.log('fileIO_test_readLines_async_019 error package: ' + JSON.stringify(err));
-                    expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+                    expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
                     done();
                 }
             });
@@ -799,7 +799,7 @@ describe('fileIO_fs_readLines', function () {
             });
         } catch (e) {
             console.log('fileIO_test_readLines_async_020 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code === 13900020 && e.message === 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -825,7 +825,7 @@ describe('fileIO_fs_readLines', function () {
             });
         } catch (e) {
             console.log('fileIO_test_readLines_async_021 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code === 13900020 && e.message === 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });

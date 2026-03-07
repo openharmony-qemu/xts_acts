@@ -368,7 +368,7 @@ describe('fileIO_randomAccessFile_write', function () {
         } catch(err) {
             console.info('fileIO_randomaccessfile_write_sync_013 has failed for ' + err);
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
         }
     });
 
@@ -392,7 +392,7 @@ describe('fileIO_randomAccessFile_write', function () {
         } catch(err) {
             console.info('fileIO_randomaccessfile_write_sync_014 has failed for ' + err);
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
         }
     });
 
@@ -462,7 +462,7 @@ describe('fileIO_randomAccessFile_write', function () {
             let randomaccessfile = fileIO.createRandomAccessFileSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
             let length = 4096;
             let bytesWritten = randomaccessfile.writeSync("", { offset: length });
-            // expect(bytesWritten == length).assertTrue();
+            expect(bytesWritten == 0).assertTrue();
             console.info('fileIO_randomaccessfile_write_sync_017 bytesWritten: ' + bytesWritten);
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
@@ -836,7 +836,7 @@ describe('fileIO_randomAccessFile_write', function () {
             expect(false).assertTrue();
         } catch(err) {
             console.info('fileIO_randomaccessfile_write_async_014 has failed for ' + err);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
             done()
         }
     });
@@ -858,7 +858,7 @@ describe('fileIO_randomAccessFile_write', function () {
             expect(false).assertTrue();
         } catch(err) {
             console.info('fileIO_randomaccessfile_write_async_015 has failed for ' + err);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
             done();
         }
     });
@@ -965,7 +965,7 @@ describe('fileIO_randomAccessFile_write', function () {
         } catch(err) {
             console.info('fileIO_randomaccessfile_write_async_019 has failed for ' + err);
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
             done();
         }
     });
@@ -992,7 +992,7 @@ describe('fileIO_randomAccessFile_write', function () {
         } catch(err) {
             console.info('fileIO_randomaccessfile_write_async_020 has failed for ' + err);
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
             done();
         }
     });
@@ -1046,7 +1046,7 @@ describe('fileIO_randomAccessFile_write', function () {
         } catch(err) {
             console.info('fileIO_randomaccessfile_write_async_022 has failed for ' + err);
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
             done();
         }
     });
@@ -1072,7 +1072,7 @@ describe('fileIO_randomAccessFile_write', function () {
         } catch(err) {
             console.info('fileIO_randomaccessfile_write_async_023 has failed for ' + err);
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
             done();
         }
     });
