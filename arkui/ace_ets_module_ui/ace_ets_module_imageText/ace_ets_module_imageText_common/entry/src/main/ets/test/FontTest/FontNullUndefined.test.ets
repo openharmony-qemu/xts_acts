@@ -16,10 +16,10 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { font } from '@kit.ArkUI';
 
-export default function FontTest() {
-  describe('FontTest', () => {
+export default function FontNullUndefinedTest() {
+  describe('FontNullUndefinedTest', () => {
     beforeAll(() => {
-      console.log('FontTest', 'beforeAll: start test')
+      console.log('FontNullUndefinedTest', 'beforeAll: start test')
     });
 
     /**
