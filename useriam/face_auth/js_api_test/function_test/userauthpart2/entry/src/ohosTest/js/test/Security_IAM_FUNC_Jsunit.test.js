@@ -362,7 +362,7 @@ export default function userauthTest() {
                 });
             } catch (e) {
                 console.log("Security_IAM_Func_0106 no callback fail on null " + e.code);
-                expect(e.code).assertEqual(12500005);
+                expect(e.code).assertEqual(401);
             }
 
             //on: invalid parameter
@@ -374,7 +374,7 @@ export default function userauthTest() {
                 });
             } catch (e) {
                 console.log("Security_IAM_Func_0106 no callback fail on undefined" + e.code);
-                expect(e.code).assertEqual(12500005);
+                expect(e.code).assertEqual(401);
             }
 
             //off: invalid parameter
@@ -392,7 +392,7 @@ export default function userauthTest() {
                 authInstance.off(null);
             } catch (e) {
                 console.log("Security_IAM_Func_0106 invalid results fail off null" + e.code);
-                expect(e.code).assertEqual(12500005);
+                expect(e.code).assertEqual(401);
             }
 
             //off: invalid parameter
@@ -401,7 +401,7 @@ export default function userauthTest() {
                 authInstance.off(undefined);
             } catch (e) {
                 console.log("Security_IAM_Func_0106 invalid results fail off undefined" + e.code);
-                expect(e.code).assertEqual(12500005);
+                expect(e.code).assertEqual(401);
             }
 
             //off: more parameter

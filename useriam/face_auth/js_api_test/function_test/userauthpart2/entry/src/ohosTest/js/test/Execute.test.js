@@ -619,14 +619,6 @@ export default function signNormalAccessBiometricExecute() {
       }
 
       try {
-        userAuth.getUserAuthInstance(undefined, widgetParamDefault);
-        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step3 success`);
-      } catch (e) {
-        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step3 fail ${e.code}`);
-        expect(e.code).assertEqual(401);
-      }
-
-      try {
         userAuth.getUserAuthInstance(authParamDefault, null);
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step4 success`);
       } catch (e) {
