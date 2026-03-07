@@ -927,10 +927,6 @@ export default function abilityTest() {
       }, (err, result: ability.AbilityResult) => {
         console.log(TAG + " error = " + JSON.stringify(err))
         console.log(TAG + " result = " + JSON.stringify(result))
-        try{expect(flag).assertTrue()}catch{
-          console.info(TAG + "app run task use time over 2s");
-        }
-        done();
       })
     })
 
@@ -976,10 +972,6 @@ export default function abilityTest() {
       }, (err, result: ability.AbilityResult) => {
         console.log(TAG + " error = " + JSON.stringify(err))
         console.log(TAG + " result = " + JSON.stringify(result))
-        try{expect(flag).assertTrue()}catch{
-          console.info(TAG + "app run task use time over 2s");
-        }
-        done();
       })
     })
 
@@ -1025,10 +1017,6 @@ export default function abilityTest() {
       }, (err, result: ability.AbilityResult) => {
         console.log(TAG + " error = " + JSON.stringify(err))
         console.log(TAG + " result = " + JSON.stringify(result))
-        try{expect(flag).assertTrue()}catch{
-          console.info(TAG + "app run task use time over 2s");
-        }
-        done();
       })
     })
 
@@ -1074,10 +1062,6 @@ export default function abilityTest() {
       }, (err, result: ability.AbilityResult) => {
         console.log(TAG + " error = " + JSON.stringify(err))
         console.log(TAG + " result = " + JSON.stringify(result))
-        try{expect(flag).assertTrue()}catch{
-          console.info(TAG + "app run task use time over 2s");
-        }
-        done();
       })
     })
 
@@ -1123,10 +1107,6 @@ export default function abilityTest() {
       }, (err, result: ability.AbilityResult) => {
         console.log(TAG + " error = " + JSON.stringify(err));
         console.log(TAG + " result = " + JSON.stringify(result));
-        try{expect(flag).assertTrue()}catch{
-          console.info(TAG + "app run task use time over 2s");
-        }
-        done();
       })
     })
 

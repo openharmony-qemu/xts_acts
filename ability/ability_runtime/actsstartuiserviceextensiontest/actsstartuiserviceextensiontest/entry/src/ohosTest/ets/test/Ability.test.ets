@@ -41,12 +41,11 @@ export default function abilityTest() {
       console.info('====> [test ] isSupportCapability: ' + isSupportCapability +  " mpEnable:" + mpEnable);
       if(isSupportCapability != true && isSupportCapability != false){
         expect().assertFail();
-        done();
       }
       if(mpEnable != true && mpEnable != false){
         expect().assertFail();
-        done();
       }
+      done();
     })
     afterEach(async (done:Function) => {
       await sleep(2000);
