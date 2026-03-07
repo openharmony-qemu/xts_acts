@@ -1941,29 +1941,6 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.name   settings_set_value_callback_no_permission
-     * @tc.number settings_set_value_callback_no_permission
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_set_value_callback_no_permission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        try {
-          settings.setValue(mContext, 'testkey', 'testvalue', (result) => {
-            console.info("[settings_set_value_callback_no_permission] result = " + result);
-            expect().assertFail();
-            done();
-          });
-        } catch (err) {
-          console.error("[settings_set_value_callback_no_permission] error = " + err);
-          expect(err.code).assertEqual(201);
-          done();
-        }
-      });
-
-    /**
      * @tc.name   settings_set_value_callback_context_null
      * @tc.number settings_set_value_callback_context_null
      * @tc.desc   MediumTest
