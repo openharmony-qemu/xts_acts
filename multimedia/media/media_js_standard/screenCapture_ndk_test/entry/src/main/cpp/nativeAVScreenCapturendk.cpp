@@ -1460,7 +1460,6 @@ static napi_value normalAVScreenCaptureStrategyForPrivacyMaskModeDisplay(napi_en
     return res;
 }
 
-// SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE
 static napi_value normalAVScreenCaptureStrategyForForPickerTestStop(napi_env env, napi_callback_info info)
 {
     usleep(g_recordTimeOne);
@@ -1471,6 +1470,40 @@ static napi_value normalAVScreenCaptureStrategyForForPickerTestStop(napi_env env
 
     OH_AVSCREEN_CAPTURE_ErrCode result = AV_SCREEN_CAPTURE_ERR_OK;
     if (result1 == AV_SCREEN_CAPTURE_ERR_OK && result2 == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = AV_SCREEN_CAPTURE_ERR_OK;
+    } else {
+        result = AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT;
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureStrategyForForPickerTestStop1(napi_env env, napi_callback_info info)
+{
+    usleep(g_recordTimeOne);
+    OH_AVSCREEN_CAPTURE_ErrCode result1 = OH_AVScreenCapture_StopScreenCapture(
+        screenCaptureStrategyForPrivacyMaskMode);
+    OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_StopScreenCapture result1 = %{public}d", result1);
+
+    OH_AVSCREEN_CAPTURE_ErrCode result = AV_SCREEN_CAPTURE_ERR_OK;
+    if (result1 == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = AV_SCREEN_CAPTURE_ERR_OK;
+    } else {
+        result = AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT;
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureStrategyForForPickerTestRelease1(napi_env env, napi_callback_info info)
+{
+    usleep(g_recordTimeOne);
+    OH_AVSCREEN_CAPTURE_ErrCode result2 = OH_AVScreenCapture_Release(screenCaptureStrategyForPrivacyMaskMode);
+    OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_Release result2 = %{public}d", result2);
+    OH_AVSCREEN_CAPTURE_ErrCode result = AV_SCREEN_CAPTURE_ERR_OK;
+    if (result2 == AV_SCREEN_CAPTURE_ERR_OK) {
         result = AV_SCREEN_CAPTURE_ERR_OK;
     } else {
         result = AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT;
@@ -2376,6 +2409,54 @@ static napi_value normalAVScreenCaptureStrategyForPresenPicker3(napi_env env, na
     return res;
 }
 
+static napi_value normalAVScreenCaptureResizeCanvas(napi_env env, napi_callback_info info)
+{
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_ResizeCanvas(screenCaptureStrategyForPrivacyMaskMode,
+    DEFAULT_WIDTH, DEFAULT_HEIGHT);
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureSetDisplayCallback(napi_env env, napi_callback_info info)
+{
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_SetDisplayCallback(screenCaptureStrategyForPrivacyMaskMode,
+    OnDisplaySelected, nullptr);
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_STATE) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureExcludeContent(napi_env env, napi_callback_info info)
+{
+    g_contentFilter = OH_AVScreenCapture_CreateContentFilter();
+    if (g_contentFilter == nullptr) {
+        napi_throw_error((env), nullptr, "error : expect g_contentFilter is not nullptr");
+    }
+    screenCaptureResult = OH_AVScreenCapture_ContentFilter_AddAudioContent(g_contentFilter,
+        OH_SCREEN_CAPTURE_NOTIFICATION_AUDIO);
+    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OK) {
+        napi_throw_error((env), nullptr, "error : expect AddAudioContent is 0 ");
+    }
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_ExcludeContent(
+        screenCaptureStrategyForPrivacyMaskMode, g_contentFilter);
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_UNSUPPORT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
 static napi_value normalAVScreenCaptureStrategyForPresenPicker1(napi_env env, napi_callback_info info)
 {
     screenCaptureNormal = OH_AVScreenCapture_Create();
@@ -2696,6 +2777,10 @@ static napi_value Init(napi_env env, napi_value exports)
             normalAVScreenCaptureStrategyForPrivacyMaskModeTestStop, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureStrategyForForPickerTestStop", nullptr,
             normalAVScreenCaptureStrategyForForPickerTestStop, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureStrategyForForPickerTestStop1", nullptr,
+            normalAVScreenCaptureStrategyForForPickerTestStop1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureStrategyForForPickerTestRelease1", nullptr,
+            normalAVScreenCaptureStrategyForForPickerTestRelease1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureSelectionCallbackSuccess", nullptr, normalAVScreenCaptureSelectionCallbackSuccess,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureSelectionCallbackStop", nullptr, normalAVScreenCaptureSelectionCallbackStop,
@@ -2762,6 +2847,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"normalAVScreenCaptureStrategy1", nullptr, normalAVScreenCaptureStrategy1,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalMultiDisplayCaptureCapabilityTest", nullptr, normalMultiDisplayCaptureCapabilityTest, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureResizeCanvas", nullptr, normalAVScreenCaptureResizeCanvas, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureSetDisplayCallback", nullptr, normalAVScreenCaptureSetDisplayCallback, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureExcludeContent", nullptr, normalAVScreenCaptureExcludeContent, nullptr,
             nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

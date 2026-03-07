@@ -565,6 +565,34 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_EXCLUDECONTENT
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_EXCLUDECONTENT
+     * @tc.desc   OH_AVScreenCapture_PresentPicker 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_EXCLUDECONTENT', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPicker();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
+      expect(result).assertEqual(0);
+      await Utils.btnPickerTextScreenCapture();
+      await Utils.btnTextScreenCapture();
+      let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop1();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
+        resultStop);
+      let result1: number = myScreenCaptureNdk.normalAVScreenCaptureExcludeContent();
+      let resultRelease: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestRelease1();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultRelease:" +
+        resultRelease);
+      expect(result1).assertEqual(0);
+      expect(resultStop).assertEqual(0);
+      expect(resultRelease).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_PresentPicker_0001
      * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_PresentPicker_0001
      * @tc.desc   OH_AVScreenCapture_PresentPicker
@@ -580,6 +608,53 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_RESIZECANVAS
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_RESIZECANVAS
+     * @tc.desc   OH_AVScreenCapture_ResizeCanvas 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_RESIZECANVAS', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPicker();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
+      expect(result).assertEqual(0);
+      await Utils.btnPickerTextScreenCapture();
+      await Utils.btnTextScreenCapture();
+      let result1: number = myScreenCaptureNdk.normalAVScreenCaptureResizeCanvas();
+      let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
+        resultStop);
+      expect(result1).assertEqual(0);
+      expect(resultStop).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SETDISPLAYCALLBACK
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SETDISPLAYCALLBACK
+     * @tc.desc   OH_AVScreenCapture_SetDisplayCallback 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SETDISPLAYCALLBACK', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPicker();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
+      expect(result).assertEqual(0);
+      await Utils.btnPickerTextScreenCapture();
+      await Utils.btnTextScreenCapture();
+      let result1: number = myScreenCaptureNdk.normalAVScreenCaptureSetDisplayCallback();
+      let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
+        resultStop);
+      expect(result1).assertEqual(0);
+      expect(resultStop).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401
