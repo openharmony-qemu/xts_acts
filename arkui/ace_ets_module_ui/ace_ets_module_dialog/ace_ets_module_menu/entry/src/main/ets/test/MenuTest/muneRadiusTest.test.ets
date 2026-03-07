@@ -18,6 +18,12 @@ import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayR
 import CommonFunc from '../../MainAbility/common/Common';
 import deviceInfo from "@ohos.deviceInfo"
 
+function defaultStrokeWidth(sysWidth: Resource) {
+  let resourceStrokeWidth = getContext().resourceManager.getNumber(sysWidth.id)
+  let newStrokeWidth: string = Math.round(px2vp(resourceStrokeWidth)) + '.00vp'
+  return newStrokeWidth;
+}
+
 export default function muneRadiusTest() {
   describe('muneRadiusTest', () => {
   let currentDeviceIsPC = false
@@ -212,7 +218,7 @@ export default function muneRadiusTest() {
       console.info("[muneRadiusTest_0500] topLeft1: " + topLeft);
         expect(topLeft).assertEqual('8.00vp');
       }else{
-        expect(obj.$attrs.borderRadius.topLeft).assertEqual('20.00vp');
+        expect(obj.$attrs.borderRadius.topLeft).assertEqual(defaultStrokeWidth($r('sys.float.menu_border_radius_token')));
       }
 
       await CommonFunc.sleep(1000);
@@ -318,7 +324,7 @@ export default function muneRadiusTest() {
       console.info("[muneRadiusTest_0500] topLeft1: " + topLeft);
         expect(topLeft).assertEqual('8.00vp');
       }else{
-        expect(obj.$attrs.borderRadius.topLeft).assertEqual('20.00vp');
+        expect(obj.$attrs.borderRadius.topLeft).assertEqual(defaultStrokeWidth($r('sys.float.menu_border_radius_token')));
       }
       await CommonFunc.sleep(1000);
 
@@ -358,7 +364,7 @@ export default function muneRadiusTest() {
       console.info("[muneRadiusTest_0500] topLeft1: " + topLeft);
         expect(topLeft).assertEqual('8.00vp');
       }else{
-        expect(obj.$attrs.borderRadius.topLeft).assertEqual('20.00vp');
+        expect(obj.$attrs.borderRadius.topLeft).assertEqual(defaultStrokeWidth($r('sys.float.menu_border_radius_token')));
       }
       
       await CommonFunc.sleep(1000);
