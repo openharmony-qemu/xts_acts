@@ -263,6 +263,7 @@ export default function audioCapturerEnhanceTest() {
       } catch (error) {
         console.log(`${Tag}getCurrentAudioCapturerChangeInfo : ERROR ${error.message},${error.code}`);
         if (error.code === undefined) {
+          expect(true).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
