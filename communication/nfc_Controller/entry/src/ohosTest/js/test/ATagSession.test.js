@@ -41,7 +41,19 @@ let aTag1 = {
         },
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
+};
+
+let aTag2 = {
+    "uid": [0x01],
+    "technology": [1],
+    "extrasData": [
+        {
+            "Sak": 0x08, "Atqa": "B000",
+        },
+    ],
+    "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let isoDepTaginfo = {
@@ -839,13 +851,34 @@ export default function nfcATagSessionTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcAtage_js_1700', Level.LEVEL0, function ()  {
-                try {
-                    tag.getNfcA(aTag).getTagInfo()
-                    console.log("[NFC_test]17 tagsession17 getTagInfo pass");
-                } catch (error) {
-                    console.log('[NFC_test]17 tagsession17 getTagInfo error' + error);
-                    expect().assertFail();
-                }          
+            try {
+                tag.getNfcA(aTag).getTagInfo()
+                console.log("[NFC_test]17 tagsession17 getTagInfo pass");
+            } catch (error) {
+                console.log('[NFC_test]17 tagsession17 getTagInfo error' + error);
+                expect().assertFail();
+            }          
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcAtage_js_1701
+         * @tc.number SUB_Communication_NFC_nfcAtage_js_1701
+         * @tc.desc   Test getTagInfo api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfcAtage_js_1701', Level.LEVEL0, function ()  {
+            try {
+                let tagInfo = tag.getNfcA(aTag2).getTagInfo();
+                console.info("[NFC_test]17 tagsession17 tagInfo is: " + tagInfo);
+                expect(tagInfo.uid.length > 0).assertTrue();
+                expect(tagInfo.technology.length > 0).assertTrue();
+                console.log("[NFC_test]17 tagsession17 getTagInfo pass");
+            } catch (error) {
+                console.log('[NFC_test]17 tagsession17 getTagInfo error' + error);
+                expect().assertFail();
+            }          
         })
 
         /**
