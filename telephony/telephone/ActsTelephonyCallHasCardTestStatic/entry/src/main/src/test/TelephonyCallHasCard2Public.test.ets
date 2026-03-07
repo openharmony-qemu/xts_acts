@@ -64,9 +64,15 @@ export default function HasCard2PublicTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let hasVoiceCapability: boolean = call.hasVoiceCapability();
-        hilog.info(domain, tag, '%{public}s', caseName +'success, hasVoiceCapability->'+JSON.stringify(hasVoiceCapability));
-        ExpectTrue(hasVoiceCapability == true);
-        done();
+        if (hasVoiceCapability) {
+          hilog.info(domain, tag, '%{public}s', caseName +'success, hasVoiceCapability->'+JSON.stringify(hasVoiceCapability));
+          ExpectTrue(hasVoiceCapability == true);
+          done();
+        } else {
+          hilog.info(domain, tag, '%{public}s', caseName +'failed, hasVoiceCapability->'+JSON.stringify(hasVoiceCapability));
+          ExpectFail();
+          done();
+        }
       } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +'failed, err->'+JSON.stringify(err));
         ExpectFail();
