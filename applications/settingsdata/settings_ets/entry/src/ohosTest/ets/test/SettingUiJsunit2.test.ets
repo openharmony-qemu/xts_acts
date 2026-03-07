@@ -1951,7 +1951,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_callback_no_permission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.setValue(mContext, 'testkey', 'testvalue', (result) => {
+          settings.setValue(mContext, 'testkey', 'testvalue', (result) => {
             console.info("[settings_set_value_callback_no_permission] result = " + result);
             expect().assertFail();
             done();
@@ -1960,7 +1960,6 @@ export default function settingUiJsunit() {
           console.error("[settings_set_value_callback_no_permission] error = " + err);
           expect(err.code).assertEqual(201);
           done();
-          return;
         }
       });
 
@@ -1975,7 +1974,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_callback_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.setValue(null, 'testkey', 'testvalue', (result) => {
+          settings.setValue(null, 'testkey', 'testvalue', (result) => {
             console.info("[settings_set_value_callback_context_null] result = " + result);
             expect().assertFail();
             done();
@@ -1985,7 +1984,6 @@ export default function settingUiJsunit() {
           expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
             .assertTrue();
           done();
-          return;
         }
       });
 
@@ -2000,7 +1998,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_callback_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.setValue(undefined, 'testkey', 'testvalue', (result) => {
+          settings.setValue(undefined, 'testkey', 'testvalue', (result) => {
             console.info("[settings_set_value_callback_context_undefined] result = " + result);
             expect().assertFail();
             done();
@@ -2010,7 +2008,6 @@ export default function settingUiJsunit() {
           expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
             .assertTrue();
           done();
-          return;
         }
       });
 
@@ -2025,7 +2022,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_callback_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.setValue(mContext, null, 'testvalue', (result) => {
+          settings.setValue(mContext, null, 'testvalue', (result) => {
             console.info("[settings_set_value_callback_key_null] result = " + result);
             expect().assertFail();
             done();
@@ -2035,7 +2032,6 @@ export default function settingUiJsunit() {
           expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
             .assertTrue();
           done();
-          return;
         }
       });
 
@@ -2050,7 +2046,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_callback_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.setValue(mContext, undefined, 'testvalue', (result) => {
+          settings.setValue(mContext, undefined, 'testvalue', (result) => {
             console.info("[settings_set_value_callback_key_undefined] result = " + result);
             expect().assertFail();
             done();
@@ -2060,7 +2056,6 @@ export default function settingUiJsunit() {
           expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
             .assertTrue();
           done();
-          return;
         }
       });
 
@@ -2075,7 +2070,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_callback_value_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.setValue(mContext, 'testkey', null, (result) => {
+          settings.setValue(mContext, 'testkey', null, (result) => {
             console.info("[settings_set_value_callback_value_null] result = " + result);
             expect().assertFail();
             done();
@@ -2085,7 +2080,6 @@ export default function settingUiJsunit() {
           expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2], type. String expected")
             .assertTrue();
           done();
-          return;
         }
       });
 
@@ -2100,7 +2094,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_callback_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.setValue(mContext, 'testkey', undefined, (result) => {
+          settings.setValue(mContext, 'testkey', undefined, (result) => {
             console.info("[settings_set_value_callback_value_undefined] result = " + result);
             expect().assertFail();
             done();
@@ -2110,7 +2104,6 @@ export default function settingUiJsunit() {
           expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2], type. String expected")
             .assertTrue();
           done();
-          return;
         }
       });
 
@@ -3892,7 +3885,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_sync_no_domain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean = settings.setValueSync(mContext, 'testkey', 'testvalue');
+          let result = settings.setValueSync(mContext, 'testkey', 'testvalue');
           console.info("[settings_set_value_sync_no_domain] result:" + result);
           expect().assertFail();
           done();
@@ -3914,7 +3907,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_sync_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean = settings.setValueSync(mContext, '', 'testvalue');
+          let result = settings.setValueSync(mContext, '', 'testvalue');
           console.info("[settings_set_value_sync_no_domain_key_empty] result:" + result);
           expect().assertFail();
           done();
@@ -3936,7 +3929,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_sync_no_domain_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean = settings.setValueSync(mContext, null, 'testvalue');
+          let result = settings.setValueSync(mContext, null, 'testvalue');
           console.info("[settings_set_value_sync_no_domain_key_null] result:" + result);
           expect().assertFail();
           done();
@@ -3959,7 +3952,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_sync_no_domain_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean = settings.setValueSync(mContext, undefined, 'testvalue');
+          let result = settings.setValueSync(mContext, undefined, 'testvalue');
           console.info("[settings_set_value_sync_no_domain_key_undefined] result:" + result);
           expect().assertFail();
           done();
@@ -3982,7 +3975,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_sync_no_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean = settings.setValueSync(mContext, 'testkey', '');
+          let result = settings.setValueSync(mContext, 'testkey', '');
           console.info("[settings_set_value_sync_no_domain_value_empty] result:" + result);
           expect().assertFail();
           done();
@@ -4004,7 +3997,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_sync_no_domain_value_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean = settings.setValueSync(mContext, 'testkey', null);
+          let result = settings.setValueSync(mContext, 'testkey', null);
           console.info("[settings_set_value_sync_no_domain_value_empty] result:" + result);
           expect().assertFail();
           done();
@@ -4027,7 +4020,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_sync_no_domain_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean = settings.setValueSync(mContext, 'testkey', undefined);
+          let result = settings.setValueSync(mContext, 'testkey', undefined);
           console.info("[settings_set_value_sync_no_domain_value_undefined] result:" + result);
           expect().assertFail();
           done();
@@ -4051,7 +4044,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           let defValue: string = 'defValue';
-          let result: string = settings.getValueSync(mContext, 'testkeydef', defValue);
+          let result = settings.getValueSync(mContext, 'testkeydef', defValue);
           console.info("[settings_get_value_sync_no_domain] result:" + result);
           expect(result === defValue).assertTrue();
           done();
@@ -4074,7 +4067,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           let defValue: string = 'defValue';
-          let result: string = settings.getValueSync(mContext, '', defValue);
+          let result = settings.getValueSync(mContext, '', defValue);
           console.info("[settings_get_value_sync_no_domain_key_empty] result:" + result);
           expect(result === defValue).assertTrue();
           done();
@@ -4097,7 +4090,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           let defValue: string = 'defValue';
-          let result: string = settings.getValueSync(mContext, null, defValue);
+          let result = settings.getValueSync(mContext, null, defValue);
           console.info("[settings_get_value_sync_no_domain_key_null] result:" + result);
           expect().assertFail();
           done();
@@ -4121,7 +4114,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           let defValue: string = 'defValue';
-          let result: string = settings.getValueSync(mContext, undefined, defValue);
+          let result = settings.getValueSync(mContext, undefined, defValue);
           console.info("[settings_get_value_sync_no_domain_key_undefined] result:" + result);
           expect().assertFail();
           done();
@@ -4145,7 +4138,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           let defValue: string = '';
-          let result: string = settings.getValueSync(mContext, 'getValueSynckey1', '');
+          let result = settings.getValueSync(mContext, 'getValueSynckey1', '');
           console.info("[settings_get_value_sync_no_domain_value_empty] result:" + result);
           expect(result === defValue).assertTrue();
           done();
@@ -4167,7 +4160,7 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_no_domain_value_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = settings.getValueSync(mContext, 'getValueSynckey1', null);
+          let result = settings.getValueSync(mContext, 'getValueSynckey1', null);
           console.info("[settings_get_value_sync_no_domain_value_null] result:" + result);
           expect().assertFail();
           done();
@@ -4190,7 +4183,7 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_no_domain_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = settings.getValueSync(mContext, 'getValueSynckey1', undefined);
+          let result = settings.getValueSync(mContext, 'getValueSynckey1', undefined);
           console.info("[settings_get_value_sync_no_domain_value_undefined] result:" + result);
           expect().assertFail();
           done();
@@ -4213,7 +4206,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_no_domain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = await settings.setValue(mContext, 'setVlauekey1', 'value1');
+          let result = await settings.setValue(mContext, 'setVlauekey1', 'value1');
           console.info("[settings_set_value_no_domain] result:" + result);
           expect().assertFail();
           done();
@@ -4235,7 +4228,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_no_domain_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = await settings.setValue(null, 'setVlauekey1', 'value1');
+          let result = await settings.setValue(null, 'setVlauekey1', 'value1');
           console.info("[settings_set_value_no_domain_context_null] result:" + result);
           expect().assertFail();
           done();
@@ -4258,7 +4251,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_no_domain_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = await settings.setValue(undefined, 'setVlauekey1', 'value1');
+          let result = await settings.setValue(undefined, 'setVlauekey1', 'value1');
           console.info("[settings_set_value_no_domain_context_undefined] result:" + result);
           expect().assertFail();
           done();
@@ -4281,7 +4274,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = await settings.setValue(mContext, '', 'value1');
+          let result = await settings.setValue(mContext, '', 'value1');
           console.info("[settings_set_value_no_domain_key_empty] result:" + result);
           expect().assertFail();
           done();
@@ -4303,7 +4296,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_no_domain_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = await settings.setValue(mContext, null, 'value1');
+          let result = await settings.setValue(mContext, null, 'value1');
           console.info("[settings_set_value_no_domain_key_null] result:" + result);
           expect().assertFail();
           done();
@@ -4326,7 +4319,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_no_domain_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = await settings.setValue(mContext, undefined, 'value1');
+          let result = await settings.setValue(mContext, undefined, 'value1');
           console.info("[settings_set_value_no_domain_key_undefined] result:" + result);
           expect().assertFail();
           done();
@@ -4349,7 +4342,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_no_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = await settings.setValue(mContext, 'setvaluekey212', '');
+          let result = await settings.setValue(mContext, 'setvaluekey212', '');
           console.info("[settings_set_value_no_domain_value_empty] result:" + result);
           expect().assertFail();
           done();
@@ -4371,7 +4364,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_no_domain_value_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = await settings.setValue(mContext, 'setvaluekey212', null);
+          let result = await settings.setValue(mContext, 'setvaluekey212', null);
           console.info("[settings_set_value_no_domain_value_null] result:" + result);
           expect().assertFail();
           done();
@@ -4394,7 +4387,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_no_domain_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: string = await settings.setValue(mContext, 'setvaluekey212', undefined);
+          let result = await settings.setValue(mContext, 'setvaluekey212', undefined);
           console.info("[settings_set_value_no_domain_value_undefined] result:" + result);
           expect().assertFail();
           done();

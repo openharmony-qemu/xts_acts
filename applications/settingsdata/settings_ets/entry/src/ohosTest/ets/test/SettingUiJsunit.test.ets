@@ -2163,7 +2163,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_callback_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.setValue(mContext, '', 'testvalue', (result) => {
+          settings.setValue(mContext, '', 'testvalue', (result) => {
             console.info("[settings_set_value_callback_key_empty] result = " + result);
             expect(err == "Error: Permission denied").assertTrue();
             done();
@@ -2172,7 +2172,6 @@ export default function settingUiJsunit() {
           console.error("[settings_set_value_callback_key_empty] error = " + err);
           expect().assertFail();
           done();
-          return;
         }
       });
 
@@ -2193,7 +2192,6 @@ export default function settingUiJsunit() {
           console.error("[settings_set_value_callback_empty] error = " + err);
           expect().assertFail();
           done();
-          return;
         }
       });
 
@@ -2215,7 +2213,6 @@ export default function settingUiJsunit() {
           console.error("[settings_set_value_callback_null] error = " + err);
           expect().assertFail();
           done();
-          return;
         }
       });
 
@@ -2237,7 +2234,6 @@ export default function settingUiJsunit() {
           console.error("[settings_set_value_callback_undefined] error = " + err);
           expect().assertFail();
           done();
-          return;
         }
       });
 
@@ -2252,7 +2248,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_callback_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.setValue(mContext, 'testkey', '', (result) => {
+          settings.setValue(mContext, 'testkey', '', (result) => {
             console.info("[settings_set_value_callback_value_empty] result = " + result);
             expect(err == "Error: Permission denied").assertTrue();
             done();
@@ -2261,7 +2257,6 @@ export default function settingUiJsunit() {
           console.error("[settings_set_value_callback_value_empty] error = " + err);
           expect().assertFail();
           done();
-          return;
         }
       });
 
