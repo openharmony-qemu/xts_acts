@@ -19,7 +19,7 @@ export default function checkBoxTest1() {
 
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/checkbox/CheckBox1",
+        url: "MainAbility/pages/Checkbox/CheckBox1",
       }
       try {
         router.clear();
