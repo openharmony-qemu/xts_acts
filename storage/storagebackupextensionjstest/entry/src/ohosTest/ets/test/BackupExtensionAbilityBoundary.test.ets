@@ -30,10 +30,13 @@
  	       console.log("onRestore end");
  	    }
  	 
- 	    onBackupEx(backupInfo: string): string {
+ 	    onBackupEx(backupInfo: string | undefined | null): string {
  	      try {
  	        if (backupInfo == "") {
  	          console.info("backupInfo is empty");
+ 	        } 	        
+			if (backupInfo == undefined || backupInfo == null) {
+ 	          console.info("backupInfo is undefined or null");
  	        }
  	        console.info(`onBackupEx ok`);
  	        let errorInfo: ErrorInfo = {
@@ -93,7 +96,47 @@
  	          expect(false).assertTrue();
  	       }
  	    });
- 	 
+
+ 	    /**
+ 	     * @tc.name   test_Backup_onBackupEx_empty_string_002
+ 	     * @tc.number SUB_BASIC_FM_FileAPI_onBackupEx_0200
+ 	     * @tc.desc   Test onBackupEx() with null
+ 	     * @tc.type   FUNCTION
+ 	     * @tc.size   MEDIUMTEST
+ 	     * @tc.level  LEVEL2
+ 	     */
+ 	    it("test_Backup_onBackupEx_empty_string_002", Level.LEVEL2, () => {
+ 	       try {
+ 	          let backupext = new MyBackupExtAbilityBoundary();
+ 	          let result = backupext.onBackupEx(null);
+ 	          console.log('test_Backup_onBackupEx_empty_string_002 run ok');
+ 	          expect(result !== null).assertTrue();
+ 	       } catch (error) {
+ 	          console.info(`test_Backup_onBackupEx_empty_string_002 error: ${JSON.stringify(error)}`);
+ 	          expect(false).assertTrue();
+ 	       }
+ 	    });
+
+ 	    /**
+ 	     * @tc.name   test_Backup_onBackupEx_empty_string_003
+ 	     * @tc.number SUB_BASIC_FM_FileAPI_onBackupEx_0300
+ 	     * @tc.desc   Test onBackupEx() with undefined
+ 	     * @tc.type   FUNCTION
+ 	     * @tc.size   MEDIUMTEST
+ 	     * @tc.level  LEVEL2
+ 	     */
+ 	    it("test_Backup_onBackupEx_empty_string_003", Level.LEVEL2, () => {
+ 	       try {
+ 	          let backupext = new MyBackupExtAbilityBoundary();
+ 	          let result = backupext.onBackupEx(undefined);
+ 	          console.log('test_Backup_onBackupEx_empty_string_003 run ok');
+ 	          expect(result !== null).assertTrue();
+ 	       } catch (error) {
+ 	          console.info(`test_Backup_onBackupEx_empty_string_003 error: ${JSON.stringify(error)}`);
+ 	          expect(false).assertTrue();
+ 	       }
+ 	    });
+
  	    /**
  	     * @tc.name   test_Backup_onRestore_name_empty_string_001
  	     * @tc.number SUB_BASIC_FM_FileAPI_onRestore_0100
