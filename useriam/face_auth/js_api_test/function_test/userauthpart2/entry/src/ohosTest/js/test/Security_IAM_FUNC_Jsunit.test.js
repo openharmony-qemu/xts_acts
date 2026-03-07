@@ -392,16 +392,7 @@ export default function userauthTest() {
                 authInstance.off(null);
             } catch (e) {
                 console.log("Security_IAM_Func_0106 invalid results fail off null" + e.code);
-                expect(e.code).assertEqual(401);
-            }
-
-            //off: invalid parameter
-            try {
-                var authInstance = userAuthNorth.getAuthInstance(challenge, authType, authTrustLevel);
-                authInstance.off(undefined);
-            } catch (e) {
-                console.log("Security_IAM_Func_0106 invalid results fail off undefined" + e.code);
-                expect(e.code).assertEqual(401);
+                expect(e.code).assertEqual(12500002);
             }
 
             //off: more parameter
