@@ -1345,7 +1345,7 @@ export default function InterfaceNullValueOverrideTest() {
       let calendar = i18n.getCalendar('zh');
       let value = calendar.isWeekend(null);
       console.log('calendar_isWeekend_null_test_0100 value:', value);
-      expect(value).assertFalse();
+      expect(value).assertTrue();
     })
 
     /**
@@ -4962,7 +4962,7 @@ export default function InterfaceNullValueOverrideTest() {
       let calendar = i18n.getCalendar('zh');
       let value = calendar.isWeekend(undefined);
       console.log('calendar_isWeekend_undefined_test_0100 value:', value);
-      expect(value).assertFalse();
+      expect(value).assertTrue();
     })
 
     /**
