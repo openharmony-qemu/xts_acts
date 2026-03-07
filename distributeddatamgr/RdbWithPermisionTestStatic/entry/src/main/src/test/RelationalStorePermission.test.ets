@@ -48,7 +48,7 @@ const TAG = "testTag"
 const STORE_NAME = "distributed_rdb.db"
 let rdbStore: data_Rdb.RdbStore | undefined;
 let config: data_Rdb.StoreConfig = {
-  "name": STORE_NAME,
+  name: STORE_NAME,
   securityLevel: data_Rdb.SecurityLevel.S1
 }
 let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
