@@ -4341,14 +4341,14 @@ export default function abilityTest() {
             }
         })
         /**
-         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYRequest_UNDEFINED_PSSH
-         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_PSSH
+         * @tc.name   SUB_MULTIMEDIA_DRM_GENERATEMEDIAKEYRequest_UNDEFINED_PSSH
+         * @tc.number SUB_MULTIMEDIA_DRM_GENERATEMEDIAKEYRequest_UNDEFINED_PSSH
          * @tc.desc   generateMediaKeyRequest传入undefined PSSH
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_PSSH', Level.LEVEL0, (done:Function) => {
+        it('SUB_MULTIMEDIA_DRM_GENERATEMEDIAKEYRequest_UNDEFINED_PSSH', Level.LEVEL0, (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
             try {
