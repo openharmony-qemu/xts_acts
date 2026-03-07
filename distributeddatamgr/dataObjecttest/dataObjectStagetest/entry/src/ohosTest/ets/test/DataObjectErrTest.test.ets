@@ -2209,7 +2209,7 @@ export default function DataObjectErrTest() {
         console.info("change" + sessionId);
       });
       try {
-        g_object.off(null, (sessionId: string, fields: Array<string>) => {
+        g_object.off(undefined, (sessionId: string, fields: Array<string>) => {
           console.info("change" + sessionId);
         });
         expect().assertFail();
