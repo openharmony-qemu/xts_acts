@@ -205,7 +205,6 @@ export default function audioRendererTest() {
       } catch (error) {
         console.info(`get current output deviceinfo unknown errro: [${error.code}, ${error.message}]`);
         if (error.code === 5400106) {
-          expect(true).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -244,7 +243,6 @@ export default function audioRendererTest() {
         }).catch((error: BusinessError) => {
           console.log("${TagFrmwkRender}: getCurrentOutputDevices : error = " + error);
           if (error.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
