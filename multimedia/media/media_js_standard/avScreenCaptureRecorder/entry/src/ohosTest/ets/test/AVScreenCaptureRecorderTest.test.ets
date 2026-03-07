@@ -704,7 +704,7 @@ export default function AVScreenCaptureRecorderTest() {
         if (captureRecorder != null) {
 
           console.info('createAVScreenCaptureRecorder success');
-          captureRecorder.init(null).then(() => {
+          await captureRecorder.init(null).then(() => {
             console.info('avScreenCaptureRecorder init success');
             captureRecorder.release();
             expect(false).assertTrue();
@@ -737,7 +737,7 @@ export default function AVScreenCaptureRecorderTest() {
       await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
         if (captureRecorder != null) {
           console.info('createAVScreenCaptureRecorder success');
-          captureRecorder.skipPrivacyMode(null).then(() => {
+          await captureRecorder.skipPrivacyMode(null).then(() => {
             console.info('skipPrivacyMode null success');
           }).catch((err: BusinessError) => {
             captureRecorder.release();
@@ -745,7 +745,7 @@ export default function AVScreenCaptureRecorderTest() {
             console.error('skipPrivacyMode null failed, error: ' + err.message);
           });
 
-          captureRecorder.skipPrivacyMode([1]).then(() => {
+          await captureRecorder.skipPrivacyMode([1]).then(() => {
             console.info('skipPrivacyMode [] success');
           }).catch((err: BusinessError) => {
             captureRecorder.release();
@@ -778,7 +778,7 @@ export default function AVScreenCaptureRecorderTest() {
       await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
         if (captureRecorder != null) {
           console.info('createAVScreenCaptureRecorder success');
-          captureRecorder.excludePickerWindows(null).then(() => {
+          await captureRecorder.excludePickerWindows(null).then(() => {
             console.info('excludePickerWindows null success');
           }).catch((err: BusinessError) => {
             captureRecorder.release();
@@ -786,7 +786,7 @@ export default function AVScreenCaptureRecorderTest() {
             console.error('excludePickerWindows null failed, error: ' + err.message);
           });
 
-          captureRecorder.excludePickerWindows([]).then(() => {
+          await captureRecorder.excludePickerWindows([]).then(() => {
             console.info('excludePickerWindows [] success');
           }).catch((err: BusinessError) => {
             captureRecorder.release();
@@ -819,7 +819,7 @@ export default function AVScreenCaptureRecorderTest() {
       await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
         if (captureRecorder != null) {
           console.info('createAVScreenCaptureRecorder success');
-          this.captureRecorder.on('stateChange', null);
+          captureRecorder.on('stateChange', null);
           await captureRecorder.setMicEnabled(false).then(() => {
             console.info('setMicEnabled null success');
           }).catch((err: BusinessError) => {
