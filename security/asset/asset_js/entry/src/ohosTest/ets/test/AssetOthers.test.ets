@@ -223,6 +223,7 @@ export default function AssetOthers() {
       expect(asset.ErrorCode.ACCESS_TOKEN_ERROR).assertEqual(24000013);
       expect(asset.ErrorCode.FILE_OPERATION_ERROR).assertEqual(24000014);
       expect(asset.ErrorCode.GET_SYSTEM_TIME_ERROR).assertEqual(24000015);
+      expect(asset.ErrorCode.LIMIT_EXCEEDED).assertEqual(24000016);
       expect(asset.ErrorCode.UNSUPPORTED).assertEqual(24000017);
       done();
     });
