@@ -127,44 +127,44 @@ export default function onAreaChangeTest() {
   //Test content and expected results
   let testValues: TestValue[] = [
     {
-    describe: 'SetMove',
-    setValue: {
-      compareButtonWidth: 120,
-      compareButtonHeight: 120
+      describe: 'SetMove',
+      setValue: {
+        compareButtonWidth: 120,
+        compareButtonHeight: 120
+      },
+      expectValue: {
+        compareButtonWidth: 120,
+        compareButtonHeight: 120
+      }
     },
-    expectValue: {
-      compareButtonWidth: 120,
-      compareButtonHeight: 120
-    }
-  },
     {
-    describe: 'SetWidthHeight',
-    setValue: {
-      width: 60,
-      height: 60
+      describe: 'SetWidthHeight',
+      setValue: {
+        width: 60,
+        height: 60
+      },
+      expectValue: {
+        width: 60,
+        height: 60
+      }
     },
-    expectValue: {
-      width: 60,
-      height: 60
-    }
-  },
     {
-    describe: 'SetOffset',
-    exceptView: ['RichText'],
-    setValue: {
-      offset: {
-        x: 50, y: 50
-      } as Position
-    },
-    expectValue: {
-      x: '50.00vp', y: '50.00vp',
-      left: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)), top: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))
+      describe: 'SetOffset',
+      exceptView: ['RichText'],
+      setValue: {
+        offset: {
+          x: 50, y: 50
+        } as Position
+      },
+      expectValue: {
+        x: '50.00vp', y: '50.00vp',
+        left: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)), top: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))
+      }
     }
-  }
   ]
 
   describe('OnAreaChangeTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(() => {
       console.info('OnAreaChangeTest beforeAll start')
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
@@ -281,16 +281,16 @@ export default function onAreaChangeTest() {
         console.info('compareButtonRectAfter right: ' , compareButtonRectAfter.bottom,compareButtonRectAfter.top);
         console.info('compareButtonRectAfter px2vp: ' , AppStorage.get<UIContext>('uiContext')?.px2vp(compareButtonRectAfter.bottom - compareButtonRectAfter.top),testData.testValue.expectValue.compareButtonHeight);
         expect(Math.abs(Number(AppStorage.get<UIContext>('uiContext')?.px2vp(compareButtonRectAfter.right - compareButtonRectAfter.left)) -
-        testData.testValue.expectValue.compareButtonWidth!) <= 2).assertTrue();
+          testData.testValue.expectValue.compareButtonWidth!) <= 2).assertTrue();
         expect(Math.abs(Number(AppStorage.get<UIContext>('uiContext')?.px2vp(compareButtonRectAfter.bottom - compareButtonRectAfter.top)) -
-        testData.testValue.expectValue.compareButtonHeight!) <= 2).assertTrue();
+          testData.testValue.expectValue.compareButtonHeight!) <= 2).assertTrue();
         await checkResults(testData, compareOldTextComponent, compareNewTextComponent, targetRectBefore,
           targetRectAfter, parentRectBefore, parentRectAfter);
       } else if (testData.testValue.describe == 'SetWidthHeight') {
         console.info('[' + testData.caseTag + '] testData.testValue.describe: ' + testData.testValue.describe);
         if ((testData.pageConfig.componentKey == 'GridCol') || (testData.pageConfig.componentKey == 'ListItemGroup')) {
           expect(Math.abs(Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectAfter.bottom - targetRectAfter.top)) -
-          testData.testValue.expectValue.height!) <= 1).assertTrue();
+            testData.testValue.expectValue.height!) <= 1).assertTrue();
           await checkResults(testData, compareOldTextComponent, compareNewTextComponent, targetRectBefore,
             targetRectAfter, parentRectBefore, parentRectAfter);
         } else if ((testData.pageConfig.componentKey == 'TabContent')) {
@@ -336,20 +336,20 @@ async function checkResults(testData: BasePageConfig, compareOldTextComponent: j
   expect(compareNewTextComponent.getElement('$attrs').getString('content') != '').assertEqual(true);
   let compareOldTextObj = JSON.parseJsonElement(compareOldTextComponent.getElement('$attrs').getString('content'))
   let compareNewTextObj = JSON.parseJsonElement(compareNewTextComponent.getElement('$attrs').getString('content'))
-  console.info('[' + testData.caseTag + '] compareOldTextObj width: ' + compareOldTextObj.getInteger('width'));
-  expect(Math.abs(compareOldTextObj.getInteger('width') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.right - targetRectBefore.left))) <= 2).assertTrue();
-  console.info('[' + testData.caseTag + '] compareOldTextObj height: ' + compareOldTextObj.getInteger('height'));
+  console.info('[' + testData.caseTag + '] compareOldTextObj width: ' + compareOldTextObj.getDouble('width'));
+  expect(Math.abs(compareOldTextObj.getDouble('width') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.right - targetRectBefore.left))) <= 2).assertTrue();
+  console.info('[' + testData.caseTag + '] compareOldTextObj height: ' + compareOldTextObj.getDouble('height'));
   console.info(' compareOldTextObj targetRectBefore px2vp: ' , Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.right - targetRectBefore.left)));
-  expect(Math.abs(compareOldTextObj.getInteger('height') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.bottom - targetRectBefore.top))) <= 2)
+  expect(Math.abs(compareOldTextObj.getDouble('height') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.bottom - targetRectBefore.top))) <= 2)
     .assertTrue();
-  console.info('[' + testData.caseTag + '] compareOldTextObj.position.x: ' + compareOldTextObj.getElement('position').getInteger('x'));
-  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('x') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.left - parentRectBefore.left))) <= 2)
+  console.info('[' + testData.caseTag + '] compareOldTextObj.position.x: ' + compareOldTextObj.getElement('position').getDouble('x'));
+  expect(Math.abs(compareOldTextObj.getElement('position').getDouble('x') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.left - parentRectBefore.left))) <= 2)
     .assertTrue();
   console.info('[' + testData.caseTag + '] compareOldTextObj.position.y: ' + compareOldTextObj.getElement('position').getDouble('y'));
   expect(Math.abs(compareOldTextObj.getElement('position').getDouble('y') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.top - parentRectBefore.top))) <= 2)
     .assertTrue();
-  console.info('[' + testData.caseTag + '] compareOldTextObj.globalPosition.x: ' + compareOldTextObj.getElement('globalPosition').getInteger('x'));
-  expect(Math.abs(compareOldTextObj.getElement('globalPosition').getInteger('x') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.left))) <= 2).assertTrue();
+  console.info('[' + testData.caseTag + '] compareOldTextObj.globalPosition.x: ' + compareOldTextObj.getElement('globalPosition').getDouble('x'));
+  expect(Math.abs(compareOldTextObj.getElement('globalPosition').getDouble('x') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.left))) <= 2).assertTrue();
   console.info('[' + testData.caseTag + '] compareOldTextObj.globalPosition.y: ' + compareOldTextObj.getElement('globalPosition').getDouble('y'));
   expect(Math.abs(compareOldTextObj.getElement('globalPosition').getDouble('y') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.top))) <= 2).assertTrue();
 
@@ -369,4 +369,3 @@ async function checkResults(testData: BasePageConfig, compareOldTextComponent: j
   expect(Math.abs(compareNewTextObj.getElement('globalPosition').getDouble('y') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectAfter.top))) <= 2).assertTrue();
 
 }
-

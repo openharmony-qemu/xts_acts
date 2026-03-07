@@ -245,7 +245,7 @@ it('PanGestureUpdateTest_static_0010', Level.LEVEL0, async (done: () => void): P
       let text26 = inspector.getInspectorByKey('PanGestureUpdate_sourceTool');
       let obj26 = JSON.parseJsonElement(text26);
       console.log('PanGestureUpdateTest_static_0010 obj26 $attrs content',obj26.getElement('$attrs').getString('content'),obj26)
-      expect(obj26.getElement('$attrs').getString('content')).assertEqual('sourceTool:FINGER');
+      expect(obj26.getElement('$attrs').getString('content')).assertEqual('sourceTool:Finger');
 
       console.info('PanGestureUpdateTest_static_0010 END');
       done();
