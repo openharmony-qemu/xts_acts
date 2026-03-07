@@ -248,6 +248,45 @@ export default function XmlTest_07() {
       });
 
     /**
+     * @tc.number    SUB_BASEDATE_PARSEINFO_GETPREFIX_0400
+     * @tc.name      getPrefixTest0004
+     * @tc.desc      Negative scenario: Error handling verification - Verify the behavior of getPrefix when the XML format is incorrect
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('getPrefixTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'getPrefixTest0004';
+        console.log(TAG + ' start');
+        const strXml =
+          '<?xml version="1.0" encoding="utf-8"?>' +
+            '<note>' +
+            '<title>Unclosed Tag' +
+            '</note>';
+
+        const textEncoder = new util.TextEncoder();
+        const arrBuffer = textEncoder.encodeInto(strXml);
+        const parser = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+
+        const options: xml.ParseOptions = {
+          supportDoctype: true,
+          ignoreNameSpace: false,
+          tokenValueCallbackFunction: (_key: xml.EventType, _value: xml.ParseInfo): boolean => {
+            return true;
+          }
+        };
+
+        try {
+          parser.parseXml(options);
+          expect().assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETPREFIX_0500
      * @tc.name      getPrefixTest0005
      * @tc.desc      Combined scenario: Nested element prefix verification - Verify the correctness of getPrefix in nested element structures
@@ -524,6 +563,49 @@ export default function XmlTest_07() {
 
 
         expect(str).assertContain("入门到精通");
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PARSEINFO_GETTEXT_0500
+     * @tc.name      testgetText0005
+     * @tc.desc      Negative scenario: Parse illegal XML (unclosed tag), verify interface does not crash and returns empty
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testgetText0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'testgetText0005';
+        console.log(TAG + ' start');
+        const invalidXml: string = '<note>OpenHarmony&';
+        const textEncoder: util.TextEncoder = new util.TextEncoder();
+
+        const encodedData: Uint8Array = textEncoder.encode(invalidXml);
+        const buffer: ArrayBuffer = encodedData.buffer as ArrayBuffer;
+
+        const parser: xml.XmlPullParser = new xml.XmlPullParser(buffer);
+
+        let actualText: string = '';
+        let parseError: boolean = false;
+        const callback: (eventType: xml.EventType, parseInfo: xml.ParseInfo) => boolean = (
+          _: xml.EventType,
+          info: xml.ParseInfo
+        ): boolean => {
+          actualText = info.getText()
+          return true;
+        };
+        const parseOptions: xml.ParseOptions = {} as xml.ParseOptions;
+        parseOptions.tokenValueCallbackFunction = callback;
+        parseOptions.ignoreNameSpace = true;
+        try {
+          parser.parseXml(parseOptions);
+          expect().assertFail()
+        } catch(err){
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+        expect(actualText).assertEqual("");
 
       });
 
@@ -1096,6 +1178,41 @@ export default function XmlTest_07() {
       });
 
     /**
+     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1600
+     * @tc.name      isEmptyElementTagTest0016
+     * @tc.desc      Test parsing illegal XML structure
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('isEmptyElementTagTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'isEmptyElementTagTest0016';
+        console.log(TAG + ' start');
+
+
+        try{
+          let strXml =
+            '<root>\n' +
+              '  <invalid&tag>Illegal character</invalid&tag>\n ' + //Tag name contains illegal & symbol, throw BusinessError
+              '  <item attr="Unclosed attribute>Content</ITEM>\n ' + //Attribute value missing closing quote, end tag case mismatch, throw BusinessError
+              '  <parent>\n' +
+              '    <child>Nesting error</parent>\n' + //Child node unclosed but parent node closed first, throw BusinessError
+              '</root>'
+          let textEncoder = new util.TextEncoder();
+          let arrBuffer = textEncoder.encodeInto(strXml);
+          let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+          let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tokenValueCallbackFunction:func02}
+          that.parseXml(options);
+
+          expect().assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1700
      * @tc.name      isEmptyElementTagTest0017
      * @tc.desc      Test tag format error, determined as legal empty tag according to XML specification
@@ -1245,6 +1362,39 @@ export default function XmlTest_07() {
         that.parseXml(options);
 
         expect(str).assertContain("true")
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_2200
+     * @tc.name      isEmptyElementTagTest0022
+     * @tc.desc      Test incomplete parsing but current node is legal empty tag
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('isEmptyElementTagTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'isEmptyElementTagTest0022';
+        console.log(TAG + ' start');
+
+
+        try{
+          let strXml = //Unclosed node throws BusinessError
+            '<root xmlns:ns="http://example.com/ns\n' +
+              '  <ns:empty/>\n' +
+              '  <unclosed>Unclosed parent node\n' +
+              '</root'
+          let textEncoder = new util.TextEncoder();
+          let arrBuffer = textEncoder.encodeInto(strXml);
+          let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+          let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tokenValueCallbackFunction:func02}
+          that.parseXml(options);
+
+          expect().assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
 
       });
 
