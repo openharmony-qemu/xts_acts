@@ -1071,10 +1071,10 @@ export default function channelCallbacktest() {
                     })
                     .catch(err => {
                         if (err === 3300101) {
-                            console.info("[NFC_test]12 openLogicalChannel_callback occurs exception:" + err.code + "---" + err);
-                            expect(3300101).assertEqual(err.code);
+                            console.info("[NFC_test]12 openLogicalChannel_callback occurs exception:" + err);
+                            expect(3300101).assertEqual(err);
                         } else {
-                            console.info("[NFC_test]12 openLogicalChannel_callback occurs exception:" + err.code + "---" + err);
+                            console.info("[NFC_test]12 openLogicalChannel_callback occurs exception:" + err);
                             expect().assertFail();
                         }
                         done();
