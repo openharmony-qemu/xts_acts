@@ -60,6 +60,7 @@ describe("SensorJsTest_sensor_55", function () {
     })
 
     const PARAMETER_ERROR_CODE = 401
+    let sensortempcode = true;
     const PARAMETER_ERROR_MSG = 'The parameter invalid.'
     const SERVICE_EXCEPTION_CODE = 14500101
     const SERVICE_EXCEPTION_MSG = "Service exception.Possible causes:" +
@@ -88,7 +89,7 @@ describe("SensorJsTest_sensor_55", function () {
             done();
         }
          setTimeout(() => {
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })

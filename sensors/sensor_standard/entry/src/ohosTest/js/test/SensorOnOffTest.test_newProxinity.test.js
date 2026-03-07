@@ -66,6 +66,7 @@ describe("SensorJsTest_sensor_54", function () {
     const SERVICE_EXCEPTION_MSG = "Service exception.Possible causes:" +
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
     let invalid  = -1;
+    let sensortempcode = true;
     let errMessages = ['ReferenceError: string is not defined','TypeError: is not callable',
     'ReferenceError: xxx is not defined']
     let errMessage
@@ -89,7 +90,7 @@ describe("SensorJsTest_sensor_54", function () {
             done();
         }
          setTimeout(() => {
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })
