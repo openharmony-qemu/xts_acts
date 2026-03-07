@@ -48,7 +48,6 @@ async function initConfig(testName: string) {
     captureConfig.fd = await getFd(fileName);
     await mScreenCapture.init(captureConfig).then(() => {
       console.info(TAG, testName + ' Succeeded in initting AVScreenCaptureRecorder.');
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG,
         testName + ' Failed to init AVScreenCaptureRecorder, code: ' + error.code + ', msg: ' + error.message);
@@ -65,7 +64,6 @@ async function createAVScreenCaptureRecorder(done: Function, testName: string) {
     if (screenCapture) {
       mScreenCapture = screenCapture;
       console.info(TAG, testName + ' Succeeded in creating AVScreenCaptureRecorder.');
-      expect(true).assertTrue();
     }
   }).catch((error: BusinessError) => {
     console.error(TAG,

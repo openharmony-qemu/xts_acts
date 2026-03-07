@@ -712,7 +712,7 @@ export default function AVScreenCaptureRecorderTest() {
             captureRecorder.release();
             console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
           });
-         } else {
+        } else {
           console.error('createAVScreenCaptureRecorder fail');
           expect(false).assertTrue();
         }
@@ -753,7 +753,7 @@ export default function AVScreenCaptureRecorderTest() {
             console.error('skipPrivacyMode [] failed, error: ' + err.message);
           });
           captureRecorder.release();
-         } else {
+        } else {
           console.error('createAVScreenCaptureRecorder fail');
           expect(false).assertTrue();
         }
@@ -794,7 +794,7 @@ export default function AVScreenCaptureRecorderTest() {
             console.error('excludePickerWindows [] failed, error: ' + err.message);
           });
           captureRecorder.release();
-         } else {
+        } else {
           console.error('createAVScreenCaptureRecorder fail');
           expect(false).assertTrue();
         }
@@ -828,7 +828,7 @@ export default function AVScreenCaptureRecorderTest() {
             console.error('setMicEnabled null failed, error: ' + err.message);
           });
           captureRecorder.release();
-         } else {
+        } else {
           console.error('createAVScreenCaptureRecorder fail');
           expect(false).assertTrue();
         }
