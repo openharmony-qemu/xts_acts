@@ -5455,7 +5455,7 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_callback_for_content_001
      * @tc.number SOUND_POOL_FUNC_TEST_351
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -5473,7 +5473,7 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_callback_for_content_002
      * @tc.number SOUND_POOL_FUNC_TEST_352
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -5491,7 +5491,7 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_callback_for_content_003
      * @tc.number SOUND_POOL_FUNC_TEST_353
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -5509,7 +5509,7 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_callback_for_content_004
      * @tc.number SOUND_POOL_FUNC_TEST_354
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -5527,7 +5527,7 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_callback_for_content_005
      * @tc.number SOUND_POOL_FUNC_TEST_355
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -5545,7 +5545,7 @@ export default function SoundPoolTest() {
     /**
      * @tc.name   createSoundPool_callback_for_content_006
      * @tc.number SOUND_POOL_FUNC_TEST_356
-     * @tc.desc   Test different content of AudioRendererInfo in create soundPool callback.
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
