@@ -191,15 +191,15 @@ export default function documentpcPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.name   test_Documentpicker_Select_Pc_Callback_006
-     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_PC_CALLBACK_0600
+     * @tc.name   test_Documentpicker_Select_Pc_Callback_007
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_PC_CALLBACK_0700
      * @tc.desc   select with option authMode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("test_Documentpicker_Select_Pc_Callback_006", Level.LEVEL1, async (done: Function) => {
-      let testNum = "test_Documentpicker_Select_Pc_Callback_006";
+    it("test_Documentpicker_Select_Pc_Callback_007", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Select_Pc_Callback_007";
       let option = new picker.DocumentSelectOptions();
       option.authMode = true;
       try {
