@@ -54,15 +54,15 @@ export default function connectNativeNullUndefinedParameterTest() {
     })
 
     /**
-     * @tc.name   SUB_WEB_WebNativeMessagingExtension_ConnectNative_Context_Null_0100
-     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Context_Null_0100
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_ConnectNative_Null_0100
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Null_0100
      * @tc.desc   Test connectNative with null context parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_WEB_WebNativeMessagingExtension_ConnectNative_Context_Null_0100', Level.LEVEL2, () => {
-      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_ConnectNative_Context_Null_0100`;
+    it('SUB_WEB_WebNativeMessagingExtension_ConnectNative_Null_0100', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_ConnectNative_Null_0100`;
       hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
       let want: Want = {
@@ -105,15 +105,15 @@ export default function connectNativeNullUndefinedParameterTest() {
     })
 
     /**
-     * @tc.name   SUB_WEB_WebNativeMessagingExtension_ConnectNative_Context_Undefined_0200
-     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Context_Undefined_0200
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_ConnectNative_Undefined_0200
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Undefined_0200
      * @tc.desc   Test connectNative with undefined context parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_WEB_WebNativeMessagingExtension_ConnectNative_Context_Undefined_0200', Level.LEVEL2, () => {
-      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_ConnectNative_Context_Undefined_0200`;
+    it('SUB_WEB_WebNativeMessagingExtension_ConnectNative_Undefined_0200', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_ConnectNative_Undefined_0200`;
       hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
       let want: Want = {
@@ -214,15 +214,15 @@ export default function connectNativeNullUndefinedParameterTest() {
     })
 
     /**
-     * @tc.name   SUB_WEB_WebNativeMessagingExtension_ConnectNative_Want_Undefined_0400
-     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Want_Undefined_0400
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_ConnectNative_Undefined_0400
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Undefined_0400
      * @tc.desc   Test connectNative with undefined want parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_WEB_WebNativeMessagingExtension_ConnectNative_Want_Undefined_0400', Level.LEVEL2, () => {
-      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_ConnectNative_Want_Undefined_0400`;
+    it('SUB_WEB_WebNativeMessagingExtension_ConnectNative_Undefined_0400', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_ConnectNative_Undefined_0400`;
       hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
       let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {

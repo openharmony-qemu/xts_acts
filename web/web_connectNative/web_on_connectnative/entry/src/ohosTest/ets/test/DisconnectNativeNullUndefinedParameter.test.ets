@@ -54,15 +54,15 @@ export default function disconnectNativeNullUndefinedParameterTest() {
     })
 
     /**
-     * @tc.name   SUB_WEB_WebNativeMessagingExtension_DisconnectNative_ConnectionId_Null_0100
-     * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_ConnectionId_Null_0100
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_DisconnectNative_Null_0100
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_Null_0100
      * @tc.desc   Test disconnectNative with null connectionId parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_WEB_WebNativeMessagingExtension_DisconnectNative_ConnectionId_Null_0100', Level.LEVEL2, async () => {
-      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_DisconnectNative_ConnectionId_Null_0100`;
+    it('SUB_WEB_WebNativeMessagingExtension_DisconnectNative_Null_0100', Level.LEVEL2, async () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_DisconnectNative_Null_0100`;
       hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
       let connectionId: number = 0; // 使用0作为无效的connectionId
