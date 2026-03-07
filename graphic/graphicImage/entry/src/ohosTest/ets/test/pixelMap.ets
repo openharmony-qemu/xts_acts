@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import camera from '@ohos.multimedia.camera';
 import image from '@ohos.multimedia.image';
+import { sendableImage } from '@kit.ImageKit';
 
 export default function imagePixelMapTest() {
   describe('imagePixelMapTest', ()=> {
@@ -145,6 +146,18 @@ export default function imagePixelMapTest() {
         console.error(`www data Failed to 444 create PixelMap. Code: ${e}`);
         expect().assertFail();
       });
+
+      let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } }
+      try {
+        let pixelMap = await sendableImage.createPixelMapFromSurface(surfaceId, region);
+        console.info('www data ImagePixelMapTest_0200 success', pixelMap.isEditable, 
+        pixelMap.isStrideAlignment);
+ 	      expect(pixelMap.isEditable).assertFalse();
+ 	      expect(pixelMap.isStrideAlignment).assertTrue();
+      } catch(err) {
+        console.info('www data ImagePixelMapTest_0200 error', JSON.stringify(err));
+ 	      expect().assertFail();
+      }
       done();
     });
     
