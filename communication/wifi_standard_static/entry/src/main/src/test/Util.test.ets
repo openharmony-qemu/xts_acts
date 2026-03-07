@@ -55,5 +55,4 @@ export default class Utils{
       hilog.info(domain, tag, 'wifi is close');
     }
   }
-
 }
