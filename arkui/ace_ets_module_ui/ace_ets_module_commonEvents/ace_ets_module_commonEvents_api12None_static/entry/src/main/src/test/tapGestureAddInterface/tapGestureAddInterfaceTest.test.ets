@@ -26,7 +26,7 @@ import {UtilsTest} from '../Util.test'
 
 export default function tapGestureAddInterfaceTest() {
   describe('tapGestureAddInterfaceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
 
@@ -62,13 +62,13 @@ export default function tapGestureAddInterfaceTest() {
 
 
 
-    /**
+/**
      * @tc.number   tapGestureAddInterfaceTest_static_0010
      * @tc.name     tapGestureAddInterfaceTest_static_0010
      * @tc.desc     tapGestureAddInterfaceTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('tapGestureAddInterfaceTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tapGestureAddInterfaceTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tapGestureAddInterfaceTest_0010 START');
       await CommonFunc.sleep(150);
       const uiContext = AppStorage.get<UIContext>("uiContext");
@@ -95,7 +95,7 @@ export default function tapGestureAddInterfaceTest() {
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
       console.info('tapGestureAddInterfaceTest_0010 obj2 $attrs content '+ obj2.getElement('$attrs').getString('content'))
-      // check the click event  whether response
+       // check the click event  whether response
       let dataE2 = JSON.parseJsonElement(obj2.getElement('$attrs').getString('content'));
       expect(Math.abs(dataE2.getDouble('localX') - 90) <= 1).assertTrue();
       expect(Math.abs(dataE2.getDouble('localY') - 10) <= 1).assertTrue();
@@ -106,13 +106,13 @@ export default function tapGestureAddInterfaceTest() {
 
 
 
-    /**
+/**
      * @tc.number   tapGestureAddInterfaceTest_static_0020
      * @tc.name     tapGestureAddInterfaceTest_static_0020
      * @tc.desc     tapGestureAddInterfaceTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('tapGestureAddInterfaceTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tapGestureAddInterfaceTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tapGestureAddInterfaceTest_0020 START');
       await CommonFunc.sleep(150);
       const uiContext = AppStorage.get<UIContext>("uiContext");
@@ -144,7 +144,7 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE2.getDouble('localX') - 80) <= 1).assertTrue();
       expect(Math.abs(dataE2.getDouble('localY') - 10) <= 1).assertTrue();
 
-      // swipe the distanceThreshold range
+       // swipe the distanceThreshold range
       await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int,Math.round(column1.left + uiContext!.vp2px(130)) as Int, Math.round(column1.top + uiContext!.vp2px(10)) as Int);
       await CommonFunc.sleep(3000)
       let tt3 = inspector.getInspectorByKey('valueKey');
@@ -163,13 +163,13 @@ export default function tapGestureAddInterfaceTest() {
 
 
 
-    /**
+/**
      * @tc.number   tapGestureAddInterfaceTest_static_0030
      * @tc.name     tapGestureAddInterfaceTest_static_0030
      * @tc.desc     tapGestureAddInterfaceTest_static_0030
      * @tc.level    Level.LEVEL0
      */
-    it('tapGestureAddInterfaceTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tapGestureAddInterfaceTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tapGestureAddInterfaceTest_0010 START');
       await CommonFunc.sleep(150);
       const uiContext = AppStorage.get<UIContext>("uiContext");
@@ -196,7 +196,7 @@ export default function tapGestureAddInterfaceTest() {
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
       console.info('tapGestureAddInterfaceTest_0010 obj2 $attrs content '+ obj2.getElement('$attrs').getString('content'))
-      // check the click event  whether response
+       // check the click event  whether response
       let dataE2 = JSON.parseJsonElement(obj2.getElement('$attrs').getString('content'));
       expect(Math.abs(dataE2.getDouble('localX') - 90) <= 1).assertTrue();
       expect(Math.abs(dataE2.getDouble('localY') - 10) <= 1).assertTrue();
@@ -207,13 +207,13 @@ export default function tapGestureAddInterfaceTest() {
 
 
 
-    /**
+/**
      * @tc.number   tapGestureAddInterfaceTest_static_0040
      * @tc.name     tapGestureAddInterfaceTest_static_0040
      * @tc.desc     tapGestureAddInterfaceTest_static_0040
      * @tc.level    Level.LEVEL0
      */
-    it('tapGestureAddInterfaceTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tapGestureAddInterfaceTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tapGestureAddInterfaceTest_0020 START');
       await CommonFunc.sleep(150);
       const uiContext = AppStorage.get<UIContext>("uiContext");
@@ -245,7 +245,7 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE2.getDouble('localX') - 80) <= 1).assertTrue();
       expect(Math.abs(dataE2.getDouble('localY') - 10) <= 1).assertTrue();
 
-      // swipe out of the distanceThreshold range
+       // swipe out of the distanceThreshold range
       await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int,Math.round(column1.left + uiContext!.vp2px(130)) as Int, Math.round(column1.top + uiContext!.vp2px(10)) as Int);
       await CommonFunc.sleep(3000)
       let tt3 = inspector.getInspectorByKey('valueKey');
