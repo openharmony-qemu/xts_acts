@@ -40,6 +40,7 @@ export default function UIContextAnimateToImmediately() {
     afterEach(async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info("UIContextAnimateToImmediately after each called");
+      done();
     });
 
     /**
