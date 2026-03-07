@@ -820,7 +820,7 @@ export default function abilityTest() {
                         console.info("XX DRM_AVPLAYER_0100 success", drmRequest.data ,drmRequest.defaultURL);
                         expect(drmRequest.data).not().assertUndefined();
                         expect(drmRequest.defaultURL).not().assertUndefined();
-                        let provisionRequestStr = = byteToString(drmRequest.data);
+                        let provisionRequestStr = byteToString(drmRequest.data);
                         let provisionResponseStr = await getHttpData(drmRequest.defaultURL, provisionRequestStr);
                         let provisionResponseByte = stringToUint8Array(provisionResponseStr);
                         drmsys!.processKeySystemResponse(provisionResponseByte).then(() => {
