@@ -3318,8 +3318,9 @@ export default function DisplayTest() {
         let brightnessInfo = display.getBrightnessInfo(-1);
         console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
         done();
-        } catch (e: BusinessError) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        } catch (e) {
+            e = e as BusinessError;
+            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         if (e.code === 801) {
             done()
         } else {
@@ -3379,7 +3380,6 @@ export default function DisplayTest() {
         let captureOptions: screenshot.CaptureOption = {
             "displayId": 0,
             "blackWindowIds": [1000]
-
         }
         let promise = screenshot.capture(captureOptions)
         promise.then((pixelMap: image.PixelMap) => {
