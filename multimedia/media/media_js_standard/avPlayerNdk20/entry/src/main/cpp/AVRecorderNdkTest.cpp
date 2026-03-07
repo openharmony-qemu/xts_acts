@@ -182,7 +182,7 @@ static napi_value OH_AVRecorder_GetAvailableEncoder0100(napi_env env, napi_callb
 static napi_value OH_AVRecorder_SetStateCallback0100(napi_env env, napi_callback_info info)
 {
     OH_AVRecorder *Recorder = OH_AVRecorder_Create();
-    if (Recorder == nullptr){
+    if (Recorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
@@ -202,7 +202,7 @@ static napi_value OH_AVRecorder_SetStateCallback0100(napi_env env, napi_callback
 static napi_value OH_AVRecorder_SetStateCallback0101(napi_env env, napi_callback_info info)
 {
     OH_AVRecorder *Recorder = OH_AVRecorder_Create();
-    if (Recorder == nullptr){
+    if (Recorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
@@ -222,7 +222,7 @@ static napi_value OH_AVRecorder_SetStateCallback0101(napi_env env, napi_callback
 static napi_value OH_AVRecorder_SetErrorCallback0100(napi_env env, napi_callback_info info)
 {
     OH_AVRecorder *Recorder = OH_AVRecorder_Create();
-    if (Recorder == nullptr){
+    if (Recorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
@@ -242,7 +242,7 @@ static napi_value OH_AVRecorder_SetErrorCallback0100(napi_env env, napi_callback
 static napi_value OH_AVRecorder_SetErrorCallback0101(napi_env env, napi_callback_info info)
 {
     OH_AVRecorder *Recorder = OH_AVRecorder_Create();
-    if (Recorder == nullptr){
+    if (Recorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
@@ -262,7 +262,7 @@ static napi_value OH_AVRecorder_SetErrorCallback0101(napi_env env, napi_callback
 static napi_value OH_AVRecorder_SetUriCallback0100(napi_env env, napi_callback_info info)
 {
     OH_AVRecorder *Recorder = OH_AVRecorder_Create();
-    if (Recorder == nullptr){
+    if (Recorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
@@ -282,7 +282,7 @@ static napi_value OH_AVRecorder_SetUriCallback0100(napi_env env, napi_callback_i
 static napi_value OH_AVRecorder_SetUriCallback0101(napi_env env, napi_callback_info info)
 {
     OH_AVRecorder *Recorder = OH_AVRecorder_Create();
-    if (Recorder == nullptr){
+    if (Recorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
@@ -343,7 +343,7 @@ static napi_value OH_AVRecorder_ContainerFormatType0100(napi_env env, napi_callb
     };
     void *userData;
     OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
-    if (AVRecorder == nullptr){
+    if (AVRecorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
@@ -394,7 +394,7 @@ static napi_value OH_AVRecorder_MetadataTemplate0100(napi_env env, napi_callback
     config.metadata.customInfo = MetadataTemplate;
     void *userData;
     OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
-    if (AVRecorder == nullptr){
+    if (AVRecorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
@@ -445,7 +445,7 @@ static napi_value OH_AVRecorder_MetadataTemplate0101(napi_env env, napi_callback
     config.metadata.customInfo.value = "1";
     void *userData;
     OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
-    if (AVRecorder == nullptr){
+    if (AVRecorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
@@ -500,7 +500,7 @@ static napi_value OH_AVRecorder_Metadata0100(napi_env env, napi_callback_info in
     config.metadata.customInfo = MetadataTemplate;
     void *userData;
     OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
-    if (AVRecorder == nullptr){
+    if (AVRecorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
@@ -550,7 +550,7 @@ static napi_value OH_AVRecorder_Config0100(napi_env env, napi_callback_info info
     config.maxDuration = 1;
     void *userData;
     OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
-    if (AVRecorder == nullptr){
+    if (AVRecorder == nullptr) {
         int32_t res = 1;
         napi_value retValue;
         napi_create_int32(env, res, &retValue);
