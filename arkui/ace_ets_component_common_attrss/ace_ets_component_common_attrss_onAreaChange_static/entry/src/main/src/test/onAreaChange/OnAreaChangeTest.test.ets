@@ -127,44 +127,44 @@ export default function onAreaChangeTest() {
   //Test content and expected results
   let testValues: TestValue[] = [
     {
-      describe: 'SetMove',
-      setValue: {
-        compareButtonWidth: 120,
-        compareButtonHeight: 120
-      },
-      expectValue: {
-        compareButtonWidth: 120,
-        compareButtonHeight: 120
-      }
+    describe: 'SetMove',
+    setValue: {
+      compareButtonWidth: 120,
+      compareButtonHeight: 120
     },
-    {
-      describe: 'SetWidthHeight',
-      setValue: {
-        width: 60,
-        height: 60
-      },
-      expectValue: {
-        width: 60,
-        height: 60
-      }
-    },
-    {
-      describe: 'SetOffset',
-      exceptView: ['RichText'],
-      setValue: {
-        offset: {
-          x: 50, y: 50
-        } as Position
-      },
-      expectValue: {
-        x: '50.00vp', y: '50.00vp',
-        left: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)), top: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))
-      }
+    expectValue: {
+      compareButtonWidth: 120,
+      compareButtonHeight: 120
     }
+  },
+    {
+    describe: 'SetWidthHeight',
+    setValue: {
+      width: 60,
+      height: 60
+    },
+    expectValue: {
+      width: 60,
+      height: 60
+    }
+  },
+    {
+    describe: 'SetOffset',
+    exceptView: ['RichText'],
+    setValue: {
+      offset: {
+        x: 50, y: 50
+      } as Position
+    },
+    expectValue: {
+      x: '50.00vp', y: '50.00vp',
+      left: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)), top: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))
+    }
+  }
   ]
 
   describe('OnAreaChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('OnAreaChangeTest beforeAll start')
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
@@ -281,16 +281,16 @@ export default function onAreaChangeTest() {
         console.info('compareButtonRectAfter right: ' , compareButtonRectAfter.bottom,compareButtonRectAfter.top);
         console.info('compareButtonRectAfter px2vp: ' , AppStorage.get<UIContext>('uiContext')?.px2vp(compareButtonRectAfter.bottom - compareButtonRectAfter.top),testData.testValue.expectValue.compareButtonHeight);
         expect(Math.abs(Number(AppStorage.get<UIContext>('uiContext')?.px2vp(compareButtonRectAfter.right - compareButtonRectAfter.left)) -
-          testData.testValue.expectValue.compareButtonWidth!) <= 2).assertTrue();
+        testData.testValue.expectValue.compareButtonWidth!) <= 2).assertTrue();
         expect(Math.abs(Number(AppStorage.get<UIContext>('uiContext')?.px2vp(compareButtonRectAfter.bottom - compareButtonRectAfter.top)) -
-          testData.testValue.expectValue.compareButtonHeight!) <= 2).assertTrue();
+        testData.testValue.expectValue.compareButtonHeight!) <= 2).assertTrue();
         await checkResults(testData, compareOldTextComponent, compareNewTextComponent, targetRectBefore,
           targetRectAfter, parentRectBefore, parentRectAfter);
       } else if (testData.testValue.describe == 'SetWidthHeight') {
         console.info('[' + testData.caseTag + '] testData.testValue.describe: ' + testData.testValue.describe);
         if ((testData.pageConfig.componentKey == 'GridCol') || (testData.pageConfig.componentKey == 'ListItemGroup')) {
           expect(Math.abs(Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectAfter.bottom - targetRectAfter.top)) -
-            testData.testValue.expectValue.height!) <= 1).assertTrue();
+          testData.testValue.expectValue.height!) <= 1).assertTrue();
           await checkResults(testData, compareOldTextComponent, compareNewTextComponent, targetRectBefore,
             targetRectAfter, parentRectBefore, parentRectAfter);
         } else if ((testData.pageConfig.componentKey == 'TabContent')) {
@@ -369,3 +369,4 @@ async function checkResults(testData: BasePageConfig, compareOldTextComponent: j
   expect(Math.abs(compareNewTextObj.getElement('globalPosition').getDouble('y') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectAfter.top))) <= 2).assertTrue();
 
 }
+
