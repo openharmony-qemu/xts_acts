@@ -18,5 +18,5 @@ import relationalStorePermissionTest from "./RelationalStorePermission.test";
 
 export default function testsuite() {
 
-    relationalStorePermissionTest()
+    relationalStorePermissionTest();
 }
