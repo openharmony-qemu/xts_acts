@@ -45,7 +45,6 @@ export default function abilityTest() {
       if(mpEnable != true && mpEnable != false){
         expect().assertFail();
       }
-      done();
     })
     afterEach(async (done:Function) => {
       await sleep(2000);

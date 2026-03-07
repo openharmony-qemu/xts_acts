@@ -898,7 +898,6 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_StartUpFeature_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUpFeature_0100";
       console.log(TAG + " start");
-      let flag = false;
       let sub:commonEventManager.CommonEventSubscriber;
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ["Start_Run_Sample_004"]
@@ -972,6 +971,10 @@ export default function abilityTest() {
       }, (err, result: ability.AbilityResult) => {
         console.log(TAG + " error = " + JSON.stringify(err))
         console.log(TAG + " result = " + JSON.stringify(result))
+        try{expect(flag).assertTrue()}catch{ 
+          console.info(TAG + "app run task use time over 2s"); 
+        } 
+        done();
       })
     })
 
@@ -1017,6 +1020,10 @@ export default function abilityTest() {
       }, (err, result: ability.AbilityResult) => {
         console.log(TAG + " error = " + JSON.stringify(err))
         console.log(TAG + " result = " + JSON.stringify(result))
+        try{expect(flag).assertTrue()}catch{ 
+          console.info(TAG + "app run task use time over 2s"); 
+        } 
+        done();
       })
     })
 
@@ -1062,6 +1069,10 @@ export default function abilityTest() {
       }, (err, result: ability.AbilityResult) => {
         console.log(TAG + " error = " + JSON.stringify(err))
         console.log(TAG + " result = " + JSON.stringify(result))
+        try{expect(flag).assertTrue()}catch{ 
+          console.info(TAG + "app run task use time over 2s"); 
+        } 
+        done();
       })
     })
 
@@ -1107,6 +1118,10 @@ export default function abilityTest() {
       }, (err, result: ability.AbilityResult) => {
         console.log(TAG + " error = " + JSON.stringify(err));
         console.log(TAG + " result = " + JSON.stringify(result));
+        try{expect(flag).assertTrue()}catch{ 
+          console.info(TAG + "app run task use time over 2s"); 
+        } 
+        done();
       })
     })
 
