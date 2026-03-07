@@ -404,5 +404,156 @@ describe('fileio_rmdir', function () {
             done();
         }
     });
+
+    /**
+     * @tc.name   fileio_test_rmdir_promise_error_001
+     * @tc.number SUB_DF_FILEIO_RMDIR_PROMISE_ERROR_001
+     * @tc.desc   Test rmdir() interface with null path. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rmdir_promise_error_001', Level.LEVEL2, async function () {
+        try {
+            await fileio.rmdir(null);
+            expect(false).assertTrue();
+        } catch (err) {
+            console.log('fileio_test_rmdir_promise_error_001: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid path').assertTrue();
+        }
+    });
+
+    /**
+     * @tc.name   fileio_test_rmdir_promise_error_002
+     * @tc.number SUB_DF_FILEIO_RMDIR_PROMISE_ERROR_002
+     * @tc.desc   Test rmdir() interface with undefined path. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rmdir_promise_error_002', Level.LEVEL2, async function () {
+        try {
+            await fileio.rmdir(undefined);
+            expect(false).assertTrue();
+        } catch (err) {
+            console.log('fileio_test_rmdir_promise_error_002: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid path').assertTrue();
+        }
+    });
+
+    /**
+     * @tc.name   fileio_test_rmdir_callback_error_001
+     * @tc.number SUB_DF_FILEIO_RMDIR_CALLBACK_ERROR_001
+     * @tc.desc   Test rmdir() interface with empty string path. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rmdir_callback_error_001', Level.LEVEL2, async function (done) {
+        try {
+            fileio.rmdir('', function (err) {
+                if (err) {
+                    console.log('fileio_test_rmdir_callback_error_001: ' + err.message + ', code: ' + err.code);
+                    expect(err.message == 'No such file or directory').assertTrue();
+                    done();
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            });
+        } catch (err) {
+            console.log('fileio_test_rmdir_callback_error_001: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'No such file or directory').assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileio_test_rmdir_callback_error_002
+     * @tc.number SUB_DF_FILEIO_RMDIR_CALLBACK_ERROR_002
+     * @tc.desc   Test rmdir() interface with null path. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rmdir_callback_error_002', Level.LEVEL2, async function (done) {
+        try {
+            fileio.rmdir(null, function (err) {
+                if (err) {
+                    console.log('fileio_test_rmdir_callback_error_002: ' + err.message + ', code: ' + err.code);
+                    done();
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            });
+        } catch (err) {
+            console.log('fileio_test_rmdir_callback_error_002: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid path').assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileio_test_rmdir_callback_error_003
+     * @tc.number SUB_DF_FILEIO_RMDIR_CALLBACK_ERROR_003
+     * @tc.desc   Test rmdir() interface with undefined path. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rmdir_callback_error_003', Level.LEVEL2, async function (done) {
+        try {
+            fileio.rmdir(undefined, function (err) {
+                if (err) {
+                    console.log('fileio_test_rmdir_callback_error_003: ' + err.message + ', code: ' + err.code);
+                    done();
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            });
+        } catch (err) {
+            console.log('fileio_test_rmdir_callback_error_003: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid path').assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileio_test_rmdir_sync_error_001
+     * @tc.number SUB_DF_FILEIO_RMDIR_SYNC_ERROR_001
+     * @tc.desc   Test rmdirSync() interface with null path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rmdir_sync_error_001', Level.LEVEL2, async function () {
+        try {
+            fileio.rmdirSync(null);
+            expect(false).assertTrue();
+        } catch (err) {
+            console.log('fileio_test_rmdir_sync_error_001: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid path').assertTrue();
+        }
+    });
+
+    /**
+     * @tc.name   fileio_test_rmdir_sync_error_002
+     * @tc.number SUB_DF_FILEIO_RMDIR_SYNC_ERROR_002
+     * @tc.desc   Test rmdirSync() interface with undefined path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rmdir_sync_error_002', Level.LEVEL2, async function () {
+        try {
+            fileio.rmdirSync(undefined);
+            expect(false).assertTrue();
+        } catch (err) {
+            console.log('fileio_test_rmdir_sync_error_002: ' + err.message + ', code: ' + err.code);
+            expect(err.message == 'Invalid path').assertTrue();
+        }
+    });
 })
 }
