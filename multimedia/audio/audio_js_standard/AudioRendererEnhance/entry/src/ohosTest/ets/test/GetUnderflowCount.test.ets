@@ -241,6 +241,7 @@ export default function audioRendererTest() {
         expect(value).assertLargerOrEqual(env.OUTPUT_NUMBER_0);
         await audioRen.drain().then(() => {
           audioRen.stop().then(() => {
+            expect(true).assertTrue();
             done();
           }).catch((err: BusinessError) => {
             console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
@@ -303,6 +304,7 @@ export default function audioRendererTest() {
           expect(data).assertLargerOrEqual(env.OUTPUT_NUMBER_0);
           audioRen.drain().then(() => {
             audioRen.stop().then(() => {
+              expect(true).assertTrue();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
@@ -430,6 +432,7 @@ export default function audioRendererTest() {
         });
         await audioRen.drain().then(() => {
           audioRen.stop().then(() => {
+            expect(true).assertTrue();
             done();
           }).catch((err: BusinessError) => {
             console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
