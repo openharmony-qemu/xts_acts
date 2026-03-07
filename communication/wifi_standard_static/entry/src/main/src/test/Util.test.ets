@@ -55,17 +55,5 @@ export default class Utils{
       hilog.info(domain, tag, 'wifi is close');
     }
   }
-  static async openWifi() : Promise<void> {
-    let state: boolean = wifiManager.isWifiActive();
-    if (state === false) {
-      hilog.info(domain, tag, 'isWifiActive:' + state);
-      wifiManager.enableWifi();
-      await Utils.msSleep(2000);
-      let state1: boolean = wifiManager.isWifiActive();
-      hilog.info(domain, tag, 'after disableWifi isWifiActive:' + state1);
-    } else {
-      hilog.info(domain, tag, 'isWifiActive:' + state);
-      hilog.info(domain, tag, 'wifi is open');
-    }
-  }
+
 }
