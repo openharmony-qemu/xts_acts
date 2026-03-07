@@ -689,7 +689,157 @@ export default function AVScreenCaptureRecorderTest() {
       }
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_STATE_CHANGE end');
     })
-    
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_INPUT_INIT
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_INPUT_INIT
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_INPUT_INIT', Level.LEVEL0, async (done: Function) => {
+     console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_INPUT_INIT start');
+      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
+        if (captureRecorder != null) {
+
+          console.info('createAVScreenCaptureRecorder success');
+          captureRecorder.init(null).then(() => {
+            console.info('avScreenCaptureRecorder init success');
+            captureRecorder.release();
+            expect(false).assertTrue();
+          }).catch((err: BusinessError) => {
+            captureRecorder.release();
+            console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
+          });
+         } else {
+          console.error('createAVScreenCaptureRecorder fail');
+          expect(false).assertTrue();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+        expect(false).assertTrue();
+      });
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_INPUT_INIT end');
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_SKIPPRIVACYMODE
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_SKIPPRIVACYMODE
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_SKIPPRIVACYMODE', Level.LEVEL0, async (done: Function) => {
+     console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_SKIPPRIVACYMODE start');
+      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
+        if (captureRecorder != null) {
+          console.info('createAVScreenCaptureRecorder success');
+          captureRecorder.skipPrivacyMode(null).then(() => {
+            console.info('skipPrivacyMode null success');
+          }).catch((err: BusinessError) => {
+            captureRecorder.release();
+            expect(false).assertTrue();
+            console.error('skipPrivacyMode null failed, error: ' + err.message);
+          });
+
+          captureRecorder.skipPrivacyMode([1]).then(() => {
+            console.info('skipPrivacyMode [] success');
+          }).catch((err: BusinessError) => {
+            captureRecorder.release();
+            expect(false).assertTrue();
+            console.error('skipPrivacyMode [] failed, error: ' + err.message);
+          });
+          captureRecorder.release();
+         } else {
+          console.error('createAVScreenCaptureRecorder fail');
+          expect(false).assertTrue();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+        expect(false).assertTrue();
+      });
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_SKIPPRIVACYMODE end');
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_EXCLUDEPICKER
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_EXCLUDEPICKER
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_EXCLUDEPICKER', Level.LEVEL0, async (done: Function) => {
+     console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_EXCLUDEPICKER start');
+      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
+        if (captureRecorder != null) {
+          console.info('createAVScreenCaptureRecorder success');
+          captureRecorder.excludePickerWindows(null).then(() => {
+            console.info('excludePickerWindows null success');
+          }).catch((err: BusinessError) => {
+            captureRecorder.release();
+            expect(false).assertTrue();
+            console.error('excludePickerWindows null failed, error: ' + err.message);
+          });
+
+          captureRecorder.excludePickerWindows([]).then(() => {
+            console.info('excludePickerWindows [] success');
+          }).catch((err: BusinessError) => {
+            captureRecorder.release();
+            expect(false).assertTrue();
+            console.error('excludePickerWindows [] failed, error: ' + err.message);
+          });
+          captureRecorder.release();
+         } else {
+          console.error('createAVScreenCaptureRecorder fail');
+          expect(false).assertTrue();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+        expect(false).assertTrue();
+      });
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_EXCLUDEPICKER end');
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_FALSE_SETMICENABLE
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_FALSE_SETMICENABLE
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_FALSE_SETMICENABLE', Level.LEVEL0, async (done: Function) => {
+     console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_FALSE_SETMICENABLE start');
+      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
+        if (captureRecorder != null) {
+          console.info('createAVScreenCaptureRecorder success');
+          this.captureRecorder.on('stateChange', null);
+          await captureRecorder.setMicEnabled(false).then(() => {
+            console.info('setMicEnabled null success');
+          }).catch((err: BusinessError) => {
+            captureRecorder.release();
+            expect(false).assertTrue();
+            console.error('setMicEnabled null failed, error: ' + err.message);
+          });
+          captureRecorder.release();
+         } else {
+          console.error('createAVScreenCaptureRecorder fail');
+          expect(false).assertTrue();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+        expect(false).assertTrue();
+      });
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_FALSE_SETMICENABLE end');
+    })
+
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTUREPRIVACYMASKMODE_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTUREPRIVACYMASKMODE_0100
