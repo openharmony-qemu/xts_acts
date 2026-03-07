@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,18 +14,18 @@
  */
 import screenLock from '@ohos.screenLock';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../hypium/index";
-
-
-export default function ScreenLockPromiseTest(){
+ 
+ 
+export default function ScreenLockPromiseTest() {
   describe('ScreenLockServicePromiseTest', () => {
     console.info("-----------------------ScreenlockPromiseTest is starting-----------------------");
-
-    let result = false
-    beforeEach(async (done: Function) => {
+ 
+    let result = false;
+    beforeEach(async (done: () => void) => {
         result = await screenLock.isScreenLocked();
         done();
     });   
-
+ 
     /*
      * @tc.number    SUB_MISC_screenLock_API_Promise_001
      * @tc.name      Set to locked screen, query the lock screen state is locked state
@@ -34,23 +34,22 @@ export default function ScreenLockPromiseTest(){
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("SUB_MISC_screenLock_API_Promise_001", Level.LEVEL2, async (done: Function) => {
+    it("SUB_MISC_screenLock_API_Promise_001", Level.LEVEL2, async (done: () => void) => {
       console.info("------------------start SUB_MISC_screenLock_API_Promise_001-------------------");
       try {
-        let data = await screenLock.isScreenLocked();
+        let data: Boolean = await screenLock.isScreenLocked();
         console.info("SUB_MISC_screenLock_API_Promise_001 isScreenLocked result is " + data);
-        expect(data == false).assertTrue();
+        expect(data).assertEqual(false);
         console.info("------------------end SUB_MISC_screenLock_API_Promise_001-------------------");
         done();
       } catch (error) {
-        expect(data == true).assertTrue();
         console.info("SUB_MISC_screenLock_API_Promise_001 test_setScreenLocked : error = " + error);
         expect().assertFail();
         done();
       }
       
     });
-
+ 
     /*
      * @tc.number    SUB_MISC_screenLock_API_Promise_002
      * @tc.name      Set to locked screen, query the lock screen state is locked state
@@ -59,12 +58,12 @@ export default function ScreenLockPromiseTest(){
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("SUB_MISC_screenLock_API_Promise_002", Level.LEVEL2, async (done: Function) => {
+    it("SUB_MISC_screenLock_API_Promise_002", Level.LEVEL2, async (done: () => void) => {
       console.info("------------------start SUB_MISC_screenLock_API_Promise_002-------------------");
       try {
         let data = await screenLock.isSecureMode();
         console.info("SUB_MISC_screenLock_API_Promise_002 isSecureMode result is " + data);
-        expect(data == false).assertTrue();
+        expect(data).assertEqual(false);
         console.info("------------------end SUB_MISC_screenLock_API_Promise_002-------------------");
         done();
       } catch (error) {

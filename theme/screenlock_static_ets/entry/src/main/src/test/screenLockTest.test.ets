@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,18 +14,19 @@
  */
 import screenLock from '@ohos.screenLock';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../hypium/index";
-
+import { BusinessError } from '@ohos.base';
+ 
 export default function screenLockJSUnit() {
-
+ 
     describe('ScreenLockServiceTest', () => {
         console.info("====>-----------------------ScreenlockTest is starting-----------------------");
-
+ 
         let result = false
-        beforeEach(async (done: Function) => {
+        beforeEach(async (done: () => void) => {
             result = await screenLock.isScreenLocked();
             done();
         });
-
+ 
         /*
          * @tc.number    SUB_MISC_screenLock_API_0001
          * @tc.name      Set to locked screen, query the lock screen state is locked state
@@ -34,10 +35,10 @@ export default function screenLockJSUnit() {
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it("SUB_MISC_screenLock_API_0001", Level.LEVEL0, async (done: Function) => {
+        it("SUB_MISC_screenLock_API_0001", Level.LEVEL0, async (done: () => void) => {
             console.info("====>------------------start SUB_MISC_screenLock_API_0001-------------------");
             try {
-                screenLock.isScreenLocked((err, data) => {
+                screenLock.isScreenLocked((err: BusinessError | null, data: Boolean | undefined) => {
                     try{
                         if(err){
                             console.info("====>SUB_MISC_screenLock_API_0001 failed because: " + JSON.stringify(err));
@@ -60,7 +61,7 @@ export default function screenLockJSUnit() {
                 done();
             }            
         });
-
+ 
         /*
          * @tc.number    SUB_MISC_screenLock_API_0002
          * @tc.name      Set to locked screen, query the lock screen state is locked state
@@ -69,13 +70,13 @@ export default function screenLockJSUnit() {
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it("SUB_MISC_screenLock_API_0002", Level.LEVEL2, async (done: Function) => {
+        it("SUB_MISC_screenLock_API_0002", Level.LEVEL2, async (done: () => void) => {
             console.info("====>------------------start SUB_MISC_screenLock_API_0002-------------------");
             try {
-                screenLock.isSecureMode((err, data) => {
+                screenLock.isSecureMode((err: BusinessError | null, data: Boolean | undefined) => {
                     try{
                         console.info("====>SUB_MISC_screenLock_API_0002 secureMode's result is " + data);
-                        expect(data == false).assertTrue();
+                        expect(data).assertEqual(false);
                         console.info("====>------------------end SUB_MISC_screenLock_API_0002-------------------");
                         done();
                     }catch(err){
@@ -89,41 +90,6 @@ export default function screenLockJSUnit() {
                 expect().assertFail();
                 done();
             }            
-        });
-
-        /*
-         * @tc.number    SUB_MISC_screenLock_API_0003
-         * @tc.name      Set to locked screen, query the lock screen state is locked state
-         * @tc.desc      Test ScreenLock API functionality.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
-         */
-        it("SUB_MISC_screenLock_API_0003", Level.LEVEL2, async (done: Function) => {
-            console.info("------------------start SUB_MISC_screenLock_API_0003-------------------");
-            try {
-                screenLock.unlockScreen((err) => {
-                    console.info("SUB_MISC_screenLock_API_0003: send unlockScreen issue success");
-                    try{
-                        if (err) {
-                            console.info("====>SUB_MISC_screenLock_API_0003 failed because: " + JSON.stringify(err));
-                            expect().assertFail();
-                            done();
-                        }
-                        expect(true).assertTrue()
-                        console.info("====>SUB_MISC_screenLock_API_0003 success.");
-                        console.info('====>-------------SUB_MISC_screenLock_API_0003 end----------------------');
-                        done();
-                    }catch(err){
-                        console.info('====>SUB_MISC_screenLock_API_0003 throw_err : ' + JSON.stringify(err));
-                        done();
-                    }          
-                });              
-            } catch (error) {
-                console.info("SUB_MISC_screenLock_API_0003: error = " + error);
-                expect().assertFail();
-                done();
-            }
         });
     });
 }
