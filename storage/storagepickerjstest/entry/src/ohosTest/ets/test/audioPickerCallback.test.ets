@@ -177,6 +177,38 @@ export default function audioPickerCallback(abilityContext: Context) {
     });
 
     /**
+     * @tc.name   test_Audiopicker_Save_Callback_002
+     * @tc.number SUB_STORAGE_AUDIOPICKER_SAVE_CALLBACK_0200
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_Audiopicker_Save_Callback_002", Level.LEVEL0, async (done: Function) => {
+      let testNum = "test_Audiopicker_Save_Callback_002";
+      let option = new picker.AudioSaveOptions();
+      option.newFileNames = [];
+      let saveDir = "Audios";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
+     * @tc.name   test_Audiopicker_Save_Callback_003
+     * @tc.number SUB_STORAGE_AUDIOPICKER_SAVE_CALLBACK_0300
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_Audiopicker_Save_Callback_003", Level.LEVEL0, async (done: Function) => {
+      let testNum = "test_Audiopicker_Save_Callback_003";
+      let option = new picker.AudioSaveOptions();
+      option.newFileNames = [""];
+      let saveDir = "Audios";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
     * @tc.name   AudioViewPicker_select_callback_000
     * @tc.number SUB_DF_AudioViewPicker_select_callback_0000
     * @tc.desc   Test AudioViewPicker.select() interfaces with null parameter and callback
