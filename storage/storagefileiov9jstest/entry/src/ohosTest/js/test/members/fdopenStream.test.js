@@ -1146,7 +1146,7 @@ describe('fileIO_fs_FdOpenStream', async function () {
     try {
       fileIO.fdopenStream(file.fd, '', (err) => {
         console.log('fileIO_test_fdopenstream_async_027 err ' + err.message + ', code: ' + err.code);
-        expect(e.code).assertEqual(13900020);
+        expect(err.code).assertEqual(13900020);
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
         done();
