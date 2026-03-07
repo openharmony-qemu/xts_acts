@@ -38,7 +38,6 @@ export default function wifiManagerTest() {
             try{
                 wifiManager.enableWifi();
                 expect().assertFail();
-                done();
             }catch(err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -49,7 +48,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -66,7 +64,6 @@ export default function wifiManagerTest() {
             try{
                 wifiManager.disableWifi();
                 expect().assertFail();
-                done();
             }catch(err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -77,7 +74,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -95,7 +91,6 @@ export default function wifiManagerTest() {
                 let state = wifiManager.isConnected();
                 hilog.info(domain, tag, "isConnected get:" + state);
                 expect().assertFail();
-                done();
             }catch(err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -106,7 +101,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -124,7 +118,6 @@ export default function wifiManagerTest() {
                 let info: wifiManager.IpInfo = wifiManager.getIpInfo();
                 hilog.info(domain, tag, "getIpInfo get:" + info);
                 expect().assertFail();
-                done();
             }catch(err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -135,7 +128,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -153,7 +145,6 @@ export default function wifiManagerTest() {
                 let info: Array<wifiManager.WifiScanInfo> = wifiManager.getScanInfoList();
                 hilog.info(domain, tag, "getScanInfoList get:" + info);
                 expect().assertFail();
-                done();
             }catch(err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -164,7 +155,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -182,7 +172,6 @@ export default function wifiManagerTest() {
                 let metered = wifiManager.isMeteredHotspot();
                 hilog.info(domain, tag, "isMeteredHotspot get:" + metered);
                 expect().assertFail();
-                done();
             }catch(err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -193,7 +182,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -211,7 +199,6 @@ export default function wifiManagerTest() {
                 let info: wifiManager.Ipv6Info = wifiManager.getIpv6Info();
                 hilog.info(domain, tag, "getIpv6Info get:" + info);
                 expect().assertFail();
-                done();
             }catch(err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -222,7 +209,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -240,7 +226,6 @@ export default function wifiManagerTest() {
                 let level: number = wifiManager.getSignalLevel(0 ,0);
                 hilog.info(domain, tag, 'getSignalLevel success result:' + level);
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -251,7 +236,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -268,7 +252,6 @@ export default function wifiManagerTest() {
             try {
                 await wifiManager.getLinkedInfo().then((data: wifiManager.WifiLinkedInfo) => {});
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -279,7 +262,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -301,19 +283,15 @@ export default function wifiManagerTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 201);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    done();
                 }
             })
             done();
@@ -331,7 +309,6 @@ export default function wifiManagerTest() {
             try {
                 await wifiManager.getP2pLinkedInfo().then((data: wifiManager.WifiP2pLinkedInfo) => {});
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -342,7 +319,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -364,20 +340,17 @@ export default function wifiManagerTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 201);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                     expect().assertFail();
-                    done();
+    
                 }
             })
             done();
@@ -395,7 +368,6 @@ export default function wifiManagerTest() {
             try {
                 await wifiManager.getCurrentGroup().then((data: wifiManager.WifiP2pGroupInfo) => {});
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -406,7 +378,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -428,20 +399,16 @@ export default function wifiManagerTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 201);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                     expect().assertFail();
-                    done();
                 }
             })
             done();
@@ -459,7 +426,6 @@ export default function wifiManagerTest() {
             try {
                 await wifiManager.getP2pPeerDevices().then((data: wifiManager.WifiP2pDevice[]) => {});
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -470,7 +436,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -492,20 +457,16 @@ export default function wifiManagerTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 201);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                     expect().assertFail();
-                    done();
                 }
             })
             done();
@@ -523,7 +484,6 @@ export default function wifiManagerTest() {
             try {
                 await wifiManager.getP2pLocalDevice().then((data: wifiManager.WifiP2pDevice) => {});
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -534,7 +494,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -556,20 +515,16 @@ export default function wifiManagerTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 201);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                     expect().assertFail();
-                    done();
                 }
             })
             done();
@@ -595,7 +550,6 @@ export default function wifiManagerTest() {
                 };
                 await wifiManager.addDeviceConfig(wifiDeviceConfig).then((netWorkId: int) => {});
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -606,7 +560,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -636,19 +589,15 @@ export default function wifiManagerTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 201);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    done();
                 }
             })
             done();
@@ -674,7 +623,6 @@ export default function wifiManagerTest() {
                 };
                 await wifiManager.addCandidateConfig(wifiDeviceConfig).then((netWorkId: int) => {});
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -685,7 +633,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -715,19 +662,15 @@ export default function wifiManagerTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 201);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    done();
                 }
             })
             done();
@@ -745,7 +688,6 @@ export default function wifiManagerTest() {
             try {
                 await wifiManager.removeCandidateConfig(0).then(() => {});
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -756,7 +698,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -778,19 +719,15 @@ export default function wifiManagerTest() {
                         if (err?.code === 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code === 801);
-                            done();
                         } else {
                             expect(true).assertEqual(err?.code === 201);
-                            done();
                         }
                     } else {
                         expect().assertFail();
-                        done();
                     }
                 } catch (err) {
                     err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    done();
                 }
             })
             done();
@@ -808,7 +745,6 @@ export default function wifiManagerTest() {
             try {
                 let infoSync: wifiManager.WifiLinkedInfo = wifiManager.getLinkedInfoSync();
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -819,7 +755,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -836,7 +771,6 @@ export default function wifiManagerTest() {
             try {
                 let deviceConfig: Array<wifiManager.WifiDeviceConfig> = wifiManager.getCandidateConfigs();
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -847,7 +781,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -864,7 +797,6 @@ export default function wifiManagerTest() {
             try {
                 let deviceConfig: Array<wifiManager.WifiDeviceConfig> = wifiManager.getDeviceConfigs();
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -875,7 +807,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -892,7 +823,6 @@ export default function wifiManagerTest() {
             try {
                 wifiManager.connectToCandidateConfig(0);
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -903,7 +833,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -920,7 +849,6 @@ export default function wifiManagerTest() {
             try {
                 wifiManager.connectToNetwork(0);
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -931,7 +859,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -948,7 +875,6 @@ export default function wifiManagerTest() {
             try {
                 wifiManager.removeDevice(0);
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -959,7 +885,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -976,7 +901,6 @@ export default function wifiManagerTest() {
             try {
                 wifiManager.disconnect();
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -987,7 +911,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1005,7 +928,6 @@ export default function wifiManagerTest() {
                 let multiLinkedInfo: Array<wifiManager.WifiLinkedInfo> = wifiManager.getMultiLinkedInfo();
                 hilog.info(domain, tag, 'getMultiLinkedInfo success result:' + JSON.stringify(multiLinkedInfo));
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1016,7 +938,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1034,7 +955,6 @@ export default function wifiManagerTest() {
                 let supported: boolean = wifiManager.isFeatureSupported(0);
                 hilog.info(domain, tag, 'isFeatureSupported success result:' + JSON.stringify(supported));
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1045,7 +965,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1063,7 +982,6 @@ export default function wifiManagerTest() {
                 let addr: string[] = wifiManager.getDeviceMacAddress();
                 hilog.info(domain, tag, 'getDeviceMacAddress success result:' + JSON.stringify(addr));
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1074,7 +992,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1092,7 +1009,6 @@ export default function wifiManagerTest() {
                 let countryCode: string = wifiManager.getCountryCode();
                 hilog.info(domain, tag, 'getCountryCode success result:' + JSON.stringify(countryCode));
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1103,7 +1019,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1121,7 +1036,6 @@ export default function wifiManagerTest() {
                 let supported: boolean = wifiManager.isBandTypeSupported(wifiManager.WifiBandType.WIFI_BAND_NONE);
                 hilog.info(domain, tag, 'isBandTypeSupported success result:' + JSON.stringify(supported));
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1132,7 +1046,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1150,7 +1063,6 @@ export default function wifiManagerTest() {
                 let apActive: boolean = wifiManager.isHotspotActive();
                 hilog.info(domain, tag, 'isHotspotActive success result:' + JSON.stringify(apActive));
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1161,7 +1073,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1186,7 +1097,6 @@ export default function wifiManagerTest() {
                 }
                 wifiManager.createGroup(wifiP2PConfig);
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1197,7 +1107,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1214,7 +1123,6 @@ export default function wifiManagerTest() {
             try {
                 wifiManager.removeGroup();
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1225,7 +1133,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1250,7 +1157,6 @@ export default function wifiManagerTest() {
                 }
                 wifiManager.p2pConnect(wifiP2PConfig);
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1261,7 +1167,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1278,7 +1183,6 @@ export default function wifiManagerTest() {
             try {
                 wifiManager.p2pCancelConnect();
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1289,7 +1193,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1306,7 +1209,6 @@ export default function wifiManagerTest() {
             try {
                 wifiManager.startDiscoverDevices();
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1317,7 +1219,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
@@ -1334,7 +1235,6 @@ export default function wifiManagerTest() {
             try {
                 wifiManager.stopDiscoverDevices();
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1345,7 +1245,6 @@ export default function wifiManagerTest() {
                 } else {
                     expect(true).assertEqual(err.code === 201);
                 }
-                done();
             }
             done();
         })
