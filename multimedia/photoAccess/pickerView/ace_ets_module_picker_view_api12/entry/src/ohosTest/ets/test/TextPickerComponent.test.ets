@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fileIo } from '@kit.CoreFileKit';
+import { fileIo, picker } from '@kit.CoreFileKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc, { ClickInfo } from '../MainAbility/common/Common';
@@ -125,6 +125,54 @@ async function clickResultButton(driver: Driver) {
 
 async function clickUpdatablePickerButton(driver: Driver) {
   console.info("testPicker create");
+  const pickerCtl = new PickerController();
+  pickerCtl.updatePickerOptions({
+    mimeType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE,
+    mimeTypeFilter: { mimeTypeArray: [] },
+    selectMode: SelectMode.SINGLE_SELECT,
+    singleSelectionMode: photoAccessHelper.SingleSelectionMode.BROWSER_MODE,
+    isRepeatSelectSupported: false,
+    preselectedUris: [],
+    checkBoxColor: '',
+    checkboxTextColor: '',
+    backgroundColor: '',
+    photoBrowserBackgroundColorMode: PickerColorMode.AUTO,
+    uiComponentColorMode: PickerColorMode.AUTO,
+    isSlidingSupported: true,
+    autoPlayScenes: [],
+    appAlbumFilters: [],
+  })
+  pickerCtl.updatePickerOptions({
+    mimeType: photoAccessHelper.PhotoViewMIMETypes.VIDEO_TYPE,
+    mimeTypeFilter: { mimeTypeArray: ['image/png'] },
+    selectMode: SelectMode.MULTI_SELECT,
+    singleSelectionMode: photoAccessHelper.SingleSelectionMode.SELECT_MODE,
+    isRepeatSelectSupported: true,
+    preselectedUris: ['1'],
+    photoBrowserBackgroundColorMode: PickerColorMode.LIGHT,
+    uiComponentColorMode: PickerColorMode.LIGHT,
+    isSlidingSupported: false,
+    autoPlayScenes: [
+      {
+        sceneType: photoAccessHelper.SceneType.GRID_TO_PHOTO_BROWSER,
+        playMode: photoAccessHelper.PlayMode.AUTO_PLAY,
+      },
+      {
+        sceneType: photoAccessHelper.SceneType.PHOTO_BROWSER_SWIPE,
+        playMode: photoAccessHelper.PlayMode.DEFAULT,
+      }
+    ],
+    appAlbumFilters: ['a'],
+  })
+  pickerCtl.updatePickerOptions({
+    mimeType: photoAccessHelper.PhotoViewMIMETypes.MOVING_PHOTO_IMAGE_TYPE,
+    mimeTypeFilter: { mimeTypeArray: [''] },
+    singleSelectionMode: photoAccessHelper.SingleSelectionMode.BROWSER_AND_SELECT_MODE,
+    preselectedUris: [''],
+    photoBrowserBackgroundColorMode: PickerColorMode.DARK,
+    uiComponentColorMode: PickerColorMode.DARK,
+    appAlbumFilters: [''],
+  })
   let btn = await driver.findComponent(ON.id('updatePickerOptions'));
   console.info("testPicker findComponent updatePickerOptions succsess");
   if (btn === null) {
@@ -1643,7 +1691,7 @@ export default function TextPicker() {
     /**
      * @tc.name   testPicker28
      * @tc.number testPicker28
-     * @tc.desc   Testing PhotoPickerComponent replacePhotoPickerPreview and saveTrustedPhotoAssets
+     * @tc.desc   Testing PhotoPickerComponent replacePhotoPickerPreview and saveTrustedPhotoAssets SAVE_AS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1664,10 +1712,19 @@ export default function TextPicker() {
       try {
         let pickerController: PickerController = new PickerController();
         let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
-        photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialog([boxPath],
-          [photoCreationConfig]).then((result) => {
-          originalUris = result;
-        });
+        photoAccessHelper.getPhotoAccessHelper(context)
+          .showAssetsCreationDialog([boxPath], [photoCreationConfig])
+          .then((result) => {
+            originalUris = result;
+          });
+        await driveFn();
+        pickerController.replacePhotoPickerPreview('', '', () => {});
+        pickerController.saveTrustedPhotoAssets([], () => {}, [], undefined);
+        const config: photoAccessHelper.PhotoCreationConfig = {
+          fileNameExtension: '.png',
+          photoType: photoAccessHelper.PhotoType.IMAGE,
+        }
+        pickerController.saveTrustedPhotoAssets([], () => {}, [config], undefined);
         pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, (a) => {
           if (!a) {
             console.log("testPicker28 replacePhotoPickerPreview fail");
@@ -1696,7 +1753,7 @@ export default function TextPicker() {
     /**
      * @tc.name   testPicker29
      * @tc.number testPicker29
-     * @tc.desc   Testing PhotoPickerComponent replacePhotoPickerPreview and saveTrustedPhotoAssets
+     * @tc.desc   Testing PhotoPickerComponent replacePhotoPickerPreview and saveTrustedPhotoAssets OVERWRITE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -3353,12 +3410,12 @@ export default function TextPicker() {
     });
 
     /**
-     * @tc.number     testPicker63	 
-     * @tc.name       testPicker63	 
-     * @tc.desc       Testing showSingleAssetCreationDialogEx with isImageFullyDisplayed param.	 
-     * @tc.size       MediumTest	 
-     * @tc.type       Function	 
-     * @tc.level      Level 0	 
+     * @tc.number     testPicker63
+     * @tc.name       testPicker63
+     * @tc.desc       Testing showSingleAssetCreationDialogEx with isImageFullyDisplayed param.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('testPicker63', Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
@@ -3546,7 +3603,16 @@ export default function TextPicker() {
       } catch (e) {
         console.log(`testPicker66, r1=${JSON.stringify(e)}, code  ${e.code} msg=${e.message}`);
       }
-
+      try {
+        pickerController.setMovingPhotoState(photoAccessHelper.MovingPhotoBadgeStateType.NOT_MOVING_PHOTO);
+      } catch (e) {
+        console.log(`testPicker66, r1=${JSON.stringify(e)}, code  ${e.code} msg=${e.message}`);
+      }
+      try {
+        pickerController.setMovingPhotoState(photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_DISABLED);
+      } catch (e) {
+        console.log(`testPicker66, r1=${JSON.stringify(e)}, code  ${e.code} msg=${e.message}`);
+      }
       try {
         // 非法场景错误码覆盖
         pickerController.setMovingPhotoState(-1);
@@ -3978,6 +4044,7 @@ export default function TextPicker() {
             expect(false).assertTrue();
           } else {
             console.log("testPicker73 replacePhotoPickerPreview success");
+            pickerController.saveTrustedPhotoAssetsEx([], [], SaveMode.OVERWRITE);
             pickerController.saveTrustedPhotoAssetsEx([boxPath]).then((result1) => {
               if (!result1) {
                 console.log("testPicker73 saveTrustedPhotoAssets (1 param) fail, save uris:" + JSON.stringify(result1));
@@ -4185,13 +4252,13 @@ export default function TextPicker() {
     });
 
     /**
-      * @tc.name   testPicker76
-      * @tc.number testPicker76
-      * @tc.desc   Testing PhotoPicker showDateOnScrollbar
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL0
-      */
+     * @tc.name   testPicker76
+     * @tc.number testPicker76
+     * @tc.desc   Testing PhotoPicker showDateOnScrollbar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPicker76',Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
@@ -4228,5 +4295,47 @@ export default function TextPicker() {
       console.info("testPicker76 finish");
       done();
     });
+
+    /**
+     * @tc.name   testPicker77
+     * @tc.number testPicker77
+     * @tc.desc   Testing PhotoPicker setPhotoBrowserItem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker77', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      const pickerOptions: PickerOptions = getDefaultPickerOptions();
+      await routeToUrl({
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          pickerOptions: pickerOptions,
+        }
+      });
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      const imageCheckbox = await driver.waitForComponent(ON.id('Selector_0'), 1000);
+      if (!imageCheckbox) {
+        console.error('testPicker77 no image')
+        done();
+        return;
+      }
+      await imageCheckbox.click();
+      await CommonFunc.sleep(300);
+      const btn = await driver.findComponent(ON.id('setPhotoBrowserItemWithEmptyURI'));
+      console.log('testPicker77 btn click')
+      await btn.click();
+      await CommonFunc.sleep(500);
+      const previewButton = await driver.findComponent(ON.id('previewButton'));
+      console.log('testPicker77 previewButton click')
+      await previewButton.click();
+      await CommonFunc.sleep(500);
+      router.back();
+      done();
+    })
   })
 }
