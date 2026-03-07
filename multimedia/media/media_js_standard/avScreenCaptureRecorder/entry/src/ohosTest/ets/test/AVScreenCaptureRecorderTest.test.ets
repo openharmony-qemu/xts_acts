@@ -704,7 +704,7 @@ export default function AVScreenCaptureRecorderTest() {
         if (captureRecorder != null) {
 
           console.info('createAVScreenCaptureRecorder success');
-          await captureRecorder.init(null).then(() => {
+          captureRecorder.init(null).then(() => {
             console.info('avScreenCaptureRecorder init success');
             captureRecorder.release();
             expect(false).assertTrue();
@@ -737,7 +737,7 @@ export default function AVScreenCaptureRecorderTest() {
       await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
         if (captureRecorder != null) {
           console.info('createAVScreenCaptureRecorder success');
-          await captureRecorder.skipPrivacyMode(null).then(() => {
+          captureRecorder.skipPrivacyMode(null).then(() => {
             console.info('skipPrivacyMode null success');
           }).catch((err: BusinessError) => {
             captureRecorder.release();
@@ -745,7 +745,7 @@ export default function AVScreenCaptureRecorderTest() {
             console.error('skipPrivacyMode null failed, error: ' + err.message);
           });
 
-          await captureRecorder.skipPrivacyMode([1]).then(() => {
+          captureRecorder.skipPrivacyMode([1]).then(() => {
             console.info('skipPrivacyMode [] success');
           }).catch((err: BusinessError) => {
             captureRecorder.release();
@@ -778,7 +778,7 @@ export default function AVScreenCaptureRecorderTest() {
       await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
         if (captureRecorder != null) {
           console.info('createAVScreenCaptureRecorder success');
-          await captureRecorder.excludePickerWindows(null).then(() => {
+          captureRecorder.excludePickerWindows(null).then(() => {
             console.info('excludePickerWindows null success');
           }).catch((err: BusinessError) => {
             captureRecorder.release();
@@ -820,7 +820,7 @@ export default function AVScreenCaptureRecorderTest() {
         if (captureRecorder != null) {
           console.info('createAVScreenCaptureRecorder success');
           captureRecorder.on('stateChange', null);
-          await captureRecorder.setMicEnabled(false).then(() => {
+          captureRecorder.setMicEnabled(false).then(() => {
             console.info('setMicEnabled null success');
           }).catch((err: BusinessError) => {
             captureRecorder.release();
