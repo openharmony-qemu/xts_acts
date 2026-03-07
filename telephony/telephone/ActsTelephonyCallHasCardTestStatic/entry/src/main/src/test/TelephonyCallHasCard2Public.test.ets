@@ -632,6 +632,40 @@ export default function HasCard2PublicTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
+        /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber1700
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_1700
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+        it('testTelephonyCallManagerFormatPhoneNumber1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+          let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber1700';
+          hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+          let options: call.NumberFormatOptions = {
+            countryCode: "CN"
+          };
+          try {
+            call.formatPhoneNumber("", options, (err: BusinessError<void>|null, data: String|undefined) => {
+              if (err) {
+                hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber success, err->'+JSON.stringify(err));
+                ExpectTrue(err.code == 8300001);
+                done();
+              } else {
+                hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber finish + '+JSON.stringify(data));
+                ExpectFail();
+                done();
+              }
+            });
+          } catch (err) {
+            hilog.info(domain, tag, '%{public}s', caseName +'  fail, err->'+JSON.stringify(err));
+            ExpectFail();
+            done();
+          }
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        });
+
     /**
      * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber_static_0100
      * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0100
