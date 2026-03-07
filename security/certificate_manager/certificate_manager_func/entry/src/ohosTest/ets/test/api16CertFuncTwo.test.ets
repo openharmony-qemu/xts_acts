@@ -626,14 +626,16 @@ export default function api16CertFuncTestTwoUnit() {
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
         try {
-          await certManagerDialog.openUninstallCertificateDialog(null, certificateType, uir)
+          let certificateType1: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_USER;
+          await certManagerDialog.openUninstallCertificateDialog(null, certificateType1, uir)
           expect(null).assertFail();
         } catch (err) {
           console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: e.code " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
         try {
-          await certManagerDialog.openUninstallCertificateDialog(context, certificateType, '')
+          let certificateType2: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_SYSTEM;
+          await certManagerDialog.openUninstallCertificateDialog(context, certificateType2, '')
           expect(null).assertFail();
         } catch (err) {
           console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: e.code " + err.code);
@@ -654,7 +656,8 @@ export default function api16CertFuncTestTwoUnit() {
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
         try {
-          await certManagerDialog.openUninstallCertificateDialog(undefined, certificateType, uir)
+          let certificateType3: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_APP;
+          await certManagerDialog.openUninstallCertificateDialog(undefined, certificateType3, uir)
           expect(null).assertFail();
         } catch (err) {
           console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: e.code " + err.code);
@@ -792,8 +795,11 @@ export default function api16CertFuncTestTwoUnit() {
           console.log("SUB_Security_CertManager_OpenCertificateDialog_0012: e.code " + err.code);
           expect(err.code).assertEqual(401);
         }
+        let property1: certManagerDialog.CertificateDialogProperty = {
+          showInstallButton: true /* 不显示安装按钮 */
+        };
         try {
-          await certManagerDialog.openCertificateDetailDialog(undefined, caCert1, property)
+          await certManagerDialog.openCertificateDetailDialog(undefined, caCert1, property1)
           expect(null).assertFail();
         } catch (err) {
           console.log("SUB_Security_CertManager_OpenCertificateDialog_0012: e.code " + err.code);
@@ -1032,6 +1038,19 @@ export default function api16CertFuncTestTwoUnit() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
       }
+
+      let ukeyInfo1: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+
+      let ukeyInfo2: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
+      }
+
+      let ukeyInfo3: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      }
+
       try {
         await certManager.getUkeyCertificate(null, ukeyInfo);
         expect(null).assertFail();
@@ -1048,9 +1067,25 @@ export default function api16CertFuncTestTwoUnit() {
         expect(err.code).assertEqual(401);
       }
 
+      try {
+        await certManager.getUkeyCertificate(undefined, ukeyInfo1);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_Ukey_0600 Failed1 to get detail of USB key certificate. index: ${stepindex} Code: ${err.code}, message: ${err.message}`)
+        expect(err.code).assertEqual(401);
+      }
+      
+      try {
+        await certManager.getUkeyCertificate(keyUri, undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_Ukey_0600 Failed2 to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
+        expect(err.code).assertEqual(17500011);
+      }
+
       let keyUri1: string = '';
       try {
-        await certManager.getUkeyCertificate(keyUri1, ukeyInfo);
+        await certManager.getUkeyCertificate(keyUri1, ukeyInfo2);
         expect(null).assertFail();
       } catch (err) {
         console.error(`SUB_Security_CertManager_Ukey_0600 Failed3 to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
