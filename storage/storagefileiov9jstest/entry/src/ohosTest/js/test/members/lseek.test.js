@@ -17,7 +17,7 @@ import {
   fileIO, FILE_CONTENT, prepareFile, nextFileName, 
   describe, it, expect,
 } from '../Common';
-import { Level } from '@ohos/hypium';
+import { TestType, Size, Level } from '@ohos/hypium';
   
 export default function fileIOLseek() {
 describe('fileIO_fs_lseek', function () {

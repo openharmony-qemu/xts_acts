@@ -18,7 +18,7 @@ import {
   fileIO, FILE_CONTENT, prepareFile, sleep, nextFileName,
   describe, it, expect,
 } from '../Common';
-import { Level } from '@ohos/hypium';
+import { TestType, Size, Level } from '@ohos/hypium';
 
   const WAIT_HALF_SECOND = 500;
   const watcherEvent = {
