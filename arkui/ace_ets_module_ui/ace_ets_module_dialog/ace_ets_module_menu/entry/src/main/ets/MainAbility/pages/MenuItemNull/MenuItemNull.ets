@@ -7,15 +7,15 @@ struct Index {
   @Builder
   SubMenu() {
     Menu() {
-      MenuItem({ content: "复制", labelInfo: "Ctrl+C" })
-      MenuItem({ content: "粘贴", labelInfo: "Ctrl+V" })
+      MenuItem({ content: '复制', labelInfo: 'Ctrl+C' })
+      MenuItem({ content: '粘贴', labelInfo: 'Ctrl+V' })
     }
   }
 
   @Builder
   MyMenu(){
     Menu() {
-      MenuItem({ startIcon: $r("app.media.app_icon"), content: "菜单选项" })
+      MenuItem({ startIcon: $r('app.media.app_icon'), content: '菜单选项' })
         .selectIcon(undefined)
         .contentFont(undefined)
         .contentFontColor(undefined)
@@ -27,7 +27,7 @@ struct Index {
   @Builder
   MyMenu1(){
     Menu() {
-      MenuItem({ startIcon: $r("app.media.app_icon"), content: "菜单选项" })
+      MenuItem({ startIcon: $r('app.media.app_icon'), content: '菜单选项' })
         .selectIcon(null)
         .contentFont(null)
         .contentFontColor(null)
