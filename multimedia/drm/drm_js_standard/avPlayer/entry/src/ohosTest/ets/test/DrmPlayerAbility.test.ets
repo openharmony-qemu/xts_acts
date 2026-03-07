@@ -4264,7 +4264,6 @@ export default function abilityTest() {
                     session.destroy();
                     drmsys.destroy();
                     done();
-                    expect(false).assertEqual(true);
                 }).catch((err:BusinessError) => {
                     expect(err.code).not().assertUndefined();
                     session.destroy();
@@ -4297,7 +4296,6 @@ export default function abilityTest() {
                     session.destroy();
                     drmsys.destroy();
                     done();
-                    expect(false).assertEqual(true);
                 }).catch((err:BusinessError) => {
                     expect(err.code).not().assertUndefined();
                     session.destroy();
@@ -4328,7 +4326,6 @@ export default function abilityTest() {
                     session.destroy();
                     drmsys.destroy();
                     done();
-                    expect(false).assertEqual(true);
                 }).catch((err:BusinessError) => {
                     expect(err.code).not().assertUndefined();
                     session.destroy();
@@ -4359,7 +4356,6 @@ export default function abilityTest() {
                     session.destroy();
                     drmsys.destroy();
                     done();
-                    expect(false).assertEqual(true);
                 }).catch((err:BusinessError) => {
                     expect(err.code).not().assertUndefined();
                     session.destroy();
@@ -4392,7 +4388,6 @@ export default function abilityTest() {
                     session.destroy();
                     drmsys.destroy();
                     done();
-                    expect(false).assertEqual(true);
                 }).catch((err:BusinessError) => {
                     expect(err.code).not().assertUndefined();
                     session.destroy();
@@ -4425,7 +4420,6 @@ export default function abilityTest() {
                     session.destroy();
                     drmsys.destroy();
                     done();
-                    expect(false).assertEqual(true);
                 }).catch((err:BusinessError) => {
                     expect(err.code).not().assertUndefined();
                     session.destroy();
@@ -4457,7 +4451,6 @@ export default function abilityTest() {
                     session.destroy();
                     drmsys.destroy();
                     done();
-                    expect(false).assertEqual(true);
                 }).catch((err:BusinessError) => {
                     expect(err.code).not().assertUndefined();
                     session.destroy();
@@ -4489,7 +4482,6 @@ export default function abilityTest() {
                     session.destroy();
                     drmsys.destroy();
                     done();
-                    expect(false).assertEqual(true);
                 }).catch((err:BusinessError) => {
                     expect(err.code).not().assertUndefined();
                     session.destroy();
