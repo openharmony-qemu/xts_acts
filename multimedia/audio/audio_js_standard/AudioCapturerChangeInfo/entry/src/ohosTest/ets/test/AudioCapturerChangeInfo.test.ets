@@ -153,7 +153,6 @@ export default function audioCapturerChange() {
           if (devDescriptor != null) {
             audioStreamManager.off('audioCapturerChange');
             await audioCap.release();
-            expect(true).assertTrue();
             done();
           }
         }
@@ -440,7 +439,6 @@ export default function audioCapturerChange() {
           }
           if (AudioCapturerChangeInfoArray[i].capturerInfo.source == 0 && devDescriptor != null) {
             audioStreamManager.off('audioCapturerChange');
-            expect(true).assertTrue();
             done();
           }
         }
@@ -559,7 +557,6 @@ export default function audioCapturerChange() {
           }
           if (AudioCapturerChangeInfoArray[i].streamId != undefined && devDescriptor != null) {
             audioStreamManager.off('audioCapturerChange');
-            expect(true).assertTrue();
             done();
           }
         }
@@ -612,7 +609,6 @@ export default function audioCapturerChange() {
           }
           if (clientUid != undefined && capFlags == 0 && devDescriptor != null) {
             audioStreamManager.off('audioCapturerChange');
-            expect(true).assertTrue();
             done();
           }
         }
@@ -667,7 +663,6 @@ export default function audioCapturerChange() {
             console.info(`${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
             if (Id > 0 && dType == 15 && dRole == 1 && sRate != null && cCount != null && cMask != null) {
               audioStreamManager.off('audioCapturerChange');
-              expect(true).assertTrue();
               done();
             }
           }
@@ -718,7 +713,6 @@ export default function audioCapturerChange() {
             console.info(`${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
           }
           audioStreamManager.off('audioCapturerChange');
-          expect(true).assertTrue();
           done();
         }
       });
@@ -776,7 +770,6 @@ export default function audioCapturerChange() {
             console.info(`${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
           }
           audioStreamManager.off('audioCapturerChange');
-          expect(true).assertTrue();
           done();
         }
       });
@@ -832,7 +825,6 @@ export default function audioCapturerChange() {
             console.info(`${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
           }
           audioStreamManager.off('audioCapturerChange');
-          expect(true).assertTrue();
           done();
         }
       });
@@ -889,7 +881,6 @@ export default function audioCapturerChange() {
             console.info(`${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
           }
           audioStreamManager.off('audioCapturerChange');
-          expect(true).assertTrue();
           done();
         }
       });
@@ -943,7 +934,6 @@ export default function audioCapturerChange() {
             console.info(`${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
             if (Id > 0 && dType == 15 && dRole == 1 && sRate != null && cCount != null && cMask != null) {
               audioStreamManager.off('audioCapturerChange');
-              expect(true).assertTrue();
               done();
             }
           }
@@ -1020,7 +1010,6 @@ export default function audioCapturerChange() {
               console.info(`audioCapturerChange off Success `);
               await audioCap.release().then(() => {
                 console.info(`${Tag}: Capturer release : SUCCESS`);
-                expect(true).assertTrue();
                 done();
               }).catch((err: BusinessError) => {
                 console.info(`${Tag}: Capturer release :ERROR :${err.message}`);
@@ -1101,7 +1090,6 @@ export default function audioCapturerChange() {
               console.info(`audioCapturerChange off Success `);
               await audioCap.release().then(() => {
                 console.info(`${Tag}: Capturer release : SUCCESS`);
-                expect(true).assertTrue();
                 done();
               }).catch((err: BusinessError) => {
                 console.info(`${Tag}: Capturer release :ERROR :${err.message}`);
@@ -1191,7 +1179,6 @@ export default function audioCapturerChange() {
               audioStreamManager.off('audioCapturerChange');
               await audioCap.release().then(() => {
                 console.info(`${Tag}: Capturer release : SUCCESS`);
-                expect(true).assertTrue();
                 done();
               }).catch((err: BusinessError) => {
                 console.info(`${Tag}: Capturer release :ERROR :${err.message}`);
@@ -1286,7 +1273,6 @@ export default function audioCapturerChange() {
               audioStreamManager.off('audioCapturerChange');
               await audioCap.release().then(() => {
                 console.info(`${Tag}: Capturer release : SUCCESS`);
-                expect(true).assertTrue();
                 done();
               }).catch((err: BusinessError) => {
                 console.info(`${Tag}: Capturer release :ERROR :${err.message}`);
@@ -1370,7 +1356,6 @@ export default function audioCapturerChange() {
                 audioStreamManagerCB.off('audioCapturerChange');
                 await audioCap.release().then(() => {
                   console.info(`${Tag}: Capturer release : SUCCESS`);
-                  expect(true).assertTrue();
                   done();
                 }).catch((err: BusinessError) => {
                   console.info(`${Tag}: Capturer release :ERROR :${err.message}`);
