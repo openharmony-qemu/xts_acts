@@ -1,0 +1,88 @@
+    it('SUB_DDM_SKV_QueryNull_wall_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_QueryNull_wall_0100 begin---------  ');
+      try {
+        let query: factory.Query | null = new factory.Query();
+        let qRes: factory.Query | null = new factory.Query();
+
+        qRes = query.reset();
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.equalTo('eee', "value");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.notEqualTo('eee', "value");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.greaterThan('eee', "value");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.lessThan('eee', "value");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.greaterThanOrEqualTo('eee', "value");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.lessThanOrEqualTo('eee', "value");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.isNull("value");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.inNumber("field", [0, 1]);
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.inString("field", ['test1', 'test2']);
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.notInNumber("field", [0, 1]);
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.notInString("field", ['test1', 'test2']);
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.like("field", "value");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.unlike("field", "value");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.orderByAsc("field");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.orderByDesc("field");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.limit(10, 1);
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.isNotNull("field");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.prefixKey("0");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.setSuggestIndex("0");
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.deviceId("deviceId")
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.and()
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.or()
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.beginGroup()
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.endGroup()
+        expect(qRes!=undefined).assertTrue();
+
+        done();
+      } catch (e) {
+        console.error(TAG + 'put 1, catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
