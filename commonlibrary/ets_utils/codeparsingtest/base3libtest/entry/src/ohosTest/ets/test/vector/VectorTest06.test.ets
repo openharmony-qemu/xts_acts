@@ -1970,7 +1970,359 @@ export default function vectorTest06() {
       expect(vector.length).assertEqual(1)
     })
 
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_10000
+     * @tc.name      testVector06Chapter0100
+     * @tc.desc      setLength string("") test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0100';
+      let vector = new Vector<string>();
+      vector.setLength(2)
+      let strVal = "";
+      vector.set(0,strVal);
+      vector.set(1,'108');
+      expect(vector.get(0)).assertEqual(strVal)
+      expect(vector.get(1)).assertEqual('108')
+      vector.setLength(1);
+      expect(vector.get(0)).assertEqual(strVal)
+      expect(vector.length).assertEqual(1)
+    })
 
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_10100
+     * @tc.name      testVector06Chapter0101
+     * @tc.desc      setLength number(0) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0101';
+      let vector = new Vector<number>();
+      vector.setLength(2)
+      let numVal = 0;
+      vector.set(0,numVal);
+      vector.set(1,108);
+      expect(vector.get(0)).assertEqual(numVal)
+      expect(vector.get(1)).assertEqual(108)
+      vector.setLength(1);
+      expect(vector.get(0)).assertEqual(numVal)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_10200
+     * @tc.name      testVector06Chapter0102
+     * @tc.desc      setLength boolean(true) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0102';
+      let vector = new Vector<boolean>();
+      vector.setLength(2)
+      let boolVal = true;
+      vector.set(0,boolVal);
+      vector.set(1,false);
+      expect(vector.get(0)).assertEqual(boolVal)
+      expect(vector.get(1)).assertEqual(false)
+      vector.setLength(1);
+      expect(vector.get(0)).assertEqual(boolVal)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_10300
+     * @tc.name      testVector06Chapter0103
+     * @tc.desc      setLength Array(Contains non-numeric types) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0103';
+      let vector = new Vector<Array<string | number | undefined | boolean | null>>();
+      vector.setLength(2)
+      let arrVal = [72, "abc", true, null, undefined, 108];
+      vector.set(0,arrVal);
+      vector.set(1,[108]);
+      expect(vector.get(0)).assertEqual(arrVal)
+      expect(vector.get(1)[0]).assertEqual(108)
+      vector.setLength(1);
+      expect(vector.get(0)).assertEqual(arrVal)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_10400
+     * @tc.name      testVector06Chapter0104
+     * @tc.desc      setLength object({a:1, b:"test", c:[1,2,3]}) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0104';
+      let vector = new Vector<object>();
+      vector.setLength(2)
+      class C1 {
+        a: number = 1;
+        b: string = "test";
+        c: Array<number> = [1, 2, 3];
+      }
+      let objVal = new C1();
+      vector.set(0,objVal);
+      vector.set(1,new C1());
+      expect(vector.get(0)).assertEqual(objVal)
+
+      vector.setLength(1);
+      expect(vector.get(0)).assertEqual(objVal)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_10500
+     * @tc.name      testVector06Chapter0105
+     * @tc.desc      get string test (normal index)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0105';
+      let vector = new Vector<string>();
+      vector.add("Hello");
+      vector.add("World");
+      expect(vector.get(0)).assertEqual("Hello");
+      expect(vector.get(1)).assertEqual("World");
+    });
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_10600
+     * @tc.name      testVector06Chapter0106
+     * @tc.desc      get string test (index out of bounds)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0106';
+      let hasThrown = false;
+      let errorType = '';
+      try {
+        let vector = new Vector<string>();
+        vector.add("Hello");
+        vector.add("World");
+        vector.get(2);
+        hasThrown = false;
+      } catch (error) {
+        hasThrown = true;
+        errorType = error?.name || error?.constructor?.name;
+      }
+      expect(hasThrown).assertTrue();
+      expect(errorType).assertEqual("RangeError");
+    });
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_10700
+     * @tc.name      testVector06Chapter0107
+     * @tc.desc      get string test (empty vector)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0107';
+      let hasThrown = false;
+      let errorType = '';
+      try {
+        let vector = new Vector<string>();
+        vector.get(0);
+        hasThrown = false;
+      } catch (error) {
+        hasThrown = true;
+        errorType = error?.name || error?.constructor?.name;
+      }
+      expect(hasThrown).assertTrue();
+      expect(errorType).assertEqual("RangeError"); // 按实际异常类型调整
+    });
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_10800
+     * @tc.name      testVector06Chapter0108
+     * @tc.desc      get Int8Array([-128]) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0108';
+      let vector = new Vector<Int8Array>();
+      let int8Array = new Int8Array([-128]);
+      vector.add(int8Array);
+      expect(vector.get(0)).assertEqual(int8Array)
+      expect(vector.get(0)[0]).assertEqual(-128)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_10900
+     * @tc.name      testVector06Chapter0109
+     * @tc.desc      get Float32Array([Infinity]) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0109';
+      let vector = new Vector<Float32Array>();
+      let float32Array = new Float32Array([Infinity]);
+      vector.add(float32Array);
+      expect(vector.get(0)).assertEqual(float32Array)
+      expect(vector.get(0)[0]).assertEqual(Infinity)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_11000
+     * @tc.name      testVector06Chapter0110
+     * @tc.desc      get Float32Array([-Infinity]) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0110';
+      let vector = new Vector<Float32Array>();
+      let float32Array = new Float32Array([-Infinity]);
+      vector.add(float32Array);
+      expect(vector.get(0)).assertEqual(float32Array)
+      expect(vector.get(0)[0]).assertEqual(-Infinity)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_11100
+     * @tc.name      testVector06Chapter0111
+     * @tc.desc      get Float32Array([NaN]) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0111';
+      let vector = new Vector<Float32Array>();
+      let float32Array = new Float32Array([NaN]);
+      vector.add(float32Array);
+      expect(vector.get(0)).assertEqual(float32Array)
+      expect(isNaN(vector.get(0)[0])).assertTrue() // NaN不能直接断言相等
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_11200
+     * @tc.name      testVector06Chapter0112
+     * @tc.desc      get string('👆') test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0112';
+      let vector = new Vector<string>();
+      let strVal = '👆';
+      vector.add(strVal);
+      expect(vector.get(0)).assertEqual(strVal)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_11300
+     * @tc.name      testVector06Chapter0113
+     * @tc.desc      get number(0) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0113';
+      let vector = new Vector<number>();
+      let numVal = 0;
+      vector.add(numVal);
+      expect(vector.get(0)).assertEqual(numVal)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_11400
+     * @tc.name      testVector06Chapter0114
+     * @tc.desc      get boolean(true) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0114';
+      let vector = new Vector<boolean>();
+      let boolVal = true;
+      vector.add(boolVal);
+      expect(vector.get(0)).assertEqual(boolVal)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_11500
+     * @tc.name      testVector06Chapter0115
+     * @tc.desc      get Array(Contains non-numeric types) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0115';
+      let vector = new Vector<Array<string | number | undefined | boolean | null>>();
+      let arrVal = [72, "abc", true, null, undefined, 108];
+      vector.add(arrVal);
+      expect(vector.get(0)).assertEqual(arrVal)
+      expect(vector.get(0)[0]).assertEqual(72)
+      expect(vector.get(0)[1]).assertEqual("abc")
+      expect(vector.get(0)[2]).assertEqual(true)
+      expect(vector.get(0)[3]).assertEqual(null)
+      expect(vector.get(0)[4]).assertEqual(undefined)
+      expect(vector.get(0)[5]).assertEqual(108)
+      expect(vector.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_VECTOR_TEST06_11600
+     * @tc.name      testVector06Chapter0116
+     * @tc.desc      get object({a:1, b:"test", c:[1,2,3]}) test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testVector06Chapter0116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testVector06Chapter0116';
+      let vector = new Vector<object>();
+      let numArr= [1, 2, 3];
+      class C1 {
+        a: number = 1;
+        b: string = "test";
+        c: Array<number> = numArr;
+      }
+      let objVal = new C1();
+      vector.add(objVal);
+      expect(vector.get(0)).assertEqual(objVal)
+      expect((vector.get(0) as C1).a).assertEqual(1)
+      expect((vector.get(0) as C1).b).assertEqual("test")
+      expect((vector.get(0) as C1).c).assertEqual(numArr)
+      expect(vector.length).assertEqual(1)
+    })
 
   })
 }
