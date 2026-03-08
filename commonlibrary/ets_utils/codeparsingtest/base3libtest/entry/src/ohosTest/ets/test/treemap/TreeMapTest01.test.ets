@@ -1967,7 +1967,40 @@ export default function TreeMap01Test() {
       expect(result).assertFalse();
     });
 
+    /**
+     * @tc.number    SUB_TREEMAP_TEST01_9700
+     * @tc.name      testTreeMap01Chapter0097
+     * @tc.desc      Check isEmpty with TreeMap containing Promise object value
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTreeMap01Chapter0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testTreeMap01Chapter0097';
+      console.log(TAG + ' start');
+      let treeMap = new TreeMap<number, Promise<string>>();
+      treeMap.set(1, new Promise<string>((resolve) => setTimeout(() => resolve('done'), 100)));
+      let result = treeMap.isEmpty();
+      expect(result).assertFalse();
+    });
 
+    /**
+     * @tc.number    SUB_TREEMAP_TEST01_9800
+     * @tc.name      testTreeMap01Chapter0098
+     * @tc.desc      Check isEmpty with TreeMap containing RegExp object value
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTreeMap01Chapter0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testTreeMap01Chapter0098';
+      console.log(TAG + ' start');
+      let treeMap = new TreeMap<number, RegExpObjectValue>();
+      const value: RegExpObjectValue = { regex: /abc/gi, flags: /def/m };
+      treeMap.set(1, value);
+      let result = treeMap.isEmpty();
+      expect(result).assertFalse();
+    });
 
   })
 }
