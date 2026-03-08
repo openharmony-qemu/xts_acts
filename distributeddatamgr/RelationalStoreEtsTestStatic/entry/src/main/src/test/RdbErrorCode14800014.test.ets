@@ -3193,5 +3193,192 @@ export default function RdbErrorCode14800014() {
         done();
       })
 
+    /**
+     * @tc.name   RdbgoTo14800014_001
+     * @tc.number RdbgoTo14800014_001
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('RdbgoTo14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(TAG + "************* RdbgoTo14800014_001 start *************");
+        const valueBucket: relationalStore.ValuesBucket = {
+          "data1": "hello",
+        };
+        await rdbStore!.insert("test", valueBucket);
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        let count = resultSet!.rowCount;
+        expect(true).assertEqual(resultSet!.goToRow(count - 1)!);
+        resultSet!.close();
+        await rdbStore!.close();
+        try {
+          resultSet!.goTo(1);
+          console.error(TAG + "RdbgoTo14800014_001 success");
+        } catch (err) {
+          console.error(TAG + "RdbgoTo14800014_001 failed. " + err);
+          expect(14800014).assertEqual(err.code);
+        }
+        console.log(TAG + "************* RdbgoTo14800014_001 end *************");
+        done();
+      });
+
+    /**
+     * @tc.name   RdbgoToRow14800014_001
+     * @tc.number RdbgoToRow14800014_001
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('RdbgoToRow14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(TAG + "************* RdbgoToRow14800014_001 start *************");
+        const valueBucket: relationalStore.ValuesBucket = {
+          "data1": "hello",
+        };
+        await rdbStore!.insert("test", valueBucket);
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        let count = resultSet!.rowCount;
+        expect(true).assertEqual(resultSet!.goToRow(count - 1)!);
+        resultSet!.close();
+        await rdbStore!.close();
+        try {
+          resultSet!.goToRow(1);
+          console.error(TAG + "RdbgoToRow14800014_001 success");
+        } catch (err) {
+          console.error(TAG + "RdbgoToRow14800014_001 failed. " + err);
+          expect(14800014).assertEqual(err.code);
+        }
+        console.log(TAG + "************* RdbgoToRow14800014_001 end *************");
+        done();
+      });
+
+    /**
+     * @tc.name   RdbbeginTransaction14800014_001
+     * @tc.number RdbbeginTransaction14800014_001
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('RdbbeginTransaction14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(TAG + "************* RdbbeginTransaction14800014_001 start *************");
+        await rdbStore!.close();
+        try {
+          rdbStore!.beginTransaction();
+          console.error(TAG + "RdbbeginTransaction14800014_001 success");
+          expect(true).assertFail();
+        } catch (err) {
+          console.error(TAG + "RdbbeginTransaction14800014_001 failed. " + err);
+          expect(14800014).assertEqual(err.code);
+        }
+        console.log(TAG + "************* RdbbeginTransaction14800014_001 end *************");
+        done();
+      });
+
+    /**
+     * @tc.name   RdbbeginTrans14800014_001
+     * @tc.number RdbbeginTrans14800014_001
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('RdbbeginTrans14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(TAG + "************* RdbbeginTrans14800014_001 start *************");
+        await rdbStore!.close();
+        try {
+          rdbStore!.beginTrans();
+          console.error(TAG + "RdbbeginTrans14800014_001 success");
+        } catch (err) {
+          console.error(TAG + "RdbbeginTrans14800014_001 failed. " + err);
+          expect(14800014).assertEqual(err.code);
+        }
+        console.log(TAG + "************* RdbbeginTrans14800014_001 end *************");
+        done();
+      });
+
+
+    /**
+     * @tc.name   Rdbcommit14800014_001
+     * @tc.number Rdbcommit14800014_001
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Rdbcommit14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(TAG + "************* Rdbcommit14800014_001 start *************");
+        try {
+          const transaction = await rdbStore!.createTransaction();
+          await transaction.commit();
+          await transaction.commit();
+          console.error(TAG + "Rdbcommit14800014_001 success");
+          expect(true).assertFail();
+        } catch (err) {
+          console.error(TAG + "Rdbcommit14800014_001 failed. " + err);
+          expect(14800014).assertEqual(err.code);
+        }
+        console.log(TAG + "************* Rdbcommit14800014_001 end *************");
+        done();
+      });
+
+    /**
+     * @tc.name   Rdbrollback14800014_001
+     * @tc.number Rdbrollback14800014_001
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Rdbrollback14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(TAG + "************* Rdbrollback14800014_001 start *************");
+        try {
+          const transaction = await rdbStore!.createTransaction();
+          await transaction.rollback();
+          await transaction.rollback();
+          console.error(TAG + "Rdbrollback14800014_001 success");
+          expect(true).assertFail();
+        } catch (err) {
+          console.error(TAG + "Rdbrollback14800014_001 failed. " + err);
+          expect(14800014).assertEqual(err.code);
+        }
+        console.log(TAG + "************* Rdbrollback14800014_001 end *************");
+        done();
+      });
+
+    /**
+     * @tc.name   RdbcommittxId14800014_001
+     * @tc.number RdbcommittxId14800014_001
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('RdbcommittxId14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(TAG + "************* RdbcommittxId14800014_001 start *************");
+        let txId :long;
+        try {
+          txId = await rdbStore!.beginTrans();
+          console.info(TAG +`beginTrans successful`+txId);
+          await rdbStore!.commit(txId);
+          await rdbStore!.commit(txId);
+          console.error(TAG + "RdbcommittxId14800014_001 success");
+          expect(true).assertFail();
+        } catch (err) {
+          console.error(TAG + "RdbcommittxId14800014_001 failed. " + err);
+          expect(14800014).assertEqual(err.code);
+        }
+        console.log(TAG + "************* RdbcommittxId14800014_001 end *************");
+        done();
+      });
+
   })
 }
