@@ -1975,5 +1975,112 @@ export default function StreamWritable01Test() {
       expect(actual).assertEqual(expected);
     });
 
+    /**
+     * @tc.number    SUB_STREAM_WRITABLE_TEST01_5000
+     * @tc.name      testStreamWritable01Chapter0050
+     * @tc.desc      Test writing Uint8Array with various non-numeric scenarios
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testStreamWritable01Chapter0050';
+      console.log(TAG + ' start');
+
+      class TestWritable extends stream.Writable {
+        private receivedData: Uint8Array | null = null;
+        private writeCalled: boolean = false;
+
+        constructor() {
+          super();
+        }
+
+        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
+          this.writeCalled = true;
+          if (chunk instanceof Uint8Array) {
+            this.receivedData = chunk;
+          }
+          callback();
+        }
+
+        getData(): Uint8Array | null {
+          return this.receivedData;
+        }
+
+        getWriteCalled(): boolean {
+          return this.writeCalled;
+        }
+      }
+
+      const writableStream = new TestWritable();
+      let errorCaught = false;
+      try {
+        const array1 = new Uint8Array([72, 101, NaN, Infinity, 108, 111]);
+        const result1 = writableStream.write(array1);
+        expect(result1).assertTrue();
+      } catch (error) {
+        console.log(TAG + ' error in test 1:', error.message);
+        errorCaught = true;
+      }
+      try {
+        const specialArray: number[] = [];
+        specialArray[0] = 72;
+        specialArray[1] = 101;
+        const uint8Array = new Uint8Array(specialArray);
+        const result2 = writableStream.write(uint8Array);
+        expect(result2).assertTrue();
+      } catch (error) {
+        console.log(TAG + ' error in test 2:', error.message);
+        errorCaught = true;
+      }
+    });
+    /**
+     * @tc.number    SUB_STREAM_WRITABLE_TEST01_5100
+     * @tc.name      testStreamWritable01Chapter0051
+     * @tc.desc      Test writing Uint8Array with all boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testStreamWritable01Chapter0051';
+      console.log(TAG + ' start');
+
+      class TestWritable extends stream.Writable {
+        private receivedData: Uint8Array | null = null;
+
+        constructor() {
+          super();
+        }
+
+        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
+          if (chunk instanceof Uint8Array) {
+            this.receivedData = chunk;
+          }
+          callback();
+        }
+
+        getData(): Uint8Array | null {
+          return this.receivedData;
+        }
+      }
+
+      const testValues = [0, 255, 0, 0];
+      const uint8Array = new Uint8Array(4);
+      uint8Array[0] = 0;
+      uint8Array[1] = 255;
+      uint8Array[2] = 256 & 0xFF;
+      uint8Array[3] = (-1) & 0xFF;
+      const writableStream = new TestWritable();
+      const result = writableStream.write(uint8Array);
+      expect(result).assertTrue();
+      const receivedData = writableStream.getData();
+      expect(receivedData != null).assertTrue();
+      expect((receivedData as Uint8Array).length).assertEqual(4);
+      expect((receivedData as Uint8Array)[0]).assertEqual(0);
+      expect((receivedData as Uint8Array)[1]).assertEqual(255);
+      expect((receivedData as Uint8Array)[2]).assertEqual(0);
+      expect((receivedData as Uint8Array)[3]).assertEqual(255);
+    });
   })
 }
