@@ -19,12 +19,12 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerDialogBGBlurStyle {
-  showDialog(style: BlurStyle | undefined | null | int) {
+  showDialog(style: BlurStyle | undefined) {
     this.getUIContext().showTextPickerDialog({
       // 建议使用 this.getUIContext().showTextPickerDialog()接口
       range: ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'],
       defaultPickerItemHeight: 40,
-      backgroundBlurStyle: (style as BlurStyle|undefined),
+      backgroundBlurStyle: (style as BlurStyle | undefined),
     } as TextPickerDialogOptions)
   }
   build() {
@@ -95,26 +95,11 @@ struct TextPickerDialogBGBlurStyle {
           this.showDialog(BlurStyle.COMPONENT_ULTRA_THICK)
         })
         .id('COMPONENT_ULTRA_THICK_ID')
-      Button('null')
-        .onClick((e: ClickEvent) => {
-          this.showDialog(null)
-        })
-        .id('nullID')
       Button('undefined')
         .onClick((e: ClickEvent) => {
           this.showDialog(undefined)
         })
         .id('undefinedID')
-      Button('100')
-        .onClick((e: ClickEvent) => {
-          this.showDialog(100)
-        })
-        .id('100ID')
-      Button('-100')
-        .onClick((e: ClickEvent) => {
-          this.showDialog(-100)
-        })
-        .id('-100ID')
     }.width('100%')
   }
 }
