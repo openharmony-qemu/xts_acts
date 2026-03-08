@@ -16,10 +16,12 @@
 import columnSplitJsunit from './ColumnSplitRowSplit/ColumnSplitJsunit.test';
 import rowSplitJsunit from './ColumnSplitRowSplit/RowSplitJsunit.test';
 import ColumnSplitJsunit from './ColumnSplitRowSplit/ColumnSplitJsunit.test.ets';
+import ColumnSplitDividerNullUndefinedTest from './ColumnSplitRowSplit/ColumnSplitDividerNullUndefined.test';
 
 
 export default function testsuite() {
   columnSplitJsunit()
   rowSplitJsunit()
   ColumnSplitJsunit();
+  ColumnSplitDividerNullUndefinedTest();
 }

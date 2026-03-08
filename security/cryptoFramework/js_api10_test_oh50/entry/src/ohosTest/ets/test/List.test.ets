@@ -40,6 +40,7 @@ import SecurityCryptoFwSha3TestUnit from './SecurityCryptoFwSHA3.test'
 import SecurityCryptoFwX963TestUnit from './SecurityCryptoFwX963.test'
 import SecurityCryptoFwAesWrapTestUnit from './SecurityCryptoFwAesWrap.test'
 import SecurityCryptoFwChaCha20Poly1305TestUnit from './SecurityCryptoFwChaCha20Poly1305.test'
+import SecurityCryptoFuncParamIsNullOrUndefinedTestUnit from './SecurityCryptoFuncParamIsNullOrUndefined.test'
 
 export default function testsuite() {
   SecurityCryptoFwSignRecoverRSARecoverTestUnit();
@@ -69,4 +70,5 @@ export default function testsuite() {
   SecurityCryptoFwX963TestUnit();
   SecurityCryptoFwAesWrapTestUnit();
   SecurityCryptoFwChaCha20Poly1305TestUnit();
+  SecurityCryptoFuncParamIsNullOrUndefinedTestUnit();
 }

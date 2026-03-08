@@ -43,7 +43,7 @@ export default function FileShare_RevokePermission_test() {
             let policies = [policyInfo];
             fileShare.revokePermission(policies).then(() => {
               console.info("FileShare_revokePermission_001 successfully");
-              expect(true).assertTrue();
+              expect(fileShare.OperationMode.READ_MODE === 0b1).assertTrue();
               done();
             }).catch((err) => {
               console.info("FileShare_revokePermission_001 failed with error message: " + err.message + ", error code: " + err.code);
@@ -81,7 +81,7 @@ export default function FileShare_RevokePermission_test() {
             let policies = [policyInfo];
             fileShare.revokePermission(policies).then(() => {
               console.info("FileShare_revokePermission_002 successfully");
-              expect(true).assertTrue();
+              expect(fileShare.OperationMode.READ_MODE === 0b1).assertTrue();
               done();
             }).catch((err) => {
               console.info("FileShare_revokePermission_002 failed with error message: " + err.message + ", error code: " + err.code);

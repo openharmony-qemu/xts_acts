@@ -14,11 +14,11 @@
  */
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import * as huksCallback from './utils/huks/HuksCallbackUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
-import { StringToUint8Array } from './utils/common/CommonUtils.ets';
-import { MergeOptions, SetParam, SetMultiParam, DeleteParam, CheckSoftware } from './utils/huks/HuksOptionsUtils.ets';
-import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
+import * as huksCallback from './utils/huks/HuksCallbackUtils';
+import { Logger } from './utils/common/Logger';
+import { StringToUint8Array } from './utils/common/CommonUtils';
+import { MergeOptions, SetParam, SetMultiParam, DeleteParam, CheckSoftware } from './utils/huks/HuksOptionsUtils';
+import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils';
 import {
   CipherData,
   GetCcmNoPaddingOptions,
@@ -30,9 +30,9 @@ import {
   GetCipherDataLenArr,
   ReBuildCipherData,
   CipherForGcm
-} from './utils/huks/CipherUtils.ets';
-import { GetDataBySize } from './utils/common/CommonUtils.ets';
-import { GetGcmNoPaddingOptions } from './utils/huks/CipherUtils.ets';
+} from './utils/huks/CipherUtils';
+import { GetDataBySize } from './utils/common/CommonUtils';
+import { GetGcmNoPaddingOptions } from './utils/huks/CipherUtils';
 
 
 export default function SecurityHuksCipherAesTest() {
@@ -69,7 +69,7 @@ export default function SecurityHuksCipherAesTest() {
         let decryptResult: CipherData = await CipherForCcm(testNumber, cipherOptions, cipherData, tagLength);
         expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })

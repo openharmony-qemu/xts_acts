@@ -16,7 +16,9 @@ import {
   ClickEvent,
   AttributeModifier,
   NavigationAttribute,
-  Entry
+  Entry,
+  NavDestination,
+  ColumnOptions
 } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
@@ -29,9 +31,8 @@ class MyNavigationModifier implements AttributeModifier<NavigationAttribute> {
   applyNormalAttribute(instance: NavigationAttribute): void {
     instance.customNavContentTransition(this.isUndefined ? undefined :
       (from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation):
-        NavigationAnimatedTransition | undefined => {
-        this.changeCount++;
-        console.log('[Modifier] customNavContentTransition, changeCount: ' + this.changeCount)
+      NavigationAnimatedTransition | undefined => {
+        this.changeCount = to.index
         // 返回 undefined 表示使用默认转场动效
         return undefined
       })
@@ -43,10 +44,29 @@ class MyNavigationModifier implements AttributeModifier<NavigationAttribute> {
 struct NavigationExample {
   pageInfos: NavPathStack = new NavPathStack();
   @State modifier: MyNavigationModifier = new MyNavigationModifier();
+  @Builder
+  pageOneTmp() {
+    NavDestination() {
+      Column({ space: 10 } as ColumnOptions) {
+        Text('pageOne2')
+          .id('NavPathStackApi2_text_pageOne')
+          .onClick(() => {
+            this.pageInfos.pop()
+          })
+      }.width('100%').height('100%')
+    }.title('pageOne')
+  }
+
+  @Builder
+  PageMap(name: string) {
+    if (name === 'pageOne') {
+      this.pageOneTmp()
+    }
+  }
 
   build() {
     Column() {
-      Text('changeCount:' + this.modifier.changeCount).id('changeCountText')
+      Text(this.modifier.changeCount.toString()).id('changeCountTextModifier')
 
       Navigation(this.pageInfos) {
         Text('this navigation bar')
@@ -63,18 +83,15 @@ struct NavigationExample {
       }
       .title('NavIndex')
       .attributeModifier(this.modifier)
+      .navDestination(this.PageMap)
       .height('50%')
 
       Button('customNavContentTransition:' + this.modifier.changeCount + ' ' + this.modifier.isUndefined)
         .id('toggleButton')
         .onClick((e: ClickEvent) => {
           // 创建新的 Modifier 实例以触发重新应用
-          let newModifier = new MyNavigationModifier()
-          newModifier.isUndefined = !this.modifier.isUndefined
-          newModifier.changeCount = this.modifier.changeCount
-          this.modifier = newModifier
+          this.modifier.isUndefined = !this.modifier.isUndefined
         })
     }
   }
 }
-

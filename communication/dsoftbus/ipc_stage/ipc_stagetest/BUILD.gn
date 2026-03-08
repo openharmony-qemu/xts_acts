@@ -19,4 +19,5 @@ ohos_js_app_suite("ActsIPCEtsTest") {
   hap_name = "ActsIPCStageTest"
   subsystem_name = "communication"
   part_name = "ipc"
+  deps = [ "../ipc_stageserver:ActsIPCEtsServer" ]
 }

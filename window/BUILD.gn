@@ -30,6 +30,8 @@ group("window") {
     "ActsZindexTestStatic:ActsZindexTestStaticTest",
     "ActsWindowKeyBoardTestStatic:ActsWindowKeyBoardStaticTest",
     "ActsWindowOrientationTestStatic:ActsWindowOrientationStaticTest",
-    "ActsWindowPropertiesTestStatic:ActsWindowPropertiesStaticTest"
+    "ActsWindowPropertiesTestStatic:ActsWindowPropertiesStaticTest",
+    "ActsWindowLifeCycleTestStatic:ActsWindowLifeCycleStaticTest",
+    "ActsWindowPCAndEventTestStatic:ActsWindowPCAndEventTestStaticTest"
   ]
 }

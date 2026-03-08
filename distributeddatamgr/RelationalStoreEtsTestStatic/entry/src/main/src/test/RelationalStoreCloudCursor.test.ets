@@ -190,6 +190,34 @@ export default function relationalStoreCloudCursor() {
             console.log(TAG + "************* testRdbCleanDirtyData0002 end *************");
         })
 
+          /**
+         * @tc.name   testRdbCleanDirtyData0004
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0800
+         * @tc.desc   clean retain data promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+         it('testRdbCleanDirtyData0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+          console.log(TAG + "************* testRdbCleanDirtyData0002 start *************");
+          if (rdbStore == undefined) {
+              console.log(TAG + "testRdbCleanDirtyData0004 rdbStore == undefined");
+              expect().assertFail();
+              return;
+          }
+          try {
+            await rdbStore!.cleanDirtyData("", 3);
+            console.log(TAG + `testRdbCleanDirtyData0004 cleanDirtyData success`);
+            done();
+          } catch (err) {
+            console.log(TAG + `testRdbCleanDirtyData0004 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
+            expect(err.code).assertEqual(14800000);
+            done();
+          }
+          console.log(TAG + "************* testRdbCleanDirtyData0004 end *************");
+      })
+
+
         console.log(TAG + "*************Unit Test End*************");
     })
 }

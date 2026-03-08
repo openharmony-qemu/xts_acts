@@ -395,6 +395,7 @@ export default function displayTest() {
         let promise = displayClass.getAvailableArea();
         promise.then((data) => {
           console.info(msgStr + 'Succeeded get the available area in this display. data: ' + JSON.stringify(data));
+          expect(data.top).assertLargerOrEqual(0);
           expect(data.left).assertEqual(0);
           expect(data.width).assertLarger(0);
           expect(data.height).assertLarger(0);
@@ -703,6 +704,9 @@ export default function displayTest() {
               console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
               sleep(500);
               expect(data.height).assertLarger(AvailableArea.height);
+              expect(data.left).assertLargerOrEqual(0);
+              expect(data.top).assertLargerOrEqual(0);
+              expect(data.width).assertLargerOrEqual(0);
               displayClass.off('availableAreaChange');
               mainWindowClass.recover();
               done();
@@ -1167,8 +1171,13 @@ export default function displayTest() {
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-        expect(err.code == 801 || err.code == 401).assertTrue();
-        done();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect(err.code).assertEqual(401);
+          done();
+        }
       }
     });
     /**
@@ -1243,7 +1252,11 @@ export default function displayTest() {
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-        expect(err.code == 401 || err.code == 801).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
         done();
       }
     });

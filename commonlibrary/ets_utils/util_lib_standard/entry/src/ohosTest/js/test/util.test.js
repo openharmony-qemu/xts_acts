@@ -5916,9 +5916,9 @@ describe('TextEncoderTest', function () {
      */
     it('testLruBufferClear003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let that = new util.LruBuffer()
-      that.put('abc',2)
-      that.put(2,'abc')
-      that.put('ancd','abcd')
+      that.put('abc', 2)
+      that.put(2, 'abc')
+      that.put('ancd', 'abcd')
       that.put(10,35)
       let result1 = that.length
       that.clear()

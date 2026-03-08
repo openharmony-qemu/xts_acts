@@ -72,6 +72,12 @@ import RdbStoreTest from "./RdbStoreTest.test";
 import TransactionTest from "./TransactionTest.test";
 import RelationalResultSetReturnValueAddTest from "./RelationalResultSetReturnValueAdd.test"
 import RelationalRdbStoreReturnValueAddTest from "./RelationalRdbStoreReturnValueAdd.test"
+import RdbStoreCallbackNullTest from "./RdbStoreCallbackNullTest.test";
+import RdbStoreResultNullEtsTest from "./RdbStoreResultNullEtsTest.test";
+import RdbStoreSqlInfoEnumTestEts from "./RdbStoreSqlInfoEnumTestEts.test";
+import RdbStoreGetModifyTimeErrTest from "./RdbStoreGetModifyTimeErr.test";
+import rdbStorePredicatesParamErrTest from "./RdbStorePredicatesParamErr.test";
+import rdbStoreAttachErrorTest from "./RdbStoreAttachError.test";
 
 export default function testsuite() {
   RelationStoreRdbStoreTest();
@@ -147,4 +153,12 @@ export default function testsuite() {
 
   RelationalResultSetReturnValueAddTest();
   RelationalRdbStoreReturnValueAddTest();
+
+  RdbStoreCallbackNullTest();
+  RdbStoreResultNullEtsTest();
+  RdbStoreSqlInfoEnumTestEts();
+
+  RdbStoreGetModifyTimeErrTest();
+  rdbStorePredicatesParamErrTest();
+  rdbStoreAttachErrorTest();
 }

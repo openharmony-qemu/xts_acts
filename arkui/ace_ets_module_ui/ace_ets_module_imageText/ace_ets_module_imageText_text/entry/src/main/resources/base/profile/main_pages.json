@@ -24,6 +24,7 @@
         "MainAbility/pages/ImageSpan/OnCompleteTest",
         "MainAbility/pages/ImageSpan/ImageSpanSupportSvg2",
         "MainAbility/pages/ImageSpan/ImageSpanTest9",
+        "MainAbility/pages/ImageSpan/ImageSpanPropertiesNullUndefinedTest",
 
         "MainAbility/pages/Span/Span3Jsunit",
         "MainAbility/pages/Span/SpanApi1",
@@ -33,10 +34,12 @@
         "MainAbility/pages/Span/SpanPageTest",
         "MainAbility/pages/Span/SpanTextShadowTest",
         "MainAbility/pages/Span/SpanUIJsunit",
+        "MainAbility/pages/Span/SpanPropertiesNullUndefinedTest",
 
         "MainAbility/pages/SymbolSpan/SymbolSpanApi1",
         "MainAbility/pages/SymbolSpan/SymbolSpanApi2",
         "MainAbility/pages/SymbolSpan/SymbolSpanModifier",
+        "MainAbility/pages/SymbolSpan/SymbolSpanPropertiesNullUndefinedTest",
 
         "MainAbility/pages/Text/EnablePreviewMenu",
         "MainAbility/pages/Text/FontSettingOptions",
@@ -120,6 +123,9 @@
         "MainAbility/pages/Text/TextLineBreakStrategyNull",
         "MainAbility/pages/Text/TextSelectionProperties",
         "MainAbility/pages/Text/TextSpecialOptionsNull",
-        "MainAbility/pages/Text/TextLayoutOptionsNull"
+        "MainAbility/pages/Text/TextLayoutOptionsNull",
+        "MainAbility/pages/Text/TextSpecialAttrsNull",
+        "MainAbility/pages/Text/TextMethodsNull",
+        "MainAbility/pages/Text/TextEditMenuOptionsNull"
     ]
 }

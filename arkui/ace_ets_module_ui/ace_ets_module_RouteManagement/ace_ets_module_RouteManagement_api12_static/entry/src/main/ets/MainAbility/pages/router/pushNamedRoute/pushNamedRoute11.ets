@@ -29,6 +29,8 @@ import {
   ClickEvent
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
+initModule('./pushNamedRoute11')
+
 @Entry({ routeName: 'pushNamedRoute11' })
 @Component
 struct pushNamedRoute11 {
@@ -37,8 +39,8 @@ struct pushNamedRoute11 {
   build() {
     Column() {
       Text('pushNamedRoute11').id('pushNamedRoute11_text1')
-      Text(this.text1).id('pushNamedRoute11_text2')
       Button('pushNamedRoute').onClick((event: ClickEvent) => {
+        initModule('./pushNamedRoute11')
         for(let i=0;i<33;i++){
           try {
             this.getUIContext().getRouter().pushNamedRoute({
@@ -46,6 +48,8 @@ struct pushNamedRoute11 {
             }, (err) => {
               if (err) {
                 this.text1 = '' +  (err as BusinessError).code
+                console.log('test pushNamedRoute11 ', this.text1)
+                AppStorage.setOrCreate<string>('errcode1', this.text1)
                 return;
               }
             })

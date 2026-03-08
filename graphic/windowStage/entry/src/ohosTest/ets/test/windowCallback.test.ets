@@ -1649,7 +1649,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
         });
@@ -1678,7 +1678,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
         });
@@ -1702,7 +1702,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let promise = windowStage.loadContentByName("Index1", abilityStorage);
         promise.then(() => {
           console.info(msg + 'Succeeded in loading the content.');
-          expect(true).assertTrue()
+          
           done()
         }).catch((err: BusinessError) => {
           console.error(msg + 'Failed to load the content. Cause:' + JSON.stringify(err));
@@ -1738,7 +1738,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       } catch (error) {
         console.log(msgStr + 'Failed to get the area of title buttons. Cause: ' + JSON.stringify(error));
         if (error.code == 801) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1768,7 +1768,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       } catch (err) {
         console.log(msgStr + 'Failed to enable the listener for window title buttons area changes. Cause: ' + JSON.stringify(err));
         if (err.code == 801) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1797,7 +1797,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       } catch (error) {
         console.log(msgStr + 'Failed to disable the listener for window title buttons area changes. Cause: ' + JSON.stringify(error));
         if (error.code == 1300002) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1865,7 +1865,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
 
@@ -1899,7 +1899,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
         });
@@ -1930,7 +1930,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let promise = windowClass.loadContentByName("Index1", storage);
         promise.then(() => {
           console.info(msg + 'Succeeded in loading the content.');
-          expect(true).assertTrue()
+          
           done()
         }).catch((err: BusinessError) => {
           console.error(msg + 'Failed to load the content. Cause:' + JSON.stringify(err));

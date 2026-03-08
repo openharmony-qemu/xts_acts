@@ -837,6 +837,34 @@ export default function NetworkManagerVpnTest() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_VPN_destroy_Promise_0500
+     * @tc.number SUB_NetworkManager_VPN_destroy_Promise_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_NetworkManager_VPN_destroy_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_destroy_Promise_0500';
+      try {
+        let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
+        vpnConnection.destroy("").then(() => {
+          console.log(`${caseName} destroy success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} destroy fail ${JSON.stringify(err)}`);
+          expect(err.code == 401).assertTrue();
+          done();
+        })
+      } catch (error) {
+        console.log(`${caseName} destroy error ${JSON.stringify(error)}`);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testNetworkManagerVPNContext0100
      * @tc.number SUB_NetworkManager_VPN_context_0100
      * @tc.desc   Function test

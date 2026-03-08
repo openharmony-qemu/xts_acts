@@ -281,6 +281,47 @@ export default function saveCompCustomizeTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_Customize_0400
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_Customize_0400
+     * @tc.desc   Test SaveComponent attr setText is '' validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_Button_Save_Customize_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_Button_Save_Customize_0400';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('app.media.icon');
+      let customText: string = '';
+      let expectText: string = '保存';
+      try {
+        let eventData: events_emitter.EventData = {
+          data: {
+            'cuIcon': customIcon,
+            'cuText': customText
+          }
+        }
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('keySave');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.icon).assertEqual(0);
+      expect(obj.$attrs.text).assertEqual(0);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, expectText, driver);
+    });
+
+    /**
      * @tc.name   Test_Security_Button_Save_Customize_0500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_Customize_0500
      * @tc.desc   Test SaveComponent attr iconBorderRadius set Dimension validated and Authorization is successful

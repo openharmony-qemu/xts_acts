@@ -735,6 +735,31 @@ export default function observerManagerTest() {
     });
 
     /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOn0400
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOn_0400
+     * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverCellularDataFlowChangeOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOn0400';
+      console.info(`${caseName} test start `);
+      try {
+        await observer.on("cellularDataFlowChange", (data: observer.DataFlowType) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(data != null);
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
      * @tc.name   testTelephonyObserverCellularDataFlowChangeOnId0100
      * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOnId_0100
      * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.

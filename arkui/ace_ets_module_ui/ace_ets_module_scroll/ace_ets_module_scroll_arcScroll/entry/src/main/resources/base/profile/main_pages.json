@@ -16,6 +16,8 @@
         "MainAbility/pages/arcListDefault/frictionNullUndefined",
         "MainAbility/pages/arcListDefault/flingSpeedLimitNullUndefined",
         "MainAbility/pages/arcListDefault/onScrollIndexNullUndefined",
+        "MainAbility/pages/arcListDefault/cachedCountNullUndefined",
+        "MainAbility/pages/arcListDefault/spaceNullUndefined",
         "MainAbility/pages/arcListItemDefault/autoScaleNullUndefined",
         "MainAbility/pages/arcListItemDefault/swipeActionNullUndefined"
     ]

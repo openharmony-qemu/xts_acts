@@ -125,9 +125,9 @@ export default function inputMethodTest() {
          * @tc.desc   Test Indicates the input method which will hide softboard with calback.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('inputmethodNomal_test_hideSoftKeyboard_static_001', Level.LEVEL2, async (done: () => void)  => {
+        it('inputmethodNomal_test_hideSoftKeyboard_static_001', Level.LEVEL0, async (done: () => void)  => {
             console.info("====>*********inputmethodNomal_test_hideSoftKeyboard_static_001 start************");
             let inputMethodCtrl = inputMethod.getController()
             inputMethodCtrl.hideSoftKeyboard((err : BusinessError | null) => {

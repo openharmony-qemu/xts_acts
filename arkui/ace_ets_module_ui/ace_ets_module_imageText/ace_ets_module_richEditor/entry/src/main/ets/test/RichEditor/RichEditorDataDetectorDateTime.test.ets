@@ -60,9 +60,9 @@ export default function RichEditorDataDetectorDateTimeTest() {
      * @tc.desc   Test RichEditor enableDataDetector with true and dataDetectorConfig.types with [TextDataDetectorType.DATE_TIME]
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorDataDetectorDateTime_0100', Level.LEVEL0, async () => {
+    it('richEditorDataDetectorDateTime_0100', Level.LEVEL1, async () => {
       console.info('[richEditorDataDetectorDateTime_0100] START');
       await CommonFunc.sleep(500);
 
@@ -95,9 +95,9 @@ export default function RichEditorDataDetectorDateTimeTest() {
      * @tc.desc   Test RichEditor dataDetectorConfig.types contains TextDataDetectorType.DATE_TIME (value: 4)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorDataDetectorDateTime_0200', Level.LEVEL0, async () => {
+    it('richEditorDataDetectorDateTime_0200', Level.LEVEL1, async () => {
       console.info('[richEditorDataDetectorDateTime_0200] START');
       await CommonFunc.sleep(500);
 

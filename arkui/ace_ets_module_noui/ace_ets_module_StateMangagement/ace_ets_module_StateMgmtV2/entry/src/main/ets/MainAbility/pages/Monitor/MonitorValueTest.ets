@@ -23,8 +23,8 @@ struct MonitorValueTest {
   @Monitor('name')
   onNameChange(monitor: IMonitor) {
     this.path1 = monitor.value('')?.path;
-    this.path2 = monitor.value('')?.path;
-    this.path3 = monitor.value('')?.path;
+    this.path2 = monitor.value(null)?.path;
+    this.path3 = monitor.value(undefined)?.path;
     // value的返回值为IMonitorValue类型，可以通过该返回值获取变量变化的信息
     console.info(`path: ${monitor.value()?.path} change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
   }

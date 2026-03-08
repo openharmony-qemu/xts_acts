@@ -1221,5 +1221,351 @@ export default function ActsBmsQueryAbilityByWant() {
         done()
       })
     });
+
+    /**
+     * @tc.name   testQueryAbilityByWantNullWantCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6000
+     * @tc.desc   Test queryAbilityByWant with null want. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantNullWantCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      bundle.queryAbilityByWant(null, bundle.BundleFlag.GET_BUNDLE_DEFAULT, userId, (err, data) => {
+        if (err) {
+          console.info('testQueryAbilityByWantNullWantCallback err:' + JSON.stringify(err));
+          expect(err).assertEqual(1);
+          done();
+          return;
+        }
+        console.info('testQueryAbilityByWantNullWantCallback success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantUndefinedWantCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6010
+     * @tc.desc   Test queryAbilityByWant with undefined want. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantUndefinedWantCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      bundle.queryAbilityByWant(undefined, bundle.BundleFlag.GET_BUNDLE_DEFAULT, userId, (err, data) => {
+        if (err) {
+          console.info('testQueryAbilityByWantUndefinedWantCallback err:' + JSON.stringify(err));
+          expect(err).assertEqual(1);
+          done();
+          return;
+        }
+        console.info('testQueryAbilityByWantUndefinedWantCallback success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantNullFlagsCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6020
+     * @tc.desc   Test queryAbilityByWant with null bundleFlags. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantNullFlagsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      bundle.queryAbilityByWant({
+          action: "action_a"}, null, userId, (err, data) => {
+        if (err) {
+          console.info('testQueryAbilityByWantNullFlagsCallback err:' + JSON.stringify(err));
+          expect(err).assertEqual(1);
+          done();
+          return;
+        }
+        console.info('testQueryAbilityByWantNullFlagsCallback success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantUndefinedFlagsCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6030
+     * @tc.desc   Test queryAbilityByWant with undefined bundleFlags. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantUndefinedFlagsCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      bundle.queryAbilityByWant( {
+          action: "action_a"}, undefined, userId, (err, data) => {
+        if (err) {
+          console.info('testQueryAbilityByWantUndefinedFlagsCallback err:' + JSON.stringify(err));
+          expect(err).assertEqual(1);
+          done();
+          return;
+        }
+        console.info('testQueryAbilityByWantUndefinedFlagsCallback success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantWithNullUserIdCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6040
+     * @tc.desc   Test queryAbilityByWant with null userId. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantWithNullUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      bundle.queryAbilityByWant( {
+          action: "action_a"
+        }, bundle.BundleFlag.GET_BUNDLE_DEFAULT, null, (err, data) => {
+        if (err) {
+          console.info('testQueryAbilityByWantWithNullUserIdCallback err:' + JSON.stringify(err));
+          expect(err).assertEqual(1);
+          done();
+          return;
+        }
+        console.info('testQueryAbilityByWantWithNullUserIdCallback success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantWithUndefinedUserIdCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6050
+     * @tc.desc   Test queryAbilityByWant with undefined userId. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantWithUndefinedUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      bundle.queryAbilityByWant({
+          action: "action_a"
+        }, bundle.BundleFlag.GET_BUNDLE_DEFAULT, undefined, (err, data) => {
+        if (err) {
+          console.info('testQueryAbilityByWantWithUndefinedUserIdCallback err:' + JSON.stringify(err));
+          expect(err).assertEqual(1);
+          done();
+          return;
+        }
+        console.info('testQueryAbilityByWantWithUndefinedUserIdCallback success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantNullWantWithoutUserIdCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6060
+     * @tc.desc   Test queryAbilityByWant with null want without userId. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantNullWantWithoutUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      bundle.queryAbilityByWant(null, bundle.BundleFlag.GET_BUNDLE_DEFAULT, (err, data) => {
+        if (err) {
+          console.info('testQueryAbilityByWantNullWantWithoutUserIdCallback err:' + JSON.stringify(err));
+          expect(err).assertEqual(1);
+          done();
+          return;
+        }
+        console.info('testQueryAbilityByWantNullWantWithoutUserIdCallback success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantUndefinedWantWithoutUserIdCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6070
+     * @tc.desc   Test queryAbilityByWant with undefined want without userId. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantUndefinedWantWithoutUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      bundle.queryAbilityByWant(undefined, bundle.BundleFlag.GET_BUNDLE_DEFAULT, (err, data) => {
+        if (err) {
+          console.info('testQueryAbilityByWantUndefinedWantWithoutUserIdCallback err:' + JSON.stringify(err));
+          expect(err).assertEqual(1);
+          done();
+          return;
+        }
+        console.info('testQueryAbilityByWantUndefinedWantWithoutUserIdCallback success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantNullFlagsWithoutUserIdCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6080
+     * @tc.desc   Test queryAbilityByWant with null bundleFlags without userId. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantNullFlagsWithoutUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      bundle.queryAbilityByWant({ action: "action_a"}, null, (err, data) => {
+        if (err) {
+          console.info('testQueryAbilityByWantNullFlagsWithoutUserIdCallback err:' + JSON.stringify(err));
+          expect(err).assertEqual(1);
+          done();
+          return;
+        }
+        console.info('testQueryAbilityByWantNullFlagsWithoutUserIdCallback success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantUndefinedFlagsWithoutUserIdCallback
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6090
+     * @tc.desc   Test queryAbilityByWant with undefined bundleFlags without userId. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantUndefinedFlagsWithoutUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      bundle.queryAbilityByWant({ action: "action_a"}, undefined, (err, data) => {
+        if (err) {
+          console.info('testQueryAbilityByWantUndefinedFlagsWithoutUserIdCallback err:' + JSON.stringify(err));
+          expect(err).assertEqual(1);
+          done();
+          return;
+        }
+        console.info('testQueryAbilityByWantUndefinedFlagsWithoutUserIdCallback success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantNullWantWithUserIdPromise
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6100
+     * @tc.desc   Test queryAbilityByWant with null want and userId. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantNullWantWithUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      await bundle.queryAbilityByWant(null, bundle.BundleFlag.GET_BUNDLE_DEFAULT, userId).then((data) => {
+        console.info('testQueryAbilityByWantNullWantWithUserIdPromise success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      }).catch((err) => {
+        console.info('testQueryAbilityByWantNullWantWithUserIdPromise err:' + JSON.stringify(err));
+        expect(err).assertEqual(1);
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantUndefinedWantWithUserIdPromise
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6110
+     * @tc.desc   Test queryAbilityByWant with undefined want and userId. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantUndefinedWantWithUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      await bundle.queryAbilityByWant(undefined, bundle.BundleFlag.GET_BUNDLE_DEFAULT, userId).then((data) => {
+        console.info('testQueryAbilityByWantUndefinedWantWithUserIdPromise success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      }).catch((err) => {
+        console.info('testQueryAbilityByWantUndefinedWantWithUserIdPromise err:' + JSON.stringify(err));
+        expect(err).assertEqual(1);
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantNullFlagsWithUserIdPromise
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6120
+     * @tc.desc   Test queryAbilityByWant with null bundleFlags and userId. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantNullFlagsWithUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      await bundle.queryAbilityByWant({action: "action_a"}, null, userId).then((data) => {
+        console.info('testQueryAbilityByWantNullFlagsWithUserIdPromise success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      }).catch((err) => {
+        console.info('testQueryAbilityByWantNullFlagsWithUserIdPromise err:' + JSON.stringify(err));
+        expect(err).assertEqual(1);
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantUndefinedFlagsWithUserIdPromise
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6130
+     * @tc.desc   Test queryAbilityByWant with undefined bundleFlags and userId. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantUndefinedFlagsWithUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      await bundle.queryAbilityByWant({action: "action_a"}, undefined, userId).then((data) => {
+        console.info('testQueryAbilityByWantUndefinedFlagsWithUserIdPromise success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      }).catch((err) => {
+        console.info('testQueryAbilityByWantUndefinedFlagsWithUserIdPromise err:' + JSON.stringify(err));
+        expect(err).assertEqual(1);
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantWithNullUserIdPromise
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6140
+     * @tc.desc   Test queryAbilityByWant with null userId. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantWithNullUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      await bundle.queryAbilityByWant({action: "action_a"}, bundle.BundleFlag.GET_BUNDLE_DEFAULT, null).then((data) => {
+        console.info('testQueryAbilityByWantWithNullUserIdPromise success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      }).catch((err) => {
+        console.info('testQueryAbilityByWantWithNullUserIdPromise err:' + JSON.stringify(err));
+        expect(err).assertEqual(1);
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   testQueryAbilityByWantWithUndefinedUserIdPromise
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6150
+     * @tc.desc   Test queryAbilityByWant with undefined userId. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryAbilityByWantWithUndefinedUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+      await bundle.queryAbilityByWant({action: "action_a"}, bundle.BundleFlag.GET_BUNDLE_DEFAULT, undefined).then((data) => {
+        console.info('testQueryAbilityByWantWithUndefinedUserIdPromise success:' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      }).catch((err) => {
+        console.info('testQueryAbilityByWantWithUndefinedUserIdPromise err:' + JSON.stringify(err));
+        expect(err).assertEqual(1);
+        done();
+      });
+    });
   })
 }

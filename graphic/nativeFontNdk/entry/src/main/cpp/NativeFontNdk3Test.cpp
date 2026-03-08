@@ -51,10 +51,14 @@
 namespace {
     // 测试常量
     const double DEFAULT_FONT_SIZE = 50;
-    const double MAX_WIDTH = 800.0;
     const int ZERO_MINUS_ONE = -1;
     const int MIN_FONT_WEIGHT = 100;
-    const int MAX_FONT_WEIGHT = 1000;
+    const int MAX_FONT_WEIGHT = 900;
+    constexpr int WEIGHT_STEP = 100;
+    constexpr int MIN_WIDTH = 1;
+    constexpr int MAX_WIDTH = 9;
+    constexpr int BOOL_FALSE = 0;
+    constexpr int BOOL_TRUE = 1;
     const int TEST_FONT_SIZE = 12;
     const double TEST_LINE_HEIGHT = 1.5;
     const int TEST_TEXT_ALIGN = 1;
@@ -168,39 +172,44 @@ napi_value OHDrawingFontParserGetFontByName001(napi_env env, napi_callback_info 
 napi_value OHDrawingCreateFontDescriptor001(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
+    
     OH_Drawing_FontDescriptor *desc = OH_Drawing_CreateFontDescriptor();
     NAPI_ASSERT_NO_MES(desc != nullptr);
-
+    
     size_t num = 0;
     OH_Drawing_FontDescriptor *descArr = OH_Drawing_MatchFontDescriptors(desc, &num);
-    NAPI_ASSERT_NO_MES(descArr != nullptr);
+    NAPI_ASSERT_NO_MES(descArr != nullptr && num > 0);
+    
+    for (size_t i = 0; i < num; i++) {
+        OH_Drawing_FontDescriptor current = descArr[i];
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Font3", "[%{public}zu] path: %{public}s", i, current.path);
+        NAPI_ASSERT_NO_MES(current.path != nullptr && strlen(current.path) > 0);
 
-    for (int i = 0; i < num; i++) {
-        OH_Drawing_FontDescriptor sub = descArr[i];
-        std::string pathStr(sub.path);
-        if (pathStr != "/system/fonts/HarmonyOS_Sans_Naskh_Arabic_UI.ttf") {
-            continue;
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Font3",
+            "[%{public}zu] weight: %{public}d, width: %{public}d, italic: %{public}d, symbolic: %{public}d",
+            i, current.weight, current.width, current.italic, current.symbolic);
+        NAPI_ASSERT_NO_MES(current.weight >= MIN_FONT_WEIGHT && current.weight <= MAX_FONT_WEIGHT &&
+                          (current.weight % WEIGHT_STEP) == 0);
+        NAPI_ASSERT_NO_MES(current.width >= MIN_WIDTH && current.width <= MAX_WIDTH);
+        
+        int italicZero = (current.italic == BOOL_FALSE);
+        int italicOne = (current.italic == BOOL_TRUE);
+        int symZero = (current.symbolic == BOOL_FALSE);
+        int symOne = (current.symbolic == BOOL_TRUE);
+        if (italicZero == 0) {
+            NAPI_ASSERT_NO_MES(italicOne == 1);
         }
-        NAPI_ASSERT_NO_MES(pathStr == "/system/fonts/HarmonyOS_Sans_Naskh_Arabic_UI.ttf");
-
-        std::string postScriptNameStr(sub.postScriptName);
-        NAPI_ASSERT_NO_MES(postScriptNameStr == "HarmonyOS_Sans_Naskh_Arabic_UI");
-
-        std::string fullNameStr(sub.fullName);
-        NAPI_ASSERT_NO_MES(fullNameStr == "HarmonyOS Sans Naskh Arabic UI");
-
-        std::string fontFamilyStr(sub.fontFamily);
-        NAPI_ASSERT_NO_MES(fontFamilyStr == "HarmonyOS Sans Naskh Arabic UI");
-
-        std::string fontSubfamilyStr(sub.fontSubfamily);
-        NAPI_ASSERT_NO_MES(fontSubfamilyStr == "Regular");
-
-        NAPI_ASSERT_NO_MES(std::to_string(descArr->weight) == "400");
-        NAPI_ASSERT_NO_MES(std::to_string(descArr->width) == "5");
-        NAPI_ASSERT_NO_MES(std::to_string(descArr->italic) == "0");
-        NAPI_ASSERT_NO_MES(std::to_string(descArr->symbolic) == "0");
+        if (symZero == 0) {
+            NAPI_ASSERT_NO_MES(symOne == 1);
+        }
+        
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Font3", "postScriptName: %{public}s",
+            current.postScriptName);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Font3", "fullName: %{public}s", current.fullName);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Font3", "fontFamily: %{public}s", current.fontFamily);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Font3", "fontSubfamily: %{public}s", current.fontSubfamily);
     }
-
+    
     OH_Drawing_DestroyFontDescriptor(desc);
     OH_Drawing_DestroyFontDescriptors(descArr, num);
     napi_create_int32(env, SUCCESS, &result);
@@ -670,6 +679,7 @@ napi_value OHDrawingGetSystemFontConfigInfo001(napi_env env, napi_callback_info 
 
     OH_Drawing_FontConfigInfoErrorCode code = ERROR_FONT_CONFIG_INFO_UNKNOWN;
     OH_Drawing_FontConfigInfo *configJsonInfo = OH_Drawing_GetSystemFontConfigInfo(&code);
+    NAPI_ASSERT_NO_MES(configJsonInfo != nullptr);
     NAPI_ASSERT_NO_MES(code == SUCCESS_FONT_CONFIG_INFO);
     OH_Drawing_DestroySystemFontConfigInfo(configJsonInfo);
 

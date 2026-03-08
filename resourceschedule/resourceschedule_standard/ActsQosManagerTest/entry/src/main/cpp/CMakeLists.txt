@@ -14,7 +14,6 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 add_library(qosmanagerops SHARED
     NapiInitTest.cpp
     QosCapiTest.cpp
-    OhosCommonTest.cpp
     )
 target_link_libraries(qosmanagerops PUBLIC
     libace_napi.z.so

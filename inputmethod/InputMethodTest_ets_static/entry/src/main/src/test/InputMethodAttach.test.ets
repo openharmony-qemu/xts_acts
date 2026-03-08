@@ -72,9 +72,9 @@ export default function inputMethodAttachTest() {
          * @tc.desc   Call the attach interface in Async mode. Optional input parameter showkeyboard=false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('SUB_Misc_inputMethod_attach_Async_static_0200', Level.LEVEL2, async (done: () => void) => {
+        it('SUB_Misc_inputMethod_attach_Async_static_0200', Level.LEVEL0, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_attach_Async_static_0200';
             const ATTRIBUTE: inputMethod.TextConfig = {
                 inputAttribute: {

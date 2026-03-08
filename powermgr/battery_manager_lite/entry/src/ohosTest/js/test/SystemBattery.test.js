@@ -264,5 +264,47 @@ export default function SystemBatteryTest() {
       console.info(`${TAG} all empty`);
       expect(TAG).assertContain('empty');
     });
+
+    /**
+     * @tc.name   get_status_null_parameter
+     * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0100
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('get_status_null_parameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      let TAG = 'get_status_null_parameter';
+      try {
+        battery.getStatus(null);
+        console.info(`${TAG} getStatus null parameter`);
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+      }
+    });
+
+    /**
+     * @tc.name   get_status_undefined_parameter
+     * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0110
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('get_status_undefined_parameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      let TAG = 'get_status_undefined_parameter';
+      try {
+        battery.getStatus(undefined);
+        console.info(`${TAG} getStatus undefined parameter`);
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+      }
+    });
   })
 }

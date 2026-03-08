@@ -38,10 +38,9 @@ export default function popupKeyboardAvoidMode() {
   describe("popupKeyboardAvoidMode", () => {
     let currentDeviceIsPC = false
     beforeAll(async (): Promise<void> => {
-      console.info("popupKeyboardAvoidMode beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api15.static", "EntryAbility")
       console.info("popupKeyboardAvoidMode beforeAll start")
-      AppStorage.get<number>('winLeft') == 0 ? true : false;
+      let deviceTypeInfo = deviceInfo.deviceType
+      currentDeviceIsPC = deviceTypeInfo === "2in1" ? true : false
       console.info("the value of the currentDeviceIsPC is " + currentDeviceIsPC)
       console.info("the value of the deviceType is " + deviceInfo.deviceType)
     })

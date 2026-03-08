@@ -43,10 +43,10 @@ export default class CommonFunc {
     let rectInfo = parts.map((part: string) => {
       return part.split(",").map((item: string):double => parseFloat(item.trim()));
     });
-    CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
-    CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
-    CommonFunc.rect_right = Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
-    CommonFunc.rect_bottom = Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
+    CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
+    CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
+    CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0);
+    CommonFunc.rect_bottom = Number(rectInfo[1][1] ?? 0);
     return CommonFunc.rect_value = {
       "left": CommonFunc.rect_left,
       "top": CommonFunc.rect_top,

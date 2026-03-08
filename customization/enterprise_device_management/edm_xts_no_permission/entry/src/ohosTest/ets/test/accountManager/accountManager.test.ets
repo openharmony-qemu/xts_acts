@@ -24,21 +24,6 @@ export default function accountManagerTest() {
 
   describe('accountManager_test', () => {
 
-    let localIds: Array<number> = [];
-
-    beforeAll((done: Function) => {
-      appIdsInit();
-      done();
-    })
-
-    afterAll((done: Function) => {
-      let osAccountManager = osAccount.getAccountManager();
-      localIds.forEach((localId) => {
-        osAccountManager.removeOsAccount(localId);
-      })
-      done();
-    })
-
     // ------------- accountManager --------------------
 
     /**

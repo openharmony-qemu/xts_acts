@@ -38,7 +38,7 @@ export default function ListScrollSnapAnimationSpeedTest() {
     const SLEEP_TIME_1000 = 1000;
     beforeAll(async (): Promise<void> => {
       console.info('ListScrollSnapAnimationSpeedTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll20.static', 'EntryAbility')
+      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility')
     });
     beforeEach(async (): Promise<void> => {
       console.info('ListScrollSnapAnimationSpeedTest beforeEach start');

@@ -1405,7 +1405,7 @@ export default function ArrayListTest() {
         arrayList.forEach((value: number, index?: number) => {
           result.add(value);
           result.add(index);
-        },newArrayList);
+        }, newArrayList);
         expect(arrayList.convertToArray().toString()).assertEqual("2,4,5,4");
         expect(newArrayList.convertToArray().toString()).assertEqual("");
         expect(result.convertToArray().toString()).assertEqual("2,0,4,1,5,2,4,3");
@@ -1436,7 +1436,7 @@ export default function ArrayListTest() {
         arrayList.forEach((value: number, index?: number) => {
           result.add(value);
           result.add(index);
-        },newArrayList);
+        }, newArrayList);
         expect(arrayList.convertToArray().toString()).assertEqual("2,4,5,4");
         expect(newArrayList.convertToArray().toString()).assertEqual("4");
         expect(result.convertToArray().toString()).assertEqual("2,0,4,1,5,2,4,3");
@@ -1832,6 +1832,31 @@ export default function ArrayListTest() {
         console.error(`${TAG} failed, error: ${err.code} ${err}`);
         expect(err.code).assertEqual(401);
       }
+    });
+
+    /**
+     * @tc.name   testArrayListCase014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_1400
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase014';
+      let arrayList = new ArrayList<number>();
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.add(5);
+      arrayList.add(4);
+      arrayList.replaceAllElements((value: number): number => {
+        return value + 7;
+      }, null);
+      expect(JSON.stringify(arrayList)).assertEqual('{"0":9,"1":11,"2":12,"3":11}');
+      arrayList.replaceAllElements((value: number): number => {
+        return value - 3;
+      }, undefined);
+      expect(JSON.stringify(arrayList)).assertEqual('{"0":6,"1":8,"2":9,"3":8}');
     });
 
   });

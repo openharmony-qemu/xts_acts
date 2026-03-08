@@ -64,6 +64,8 @@ const uint64_t COST_TIME_500 = 500;
 const uint64_t COST_TIME_600 = 600;
 const int TASK_STORAGE_SIZE = 128;
 const int STORAGE_SIZE = 64;
+const int TEST_VALUE_1 = 100;
+const int TEST_VALUE_2 = 5;
 #if defined(__aarch64__)
 const int FIBER_STORAGE_SIZE = 22;
 #elif defined(__arm__)
@@ -72,6 +74,9 @@ const int FIBER_STORAGE_SIZE = 64;
 const int FIBER_STORAGE_SIZE = 8;
 #endif
 const int FUNCTION_STORAGE_SIZE = 96;
+const int ONE_SECOND_TO_MICRO = 1000 * 1000;
+const int NS_PER_SEC = 1000000000;
+const int NS_PER_MS = 1000000;
 
 void OnePlusForTest(void* arg)
 {
@@ -336,6 +341,28 @@ static void FfrtDestroyFunctionWrapper(void* t)
     }
 }
 
+static long long tm_to_ns(struct timespec tm)
+{
+    return tm.tv_sec * NS_PER_SEC + tm.tv_nsec;
+}
+
+static struct timespec ns_to_tm(long long ns)
+{
+    struct timespec tm;
+    tm.tv_sec = ns / NS_PER_SEC;
+    tm.tv_nsec = ns - (tm.tv_sec * NS_PER_SEC);
+    return tm;
+}
+
+static struct timespec timeoutms_to_tm(int timeout_ms)
+{
+    struct timespec start_tm;
+    struct timespec end_tm;
+    clock_gettime(CLOCK_MONOTONIC, &start_tm);
+    end_tm = ns_to_tm(tm_to_ns(start_tm) + timeout_ms * NS_PER_MS);
+    return end_tm;
+}
+
 #define FFRT_STATIC_ASSERT(cond, msg) int x(int static_assertion_##msg[(cond) ? 1 : -1])
 static inline ffrt_function_header_t* ffrt_create_function_wrapper(const ffrt_function_t func,
     const ffrt_function_t after_func, void* arg, ffrt_function_kind_t kind_t = ffrt_function_kind_general)
@@ -553,6 +580,63 @@ static napi_value ConditionVariableTest004(napi_env env, napi_callback_info info
     ffrt_cond_destroy(&cond);
     ffrt_mutex_destroy(&lock_);
     ffrt_task_handle_destroy(task3);
+    napi_value flag = nullptr;
+    napi_create_double(env, resultEnd, &flag);
+    return flag;
+}
+
+static napi_value ConditionVariableTest005(napi_env env, napi_callback_info info)
+{
+    int a = 0;
+    int resultEnd = 0;
+    ffrt_cond_t cond;
+    ffrt_mutex_t lock_;
+    ffrt_cond_init(&cond, nullptr);
+    ffrt_mutex_init(&lock_, nullptr);
+
+    std::function<void()>&& FfrtFunc1 = [&]() {
+        int timeout = 2000;
+        struct timespec tm = timeoutms_to_tm(timeout);
+        ffrt_mutex_lock(&lock_);
+        int ret = ffrt_cond_timedwait(nullptr, &lock_, &tm);
+        if (ret != ffrt_error_inval) {
+            resultEnd = ERR_CODE_1;
+        }
+        ret = ffrt_cond_timedwait(&cond, nullptr, &tm);
+        if (ret != ffrt_error_inval) {
+            resultEnd = ERR_CODE_2;
+        }
+        ret = ffrt_cond_timedwait(&cond, &lock_, nullptr);
+        if (ret != ffrt_error_inval) {
+            resultEnd = ERR_CODE_3;
+        }
+        ret = ffrt_cond_timedwait(&cond, &lock_, &tm);
+        if (ret != ffrt_success) {
+            resultEnd = ERR_CODE_4;
+        }
+        a = TEST_VALUE_1;
+        ffrt_mutex_unlock(&lock_);
+    };
+
+    ffrt_function_header_t* ffrt_func1 = create_function_wrapper((FfrtFunc1));
+    ffrt_submit_base(ffrt_func1, nullptr, nullptr, nullptr);
+
+    std::function<void()>&& FfrtFunc2 = [&]() {
+        ffrt_usleep(ONE_SECOND_TO_MICRO);
+        ffrt_mutex_lock(&lock_);
+        a = TEST_VALUE_2;
+        ffrt_cond_signal(&cond);
+        ffrt_mutex_unlock(&lock_);
+    };
+    ffrt_function_header_t* ffrt_func2 = create_function_wrapper((FfrtFunc2));
+    ffrt_submit_base(ffrt_func2, nullptr, nullptr, nullptr);
+
+    ffrt_wait();
+    ffrt_cond_destroy(&cond);
+    ffrt_mutex_destroy(&lock_);
+    if (a != TEST_VALUE_1) {
+        resultEnd = ERR_CODE_5;
+    }
     napi_value flag = nullptr;
     napi_create_double(env, resultEnd, &flag);
     return flag;
@@ -4164,6 +4248,8 @@ napi_property_descriptor desc[] = {
     {"conditionVariableTest003", nullptr, ConditionVariableTest003, nullptr, nullptr, nullptr,
         napi_default, nullptr },
     {"conditionVariableTest004", nullptr, ConditionVariableTest004, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"conditionVariableTest005", nullptr, ConditionVariableTest005, nullptr, nullptr, nullptr,
         napi_default, nullptr },
     {"conditionVariableApiTest001", nullptr, ConditionVariableApiTest001, nullptr, nullptr, nullptr,
         napi_default, nullptr },

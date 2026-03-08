@@ -15,7 +15,7 @@
  */
 import router from '@ohos.router';
 import { Entry, Component, Column, ColumnOptions, Text, Button, ClickEvent } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -25,7 +25,6 @@ struct pushUrl7 {
   build() {
     Column() {
       Text('pushUrl7').id('pushUrl7_text1')
-      Text(this.text1).id('pushUrl7_text2')
       Button('pushUrl').onClick((event: ClickEvent) => {
         for(let i = 0; i<=33 ; i++){
           this.getUIContext().getRouter().pushUrl({
@@ -33,6 +32,8 @@ struct pushUrl7 {
           }, (err) => {
             if (err) {
               this.text1 = '' +  err.code
+              console.log('test pushUrl7 ', this.text1)
+              AppStorage.setOrCreate<string>('errcode1', this.text1)
               return;
             }
             console.info('pushUrl success');

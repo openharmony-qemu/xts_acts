@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import account from '@ohos.account.appAccount'
+import osAccount from '@ohos.account.osAccount'
+import daccount from '@ohos.account.distributedAccount'
 import { describe, beforeAll, Hypium, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
@@ -31,6 +33,8 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
   describe('ActsSetCheckDataSyncEnabledStatic', () => {
     let accountManager: account.AppAccountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, "====>create finish====");
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    hilog.info(0x0000, tag, "====>get os AccountManager finish====");
 
     beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, tag, "====>ActsSetCheckDataSyncEnabledStatic beforeAll start====");
@@ -917,6 +921,113 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, logTag + "end====");
+          done();
+        }
+      });
+    /**
+    * @tc.number   ActsDaAccountPermissionCheck_0100
+    * @tc.name     ActsDaAccountPermissionCheck_0100
+    * @tc.desc     check account permission
+    * @tc.type     FUNCTION
+    * @tc.size     MEDIUMTEST
+    * @tc.level    LEVEL2
+    */
+    it('ActsDaAccountPermissionCheck_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>ActsDaAccountPermissionCheck_0100 start====");
+        osAccountManager.queryDistributedVirtualDeviceId((err: BusinessError<void> | null,
+          id: string | undefined): void => {
+          hilog.info(0x0000, tag, "====>queryDistributedVirtualDeviceId err: " + JSON.stringify(err));
+          hilog.info(0x0000, tag, "====>queryDistributedVirtualDeviceId deviceId: " + id);
+          try {
+            if (err) {
+              hilog.info(0x0000, tag, "====>run err");
+              expect().assertFail();
+            }
+            hilog.info(0x0000, tag, "====>ActsDaAccountPermissionCheck_0100 end====");
+          } catch (err) {
+            hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
+          }
+          done();
+        });
+      });
+    
+    /**
+    * @tc.number   ActsDaAccountPermissionCheck_0200
+    * @tc.name     ActsDaAccountPermissionCheck_0200
+    * @tc.desc     check account permission
+    * @tc.type     FUNCTION
+    * @tc.size     MEDIUMTEST
+    * @tc.level    LEVEL2
+    */
+    it('ActsDaAccountPermissionCheck_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>ActsDaAccountPermissionCheck_0200 start====");
+        try {
+          hilog.info(0x0000, tag, "====>queryDistributedVirtualDeviceId start====");
+          let id: string = await osAccountManager.queryDistributedVirtualDeviceId();
+          hilog.info(0x0000, tag, "====>queryDistributedVirtualDeviceId: " + id);
+          expect(id).not().assertUndefined();
+          hilog.info(0x0000, tag, "====>ActsDaAccountPermissionCheck_0200 end====");
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
+        }
+        done();
+      });
+
+      /**
+        * @tc.name   ActsDaAccountPermissionCheck_0300
+        * @tc.number ActsDaAccountPermissionCheck_0300
+        * @tc.desc   check getOsAccountDistributedInfo interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+      it('ActsDaAccountPermissionCheck_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let logTag: string = "====>ActsDaAccountPermissionCheck_0300 ";
+        hilog.info(0x0000, tag, logTag + "start====");
+        try {
+          let accountAbility = daccount.getDistributedAccountAbility();
+          let data: daccount.DistributedInfo = await accountAbility.getOsAccountDistributedInfo();
+          hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
+          expect(data.name).assertEqual('ohosAnonymousName');
+          expect(data.id).assertEqual('ohosAnonymousUid');
+          done();
+        } catch (err){
+          hilog.info(0x0000, tag, logTag + "err: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+      /**
+        * @tc.name   ActsDaAccountPermissionCheck_0400
+        * @tc.number ActsDaAccountPermissionCheck_0400
+        * @tc.desc   check getOsAccountDistributedInfo interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+      it('ActsDaAccountPermissionCheck_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let logTag: string = "====>ActsDaAccountPermissionCheck_0400 ";
+        hilog.info(0x0000, tag, logTag + "start====");
+        try {
+          let accountAbility = daccount.getDistributedAccountAbility();
+          accountAbility.getOsAccountDistributedInfo((err: BusinessError<void> | null, data: daccount.DistributedInfo | undefined): void => {
+            hilog.info(0x0000, tag, logTag + "err: " + JSON.stringify(err));
+            hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
+            if (data) {
+              expect(data.name).assertEqual('ohosAnonymousName');
+              expect(data.id).assertEqual('ohosAnonymousUid');
+            }
+            done();
+          });
+        } catch (err) {
+          hilog.info(0x0000, tag, logTag + "err: " + JSON.stringify(err));
+          expect().assertFail();
           done();
         }
       });

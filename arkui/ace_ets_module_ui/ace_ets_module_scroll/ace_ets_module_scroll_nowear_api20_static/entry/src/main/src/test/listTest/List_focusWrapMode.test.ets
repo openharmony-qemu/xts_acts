@@ -33,7 +33,7 @@ export default function List_focusWrapMode() {
 
     beforeAll(async() => {
       console.info('textPickerAlignment beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll20.static', 'EntryAbility')
+      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility')
       await UtilsTest.msSleep(4000)
     });
 

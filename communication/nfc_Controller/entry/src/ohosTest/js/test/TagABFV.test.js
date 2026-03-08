@@ -24,6 +24,8 @@ function sleep(delay) {
 function readerModeCb(err, tagInfo) {
     if (!err) {
         console.info("offCallback: tag found tagInfo = ", JSON.stringify(tagInfo));
+        expect(tagInfo.uid.length > 0).assertTrue();
+        expect(tagInfo.technology.length > 0).assertTrue();
     } else {
         console.error("offCallback err: " + err.message);
         return;
@@ -39,7 +41,7 @@ let aTag = {
         },
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 let aTag1 = {
@@ -51,7 +53,7 @@ let aTag1 = {
         },
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 let bTag = {
@@ -63,6 +65,7 @@ let bTag = {
         }
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let bTag1 = {
@@ -74,6 +77,19 @@ let bTag1 = {
         }
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
+};
+
+let bTag2 = {
+    "uid": [],
+    "technology": [],
+    "extrasData": [
+        {
+            "AppData": "", "ProtocolInfo": "",
+        }
+    ],
+    "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let fTag = {
@@ -85,6 +101,7 @@ let fTag = {
         }
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let fTag1 = {
@@ -96,6 +113,19 @@ let fTag1 = {
         }
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
+};
+
+let fTag2 = {
+    "uid": [],
+    "technology": [],
+    "extrasData": [
+        {
+            "SystemCode": "", "Pmm": "",
+        }
+    ],
+    "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let vTag = {
@@ -107,6 +137,19 @@ let vTag = {
         }
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
+};
+
+let vTag1 = {
+    "uid": [],
+    "technology": [],
+    "extrasData": [
+        {
+            "ResponseFlags": 0x09, "DsfId": 0x13,
+        }
+    ],
+    "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 var Want = {
@@ -134,7 +177,22 @@ let isoDepTaginfo = {
             "HistoricalBytes": "4D54000500308693695B", "HiLayerResponse": "",
         },
     ],
+    "supportedProfiles": [1],
+};
+
+let isoDepTaginfo1 = {
+    "uid": [],
+    "technology": [],
+    "extrasData": [
+        {
+            "Sak": 0x08, "Atqa": "B000",
+        },
+        {
+            "HistoricalBytes": "4D54000500308693695B", "HiLayerResponse": "",
+        },
+    ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let NDEFTaginfo = {
@@ -149,6 +207,22 @@ let NDEFTaginfo = {
         },
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
+};
+
+let NDEFTaginfo1 = {
+    "uid": [],
+    "technology": [],
+    "extrasData": [
+        {
+            "Sak": 0x08, "Atqa": "B000",
+        },
+        {
+            "NdefMsg": "D4010354787473", "NdefForumType": 1, "NdefTagLength":255, "NdefTagMode": 1,
+        },
+    ],
+    "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let mifareclassicTaginfo = {
@@ -163,6 +237,22 @@ let mifareclassicTaginfo = {
         },
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
+};
+
+let mifareclassicTaginfo1 = {
+    "uid": [],
+    "technology": [],
+    "extrasData": [
+        {
+            "Sak": 0x08, "Atqa": "B000",
+        },
+        {
+            
+        },
+    ],
+    "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let mifareUltralightTaginfo = {
@@ -177,6 +267,22 @@ let mifareUltralightTaginfo = {
         },
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
+};
+
+let mifareUltralightTaginfo1 = {
+    "uid": [],
+    "technology": [],
+    "extrasData": [
+        {
+            "Sak": 0x08, "Atqa": "B000",
+        },
+        {
+            "MifareUltralightC": "ture",
+        },
+    ],
+    "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let NdefFormatableTag = {
@@ -191,6 +297,22 @@ let NdefFormatableTag = {
         },
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
+};
+
+let NdefFormatableTag1 = {
+    "uid": [],
+    "technology": [],
+    "extrasData": [
+        {
+            "Sak": 0x08, "Atqa": "B000",
+        },
+        {
+
+        },
+    ],
+    "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 export default function nfcTagABFVTest() {
@@ -697,22 +819,107 @@ export default function nfcTagABFVTest() {
                 getTagtest = tag.getTagInfo(Want);
                 console.info('[NFC_test] tag13 Nfcget tagABFV gettaginfo is: ' + getTagtest)
                 expect(getTagtest instanceof Object).assertTrue();
-            }catch(error){
-                console.info('[NFC_test] tag13 Nfcget taginfo error' + error)
-                expect(true).assertTrue();
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect().assertFail();
+                }
             }
             console.info('[NFC_test] tag13 test TagInfo data>:' + getTagtest);
         })
 
-         /**
-          * @tc.name   SUB_Communication_NFC_nfctage_js_1400
-          * @tc.number SUB_Communication_NFC_nfctage_js_1400
-          * @tc.desc   This interface is used to obtain the NFC A tag object.
-          * @tc.type   FUNCTION
-          * @tc.size   MEDIUMTEST
-          * @tc.level  LEVEL0
-          */
-         it('SUB_Communication_NFC_nfctage_js_1400', Level.LEVEL0, function ()  {
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_1301
+         * @tc.number SUB_Communication_NFC_nfctage_js_1301
+         * @tc.desc   Obtains the DsfId value of the taginfo.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_1301', Level.LEVEL0, function ()  {
+            let getTagtest ;
+            try {
+                getTagtest = tag.getTagInfo(null);
+                console.info('[NFC_test] tag13 Nfcget tagABFV gettaginfo is: ' + getTagtest)
+                expect(getTagtest instanceof Object).assertTrue();
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect().assertFail();
+                }
+            }
+            console.info('[NFC_test] tag13 test TagInfo data>:' + getTagtest);
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_1302
+         * @tc.number SUB_Communication_NFC_nfctage_js_1302
+         * @tc.desc   Obtains the DsfId value of the taginfo.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_1302', Level.LEVEL0, function ()  {
+            let getTagtest ;
+            try {
+                getTagtest = tag.getTagInfo(undefined);
+                console.info('[NFC_test] tag13 Nfcget tagABFV gettaginfo is: ' + getTagtest)
+                expect(getTagtest instanceof Object).assertTrue();
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect().assertFail();
+                }
+            }
+            console.info('[NFC_test] tag13 test TagInfo data>:' + getTagtest);
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_1303
+         * @tc.number SUB_Communication_NFC_nfctage_js_1303
+         * @tc.desc   Obtains the DsfId value of the taginfo.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_1303', Level.LEVEL0, function ()  {
+            let getTagtest ;
+            try {
+                getTagtest = tag.getTagInfo(Want);
+                console.info('[NFC_test] tag13 Nfcget tagABFV gettaginfo is: ' + getTagtest)
+                expect(tagInfo.uid.length > 0).assertTrue();
+                expect(tagInfo.technology.length > 0).assertTrue();
+                expect(getTagtest instanceof Object).assertTrue();
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect().assertFail();
+                }
+            }
+            console.info('[NFC_test] tag13 test TagInfo data>:' + getTagtest);
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_1400
+         * @tc.number SUB_Communication_NFC_nfctage_js_1400
+         * @tc.desc   This interface is used to obtain the NFC A tag object.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_1400', Level.LEVEL0, function ()  {
             let NfcATag ;
             try {
                 NfcATag = tag.getNfcA(aTag);
@@ -846,10 +1053,10 @@ export default function nfcTagABFVTest() {
                 expect(MifareClassicTag != null).assertTrue();
                 expect(MifareClassicTag instanceof Object).assertTrue();
             } catch (error) {
-                if (error.code == 801) {
+                if (error.code === 801) {
                     console.info('nfc mifareClassic20 error' + error + "/" + error.code);
                     expect(801).assertEqual(error.code)
-                } else if (error.code == 3100201) {
+                } else if (error.code === 3100201) {
                     console.info('nfc mifareClassic20 error' + error + "/" + error.code);
                     expect(3100201).assertEqual(error.code)
                 } else {
@@ -919,6 +1126,8 @@ export default function nfcTagABFVTest() {
             try {
                 let recvNfcTagFunc = tagInfo => {
                     console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                    expect(tagInfo.uid.length > 0).assertTrue();
+                    expect(tagInfo.technology.length > 0).assertTrue();
                     expect(tagInfo != null).assertTrue();
                 }
                 tag.registerForegroundDispatch(elementName, discTech, recvNfcTagFunc);
@@ -926,12 +1135,82 @@ export default function nfcTagABFVTest() {
                 tag.unregisterForegroundDispatch(elementName);
                 console.info('[NFC_test] nfc unregisterForegroundDispatch pass')
             } catch (error) {
-                if (error.code == 201) {
+                if (error.code === 201) {
                     console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
                     expect(201).assertEqual(error.code)
-                } else if (error.code == 801) {
+                } else if (error.code === 801) {
                     console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
                     expect(801).assertEqual(error.code)
+                } else {
+                    console.info('nfc registerForegroundDispatch failed');
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2301
+         * @tc.number SUB_Communication_NFC_nfctage_js_2301
+         * @tc.desc   This interface registerForegroundDispatch.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_2301', Level.LEVEL0, function ()  {
+            let elementName = {
+                "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+                "abilityName": "MainAbility",
+                "moduleName": "entry"
+            };
+            let discTech = [1, 2, 4];
+            try {
+                let recvNfcTagFunc = tagInfo => {
+                    console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                    expect(tagInfo != null).assertTrue();
+                }
+                tag.registerForegroundDispatch(null, discTech, recvNfcTagFunc);
+                console.info('[NFC_test] nfc registerForegroundDispatch pass')
+                tag.unregisterForegroundDispatch(null);
+                console.info('[NFC_test] nfc unregisterForegroundDispatch pass')
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('nfc registerForegroundDispatch failed');
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2302
+         * @tc.number SUB_Communication_NFC_nfctage_js_2302
+         * @tc.desc   This interface registerForegroundDispatch.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_2302', Level.LEVEL0, function ()  {
+            let elementName = {
+                "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+                "abilityName": "MainAbility",
+                "moduleName": "entry"
+            };
+            let discTech = [1, 2, 4];
+            try {
+                let recvNfcTagFunc = tagInfo => {
+                    console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                    expect(tagInfo != null).assertTrue();
+                }
+                tag.registerForegroundDispatch(undefined, discTech, recvNfcTagFunc);
+                console.info('[NFC_test] nfc registerForegroundDispatch pass')
+                tag.unregisterForegroundDispatch(undefined);
+                console.info('[NFC_test] nfc unregisterForegroundDispatch pass')
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
+                    expect(401).assertEqual(error.code)
                 } else {
                     console.info('nfc registerForegroundDispatch failed');
                     expect().assertFail();
@@ -951,7 +1230,7 @@ export default function nfcTagABFVTest() {
             let cTag = {
                 "uid": [0x01, 0x02, 0x03, 0x04],
                 "technology": [10],
-                "supportedProfiles": 1,
+                "supportedProfiles": [1],
             };
             try {
                 let data = tag.getBarcodeTag(cTag);
@@ -975,7 +1254,7 @@ export default function nfcTagABFVTest() {
             let dTag = {
                 "uid": [0x01, 0x02, 0x03, 0x04],
                 "technology": [10],
-                "supportedProfiles": 1,
+                "supportedProfiles": [1],
             };
             await tag.getBarcodeTag(dTag).getBarcode().then((BarcodeTag) => {
                 console.info("[NFC_test]25 getBarcodedata is " + BarcodeTag + " json: " + JSON.stringify(BarcodeTag));
@@ -1007,7 +1286,7 @@ export default function nfcTagABFVTest() {
             try {
                 tag.off('readerMode', elementName, readerModeCb);
             } catch (err) {
-                if (err.code == 3100203) {
+                if (err.code === 3100203) {
                     expect(3100203).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2600 ERROR :  " + err + " - " + err.code);
                     done();
@@ -1035,6 +1314,8 @@ export default function nfcTagABFVTest() {
             };
             let recvNfcTagFunc = tagInfo => {
                 console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                expect(tagInfo.uid.length > 0).assertTrue();
+                expect(tagInfo.technology.length > 0).assertTrue();
                 expect(tagInfo != null).assertTrue();
             }
             let discTech = [1, 2, 4];
@@ -1100,6 +1381,8 @@ export default function nfcTagABFVTest() {
             };
             let recvNfcTagFunc = tagInfo => {
                 console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                expect(tagInfo.uid.length > 0).assertTrue();
+                expect(tagInfo.technology.length > 0).assertTrue();
                 expect(tagInfo != null).assertTrue();
             }
 
@@ -1115,6 +1398,357 @@ export default function nfcTagABFVTest() {
                 }
             }
             done();
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2900
+         * @tc.number SUB_Communication_NFC_nfctage_js_2900
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_2900', Level.LEVEL0, function ()  {
+            try {
+                let getAtag1 = tag.getNfcA(aTag1);
+                console.info('Nfcget Connected data' + getAtag1);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2901
+         * @tc.number SUB_Communication_NFC_nfctage_js_2901
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_2901', Level.LEVEL0, function ()  {
+            try {
+                let getAtag1 = tag.getNfcA(null);
+                console.info('Nfcget Connected data' + getAtag1);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2902
+         * @tc.number SUB_Communication_NFC_nfctage_js_2902
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_2902', Level.LEVEL0, function ()  {
+            try {
+                let getAtag1 = tag.getNfcA(undefined);
+                console.info('Nfcget Connected data' + getAtag1);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_3000
+         * @tc.number SUB_Communication_NFC_nfctage_js_3000
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_3000', Level.LEVEL0, function ()  {
+            try {
+                let getBtag = tag.getNfcBTag(bTag2);
+                console.info('Nfcget Connected data' + getBtag);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_3100
+         * @tc.number SUB_Communication_NFC_nfctage_js_3100
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_3100', Level.LEVEL0, function ()  {
+            try {
+                let getBtag1 = tag.getNfcB(bTag2);
+                console.info('Nfcget Connected data' + getBtag1);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_3200
+         * @tc.number SUB_Communication_NFC_nfctage_js_3200
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_3200', Level.LEVEL0, function ()  {
+            try {
+                let getFtag = tag.getNfcFTag(fTag2);
+                console.info('Nfcget Connected data' + getFtag);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_3300
+         * @tc.number SUB_Communication_NFC_nfctage_js_3300
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_3300', Level.LEVEL0, function ()  {
+            try {
+                let getFtag1 = tag.getNfcF(fTag2);
+                console.info('Nfcget Connected data' + getFtag1);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_3400
+         * @tc.number SUB_Communication_NFC_nfctage_js_3400
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_3400', Level.LEVEL0, function ()  {
+            try {
+                let getVtag = tag.getNfcVTag(vTag1);
+                console.info('Nfcget Connected data' + getVtag);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_3500
+         * @tc.number SUB_Communication_NFC_nfctage_js_3500
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_3500', Level.LEVEL0, function ()  {
+            try {
+                let getVtag1 = tag.getNfcV(vTag1);
+                console.info('Nfcget Connected data' + getVtag1);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_3600
+         * @tc.number SUB_Communication_NFC_nfctage_js_3600
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_3600', Level.LEVEL0, function ()  {
+            try {
+                let getIsoDepTag = tag.getIsoDep(isoDepTaginfo1);
+                console.info('Nfcget Connected data' + getIsoDepTag);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_3700
+         * @tc.number SUB_Communication_NFC_nfctage_js_3700
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_3700', Level.LEVEL0, function ()  {
+            try {
+                let getNdef = tag.getNdef(NDEFTaginfo1);
+                console.info('Nfcget Connected data' + getNdef);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_3800
+         * @tc.number SUB_Communication_NFC_nfctage_js_3800
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_3800', Level.LEVEL0, function ()  {
+            try {
+                let getMifareClassic = tag.getMifareClassic(mifareclassicTaginfo1);
+                console.info('Nfcget Connected data' + getMifareClassic);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_3900
+         * @tc.number SUB_Communication_NFC_nfctage_js_3900
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_3900', Level.LEVEL0, function ()  {
+            try {
+                let getMifareUltralight = tag.getMifareUltralight(mifareUltralightTaginfo1);
+                console.info('Nfcget Connected data' + getMifareUltralight);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_4000
+         * @tc.number SUB_Communication_NFC_nfctage_js_4000
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_4000', Level.LEVEL0, function ()  {
+            try {
+                let getNdefFormatable = tag.getNdefFormatable(NdefFormatableTag1);
+                console.info('Nfcget Connected data' + getNdefFormatable);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_4100
+         * @tc.number SUB_Communication_NFC_nfctage_js_4100
+         * @tc.desc   Test setSendDataTimeout api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_4100', Level.LEVEL0, function ()  {
+            let bTag = {
+                "uid": [],
+                "technology": [],
+                "tagRfDiscId": 1,
+                "supportedProfiles": [1],
+            };
+            try {
+                let getBarcodeTag = tag.getBarcodeTag(bTag);
+                console.info('Nfcget Connected data' + getBarcodeTag);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect().assertFail();
+                }
+            }
         })
 
         console.info("*************[nfc_test] start nfc js unit test end*************");

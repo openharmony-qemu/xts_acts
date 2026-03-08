@@ -20,6 +20,7 @@ import uiContextMiscNullUndefinedTest from './uiContext/UIContextMiscNullUndefin
 import UIContextGetRectangleByIdNullUndefined from './uiContext/UIContextGetRectangleByIdNullUndefined.test';
 import setResourceManagerCacheNullUndefinedTest from './uiContext/SetResourceManagerCacheNullUndefined.test';
 import columnAllowForceDarkTest from './column/ColumnAllowForceDark.test';
+import GetContextNullUndefinedTest from './getUIContext/GetContextNullUndefined.test';
 
 export default function testsuite() {
   IsFollowingSystemFontScaleTrueTest();
@@ -30,4 +31,5 @@ export default function testsuite() {
   UIContextGetRectangleByIdNullUndefined();
   setResourceManagerCacheNullUndefinedTest();
   columnAllowForceDarkTest();
+  GetContextNullUndefinedTest();
 }

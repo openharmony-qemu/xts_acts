@@ -6,12 +6,15 @@
         "MainAbility/pages/frameNode/frameNode",
         "MainAbility/pages/frameNode/nodeContainer",
         "MainAbility/pages/frameNode/frameNodeTestGetInterface",
-		"MainAbility/pages/frameNode/APIsetOnFocus",
-		"MainAbility/pages/frameNode/APIsetOnHover",
+        "MainAbility/pages/frameNode/APIsetOnFocus",
+        "MainAbility/pages/frameNode/APIsetOnHover",
         "MainAbility/pages/frameNode/nodeList",
         "MainAbility/pages/frameNode/nodeListItemGroup",
-		"MainAbility/pages/frameNode/IsOnMainTreeMethodPage",
+        "MainAbility/pages/frameNode/IsOnMainTreeMethodPage",
         "MainAbility/pages/frameNode/isInRenderStateTest",
-        "MainAbility/pages/nodeAdapter/NodeAdapter001"
+        "MainAbility/pages/nodeAdapter/NodeAdapter001",
+        "MainAbility/pages/frameNode/FrameNodeMethodNullUndefined",
+        "MainAbility/pages/frameNode/CustomPropertyNullUndefined",
+        "MainAbility/pages/frameNode/AddComponentContentNullUndefined"
     ]
 }

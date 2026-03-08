@@ -42,24 +42,6 @@ export default function pasteBoardTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeAll start');
-            try {
-                await Utils.msSleep(2000);
-                hilog.info(domain, tag, " uitestOnTest load up over!!!!!")
-                g_context = Hypium.get('Context') as common.UIAbilityContext;
-                let atManager = abilityAccessCtrl.createAtManager();
-                let arr: Array<Permissions> = new Array<Permissions>();
-                arr.push('ohos.permission.READ_PASTEBOARD')
-                atManager.requestPermissionsFromUser(g_context, arr,
-                    (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
-                        hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
-                        hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
-                        hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
-                    });
-            } catch (err) {
-                hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
-            }
-            await Utils.msSleep(2000);
-            await Utils.clickRequestPermission('始终允许');
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
         beforeEach(() => {
@@ -69,58 +51,48 @@ export default function pasteBoardTest() {
         })
 
         /**
-         * @tc.name   SUB__SystemPasteboard_Permission_Static_0010
-         * @tc.number SUB__SystemPasteboard_Permission_Static_0010
+         * @tc.name   SUB_SystemPasteboard_Permission_Static_0010
+         * @tc.number SUB_SystemPasteboard_Permission_Static_0010
          * @tc.desc   Test permission API functionality.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB__SystemPasteboard_Permission_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0010----------");
+        it('SUB_SystemPasteboard_Permission_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0010 start");
             try {
                 let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
                 let textData = 'Hello World!';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
                 await systemPasteboard.setData(pasteData);
-                let hasData = await systemPasteboard.hasData();
-                expect(hasData).assertTrue();
                 let data: pasteboard.PasteData = await systemPasteboard.getData();
-                expect(data.getRecordCount() == 1).assertTrue();
-                let text: string = pasteData.getPrimaryText();
-                expect(text).assertEqual(textData);
-                systemPasteboard.clearDataSync();
+                let text: string = data.getPrimaryText();
+                expect(text).assertEqual('');
                 done();
             } catch (err) {
                 err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
-                expect(err).assertEqual(null);
+                expect(err === null).assertTrue();
             }
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0010----------");
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0010 end");
         })
 
         /**
-         * @tc.name   SUB__SystemPasteboard_Permission_Static_0020
-         * @tc.number SUB__SystemPasteboard_Permission_Static_0020
+         * @tc.name   SUB_SystemPasteboard_Permission_Static_0020
+         * @tc.number SUB_SystemPasteboard_Permission_Static_0020
          * @tc.desc   Test permission API functionality.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB__SystemPasteboard_Permission_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0020----------");
+        it('SUB_SystemPasteboard_Permission_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0020 start");
             let pasteData = pasteboard.createData('string', ARRAY_BUFFER);
             let systemPasteBoard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteBoard.setData(pasteData);
                 systemPasteBoard.getData((err: BusinessError | null, data: pasteboard.PasteData | undefined) => {
-                    if (err?.message) {
-                        hilog.info(domain, tag, "Get the pastedata from system pasteboard failed" + err);
-                        expect(false).assertTrue();
-                    } else {
-                        let recordCount = data?.getRecordCount();
-                        expect(recordCount).assertEqual(1);
-                    }
+                    expect(err == null).assertTrue();
                     done();
                 })
             } catch (err) {
@@ -128,46 +100,46 @@ export default function pasteBoardTest() {
                 expect(false).assertTrue();
                 done();
             }
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0020----------");
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0020 end");
         })
 
         /**
-         * @tc.name   SUB__SystemPasteboard_Permission_Static_0030
-         * @tc.number SUB__SystemPasteboard_Permission_Static_0030
+         * @tc.name   SUB_SystemPasteboard_Permission_Static_0030
+         * @tc.number SUB_SystemPasteboard_Permission_Static_0030
          * @tc.desc   Test permission API functionality.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB__SystemPasteboard_Permission_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0030----------");
+        it('SUB_SystemPasteboard_Permission_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0030 start");
             let pasteData = pasteboard.createData('string', ARRAY_BUFFER);
             let systemPasteBoard = pasteboard.getSystemPasteboard();
             try {
                 systemPasteBoard.setData(pasteData, (err) => {
-                    let hasData = await systemPasteBoard.hasData();
                     let data = systemPasteBoard.getDataSync();
-                    expect(hasData).assertTrue();
+                    let hasType: boolean = data.hasType('string');
+                    expect(hasType).assertFalse();
                     done();
                 });
             } catch (err) {
                 err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
-                expect(err).assertEqual(null);
+                expect(err === null).assertTrue();
             }
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0030----------");
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0030 end");
         })
 
         /**
-         * @tc.name   SUB__SystemPasteboard_Permission_Static_0040
-         * @tc.number SUB__SystemPasteboard_Permission_Static_0040
+         * @tc.name   SUB_SystemPasteboard_Permission_Static_0040
+         * @tc.number SUB_SystemPasteboard_Permission_Static_0040
          * @tc.desc   Test permission API functionality.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB__SystemPasteboard_Permission_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0040----------");
+        it('SUB_SystemPasteboard_Permission_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0040 start");
             let plainTextData = new unifiedDataChannel.UnifiedData();
             let plainText = new unifiedDataChannel.PlainText();
             let systemPasteboard = pasteboard.getSystemPasteboard();
@@ -181,54 +153,33 @@ export default function pasteBoardTest() {
             systemPasteboard.clearDataSync();
             let result = systemPasteboard.hasDataSync();
             expect(result).assertFalse();
-
             let result1: number = systemPasteboard.getChangeCount();
-            hilog.info(domain, tag, "Succeeded in getting the change count.Result0:" + result1);
             try {
                 await systemPasteboard.setUnifiedData(plainTextData);
                 let result2: number = systemPasteboard.getChangeCount();
-                hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
                 expect(result2).assertEqual(result1 + 1);
-                console.info(domain, tag, 'Pasteboard change success.');
-                try {
-                    let data: unifiedDataChannel.UnifiedData = await systemPasteboard.getUnifiedData();
-                    try {
-                        let records = data.getRecords();
-                        expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
-                        let record = records[0] as unifiedDataChannel.PlainText;
-                        expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
-                    } catch (err) {
-                        err = err as BusinessError;
-                        hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
-                        expect().assertFail();
-                        done();
-                    }
-                } catch (err) {
-                    err = err as BusinessError;
-                    hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
-                    expect().assertFail();
-                    done();
-                }
+                let data: unifiedDataChannel.UnifiedData = await systemPasteboard.getUnifiedData();
+                expect(data != null).assertTrue();
                 done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
-                expect().assertFail();
+                expect(err === null).assertTrue();
                 done();
             }
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0040----------");
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0040 end");
         })
 
         /**
-         * @tc.name   SUB__SystemPasteboard_Permission_Static_0050
-         * @tc.number SUB__SystemPasteboard_Permission_Static_0050
+         * @tc.name   SUB_SystemPasteboard_Permission_Static_0050
+         * @tc.number SUB_SystemPasteboard_Permission_Static_0050
          * @tc.desc   Test permission API functionality.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB__SystemPasteboard_Permission_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0050----------");
+        it('SUB_SystemPasteboard_Permission_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0050 start");
             let plainTextData = new unifiedDataChannel.UnifiedData();
             let plainText = new unifiedDataChannel.PlainText();
             let systemPasteboard = pasteboard.getSystemPasteboard();
@@ -238,49 +189,38 @@ export default function pasteBoardTest() {
             };
             plainText.textContent = 'textContent';
             plainText.textAbstract = 'textAbstract';
-            plainTextData.addRecord(plainText);
-            systemPasteboard.clearDataSync();
-            let result = systemPasteboard.hasDataSync();
-            hilog.info(domain, tag, "result:" + result);
-            expect(result).assertFalse();
-
-            let result1: number = systemPasteboard.getChangeCount();
-            hilog.info(domain, tag, "Succeeded in getting the change count.Result0:" + result1);
             try {
+                plainTextData.addRecord(plainText);
+                systemPasteboard.clearDataSync();
+                let result = systemPasteboard.hasDataSync();
+                hilog.info(domain, tag, "result:" + result);
+                expect(result).assertFalse();
+                let result1: number = systemPasteboard.getChangeCount();
                 systemPasteboard.setUnifiedDataSync(plainTextData);
                 let result2: number = systemPasteboard.getChangeCount();
-                hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
                 let data: unifiedDataChannel.UnifiedData = systemPasteboard.getUnifiedDataSync();
-                let records = data.getRecords();
-                hilog.info(domain, tag, "Get Plain Text records length :" + records.length);
-                expect(records.length).assertEqual(1);
-                expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
-                let record = records[0] as unifiedDataChannel.PlainText;
-                expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
-                hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
-                hilog.info(domain, tag, "Succeeded in getting the change count.Result2:" + result2);
+                expect(data != null).assertTrue();
                 expect(result2).assertEqual(result1 + 1);
-                hilog.info(domain, tag, 'Pasteboard change success.');
                 done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
-                expect().assertFail();
+                expect(err === null).assertTrue();
                 done();
             }
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0050----------");
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0050 end");
         })
 
         /**
-         * @tc.name   SUB__SystemPasteboard_Permission_Static_0060
-         * @tc.number SUB__SystemPasteboard_Permission_Static_0060
+         * @tc.name   SUB_SystemPasteboard_Permission_Static_0060
+         * @tc.number SUB_SystemPasteboard_Permission_Static_0060
          * @tc.desc   Test permission API functionality.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB__SystemPasteboard_Permission_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0060----------");
+        it('SUB_SystemPasteboard_Permission_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0060 start");
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 systemPasteboard.setAppShareOptions(pasteboard.ShareOption.INAPP);
@@ -292,41 +232,21 @@ export default function pasteBoardTest() {
                 expect(err.code).assertEqual(201);
                 done();
             }
-            try {
-                systemPasteboard.removeAppShareOptions();
-                hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions success");
-            } catch (err) {
-                err = err as BusinessError;
-                hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions fail" + err.message);
-                hilog.info(domain, tag, "err.code " + err.code);
-                expect(err.code).assertEqual(201);
-                done();
-            }
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0060----------");
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0060 end");
         })
 
         /**
-         * @tc.name   SUB__SystemPasteboard_Permission_Static_0070
-         * @tc.number SUB__SystemPasteboard_Permission_Static_0070
+         * @tc.name   SUB_SystemPasteboard_Permission_Static_0070
+         * @tc.number SUB_SystemPasteboard_Permission_Static_0070
          * @tc.desc   Test permission API functionality.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB__SystemPasteboard_Permission_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0070----------");
+        it('SUB_SystemPasteboard_Permission_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0070 start");
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
-                systemPasteboard.setAppShareOptions(pasteboard.ShareOption.INAPP);
-                hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp success");
-            } catch (err) {
-                err = err as BusinessError;
-                hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp fail " + err.message);
-                hilog.info(domain, tag, "err.code " + err.code);
-                expect(err.code).assertEqual(201);
-                done();
-            }
-            try {
                 systemPasteboard.removeAppShareOptions();
                 hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions success");
             } catch (err) {
@@ -336,26 +256,23 @@ export default function pasteBoardTest() {
                 expect(err.code).assertEqual(201);
                 done();
             }
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0070----------");
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0070 end");
         })
 
         /**
-         * @tc.name   SUB__SystemPasteboard_Permission_Static_0080
-         * @tc.number SUB__SystemPasteboard_Permission_Static_0080
+         * @tc.name   SUB_SystemPasteboard_Permission_Static_0080
+         * @tc.number SUB_SystemPasteboard_Permission_Static_0080
          * @tc.desc   Test permission API functionality.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB__SystemPasteboard_Permission_Static_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0080----------");
+        it('SUB_SystemPasteboard_Permission_Static_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0080 start");
             let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-            hilog.info(domain, tag, "------getSystemPasteboard start------");
             systemPasteboard.clearDataSync();
-            hilog.info(domain, tag, "------clearDataSync start------");
             try {
                 let dstUri: string = fileUri.getUriFromPath(dstDir);
-                hilog.info(domain, tag, 'dstUri:' + dstUri + 'length:' + dstUri.length);
                 expect(dstUri != null).assertTrue();
                 let params: pasteboard.GetDataParams = {
                     destUri: dstUri,
@@ -371,7 +288,39 @@ export default function pasteBoardTest() {
                 expect(err.code).assertEqual(12900010);
                 done();
             }
-            hilog.info(domain, tag, "----------SUB__SystemPasteboard_Permission_Static_0080----------");
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0080 end");
+        })
+
+        /**
+         * @tc.name   SUB_SystemPasteboard_Permission_Static_0090
+         * @tc.number SUB_SystemPasteboard_Permission_Static_0090
+         * @tc.desc   Test permission API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_SystemPasteboard_Permission_Static_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0090 start");
+            let filePath: string = context.filesDir + '/src';
+            let fileFullName: string = filePath + '/test1.txt';
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, fileUri.getUriFromPath(fileFullName));
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            await systemPasteboard.setData(pasteData);
+            let dstUri: string = fileUri.getUriFromPath(dstDir);
+            let params: pasteboard.GetDataParams = {
+              destUri: dstUri,
+              progressIndicator: pasteboard.ProgressIndicator.DEFAULT
+            };
+            try {
+                await systemPasteboard.getDataWithProgress(params);
+                expect().assertFail();
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag, "Remove specified record fail,error code is: " + err.message + err.code)
+                expect(err.code).assertEqual(12900010);
+                done();
+            }
+            hilog.info(domain, tag, "SUB_SystemPasteboard_Permission_Static_0090 end");
         })
     })
 }

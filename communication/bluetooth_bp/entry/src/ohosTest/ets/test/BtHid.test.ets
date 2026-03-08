@@ -378,6 +378,17 @@ function registerHidDeviceAsync(): Promise<boolean> {
         });
     });
 }
+let unregisterHidDeviceaftereach = async () => {
+console.info('unregisterHidDevice after each:');
+    try {
+        hidDevice.unregisterHidDevice();
+        await sleep(500);
+        console.info("[bluetooth_js]afterEach unregisterHidDevice is success ");
+    } catch (err) {
+        console.info("[bluetooth_js]rk板不支持" + JSON.stringify(err.code));
+        expect(Number(err.code)).assertEqual(801);
+    }
+}
 export default function btHidTest() {
 describe('btHidTest', () => {
     beforeAll(async (done : Function) =>  {
@@ -394,9 +405,7 @@ describe('btHidTest', () => {
     })
     afterEach(async (done : Function) =>  {
         console.info('afterEach called')
-        hidDevice.unregisterHidDevice();
-        await sleep(500);
-        console.info("[bluetooth_js]afterEach unregisterHidDevice is success ");
+        unregisterHidDeviceaftereach();
         done();
     })
     afterAll(async (done : Function) =>  {

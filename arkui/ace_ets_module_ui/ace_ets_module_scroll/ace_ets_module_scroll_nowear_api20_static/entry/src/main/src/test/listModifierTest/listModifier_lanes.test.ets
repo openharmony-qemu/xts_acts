@@ -33,7 +33,7 @@ export default function listModifier_lanes() {
 
     beforeAll(async() => {
       console.info('listModifier_lanes beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll20.static', 'EntryAbility')
+      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility')
       await UtilsTest.msSleep(4000)
     });
 

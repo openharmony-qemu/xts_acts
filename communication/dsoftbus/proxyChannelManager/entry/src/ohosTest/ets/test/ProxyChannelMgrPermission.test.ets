@@ -23,57 +23,9 @@ import { buffer, util } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let logTag = "[proxyChannelManager_log]";
-let OPEN_BT_TEXT:string = "开启";
-let CLOSE_BT_TEXT:string = "关闭";
 
 async function sleep(ms:number): Promise<void>{
   return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function clickRequestPermission(text:string) {
-  console.info(logTag +'[bluetooth_js] clickRequestPermission start');
-  let driver = await Driver.create();
-  try {
-    let button = await driver.findComponent(ON.text(text));
-    await sleep(1000);
-    await button.click();
-    await sleep(1000);
-    console.info(logTag +'[bluetooth_js] clickRequestPermission end');
-  } catch (err) {
-    console.info(logTag +'[bluetooth_js] clickRequestPermission failed. ' + err);
-  }
-}
-
-async function tryToEnableBt() {
-  let sta = btAccess.getState();
-  console.info(logTag +'[bluetooth_js] bt turn off:'+ JSON.stringify(sta));
-  switch(sta){
-    case 0:
-      btAccess.enableBluetooth();
-      await sleep(5000);
-      await clickRequestPermission(OPEN_BT_TEXT);
-      await sleep(10000);
-      let sta1 = btAccess.getState();
-      console.info(logTag +'[bluetooth_js] bt turn off1:'+ JSON.stringify(sta1));
-      break;
-    case 1:
-      console.info(logTag +'[bluetooth_js] bt turning on2:'+ JSON.stringify(sta));
-      await sleep(3000);
-      break;
-    case 2:
-      console.info(logTag +'[bluetooth_js] bt turn on3:'+ JSON.stringify(sta));
-      break;
-    case 3:
-      btAccess.enableBluetooth();
-      await sleep(3000);
-      await clickRequestPermission(OPEN_BT_TEXT);
-      await sleep(10000);
-      let sta2 = btAccess.getState();
-      console.info(logTag +'[bluetooth_js] bt turning off4:'+ JSON.stringify(sta2));
-      break;
-    default:
-      console.info(logTag +'[bluetooth_js] enable success');
-  }
 }
 
 // 注册接收数据回调
@@ -93,9 +45,6 @@ export default function noPermissionProxyMgr() {
   describe('noPermissionProxyMgr', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
-      console.info('beforeAll');
-      await tryToEnableBt();
-      await sleep(1000);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -110,10 +59,6 @@ export default function noPermissionProxyMgr() {
       // This API supports only one parameter: clear action function.
     })
     afterAll(async (done: Function) => {
-      console.info(logTag +'[bluetooth_js] bt close');
-      btAccess.disableBluetooth();
-      await sleep(5000);
-      done();
     })
 
     /**

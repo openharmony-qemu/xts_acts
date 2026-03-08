@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -408,12 +408,12 @@ export default function AsyncLockTest() {
 
             expect(executionOrder[0]).assertEqual(1);
             expect(executionOrder[1]).assertEqual(3);
-            expect(executionOrder[2]).assertEqual(7);
-            expect(executionOrder[3]).assertEqual(2);
-            expect(executionOrder[4]).assertEqual(4);
-            expect(executionOrder[5]).assertEqual(8);
-            expect(executionOrder[6]).assertEqual(5);
-            expect(executionOrder[7]).assertEqual(6);
+            expect(executionOrder[2]).assertEqual(2);
+            expect(executionOrder[3]).assertEqual(4);
+            expect(executionOrder[4]).assertEqual(5);
+            expect(executionOrder[5]).assertEqual(6);
+            expect(executionOrder[6]).assertEqual(7);
+            expect(executionOrder[7]).assertEqual(8);
             done();
         });
 

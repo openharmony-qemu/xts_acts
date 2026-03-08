@@ -446,6 +446,7 @@ export default function stateManagementNullUndefinedTest() {
         // Clean up if property was created
         if (AppStorage.has(propName)) {
           PersistentStorage.deleteProp(propName);
+          AppStorage.delete(propName)
         }
         // If no exception is thrown, the test passes
         console.info('[PersistentStorage_persistProps_emptyKey_001] END');
@@ -479,6 +480,7 @@ export default function stateManagementNullUndefinedTest() {
         // Clean up if property was created
         if (AppStorage.has(propName)) {
           PersistentStorage.deleteProp(propName);
+          AppStorage.delete(propName)
         }
         // If no exception is thrown, the test passes
         console.info('[PersistentStorage_PersistProps_emptyKey_001] END');
@@ -832,5 +834,498 @@ export default function stateManagementNullUndefinedTest() {
         expect().assertFail();
       }
     });
+
+    // ========== persistProp Tests (current API) ==========
+
+    /**
+     * @tc.name   PersistentStorage_persistProp_key_emptyString_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROP_KEY_EMPTYSTRING_001
+     * @tc.desc   Test PersistentStorage.persistProp with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistentStorage_persistProp_key_emptyString_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_persistProp_key_emptyString_001] START');
+      try {
+        const key: string = '';
+        const defaultValue: string = 'defaultTestValue';
+
+        // Test persistProp with empty string key
+        PersistentStorage.persistProp<string>(key, defaultValue);
+
+        // Verify the property was created in AppStorage
+        const hasResult: boolean = AppStorage.has(key);
+        expect(hasResult).assertTrue();
+
+        const getValue: string | null | undefined = AppStorage.get<string>(key);
+        expect(getValue).assertEqual(defaultValue);
+
+        // Clean up
+        PersistentStorage.deleteProp(key);
+        AppStorage.delete(key);
+
+        console.info('[PersistentStorage_persistProp_key_emptyString_001] END');
+      } catch (err) {
+        console.error('[PersistentStorage_persistProp_key_emptyString_001] Error: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_persistProp_key_null_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROP_KEY_NULL_001
+     * @tc.desc   Test PersistentStorage.persistProp with null key
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistentStorage_persistProp_key_null_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_persistProp_key_null_001] START');
+      try {
+        const key: string | null = null;
+        const defaultValue: string = 'defaultTestValue';
+
+        // Test persistProp with null key
+        PersistentStorage.persistProp<string>(key, defaultValue);
+
+        // If no error, verify behavior
+        console.info('[PersistentStorage_persistProp_key_null_001] persistProp called with null key');
+        // Verify the property was created in AppStorage
+        const hasResult: boolean = AppStorage.has(key);
+        expect(hasResult).assertTrue();
+
+        const getValue: string | null | undefined = AppStorage.get<string>(key);
+        expect(getValue).assertEqual(defaultValue);
+        // Clean up
+        PersistentStorage.deleteProp(key);
+        AppStorage.delete(key);
+      } catch (err) {
+        console.error('[PersistentStorage_persistProp_key_null_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for null key
+        console.info('[PersistentStorage_persistProp_key_null_001] Expected error caught');
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_persistProp_key_undefined_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROP_KEY_UNDEFINED_001
+     * @tc.desc   Test PersistentStorage.persistProp with undefined key
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistentStorage_persistProp_key_undefined_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_persistProp_key_undefined_001] START');
+      try {
+        const key: string | undefined = undefined;
+        const defaultValue: string = 'defaultTestValue';
+
+        // Test persistProp with undefined key
+        PersistentStorage.persistProp<string>(key, defaultValue);
+
+        // Verify the property was created in AppStorage
+        const hasResult: boolean = AppStorage.has(key);
+        expect(hasResult).assertTrue();
+
+        const getValue: string | null | undefined = AppStorage.get<string>(key);
+        expect(getValue).assertEqual(defaultValue);
+        // Clean up
+        PersistentStorage.deleteProp(key);
+        AppStorage.delete(key);
+      } catch (err) {
+        console.error('[PersistentStorage_persistProp_key_undefined_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for undefined key
+        console.info('[PersistentStorage_persistProp_key_undefined_001] Expected error caught');
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_persistProp_defaultValue_null_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROP_DEFAULTVALUE_NULL_001
+     * @tc.desc   Test PersistentStorage.persistProp with null defaultValue (API 12+)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistentStorage_persistProp_defaultValue_null_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_persistProp_defaultValue_null_001] START');
+      try {
+        const key: string = 'testPersistPropNullDefault';
+        const defaultValue: string | null = null;
+
+        // Test persistProp with null defaultValue (API 12+ allows null)
+        PersistentStorage.persistProp<string | null>(key, defaultValue);
+
+        // Verify the property was created in AppStorage
+        const hasResult: boolean = AppStorage.has(key);
+        expect(hasResult).assertTrue();
+
+        const getValue: string | null | undefined = AppStorage.get<string | null>(key);
+        expect(getValue).assertEqual(null);
+
+        // Clean up
+        PersistentStorage.deleteProp(key);
+        AppStorage.delete(key);
+
+        console.info('[PersistentStorage_persistProp_defaultValue_null_001] END');
+      } catch (err) {
+        console.error('[PersistentStorage_persistProp_defaultValue_null_001] Error: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_persistProp_defaultValue_undefined_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROP_DEFAULTVALUE_UNDEFINED_001
+     * @tc.desc   Test PersistentStorage.persistProp with undefined defaultValue (API 12+)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistentStorage_persistProp_defaultValue_undefined_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_persistProp_defaultValue_undefined_001] START');
+      try {
+        const key: string = 'testPersistPropUndefinedDefault';
+        const defaultValue: string | undefined = undefined;
+
+        // Test persistProp with undefined defaultValue (API 12+ allows undefined)
+        PersistentStorage.persistProp<string | undefined>(key, defaultValue);
+
+        // Verify the property was created in AppStorage
+        const hasResult: boolean = AppStorage.has(key);
+        expect(hasResult).assertTrue();
+
+        const getValue: string | undefined | null = AppStorage.get<string | undefined>(key);
+        expect(getValue).assertEqual(undefined);
+
+        // Clean up
+        PersistentStorage.deleteProp(key);
+        AppStorage.delete(key);
+
+        console.info('[PersistentStorage_persistProp_defaultValue_undefined_001] END');
+      } catch (err) {
+        console.error('[PersistentStorage_persistProp_defaultValue_undefined_001] Error: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
+    });
+
+    // ========== persistProps Tests (current API) ==========
+
+    /**
+     * @tc.name   PersistentStorage_persistProps_props_null_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROPS_PROPS_NULL_001
+     * @tc.desc   Test PersistentStorage.persistProps with null props array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistentStorage_persistProps_props_null_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_persistProps_props_null_001] START');
+      try {
+        const props: null = null;
+
+        // Test persistProps with null props array
+        PersistentStorage.persistProps(props);
+
+        // If no error, verify behavior
+        console.info('[PersistentStorage_persistProps_props_null_001] persistProps called with null');
+        expect().assertFail(); // Should throw error or fail
+      } catch (err) {
+        console.error('[PersistentStorage_persistProps_props_null_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for null props
+        console.info('[PersistentStorage_persistProps_props_null_001] Expected error caught');
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_persistProps_props_undefined_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROPS_PROPS_UNDEFINED_001
+     * @tc.desc   Test PersistentStorage.persistProps with undefined props array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistentStorage_persistProps_props_undefined_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_persistProps_props_undefined_001] START');
+      try {
+        const props: undefined = undefined;
+
+        // Test persistProps with undefined props array
+        PersistentStorage.persistProps(props);
+
+        // If no error, verify behavior
+        console.info('[PersistentStorage_persistProps_props_undefined_001] persistProps called with undefined');
+        expect().assertFail(); // Should throw error or fail
+      } catch (err) {
+        console.error('[PersistentStorage_persistProps_props_undefined_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for undefined props
+        console.info('[PersistentStorage_persistProps_props_undefined_001] Expected error caught');
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_persistProps_props_emptyArray_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROPS_PROPS_EMPTYARRAY_001
+     * @tc.desc   Test PersistentStorage.persistProps with empty props array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistentStorage_persistProps_props_emptyArray_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_persistProps_props_emptyArray_001] START');
+      try {
+        const props: [] = [];
+
+        // Test persistProps with empty props array
+        PersistentStorage.persistProps(props);
+
+        // Should succeed without creating any properties
+        console.info('[PersistentStorage_persistProps_props_emptyArray_001] persistProps called with empty array');
+        console.info('[PersistentStorage_persistProps_props_emptyArray_001] END');
+      } catch (err) {
+        console.error('[PersistentStorage_persistProps_props_emptyArray_001] Error: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
+    });
+
+    // ========== PersistProp Tests (deprecated API) ==========
+
+    /**
+     * @tc.name   PersistentStorage_PersistProp_key_emptyString_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROP_KEY_EMPTYSTRING_DEPRECATED_001
+     * @tc.desc   Test deprecated PersistentStorage.PersistProp with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     * @deprecated since 10
+     */
+    it('PersistentStorage_PersistProp_key_emptyString_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_PersistProp_key_emptyString_001] START');
+      try {
+        const key: string = '';
+        const defaultValue: string = 'defaultTestValue';
+
+        // Test PersistProp with empty string key
+        PersistentStorage.PersistProp<string>(key, defaultValue);
+
+        // Verify the property was created in AppStorage
+        const hasResult: boolean = AppStorage.has(key);
+        expect(hasResult).assertTrue();
+
+        const getValue: string | null | undefined = AppStorage.get<string>(key);
+        expect(getValue).assertEqual(defaultValue);
+
+        // Clean up
+        PersistentStorage.DeleteProp(key);
+        AppStorage.delete(key);
+
+        console.info('[PersistentStorage_PersistProp_key_emptyString_001] END');
+      } catch (err) {
+        console.error('[PersistentStorage_PersistProp_key_emptyString_001] Error: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_PersistProp_key_null_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROP_KEY_NULL_DEPRECATED_001
+     * @tc.desc   Test deprecated PersistentStorage.PersistProp with null key
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     * @deprecated since 10
+     */
+    it('PersistentStorage_PersistProp_key_null_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_PersistProp_key_null_001] START');
+      try {
+        const key: string | null = null;
+        const defaultValue: string = 'defaultTestValue';
+
+        // Test PersistProp with null key
+        PersistentStorage.PersistProp<string>(key, defaultValue);
+
+        // Verify the property was created in AppStorage
+        const hasResult: boolean = AppStorage.has(key);
+        expect(hasResult).assertTrue();
+
+        const getValue: string | null | undefined = AppStorage.get<string>(key);
+        expect(getValue).assertEqual(defaultValue);
+
+        // Clean up
+        PersistentStorage.DeleteProp(key);
+        AppStorage.delete(key);
+      } catch (err) {
+        console.error('[PersistentStorage_PersistProp_key_null_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for null key
+        console.info('[PersistentStorage_PersistProp_key_null_001] Expected error caught');
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_PersistProp_key_undefined_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROP_KEY_UNDEFINED_DEPRECATED_001
+     * @tc.desc   Test deprecated PersistentStorage.PersistProp with undefined key
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     * @deprecated since 10
+     */
+    it('PersistentStorage_PersistProp_key_undefined_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_PersistProp_key_undefined_001] START');
+      try {
+        const key: string | undefined = undefined;
+        const defaultValue: string = 'defaultTestValue';
+
+        // Test PersistProp with undefined key
+        PersistentStorage.PersistProp<string>(key, defaultValue);
+
+        // Verify the property was created in AppStorage
+        const hasResult: boolean = AppStorage.has(key);
+        expect(hasResult).assertTrue();
+
+        const getValue: string | null | undefined = AppStorage.get<string>(key);
+        expect(getValue).assertEqual(defaultValue);
+
+        // Clean up
+        PersistentStorage.DeleteProp(key);
+        AppStorage.delete(key);
+      } catch (err) {
+        console.error('[PersistentStorage_PersistProp_key_undefined_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for undefined key
+        console.info('[PersistentStorage_PersistProp_key_undefined_001] Expected error caught');
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_PersistProp_defaultValue_null_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROP_DEFAULTVALUE_NULL_DEPRECATED_001
+     * @tc.desc   Test deprecated PersistentStorage.PersistProp with null defaultValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     * @deprecated since 10
+     */
+    it('PersistentStorage_PersistProp_defaultValue_null_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_PersistProp_defaultValue_null_001] START');
+      try {
+        const key: string = 'testPersistPropNullDefaultDeprecated';
+        const defaultValue: string | null = null;
+
+        // Test PersistProp with null defaultValue (deprecated API may not allow null)
+        PersistentStorage.PersistProp<string | null>(key, defaultValue);
+
+        // Verify the property was created in AppStorage
+        const hasResult: boolean = AppStorage.has(key);
+        expect(hasResult).assertTrue();
+
+        const getValue: string | null | undefined = AppStorage.get<string | null>(key);
+        expect(getValue).assertEqual(null);
+
+        // Clean up
+        PersistentStorage.DeleteProp(key);
+        AppStorage.delete(key);
+
+        console.info('[PersistentStorage_PersistProp_defaultValue_null_001] END');
+      } catch (err) {
+        console.error('[PersistentStorage_PersistProp_defaultValue_null_001] Error: ' + JSON.stringify(err));
+        // Expected: may throw error (deprecated API may not support null)
+        console.info('[PersistentStorage_PersistProp_defaultValue_null_001] Expected error caught');
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_PersistProp_defaultValue_undefined_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROP_DEFAULTVALUE_UNDEFINED_DEPRECATED_001
+     * @tc.desc   Test deprecated PersistentStorage.PersistProp with undefined defaultValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     * @deprecated since 10
+     */
+    it('PersistentStorage_PersistProp_defaultValue_undefined_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_PersistProp_defaultValue_undefined_001] START');
+      try {
+        const key: string = 'testPersistPropUndefinedDefaultDeprecated';
+        const defaultValue: string | undefined = undefined;
+
+        // Test PersistProp with undefined defaultValue (deprecated API may not allow undefined)
+        PersistentStorage.PersistProp<string | undefined>(key, defaultValue);
+
+        // Verify the property was created in AppStorage
+        const hasResult: boolean = AppStorage.has(key);
+        expect(hasResult).assertTrue();
+
+        const getValue: string | undefined | null = AppStorage.get<string | undefined>(key);
+        expect(getValue).assertEqual(undefined);
+
+        // Clean up
+        PersistentStorage.DeleteProp(key);
+        AppStorage.delete(key);
+
+        console.info('[PersistentStorage_PersistProp_defaultValue_undefined_001] END');
+      } catch (err) {
+        console.error('[PersistentStorage_PersistProp_defaultValue_undefined_001] Error: ' + JSON.stringify(err));
+        // Expected: may throw error (deprecated API may not support undefined)
+        console.info('[PersistentStorage_PersistProp_defaultValue_undefined_001] Expected error caught');
+      }
+    });
+
+    // ========== PersistProps Tests (deprecated API) ==========
+
+    /**
+     * @tc.name   PersistentStorage_PersistProps_properties_null_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROPS_PROPERTIES_NULL_DEPRECATED_001
+     * @tc.desc   Test deprecated PersistentStorage.PersistProps with null properties array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTESTgit 
+     * @tc.level  LEVEL2
+     * @deprecated since 10
+     */
+    it('PersistentStorage_PersistProps_properties_null_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_PersistProps_properties_null_001] START');
+      try {
+        const properties: null = null;
+
+        // Test PersistProps with null properties array
+        PersistentStorage.PersistProps(properties);
+
+        // If no error, verify behavior
+        console.info('[PersistentStorage_PersistProps_properties_null_001] PersistProps called with null');
+        expect().assertFail(); // Should throw error or fail
+      } catch (err) {
+        console.error('[PersistentStorage_PersistProps_properties_null_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for null properties
+        console.info('[PersistentStorage_PersistProps_properties_null_001] Expected error caught');
+      }
+    });
+
+    /**
+     * @tc.name   PersistentStorage_PersistProps_properties_undefined_001
+     * @tc.number SUB_ARUI_PERSISTENTSTORAGE_PERSISTPROPS_PROPERTIES_UNDEFINED_DEPRECATED_001
+     * @tc.desc   Test deprecated PersistentStorage.PersistProps with undefined properties array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     * @deprecated since 10
+     */
+    it('PersistentStorage_PersistProps_properties_undefined_001', Level.LEVEL2, () => {
+      console.info('[PersistentStorage_PersistProps_properties_undefined_001] START');
+      try {
+        const properties: undefined = undefined;
+
+        // Test PersistProps with undefined properties array
+        PersistentStorage.PersistProps(properties);
+
+        // If no error, verify behavior
+        console.info('[PersistentStorage_PersistProps_properties_undefined_001] PersistProps called with undefined');
+        expect().assertFail(); // Should throw error or fail
+      } catch (err) {
+        console.error('[PersistentStorage_PersistProps_properties_undefined_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for undefined properties
+        console.info('[PersistentStorage_PersistProps_properties_undefined_001] Expected error caught');
+      }
+    });
+
   });
 }

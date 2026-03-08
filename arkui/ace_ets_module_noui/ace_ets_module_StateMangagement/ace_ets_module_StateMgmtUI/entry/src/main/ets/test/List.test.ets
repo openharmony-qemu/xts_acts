@@ -45,6 +45,7 @@ import LifeCycleTest0510 from './lifecycle/LifeCycleTest0510.test';
 import LifeCycleTest0100 from './lifecycle/LifeCycleTest0100.test';
 import LifeCycleTest0300 from './lifecycle/LifeCycleTest0300.test';
 import LifeCycleTest0310 from './lifecycle/LifeCycleTest0310.test';
+import LifeCycleUndefinedNullTest from './lifecycle/LifeCycleUndefinedNullTest.test';
 
 
 export default function testsuite() {
@@ -80,4 +81,5 @@ export default function testsuite() {
     LifeCycleTest0100();
     LifeCycleTest0300();
     LifeCycleTest0310();
+    LifeCycleUndefinedNullTest();
 }

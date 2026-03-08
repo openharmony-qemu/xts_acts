@@ -23,6 +23,7 @@ import scrollEvent from './scrollEvent.test'
 import scrollByTo from './scrollByTo.test'
 import ScrollToError from './ScrollToError.test'
 import ScrollByError from './ScrollByError.test'
+import scrollByWithResultError from './ScrollByWithResultError.test'
 export default function testsuite() {
   webResourceResponseGet()
   webViewOnScroll()
@@ -34,4 +35,5 @@ export default function testsuite() {
   scrollByTo()
   ScrollToError()
   ScrollByError()
+  scrollByWithResultError()
 }

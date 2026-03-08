@@ -631,5 +631,79 @@ export default function ActsUrlParameterTest() {
         expect(err.code).assertEqual(401);
       }
     });
+    /**
+     * @tc.name   testUrlParameter031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_3100
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUrlParameter031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let objectParams1 = new url.URLParams({ "fod": '1', "bard": '2' });
+      objectParams1.append("", "3");
+      expect(objectParams1.toString()).assertEqual("fod=1&bard=2&=3")
+      try {
+        objectParams1.append(null, "3");
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        objectParams1.append(undefined, "3");
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      objectParams1.delete("");
+      try {
+        objectParams1.delete(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        objectParams1.delete(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      objectParams1.has("");
+      try {
+        objectParams1.has(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        objectParams1.has(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      objectParams1.set("", "7");
+      expect(objectParams1.toString()).assertEqual('fod=1&bard=2&=7')
+      try {
+        objectParams1.set(null, "3");
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        objectParams1.set(undefined, "3");
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      objectParams1.set("cc", "");
+      expect(objectParams1.toString()).assertEqual('fod=1&bard=2&=7&cc=')
+      try {
+        objectParams1.set("cc", null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        objectParams1.set("cc", undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
   })
 }

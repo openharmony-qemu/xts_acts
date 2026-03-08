@@ -173,6 +173,34 @@ static napi_value OhAvMetadataExtractorFetchMetadata(napi_env env, napi_callback
     return result;
 }
 
+static napi_value OhAvMetadataExtractorFetchMetadataError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value argv[1];
+    int32_t fileDescribe = -1;
+    OH_AVErrCode avErrCode = AV_ERR_INVALID_VAL;
+
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    napi_get_value_int32(env, argv[0], &fileDescribe);
+    napi_create_int32(env, 0, &result);
+
+    OH_AVMetadataExtractor* mainExtractor = OH_AVMetadataExtractor_Create();
+    avErrCode = OH_AVMetadataExtractor_SetFDSource(mainExtractor, fileDescribe, PARAM_0, PARAM_END);
+    OH_AVFormat* avMetadata = OH_AVFormat_Create();
+
+    avErrCode = OH_AVMetadataExtractor_FetchMetadata(mainExtractor, avMetadata);
+    if (avErrCode == AV_ERR_UNSUPPORTED_FORMAT) {
+        napi_create_int32(env, 0, &result);
+    }
+
+    OH_AVMetadataExtractor_Release(mainExtractor);
+    OH_AVFormat_Destroy(avMetadata);
+    mainExtractor = nullptr;
+
+    return result;
+}
+
 void FetchAvMetadataFirstPart(napi_env env, OH_AVFormat* avMetadata, napi_value &jsMetadata)
 {
     const char* out = nullptr;
@@ -859,6 +887,69 @@ static napi_value OhAVMetadataExtractorFetchFrameByTimeError(napi_env env, napi_
     return result;
 }
 
+static napi_value OhAVMetadataExtractorFetchFrameByTimeErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value argv[1];
+    int32_t fileDescribe = -1;
+    int64_t offset = -1;
+    int64_t size = -1;
+    OH_AVErrCode avErrCode = AV_ERR_INVALID_VAL;
+    napi_create_int32(env, 0, &result);
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    napi_get_value_int32(env, argv[0], &fileDescribe);
+
+    OH_AVMetadataExtractor* mainExtractor = OH_AVMetadataExtractor_Create();
+    avErrCode = OH_AVMetadataExtractor_SetFDSource(mainExtractor, fileDescribe, PARAM_0, PARAM_END);
+    if (avErrCode != AV_ERR_OK) {
+        napi_create_int32(env, avErrCode, &result);
+    }
+    OH_PixelmapNative *pixelmapNative = nullptr;
+    avErrCode = OH_AVMetadataExtractor_FetchFrameByTime(mainExtractor,
+        0, OH_AVMEDIA_SEEK_NEXT_SYNC, nullptr, &pixelmapNative);
+    if (avErrCode == AV_ERR_OPERATE_NOT_PERMIT) {
+        napi_create_int32(env, 0, &result);
+    }
+    OH_AVMetadataExtractor_Release(mainExtractor);
+    OH_PixelmapNative_Release(pixelmapNative);
+    mainExtractor = nullptr;
+
+    return result;
+}
+
+static napi_value OhAVMetadataExtractorFetchFrameByTimeErrTwo(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value argv[1];
+    int32_t fileDescribe = -1;
+    int64_t offset = -1;
+    int64_t size = -1;
+    OH_AVErrCode avErrCode = AV_ERR_INVALID_VAL;
+    napi_create_int32(env, 0, &result);
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    napi_get_value_int32(env, argv[0], &fileDescribe);
+
+    OH_AVMetadataExtractor* mainExtractor = OH_AVMetadataExtractor_Create();
+    avErrCode = OH_AVMetadataExtractor_SetFDSource(mainExtractor, fileDescribe, PARAM_0, PARAM_END);
+    if (avErrCode != AV_ERR_OK) {
+        napi_create_int32(env, avErrCode, &result);
+    }
+    OH_PixelmapNative *pixelmapNative = nullptr;
+    OH_AVMetadataExtractor_OutputParam* outputParams = OH_AVMetadataExtractor_OutputParam_Create();
+    avErrCode = OH_AVMetadataExtractor_FetchFrameByTime(mainExtractor,
+        0, OH_AVMEDIA_SEEK_NEXT_SYNC, outputParams, &pixelmapNative);
+    if (avErrCode == AV_ERR_UNSUPPORTED_FORMAT) {
+        napi_create_int32(env, 0, &result);
+    }
+    OH_AVMetadataExtractor_Release(mainExtractor);
+    OH_PixelmapNative_Release(pixelmapNative);
+    mainExtractor = nullptr;
+
+    return result;
+}
+
 static napi_value OhAVMetadataExtractorGetTrackDescriptionError(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -1260,6 +1351,12 @@ static void OHAVMetadataExtractorOnFrameFetchedImplErr3(OH_AVMetadataExtractor* 
     if (code == AV_ERR_UNSUPPORTED_FORMAT) {
         return;
     }
+    if (code == AV_ERR_OPERATE_NOT_PERMIT) {
+        return;
+    }
+    if (code == AV_ERR_TIMEOUT) {
+        return;
+    }
     OHAVMetadataExtractorUserData* data = reinterpret_cast<OHAVMetadataExtractorUserData*>(userData);
     if (data == nullptr) {
         LOG("OHAVMetadataExtractorOnFrameFetchedImpl userData is nullptr");
@@ -1314,7 +1411,7 @@ static napi_value OhAVMetadataExtractorFetchFramesByTimesErr3(napi_env env, napi
         timeUs, typeSize, static_cast<OH_AVMedia_SeekMode>(option), userData->outputParams,
         OHAVMetadataExtractorOnFrameFetchedImplErr3, userData);
     int32_t res = 1;
-    if (avErrCode == AV_ERR_INVALID_VAL) {
+    if (avErrCode == AV_ERR_INVALID_VAL || avErrCode == AV_ERR_IO_CLEARTEXT_NOT_PERMITTED) {
         res = 0;
     }
     LOG("OhAVMetadataExtractorFetchFrames avErrCode %{public}d", avErrCode);
@@ -1418,6 +1515,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, napi_default, nullptr},
         {"ohAvMetadataExtractorFetchMetadata", nullptr, OhAvMetadataExtractorFetchMetadata, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"ohAvMetadataExtractorFetchMetadataError", nullptr, OhAvMetadataExtractorFetchMetadataError, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
         {"ohAvMetadataExtractorSetFdPathSource", nullptr, OhAvMetadataExtractorSetFdPathSource, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"ohAvMetadataExtractorFetchAlbumCover", nullptr, OhAvMetadataExtractorFetchAlbumCover, nullptr, nullptr,
@@ -1445,6 +1544,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OhAVMetadataExtractorOutputParamsSetSizeError", nullptr, OhAVMetadataExtractorOutputParamsSetSizeError,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OhAVMetadataExtractorFetchFrameByTimeError", nullptr, OhAVMetadataExtractorFetchFrameByTimeError, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"OhAVMetadataExtractorFetchFrameByTimeErr", nullptr, OhAVMetadataExtractorFetchFrameByTimeErr, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"OhAVMetadataExtractorFetchFrameByTimeErrTwo", nullptr, OhAVMetadataExtractorFetchFrameByTimeErrTwo, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"OhAVMetadataExtractorGetTrackDescriptionError", nullptr, OhAVMetadataExtractorGetTrackDescriptionError,
             nullptr, nullptr, nullptr, napi_default, nullptr},

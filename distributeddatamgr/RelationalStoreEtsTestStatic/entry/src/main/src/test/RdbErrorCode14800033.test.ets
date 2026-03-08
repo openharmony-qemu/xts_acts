@@ -2069,5 +2069,93 @@ export default function RdbErrorCode14800033() {
         done();
         console.log(TAG + "************* testRdbTransaction14800033_064 end   *************");
       })
+
+      /**
+     * @tc.name   testRdbRestore14800033_065
+     * @tc.number testRdbRestore14800033_065
+     * @tc.desc   restore success promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbRestore14800033_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + "************* testRdbRestore14800033_065 start *************");
+      await rdbStore!.backup("backup2.db");
+      try {
+         rdbStore!.restore("backup2.db", (err) => {
+          console.info(TAG + `restore is successful`);
+         });
+      } catch (e) {
+        console.error(TAG + "testRdbRestore14800033_065 fail code is " + e.code + " message is " + e.message);
+        expect(14800033).assertEqual(e.code);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testRdbStoreExecuteSq0100
+     * @tc.number testRdbStoreExecuteSq0100
+     * @tc.desc   resultSet occupies connection, attach failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreExecuteSq0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
+      console.log(TAG + "************* testRdbStoreExecuteSq0100 start *************");
+      try {
+      await rdbStore!.execute(CREATE_TABLE_TEST1);
+      const record: relationalStore.ValuesBucket = {
+        "name": "lixi",
+        "age": 20 as long,
+      };
+      await (rdbStore as relationalStore.RdbStore).insert("test1", record);
+       (rdbStore as relationalStore.RdbStore).executeSql("UPDATE test1 SET id = 'xiao' WHERE id = ?", [1 as long], (err: BusinessError|null) => {
+        if(err){
+          expect(14800033).assertEqual(err.code);
+          done();
+        }else{
+          expect(null).assertFail();
+          done();
+        }
+       
+      }); 
+    } catch(e) {
+      console.log("testRdbStoreExecuteSq0100-2 err: failed, err: code=" + e.code + " message=" + e.message);
+      expect(14800033).assertEqual(e.code);
+      done();
+    }
+
+    console.log(TAG + "************* testRdbStoreExecuteSq0100 end *************");
+    })
+
+    /**
+     * @tc.name   testRdbStoreExecuteSq0200
+     * @tc.number testRdbStoreExecuteSq0200
+     * @tc.desc   resultSet occupies connection, attach failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('testRdbStoreExecuteSq0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
+      console.log(TAG + "************* testRdbStoreExecuteSq0100 start *************");
+      try {
+      await rdbStore!.execute(CREATE_TABLE_TEST1);
+      const record: relationalStore.ValuesBucket = {
+        "name": "lixi",
+        "age": 20 as long,
+      };
+      await (rdbStore as relationalStore.RdbStore).insert("test1", record);
+      await (rdbStore as relationalStore.RdbStore).executeSql("UPDATE test1 SET id = 'xiao' WHERE id = ?", [1 as long]) 
+      expect(null).assertFail();
+      done();
+    } catch(e) {
+      console.log("testRdbStoreExecuteSq0200 err: failed, err: code=" + e.code + " message=" + e.message);
+      expect(14800033).assertEqual(e.code);
+      done();
+    }
+
+    console.log(TAG + "************* testRdbStoreExecuteSq0200 end *************");
+    })
+
   })
 }

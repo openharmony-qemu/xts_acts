@@ -46,3 +46,4 @@ export const OhAvPlayerSetFdPathSource: () => number;
 export const OhCloseFile: () => number;
 export const OhAvPlayerSetFdPathIndex: (a : number) => number; //获取文件名，设置默认参数
 export const OhAvPlayerSetFdPathSourceTwo: () => number;
+export const ohAvPlayerErrCodeEnum: () => number;

@@ -73,6 +73,11 @@
         "label": "$string:EntryEmbeddedUIExtAbility_label",
         "type": "embeddedUI"
       },
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.PRIVACY_WINDOW"
+      }
     ]
   }
 }

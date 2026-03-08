@@ -34,6 +34,7 @@ import ImageTextTest from './ImageSpanTest/ImageTextTest.test';
 import OnCompleteTest from './ImageSpanTest/OnCompleteTest.test';
 import ImageSpanSupportSvg2 from './ImageSpanTest/ImageSpanSupportSvg2.test';
 import spanExample from './ImageSpanTest/ImageSpanTest9.test';
+import ImageSpanPropertiesNullUndefinedTest from './ImageSpanTest/ImageSpanPropertiesNullUndefinedTest.test';
 
 import Span3JsunitTest from './SpanTest/Span3JsunitTest.test';
 import SpanApi1Test from './SpanTest/SpanApi1Test.test';
@@ -43,10 +44,12 @@ import SpanJsunitTest from './SpanTest/SpanJsunitTest.test';
 import SpanPageTest from './SpanTest/SpanPageTest.test';
 import SpanTextShadowTest from './SpanTest/SpanTextShadowTest.test';
 import SpanUIJsunitTest from './SpanTest/SpanUIJsunitTest.test';
+import SpanPropertiesNullUndefinedTest from './SpanTest/SpanPropertiesNullUndefinedTest.test';
 
 import SymbolSpanApi1Test from './SymbolSpanTest/SymbolSpanApi1Test.test';
 import SymbolSpanApi2Test from './SymbolSpanTest/SymbolSpanApi2Test.test';
 import SymbolSpanModifierTest from './SymbolSpanTest/SymbolSpanModifierTest.test';
+import SymbolSpanPropertiesNullUndefinedTest from './SymbolSpanTest/SymbolSpanPropertiesNullUndefinedTest.test';
 
 import EnablePreviewMenuTest from './TextTest/EnablePreviewMenu.test';
 import FontSettingOptions from './TextTest/FontSettingOptions.test';
@@ -133,6 +136,9 @@ import TextLineBreakStrategyNullTest from './TextTest/TextLineBreakStrategyNull.
 import TextSelectionPropertiesTest from './TextTest/TextSelectionProperties.test';
 import TextSpecialOptionsNullTest from './TextTest/TextSpecialOptionsNull.test';
 import TextLayoutOptionsNullTest from './TextTest/TextLayoutOptionsNull.test';
+import TextSpecialAttrsNullTest from './TextTest/TextSpecialAttrsNull.test';
+import TextMethodsNullTest from './TextTest/TextMethodsNull.test';
+import TextEditMenuOptionsNullTest from './TextTest/TextEditMenuOptionsNull.test';
 
 
 export default function testsuite() {
@@ -157,6 +163,7 @@ export default function testsuite() {
   ImageTextTest()
   OnCompleteTest()
   ImageSpanSupportSvg2()
+  ImageSpanPropertiesNullUndefinedTest()
   // SpanTest
   Span3JsunitTest()
   SpanApi1Test()
@@ -166,10 +173,12 @@ export default function testsuite() {
   SpanPageTest()
   SpanTextShadowTest()
   SpanUIJsunitTest()
+  SpanPropertiesNullUndefinedTest()
   // SymbolSpanTest
   SymbolSpanApi1Test()
   SymbolSpanApi2Test()
   SymbolSpanModifierTest()
+  SymbolSpanPropertiesNullUndefinedTest()
   //TextTest
   EnablePreviewMenuTest()
   FontSettingOptions()
@@ -257,4 +266,7 @@ export default function testsuite() {
   TextSelectionPropertiesTest();
   TextSpecialOptionsNullTest();
   TextLayoutOptionsNullTest();
+  TextSpecialAttrsNullTest();
+  TextMethodsNullTest();
+  TextEditMenuOptionsNullTest();
 }

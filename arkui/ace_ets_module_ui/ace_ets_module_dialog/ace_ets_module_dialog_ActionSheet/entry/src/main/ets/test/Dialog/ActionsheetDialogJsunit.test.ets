@@ -43,14 +43,14 @@ export default function ActionsheetDialogAJsunit() {
     });
 
    /**
-     * @tc.number    ActionsheetDialogAJsunit_0100
+     * @tc.number    SUB_ACE_ActionsheetDialogAJsunit_0100
      * @tc.name      ActionsheetDialogAJsunit_0100
      * @tc.desc      createActionSheetToWindow
-     * @tc.level:    Level 2
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('ActionsheetDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
+    it('ActionsheetDialogAJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('ActionsheetDialogAJsunit_0100 START');
       let driver = await UiDriver.create()

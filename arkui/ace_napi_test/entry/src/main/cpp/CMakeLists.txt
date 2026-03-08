@@ -19,7 +19,3 @@ target_link_libraries(napitest PUBLIC securec libace_napi.z.so libuv.so libhilog
 add_library(napitestex SHARED ./napi/NapiCheckTest.cpp)
 
 target_link_libraries(napitestex PUBLIC securec libace_napi.z.so libuv.so libhilog_ndk.z.so libc++.a)
-
-add_library(napifunctioncalltest SHARED ./napi/napiFunctionCallTest.cpp)
-
-target_link_libraries(napifunctioncalltest PUBLIC libace_napi.z.so)

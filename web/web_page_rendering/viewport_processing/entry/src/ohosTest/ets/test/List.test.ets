@@ -15,9 +15,13 @@
 import webViewMetaViewportTrue from './webViewMetaViewportTrue.test';
 import webViewOnViewportFitChange from './webViewOnViewportFitChange.test';
 import WebViewAvoidVisibleViewportBottom from './WebViewAvoidVisibleViewportBottom.test';
+import AvoidVisibleViewportBottomNull from './AvoidVisibleViewportBottomNull.test';
+import AvoidVisibleViewportBottomUndefined from './AvoidVisibleViewportBottomUndefined.test';
 
 export default function testsuite() {
     webViewOnViewportFitChange();
     webViewMetaViewportTrue();
 	WebViewAvoidVisibleViewportBottom();
+	AvoidVisibleViewportBottomNull();
+	AvoidVisibleViewportBottomUndefined();
 }

@@ -263,6 +263,14 @@
         "exported": true,
         "srcEntry": "./ets/testability/EmbeddedOccupyErrorCodeTestAbility.ets",
         "type": "embeddedUI"
+      },
+      {
+        "name": "EmbeddedGetWindowAvoidAreaAbility",
+        "description": "$string:TestAbility_desc",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "srcEntry": "./ets/testability/EmbeddedGetWindowAvoidAreaAbility.ets",
+        "type": "embeddedUI"
       }
     ],
     "requestPermissions": [

@@ -90,10 +90,10 @@ function byteToString(arr:Uint8Array) {
       for(let st = 1; st < bytesLength; st++) {
         store += _arr[st + i].toString(2).slice(2);
       }
-      str += String.fromCharCode(parseInt(store, 2));
+      str += String.fromCharCode(parseInt(store, 2).toInt());
       i += bytesLength - 1;
     } else {
-      str += String.fromCharCode(_arr[i]);
+      str += String.fromCharCode(_arr[i].toInt());
     }
   }
   return str;

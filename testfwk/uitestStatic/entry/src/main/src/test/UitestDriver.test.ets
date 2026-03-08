@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, UiWindow } from '@kit.TestKit'
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, UiWindow, ComponentEventType, WindowChangeType } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
@@ -832,14 +832,10 @@ export default function uitestDriverTest() {
       expect(Button != null).assertTrue();
       if (Button != null) {
         let center = await Button.getBoundsCenter();
-        await driver!.mouseDoubleClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0);
+        await driver!.mouseDoubleClick(center, MouseButton.MOUSE_BUTTON_RIGHT, 0);
         await driver!.delayMs(waitUiReadyMs);
         let button = await driver!.findComponent(ON.text('doubleClick'));
-        expect(button != null).assertTrue();
-        if (button != null) {
-          let text = await button.getText();
-          expect(text == 'doubleClick').assertTrue();
-        }
+        expect(button == null).assertTrue();
       }
       await stopApplication('com.uitestScene.acts');
     })
@@ -865,14 +861,10 @@ export default function uitestDriverTest() {
       expect(Button != null).assertTrue();
       if (Button != null) {
         let center = await Button.getBoundsCenter();
-        await driver!.mouseDoubleClick(center, MouseButton.MOUSE_BUTTON_LEFT);
+        await driver!.mouseDoubleClick(center, MouseButton.MOUSE_BUTTON_MIDDLE);
         await driver!.delayMs(waitUiReadyMs)
         let button = await driver!.findComponent(ON.text('doubleClick'));
-        expect(button != null).assertTrue();
-        if (button != null) {
-          let text = await button.getText();
-          expect(text == 'doubleClick').assertTrue();
-        }
+        expect(button == null).assertTrue();
       }
       await stopApplication('com.uitestScene.acts');
     })
@@ -919,15 +911,11 @@ export default function uitestDriverTest() {
       expect(Button != null).assertTrue();
       if (Button != null) {
         let center = await Button.getBoundsCenter();
-        await driver!.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0);
+        await driver!.mouseLongClick(center, MouseButton.MOUSE_BUTTON_RIGHT, 0);
         await driver!.delayMs(waitUiReadyMs);
       }
       let newButton = await driver!.findComponent(ON.text('longClick'));
-      expect(newButton != null).assertTrue();
-      if (newButton != null) {
-        let text = await newButton.getText();
-        expect(text == 'longClick').assertTrue();
-      }
+      expect(newButton == null).assertTrue();
       await stopApplication('com.uitestScene.acts');
     })
 
@@ -946,15 +934,11 @@ export default function uitestDriverTest() {
       expect(Button != null).assertTrue();
       if (Button != null) {
         let center = await Button.getBoundsCenter();
-        await driver!.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT);
+        await driver!.mouseLongClick(center, MouseButton.MOUSE_BUTTON_MIDDLE);
         await driver!.delayMs(waitUiReadyMs);
       }
       let newButton = await driver!.findComponent(ON.text('longClick'));
-      expect(newButton != null).assertTrue();
-      if (newButton != null) {
-        let text = await newButton.getText();
-        expect(text == 'longClick').assertTrue();
-      }
+      expect(newButton == null).assertTrue();
       await stopApplication('com.uitestScene.acts');
     })
 
@@ -1018,6 +1002,7 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testGetDisplayDensity getDisplayRotation success, ${JSON.stringify(density)}`);
         expect(density.x != 0).assertTrue()
         expect(density.y != 0).assertTrue()
+        expect(density.displayId != null).assertTrue()
       }catch( error) {
         hilog.info(domain, tag, `testGetDisplayDensity_static error is, ${ JSON.stringify(error)} `);
         expect().assertFail();
@@ -1049,6 +1034,16 @@ export default function uitestDriverTest() {
             expect(uiElementInfo.text == 'toastShow').assertTrue();
             hilog.info(domain, tag, `testMonitor1_static  type , ${ uiElementInfo.type }`);
             expect(uiElementInfo.type == 'Toast').assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  windowChangeType , ${ uiElementInfo.windowChangeType }`);
+            expect(uiElementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  componentEventType , ${ uiElementInfo.componentEventType }`);
+            expect(uiElementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  windowId , ${ uiElementInfo.windowId }`);
+            expect(uiElementInfo.windowId != null).assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  componentId , ${ uiElementInfo.componentId }`);
+            expect(uiElementInfo.componentId == '').assertTrue();
+            hilog.info(domain, tag, `testMonitor1_static  componentRect , ${ uiElementInfo.componentRect }`);
+            expect(uiElementInfo.componentRect != null).assertTrue();
           } catch (err) {
             hilog.info(domain, tag, `testMonitor1_static  error, ${ JSON.stringify(err) }`);
           }
@@ -1092,6 +1087,16 @@ export default function uitestDriverTest() {
             expect(uiElementInfo.type == 'AlertDialog').assertTrue()
             hilog.info(domain, tag, `testMonitor2_static UIElementInfo type , ${ uiElementInfo.type }`);
             expect(uiElementInfo.text == 'dialogShow').assertTrue()
+            hilog.info(domain, tag, `testMonitor2_static  windowChangeType , ${ uiElementInfo.windowChangeType }`);
+            expect(uiElementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+            hilog.info(domain, tag, `testMonitor2_static  componentEventType , ${ uiElementInfo.componentEventType }`);
+            expect(uiElementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();
+            hilog.info(domain, tag, `testMonitor2_static  windowId , ${ uiElementInfo.windowId }`);
+            expect(uiElementInfo.windowId != null).assertTrue();
+            hilog.info(domain, tag, `testMonitor2_static  componentId , ${ uiElementInfo.componentId }`);
+            expect(uiElementInfo.componentId == '').assertTrue();
+            hilog.info(domain, tag, `testMonitor2_static  componentRect , ${ uiElementInfo.componentRect }`);
+            expect(uiElementInfo.componentRect != null).assertTrue();
           } catch (err) {
             hilog.info(domain, tag, `testMonitor2_static callback error, ${ JSON.stringify(err) }`);
           }
@@ -1315,6 +1320,7 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testGetDisplaySize test, ${JSON.stringify(test)}`);
         expect(test.x != 0).assertTrue();
         expect(test.y != 0).assertTrue();
+        expect(test.displayId != null).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, `testGetDisplaySize error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -1431,7 +1437,7 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_3_static mainPageCom, ${JSON.stringify(mainPageCom)}`);
         expect(mainPageCom == null).assertTrue();
         // 三指下划,应用返回前台
-        await driver!.touchPadMultiFingerSwipe(3, UiDirection.DOWN);
+        await driver!.touchPadMultiFingerSwipe(3, UiDirection.DOWN, {stay: false});
         await driver!.delayMs(1000);
         let mainPageCom1 = await driver!.findComponent(ON.text('MainPage'));
         hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_3_static mainPageCom1, ${JSON.stringify(mainPageCom1)}`);

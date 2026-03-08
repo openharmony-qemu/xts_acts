@@ -69,7 +69,9 @@ import {
   OptionWidthMode,
   Dimension,
   SymbolGlyphModifier,
-  Entry
+  Entry,
+  NavDestination,
+  ColumnOptions
 } from '@ohos.arkui.component'
 import { Provide, State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
@@ -80,10 +82,29 @@ struct NavigationExample {
   pageInfos: NavPathStack = new NavPathStack();
   @State num: int = 0;
   @State def: boolean = true;
+  @Builder
+  pageOneTmp() {
+    NavDestination() {
+      Column({ space: 10 } as ColumnOptions) {
+        Text('pageOne2')
+          .id('NavPathStackApi2_text_pageOne')
+          .onClick(() => {
+            this.pageInfos.pop()
+          })
+      }.width('100%').height('100%')
+    }.title('pageOne')
+  }
+
+  @Builder
+  PageMap(name: string) {
+    if (name === 'pageOne') {
+      this.pageOneTmp()
+    }
+  }
 
   build() {
     Column() {
-      Text('changeCount:' + this.num).id('changeCountText')
+      Text(this.num.toString()).id('changeCountText')
 
       Navigation(this.pageInfos) {
         Text('this navigation bar')
@@ -99,11 +120,11 @@ struct NavigationExample {
           })
       }
       .title('NavIndex')
+      .navDestination(this.PageMap)
       .customNavContentTransition(this.def ?
         (from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation):
-          NavigationAnimatedTransition | undefined => {
-          this.num = this.num + 1
-          console.log('[tjm] customNavContentTransition, changeCount: ' + this.num)
+        NavigationAnimatedTransition | undefined => {
+          this.num = to.index
           // 返回 undefined 表示使用默认转场动效
           return undefined
         } : undefined)

@@ -139,6 +139,7 @@ export const CaptureScreenPixelmapInvalidParamOrDeviceNotSupported: () => number
 export const CaptureScreenPixelmapNoPermission: () => number;
 
 export const GetDisplaySourceMode: (id: number) => number;
+export const IsFoldable: () => boolean;
 export const GetDisplaySourceMode001: (id: number) => number;
 export const GetDisplaySourceMode002: () => number;
 export const GetDisplaySourceMode003: (id: number) => number;

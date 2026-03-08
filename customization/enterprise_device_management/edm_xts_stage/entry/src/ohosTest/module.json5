@@ -201,7 +201,10 @@
       },
  	    {
  	      "name": "ohos.permission.ENTERPRISE_READ_LOG"
- 	    }
+ 	    },
+      {
+        "name": "ohos.permission.ACQUIRE_LOCAL_ACCOUNT_AUTHORIZATION"
+      }
     ]
   }
 }

@@ -459,5 +459,84 @@ describe('fileio_createStream', function () {
         done();
  	    }
  	   });
+	
+	/**
+	* @tc.name   fileio_test_stream_create_callback_error_004
+	* @tc.number SUB_DF_FILEIO_STREAM_CREATE_CALLBACK_ERROR_004
+	* @tc.desc   Test createStream() interface with empty string path. Callback.
+	* @tc.type   FUNCTION
+	* @tc.size   MEDIUMTEST
+	* @tc.level  LEVEL2
+	*/
+	it('fileio_test_stream_create_callback_error_004', Level.LEVEL2, async function (done) {
+		let fpath = await nextFileName('fileio_test_stream_create_callback_error_004');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+		fileio.createStream(fpath, "", function (err) {
+		if (err) {
+			console.log('fileio_test_stream_create_callback_error_004: ' + err.message + ', code: ' + err.code);
+			expect(err.message == 'Invalid argument').assertTrue();
+			done();
+		} else {
+			expect(false).assertTrue();
+			done();
+		}
+		});
+	});
+	
+	/**
+	* @tc.name   fileio_test_stream_create_callback_error_005
+	* @tc.number SUB_DF_FILEIO_STREAM_CREATE_CALLBACK_ERROR_005
+	* @tc.desc   Test createStream() interface with null path. Callback.
+	* @tc.type   FUNCTION
+	* @tc.size   MEDIUMTEST
+	* @tc.level  LEVEL2
+	*/
+	it('fileio_test_stream_create_callback_error_005', Level.LEVEL2, async function (done) {
+		let fpath = await nextFileName('fileio_test_stream_create_callback_error_005');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+		try {
+			fileio.createStream(fpath, null, function (err) {
+			if (err) {
+				console.log('fileio_test_stream_create_callback_error_005: ' + err.message + ', code: ' + err.code);
+				expect(err.message == 'Invalid argument').assertTrue();
+				done();
+			}
+			});
+		console.log('fileio_test_stream_create_callback_error_005 res');
+		done();
+		} catch (err) {
+		console.log('fileio_test_stream_create_callback_error_005 err: ' + err.message + ', code: ' + err.code);
+		expect(err.message == 'Invalid mode').assertTrue();
+		done();
+		}
+	});
+	
+	/**
+	* @tc.name   fileio_test_stream_create_callback_error_006
+	* @tc.number SUB_DF_FILEIO_STREAM_CREATE_CALLBACK_ERROR_006
+	* @tc.desc   Test createStream() interface with undefined path. Callback.
+	* @tc.type   FUNCTION
+	* @tc.size   MEDIUMTEST
+	* @tc.level  LEVEL2
+	*/
+	it('fileio_test_stream_create_callback_error_006', Level.LEVEL2, async function (done) {
+		let fpath = await nextFileName('fileio_test_stream_create_callback_error_006');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+		try {
+			fileio.createStream(fpath, undefined, function (err) {
+			if (err) {
+				console.log('fileio_test_stream_create_callback_error_006: ' + err.message + ', code: ' + err.code);
+				expect(err.message == 'Invalid mode').assertTrue();
+				done();
+			}
+			});
+		console.log('fileio_test_stream_create_callback_error_006 res');
+		done();
+		} catch (err) {
+		console.log('fileio_test_stream_create_callback_error_006 err: ' + err.message + ', code: ' + err.code);
+		expect(err.message == 'Invalid mode').assertTrue();
+		done();
+	    }
+	});
 });
 }

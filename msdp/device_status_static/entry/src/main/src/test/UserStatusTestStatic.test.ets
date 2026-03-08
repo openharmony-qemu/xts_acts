@@ -128,7 +128,7 @@ export default function userStatusTest() {
         try {
           userStatus.onUserAgeGroupDetected((data: userStatus.UserClassification) => {});
           await Utils.msSleep(2000);
-          userStatus.offUserAgeGroupDetected((data: userStatus.UserClassification) => {});
+          userStatus.offUserAgeGroupDetected();
           hilog.info(domain, tag, `${caseName} onUserAgeGroupDetected successed`);
           done();
         } catch (error) {

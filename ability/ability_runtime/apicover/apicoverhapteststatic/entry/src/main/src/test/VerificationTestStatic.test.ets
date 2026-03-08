@@ -21,7 +21,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
@@ -60,15 +60,55 @@ export default function verificationStaticTest() {
     it('SUB_AA_OpenHarmony_AbilityConstant_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       tag = 'SUB_AA_OpenHarmony_AbilityConstant_Static_0200 ==>';
       await Utils.msSleep(2000);
-      let launchWant: Want = AppStorage.get<Want>("launchWant") as Want;
-      let lastRequestWant: Want = AppStorage.get<Want>("lastRequestWant") as Want;
-      let specifiedId: string = AppStorage.get<string>("specifiedId") as string;
-      let windowStage: window.WindowStage = AppStorage.get<window.WindowStage>("windowStage") as window.WindowStage;
-      expect(launchWant.bundleName).assertEqual("com.example.apicoverhaptest.static");
-      expect(lastRequestWant.bundleName).assertEqual("com.example.apicoverhaptest.static");
+      let launchWant: Want | undefined = AppStorage.get<Want>("launchWant") as Want;
+      let lastRequestWant: Want | undefined = AppStorage.get<Want>("lastRequestWant") as Want;
+      let windowStage: window.WindowStage | undefined = AppStorage.get<window.WindowStage>("windowStage") as window.WindowStage;
+      expect(launchWant!.bundleName).assertEqual("com.example.apicoverhaptest.static");
+      expect(lastRequestWant!.bundleName).assertEqual("com.example.apicoverhaptest.static");
       expect(windowStage).not().assertNull();
       done();
     })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_AbilityConstant_Static_0300
+     * @tc.number SUB_AA_OpenHarmony_AbilityConstant_Static_0300
+     * @tc.desc   The startAbility interface starts the ability, test specifiedId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AA_OpenHarmony_AbilityConstant_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        tag = 'SUB_AA_OpenHarmony_AbilityConstant_Static_0300 ==>';
+        let want: Want = {
+          bundleName: 'com.example.apicoverhaptest.static',
+          abilityName: 'EntryAbility3',
+          parameters: {
+            'instanceKey': 'Key',
+          } as Record<String, RecordData>
+        };
+        try {
+          const context: common.UIAbilityContext =
+            AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext;
+          context.startAbility(want).then(() => {
+            hilog.info(domain, tag, 'Succeeded in starting SpecifiedAbility.');
+            await Utils.msSleep(2000);
+            let specifiedId: string = AppStorage.get<string>("specifiedId") as string;
+            hilog.info(domain, tag, `specifiedId:${specifiedId}`);
+            expect(specifiedId).assertEqual("SpecifiedAbilityInstance_Key");
+            done();
+          }).catch((err: Error): void => {
+            hilog.error(domain, tag,
+              `Failed to start SpecifiedAbility. Code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          hilog.error(domain, tag, `Failed to start SpecifiedAbility2. Code is ${err.code}, message is ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      })
 
     /**
      * @tc.name   SUB_AA_OpenHarmony_SetMissionLabel_static_0100

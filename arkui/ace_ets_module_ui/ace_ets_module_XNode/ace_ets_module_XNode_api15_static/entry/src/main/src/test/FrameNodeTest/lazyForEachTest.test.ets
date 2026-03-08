@@ -47,12 +47,12 @@ export default function lazyForEachTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        // let result = await router.replaceUrl(options);
+        let result = await router.replaceUrl(options);
         console.info("get lazyForEachTest state pages:" + JSON.stringify(pages));
         if (!("lazyForEachTest" == pages.name)) {
           console.info("get lazyForEachTest pages.name:" + JSON.stringify(pages.name));
-          router.pushUrl(options);
           await CommonFunc.sleep(2000);
+          console.info('push lazyForEachTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push lazyForEachTest page error:" + err);

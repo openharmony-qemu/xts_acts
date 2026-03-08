@@ -78,7 +78,7 @@ export default function MessageTest2() {
           let callback: CB = () => {};
           let message: concurrency.Message = new concurrency.Message(callback, handler);
           handler.sendMessage(message);
-          expect(message.getWhat()).assertEqual(0);
+          expect(message.getWhat()).assertEqual(-1000000);
           while (!flag) {
             await Utils.msSleep(100)
           }

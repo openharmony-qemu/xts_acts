@@ -14,10 +14,10 @@
  */
 import { beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
-import { CheckSoftware } from './utils/huks/HuksOptionsUtils.ets';
-import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils.ets';
-import { GetWrapKeyOptions } from './utils/huks/WrapKeyUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
+import { CheckSoftware } from './utils/huks/HuksOptionsUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
+import { GetWrapKeyOptions } from './utils/huks/WrapKeyUtils';
+import { Logger } from './utils/common/Logger';
 
 
 export default function SecurityHuksWrapKeyTest() {

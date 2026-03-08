@@ -87,6 +87,12 @@ export default function customNavContentTransitionModifierUndefined() {
         await CommonFunc.sleep(1500);
       }
 
+      //判断回调更新结果
+      let strJson2 = inspector.getInspectorByKey('changeCountTextModifier');
+      let obj2 = JSON.parseJsonElement(strJson2);
+      let testText2 = obj2.getElement('$attrs').getString('content');
+      expect(testText2).assertEqual("0");
+
       // 点击返回按钮返回到初始页面
       await driver.pressBack();
       await CommonFunc.sleep(1000);
@@ -111,6 +117,12 @@ export default function customNavContentTransitionModifierUndefined() {
         await pushBtn.click();
         await CommonFunc.sleep(1500);
       }
+
+      //判断回调更新结果
+      let strJson3 = inspector.getInspectorByKey('changeCountTextModifier');
+      let obj3 = JSON.parseJsonElement(strJson3);
+      let testText3 = obj3.getElement('$attrs').getString('content');
+      expect(testText3).assertEqual("-1");
 
       // 点击返回
       await driver.pressBack();

@@ -594,8 +594,339 @@ describe('fileio_stream_read', function () {
           done();
         });
       });
+     } catch (e) {
+       console.log('fileio_test_stream_read_async_017 has failed for ' + e);
+       expect(false).assertTrue();
+     }
+  });
+
+  /**
+   * @tc.name   fileio_stream_read_error_001
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_ERROR_001
+   * @tc.desc   Test read() interface with null buffer. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_error_001', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_stream_read_error_001');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      await ss.read(null);
+      expect(false).assertTrue();
     } catch (e) {
-      console.log('fileio_test_stream_read_async_017 has failed for ' + e);
+      console.log('fileio_stream_read_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+      ss.closeSync();
+      fileio.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stream_read_error_002
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_ERROR_002
+   * @tc.desc   Test read() interface with undefined buffer. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_error_002', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_stream_read_error_002');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      await ss.read(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_stream_read_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+      ss.closeSync();
+      fileio.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stream_read_error_003
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_ERROR_003
+   * @tc.desc   Test read() interface with null options. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_error_003', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_stream_read_error_003');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+	  let res = await ss.read(new ArrayBuffer(4096), null);
+	  console.log('fileio_stream_read_error_003 res: ' + res + 'FILE_CONTENT.length:' + FILE_CONTENT.length);
+	  expect(res.bytesRead === FILE_CONTENT.length).assertTrue();
+	  ss.closeSync();
+      fileio.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileio_stream_read_error_003: ' + e.message + ', code: ' + e.code);
+	  expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stream_read_error_004
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_ERROR_004
+   * @tc.desc   Test read() interface with undefined options. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_error_004', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_stream_read_error_004');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      let readout = await ss.read(new ArrayBuffer(4096), undefined);
+      expect(readout.bytesRead == FILE_CONTENT.length).assertTrue();
+      ss.closeSync();
+      fileio.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileio_stream_read_error_004: ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  // Test cases for read(buffer: ArrayBuffer, callback: AsyncCallback<ReadOut>): void
+  /**
+   * @tc.name   fileio_stream_read_error_005
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_ERROR_005
+   * @tc.desc   Test read() interface with null buffer. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_error_005', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_stream_read_error_005');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      ss.read(null, function (err, readout) {
+        if (err) {
+          console.log('fileio_stream_read_error_005: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+          ss.closeSync();
+          fileio.unlinkSync(fpath);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_stream_read_error_005: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+      ss.closeSync();
+      fileio.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stream_read_error_006
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_ERROR_006
+   * @tc.desc   Test read() interface with undefined buffer. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_error_006', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_stream_read_error_006');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      ss.read(undefined, function (err, readout) {
+        if (err) {
+          console.log('fileio_stream_read_error_006: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+          ss.closeSync();
+          fileio.unlinkSync(fpath);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_stream_read_error_006: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+      ss.closeSync();
+      fileio.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  // Test cases for read(buffer: ArrayBuffer, options: {...}, callback: AsyncCallback<ReadOut>): void
+  /**
+   * @tc.name   fileio_stream_read_error_007
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_ERROR_007
+   * @tc.desc   Test read() interface with null buffer. Callback with options.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_error_007', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_stream_read_error_007');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      ss.read(null, {}, function (err, readout) {
+        if (err) {
+          console.log('fileio_stream_read_error_007: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+          ss.closeSync();
+          fileio.unlinkSync(fpath);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_stream_read_error_007: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+      ss.closeSync();
+      fileio.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stream_read_error_008
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_ERROR_008
+   * @tc.desc   Test read() interface with undefined buffer. Callback with options.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_error_008', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_stream_read_error_008');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      ss.read(undefined, {}, function (err, readout) {
+        if (err) {
+          console.log('fileio_stream_read_error_008: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+          ss.closeSync();
+          fileio.unlinkSync(fpath);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_stream_read_error_008: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+      ss.closeSync();
+      fileio.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  // Test cases for readSync(buffer: ArrayBuffer, options?: {...}): number
+  /**
+   * @tc.name   fileio_stream_read_sync_error_001
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_SYNC_ERROR_001
+   * @tc.desc   Test readSync() interface with null buffer.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_sync_error_001', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_stream_read_sync_error_001');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      ss.readSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_stream_read_sync_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+      ss.closeSync();
+      fileio.unlinkSync(fpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stream_read_sync_error_002
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_SYNC_ERROR_002
+   * @tc.desc   Test readSync() interface with undefined buffer.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_sync_error_002', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_stream_read_sync_error_002');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      ss.readSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_stream_read_sync_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid read buffer, expect arraybuffer').assertTrue();
+      ss.closeSync();
+      fileio.unlinkSync(fpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stream_read_sync_error_003
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_SYNC_ERROR_003
+   * @tc.desc   Test readSync() interface with null options.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_sync_error_003', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_stream_read_sync_error_003');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      let res = ss.readSync(new ArrayBuffer(4096), null);
+	  console.log('fileio_stream_read_sync_error_003 res: ' + res + 'FILE_CONTENT.length:' + FILE_CONTENT.length);
+	  ss.closeSync();
+      fileio.unlinkSync(fpath);
+	  expect(res === FILE_CONTENT.length).assertTrue();
+    } catch (e) {
+      console.log('fileio_stream_read_sync_error_003: ' + e.message + ', code: ' + e.code);
+	  expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stream_read_sync_error_004
+   * @tc.number SUB_DF_FILEIO_STREAM_READ_SYNC_ERROR_004
+   * @tc.desc   Test readSync() interface with undefined options.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stream_read_sync_error_004', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_stream_read_sync_error_004');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let ss = fileio.createStreamSync(fpath, 'r+');
+    try {
+      let readLen = ss.readSync(new ArrayBuffer(4096), undefined);
+      expect(readLen == FILE_CONTENT.length).assertTrue();
+      ss.closeSync();
+      fileio.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileio_stream_read_sync_error_004: ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
     }
   });

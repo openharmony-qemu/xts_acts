@@ -160,9 +160,9 @@ export default function inputMethodAuthorityJSUnit() {
          * @tc.desc   Test Indicates the input method which will hide softboard with Promise.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('inputmethodNomal_test_hideSoftKeyboard_static_002', Level.LEVEL2, async (done: () => void)  => {
+        it('inputmethodNomal_test_hideSoftKeyboard_static_002', Level.LEVEL0, async (done: () => void)  => {
             hilog.info(domain, tag, "====>*********inputmethodNomal_test_hideSoftKeyboard_static_002 start************");
             let inputMethodCtrl = inputMethod.getController()
             try {

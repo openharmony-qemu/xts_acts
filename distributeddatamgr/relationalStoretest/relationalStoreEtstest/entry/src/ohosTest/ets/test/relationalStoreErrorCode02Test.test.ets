@@ -159,5 +159,57 @@ export default function relationalStoreErrorCode02Test() {
       }
       console.log(TAG + "************* testRdbStoreAttach0001 end *************");
     });
+
+    /**
+     * @tc.name   relationalStoreTest004
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_getRdbStoreErrorAPITest_1000
+     * @tc.desc   getRdbStore success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('relationalStoreTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+      console.info(TAG + "************* relationalStoreTest004 start *************");
+      const STORE_CONFIG : relationalStore.StoreConfig= {
+        name: "rdbStore.db",
+        securityLevel: relationalStore.SecurityLevel.S1,
+        dataGroupId:"47589"
+      }
+      try{
+        await relationalStore.getRdbStore(context, STORE_CONFIG, (err: BusinessError) => {
+          console.log(TAG + `getRdbStore success`);
+          expect().assertFail();
+        })
+      }catch (e) {
+        console.error(TAG + `getRdbStore failed, code is ${e.code},message is ${e.message}`);
+        expect(e.code).assertEqual("14801002");
+      }
+      console.info(TAG + "************* relationalStoreTest004 end *************");
+    })
+
+    /**
+     * @tc.name   relationalStoreTest005
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_getRdbStoreErrorAPITest_1100
+     * @tc.desc   getRdbStore success promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('relationalStoreTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+      console.info(TAG + "************* relationalStoreTest005 start *************");
+      const STORE_CONFIG : relationalStore.StoreConfig= {
+        name: "rdbStore.db",
+        securityLevel: relationalStore.SecurityLevel.S1,
+        dataGroupId:"47589"
+      }
+      try{
+         rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+         expect().assertFail();
+      }catch (e) {
+        console.error(TAG + `getRdbStore failed, code is ${e.code},message is ${e.message}`);
+        expect(e.code).assertEqual("14801002");
+      }
+      console.info(TAG + "************* relationalStoreTest005 end *************");
+    })
   })
 }

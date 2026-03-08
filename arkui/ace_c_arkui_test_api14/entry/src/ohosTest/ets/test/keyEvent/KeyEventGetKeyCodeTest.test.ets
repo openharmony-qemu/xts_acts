@@ -26,6 +26,7 @@ export default function KeyEventGetKeyCodeTest() {
 
     beforeEach(async (done: Function) => {
       await Utils.pushPage(`keyEvent/${PAGE_TAG}`, done);
+      done();
     });
 
    

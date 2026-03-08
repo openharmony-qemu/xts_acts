@@ -33,6 +33,7 @@ struct GetEventUndefined {
 
   build() {
     Column() {
+      Text('typeNode.getEvent')
       Button('undefined').onClick(() => {
         let gridEvent: UIGridEvent | undefined = typeNode.getEvent(undefined, 'Grid');
         AppStorage.SetOrCreate('getEventGridUn', gridEvent);
@@ -48,6 +49,25 @@ struct GetEventUndefined {
 
       }).id('getEvent_undefined')
         .margin(10)
+
+      Button('null').onClick(() => {
+        let gridEvent: UIGridEvent | undefined = typeNode.getEvent(null, 'Grid');
+        AppStorage.SetOrCreate('getEventGridNull', gridEvent);
+        console.log('getEvent GridNull' + gridEvent)
+
+        let scrollEvent: UIScrollEvent | undefined = typeNode.getEvent(null, 'Scroll');
+        AppStorage.SetOrCreate('getEventScrollNull', scrollEvent);
+        console.log('getEvent ScrollNull' + scrollEvent)
+
+        let listEvent: UIListEvent | undefined = typeNode.getEvent(null, 'List');
+        AppStorage.SetOrCreate('getEventListNull', listEvent);
+        console.log('getEvent ListNull' + listEvent)
+
+        let waterFlowEvent: UIWaterFlowEvent | undefined = typeNode.getEvent(null, 'WaterFlow');
+        AppStorage.SetOrCreate('getEventWaterFlowNull', waterFlowEvent);
+        console.log('getEvent WaterFlowNull' + waterFlowEvent)
+
+      }).id('getEvent_null')
 
       NodeContainer(this.myNodeController)
     }.width('100%')

@@ -1351,5 +1351,928 @@ export default function PasteboardReturnvalue() {
       console.info('SUB_Pasteboard_Returnvalue_Abnormal_025 end');
       done();
     })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_026
+     * @tc.number SUB_Pasteboard_createData_001
+     * @tc.desc   Test createData with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_026 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData("", ARRAY_BUFFER);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + `createData with empty string error: ${err.message}`);
+        expect(err.code).assertEqual(String(401));
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_026 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_027
+     * @tc.number SUB_Pasteboard_createRecord_001
+     * @tc.desc   Test createRecord with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_027 start");
+      try {
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord("", ARRAY_BUFFER);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + `createRecord with empty string error: ${err.message}`);
+        expect(err.code).assertEqual(String(401));
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_027 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_028
+     * @tc.number SUB_Pasteboard_addEntry_001
+     * @tc.desc   Test addEntry with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_028 start");
+      try {
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        record.addEntry("", ARRAY_BUFFER);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + `addEntry with empty string error: ${err.message}`);
+        expect(err.code).assertEqual(String(401));
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_028 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_029
+     * @tc.number SUB_Pasteboard_getData_001
+     * @tc.desc   Test getData with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_029 start");
+      try {
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        record.addEntry(pasteboard.MIMETYPE_TEXT_URI, "file:///test.txt");
+        record.getData("").then(() => {
+          let text: string = record.toPlainText();
+          console.info(`Succeeded in converting to text. Text: ${text}`);
+          expect(record != null).assertTrue();
+          done();
+        })
+      } catch (err) {
+        console.error(TAG + `addEntry with empty string error: ${err.message}`);
+        expect(err.code).assertEqual(String(401));
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_029 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_030
+     * @tc.number SUB_Pasteboard_addRecord_001
+     * @tc.desc   Test addRecord with record object - verify htmlText property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_030 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_HTML, "<html>test</html>");
+        pasteData.addRecord(record);
+        let htmlText: string = pasteData.getPrimaryHtml();
+        expect(htmlText).assertEqual("<html>test</html>");
+      } catch (err) {
+        console.error(TAG + `addRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_030 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_031
+     * @tc.number SUB_Pasteboard_addRecord_002
+     * @tc.desc   Test addRecord with record object - verify mimeType property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_031 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_HTML, "<html>test</html>");
+        pasteData.addRecord(record);
+        let mimeType: string = pasteData.getPrimaryMimeType();
+        expect(mimeType).assertEqual(pasteboard.MIMETYPE_TEXT_HTML);
+      } catch (err) {
+        console.error(TAG + `addRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_031 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_032
+     * @tc.number SUB_Pasteboard_addRecord_003
+     * @tc.desc   Test addRecord with record object - verify plainText property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_032 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, "<html>test</html>");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        pasteData.addRecord(record);
+        let plainText: string = pasteData.getPrimaryText();
+        expect(plainText).assertEqual("hello");
+      } catch (err) {
+        console.error(TAG + `addRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_032 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_033
+     * @tc.number SUB_Pasteboard_addRecord_004
+     * @tc.desc   Test addRecord with record object - verify uri property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_033 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_URI, "file:///test.txt");
+        pasteData.addRecord(record);
+        let uri: string = pasteData.getPrimaryUri();
+        expect(uri).assertEqual("file:///test.txt");
+      } catch (err) {
+        console.error(TAG + `addRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_033 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_034
+     * @tc.number SUB_Pasteboard_addRecord_005
+     * @tc.desc   Test addRecord with record object - verify pixelMap isEditable true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_034 start");
+      try {
+        let buffer: ArrayBuffer = new ArrayBuffer(128);
+        let pixelMap: image.PixelMap = await image.createPixelMap(buffer, opt);
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
+        pasteData.addRecord(record);
+        let primaryPixelMap: image.PixelMap = pasteData.getPrimaryPixelMap();
+        expect(primaryPixelMap.isEditable).assertTrue();
+      } catch (err) {
+        console.error(TAG + `addRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_034 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_035
+     * @tc.number SUB_Pasteboard_addRecord_006
+     * @tc.desc   Test addRecord with record object - verify pixelMap isEditable false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_035 start");
+      try {
+        let buffer: ArrayBuffer = new ArrayBuffer(128);
+        let opts: image.InitializationOptions = {
+          size: new Sizes(),
+          pixelFormat: 3,
+          editable: false,
+          alphaType: 1,
+          scaleMode: 1
+        };
+        let pixelMap: image.PixelMap = await image.createPixelMap(buffer, opts);
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
+        pasteData.addRecord(record);
+        let primaryPixelMap: image.PixelMap = pasteData.getPrimaryPixelMap();
+        expect(primaryPixelMap.isEditable).assertFalse();
+      } catch (err) {
+        console.error(TAG + `addRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_035 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_036
+     * @tc.number SUB_Pasteboard_addRecord_008
+     * @tc.desc   Test addRecord with record object - verify pixelMap isStrideAlignment false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_036 start");
+      try {
+        let buffer: ArrayBuffer = new ArrayBuffer(128);
+        let pixelMap: image.PixelMap = await image.createPixelMap(buffer, opt);
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
+        pasteData.addRecord(record);
+        let primaryPixelMap: image.PixelMap = pasteData.getPrimaryPixelMap();
+        expect(primaryPixelMap.isStrideAlignment).assertFalse();
+      } catch (err) {
+        console.error(TAG + `addRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_036 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_037
+     * @tc.number SUB_Pasteboard_addRecord_009
+     * @tc.desc   Test addRecord(mimeType, value) with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_037 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        pasteData.addRecord("", ARRAY_BUFFER);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + `addRecord with empty string error: ${err.message}`);
+        expect(err.code).assertEqual(String(401));
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_037 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_038
+     * @tc.number SUB_Pasteboard_setProperty_004
+     * @tc.desc   Test setProperty with empty string for tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_038 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
+        prop.tag = "";
+        pasteData.setProperty(prop);
+        let newProp: pasteboard.PasteDataProperty = pasteData.getProperty();
+        expect(newProp.tag).assertEqual("");
+      } catch (err) {
+        console.error(TAG + `setProperty error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_038 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_039
+     * @tc.number SUB_Pasteboard_setProperty_006
+     * @tc.desc   Test setProperty with localOnly false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_039 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
+        prop.localOnly = false;
+        pasteData.setProperty(prop);
+        let newProp: pasteboard.PasteDataProperty = pasteData.getProperty();
+        expect(newProp.localOnly).assertFalse();
+      } catch (err) {
+        console.error(TAG + `setProperty error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_039 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_040
+     * @tc.number SUB_Pasteboard_setProperty_007
+     * @tc.desc   Test setProperty with shareOption INAPP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_040 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
+        prop.shareOption = pasteboard.ShareOption.INAPP;
+        pasteData.setProperty(prop);
+        let newProp: pasteboard.PasteDataProperty = pasteData.getProperty();
+        expect(newProp.shareOption).assertEqual(pasteboard.ShareOption.INAPP);
+      } catch (err) {
+        console.error(TAG + `setProperty error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_040 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_041
+     * @tc.number SUB_Pasteboard_setProperty_008
+     * @tc.desc   Test setProperty with shareOption LOCALDEVICE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_041 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
+        prop.shareOption = pasteboard.ShareOption.LOCALDEVICE;
+        pasteData.setProperty(prop);
+        let newProp: pasteboard.PasteDataProperty = pasteData.getProperty();
+        expect(newProp.shareOption).assertEqual(pasteboard.ShareOption.LOCALDEVICE);
+      } catch (err) {
+        console.error(TAG + `setProperty error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_041 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_042
+     * @tc.number SUB_Pasteboard_setProperty_009
+     * @tc.desc   Test setProperty with shareOption CROSSDEVICE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_042 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
+        prop.shareOption = pasteboard.ShareOption.CROSSDEVICE;
+        pasteData.setProperty(prop);
+        let newProp: pasteboard.PasteDataProperty = pasteData.getProperty();
+        expect(newProp.shareOption).assertEqual(pasteboard.ShareOption.CROSSDEVICE);
+      } catch (err) {
+        console.error(TAG + `setProperty error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_042 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_043
+     * @tc.number SUB_Pasteboard_hasType_001
+     * @tc.desc   Test hasType with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_043 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let hasdata = pasteData.hasType("");
+        expect(hasdata).assertFalse();
+      } catch (err) {
+        console.error(TAG + `setProperty error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_043 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_044
+     * @tc.number SUB_Pasteboard_replaceRecord_001
+     * @tc.desc   Test replaceRecord with record object - verify htmlText property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_044 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_HTML, "<html>test</html>");
+        pasteData.replaceRecord(0, record);
+        let htmlText: string = pasteData.getPrimaryHtml();
+        expect(htmlText).assertEqual("<html>test</html>");
+      } catch (err) {
+        console.error(TAG + `replaceRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_044 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_045
+     * @tc.number SUB_Pasteboard_replaceRecord_002
+     * @tc.desc   Test replaceRecord with record object - verify mimeType property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_045 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_HTML, "<html>test</html>");
+        pasteData.replaceRecord(0, record);
+        let mimeType: string = pasteData.getPrimaryMimeType();
+        expect(mimeType).assertEqual(pasteboard.MIMETYPE_TEXT_HTML);
+      } catch (err) {
+        console.error(TAG + `replaceRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_045 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_046
+     * @tc.number SUB_Pasteboard_replaceRecord_003
+     * @tc.desc   Test replaceRecord with record object - verify plainText property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_046 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, "<html>test</html>");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        pasteData.replaceRecord(0, record);
+        let plainText: string = pasteData.getPrimaryText();
+        expect(plainText).assertEqual("hello");
+      } catch (err) {
+        console.error(TAG + `replaceRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_046 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_047
+     * @tc.number SUB_Pasteboard_replaceRecord_004
+     * @tc.desc   Test replaceRecord with record object - verify uri property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_047 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_URI, "file:///test.txt");
+        pasteData.replaceRecord(0, record);
+        let uri: string = pasteData.getPrimaryUri();
+        expect(uri).assertEqual("file:///test.txt");
+      } catch (err) {
+        console.error(TAG + `replaceRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_047 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_048
+     * @tc.number SUB_Pasteboard_replaceRecord_005
+     * @tc.desc   Test replaceRecord with record object - verify pixelMap isEditable true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_048 start");
+      try {
+        let buffer: ArrayBuffer = new ArrayBuffer(128);
+        let pixelMap: image.PixelMap = await image.createPixelMap(buffer, opt);
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
+        pasteData.replaceRecord(0, record);
+        let primaryPixelMap: image.PixelMap = pasteData.getPrimaryPixelMap();
+        expect(primaryPixelMap.isEditable).assertTrue();
+      } catch (err) {
+        console.error(TAG + `replaceRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_048 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_049
+     * @tc.number SUB_Pasteboard_replaceRecord_006
+     * @tc.desc   Test replaceRecord with record object - verify pixelMap isEditable false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_049 start");
+      try {
+        let buffer: ArrayBuffer = new ArrayBuffer(128);
+        let opts: image.InitializationOptions = {
+          size: new Sizes(),
+          pixelFormat: 3,
+          editable: false,
+          alphaType: 1,
+          scaleMode: 1
+        };
+        let pixelMap: image.PixelMap = await image.createPixelMap(buffer, opts);
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
+        pasteData.replaceRecord(0, record);
+        let primaryPixelMap: image.PixelMap = pasteData.getPrimaryPixelMap();
+        expect(primaryPixelMap.isEditable).assertFalse();
+      } catch (err) {
+        console.error(TAG + `replaceRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_049 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_050
+     * @tc.number SUB_Pasteboard_replaceRecord_008
+     * @tc.desc   Test replaceRecord with record object - verify pixelMap isStrideAlignment false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_050 start");
+      try {
+        let buffer: ArrayBuffer = new ArrayBuffer(128);
+        let pixelMap: image.PixelMap = await image.createPixelMap(buffer, opt);
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
+        pasteData.replaceRecord(0, record);
+        let primaryPixelMap: image.PixelMap = pasteData.getPrimaryPixelMap();
+        expect(primaryPixelMap.isStrideAlignment).assertFalse();
+      } catch (err) {
+        console.error(TAG + `replaceRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_050 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_051
+     * @tc.number SUB_Pasteboard_hasDataType_001
+     * @tc.desc   Test hasDataType with empty string for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_051 start");
+      try {
+        let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+        let hasdatat = systemPasteboard.hasDataType("");
+        expect(hasdatat).assertFalse();
+      } catch (err) {
+        console.error(TAG + `hasDataType with empty string error: ${err.message}`);
+        expect(err.code).assertEqual(String(401));
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_051 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_052
+     * @tc.number SUB_Pasteboard_detectPatterns_001
+     * @tc.desc   Test detectPatterns with empty array for first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_052 start");
+      try {
+        let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+        await systemPasteboard.detectPatterns([]).then((result: Array<pasteboard.Pattern>) => {
+          expect(result.length).assertEqual(0);
+        })
+      } catch (err) {
+        console.error(TAG + `detectPatterns error: ${err.message}`);
+        expect(err.code).assertEqual(String(401));
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_052 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_053
+     * @tc.number SUB_Pasteboard_createWantRecord_001
+     * @tc.desc   Test createWantRecord return value - verify htmlText property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_053 start");
+      try {
+        let record: pasteboard.PasteDataRecord = pasteboard.createWantRecord(WANT);
+        expect(record != null).assertTrue();
+        expect(record.htmlText).assertEqual(undefined);
+      } catch (err) {
+        console.error(TAG + `createWantRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_053 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_054
+     * @tc.number SUB_Pasteboard_createWantRecord_002
+     * @tc.desc   Test createWantRecord return value - verify want property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_054 start");
+      try {
+        let record: pasteboard.PasteDataRecord = pasteboard.createWantRecord(WANT);
+        expect(record != null).assertTrue();
+        expect(record.want != null).assertTrue();
+        expect(record.want.bundleName).assertEqual(WANT.bundleName);
+      } catch (err) {
+        console.error(TAG + `createWantRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_054 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_055
+     * @tc.number SUB_Pasteboard_createPlainTextRecord_001
+     * @tc.desc   Test createPlainTextRecord return value - verify htmlText property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_055 start");
+      try {
+        let text: string = "Hello World";
+        let record: pasteboard.PasteDataRecord = pasteboard.createPlainTextRecord(text);
+        expect(record != null).assertTrue();
+        expect(record.htmlText).assertEqual(undefined);
+      } catch (err) {
+        console.error(TAG + `createPlainTextRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_055 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_056
+     * @tc.number SUB_Pasteboard_createPlainTextRecord_002
+     * @tc.desc   Test createPlainTextRecord return value - verify want property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_056 start");
+      try {
+        let text: string = "Hello World";
+        let record: pasteboard.PasteDataRecord = pasteboard.createPlainTextRecord(text);
+        expect(record != null).assertTrue();
+        expect(record.want == undefined).assertTrue();
+      } catch (err) {
+        console.error(TAG + `createPlainTextRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_056 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_057
+     * @tc.number SUB_Pasteboard_createUriRecord_001
+     * @tc.desc   Test createUriRecord return value - verify htmlText property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_057 start");
+      try {
+        let uri: string = "file:///data/test.txt";
+        let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord(uri);
+        expect(record != null).assertTrue();
+        expect(record.htmlText).assertEqual(undefined);
+      } catch (err) {
+        console.error(TAG + `createUriRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_057 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_058
+     * @tc.number SUB_Pasteboard_createUriRecord_002
+     * @tc.desc   Test createUriRecord return value - verify want property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_058 start");
+      try {
+        let uri: string = "file:///data/test.txt";
+        let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord(uri);
+        expect(record != null).assertTrue();
+        expect(record.want == undefined).assertTrue();
+      } catch (err) {
+        console.error(TAG + `createUriRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_058 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_059
+     * @tc.number SUB_Pasteboard_getPrimaryPixelMap_001
+     * @tc.desc   Test getPrimaryPixelMap return value - verify isEditable property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_059 start");
+      try {
+        let buffer: ArrayBuffer = new ArrayBuffer(128);
+        let pixelMap: image.PixelMap = await image.createPixelMap(buffer, opt);
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
+        let primaryPixelMap: image.PixelMap = pasteData.getPrimaryPixelMap();
+        expect(primaryPixelMap != null).assertTrue();
+        expect(primaryPixelMap.isEditable).assertTrue();
+      } catch (err) {
+        console.error(TAG + `getPrimaryPixelMap error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_059 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_060
+     * @tc.number SUB_Pasteboard_getPrimaryPixelMap_002
+     * @tc.desc   Test getPrimaryPixelMap return value - verify isStrideAlignment property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_060 start");
+      try {
+        let buffer: ArrayBuffer = new ArrayBuffer(128);
+        let pixelMap: image.PixelMap = await image.createPixelMap(buffer, opt);
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
+        let primaryPixelMap: image.PixelMap = pasteData.getPrimaryPixelMap();
+        expect(primaryPixelMap != null).assertTrue();
+        expect(primaryPixelMap.isStrideAlignment).assertFalse();
+      } catch (err) {
+        console.error(TAG + `getPrimaryPixelMap error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_060 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_061
+     * @tc.number SUB_Pasteboard_getProperty_001
+     * @tc.desc   Test getProperty return value - verify additions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_061 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
+        expect(prop != null).assertTrue();
+        expect(prop.additions != null).assertTrue();
+      } catch (err) {
+        console.error(TAG + `getProperty error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_061 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_062
+     * @tc.number SUB_Pasteboard_getRecord_001
+     * @tc.desc   Test getRecord return value - verify htmlText property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_062 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteData.getRecord(0);
+        expect(record != null).assertTrue();
+        expect(record.htmlText).assertEqual(undefined);
+      } catch (err) {
+        console.error(TAG + `getRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_062 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Returnvalue_Abnormal_063
+     * @tc.number SUB_Pasteboard_getRecord_002
+     * @tc.desc   Test getRecord return value - verify want property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Returnvalue_Abnormal_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_063 start");
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+        let record: pasteboard.PasteDataRecord = pasteData.getRecord(0);
+        expect(record != null).assertTrue();
+        expect(record.want == undefined).assertTrue();
+      } catch (err) {
+        console.error(TAG + `getRecord error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info("SUB_Pasteboard_Returnvalue_Abnormal_063 end");
+      done();
+    })
   });
 }

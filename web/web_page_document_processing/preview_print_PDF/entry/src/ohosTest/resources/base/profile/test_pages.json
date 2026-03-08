@@ -5,7 +5,8 @@
     "testability/pages/WebViewOnPdfLoadEvent",
     "testability/pages/WebViewOnPdfLoadResult",
     "testability/pages/CreatePdfCallbackError",
-    "testability/pages/CreatePdfPromiseError"
+    "testability/pages/CreatePdfPromiseError",
+    "testability/pages/WebViewControllerCreateWebPrintDocumentAdapter"
   ]
 }
 

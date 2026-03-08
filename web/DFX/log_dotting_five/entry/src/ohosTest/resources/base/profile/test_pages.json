@@ -10,7 +10,8 @@
     "testability/pages/webViewSdkSchemeHandler",
     "testability/pages/precompileJavaScriptTest",
     "testability/pages/WebDownloadEnumTest2",
-    "testability/pages/EnableBackForwardCache"
+    "testability/pages/EnableBackForwardCache",
+    "testability/pages/PathAllowingUniversalAccess"
   ]
 }
 

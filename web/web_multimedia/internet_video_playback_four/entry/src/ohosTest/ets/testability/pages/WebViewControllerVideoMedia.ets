@@ -513,7 +513,17 @@ struct WebViewControllerVideoMedia {
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("playVideo()");
-                  await Utils.sleep(2000);
+                  let nums=1;
+                  let tryTime=200
+                  while(nums < tryTime) {
+                    await Utils.sleep(1000);
+                    //播放状态
+                    if (this.controller.getMediaPlaybackState() == 1) {
+                      break;
+                    }
+                    console.log('CloseAllMediaPresentations0100---' + nums)
+                    nums++;
+                  }
                   this.controller.closeAllMediaPresentations();
                   await Utils.sleep(2000);
                   this.isPageEnd = -1;

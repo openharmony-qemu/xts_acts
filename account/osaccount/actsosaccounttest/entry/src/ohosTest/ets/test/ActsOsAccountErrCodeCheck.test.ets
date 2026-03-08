@@ -66,6 +66,7 @@ export default function ActsOsAccountErrCodeCheck() {
         console.info(tag + "start checkOsAccountActivated");
         let data = await osAccountManager.checkOsAccountActivated(undefined);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -124,6 +125,7 @@ export default function ActsOsAccountErrCodeCheck() {
         console.info(tag + "start checkOsAccountConstraintEnabled");
         let data = await osAccountManager.checkOsAccountConstraintEnabled(undefined, "");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -182,6 +184,7 @@ export default function ActsOsAccountErrCodeCheck() {
         console.info(tag + "start checkOsAccountConstraintEnabled");
         let data = await osAccountManager.checkOsAccountConstraintEnabled(100, null);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -342,6 +345,7 @@ export default function ActsOsAccountErrCodeCheck() {
         console.info(tag + "start getOsAccountLocalIdForDomain");
         let data = await osAccountManager.getOsAccountLocalIdForDomain(null);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -400,6 +404,7 @@ export default function ActsOsAccountErrCodeCheck() {
         console.info(tag + "start getOsAccountConstraints");
         let data = await osAccountManager.getOsAccountConstraints(undefined);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -473,6 +478,7 @@ export default function ActsOsAccountErrCodeCheck() {
       console.info(tag + "start getOsAccountType");
       try {
         osAccountManager.getOsAccountType(undefined);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -498,6 +504,7 @@ export default function ActsOsAccountErrCodeCheck() {
       console.info(tag + "start getOsAccountType");
       try {
         osAccountManager.getOsAccountType(null);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -604,6 +611,7 @@ export default function ActsOsAccountErrCodeCheck() {
         console.info(tag + "start checkOsAccountConstraintEnabled");
         let data = await osAccountManager.checkOsAccountConstraintEnabled(101, "");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -712,6 +720,7 @@ export default function ActsOsAccountErrCodeCheck() {
         console.info(tag + "start getOsAccountLocalIdForDomain");
         let data = await osAccountManager.getOsAccountLocalIdForDomain(info);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -746,6 +755,7 @@ export default function ActsOsAccountErrCodeCheck() {
         console.info(tag + "start getOsAccountLocalIdForDomain");
         let data = await osAccountManager.getOsAccountLocalIdForDomain(info);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -804,6 +814,7 @@ export default function ActsOsAccountErrCodeCheck() {
         console.info(tag + "start getOsAccountLocalIdForSerialNumber");
         let data = await osAccountManager.getOsAccountLocalIdForSerialNumber(0.1);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {

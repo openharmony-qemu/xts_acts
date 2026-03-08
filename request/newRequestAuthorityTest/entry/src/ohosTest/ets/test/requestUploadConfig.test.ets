@@ -13,12 +13,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, beforeEach, Level } from '@ohos/hypium';
 import request from '@ohos.request';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import fs from  '@ohos.file.fs';
 import Server from '../common/Server'
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestUploadConfigTest() {
   describe('requestUploadConfigTest', () => {
@@ -85,6 +86,16 @@ export default function requestUploadConfigTest() {
         console.info('====>beforeAll catch err:'+JSON.stringify(err))
         done();
       }
+    });
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
     });
 
     /**
@@ -890,6 +901,580 @@ export default function requestUploadConfigTest() {
         console.info("====>SUB_Request_Download_on_faultOccur_1000 start success");
       } catch (err) {
         console.info("====>SUB_Request_Download_on_faultOccur_1000 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Promise_0100
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Promise_0100
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Promise_0100', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Promise_0100 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0100 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          try {
+            let filter: request.agent.Filter = {
+              action: request.agent.Action.UPLOAD,
+              mode: request.agent.Mode.BACKGROUND,
+              state: request.agent.State.WAITING
+            };
+            let data = await request.agent.search(filter);
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0100 search data is:' + JSON.stringify(data));
+            expect(data.length >= 0).assertTrue();
+            done();
+          } catch (err){
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0100 create throw_err:' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          };
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0100 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0100 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Promise_0200
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Promise_0200
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Promise_0200', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Promise_0200 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0200 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          try {
+            let filter: request.agent.Filter = {
+              action: request.agent.Action.UPLOAD,
+              mode: request.agent.Mode.BACKGROUND,
+              state: request.agent.State.RUNNING
+            };
+            let data = await request.agent.search(filter);
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0200 search data is:' + JSON.stringify(data));
+            expect(data.length >= 0).assertTrue();
+            done();
+          } catch (err){
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0200 create throw_err:' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          };
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0200 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0200 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Promise_0300
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Promise_0300
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Promise_0300', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Promise_0300 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0300 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          try {
+            let filter: request.agent.Filter = {
+              action: request.agent.Action.UPLOAD,
+              mode: request.agent.Mode.BACKGROUND,
+              state: request.agent.State.RETRYING
+            };
+            let data = await request.agent.search(filter);
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0300 search data is:' + JSON.stringify(data));
+            expect(data.length >= 0).assertTrue();
+            done();
+          } catch (err){
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0300 create throw_err:' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          };
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0300 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0300 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Promise_0400
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Promise_0400
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Promise_0400', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Promise_0400 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0400 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          try {
+            let filter: request.agent.Filter = {
+              action: request.agent.Action.UPLOAD,
+              mode: request.agent.Mode.BACKGROUND,
+              state: request.agent.State.PAUSED
+            };
+            let data = await request.agent.search(filter);
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0400 search data is:' + JSON.stringify(data));
+            expect(data.length >= 0).assertTrue();
+            done();
+          } catch (err){
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0400 create throw_err:' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          };
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0400 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0400 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Promise_0500
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Promise_0500
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Promise_0500', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Promise_0500 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0500 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          try {
+            let filter: request.agent.Filter = {
+              action: request.agent.Action.UPLOAD,
+              mode: request.agent.Mode.BACKGROUND,
+              state: request.agent.State.STOPPED
+            };
+            let data = await request.agent.search(filter);
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0500 search data is:' + JSON.stringify(data));
+            expect(data.length >= 0).assertTrue();
+            done();
+          } catch (err){
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0500 create throw_err:' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          };
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0500 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0500 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Promise_0600
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Promise_0600
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Promise_0600', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Promise_0600 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0600 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          try {
+            let filter: request.agent.Filter = {
+              action: request.agent.Action.UPLOAD,
+              mode: request.agent.Mode.BACKGROUND,
+              state: request.agent.State.FAILED
+            };
+            let data = await request.agent.search(filter);
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0600 search data is:' + JSON.stringify(data));
+            expect(data.length >= 0).assertTrue();
+            done();
+          } catch (err){
+            console.info('====>SUB_REQUEST_Agent_UploadFilter_Promise_0600 create throw_err:' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          };
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0600 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Promise_0600 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Callback_0100
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Callback_0100
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Callback_0100', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Callback_0100 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0100 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          let filter: request.agent.Filter = {
+            action: request.agent.Action.UPLOAD,
+            mode: request.agent.Mode.BACKGROUND,
+            state: request.agent.State.INITIALIZED
+          };
+          request.agent.search(filter, (err, data)=>{
+            try{
+              if(err){
+                console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0100 err:' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+              };
+              console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0100 search data is:' + JSON.stringify(data));
+              expect(data.length >= 0).assertTrue();
+              done();
+            }catch(err){
+              console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0100 search throw_err:' + JSON.stringify(err));
+              done();
+            };
+          });
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0100 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0100 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Callback_0200
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Callback_0200
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Callback_0200', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Callback_0200 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0200 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          let filter: request.agent.Filter = {
+            action: request.agent.Action.UPLOAD,
+            mode: request.agent.Mode.BACKGROUND,
+            state: request.agent.State.WAITING
+          };
+          request.agent.search(filter, (err, data)=>{
+            try{
+              if(err){
+                console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0200 err:' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+              };
+              console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0200 search data is:' + JSON.stringify(data));
+              expect(data.length >= 0).assertTrue();
+              done();
+            }catch(err){
+              console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0200 search throw_err:' + JSON.stringify(err));
+              done();
+            };
+          });
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0200 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0200 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Callback_0300
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Callback_0300
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Callback_0300', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Callback_0300 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0300 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          let filter: request.agent.Filter = {
+            action: request.agent.Action.UPLOAD,
+            mode: request.agent.Mode.BACKGROUND,
+            state: request.agent.State.RETRYING
+          };
+          request.agent.search(filter, (err, data)=>{
+            try{
+              if(err){
+                console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0300 err:' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+              };
+              console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0300 search data is:' + JSON.stringify(data));
+              expect(data.length >= 0).assertTrue();
+              done();
+            }catch(err){
+              console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0300 search throw_err:' + JSON.stringify(err));
+              done();
+            };
+          });
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0300 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0300 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Callback_0400
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Callback_0400
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Callback_0400', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Callback_0400 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0400 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          let filter: request.agent.Filter = {
+            action: request.agent.Action.UPLOAD,
+            mode: request.agent.Mode.BACKGROUND,
+            state: request.agent.State.STOPPED
+          };
+          request.agent.search(filter, (err, data)=>{
+            try{
+              if(err){
+                console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0400 err:' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+              };
+              console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0400 search data is:' + JSON.stringify(data));
+              expect(data.length >= 0).assertTrue();
+              done();
+            }catch(err){
+              console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0400 search throw_err:' + JSON.stringify(err));
+              done();
+            };
+          });
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0400 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0400 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadFilter_Callback_0500
+     * @tc.number SUB_REQUEST_Agent_UploadFilter_Callback_0500
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_Agent_UploadFilter_Callback_0500', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_Agent_UploadFilter_Callback_0500 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: 'cacheNormal.txt',
+          filename: 'MultiLevel.txt'
+        }
+      }]
+      console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0500 config: " + JSON.stringify(config));
+      try {
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          task.off('completed', on_completedCallback);
+          let filter: request.agent.Filter = {
+            action: request.agent.Action.UPLOAD,
+            state: request.agent.State.COMPLETED
+          };
+          request.agent.search(filter, (err, data)=>{
+            try{
+              if(err){
+                console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0500 err:' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+              };
+              console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0500 search data is:' + JSON.stringify(data));
+              expect(data.includes(task.tid)).assertEqual(true);
+              done();
+            }catch(err){
+              console.info('====>SUB_REQUEST_Agent_UploadFilter_Callback_0500 search throw_err:' + JSON.stringify(err));
+              done();
+            };
+          });
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, uploadConfig);
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0500 start success");
+      } catch (err) {
+        console.info("====>SUB_REQUEST_Agent_UploadFilter_Callback_0500 create catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

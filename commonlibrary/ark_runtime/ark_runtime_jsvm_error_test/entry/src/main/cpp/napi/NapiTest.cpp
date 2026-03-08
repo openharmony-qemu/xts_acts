@@ -878,6 +878,8 @@ static FunctionDef g_jsvmFunctions7[] = {
     {"JsvmKeyAllPropertiesCode", JsvmKeyAllPropertiesCode},
     {"JsvmKeySkipStringsCode", JsvmKeySkipStringsCode},
     {"JsvmCompileModeDefaultCode", JsvmCompileModeDefaultCode},
+    {"JsvmFixJSVMExpectedTest", JsvmFixJSVMExpectedTest},
+    {"JsvmApiEnumStructTestCheck", JsvmApiEnumStructTestCheck},
     {"JsvmCompileModeConsumeCodeCode", JsvmCompileModeConsumeCodeCode},
     {"JsvmCompileModeProduceCompileProfileCode", JsvmCompileModeProduceCompileProfileCode},
     {"JsvmCompileModeConsumeCompileProfileCode", JsvmCompileModeConsumeCompileProfileCode},

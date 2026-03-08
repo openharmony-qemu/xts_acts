@@ -222,7 +222,7 @@ export default function window_test() {
                 expect(wnd != null).assertTrue();
                 wnd.getAvoidArea(window.AvoidAreaType.TYPE_CUTOUT).then((data) => {
                     console.log(msgStr + ' wnd.getAvoidArea success, data :' + JSON.stringify(data));
-                    expect(!data.visible).assertTrue();
+                    expect(data.visible).assertEqual(false);
                     expect(data.rightRect != null).assertTrue();
                     expect(data.topRect != null).assertTrue();
                     expect(data.bottomRect != null).assertTrue();
@@ -1028,7 +1028,7 @@ export default function window_test() {
                         expect(data != null).assertTrue();
                         data.on('windowSizeChange', windowSizeChangeCallback);
                         data.off('windowSizeChange');
-                        expect(true).assertTrue()
+                        
                         done()
                     }
                 })
@@ -4024,7 +4024,7 @@ export default function window_test() {
             } catch (error) {
                 console.log('www data Failed to obtain the window limits of window. Cause: ' + JSON.stringify(error));
                 if (error.code == 801) {
-                    expect(true).assertTrue()
+                    
                     done()
                 } else {
                     expect().assertFail();
@@ -4062,7 +4062,7 @@ export default function window_test() {
                                         expect().assertFail()
                                     }
                                     console.info(msgStr + 'Succeeded in minimizing the window.');
-                                    expect(true).assertTrue()
+                                    
                                     wnd.destroy((err) => {
                                         if (err.code) {
                                             console.error(msgStr + ' Failed to destroy the window. err:' + JSON.stringify(err));
@@ -4130,7 +4130,7 @@ export default function window_test() {
                                 let promise = wnd.minimize();
                                 promise.then(() => {
                                     console.info(msgStr + 'Succeeded in minimizing the window.');
-                                    expect(true).assertTrue()
+                                    
                                     wnd.destroy((err) => {
                                         if (err.code) {
                                             console.error(msgStr + ' Failed to destroy the window. err:' + JSON.stringify(err));
@@ -4210,21 +4210,21 @@ export default function window_test() {
                     expect().assertFail()
                     done();
                 } else {
-                    expect(true).assertTrue()
+                    
                     console.log(msgStr + "failed to test enum value" + JSON.stringify(err))
                     done()
                 }
             }
 
         })
-    /**
-    * @tc.name testCreateWindow_callback_TYPE_APP
-    * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1220
-    * @tc.desc test the enum value of WindowStatusType
-    * @tc.type FUNCTION
-    * @tc.size MEDIUMTEST
-    * @tc.level LEVEL2
-    */
+        /**
+        * @tc.name testCreateWindow_callback_TYPE_APP
+        * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1220
+        * @tc.desc test the enum value of WindowStatusType
+        * @tc.type FUNCTION
+        * @tc.size MEDIUMTEST
+        * @tc.level LEVEL2
+        */
         it('testCreateWindow_callback_TYPE_APP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'testCreateWindow_callback_TYPE_APP';
             console.log(msgStr + ' begin');
@@ -4236,7 +4236,7 @@ export default function window_test() {
                 window.createWindow(config, async (err, data) => {
                     const errCode = err.code;
                     if (errCode) {
-                        console.error(msgStr + `Failed to create the window.Cause code: ${ err.code }, message: ${ err.message }`);
+                        console.error(msgStr + `Failed to create the window.Cause code: ${err.code}, message: ${err.message}`);
                         expect(false).assertTrue();
                         done();
                     } else {
@@ -4274,8 +4274,36 @@ export default function window_test() {
                 window.createWindow(config).then(async (data) => {
                     console.info(msgStr + 'Succeeded in creating the window. Data: ' + JSON.stringify(data));
                     expect(data !== null).assertTrue();
-                    await data.destroyWindow();
-                    done();
+                    data.getProperties(async (err, Properties) => {
+                        const errCode = err.code;
+                        if (errCode) {
+                            console.error(msgStr + `Failed to obtain the window properties1. Cause code: ${err.code}, message: ${err.message}`);
+                            await data.destroyWindow();
+                            expect(false).assertTrue();
+                            done();
+                        } else {
+                            console.info(msgStr + 'Succeeded in obtaining the window properties1. Data: ' + JSON.stringify(Properties));
+                            expect(Properties.type).assertEqual(window.WindowType.TYPE_APP)
+                            let promise = data.getProperties();
+                            promise.then(async (Properties) => {
+                                console.info(msgStr + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(Properties));
+                                expect(Properties.type).assertEqual(window.WindowType.TYPE_APP);
+                                let properties = data.getWindowProperties();
+                                console.info(msgStr + 'Succeeded in obtaining the window properties3. Data: ' + JSON.stringify(properties));
+                                expect(properties.type).assertEqual(window.WindowType.TYPE_APP);
+                                await data.destroyWindow();
+                                done();
+                            }).catch(async (err) => {
+                                console.error(msgStr + `Failed to obtain the window properties2. Cause code: ${err.code}, message: ${err.message}`);
+                                await data.destroyWindow();
+                                expect(false).assertTrue();
+                                done();
+                            });
+                            
+                        }
+
+                    });
+
                 }).catch((err) => {
                     console.error(msgStr + `Failed to create the window. Cause code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
@@ -4300,27 +4328,27 @@ export default function window_test() {
      * @tc.level  LEVEL3
      */
         it('testGetTopWindow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-          let msgStr = 'testGetTopWindow_0100';
-          console.log(msgStr + ' begin');
-          console.log(msgStr + 'begin.');
-          try {
-            await window.getTopWindow(null);
-            console.info(msgStr + 'Succeeded');
-          } catch (exception) {
-            console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
-            expect().assertFail();
-            done();
-          }
-    
-          try {
-            await window.getTopWindow(undefined);
-            console.info(msgStr + 'Succeeded2.');
-            done();
-          } catch (exception) {
-            console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
-            expect().assertFail();
-            done()
-          }
+            let msgStr = 'testGetTopWindow_0100';
+            console.log(msgStr + ' begin');
+            console.log(msgStr + 'begin.');
+            try {
+                await window.getTopWindow(null);
+                console.info(msgStr + 'Succeeded');
+            } catch (exception) {
+                console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + `message:${exception.message}`);
+                expect().assertFail();
+                done();
+            }
+
+            try {
+                await window.getTopWindow(undefined);
+                console.info(msgStr + 'Succeeded2.');
+                done();
+            } catch (exception) {
+                console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code) + `message:${exception.message}`);
+                expect().assertFail();
+                done()
+            }
         })
 
     })

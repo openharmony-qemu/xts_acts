@@ -20,7 +20,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 export default function ShapeNullUndefinedTest() {
   describe('ShapeNullUndefinedTest', () => {
     beforeAll(async (done: Function) => {
-      console.info("ShapeResourceTest beforeEach start");
+      console.info("ShapeNullUndefinedTest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Shape/ShapeNullUndefined",
       }

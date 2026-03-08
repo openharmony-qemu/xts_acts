@@ -34,7 +34,7 @@ export function initReadfile(fpath: string) {
   for (let times = 0; times < 1; times++){
     let charCode = 'a'.charCodeAt(0);
     for(let i = 0; i < 26; i++){
-      arr_names.fill(String.fromCharCode(charCode));
+      arr_names.fill(String.fromCharCode(charCode.toInt()));
       hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_000 earr_names:' + arr_names);
       fs.writeSync(file.fd, arr_names.join(''));
       charCode++;

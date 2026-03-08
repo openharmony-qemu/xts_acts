@@ -14,11 +14,11 @@
  */
 import { beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { CheckSoftware, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils.ets';
-import { GetEd25519GenerateOptions, GetX25519GenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
-import { GetAttestKeyOptions } from './utils/huks/AttestKeyUtils.ets';
-import { GetImportPubKeyOptions } from './utils/huks/ImportKeyUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
+import { CheckSoftware, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetEd25519GenerateOptions, GetX25519GenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { GetAttestKeyOptions } from './utils/huks/AttestKeyUtils';
+import { GetImportPubKeyOptions } from './utils/huks/ImportKeyUtils';
+import { Logger } from './utils/common/Logger';
 import { CheckWifiInfo } from './utils/common/NetworkUtils';
 
 

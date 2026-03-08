@@ -153,7 +153,16 @@ static napi_value ffrt_rwlockattr_tTest(napi_env env, napi_callback_info info)
     ffrt_rwlock_t* rwlock;
     ffrt_rwlockattr_t attr;
     int result = ffrt_rwlock_init(rwlock, &attr);
-    napi_create_int32(env, result == (ffrt_error || ffrt_error_nomem || ffrt_error_timedout) ? 1 : 0, &resultEnd);
+    if (result == ffrt_error) {
+        result = ERR_CODE_1;
+    } else if (result == ffrt_error_nomem) {
+        result = ERR_CODE_2;
+    } else if (result == ffrt_error_timedout) {
+        result = ERR_CODE_3;
+    } else {
+        result = 0;
+    }
+    napi_create_int32(env, result, &resultEnd);
     return resultEnd;
 }
 

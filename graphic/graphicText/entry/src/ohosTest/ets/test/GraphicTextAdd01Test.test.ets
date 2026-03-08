@@ -595,7 +595,7 @@ export default function GraphicTextAdd01Test() {
           done();
         } catch (err) {
           console.info(`${LOG_PREFIX} loadFontWithCheckPathEmptyString401 `, JSON.stringify(err));
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(25900001);
           done();
         }
       });

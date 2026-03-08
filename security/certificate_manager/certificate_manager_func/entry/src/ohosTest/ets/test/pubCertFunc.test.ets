@@ -117,6 +117,20 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       catch (err) {
         expect(err.code).assertEqual(401);
       }
+      try {
+        await certManager.getPublicCertificate(null);
+        expect(null).assertFail();
+      }
+      catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        await certManager.getPublicCertificate(undefined);
+        expect(null).assertFail();
+      }
+      catch (err) {
+        expect(err.code).assertEqual(401);
+      }
       done();
     });
 
@@ -150,6 +164,20 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     it('SUB_Security_CertManager_PubCertJsApi_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await certManager.isAuthorizedApp('');
+        expect(null).assertFail();
+      }
+      catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        await certManager.isAuthorizedApp(null);
+        expect(null).assertFail();
+      }
+      catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        await certManager.isAuthorizedApp(undefined);
         expect(null).assertFail();
       }
       catch (err) {
@@ -191,6 +219,71 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let keystorePwd: string = '123456';
       let certAlias: string = 'appCertAliasDemoRsa';
       let keyUri: string | undefined;
+
+      try{
+        await certManager.installPrivateCertificate(null, keystorePwd, certAlias);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(undefined, keystorePwd, certAlias);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, "", certAlias);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INCORRECT_FORMAT);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, null, certAlias);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, undefined, certAlias);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, "");
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, null);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, undefined);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
       await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias).then((cmResult: certManager.CMResult) => {
         expect(cmResult != null).assertTrue();
         console.warn("SUB_Security_CertManager_GetPriCertJsApi_Func_0010[Promise] cmResult.uri: " + cmResult.uri);
@@ -314,7 +407,6 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
-
         try {
           await certManagerDialog.openCertificateManagerDialog(context, null);
           expect(null).assertFail();
@@ -322,7 +414,20 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
-
+        try {
+          await certManagerDialog.openCertificateManagerDialog(undefined, certManagerDialog.CertificateDialogPageType.PAGE_MAIN);
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+        try {
+          await certManagerDialog.openCertificateManagerDialog(context, undefined);
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
         try {
           await certManagerDialog.openCertificateManagerDialog(context, 9);
           expect(null).assertFail();
@@ -393,7 +498,39 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
       }
-
+      try {
+        await certManagerDialog.openInstallCertificateDialog(undefined, certificateType, certificateScope, caCert)
+        expect(null).assertFail()
+      } catch (err) {
+        if (err.code == 29700004) {
+          done();
+        } else {
+          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+      }
+      try {
+        await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, null)
+        expect(null).assertFail()
+      } catch (err) {
+        if (err.code == 29700004) {
+          done();
+        } else {
+          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+      }
+      try {
+        await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, undefined)
+        expect(null).assertFail()
+      } catch (err) {
+        if (err.code == 29700004) {
+          done();
+        } else {
+          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+      }
       try {
         await certManagerDialog.openInstallCertificateDialog(context, null, certificateScope, caCert)
         expect(null).assertFail()
@@ -417,21 +554,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
       }
-
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, null, caCert)
-        expect(null).assertFail()
-      } catch (err) {
-        if (err.code == 29700004) {
-          done();
-        } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
-        }
-      }
-
-      try {
-        await certManagerDialog.openInstallCertificateDialog(context, certificateType, 3, caCert)
         expect(null).assertFail()
       } catch (err) {
         if (err.code == 29700004) {

@@ -521,5 +521,67 @@ describe('fileio_ftruncate', function () {
         done();
  	    }
  	   });
+
+    /**
+ 	    * @tc.name   fileio_test_ftruncate_callback_error_003
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_CALLBACK_ERROR_003
+ 	    * @tc.desc   Test ftruncate() interface with null fd. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_callback_error_003', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileio_test_ftruncate_callback_error_003');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	    let fd = fileio.openSync(fpath, 0o2);
+      try {
+ 	     fileio.ftruncate(fd, null, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_test_ftruncate_callback_error_003: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'Invalid len').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_test_ftruncate_callback_error_003 res');
+       done();
+      } catch (err) {
+        console.log('fileio_test_ftruncate_callback_error_003 err: ' + err.message + ', code: ' + err.code);
+        fileio.closeSync(fd);
+ 	      fileio.unlinkSync(fpath);
+        expect(err.message == 'Invalid len').assertTrue();
+        done();
+ 	    }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_callback_error_004
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_CALLBACK_ERROR_004
+ 	    * @tc.desc   Test ftruncate() interface with undefined fd. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_callback_error_004', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileio_test_ftruncate_callback_error_004');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	    let fd = fileio.openSync(fpath, 0o2);
+      try {
+ 	     fileio.ftruncate(fd, undefined, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_test_ftruncate_callback_error_004: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'Invalid len').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_test_ftruncate_callback_error_004 res');
+       done();
+      } catch (err) {
+        console.log('fileio_test_ftruncate_callback_error_004 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid len').assertTrue();
+        fileio.closeSync(fd);
+ 	      fileio.unlinkSync(fpath);
+        done();
+ 	    }
+ 	   });
 });
 }

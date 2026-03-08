@@ -4490,6 +4490,7 @@ export default function ActsAccountOAuthToken() {
                     expect(err).assertEqual(null);
                     expect(isNaN(dataInfo.iconId)).assertFalse();
                     expect(isNaN(dataInfo.labelId)).assertFalse();
+					expect(dataInfo.owner).not().assertUndefined();
                     done();
                 });
             });
@@ -4509,6 +4510,7 @@ export default function ActsAccountOAuthToken() {
 					console.info("====>ActsAccountOAuthToken_13201 getAuthenticatorInfo dataInfo:" + JSON.stringify(dataInfo));
 					expect(isNaN(dataInfo.iconId)).assertFalse();
 					expect(isNaN(dataInfo.labelId)).assertFalse();
+					expect(dataInfo.owner).not().assertUndefined();
 					done();
 				}).catch((err) => {
 					console.info("====>ActsAccountOAuthToken_13201 getAuthenticatorInfo err:" + JSON.stringify(err));

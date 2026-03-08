@@ -55,6 +55,7 @@ import editBadgeGrid from './Grid/editBadgeGrid.test';
 import gridDefaultTest1 from './gridDefault/gridDefault1.test';
 import gridDefaultTest2 from './gridDefault/gridDefault2.test';
 import gridDefaultTest3 from './gridDefault/gridDefault3.test';
+import gridEventNullUndefined from './gridDefault/gridEventNullUndefined.test';
 import gridItemNullUndefinedTest from './gridItemDefault/gridItemNullUndefined.test';
 import columnsTemplateNullUndefined from './LazyVGridLayout/columnsTemplateNullUndefined.test';
 import columnsRowsGapNullUndefined from './LazyVGridLayout/columnsRowsGapNullUndefined.test';
@@ -102,6 +103,7 @@ export default function testsuite() {
   gridDefaultTest1()
   gridDefaultTest2()
   gridDefaultTest3()
+  gridEventNullUndefined()
   gridItemNullUndefinedTest()
   columnsTemplateNullUndefined()
   columnsRowsGapNullUndefined()

@@ -38,7 +38,7 @@ export default function WaterFlowContentEndOffsetModifierTest() {
     const SLEEP_TIME_1000 = 1000;
     beforeAll(async (): Promise<void> => {
       console.info('WaterFlowContentEndOffsetModifierTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll20.static', 'EntryAbility')
+      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility')
     });
     beforeEach(async (): Promise<void> => {
       console.info('WaterFlowContentEndOffsetModifierTest beforeEach start');

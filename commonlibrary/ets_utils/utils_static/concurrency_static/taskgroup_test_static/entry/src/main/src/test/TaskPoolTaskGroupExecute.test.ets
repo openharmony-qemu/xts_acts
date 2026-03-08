@@ -284,6 +284,8 @@ export default function taskPoolTaskGroupExecuteTest() {
         }).catch((e: Any) => {
           //expect((e as BusinessError)?.name).assertContain('BusinessError')
           console.info('======e', JSON.stringify(e))
+          // The task of ArkTS-Sta is canceled at runtime and enters "then" instead of "reject", but the uncertainty of the number of workers in the taskpool (when the number of workers is only 1) will lead to task2 being canceled before it runs and entering "reject".
+          count1++
         })
         await sleep(1000)
         taskpool.cancel(task2)

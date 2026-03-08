@@ -16,6 +16,7 @@
     "testability/pages/webViewOnFullScreenExit",
     "testability/pages/getSurfaceId",
     "testability/pages/webViewController",
-    "testability/pages/WebViewOnFirstScreenPaint"
+    "testability/pages/WebViewOnFirstScreenPaint",
+    "testability/pages/WebPageSnapshot"
   ]
 }

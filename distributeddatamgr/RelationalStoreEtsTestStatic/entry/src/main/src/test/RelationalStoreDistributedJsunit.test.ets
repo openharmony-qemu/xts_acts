@@ -861,6 +861,100 @@ export default function relationalStoreDistributedTest() {
         done();
 
       })
+
+       /**
+     * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_032
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_3200
+     * @tc.desc   sync test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+      try {
+        rdbStore!.on('', false, Observer);
+        console.info(TAG + "on success ");
+      } catch (err) {
+        console.info(TAG + "on " + err);
+        expect(401).assertEqual(err.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_033
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_3300
+     * @tc.desc   sync test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+      try {
+        rdbStore!.off('', false, Observer);
+        console.info(TAG + "off success ");
+      } catch (err) {
+        console.info(TAG + "off " + err);
+        expect(401).assertEqual(err.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRdbStoreDistributedErr0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_3700
+     * @tc.desc   setDistributedTables errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+      it("testRdbStoreDistributedErr0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info(TAG + "************* testRdbStoreDistributedErr0400 start *************");
+        let distributedConfig : data_Rdb.DistributedConfig = {
+          autoSync: false,
+          enableCloud: true,
+          asyncDownloadAsset: true
+        }
+        try {
+          await rdbStore!.setDistributedTables([""], data_Rdb.DistributedType.DISTRIBUTED_DEVICE, distributedConfig)
+          expect(null).assertFail()
+          done();
+        } catch (err) {
+          console.info(TAG + `testRdbStoreDistributedErr0400 failed , error code is ${err.code}, message is ${err.message}`);
+          expect(14800000).assertEqual(err.code);
+          done();
+        }
+      })
+  
+      /**
+       * @tc.name   testRdbStoreDistributedErr0500
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_3800
+       * @tc.desc   setDistributedTables errcode is 401
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it("testRdbStoreDistributedErr0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info(TAG + "************* testRdbStoreDistributedErr0500 start *************");
+        let distributedConfig : data_Rdb.DistributedConfig = {
+          autoSync: false,
+          enableCloud: false,
+          asyncDownloadAsset: false
+        }
+        try {
+          await rdbStore!.setDistributedTables([""], data_Rdb.DistributedType.DISTRIBUTED_DEVICE, distributedConfig)
+          expect(null).assertFail()
+          done();
+        } catch (err) {
+          console.info(TAG + `testRdbStoreDistributedErr0500 failed , error code is ${err.code}, message is ${err.message}`);
+          expect(14800000).assertEqual(err.code);
+          done();
+        }
+      })
     console.info(TAG + "*************Unit Test End*************");
   })
 }

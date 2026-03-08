@@ -483,6 +483,7 @@ napi_value OHDrawingGetSystemFontFullNamesByType003(napi_env env, napi_callback_
     for (size_t i = 0; i < num; i++) {
         const OH_Drawing_String *fullName = OH_Drawing_GetSystemFontFullNameByIndex(ttfs, i);
         OH_Drawing_FontDescriptor *fd = OH_Drawing_GetFontDescriptorByFullName(fullName, CUSTOMIZED);
+        NAPI_ASSERT_NO_MES(fd != nullptr);
         if (strcmp(fd->fullName, "Noto Sans CJK JP") == 0) {
             napi_create_int32(env, SUCCESS, &result2);
         } else {

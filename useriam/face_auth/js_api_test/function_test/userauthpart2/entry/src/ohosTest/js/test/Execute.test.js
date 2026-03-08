@@ -391,6 +391,13 @@ export default function signNormalAccessBiometricExecute() {
         },
         {
           widgetParam: {
+            title: '使用密码验证',
+            navigationButtonText: null,
+          },
+          ret: 401
+        },
+        {
+          widgetParam: {
             title:'abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij' +
             'abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij' +
             'abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij' +
@@ -600,6 +607,22 @@ export default function signNormalAccessBiometricExecute() {
         expect(null).assertFail();
       } catch (e) {
         console.info(`Security_IAM_getUserAuthInstance_Func_0088 step1 fail ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        userAuth.getUserAuthInstance(null, widgetParamDefault);
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step2 success`);
+      } catch (e) {
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step2 fail ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        userAuth.getUserAuthInstance(authParamDefault, null);
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step4 success`);
+      } catch (e) {
+        console.info(`Security_IAM_getUserAuthInstance_Func_0088 step4 fail ${e.code}`);
         expect(e.code).assertEqual(401);
       }
       done();

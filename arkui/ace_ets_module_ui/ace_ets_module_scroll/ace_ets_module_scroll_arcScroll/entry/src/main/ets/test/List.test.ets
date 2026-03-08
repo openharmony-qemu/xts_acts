@@ -28,6 +28,8 @@ import fadingEdgeNullUndefinedTest from './arcListDefault/fadingEdgeNullUndefine
 import frictionNullUndefinedTest from './arcListDefault/frictionNullUndefined.test';
 import flingSpeedLimitNullUndefinedTest from './arcListDefault/flingSpeedLimitNullUndefined.test';
 import onScrollIndexNullUndefinedTest from './arcListDefault/onScrollIndexNullUndefined.test';
+import cachedCountNullUndefinedTest from './arcListDefault/cachedCountNullUndefined.test';
+import spaceNullUndefinedTest from './arcListDefault/spaceNullUndefined.test';
 import autoScaleNullUndefinedTest from './arcListItemDefault/autoScaleNullUndefined.test';
 import swipeActionNullUndefinedTest from './arcListItemDefault/swipeActionNullUndefined.test';
 
@@ -47,6 +49,8 @@ export default function testsuite() {
   frictionNullUndefinedTest();
   flingSpeedLimitNullUndefinedTest();
   onScrollIndexNullUndefinedTest();
+  cachedCountNullUndefinedTest();
+  spaceNullUndefinedTest();
   autoScaleNullUndefinedTest();
   swipeActionNullUndefinedTest();
 }

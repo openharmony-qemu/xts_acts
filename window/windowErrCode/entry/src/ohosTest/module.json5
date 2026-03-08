@@ -57,6 +57,11 @@
         "startWindowBackground": "$color:start_window_background",
         "orientation": "portrait",
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.SET_WINDOW_TRANSPARENT",
+      }
     ]
   }
 }

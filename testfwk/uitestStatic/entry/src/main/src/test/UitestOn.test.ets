@@ -100,7 +100,28 @@ export default function uitestOnTest() {
           hilog.info(domain, tag, `testType_static type4 ${ JSON.stringify(type4) }`);
           expect(type4).assertEqual('Text');
         }
-
+        let text5 = await driver.findComponent(ON.type('').text('next page'))
+        console.log(`${tag}, testType text5,${JSON.stringify(text5)}`)
+        expect(text5).assertNull()
+        let text6 = await driver.findComponent(ON.type('Text', MatchPattern.REG_EXP));
+        hilog.info(domain, tag, `testType_static text6, ${ JSON.stringify(text6) }`);
+        expect(text6 != null).assertTrue()
+        if (text6 != null) {
+          let type6 = await text6.getType();
+          hilog.info(domain, tag, `testType_static type6 ${ JSON.stringify(type6) }`);
+          expect(type6).assertEqual('Text');
+        }
+        let text7 = await driver.findComponent(ON.type('Text', MatchPattern.REG_EXP_ICASE));
+        hilog.info(domain, tag, `testType_static text7, ${ JSON.stringify(text7) }`);
+        expect(text7 != null).assertTrue()
+        if (text7 != null) {
+          let type7 = await text7.getType();
+          hilog.info(domain, tag, `testType_static type7 ${ JSON.stringify(type7) }`);
+          expect(type7).assertEqual('Text');
+        }
+        let text8 = await driver.findComponent(ON.type('', MatchPattern.EQUALS).text('next page'))
+        console.log(`${tag}, testType text8,${JSON.stringify(text8)}`)
+        expect(text8).assertNull()
       } catch(error) {
         hilog.info(domain, tag, `testType_static error, ${ JSON.stringify(error) }`);
         expect().assertFail();
@@ -166,6 +187,40 @@ export default function uitestOnTest() {
           let id4 = await text4.getId();
           hilog.info(domain, tag, `testId_static id4 , ${ JSON.stringify(id4) }`);
           expect(id4 == 'my-key').assertTrue();
+        }
+        let text5 = await driver.findComponent(ON.text('MainPage').id(''));
+        hilog.info(domain, tag, `testId_static text5, ${ JSON.stringify(text5) }`);
+        expect(text5 != null).assertTrue();
+        if (text5 != null) {
+          let id5 = await text5.getId();
+          hilog.info(domain, tag, `testId_static id5 , ${ JSON.stringify(id5) }`);
+          expect(id5).assertEqual('');
+        }
+
+        let text6 = await driver.findComponent(ON.id('my-key', MatchPattern.REG_EXP));
+        hilog.info(domain, tag, `testId_static text6, ${ JSON.stringify(text6) }`);
+        expect(text6 != null).assertTrue();
+        if (text6 != null) {
+          let id6 = await text6.getId();
+          hilog.info(domain, tag, `testId_static id6 , ${ JSON.stringify(id6) }`);
+          expect(id6 == 'my-key').assertTrue();
+        }
+
+        let text7 = await driver.findComponent(ON.id('my-key', MatchPattern.REG_EXP_ICASE));
+        hilog.info(domain, tag, `testId_static text7, ${ JSON.stringify(text7) }`);
+        expect(text7 != null).assertTrue();
+        if (text7 != null) {
+          let id7 = await text7.getId();
+          hilog.info(domain, tag, `testId_static id7 , ${ JSON.stringify(id7) }`);
+          expect(id7 == 'my-key').assertTrue();
+        }
+        let text8 = await driver.findComponent(ON.text('MainPage').id('', MatchPattern.EQUALS));
+        hilog.info(domain, tag, `testId_static text8, ${ JSON.stringify(text8) }`);
+        expect(text8 != null).assertTrue();
+        if (text8 != null) {
+          let id8 = await text8.getId();
+          hilog.info(domain, tag, `testId_static id8 , ${ JSON.stringify(id8) }`);
+          expect(id8).assertEqual('');
         }
       } catch(error) {
         hilog.info(domain, tag, `testId_static error, ${ JSON.stringify(error) }`);
@@ -262,7 +317,7 @@ export default function uitestOnTest() {
           expect(hint4 == 'welcome').assertTrue();
         }
 
-        let text5 = await driver.findComponent(ON.hint('welcome', MatchPattern.EQUALS));
+        let text5 = await driver.findComponent(ON.hint('welcome', undefined));
         if (text5 == null) {
           let scroll = await driver.findComponent(ON.type('Scroll'))
           if (scroll != null) {
@@ -291,6 +346,21 @@ export default function uitestOnTest() {
           hilog.info(domain, tag, `testGetHint_static hint6 is, ${ hint6 }`);
           expect(hint6 == 'welcome').assertTrue();
         }
+        let button7 = await driver.findComponent(ON.hint('', MatchPattern.EQUALS).text('next page'));
+        if (button7 == null) {
+          let scroll = await driver.findComponent(ON.type('Scroll'))
+          if (scroll != null) {
+            button7 = await scroll.scrollSearch(ON.hint('', MatchPattern.EQUALS).text('next page'))
+          }
+        }
+        await driver.delayMs(waitUiReadyMs);
+        expect(button7 != null).assertTrue();
+        if (button7 != null) {
+          let hint7 = await button7.getHint();
+          await driver.delayMs(waitUiReadyMs);
+          console.log(`${tag}, testGetHint hint7, ${JSON.stringify(hint7)}`)
+          expect(hint7).assertEqual('');
+        }
       } catch(error) {
         hilog.info(domain, tag, `testGetHint_static error, ${ JSON.stringify(error) }`);
         expect().assertFail();
@@ -313,21 +383,57 @@ export default function uitestOnTest() {
         let driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(1000);
-        let text = await driver.findComponent(ON.type('Text').description('', MatchPattern.EQUALS));
+        let text = await driver.findComponent(ON.type('Text').description(''))
+        if (text == null) {
+          text = await driver.findComponent(ON.type('Text').description('', MatchPattern.EQUALS))
+        }
         expect(text != null).assertTrue();
         if (text != null) {
           let description = await text.getDescription();
           hilog.info(domain, tag, `testDescription_static description, ${ JSON.stringify(description) }`);
           expect(description == '').assertTrue();
         }
-
-        let text1 = await driver.findComponent(ON.type('Text').description(''));
-        hilog.info(domain, tag, `testDescription_static  text1, ${ JSON.stringify(text1) }`);
+        let text1 = await driver.findComponent(ON.description('toast', MatchPattern.CONTAINS))
         expect(text1 != null).assertTrue();
         if (text1 != null) {
-          let description1 = await text1.getDescription();
-          hilog.info(domain, tag, `testDescription_static description1, ${ JSON.stringify(description1) }`);
-          expect(description1 == '').assertTrue();
+          let text1Des = await text1.getDescription()
+          console.log(`${tag},testDescription  text1Des, ${JSON.stringify(text1Des)}`)
+          expect(text1Des).assertEqual('toast')
+        }
+        let text2 = await driver.findComponent(ON.description('toa', MatchPattern.STARTS_WITH))
+        expect(text2 != null).assertTrue();
+        if (text2 != null) {
+          let text2Des = await text2.getDescription()
+          console.log(`${tag},testDescription  text2Des, ${JSON.stringify(text2Des)}`)
+          expect(text2Des).assertEqual('toast')
+        }
+        let text3 = await driver.findComponent(ON.description('ast', MatchPattern.ENDS_WITH))
+        expect(text3 != null).assertTrue();
+        if (text3 != null) {
+          let text3Des = await text3.getDescription()
+          console.log(`${tag},testDescription  text3Des, ${JSON.stringify(text3Des)}`)
+          expect(text3Des).assertEqual('toast')
+        }
+        let text4 = await driver.findComponent(ON.description('toast', MatchPattern.REG_EXP))
+        expect(text4 != null).assertTrue();
+        if (text4 != null) {
+          let text4Des = await text4.getDescription()
+          console.log(`${tag},testDescription  text4Des, ${JSON.stringify(text4Des)}`)
+          expect(text4Des).assertEqual('toast')
+        }
+        let text5 = await driver.findComponent(ON.description('toast', MatchPattern.REG_EXP_ICASE))
+        expect(text5 != null).assertTrue();
+        if (text5 != null) {
+          let text5Des = await text5.getDescription()
+          console.log(`${tag},testDescription  text5Des, ${JSON.stringify(text5Des)}`)
+          expect(text5Des).assertEqual('toast')
+        }
+        let text6 = await driver.findComponent(ON.description('toast', undefined))
+        expect(text6 != null).assertTrue();
+        if (text6 != null) {
+          let text6Des = await text6.getDescription()
+          console.log(`${tag},testDescription  text6Des, ${JSON.stringify(text6Des)}`)
+          expect(text6Des).assertEqual('toast')
         }
       } catch(error) {
         hilog.info(domain, tag, `testDescription_static error, ${ JSON.stringify(error) }`);
@@ -508,6 +614,30 @@ export default function uitestOnTest() {
           hilog.info(domain, tag, `testMatchPattern_static bt4Text, ${ JSON.stringify(bt4Text)}`);
           expect(bt4Text).assertEqual('next page');
         }
+        let button5 = await driver.findComponent(ON.type('Button').text('',MatchPattern.REG_EXP));
+        hilog.info(domain, tag, `testMatchPattern_static button5, ${ JSON.stringify(button5)}`);
+        expect(button5 != null).assertTrue()
+        if (button5 != null) {
+          let bt5Text = await button5.getText();
+          hilog.info(domain, tag, `testMatchPattern_static bt5Text, ${ JSON.stringify(bt5Text)}`);
+          expect(bt5Text).assertEqual('toast');
+        }
+        let button6 = await driver.findComponent(ON.type('Button').text('',MatchPattern.REG_EXP_ICASE));
+        hilog.info(domain, tag, `testMatchPattern_static button6, ${ JSON.stringify(button6)}`);
+        expect(button6 != null).assertTrue()
+        if (button6 != null) {
+          let bt6Text = await button6.getText();
+          hilog.info(domain, tag, `testMatchPattern_static bt6Text, ${ JSON.stringify(bt6Text)}`);
+          expect(bt6Text).assertEqual('toast');
+        }
+        let button8 = await driver.findComponent(ON.text('next page', undefined));
+        hilog.info(domain, tag, `testMatchPattern_static button8, ${ JSON.stringify(button8)}`);
+        expect(button8 != null).assertTrue()
+        if (button8 != null) {
+          let bt8Text = await button8.getText();
+          hilog.info(domain, tag, `testMatchPattern_static bt8Text, ${ JSON.stringify(bt8Text)}`);
+          expect(bt8Text).assertEqual('next page');
+        }
       } catch(error) {
         hilog.info(domain, tag, `testMatchPattern_static error, ${ JSON.stringify(error)}`);
         expect().assertFail();
@@ -622,6 +752,8 @@ export default function uitestOnTest() {
       let btn = await driver.findComponent(ON.inWindow('com.uitestScene.acts').text('next page'));
       hilog.info(domain, tag, `testInWindow_static button, ${ JSON.stringify(btn) }`);
       expect(btn != null).assertTrue();
+      let btn1 = await driver.findComponent(ON.inWindow('').text('next page'))
+      expect(btn1 != null).assertTrue()
       hilog.info(domain, tag, "testInWindow_static over!!!!!!!!!")
       await stopApplication('com.uitestScene.acts')
     })

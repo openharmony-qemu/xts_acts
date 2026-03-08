@@ -135,6 +135,12 @@ export default function audioRendererChange() {
       let dpDevice: boolean = false;
       console.info(`CHANGE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       dpDevice = outputDeviceDescription.some(device => device.deviceType === audio.DeviceType.DISPLAY_PORT);
+      if (dpDevice) {
+        console.info(`CHANGE_0100 This device has external device`)
+        expect(resultFlag).assertEqual(false);
+        done();
+        return;        
+      }
       try {
         audioStreamManagerCB.on('audioRendererChange', (AudioRendererChangeInfoArray: ESObject) => {
           for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {

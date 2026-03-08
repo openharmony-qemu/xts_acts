@@ -25,6 +25,7 @@
 #include <native_drawing/drawing_register_font.h>
 #include <native_drawing/drawing_text_font_descriptor.h>
 #include <native_drawing/drawing_text_typography.h>
+#include "common/native_common.h"
 
 enum CaseNum {
     CASE_1 = 1,
@@ -279,6 +280,7 @@ napi_value OH_Drawing_FontDescriptor0100(napi_env env, napi_callback_info info)
     OH_Drawing_Array *fullNameArray = OH_Drawing_GetSystemFontFullNamesByType(ALL);
     const OH_Drawing_String *fullName = OH_Drawing_GetSystemFontFullNameByIndex(fullNameArray, 5);
     OH_Drawing_FontDescriptor *fontDescriptor = OH_Drawing_GetFontDescriptorByFullName(fullName, ALL);
+    NAPI_ASSERT_NO_MES(fontDescriptor != nullptr);
     int32_t stateValue = fontDescriptorGetSwitch(fontDescriptor, numValue);
     napi_value result;
     napi_create_int32(env, stateValue, &result);
@@ -294,6 +296,7 @@ napi_value OH_Drawing_FontConfigInfo0100(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, args[0], &numValue);
     OH_Drawing_FontConfigInfoErrorCode errorCode = SUCCESS_FONT_CONFIG_INFO;
     OH_Drawing_FontConfigInfo *drawFontCfgInfo = OH_Drawing_GetSystemFontConfigInfo(&errorCode);
+    NAPI_ASSERT_NO_MES(drawFontCfgInfo != nullptr);
     int32_t stateValue = 1;
     switch (numValue) {
         case CASE_1:
@@ -344,6 +347,7 @@ napi_value OH_Drawing_FontGenericInfo0100(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, args[0], &numValue);
     OH_Drawing_FontConfigInfoErrorCode errorCode = SUCCESS_FONT_CONFIG_INFO;
     OH_Drawing_FontConfigInfo *drawFontCfgInfo = OH_Drawing_GetSystemFontConfigInfo(&errorCode);
+    NAPI_ASSERT_NO_MES(drawFontCfgInfo != nullptr);
     OH_Drawing_FontGenericInfo *drawFontGecInfo = drawFontCfgInfo->fontGenericInfoSet;
     int32_t stateValue = 1;
     switch (numValue) {
@@ -390,6 +394,7 @@ napi_value OH_Drawing_FontAliasInfo0100(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, args[0], &numValue);
     OH_Drawing_FontConfigInfoErrorCode errorCode = SUCCESS_FONT_CONFIG_INFO;
     OH_Drawing_FontConfigInfo *drawFontCfgInfo = OH_Drawing_GetSystemFontConfigInfo(&errorCode);
+    NAPI_ASSERT_NO_MES(drawFontCfgInfo != nullptr);
     OH_Drawing_FontAliasInfo *drawFontAlsInfo = drawFontCfgInfo->fontGenericInfoSet->aliasInfoSet;
     int32_t stateValue = 1;
     switch (numValue) {
@@ -421,6 +426,7 @@ napi_value OH_Drawing_FontAdjustInfo0100(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, args[0], &numValue);
     OH_Drawing_FontConfigInfoErrorCode errorCode = SUCCESS_FONT_CONFIG_INFO;
     OH_Drawing_FontConfigInfo *drawFontCfgInfo = OH_Drawing_GetSystemFontConfigInfo(&errorCode);
+    NAPI_ASSERT_NO_MES(drawFontCfgInfo != nullptr);
     OH_Drawing_FontAdjustInfo *drawFontAlsInfo = drawFontCfgInfo->fontGenericInfoSet->adjustInfoSet;
     int32_t stateValue = 1;
     switch (numValue) {
@@ -452,6 +458,7 @@ napi_value OH_Drawing_FontFallbackGroup0100(napi_env env, napi_callback_info inf
     napi_get_value_int32(env, args[0], &numValue);
     OH_Drawing_FontConfigInfoErrorCode errorCode = SUCCESS_FONT_CONFIG_INFO;
     OH_Drawing_FontConfigInfo *drawFontCfgInfo = OH_Drawing_GetSystemFontConfigInfo(&errorCode);
+    NAPI_ASSERT_NO_MES(drawFontCfgInfo != nullptr);
     OH_Drawing_FontFallbackGroup *drawFontFG = drawFontCfgInfo->fallbackGroupSet;
     int32_t stateValue = 1;
     switch (numValue) {
@@ -488,6 +495,7 @@ napi_value OH_Drawing_FontFallbackInfo0100(napi_env env, napi_callback_info info
     napi_get_value_int32(env, args[0], &numValue);
     OH_Drawing_FontConfigInfoErrorCode errorCode = SUCCESS_FONT_CONFIG_INFO;
     OH_Drawing_FontConfigInfo *drawFontCfgInfo = OH_Drawing_GetSystemFontConfigInfo(&errorCode);
+    NAPI_ASSERT_NO_MES(drawFontCfgInfo != nullptr);
     OH_Drawing_FontFallbackInfo *drawFontFBInfo = drawFontCfgInfo->fallbackGroupSet->fallbackInfoSet;
     int32_t stateValue = 1;
     switch (numValue) {
@@ -533,6 +541,7 @@ napi_value OH_Drawing_FontConfigInfoErrorCode0100(napi_env env, napi_callback_in
             break;
     }
     OH_Drawing_FontConfigInfo *drawFontCfgInfo = OH_Drawing_GetSystemFontConfigInfo(&errorCode);
+    NAPI_ASSERT_NO_MES(drawFontCfgInfo != nullptr);
     int32_t stateValue = 1;
     if (drawFontCfgInfo == nullptr) {
         stateValue = 0;

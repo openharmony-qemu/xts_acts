@@ -317,10 +317,9 @@ export default function windowPCTest() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-          expect(false).assertFalse();
         } else {
           console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-          expect(false).assertFalse();
+          expect(true).assertFalse();
         }
         done();
       })
@@ -385,16 +384,15 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse();
           } else {
             console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertFalse();
+            expect(true).assertFalse();
           }
           done();
         })
       } catch (exception) {
         console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect(false).assertFalse();
+        expect(true).assertFalse();
         done();
       }
     })
@@ -449,16 +447,15 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse();
           } else {
             console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertFalse();
+            expect(true).assertFalse();
           }
           done();
         })
       } catch (exception) {
         console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect(false).assertFalse();
+        expect(true).assertFalse();
         done();
       }
     })
@@ -1395,14 +1392,14 @@ export default function windowPCTest() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801 || err.code == 401) {
+          if (err.code == 801) {
             console.error(`The device not support setSupportedWindowModes`);
             
             done();
-          } else {
-            expect().assertFail();
+          } else  {
+            expect(err.code).assertEqual(401);
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1411,6 +1408,7 @@ export default function windowPCTest() {
       }
       ;
     });
+    
 
     /**
      * @tc.name   test_setSupportedWindowModes_onlySplit
@@ -1581,7 +1579,76 @@ export default function windowPCTest() {
       ;
 
     });
-
+/**
+     * @tc.name   test_setSupportedWindowModes_null
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0800
+     * @tc.desc   传参[]，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setSupportedWindowModes_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const message = 'test_setSupportedWindowModes_null'
+        let windowStageStart = await startAbility(message, context)
+        let promise = windowStageStart.setSupportedWindowModes(null);
+        promise.then(() => {
+          console.info('Succeed in setting window support modes');
+          expect().assertFail()
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+          if (err.code == 801) {
+            console.error(`The device not support setSupportedWindowModes`);
+            
+            done();
+          } else  {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+      ;
+    });
+    /**
+     * @tc.name   test_setSupportedWindowModes_undefined
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0900
+     * @tc.desc   传参[]，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setSupportedWindowModes_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const message = 'test_setSupportedWindowModes_undefined'
+        let windowStageStart = await startAbility(message, context)
+        let promise = windowStageStart.setSupportedWindowModes(undefined);
+        promise.then(() => {
+          console.info('Succeed in setting window support modes');
+          expect().assertFail()
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+          if (err.code == 801) {
+            console.error(`The device not support setSupportedWindowModes`);
+            
+            done();
+          } else  {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+      ;
+    });
 
     /**
      * @tc.name   test_on_windowWillClose_resolve_true
@@ -3290,11 +3357,14 @@ export default function windowPCTest() {
         done();
       }).catch(async (err: BusinessError) => {
         console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-        if (err.code == 801 || err.code == 1300002) {
+        if (err.code === 801) {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           done();
-        } else {
-          expect(false).assertFalse();
+        } else if(err.code === 1300002){
+          console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+          done();
+        }else {
+          expect(true).assertFalse();
           done();
         }
       })
@@ -3331,7 +3401,7 @@ export default function windowPCTest() {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           done();
         } else {
-          expect(false).assertFalse();
+          expect(false).assertTrue();
           done();
         }
       })
@@ -3368,7 +3438,7 @@ export default function windowPCTest() {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           done();
         } else {
-          expect(false).assertFalse();
+          expect(false).assertTrue();
           done();
         }
       })
@@ -3392,6 +3462,7 @@ export default function windowPCTest() {
         windowClass.setDragKeyFramePolicy(keyFramePolicy).then((ret: window.KeyFramePolicy) => {
           console.info(`${message} Succeeded in setting key frame: ${JSON.stringify(ret)}`);
           expect(ret.enable).assertEqual(keyFramePolicy.enable);
+          expect(ret.enable).assertEqual(true);
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
@@ -3677,7 +3748,7 @@ export default function windowPCTest() {
         let windowClass: window.Window = windowStage.getMainWindowSync();
         windowClass.setDragKeyFramePolicy(keyFramePolicy).then((ret: window.KeyFramePolicy) => {
           console.info(`${message} Succeeded in setting key frame: ${JSON.stringify(ret)}`);
-          expect(ret.enable).assertEqual(keyFramePolicy.enable);
+          expect(ret.enable).assertEqual(false);
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);

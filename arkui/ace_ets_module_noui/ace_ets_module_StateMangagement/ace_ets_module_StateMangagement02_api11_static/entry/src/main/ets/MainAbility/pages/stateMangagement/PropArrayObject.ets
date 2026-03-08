@@ -104,7 +104,7 @@ struct PropArrayObjectChild {
           this.message.shift()
         })
 
-      ForEach(Array.from(this.message.entries()), (item: [number, MyPropObject]) => {
+      ForEach(Array.from(this.message.entries()), (item: [int, MyPropObject]) => {
         Text(`Item${item[1].id} ${item[1].value} index: ${item[0]}`).fontSize(9).id('propArrayObject_value_' + item[0])
           .height('5%')
         Divider()

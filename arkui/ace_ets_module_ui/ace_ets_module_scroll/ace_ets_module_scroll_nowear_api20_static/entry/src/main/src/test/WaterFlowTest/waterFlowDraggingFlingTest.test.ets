@@ -50,7 +50,7 @@ export default function WaterFlowDraggingFlingTest() {
     const SLEEP_TIME_2000 = 2000;
     beforeAll(async (): Promise<void> => {
       console.info('WaterFlowDraggingFlingTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll20.static', 'EntryAbility')
+      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility')
     });
     beforeEach(async (): Promise<void> => {
       console.info('WaterFlowDraggingFlingTest beforeEach start');

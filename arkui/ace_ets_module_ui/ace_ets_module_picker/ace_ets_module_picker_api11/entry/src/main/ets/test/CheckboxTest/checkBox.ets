@@ -59,7 +59,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0100 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -89,7 +89,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual("#FFFD0000");
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0200 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -119,7 +119,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual("#FF8A2BE2");
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0300 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -149,7 +149,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual("#FFFFC0CB");
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0400 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -179,7 +179,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual("#FFFD0000");
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0500 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -209,7 +209,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual(obj.$attrs.backgroundColor);
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0600 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -239,7 +239,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual(obj.$attrs.backgroundColor);
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0700 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -269,7 +269,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual(obj.$attrs.backgroundColor);
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0800 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -299,7 +299,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual("#FFFD0000");
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0900 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -329,7 +329,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual(obj.$attrs.backgroundColor);
           console.info('ArkUX_Stage_Checkbox_unselectedColor_1000 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_1000 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -359,7 +359,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual(obj.$attrs.backgroundColor);
           console.info('ArkUX_Stage_Checkbox_unselectedColor_1100 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_1100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -389,7 +389,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Checkbox_unselectedColor_1200 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_unselectedColor_1200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -423,7 +423,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0100 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -457,7 +457,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual("#FFFD0000");
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0200 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -491,7 +491,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual("#FF8A2BE2");
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0300 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -525,7 +525,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual("#FFFFC0CB");
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0400 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -559,7 +559,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual("#FFFD0000");
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0500 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -593,7 +593,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual(obj.$attrs.backgroundColor);
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0600 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -627,7 +627,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual(obj.$attrs.backgroundColor);
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0700 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -661,7 +661,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual(obj.$attrs.backgroundColor);
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0800 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -695,7 +695,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual("#FFFD0000");
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0900 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -729,7 +729,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual(obj.$attrs.backgroundColor);
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_1000 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_1000 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -763,7 +763,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual(obj.$attrs.backgroundColor);
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_1100 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_1100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -797,7 +797,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeColor).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_1200 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_1200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -831,7 +831,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("0.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0100 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -865,7 +865,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("1.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0200 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -899,7 +899,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("60.00px");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0300 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -933,7 +933,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("-1.00px");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0400 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -967,7 +967,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("50.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0500 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1001,7 +1001,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("0.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0600 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1035,7 +1035,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("-1.00px");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0700 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1069,7 +1069,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("-1.00px");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0800 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1103,7 +1103,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("40.00fp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0900 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1137,7 +1137,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("-1.00px");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_1000 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_1000 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1171,7 +1171,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("0.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_1100 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_1100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1205,7 +1205,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("10.00lpx");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_1200 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_1200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1239,7 +1239,7 @@ export default function checkBoxTest1() {
           expect(markObj.size).assertEqual("-1.00px");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_1300 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_1300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1274,7 +1274,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("0.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0100 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1308,7 +1308,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("1.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0200 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1342,7 +1342,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("60.00px");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0300 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1376,7 +1376,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("2.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0400 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1410,7 +1410,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("50.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0500 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1444,7 +1444,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("0.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0600 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1478,7 +1478,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("2.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0700 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1512,7 +1512,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("2.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0800 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1546,7 +1546,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("5.00fp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0900 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1580,7 +1580,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("2.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_1000 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_1000 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1614,7 +1614,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("0.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_1100 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_1100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1648,7 +1648,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("40.00lpx");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_1200 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_1200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1682,7 +1682,7 @@ export default function checkBoxTest1() {
           expect(markObj.strokeWidth).assertEqual("2.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_1300 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_1300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1725,7 +1725,7 @@ export default function checkBoxTest1() {
           expect(obj.$attrs.unselectedColor).assertEqual("#FFFFC0CB");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_1400 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_1400 ERR  ' + JSON.stringify(err));
         }
         done();

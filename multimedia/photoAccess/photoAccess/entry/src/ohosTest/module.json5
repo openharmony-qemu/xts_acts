@@ -86,6 +86,13 @@
                 "usedScene": {
                     "when": "always"
                 }
+            },
+            {
+                "name": "ohos.permission.SHORT_TERM_WRITE_IMAGEVIDEO",
+                "reason": "$string:reason",
+                "usedScene": {
+                    "when": "always"
+                }
             }
         ]
     }

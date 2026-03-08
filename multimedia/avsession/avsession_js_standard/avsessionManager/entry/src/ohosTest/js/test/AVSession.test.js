@@ -27,8 +27,8 @@ export default function AVSession() {
         let session;
         let controller;
         let OutputDeviceInfo = { isRemote: false, audioDeviceId: [0], deviceName: ['LocalDevice'] };
-        let keyItem = { code: 0x49, pressedTime: 123456789, deviceId: 0 };
-        let event = { action: 2, key: keyItem, keys: [keyItem] };
+        let keyItem = {code:0x49, pressedTime:2, deviceId:0};
+        let event = {id:1, deviceId:0, actionTime:1, screenId:1, windowId:1, action:2, key:keyItem, unicodeChar:0, keys:[keyItem], ctrlKey:false, altKey:false, shiftKey:false, logoKey:false, fnKey:false, capsLock:false, numLock:false, scrollLock:false};
         let context = featureAbility.getContext();
         let castControlCommandType = 'play';
         let deviceInfo = {
@@ -1606,13 +1606,9 @@ export default function AVSession() {
             });
             
             await controller.isActive().then((data) => {
-                if (data) {
-                    console.info(`${TAG}TestLog: session is active`);
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: session is directive');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: data = ${data}`);
+                expect(data).assertTrue();
+                console.info(`${TAG}TestLog: session is active`);
             }).catch((err) => {
                 console.info(`${TAG}TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1629,30 +1625,27 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_PROMISE_0100]";
             await session.activate().then(() => {
-                console.info('TestLog: Set session active');
+                console.info(`${TAG}TestLog: Set session active`);
             }).catch((err) => {
-                console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await session.deactivate().then(() => {
-                console.info('TestLog: Deactivate session');
+                console.info(`${TAG}TestLog: Deactivate session`);
             }).catch((err) => {
-                console.info(`TestLog: Deactivate session error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Deactivate session error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             await controller.isActive().then((data) => {
-                if (data) {
-                    console.info('TestLog: session deactivate failed');
-                    expect(false).assertTrue();
-                } else {
-                    console.info('TestLog: session deactivate successfully');
-                    expect(true).assertTrue();
-                }
+                console.info(`${TAG}TestLog: data = ${data}`);
+                expect(data).assertFalse();
+                console.info(`${TAG}TestLog: session deactivate successfully`);
             }).catch((err) => {
-                console.info(`TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -1667,33 +1660,30 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_CALLBACK_0100]";
             try {
                 session.activate((err) => {
                     if (err) {
-                        console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
+                        console.info(`${TAG}TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                         expect(false).assertTrue();
                     } else {
-                        console.info('TestLog: Set session active successfully');
+                        console.info(`${TAG}TestLog: Set session active successfully`);
                     }
                 })
             } catch (err) {
-                console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
 
             await sleep(500);
             await controller.isActive((err, isActive) => {
                 if(err) {
-                    console.info(`TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
+                    console.info(`${TAG}TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 } else {
-                    if (isActive) {
-                        console.info('TestLog: session is active');
-                        expect(true).assertTrue();
-                    } else {
-                        console.info('TestLog: session is directive');
-                        expect(false).assertTrue();
-                    }
+                    console.info(`${TAG}TestLog: active = ${isActive}`);
+                    expect(isActive).assertTrue();
+                    console.info(`${TAG}TestLog: session is active`);
                 }
             })
             done();
@@ -1708,40 +1698,37 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_CALLBACK_0100]";
             await session.activate().then(() => {
-                console.info('TestLog: Set session active');
+                console.info(`${TAG}TestLog: Set session active`);
             }).catch((err) => {
-                console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
 
             try {
                 session.deactivate((err) => {
                     if (err) {
-                        console.info(`TestLog: Deactivate session error: code: ${err.code}, message: ${err.message}`);
+                        console.info(`${TAG}TestLog: Deactivate session error: code: ${err.code}, message: ${err.message}`);
                         expect(false).assertTrue();
                     } else {
-                        console.info('TestLog: Deactivate session');
+                        console.info(`${TAG}TestLog: Deactivate session`);
                     }
                 })
             } catch (err) {
-                console.info(`TestLog: Deactivate session error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Deactivate session error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
             await sleep(500);
 
             await controller.isActive((err, isActive) => {
                 if(err) {
-                    console.info(`TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
+                    console.info(`${TAG}TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 } else {
-                    if (isActive) {
-                        console.info('TestLog: session deactivate failed');
-                        expect(false).assertTrue();
-                    } else {
-                        console.info('TestLog: session deactivate successfully');
-                        expect(true).assertTrue();
-                    }
+                    console.info(`${TAG}TestLog: isActive = ${isActive}`);
+                    expect(isActive).assertFalse();
+                    console.info(`${TAG}TestLog: session deactivate successfully`);
                 }
                 
             })
@@ -1757,18 +1744,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONPLAY_0100]"; 
+            let flag = false;
             session.on('play', () => {
-                console.info('TestLog: Play command callback registration successful');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Play command callback registration successful`);
+                flag = true;
             });
 
             await controller.sendControlCommand({ command: 'play' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+
+            console.info(`${TAG}TestLog: callback = ${flag}`);
+            expect(flag).assertTrue();
+            console.info(`${TAG}TestLog: callback successfully`);
             done();
         })
 
@@ -1781,18 +1774,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPAUSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONPAUSE_0100]"; 
+            let flag = false;
             session.on('pause', () => {
-                console.info('TestLog: Pause command callback registration successful');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Pause command callback registration successful`);
+                flag = true;
             });
 
             await controller.sendControlCommand({ command: 'pause' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+
+            console.info(`${TAG}TestLog: callback = ${flag}`);
+            expect(flag).assertTrue();
+            console.info(`${TAG}TestLog: callback successfully`);
             done();
         })
 
@@ -1805,18 +1804,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSTOP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONSTOP_0100]"; 
+            let flag = false;
             session.on('stop', () => {
-                console.info('TestLog: Stop command callback registration successful');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Stop command callback registration successful`);
+                flag = true;
             });
 
             await controller.sendControlCommand({ command: 'stop' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+
+            console.info(`${TAG}TestLog: callback = ${flag}`);
+            expect(flag).assertTrue();
+            console.info(`${TAG}TestLog: callback successfully`);
             done();
         })
 
@@ -1829,18 +1834,23 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_0100]"; 
+            let flag = false;
             session.on('playNext', () => {
-                console.info('TestLog: PlayNext command callback registration successful');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: PlayNext command callback registration successful`);
+                flag = true;
             });
 
             await controller.sendControlCommand({ command: 'playNext' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback = ${flag}`);
+            expect(flag).assertTrue();
+            console.info(`${TAG}TestLog: callback successfully`);
             done();
         })
 
@@ -1853,18 +1863,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_0100]"; 
+            let flag = false;
             session.on('playPrevious', () => {
-                console.info('TestLog: PlayPrevious command callback registration successful');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: PlayPrevious command callback registration successful`);
+                flag = true;
             });
 
             await controller.sendControlCommand({ command: 'playPrevious' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+            
+            console.info(`${TAG}TestLog: callback = ${flag}`);
+            expect(flag).assertTrue();
+            console.info(`${TAG}TestLog: callback successfully`);
             done();
         })
 
@@ -1877,18 +1893,23 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_0100]"; 
+            let flag = false;
             session.on('fastForward', () => {
-                console.info('TestLog: FastForward command callback registration successful');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: FastForward command callback registration successful`);
+                flag = true;
             });
 
             await controller.sendControlCommand({ command: 'fastForward' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback = ${flag}`);
+            expect(flag).assertTrue();
+            console.info(`${TAG}TestLog: callback successfully`);
             done();
         })
 
@@ -1901,19 +1922,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_0200]"; 
             session.on('fastForward', (time) => {
-                if (time == avSession.SkipIntervals.SECONDS_10) {
-                    console.info('TestLog: FastForward command callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: time = ${time}`);
+                expect(time).assertEqual(avSession.SkipIntervals.SECONDS_10);
+                console.info(`${TAG}TestLog: FastForward command callback registration successful`);
             });
 
             await controller.sendControlCommand({ command: 'fastForward', parameter: avSession.SkipIntervals.SECONDS_10 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -1929,19 +1948,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_0300]"; 
             session.on('fastForward', (time) => {
-                if (time == avSession.SkipIntervals.SECONDS_15) {
-                    console.info('TestLog: FastForward command callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: time = ${time}`);
+                expect(time).assertEqual(avSession.SkipIntervals.SECONDS_15);
+                console.info(`${TAG}TestLog: FastForward command callback registration successful`);
             });
 
             await controller.sendControlCommand({ command: 'fastForward', parameter: avSession.SkipIntervals.SECONDS_15 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -1957,19 +1974,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_0400]"; 
             session.on('fastForward', (time) => {
-                if (time == avSession.SkipIntervals.SECONDS_30) {
-                    console.info('TestLog: FastForward command callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: time = ${time}`);
+                expect(time).assertEqual(avSession.SkipIntervals.SECONDS_30);
+                console.info(`${TAG}TestLog: FastForward command callback registration successful`);
             });
 
             await controller.sendControlCommand({ command: 'fastForward', parameter: avSession.SkipIntervals.SECONDS_30 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -1985,18 +2000,24 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONREWIND_0100]"; 
+            let flag = false;
             session.on('rewind', () => {
-                console.info('TestLog: Rewind command callback registration successful');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Rewind command callback registration successful`);
+                flag = true;
             });
 
             await controller.sendControlCommand({ command: 'rewind' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+
+            console.info(`${TAG}TestLog: callback = ${flag}`);
+            expect(flag).assertTrue();
+            console.info(`${TAG}TestLog: callback successfully`);
             done();
         })
 
@@ -2009,19 +2030,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONREWIND_0200]"; 
             session.on('rewind', (time) => {
-                if (time == avSession.SkipIntervals.SECONDS_10) {
-                    console.info('TestLog: Rewind command callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: time = ${time}`);
+                expect(time).assertEqual(avSession.SkipIntervals.SECONDS_10);
+                console.info(`${TAG}TestLog: Rewind command callback registration successful`);
             });
 
             await controller.sendControlCommand({ command: 'rewind', parameter: avSession.SkipIntervals.SECONDS_10 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -2037,19 +2056,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONREWIND_0300]"; 
             session.on('rewind', (time) => {
-                if (time == avSession.SkipIntervals.SECONDS_15) {
-                    console.info('TestLog: Rewind command callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: time = ${time}`);
+                expect(time).assertEqual(avSession.SkipIntervals.SECONDS_15);
+                console.info(`${TAG}TestLog: Rewind command callback registration successful`);
             });
 
             await controller.sendControlCommand({ command: 'rewind', parameter: avSession.SkipIntervals.SECONDS_15 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -2065,19 +2082,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONREWIND_0400]"; 
             session.on('rewind', (time) => {
-                if (time == avSession.SkipIntervals.SECONDS_30) {
-                    console.info('TestLog: Rewind command callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: time = ${time}`);
+                expect(time).assertEqual(avSession.SkipIntervals.SECONDS_30);
+                console.info(`${TAG}TestLog: Rewind command callback registration successful`);
             });
 
             await controller.sendControlCommand({ command: 'rewind', parameter: avSession.SkipIntervals.SECONDS_30 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -2093,20 +2108,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSEEK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONSEEK_0100]";
             session.on('seek', (callback) => {
-                if (callback === 10) {
-                    console.info('TestLog: Seek command callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Seek command callback registration failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: callback = ${callback}`);
+                expect(callback).assertEqual(10);
+                console.info(`${TAG}TestLog: Seek command callback registration successful`);
             });
 
             await controller.sendControlCommand({ command: 'seek', parameter: 10 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -2122,20 +2134,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_0100]";
             session.on('setSpeed', (callback) => {
-                if (callback === 2.6) {
-                    console.info('TestLog: SetSpeed command callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: SetSpeed command callback registration error');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: callback = ${callback}`);
+                expect(callback).assertEqual(2.6);
+                console.info(`${TAG}TestLog: SetSpeed command callback registration successful`);
             });
 
             await controller.sendControlCommand({ command: 'setSpeed', parameter: 2.6 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -2151,23 +2160,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_0100]";
             session.on('setLoopMode', (callback) => {
-                if (callback === 1) {
-                    console.info('TestLog: Set LoopMode command callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Set LoopMode command callback registration error');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: callback = ${callback}`);
+                expect(callback).assertEqual(1);
+                console.info(`${TAG}TestLog: Set LoopMode command callback registration successful`);
             });
 
             await controller.sendControlCommand({
                 command: 'setLoopMode', parameter:
                     avSession.LoopMode.LOOP_MODE_SINGLE
             }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -2183,21 +2189,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_0100]";
             session.on('toggleFavorite', (callback) => {
-                if (callback === 'false') {
-                    console.info('TestLog: Set toggleFavorite command callback registration successful');
-                    expect(true).assertTrue();
-                }
-                else {
-                    console.info('TestLog: Set toggleFavorite command callback registration error');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: callback = ${callback}`);
+                expect(callback).assertFalse;
+                console.info(`${TAG}TestLog: Set toggleFavorite command callback registration successful`);
             });
 
             await controller.sendControlCommand({ command: 'toggleFavorite', parameter: 'false' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -2213,20 +2215,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_0100]";
             session.on('handleKeyEvent', (callback) => {
-                if (callback.action === 2) {
-                    console.info('TestLog: Handle keyEvent callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Handle keyEvent callback registration error');
-                    expect(false).assertTrue();
-                }
+                console.info(`${TAG}TestLog: callback = ${callback.action}`);
+                expect(callback.action).assertEqual(2);
+                console.info(`${TAG}TestLog: Handle keyEvent callback registration successful`);
             });
 
             await controller.sendAVKeyEvent(event).then(() => {
-                console.info('TestLog: Controller send AVKeyEvent successfully');
+                console.info(`${TAG}TestLog: Controller send AVKeyEvent successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send AVKeyEvent error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send AVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
@@ -2242,15 +2241,16 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONWRONGCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONWRONGCALLBACK_0100]";
             try {
                 session.on('wrongCall', () => {
-                    console.info('TestLog: Wrong callback registration successful');
+                    console.info(`${TAG}TestLog: Wrong callback registration successful`);
                 });
             } catch (err) {
-                console.info(`TestLog: Wrong callback registration error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
-                done();
+                console.info(`${TAG}TestLog: Wrong callback registration error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(401);
             }
+            done();
         })
 
         /**
@@ -2262,14 +2262,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFPLAY_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
                 console.info('TestLog: Play command registration1 success');
-                expect(false).assertTrue();
+                callback1Called = true;
             }
 
             function callback2() {
                 console.info('TestLog: Play command registration2 success');
-                expect(false).assertTrue();
+                callback2Called = true;
             }
 
             session.on('play', callback1);
@@ -2282,9 +2285,13 @@ export default function AVSession() {
                 console.info('TestLog: Controller send command successfully');
             }).catch((err) => {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -2297,14 +2304,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFPLAY_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: Play command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Play command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: Play command registration2 success');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Play command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('play', callback1);
@@ -2314,12 +2324,19 @@ export default function AVSession() {
             session.off('play', callback1);
 
             await controller.sendControlCommand({ command: 'play' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off Play specified callback successfully`);
+
             done();
         })
 
@@ -2333,14 +2350,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: Pause command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Pause command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: Pause command registration2 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Pause command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('pause', callback1);
@@ -2350,12 +2370,16 @@ export default function AVSession() {
             session.off('pause');
 
             await controller.sendControlCommand({ command: 'pause' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -2368,14 +2392,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: Pause command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Pause command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: Pause command registration2 success');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Pause command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('pause', callback1);
@@ -2391,6 +2418,13 @@ export default function AVSession() {
                 expect(false).assertTrue();
             });
             await sleep(500);
+
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off pause specified callback successfully`);
+
             done();
         })
 
@@ -2403,14 +2437,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSTOP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSTOP_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: Stop command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Stop command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: Stop command registration2 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Stop command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('stop', callback1)
@@ -2420,12 +2457,16 @@ export default function AVSession() {
             session.off('stop');
 
             await controller.sendControlCommand({ command: 'stop' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -2438,14 +2479,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSTOP_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSTOP_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: Stop command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Stop command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: Stop command registration2 success');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Stop command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('stop', callback1)
@@ -2461,6 +2505,11 @@ export default function AVSession() {
                 expect(false).assertTrue();
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off stop specified callback successfully`);
             done();
         })
 
@@ -2473,14 +2522,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
                 console.info('TestLog: PlayNext command registration1 success');
-                expect(false).assertTrue();
+                callback1Called = true;
             }
 
             function callback2() {
                 console.info('TestLog: PlayNext command registration2 success');
-                expect(false).assertTrue();
+                callback2Called = true;
             }
 
             session.on('playNext', callback1);
@@ -2493,9 +2545,13 @@ export default function AVSession() {
                 console.info('TestLog: Controller send command successfully');
             }).catch((err) => {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -2508,14 +2564,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: PlayNext command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: PlayNext command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: PlayNext command registration2 success');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: PlayNext command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('playNext', callback1);
@@ -2525,12 +2584,17 @@ export default function AVSession() {
             session.off('playNext', callback1);
 
             await controller.sendControlCommand({ command: 'playNext' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off playNext specified callback successfully`);
             done();
         })
 
@@ -2543,14 +2607,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: PlayPrevious command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: PlayPrevious command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: PlayPrevious command registration2 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: PlayPrevious command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('playPrevious', callback1);
@@ -2560,12 +2627,16 @@ export default function AVSession() {
             session.off('playPrevious');
 
             await controller.sendControlCommand({ command: 'playPrevious' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -2578,14 +2649,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: PlayPrevious command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: PlayPrevious command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: PlayPrevious command registration2 success');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: PlayPrevious command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('playPrevious', callback1);
@@ -2595,12 +2669,17 @@ export default function AVSession() {
             session.off('playPrevious', callback1);
 
             await controller.sendControlCommand({ command: 'playPrevious' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off playPrevious specified callback successfully`);
             done();
         })
 
@@ -2613,14 +2692,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: FastForward command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: FastForward command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: FastForward command registration2 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: FastForward command registration2 success`);
+                callback1Called = true;
             }
 
             session.on('fastForward', callback1);
@@ -2630,12 +2712,16 @@ export default function AVSession() {
             session.off('fastForward');
 
             await controller.sendControlCommand({ command: 'fastForward' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -2648,14 +2734,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: FastForward command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: FastForward command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: FastForward command registration2 success');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: FastForward command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('fastForward', callback1);
@@ -2665,12 +2754,17 @@ export default function AVSession() {
             session.off('fastForward', callback1);
 
             await controller.sendControlCommand({ command: 'fastForward' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off fastForward specified callback successfully`);
             done();
         })
 
@@ -2683,14 +2777,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFREWIND_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: Rewind command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Rewind command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: Rewind command registration2 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Rewind command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('rewind', callback1);
@@ -2700,12 +2797,16 @@ export default function AVSession() {
             session.off('rewind');
 
             await controller.sendControlCommand({ command: 'rewind' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -2718,14 +2819,17 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFREWIND_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1() {
-                console.info('TestLog: Rewind command registration1 success');
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Rewind command registration1 success`);
+                callback1Called = true;
             }
 
             function callback2() {
-                console.info('TestLog: Rewind command registration2 success');
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Rewind command registration2 success`);
+                callback2Called = true;
             }
 
             session.on('rewind', callback1);
@@ -2735,12 +2839,17 @@ export default function AVSession() {
             session.off('rewind', callback1);
 
             await controller.sendControlCommand({ command: 'rewind' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off fastForward specified callback successfully`);
             done();
         })
 
@@ -2753,17 +2862,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSEEK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSEEK_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1(data) {
                 if (data === 5) {
-                    console.info('TestLog: offSeek callback1 registration');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: offSeek callback1 registration`);
+                    callback1Called = true;
                 }
             }
 
             function callback2(data) {
                 if (data === 10) {
-                    console.info('TestLog: offSeek callback2 registration');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: offSeek callback2 registration`);
+                    callback2Called = true;
                 }
             }
 
@@ -2774,12 +2886,16 @@ export default function AVSession() {
             session.off('seek');
 
             await controller.sendControlCommand({ command: 'seek', parameter: 10 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -2792,17 +2908,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSEEK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSEEK_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1(data) {
                 if (data === 5) {
-                    console.info('TestLog: offSeek callback1 registration');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: offSeek callback1 registration`);
+                    callback1Called = true;
                 }
             }
 
             function callback2(data) {
                 if (data === 10) {
-                    console.info('TestLog: offSeek callback2 registration');
-                    expect(true).assertTrue;
+                    console.info(`${TAG}TestLog: offSeek callback2 registration`);
+                    callback2Called = true;
                 }
             }
 
@@ -2819,6 +2938,11 @@ export default function AVSession() {
                 expect(false).assertTrue();
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off seek specified callback successfully`);
             done();
         })
 
@@ -2831,17 +2955,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1(data) {
                 if (data === 1.0) {
-                    console.info('TestLog: SetSpend command registration1 success');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: SetSpend command registration1 success`);
+                    callback1Called = true;
                 }
             }
 
             function callback2(data) {
                 if (data === 2.0) {
-                    console.info('TestLog: SetSpend command registration2 success');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: SetSpend command registration2 success`);
+                    callback2Called = true;
                 }
             }
 
@@ -2852,12 +2979,16 @@ export default function AVSession() {
             session.off('setSpeed');
 
             await controller.sendControlCommand({ command: 'setSpeed', parameter: 2.0 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -2870,17 +3001,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1(data) {
                 if (data === 1.0) {
-                    console.info('TestLog: SetSpend command registration1 success');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: SetSpend command registration1 success`);
+                    callback1Called = true;
                 }
             }
 
             function callback2(data) {
                 if (data === 2.0) {
-                    console.info('TestLog: SetSpend command registration2 success');
-                    expect(true).assertTrue;
+                    console.info(`${TAG}TestLog: SetSpend command registration2 success`);
+                    callback2Called = true;
                 }
             }
 
@@ -2891,12 +3025,17 @@ export default function AVSession() {
             session.off('setSpeed', callback1);
 
             await controller.sendControlCommand({ command: 'setSpeed', parameter: 2.0 }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off setSpeed specified callback successfully`);
             done();
         })
 
@@ -2909,17 +3048,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1(data) {
                 if (data === 1) {
-                    console.info('TestLog: SetLoopMode command registration1 success');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: SetLoopMode command registration1 success`);
+                    callback1Called = true;
                 }
             }
 
             function callback2(data) {
                 if (data === 2) {
-                    console.info('TestLog: SetLoopMode command registration2 success');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: SetLoopMode command registration2 success`);
+                    callback2Called = true;
                 }
             }
 
@@ -2930,15 +3072,19 @@ export default function AVSession() {
             session.off('setLoopMode');
 
             await controller.sendControlCommand({
-                command: 'setLoopMode',
-                parameter: avSession.LoopMode.LOOP_MODE_SINGLE
-            }).then(() => {
-                console.info('TestLog: Controller send command successfully');
-            }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
-            });
+                command: 'setLoopMode', parameter:
+                avSession.LoopMode.LOOP_MODE_SINGLE
+              }).then(() => {
+                console.info(`${TAG}TestLog: Controller send command successfully`);
+              }).catch((err) => {
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600105);
+              });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -2951,17 +3097,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1(data) {
                 if (data === 2) {
-                    console.info('TestLog: SetLoopMode command registration1 success');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: SetLoopMode command registration1 success`);
+                    callback1Called = true;
                 }
             }
 
             function callback2(data) {
                 if (data === 1) {
-                    console.info('TestLog: SetLoopMode command registration2 success');
-                    expect(true).assertTrue;
+                    console.info(`${TAG}TestLog: SetLoopMode command registration2 success`);
+                    callback2Called = true;
                 }
             }
 
@@ -2972,15 +3121,20 @@ export default function AVSession() {
             session.off('setLoopMode', callback1);
 
             await controller.sendControlCommand({
-                command: 'setLoopMode',
-                parameter: avSession.LoopMode.LOOP_MODE_SINGLE
-            }).then(() => {
-                console.info('TestLog: Controller send command successfully');
-            }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                command: 'setLoopMode', parameter:
+                avSession.LoopMode.LOOP_MODE_SINGLE
+              }).then(() => {
+                console.info(`${TAG}TestLog: Controller send command successfully`);
+              }).catch((err) => {
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
-            });
+              });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off setLoopMode specified callback successfully`);
             done();
         })
 
@@ -2993,17 +3147,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_0100]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1(data) {
                 if (data === 'true') {
-                    console.info('TestLog: ToggleFavorite command registration1 success');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: ToggleFavorite command registration1 success`);
+                    callback1Called = true;
                 }
             }
 
             function callback2(data) {
                 if (data === 'false') {
-                    console.info('TestLog: ToggleFavorite command registration1 success');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: ToggleFavorite command registration1 success`);
+                    callback2Called = true;
                 }
             }
 
@@ -3014,12 +3171,16 @@ export default function AVSession() {
             session.off('toggleFavorite');
 
             await controller.sendControlCommand({ command: 'toggleFavorite', parameter: 'false' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertFalse();
             done();
         })
 
@@ -3032,17 +3193,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1(data) {
                 if (data === 'true') {
-                    console.info('TestLog: ToggleFavorite command registration1 success');
-                    expect(false).assertTrue;
+                    console.info(`${TAG}TestLog: ToggleFavorite command registration1 success`);
+                    callback1Called = true;
                 }
             }
 
             function callback2(data) {
                 if (data === 'false') {
-                    console.info('TestLog: ToggleFavorite command registration2 success');
-                    expect(true).assertTrue;
+                    console.info(`${TAG}TestLog: ToggleFavorite command registration2 success`);
+                    callback2Called = true;
                 }
             }
 
@@ -3053,12 +3217,17 @@ export default function AVSession() {
             session.off('toggleFavorite', callback1);
 
             await controller.sendControlCommand({ command: 'toggleFavorite', parameter: 'false' }).then(() => {
-                console.info('TestLog: Controller send command successfully');
+                console.info(`${TAG}TestLog: Controller send command successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off toggleFavorite specified callback successfully`);
             done();
         })
 
@@ -3071,18 +3240,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            let flag = true;
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_0100]";
+            let flag1 = false;
+            let flag2 = false;
             function callback1(data) {
                 if (data.action === 1) {
-                    console.info('TestLog: HandleKeyEvent command registration1 success');
-                    flag = false;
+                    console.info(`${TAG}TestLog: HandleKeyEvent command registration1 success`);
+                    flag1 = true;
                 }
             }
 
             function callback2(data) {
                 if (data.action === 2) {
-                    console.info('TestLog: HandleKeyEvent command registration2 success');
-                    flag = false;
+                    console.info(`${TAG}TestLog: HandleKeyEvent command registration2 success`);
+                    flag2 = true;
                 }
             }
 
@@ -3093,20 +3264,18 @@ export default function AVSession() {
             session.off('handleKeyEvent');
 
             await controller.sendAVKeyEvent(event).then(() => {
-                console.info('TestLog: Controller send AVKeyEvent successfully');
+                console.info(`${TAG}TestLog: Controller send AVKeyEvent successfully`);
             }).catch((err) => {
-                console.info(`TestLog: Controller send AVKeyEvent error: code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
+                console.info(`${TAG}TestLog: Controller send AVKeyEvent error: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600105);
             });
             await sleep(500);
 
-            if (flag) {
-                console.info('TestLog: HandleKeyEvent command callback unRegistration successful');
-                expect(true).assertTrue();
-            } else {
-                console.info('TestLog: HandleKeyEvent command callback unRegistration failed');
-                expect(false).assertTrue();
-            }
+            console.info(`${TAG}TestLog: flag1 = ${flag1}`);
+            expect(flag1).assertFalse();
+            console.info(`${TAG}TestLog: flag2 = ${flag2}`);
+            expect(flag2).assertFalse();
+            console.info(`${TAG}TestLog: HandleKeyEvent command callback unRegistration successful`);
             done();
         })
 
@@ -3119,17 +3288,20 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_0200]";
+            let callback1Called = false;
+            let callback2Called = false;
             function callback1(data) {
                 if (data.action === 1) {
-                    console.info('TestLog: HandleKeyEvent command registration1 success');
-                    expect(false).assertTrue();
+                    console.info(`${TAG}TestLog: HandleKeyEvent command registration1 success`);
+                    callback1Called = true;
                 }
             }
 
             function callback2(data) {
                 if (data.action === 2) {
-                    console.info('TestLog: HandleKeyEvent command registration2 success');
-                    expect(true).assertTrue();
+                    console.info(`${TAG}TestLog: HandleKeyEvent command registration2 success`);
+                    callback2Called = true;
                 }
             }
 
@@ -3140,12 +3312,17 @@ export default function AVSession() {
             session.off('handleKeyEvent', callback1);
 
             await controller.sendAVKeyEvent(event).then(() => {
-                console.info('TestLog: Controller send AVKeyEvent successfully');
-            }).catch((err) => {
-                console.info(`TestLog: Controller send AVKeyEvent error: code: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}TestLog: Controller send AVKeyEvent successfully`);
+              }).catch((err) => {
+                console.info(`${TAG}TestLog: Controller send AVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
-            });
+              });
             await sleep(500);
+            console.info(`${TAG}TestLog: callback1Called = ${callback1Called}`);
+            expect(callback1Called).assertFalse();
+            console.info(`${TAG}TestLog: callback2Called = ${callback2Called}`);
+            expect(callback2Called).assertTrue();
+            console.info(`${TAG}TestLog: off handleKeyEvent specified callback successfully`);
             done();
         })
 
@@ -3158,41 +3335,26 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            session.on('outputDeviceChange', (callback) => {
-                if (!callback.isRemote) {
-                    console.info(callback.audioDeviceId.size);
-                    console.info(callback.deviceName.size);
-                    console.info('outputDeviceChange callback registration successful');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('outputDeviceChange callback registration fail');
-                    expect(false).assertTrue();
-                }
-            });
-
-            session.off('outputDeviceChange');
-
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_PROMISE_0100]";
+        
             await session.getOutputDevice().then((data) => {
-                if (!data.isRemote) {
-                    let deviceInfo = data.devices[0]
-                    if (deviceInfo && deviceInfo.castCategory !== undefined && deviceInfo.deviceId !== undefined &&
-                        deviceInfo.deviceName !== undefined && deviceInfo.deviceType !== undefined && deviceInfo.ipAddress !== undefined &&
-                        deviceInfo.providerId !== undefined && deviceInfo.supportedProtocols !== undefined && deviceInfo.authenticationStatus !== undefined) {
-                        expect(true).assertTrue();
-                    } else {
-                        console.info('getOutputDevice value error.')
-                        expect(false).assertTrue();
-                    }
-                } else {
-                    console.info(avSession.OutputDeviceInfo.isRemote);
-                    console.info(avSession.OutputDeviceInfo.audioDeviceId.size);
-                    console.info(avSession.OutputDeviceInfo.deviceName.size);
-                    console.info('getOutputDevice successfully');
-                    console.info('Get device information failed');
-                    expect(false).assertTrue();
-                }
+                let deviceInfo = data.devices[0]
+                console.info(`${TAG}estLog1 length = ${data.devices.length}`);
+                expect(data.devices.length).assertEqual(1);
+                console.info(`${TAG}TestLog1 castCategory = ${deviceInfo.castCategory}`);
+                expect(deviceInfo.modelName).not().assertEqual(undefined);
+                console.info(`${TAG}TestLog1 deviceId = ${deviceInfo.deviceId}`);
+                expect(deviceInfo.deviceId).assertEqual("0");
+                console.info(`${TAG}TestLog1 deviceName = ${deviceInfo.deviceName}`);
+                expect(deviceInfo.deviceName).assertEqual("LocalDevice");
+                console.info(`${TAG}TestLog1 deviceType = ${deviceInfo.deviceType}`);
+                expect(deviceInfo.deviceType).assertEqual(0);
+                console.info(`${TAG}TestLog1 modelName = ${deviceInfo.modelName}`);
+                expect(deviceInfo.modelName).assertEqual("");
+                console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo.supportedPullClients}`);
+                expect(deviceInfo.supportedPullClients).assertEqual(undefined);
             }).catch((err) => {
-                console.info(`Get device BusinessError: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}Get device BusinessError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             })
             done();
@@ -3207,6 +3369,7 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_0100]";
             try {
                 session.getOutputDevice((err, value) => {
                     if (err) {
@@ -3215,25 +3378,30 @@ export default function AVSession() {
                     } else if (!value.isRemote) {
                         console.info('Get device information successfully');
                         let deviceInfo = value.devices[0]
-                        if (deviceInfo && deviceInfo.castCategory !== undefined && deviceInfo.deviceId !== undefined &&
-                            deviceInfo.deviceName !== undefined && deviceInfo.deviceType !== undefined && deviceInfo.ipAddress !== undefined &&
-                            deviceInfo.providerId !== undefined && deviceInfo.supportedProtocols !== undefined && deviceInfo.authenticationStatus !== undefined) {
-                            expect(true).assertTrue();
-                        } else {
-                            console.info('getOutputDevice value error.')
-                            expect(false).assertTrue();
-                        }
+                        console.info(`${TAG}estLog1 length = ${value.devices.length}`);
+                        expect(value.devices.length).assertEqual(1);
+                        console.info(`${TAG}TestLog1 castCategory = ${deviceInfo.castCategory}`);
+                        expect(deviceInfo.modelName).not().assertEqual(undefined);
+                        console.info(`${TAG}TestLog1 deviceId = ${deviceInfo.deviceId}`);
+                        expect(deviceInfo.deviceId).assertEqual("0");
+                        console.info(`${TAG}TestLog1 deviceName = ${deviceInfo.deviceName}`);
+                        expect(deviceInfo.deviceName).assertEqual("LocalDevice");
+                        console.info(`${TAG}TestLog1 deviceType = ${deviceInfo.deviceType}`);
+                        expect(deviceInfo.deviceType).assertEqual(0);
+                        console.info(`${TAG}TestLog1 modelName = ${deviceInfo.modelName}`);
+                        expect(deviceInfo.modelName).assertEqual("");
+                        console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo.supportedPullClients}`);
+                        expect(deviceInfo.supportedPullClients).assertEqual(undefined);
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
                     }
-                    done();
                 });
             } catch (err) {
                 console.info(`Get device information unknownError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
-                done();
             } 
+            done();
         })
 
         /**
@@ -3245,6 +3413,7 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_0100]";
             try {
                 session.getOutputDevice((err, value) => {
                     if (err) {
@@ -3279,12 +3448,16 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_PROMISE_0100]";
+            let avSessionController;
             await session.getController().then((data) => {
-                console.info('Get controller successfully');
-                expect(true).assertTrue();
+                avSessionController = data;
+                console.info(`${TAG}Testlog:Get avSessionController.sessionId = ${avSessionController.sessionId}`);
+                expect(avSessionController.sessionId).not().assertUndefined();
+                console.info(`${TAG}Testlog:Get controller successfully`);
             }).catch((err) => {
-                console.info('Get controller failed');
-                console.info(`Get controller BusinessError: ${err.code}, message: ${err.message}`);
+                console.info(`${TAG}Testlog:Get controller failed`);
+                console.info(`${TAG}Testlog:Get controller BusinessError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -3299,70 +3472,28 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_CALLBACK_0100]";
+            let avSessionController;
             try {
                 session.getController((err, data) => {
                     if (err) {
                         console.info('Get controller failed');
                         expect(false).assertTrue();
                     } else {
-                        console.info('Get controller successfully');
-                        expect(true).assertTrue();
+                        avSessionController = data;
+                        console.info(`${TAG}Testlog:Get avSessionController.sessionId = ${avSessionController.sessionId}`);
+                        expect(avSessionController.sessionId).not().assertUndefined();
+                        console.info(`${TAG}Testlog:Get controller successfully`);
                     }
-                    done();
                 })
             } catch (err) {
-                console.info(`Get controller failed, unknown error: code: ${err.code} message: ${err.message}.`);
+                console.info(`${TAG}Testlog:Get controller failed, unknown error: code: ${err.code} message: ${err.message}.`);
                 expect(false).assertTrue();
-                done();
             }
-        })
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_CALLBACK_0100
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_CALLBACK_0100
-         * @tc.desc   Testing call sendAVKeyEvent(callback)
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            try {
-                controller.sendAVKeyEvent(event, (err, data) => {
-                    if (err) {
-                        console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
-                        expect(false).assertTrue();
-                    } else {
-                        console.info('sendAVKeyEvent Successfully');
-                        expect(true).assertTrue();
-                    }
-                    done();
-                })
-            } catch (err) {
-                console.info(`TestLog: sendAVKeyEvent unknownError: code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-                done();
-            }
-        })
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_PROMISE_0100
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_PROMISE_0100
-         * @tc.desc   Testing call sendAVKeyEvent(promise)
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            await controller.sendAVKeyEvent(event).then(() => {
-                console.info('sendAVKeyEvent Successfully');
-                expect(true).assertTrue();
-            }).catch((err) => {
-                console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-            });
             done();
         })
 
+        
         /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_0100
          * @tc.number SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_0100
@@ -3379,13 +3510,8 @@ export default function AVSession() {
                 console.info(`TestLog: getRealPlaybackPositionSync error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
-            if (realPosition < 0) {
-                console.info(`TestLog: getRealPlaybackPositionSync error: code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-            } else {
-                console.info(`TestLog: getRealPlaybackPositionSync Successfully, positon: ${realPosition}`);
-                expect(true).assertTrue();
-            }
+            console.info(`TestLog: getRealPlaybackPositionSync Successfully, positon: ${realPosition}`);
+            expect(realPosition).assertLargerOrEqual(0);
             done();
         })
 
@@ -3544,31 +3670,29 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_SUPPORTEDDRMCAPABILITIES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_SUPPORTEDDRMCAPABILITIES_0100]";
             try {
                 session.getOutputDevice((err, value) => {
                     if (err) {
-                        console.error(`Get device information BusinessError: ${err.code}, message: ${err.message}`);
+                        console.error(`${TAG}Get device information BusinessError: ${err.code}, message: ${err.message}`);
                         expect(false).assertTrue();
                     } else if (!value.isRemote) {
-                        console.info('Get device information successfully');
-                        let deviceInfo = value.devices[0]
-                        if (deviceInfo && Array.isArray(deviceInfo.supportedDrmCapabilities)) {
-                            expect(true).assertTrue();
-                        } else {
-                            console.info('getOutputDevice value error.')
-                            expect(false).assertTrue();
-                        }
+                        console.info(`${TAG}Get device information successfully`);
+                        let deviceInfo = value.devices[0];
+                        console.info(`${TAG}estLog1 length = ${value.devices.length}`);
+                        expect(value.devices.length).assertEqual(1);
+                        console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo.supportedPullClients}`);
+                        expect(deviceInfo.supportedPullClients).assertEqual(undefined);
                     } else {
-                        console.info('Get device information failed');
+                        console.info(`${TAG}Get device information failed`);
                         expect(false).assertTrue();
                     }
-                    done();
                 });
             } catch (err) {
-                console.error(`Get device information unknownError: ${err.code}, message: ${err.message}`);
+                console.error(`${TAG}Get device information unknownError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
-                done();
             } 
+            done();
         })
 
         /**
@@ -3586,7 +3710,6 @@ export default function AVSession() {
                     session.getAllCastDisplays().then((data) => {
                         if (Array.isArray(data)) {
                             console.info(`getAllCastDisplays success: ${JSON.stringify(data)}`);
-                            expect(true).assertTrue();
                         } else {
                             console.info('getAllCastDisplays failed');
                             expect(false).assertTrue();

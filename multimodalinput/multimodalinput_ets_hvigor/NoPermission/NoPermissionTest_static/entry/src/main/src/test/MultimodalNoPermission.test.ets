@@ -26,20 +26,6 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 export default function MultimodalNoPermissionTest() {
 
   describe("MultimodalNoPermissionTest", (): void => {
-    const ExpectTrue = (n: boolean) => {
-      try {
-        expect(n).assertTrue();
-      } catch (err) {
-        console.info("expectInfo", `test failed`);
-      }
-    }
-    const ExpectFalse = (n: boolean) => {
-      try {
-        expect(n).assertFail();
-      } catch (err) {
-        console.info("expectInfo", `test failed`);
-      }
-    }
 
     /**
      * @tc.name   SUB_MMI_Input_Api_NoPermission_0100
@@ -55,13 +41,13 @@ export default function MultimodalNoPermissionTest() {
         try {
           await inputDevice.setFunctionKeyEnabled(inputDevice.FunctionKey.CAPS_LOCK, true);
           console.info(`${caseName} Set capslock state success`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         } catch (error) {
           error = error as BusinessError;
           console.info(`${caseName} Failed to set capslock state, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
-          ExpectTrue(error.code === 201);
+          expect(error.code).assertEqual(201);
           done();
         }
       });
@@ -82,12 +68,12 @@ export default function MultimodalNoPermissionTest() {
           let pattern: Array<long> = [100, 200, 300, 400];
           infraredEmitter.transmitInfrared(infraredFrequency, pattern);
           console.info(`${caseName} transmitInfrared success.`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         } catch (error) {
           error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectTrue(error.code == 201);
+          expect(error.code).assertEqual(201);
           done();
         }
       });
@@ -106,12 +92,12 @@ export default function MultimodalNoPermissionTest() {
         try {
           let frequencies = infraredEmitter.getInfraredFrequencies();
           console.info(`${caseName} getInfraredFrequencies success, frequencies: ${JSON.stringify(frequencies)}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         } catch (error) {
           error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectTrue(error.code == 201);
+          expect(error.code).assertEqual(201);
           done();
         }
       });

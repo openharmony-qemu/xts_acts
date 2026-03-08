@@ -23,6 +23,7 @@ group("access_token") {
       "static/accessTokenFuncTestStatic:ActsAccessTokenFuncStaticTest",
       "static/requestPermissionOnSettingTestStatic:ActsRequestPermissionsOnSettingStaticTest",
       "static/requestPermissionsFromUserTestStatic:ActsRequestPermissionsFromUserStaticTest",
+      "static/openPermissionOnSettingTestStatic:ActsOpenPermissionOnSettingStaticTest",
     ]
   }
 }

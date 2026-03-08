@@ -20,4 +20,10 @@ ohos_js_app_static_suite("ActsAccountOperateStaticTest") {
   hap_name = "ActsAccountOperateStaticTest"
   part_name = "os_account"
   subsystem_name = "account"
+  deps = [ 
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountsceneappaccess:ActsAccountSceneAppAccess",
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountsceneonoff:ActsAccountSceneOnOff",
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountoauthtoken:ActsAccountOauthtoken",
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountauthenticator:ActsAccountAuthenticator"
+  ]
 }

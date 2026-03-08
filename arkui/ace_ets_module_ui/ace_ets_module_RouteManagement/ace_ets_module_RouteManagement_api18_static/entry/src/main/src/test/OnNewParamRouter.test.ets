@@ -48,8 +48,9 @@ export default function OnNewParamRouter() {
         url: 'MainAbility/pages/router/OnNewParamRouter',
       }
       try {
+        await CommonFunc.sleep(5000);
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get OnNewParamRouter state success " + JSON.stringify(pages));
         if (!("OnNewParamRouter" == pages.name)) {
@@ -88,7 +89,7 @@ it('OnNewParamRouter_static_0100', Level.LEVEL2, async (done: () => void): Promi
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await driver.delayMs(500);
+      await driver.delayMs(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushId'));
       await (btn1?.click() as Promise<void>)

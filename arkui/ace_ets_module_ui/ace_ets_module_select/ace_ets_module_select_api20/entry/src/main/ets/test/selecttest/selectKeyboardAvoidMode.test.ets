@@ -18,9 +18,19 @@ import { router } from '@kit.ArkUI';
 import Utils from '../../MainAbility/common/Utils';
 import { Driver, ON, } from '@ohos.UiTest';
 import { Want } from '@kit.AbilityKit';
+import deviceInfo from "@ohos.deviceInfo"
 
 export default function selectKeyboardAvoidMode() {
   describe('selectKeyboardAvoidMode', () => {
+    let currentDeviceIsPC = false
+    beforeAll(() => {
+        console.info("popupKeyboardAvoidMode beforeAll start")
+        let deviceTypeInfo = deviceInfo.deviceType
+        currentDeviceIsPC = deviceTypeInfo === "2in1" ? true : false
+        console.info("the value of the currentDeviceIsPC is " + currentDeviceIsPC)
+        console.info("the value of the deviceType is " + deviceInfo.deviceType)
+    })
+
     beforeEach(async (done: Function) => {
       console.info('selectKeyboardAvoidMode beforeEach start');
       let options: router.RouterOptions = {
@@ -54,17 +64,19 @@ export default function selectKeyboardAvoidMode() {
    it('selectKeyboardAvoidMode_001', Level.LEVEL0, async (done: Function) => {
      await Utils.sleep(1000);
      console.log('selectKeyboardAvoidMode_001 START')
-     let driver: Driver = Driver.create();
-     let btn1 = await driver.findComponent(ON.id('select01'));
-     let hideBtn = await driver.findComponent(ON.id('hideBtn'));
-     await btn1.click();
-     await Utils.sleep(5000);
-     let str = await driver.findComponent(ON.text('ddd'));
-     expect(str == null ).assertTrue();
-     await Utils.sleep(1000);
-     await btn1.click();
-     await Utils.sleep(1000);
-     await hideBtn.click();
+     if (!currentDeviceIsPC) {
+      let driver: Driver = Driver.create();
+      let btn1 = await driver.findComponent(ON.id('select01'));
+      let hideBtn = await driver.findComponent(ON.id('hideBtn'));
+      await btn1.click();
+      await Utils.sleep(5000);
+      let str = await driver.findComponent(ON.text('ddd'));
+      expect(str == null ).assertTrue();
+      await Utils.sleep(1000);
+      await btn1.click();
+      await Utils.sleep(1000);
+      await hideBtn.click();
+     }
      console.log('selectKeyboardAvoidMode_001 END')
      done();
    });
@@ -80,17 +92,19 @@ export default function selectKeyboardAvoidMode() {
    it('selectKeyboardAvoidMode_002', Level.LEVEL0, async (done: Function) => {
      await Utils.sleep(1000);
      console.log('selectKeyboardAvoidMode_002 START')
-     let driver: Driver = Driver.create();
-     let btn2 = await driver.findComponent(ON.id('select02'));
-     let hideBtn = await driver.findComponent(ON.id('hideBtn'));
-     await btn2.click();
-     await Utils.sleep(5000);
-     let str1 = await driver.findComponent(ON.text('ddd'));
-     expect(str1 == null ).assertTrue();
-     await Utils.sleep(1000);
-     await btn2.click();
-     await Utils.sleep(1000);
-     await hideBtn.click();
+     if (!currentDeviceIsPC) {
+        let driver: Driver = Driver.create();
+        let btn2 = await driver.findComponent(ON.id('select02'));
+        let hideBtn = await driver.findComponent(ON.id('hideBtn'));
+        await btn2.click();
+        await Utils.sleep(5000);
+        let str1 = await driver.findComponent(ON.text('ddd'));
+        expect(str1 == null ).assertTrue();
+        await Utils.sleep(1000);
+        await btn2.click();
+        await Utils.sleep(1000);
+        await hideBtn.click();
+     }
      console.log('selectKeyboardAvoidMode_002 END')
      done();
    });
@@ -106,17 +120,19 @@ export default function selectKeyboardAvoidMode() {
    it('selectKeyboardAvoidMode_003', Level.LEVEL0, async (done: Function) => {
      await Utils.sleep(1000);
      console.log('selectKeyboardAvoidMode_003 START')
-     let driver: Driver = Driver.create();
-     let btn3 = await driver.findComponent(ON.id('select03'));
-     let hideBtn = await driver.findComponent(ON.id('hideBtn'));
-     await btn3.click();
-     await Utils.sleep(5000);
-     let str1 = await driver.findComponent(ON.text('ddd'));
-     expect(str1 !== null ).assertTrue();
-     await Utils.sleep(1000);
-     await btn3.click();
-     await Utils.sleep(1000);
-     await hideBtn.click();
+     if (!currentDeviceIsPC) {
+        let driver: Driver = Driver.create();
+        let btn3 = await driver.findComponent(ON.id('select03'));
+        let hideBtn = await driver.findComponent(ON.id('hideBtn'));
+        await btn3.click();
+        await Utils.sleep(5000);
+        let str1 = await driver.findComponent(ON.text('ddd'));
+        expect(str1 !== null ).assertTrue();
+        await Utils.sleep(1000);
+        await btn3.click();
+        await Utils.sleep(1000);
+        await hideBtn.click();
+     }
      console.log('selectKeyboardAvoidMode_003 END')
      done();
    });

@@ -126,8 +126,8 @@ export default function AVSessionManager() {
             let TAG = "[SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0400]";
             await avSession.createAVSession(context, tag, "video").then((data) => {
                 currentAVSession = data;
-                console.info(`${TAG}TestLog: avSession create successfully:length = ${session.sessionId.length}`);
-                expect(session.sessionId.length).assertEqual(64);    
+                console.info(`${TAG}TestLog: avSession create successfully:length = ${currentAVSession.sessionId.length}`);
+                expect(currentAVSession.sessionId.length).assertEqual(64);    
             }).catch((err) => {
                 console.info(`${TAG}TestLog: avSession create error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -224,7 +224,6 @@ export default function AVSessionManager() {
                             console.info(`${TAG}stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                         } else {
                             console.info(`${TAG}stopCasting successfully`);
-                            expect(true).assertTrue();
                         }
                     }).catch((err) => {
                         console.info(`${TAG}CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -259,7 +258,6 @@ export default function AVSessionManager() {
                 });
                 currentAVSession.stopCasting().then(() => {
                     console.info(`${TAG}stopCasting successfully`);
-                    expect(true).assertTrue();
                 }).catch((err) => {
                     console.info(`${TAG}stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
@@ -268,7 +266,6 @@ export default function AVSessionManager() {
                 console.error(`${TAG}stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`)
                 console.info(`${TAG}stopCasting promise successfully`);
                 expect(error.message).assertEqual("Cannot read property then of undefined");
-
             }
             done();
         })

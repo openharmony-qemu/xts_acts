@@ -88,4 +88,6 @@ multimedia/av_codec/vcodec/ActsVcodecEncoderTest/entry/src/main/resources/rawfil
 arkui/ace_ets_module_ui/ace_ets_module_search_undefined_static/entry/src/main/resources/base/media/fontFamily.ttf filter=lfs diff=lfs merge=lfs -text
 arkui/ace_ets_module_ui/ace_ets_module_textArea_undefined_static/entry/src/main/resources/base/media/fontFamily.ttf filter=lfs diff=lfs merge=lfs -text
 arkui/ace_ets_module_ui/ace_ets_module_textInput_undefined_static/entry/src/main/resources/base/media/fontFamily.ttf filter=lfs diff=lfs merge=lfs -text
+resourceschedule/resourceschedule_standard/ActsQosManagerTest/entry/src/main/resources/rawfile/Qwen2.5-0.5B-CPU-Q4/params filter=lfs diff=lfs merge=lfs -text
+resourceschedule/resourceschedule_standard/ActsQosManagerTest/entry/src/main/resources/rawfile/Qwen2.5-0.5B-CPU-Q4/tokenizer.json filter=lfs diff=lfs merge=lfs -text
 /customization/enterprise_device_management/edm_xts_stage/entry/src/ohosTest/resources/resfile/101mb.bmp filter=lfs diff=lfs merge=lfs -text

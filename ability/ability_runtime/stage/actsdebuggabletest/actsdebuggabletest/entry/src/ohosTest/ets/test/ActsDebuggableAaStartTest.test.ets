@@ -18,6 +18,7 @@ import base from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import backgroundTaskManager from '@ohos.resourceschedule.backgroundTaskManager';
+import EventBusPlus from '../lib/EventBusPlus'
 
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
@@ -40,14 +41,6 @@ export default function actsDebuggableAaStartTest() {
     })
 
     beforeEach(async () => {
-      await abilityDelegator.executeShellCommand('aa force-stop com.example.timeout').then(data => {
-        hilog.info(0x0000, 'debuggabletest', '%{public}s',
-          'beforeEach ActsDebuggableAaStartTest force-stop data is: ' + JSON.stringify(data));
-      }).catch((err:base.BusinessError) => {
-        hilog.info(0x0000, 'debuggabletest', '%{public}s',
-          'beforeEach ActsDebuggableAaStartTest force-stop err is: ' + JSON.stringify(err));
-      });
-      await sleep(1000);
       await abilityDelegator.executeShellCommand('hilog -r').then(data => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
           'beforeEach ActsDebuggableAaStartTest hilog -r data is: ' + JSON.stringify(data));
@@ -55,7 +48,6 @@ export default function actsDebuggableAaStartTest() {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
           'beforeEach ActsDebuggableAaStartTest hilog -r err is: ' + JSON.stringify(err));
       });
-      await sleep(2000);
     })
     afterEach(() => {
     })
@@ -72,6 +64,8 @@ export default function actsDebuggableAaStartTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_AA_AMS_Debuggable_0300', Level.LEVEL1, async (done: Function) => {
+      let promiseOnCreate = EventBusPlus.onWait('timeoutOnCreate');
+      let promiseOnDestroy = EventBusPlus.onWait('onDestroy')
       let res = '';
       await abilityDelegator.executeShellCommand('aa start -b com.example.timeout -a EntryAbility').then(data => {
         res = data.stdResult;
@@ -80,6 +74,9 @@ export default function actsDebuggableAaStartTest() {
           'SUB_AA_AMS_Debuggable_0300 err is: ' + JSON.stringify(err));
       })
       expect(res).assertContain('start ability successfully.');
+      await promiseOnCreate;
+      EventBusPlus.emit('terminateTimeout');
+      await promiseOnDestroy;
       done();
     })
 

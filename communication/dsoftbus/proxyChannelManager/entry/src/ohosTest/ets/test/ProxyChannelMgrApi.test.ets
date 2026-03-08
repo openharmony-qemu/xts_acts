@@ -514,7 +514,66 @@ export default function proxyChannelMgr() {
       await sleep(1000);
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_1200----------------");
     });
-
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1210
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1210
+     * @tc.desc   openProxyChannel接口入参channelInfo为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1210----------------");
+      let flag = false;
+      let chlId: number = -1;
+      try {
+        await proxyChannelManager.openProxyChannel(null)
+          .then((channelId: number) => {
+            chlId = channelId;
+            console.info(logTag+"SUB_DSoftbus_Trans_proxyChannelMgrAPI_1210 openProxyChannel chlId:" + chlId);
+          })
+      }catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_1210 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_1210 error.message is " + error.message);
+        expect(error.code == 32390006).assertTrue();
+        expect(error.message != null).assertTrue();
+      }finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_1210----------------");
+    });
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1220
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1220
+     * @tc.desc   openProxyChannel接口入参channelInfo为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1220----------------");
+      let flag = false;
+      let chlId: number = -1;
+      try {
+        await proxyChannelManager.openProxyChannel(undefined)
+          .then((channelId: number) => {
+            chlId = channelId;
+            console.info(logTag+"SUB_DSoftbus_Trans_proxyChannelMgrAPI_1220 openProxyChannel chlId:" + chlId);
+          })
+      }catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_1220 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_1220 error.message is " + error.message);
+        expect(error.code == 32390006).assertTrue();
+        expect(error.message != null).assertTrue();
+      }finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_1220----------------");
+    });
     /**
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300
@@ -887,6 +946,68 @@ export default function proxyChannelMgr() {
       }
       await sleep(1000);
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_2400----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410
+     * @tc.desc   sendData接口入参data为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410----------------");
+      let flag = false;
+      let channelId: number = 1;
+      try {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410 channelId is " + channelId);
+        await proxyChannelManager.sendData(channelId, null)
+          .then(() => {
+             console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410 sendData success");
+          })
+      }catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410 error.message is " + error.message);
+        expect(error.code == 32390006).assertTrue();
+        expect(error.message != null).assertTrue();
+      } finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420
+     * @tc.desc   sendData接口入参data为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410----------------");
+      let flag = false;
+      let channelId: number = 1;
+      try {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420 channelId is " + channelId);
+        await proxyChannelManager.sendData(channelId, undefined)
+          .then(() => {
+             console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420 sendData success");
+          })
+      }catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420 error.message is " + error.message);
+        expect(error.code == 32390006).assertTrue();
+        expect(error.message != null).assertTrue();
+      } finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420----------------");
     });
 
     /**

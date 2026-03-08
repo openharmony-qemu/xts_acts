@@ -145,6 +145,96 @@ export default function actslocationTest() {
        })
 
         /**
+         * @tc.number  testGeolocationManagerGeofenceConfig001
+         * @tc.name  testGeolocationManagerGeofenceConfig001
+         * @tc.desc  Test Location API functionality
+         * @tc.level  Level 2
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
+         */
+        it('testGeolocationManagerGeofenceConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
+            async(done:()=>void):Promise<void>=>{
+                expect(true).assertEqual(geoLocationManager.CoordinateSystemType.WGS84 == 1)
+                expect(true).assertEqual(geoLocationManager.CoordinateSystemType.GCJ02 == 2)
+
+                expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_DWELL == 4)
+
+                expect(true).assertEqual(geoLocationManager.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA == 1)
+
+
+                done();
+
+       })
+
+        /**
+         * @tc.number  testGeolocationManagerCoreConfig001
+         * @tc.name  testGeolocationManagerCoreConfig001
+         * @tc.desc  Test Location API functionality
+         * @tc.level  Level 2
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
+         */
+        it('testGeolocationManagerCoreConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
+            async(done:()=>void):Promise<void>=>{
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_DEFAULT == -1)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_PERMISSION_DENIED == -2)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_BACKGROUND_PERMISSION_DENIED == -3)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_SWITCH_OFF == -4)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_INTERNET_ACCESS_FAILURE == -5)
+
+                expect(true).assertEqual(geoLocationManager.UserActivityScenario.SPORT == 0x402)
+                expect(true).assertEqual(geoLocationManager.UserActivityScenario.TRANSPORT == 0x403)
+                expect(true).assertEqual(geoLocationManager.UserActivityScenario.DAILY_LIFE_SERVICE == 0x404)
+
+                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.HIGH_POWER_CONSUMPTION == 0x601)
+                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.LOW_POWER_CONSUMPTION == 0x602)
+                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.NO_POWER_CONSUMPTION == 0x603)
+
+                expect(true).assertEqual(geoLocationManager.SportsType.RUNNING == 1)
+                expect(true).assertEqual(geoLocationManager.SportsType.WALKING == 2)
+                expect(true).assertEqual(geoLocationManager.SportsType.CYCLING == 3)
+
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_LOCALE == 1)
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_SIM == 2)
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_LOCATION	 == 3)
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_NETWORK == 4)
+
+
+                done();
+
+       })
+       
+        /**
+         * @tc.number  testGeolocationManagerGnssConfig001
+         * @tc.name  testGeolocationManagerGnssConfig001
+         * @tc.desc  Test Location API functionality
+         * @tc.level  Level 2
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
+         */
+        it('testGeolocationManagerGnssConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
+            async(done:()=>void):Promise<void>=>{
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_UNKNOWN == 0)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GPS == 1)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_SBAS == 2)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GLONASS == 3)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_QZSS == 4)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_BEIDOU == 5)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GALILEO == 6)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_IRNSS == 7)
+
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_NULL == 0)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_EPHEMERIS_DATA_EXIST == 1)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_ALMANAC_DATA_EXIST == 2)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_USED_IN_FIX == 4)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_CARRIER_FREQUENCY_EXIST == 8)
+
+
+                done();
+
+       })
+
+        /**
          * @tc.number  Sub_Location_GetCurrentLocation_0100
          * @tc.name  Sub_Location_GetCurrentLocation_0100
          * @tc.desc  Test Location API functionality
@@ -661,11 +751,13 @@ export default function actslocationTest() {
                 }).catch((error) => {
                   console.error('promise, SUB_Location_getActiveGeoFences_0100: error=' + error.code);
                   expect(error.code).assertEqual(801);
+                  done();
                 });
               } catch (error) {
                 console.error("SUB_Location_getActiveGeoFences_0100: errCode" + error.code + ", errMessage" + error.message);
                 expect().assertFalse();
               }
+              done();
              }
             })
 

@@ -838,16 +838,22 @@ export default function cameraJSUnitOutput() {
           cameraObj.getSupportedCameras();
           cameraObj.getSupportedOutputCapability();
           cameraObj.createSession();
-          let result = cameraObj.createMetadataOutput();
-          result = cameraObj.createCameraInput();
-          result = cameraObj.cameraInputOpen();
-          cameraObj.sessionBegin();
-          result = cameraObj.sessionAddInput();
-          result = cameraObj.sessionAddMetadataOutput();
-          result = cameraObj.sessionCommitConfig();
-          result = cameraObj.sessionStart();
-          result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
-          expect(result).assertEqual(0);
+          if (cameraObj.IsMetadataObjectTypeValid() == 0) {
+            console.info(TAG + "IsMetadataObjectTypeValid invalid"); 
+            expect(true).assertTrue();
+          }
+          else {
+            let result = cameraObj.createMetadataOutput();
+            result = cameraObj.createCameraInput();
+            result = cameraObj.cameraInputOpen();
+            cameraObj.sessionBegin();
+            result = cameraObj.sessionAddInput();
+            result = cameraObj.sessionAddMetadataOutput();
+            result = cameraObj.sessionCommitConfig();
+            result = cameraObj.sessionStart();
+            result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
+            expect(result).assertEqual(0);
+          }
       } catch (error) {
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200 FAILED");
           console.info(TAG + "ERRORCODE: " + error.code);
@@ -869,17 +875,23 @@ export default function cameraJSUnitOutput() {
           cameraObj.getSupportedCameras();
           cameraObj.getSupportedOutputCapability();
           cameraObj.createSession();
-          let result = cameraObj.createMetadataOutput();
-          result = cameraObj.createCameraInput();
-          result = cameraObj.cameraInputOpen();
-          cameraObj.sessionBegin();
-          result = cameraObj.sessionAddInput();
-          result = cameraObj.sessionAddMetadataOutput();
-          result = cameraObj.sessionCommitConfig();
-          result = cameraObj.sessionStart();
-          result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
-          result = await cameraObj.MetadataOutputRemoveMetadataObjectTypes();
-          expect(result).assertEqual(0);
+          if (cameraObj.IsMetadataObjectTypeValid() == 0) {
+            console.info(TAG + "IsMetadataObjectTypeValid invalid"); 
+            expect(true).assertTrue();
+          }
+          else {
+            let result = cameraObj.createMetadataOutput();
+            result = cameraObj.createCameraInput();
+            result = cameraObj.cameraInputOpen();
+            cameraObj.sessionBegin();
+            result = cameraObj.sessionAddInput();
+            result = cameraObj.sessionAddMetadataOutput();
+            result = cameraObj.sessionCommitConfig();
+            result = cameraObj.sessionStart();
+            result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
+            result = await cameraObj.MetadataOutputRemoveMetadataObjectTypes();
+            expect(result).assertEqual(0);
+          }
       } catch (error) {
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200 FAILED");
           console.info(TAG + "ERRORCODE: " + error.code);

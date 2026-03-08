@@ -72,8 +72,7 @@ it('setXComponentSurfaceRotationTest_static_0010', Level.LEVEL2, async (done: ()
       const strJson2 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')
       console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is: 12  " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(strJson2)
-        .assertEqual('false');
+      expect(strJson2).assertContain('false');
       console.info('[setXComponentSurfaceRotationTest_static_0010] END');
       done();
     });

@@ -103,6 +103,38 @@ export default function audioPickerPromise(abilityContext: Context) {
     });
 
     /**
+     * @tc.name   test_Audiopicker_Save_Promise_002
+     * @tc.number SUB_STORAGE_AUDIOPICKER_SAVE_PROMISE_0200
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_Audiopicker_Save_Promise_002", Level.LEVEL0, async (done: Function) => {
+      let testNum = "test_Audiopicker_Save_Promise_002";
+      let option = new picker.AudioSaveOptions();
+      option.newFileNames = [];
+      let saveDir = "Audios";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
+     * @tc.name   test_Audiopicker_Save_Promise_003
+     * @tc.number SUB_STORAGE_AUDIOPICKER_SAVE_PROMISE_0300
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_Audiopicker_Save_Promise_003", Level.LEVEL0, async (done: Function) => {
+      let testNum = "test_Audiopicker_Save_Promise_003";
+      let option = new picker.AudioSaveOptions();
+      option.newFileNames = [""];
+      let saveDir = "Audios";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
     * @tc.name   AudioViewPicker_select_000
     * @tc.number SUB_DF_AudioViewPicker_select_0000
     * @tc.desc   Test AudioViewPicker.select() interfaces with null parameter
@@ -262,13 +294,13 @@ async function select(testNum: string, done: Function, dirName: string, fileName
     let audioPicker = new picker.AudioViewPicker();
     audioPicker.select().then((result) => {
       console.info(`${testNum}::select result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::select err: ${JSON.stringify(err)}`);
       done();
       return;
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -284,13 +316,13 @@ async function selectWithOption(testNum: string, done: Function, option: picker.
     let audioPicker = new picker.AudioViewPicker();
     audioPicker.select(option).then((result) => {
       console.info(`${testNum}::selectWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::selectWithOption err: ${JSON.stringify(err)}`);
       done();
       return;
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -305,13 +337,13 @@ async function saveWithoutSelect(testNum: string, done: Function) {
     let audioPicker = new picker.AudioViewPicker();
     audioPicker.save().then((result) => {
       console.info(`${testNum}::saveWithoutSelect result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::saveWithoutSelect err: ${JSON.stringify(err)}`);
       done();
       return;
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -326,13 +358,13 @@ async function saveWithOption(testNum: string, done: Function, option: picker.Au
     let audioPicker = new picker.AudioViewPicker();
     audioPicker.save(option).then((result) => {
       console.info(`${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::saveWithOption err: ${JSON.stringify(err)}`);
       done();
       return;
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {

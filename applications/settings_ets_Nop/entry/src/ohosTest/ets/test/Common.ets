@@ -15,13 +15,14 @@
 
 export default class CommonFunc {
 
-  static sleep(time: number) {
+  static async sleep(time: number) {
+    console.info(`setting nop ${time} start...`);
     return new Promise<string>((resolve: (value: string) => void) => {
       setTimeout(() => {
         resolve("ok")
       }, time)
     }).then(() => {
-      console.info(`sleep ${time} over...`)
+      console.info(`setting nop sleep ${time} over...`);
     })
   }
 }

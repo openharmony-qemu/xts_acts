@@ -16,13 +16,10 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level, beforeEach, afterAll, afterEach } from '@ohos/hypium'
 import {
-  photoKeys, fetchOption, getPermission, driveFn, sleep, LOG_TAG, isEmpty
+  getPermission, driveFn, sleep, LOG_TAG, isEmpty
 } from '../common'
 import common from '@ohos.app.ability.common'
 import { dataSharePredicates } from '@kit.ArkData';
-import { fileIo } from '@kit.CoreFileKit';
-import { PhotoSource, RecentPhotoOptions } from '@kit.MediaLibraryKit';
-import assertFail from '@ohos/hypium/src/main/module/assert/assertFail';
 import { JSON, uri } from '@kit.ArkTS';
 import { fileIo as fs, ReadOptions } from '@kit.CoreFileKit';
 
@@ -1491,20 +1488,8 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_001';
-      // let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      // let fetchOptions: photoAccessHelper.FetchOptions = {
-      //   fetchColumns: [],
-      //   predicates: predicates
-      // };
       try {
-        // let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-        //   await PhAccessHelper.getAssets(fetchOptions);
-        // let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        // if (asset === undefined) {
-        //   console.error('asset not exist');
-        //   return;
-        // }
-        PhAccessHelper.createDeleteRequest([null], () => {
+        PhAccessHelper.createDeleteRequest(null, () => {
         });
         expect().assertFail()
         done();
@@ -1525,7 +1510,7 @@ export default function PhotoGetAssetsTestSupp() {
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_002';
       try {
-        PhAccessHelper.createDeleteRequest([undefined], () => {
+        PhAccessHelper.createDeleteRequest(undefined, () => {
         });
         expect().assertFail()
         done();
@@ -1588,7 +1573,7 @@ export default function PhotoGetAssetsTestSupp() {
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_001';
       try {
-        await PhAccessHelper.createDeleteRequest([null]);
+        await PhAccessHelper.createDeleteRequest(null);
         console.info('createDeleteRequest successfully');
         expect().assertFail()
         done();
@@ -1609,7 +1594,7 @@ export default function PhotoGetAssetsTestSupp() {
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_002';
       try {
-        await PhAccessHelper.createDeleteRequest([undefined]);
+        await PhAccessHelper.createDeleteRequest(undefined);
         console.info('createDeleteRequest successfully');
         expect().assertFail()
         done();
@@ -2144,7 +2129,7 @@ export default function PhotoGetAssetsTestSupp() {
     /**
      * @tc.number   SUB_APPLY_CHANGES_003
      * @tc.name     SUB_APPLY_CHANGES_003
-     * @tc.desc     applyChanges-undefined
+     * @tc.desc     applyChanges-空字符串
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    Level 0
@@ -2713,5 +2698,36 @@ export default function PhotoGetAssetsTestSupp() {
         done();
       }
     });
+
+    /**
+     * @tc.number   CREATE_ASSET_WITH_SHORT_TERM_PERMISSION_004
+     * @tc.name     CREATE_ASSET_WITH_SHORT_TERM_PERMISSION_004
+     * @tc.desc     createAssetWithShortTermPermission-第1个参数属性subtype枚举覆盖MOVING_PHOTO
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("CREATE_ASSET_WITH_SHORT_TERM_PERMISSION_004", Level.LEVEL0, (done: Function) => {
+      const testName = "CREATE_ASSET_WITH_SHORT_TERM_PERMISSION_004";
+      let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
+        title: '123456',
+        fileNameExtension: 'jpg',
+        photoType: photoAccessHelper.PhotoType.VIDEO,
+        subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO,
+      };
+      try {
+        let res = PhAccessHelper.createAssetWithShortTermPermission(photoCreationConfig);
+        console.info(TAG, testName, 'successfully', res);
+        expect(isEmpty(res)).assertFalse();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed createAssetWithShortTermPermission', JSON.stringify(error), error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        done();
+      }
+    });
+
   })
 }

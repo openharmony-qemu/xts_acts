@@ -130,6 +130,7 @@ export default function DisplayTest() {
         let code:number = 0;
         let displayFoldStatus:display.FoldStatus;
         let context: common.UIAbilityContext | undefined;
+        let isSupportRotate = false;
         beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, 'beforeAll start');
             abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
@@ -143,6 +144,20 @@ export default function DisplayTest() {
             hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
             context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
             hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
+            let windowClass:window.Window = windowStage!.getMainWindowSync();
+            await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
+            await Utils.msSleep(300);
+            let Orientation1 = display.getDefaultDisplaySync().orientation;
+            await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+            await Utils.msSleep(300);
+            let Orientation2 = display.getDefaultDisplaySync().orientation;
+            if (Orientation1 != Orientation2) {
+                isSupportRotate = true;
+            } else {
+                isSupportRotate = false;
+            }
+            await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+            await Utils.msSleep(300);
             try{
                 let data:string = displayClass.getDisplayCapability();
                 // let capabilityData = JSON.parse(data);
@@ -226,6 +241,110 @@ export default function DisplayTest() {
                 done();
             });
         });
+        
+        /**
+    * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0340
+    * @tc.name        testGetDefaultDisplaySync_SyncFunction_static_0200
+    * @tc.desc        To test the sync function of obtaining the target display by id
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 1
+    */
+    it('testGetDefaultDisplaySync_SyncFunction_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, '[ANI]','testGetDefaultDisplaySync_SyncFunction_static_0200 begin');
+        try {
+            let dsp:display.Display = display.getDefaultDisplaySync();
+            hilog.info(0x0000, '[ANI]','displayTest getDefaultDisplaySyncTest1: ' + JSON.stringify(dsp));
+            expect(dsp.id).assertEqual(0);
+            expect(dsp.refreshRate !== null).assertTrue();
+            expect(dsp.width !== null).assertTrue();
+            expect(dsp.height !== null).assertTrue();
+            expect(dsp.rotation !== null).assertTrue();
+            expect(dsp.densityDPI !== null).assertTrue();
+            expect(dsp.name !== null).assertTrue();
+            expect(dsp.alive).assertTrue();
+            expect(dsp.state !== null).assertTrue();
+            expect(dsp.densityPixels !== null).assertTrue();
+            expect(dsp.scaledDensity !== null).assertTrue();
+            expect(dsp.xDPI !== null).assertTrue();
+            expect(dsp.yDPI !== null).assertTrue();
+            done();
+        } catch (err) {
+            hilog.error(0x0000, '[ANI]','getDefaultDisplaySyncTest1 error ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5180
+    * @tc.name      testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100
+    * @tc.desc      testCaptureStatusChange returns true when create virtual screen and false when destroy virtual screen
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level3
+    */
+    it('testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName : string = 'testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        
+        let captureStatus: boolean = false;
+        let callbackTriggered:boolean = false;
+        let callback : Callback<boolean> = (status: boolean) => {
+            hilog.info(0x0000, '[ANI]', msgStr + 'capture status: ' + status);
+            captureStatus = status;
+            callbackTriggered = true;
+        };
+        
+        let option: display.VirtualScreenConfig = {
+            name: 'screen01',
+            width: 100,
+            height: 2340,
+            density: 2,
+            surfaceId: ''
+        };
+        
+        try {        
+            // 创建虚拟屏
+            let vid = await display.createVirtualScreen(option);
+            hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
+            await Utils.msSleep(3000);
+            
+            // 注册监听
+            display.onCaptureStatusChange(callback);
+            hilog.info(0x0000, '[ANI]', msgStr + 'register onCaptureStatusChange success');
+            await Utils.msSleep(1000);
+
+            // 销毁虚拟屏
+            await display.destroyVirtualScreen(vid);
+            hilog.info(0x0000, '[ANI]', msgStr + 'Success in destroyVirtualScreen');
+            
+            // 验证销毁虚拟屏后返回false
+            await Utils.msSleep(3000);
+            while (!callbackTriggered) {
+                await Utils.msSleep(100);
+            }
+            hilog.info(0x0000, '[ANI]', msgStr + 'after destroyVirtualScreen, captureStatus: ' + captureStatus);
+            expect(captureStatus === false).assertTrue();
+            
+            // 注销监听（传入callback参数）
+            display.offCaptureStatusChange(callback);
+            hilog.info(0x0000, '[ANI]', msgStr + 'offCaptureStatusChange success');
+            
+            done();
+        }
+        catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + JSON.stringify(err));
+            if (err.code === 801) {
+                hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
+            }
+            expect(err.code === 801).assertTrue();
+            done();
+        }
+    });
+
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0440
          * @tc.name        tesGetAllDisplays_Callback_static_0100
@@ -294,7 +413,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.offFoldStatusChange();
+                display.offFoldStatusChange(callback);
             } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
@@ -353,7 +472,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.offFoldDisplayModeChange();
+                display.offFoldDisplayModeChange(callback);
             } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
@@ -447,6 +566,31 @@ export default function DisplayTest() {
             let dpClass: display.Display = display.getDefaultDisplaySync();
             expect(!!dpClass).assertTrue();
             dpClass.getCutoutInfo((err:BusinessError<void> | null, data:display.CutoutInfo| undefined) : void => {
+                if (data!.boundingRects.length !== 0) {
+                    expect(data!.boundingRects[0]!.left).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.top).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.height).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.width).assertLargerOrEqual(0);
+                } else {
+                    expect(data!.boundingRects.length).assertEqual(0);
+                }
+                expect(data!.waterfallDisplayAreaRects.left.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
+                done();
                 if (err && err.code) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + JSON.stringify(err));
                     expect(false).assertTrue();
@@ -473,6 +617,30 @@ export default function DisplayTest() {
             expect(!!dpClass).assertTrue();
             dpClass.getCutoutInfo().then((data: display.CutoutInfo) => {
                 hilog.info(0x0000, '[ANI]','Succeeded in getting cutoutInfo. Data: ' + JSON.stringify(data));
+                if (data!.boundingRects.length !== 0) {
+                    expect(data!.boundingRects[0]!.left).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.top).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.height).assertLargerOrEqual(0);
+                    expect(data!.boundingRects[0]!.width).assertLargerOrEqual(0);
+                } else {
+                    expect(data!.boundingRects.length).assertEqual(0);
+                }
+                expect(data!.waterfallDisplayAreaRects.left.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
                 done();
             }).catch((error: Error) =>{
                 hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + JSON.stringify(error));
@@ -548,7 +716,7 @@ export default function DisplayTest() {
                 let displayId:long = display.getDefaultDisplaySync().id;
                 let dsp:display.Display = display.getDisplayByIdSync(displayId);
                 hilog.info(0x0000, '[ANI]','displayTest getDisplayByIdSyncTest1: ' + JSON.stringify(dsp));
-                expect(dsp.id != null).assertTrue();
+                expect(dsp.id).assertEqual(0);
                 expect(dsp.refreshRate != null).assertTrue();
                 expect(dsp.width != null).assertTrue();
                 expect(dsp.height != null).assertTrue();
@@ -825,7 +993,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.offFoldAngleChange();
+                display.offFoldAngleChange(callback);
             }
             catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -1538,6 +1706,10 @@ export default function DisplayTest() {
             let callback1: Callback<display.Rect> = (data: display.Rect) => {
                 num++;
                 hilog.info(0x0000, '[ANI]','Listening callback1 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
+                expect(data.left).assertLargerOrEqual(0);
+                expect(data.top).assertLargerOrEqual(0);
+                expect(data.width).assertLargerOrEqual(0);
+                expect(data.height).assertLargerOrEqual(0);
             };
             let callback2: Callback<display.Rect> = (data: display.Rect) => {
                 num++;
@@ -2084,7 +2256,9 @@ export default function DisplayTest() {
                     }
                     hilog.info(domain, tag,caseName + 'Succeeded in setting the window to privacy mode.');
                     let captureOption: screenshot.CaptureOption = {
-                        "displayId": 0
+                        "displayId": 0,
+                        "blackWindowIds": []
+
                     };
                     let promise = screenshot.capture(captureOption);
                     promise.then((PixelMap: image.PixelMap) => {
@@ -2645,6 +2819,593 @@ export default function DisplayTest() {
                 expect().assertFail()
             }
         }
+    })
+
+    /**
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+    * @tc.name      testOnAdd_VirtualScreenCreate_static_0100
+    * @tc.desc      testOnAdd returns screenId when create virtual screen
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level3
+    */
+    it('testOnAdd_VirtualScreenCreate_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName : string = 'testOnAdd_VirtualScreenCreate_static_0100';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        
+        let receivedScreenId: Long = -1;
+        let callbackTriggered:boolean = false;
+        let callback: Callback<Long> = (screenId: Long) => {
+            callbackTriggered = true
+            hilog.info(0x0000, '[ANI]', msgStr + 'onAdd callback received. Data: ' + JSON.stringify(screenId));
+            receivedScreenId = screenId;
+        };
+        
+        let option: display.VirtualScreenConfig = {
+            name: 'screen01',
+            width: 100,
+            height: 2340,
+            density: 2,
+            surfaceId: ''
+        };
+        
+        try {
+            // 注册监听
+            display.onAdd(callback);
+            hilog.info(0x0000, '[ANI]', msgStr + 'register onAdd success');
+            
+            // 创建虚拟屏
+            let vid = await display.createVirtualScreen(option);
+            hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
+
+            try{
+                display.makeUnique(vid).then(() => {
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in make unique screen');
+                }).catch((e)=> {
+                    hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + e.code);
+                    if (e.code === 801) {
+                        hilog.info(domain, tag, caseName + 'device not support makeUnique');
+                        done();
+                    }
+                })
+            }catch (err) {
+                err = err as BusinessError;
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code);
+                if (err.code === 801) {
+                        hilog.info(domain, tag, caseName + 'device not support makeUnique');
+                        done();
+                }
+            }
+            
+            // 验证onAdd回调被触发，接收到有效的screenId（大于等于 1000）
+            while (!callbackTriggered) {
+                await Utils.msSleep(100);
+            }
+            hilog.info(0x0000, '[ANI]', msgStr + 'receivedScreenId: ' + receivedScreenId);
+            expect(receivedScreenId >= 1000).assertTrue();
+            
+            // 注销监听
+            display.offAdd(callback);
+            hilog.info(0x0000, '[ANI]', msgStr + 'offAdd success');
+            
+            // 清理：销毁创建的虚拟屏
+            await display.destroyVirtualScreen(vid);
+            
+            done();
+        }
+        catch (err) {
+            err = err as BusinessError;
+            hilog.info(0x0000, '[ANI]', msgStr + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
+            if (err.code === 801) {
+                hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
+                done();
+            }
+            expect(err.code === 801).assertTrue();
+            done();
+        }
+    });
+
+    /**
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5200
+    * @tc.name      testOnRemove_VirtualScreenDestroy_static_0100
+    * @tc.desc      testOnRemove returns screenId when destroy virtual screen
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level3
+    */
+    it('testOnRemove_VirtualScreenDestroy_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    let caseName : string = 'testOnRemove_VirtualScreenDestroy_static_0100';
+    let msgStr : string = 'jsunittest ' + caseName + ' ';
+    hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+
+    let receivedScreenId: Long = -1;
+    let callbackTriggered:boolean = false;
+    let callback: Callback<Long> = (screenId: Long) => {
+        callbackTriggered = true
+        hilog.info(0x0000, '[ANI]', msgStr + 'onRemove callback received. Data: ' + JSON.stringify(screenId));
+        receivedScreenId = screenId;
+    };
+
+    let option: display.VirtualScreenConfig = {
+        name: 'screen01',
+        width: 100,
+        height: 2340,
+        density: 2,
+        surfaceId: ''
+    };
+
+    try {
+        // 注册监听
+        display.onRemove(callback);
+        hilog.info(0x0000, '[ANI]', msgStr + 'register onRemove success');
+
+        // 创建虚拟屏
+        let vid = await display.createVirtualScreen(option);
+        hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
+
+        try{
+        display.makeUnique(vid).then(() => {
+            hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in make unique screen');
+        }).catch((e)=> {
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + e.code);
+            if (e.code === 801) {
+                hilog.info(domain, tag, caseName + 'device not support makeUnique');
+                done();
+            }
+        })
+        }catch (err) {
+        err = err as BusinessError;
+        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code);
+            if (err.code === 801) {
+                    hilog.info(domain, tag, caseName + 'device not support makeUnique');
+                    done();
+            }
+        }
+
+        // 清理：销毁创建的虚拟屏
+        await display.destroyVirtualScreen(vid);
+
+        // 验证onRemove回调被触发，接收到有效的screenId（大于等于 1000）
+        while (!callbackTriggered) {
+        await Utils.msSleep(100);
+        }
+        hilog.info(0x0000, '[ANI]', msgStr + 'receivedScreenId: ' + receivedScreenId);
+        expect(receivedScreenId >= 1000).assertTrue();
+
+        // 注销监听
+        display.offRemove(callback);
+        hilog.info(0x0000, '[ANI]', msgStr + 'offAdd success');
+
+        done();
+    }
+    catch (err) {
+        err = err as BusinessError;
+        hilog.info(0x0000, '[ANI]', msgStr + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
+        if (err.code === 801) {
+        hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
+        done();
+        }
+        expect(err.code === 801).assertTrue();
+        done();
+    }
+    });
+
+    /**
+    * @tc.number SUB_WMS_DMS_CHANGE_SETPERFERORIENTATION_STATIC_0100
+    * @tc.name   testOnChange_setPreferOrientation_static_0100
+    * @tc.desc   旋转后屏幕改变监听
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('testOnChange_setPreferOrientation_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    let caseName: string = 'testOnChange_setPreferOrientation_static_0100';
+    let msgStr : string = 'jsunittest ' + caseName + ' ';
+    hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+    let windowClass:window.Window = windowStage!.getMainWindowSync();
+    try {
+        if(isSupportRotate === true){
+        let index1 = 0;
+        let index2 = 0;
+        const callback1 = (res: long)=>{
+            console.info(caseName + ' callback1 res: ' + res);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+        }
+        const callback2 = (res: long)=>{
+            console.info(caseName + ' callback2 res: ' + res);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+        }
+        display.onChangeWithAttribute(['width'], callback1);
+        display.onChangeWithAttribute(['height'], callback2);
+        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+        console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+        expect(index1).assertLarger(0);
+        expect(index2).assertLarger(0);
+        display.offChange(callback1);
+        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setOrientation index1: ' + index1);
+        console.info(caseName + ' setOrientation index2: ' + index2);
+        expect(index1).assertLarger(0);
+        expect(index2).assertLarger(0);
+        display.offChange();
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+        console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+        expect(index1).assertLarger(0);
+        expect(index2).assertLarger(0);
+        done();
+        }else{
+        done();
+        }
+
+    } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code === 801) {
+        done();
+        } else {
+        expect().assertFail();
+        done();
+        }
+    }
+    });
+
+    /**
+    * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_STATIC_0100
+    * @tc.name   testOnChangeWithAttribute_width_height_setPreferOrientation_static_0100
+    * @tc.desc   旋转后宽高精细化监听
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('testOnChangeWithAttribute_width_height_setPreferOrientation_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    let caseName: string = 'testOnChangeWithAttribute_width_height_setPreferOrientation_static_0100';
+    let msgStr : string = 'jsunittest ' + caseName + ' ';
+    hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+    let windowClass:window.Window = windowStage!.getMainWindowSync();
+    try {
+        if(isSupportRotate === true){
+        let index1 = 0;
+        let index2 = 0;
+        const callback1 = (res: long)=>{
+            console.info(caseName + ' callback1 res: ' + res);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+        }
+        const callback2 = (res: long)=>{
+            console.info(caseName + ' callback2 res: ' + res);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+        }
+        display.onChangeWithAttribute(['width'], callback1);
+        display.onChangeWithAttribute(['height'], callback2);
+        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+        console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+        expect(index1).assertEqual(1);
+        expect(index2).assertEqual(1);
+        display.offChange(callback1);
+        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setOrientation index1: ' + index1);
+        console.info(caseName + ' setOrientation index2: ' + index2);
+        expect(index1).assertEqual(1);
+        expect(index2).assertEqual(2);
+        display.offChange();
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+        console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+        expect(index1).assertEqual(1);
+        expect(index2).assertEqual(2);
+        done();
+        }else{
+        done();
+        }
+
+    } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code === 801) {
+        done();
+        } else {
+        expect().assertFail();
+        done();
+        }
+    }
+    });
+
+    /**
+    * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_STATIC_0200
+    * @tc.name   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation_static_0100
+    * @tc.desc   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation_static_0100
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('testOnChangeWithAttribute_rotation_orientation_setPreferOrientation_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    let caseName: string = 'testOnChangeWithAttribute_width_height_setPreferOrientation_static_0100';
+    let msgStr : string = 'jsunittest ' + caseName + ' ';
+    hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+    let windowClass:window.Window = windowStage!.getMainWindowSync();
+
+    try {
+        if(isSupportRotate === true) {
+        let index1 = 0;
+        let index2 = 0;
+        const callback1 = (res: long) => {
+            console.info(caseName + ' callback1 res: ' + res);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+        }
+        const callback2 = (res: long) => {
+            console.info(caseName + ' callback2 res: ' + res);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+        }
+        display.onChangeWithAttribute(['rotation'], callback1);
+        display.onChangeWithAttribute(['orientation'], callback2);
+        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+        console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+        expect(index1).assertEqual(1);
+        expect(index2).assertEqual(1);
+        display.offChange(callback1);
+        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT_INVERTED);
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setOrientation index1: ' + index1);
+        console.info(caseName + ' setOrientation index2: ' + index2);
+        expect(index1).assertEqual(1);
+        expect(index2).assertEqual(2);
+        display.offChange();
+        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+        console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+        expect(index1).assertEqual(1);
+        expect(index2).assertEqual(2);
+        done();
+        }else{
+        done();
+        }
+    } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code === 801) {
+        done();
+        } else {
+        expect().assertFail();
+        done();
+        }
+    }
+    });
+
+    /**
+    * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_STATIC_0300
+    * @tc.name   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2_static_0100
+    * @tc.desc   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2_static_0100
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    let caseName: string = 'testOnChangeWithAttribute_width_height_setPreferOrientation_static_0100';
+    let msgStr : string = 'jsunittest ' + caseName + ' ';
+    hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+    let windowClass:window.Window = windowStage!.getMainWindowSync();
+    let diaplayId = display.getDefaultDisplaySync().id;
+    console.info(caseName + 'diaplayId: ' + diaplayId);
+    try {
+        if(isSupportRotate === true) {
+        let index1 = 0;
+        const callback1 = (res: long) => {
+            console.info(caseName + ' callback1 res: ' + res);
+            expect(res).assertEqual(diaplayId);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+        }
+        display.onChangeWithAttribute(['rotation', 'densityDPI'], callback1);
+        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+        expect(index1).assertEqual(1);
+        display.offChange(callback1);
+        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+        await Utils.msSleep(3000);
+        console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+        expect(index1).assertEqual(1);
+        done();
+        }else{
+        done();
+        }
+    } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code === 801) {
+        done();
+        } else {
+        expect().assertFail();
+        done();
+        }
+    }
+    });
+
+        /**
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6190
+    * @tc.name      testCaptureStatusChange_VirtualScreenCreateDestroy_static_0200
+    * @tc.desc      testCaptureStatusChange returns true when create virtual screen and false when destroy virtual screen
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level3
+    */
+    it('testCaptureStatusChange_VirtualScreenCreateDestroy_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName : string = 'testCaptureStatusChange_VirtualScreenCreateDestroy_static_0200';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+
+        let captureStatus: boolean = false;
+        let callbackTriggered:boolean = false;
+        let callback : Callback<boolean> = (status: boolean) => {
+        hilog.info(0x0000, '[ANI]', msgStr + 'capture status: ' + status);
+        captureStatus = status;
+        callbackTriggered = true;
+        };
+
+        let option: display.VirtualScreenConfig = {
+        name: 'screen01',
+        width: 100,
+        height: 2340,
+        density: 2,
+        surfaceId: '',
+        supportsFocus: false
+        };
+
+        try {
+
+        // 注册监听
+        display.onCaptureStatusChange(callback);
+        hilog.info(0x0000, '[ANI]', msgStr + 'register onCaptureStatusChange success');
+        await Utils.msSleep(1000);
+
+        // 创建虚拟屏
+        let vid = await display.createVirtualScreen(option);
+        hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
+        await Utils.msSleep(3000);
+
+        // 验证销毁虚拟屏后返回false
+        await Utils.msSleep(3000);
+        while (!callbackTriggered) {
+            await Utils.msSleep(100);
+        }
+        hilog.info(0x0000, '[ANI]', msgStr + 'after createVirtualScreen, captureStatus: ' + captureStatus);
+        expect(captureStatus === true).assertTrue();
+
+        // 注销监听（传入callback参数）
+        display.offCaptureStatusChange(callback);
+        hilog.info(0x0000, '[ANI]', msgStr + 'offCaptureStatusChange success');
+
+        // 销毁虚拟屏
+        await display.destroyVirtualScreen(vid);
+        hilog.info(0x0000, '[ANI]', msgStr + 'Success in destroyVirtualScreen');
+
+        done();
+        }
+        catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + JSON.stringify(err));
+        if (err.code === 801) {
+            hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
+        }
+        expect(err.code === 801).assertTrue();
+        done();
+        }
+    });
+
+        /**
+    * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_static_0200
+    * @tc.name       testGetBrightnessInfowithMainDisplayid_errcode_static
+    * @tc.desc       查询主屏亮度信息
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level0
+    */
+    it('testGetBrightnessInfowithMainDisplayid_errcode_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName:string =  'testGetBrightnessInfowithMainDisplayid_errcode_static';
+        try {
+        let brightnessInfo = display.getBrightnessInfo(-1);
+        console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+        done();
+        } catch (e) {
+            e = e as BusinessError;
+            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code === 801) {
+            done()
+        } else {
+            expect(e.code === 1400004).assertTrue();
+            done();
+        }
+        }
+    });
+
+            /**
+        * @tc.name   testConvertRelativeToGlobalCoordinatewithPosition_Normal_0100_static
+        * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_NORMAL_static_0100
+        * @tc.desc   验证convertRelativeToGlobalCoordinate接口
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
+        it('testConvertRelativeToGlobalCoordinatewithPosition_Normal_0100_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testConvertRelativeToGlobalCoordinatewithPosition_Normal_0100_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let relativePosition: display.RelativePosition = {
+                displayId: 0,
+                position: {
+                x: 100,
+                y: 200
+                }
+            };
+            try {
+                let displayClass:display.Display = display.getDefaultDisplaySync();
+                let position: display.Position = display.convertRelativeToGlobalCoordinate(relativePosition);
+                expect(position != null).assertTrue();
+                expect(position.x).assertLargerOrEqual(0);
+                expect(position.y).assertLargerOrEqual(0);
+                done();
+            } catch (e) {
+                e = e as BusinessError;
+                console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
+                expect(e.code).assertEqual(1400004)
+                done()
+            }
+        })
+
+    /**
+    * @tc.number     SUB_BASIC_WMS_SPCIAL_SCREEN_SHOT_CAPTURE_ERRORCODE_static_0100
+    * @tc.name       tesScreenShot_Capture_ErrorCode401_static
+    * @tc.desc       tesScreenShot_Capture_ErrorCode401 when without permission
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level3
+    */
+    it('tesScreenShot_Capture_ErrorCode401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName:string = 'tesScreenShot_Capture_ErrorCode401_static';
+        let msgStr:string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag,msgStr + 'begin');
+        try {
+        let captureOptions: screenshot.CaptureOption = {
+            "displayId": 0,
+            "blackWindowIds": [1000]
+        }
+        let promise = screenshot.capture(captureOptions)
+        promise.then((pixelMap: image.PixelMap) => {
+            hilog.info(domain, tag,caseName + 'Succeeded in capture')
+            expect(false).assertTrue()
+            done()
+        }).catch((err: Error):PromiseLike<void>|undefined => {
+            hilog.info(domain, tag,caseName + 'Failed to capture, err: ' + err.code);
+            if (err.code === 801) {
+            done();
+            } else {
+            expect(err.code === 401).assertTrue();
+            done();
+            }
+        })
+        } catch (exception) {
+        exception = exception as BusinessError;
+        hilog.error(domain, tag,caseName + 'Failed to pick Code: ' + exception.code +':msg:'+ JSON.stringify(exception.message));
+        expect(exception.message!=null).assertTrue();
+        if (exception.code === 801) {
+            done();
+        } else {
+            expect(exception.code === 401).assertTrue();
+            done();
+        }
+        };
     })
 
 

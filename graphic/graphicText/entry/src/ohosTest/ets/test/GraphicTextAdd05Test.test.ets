@@ -1292,6 +1292,298 @@ export default function GraphicTextAdd05Test() {
         }
       });
 
+    /**
+     * @tc.name   getLineMetricsAdd05
+     * @tc.number getLineMetricsAdd05
+     * @tc.desc   TextLine getLineMetrics normal test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getLineMetricsAdd05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg  = "====getLineMetricsAdd05===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        console.info('www data arrLineMetric ', 11111);
+        let lineMetrics: text.LineMetrics | undefined =  paragraph.getLineMetrics(0);
+        console.info('www data arrLineMetric ', JSON.stringify(lineMetrics));
+        expect(lineMetrics?.startIndex).assertEqual(0);
+        expect(lineMetrics?.endIndex).assertEqual(39);
+        expect(lineMetrics?.ascent).assertLargerOrEqual(0);
+        expect(lineMetrics?.descent).assertLargerOrEqual(0);
+        expect(lineMetrics?.height).assertLarger(0);
+        expect(lineMetrics?.width).assertLarger(0);
+        expect(lineMetrics?.left).assertEqual(0);
+        expect(lineMetrics?.baseline).assertLarger(0);
+        expect(lineMetrics?.lineNumber).assertEqual(0);
+        expect(lineMetrics?.topHeight).assertEqual(0);
+        expect(lineMetrics?.runMetrics !== undefined).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   getImageBoundsAdd05
+     * @tc.number getImageBoundsAdd05
+     * @tc.desc   run getImageBounds normal test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getImageBoundsAdd05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const LOG_PREFIX = 'www data ';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          const longText = 'This is a very long text with many words to test the getImageBounds method properly and ' +
+            'ensure it works correctly with large amounts of text content and provides accurate boundary measurements.';
+          paragraphBuilder.addText(longText);
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+
+          const lines: text.TextLine[] = paragraph.getTextLines();
+          const runs: text.Run[] = lines[0].getGlyphRuns();
+          const bounds: common2D.Rect = runs[0].getImageBounds();
+
+          console.info(`${LOG_PREFIX} getImageBoundsAdd05 error `, JSON.stringify(bounds));
+
+          console.info(`${LOG_PREFIX} getImageBoundsAdd05 success left=${bounds.left} right=${bounds.right} `
+            + `bottom=${bounds.bottom} width=${bounds.right - bounds.left}`);
+          expect(bounds.left).assertEqual(0);
+          expect(bounds.top).assertLargerOrEqual(0);
+          expect(bounds.right).assertLarger(0);
+          expect(bounds.bottom).assertLarger(0);
+          expect(bounds.right > bounds.left).assertLarger(0);
+          expect(bounds.right - bounds.left > 0).assertTrue();
+          done();
+        } catch (err) {
+          console.info(`${LOG_PREFIX} getImageBoundsAdd05 error `, JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+      
+    /**
+     * @tc.name   getFontDescriptorByFullNameAdd05
+     * @tc.number getFontDescriptorByFullNameAdd05
+     * @tc.desc   text getFontDescriptorByFullName test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getFontDescriptorByFullNameAdd05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function)=> {
+        let msg = "====www data testGetSystemFontFullNamesByType===="
+        console.info(msg + ' begin ');
+        let fontType:text.SystemFontType = text.SystemFontType.GENERIC
+        try{
+          let promiseFontType = text.getSystemFontFullNamesByType(fontType)
+          promiseFontType.then((data:Array<string>) => {
+            console.info(msg + ` then font list size: ${data.length}`)
+            console.info(msg + ' data[0] = ' + data[0])
+            let promise = text.getFontDescriptorByFullName(data[0], fontType)
+            promise.then((fontDescriptor: text.FontDescriptor) => {
+              console.log(msg + ' Succeed in text.getFontDescriptorByFullName  ' + JSON.stringify(fontDescriptor) )
+              console.log(msg + ' Succeed in text.getFontDescriptorByFullName  ' + fontDescriptor )
+              console.info(msg + ` desc: ${JSON.stringify(fontDescriptor)}`)
+              expect(fontDescriptor.path).assertEqual('/system/fonts/HarmonyOS_Sans.ttf');
+              expect(fontDescriptor.postScriptName).assertEqual('HarmonyOS_Sans');
+              expect(fontDescriptor.fullName).assertEqual('HarmonyOS Sans');
+              expect(fontDescriptor.fontFamily).assertEqual('HarmonyOS Sans');
+              expect(fontDescriptor.fontSubfamily).assertEqual('Regular');
+              expect(fontDescriptor.weight).assertEqual(3);
+              expect(fontDescriptor.width).assertEqual(5);
+              expect(fontDescriptor.italic).assertEqual(0);
+              expect(fontDescriptor.monoSpace).assertFalse();
+              expect(fontDescriptor.symbolic).assertFalse();
+              expect(fontDescriptor.localPostscriptName).assertEqual('HarmonyOS_Sans');
+              expect(fontDescriptor.localFullName).assertEqual('HarmonyOS Sans');
+              expect(fontDescriptor.localFamilyName).assertEqual('HarmonyOS Sans');
+              expect(fontDescriptor.localSubFamilyName).assertEqual('Regular');
+              expect(fontDescriptor.version).assertEqual('Version 2.040');
+              expect(fontDescriptor.manufacture).assertEqual('Hanyi Fonts');
+              expect(fontDescriptor.copyright).assertEqual('Copyright 2021-2024 Huawei Device Co., Ltd. All Rights Reserved.');
+              expect(fontDescriptor.trademark).assertEqual('');
+              expect(fontDescriptor.license).assertEqual('');
+              expect(fontDescriptor.index).assertEqual(0);
+              done()
+            }).catch((error: BusinessError) => {
+              console.error(msg + ` Failed to get fontDescriptor by fullName, error: ${JSON.stringify(error)}`);
+              expect().assertFail();
+              done()
+            });
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to get font fullNames by type, error: ${JSON.stringify(error)}`);
+          });
+        } catch(err){
+          console.info(msg + ' Failed in text.getSystemFontFullNamesByType.  Cause: ' + JSON.stringify(err));
+          console.info(msg + ' Failed in text.getSystemFontFullNamesByType.  Cause: ' + err);
+          expect().assertFail();
+          done()
+        }
+      })
+      
+    /**
+     * @tc.name   getFontDescriptorsFromPathAdd05
+     * @tc.number getFontDescriptorsFromPathAdd05
+     * @tc.desc   text getFontDescriptorsFromPath test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getFontDescriptorsFromPathAdd05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const LOG_PREFIX = 'www data ';
+        try {
+          const descriptors: text.FontDescriptor[] = await text.getFontDescriptorsFromPath('');
+          console.info(`${LOG_PREFIX} getFontDescriptorsFromPathAdd05 success`, JSON.stringify(descriptors));
+          expect(descriptors.length == 0).assertTrue();
+          done();
+        } catch (err) {
+          console.info(`${LOG_PREFIX} getFontDescriptorsFromPathAdd05 error `, JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+    
+    /**
+     * @tc.name   getFontUnicodeSetAdd05
+     * @tc.number getFontUnicodeSetAdd05
+     * @tc.desc   text getFontUnicodeSet test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getFontUnicodeSetAdd05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const LOG_PREFIX = 'www data ';
+        try {
+          const unicodeSet: number[] = await text.getFontUnicodeSet('', 0);
+          console.info(`${LOG_PREFIX} getFontUnicodeSetAdd05 success`);
+          done();
+        } catch (err) {
+          console.info(`${LOG_PREFIX} getFontUnicodeSetAdd05 error `, JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   getFontCountAdd05
+     * @tc.number getFontCountAdd05
+     * @tc.desc   text getFontCount test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getFontCountAdd05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const LOG_PREFIX = 'www data ';
+        try {
+          const count: number = text.getFontCount('');
+          console.info(`${LOG_PREFIX} getFontCountAdd05 success`);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info(`${LOG_PREFIX} getFontCountAdd05 error `, JSON.stringify(err));
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testGraphicTextAdd05_getRectsForRange
+     * @tc.number testGraphicTextAdd05_getRectsForRange
+     * @tc.desc   getRectsForRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGraphicTextAdd05_getRectsForRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done:Function)=> {
+      let msg  = "====www data testGraphicTextAdd05_getRectsForRange===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let range: text.Range = { start: 0, end: 1};
+        let rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT,
+          text.RectHeightStyle.INCLUDE_LINE_SPACE_MIDDLE);
+        console.info(msg + 'rects success ', JSON.stringify(rects))
+        expect(rects.length > 0).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'rects error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGraphicTextAdd05_createTruncatedLine
+     * @tc.number testGraphicTextAdd05_createTruncatedLine
+     * @tc.desc   test createTruncatedLine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGraphicTextAdd05_createTruncatedLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text with very long content');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+
+          const lines: text.TextLine[] = paragraph.getTextLines();
+          const truncatedLine1: text.TextLine = lines[0].createTruncatedLine(100,text.EllipsisMode.MULTILINE_START,'');
+          console.info(`${LOG_PREFIX} createTruncatedLineEllipsisEmpty success`, JSON.stringify(truncatedLine1));
+          expect(truncatedLine1 !== undefined).assertTrue();
+          const truncatedLine2: text.TextLine = lines[0].createTruncatedLine(100,text.EllipsisMode.MULTILINE_MIDDLE,'');
+          console.info(`${LOG_PREFIX} createTruncatedLineEllipsisEmpty success`, JSON.stringify(truncatedLine2));
+          expect(truncatedLine2).assertUndefined();
+          done();
+        } catch (err) {
+          console.info(`${LOG_PREFIX} createTruncatedLineEllipsisEmpty error `, JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
   })
 }
 

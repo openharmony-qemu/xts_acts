@@ -1912,7 +1912,7 @@ export default function TaskpoolTest() {
           console.info(`${caseName}: taskConstructor2 return value: ${JSON.stringify(res)}`);
           isTerminate1 = true;
           result2 = res as number[] | undefined[];
-          expect(result2).assertDeepEquals([null, null]);
+          expect(JSON.stringify(result2)).assertDeepEquals('[null,null]');
         });
         while (isTerminate1 && isTerminate2) {
           await promiseCase();
@@ -2099,39 +2099,39 @@ export default function TaskpoolTest() {
         let runner3: taskpool.SequenceRunner = new taskpool.SequenceRunner(taskpool.Priority.HIGH);
         runner1.execute(task1).then((res: Object) => {
           flag1 = true;
-          finalString += res as string;
+          let result = res as string;
           console.info(`${caseName}: seqrunner: task1 done.`);
-          expect(finalString).assertDeepEquals('efa');
+          expect(result).assertEqual('a');
         });
         runner1.execute(task2).then((res: Object) => {
           flag2 = true;
-          finalString += res;
+          let result = res as string;
           console.info(`${caseName}: seqrunner: task2 done`);
-          expect(finalString).assertDeepEquals('efab');
+          expect(result).assertEqual('b');
         });
         runner2.execute(task3).then((res: Object) => {
           flag3 = true;
-          finalString += res;
+          let result = res as string;
           console.info(`${caseName}: seqrunner: task3 done.`);
-          expect(finalString).assertDeepEquals('efabc');
+          expect(result).assertEqual('c');
         });
         runner2.execute(task4).then((res: Object) => {
           flag4 = true;
-          finalString += res;
+          let result = res as string;
           console.info(`${caseName}: seqrunner: task4 done`);
-          expect(finalString).assertDeepEquals('efabcd');
+          expect(result).assertEqual('d');
         });
         runner3.execute(task5).then((res: Object) => {
           flag5 = true;
-          finalString += res;
+          let result = res as string;
           console.info(`${caseName}: seqrunner: task5 done.`);
-          expect(finalString).assertDeepEquals('e');
+          expect(result).assertEqual('e');
         });
         runner3.execute(task6).then((res: Object) => {
           flag6 = true;
-          finalString += res;
+          let result = res as string;
           console.info(`${caseName}: seqrunner: task6 done`);
-          expect(finalString).assertDeepEquals('ef');
+          expect(result).assertEqual('f');
         });
         while (flag1 && flag2 && flag3 && flag4 && flag5 && flag6) {
           await promiseCase();

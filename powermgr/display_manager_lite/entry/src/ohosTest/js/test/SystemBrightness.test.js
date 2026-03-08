@@ -808,5 +808,236 @@ export default function SystemBrightnessTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SystemBrightnessTest_2800
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0280
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_2800';
+      try {
+        brightness.getValue(null);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SystemBrightnessTest_2900
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0290
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_2900';
+      try {
+        brightness.getValue(undefined);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SystemBrightnessTest_3000
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0300
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_3000';
+      try {
+        brightness.setValue(null);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SystemBrightnessTest_3100
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0310
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_3100';
+      try {
+        brightness.setValue(undefined);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SystemBrightnessTest_3200
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0320
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_3200';
+      try {
+        brightness.getMode(null);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SystemBrightnessTest_3300
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0330
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_3300';
+      try {
+        brightness.getMode(undefined);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SystemBrightnessTest_3400
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0340
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_3400';
+      try {
+        brightness.setMode(null);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SystemBrightnessTest_3500
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0350
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_3500';
+      try {
+        brightness.setMode(undefined);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SystemBrightnessTest_3600
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0360
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_3600';
+      try {
+        brightness.setKeepScreenOn(null);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SystemBrightnessTest_3700
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0370
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_3700';
+      try {
+        brightness.setKeepScreenOn(undefined);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SystemBrightnessTest_3800
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0380
+     * @tc.desc   gatValue when option parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_3800';
+      try {
+        brightness.getValue();
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
   })
 }

@@ -157,5 +157,38 @@ export default function ActsZlibInterfaceTest() {
       hilog.info(domain, tag, "==================ACTS_ZlibInterfaceTest_static_04 end==================");
     })
 
+    /**
+     * @tc.name   ActsZlibInterfaceTest_static_05
+     * @tc.number ACTS_ZlibInterfaceTest_static_05
+     * @tc.desc   test getOriginalSize compressFile empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ActsZlibInterfaceTest_static_05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================ACTS_ZlibInterfaceTest_static_05 start==================");
+        try {
+          zlib.getOriginalSize("").then(() => {
+            hilog.info(domain, tag, 'ActsZlibInterfaceTest_static_05 getOriginalSize success');
+            expect().assertFail();
+            done();
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `ACTS_ZlibInterfaceTest_static_05 getOriginalSize failed errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData.code).assertEqual(900001);
+            expect(errData.message).assertEqual("BusinessError 900001: The Input source file is invalid.");
+            done();
+          });
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `ACTS_ZlibInterfaceTest_static_05 getOriginalSize failed errData is  errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "==================ACTS_ZlibInterfaceTest_static_05 end==================");
+      })
+
   })
 }

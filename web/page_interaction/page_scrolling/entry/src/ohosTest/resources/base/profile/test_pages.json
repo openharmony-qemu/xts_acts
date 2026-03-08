@@ -9,6 +9,6 @@
     "testability/pages/webViewOnScroll",
 	"testability/pages/scrollByTo",
     "testability/pages/ScrollToError",
-    "testability/pages/ScrollByError"
+    "testability/pages/ScrollByWithResultError"
   ]
 }

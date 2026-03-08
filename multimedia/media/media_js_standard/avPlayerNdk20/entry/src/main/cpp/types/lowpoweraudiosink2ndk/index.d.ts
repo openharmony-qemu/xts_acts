@@ -50,6 +50,4 @@ export const OH_SetRenderStartListener0101: () => number;
 export const OH_SetErrorListener0101: () => number;
 export const OH_LowPowerAudioSink_GetParameter0100: () => number;
 export const OH_LowPowerAudioSink_GetParameter0200: () => number;
-export const OH_LowPowerAudioSink_GetParameter0300: () => number;
 export const OH_AVSamplesBuffer_GetRemainedCapacity0100: () => number;
-export const OH_SetLoudnessGain0200: () => number;

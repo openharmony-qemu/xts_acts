@@ -19,6 +19,7 @@ interface CustomUserData {}
 export const ohAvMetadataExtractorCreate: () => number;
 export const ohAvMetadataExtractorSetFdPathSource: (a : number) => number;
 export const ohAvMetadataExtractorFetchMetadata: (a : number) => number;
+export const ohAvMetadataExtractorFetchMetadataError: (a : number) => number;
 export const ohAvMetadataExtractorFetchMetadataAll: (a : number) => media.AVMetadata;
 export const ohAvMetadataExtractorFetchAlbumCover: (a : number) => number;
 export const ohAvMetadataExtractorFetchAlbumCoverError: (a : number) => number;
@@ -35,6 +36,8 @@ export const OhAvMetadataExtractorGetRefTrackMetaData: (fd : number, trackIndex 
 export const OhAVMetadataExtractorOutputParamsDestroyError: () => number;
 export const OhAVMetadataExtractorOutputParamsSetSizeError: () => boolean;
 export const OhAVMetadataExtractorFetchFrameByTimeError: (a: number) => number;
+export const OhAVMetadataExtractorFetchFrameByTimeErr: (fd: number) => number;
+export const OhAVMetadataExtractorFetchFrameByTimeErrTwo: (fd: number) => number;
 export const OhAVMetadataExtractorGetTrackDescriptionError: (a: number) => number;
 export const OhAVMetadataExtractorGetCustomInfoError: () => number;
 export const OhAvMetadataExtractorSetUrlMediaSource: (url: string) => number;

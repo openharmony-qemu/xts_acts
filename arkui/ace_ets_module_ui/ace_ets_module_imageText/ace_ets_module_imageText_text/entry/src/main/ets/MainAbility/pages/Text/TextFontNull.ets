@@ -41,13 +41,13 @@ struct TextFontNull {
         // Test 3: font(Font, options?) with null fontValue
         Text('font(Font, options?) with null fontValue')
           .id('text_font_withoptions_null')
-          .font(null, {})
+          .font(null, null)
           .height('5%')
 
         // Test 4: font(Font, options?) with undefined fontValue
         Text('font(Font, options?) with undefined fontValue')
           .id('text_font_withoptions_undefined')
-          .font(undefined, {})
+          .font(undefined, undefined)
           .height('5%')
 
         // Test 5: Default font for comparison

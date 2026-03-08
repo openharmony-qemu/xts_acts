@@ -58,7 +58,6 @@ interface EnumValuePair<T> {
   value: number;
 }
 
-let filesDir: string | undefined;
 let cacheDir: string | undefined;
 let isSupportHEIFDecode: boolean;
 let isSupportHdr: Boolean;
@@ -85,10 +84,12 @@ export default function imageExifGetModifyByTypeTest() {
   describe("imageExifGetModifyByTypeTest", () => {
 
     beforeAll(async () => {
-      filesDir = AppStorage.get('pathDir')
       cacheDir = AppStorage.get('cacheDir')
-      isSupportHEIFDecode =
-        image.createImageSource(filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
+      let filePath = AppStorage.get('pathDir') + '/' + "test.jpg";
+      let imageSource: image.ImageSource = image.createImageSource(filePath);
+      console.info('imageSource is ' + imageSource);
+      isSupportHEIFDecode = imageSource.supportedFormats.includes('image/heic');
+      console.info('isSupportHEIFDecode is ' + isSupportHEIFDecode);
       isSupportHdr =
         !display.getDefaultDisplaySync().hdrFormats.includes(hdrCapability.HDRFormat.NONE) &&
         display.getDefaultDisplaySync().hdrFormats.length != 0;

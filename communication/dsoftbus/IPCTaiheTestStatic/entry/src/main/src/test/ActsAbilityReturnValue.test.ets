@@ -396,6 +396,66 @@ export default function abilityTestReturnValue() {
     });
 
     /**
+     * @tc.name   SUB_IPC_MessageSequence_readFloat_ReturnValue_0100
+     * @tc.number SUB_IPC_MessageSequence_readFloat_ReturnValue_0100
+     * @tc.desc   test MessageSequence readFloat return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_MessageSequence_readFloat_ReturnValue_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readFloat_ReturnValue_0100 --------------------');
+      let data = rpc.MessageSequence.create();
+      try {
+        let input: double = 3.14;
+        data.writeFloat(input);
+        let result: double = data.readFloat();
+         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFloat_ReturnValue_0100 typeof result is: ' + typeof result);
+        expect(typeof result === 'number').assertTrue();
+        expect(result).assertEqual(input);
+     } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFloat_ReturnValue_0100 error is: ' + err);
+        expect(err === null).assertTrue();
+      } finally {
+        data.reclaim();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readFloat_ReturnValue_0100 --------------------');
+    });
+
+    /**
+     * @tc.name   SUB_IPC_MessageSequence_readDouble_ReturnValue_0100
+     * @tc.number SUB_IPC_MessageSequence_readDouble_ReturnValue_0100
+     * @tc.desc   test MessageSequence readDouble return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_MessageSequence_readDouble_ReturnValue_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readDouble_ReturnValue_0100 --------------------');
+      let data = rpc.MessageSequence.create();
+      try {
+        let input: double = 3.1415926535;
+        data.writeDouble(input);
+        let result: double = data.readDouble();
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDouble_ReturnValue_0100 typeof result is: ' + typeof result);
+        expect(typeof result === 'number').assertTrue();
+        expect(result).assertEqual(input);
+     } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDouble_ReturnValue_0100 error is: ' + err);
+        expect(err === null).assertTrue();
+      } finally {
+        data.reclaim();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readDouble_ReturnValue_0100 --------------------');
+    });
+ 
+    /**
      * @tc.name   SUB_IPC_MessageSequence_readChar_ReturnValue_0100
      * @tc.number SUB_IPC_MessageSequence_readChar_ReturnValue_0100
      * @tc.desc   test MessageSequence readChar return value

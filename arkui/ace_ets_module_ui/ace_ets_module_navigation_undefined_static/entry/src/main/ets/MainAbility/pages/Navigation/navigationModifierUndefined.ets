@@ -38,7 +38,7 @@ class MyModifier implements AttributeModifier<NavigationAttribute> {
         }
       ] as Array<ToolbarItem>)
       .minContentWidth(this.isUndefined3 ? undefined : 150 as number)
-      .navBarWidthRange(this.isUndefined4 ? undefined : ['10vp', '500vp'] as NavType)
+      .navBarWidthRange(this.isUndefined4 ? undefined : ['310vp', '500vp'] as NavType)
   }
 }
 

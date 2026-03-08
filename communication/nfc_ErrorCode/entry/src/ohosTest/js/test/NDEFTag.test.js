@@ -268,6 +268,68 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0501
+         * @tc.number SUB_Communication_NFC_nfcNDEF_js_0501
+         * @tc.desc   Write ndef messages to this tag promise. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('SUB_Communication_NFC_nfcNDEF_js_0501', Level.LEVEL1, async function (done) {
+            if (NdefTag != null && NdefTag != undefined) {
+                let rawData = [
+                    0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43
+                ];
+                let ndefMessage = tag.ndef.createNdefMessage(rawData);
+                (async () => {
+                    try {
+                        let result = await NdefTag.writeNdef(null);
+                        console.info("[NFC_test]ndef5 writeNdef data: " + result);
+                    } catch(error) {
+                        console.info("[NFC_test]ndef5 writeNdef errorcode: " + error.code);
+                        expect(401).assertEqual(error.code);
+                    }
+                })();
+                sleep(3000);
+                done();
+            } else {
+                console.info("[NFC_test]NdefTag5 = null & = undefined: ");
+                expect(true).assertFalse();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0502
+         * @tc.number SUB_Communication_NFC_nfcNDEF_js_0502
+         * @tc.desc   Write ndef messages to this tag promise. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('SUB_Communication_NFC_nfcNDEF_js_0502', Level.LEVEL1, async function (done) {
+            if (NdefTag != null && NdefTag != undefined) {
+                let rawData = [
+                    0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43
+                ];
+                let ndefMessage = tag.ndef.createNdefMessage(rawData);
+                (async () => {
+                    try {
+                        let result = await NdefTag.writeNdef(undefined);
+                        console.info("[NFC_test]ndef5 writeNdef data: " + result);
+                    } catch(error) {
+                        console.info("[NFC_test]ndef5 writeNdef errorcode: " + error.code);
+                        expect(401).assertEqual(error.code);
+                    }
+                })();
+                sleep(3000);
+                done();
+            } else {
+                console.info("[NFC_test]NdefTag5 = null & = undefined: ");
+                expect(true).assertFalse();
+            }
+        })
+
+        /**
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0600
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0600
          * @tc.desc   Write ndef messages to this tag callback. The error code is 401
@@ -343,7 +405,7 @@ export default function nfcNDEFErrorTest() {
                 try {
                     NdefTag.setReadOnly('test')((err, data)=> {
                         if (err) {
-                            expect(true).assertEqual(true);
+                            expect(401).assertEqual(err.code);
                             console.info("[NFC_test]ndef8 setReadOnly errcode: " + err);
                         } else {
                             expect(data).assertInstanceOf('Number')
@@ -456,7 +518,7 @@ export default function nfcNDEFErrorTest() {
                     NdefFormatable.format('test', (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]ndef12 format errcode: " + err);
-                            expect(true).assertTrue();
+                            expect(401).assertEqual(err.code);
                         } else {
                             console.info("[NFC_test]ndef12 format formatReadOnly2" );
                         }
@@ -524,7 +586,7 @@ export default function nfcNDEFErrorTest() {
                     NdefFormatable.formatReadOnly('test', (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]ndef14 formatReadOnly errcode: " + err);
-                            expect(true).assertTrue();
+                            expect(401).assertEqual(err.code);
                         } else {
                             console.info("[NFC_test]ndef14 formatReadOnly" +data);
                         }

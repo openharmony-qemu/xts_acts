@@ -221,7 +221,7 @@ export default function navigationModifierUndefined() {
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('navBarWidthRange')))
-        .assertEqual('\"10.00vp, 500.00vp\"');
+        .assertEqual('\"310.00vp, 500.00vp\"');
 
       // 第二次点击：isUndefined4 从 false 变回 true，navBarWidthRange 变回 undefined (默认值 [240, 432])
       await (changeBtn?.click() as Promise<void>);

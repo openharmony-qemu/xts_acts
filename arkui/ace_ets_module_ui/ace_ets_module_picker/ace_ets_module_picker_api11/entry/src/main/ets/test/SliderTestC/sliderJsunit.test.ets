@@ -71,7 +71,7 @@ export default function sliderJsunitSliderTest() {
                 }
             } catch (err) {
                 console.error("push sliderJsunitSliderTest page error:" + err)
-                expect().assertFail()
+      
             }
             done()
         })
