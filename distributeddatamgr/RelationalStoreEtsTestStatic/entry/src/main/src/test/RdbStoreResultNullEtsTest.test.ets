@@ -2395,5 +2395,66 @@ export default function RdbStoreResultNullEtsTest() {
         done()
         console.log(tag + "************* testTransquerySqlWithoutRowCount005 end *************");
       });
+
+    /**
+     * @tc.name   testsqueryWithoutRowCount001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_4000
+     * @tc.desc   testTransqueryWithoutRowCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testsqueryWithoutRowCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(tag + "************* testsqueryWithoutRowCount001 start *************");
+        const valueBucket1: data_relationalStore.ValuesBucket = {
+          "data1": "hello world"
+        };
+        let row = await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket1);
+        console.log(tag + "row is " + row);
+        let predicates = new data_relationalStore.RdbPredicates("test");
+        predicates.equalTo("data1", "hello world");
+
+        if (rdbStore!= undefined) {
+          let resultSet: data_relationalStore.LiteResultSet | undefined;
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates, ["data1"]);
+          expect(resultSet!==undefined).assertTrue();
+          resultSet!.close()
+        }
+        done()
+        console.log(tag + "************* testsqueryWithoutRowCount001 end *************");
+      });
+
+    /**
+     * @tc.name   testquerySqlWithoutRowCountreturn001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_5500
+     * @tc.desc   querySqlWithoutRowCount sec param is not kong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testquerySqlWithoutRowCountreturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(tag + "************* testquerySqlWithoutRowCountreturn001 start *************");
+        const valueBucket1: data_relationalStore.ValuesBucket = {
+          "data1": "hello world"
+        };
+        let row = await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket1);
+        console.log(tag + "row is " + row);
+        try{
+          if (rdbStore!= undefined) {
+            let resultSet: data_relationalStore.LiteResultSet | undefined;
+            resultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test where data1 = ?", ['hello world']);
+            expect(resultSet!==undefined).assertTrue();
+            resultSet!.close()
+          }
+        } catch (e) {
+          console.error(tag + `testquerySqlWithoutRowCountreturn001 failed. code is ${e.code}, message is ${e.message}`);
+          expect(true).assertFail();
+        }
+        done()
+        console.log(tag + "************* testquerySqlWithoutRowCountreturn001 end *************");
+      });
+
   })
 }
