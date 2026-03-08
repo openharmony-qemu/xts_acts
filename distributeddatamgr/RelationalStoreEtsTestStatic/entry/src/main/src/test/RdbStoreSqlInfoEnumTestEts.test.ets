@@ -166,6 +166,39 @@ export default function RdbStoreSqlInfoEnumTestEts() {
             }
         });
 
+        /**
+         * @tc.number testGetInsertSqlInfonull001
+         * @tc.name testGetInsertSqlInfoConflictResolutionIsON_CONFLICT_FAIL
+         * @tc.desc first param is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("testGetInsertSqlInfonull001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+            console.log(TAG + "************* testGetInsertSqlInfonull001 start *************");
+            try {
+                const bucket: relationalStore.ValuesBucket = {
+                    "name": "tableName",
+                    "age": "18",
+                    "sex": "man",
+                    "desc": "asserter"
+                };
+                const info: relationalStore.SqlInfo = relationalStore.getInsertSqlInfo(
+                    "",
+                    bucket,
+                    relationalStore.ConflictResolution.ON_CONFLICT_FAIL
+                );
+                expect(null).assertFail();
+                done();
+            } catch (e) {
+                e = e as BusinessError;
+                console.log(TAG +"catch err: failed, err: code=" + e.code + " message=" + e.message);
+                expect(14800001).assertEqual(e.code);
+                console.log(TAG + "************* testGetInsertSqlInfonull001 end *************");
+                done();
+            }
+        });
+
 
 //==============================================function getUpdateSqlInfo(predicates: RdbPredicates, values: ValuesBucket, conflict?: Configuration):SqlInfo;==============================================
         /**
