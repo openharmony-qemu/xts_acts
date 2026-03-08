@@ -1058,7 +1058,64 @@ export default function SingleKvStoreNull(){
       }
     })
 
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvNull_sync_0100
+     * @tc.name SUB_DDM_SKV_Null_sync_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc  sync err=201
+     */
+    it('SUB_DDM_SKV_Null_sync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_Null_sync_0100 begin---------  ');
+      try {
+          let mode = factory.SyncMode.PULL_ONLY;
+          kvStore!.sync(["AA","BB"], mode, 10);
+          console.info(TAG +'kvStore!.sync success ');
+          expect(null).assertFail();
+          done();
+        } catch (e) {
+          console.error(TAG +' catch sync :e:' + `, code=${e.code}, message=${e.message}`);
+          if (e.code === 201) {
+            expect( e.code ).assertEqual(201);
+          } else {
+            expect( e != undefined ).assertTrue();
+          }
+          done();
+        }
 
+      })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvNull_syncQuery_0100
+     * @tc.name SUB_DDM_SKV_Null_syncQuery_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc  syncQuery err=201
+     */
+    it('SUB_DDM_SKV_Null_syncQuery_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_Null_syncQuery_0100 begin---------  ');
+      try {
+          let mode = factory.SyncMode.PULL_ONLY;
+          const query: factory.Query = new factory.Query();
+          query.prefixKey("batch_test");
+          kvStore!.sync(["AA","BB"], query, mode, 10);
+          console.info(TAG +' kvStore!.sync success ');
+          expect(null).assertFail();
+          done();
+        } catch (e) {
+          console.error(TAG +' catch sync :e:' + `, code=${e.code}, message=${e.message}`);
+          if (e.code === 201) {
+            expect( e.code ).assertEqual(201);
+          } else {
+            expect( e != undefined ).assertTrue();
+          }
+          done();
+        }
+
+      })
+      
     console.info(TAG + '-------------------describe SingleKvStoreNull  end-------------------');
   })
 }
