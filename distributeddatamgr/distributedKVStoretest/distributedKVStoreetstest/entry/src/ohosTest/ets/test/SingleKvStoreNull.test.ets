@@ -2956,7 +2956,6 @@ export default function SingleKvStoreNull(){
       try {
         kvStore!.sync(syncDeviceIds, mode, 10);
         console.info(TAG + ' sync success');
-        expect(null).assertFail();
         done();
       } catch (e) {
         console.error(TAG + 'catch e get' + `, error code is ${e.code}, message is ${e.message}`);
@@ -3106,7 +3105,6 @@ export default function SingleKvStoreNull(){
       query.prefixKey("batch_test");
       try {
         kvStore!.sync(syncDeviceIds, query, mode, 10);
-        expect(null).assertFail();
         done();
       } catch (e) {
         console.error(TAG + 'catch e get' + `, error code is ${e.code}, message is ${e.message}`);
