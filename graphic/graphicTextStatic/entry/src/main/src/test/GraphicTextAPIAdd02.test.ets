@@ -845,6 +845,260 @@ export default function GraphicTextAPIAdd02() {
         }
       })
 
+    /**
+     * @tc.name   GraphicTextAPIAdd02Static_2300
+     * @tc.number GraphicTextAPIAdd02Static_2300
+     * @tc.desc   To test interface loadFontAsync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GraphicTextAPIAdd02Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "GraphicTextAPIAdd02Static_2300";
+        let fontCollection: text.FontCollection = new text.FontCollection();
+        try {
+          fontCollection.loadFontSync('', $rawfile('test.ttf'));
+          console.info(msg + 'www data success loadFontSync 111');
+        } catch (err) {
+          console.info(msg + 'www data failed to loadFontSync 111', JSON.stringify(err));
+          expect().assertFail();
+        }
+        try {
+          await fontCollection.loadFont('', $rawfile('test.ttf'));
+          console.info(msg + 'www data success loadFontSync 111');
+        } catch (err) {
+          console.info(msg + 'www data failed to loadFontSync 111', JSON.stringify(err));
+          expect().assertFail();
+        }
+        try {
+          fontCollection.unloadFontSync('');
+          console.info(msg + 'www data success unloadFontSync 222');
+        } catch (err) {
+          console.info(msg + 'www data failed to unloadFontSync 222', JSON.stringify(err));
+          expect().assertFail();
+        }
+        try {
+          await fontCollection.unloadFont('');
+          console.info(msg + 'www data success unloadFontSync 333');
+        } catch (err) {
+          console.info(msg + 'www data failed to unloadFontSync 333', JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   GraphicTextAPIAdd02Static_2400
+     * @tc.number GraphicTextAPIAdd02Static_2400
+     * @tc.desc   FontCollection loadFontSyncWithCheck path parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GraphicTextAPIAdd02Static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const msgStr = 'www data GraphicTextAPIAdd02Static_2400 ';
+        const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+        try {
+          fontCollection.loadFontSyncWithCheck('', $rawfile('test.ttf'));
+          console.info(`${msgStr} success `, 111);
+          fontCollection.unloadFontSync('');
+          done();
+        } catch (err) {
+          console.info(`${msgStr} error 111 `, err.code);
+          expect().assertFail();
+          done();
+        }
+        try {
+          await fontCollection.loadFontWithCheck('', $rawfile('test.ttf'));
+          console.info(`${msgStr} success `, 222);
+          fontCollection.unloadFontSync('');
+          done();
+        } catch (err) {
+          console.info(`${msgStr} error 222 `, err.code);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   GraphicTextAPIAdd02Static_2500
+     * @tc.number GraphicTextAPIAdd02Static_2500
+     * @tc.desc   ParagraphBuilder pushStyle fontStyle NORMAL test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GraphicTextAPIAdd02Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const msgStr = 'www data GraphicTextAPIAdd02Static_2500 ';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          const textStyle: text.TextStyle = {
+            fontSize: 20,
+            fontFamilies: undefined,
+            fontStyle: text.FontStyle.NORMAL,
+            ellipsisMode: text.EllipsisMode.MULTILINE_START
+          };
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          console.info(`${msgStr} success`);
+          done();
+        } catch (err) {
+          console.info(`${msgStr} error `, JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   GraphicTextAPIAdd02Static_2600
+     * @tc.number GraphicTextAPIAdd02Static_2600
+     * @tc.desc   ParagraphBuilder pushStyle fontStyle NORMAL test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GraphicTextAPIAdd02Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const msgStr = 'www data GraphicTextAPIAdd02Static_2600 ';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          const textStyle: text.TextStyle = {
+            fontSize: 20,
+            fontFamilies: undefined,
+            fontStyle: text.FontStyle.NORMAL,
+            ellipsisMode: text.EllipsisMode.MULTILINE_MIDDLE
+          };
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          console.info(`${msgStr} success`);
+          done();
+        } catch (err) {
+          console.info(`${msgStr} error `, JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   GraphicTextAPIAdd02Static_2700
+     * @tc.number GraphicTextAPIAdd02Static_2700
+     * @tc.desc   test createTruncatedLine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GraphicTextAPIAdd02Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let fontCollection: text.FontCollection = new text.FontCollection();
+        try {
+          fontCollection.loadFontSync('Clock_01', 'file:///system/fonts/HarmonyClock_01.ttf')
+          let fontFamilies: Array<string> = ["Clock_01"]
+          let myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          let myParagraphStyle: text.ParagraphStyle = {
+            textStyle: myTextStyle, compressHeadPunctuation: false,
+            includeFontPadding: true, fallbackLineSpacing: false
+          }
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+          paragraphBuilder.addText(textData);
+          let lineTypeset: text.LineTypeset = paragraphBuilder.buildLineTypeset();
+          console.info('www data GraphicTextAPIAdd02Static_2700 getLineBreak ', lineTypeset.getLineBreak(20,100));
+          let textLine: text.TextLine = lineTypeset.createLine(1,20);
+          let truncatedTextLine1 = textLine.createTruncatedLine(10, text.EllipsisMode.MULTILINE_START, '');
+          console.info('www data GraphicTextAPIAdd02Static_2700 range.start ', truncatedTextLine1);
+          console.info('www data GraphicTextAPIAdd02Static_2700 range.start ', truncatedTextLine1?.getGlyphCount());
+          expect(truncatedTextLine1 !== undefined).assertTrue();
+          let truncatedTextLine2 = textLine.createTruncatedLine(10, text.EllipsisMode.MULTILINE_MIDDLE, '');
+          console.info('www data GraphicTextAPIAdd02Static_2700 range.start ', truncatedTextLine2);
+          console.info('www data GraphicTextAPIAdd02Static_2700 range.start ', truncatedTextLine2?.getGlyphCount());
+          expect(truncatedTextLine2).assertUndefined();
+          fontCollection.unloadFontSync('Clock_01');
+          done();
+        } catch (e) {
+          console.error(`www data Failed to do GraphicTextAPIAdd02Static_2700, error: ${e}, ${e.code} `);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   GraphicTextAPIAdd02Static_2800
+     * @tc.number GraphicTextAPIAdd02Static_2800
+     * @tc.desc   test getFontDescriptorByFullName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GraphicTextAPIAdd02Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg  = "====www data GraphicTextAPIAdd02Static_2800====";
+        let fontCollection = text.FontCollection.getGlobalInstance();
+        fontCollection.unloadFontSync('myFamilyName');
+        fontCollection.unloadFontSync('myFamilyName0');
+        fontCollection.unloadFontSync('test');
+        fontCollection.unloadFontSync('Clock_01');
+        try {
+          await text.getFontDescriptorByFullName('', text.SystemFontType.CUSTOMIZED)
+            .then((fontDescriptor: text.FontDescriptor)=>{
+              console.info(msg + JSON.stringify(fontDescriptor));
+              expect(false).assertTrue();
+              done();
+            }).catch((err: Error) => {
+              console.info(msg + 'error ' + JSON.stringify(err));
+              done();
+            });
+        } catch(err){
+          console.info(msg + err);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   GraphicTextAPIAdd02Static_2900
+     * @tc.number GraphicTextAPIAdd02Static_2900
+     * @tc.desc   Paragraph getGlyphPositionAtCoordinate normal test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GraphicTextAPIAdd02Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = "====www data GraphicTextAPIAdd02Static_2900====";
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Hello World');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          const positionWithAffinity: text.PositionWithAffinity = paragraph.getGlyphPositionAtCoordinate(10, 10);
+          console.info(`${msgStr} success position=`
+            + `${positionWithAffinity.position} affinity=${positionWithAffinity.affinity}`);
+          expect(positionWithAffinity !== undefined).assertTrue();
+          expect(positionWithAffinity.position).assertLargerOrEqual(0);
+          expect(positionWithAffinity.affinity).assertEqual(text.Affinity.UPSTREAM);
+          done();
+        } catch (err) {
+          console.info(`${msgStr}  error `, JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
 
   })
 }
