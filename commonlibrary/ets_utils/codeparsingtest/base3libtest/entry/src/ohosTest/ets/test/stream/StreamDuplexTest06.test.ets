@@ -1976,6 +1976,230 @@ export default function StreamDuplex06Test() {
       });
     });
 
+    /**
+     * @tc.number    SUB_STREAM_DUPLEX_TEST06_4700
+     * @tc.name      testStreamDuplex06Chapter0047
+     * @tc.desc      Test doWrite with empty string and Uint8Array in sequence
+     * @tc.type      Function
+     * @tc.size      MediumTest
+     * @tc.level     Level 2
+     */
+    it('testStreamDuplex06Chapter0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const TAG = 'testStreamDuplex06Chapter0047';
+      console.log(TAG + ' start');
 
+      class TestDuplex extends stream.Duplex {
+        receivedData: Array<string | Uint8Array> = [];
+
+        constructor() {
+          super();
+        }
+
+        doRead(size: number) {
+        }
+
+        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
+          this.receivedData.push(chunk);
+          callback();
+        }
+      }
+      let duplexStream = new TestDuplex();
+
+      await new Promise<void>((resolve) => {
+        let callbacksCompleted = 0;
+        const totalWrites = 3;
+
+        const checkCompletion = () => {
+          callbacksCompleted++;
+          if (callbacksCompleted === totalWrites) {
+            expect((duplexStream as TestDuplex).receivedData.length).assertEqual(3);
+            expect((duplexStream as TestDuplex).receivedData[0]).assertEqual('first');
+            expect((duplexStream as TestDuplex).receivedData[1] instanceof Uint8Array).assertTrue();
+            expect(((duplexStream as TestDuplex).receivedData[1] as Uint8Array).length).assertEqual(3);
+            expect((duplexStream as TestDuplex).receivedData[2]).assertEqual('third');
+            resolve();
+          }
+        };
+
+        duplexStream.write('first', 'utf8', () => {
+          checkCompletion();
+        });
+
+        duplexStream.write(new Uint8Array([1, 2, 3]), 'utf8', () => {
+          checkCompletion();
+        });
+
+        duplexStream.write('third', 'utf8', () => {
+          checkCompletion();
+        });
+      });
+    });
+
+    /**
+     * @tc.number    SUB_STREAM_DUPLEX_TEST06_4800
+     * @tc.name      testStreamDuplex06Chapter0048
+     * @tc.desc      Test doWrite with all control characters (0x00-0x1F, 0x7F)
+     * @tc.type      Function
+     * @tc.size      MediumTest
+     * @tc.level     Level 2
+     */
+    it('testStreamDuplex06Chapter0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const TAG = 'testStreamDuplex06Chapter0048';
+      console.log(TAG + ' start');
+
+      class TestDuplex extends stream.Duplex {
+        receivedData: string | Uint8Array = '';
+
+        constructor() {
+          super();
+        }
+
+        doRead(size: number) {
+        }
+
+        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
+          this.receivedData = chunk;
+          callback();
+        }
+      }
+
+      let duplexStream = new TestDuplex();
+
+      let controlChars = '';
+      for (let i = 0; i <= 0x1F; i++) {
+        controlChars += String.fromCharCode(i);
+      }
+      controlChars += String.fromCharCode(0x7F);
+
+      await new Promise<void>((resolve) => {
+        duplexStream.write(controlChars, 'utf8', () => {
+          expect((duplexStream as TestDuplex).receivedData).assertEqual(controlChars);
+          resolve();
+        });
+      });
+    });
+
+    /**
+     * @tc.number    SUB_STREAM_DUPLEX_TEST06_4900
+     * @tc.name      testStreamDuplex06Chapter0049
+     * @tc.desc      Test doWrite with string containing only whitespace characters
+     * @tc.type      Function
+     * @tc.size      MediumTest
+     * @tc.level     Level 2
+     */
+    it('testStreamDuplex06Chapter0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const TAG = 'testStreamDuplex06Chapter0049';
+      console.log(TAG + ' start');
+
+      class TestDuplex extends stream.Duplex {
+        receivedData: string | Uint8Array = '';
+
+        constructor() {
+          super();
+        }
+
+        doRead(size: number) {
+        }
+
+        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
+          this.receivedData = chunk;
+          callback();
+        }
+      }
+
+      let duplexStream = new TestDuplex();
+      let whitespaceString = ' \t\n\r\v\f\u00A0\u2028\u2029';
+
+      await new Promise<void>((resolve) => {
+        duplexStream.write(whitespaceString, 'utf8', () => {
+          expect((duplexStream as TestDuplex).receivedData).assertEqual(whitespaceString);
+          resolve();
+        });
+      });
+    });
+
+    /**
+     * @tc.number    SUB_STREAM_DUPLEX_TEST06_5000
+     * @tc.name      testStreamDuplex06Chapter0050
+     * @tc.desc      Test doWrite with string containing Unicode supplementary characters
+     * @tc.type      Function
+     * @tc.size      MediumTest
+     * @tc.level     Level 2
+     */
+    it('testStreamDuplex06Chapter0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const TAG = 'testStreamDuplex06Chapter0050';
+      console.log(TAG + ' start');
+
+      class TestDuplex extends stream.Duplex {
+        receivedData: string | Uint8Array = '';
+
+        constructor() {
+          super();
+        }
+
+        doRead(size: number) {
+        }
+
+        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
+          this.receivedData = chunk;
+          callback();
+        }
+      }
+
+      let duplexStream = new TestDuplex();
+
+      let supplementaryChars = '😀🎉🌟🌈🚀';
+
+      await new Promise<void>((resolve) => {
+        duplexStream.write(supplementaryChars, 'utf8', () => {
+          expect((duplexStream as TestDuplex).receivedData).assertEqual(supplementaryChars);
+          resolve();
+        });
+      });
+    });
+
+    /**
+     * @tc.number    SUB_STREAM_DUPLEX_TEST06_5100
+     * @tc.name      testStreamDuplex06Chapter0051
+     * @tc.desc      Test doWrite performance with multiple small writes
+     * @tc.type      Function
+     * @tc.size      MediumTest
+     * @tc.level     Level 2
+     */
+    it('testStreamDuplex06Chapter0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const TAG = 'testStreamDuplex06Chapter0051';
+      console.log(TAG + ' start');
+
+      class TestDuplex extends stream.Duplex {
+        writeCount: number = 0;
+
+        constructor() {
+          super();
+        }
+
+        doRead(size: number) {
+        }
+
+        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
+          this.writeCount++;
+          callback();
+        }
+      }
+
+      let duplexStream = new TestDuplex();
+      let promises: Promise<void>[] = [];
+
+
+      for (let i = 0; i < 1000; i++) {
+        promises.push(new Promise<void>((resolve) => {
+          duplexStream.write(`chunk-${i}`, 'utf8', () => {
+            resolve();
+          });
+        }));
+      }
+
+      await Promise.all(promises);
+      expect((duplexStream as TestDuplex).writeCount).assertEqual(1000);
+    });
   })
 }
