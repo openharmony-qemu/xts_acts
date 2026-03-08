@@ -1,5 +1,25 @@
 SingleKVStore	sync	sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void;	ohos.permission.DISTRIBUTED_DATASYNC	未申请权限覆盖时，未捕获201错误码
 SingleKVStore	sync	sync(deviceIds: string[], query: Query, mode: SyncMode, delayMs?: number): void;	ohos.permission.DISTRIBUTED_DATASYNC	未申请权限覆盖时，未捕获201错误码
+FieldNode	appendChild	appendChild(child: FieldNode): boolean;	第1个参数属性default:缺少空值""覆盖；	已经覆盖
+Query	and	and(): Query;	工具暂不能识别返回值类型，请人工确认	SUB_DDM_DKV_QUERY_AND_PROMISE_0100,SUB_DDM_DKV_QUERY_AND_PROMISE_0200
+Query	or	or(): Query;	工具暂不能识别返回值类型，请人工确认	SUB_DDM_DKV_QUERY_OR_PROMISE_0100,SUB_DDM_DKV_QUERY_OR_PROMISE_0200
+Query	beginGroup	beginGroup(): Query;	工具暂不能识别返回值类型，请人工确认	SUB_DDM_DKV_QUERY_ENDGROUP_PROMISE_0100,SUB_DDM_DKV_QUERY_BEGINGROUP_PROMISE_0200
+Query	endGroup	endGroup(): Query;	工具暂不能识别返回值类型，请人工确认	SUB_DDM_DKV_QUERY_ENDGROUP_PROMISE_0100,SUB_DDM_DKV_QUERY_ENDGROUP_PROMISE_0200
+				
+				
+				
+static	 			
+Query	and	and(): Query;	工具暂不能识别返回值类型，请人工确认	SUB_DDM_DKV_QUERY_AND_PROMISE_0100,SUB_DDM_DKV_QUERY_AND_PROMISE_0200
+Query	or	or(): Query;	工具暂不能识别返回值类型，请人工确认	SUB_DDM_DKV_QUERY_OR_PROMISE_0100,SUB_DDM_DKV_QUERY_OR_PROMISE_0200
+Query	beginGroup	beginGroup(): Query;	工具暂不能识别返回值类型，请人工确认	SUB_DDM_DKV_QUERY_BEGINGROUP_PROMISE_0100
+Query	endGroup	endGroup(): Query;	工具暂不能识别返回值类型，请人工确认	SUB_DDM_DKV_QUERY_ENDGROUP_PROMISE_0100,SUB_DDM_DKV_QUERY_ENDGROUP_PROMISE_0200
+				
+DataObject	setSessionId	setSessionId(sessionId: string, callback: AsyncCallback<void>): void;	无未申请权限覆盖	DataObjectErrTest74;
+DataObject	setSessionId	setSessionId(sessionId?: string): Promise<void>;	无未申请权限覆盖	DataObjectErrTest75;   401
+				SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_006;  15400001
+				SUB_DataObject_setSessionId_Callback_PermissionTest_0100   //新增权限
+
+
 
 SingleKvStoreNull.test.ets
     it('SUB_DDM_SKV_Null_sync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
