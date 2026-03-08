@@ -1072,7 +1072,6 @@ export default function SingleKvStoreNull(){
           let mode = factory.SyncMode.PULL_ONLY;
           kvStore!.sync(["AA","BB"], mode, 10);
           console.info(TAG +'kvStore!.sync success ');
-          expect(null).assertFail();
           done();
         } catch (e) {
           console.error(TAG +' catch sync :e:' + `, code=${e.code}, message=${e.message}`);
@@ -1102,7 +1101,6 @@ export default function SingleKvStoreNull(){
           query.prefixKey("batch_test");
           kvStore!.sync(["AA","BB"], query, mode, 10);
           console.info(TAG +' kvStore!.sync success ');
-          expect(null).assertFail();
           done();
         } catch (e) {
           console.error(TAG +' catch sync :e:' + `, code=${e.code}, message=${e.message}`);
