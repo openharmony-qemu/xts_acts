@@ -56,11 +56,6 @@ struct DatePickerDialogBGColor {
         })
         .id('colorBlueID')
 
-      Button('null')
-        .onClick((e: ClickEvent) => {
-          this.showDialog(null)
-        })
-        .id('nullID')
       Button('undefined')
         .onClick((e: ClickEvent) => {
           this.showDialog(undefined)
