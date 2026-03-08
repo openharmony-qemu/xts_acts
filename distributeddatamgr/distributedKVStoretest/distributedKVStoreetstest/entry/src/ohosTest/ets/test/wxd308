@@ -1,3 +1,47 @@
+SingleKVStore	sync	sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void;	ohos.permission.DISTRIBUTED_DATASYNC	未申请权限覆盖时，未捕获201错误码
+SingleKVStore	sync	sync(deviceIds: string[], query: Query, mode: SyncMode, delayMs?: number): void;	ohos.permission.DISTRIBUTED_DATASYNC	未申请权限覆盖时，未捕获201错误码
+
+SingleKvStoreNull.test.ets
+    it('SUB_DDM_SKV_Null_sync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_Null_sync_0100 begin---------  ');
+      let mode = factory.SyncMode.PULL_ONLY;
+      try {
+        kvStore!.sync(syncDeviceIds, mode, 10);
+        console.info(TAG + ' sync success');
+        expect(null).assertFail();
+        done();
+      } catch (e) {
+        console.error(TAG + 'catch e get' + `, error code is ${e.code}, message is ${e.message}`);
+        if (e.code === 201) {
+          expect( e.code ).assertEqual(201);
+        } else {
+          expect( e != undefined ).assertTrue();
+        }
+        done();
+      }
+    })
+
+    it('SUB_DDM_SKV_Null_syncQuery_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_Null_syncQuery_0100 begin---------  ');
+      let mode = factory.SyncMode.PUSH_ONLY;
+      const query = new factory.Query();
+      query.prefixKey("batch_test");
+      try {
+        kvStore!.sync(syncDeviceIds, query, mode, 10);
+        expect(null).assertFail();
+        done();
+      } catch (e) {
+        console.error(TAG + 'catch e get' + `, error code is ${e.code}, message is ${e.message}`);
+        if (e.code === 201) {
+          expect( e.code ).assertEqual(201);
+        } else {
+          expect( e != undefined ).assertTrue();
+        }
+        done();
+      }
+    })
+
+QueryNull.test.ets
     it('SUB_DDM_SKV_QueryNull_wall_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + ' --------- SUB_DDM_SKV_QueryNull_wall_0100 begin---------  ');
       try {
