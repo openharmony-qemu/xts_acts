@@ -428,7 +428,7 @@ export default function graphicImagePixelMap5() {
      */
     it('graphicImagePixelMap5_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await image.createPixelMapFromSurfaceWithTransformation('111111', true)
+        await image.createPixelMapFromSurfaceWithTransformation('111111', false)
           .then((pixelMap: image.PixelMap) => {
             console.info('www data graphicImagePixelMap5_static_2900 PixelMap created successfully.');
             expect(pixelMap !== null).assertTrue();
@@ -489,7 +489,7 @@ export default function graphicImagePixelMap5() {
     it('graphicImagePixelMap5_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          const pixelMap: image.PixelMap = image.createPixelMapFromSurfaceWithTransformationSync('111111', true);
+          const pixelMap: image.PixelMap = image.createPixelMapFromSurfaceWithTransformationSync('111111', false);
           console.info('www data graphicImagePixelMap5_static_3100 PixelMap created successfully.');
           expect(pixelMap !== null).assertTrue();
 
@@ -600,7 +600,10 @@ export default function graphicImagePixelMap5() {
         let pixelMap = image.createPixelMapSync(color, opts);
         try {
           pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
-          console.info('www data createCroppedAndScaledPixelMapSync pass 111');
+          console.info('www data createCroppedAndScaledPixelMapSync pass 111', pixelMap.isEditable,
+            pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
         }catch(err){
           console.info('www data createCroppedAndScaledPixelMapSync error 111', JSON.stringify(err));
           expect().assertFail();
@@ -651,7 +654,7 @@ export default function graphicImagePixelMap5() {
           editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
         }
         let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-        let pixelMap = image.createPixelMapSync(color, opts);
+        let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
         try {
           pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
           console.info('www data graphicImagePixelMap5_static_3500 pass');
@@ -675,7 +678,7 @@ export default function graphicImagePixelMap5() {
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
-          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+          editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
         }
         let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
         let pixelMap = image.createPixelMapSync(color, opts);
@@ -735,7 +738,10 @@ export default function graphicImagePixelMap5() {
         let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
         let pixelMap = image.createPixelMapSync(color, opts);
         await pixelMap.createCroppedAndScaledPixelMap(region, 10, 10).then(()=>{
-          console.info('www data createCroppedAndScaledPixelMap pass 111');
+          console.info('www data createCroppedAndScaledPixelMap pass 111', pixelMap.isEditable,
+          pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
         }).catch((err: Error) => {
           console.info('www data createCroppedAndScaledPixelMap error 111', JSON.stringify(err));
           expect().assertFail();
@@ -880,9 +886,15 @@ export default function graphicImagePixelMap5() {
           size: { height: 2, width: 2 },
           alphaType: image.AlphaType.PREMUL
         }
-        let srcPixelmap = image.createPixelMapSync(color, optsForUnpre);
+        let srcPixelMap = image.createPixelMapSync(color, optsForUnpre);
+        console.info(msg + 'srcPixelMap success', srcPixelMap.isEditable, srcPixelMap.isStrideAlignment);
+        expect(srcPixelMap.isEditable).assertTrue();
+        expect(srcPixelMap.isStrideAlignment).assertFalse();
         let dstPixelMap = image.createPixelMapSync(optsForPre);
-        image.createPremultipliedPixelMap(srcPixelmap, dstPixelMap, (error: BusinessError | null) => {
+        console.info(msg + 'dstPixelMap success', dstPixelMap.isEditable, dstPixelMap.isStrideAlignment);
+        expect(dstPixelMap.isEditable).assertTrue();
+        expect(dstPixelMap.isStrideAlignment).assertFalse();
+        image.createPremultipliedPixelMap(srcPixelMap, dstPixelMap, (error: BusinessError | null) => {
           if(error) {
             console.error(msg + `Failed to convert pixelmap. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
@@ -924,9 +936,15 @@ export default function graphicImagePixelMap5() {
           size: { height: 2, width: 2 },
           alphaType: image.AlphaType.PREMUL
         }
-        let srcPixelmap = image.createPixelMapSync(color, optsForUnpre);
+        let srcPixelMap = image.createPixelMapSync(color, optsForUnpre);
+        console.info(msg + 'srcPixelMap success', srcPixelMap.isEditable, srcPixelMap.isStrideAlignment);
+        expect(srcPixelMap.isEditable).assertTrue();
+        expect(srcPixelMap.isStrideAlignment).assertFalse();
         let dstPixelMap = image.createPixelMapSync(optsForPre);
-        await image.createPremultipliedPixelMap(srcPixelmap, dstPixelMap).then(() => {
+        console.info(msg + 'dstPixelMap success', dstPixelMap.isEditable, dstPixelMap.isStrideAlignment);
+        expect(dstPixelMap.isEditable).assertTrue();
+        expect(dstPixelMap.isStrideAlignment).assertFalse();
+        await image.createPremultipliedPixelMap(srcPixelMap, dstPixelMap).then(() => {
           console.info(msg + 'Succeeded in converting pixelmap.');
           done();
         }).catch((error: Error) => {
@@ -963,10 +981,16 @@ export default function graphicImagePixelMap5() {
         console.log(" www data 3.1" + msg)
         try {
           console.log(msg + " succeed in try createPixelMapSync ")
-          let srcPixelmap = image.createPixelMapSync(color, opts2);
+          let srcPixelMap = image.createPixelMapSync(color, opts2);
+          console.info(msg + 'srcPixelMap success', srcPixelMap.isEditable, srcPixelMap.isStrideAlignment);
+          expect(srcPixelMap.isEditable).assertTrue();
+          expect(srcPixelMap.isStrideAlignment).assertFalse();
           let dstPixelMap = image.createPixelMapSync(opts3);
+          console.info(msg + 'dstPixelMap success', dstPixelMap.isEditable, dstPixelMap.isStrideAlignment);
+          expect(dstPixelMap.isEditable).assertTrue();
+          expect(dstPixelMap.isStrideAlignment).assertFalse();
           console.log(" www data 3.2" + msg)
-          image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap, (error: BusinessError | null) => {
+          image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap, (error: BusinessError | null) => {
             if(error) {
               console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message} `);
               expect().assertFail()
@@ -1011,10 +1035,16 @@ export default function graphicImagePixelMap5() {
         console.log(" www data 4.1" + msg)
         try {
           console.log(msg + " succeed in try createPixelMapSync ")
-          let srcPixelmap = image.createPixelMapSync(color, opts2);
+          let srcPixelMap = image.createPixelMapSync(color, opts2);
+          console.info(msg + 'srcPixelMap success', srcPixelMap.isEditable, srcPixelMap.isStrideAlignment);
+          expect(srcPixelMap.isEditable).assertTrue();
+          expect(srcPixelMap.isStrideAlignment).assertFalse();
           let dstPixelMap = image.createPixelMapSync(opts3);
+          console.info(msg + 'dstPixelMap success', dstPixelMap.isEditable, dstPixelMap.isStrideAlignment);
+          expect(dstPixelMap.isEditable).assertTrue();
+          expect(dstPixelMap.isStrideAlignment).assertFalse();
           console.log(" www data 4.2" + msg)
-          image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap).then(() => {
+          image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap).then(() => {
             console.log(" www data 4.3" + msg)
             console.info(msg + ' Succeeded in converting pixelmap.');
             done()
@@ -1051,8 +1081,8 @@ export default function graphicImagePixelMap5() {
           expect(pixelMap !== null).assertTrue();
 
           // Verify basic properties
-          expect(pixelMap.isEditable).assertTrue();
-          expect(pixelMap.isStrideAlignment).assertTrue();
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
 
           console.info(`www data graphicImagePixelMap5_static_0100 success`);
           expect(false).assertTrue();
@@ -1077,10 +1107,9 @@ export default function graphicImagePixelMap5() {
       async (done: () => void): Promise<void> => {
         try {
           // Test with valid parameters
-          const surfaceId = "";
           const region: image.Region = { x: 0, y: 0, size: { width: 100, height: 100 } };
 
-          const pixelMap = await image.createPixelMapFromSurface(surfaceId, region);
+          const pixelMap = await image.createPixelMapFromSurface('', region);
 
           console.info(`www data graphicImagePixelMap5_static_0200 pixelMap: ${pixelMap}`);
           expect(pixelMap !== null).assertTrue();
@@ -1111,9 +1140,8 @@ export default function graphicImagePixelMap5() {
     it('graphicImagePixelMap5_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-        let surfaceId = '';
         try {
-          let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync(surfaceId, region);
+          let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync('', region);
           console.info('www data succeed in graphicImagePixelMap5_static_0300');
           expect(pixelMap !== null).assertTrue();
 
@@ -1141,9 +1169,8 @@ export default function graphicImagePixelMap5() {
      */
     it('graphicImagePixelMap5_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let surfaceId = '';
         try {
-          let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync(surfaceId);
+          let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync('');
           console.info('www data succeed in graphicImagePixelMap5_static_0400');
           expect(pixelMap !== null).assertTrue();
 
@@ -1227,7 +1254,519 @@ export default function graphicImagePixelMap5() {
       }
     });
 
+    /**
+     * @tc.name   graphicImagePixelMap5_static_0700
+     * @tc.number graphicImagePixelMap5_static_0700
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+        }
+        let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
+        let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        try {
+          pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
+          console.info('www data graphicImagePixelMap5_static_0700 pass', pixelMap.isEditable,
+            pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertTrue();
+        }catch(err){
+          console.info('www data graphicImagePixelMap5_static_0700 error', JSON.stringify(err.code));
+          expect().assertFail();
+        }
+        done();
+      })
 
+    /**
+     * @tc.name   graphicImagePixelMap5_static_0800
+     * @tc.number graphicImagePixelMap5_static_0800
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+        }
+        let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
+        let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        try {
+          await pixelMap.createCroppedAndScaledPixelMap(region, 10, 10);
+          console.info('www data graphicImagePixelMap5_static_0800 pass', pixelMap.isEditable,
+            pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertTrue();
+        }catch(err){
+          console.info('www data graphicImagePixelMap5_static_0800 error', JSON.stringify(err.code));
+          expect().assertFail();
+        }
+        done();
+      })
 
+    /**
+     * @tc.name   graphicImagePixelMap5_static_0900
+     * @tc.number graphicImagePixelMap5_static_0900
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let opts: image.InitializationOptions = { editable: true, srcPixelFormat: image.PixelMapFormat.RGBA_1010102,
+            pixelFormat: image.PixelMapFormat.RGBA_1010102, size: { height: 4, width: 6 } }
+          let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
+          let imgInfo = pixelMap.getImageInfoSync();
+          console.info('www data graphicImagePixelMap5_static_0900 ', JSON.stringify(imgInfo));
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_1010102);
+          let imgInfoPromise = await pixelMap.getImageInfo();
+          console.info('www data graphicImagePixelMap5_static_0900 ', JSON.stringify(imgInfoPromise));
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_1010102);
+          pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
+            if(imageInfoCallback !== undefined){
+              console.info('www data graphicImagePixelMap5_static_0900 ', JSON.stringify(imageInfoCallback));
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_1010102);
+            }
+          })
+        } catch (err) {
+          console.info('www data graphicImagePixelMap5_static_0900 ', err);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap5_static_1000
+     * @tc.number graphicImagePixelMap5_static_1000
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'www data graphicImagePixelMap5_static_1000 ';
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.ASTC_4x4,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          alphaType: image.AlphaType.UNKNOWN,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        image.createPixelMap(color, opts, (error: BusinessError | null, pixelMap: image.PixelMap | undefined) => {
+          if(error) {
+            console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
+            expect(Number(error.code)).assertEqual(62980096);
+          } else {
+            console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
+            expect().assertFail();
+          }
+        })
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap5_static_1100
+     * @tc.number graphicImagePixelMap5_static_1100
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'www data graphicImagePixelMap5_static_1100 ';
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.ASTC_4x4,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          alphaType: image.AlphaType.UNKNOWN,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        try {
+          let pixelMap = await image.createPixelMap(color, opts)
+          console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
+          expect().assertFail();
+        } catch(err){
+          console.error(msgStr + ` Failed to create pixelmap. code is ${err.code}`);
+          expect(Number(err.code)).assertEqual(62980096);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap5_static_1200
+     * @tc.number graphicImagePixelMap5_static_1200
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'www data graphicImagePixelMap5_static_1200 ';
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888,
+          pixelFormat: image.PixelMapFormat.ARGB_8888,
+          alphaType: image.AlphaType.PREMUL,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(opts);
+          console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          done();
+        } catch(error){
+          console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap5_static_1300
+     * @tc.number graphicImagePixelMap5_static_1300
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = '=====www data graphicImagePixelMap5_static_1300=====';
+        const color: ArrayBuffer = new ArrayBuffer(16);
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+          bufferArr[i] = 255;
+          bufferArr[i+1] = 255;
+          bufferArr[i+2] = 122;
+          bufferArr[i+3] = 122;
+        }
+        let optsForUnpre: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 2, width: 2 },
+          alphaType: image.AlphaType.UNPREMUL
+        }
+        let optsForPre: image.InitializationOptions = {
+          editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 2, width: 2 },
+          alphaType: image.AlphaType.PREMUL
+        }
+        let srcPixelMap = image.createPixelMapUsingAllocatorSync(color, optsForUnpre, image.AllocatorType.DMA);
+        console.info(msg + 'srcPixelMap success', srcPixelMap.isEditable, srcPixelMap.isStrideAlignment);
+        expect(srcPixelMap.isEditable).assertFalse();
+        expect(srcPixelMap.isStrideAlignment).assertTrue();
+        let dstPixelMap = image.createPixelMapUsingAllocatorSync(color, optsForPre, image.AllocatorType.DMA);
+        console.info(msg + 'dstPixelMap success', dstPixelMap.isEditable, dstPixelMap.isStrideAlignment);
+        expect(dstPixelMap.isEditable).assertFalse();
+        expect(dstPixelMap.isStrideAlignment).assertTrue();
+        image.createPremultipliedPixelMap(srcPixelMap, dstPixelMap, (error: BusinessError | null) => {
+          if(error) {
+            console.error(msg + `Failed to convert pixelmap. code is ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(62980248);
+            done();
+          } else {
+            console.info(msg + ' Succeeded in converting pixelmap.');
+            expect().assertFail();
+            done();
+          }
+        })
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap5_static_1400
+     * @tc.number graphicImagePixelMap5_static_1400
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = '=====www data graphicImagePixelMap5_static_1400=====';
+        const color: ArrayBuffer = new ArrayBuffer(16);
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+          bufferArr[i] = 255;
+          bufferArr[i+1] = 255;
+          bufferArr[i+2] = 122;
+          bufferArr[i+3] = 122;
+        }
+        let optsForUnpre: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 2, width: 2 },
+          alphaType: image.AlphaType.UNPREMUL
+        }
+        let optsForPre: image.InitializationOptions = {
+          editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 2, width: 2 },
+          alphaType: image.AlphaType.PREMUL
+        }
+        let srcPixelMap = image.createPixelMapUsingAllocatorSync(color, optsForUnpre, image.AllocatorType.DMA);
+        console.info(msg + 'srcPixelMap success', srcPixelMap.isEditable, srcPixelMap.isStrideAlignment);
+        expect(srcPixelMap.isEditable).assertFalse();
+        expect(srcPixelMap.isStrideAlignment).assertTrue();
+        let dstPixelMap = image.createPixelMapUsingAllocatorSync(color, optsForPre, image.AllocatorType.DMA);
+        console.info(msg + 'dstPixelMap success', dstPixelMap.isEditable, dstPixelMap.isStrideAlignment);
+        expect(dstPixelMap.isEditable).assertFalse();
+        expect(dstPixelMap.isStrideAlignment).assertTrue();
+        await image.createPremultipliedPixelMap(srcPixelMap, dstPixelMap).then(() => {
+          console.info(msg + 'Succeeded in converting pixelmap.');
+          expect().assertFail();
+          done();
+        }).catch((error: Error) => {
+          console.error(msg + `Failed to convert pixelmap, error code is ${error.code}`);
+          expect(Number(error.code)).assertEqual(62980248);
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap5_static_1500
+     * @tc.number graphicImagePixelMap5_static_1500
+     * @tc.desc   The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "www data  =graphicImagePixelMap5_static_1500= "
+        console.log(" www data 3" + msg + " begin ")
+        const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+          bufferArr[i] = 255;
+          bufferArr[i+1] = 255;
+          bufferArr[i+2] = 122;
+          bufferArr[i+3] = 122;
+        }
+        let opts2: image.InitializationOptions = { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 2, width: 2 } , alphaType: image.AlphaType.PREMUL}
+        let opts3: image.InitializationOptions = { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 2, width: 2 } , alphaType: image.AlphaType.UNPREMUL}
+        try {
+          console.log(msg + " succeed in try createPixelMapSync ")
+          let srcPixelMap = image.createPixelMapUsingAllocatorSync(color, opts3, image.AllocatorType.DMA);
+          console.info(msg + 'srcPixelMap success', srcPixelMap.isEditable, srcPixelMap.isStrideAlignment);
+          expect(srcPixelMap.isEditable).assertFalse();
+          expect(srcPixelMap.isStrideAlignment).assertTrue();
+          let dstPixelMap = image.createPixelMapUsingAllocatorSync(color, opts2, image.AllocatorType.DMA);
+          console.info(msg + 'dstPixelMap success', dstPixelMap.isEditable, dstPixelMap.isStrideAlignment);
+          expect(dstPixelMap.isEditable).assertFalse();
+          expect(dstPixelMap.isStrideAlignment).assertTrue();
+          image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap, (error: BusinessError | null) => {
+            if(error) {
+              console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message} `);
+              expect(Number(error.code)).assertEqual(62980248);
+              done()
+            } else {
+              console.info(msg + ' Succeeded in converting pixelmap.');
+              expect().assertFail();
+              done()
+            }
+          })
+        } catch (err) {
+          console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
+          expect().assertFail()
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap5_static_1600
+     * @tc.number graphicImagePixelMap5_static_1600
+     * @tc.desc   The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "www data =graphicImagePixelMap5_static_1600= "
+        console.log(" www data 4" + msg + " begin ")
+        const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+          bufferArr[i] = 255;
+          bufferArr[i+1] = 255;
+          bufferArr[i+2] = 122;
+          bufferArr[i+3] = 122;
+        }
+        let opts2: image.InitializationOptions = { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 2, width: 2 } , alphaType: image.AlphaType.PREMUL}
+        let opts3: image.InitializationOptions = { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 2, width: 2 } , alphaType: image.AlphaType.UNPREMUL}
+        try {
+          console.log(msg + " succeed in try createPixelMapSync ")
+          let srcPixelMap = image.createPixelMapUsingAllocatorSync(color, opts2, image.AllocatorType.DMA);
+          console.info(msg + 'srcPixelMap success', srcPixelMap.isEditable, srcPixelMap.isStrideAlignment);
+          expect(srcPixelMap.isEditable).assertFalse();
+          expect(srcPixelMap.isStrideAlignment).assertTrue();
+          let dstPixelMap = image.createPixelMapUsingAllocatorSync(color, opts3, image.AllocatorType.DMA);
+          console.info(msg + 'dstPixelMap success', dstPixelMap.isEditable, dstPixelMap.isStrideAlignment);
+          expect(dstPixelMap.isEditable).assertFalse();
+          expect(dstPixelMap.isStrideAlignment).assertTrue();
+          image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap).then(() => {
+            console.info(msg + ' Succeeded in converting pixelmap.');
+            expect().assertFail();
+            done()
+          }).catch((error) => {
+            console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(62980248);
+            done()
+          })
+        } catch (err) {
+          console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
+          expect().assertFail()
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap5_static_1700
+     * @tc.number graphicImagePixelMap5_static_1700
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
+        try {
+          let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync('123', region);
+          console.info('www data succeed in graphicImagePixelMap5_static_1700');
+          expect(pixelMap !== null).assertTrue();
+          // Verify basic properties
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertTrue();
+          console.info(`www data graphicImagePixelMap5_static_1700 success`);
+          expect().assertFail();
+        } catch (err) {
+          err = err as BusinessError;
+          console.error(`www data graphicImagePixelMap5_static_1700 error: ${err}, code: ${err.code}`);
+          expect(Number(err.code) == 62980178).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap5_static_1800
+     * @tc.number graphicImagePixelMap5_static_1800
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap5_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync('123456');
+          console.info('www data succeed in graphicImagePixelMap5_static_0400');
+          expect(pixelMap !== null).assertTrue();
+
+          // Verify basic properties
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+
+          console.info(`www data graphicImagePixelMap5_static_0400 success`);
+          expect().assertFail();
+        } catch (err) {
+          err = err as BusinessError;
+          console.error(`www data graphicImagePixelMap5_static_0400 error: ${err}, code: ${err.code}`);
+          expect(Number(err.code) == 62980178).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    graphicImagePixelMap5_static_1900
+     * @tc.number  graphicImagePixelMap5_static_1900
+     * @tc.desc    createPixelMapFromSurface function test.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('graphicImagePixelMap5_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          // Test with valid parameters
+          const surfaceId = "testSurface001";
+          const region: image.Region = { x: 0, y: 0, size: { width: 100, height: 100 } };
+
+          const pixelMap = await image.createPixelMapFromSurface(surfaceId);
+
+          console.info(`www data graphicImagePixelMap5_static_1900 pixelMap: ${pixelMap}`);
+          expect(pixelMap !== null).assertTrue();
+
+          // Verify basic properties
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+
+          console.info(`www data graphicImagePixelMap5_static_1900 success`);
+          expect(false).assertTrue();
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.error(`www data graphicImagePixelMap5_static_1900 error: ${error}, code: ${err.code}`);
+          expect(error.code).assertEqual(62980178);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name    graphicImagePixelMap5_static_2000
+     * @tc.number  graphicImagePixelMap5_static_2000
+     * @tc.desc    createPixelMapFromSurface function test.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('graphicImagePixelMap5_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          // Test with valid parameters
+          const region: image.Region = { x: 0, y: 0, size: { width: 100, height: 100 } };
+
+          const pixelMap = await image.createPixelMapFromSurface('');
+
+          console.info(`www data graphicImagePixelMap5_static_1900 pixelMap: ${pixelMap}`);
+          expect(pixelMap !== null).assertTrue();
+
+          // Verify basic properties
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertTrue();
+
+          console.info(`www data graphicImagePixelMap5_static_1900 success`);
+          expect(false).assertTrue();
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.error(`www data graphicImagePixelMap5_static_1900 error: ${error}, code: ${err.code}`);
+          expect(error.code).assertEqual(62980178);
+          done();
+        }
+      });
+      
   })
 }
