@@ -44,13 +44,13 @@ let onMicStateChangeFlag4: boolean | null = null;
 let onMicStateChangeFlag5: boolean | null = null;
 let strParams: ESObject = "123";
 let numParams: ESObject = 123;
+let audioVolumeManager = audioManager.getVolumeManager();
 
 let voice = call.hasVoiceCapability()
 
 function getAudioManager() {
   audioManager = audio.getAudioManager();
   if (audioManager != null) {
-    let audioVolumeManager = audioManager.getVolumeManager();
     console.info(`${TagFrmwk}: getAudioManger : PASS`);
   } else {
     console.info(`${TagFrmwk}: getAudioManger : FAIL`);
