@@ -168,7 +168,7 @@ async function createSignRecover(algName: string, paddingName: string, mdName: s
 }
 
 async function createDigestDataSignVerify(algName: string, paddingName: string, mdName: string,
-  dataLen: number, isOnlySign: boolean, isSync: boolean, isPadding: boolean) {
+  dataLen: int, isOnlySign: boolean, isSync: boolean, isPadding: boolean) {
   let rawData: cryptoFramework.DataBlob;
   let keyPair: cryptoFramework.KeyPair;
   try {

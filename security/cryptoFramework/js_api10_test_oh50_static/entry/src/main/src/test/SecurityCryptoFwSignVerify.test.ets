@@ -116,7 +116,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
           let digests: string[] = cipherSpec[2];
           let keyPair = await signVerifySyncUtils.generateSignKey(algName);
           for (let digest of digests) {
-            let msgLen: number = (new MdMap()).getMdSize(digest);
+            let msgLen: int = (new MdMap()).getMdSize(digest);
             let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
             let signAlgName: string = algName + "|" + padding + "|" + digest + "|OnlySign";
             let verifyAlgName: string = algName + "|" + padding + "|" + digest + "|OnlyVerify";
@@ -180,7 +180,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
           let digest: string = cipherSpec[2][0];
           let mgf_digests: string[] = cipherSpec[3];
           let keyPair = await signVerifySyncUtils.generateSignKey(algName);
-          let msgLen: number = (new MdMap()).getMdSize(digest);
+          let msgLen: int = (new MdMap()).getMdSize(digest);
           let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
           for (let mgf_digest of mgf_digests) {
             let signAlgName: string = algName + "|" + padding + "|" + digest + "|" + mgf_digest + "|OnlySign";
@@ -565,7 +565,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
           for (let digest of digests) {
             let signAlgName: string = algName + "|" + digest + "|OnlySign";
             let verifyAlgName: string = algName + "|" + digest + "|OnlyVerify";
-            let msgLen: number = (new MdMap()).getMdSize(digest);
+            let msgLen: int = (new MdMap()).getMdSize(digest);
             let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
             let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
             let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
@@ -641,7 +641,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
           for (let digest of digests) {
             let signAlgName: string = algName + "|" + digest + "|OnlySign";
             let verifyAlgName: string = algName + "|" + digest + "|OnlyVerify";
-            let msgLen: number = (new MdMap()).getMdSize(digest);
+            let msgLen: int = (new MdMap()).getMdSize(digest);
             let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
             let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
             let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
@@ -796,7 +796,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
      */
     it("SUB_Security_CryptoFramework_SignVerifySync_Func_1601", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let msgLen: number = 16;
+        let msgLen: int = 16;
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let algName: string = "RSA512";
         let signAlgName: string = "RSA512|PKCS1|MD5|OnlySign";
@@ -2104,7 +2104,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
       try {
         let algName: string = "RSA1024";
         let signAlgName: string = "RSA1024|PSS|SHA384|MGF1_SHA256|OnlySign";
-        let msgLen: number = 32;
+        let msgLen: int = 32;
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
@@ -2128,7 +2128,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
       try {
         let algName: string = "RSA512";
         let signAlgName: string = "RSA512|PKCS1|SHA256|OnlySign";
-        let msgLen: number = 48;
+        let msgLen: int = 48;
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
@@ -2152,7 +2152,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
       try {
         let algName: string = "RSA512";
         let signAlgName: string = "RSA512|PKCS1|SM3|OnlySign";
-        let msgLen: number = 32;
+        let msgLen: int = 32;
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);

@@ -1769,7 +1769,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
       try {
         let algName: string = "Blowfish";
         let encAlgName: string = "Blowfish|ECB|PKCS7"
-        let dataLen: number = 16;
+        let dataLen: int = 16;
         for (let keyLen = 4; keyLen < 33; keyLen += 4) { // 密钥步长4字节
           let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
           let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
@@ -1802,7 +1802,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
       try {
         let algName: string = "Blowfish";
         let encAlgName: string = "Blowfish|ECB|PKCS5"
-        let dataLen: number = 19;
+        let dataLen: int = 19;
         for (let keyLen = 4; keyLen < 33; keyLen += 4) { // 密钥步长4字节
           let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
           let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
@@ -1835,7 +1835,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
       try {
         let algName: string = "Blowfish";
         let encAlgName: string = "Blowfish|ECB|NoPadding"
-        let dataLen: number = 16;
+        let dataLen: int = 16;
         for (let keyLen = 4; keyLen < 33; keyLen += 4) { // 密钥步长4字节
           let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
           let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
@@ -1866,7 +1866,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let dataLen: number = 16;
+        let dataLen: int = 16;
         let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0];
         let paramSpec: cryptoFramework.IvParamsSpec = syncSymEncAndDecUtils.genIvParamsSpec(dataIv);
         for (let index = 0; index < syncSymEncAndDecUtils.WEAK_SYM_CIPHER.length; index++) {
@@ -1906,7 +1906,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let dataLen: number = 16;
+        let dataLen: int = 16;
         let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0];
         let paramSpec: cryptoFramework.IvParamsSpec = syncSymEncAndDecUtils.genIvParamsSpec(dataIv);
         for (let index = 0; index < syncSymEncAndDecUtils.WEAK_SYM_CIPHER.length; index++) {

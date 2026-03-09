@@ -456,7 +456,7 @@ export default function SecurityCryptoFwX963TestUnit() {
           let z: string = "0000000000000000";
           let info: string = "00000000";
           let digestAlgName: string = "SHA3-224";
-          let keySize: number = 16;
+          let keySize: int = 16;
           let kdfSpec: cryptoFramework.X963KdfSpec = JsX963Spec(z, info, keySize);
           JsX963KdfSync(digestAlgName, kdfSpec);
         } catch (error) {

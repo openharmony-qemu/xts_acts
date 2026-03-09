@@ -71,7 +71,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
     it("SUB_Security_CryptoFramework_HMACSync_Func_0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let keyAlgName: string = "AES256";
-        let messageLen: number = 128;
+        let messageLen: int = 128;
         let message: cryptoFramework.DataBlob = await hmacSyncUtils.createData(messageLen);
         let key: cryptoFramework.SymKey = await hmacSyncUtils.genSymKey(keyAlgName);
         for(let algName of hmacSyncUtils.H_MAC_SPEC) {
@@ -97,7 +97,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
     it("SUB_Security_CryptoFramework_HMACSync_Func_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let keyAlgName: string = "AES256";
-        let messageLen: number = 128;
+        let messageLen: int = 128;
         let message: cryptoFramework.DataBlob = await hmacSyncUtils.createData(messageLen);
         let key: cryptoFramework.SymKey = await hmacSyncUtils.genSymKey(keyAlgName);
         for(let algName of hmacSyncUtils.H_MAC_SPEC) {

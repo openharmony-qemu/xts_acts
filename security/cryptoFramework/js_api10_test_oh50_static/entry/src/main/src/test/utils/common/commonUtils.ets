@@ -187,7 +187,7 @@ async function doScryptCallback(kdf: cryptoFramework.Kdf,
 
 interface OH_MF_INFO {
   algName: string;
-  mdSize: number;
+  mdSize: int;
 }
 
 let OH_MD_SPEC: OH_MF_INFO[] = [
@@ -203,7 +203,7 @@ let OH_MD_SPEC: OH_MF_INFO[] = [
 ]
 
 class MdMap {
-  map: HashMap<string, number> = new HashMap<string, number>();
+  map: HashMap<string, number> = new HashMap<string, int>();
   constructor(isInit: boolean = true) {
     if (isInit) {
       this.map.set("SHA1", 20);
@@ -218,7 +218,7 @@ class MdMap {
       this.map.set("SM3", 32);
     }
   }
-  getMdSize(algName: string): number {
+  getMdSize(algName: string): int {
     return this.map.get(algName)
   }
 }

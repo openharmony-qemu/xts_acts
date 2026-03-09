@@ -532,7 +532,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "Blowfish";
-        let expectKeyLen: number = 3;
+        let expectKeyLen: int = 3;
         let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(expectKeyLen);
         let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
         await generator.convertKey(keyData);
@@ -555,7 +555,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "Blowfish";
-        let expectKeyLen: number = 57;
+        let expectKeyLen: int = 57;
         let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(expectKeyLen);
         let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
         await generator.convertKey(keyData);
@@ -578,7 +578,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "RC2";
-        let expectKeyLen: number = 129;
+        let expectKeyLen: int = 129;
         let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(expectKeyLen);
         let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
         generator.convertKeySync(keyData);
@@ -601,7 +601,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "RC4";
-        let expectKeyLen: number = 513;
+        let expectKeyLen: int = 513;
         let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(expectKeyLen);
         let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
         await generator.convertKey(keyData);

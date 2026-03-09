@@ -75,8 +75,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       let password: string = "hello world";
       let isKeyString: boolean = false;
       let salt: string = "0123456789";
-      let keySize: number = 128;
-      let iterations: number = 10000;
+      let keySize: int = 128;
+      let iterations: int = 10000;
       let algName: string = "PBKDF2";
       let spec: cryptoFramework.PBKDF2Spec = pbkdf2Utils.getPbkdf2Spec(password, isKeyString, salt, iterations, keySize);
       try {
@@ -104,8 +104,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       let password: string = "hello world";
       let isKeyString: boolean = false;
       let salt: string = "0123456789";
-      let keySize: number = 128;
-      let iterations: number = 10000;
+      let keySize: int = 128;
+      let iterations: int = 10000;
       let algName: string = "PBKDF2";
       let spec: cryptoFramework.PBKDF2Spec = pbkdf2Utils.getPbkdf2Spec(password, isKeyString, salt, iterations, keySize);
       try {

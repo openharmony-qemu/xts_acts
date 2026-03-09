@@ -128,7 +128,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let paddingName = "PKCS1";
         let isOnlySign: boolean = true;
         let mdName: string = "NoHash";
-        let dataLen: number = 64;
+        let dataLen: int = 64;
         let isSync: boolean = false;
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createDigestDataSignVerify(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
@@ -233,7 +233,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let algName: string = "RSA512";
         let paddingName = "PKCS1";
         let isOnlySign: boolean = true;
-        let dataLen: number = 64;
+        let dataLen: int = 64;
         let isSync: boolean = false;
         let mdName: string = "SHA512"; // 规格不支持SHA512
         let isPadding: boolean = true;
