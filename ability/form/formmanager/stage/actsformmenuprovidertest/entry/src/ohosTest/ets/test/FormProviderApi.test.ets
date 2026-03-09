@@ -135,6 +135,9 @@ export default function formProviderTest() {
       formProvider.getPublishedFormInfoById(formId).then((data: formInfo.FormInfo) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', 
         `${TAG} formProvider getPublishedFormInfoById success, data: ${JSON.stringify(data)}`);
+        expect(data.bundleName.length > 0).assertTrue();
+        expect(data.moduleName.length > 0).assertTrue();
+        expect(data.abilityName.length > 0).assertTrue();
         done();
       }).catch ((error: BusinessError) => {
         if (error.code === ERROR_CODE) {
