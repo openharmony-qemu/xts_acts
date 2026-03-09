@@ -15874,6 +15874,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_AUDIO_EFFECT_MODE_EFFECT_DEFAULT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT, (err) => {
         if (err) {
           console.info(`${TagFrmwk}: setAudioEffectMode with EFFECT_DEFAULT: FAIL :${err.message}`);
@@ -15895,6 +15910,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_NORMAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_NORMAL, (err) => {
         if (err) {
           console.info(`${TagFrmwk}: setRenderRate with RENDER_RATE_NORMAL: FAIL :${err.message}`);
@@ -15916,6 +15946,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_HALF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_HALF, (err) => {
         if (err) {
           console.info(`${TagFrmwk}: setRenderRate with RENDER_RATE_HALF: FAIL :${err.message}`);
@@ -15937,6 +15982,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_INTERRUPT_MODE_SYNC_INDEPENDENT_MODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         audioRenderer.setInterruptModeSync(audio.InterruptMode.INDEPENDENT_MODE);
         console.info(`${TagFrmwk}: setInterruptModeSync with INDEPENDENT_MODE: PASS`);
@@ -15957,6 +16017,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_INVALID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.INVALID);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with INVALID: FAIL`);
@@ -15978,6 +16053,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_SPEAKER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.SPEAKER);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with SPEAKER: FAIL`);
@@ -15999,6 +16089,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADSET_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.WIRED_HEADSET);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with WIRED_HEADSET: FAIL`);
@@ -16020,6 +16125,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADPHONES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.WIRED_HEADPHONES);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with WIRED_HEADPHONES: FAIL`);
@@ -16041,6 +16161,21 @@ export default function audioRendererTest() {
       * @tc.level  LEVEL2
       */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_BLUETOOTH_SCO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.BLUETOOTH_SCO);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with BLUETOOTH_SCO: FAIL`);
@@ -16061,7 +16196,21 @@ export default function audioRendererTest() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_BLUETOOTH_A2DP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_BLUETOOTH_A2DP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {      let audioStreamInfo:audio.AudioStreamInfo = {
+      samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+      channels: audio.AudioChannel.CHANNEL_2,
+      sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+      encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+    }
+    let audioRendererInfo:audio.AudioRendererInfo = {
+      usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+      rendererFlags: 0
+    }
+    let audioRendererOptions:audio.AudioRendererOptions = {
+      streamInfo: audioStreamInfo,
+      rendererInfo: audioRendererInfo
+    }
+    let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.BLUETOOTH_A2DP);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with BLUETOOTH_A2DP: PASS`);
@@ -16083,6 +16232,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_MIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.MIC);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with MIC: PASS`);
@@ -16104,6 +16268,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_USB_HEADSET_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.USB_HEADSET);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with USB_HEADSET: PASS`);
@@ -16125,6 +16304,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_DISPLAY_PORT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.DISPLAY_PORT);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with DISPLAY_PORT: PASS`);
@@ -16146,6 +16340,21 @@ export default function audioRendererTest() {
       * @tc.level  LEVEL2
       */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_REMOTE_CAST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.REMOTE_CAST);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with REMOTE_CAST: PASS`);
@@ -16167,6 +16376,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_USB_DEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.USB_DEVICE);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with USB_DEVICE: PASS`);
@@ -16188,6 +16412,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_HDMI_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.HDMI);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with HDMI: PASS`);
@@ -16209,6 +16448,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_LINE_DIGITAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.LINE_DIGITAL);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with LINE_DIGITAL: PASS`);
@@ -16230,6 +16484,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_REMOTE_DAUDIO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.REMOTE_DAUDIO);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with REMOTE_DAUDIO: PASS`);
@@ -16251,6 +16520,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_HEARING_AID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.HEARING_AID);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with HEARING_AID: PASS`);
@@ -16272,6 +16556,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_NEARLINK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.NEARLINK);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with NEARLINK: PASS`);
@@ -16293,6 +16592,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_SYSTEM_PRIVATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.SYSTEM_PRIVATE);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with SYSTEM_PRIVATE: PASS`);
@@ -16314,6 +16628,21 @@ export default function audioRendererTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.DEFAULT);
         console.info(`${TagFrmwk}: setDefaultOutputDevice with DEFAULT: PASS`);
