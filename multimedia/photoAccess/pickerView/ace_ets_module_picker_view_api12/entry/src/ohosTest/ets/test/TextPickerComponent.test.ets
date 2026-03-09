@@ -2637,6 +2637,12 @@ export default function TextPicker() {
       pickerController.addData(DataType.SET_BADGE_CONFIGS, uris);
       await CommonFunc.sleep(1000);
       pickerController.deleteData(DataType.SET_BADGE_CONFIGS, uris);
+      await CommonFunc.sleep(1000);
+      pickerController.setData(DataType.SET_BADGE_CONFIGS, []);
+      await CommonFunc.sleep(1000);
+      pickerController.addData(DataType.SET_BADGE_CONFIGS, []);
+      await CommonFunc.sleep(1000);
+      pickerController.deleteData(DataType.SET_BADGE_CONFIGS, []);
       let code: number = EventType.PHOTO_PICKER_INFO;
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
