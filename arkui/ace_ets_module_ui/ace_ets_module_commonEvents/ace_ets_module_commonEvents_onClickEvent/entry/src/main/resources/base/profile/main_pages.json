@@ -9,6 +9,7 @@
         "MainAbility/pages/Color/colorMetrics",
         "MainAbility/pages/Background/BackgroundOptions",
         "MainAbility/pages/NodeRenderState/nodeRenderState",
-        "MainAbility/pages/ClickEvent/ClickEventNullAndUndefined"
+        "MainAbility/pages/ClickEvent/ClickEventNullAndUndefined",
+        "MainAbility/pages/enableClickSoundEffect/enableClickSoundEffect"
     ]
 }
