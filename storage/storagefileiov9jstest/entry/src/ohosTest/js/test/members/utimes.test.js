@@ -156,6 +156,88 @@ export default function fileIOUtimes() {
       console.log('fileIO_test_utimes_async_006 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
     }
-  }); 
+  });
+  
+  /**
+   * @tc.name   fileIO_test_utimes_async_007
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0700
+   * @tc.desc   Test utimes() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_utimes_async_007', Level.LEVEL3, async function () {
+
+    try {
+      fileIO.utimes(null, new Date().getTime());
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_utimes_async_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_utimes_async_008
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0800
+   * @tc.desc   Test utimes() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_utimes_async_008', Level.LEVEL3, async function () {
+
+    try {
+      fileIO.utimes(undefined, new Date().getTime());
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_utimes_async_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_utimes_async_009
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0900
+   * @tc.desc   Test utimes() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_utimes_async_009', Level.LEVEL3, async function () {
+    let fpath = await nextFileName('fileIO_test_utimes_async_009');
+    expect(prepareFile(fpath,FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.utimes(fpath, null);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_utimes_async_009 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_utimes_async_010
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_1000
+   * @tc.desc   Test utimes() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_utimes_async_010', Level.LEVEL3, async function () {
+    let fpath = await nextFileName('fileIO_test_utimes_async_010');
+    expect(prepareFile(fpath,FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.utimes(fpath, undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_utimes_async_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
 });
 }
