@@ -1682,7 +1682,7 @@ export default function btSocketTest() {
                     console.info('[bluetooth_js]sppCloseServerSocket is not support');
                     expect(true).assertTrue();
                 } else {
-                    expect(true).assertEqual(err == null || Number(err.code) == 2900099 || Number(err.code) == 401);
+                    expect(true).assertEqual(err === null || Number(err.code) === 2900099 || Number(err.code) === 401);
                 }
             }
             done();
