@@ -33,7 +33,7 @@ export default function PromptActionTest() {
   describe('PromptActionTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("PromptActionTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.button.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility");
 
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/promptAction/promptAction',

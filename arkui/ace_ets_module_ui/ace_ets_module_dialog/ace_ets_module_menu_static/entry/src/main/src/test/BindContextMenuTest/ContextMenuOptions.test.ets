@@ -45,7 +45,7 @@ export default function ContextMenuOptionsTest() {
   describe('ContextMenuOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ContextMenuOptionsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.button.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

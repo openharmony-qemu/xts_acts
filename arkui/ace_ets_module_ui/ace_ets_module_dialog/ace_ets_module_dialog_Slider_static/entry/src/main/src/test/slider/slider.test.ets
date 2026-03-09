@@ -45,7 +45,7 @@ export default function SliderTest() {
   describe('SliderTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("SliderTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.button.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.slider_static", "EntryAbility");
 
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/slider/sliderIndex',

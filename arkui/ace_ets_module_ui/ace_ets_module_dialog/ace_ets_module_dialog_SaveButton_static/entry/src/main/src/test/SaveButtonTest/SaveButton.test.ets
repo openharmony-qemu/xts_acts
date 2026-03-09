@@ -46,7 +46,7 @@ export default function SaveButtonTest() {
   describe('SaveButtonTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("SaveButtonTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.button.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.saveButton.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

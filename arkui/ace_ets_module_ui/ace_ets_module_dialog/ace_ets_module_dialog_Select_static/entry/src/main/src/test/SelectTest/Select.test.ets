@@ -45,7 +45,7 @@ export default function SelectTest() {
   describe('SelectTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("SelectTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.button.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.select.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

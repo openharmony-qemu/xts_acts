@@ -31,13 +31,13 @@ export default function PopupNodeTest() {
   describe('PopupNodeTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("PopupTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.button.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {
       console.info("PopupTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Popup/PopupIndex',
+        url: 'MainAbility/pages/popup/PopupIndex',
       };
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router;

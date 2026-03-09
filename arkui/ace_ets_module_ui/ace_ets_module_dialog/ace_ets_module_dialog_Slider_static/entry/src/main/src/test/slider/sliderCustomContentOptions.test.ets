@@ -45,7 +45,7 @@ export default function SliderCustomContentOptionsTest() {
   describe('SliderCustomContentOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("SliderCustomContentOptionsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.button.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.slider_static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

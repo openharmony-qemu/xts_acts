@@ -45,13 +45,13 @@ export default function CustomPopupOptionsTest() {
   describe('CustomPopupOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("CustomPopupOptionsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.button.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {
       console.info("CustomPopupOptionsTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Popup/CustomPopupOptions',
+        url: 'MainAbility/pages/popup/CustomPopupOptions',
       };
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router;
