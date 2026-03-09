@@ -2422,44 +2422,46 @@ export default function AudioHapticTest() {
       done();
     });
 
-     /**
- 	      * @tc.name   AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100
- 	      * @tc.number AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100
- 	      * @tc.desc   setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE test.
- 	      * @tc.type   FUNCTION
- 	      * @tc.size   MEDIUMTEST
- 	      * @tc.level  LEVEL2
- 	      */
- 	     it('AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
- 	       try {
- 	         audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
- 	         console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: PASS`);
- 	         done();
- 	       } catch (err) {
- 	         console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: FAIL :${(err as BusinessError).message}`);
- 	         expect(false).assertTrue();
- 	       }
- 	       done();
- 	     })
- 	 
- 	     /**
- 	      * @tc.name   AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100
- 	      * @tc.number AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100
- 	      * @tc.desc   setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION test.
- 	      * @tc.type   FUNCTION
- 	      * @tc.size   MEDIUMTEST
- 	      * @tc.level  LEVEL2
- 	      */
- 	     it('AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
- 	       try {
- 	         audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
- 	         console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION: PASS`);
- 	         done();
- 	       } catch (err) {
- 	         console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION: FAIL :${(err as BusinessError).message}`);
- 	         expect(false).assertTrue();
- 	       }
- 	       done();
- 	     })
+   /**
+    * @tc.name   AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100
+    * @tc.number AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100
+    * @tc.desc   setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100
+    * @tc.number AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100
+    * @tc.desc   setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+      done();
+    })
   })
 }
