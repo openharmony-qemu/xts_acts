@@ -433,7 +433,8 @@ export default function audioGetRendererInfoTest() {
       }
     });
   });
-      /**
+  let Tag: string = 'AudioRendererOnOutputDeviceChangeWithInfo';
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_CREATE_RENDERER_CALLBACK_SAMPLE_FORMAT_INVALID_063
      * @tc.number SUB_MULTIMEDIA_AUDIO_CREATE_RENDERER_CALLBACK_SAMPLE_FORMAT_INVALID_063
      * @tc.desc   AudioRenderer createAudioRenderer callback sampleFormat SAMPLE_FORMAT_INVALID test.
@@ -2323,7 +2324,7 @@ export default function audioGetRendererInfoTest() {
       }
       done();
     });
-  });
+  
 
   describe('audioCreateAudioRenderer', () => {
     const Tag: string = 'AudioCreateAudioRenderer';
@@ -4218,5 +4219,5 @@ export default function audioGetRendererInfoTest() {
       }
       done();
     });
-
+  });
 }
