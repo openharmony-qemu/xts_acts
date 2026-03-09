@@ -28,8 +28,8 @@
      "type": "PushKit",
      "pre-push": [],
      "push": [
-       "./resource/media/codec/video_decoder/1920_1080_30.h265 ->/data/app/el2/100/base/com.example.actshevcswdecodertest/files",
-       "./resource/media/codec/video_decoder/hash_val.json ->/data/app/el2/100/base/com.example.actshevcswdecodertest/files"
+       "./resource/media/codec/video_decoder/1920_1080_30.h265 ->/data/app/el2/100/base/com.example.actshevcswdecodertest/files/",
+       "./resource/media/codec/video_decoder/hash_val.json ->/data/app/el2/100/base/com.example.actshevcswdecodertest/files/"
      ]
    }
  ]
