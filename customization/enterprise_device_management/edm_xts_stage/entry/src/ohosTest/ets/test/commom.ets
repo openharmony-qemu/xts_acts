@@ -60,7 +60,7 @@ const AUTOSTARTAPP2: Want = {
   bundleName: "com.example.extensionzerotest",
   abilityName: "com.example.extensionzerotest.MainAbility",
   parameters: {
-    isHiddenStart: true
+    isHiddenStart: false
   }
 };
 const SELFHAPNAME = "com.edm.acts.normal"
