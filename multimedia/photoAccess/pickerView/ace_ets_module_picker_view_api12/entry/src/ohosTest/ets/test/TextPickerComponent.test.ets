@@ -1492,7 +1492,7 @@ export default function TextPicker() {
           console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
           if (result) {
             console.info('success');
-            expect(result).assertNotNull();
+            expect(result).not().assertNull();
             expect(result.length).assertLarger(0);
           } else {
             console.error("testPicker23 empty result");
@@ -1509,7 +1509,7 @@ export default function TextPicker() {
           console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
           if (result) {
             console.info('success');
-            expect(result).assertNotNull();
+            expect(result).not().assertNull();
             expect(result.length).assertLarger(0);
             expect(true).assertFalse();
           } else {
