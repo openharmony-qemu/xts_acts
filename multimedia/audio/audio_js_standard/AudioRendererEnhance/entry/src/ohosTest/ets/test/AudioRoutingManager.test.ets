@@ -447,7 +447,6 @@ export default function AudioRoutingManagerTest() {
         audioRoutingManager.off('availableDeviceChange', (data: ESObject) => {
           console.info(`${Tag}: off_availableDeviceChange 'availableDeviceChange': SUCCESS`);
         });
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${Tag}: on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
@@ -539,7 +538,6 @@ export default function AudioRoutingManagerTest() {
             if (deviceBlockStatusInfo.DeviceBlockStatus == audioRoutingManager.blockStatus.BLOCKED ||
             deviceBlockStatusInfo.DeviceBlockStatus == audioRoutingManager.blockStatus.UNBLOCKED) {
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
-              expect(true).assertTrue();
             } else {
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
               expect(false).assertTrue();
@@ -547,7 +545,6 @@ export default function AudioRoutingManagerTest() {
           })
           audioRoutingManager.off('micBlockStatusChanged')
         }
-        expect(true).assertTrue();
       } catch (error) {
         console.error(`${Tag}: on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
@@ -707,7 +704,6 @@ export default function AudioRoutingManagerTest() {
               console.info(`${Tag}: audioDevices[0].id: ${audioDevices[0].id}`);
               expect(audioDevices[0].id).assertLargerOrEqual(0);
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
-              expect(true).assertTrue();
             } else {
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
               expect(false).assertTrue();
@@ -715,7 +711,6 @@ export default function AudioRoutingManagerTest() {
           })
           audioRoutingManager.off('micBlockStatusChanged')
         }
-        expect(true).assertTrue();
       } catch (error) {
         console.error(`${Tag}: on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
