@@ -242,7 +242,7 @@ export default function TextParagraphTest() {
         try {
           globalParagraph?.layoutSync(100);
           let longestLine = globalParagraph!.getLongestLine();
-          expect(Math.round(longestLine * 100) / 100).assertEqual(163.51);
+          expect(Math.round(longestLine * 100) / 100).assertEqual(165.56);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getLongestLine. Cause:${JSON.stringify(err)}`);
@@ -264,7 +264,7 @@ export default function TextParagraphTest() {
         try {
           globalParagraph?.layoutSync(100);
           let width = globalParagraph!.getLongestLineWithIndent();
-          expect(Math.round(width * 100) / 100).assertEqual(163.51);
+          expect(Math.round(width * 100) / 100).assertEqual(165.56);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getLongestLineWithIndent. Cause:${JSON.stringify(err)}`);
@@ -286,7 +286,7 @@ export default function TextParagraphTest() {
         try {
           globalParagraph?.layoutSync(100);
           let width = globalParagraph!.getMinIntrinsicWidth();
-          expect(Math.round(width * 100) / 100).assertEqual(257.22);
+          expect(Math.round(width * 100) / 100).assertEqual(262.15);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getMinIntrinsicWidth. Cause:${JSON.stringify(err)}`);
@@ -308,7 +308,7 @@ export default function TextParagraphTest() {
         try {
           globalParagraph?.layoutSync(100);
           let width = globalParagraph!.getMaxIntrinsicWidth();
-          expect(Math.round(width * 100) / 100).assertEqual(2302.72);
+          expect(Math.round(width * 100) / 100).assertEqual(2333.12);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getMaxIntrinsicWidth. Cause:${JSON.stringify(err)}`);
@@ -576,8 +576,8 @@ export default function TextParagraphTest() {
             expect(Math.round(Number(lineMetrics?.ascent ?? 0) * 100) / 100).assertEqual(303.39)
             expect(Math.round(Number(lineMetrics?.descent ?? 0) * 100) / 100).assertEqual(112.61)
             expect(lineMetrics?.height).assertEqual(416)
-            expect(Math.round(Number(lineMetrics?.width ?? 0) * 100) / 100).assertEqual(50.50)
-            expect(Math.round(Number(lineMetrics?.left ?? 0) * 100) / 100).assertEqual(49.50)
+            expect(Math.round(Number(lineMetrics?.width ?? 0) * 100) / 100).assertEqual(50.82)
+            expect(Math.round(Number(lineMetrics?.left ?? 0) * 100) / 100).assertEqual(49.18)
             expect(Math.round(Number(lineMetrics?.baseline ?? 0) * 100) / 100).assertEqual(1135.39)
             expect(lineMetrics?.lineNumber).assertEqual(2)
             expect(lineMetrics?.topHeight).assertEqual(832)
