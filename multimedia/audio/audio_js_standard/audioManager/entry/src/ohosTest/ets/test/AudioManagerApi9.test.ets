@@ -30,7 +30,7 @@ console.info(`${TagFrmwk}: Create AudioManger Object JS Framework`);
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 let audioManager: audio.AudioManager;
 let streamManager: audio.AudioStreamManager;
-let audioVolumeManager: audio.AudioVolumeManager;
+let audioVolumeManager = audioManager.getVolumeManager();
 let audioMedia = 3;
 let minVol = 0;
 let maxVol = 15;
