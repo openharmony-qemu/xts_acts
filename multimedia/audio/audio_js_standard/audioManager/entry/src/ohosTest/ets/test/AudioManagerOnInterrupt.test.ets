@@ -75,7 +75,7 @@ export default function audioManagerOnInterrupt() {
     const Tag: string = 'AudioRoutingManagerOnAvailableDeviceChange';
 
     /**
-     * @tc.name   SUB_MULTIMedia_AUDIO_ROUTING_MANAGER_ON_AVAILABLE_DEVICE_CHANGE_TYPE_001
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLE_DEVICE_CHANGE_TYPE_001
      * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLE_DEVICE_CHANGE_TYPE_001
      * @tc.desc   AudioRoutingManager on availableDeviceChange type property test.
      * @tc.type   FUNCTION
