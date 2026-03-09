@@ -247,6 +247,63 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+      * @tc.name   fileIO_test_readLines_sync_010
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_1000
+      * @tc.desc   Test readLinesSync() interfaces. filePath is null.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_sync_010', Level.LEVEL3, async function () {
+        try {
+            fileIO.readLinesSync(null);
+            expect(false).assertTrue();
+        } catch (e) {
+            console.log('fileIO_test_readLines_sync_010 has failed for ' + e.message + ', code: ' + e.code);
+            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_sync_011
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_1100
+      * @tc.desc   Test readLinesSync() interfaces. filePath is undefined.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_sync_011', Level.LEVEL3, async function () {
+        try {
+            fileIO.readLinesSync(undefined);
+            expect(false).assertTrue();
+        } catch (e) {
+            console.log('fileIO_test_readLines_sync_011 has failed for ' + e.message + ', code: ' + e.code);
+            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_sync_012
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_1200
+      * @tc.desc   Test readLinesSync() interfaces. options is null.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_sync_012', Level.LEVEL3, async function () {
+        let fpath = await nextFileName('fileIO_test_readLines_sync_012');
+        expect(prepareFile(fpath, FILE_CONTENTS)).assertTrue();
+
+        try {
+            let sr = fileIO.readLinesSync(fpath, null);
+            expect(sr != null).assertTrue();
+        } catch (e) {
+            console.log('fileIO_test_readLines_sync_012 has failed for ' + e.message + ', code: ' + e.code);
+            expect(false).assertTrue();
+        }
+    });
+
+    /**
      * @tc.name   fileIO_test_readLines_async_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0100
      * @tc.desc   Test readLines() interfaces. Promise.
@@ -892,6 +949,205 @@ describe('fileIO_fs_readLines', function () {
         } catch (e) {
             console.log('fileIO_test_readLines_async_023 has failed for ' + e.message + ', code: ' + e.code);
             expect(false).assertTrue();
+            done();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_async_024
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_2400
+      * @tc.desc   Test readLines() interfaces. Promise. filePath is null.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_async_024', Level.LEVEL3, async function (done) {
+        try {
+            await fileIO.readLines(null);
+            expect(false).assertTrue();
+        } catch (e) {
+            console.log('fileIO_test_readLines_async_024 has failed for ' + e.message + ', code: ' + e.code);
+            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            done();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_async_025
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_2500
+      * @tc.desc   Test readLines() interfaces. Promise. filePath is undefined.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_async_025', Level.LEVEL3, async function (done) {
+        try {
+            await fileIO.readLines(undefined);
+            expect(false).assertTrue();
+        } catch (e) {
+            console.log('fileIO_test_readLines_async_025 has failed for ' + e.message + ', code: ' + e.code);
+            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            done();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_async_026
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_2600
+      * @tc.desc   Test readLines() interfaces. Promise. options is null.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_async_026', Level.LEVEL3, async function (done) {
+        let fpath = await nextFileName('fileIO_test_readLines_async_026');
+        expect(prepareFile(fpath, FILE_CONTENTS)).assertTrue();
+
+        try {
+            let sr = await fileIO.readLines(fpath, null);
+            expect(sr != null).assertTrue();
+            done();
+        } catch (e) {
+            fileIO.unlinkSync(fpath);
+            console.log('fileIO_test_readLines_async_026 has failed for ' + e.message + ', code: ' + e.code);
+            expect(false).assertTrue();
+            done();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_async_027
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_2700
+      * @tc.desc   Test readLines() interfaces. Callback. filePath is null.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_async_027', Level.LEVEL3, async function (done) {
+        try {
+            fileIO.readLines(null, (err) => {
+                expect(false).assertTrue();
+            });
+        } catch (e) {
+            console.log('fileIO_test_readLines_async_027 has failed for ' + e.message + ', code: ' + e.code);
+            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            done();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_async_028
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_2800
+      * @tc.desc   Test readLines() interfaces. Callback. filePath is undefined.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_async_028', Level.LEVEL3, async function (done) {
+        try {
+            fileIO.readLines(undefined, (err) => {
+                expect(false).assertTrue();
+            });
+        } catch (e) {
+            console.log('fileIO_test_readLines_async_028 has failed for ' + e.message + ', code: ' + e.code);
+            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            done();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_async_029
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_2900
+      * @tc.desc   Test readLines() interfaces. Callback. options is null.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_async_029', Level.LEVEL3, async function (done) {
+        let fpath = await nextFileName('fileIO_test_readLines_async_029');
+        expect(prepareFile(fpath, FILE_CONTENTS)).assertTrue();
+
+        try {
+            fileIO.readLines(fpath, null, (err,sr) => {
+                if(err) {
+                    console.log('fileIO_test_readLines_async_029 error: {message: ' + err.message + ', code: ' + err.code + '}');
+                    expect(false).assertTrue();
+                }
+                expect(sr != null).assertTrue();
+                done();
+            });
+        } catch (e) {
+            console.log('fileIO_test_readLines_async_029 has failed for ' + e.message + ', code: ' + e.code);
+            expect(false).assertTrue();
+            done();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_async_030
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_3000
+      * @tc.desc   Test readLines() interfaces. Promise. encoding is empty string.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_async_030', Level.LEVEL3, async function (done) {
+        let fpath = await nextFileName('fileIO_test_readLines_async_030');
+        expect(prepareFile(fpath, FILE_CONTENTS)).assertTrue();
+
+        try {
+            await fileIO.readLines(fpath, {
+                encoding: ''
+            });
+            expect(false).assertTrue();
+        } catch (e) {
+            fileIO.unlinkSync(fpath);
+            console.log('fileIO_test_readLines_async_030 has failed for ' + e.message + ', code: ' + e.code);
+            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            done();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_async_031
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_3100
+      * @tc.desc   Test readLines() interfaces. Callback. filePath is null with options.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_async_031', Level.LEVEL3, async function (done) {
+        try {
+            fileIO.readLines(null, {
+                encoding: 'utf-8'
+            }, (err) => {
+                expect(false).assertTrue();
+            });
+        } catch (e) {
+            console.log('fileIO_test_readLines_async_031 has failed for ' + e.message + ', code: ' + e.code);
+            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            done();
+        }
+    });
+
+    /**
+      * @tc.name   fileIO_test_readLines_async_032
+      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_3200
+      * @tc.desc   Test readLines() interfaces. Callback. filePath is undefined with options.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('fileIO_test_readLines_async_032', Level.LEVEL3, async function (done) {
+        try {
+            fileIO.readLines(undefined, {
+                encoding: 'utf-8'
+            }, (err) => {
+                expect(false).assertTrue();
+            });
+        } catch (e) {
+            console.log('fileIO_test_readLines_async_032 has failed for ' + e.message + ', code: ' + e.code);
+            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
