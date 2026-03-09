@@ -29,12 +29,14 @@
         "MainAbility/pages/TextClock/TextClockDateTimeOptions",
         "MainAbility/pages/TextClock/TextClockFormat",
         "MainAbility/pages/TextClock/TextClockNodeTest",
+        "MainAbility/pages/TextClock/TextClockPropertiesNullUndefined",
 
         "MainAbility/pages/TextTimer/TextTimerApi",
         "MainAbility/pages/TextTimer/TextTimerJsunit",
         "MainAbility/pages/TextTimer/TextTimerJsunit2",
         "MainAbility/pages/TextTimer/TextTimerFontWeight",
         "MainAbility/pages/TextTimer/TextTimerNode",
-        "MainAbility/pages/TextTimer/TextTimerTextShadow"
+        "MainAbility/pages/TextTimer/TextTimerTextShadow",
+        "MainAbility/pages/TextTimer/TextTimerPropertiesNullUndefined"
     ]
 }

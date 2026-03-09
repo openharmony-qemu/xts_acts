@@ -2209,7 +2209,7 @@ export default function DataObjectErrTest() {
         console.info("change" + sessionId);
       });
       try {
-        g_object.off(null, (sessionId: string, fields: Array<string>) => {
+        g_object.off(undefined, (sessionId: string, fields: Array<string>) => {
           console.info("change" + sessionId);
         });
         expect().assertFail();
@@ -2399,5 +2399,417 @@ export default function DataObjectErrTest() {
       }
       console.log(TAG + "************* DataObjectErrTest99 end *************");
     });
+
+    /**
+     * @tc.name   DataObjectErrTest100
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9901
+     * @tc.desc   Test DataObject off_status20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* DataObjectErrTest100 start *************");
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      try {
+        g_object.on('status', statusCallback1)
+        g_object.off(null, statusCallback1)
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + 'Failed to off status20. code: ' + err.code + '.message:' + err.message);
+        expect(err.code).assertEqual('401');
+      }
+      console.log(TAG + "************* DataObjectErrTest100 end *************");
+    });
+
+    /**
+     * @tc.name   DataObjectErrTest101
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9902
+     * @tc.desc   Test DataObject save
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* DataObjectErrTest101 start *************");
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      await g_object.setSessionId('1010123456789')
+      try {
+        g_object.save('', (err: BusinessError, result: distributedDataObject.SaveSuccessResponse) => { });
+        expect().assertFail()
+      } catch (err) {
+        console.error(TAG + 'save fail: error code = ' + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      console.log(TAG + "************* DataObjectErrTest101 end *************");
+    });
+
+    /**
+     * @tc.name   DataObjectErrTest102
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9903
+     * @tc.desc   Test DataObject save
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* DataObjectErrTest102 start *************");
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      await g_object.setSessionId('102012345678')
+      try {
+        await g_object.save(null);
+        expect().assertFail()
+      } catch (err) {
+        console.error(TAG + 'save fail: error code = ' + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      console.log(TAG + "************* DataObjectErrTest102 end *************");
+    });
+
+    /**
+     * @tc.name   DataObjectErrTest103
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9904
+     * @tc.desc   Test DataObject on null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest103 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      try {
+        g_object.on(null, (sessionId: string, networkId: string, status: 'online' | 'offline') => {
+          console.log(TAG + "status changed " + sessionId + " " + status + " " + networkId);
+        });
+        console.log(TAG + 'on Success');
+      } catch (err) {
+        console.error(TAG + 'fail: error code = ' + err.code);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest103 end ************')
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest104
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9905
+     * @tc.desc   Test DataObject on undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest104 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      try {
+        g_object.on(undefined, (sessionId: string, networkId: string, status: 'online' | 'offline') => {
+          console.log(TAG + "status changed " + sessionId + " " + status + " " + networkId);
+        });
+        console.log(TAG + 'on Success');
+      } catch (err) {
+        console.error(TAG + 'fail: error code = ' + err.code);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest104 end ************')
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest105
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9906
+     * @tc.desc   Test DataObject on undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest105 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      try {
+        g_object.on(undefined, (sessionId: string, fields: Array<string>) => {
+          console.log(TAG + "change" + sessionId);
+        });
+        console.log(TAG + 'on Success');
+      } catch (err) {
+        console.error(TAG + 'fail: error code = ' + err.code);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest105 end ************')
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest106
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9907
+     * @tc.desc   Test DataObject on null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest106 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      try {
+        g_object.on(null, (sessionId: string, fields: Array<string>) => {
+          console.log(TAG + "change" + sessionId);
+        });
+        console.log(TAG + 'on Success');
+      } catch (err) {
+        console.error(TAG + 'fail: error code = ' + err.code);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest106 end ************')
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest107
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9908
+     * @tc.desc   Test DataObject on undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest107 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      try {
+        g_object.on('status', (undefined));
+        console.log(TAG + 'on Success');
+      } catch (err) {
+        console.error(TAG + 'fail: error code = ' + err.code);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest107 end ************')
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest108
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9909
+     * @tc.desc   Test DataObject on null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest108 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      try {
+        g_object.on('status', (null));
+        console.log(TAG + 'on Success');
+      } catch (err) {
+        console.error(TAG + 'fail: error code = ' + err.code);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest108 end ************')
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest109
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9910
+     * @tc.desc   Test DataObject on null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest109 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      try {
+        g_object.off(null, (sessionId: string, networkId: string, status: 'online' | 'offline') => {
+          console.log(TAG + "status changed " + sessionId + " " + status + " " + networkId);
+        });
+        console.log(TAG + 'off Success');
+      } catch (err) {
+        console.error(TAG + 'fail: error code = ' + err.code);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest109 end ************')
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest110
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9911
+     * @tc.desc   Test DataObject on undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest110 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      try {
+        g_object.off(undefined, (sessionId: string, networkId: string, status: 'online' | 'offline') => {
+          console.log(TAG + "status changed " + sessionId + " " + status + " " + networkId);
+        });
+        console.log(TAG + 'off Success');
+      } catch (err) {
+        console.error(TAG + 'fail: error code = ' + err.code);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest110 end ************')
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest111
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9912
+     * @tc.desc   Test DataObject on undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest111 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      try {
+        g_object.off(undefined, (sessionId: string, fields: Array<string>) => {
+          console.log(TAG + "change" + sessionId);
+        });
+        console.log(TAG + 'off Success');
+      } catch (err) {
+        console.error(TAG + 'fail: error code = ' + err.code);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest111 end ************')
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest112
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_9913
+     * @tc.desc   Test DataObject on null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest112 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      try {
+        g_object.off(null, (sessionId: string, fields: Array<string>) => {
+          console.log(TAG + "change" + sessionId);
+        });
+        console.log(TAG + 'off Success');
+      } catch (err) {
+        console.error(TAG + 'fail: error code = ' + err.code);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest112 end ************')
+    })
   })
 }

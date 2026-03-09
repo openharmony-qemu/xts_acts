@@ -336,20 +336,20 @@ async function checkResults(testData: BasePageConfig, compareOldTextComponent: j
   expect(compareNewTextComponent.getElement('$attrs').getString('content') != '').assertEqual(true);
   let compareOldTextObj = JSON.parseJsonElement(compareOldTextComponent.getElement('$attrs').getString('content'))
   let compareNewTextObj = JSON.parseJsonElement(compareNewTextComponent.getElement('$attrs').getString('content'))
-  console.info('[' + testData.caseTag + '] compareOldTextObj width: ' + compareOldTextObj.getInteger('width'));
-  expect(Math.abs(compareOldTextObj.getInteger('width') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.right - targetRectBefore.left))) <= 2).assertTrue();
-  console.info('[' + testData.caseTag + '] compareOldTextObj height: ' + compareOldTextObj.getInteger('height'));
+  console.info('[' + testData.caseTag + '] compareOldTextObj width: ' + compareOldTextObj.getDouble('width'));
+  expect(Math.abs(compareOldTextObj.getDouble('width') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.right - targetRectBefore.left))) <= 2).assertTrue();
+  console.info('[' + testData.caseTag + '] compareOldTextObj height: ' + compareOldTextObj.getDouble('height'));
   console.info(' compareOldTextObj targetRectBefore px2vp: ' , Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.right - targetRectBefore.left)));
-  expect(Math.abs(compareOldTextObj.getInteger('height') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.bottom - targetRectBefore.top))) <= 2)
+  expect(Math.abs(compareOldTextObj.getDouble('height') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.bottom - targetRectBefore.top))) <= 2)
     .assertTrue();
-  console.info('[' + testData.caseTag + '] compareOldTextObj.position.x: ' + compareOldTextObj.getElement('position').getInteger('x'));
-  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('x') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.left - parentRectBefore.left))) <= 2)
+  console.info('[' + testData.caseTag + '] compareOldTextObj.position.x: ' + compareOldTextObj.getElement('position').getDouble('x'));
+  expect(Math.abs(compareOldTextObj.getElement('position').getDouble('x') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.left - parentRectBefore.left))) <= 2)
     .assertTrue();
   console.info('[' + testData.caseTag + '] compareOldTextObj.position.y: ' + compareOldTextObj.getElement('position').getDouble('y'));
   expect(Math.abs(compareOldTextObj.getElement('position').getDouble('y') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.top - parentRectBefore.top))) <= 2)
     .assertTrue();
-  console.info('[' + testData.caseTag + '] compareOldTextObj.globalPosition.x: ' + compareOldTextObj.getElement('globalPosition').getInteger('x'));
-  expect(Math.abs(compareOldTextObj.getElement('globalPosition').getInteger('x') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.left))) <= 2).assertTrue();
+  console.info('[' + testData.caseTag + '] compareOldTextObj.globalPosition.x: ' + compareOldTextObj.getElement('globalPosition').getDouble('x'));
+  expect(Math.abs(compareOldTextObj.getElement('globalPosition').getDouble('x') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.left))) <= 2).assertTrue();
   console.info('[' + testData.caseTag + '] compareOldTextObj.globalPosition.y: ' + compareOldTextObj.getElement('globalPosition').getDouble('y'));
   expect(Math.abs(compareOldTextObj.getElement('globalPosition').getDouble('y') - Number(AppStorage.get<UIContext>('uiContext')?.px2vp(targetRectBefore.top))) <= 2).assertTrue();
 

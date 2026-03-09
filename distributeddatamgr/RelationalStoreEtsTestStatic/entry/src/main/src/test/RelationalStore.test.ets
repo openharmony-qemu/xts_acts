@@ -2168,5 +2168,396 @@ export default function relationalStoreTest() {
       console.info(tag + "************* DeleteRdbStoreErrTest011 end *************");
     })
 
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0100
+     * @tc.desc   executeSync table with ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0100',
+       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+         console.info(tag +
+           "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0100 start *************");
+         const record: relationalStore.ValuesBucket = {
+           "name": "Jim",
+           "age": 30 as long,
+         };
+         try {
+           (rdbStore as relationalStore.RdbStore)!.insertSync("employee", record);
+           let data = (rdbStore as relationalStore.RdbStore)!.executeSync("", ["Jim"]);
+           console.log(tag + "query success" + data);
+           expect(null).assertFail()
+           done()
+         } catch (err) {
+           console.log(tag + "query failed" + err.code + err.message);
+           expect(err.code).assertEqual(14800021);
+           done()
+         }
+         console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0100 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0200
+     * @tc.desc   executeSync table with ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+          console.info(tag +
+            "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0200 start *************");
+          const record: relationalStore.ValuesBucket = {
+            "name": "Jim",
+            "age": 30 as long,
+          };
+          try {
+            (rdbStore as relationalStore.RdbStore)!.insertSync("employee", record);
+            let data = (rdbStore as relationalStore.RdbStore)!.executeSync("DELETE FROM EMPLOYEE WHERE name = Jim", undefined);
+            console.log(tag + "query success" + data);
+            expect(data).assertEqual(1);
+          } catch (err) {
+            console.log(tag + "query failed" + err.code + err.message);
+            expect(err.code).assertEqual(14800021);
+          }
+
+          try {
+            (rdbStore as relationalStore.RdbStore)!.insertSync("employee", record);
+            let data = (rdbStore as relationalStore.RdbStore)!.executeSync("DELETE FROM EMPLOYEE WHERE name = Jim", []);
+            console.log(tag + "query success" + data);
+            expect(data).assertEqual(1);
+          } catch (err) {
+            console.log(tag + "query failed" + err.code + err.message);
+            expect(err.code).assertEqual(14800021);
+
+          }
+          console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSyncErrorEtsTest_0200 end *************");
+      
+     })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrorEtsTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrorEtsTest_0100
+     * @tc.desc   executeSql  with "" callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrorEtsTest_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info(tag +
+        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrorEtsTest_0100 start *************");
+      try {
+          (rdbStore as relationalStore.RdbStore)!.executeSql("", (err: BusinessError | null) => {
+          if(err){
+            expect(err.code).assertEqual(14800034);
+            done()
+          }else{
+            expect(null).assertFail();
+            done()
+          }
+        }); 
+      } catch (err) {
+        console.log(tag + "query failed" + err.code + err.message);
+        expect(err.code).assertEqual(401);
+        done()
+      }
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrorEtsTest_0100 end *************");
+    })
+
+    
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0200
+     * @tc.desc   executeSql  with "" promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0200',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0200 start *************");
+        try {
+          const record: relationalStore.ValuesBucket = {
+            "name": "zhangsan",
+            "age": 20 as long,
+          };
+          await (rdbStore as relationalStore.RdbStore)!.insert("test", record);
+          let res = await (rdbStore as relationalStore.RdbStore)!.executeSql("DELETE FROM test where name = ? ", ["zhangsan"]); 
+          console.log(tag + "executeSql success");
+          expect(res).assertEqual(undefined);
+      } catch (err) {
+        if(err.code === 801){
+          console.log(tag + "executeSql failed" + err.code + err.message);
+          expect(err.code).assertEqual(801);
+        }else{
+          expect(null).assertFail();
+        }
+      
+      }
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0200 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0300
+     * @tc.desc   executeSql  with "" promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0300',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+       console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0300 start *************");
+       try {
+         const record: relationalStore.ValuesBucket = {
+           "name": "zhangsan",
+           "age": 20 as long,
+         };
+         await (rdbStore as relationalStore.RdbStore)!.insert("test", record);
+          (rdbStore as relationalStore.RdbStore)!.executeSql("DELETE FROM test where name = zhangsan", (err: BusinessError | null) => {
+            if(err){
+              expect(err.code).assertEqual(14800021);
+              done()
+            }else{
+              console.log(tag + "executeSql success");
+              expect(null).assertFail();
+              done()
+            }
+         }); 
+         
+     } catch (err) {
+        if(err.code === 801){
+          console.log(tag + "executeSql failed" + err.code + err.message);
+          expect(err.code).assertEqual(801);
+          done()
+        }else{
+          expect(null).assertFail();
+          done()
+        }
+     }
+       console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0300 end *************");
+     })
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0400
+     * @tc.desc   executeSql  with "" promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0400',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+       console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0100 start *************");
+         try {
+           const record: relationalStore.ValuesBucket = {
+             "name": "zhangsan",
+             "age": 20 as long,
+           };
+           await (rdbStore as relationalStore.RdbStore)!.insert("test", record);
+           await (rdbStore as relationalStore.RdbStore)!.executeSql("", ["zhangsan"]); 
+           console.log(tag + "executeSql success");
+           expect(null).assertFail()
+           done()
+       } catch (err) {
+         console.log(tag + "executeSql failed" + err.code + err.message);
+         expect(err.code).assertEqual(14800000);
+         done()
+       }
+       console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0400 end *************");
+     })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0500
+     * @tc.desc   executeSql  with null or undefined promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0500',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+       console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0500 start *************");
+       const record: relationalStore.ValuesBucket = {
+         "name": "zhangsan1",
+         "age": 20 as long,
+       };
+       await (rdbStore as relationalStore.RdbStore)!.insert("test", record);  
+      try {
+        await (rdbStore as relationalStore.RdbStore)!.executeSql("DELETE FROM test where name = ?", undefined); 
+        console.log(tag + "executeSql success");
+        expect(null).assertFail()
+        done()
+    } catch (err) {
+      console.log(tag + "executeSql failed" + err.code + err.message);
+      expect(err.code).assertEqual(14800000);
+      done()
+    }
+
+    try {
+      await (rdbStore as relationalStore.RdbStore)!.executeSql("DELETE FROM test where name = ?", []); 
+      console.log(tag + "executeSql success");
+      expect(null).assertFail()
+      done()
+      } catch (err) {
+        console.log(tag + "executeSql failed" + err.code + err.message);
+        expect(err.code).assertEqual(14800000);
+        done()
+      }
+       console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteSqlErrTest_0500 end *************");
+     })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_EmitErrTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_EmitErrTest_0100
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_EmitErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void) => {
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_EmitErrTest_0100 start *************");
+      await rdbStore!.close();
+      console.info(`${tag} close succeeded`);
+      try {
+        rdbStore!.emit('');
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(tag + "err.code:" + err.code);
+        expect(14800014).assertEqual(err.code);
+        done();
+      }
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_EmitErrTest_0100 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0100
+     * @tc.desc   execute  with "" promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info(tag +
+        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0100 start *************");
+      try {
+          await (rdbStore as relationalStore.RdbStore)!.execute("") 
+          expect(null).assertFail();
+          done();
+      } catch (err) {
+        console.log(tag + "query failed" + err.code + err.message);
+        expect(err.code).assertEqual(14800021);
+        done()
+      }
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0100 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0200
+     * @tc.desc   execute  with null or undefined promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0200',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info(tag +
+        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0200 start *************");
+        const record: relationalStore.ValuesBucket = {
+          "name": "zhangsan2",
+          "age": 20 as long,
+        };  
+        await (rdbStore as relationalStore.RdbStore)!.insert("test", record);  
+      try {
+        await (rdbStore as relationalStore.RdbStore)!.execute("DELETE FROM test where name = ?", undefined) 
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(tag + "query failed" + err.code + err.message);
+        expect(err.code).assertEqual(14800000);
+        done()
+      }
+      try {
+        await (rdbStore as relationalStore.RdbStore)!.execute("DELETE FROM test where name = ?", []) 
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(tag + "query failed" + err.code + err.message);
+        expect(err.code).assertEqual(14800000);
+        done()
+      }
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0200 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0300
+     * @tc.desc   execute  with "" promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0300',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info(tag +
+        "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0300 start *************");
+      try {
+         let textId = await rdbStore!.beginTrans()
+          await (rdbStore as relationalStore.RdbStore)!.execute("", textId, [18 as long]) 
+          expect(null).assertFail();
+          done();
+      } catch (err) {
+        console.log(tag + "query failed" + err.code + err.message);
+        expect(err.code).assertEqual(801);
+        done()
+      }
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrorEtsTest_0300 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0500
+     * @tc.desc   execute  with "" promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+      it('SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        console.info(tag +"************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0500 start *************");
+          const record: relationalStore.ValuesBucket = {
+           "name": "zhangsan3",
+           "age": 18 as long,
+         };  
+         await (rdbStore as relationalStore.RdbStore)!.insert("test", record);  
+        try {
+           let textId = await rdbStore!.beginTrans()
+            await (rdbStore as relationalStore.RdbStore)!.execute("DELETE FROM test WHERE age = ?", textId, []) 
+        } catch (err) {
+          console.log(tag + "query failed" + err.code + err.message);
+          expect(err.code).assertEqual(801);
+          done()
+        }
+       try {
+        let textId = await rdbStore!.beginTrans()
+         await (rdbStore as relationalStore.RdbStore)!.execute("DELETE FROM test WHERE age = ?", textId, undefined) 
+        } catch (err) {
+          console.log(tag + "query failed" + err.code + err.message);
+          expect(err.code).assertEqual(801);
+          done()
+        }
+        console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_ExecuteErrTest_0500 end *************");
+      })
+
   })
 }
