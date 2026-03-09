@@ -70,5 +70,140 @@ export default function webViewContMessageError() {
       Utils.registerEvent("testPostMessageEventPortClose", "Failed to post messages through the port.", 111820, done);
       await Utils.waitAndClickComponent(driver, "webViewContMessageError");
     })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0300
+     * @tc.name       testPostMessageFirstEmpty
+     * @tc.desc       test interface of postMessage with not been associated with specific Web Components
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPostMessageFirstEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitPostMessageFirstEmpty";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPostMessageFirstEmpty", "17100001", 111820, done);
+      await Utils.waitAndClickComponent(driver, "webViewContMessageError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0400
+     * @tc.name       testPostMessageFirstNull
+     * @tc.desc       test interface of postMessage with not been associated with specific Web Components
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPostMessageFirstNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitPostMessageFirstNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPostMessageFirstNull", "401", 111830, done);
+      await Utils.waitAndClickComponent(driver, "webViewContMessageError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0500
+     * @tc.name       testPostMessageFirstUndefined
+     * @tc.desc       test interface of postMessage with not been associated with specific Web Components
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPostMessageFirstUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitPostMessageFirstUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPostMessageFirstUndefined", "401", 111840, done);
+      await Utils.waitAndClickComponent(driver, "webViewContMessageError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0600
+     * @tc.name       testPostMessageSecondNull
+     * @tc.desc       test interface of postMessage with not been associated with specific Web Components
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPostMessageSecondNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitPostMessageSecondNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPostMessageSecondNull", "401", 111850, done);
+      await Utils.waitAndClickComponent(driver, "webViewContMessageError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0700
+     * @tc.name       testPostMessageSecondUndefined
+     * @tc.desc       test interface of postMessage with not been associated with specific Web Components
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPostMessageSecondUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitPostMessageSecondUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPostMessageSecondUndefined", "401", 111860, done);
+      await Utils.waitAndClickComponent(driver, "webViewContMessageError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0800
+     * @tc.name       testPostMessageSecondEmptyArray
+     * @tc.desc       test interface of postMessage with not been associated with specific Web Components
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPostMessageSecondEmptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitPostMessageSecondEmptyArray";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPostMessageSecondEmptyArray", "401", 111870, done);
+      await Utils.waitAndClickComponent(driver, "webViewContMessageError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0900
+     * @tc.name       testPostMessageThirdEmpty
+     * @tc.desc       test interface of postMessage with not been associated with specific Web Components
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPostMessageThirdEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitPostMessageThirdEmpty";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPostMessageThirdEmpty", "17100001", 111880, done);
+      await Utils.waitAndClickComponent(driver, "webViewContMessageError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_1000
+     * @tc.name       testPostMessageThirdNull
+     * @tc.desc       test interface of postMessage with not been associated with specific Web Components
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPostMessageThirdNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitPostMessageThirdNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPostMessageThirdNull", "17100001", 111890, done);
+      await Utils.waitAndClickComponent(driver, "webViewContMessageError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_1100
+     * @tc.name       testPostMessageThirdUndefined
+     * @tc.desc       test interface of postMessage with not been associated with specific Web Components
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPostMessageThirdUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitPostMessageThirdUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPostMessageThirdUndefined", "17100001", 111900, done);
+      await Utils.waitAndClickComponent(driver, "webViewContMessageError");
+    })
   })
 }

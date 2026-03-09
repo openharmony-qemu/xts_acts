@@ -123,6 +123,113 @@ struct webViewContMessageError {
               break;
             }
 
+            case "emitPostMessageFirstEmpty": {
+              try {
+                this.ports = this.controller.createWebMessagePorts();
+                this.controllerTwo.postMessage('', [this.ports[0]], '*');
+                Utils.emitEvent('noError', 111820)
+              } catch (error) {
+                console.error(`emitPostMessageInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111820)
+              }
+              break;
+            }
+
+            case "emitPostMessageFirstNull": {
+              try {
+                this.ports = this.controller.createWebMessagePorts();
+                this.controllerTwo.postMessage(null, [this.ports[0]], '*');
+                Utils.emitEvent('noError', 111830)
+              } catch (error) {
+                console.error(`emitPostMessageInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111830)
+              }
+              break;
+            }
+
+            case "emitPostMessageFirstUndefined": {
+              try {
+                this.ports = this.controller.createWebMessagePorts();
+                this.controllerTwo.postMessage(undefined, [this.ports[0]], '*');
+                Utils.emitEvent('noError', 111840)
+              } catch (error) {
+                console.error(`emitPostMessageInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111840)
+              }
+              break;
+            }
+
+            case "emitPostMessageSecondNull": {
+              try {
+                this.ports = this.controller.createWebMessagePorts();
+                this.controllerTwo.postMessage('__init_port__', null, '*');
+                Utils.emitEvent('noError', 111850)
+              } catch (error) {
+                console.error(`emitPostMessageInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111850)
+              }
+              break;
+            }
+
+            case "emitPostMessageSecondUndefined": {
+              try {
+                this.ports = this.controller.createWebMessagePorts();
+                this.controllerTwo.postMessage('__init_port__', undefined, '*');
+                Utils.emitEvent('noError', 111860)
+              } catch (error) {
+                console.error(`emitPostMessageInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111860)
+              }
+              break;
+            }
+
+            case "emitPostMessageSecondEmptyArray": {
+              try {
+                this.ports = this.controller.createWebMessagePorts();
+                this.controllerTwo.postMessage('__init_port__', [], '*');
+                Utils.emitEvent('noError', 111870)
+              } catch (error) {
+                console.error(`emitPostMessageInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111870)
+              }
+              break;
+            }
+
+            case "emitPostMessageThirdEmpty": {
+              try {
+                this.ports = this.controller.createWebMessagePorts();
+                this.controllerTwo.postMessage('__init_port__', [this.ports[0]], '');
+                Utils.emitEvent('noError', 111880)
+              } catch (error) {
+                console.error(`emitPostMessageInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111880)
+              }
+              break;
+            }
+
+            case "emitPostMessageThirdNull": {
+              try {
+                this.ports = this.controller.createWebMessagePorts();
+                this.controllerTwo.postMessage('__init_port__', [this.ports[0]], '');
+                Utils.emitEvent('noError', 111890)
+              } catch (error) {
+                console.error(`emitPostMessageInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111890)
+              }
+              break;
+            }
+
+            case "emitPostMessageThirdUndefined": {
+              try {
+                this.ports = this.controller.createWebMessagePorts();
+                this.controllerTwo.postMessage('__init_port__', [this.ports[0]], '');
+                Utils.emitEvent('noError', 111900)
+              } catch (error) {
+                console.error(`emitPostMessageInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111900)
+              }
+              break;
+            }
           }
         })
       }

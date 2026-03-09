@@ -238,6 +238,147 @@ struct webViewContJavaScriptError {
               Utils.emitEvent(this.errorMsg, 111670)
               break;
             }
+
+            case "emitRegisterJavaScriptProxyJSObjectNull": {
+              try {
+                this.controllerTwo.registerJavaScriptProxy(null, "objName", ["test", "toString"]);
+                Utils.emitEvent('noError', 111680)
+              } catch (error) {
+                console.error(`emitRegisterJavaScriptProxyJSObjectNull ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111680)
+              }
+              break;
+            }
+
+            case "emitRegisterJavaScriptProxyJSObjectUndefined": {
+              try {
+                this.controllerTwo.registerJavaScriptProxy(undefined, "objName", ["test", "toString"]);
+                Utils.emitEvent('noError', 111690)
+              } catch (error) {
+                console.error(`emitRegisterJavaScriptProxyJSObjectUndefined ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111690)
+              }
+              break;
+            }
+
+            case "emitRegisterJavaScriptProxyNameEmpty": {
+              try {
+                this.controllerTwo.registerJavaScriptProxy(this.testObjtest, "", ["test", "toString"]);
+                Utils.emitEvent('noError', 111700)
+              } catch (error) {
+                console.error(`emitRegisterJavaScriptProxyNameEmpty ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111700)
+              }
+              break;
+            }
+
+            case "emitRegisterJavaScriptProxyNameNull": {
+              try {
+                this.controllerTwo.registerJavaScriptProxy(this.testObjtest, null, ["test", "toString"]);
+                Utils.emitEvent('noError', 111710)
+              } catch (error) {
+                console.error(`emitRegisterJavaScriptProxyNameNull ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111710)
+              }
+              break;
+            }
+
+            case "emitRegisterJavaScriptProxyNameUndefined": {
+              try {
+                this.controllerTwo.registerJavaScriptProxy(this.testObjtest, undefined, ["test", "toString"]);
+                Utils.emitEvent('noError', 111720)
+              } catch (error) {
+                console.error(`emitRegisterJavaScriptProxyNameUndefined ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111720)
+              }
+              break;
+            }
+
+            case "emitRegisterJavaScriptProxyPermissionEmpty": {
+              try {
+                this.controllerTwo.registerJavaScriptProxy(this.testObjtest, 'objName', ["test", "toString"], ["asyncTestBool"],'');
+                Utils.emitEvent('noError', 111730)
+              } catch (error) {
+                console.error(`emitRegisterJavaScriptProxyPermissionEmpty ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111730)
+              }
+              break;
+            }
+
+            case "emitRegisterJavaScriptProxyPermissionNull": {
+              try {
+                this.controllerTwo.registerJavaScriptProxy(this.testObjtest, 'objName', ["test", "toString"],["asyncTestBool"],null);
+                Utils.emitEvent('noError', 111740)
+              } catch (error) {
+                console.error(`emitRegisterJavaScriptProxyPermissionNull ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111740)
+              }
+              break;
+            }
+
+            case "emitRegisterJavaScriptProxyPermissionUndefined": {
+              try {
+                this.controllerTwo.registerJavaScriptProxy(this.testObjtest, 'objName', ["test", "toString"],["asyncTestBool"],undefined);
+                Utils.emitEvent('noError', 111750)
+              } catch (error) {
+                console.error(`emitRegisterJavaScriptProxyPermissionUndefined ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111750)
+              }
+              break;
+            }
+
+            case "emitDeleteJavaScriptRegisterEmpty": {
+              try {
+                this.errorCode = '0';
+                this.errorMsg = 'failed';
+                this.controllerTwo.deleteJavaScriptRegister('');
+                Utils.emitEvent('noError', 111760)
+              } catch (error) {
+                console.error(`emitDeleteJavaScriptRegisterInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111760)
+              }
+
+              break;
+            }
+
+            case "emitDeleteJavaScriptRegisterEmpty": {
+              try {
+                this.errorCode = '0';
+                this.errorMsg = 'failed';
+                this.controllerTwo.deleteJavaScriptRegister('');
+                Utils.emitEvent('noError', 111760)
+              } catch (error) {
+                console.error(`emitDeleteJavaScriptRegisterEmpty ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111760)
+              }
+              break;
+            }
+
+            case "emitDeleteJavaScriptRegisterNull": {
+              try {
+                this.errorCode = '0';
+                this.errorMsg = 'failed';
+                this.controllerTwo.deleteJavaScriptRegister(null);
+                Utils.emitEvent('noError', 111770)
+              } catch (error) {
+                console.error(`emitDeleteJavaScriptRegisterNull ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111770)
+              }
+              break;
+            }
+
+            case "emitDeleteJavaScriptRegisterUndefined": {
+              try {
+                this.errorCode = '0';
+                this.errorMsg = 'failed';
+                this.controllerTwo.deleteJavaScriptRegister(undefined);
+                Utils.emitEvent('noError', 111780)
+              } catch (error) {
+                console.error(`emitDeleteJavaScriptRegisterUndefined ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 111780)
+              }
+              break;
+            }
           }
         })
       }

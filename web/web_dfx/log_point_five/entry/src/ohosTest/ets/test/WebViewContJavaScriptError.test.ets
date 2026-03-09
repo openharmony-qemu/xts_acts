@@ -149,5 +149,172 @@ export default function webViewContJavaScriptError() {
       Utils.registerEvent("testDeleteJavaScriptRegisterNameErr", "Failed to delete JavaScriptProxy because it does not exist.", 111670, done);
       await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
     })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_3300
+     * @tc.name     testRegisterJavaScriptProxyJSObjectNull
+     * @tc.desc     test interface of registerJavaScriptProxy with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testRegisterJavaScriptProxyJSObjectNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitRegisterJavaScriptProxyJSObjectNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRegisterJavaScriptProxyJSObjectNull", "401", 111680, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_3400
+     * @tc.name     testRegisterJavaScriptProxyJSObjectUndefined
+     * @tc.desc     test interface of registerJavaScriptProxy with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testRegisterJavaScriptProxyJSObjectUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitRegisterJavaScriptProxyJSObjectUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRegisterJavaScriptProxyJSObjectUndefined", "401", 111690, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_3500
+     * @tc.name     testRegisterJavaScriptProxyNameEmpty
+     * @tc.desc     test interface of registerJavaScriptProxy with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testRegisterJavaScriptProxyNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitRegisterJavaScriptProxyNameEmpty";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRegisterJavaScriptProxyNameEmpty", "17100001", 111700, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_3600
+     * @tc.name     testRegisterJavaScriptProxyNameNull
+     * @tc.desc     test interface of registerJavaScriptProxy with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testRegisterJavaScriptProxyNameNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitRegisterJavaScriptProxyNameNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRegisterJavaScriptProxyNameNull", "401", 111710, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_3700
+     * @tc.name     testRegisterJavaScriptProxyNameUndefined
+     * @tc.desc     test interface of registerJavaScriptProxy with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testRegisterJavaScriptProxyNameUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitRegisterJavaScriptProxyNameUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRegisterJavaScriptProxyNameUndefined", "401", 111720, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_3800
+     * @tc.name     testRegisterJavaScriptProxyPermissionEmpty
+     * @tc.desc     test interface of registerJavaScriptProxy with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testRegisterJavaScriptProxyPermissionEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitRegisterJavaScriptProxyPermissionEmpty";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRegisterJavaScriptProxyPermissionEmpty", "17100001", 111730, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_3900
+     * @tc.name     testRegisterJavaScriptProxyPermissionNull
+     * @tc.desc     test interface of registerJavaScriptProxy with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testRegisterJavaScriptProxyPermissionNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitRegisterJavaScriptProxyPermissionNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRegisterJavaScriptProxyPermissionNull", "401", 111740, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_3900
+     * @tc.name     testRegisterJavaScriptProxyPermissionNull
+     * @tc.desc     test interface of registerJavaScriptProxy with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testRegisterJavaScriptProxyPermissionUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitRegisterJavaScriptProxyPermissionUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRegisterJavaScriptProxyPermissionUndefined", "401", 111750, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_4000
+     * @tc.name     testDeleteJavaScriptRegisterEmpty
+     * @tc.desc     test interface of deleteJavaScriptRegister with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testDeleteJavaScriptRegisterEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitDeleteJavaScriptRegisterEmpty";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testDeleteJavaScriptRegisterEmpty", "17100001", 111760, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_4100
+     * @tc.name     testDeleteJavaScriptRegisterNull
+     * @tc.desc     test interface of deleteJavaScriptRegister with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testDeleteJavaScriptRegisterNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitDeleteJavaScriptRegisterNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testDeleteJavaScriptRegisterNull", "401", 111770, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_4100
+     * @tc.name     testDeleteJavaScriptRegisterUndefined
+     * @tc.desc     test interface of deleteJavaScriptRegister with not been associated with specific Web Components
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('testDeleteJavaScriptRegisterUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitDeleteJavaScriptRegisterUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testDeleteJavaScriptRegisterUndefined", "401", 111780, done);
+      await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
+    })
+
+
   })
 }
