@@ -178,7 +178,7 @@ void VEncAPI11Sample::DumpQPInfo(OH_AVBuffer *buffer)
     OH_AVFormat_GetDoubleValue(format, OH_MD_KEY_VIDEO_ENCODER_MSE, &mse);
     if (qp_average < 0 || mse < 0) {
         errCount ++;
-    }    
+    }
 }
 
 void VEncAPI11Sample::DumpInfo(OH_AVCodecBufferAttr attr, OH_AVBuffer *buffer)
