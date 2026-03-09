@@ -49,6 +49,7 @@
         "MainAbility/pages/TextDelete/TextAreaDelete",
         "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest",
         "MainAbility/pages/SetTextSelectionTest/SetTextSelectionTest",
-        "MainAbility/pages/CustomKeyboardContinueTest"
+        "MainAbility/pages/CustomKeyboardContinueTest",
+        "MainAbility/pages/TypeNodeTestPage"
     ]
 }
