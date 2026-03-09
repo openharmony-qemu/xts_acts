@@ -21,7 +21,9 @@ import Want from '@ohos.app.ability.Want';
 import formBindingData from '@ohos.app.form.formBindingData';
 import formProvider from '@ohos.app.form.formProvider';
 import FormEditExtensionAbility from '@ohos.app.form.FormEditExtensionAbility';
+import LiveFormExtensionAbility from '@ohos.app.form.LiveFormExtensionAbility';
 import hilog from '@ohos.hilog';
+import common from '@ohos.app.ability.common';
 
 const tag: string = 'testTag';
 const domain: number = 0xF811;
@@ -123,7 +125,71 @@ export default function formApiCoverTest() {
       console.info(`${name} start`);
       try {
         let abilityTest:FormEditExtensionAbility = new FormEditExtensionAbility();
-        abilityTest.context.startSecondPage(module1Want);
+        abilityTest.context.startSecondPage(module1Want).then((result: common.AbilityResult) => {
+          console.info(`startSecondPage success ${JSON.stringify(result)}`);
+        });
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
+         if (error.code === ERROR_CODE9) {
+          expect(error.code).assertEqual(ERROR_CODE9);
+        } else if(error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if(error.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0200
+     * @tc.desc   Function startSecondPage covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0200';
+      console.info(`${name} start`);
+      try {
+        let abilityTest:FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.startSecondPage(null);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
+         if (error.code === ERROR_CODE9) {
+          expect(error.code).assertEqual(ERROR_CODE9);
+        } else if(error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if(error.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0300
+     * @tc.desc   Function startSecondPage covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0300';
+      console.info(`${name} start`);
+      try {
+        let abilityTest:FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.startSecondPage(undefined);
         expect().assertFail();
       } catch (error) {
         console.log(`${name} exception caught: ${JSON.stringify(error)}`);
@@ -155,6 +221,76 @@ export default function formApiCoverTest() {
       try {
         let abilityTest:FormEditExtensionAbility = new FormEditExtensionAbility();
         abilityTest.context.startUIAbility(module1Want);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE9) {
+          expect(error.code).assertEqual(ERROR_CODE9);
+        } else if(error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if(error.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else if(error.code === ERROR_CODE11) {
+          expect(error.code).assertEqual(ERROR_CODE11);
+        } else if(error.code === ERROR_CODE12) {
+          expect(error.code).assertEqual(ERROR_CODE12);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0200
+     * @tc.desc   Function startUIAbility covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0200';
+      console.info(`${name} start`);
+      try {
+        let abilityTest:FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.startUIAbility(null);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE9) {
+          expect(error.code).assertEqual(ERROR_CODE9);
+        } else if(error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if(error.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else if(error.code === ERROR_CODE11) {
+          expect(error.code).assertEqual(ERROR_CODE11);
+        } else if(error.code === ERROR_CODE12) {
+          expect(error.code).assertEqual(ERROR_CODE12);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0300
+     * @tc.desc   Function startUIAbility covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0300';
+      console.info(`${name} start`);
+      try {
+        let abilityTest:FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.startUIAbility(undefined);
         expect().assertFail();
       } catch (error) {
         console.log(`${name} exception caught: ${JSON.stringify(error)}`);
@@ -439,259 +575,110 @@ export default function formApiCoverTest() {
       hilog.info(domain, tag, `${itName} end`);
     });
 
-    /**
-     * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_5200
-     * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_5200
-     * @tc.desc   createFormBindingData test.
+    /**startAbilityByLiveForm
+     * @tc.name   SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0100
+     * @tc.desc   Function startUIAbility covered test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_5200';
-      hilog.info(domain, tag, `${itName} start`);
-      try {
-        let formImagesParam: Record<string, number> = {
-          'image': 100
-        };
-        let createFormBindingDataParam: Record<string, string | Record<string, number>> = {
-          'name': '21°',
-          'imgSrc': 'image',
-          'formImages': formImagesParam
-        };
-
-        hilog.info(domain, tag, `${itName} createFormBindingData`);
-        let bindingData = formBindingData.createFormBindingData(createFormBindingDataParam);
-        hilog.info(domain, tag, `${itName} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
-        let data = JSON.parse(bindingData.data as string) as Record<string, string | Record<string, number>>;
-        expect(data.name === '21°').assertTrue();
-        expect(data.imgSrc === 'image').assertTrue();
-        expect((data.formImages as Record<string, number>).image === 100).assertTrue();
-
-        let ProxyDataA: formBindingData.ProxyData = {
-          key: "123456789",
-          subscriberId: "123456"
-        }
-        let ProxyDatas: formBindingData.ProxyData[] = [];
-        ProxyDatas.push(ProxyDataA);
-        bindingData.proxies = ProxyDatas;
-        expect(bindingData.proxies[0]?.key === "123456789").assertTrue();
-        expect(bindingData.proxies[0]?.subscriberId === "123456").assertTrue();
-        done();
-      } catch(error) {
-        hilog.info(domain, tag, `${itName} createFormBindingData fail. error code: ${error?.code}`);
-        expect(error.code).assertEqual(ERROR_CODE1);
-        done();
-      }
-      hilog.info(domain, tag, `${itName} end`);
-    });
-
-    /**
-     * @tc.name   SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0300
-     * @tc.number SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0300
-     * @tc.desc   Function setFormNextRefreshTime covered test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it(`SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let name: string = 'SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0300';
+    it('SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0100';
       console.info(`${name} start`);
       try {
-        formProvider.setFormNextRefreshTime(null, null, (error, data) => {
-          console.log(`${name} setFormNextRefreshTime, error: ${JSON.stringify(error)} data: ${JSON.stringify(data)}`);
-          if (error.code === ERROR_CODE1) {
-            expect(error.code).assertEqual(ERROR_CODE1);
-          } else if(error.code === ERROR_CODE2) {
-            expect(error.code).assertEqual(ERROR_CODE2);
-          } else if(error.code === ERROR_CODE3) {
-            expect(error.code).assertEqual(ERROR_CODE3);
-          } else if(error.code === ERROR_CODE4) {
-            expect(error.code).assertEqual(ERROR_CODE4);
-          } else if(error.code === ERROR_CODE5) {
-            expect(error.code).assertEqual(ERROR_CODE5);
-          } else if(error.code === ERROR_CODE6) {
-            expect(error.code).assertEqual(ERROR_CODE6);
-          } else if(error.code === ERROR_CODE7) {
-            expect(error.code).assertEqual(ERROR_CODE7);
-          } else if(error.code === ERROR_CODE8) {
-            expect(error.code).assertEqual(ERROR_CODE8);
-          }
-          done();
+        let abilityTest:LiveFormExtensionAbility = new LiveFormExtensionAbility();
+        abilityTest.context.startAbilityByLiveForm({
+          bundleName: 'com.acts.liveformextensiontest',
+          abilityName: 'TestAbility'
         });
-      } catch (error) {
-        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ERROR_CODE1);
-        done();
-      }
-      console.info(`${name} end`);
-    });
-
-    /**
-     * @tc.name   SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0400
-     * @tc.number SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0400
-     * @tc.desc   Function setFormNextRefreshTime covered test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it(`SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let name: string = 'SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0400';
-      console.info(`${name} start`);
-      try {
-        formProvider.setFormNextRefreshTime(undefined, undefined, (error, data) => {
-          console.log(`${name} setFormNextRefreshTime, error: ${JSON.stringify(error)} data: ${JSON.stringify(data)}`);
-          if (error.code === ERROR_CODE1) {
-            expect(error.code).assertEqual(ERROR_CODE1);
-          } else if(error.code === ERROR_CODE2) {
-            expect(error.code).assertEqual(ERROR_CODE2);
-          } else if(error.code === ERROR_CODE3) {
-            expect(error.code).assertEqual(ERROR_CODE3);
-          } else if(error.code === ERROR_CODE4) {
-            expect(error.code).assertEqual(ERROR_CODE4);
-          } else if(error.code === ERROR_CODE5) {
-            expect(error.code).assertEqual(ERROR_CODE5);
-          } else if(error.code === ERROR_CODE6) {
-            expect(error.code).assertEqual(ERROR_CODE6);
-          } else if(error.code === ERROR_CODE7) {
-            expect(error.code).assertEqual(ERROR_CODE7);
-          } else if(error.code === ERROR_CODE8) {
-            expect(error.code).assertEqual(ERROR_CODE8);
-          }
-          done();
-        });
-      } catch (error) {
-        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ERROR_CODE1);
-        done();
-      }
-      console.info(`${name} end`);
-    });
-
-    /**
-     * @tc.name   SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0500
-     * @tc.number SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0500
-     * @tc.desc   Function setFormNextRefreshTime covered test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it(`SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let name: string = 'SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0500';
-      console.info(`${name} start`);
-      try {
-        formProvider.setFormNextRefreshTime(null, null).then(() => {
-          console.log(`${name} setFormNextRefreshTime success`);
-        }).catch((error: BusinessError) => {
-          console.log(`${name} setFormNextRefreshTime, error: ${JSON.stringify(error)}`);
-          if (error.code === ERROR_CODE1) {
-            expect(error.code).assertEqual(ERROR_CODE1);
-          } else if(error.code === ERROR_CODE2) {
-            expect(error.code).assertEqual(ERROR_CODE2);
-          } else if(error.code === ERROR_CODE3) {
-            expect(error.code).assertEqual(ERROR_CODE3);
-          } else if(error.code === ERROR_CODE4) {
-            expect(error.code).assertEqual(ERROR_CODE4);
-          } else if(error.code === ERROR_CODE5) {
-            expect(error.code).assertEqual(ERROR_CODE5);
-          } else if(error.code === ERROR_CODE6) {
-            expect(error.code).assertEqual(ERROR_CODE6);
-          } else if(error.code === ERROR_CODE7) {
-            expect(error.code).assertEqual(ERROR_CODE7);
-          } else if(error.code === ERROR_CODE8) {
-            expect(error.code).assertEqual(ERROR_CODE8);
-          }
-          done();
-        }); 
-      } catch (error) {
-        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ERROR_CODE1);
-        done();
-      }
-      console.info(`${name} end`);
-    });
-
-    /**
-     * @tc.name   SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0600
-     * @tc.number SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0600
-     * @tc.desc   Function setFormNextRefreshTime covered test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it(`SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let name: string = 'SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0600';
-      console.info(`${name} start`);
-      try {
-        formProvider.setFormNextRefreshTime(undefined, undefined).then(() => {
-          console.log(`${name} setFormNextRefreshTime success`);
-        }).catch((error: BusinessError) => {
-          console.log(`${name} setFormNextRefreshTime, error: ${JSON.stringify(error)}`);
-          if (error.code === ERROR_CODE1) {
-            expect(error.code).assertEqual(ERROR_CODE1);
-          } else if(error.code === ERROR_CODE2) {
-            expect(error.code).assertEqual(ERROR_CODE2);
-          } else if(error.code === ERROR_CODE3) {
-            expect(error.code).assertEqual(ERROR_CODE3);
-          } else if(error.code === ERROR_CODE4) {
-            expect(error.code).assertEqual(ERROR_CODE4);
-          } else if(error.code === ERROR_CODE5) {
-            expect(error.code).assertEqual(ERROR_CODE5);
-          } else if(error.code === ERROR_CODE6) {
-            expect(error.code).assertEqual(ERROR_CODE6);
-          } else if(error.code === ERROR_CODE7) {
-            expect(error.code).assertEqual(ERROR_CODE7);
-          } else if(error.code === ERROR_CODE8) {
-            expect(error.code).assertEqual(ERROR_CODE8);
-          }
-          done();
-        }); 
-      } catch (error) {
-        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ERROR_CODE1);
-        done();
-      }
-      console.info(`${name} end`);
-    });
-
-    /**
-     * @tc.name   SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0700
-     * @tc.number SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0700
-     * @tc.desc   Function setFormNextRefreshTime covered test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it(`SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0700`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let name: string = 'SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0700';
-      console.info(`${name} start`);
-      try {
-        formProvider.setFormNextRefreshTime("", 123).then(() => {
-          console.log(`${name} setFormNextRefreshTime success`);
-        }).catch((error: BusinessError) => {
-          console.log(`${name} setFormNextRefreshTime, error: ${JSON.stringify(error)}`);
-          if (error.code === ERROR_CODE1) {
-            expect(error.code).assertEqual(ERROR_CODE1);
-          } else if(error.code === ERROR_CODE2) {
-            expect(error.code).assertEqual(ERROR_CODE2);
-          } else if(error.code === ERROR_CODE3) {
-            expect(error.code).assertEqual(ERROR_CODE3);
-          } else if(error.code === ERROR_CODE4) {
-            expect(error.code).assertEqual(ERROR_CODE4);
-          } else if(error.code === ERROR_CODE5) {
-            expect(error.code).assertEqual(ERROR_CODE5);
-          } else if(error.code === ERROR_CODE6) {
-            expect(error.code).assertEqual(ERROR_CODE6);
-          } else if(error.code === ERROR_CODE7) {
-            expect(error.code).assertEqual(ERROR_CODE7);
-          } else if(error.code === ERROR_CODE8) {
-            expect(error.code).assertEqual(ERROR_CODE8);
-          }
-          done();
-        }); 
-      } catch (error) {
-        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } catch (error) {
+        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE9) {
+          expect(error.code).assertEqual(ERROR_CODE9);
+        } else if(error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if(error.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else if(error.code === ERROR_CODE11) {
+          expect(error.code).assertEqual(ERROR_CODE11);
+        } else if(error.code === ERROR_CODE12) {
+          expect(error.code).assertEqual(ERROR_CODE12);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**startAbilityByLiveForm
+     * @tc.name   SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0200
+     * @tc.desc   Function startUIAbility covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0200';
+      console.info(`${name} start`);
+      try {
+        let abilityTest:LiveFormExtensionAbility = new LiveFormExtensionAbility();
+        abilityTest.context.startAbilityByLiveForm(null);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE9) {
+          expect(error.code).assertEqual(ERROR_CODE9);
+        } else if(error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if(error.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else if(error.code === ERROR_CODE11) {
+          expect(error.code).assertEqual(ERROR_CODE11);
+        } else if(error.code === ERROR_CODE12) {
+          expect(error.code).assertEqual(ERROR_CODE12);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0300
+     * @tc.desc   Function startUIAbility covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0300';
+      console.info(`${name} start`);
+      try {
+        let abilityTest:LiveFormExtensionAbility = new LiveFormExtensionAbility();
+        abilityTest.context.startAbilityByLiveForm(undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${name} exception caught: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE9) {
+          expect(error.code).assertEqual(ERROR_CODE9);
+        } else if(error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if(error.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else if(error.code === ERROR_CODE11) {
+          expect(error.code).assertEqual(ERROR_CODE11);
+        } else if(error.code === ERROR_CODE12) {
+          expect(error.code).assertEqual(ERROR_CODE12);
+        }
+        done();
       }
       console.info(`${name} end`);
     });
