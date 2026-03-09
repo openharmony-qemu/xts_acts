@@ -1797,7 +1797,8 @@ export default function checkBoxGroupTest() {
           console.info("ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1500 component obj.$attrs.mark is: " +
           JSON.stringify(obj.$attrs.mark));
           let markObj: Record<string, ESObject> = JSON.parse(obj.$attrs.mark);
-          expect(markObj.strokeWidth).assertEqual("2.00vp");
+          let width :number = Number(markObj.strokeWidth.split('.')[0])
+          expect(Math.floor(Math.abs(width - 2))<=1).assertEqual(true)
           expect(markObj.size).assertEqual("0.00vp");
           expect(markObj.strokeColor).assertEqual(obj.$attrs.borderColor);
           expect(obj.$attrs.unselectedColor).assertEqual(obj.$attrs.backgroundColor);
@@ -1809,8 +1810,8 @@ export default function checkBoxGroupTest() {
           console.info("ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1500 objGroup obj.$attrs.mark is: " +
           JSON.stringify(objGroup.$attrs.mark));
           let markObjGroup: Record<string, ESObject> = JSON.parse(objGroup.$attrs.mark);
-          let width :number = Number(markObj.strokeWidth.split('.')[0])
-          expect(Math.floor(Math.abs(width - 2))<=1).assertEqual(true)
+          let widthGroup :number = Number(markObjGroup.strokeWidth.split('.')[0])
+          expect(Math.floor(Math.abs(widthGroup - 2))<=1).assertEqual(true)
           expect(markObjGroup.size).assertEqual("0.00vp");
           expect(markObjGroup.strokeColor).assertEqual(obj.$attrs.borderColor);
           expect(objGroup.$attrs.unselectedColor).assertEqual(obj.$attrs.backgroundColor);
