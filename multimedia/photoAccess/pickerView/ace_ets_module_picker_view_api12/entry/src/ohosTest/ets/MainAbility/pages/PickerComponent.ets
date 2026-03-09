@@ -27,7 +27,7 @@ import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo } from '@ohos.file.
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { EventType } from '../common/Common';
+import CommonFunc, { EventType } from '../common/Common';
 import { ClickInfo } from '../common/Common';
 import { PhotoPickerResult } from '../common/PhotoPickerResult';
 
@@ -202,9 +202,9 @@ struct PickerComponent {
     this.sendEvent(albumInfo, EventType.ALBUM_INFO);
     if (albumInfo?.uri) {
       this.pickerController.setData(DataType.SET_ALBUM_URI, albumInfo.uri);
-      await CommonFunc.sleep(500);
+
       this.pickerController.addData(DataType.SET_ALBUM_URI, albumInfo.uri);
-      await CommonFunc.sleep(500);
+
       this.pickerController.deleteData(DataType.SET_ALBUM_URI, albumInfo.uri);
       console.info('onALbumClick' + JSON.stringify(albumInfo.uri));
     }
@@ -326,7 +326,7 @@ struct PickerComponent {
   ButtonBar() {
     Row() {
       Button('视频和图片').width('50%').height('5%')
-        .onClick(() => {
+        .onClick(async () => {
           this.isShowAll = true;
           this.isShowVideo = false;
           this.isShowPhoto = false;
