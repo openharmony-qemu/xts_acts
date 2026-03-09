@@ -103,6 +103,24 @@ async function routeToUrl(options: router.RouterOptions) {
   }
 }
 
+async function closePermissionDialog() {
+  let driver = Driver.create();
+
+  for (let i = 0; i < 5; i++) {
+    await driver.delayMs(500);
+
+    let allowBtn = await driver.findComponent(ON.text('Allow'));
+    if (!allowBtn) {
+      allowBtn = await driver.findComponent(ON.text('Deny'));
+    }
+
+    if (allowBtn) {
+      await allowBtn.click();
+      return;
+    }
+  }
+}
+
 
 function getSheetPickerOptions(): photoAccessHelper.PhotoSelectOptions {
   let sheetPickerOptions = new photoAccessHelper.PhotoSelectOptions();
@@ -1622,6 +1640,7 @@ export default function TextPicker() {
         done();
         return;
       }
+
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
 
       let cases: AssetCreateOption[] = [
@@ -1637,22 +1656,19 @@ export default function TextPicker() {
         try {
           let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
 
-          driveFn().catch((err: Error) => {
-            console.info("testPicker25 driveFn info: " + err.message);
-          });
+          await closePermissionDialog();
 
           let result = await createPromise;
-          console.info("createAssetWithShortTermPermission result=" + JSON.stringify(result));
           expect(result).not().assertUndefined();
 
         } catch(error) {
-          console.error("testPicker25 API error caught: " + JSON.stringify(error) + " code: " + error.code);
-
           let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
           expect(isValidErrorCode).assertTrue();
         }
-      }
 
+        let driver = Driver.create();
+        await driver.delayMs(500);
+      }
       console.info("testPicker25 finish");
       done();
     });
