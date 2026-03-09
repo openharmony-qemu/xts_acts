@@ -105,7 +105,7 @@ export default function webExtensionConnectionCallbackOnDisconnectParameterTest(
             expect(connection === null).assertTrue();
           } else {
             hilog.info(0x0000, 'testTag', `${tcNumber} connection is not null, checking properties`);
-            expect(connection).assertNotNull();
+            expect(connection).assertNull();
           }
           
           // 测试完成
