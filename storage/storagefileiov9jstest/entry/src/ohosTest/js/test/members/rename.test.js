@@ -222,6 +222,50 @@ describe('fileIO_fs_rename', function () {
   });
 
   /**
+  * @tc.name   fileIO_test_rename_sync_009
+  * @tc.number SUB_DF_FILEIO_RENAME_SYNC_0900
+  * @tc.desc   Test renameSync() interfaces. Test first parameter is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_rename_sync_009', Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_rename_sync_009');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.renameSync(null, fpath + 'test');
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_rename_sync_009 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_rename_sync_010
+  * @tc.number SUB_DF_FILEIO_RENAME_SYNC_1000
+  * @tc.desc   Test renameSync() interfaces. Test first parameter is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_rename_sync_010', Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_rename_sync_010');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.renameSync(undefined, fpath + 'test');
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_rename_sync_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
    * @tc.name   fileIO_test_rename_async_000
    * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_0000
    * @tc.desc   Test rename() interfaces. Promise.
@@ -567,6 +611,159 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       console.log('fileIO_test_rename_async_013 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_rename_async_014
+  * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_1400
+  * @tc.desc   Test rename() interfaces. Promise. Test first parameter is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_rename_async_014', Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_rename_async_014');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      await fileIO.rename(null, fpath + 'test');
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_rename_async_014 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_rename_async_015
+  * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_1500
+  * @tc.desc   Test rename() interfaces. Promise. Test first parameter is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_rename_async_015', Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_rename_async_015');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      await fileIO.rename(undefined, fpath + 'test');
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_rename_async_015 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_rename_async_016
+  * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_1600
+  * @tc.desc   Test rename() interfaces. Callback. Test first parameter is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_rename_async_016', Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_rename_async_016');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.rename(null, fpath + 'test', (err) => {
+        if (err) {
+          console.log('fileIO_test_rename_async_016 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_rename_async_016 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_rename_async_017
+  * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_1700
+  * @tc.desc   Test rename() interfaces. Callback. Test first parameter is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_rename_async_017', Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_rename_async_017');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.rename(undefined, fpath + 'test', (err) => {
+        if (err) {
+          console.log('fileIO_test_rename_async_017 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_rename_async_017 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_rename_async_018
+  * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_1800
+  * @tc.desc   Test rename() interfaces. Callback. Test second parameter is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_rename_async_018', Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_rename_async_018');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.rename(fpath, null, (err) => {
+        if (err) {
+          console.log('fileIO_test_rename_async_018 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_rename_async_018 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_rename_async_019
+  * @tc.number SUB_DF_FILEIO_RENAME_ASYNC_1900
+  * @tc.desc   Test rename() interfaces. Callback. Test second parameter is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_rename_async_019', Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_rename_async_019');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.rename(fpath, undefined, (err) => {
+        if (err) {
+          console.log('fileIO_test_rename_async_019 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_rename_async_019 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
     }
   });
 });

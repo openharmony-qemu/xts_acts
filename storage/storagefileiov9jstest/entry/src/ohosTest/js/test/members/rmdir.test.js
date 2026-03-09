@@ -135,6 +135,42 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_sync_005
+   * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0500
+   * @tc.desc   Test rmdirSync() interface. Test first parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_rmdir_sync_005', Level.LEVEL0, function () {
+    try {
+      fileIO.rmdirSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_rmdir_sync_005 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_rmdir_sync_006
+   * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0600
+   * @tc.desc   Test rmdirSync() interface. Test first parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_rmdir_sync_006', Level.LEVEL0, function () {
+    try {
+      fileIO.rmdirSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_rmdir_sync_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
    * @tc.name   fileIO_test_rmdir_async_000
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0000
    * @tc.desc   Test rmdir() interface. Promise.
@@ -300,7 +336,7 @@ describe('fileIO_fs_rmdir', function () {
 
   /**
    * @tc.name   fileIO_test_rmdir_async_006
-   * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0600
+   * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_ASYNC_0600
    * @tc.desc   Test rmdirSync() interface. Promise.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
@@ -317,6 +353,92 @@ describe('fileIO_fs_rmdir', function () {
     } catch (e) {
       console.log('fileIO_test_rmdir_async_006 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_rmdir_async_007
+   * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0700
+   * @tc.desc   Test rmdir() interface. Promise. Test first parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_rmdir_async_007', Level.LEVEL0, async function (done) {
+    try {
+      await fileIO.rmdir(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_rmdir_async_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_rmdir_async_008
+   * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0800
+   * @tc.desc   Test rmdir() interface. Promise. Test first parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_rmdir_async_008', Level.LEVEL0, async function (done) {
+    try {
+      await fileIO.rmdir(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_rmdir_async_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_rmdir_async_009
+   * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0900
+   * @tc.desc   Test rmdir() interface. Callback. Test first parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_rmdir_async_009', Level.LEVEL0, async function (done) {
+    try {
+      fileIO.rmdir(null, (err) => {
+        if (err) {
+          console.log('fileIO_test_rmdir_async_009 error: {message: ' + err.message + ', code: ' + err.code + '}');
+		  expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_rmdir_async_009 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+	  done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_rmdir_async_010
+   * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_1000
+   * @tc.desc   Test rmdir() interface. Callback. Test first parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_rmdir_async_010', Level.LEVEL0, async function (done) {
+    try {
+      fileIO.rmdir(undefined, (err) => {
+        if (err) {
+          console.log('fileIO_test_rmdir_async_010 error: {message: ' + err.message + ', code: ' + err.code + '}');
+		  expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_rmdir_async_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+	  done();
     }
   });
 })

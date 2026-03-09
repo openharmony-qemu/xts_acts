@@ -294,6 +294,63 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_012
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_1200
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_sync_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    try {
+      fileIO.readTextSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_readtext_sync_012 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_sync_013
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_1300
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_sync_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    try {
+      fileIO.readTextSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_readtext_sync_013 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_sync_014
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_1400
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_sync_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_readtext_sync_014');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let str = fileIO.readTextSync(fpath, null);
+      expect(str != null).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_readtext_sync_014 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
    * @tc.name   fileIO_test_readtext_async_000
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0000
    * @tc.desc   Test readtext() interfaces. Promise.
@@ -866,6 +923,227 @@ describe('fileIO_fs_readtext', function () {
     } catch (e) {
       console.log('fileIO_test_readtext_async_021 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_async_022
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2200
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_async_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    try {
+      let str = await fileIO.readText(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_readtext_async_022 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_async_023
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2300
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_async_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    try {
+      let str = await fileIO.readText(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_readtext_async_023 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_async_024
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2400
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_async_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_readtext_async_024');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      let str = await fileIO.readText(fpath, null);
+      expect(str != null).assertTrue();
+      done()
+    } catch (e) {
+      console.log('fileIO_test_readtext_async_024 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_async_025
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2500
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_async_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_readtext_async_025');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      let str = await fileIO.readText(fpath, undefined);
+      expect(str == FILE_CONTENT).assertTrue();
+      done()
+    } catch (e) {
+      console.log('fileIO_test_readtext_async_025 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_async_026
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2600
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_async_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    
+    try {
+      fileIO.readText(null, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_readtext_async_026 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_async_027
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2700
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_async_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    
+    try {
+      fileIO.readText(undefined, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_readtext_async_027 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_async_028
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2800
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_async_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    
+    try {
+      fileIO.readText(null, {}, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_readtext_async_028 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_async_029
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2900
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_async_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    
+    try {
+      fileIO.readText(undefined, {}, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_readtext_async_029 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_async_030
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_3000
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_async_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_readtext_async_030');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    
+    try {
+      fileIO.readText(fpath, null, (err, str) => {
+        if (err) {
+          console.log('fileIO_test_readtext_async_030 error package: ' + err.message + ', code: ' + err.code);
+          expect(false).assertTrue();
+        }
+        expect(str == FILE_CONTENT).assertTrue();
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_readtext_async_030 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_readtext_async_031
+   * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_3100
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_readtext_async_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_readtext_async_031');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    
+    try {
+      fileIO.readText(fpath, undefined, (err, str) => {
+        if (err) {
+          console.log('fileIO_test_readtext_async_031 error package: ' + err.message + ', code: ' + err.code);
+          expect(false).assertTrue();
+        }
+        expect(str == FILE_CONTENT).assertTrue();
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_readtext_async_031 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
     }
   });
 });
