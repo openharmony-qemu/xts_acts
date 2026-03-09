@@ -8440,5 +8440,544 @@ export default function soundPoolTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0100', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (soundId: number) => {
+          console.info('Succeeded in loadComplete, soundId：' + soundId);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0200', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (soundId: number) => {
+          console.info('Succeeded in loadComplete, soundId：' + soundId);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0300', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (streamId) => {
+          console.info('The stream with streamId: ' + streamId + ' has finished playing.');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0400', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (streamId) => {
+          console.info('The stream with streamId: ' + streamId + ' has finished playing.');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0500', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+            }
+        soundPool.on(null, () => {
+          console.info('Succeeded in playFinished');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0600', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, () => {
+          console.info('Succeeded in playFinished');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0700', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (error: BusinessError) => {
+          console.error('error happened,and error message is :' + error.message);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0800', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (error: BusinessError) => {
+          console.error('error happened,and error message is :' + error.message);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0900', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (errorInfo) => {
+          console.error('error happened,and error code is :' + errorInfo.errorCode.code);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1000', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (errorInfo) => {
+          console.error('error happened,and error code is :' + errorInfo.errorCode.code);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1100', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (soundId: number) => {
+          console.info('Succeeded in loadComplete, soundId：' + soundId);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1200', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (soundId: number) => {
+          console.info('Succeeded in loadComplete, soundId：' + soundId);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1300', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (streamId) => {
+          console.info('The stream with streamId: ' + streamId + ' has finished playing.');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1400', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (streamId) => {
+          console.info('The stream with streamId: ' + streamId + ' has finished playing.');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1500', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+            }
+        soundPool.on(null, () => {
+          console.info('Succeeded in playFinished');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1600', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, () => {
+          console.info('Succeeded in playFinished');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1700', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (error: BusinessError) => {
+          console.error('error happened,and error message is :' + error.message);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1800', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (error: BusinessError) => {
+          console.error('error happened,and error message is :' + error.message);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1900', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (errorInfo) => {
+          console.error('error happened,and error code is :' + errorInfo.errorCode.code);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_2000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_2000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_2000', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (errorInfo) => {
+          console.error('error happened,and error code is :' + errorInfo.errorCode.code);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
   })
 }

@@ -523,5 +523,257 @@ export default function AVTranscoderTest() {
       await createAVTranscoder(done, testContext, testName);
       completeListen(done, testName);
     })
+
+    /**
+     * @tc.name   null_undefined_001
+     * @tc.number AV_TRANSCODER_TEST_016
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_001', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.on(null, (progress: number) => {
+          console.info('avTranscoder progressUpdate = ' + progress);
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   null_undefined_002
+     * @tc.number AV_TRANSCODER_TEST_017
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_002', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.on(undefined, (progress: number) => {
+          console.info('avTranscoder progressUpdate = ' + progress);
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   null_undefined_003
+     * @tc.number AV_TRANSCODER_TEST_018
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_003', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.on(null, async () => {
+          console.info('avTranscoder complete');
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   null_undefined_004
+     * @tc.number AV_TRANSCODER_TEST_019
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_004', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.on(undefined, async () => {
+          console.info('avTranscoder complete');
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+  
+    /**
+     * @tc.name   null_undefined_005
+     * @tc.number AV_TRANSCODER_TEST_020
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_005', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.on(null, (err: BusinessError) => {
+          console.info('case avTranscoder.on(error) called, errMessage is ' + err.message);
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   null_undefined_006
+     * @tc.number AV_TRANSCODER_TEST_021
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_006', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.on(undefined, (err: BusinessError) => {
+          console.info('case avTranscoder.on(error) called, errMessage is ' + err.message);
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   null_undefined_007
+     * @tc.number AV_TRANSCODER_TEST_022
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_007', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.off(null, (progress: number) => {
+          console.info('avTranscoder progressUpdate = ' + progress);
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   null_undefined_008
+     * @tc.number AV_TRANSCODER_TEST_023
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_008', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.off(undefined, (progress: number) => {
+          console.info('avTranscoder progressUpdate = ' + progress);
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   null_undefined_009
+     * @tc.number AV_TRANSCODER_TEST_024
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_009', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.off(null, async () => {
+          console.info('avTranscoder complete');
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   null_undefined_010
+     * @tc.number AV_TRANSCODER_TEST_025
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_010', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.off(undefined, async () => {
+          console.info('avTranscoder complete');
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+  
+    /**
+     * @tc.name   null_undefined_011
+     * @tc.number AV_TRANSCODER_TEST_026
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_011', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.off(null, (err: BusinessError) => {
+          console.info('case avTranscoder.on(error) called, errMessage is ' + err.message);
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   null_undefined_012
+     * @tc.number AV_TRANSCODER_TEST_027
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('null_undefined_012', Level.LEVEL0, async (done: Function) => {
+      try {
+        let avTranscoder = await media.createAVTranscoder();
+        avTranscoder.off(undefined, (err: BusinessError) => {
+          console.info('case avTranscoder.on(error) called, errMessage is ' + err.message);
+        });
+      } catch (err) {
+        console.error('avTranscoderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
   })
 }

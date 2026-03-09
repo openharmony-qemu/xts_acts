@@ -2403,6 +2403,7 @@ export default function VideoPlayerAPICallbackTest() {
         console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
         expect().assertFail();
       }
+      done();
     });
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0002
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0002
@@ -2425,6 +2426,7 @@ export default function VideoPlayerAPICallbackTest() {
         console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
         expect().assertFail();
       }
+      done();
     });
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0003
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0003
@@ -2447,6 +2449,7 @@ export default function VideoPlayerAPICallbackTest() {
         console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
         expect().assertFail();
       }
+      done();
     });
 
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0004
@@ -2470,6 +2473,7 @@ export default function VideoPlayerAPICallbackTest() {
         console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
         expect().assertFail();
       }
+      done();
     });
 
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0005
@@ -2493,6 +2497,7 @@ export default function VideoPlayerAPICallbackTest() {
         console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
         expect().assertFail();
       }
+      done();
     });
 
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0006
@@ -2516,6 +2521,7 @@ export default function VideoPlayerAPICallbackTest() {
         console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
         expect().assertFail();
       }
+      done();
     });
 
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0007
@@ -2539,6 +2545,7 @@ export default function VideoPlayerAPICallbackTest() {
         console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
         expect().assertFail();
       }
+      done();
     });
   
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0008
@@ -2562,6 +2569,7 @@ export default function VideoPlayerAPICallbackTest() {
         console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
         expect().assertFail();
       }
+      done();
     });
   })
 }
