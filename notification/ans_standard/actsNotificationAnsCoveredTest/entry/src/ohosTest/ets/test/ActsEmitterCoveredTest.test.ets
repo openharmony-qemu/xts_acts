@@ -1098,5 +1098,46 @@ export default function actsEmitterCovered() {
       console.info(TAG+ ' test case end');
       done();
     })
+    
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_2600
+     * @tc.number Sub_Notification_Emitter_Capabilities_2600
+     * @tc.desc   test  off interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_2600', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_2600';
+      let innerEvent: emitter.InnerEvent = {
+        eventId: 1
+      };
+
+      let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+        expect(false).assertTrue();
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter.on(innerEvent, onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter.off(undefined);
+        emitter.off(null);
+        console.info(TAG+ ' emit event success');
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
   })
 }
