@@ -89,7 +89,6 @@ function getSheetPickerOptions(): photoAccessHelper.PhotoSelectOptions {
   sheetPickerOptions.isDestroyedWithNavigation = true;
   sheetPickerOptions.isEditSupported = true;
   sheetPickerOptions.isOriginalSupported = true;
-  sheetPickerOptions.isDestroyedWithNavigation = true;
   sheetPickerOptions.subWindowName = 'xts_demo';
   return sheetPickerOptions;
 }
@@ -148,7 +147,7 @@ async function clickUpdatablePickerButton(driver: Driver) {
     selectMode: SelectMode.MULTI_SELECT,
     singleSelectionMode: photoAccessHelper.SingleSelectionMode.SELECT_MODE,
     isRepeatSelectSupported: true,
-    preselectedUris: ['1'],
+    preselectedUris: undefined,
     photoBrowserBackgroundColorMode: PickerColorMode.LIGHT,
     uiComponentColorMode: PickerColorMode.LIGHT,
     isSlidingSupported: false,
@@ -308,19 +307,19 @@ async function saveMovingPhoto() {
   fileIo.closeSync(resultFile);
 }
 
-async function closePickerModel(driver: Driver) {
-  await CommonFunc.sleep(500);
+async function closePickerModel(driver: Driver, time ?: number) {
+  await CommonFunc.sleep(time ?? 500);
   const checkbox: Component | null = await driver.findComponent(ON.id('Selector_0'));
   if (checkbox) {
     await checkbox.click();
-    await CommonFunc.sleep(300);
+    await CommonFunc.sleep(time ?? 300);
     const button: Component | null = await driver.findComponent(ON.id('Complete'));
     await button?.click();
   } else {
     const closeBtn: Component | null = await driver.findComponent(ON.id('Third_Select_PickerClose'));
     await closeBtn?.click();
   }
-  await CommonFunc.sleep(500);
+  await CommonFunc.sleep(time ?? 500);
 }
 
 export default function TextPicker() {
@@ -377,6 +376,8 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.checkBoxColor = '#000000';
+      pickerOptions.preselectedUris = undefined;
+      pickerOptions.isPreviewForSingleSelectionSupported = undefined;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: String = pickerOptions.checkBoxColor ?? '';
         let result: PhotoPickerResult = event?.data?.msg.checkBoxColor;
@@ -423,6 +424,8 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.backgroundColor = '#000000';
+      pickerOptions.preselectedUris = [''];
+      pickerOptions.isPreviewForSingleSelectionSupported = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: String = pickerOptions.backgroundColor ?? '';
         let result: PhotoPickerResult = event?.data?.msg.backgroundColor;
@@ -469,6 +472,8 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.isRepeatSelectSupported = true;
+      pickerOptions.preselectedUris = [];
+      pickerOptions.isPreviewForSingleSelectionSupported = true;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: boolean = pickerOptions.isRepeatSelectSupported ?? false;
         let result: PhotoPickerResult = event?.data?.msg.isRepeatSelectSupported;
@@ -1515,7 +1520,7 @@ export default function TextPicker() {
           .catch((error: Error) => {
             console.info('PhotoViewPicker select error, uri: ' + JSON.stringify(error));
           })
-          await closePickerModel(driver);
+        await closePickerModel(driver);
       }
 
       console.info("testPicker24 finish");
@@ -1523,7 +1528,7 @@ export default function TextPicker() {
     });
 
 
-    
+
     /**
      * @tc.name   testPicker_callback_24
      * @tc.number testPicker_callback_24
@@ -1549,8 +1554,8 @@ export default function TextPicker() {
         expect(photoSelectOptions.completeButtonText).assertEqual(textList[index]);
         photoPicker.select(photoSelectOptions, (err: BusinessError, result: photoAccessHelper.PhotoSelectResult) => {
           if (err) {
-          console.info('PhotoViewPicker select error, uri: ' + JSON.stringify(err));
-          return;
+            console.info('PhotoViewPicker select error, uri: ' + JSON.stringify(err));
+            return;
           }
           console.info('PhotoViewPicker select success, uri: ' + JSON.stringify(result));
         });
@@ -1724,26 +1729,29 @@ export default function TextPicker() {
           fileNameExtension: '.png',
           photoType: photoAccessHelper.PhotoType.IMAGE,
         }
-        pickerController.saveTrustedPhotoAssets([], () => {}, [config], undefined);
+        pickerController.saveTrustedPhotoAssets([], (err, arr) => {
+          if (err) {
+            console.error("testPicker28 saveTrustedPhotoAssets empty trustedUri fail");
+          }
+          expect(arr.length).assertEqual(0);
+        }, [config], undefined);
         pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, (a) => {
           if (!a) {
-            console.log("testPicker28 replacePhotoPickerPreview fail");
-            expect(false).assertTrue();
+            console.error("testPicker28 replacePhotoPickerPreview fail");
+            expect().assertFail();
           } else {
             console.log("testPicker28 replacePhotoPickerPreview success");
             pickerController.saveTrustedPhotoAssets([boxPath], (err, arr) => {
-              if (!err) {
-                console.log("testPicker28 saveTrustedPhotoAssets fail");
-                expect(false).assertTrue();
-              } else {
-                console.log("testPicker28 saveTrustedPhotoAssets success, save uris:" + arr);
+              if (err) {
+                console.error("testPicker28 saveTrustedPhotoAssets fail");
               }
+              expect(arr.length).assertLarger(0);
             }, undefined, SaveMode.SAVE_AS);
           }
         });
       } catch (error) {
-        console.log("testPicker28 error:" + JSON.stringify(error));
-        expect(false).assertTrue();
+        console.error("testPicker28 error:" + JSON.stringify(error));
+        expect().assertFail()
       }
       await CommonFunc.sleep(1000);
       console.log("testPicker28 btn click finish");
@@ -2413,7 +2421,7 @@ export default function TextPicker() {
       }
       const options: RecentPhotoOptions = new RecentPhotoOptions();
       options.period = 0;
-      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE; 
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
       options.photoSource = PhotoSource.ALL;
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
       try{
@@ -2427,7 +2435,7 @@ export default function TextPicker() {
       }
       await CommonFunc.sleep(1000);
 
-      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE; 
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
       options.photoSource = PhotoSource.SCREENSHOT;
       try{
         phAccessHelper.getRecentPhotoInfo(options).then((result : RecentPhotoInfo) => {
@@ -2440,7 +2448,7 @@ export default function TextPicker() {
       }
       await CommonFunc.sleep(1000);
 
-      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.VIDEO_TYPE; 
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.VIDEO_TYPE;
       options.photoSource = PhotoSource.CAMERA;
       try{
         phAccessHelper.getRecentPhotoInfo(options).then((result : RecentPhotoInfo) => {
@@ -2452,8 +2460,8 @@ export default function TextPicker() {
         expect(false).assertTrue();
       }
       await CommonFunc.sleep(1000);
-      
-      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.MOVING_PHOTO_IMAGE_TYPE; 
+
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.MOVING_PHOTO_IMAGE_TYPE;
       options.photoSource = PhotoSource.ALL;
       try{
         phAccessHelper.getRecentPhotoInfo(options).then((result : RecentPhotoInfo) => {
@@ -2666,15 +2674,15 @@ export default function TextPicker() {
       }
       let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = getSheetPickerOptions();
       let testFinished: boolean = true;
-      let contextRecoveryInfo = {
-        "albumUri" : "",
-        "displayName": "IMG_20240522_085513_3.jpg",
-        "recommendationType": 0,
-        "selectedRecommendationType": 0,
-        "time": 1756371999125,
-        "version": 1.0,
-        "gridLevel": 1
-      } as photoAccessHelper.ContextRecoveryInfo;
+      const contextRecoveryInfo: photoAccessHelper.ContextRecoveryInfo = {
+        albumUri : '',
+        displayName: 'IMG_20240522_085513_3.jpg',
+        recommendationType: 0,
+        selectedRecommendationType: 0,
+        time: 1756371999125,
+        version: 1.0,
+        gridLevel: 1
+      };
       sheetPickerOptions.contextRecoveryInfo = contextRecoveryInfo;
       sheetPickerOptions.isMovingPhotoBadgeShown = true;
       let code = EventType.PHOTO_PICKER_INFO;
@@ -2898,6 +2906,10 @@ export default function TextPicker() {
 
       await routeToUrl(options);
 
+      await CommonFunc.sleep(2000);
+      pickerController.addData(DataType.SET_SELECTED_INFO, preselectedInfos);
+      await CommonFunc.sleep(2000);
+      pickerController.deleteData(DataType.SET_SELECTED_INFO, preselectedInfos);
       // Set DataType.SET_SELECTED_INFO
       pickerController.setData(DataType.SET_SELECTED_INFO, preselectedInfos);
 
@@ -3543,7 +3555,21 @@ export default function TextPicker() {
         return;
       }
       let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-      sheetPickerOptions.isReturnToPhotoBrowserEnabled = false;
+      sheetPickerOptions.isReturnToPhotoBrowserEnabled = true;
+      sheetPickerOptions.isEditSupported = true;
+      sheetPickerOptions.isOriginalSupported = true;
+      sheetPickerOptions.subWindowName = 'xts_demo';
+      sheetPickerOptions.isDestroyedWithNavigation = true;
+      sheetPickerOptions.contextRecoveryInfo = {
+        albumUri: '',
+        displayName: '',
+        recommendationType: 0,
+        selectedRecommendationType: 0,
+        time: 1756371999125,
+        version: 1.0,
+        gridLevel: photoAccessHelper.GridLevel.COMPACT
+      };
+
       try{
         let photoPicker = new photoAccessHelper.PhotoViewPicker();
         photoPicker.select(sheetPickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
@@ -3556,7 +3582,13 @@ export default function TextPicker() {
         console.error(`testPicker65, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
       }
 
-      sheetPickerOptions.isReturnToPhotoBrowserEnabled = true;
+      sheetPickerOptions.isReturnToPhotoBrowserEnabled = false;
+      sheetPickerOptions.isEditSupported = false;
+      sheetPickerOptions.isOriginalSupported = false;
+      sheetPickerOptions.subWindowName = '';
+      sheetPickerOptions.isDestroyedWithNavigation = false;
+      sheetPickerOptions.contextRecoveryInfo.gridLevel = photoAccessHelper.GridLevel.SPACIOUS;
+
       try{
         let photoPicker = new photoAccessHelper.PhotoViewPicker();
         photoPicker.select(sheetPickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
@@ -3564,6 +3596,43 @@ export default function TextPicker() {
           JSON.stringify(PhotoSelectResult));
         })
         await closePickerModel(driver);
+      } catch(err) {
+        expect(false).assertTrue();
+        console.error(`testPicker65, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+
+      sheetPickerOptions.contextRecoveryInfo.gridLevel = photoAccessHelper.GridLevel.STANDARD;
+      try{
+        let photoPicker = new photoAccessHelper.PhotoViewPicker();
+        photoPicker.select(sheetPickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('testPicker65, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(PhotoSelectResult));
+        })
+        await closePickerModel(driver);
+      } catch(err) {
+        expect(false).assertTrue();
+        console.error(`testPicker65, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+
+      try{
+        let photoPicker = new photoAccessHelper.PhotoViewPicker();
+        photoPicker.select(undefined).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('testPicker65, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(PhotoSelectResult));
+        })
+        await closePickerModel(driver, 100);
+      } catch(err) {
+        expect(false).assertTrue();
+        console.error(`testPicker65, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+
+      try{
+        let photoPicker = new photoAccessHelper.PhotoViewPicker();
+        photoPicker.select(null).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('testPicker65, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(PhotoSelectResult));
+        })
+        await closePickerModel(driver, 100);
       } catch(err) {
         expect(false).assertTrue();
         console.error(`testPicker65, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
@@ -3850,7 +3919,7 @@ export default function TextPicker() {
         expect(selectResult).assertEqual([expectedUri]);
       }
 
-      const triggerPhotoPickerInfoEvent = (uri: string) => {
+      const triggerPhotoPickerInfoEvent = async (uri: string) => {
         let code: number = EventType.PHOTO_PICKER_INFO;
         let callback = (event: events_emitter.EventData): void => handlePhotoPickerInfo(event, uri);
 
@@ -3866,6 +3935,11 @@ export default function TextPicker() {
         } as ClickResult];
 
         pickerController.addData(DataType.SET_ITEM_CLICK_RESULT, clickResult);
+        await CommonFunc.sleep(2000);
+        pickerController.deleteData(DataType.SET_ITEM_CLICK_RESULT, clickResult);
+        await CommonFunc.sleep(2000);
+        pickerController.setData(DataType.SET_ITEM_CLICK_RESULT, clickResult);
+        await CommonFunc.sleep(2000);
       }
 
       let event: events_emitter.InnerEvent = {
@@ -4167,48 +4241,20 @@ export default function TextPicker() {
         photoAccessHelper.MovingPhotoBadgeStateType.NOT_MOVING_PHOTO;
       pickerOptions.globalMovingPhotoState = state;
 
-      expect(pickerOptions.isEditSupported).assertTrue();
-      expect(pickerOptions.isOriginalSupported).assertTrue();
-      expect(pickerOptions.isDestroyedWithNavigation).assertTrue();
+      pickerOptions.isReturnToPhotoBrowserEnabled = true;
+      pickerOptions.isEditSupported = true;
+      pickerOptions.isOriginalSupported = true;
+      pickerOptions.isDestroyedWithNavigation = true;
 
-      pickerOptions.isEditSupported = false;
-      pickerOptions.isOriginalSupported = false;
-      pickerOptions.subWindowName = undefined;
-      pickerOptions.isDestroyedWithNavigation = false;
-
-      expect(pickerOptions.isEditSupported).assertFalse();
-      expect(pickerOptions.isOriginalSupported).assertFalse();
-      expect(pickerOptions.subWindowName).assertUndefined();
-      expect(pickerOptions.isDestroyedWithNavigation).assertFalse();
-
-      const contextRecoveryInfo: photoAccessHelper.ContextRecoveryInfo = {
+      pickerOptions.contextRecoveryInfo = {
         albumUri: '',
         displayName: '',
         recommendationType: 0,
         selectedRecommendationType: 0,
         time: 1756371999125,
         version: 1.0,
-        gridLevel: photoAccessHelper.GridLevel.STANDARD
-      }
-
-      pickerOptions.contextRecoveryInfo = contextRecoveryInfo;
-
-      expect(pickerOptions.contextRecoveryInfo.albumUri).assertEqual('');
-      expect(pickerOptions.contextRecoveryInfo.displayName).assertEqual('');
-      expect(pickerOptions.contextRecoveryInfo.gridLevel).assertEqual(photoAccessHelper.GridLevel.STANDARD);
-      pickerOptions.contextRecoveryInfo.gridLevel = photoAccessHelper.GridLevel.SPACIOUS;
-      expect(pickerOptions.contextRecoveryInfo.gridLevel).assertEqual(photoAccessHelper.GridLevel.SPACIOUS);
-      pickerOptions.contextRecoveryInfo.gridLevel = photoAccessHelper.GridLevel.COMPACT;
-      expect(pickerOptions.contextRecoveryInfo.gridLevel).assertEqual(photoAccessHelper.GridLevel.COMPACT);
-      pickerOptions.contextRecoveryInfo = undefined;
-      expect(pickerOptions.contextRecoveryInfo).assertUndefined();
-
-      pickerOptions.subWindowName = '';
-      expect(pickerOptions.subWindowName).assertEqual('');
-
-      expect(pickerOptions).not().assertUndefined();
-      expect(pickerOptions).not().assertNull();
-
+        gridLevel: photoAccessHelper.GridLevel.SPACIOUS
+      };
 
       let photoPicker = new photoAccessHelper.PhotoViewPicker();
       try{
@@ -4221,6 +4267,44 @@ export default function TextPicker() {
         })
         await closePickerModel(driver);
       } catch(error) {
+        console.error(`testPicker75, PhotoViewPicker.select failed with err: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(23800151);
+      }
+
+      // false
+      pickerOptions.isReturnToPhotoBrowserEnabled = false;
+      pickerOptions.isEditSupported = false;
+      pickerOptions.isOriginalSupported = false;
+      pickerOptions.subWindowName = '';
+      pickerOptions.isDestroyedWithNavigation = false;
+      pickerOptions.contextRecoveryInfo.gridLevel = photoAccessHelper.GridLevel.STANDARD;
+      try {
+        photoPicker.select(pickerOptions,
+          (err: BusinessError, PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+            if (err) {
+              console.error(`select callback错误码覆盖 failed with err: ${err.code}, ${err.message}`);
+              return;
+            }
+            console.info('select callback错误码覆盖 successfully,uri:' + JSON.stringify(PhotoSelectResult));
+          })
+        await closePickerModel(driver);
+      } catch (error) {
+        console.error(`testPicker75, PhotoViewPicker.select failed with err: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(23800151);
+      }
+
+      pickerOptions.contextRecoveryInfo.gridLevel = photoAccessHelper.GridLevel.COMPACT;
+      try {
+        photoPicker.select(pickerOptions,
+          (err: BusinessError, PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+            if (err) {
+              console.error(`select callback错误码覆盖 failed with err: ${err.code}, ${err.message}`);
+              return;
+            }
+            console.info('select callback错误码覆盖 successfully,uri:' + JSON.stringify(PhotoSelectResult));
+          })
+        await closePickerModel(driver);
+      } catch (error) {
         console.error(`testPicker75, PhotoViewPicker.select failed with err: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(23800151);
       }
