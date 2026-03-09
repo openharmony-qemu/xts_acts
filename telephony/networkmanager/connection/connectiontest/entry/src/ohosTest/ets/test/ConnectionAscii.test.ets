@@ -699,5 +699,39 @@ export default function ConnectionAsciiTest() {
       expect(result).assertEqual("www.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.com");
     });
 
+    /**
+     * @tc.name    testConnectiongetDnsAscii4800
+     * @tc.number  SUB_Connection_getDnsAscii_4800
+     * @tc.desc    Test NULL parameters.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('testConnectiongetDnsAscii4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const result = connection.getDnsAscii(null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code)).assertEqual(2100001);
+      }
+    });
+
+    /**
+     * @tc.name    testConnectiongetDnsAscii4900
+     * @tc.number  SUB_Connection_getDnsAscii_4900
+     * @tc.desc    Test UNDEFINED parameters.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('testConnectiongetDnsAscii4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const result = connection.getDnsAscii(undefined,connection.ConversionProcess.NO_CONFIGURATION);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code)).assertEqual(2100001);
+      }
+    });    
+
   });
 }
