@@ -49,8 +49,8 @@ let voice = call.hasVoiceCapability()
 
 function getAudioManager() {
   audioManager = audio.getAudioManager();
-  audioVolumeManager = audioManager.getVolumeManager();
   if (audioManager != null) {
+    let audioVolumeManager = audioManager.getVolumeManager();
     console.info(`${TagFrmwk}: getAudioManger : PASS`);
   } else {
     console.info(`${TagFrmwk}: getAudioManger : FAIL`);
