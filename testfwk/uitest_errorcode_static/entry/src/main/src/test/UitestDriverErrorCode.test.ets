@@ -825,11 +825,10 @@ export default function uitestDriverErrorTest() {
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.mouseScroll({x: 100, y: 100,displayId: 0}, true, 10, 0, 0, -1);
-        expect().assertFail();
+        await driver.mouseScroll({x: 100, y: 100,displayId: 0}, true, 10, 0, 0, 199);
       } catch (e) {
-        hilog.info(domain, tag, `test_driver_mouseScroll_401_static speed = -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
+        hilog.info(domain, tag, `test_driver_mouseScroll_401_static speed = 199 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
       try {
         await driver.mouseScroll({x: 100, y: 100,displayId: 0}, true, 10, 0, 0, 501);
@@ -1331,6 +1330,13 @@ export default function uitestDriverErrorTest() {
         hilog.info(domain, tag, `test_driver_penLongClick_static presure = -1 is, ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
+      try {
+        await driver.penLongClick({x: 100, y: 100, displayId: 0}, 2);
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_penLongClick_static presure = 2 is, ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
       hilog.info(domain, tag, `test_driver_penLongClick_static end`);
     })
 
@@ -1435,6 +1441,18 @@ export default function uitestDriverErrorTest() {
       } catch (e) {
         hilog.info(domain, tag, `test_driver_penSwipe_static speed = -1 is, ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.penSwipe({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, 199, 1);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_penSwipe_static speed = 199 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.penSwipe({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, 40001, 1);
+      } catch (e) {
+        hilog.info(domain, tag, `test_driver_penSwipe_static speed = 40001 is, ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
       try {
         await driver.penSwipe({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, 200, -1);
@@ -1612,21 +1630,21 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_clickAt_static p.x = -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver.clickAt({x: 100, y: -1});
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_clickAt_static p.y= -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver.clickAt({x: 100, y: 100, displayId: -1});
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_clickAt_static p.displayId= -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       hilog.info(domain, tag, `test_driver_clickAt_static end`);
     })
@@ -1647,21 +1665,21 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_doubleClickAt_static p.x = -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver.doubleClickAt({x: 100, y: -1});
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_doubleClickAt_static p.y= -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver.doubleClickAt({x: 100, y: 100, displayId: -1});
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_doubleClickAt_static p.displayId= -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       hilog.info(domain, tag, `test_driver_doubleClickAt_static end`);
     })
