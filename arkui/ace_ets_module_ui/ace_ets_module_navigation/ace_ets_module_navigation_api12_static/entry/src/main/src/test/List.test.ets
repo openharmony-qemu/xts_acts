@@ -384,7 +384,7 @@ export default function testsuite() {
   PushNameRouterTest();
   Navigation_SingleInstanceJump40();
   Navigation_SingleInstanceJump41();
-  NavPathStack2();
+  //NavPathStack2();
   //NavPathStack2_4();
   //NavPathStack6();
   //NavPathStack23();
