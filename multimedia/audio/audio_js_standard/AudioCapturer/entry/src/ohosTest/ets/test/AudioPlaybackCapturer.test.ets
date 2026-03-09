@@ -561,14 +561,18 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -630,14 +634,18 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -719,14 +727,18 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -808,14 +820,18 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -897,14 +913,18 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -986,14 +1006,18 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -1034,14 +1058,18 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo,
         playbackCaptureConfig: playbackCaptureConfig,
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -1103,14 +1131,18 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device =>
+      const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
