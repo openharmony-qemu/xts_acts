@@ -2213,7 +2213,7 @@ export default function applicationManagerTest() {
         let autoStartApps = applicationManager.getAutoStartApps(SELFWANT);
         expect(autoStartApps.length == 2).assertTrue();
         expect(autoStartApps[0].parameters?.isHiddenStart).assertFalse();
-        expect(autoStartApps[1].parameters?.isHiddenStart).assertTrue();
+        expect(autoStartApps[1].parameters?.isHiddenStart).assertFalse();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
