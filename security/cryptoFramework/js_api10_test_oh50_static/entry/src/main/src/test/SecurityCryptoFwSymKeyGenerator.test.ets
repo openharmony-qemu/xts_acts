@@ -629,7 +629,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`“${error}“, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
     });

@@ -814,7 +814,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED); // ERR_INVALID_CALL
+        expect(error.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL); // ERR_INVALID_CALL
       }
       done();
     });

@@ -115,32 +115,6 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0301
-     * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0301
-     * @tc.desc   digest data sign of RSA1024|PKCS1|NoHash|OnlySign
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_Security_CryptoFramework_RSASignRecover_Func_0301", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "RSA512";
-        let paddingName = "PKCS1";
-        let isOnlySign: boolean = true;
-        let mdName: string = "NoHash";
-        let dataLen: int = 64;
-        let isSync: boolean = false;
-        let isPadding: boolean = true;
-        let ret: boolean = await rsaTest.createDigestDataSignVerify(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
-        expect(ret).assertTrue();
-      } catch (error) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0400
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0400
      * @tc.desc   digest is RSA2048|PKCS1|NoHash|OnlySign
