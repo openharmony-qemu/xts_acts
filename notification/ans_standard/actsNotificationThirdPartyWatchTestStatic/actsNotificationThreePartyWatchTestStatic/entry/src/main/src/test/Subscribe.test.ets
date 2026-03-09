@@ -122,8 +122,7 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL0
       */
-    it('Sub_Notification_Ans_ThreePartyWatch_Static_1011_884', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_ThreePartyWatch_Static_1011_884', Level.LEVEL0, async (done: () => void): Promise<void> => {
       // 定义当前测试用例的日志标签
       let TAG = "Sub_Notification_Ans_ThreePartyWatch_Static_1011_884 ";
       let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [];
