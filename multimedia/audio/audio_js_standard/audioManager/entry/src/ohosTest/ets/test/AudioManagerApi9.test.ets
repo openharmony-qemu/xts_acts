@@ -30,6 +30,7 @@ console.info(`${TagFrmwk}: Create AudioManger Object JS Framework`);
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 let audioManager: audio.AudioManager;
 let streamManager: audio.AudioStreamManager;
+let audioVolumeManager: audio.AudioVolumeManager;
 let audioMedia = 3;
 let minVol = 0;
 let maxVol = 15;
@@ -3046,7 +3047,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_UNKNOWN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_UNKNOWN: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3066,7 +3067,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_VOICE_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_VOICE_COMMUNICATION: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3086,7 +3087,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_VOICE_ASSISTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_VOICE_ASSISTANT: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3106,7 +3107,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_ALARM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_ALARM);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_ALARM);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_ALARM: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3126,7 +3127,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_VOICE_MESSAGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_VOICE_MESSAGE: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3146,7 +3147,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_NOTIFICATION_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_NOTIFICATION_RINGTONE: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3166,7 +3167,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_RINGTONE: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3186,7 +3187,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_NOTIFICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_NOTIFICATION: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3206,7 +3207,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_ACCESSIBILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_ACCESSIBILITY: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3226,7 +3227,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_MOVIE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_MOVIE: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3246,7 +3247,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_GAME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_GAME);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_GAME);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_GAME: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3266,7 +3267,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_AUDIOBOOK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_AUDIOBOOK: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3286,7 +3287,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_NAVIGATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_NAVIGATION: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3306,7 +3307,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_BY_STREAM_STREAM_USAGE_VIDEO_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        let volume:number = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
         console.info(`${TagFrmwk}: getVolumeByStream with STREAM_USAGE_VIDEO_COMMUNICATION: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -3326,7 +3327,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_UNKNOWN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_UNKNOWN: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3346,7 +3347,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_MUSIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_MUSIC: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3366,7 +3367,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_VOICE_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_VOICE_COMMUNICATION: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3386,7 +3387,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_VOICE_ASSISTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_VOICE_ASSISTANT: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3406,7 +3407,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_ALARM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_ALARM);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_ALARM);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_ALARM: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3426,7 +3427,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_VOICE_MESSAGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_VOICE_MESSAGE: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3446,7 +3447,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_NOTIFICATION_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_NOTIFICATION_RINGTONE: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3466,7 +3467,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_RINGTONE: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3486,7 +3487,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_NOTIFICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_NOTIFICATION: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3506,7 +3507,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_ACCESSIBILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_ACCESSIBILITY: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3526,7 +3527,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_MOVIE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_MOVIE: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3546,7 +3547,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_GAME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_GAME);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_GAME);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_GAME: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3566,7 +3567,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_AUDIOBOOK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_AUDIOBOOK: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3586,7 +3587,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_NAVIGATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_NAVIGATION: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3606,7 +3607,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MIN_VOLUME_BY_STREAM_STREAM_USAGE_VIDEO_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        let volume:number = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
         console.info(`${TagFrmwk}: getMinVolumeByStream with STREAM_USAGE_VIDEO_COMMUNICATION: PASS, minVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3626,7 +3627,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_UNKNOWN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_UNKNOWN: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3646,7 +3647,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_MUSIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_MUSIC: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3666,7 +3667,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_VOICE_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_VOICE_COMMUNICATION: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3686,7 +3687,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_VOICE_ASSISTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_VOICE_ASSISTANT: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3706,7 +3707,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_ALARM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_ALARM);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_ALARM);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_ALARM: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3726,7 +3727,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_VOICE_MESSAGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_VOICE_MESSAGE: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3746,7 +3747,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_NOTIFICATION_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_NOTIFICATION_RINGTONE: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3766,7 +3767,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_RINGTONE: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3786,7 +3787,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_NOTIFICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_NOTIFICATION: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3806,7 +3807,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_ACCESSIBILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_ACCESSIBILITY: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3826,7 +3827,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_MOVIE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_MOVIE: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3846,7 +3847,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_GAME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_GAME);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_GAME);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_GAME: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3866,7 +3867,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_AUDIOBOOK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_AUDIOBOOK: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3886,7 +3887,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_NAVIGATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_NAVIGATION: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3906,7 +3907,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_MAX_VOLUME_BY_STREAM_STREAM_USAGE_VIDEO_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        let volume:number = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
         console.info(`${TagFrmwk}: getMaxVolumeByStream with STREAM_USAGE_VIDEO_COMMUNICATION: PASS, maxVolume: ${volume}`);
         done();
       } catch (err) {
@@ -3926,7 +3927,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_UNKNOWN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_UNKNOWN: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -3946,7 +3947,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_VOICE_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_VOICE_COMMUNICATION: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -3966,7 +3967,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_VOICE_ASSISTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_VOICE_ASSISTANT: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -3986,7 +3987,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_ALARM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_ALARM);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_ALARM);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_ALARM: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -4006,7 +4007,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_VOICE_MESSAGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_VOICE_MESSAGE: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -4026,7 +4027,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_NOTIFICATION_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_NOTIFICATION_RINGTONE: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -4046,7 +4047,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_RINGTONE: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -4066,7 +4067,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_NOTIFICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_NOTIFICATION: PASS, is: ${isMuted}`);
         done();
       } catch (err) {
@@ -4086,7 +4087,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_ACCESSIBILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_ACCESSIBILITY: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -4106,7 +4107,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_MOVIE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_MOVIE: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -4126,7 +4127,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_GAME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_GAME);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_GAME);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_GAME: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -4146,7 +4147,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_AUDIOBOOK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_AUDIOBOOK: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -4166,7 +4167,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_NAVIGATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_NAVIGATION: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -4186,7 +4187,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_USAGE_VIDEO_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let isMuted = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
         console.info(`${TagFrmwk}: isSystemMutedForStream with STREAM_USAGE_VIDEO_COMMUNICATION: PASS, isMuted: ${isMuted}`);
         done();
       } catch (err) {
@@ -4206,7 +4207,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_UNKNOWN_INVALID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 10, audio.DeviceType.INVALID);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 10, audio.DeviceType.INVALID);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_UNKNOWN and INVALID: PASS, volume: ${volume}`);
         expect(false).assertTrue();
       } catch (err) {
@@ -4227,7 +4228,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_MEDIA_EARPIECE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_MEDIA, 10, audio.DeviceType.EARPIECE);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_MEDIA, 10, audio.DeviceType.EARPIECE);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_MEDIA and EARPIECE: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4247,7 +4248,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_VOICE_COMMUNICATION_WIRED_HEADSET_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 10, audio.DeviceType.WIRED_HEADSET);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 10, audio.DeviceType.WIRED_HEADSET);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_VOICE_COMMUNICATION and WIRED_HEADSET: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4267,7 +4268,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_VOICE_ASSISTANT_WIRED_HEADPHONES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 10, audio.DeviceType.WIRED_HEADPHONES);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 10, audio.DeviceType.WIRED_HEADPHONES);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_VOICE_ASSISTANT and WIRED_HEADPHONES: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4287,7 +4288,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_ALARM_BLUETOOTH_SCO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_ALARM, 10, audio.DeviceType.BLUETOOTH_SCO);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_ALARM, 10, audio.DeviceType.BLUETOOTH_SCO);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_ALARM and BLUETOOTH_SCO: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4307,7 +4308,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_VOICE_MESSAGE_BLUETOOTH_A2DP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 10, audio.DeviceType.BLUETOOTH_A2DP);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 10, audio.DeviceType.BLUETOOTH_A2DP);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_VOICE_MESSAGE and BLUETOOTH_A2DP: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4327,7 +4328,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_NOTIFICATION_RINGTONE_MIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE, 10, audio.DeviceType.MIC);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE, 10, audio.DeviceType.MIC);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_NOTIFICATION_RINGTONE and MIC: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4347,7 +4348,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_RINGTONE_USB_HEADSET_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE, 10, audio.DeviceType.USB_HEADSET);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE, 10, audio.DeviceType.USB_HEADSET);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_RINGTONE and USB_HEADSET: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4367,7 +4368,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_NOTIFICATION_DISPLAY_PORT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 10, audio.DeviceType.DISPLAY_PORT);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 10, audio.DeviceType.DISPLAY_PORT);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_NOTIFICATION and DISPLAY_PORT: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4387,7 +4388,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_ACCESSIBILITY_REMOTE_CAST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 10, audio.DeviceType.REMOTE_CAST);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 10, audio.DeviceType.REMOTE_CAST);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_ACCESSIBILITY and REMOTE_CAST: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4407,7 +4408,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_MOVIE_USB_DEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_MOVIE, 10, audio.DeviceType.USB_DEVICE);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_MOVIE, 10, audio.DeviceType.USB_DEVICE);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_MOVIE and USB_DEVICE: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4427,7 +4428,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_GAME_HDMI_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_GAME, 10, audio.DeviceType.HDMI);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_GAME, 10, audio.DeviceType.HDMI);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_GAME and HDMI: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4447,7 +4448,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_AUDIOBOOK_LINE_DIGITAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 10, audio.DeviceType.LINE_DIGITAL);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 10, audio.DeviceType.LINE_DIGITAL);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_AUDIOBOOK and LINE_DIGITAL: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4467,7 +4468,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_NAVIGATION_REMOTE_DAUDIO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 10, audio.DeviceType.REMOTE_DAUDIO);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 10, audio.DeviceType.REMOTE_DAUDIO);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_NAVIGATION and REMOTE_DAUDIO: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4487,7 +4488,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_VIDEO_COMMUNICATION_HEARING_AID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 10, audio.DeviceType.HEARING_AID);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 10, audio.DeviceType.HEARING_AID);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_VIDEO_COMMUNICATION and HEARING_AID: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4507,7 +4508,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_UNKNOWN_NEARLINK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 10, audio.DeviceType.NEARLINK);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 10, audio.DeviceType.NEARLINK);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_UNKNOWN and NEARLINK: PASS, volume: ${volume}`);
         done();
       } catch (err) {
@@ -4527,7 +4528,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_MEDIA_SYSTEM_PRIVATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_MEDIA, 10, audio.DeviceType.SYSTEM_PRIVATE);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_MEDIA, 10, audio.DeviceType.SYSTEM_PRIVATE);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_MEDIA and SYSTEM_PRIVATE: PASS, {volume: ${volume}`);
         done();
       } catch (err) {
@@ -4547,7 +4548,7 @@ export default function audioManagerApi9() {
     */
     it('AUDIO_VOLUME_MANAGER_GET_VOLUME_IN_UNIT_OF_DB_BY_STREAM_STREAM_USAGE_VOICE_COMMUNICATION_DEFAULT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let volume = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 10, audio.DeviceType.DEFAULT);
+        let volume:number = audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 10, audio.DeviceType.DEFAULT);
         console.info(`${TagFrmwk}: getVolumeInUnitOfDbByStream with STREAM_USAGE_VOICE_COMMUNICATION and DEFAULT: PASS, volume: ${volume}`);
         done();
       } catch (err) {
