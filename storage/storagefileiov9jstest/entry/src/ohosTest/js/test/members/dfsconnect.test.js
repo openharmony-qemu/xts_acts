@@ -227,10 +227,10 @@ export default function fileIODfsConnect() {
       }
     }
     try {
-      fileIO.disconnectDfs(networkId,DFSListener).then(() => {
-        console.log(testNum + "Success to disconnectDfs");
+      fileIO.connectDfs(networkId,DFSListener).then(() => {
+        console.log(testNum + "Success to connectDfs");
       }).catch((err) => {
-        console.log(testNum + 'disconnectDfs failed with error code: ' + err.code + 'message: ' + err.message);
+        console.log(testNum + 'connectDfs failed with error code: ' + err.code + 'message: ' + err.message);
         expect(err.code === 13900004).assertTrue();
         done();
       });
@@ -259,10 +259,10 @@ export default function fileIODfsConnect() {
       }
     }
     try {
-      fileIO.disconnectDfs(networkId,DFSListener).then(() => {
-        console.log(testNum + "Success to disconnectDfs");
+      fileIO.connectDfs(networkId,DFSListener).then(() => {
+        console.log(testNum + "Success to connectDfs");
       }).catch((err) => {
-        console.log(testNum + 'disconnectDfs failed with error code: ' + err.code + 'message: ' + err.message);
+        console.log(testNum + 'connectDfs failed with error code: ' + err.code + 'message: ' + err.message);
         expect(err.code === 13900004).assertTrue();
         done();
       });
