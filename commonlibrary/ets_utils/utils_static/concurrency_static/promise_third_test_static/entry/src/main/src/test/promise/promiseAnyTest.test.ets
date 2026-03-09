@@ -632,7 +632,6 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    // App died
     it('PromiseAnyTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const asyncFn1 = async (): Promise<int> => {
         await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 80)});
@@ -695,7 +694,6 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    // App died
     it('PromiseAnyTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const promises: Promise<int>[] = [];
 
@@ -772,7 +770,6 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    //App died
     it('PromiseAnyTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const promises: Promise<int>[] = [];
 
@@ -921,7 +918,6 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    // App died
     it('PromiseAnyTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const serviceA = new Service('A', 100);
       const serviceB = new Service('B', 60);
@@ -976,7 +972,6 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    // App died
     it('PromiseAnyTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const createPromisesDynamically = async (count: number): Promise<Promise<number>[]> => {
         const promises: Promise<number>[] = [];
@@ -1079,7 +1074,6 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    // App died
     it('PromiseAnyTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const processData = async (data: string, delay: int): Promise<string> => {
         // Step 1: Validate

@@ -340,7 +340,6 @@ export default function promiseCombTest(){
      * @tc.type Function
      * @tc.level Level 6
      */
-    // App died
     it('AsyncAwaitCombTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const reliableTask = (id: number, delay: int): Promise<number> => {
         return new Promise<number>((resolve) => {

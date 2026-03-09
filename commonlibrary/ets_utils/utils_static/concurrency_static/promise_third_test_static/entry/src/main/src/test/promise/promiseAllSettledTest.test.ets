@@ -416,7 +416,6 @@ export default function promiseAllSettledTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // 停止迁移，现有编译不兼容问题需解决，否则此接口没法使用
     it('PromiseAllSettledTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const targetDate = new Date('2024-01-01');
       const p1: Promise<Date> = new Promise<Date>((resolve) => resolve(targetDate));
