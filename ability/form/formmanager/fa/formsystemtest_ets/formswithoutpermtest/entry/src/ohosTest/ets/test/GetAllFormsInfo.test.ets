@@ -14,15 +14,75 @@
  */
 
 import formHost from '@ohos.application.formHost';
+import formProvider from '@ohos.application.formProvider';
 import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { BusinessError } from '@ohos.base';
 
 export const getAllFormsInfoTest = (describeName:string, filterParameter:number) => {
+  const ERR_CODE1 = 1;
   const ERR_OK_CODE = 2;
+  const ERR_CODE7 = 7;
   const ERR_OK = `success`;
 
   describe(`${describeName}`, () => {
     const callbackName = `FMS_getFormsInfo_0200 callback`;
     const promiseName = `FMS_getFormsInfo_0200 promise`;
+
+    /**
+     * @tc.name   GetAllFormsInfoTest_001
+     * @tc.number GetAllFormsInfoTest_001
+     * @tc.desc   setFormNextRefreshTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it(`GetAllFormsInfoTest_001`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let name: string = 'GetAllFormsInfoTest_001';
+      console.log(`==========${name} start==========`);
+      let onCallBack = () => {
+        console.log(`==========${name} onCallBack==========`);
+      };
+      formProvider.setFormNextRefreshTime(null, null, onCallBack);
+      console.log(`==========${name} start 1==========`);
+      formProvider.setFormNextRefreshTime(null, null)
+        .then((data) => {
+          console.log(`==========${name} then==========${JSON.stringify(data)}`);
+        })
+        .catch((error:BusinessError) => {
+          expect(error.code).assertEqual(ERR_CODE1);
+          console.log(`==========${name} catch==========${JSON.stringify(error)}`);
+      });
+      console.log(`==========${name} end==========`);
+      done();
+    });
+
+    /**
+     * @tc.name   GetAllFormsInfoTest_002
+     * @tc.number GetAllFormsInfoTest_002
+     * @tc.desc   updateForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it(`GetAllFormsInfoTest_002`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let name: string = 'GetAllFormsInfoTest_002';
+      console.log(`==========${name} start==========`);
+      let onCallBack = () => {
+        console.log(`==========${name} onCallBack==========`);
+      };
+      formProvider.updateForm(null, null, onCallBack);
+      console.log(`==========${name} start 1==========`);
+      formProvider.updateForm(null, null)
+        .then((data) => {
+          console.log(`==========${name} then==========${JSON.stringify(data)}`);
+        })
+        .catch((error:BusinessError) => {
+          expect(error.code).assertEqual(ERR_CODE7);
+          console.log(`==========${name} catch==========${JSON.stringify(error)}`);
+      });
+      console.log(`==========${name} end==========`);
+      done();
+    });
 
     /**
      * @tc.name   ${callbackName}
