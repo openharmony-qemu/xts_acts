@@ -59,30 +59,6 @@ function sleep(count: int): Promise<int> {
   })
 }
 
-let drivenFn = async () => {
-  try {
-    let driver: Driver = Driver.create();
-    console.info('come in driveFn');
-    console.info('driver is ${JSON.stringify(driver)}');
-    await sleep(1000);
-    let button = await driver.findComponent(ON.text('始终允许'));
-    if (button) {
-      console.info('button is $ {JSON.stringify(button)}');
-      await sleep(1000);
-      await button.click();
-      await sleep(1000);
-    } else {
-      let button1 = await driver.findComponent(ON.text('允许'));
-      console.info('button is $ {JSON.stringify(button)}');
-      await sleep(1000);
-      await button1!.click();
-      await sleep(1000);
-    }
-  } catch (err) {
-    console.info('err is' + err);
-  }
-}
-
 export default function ObjectStoreNoPermissionsStatic() {
   describe('ObjectStoreNoPermissionsStatic', () => {
     beforeAll(async (done: () => void) => {
@@ -91,8 +67,6 @@ export default function ObjectStoreNoPermissionsStatic() {
         abilityName: 'EntryAbility'
       });
       await sleep(5000);
-      await drivenFn();
-      await sleep(2000);
       context1 = AppStorage.get<common.UIAbilityContext>("context")! as common.UIAbilityContext;
       done();
     });
