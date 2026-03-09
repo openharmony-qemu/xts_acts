@@ -993,8 +993,7 @@ export default function EmptyParamTest() {
         try {
             let context: Context = AppStorage.get('null') as Context;
             const key: string = '';
-            let holder: contact.Holder = null;
-            contact.queryContact(context, key, holder, (err: BusinessError) => {
+            contact.queryContact(context, key, null, (err: BusinessError) => {
                 if (err) {
                     console.error(`contactsApi_query_empty_test_3500: contact query err = ${err.code}, ${err.message}`);
                     expect(err.code === 201).assertTrue();
@@ -1055,8 +1054,7 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('context') as Context;
-            let contactAttributes: contact.ContactAttributes = null;
-            contact.queryContact(null, null, contactAttributes, (err: BusinessError) => {
+            contact.queryContact(null, null, null, (err: BusinessError) => {
                 if (err) {
                     console.error(`contactsApi_query_empty_test_3700: contact query err = ${err.code}, ${err.message}`);
                     expect(err.code === 201).assertTrue();
@@ -1085,9 +1083,7 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('context') as Context;
-            let contactAttributes: contact.ContactAttributes = null;
-            let holder: contact.Holder = null;
-            contact.queryContact(null, null, holder, contactAttributes, (err: BusinessError) => {
+            contact.queryContact(null, null, null, null, (err: BusinessError) => {
                 if (err) {
                     console.error(`contactsApi_query_empty_test_3800: contact query err = ${err.code}, ${err.message}`);
                     expect(err.code === 201).assertTrue();
@@ -1119,8 +1115,7 @@ export default function EmptyParamTest() {
             let contactAttributes: contact.ContactAttributes = {
                 attributes: []
             };
-            let holder: contact.Holder = null;
-            contact.queryContact(null, null, holder, contactAttributes, (err: BusinessError) => {
+            contact.queryContact(null, null, null, contactAttributes, (err: BusinessError) => {
                 if (err) {
                     console.error(`contactsApi_query_empty_test_3900: contact query err = ${err.code}, ${err.message}`);
                     expect(err.code === 201).assertTrue();
@@ -1149,9 +1144,7 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('null') as Context;
-            let contactAttributes: contact.ContactAttributes = null;
-            let holder: contact.Holder = null;
-            await contact.queryContact(context, null, holder, contactAttributes).then(() => {
+            await contact.queryContact(context, null, null, null).then(() => {
                 console.info("contactsApi_query_empty_test_4000: query success");
                 done();
             }).catch((error: BusinessError) => {
@@ -1180,8 +1173,7 @@ export default function EmptyParamTest() {
             let contactAttributes: contact.ContactAttributes = {
                 attributes: []
             };
-            let holder: contact.Holder = null;
-            await contact.queryContact(context, null, holder, contactAttributes).then(() => {
+            await contact.queryContact(context, null, null, contactAttributes).then(() => {
                 console.info("contactsApi_query_empty_test_4100: query success");
                 done();
             }).catch((error: BusinessError) => {
@@ -1326,7 +1318,7 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('context') as Context;
-            await contact.queryContacts(null, null, null).then(() => {
+            await contact.queryContacts(null, null, null).then((contacts: contact.Contact[]) => {
                 console.info("contactsApi_query_empty_test_4600: query success");
                 done();
             }).catch((error: BusinessError) => {
@@ -1340,7 +1332,6 @@ export default function EmptyParamTest() {
             done();
         }
     });
-
 
 
     })
