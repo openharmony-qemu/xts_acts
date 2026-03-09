@@ -16,7 +16,7 @@
 import {
   fileIO, FILE_CONTENT, prepareFile, nextFileName, describe, it, expect,
 } from '../Common';
- import { Level } from '@ohos/hypium';
+import { Level, TestType, Size } from '@ohos/hypium';
 
 export default function fileIOCreateStream() {
 describe('fileIO_fs_createStream', function () {
