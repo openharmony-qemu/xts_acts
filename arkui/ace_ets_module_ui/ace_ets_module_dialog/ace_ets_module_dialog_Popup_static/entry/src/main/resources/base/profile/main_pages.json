@@ -2,6 +2,7 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/popup/popup",
-    "MainAbility/pages/Popup/PopupIndex"
+    "MainAbility/pages/Popup/PopupIndex",
+    "MainAbility/pages/Popup/CustomPopupOptions"
   ]
 }

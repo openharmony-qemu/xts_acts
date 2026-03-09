@@ -51,7 +51,7 @@ export default function ContextMenuOptionsTest() {
     beforeEach(async (): Promise<void> => {
       console.info("ContextMenuOptionsTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/PopupCommon/ContextMenuOptions',
+        url: 'MainAbility/pages/bindContextMenu/ContextMenuOptions',
       };
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router;
