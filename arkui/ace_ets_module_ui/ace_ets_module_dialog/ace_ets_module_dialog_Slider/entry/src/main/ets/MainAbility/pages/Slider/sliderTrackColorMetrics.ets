@@ -113,7 +113,7 @@ struct sliderTrackColorMetricsTest {
           }).id('Slider0')
             .width('80%')
             .blockColor('#FF0000')
-            .trackColor( $r('sys.color.ohos_id_color_component_normal'))
+            .trackColor( $r('sys.color.slider_outset_track_bg_color'))
             .selectedColor('#4169E1')
             .showTips(true)
         }

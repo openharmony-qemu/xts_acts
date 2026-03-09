@@ -19,6 +19,11 @@ import router from '@ohos.router';
 import CommonFunc from "../../MainAbility/common/Common";
 import events_emitter from '@ohos.events.emitter';
 
+function defaultStrokeWidth(sysWidth: Resource) {
+  let resourceStrokeWidth = getContext().resourceManager.getNumber(sysWidth.id)
+  let newStrokeWidth: string = Math.round(px2vp(resourceStrokeWidth)) + '.00vp'
+  return newStrokeWidth;
+}
 export default function sliderTest() {
   describe('ActsAbilityTest', () => {
     beforeEach(async (done: Function) => {
@@ -1742,8 +1747,8 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_1400  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(width).assertEqual('12.00vp');
-          expect(height).assertEqual('12.00vp');
+          expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+          expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
 
           console.info("----ArkUX_Stage_Slider_blockSize_1400  isend ");
 
@@ -1806,8 +1811,8 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_1600  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(width).assertEqual('12.00vp');
-          expect(height).assertEqual('12.00vp');
+          expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+          expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           done();
         } catch (err) {
           console.info('ArkUX_Stage_Slider_blockSize_1600 ERROR: ' + JSON.stringify(err));
@@ -1833,8 +1838,8 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_1700  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(width).assertEqual('12.00vp');
-          expect(height).assertEqual('12.00vp');
+          expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+          expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           done();
         } catch (err) {
           console.info('ArkUX_Stage_Slider_blockSize_1700 ERROR: ' + JSON.stringify(err));
