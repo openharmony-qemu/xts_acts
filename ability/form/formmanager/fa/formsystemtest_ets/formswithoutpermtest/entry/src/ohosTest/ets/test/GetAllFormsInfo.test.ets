@@ -36,7 +36,7 @@ export const getAllFormsInfoTest = (describeName:string, filterParameter:number)
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it(`GetAllFormsInfoTest_001`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it('GetAllFormsInfoTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let name: string = 'GetAllFormsInfoTest_001';
       console.log(`==========${name} start==========`);
       let onCallBack = () => {
@@ -64,7 +64,7 @@ export const getAllFormsInfoTest = (describeName:string, filterParameter:number)
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it(`GetAllFormsInfoTest_002`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it('GetAllFormsInfoTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let name: string = 'GetAllFormsInfoTest_002';
       console.log(`==========${name} start==========`);
       let onCallBack = () => {
