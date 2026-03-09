@@ -38,6 +38,7 @@ import SliderAttrs2 from './SliderTest/SliderAttrs2.test';
 import TimePickerAddApi from './TimePickerTest/TimePickerAddApi.test';
 import enableHapticFeedbackTest from './TimePickerTest/enableHapticFeedbackTest.test';
 import RatingAdvancedTest from './RatingTest/RatingAdvanced.test';
+import XComponentSliderTest from './SliderTest/XcomponentSlider.test';
 import textPickerDefaultPickerItemHeightJsunit from './TextPickerTest/textPicker.test';
 
 export default function testsuite() {
@@ -64,5 +65,6 @@ export default function testsuite() {
   SliderAttrs2();
   enableHapticFeedbackTest();
   RatingAdvancedTest();
+  XComponentSliderTest();
   textPickerDefaultPickerItemHeightJsunit()
 }
