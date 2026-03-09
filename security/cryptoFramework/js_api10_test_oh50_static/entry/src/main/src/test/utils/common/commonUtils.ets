@@ -184,6 +184,44 @@ async function doScryptCallback(kdf: cryptoFramework.Kdf,
   });
 }
 
+interface OH_MF_INFO {
+  algName: string;
+  mdSize: number;
+}
+
+let OH_MD_SPEC: OH_MF_INFO[] = [
+  {algName: "SHA1", mdSize: 20},
+  {algName: "SHA224", mdSize: 28},
+  {algName: "SHA256", mdSize: 32},
+  {algName: "SHA384", mdSize: 48},
+  {algName: "SHA512", mdSize: 64},
+  {algName: "SHA3-256", mdSize: 32},
+  {algName: "SHA3-384", mdSize: 48},
+  {algName: "SHA3-512", mdSize: 64},
+  {algName: "MD5", mdSize: 16},
+]
+
+class MdMap {
+  map: HashMap<string, number> = new HashMap<string, number>();
+  constructor(isInit: boolean = true) {
+    if (isInit) {
+      this.map.set("SHA1", 20);
+      this.map.set("SHA224", 28);
+      this.map.set("SHA256", 32);
+      this.map.set("SHA384", 48);
+      this.map.set("SHA512", 64);
+      this.map.set("SHA3-256", 32);
+      this.map.set("SHA3-384", 48);
+      this.map.set("SHA3-512", 64);
+      this.map.set("MD5", 16);
+      this.map.set("SM3", 32);
+    }
+  }
+  getMdSize(algName: string): number {
+    return this.map.get(algName)
+  }
+}
+
 export {
   stringToUint8Array,
   decToHexString,
@@ -194,5 +232,8 @@ export {
   compareNumber,
   compareString,
   doScryptCallback,
-  asyncType
+  asyncType,
+  OH_MF_INFO,
+  OH_MD_SPEC,
+  MdMap
 }

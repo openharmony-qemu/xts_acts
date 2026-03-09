@@ -23,6 +23,7 @@ import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import  buffer  from '@ohos.buffer';
 import { cryptoFramework } from '@kit.CryptoArchitectureKit'
+import { MdMap } from './utils/common/commonUtils';
 import * as commonUtils from './utils/common/commonUtils';
 import * as signVerifySyncUtils from './utils/signVerify/signVerifySyncUtils';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -99,6 +100,39 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_0102
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_0102
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let cipherSpec of signVerifySyncUtils.RSA_PKCS1_CIPHER_SPEC) {
+          let algName: string = cipherSpec[0][0];
+          algName = algName === "RSA" ? "RSA512": algName;
+          let padding: string = cipherSpec[1][0];
+          let digests: string[] = cipherSpec[2];
+          let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+          for (let digest of digests) {
+            let msgLen: number = (new MdMap()).getMdSize(digest);
+            let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+            let signAlgName: string = algName + "|" + padding + "|" + digest + "|OnlySign";
+            let verifyAlgName: string = algName + "|" + padding + "|" + digest + "|OnlyVerify";
+            let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+            let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
      * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_0200
      * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_0200
      * @tc.desc   algorithm is Sign and verify
@@ -120,6 +154,39 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             let signAlgName: string = algName + "|" + padding + "|" + digest + "|" + mgf_digest;
             let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
             let ret: boolean = signVerifySyncUtils.doVerifySync(signAlgName, keyPair.pubKey, msg, dataSign);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_0201
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_0201
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_0201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        for (let cipherSpec of signVerifySyncUtils.RSA_PSS_CIPHER_SPEC) {
+          let algName: string = cipherSpec[0][0];
+          let padding: string = cipherSpec[1][0];
+          let digest: string = cipherSpec[2][0];
+          let mgf_digests: string[] = cipherSpec[3];
+          let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+          let msgLen: number = (new MdMap()).getMdSize(digest);
+          let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+          for (let mgf_digest of mgf_digests) {
+            let signAlgName: string = algName + "|" + padding + "|" + digest + "|" + mgf_digest + "|OnlySign";
+            let verifyAlgName: string = algName + "|" + padding + "|" + digest + "|" + mgf_digest + "|OnlyVerify";
+            let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+            let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
             expect(ret).assertTrue();
           }
         }
@@ -481,6 +548,114 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1201
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1201
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_1201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let cipherSpec of signVerifySyncUtils.ECDSA_SPEC) {
+          let algName: string = cipherSpec[0][0];
+          algName = algName === "ECC" ? "ECC224": algName;
+          let digests: string[] = cipherSpec[1];
+          let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+          for (let digest of digests) {
+            let signAlgName: string = algName + "|" + digest + "|OnlySign";
+            let verifyAlgName: string = algName + "|" + digest + "|OnlyVerify";
+            let msgLen: number = (new MdMap()).getMdSize(digest);
+            let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+            let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+            let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1202
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1202
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_1202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "ECC256";
+        let digest: string = "MD5"; // ECC不支持MD5
+        let signAlgName: string = algName + "|" + digest + "|OnlySign";
+        cryptoFramework.createSign(signAlgName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1203
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1203
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_1203", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "ECC256";
+        let digest: string = "SM3"; // ECC不支持SM3
+        let signAlgName: string = algName + "|" + digest + "|OnlyVerify";
+        cryptoFramework.createVerify(signAlgName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1204
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1204
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_1204", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let cipherSpec of signVerifySyncUtils.ECDSA_SPEC) {
+          let algName: string = cipherSpec[0][0];
+          algName = algName === "ECC" ? "ECC224": algName;
+          let digests: string[] = cipherSpec[1];
+          let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+          for (let digest of digests) {
+            let signAlgName: string = algName + "|" + digest + "|OnlySign";
+            let verifyAlgName: string = algName + "|" + digest + "|OnlyVerify";
+            let msgLen: number = (new MdMap()).getMdSize(digest);
+            let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+            let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
+            let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
      * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1300
      * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1300
      * @tc.desc   algorithm is Sign and verify
@@ -607,6 +782,33 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
       } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1601
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1601
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_1601", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let msgLen: number = 16;
+        let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+        let algName: string = "RSA512";
+        let signAlgName: string = "RSA512|PKCS1|MD5|OnlySign";
+        let verifyAlgName: string = "RSA512|PKCS1|MD5|OnlyVerify";
+        let blockSize: number = 5;
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        signVerifySyncUtils.doVerifyWithUpdateSync(verifyAlgName, keyPair.pubKey, msg, dataSign, blockSize);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED); // ERR_INVALID_CALL
       }
       done();
     });
@@ -1886,6 +2088,200 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
       } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_4600
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4600
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RSA1024";
+        let signAlgName: string = "RSA1024|PSS|SHA384|MGF1_SHA256|OnlySign";
+        let msgLen: number = 32;
+        let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_4700
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4700
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RSA512";
+        let signAlgName: string = "RSA512|PKCS1|SHA256|OnlySign";
+        let msgLen: number = 48;
+        let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_4800
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4800
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RSA512";
+        let signAlgName: string = "RSA512|PKCS1|SM3|OnlySign";
+        let msgLen: number = 32;
+        let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_4900
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4900
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RSA512";
+        let signAlgName: string = "RSA512|PKCS1|SHA256|OnlySign";
+        let verifyAlgName: string = "RSA512|PKCS1|SHA256"
+        let msgData: number[] = [
+          0xe3, 0xb0, 0xc4, 0x42, 0x98, 0xfc, 0x1c, 0x14, 0x9a, 0xfb, 0xf4, 0xc8, 0x99, 0x6f, 0xb9, 0x24,
+          0x27, 0xae, 0x41, 0xe4, 0x64, 0x9b, 0x93, 0x4c, 0xa4, 0x95, 0x99, 0x1b, 0x78, 0x52, 0xb8, 0x55
+        ];
+        let msg: cryptoFramework.DataBlob = {data: new Uint8Array(msgData)};
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let signData: cryptoFramework.DataBlob = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlgName);
+        await verify.init(keyPair.pubKey);
+        let ret = await verify.verify(null, signData);
+        expect(ret).assertTrue();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_5000
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_5000
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "ECC256";
+        let signAlgName: string = "ECC256|SHA256|OnlySign";
+        let verifyAlgName: string = "ECC256|SHA256"
+        let msgData: number[] = [
+          0xe3, 0xb0, 0xc4, 0x42, 0x98, 0xfc, 0x1c, 0x14, 0x9a, 0xfb, 0xf4, 0xc8, 0x99, 0x6f, 0xb9, 0x24,
+          0x27, 0xae, 0x41, 0xe4, 0x64, 0x9b, 0x93, 0x4c, 0xa4, 0x95, 0x99, 0x1b, 0x78, 0x52, 0xb8, 0x55
+        ];
+        let msg: cryptoFramework.DataBlob = {data: new Uint8Array(msgData)};
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let signData: cryptoFramework.DataBlob = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlgName);
+        await verify.init(keyPair.pubKey);
+        let ret = await verify.verify(null, signData);
+        expect(ret).assertTrue();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_5100
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_5100
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let verifyAlgName: string = "DSA1024|SHA256|OnlyVerify";
+        cryptoFramework.createVerify(verifyAlgName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_5200
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_5200
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let verifyAlgName: string = "SM2|SM3|OnlyVerify";
+        cryptoFramework.createVerify(verifyAlgName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_5300
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_5300
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let verifyAlgName: string = "Ed25519|OnlyVerify";
+        cryptoFramework.createVerify(verifyAlgName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
       }
       done();
     });

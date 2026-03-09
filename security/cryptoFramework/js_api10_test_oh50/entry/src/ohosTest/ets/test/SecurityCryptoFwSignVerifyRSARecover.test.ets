@@ -173,6 +173,86 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0501
+     * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0501
+     * @tc.desc   digest data sign of RSA2048|PKCS1|SHA512|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_RSASignRecover_Func_0501", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let algName: string = "RSA1024";
+        let paddingName = "PKCS1";
+        let isOnlySign: boolean = true;
+        let isSync: boolean = false;
+        let isPadding: boolean = true;
+        for (let index = 0; index < commonUtil.OH_MD_SPEC.length; index++) {
+          let ret: boolean = await rsaTest.createDigestDataSignVerify(algName,
+            paddingName, commonUtil.OH_MD_SPEC[index].algName, commonUtil.OH_MD_SPEC[index].mdSize, isOnlySign, isSync, isPadding);
+          expect(ret).assertTrue();
+        }
+      } catch (err) {
+        console.error(`“${err}“, error code: ${err.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0502
+     * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0502
+     * @tc.desc   digest data sign of RSA512|PKCS1|SHA512|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_RSASignRecover_Func_0502", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let algName: string = "RSA512";
+        let paddingName = "PKCS1";
+        let isOnlySign: boolean = true;
+        let dataLen: number = 64;
+        let isSync: boolean = false;
+        let mdName: string = "SHA512"; // 规格不支持SHA512
+        let isPadding: boolean = true;
+        await rsaTest.createDigestDataSignVerify(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`“${err}“, error code: ${err.code}`);
+        expect(err.code).assertEqual(17630001);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0503
+     * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0503
+     * @tc.desc   digest data sign of RSA2048|PKCS1|SHA512|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_RSASignRecover_Func_0503", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let algName: string = "RSA1024";
+        let paddingName = "PKCS1";
+        let isOnlySign: boolean = true;
+        let isSync: boolean = true;
+        let isPadding: boolean = true;
+        for (let index = 0; index < commonUtil.OH_MD_SPEC.length; index++) {
+          let ret: boolean = await rsaTest.createDigestDataSignVerify(algName,
+            paddingName, commonUtil.OH_MD_SPEC[index].algName, commonUtil.OH_MD_SPEC[index].mdSize, isOnlySign, isSync, isPadding);
+          expect(ret).assertTrue();
+        }
+      } catch (err) {
+        console.error(`“${err}“, error code: ${err.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
 	
     /**
      * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0600
