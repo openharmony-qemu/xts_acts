@@ -580,24 +580,6 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        // /**
-        //  * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
-        //  * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
-        //  * @tc.desc   Test constant PhyType api12
-        //  * @tc.type   FUNCTION
-        //  * @tc.size   MEDIUMTEST
-        //  * @tc.level  LEVEL2
-        //  */
-        // it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        //     let PHY_LE_1M = bluetooth.PhyType.PHY_LE_1M;
-        //     console.info("[bluetooth_js]PHY_LE_1M : " + JSON.stringify(PHY_LE_1M));
-        //     expect(true).assertEqual(PHY_LE_1M == 1);
-        //
-        //     let PHY_LE_ALL_SUPPORTED = bluetooth.PhyType.PHY_LE_ALL_SUPPORTED;
-        //     console.info("[bluetooth_js]PHY_LE_ALL_SUPPORTED : " + JSON.stringify(PHY_LE_ALL_SUPPORTED));
-        //     expect(true).assertEqual(PHY_LE_ALL_SUPPORTED == 255);
-        //     done();
-        // })
 
         /**
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
