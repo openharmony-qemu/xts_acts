@@ -2382,6 +2382,7 @@ export default function VideoPlayerAPICallbackTest() {
           FINISH_EVENT, SETSPEED_EVENT, '4', RELEASE_EVENT, END_EVENT);
       toNextStep(videoPlayer, mySteps, done)
     });
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0001
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0001
      * @tc.desc   Video playback control test
@@ -2393,7 +2394,7 @@ export default function VideoPlayerAPICallbackTest() {
       try {
         media.createVideoPlayer((err, video) => {
           if (video != null) {
-            videoPlayer = video;
+            let videoPlayer = video;
             videoPlayer.on(null, () => {
               console.info('playbackCompleted called!');
             });
@@ -2405,6 +2406,7 @@ export default function VideoPlayerAPICallbackTest() {
       }
       done();
     });
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0002
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0002
      * @tc.desc   Video playback control test
@@ -2416,7 +2418,7 @@ export default function VideoPlayerAPICallbackTest() {
       try {
         media.createVideoPlayer((err, video) => {
           if (video != null) {
-            videoPlayer = video;
+            let videoPlayer = video;
             videoPlayer.on(undefined, () => {
               console.info('playbackCompleted called!');
             });
@@ -2428,6 +2430,7 @@ export default function VideoPlayerAPICallbackTest() {
       }
       done();
     });
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0003
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0003
      * @tc.desc   Video playback control test
@@ -2439,7 +2442,7 @@ export default function VideoPlayerAPICallbackTest() {
       try {
         media.createVideoPlayer((err, video) => {
           if (video != null) {
-            videoPlayer = video;
+            let videoPlayer = video;
             videoPlayer.on(null, (infoType: media.BufferingInfoType, value: number) => {
             console.info('video bufferingInfo type: ');
             });
@@ -2451,7 +2454,7 @@ export default function VideoPlayerAPICallbackTest() {
       }
       done();
     });
-
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0004
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0004
      * @tc.desc   Video playback control test
@@ -2463,7 +2466,7 @@ export default function VideoPlayerAPICallbackTest() {
       try {
         media.createVideoPlayer((err, video) => {
           if (video != null) {
-            videoPlayer = video;
+            let videoPlayer = video;
             videoPlayer.on(undefined, (infoType: media.BufferingInfoType, value: number) => {
             console.info('video bufferingInfo type: ');
             });
@@ -2475,7 +2478,7 @@ export default function VideoPlayerAPICallbackTest() {
       }
       done();
     });
-
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0005
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0005
      * @tc.desc   Video playback control test
@@ -2487,7 +2490,7 @@ export default function VideoPlayerAPICallbackTest() {
       try {
         media.createVideoPlayer((err, video) => {
           if (video != null) {
-            videoPlayer = video;
+            let videoPlayer = video;
             videoPlayer.on(null, (width: number, height: number) => {
               console.info('video width is: ');
             });
@@ -2499,7 +2502,7 @@ export default function VideoPlayerAPICallbackTest() {
       }
       done();
     });
-
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0006
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0006
      * @tc.desc   Video playback control test
@@ -2511,7 +2514,7 @@ export default function VideoPlayerAPICallbackTest() {
       try {
         media.createVideoPlayer((err, video) => {
           if (video != null) {
-            videoPlayer = video;
+            let videoPlayer = video;
             videoPlayer.on(undefined, (width: number, height: number) => {
               console.info('video width is: ');
             });
@@ -2523,7 +2526,7 @@ export default function VideoPlayerAPICallbackTest() {
       }
       done();
     });
-
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0007
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0007
      * @tc.desc   Video playback control test
@@ -2535,7 +2538,7 @@ export default function VideoPlayerAPICallbackTest() {
       try {
         media.createVideoPlayer((err, video) => {
           if (video != null) {
-            videoPlayer = video;
+            let videoPlayer = video;
             videoPlayer.on(null, (error: BusinessError) => {
               console.error(`video error called, error: ${error}`);
             });
@@ -2547,7 +2550,7 @@ export default function VideoPlayerAPICallbackTest() {
       }
       done();
     });
-  
+    /**  
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0008
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0008
      * @tc.desc   Video playback control test
@@ -2559,7 +2562,7 @@ export default function VideoPlayerAPICallbackTest() {
       try {
         media.createVideoPlayer((err, video) => {
           if (video != null) {
-            videoPlayer = video;
+            let videoPlayer = video;
             videoPlayer.on(undefined, (error: BusinessError) => {
               console.error(`video error called, error: ${error}`);
             });

@@ -815,17 +815,16 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_001', Level.LEVEL0, async (done: Function) => {
-      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
-      if (captureRecorder != null) {
-        avScreenCaptureRecorder = captureRecorder;
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
         avScreenCaptureRecorder.on(null, (err: BusinessError) => {
         console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
             });
-          }
-        }).catch((error: BusinessError) => {
-          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-          expect().assertFail();
-        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
       done();
     })
 
@@ -838,17 +837,16 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_002', Level.LEVEL0, async (done: Function) => {
-      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
-      if (captureRecorder != null) {
-        avScreenCaptureRecorder = captureRecorder;
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
         avScreenCaptureRecorder.on(undefined, (err: BusinessError) => {
         console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
             });
-          }
-        }).catch((error: BusinessError) => {
-          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-          expect().assertFail();
-        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
       done();
     })
 
@@ -861,17 +859,16 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_003', Level.LEVEL0, async (done: Function) => {
-      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
-      if (captureRecorder != null) {
-        avScreenCaptureRecorder = captureRecorder;
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
         avScreenCaptureRecorder.on(null, (state: media.AVScreenCaptureStateCode) => {
             console.info('avScreenCaptureRecorder stateChange to ' + state);
             });
-          }
-        }).catch((error: BusinessError) => {
-          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-          expect().assertFail();
-        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
       done();
     })
 
@@ -884,17 +881,16 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_004', Level.LEVEL0, async (done: Function) => {
-      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
-      if (captureRecorder != null) {
-        avScreenCaptureRecorder = captureRecorder;
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
         avScreenCaptureRecorder.on(undefined, (state: media.AVScreenCaptureStateCode) => {
             console.info('avScreenCaptureRecorder stateChange to ' + state);
             });
-          }
-        }).catch((error: BusinessError) => {
-          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-          expect().assertFail();
-        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
       done();
     })
 
@@ -907,17 +903,16 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_005', Level.LEVEL0, async (done: Function) => {
-      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
-      if (captureRecorder != null) {
-        avScreenCaptureRecorder = captureRecorder;
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
         avScreenCaptureRecorder.off(null, (err: BusinessError) => {
         console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
             });
-          }
-        }).catch((error: BusinessError) => {
-          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-          expect().assertFail();
-        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
       done();
     })
 
@@ -930,17 +925,16 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_006', Level.LEVEL0, async (done: Function) => {
-      await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
-      if (captureRecorder != null) {
-        avScreenCaptureRecorder = captureRecorder;
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
         avScreenCaptureRecorder.off(undefined, (err: BusinessError) => {
         console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
             });
-          }
-        }).catch((error: BusinessError) => {
-          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-          expect().assertFail();
-        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
       done();
     })
   })

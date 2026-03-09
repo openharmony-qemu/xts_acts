@@ -23,8 +23,6 @@ import { LOG_TAG, MediaErrorCode, SLEEP_TIME_20, SLEEP_TIME_200, SLEEP_TIME_500,
 import { audio } from '@kit.AudioKit';
 import { sleep } from '../common';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
-import { audio } from '@kit.AudioKit'
-import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 const TAG = LOG_TAG + 'AVRecorderTest';
 
@@ -5510,7 +5508,7 @@ export default function AVRecorderTest() {
       }
       done();
     })
-  
+
     /**
      * @tc.name   AvRecorderNullUndefinedTest_003
      * @tc.number AvRecorderNullUndefinedTest_003
@@ -5523,8 +5521,8 @@ export default function AVRecorderTest() {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){
-              mAvRecord.on('stateChange', null => {
-              console.info('case state has changed, new state is: ' + state + ', and reason is: ');
+              mAvRecord.on('stateChange', undefined => {
+              console.info('case state has changed, new state is: ');
               });
             }
       } catch (err) {
@@ -5546,8 +5544,8 @@ export default function AVRecorderTest() {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){
-              mAvRecord.on('stateChange', undefined => {
-              console.info('case state has changed, new state is: ' + state + ', and reason is: ');
+              mAvRecord.on(null, (err: BusinessError) => {
+                console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
               });
             }
       } catch (err) {
@@ -5569,7 +5567,7 @@ export default function AVRecorderTest() {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){
-              mAvRecord.on(null, (err: BusinessError) => {
+              mAvRecord.on(undefined, (err: BusinessError) => {
                 console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
               });
             }
@@ -5592,8 +5590,8 @@ export default function AVRecorderTest() {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){
-              mAvRecord.on(undefined, (err: BusinessError) => {
-                console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
+              mAvRecord.off(null, async (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+              console.info('case state has changed, new state is: ' + state + ', and reason is: ');
               });
             }
       } catch (err) {
@@ -5615,7 +5613,7 @@ export default function AVRecorderTest() {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){
-              mAvRecord.off(null, async (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+              mAvRecord.off(undefined, async (state: media.AVRecorderState, reason: media.StateChangeReason) => {
               console.info('case state has changed, new state is: ' + state + ', and reason is: ');
               });
             }
@@ -5638,8 +5636,8 @@ export default function AVRecorderTest() {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){
-              mAvRecord.off(undefined, async (state: media.AVRecorderState, reason: media.StateChangeReason) => {
-              console.info('case state has changed, new state is: ' + state + ', and reason is: ');
+              mAvRecord.off(null, (err: BusinessError) => {
+                console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
               });
             }
       } catch (err) {
@@ -5657,11 +5655,11 @@ export default function AVRecorderTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AvRecorderNullUndefinedTest_009', Level.LEVEL2, async (done: Function) => {
+    it('AvRecorderNullUndefinedTest_010', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){
-              mAvRecord.off(null, (err: BusinessError) => {
+              mAvRecord.off(undefined, (err: BusinessError) => {
                 console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
               });
             }
@@ -5684,8 +5682,8 @@ export default function AVRecorderTest() {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){
-              mAvRecord.off(undefined, (err: BusinessError) => {
-                console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
+              mAvRecord.off(null,  (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
+                console.info('audioCapturerChange called');
               });
             }
       } catch (err) {
@@ -5707,7 +5705,7 @@ export default function AVRecorderTest() {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){
-              mAvRecord.off(null,  (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
+              mAvRecord.off(undefined,  (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
                 console.info('audioCapturerChange called');
               });
             }
@@ -5730,8 +5728,8 @@ export default function AVRecorderTest() {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){
-              mAvRecord.off(undefined,  (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
-                console.info('audioCapturerChange called');
+              mAvRecord.off(null, (asset: photoAccessHelper.PhotoAsset) => {
+              console.info('photoAssetAvailable called');
               });
             }
       } catch (err) {
@@ -5750,29 +5748,6 @@ export default function AVRecorderTest() {
      * @tc.level  LEVEL2
      */
     it('AvRecorderNullUndefinedTest_013', Level.LEVEL2, async (done: Function) => {
-      await createAvRecorderPromise();
-      try {
-            if (mAvRecord != null){
-              mAvRecord.off(null, (asset: photoAccessHelper.PhotoAsset) => {
-              console.info('photoAssetAvailable called');
-              });
-            }
-      } catch (err) {
-        console.error('AudioPlayerNullUndefinedTest failed.', err.code, err.message);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   AvRecorderNullUndefinedTest_014
-     * @tc.number AvRecorderNullUndefinedTest_014
-     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('AvRecorderNullUndefinedTest_014', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){

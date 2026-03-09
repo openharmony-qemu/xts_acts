@@ -18,6 +18,7 @@ import media from '@ohos.multimedia.media';
 import { idle, offCallback, PlayTest, setSource, setSubtitle, testAVPlayerFun, } from './AVPlayerTestBase';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import { BusinessError, Callback } from '@kit.BasicServicesKit';
+import drm from '@ohos.multimedia.drm';
 import {
   LOG_TAG,
   SLEEP_TIME_500,
@@ -2693,6 +2694,7 @@ export default function AVPlayerTest() {
         });
       } catch (err) {
         console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
       }
       done();
     });
@@ -3782,6 +3784,7 @@ export default function AVPlayerTest() {
         });
       } catch (err) {
         console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
       }
       done();
     });
@@ -3852,6 +3855,7 @@ export default function AVPlayerTest() {
         });
       } catch (err) {
         console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
       }
       done();
     });
@@ -4401,6 +4405,7 @@ export default function AVPlayerTest() {
         });
       } catch (err) {
         console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
       }
       done();
     });
@@ -4972,6 +4977,7 @@ export default function AVPlayerTest() {
         });
       } catch (err) {
         console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
       }
       done();
     });
@@ -5042,6 +5048,7 @@ export default function AVPlayerTest() {
         });
       } catch (err) {
         console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
       }
       done();
     });
@@ -5278,7 +5285,7 @@ export default function AVPlayerTest() {
       try {
             playbackInfo = await avPlayer.getPlaybackInfo();
             console.info(`AVPlayer getPlaybackInfo = ${JSON.stringify(playbackInfo)}`);
-            except(playbackInfo.SERVER_IP_ADDRESS).not().assertUndefined;
+            expect(playbackInfo.SERVER_IP_ADDRESS).not().assertUndefined;
       } catch (err) {
         console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
         expect(err.code).assertEqual(5400102);

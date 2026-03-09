@@ -17,6 +17,7 @@ import media from '@ohos.multimedia.media'
 import MediaTestBase from './MediaTestBase';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import { resourceManager } from '@kit.LocalizationKit';
+import { audio } from '@kit.AudioKit';
 
 let audioPlayer: media.AudioPlayer | null = media.createAudioPlayer();
 let loopValue = 0;
@@ -967,7 +968,7 @@ export default function PlayerLocalTestAudioAPI() {
       initAudioPlayer();
       try {
             if (audioPlayer != null){
-              avPlayer.on(null, (time:number) => {
+              audioPlayer.on(null, (time:number) => {
                 console.info('timeUpdate called,and new time is :' + time);
               });
             }
@@ -989,7 +990,7 @@ export default function PlayerLocalTestAudioAPI() {
       initAudioPlayer();
       try {
             if (audioPlayer != null){
-              avPlayer.on(undefined, (time:number) => {
+              audioPlayer.on(undefined, (time:number) => {
                 console.info('timeUpdate called,and new time is :' + time);
               });
             }
@@ -1011,7 +1012,7 @@ export default function PlayerLocalTestAudioAPI() {
       initAudioPlayer();
       try {
             if (audioPlayer != null){
-              avPlayer.on(null, (info: audio.InterruptEvent) => {
+              audioPlayer.on(null, (info: audio.InterruptEvent) => {
               console.info('audioInterrupt called,and InterruptEvent info is:');
               });
             }
@@ -1033,7 +1034,7 @@ export default function PlayerLocalTestAudioAPI() {
       initAudioPlayer();
       try {
             if (audioPlayer != null){
-              avPlayer.on(undefined, (info: audio.InterruptEvent) => {
+              audioPlayer.on(undefined, (info: audio.InterruptEvent) => {
               console.info('audioInterrupt called,and InterruptEvent info is:');
               });
             }
@@ -1055,7 +1056,7 @@ export default function PlayerLocalTestAudioAPI() {
       initAudioPlayer();
       try {
             if (audioPlayer != null){
-              avPlayer.on(undefined, (info: audio.InterruptEvent) => {
+              audioPlayer.on(undefined, (info: audio.InterruptEvent) => {
               console.info('audioInterrupt called,and InterruptEvent info is:');
               });
             }
@@ -1077,7 +1078,7 @@ export default function PlayerLocalTestAudioAPI() {
       initAudioPlayer();
       try {
             if (audioPlayer != null){
-              avPlayer.on(null, (error: BusinessError) => {
+              audioPlayer.on(null, (error: BusinessError) => {
               console.info('audioInterrupt called,and InterruptEvent info is:');
               });
             }
@@ -1099,7 +1100,7 @@ export default function PlayerLocalTestAudioAPI() {
       initAudioPlayer();
       try {
             if (audioPlayer != null){
-              avPlayer.on(undefined, (error: BusinessError) => {
+              audioPlayer.on(undefined, (error: BusinessError) => {
               console.info('audioInterrupt called,and InterruptEvent info is:');
               });
             }
