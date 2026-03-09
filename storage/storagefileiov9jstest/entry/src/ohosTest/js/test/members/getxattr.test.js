@@ -197,6 +197,37 @@ it('test_FileIO_Getxattr_ASync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level
   }
 });
 
+
+/**
+ * @tc.name   test_FileIO_Getxattr_ASync_007
+ * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_ASync_0700
+ * @tc.desc   Test getxattr() interface. Callback. Test first parameter is null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('test_FileIO_Getxattr_ASync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+  let fpath = await nextFileName('test_FileIO_Getxattr_ASync_007');
+  let attrKey = 'user.comment';
+  let attrValue = 'Test file.';
+  expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  fs.setxattrSync(fpath, attrKey, attrValue);
+
+  try {
+    fs.getxattr(null, attrKey, (err, attrValue) => {
+      if (err) {
+    console.log('test_FileIO_Getxattr_ASync_007 error: {message: ' + err.message + ', code: ' + err.code + '}');
+    expect(false).assertTrue();
+    done();
+      }
+    });
+  } catch (e) {
+    console.log('test_FileIO_Getxattr_ASync_007 has failed for ' + e.message + ', code: ' + e.code);
+    expect(e.code === 13900020).assertTrue();
+      done();
+  }
+});
+
 /**
  * @tc.name   test_FileIO_Getxattr_ASync_008
  * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_ASync_0800

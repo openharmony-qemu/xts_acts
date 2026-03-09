@@ -209,5 +209,68 @@ export default function fileIODfsConnect() {
       done();
     }
   });
+
+  /**
+    * @tc.name   fileIO_test_connectDfs_009
+    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_connectDfs_0900
+    * @tc.desc   Test disconnectDfs() interfaces.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_connectDfs_009', Level.LEVEL3, async function (done) {
+    let testNum = 'fileIO_test_connectDfs_009';
+    let networkId = '3dfgfh2yhytrg9rebgk4893fnio34fn4edrg';
+    let DFSListener = {
+      onStatus: function (undefined, status) {
+        console.log(testNum + 'connectDfs onStatus');
+      }
+    }
+    try {
+      fileIO.disconnectDfs(networkId,DFSListener).then(() => {
+        console.log(testNum + "Success to disconnectDfs");
+      }).catch((err) => {
+        console.log(testNum + 'disconnectDfs failed with error code: ' + err.code + 'message: ' + err.message);
+        expect(err.code === 13900004).assertTrue();
+        done();
+      });
+    } catch (e) {
+      console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+
+  /**
+    * @tc.name   fileIO_test_connectDfs_010
+    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_connectDfs_1000
+    * @tc.desc   Test disconnectDfs() interfaces.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_connectDfs_010', Level.LEVEL3, async function (done) {
+    let testNum = 'fileIO_test_connectDfs_010';
+    let networkId = '3dfgfh2yhytrg9rebgk4893fnio34fn4edrg';
+    let DFSListener = {
+      onStatus: function (networkId, undefined) {
+        console.log(testNum + 'connectDfs onStatus');
+      }
+    }
+    try {
+      fileIO.disconnectDfs(networkId,DFSListener).then(() => {
+        console.log(testNum + "Success to disconnectDfs");
+      }).catch((err) => {
+        console.log(testNum + 'disconnectDfs failed with error code: ' + err.code + 'message: ' + err.message);
+        expect(err.code === 13900004).assertTrue();
+        done();
+      });
+    } catch (e) {
+      console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
 });
 }
