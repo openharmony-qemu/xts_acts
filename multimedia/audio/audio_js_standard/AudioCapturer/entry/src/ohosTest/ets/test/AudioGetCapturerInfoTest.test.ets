@@ -1152,7 +1152,7 @@ export default function audioGetCapturerInfoTest() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_CREATE_CAPTURER_SOURCE_VOICE_recognition_029
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CREATE_CAPTURER_SOURCE_voice_recognition_029
      * @tc.number SUB_MULTIMEDIA_AUDIO_CREATE_CAPTURER_SOURCE_voice_recognition_029
      * @tc.desc   AudioCapturer createAudioCapturer source SOURCE_TYPE_VOICE_recognition test.
      * @tc.type   FUNCTION
