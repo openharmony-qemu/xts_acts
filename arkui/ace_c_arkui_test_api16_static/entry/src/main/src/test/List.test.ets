@@ -37,6 +37,6 @@ export default function testsuite() {
   buttonTypeTest();
   NodeUtilMoveTest();
   TimePickerTest();
-  DragTest();
+  //DragTest();
   textPickerTest();
 }

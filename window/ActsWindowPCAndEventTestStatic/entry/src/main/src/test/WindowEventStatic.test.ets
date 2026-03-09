@@ -603,11 +603,8 @@ export default function WindowEventStatic() {
 
                 let maskWidth = subWindow.getWindowProperties().windowRect.width;
                 let maskHeight = subWindow.getWindowProperties().windowRect.height;
-                let windowMask = Array<Array<Long>>(maskHeight).fill([]).map((_, row) => {
-                    let array = Array<Long>(maskWidth);
-                    for (let i = 0 ; i < maskWidth; i++) {
-                        array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
-                    }
+                let windowMask = Array.create<Array<Long>>(maskHeight, [] as Array<Long>).map((_, row) => {
+                    let array = new Array<Long>(maskWidth, (i) => { return (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0 });
                     return array;
                 });
 
@@ -659,11 +656,8 @@ export default function WindowEventStatic() {
 
                 let maskWidth = subWindow.getWindowProperties().windowRect.width;
                 let maskHeight = subWindow.getWindowProperties().windowRect.height;
-                let windowMask = Array<Array<Long>>(maskHeight).fill([]).map((_, row) => {
-                    let array = Array<Long>(maskWidth);
-                    for (let i = 0 ; i < maskWidth; i++) {
-                        array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
-                    }
+                let windowMask = Array.create<Array<Long>>(maskHeight, [] as Array<Long>).map((_, row) => {
+                    let array = new Array<Long>(maskWidth, (i) => { return (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0 });
                     return array;
                 });
 
@@ -1062,11 +1056,8 @@ export default function WindowEventStatic() {
 
                 let maskWidth = subWindow.getWindowProperties().windowRect.width;
                 let maskHeight = subWindow.getWindowProperties().windowRect.height;
-                let windowMask = Array<Array<Long>>(maskHeight).fill([]).map((_, row) => {
-                    let array = Array<Long>(maskWidth);
-                    for (let i = 0 ; i < maskWidth; i++) {
-                        array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
-                    }
+                let windowMask = Array.create<Array<Long>>(maskHeight, [] as Array<Long>).map((_, row) => {
+                    let array = new Array<Long>(maskWidth, (i) => { return (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0 });
                     return array;
                 });
 

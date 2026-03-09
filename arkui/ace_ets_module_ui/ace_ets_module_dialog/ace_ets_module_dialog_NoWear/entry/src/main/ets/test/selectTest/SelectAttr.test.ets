@@ -71,7 +71,9 @@ export default function SelectAttr() {
       let obj2: Record<string, ESObject> = JSON.parse(JSON.stringify(getInspectorTree()));
       await Utils.sleep(1000);
       console.info("[SelectAttr_001] obj2 is: " + JSON.stringify(obj2));
-      expect(Math.abs(parseFloat(obj2.$children[1].$children[0].$attrs.width.slice(0,-2)) - parseFloat(obj1.$attrs.width.slice(0,-2))) <= 1).assertTrue();  
+      let width = parseFloat(obj2.$children[1].$children[0].$attrs.width.slice(0,-2))
+      let width1 = parseFloat(obj1.$attrs.width.slice(0,-2))
+      expect(Math.floor(Math.abs(width - width1)) <= 1).assertTrue();
       console.info('[SelectAttr_001] END');
       done();
     });

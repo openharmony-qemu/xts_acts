@@ -26,10 +26,15 @@ const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 const TEST_SUITE_NAME: string = 'ActsUIExtensionContentSessionTest';
 const TEST_CASE_NAME: string = 'Sub_UIExtensionContentSession_errorCode_static';
+const TEST_CASE_NAME_LC: string = 'SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_static';
+const TEST_CASE_NAME_EC: string = 'Sub_UIExtensionContentSession_errorCode_static';
+const TEST_CASE_NAME_SWPM: string = 'Sub_UIExtensionContentSession_SetWindowPrivacyMode_static';
 const BUNDLE_NAME: string = 'com.example.uiextensioncontentsession.static';
 const ABILITY_NAME: string = 'EntryAbility';
 const TEST_CASE_KEY: string = 'caseTag';
+const PARAM_0: int = 0;
 const PARAM_1: int = 1;
+const PARAM_NEGATIVE_1: int = -1;
 let testCaseName: string = '';
 let uiExtContext: common.UIExtensionContext;
 
@@ -120,6 +125,163 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
       } catch (err) {
         hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} startAbilityByType failed,
           code: ${(err as BusinessError).code}`);
+      }
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case end`);
+    };
+
+    if (testCaseName === (TEST_CASE_NAME_LC + '_0600')) {
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case start`);
+      let code: int = PARAM_0;
+      try {
+        session.loadContentByName('', storage);
+      } catch (err) {
+        code = (err as BusinessError).code;
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} loadContentByName failed,
+          code: ${code}`);
+      }
+      let commonEventDataOptions: commonEventManager.CommonEventPublishData = {
+        parameters: {
+          'result': code,
+        } as Record<string, RecordData>
+      } as commonEventManager.CommonEventPublishData;
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish : ${commonEventDataOptions}`);
+      commonEventManager.publish(testCaseName + '_event', commonEventDataOptions, (result) => {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish, ${JSON.stringify(result)}`);
+        uiExtContext.terminateSelf()
+      });
+
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case end`);
+    };
+
+    if (testCaseName === (TEST_CASE_NAME_LC + '_0800')) {
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case start`);
+      let code: int = PARAM_0;
+      try {
+        session.loadContentByName('entryembeddeduiextability/pages/EntryEmbeddedUIExtAbilityPage');
+      } catch (err) {
+        code = (err as BusinessError).code;
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} loadContentByName failed,
+          code: ${code}`);
+      }
+      let commonEventDataOptions: commonEventManager.CommonEventPublishData = {
+        parameters: {
+          'result': code,
+        } as Record<string, RecordData>
+      } as commonEventManager.CommonEventPublishData;
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish : ${commonEventDataOptions}`);
+      commonEventManager.publish(testCaseName + '_event', commonEventDataOptions, (result) => {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish, ${JSON.stringify(result)}`);
+        uiExtContext.terminateSelf()
+      });
+
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case end`);
+    };
+
+    if (testCaseName === (TEST_CASE_NAME_EC + '_1300')) {
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case start`);
+      let code: int = PARAM_0;
+      try {
+        let windowProxy = session.getUIExtensionWindowProxy();
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} getUIExtensionWindowProxy success`);
+        if (windowProxy) {
+          code = PARAM_0;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} getUIExtensionWindowProxy windowProxy success`);
+        } else {
+          code = PARAM_NEGATIVE_1;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} getUIExtensionWindowProxy windowProxy null`);
+        }     
+      } catch (err) {
+        code = (err as BusinessError).code;
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} getUIExtensionWindowProxy failed,
+          code: ${code}`);
+      }
+      let commonEventDataOptions: commonEventManager.CommonEventPublishData = {
+        parameters: {
+          'result': code,
+        } as Record<string, RecordData>
+      } as commonEventManager.CommonEventPublishData;
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish : ${commonEventDataOptions}`);
+      commonEventManager.publish(testCaseName + '_event', commonEventDataOptions, (result) => {
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish, ${JSON.stringify(result)}`);
+        uiExtContext.terminateSelf()
+      });
+
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case end`);
+    };
+
+    if (testCaseName === (TEST_CASE_NAME_SWPM + '_0100')) {
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case start`);
+      let code: int = PARAM_0;
+      try {
+        session.setWindowPrivacyMode(true).then(() => {
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} setWindowPrivacyMode promise success`);
+          let commonEventDataOptions: commonEventManager.CommonEventPublishData = {
+            parameters: {
+              'result': code,
+            } as Record<string, RecordData>
+          } as commonEventManager.CommonEventPublishData;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish : ${commonEventDataOptions}`);
+          commonEventManager.publish(testCaseName + '_event', commonEventDataOptions, (result) => {
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish, ${JSON.stringify(result)}`);
+            uiExtContext.terminateSelf()
+          });
+        }).catch((err: Error) => {
+          code = (err as BusinessError).code
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} setWindowPrivacyMode, code: ${code}`);
+          let commonEventDataOptions: commonEventManager.CommonEventPublishData = {
+            parameters: {
+              'result': code,
+            } as Record<string, RecordData>
+          } as commonEventManager.CommonEventPublishData;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish : ${commonEventDataOptions}`);
+          commonEventManager.publish(testCaseName + '_event', commonEventDataOptions, (result) => {
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish, ${JSON.stringify(result)}`);
+            uiExtContext.terminateSelf()
+          });
+        });
+      } catch (err) {
+        code = (err as BusinessError).code
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} setWindowPrivacyMode failed,
+          code: ${code}`);
+      }
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case end`);
+    };
+
+    if (testCaseName === (TEST_CASE_NAME_SWPM + '_0200')) {
+      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case start`);
+      let code: int = PARAM_0;
+      try {
+        session.setWindowPrivacyMode(true, (err: BusinessError | null) => {
+          if (err) {
+            code = err.code;
+          }
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME_SWPM}
+           setWindowPrivacyMode cb code: ${code}`);
+          let commonEventDataOptions: commonEventManager.CommonEventPublishData = {
+            parameters: {
+              'result': code,
+            } as Record<string, RecordData>
+          } as commonEventManager.CommonEventPublishData;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish : ${commonEventDataOptions}`);
+          commonEventManager.publish(testCaseName + '_event', commonEventDataOptions, (result) => {
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish, ${JSON.stringify(result)}`);
+            uiExtContext.terminateSelf()
+          });
+        });
+      } catch (err) {
+        code = (err as BusinessError).code;
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} setWindowPrivacyMode failed,
+          code: ${code}`);
+        let commonEventDataOptions: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': code,
+          } as Record<string, RecordData>
+        } as commonEventManager.CommonEventPublishData;
+        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish : ${commonEventDataOptions}`);
+        commonEventManager.publish(testCaseName + '_event', commonEventDataOptions, (result) => {
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish, ${JSON.stringify(result)}`);
+          uiExtContext.terminateSelf()
+        });
       }
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case end`);
     };

@@ -138,6 +138,20 @@ export default function uitestEnumTest() {
         console.log(`${TestTag}, testApi9_Component_scrollToTop_401 text = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
+      try {
+        let input1 = await driver.findComponent(ON.text('MainPage'))
+        await input1.scrollToTop(100);
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Component_scrollToTop_401 text = -1 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        let input1 = await driver.findComponent(ON.text('MainPage'))
+        await input1.scrollToTop(41000);
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Component_scrollToTop_401 text = -1 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, testApi9_Component_scrollToTop_401 END`);
     })
@@ -159,14 +173,14 @@ export default function uitestEnumTest() {
         let input1 = await driver.findComponent(ON.text('MainPage'))
         await input1.scrollToBottom(null);
       } catch (error) {
-        console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 text = null error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 spe = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
         let input1 = await driver.findComponent(ON.text('MainPage'))
         await input1.scrollToBottom(undefined);
       } catch (error) {
-        console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 text = undefined error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 spe = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
@@ -174,8 +188,22 @@ export default function uitestEnumTest() {
         await input1.scrollToBottom(-1);
         expect().assertFail();
       } catch (error) {
-        console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 text = -1 error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 spe = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let input1 = await driver.findComponent(ON.text('MainPage'))
+        await input1.scrollToBottom(100);
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 spe = 100 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        let input1 = await driver.findComponent(ON.text('MainPage'))
+        await input1.scrollToBottom(41000);
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 spe = 41000 error, ${JSON.stringify(error)}`);
+        expect().assertFail();
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 END`);

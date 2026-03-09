@@ -50,6 +50,33 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 Failed to get private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
+
+      try {
+        await certManager.getPrivateCertificate("");
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 private certificate success. `);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 Failed1 to get private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+
+      try {
+        await certManager.getPrivateCertificate(null);
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 private certificate success. `);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 Failed2 to get private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+
+      try {
+        await certManager.getPrivateCertificate(undefined);
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 private certificate success. `);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 Failed3 to get private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
       done();
     });
 
@@ -73,14 +100,57 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
             } else {
               resolve(CMResult);
             }
-
-
           });
         });
         console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0101 private certificate success. `);
         expect(cmResult2 != undefined && cmResult2 != null).assertFail();
       } catch (err) {
         console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0101 Failed to get private certificate. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        cmResult2 = await new Promise<certManager.CMResult>((resolve, reject) => {
+          certManager.getPrivateCertificate("", (err: Error, CMResult: certManager.CMResult) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(CMResult);
+            }
+          });
+        });
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0101 Failed to get null private certificate. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        cmResult2 = await new Promise<certManager.CMResult>((resolve, reject) => {
+          certManager.getPrivateCertificate(null, (err: Error, CMResult: certManager.CMResult) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(CMResult);
+            }
+          });
+        });
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0101 Failed to get null private certificate. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+  
+      try {
+        cmResult2 = await new Promise<certManager.CMResult>((resolve, reject) => {
+          certManager.getPrivateCertificate(undefined, (err: Error, CMResult: certManager.CMResult) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(CMResult);
+            }
+          });
+        });
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0101 Failed to get undefined private certificate. Code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(401);
       }
       done();

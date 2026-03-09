@@ -256,6 +256,7 @@ int OHDrawingCopyTextShadow001()
         offset,
         blurRadius);
     OH_Drawing_TextShadow* shadowCopy = OH_Drawing_CopyTextShadow(shadow);
+    ASSERT_NE(shadowCopy, nullptr);
     OH_Drawing_CopyTextShadow(nullptr);
     txtStyle = OH_Drawing_CreateTextStyle();
     ASSERT_NE(txtStyle, nullptr);

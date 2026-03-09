@@ -614,6 +614,24 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
         console.error(`SUB_Security_CertManager_SignThree_Func_0104 Failed to finish. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
+
+      try {
+        certManager.finish(null, (err, cmResult) => {
+        });
+        expect(null).assertFail();
+      } catch(error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0104 Failed to null finish. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      
+      try {
+        certManager.finish(undefined, (err, cmResult) => {
+        });
+        expect(null).assertFail();
+      } catch(error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0104 Failed to undefined finish. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
       done();
     });
 

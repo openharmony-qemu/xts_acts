@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFWANT, SELFHAPNAME, TEST_APP_ID_1, TEST_POLICY_NAME, TEST_POLICY_VALUE, INVALID_WANT } from '../commom.ets';
+import { ENTINFO1, SELFWANT, SELFHAPNAME, TEST_APP_ID_1, TEST_POLICY_NAME, TEST_POLICY_VALUE, INVALID_WANT, DEFAULT_USER_ID } from '../commom.ets';
 
 import bluetoothManager from '@ohos.enterprise.bluetoothManager';
 import adminManager from '@ohos.enterprise.adminManager';
@@ -1252,5 +1252,1216 @@ export default function bluetoothManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   getBluetoothInfo_test_001
+     * @tc.number getBluetoothInfo_test_001
+     * @tc.desc   getBluetoothInfo with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getBluetoothInfo_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getBluetoothInfo_test_001  -------- START --------');
+      try {
+        bluetoothManager.getBluetoothInfo(null);
+        console.info(' --- getBluetoothInfo_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getBluetoothInfo_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getBluetoothInfo_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getBluetoothInfo_test_002
+     * @tc.number getBluetoothInfo_test_002
+     * @tc.desc   getBluetoothInfo with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getBluetoothInfo_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getBluetoothInfo_test_002  -------- START --------');
+      try {
+        bluetoothManager.getBluetoothInfo(undefined);
+        console.info(' --- getBluetoothInfo_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getBluetoothInfo_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getBluetoothInfo_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedBluetoothDevices_test_001
+     * @tc.number addAllowedBluetoothDevices_test_001
+     * @tc.desc   addAllowedBluetoothDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedBluetoothDevices_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedBluetoothDevices_test_001  -------- START --------');
+      try {
+        bluetoothManager.addAllowedBluetoothDevices(null, ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"]);
+        console.info(' --- addAllowedBluetoothDevices_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedBluetoothDevices_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedBluetoothDevices_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedBluetoothDevices_test_002
+     * @tc.number addAllowedBluetoothDevices_test_002
+     * @tc.desc   addAllowedBluetoothDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedBluetoothDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedBluetoothDevices_test_002  -------- START --------');
+      try {
+        bluetoothManager.addAllowedBluetoothDevices(undefined, ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"]);
+        console.info(' --- addAllowedBluetoothDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedBluetoothDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedBluetoothDevices_test_003
+     * @tc.number addAllowedBluetoothDevices_test_003
+     * @tc.desc   addAllowedBluetoothDevices with null parameter deviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedBluetoothDevices_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedBluetoothDevices_test_003  -------- START --------');
+      try {
+        bluetoothManager.addAllowedBluetoothDevices(SELFWANT, null);
+        console.info(' --- addAllowedBluetoothDevices_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedBluetoothDevices_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedBluetoothDevices_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedBluetoothDevices_test_004
+     * @tc.number addAllowedBluetoothDevices_test_004
+     * @tc.desc   addAllowedBluetoothDevices with undefined parameter deviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedBluetoothDevices_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedBluetoothDevices_test_004  -------- START --------');
+      try {
+        bluetoothManager.addAllowedBluetoothDevices(SELFWANT, undefined);
+        console.info(' --- addAllowedBluetoothDevices_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedBluetoothDevices_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedBluetoothDevices_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedBluetoothDevices_test_001
+     * @tc.number removeAllowedBluetoothDevices_test_001
+     * @tc.desc   removeAllowedBluetoothDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedBluetoothDevices_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedBluetoothDevices_test_001  -------- START --------');
+      try {
+        bluetoothManager.removeAllowedBluetoothDevices(null, ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"]);
+        console.info(' --- removeAllowedBluetoothDevices_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedBluetoothDevices_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedBluetoothDevices_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedBluetoothDevices_test_002
+     * @tc.number removeAllowedBluetoothDevices_test_002
+     * @tc.desc   removeAllowedBluetoothDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedBluetoothDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedBluetoothDevices_test_002  -------- START --------');
+      try {
+        bluetoothManager.removeAllowedBluetoothDevices(undefined, ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"]);
+        console.info(' --- removeAllowedBluetoothDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedBluetoothDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedBluetoothDevices_test_003
+     * @tc.number removeAllowedBluetoothDevices_test_003
+     * @tc.desc   removeAllowedBluetoothDevices with null parameter deviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedBluetoothDevices_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedBluetoothDevices_test_003  -------- START --------');
+      try {
+        bluetoothManager.removeAllowedBluetoothDevices(SELFWANT, null);
+        console.info(' --- removeAllowedBluetoothDevices_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedBluetoothDevices_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedBluetoothDevices_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedBluetoothDevices_test_004
+     * @tc.number removeAllowedBluetoothDevices_test_004
+     * @tc.desc   removeAllowedBluetoothDevices with undefined parameter deviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedBluetoothDevices_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedBluetoothDevices_test_004  -------- START --------');
+      try {
+        bluetoothManager.removeAllowedBluetoothDevices(SELFWANT, undefined);
+        console.info(' --- removeAllowedBluetoothDevices_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedBluetoothDevices_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedBluetoothDevices_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedBluetoothDevices_test_002
+     * @tc.number getAllowedBluetoothDevices_test_002
+     * @tc.desc   getAllowedBluetoothDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedBluetoothDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedBluetoothDevices_test_002  -------- START --------');
+      try {
+        bluetoothManager.getAllowedBluetoothDevices(undefined);
+        console.info(' --- getAllowedBluetoothDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedBluetoothDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   turnOnBluetooth_test_001
+     * @tc.number turnOnBluetooth_test_001
+     * @tc.desc   turnOnBluetooth with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("turnOnBluetooth_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- turnOnBluetooth_test_001  -------- START --------');
+      try {
+        bluetoothManager.turnOnBluetooth(null);
+        console.info(' --- turnOnBluetooth_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- turnOnBluetooth_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- turnOnBluetooth_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   turnOnBluetooth_test_002
+     * @tc.number turnOnBluetooth_test_002
+     * @tc.desc   turnOnBluetooth with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("turnOnBluetooth_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- turnOnBluetooth_test_002  -------- START --------');
+      try {
+        bluetoothManager.turnOnBluetooth(undefined);
+        console.info(' --- turnOnBluetooth_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- turnOnBluetooth_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- turnOnBluetooth_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   turnOffBluetooth_test_001
+     * @tc.number turnOffBluetooth_test_001
+     * @tc.desc   turnOffBluetooth with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("turnOffBluetooth_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- turnOffBluetooth_test_001  -------- START --------');
+      try {
+        bluetoothManager.turnOffBluetooth(null);
+        console.info(' --- turnOffBluetooth_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- turnOffBluetooth_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- turnOffBluetooth_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   turnOffBluetooth_test_002
+     * @tc.number turnOffBluetooth_test_002
+     * @tc.desc   turnOffBluetooth with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("turnOffBluetooth_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- turnOffBluetooth_test_002  -------- START --------');
+      try {
+        bluetoothManager.turnOffBluetooth(undefined);
+        console.info(' --- turnOffBluetooth_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- turnOffBluetooth_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- turnOffBluetooth_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedBluetoothDevices_test_001
+     * @tc.number addDisallowedBluetoothDevices_test_001
+     * @tc.desc   addDisallowedBluetoothDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedBluetoothDevices_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedBluetoothDevices_test_001  -------- START --------');
+      try {
+        bluetoothManager.addDisallowedBluetoothDevices(null, ["00:1A:2B:3C:4D:5E", "AA:BB:CC:DD:EE:FF"]);
+        console.info(' --- addDisallowedBluetoothDevices_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedBluetoothDevices_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedBluetoothDevices_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedBluetoothDevices_test_002
+     * @tc.number addDisallowedBluetoothDevices_test_002
+     * @tc.desc   addDisallowedBluetoothDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedBluetoothDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedBluetoothDevices_test_002  -------- START --------');
+      try {
+        bluetoothManager.addDisallowedBluetoothDevices(undefined, ["00:1A:2B:3C:4D:5E", "AA:BB:CC:DD:EE:FF"]);
+        console.info(' --- addDisallowedBluetoothDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedBluetoothDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedBluetoothDevices_test_003
+     * @tc.number addDisallowedBluetoothDevices_test_003
+     * @tc.desc   addDisallowedBluetoothDevices with null parameter deviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedBluetoothDevices_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedBluetoothDevices_test_003  -------- START --------');
+      try {
+        bluetoothManager.addDisallowedBluetoothDevices(SELFWANT, null);
+        console.info(' --- addDisallowedBluetoothDevices_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedBluetoothDevices_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedBluetoothDevices_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedBluetoothDevices_test_004
+     * @tc.number addDisallowedBluetoothDevices_test_004
+     * @tc.desc   addDisallowedBluetoothDevices with undefined parameter deviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedBluetoothDevices_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedBluetoothDevices_test_004  -------- START --------');
+      try {
+        bluetoothManager.addDisallowedBluetoothDevices(SELFWANT, undefined);
+        console.info(' --- addDisallowedBluetoothDevices_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedBluetoothDevices_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedBluetoothDevices_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedBluetoothDevices_test_001
+     * @tc.number removeDisallowedBluetoothDevices_test_001
+     * @tc.desc   removeDisallowedBluetoothDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedBluetoothDevices_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedBluetoothDevices_test_001  -------- START --------');
+      try {
+        bluetoothManager.removeDisallowedBluetoothDevices(null, ["00:1A:2B:3C:4D:5E", "AA:BB:CC:DD:EE:FF"]);
+        console.info(' --- removeDisallowedBluetoothDevices_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedBluetoothDevices_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedBluetoothDevices_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedBluetoothDevices_test_002
+     * @tc.number removeDisallowedBluetoothDevices_test_002
+     * @tc.desc   removeDisallowedBluetoothDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedBluetoothDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedBluetoothDevices_test_002  -------- START --------');
+      try {
+        bluetoothManager.removeDisallowedBluetoothDevices(undefined, ["00:1A:2B:3C:4D:5E", "AA:BB:CC:DD:EE:FF"]);
+        console.info(' --- removeDisallowedBluetoothDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedBluetoothDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedBluetoothDevices_test_003
+     * @tc.number removeDisallowedBluetoothDevices_test_003
+     * @tc.desc   removeDisallowedBluetoothDevices with null parameter deviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedBluetoothDevices_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedBluetoothDevices_test_003  -------- START --------');
+      try {
+        bluetoothManager.removeDisallowedBluetoothDevices(SELFWANT, null);
+        console.info(' --- removeDisallowedBluetoothDevices_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedBluetoothDevices_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedBluetoothDevices_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedBluetoothDevices_test_004
+     * @tc.number removeDisallowedBluetoothDevices_test_004
+     * @tc.desc   removeDisallowedBluetoothDevices with undefined parameter deviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedBluetoothDevices_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedBluetoothDevices_test_004  -------- START --------');
+      try {
+        bluetoothManager.removeDisallowedBluetoothDevices(SELFWANT, undefined);
+        console.info(' --- removeDisallowedBluetoothDevices_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedBluetoothDevices_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedBluetoothDevices_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedBluetoothDevices_test_002
+     * @tc.number getDisallowedBluetoothDevices_test_002
+     * @tc.desc   getDisallowedBluetoothDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedBluetoothDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedBluetoothDevices_test_002  -------- START --------');
+      try {
+        bluetoothManager.getDisallowedBluetoothDevices(undefined);
+        console.info(' --- getDisallowedBluetoothDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedBluetoothDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedBluetoothProtocols_test_001
+     * @tc.number addDisallowedBluetoothProtocols_test_001
+     * @tc.desc   addDisallowedBluetoothProtocols with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedBluetoothProtocols_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedBluetoothProtocols_test_001  -------- START --------');
+      try {
+        let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
+          bluetoothManager.Protocol.SPP, bluetoothManager.Protocol.OPP];
+        bluetoothManager.addDisallowedBluetoothProtocols(null, DEFAULT_USER_ID, protocols);
+        console.info(' --- addDisallowedBluetoothProtocols_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedBluetoothProtocols_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedBluetoothProtocols_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedBluetoothProtocols_test_002
+     * @tc.number addDisallowedBluetoothProtocols_test_002
+     * @tc.desc   addDisallowedBluetoothProtocols with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedBluetoothProtocols_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedBluetoothProtocols_test_002  -------- START --------');
+      try {
+        let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
+          bluetoothManager.Protocol.SPP, bluetoothManager.Protocol.OPP];
+        bluetoothManager.addDisallowedBluetoothProtocols(undefined, DEFAULT_USER_ID, protocols);
+        console.info(' --- addDisallowedBluetoothProtocols_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedBluetoothProtocols_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedBluetoothProtocols_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedBluetoothProtocols_test_003
+     * @tc.number addDisallowedBluetoothProtocols_test_003
+     * @tc.desc   addDisallowedBluetoothProtocols with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedBluetoothProtocols_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedBluetoothProtocols_test_003  -------- START --------');
+      try {
+        let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
+          bluetoothManager.Protocol.SPP, bluetoothManager.Protocol.OPP];
+        bluetoothManager.addDisallowedBluetoothProtocols(SELFWANT, null, protocols);
+        console.info(' --- addDisallowedBluetoothProtocols_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedBluetoothProtocols_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedBluetoothProtocols_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedBluetoothProtocols_test_004
+     * @tc.number addDisallowedBluetoothProtocols_test_004
+     * @tc.desc   addDisallowedBluetoothProtocols with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedBluetoothProtocols_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedBluetoothProtocols_test_004  -------- START --------');
+      try {
+        let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
+          bluetoothManager.Protocol.SPP, bluetoothManager.Protocol.OPP];
+        bluetoothManager.addDisallowedBluetoothProtocols(SELFWANT, undefined, protocols);
+        console.info(' --- addDisallowedBluetoothProtocols_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedBluetoothProtocols_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedBluetoothProtocols_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedBluetoothProtocols_test_005
+     * @tc.number addDisallowedBluetoothProtocols_test_005
+     * @tc.desc   addDisallowedBluetoothProtocols with null parameter protocols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedBluetoothProtocols_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedBluetoothProtocols_test_005  -------- START --------');
+      try {
+        bluetoothManager.addDisallowedBluetoothProtocols(SELFWANT, DEFAULT_USER_ID, null);
+        console.info(' --- addDisallowedBluetoothProtocols_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedBluetoothProtocols_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedBluetoothProtocols_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedBluetoothProtocols_test_006
+     * @tc.number addDisallowedBluetoothProtocols_test_006
+     * @tc.desc   addDisallowedBluetoothProtocols with undefined parameter protocols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedBluetoothProtocols_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedBluetoothProtocols_test_006  -------- START --------');
+      try {
+        bluetoothManager.addDisallowedBluetoothProtocols(SELFWANT, DEFAULT_USER_ID, undefined);
+        console.info(' --- addDisallowedBluetoothProtocols_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedBluetoothProtocols_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedBluetoothProtocols_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedBluetoothProtocols_test_001
+     * @tc.number removeDisallowedBluetoothProtocols_test_001
+     * @tc.desc   removeDisallowedBluetoothProtocols with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedBluetoothProtocols_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedBluetoothProtocols_test_001  -------- START --------');
+      try {
+        let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
+          bluetoothManager.Protocol.SPP];
+        bluetoothManager.removeDisallowedBluetoothProtocols(null, DEFAULT_USER_ID, protocols);
+        console.info(' --- removeDisallowedBluetoothProtocols_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedBluetoothProtocols_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedBluetoothProtocols_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedBluetoothProtocols_test_002
+     * @tc.number removeDisallowedBluetoothProtocols_test_002
+     * @tc.desc   removeDisallowedBluetoothProtocols with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedBluetoothProtocols_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedBluetoothProtocols_test_002  -------- START --------');
+      try {
+        let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
+          bluetoothManager.Protocol.SPP];
+        bluetoothManager.removeDisallowedBluetoothProtocols(undefined, DEFAULT_USER_ID, protocols);
+        console.info(' --- removeDisallowedBluetoothProtocols_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedBluetoothProtocols_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedBluetoothProtocols_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedBluetoothProtocols_test_003
+     * @tc.number removeDisallowedBluetoothProtocols_test_003
+     * @tc.desc   removeDisallowedBluetoothProtocols with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedBluetoothProtocols_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedBluetoothProtocols_test_003  -------- START --------');
+      try {
+        let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
+          bluetoothManager.Protocol.SPP];
+        bluetoothManager.removeDisallowedBluetoothProtocols(SELFWANT, null, protocols);
+        console.info(' --- removeDisallowedBluetoothProtocols_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedBluetoothProtocols_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedBluetoothProtocols_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedBluetoothProtocols_test_004
+     * @tc.number removeDisallowedBluetoothProtocols_test_004
+     * @tc.desc   removeDisallowedBluetoothProtocols with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedBluetoothProtocols_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedBluetoothProtocols_test_004  -------- START --------');
+      try {
+        let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
+          bluetoothManager.Protocol.SPP];
+        bluetoothManager.removeDisallowedBluetoothProtocols(SELFWANT, undefined, protocols);
+        console.info(' --- removeDisallowedBluetoothProtocols_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedBluetoothProtocols_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedBluetoothProtocols_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedBluetoothProtocols_test_005
+     * @tc.number removeDisallowedBluetoothProtocols_test_005
+     * @tc.desc   removeDisallowedBluetoothProtocols with null parameter protocols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedBluetoothProtocols_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedBluetoothProtocols_test_005  -------- START --------');
+      try {
+        bluetoothManager.removeDisallowedBluetoothProtocols(SELFWANT, DEFAULT_USER_ID, null);
+        console.info(' --- removeDisallowedBluetoothProtocols_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedBluetoothProtocols_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedBluetoothProtocols_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedBluetoothProtocols_test_006
+     * @tc.number removeDisallowedBluetoothProtocols_test_006
+     * @tc.desc   removeDisallowedBluetoothProtocols with undefined parameter protocols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedBluetoothProtocols_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedBluetoothProtocols_test_006  -------- START --------');
+      try {
+        bluetoothManager.removeDisallowedBluetoothProtocols(SELFWANT, DEFAULT_USER_ID, undefined);
+        console.info(' --- removeDisallowedBluetoothProtocols_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedBluetoothProtocols_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedBluetoothProtocols_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedBluetoothProtocols_test_001
+     * @tc.number getDisallowedBluetoothProtocols_test_001
+     * @tc.desc   getDisallowedBluetoothProtocols with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedBluetoothProtocols_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedBluetoothProtocols_test_001  -------- START --------');
+      try {
+        bluetoothManager.getDisallowedBluetoothProtocols(null, DEFAULT_USER_ID);
+        console.info(' --- getDisallowedBluetoothProtocols_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedBluetoothProtocols_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedBluetoothProtocols_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedBluetoothProtocols_test_002
+     * @tc.number getDisallowedBluetoothProtocols_test_002
+     * @tc.desc   getDisallowedBluetoothProtocols with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedBluetoothProtocols_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedBluetoothProtocols_test_002  -------- START --------');
+      try {
+        bluetoothManager.getDisallowedBluetoothProtocols(undefined, DEFAULT_USER_ID);
+        console.info(' --- getDisallowedBluetoothProtocols_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedBluetoothProtocols_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedBluetoothProtocols_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedBluetoothProtocols_test_003
+     * @tc.number getDisallowedBluetoothProtocols_test_003
+     * @tc.desc   getDisallowedBluetoothProtocols with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedBluetoothProtocols_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedBluetoothProtocols_test_003  -------- START --------');
+      try {
+        bluetoothManager.getDisallowedBluetoothProtocols(SELFWANT, null);
+        console.info(' --- getDisallowedBluetoothProtocols_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedBluetoothProtocols_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedBluetoothProtocols_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedBluetoothProtocols_test_004
+     * @tc.number getDisallowedBluetoothProtocols_test_004
+     * @tc.desc   getDisallowedBluetoothProtocols with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedBluetoothProtocols_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedBluetoothProtocols_test_004  -------- START --------');
+      try {
+        bluetoothManager.getDisallowedBluetoothProtocols(SELFWANT, undefined);
+        console.info(' --- getDisallowedBluetoothProtocols_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedBluetoothProtocols_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedBluetoothProtocols_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getBluetoothInfo_test_015
+     * @tc.number getBluetoothInfo_test_015
+     * @tc.desc   getBluetoothInfo with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getBluetoothInfo_test_015", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getBluetoothInfo_test_015  -------- START --------');
+      try {
+        bluetoothManager.getBluetoothInfo(null);
+        console.info(' --- getBluetoothInfo_test_015 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getBluetoothInfo_test_015 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getBluetoothInfo_test_015  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getBluetoothInfo_test_016
+     * @tc.number getBluetoothInfo_test_016
+     * @tc.desc   getBluetoothInfo with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getBluetoothInfo_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getBluetoothInfo_test_016  -------- START --------');
+      try {
+        bluetoothManager.getBluetoothInfo(undefined);
+        console.info(' --- getBluetoothInfo_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getBluetoothInfo_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getBluetoothInfo_test_016  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedBluetoothDevices_test_016
+     * @tc.number getAllowedBluetoothDevices_test_016
+     * @tc.desc   getAllowedBluetoothDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedBluetoothDevices_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedBluetoothDevices_test_016  -------- START --------');
+      try {
+        bluetoothManager.getAllowedBluetoothDevices(undefined);
+        console.info(' --- getAllowedBluetoothDevices_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedBluetoothDevices_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedBluetoothDevices_test_016  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   turnOnBluetooth_test_015
+     * @tc.number turnOnBluetooth_test_015
+     * @tc.desc   turnOnBluetooth with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("turnOnBluetooth_test_015", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- turnOnBluetooth_test_015  -------- START --------');
+      try {
+        bluetoothManager.turnOnBluetooth(null);
+        console.info(' --- turnOnBluetooth_test_015 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- turnOnBluetooth_test_015 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- turnOnBluetooth_test_015  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   turnOnBluetooth_test_016
+     * @tc.number turnOnBluetooth_test_016
+     * @tc.desc   turnOnBluetooth with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("turnOnBluetooth_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- turnOnBluetooth_test_016  -------- START --------');
+      try {
+        bluetoothManager.turnOnBluetooth(undefined);
+        console.info(' --- turnOnBluetooth_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- turnOnBluetooth_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- turnOnBluetooth_test_016  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   turnOffBluetooth_test_015
+     * @tc.number turnOffBluetooth_test_015
+     * @tc.desc   turnOffBluetooth with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("turnOffBluetooth_test_015", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- turnOffBluetooth_test_015  -------- START --------');
+      try {
+        bluetoothManager.turnOffBluetooth(null);
+        console.info(' --- turnOffBluetooth_test_015 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- turnOffBluetooth_test_015 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- turnOffBluetooth_test_015  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   turnOffBluetooth_test_016
+     * @tc.number turnOffBluetooth_test_016
+     * @tc.desc   turnOffBluetooth with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("turnOffBluetooth_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- turnOffBluetooth_test_016  -------- START --------');
+      try {
+        bluetoothManager.turnOffBluetooth(undefined);
+        console.info(' --- turnOffBluetooth_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- turnOffBluetooth_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- turnOffBluetooth_test_016  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedBluetoothDevices_test_016
+     * @tc.number getDisallowedBluetoothDevices_test_016
+     * @tc.desc   getDisallowedBluetoothDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedBluetoothDevices_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedBluetoothDevices_test_016  -------- START --------');
+      try {
+        bluetoothManager.getDisallowedBluetoothDevices(undefined);
+        console.info(' --- getDisallowedBluetoothDevices_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedBluetoothDevices_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedBluetoothDevices_test_016  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getDisallowedBluetoothProtocols_test_029
+     * @tc.number getDisallowedBluetoothProtocols_test_029
+     * @tc.desc   getDisallowedBluetoothProtocols with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedBluetoothProtocols_test_029", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedBluetoothProtocols_test_029  -------- START --------');
+      try {
+        bluetoothManager.getDisallowedBluetoothProtocols(null, DEFAULT_USER_ID);
+        console.info(' --- getDisallowedBluetoothProtocols_test_029 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedBluetoothProtocols_test_029 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedBluetoothProtocols_test_029  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedBluetoothProtocols_test_030
+     * @tc.number getDisallowedBluetoothProtocols_test_030
+     * @tc.desc   getDisallowedBluetoothProtocols with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedBluetoothProtocols_test_030", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedBluetoothProtocols_test_030  -------- START --------');
+      try {
+        bluetoothManager.getDisallowedBluetoothProtocols(undefined, DEFAULT_USER_ID);
+        console.info(' --- getDisallowedBluetoothProtocols_test_030 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedBluetoothProtocols_test_030 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedBluetoothProtocols_test_030  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedBluetoothProtocols_test_031
+     * @tc.number getDisallowedBluetoothProtocols_test_031
+     * @tc.desc   getDisallowedBluetoothProtocols with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedBluetoothProtocols_test_031", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedBluetoothProtocols_test_031  -------- START --------');
+      try {
+        bluetoothManager.getDisallowedBluetoothProtocols(SELFWANT, null);
+        console.info(' --- getDisallowedBluetoothProtocols_test_031 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedBluetoothProtocols_test_031 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedBluetoothProtocols_test_031  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedBluetoothProtocols_test_032
+     * @tc.number getDisallowedBluetoothProtocols_test_032
+     * @tc.desc   getDisallowedBluetoothProtocols with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedBluetoothProtocols_test_032", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedBluetoothProtocols_test_032  -------- START --------');
+      try {
+        bluetoothManager.getDisallowedBluetoothProtocols(SELFWANT, undefined);
+        console.info(' --- getDisallowedBluetoothProtocols_test_032 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedBluetoothProtocols_test_032 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedBluetoothProtocols_test_032  -------- END --------');
+    })
+
+
   })
 }

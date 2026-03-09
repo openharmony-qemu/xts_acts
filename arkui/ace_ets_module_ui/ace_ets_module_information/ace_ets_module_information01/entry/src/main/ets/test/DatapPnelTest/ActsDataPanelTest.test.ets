@@ -2166,7 +2166,7 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0800 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
           let resourceOffsetx :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsetx').id)
-          expect(obj.$attrs.trackShadow.offsetX).assertEqual(px2vp(resourceOffsetx)+'.000000');
+          expect(obj.$attrs.trackShadow.offsetX).assertEqual(Math.round(px2vp(resourceOffsetx))+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0800 END ');
           done();
         } catch (err) {
@@ -2196,7 +2196,7 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0900 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
           let resourceOffsetx :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsetx').id)
-          expect(obj.$attrs.trackShadow.offsetX).assertEqual(px2vp(resourceOffsetx)+'.000000');
+          expect(obj.$attrs.trackShadow.offsetX).assertEqual(Math.round(px2vp(resourceOffsetx))+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0900 END ');
           done();
         } catch (err) {
@@ -2226,7 +2226,7 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1000 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
           let resourceOffsetx :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsetx').id)
-          expect(obj.$attrs.trackShadow.offsetX).assertEqual(px2vp(resourceOffsetx)+'.000000');
+          expect(obj.$attrs.trackShadow.offsetX).assertEqual(Math.round(px2vp(resourceOffsetx))+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1000 END ');
           done();
         } catch (err) {
@@ -2316,7 +2316,7 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1300 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
           let resourceOffsety :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsety').id)
-          expect(obj.$attrs.trackShadow.offsetY).assertEqual(px2vp(resourceOffsety)+'.000000');
+          expect(obj.$attrs.trackShadow.offsetY).assertEqual(Math.round(px2vp(resourceOffsety))+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1300 END ');
           done();
         } catch (err) {
@@ -2346,7 +2346,7 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1400 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
           let resourceOffsety :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsety').id)
-          expect(obj.$attrs.trackShadow.offsetY).assertEqual(px2vp(resourceOffsety)+'.000000');
+          expect(obj.$attrs.trackShadow.offsetY).assertEqual(Math.round(px2vp(resourceOffsety))+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1400 END ');
           done();
         } catch (err) {
@@ -2377,7 +2377,7 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1500 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
           let resourceOffsety :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_datapanel_trackshadow_offsety').id)
-          expect(obj.$attrs.trackShadow.offsetY).assertEqual(px2vp(resourceOffsety)+'.000000');
+          expect(obj.$attrs.trackShadow.offsetY).assertEqual(Math.round(px2vp(resourceOffsety))+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1500 END ');
           done();
         } catch (err) {

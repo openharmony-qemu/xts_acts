@@ -416,6 +416,87 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_035
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3500
+   * @tc.desc   Test open(path, callback) interface. The first parameter is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_test_open_async_035', Level.LEVEL2, async function (done) {
+    try {
+      fileio.open('', (err, fd) => {
+        if (err) {
+          console.log('fileio_test_open_async_035 error: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'No such file or directory').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_test_open_async_035 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_test_open_async_036
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3600
+   * @tc.desc   Test open(path, callback) interface. The first parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_test_open_async_036', Level.LEVEL2, async function (done) {
+    try {
+      fileio.open(null, (err, fd) => {
+        if (err) {
+          console.log('fileio_test_open_async_036 error: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_test_open_async_036 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_test_open_async_037
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3700
+   * @tc.desc   Test open(path, callback) interface. The first parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_test_open_async_037', Level.LEVEL2, async function (done) {
+    try {
+      fileio.open(undefined, (err, fd) => {
+        if (err) {
+          console.log('fileio_test_open_async_037 error: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_test_open_async_037 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  /**
    * @tc.name   fileio_test_open_async_013
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1300
    * @tc.desc   Test open() interfaces. The first parameter is empty string.

@@ -473,6 +473,7 @@ import StyledStringKeyTest1 from "./StyledString/StyledStringKeyTest1.test";
 import spanTest from './spanTest/SpanJsunit1.test'
 
 export default function testsuite() {
+  textAreaInputTest();
   RichEditorStringSpan001();
   RichEditorStringSpan002()
   RichEditorStringSpan003();
@@ -696,7 +697,7 @@ export default function testsuite() {
   TextCommonTextComputing8();
   TextCommonTextComputing9();
 
-  textAreaInputTest();
+  
   APIContentTypeTest();
   APIUnderlineColorTest();
   TextInputAddApi();

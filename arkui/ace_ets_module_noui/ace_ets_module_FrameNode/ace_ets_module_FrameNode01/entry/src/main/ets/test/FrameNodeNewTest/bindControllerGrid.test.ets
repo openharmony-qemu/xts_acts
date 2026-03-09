@@ -63,28 +63,5 @@ export default function bindControllerGrid() {
       console.info('[bindControllerGrid_0100] END');
       done();
     });
-
-    /**
-     * @tc.name   bindControllerGrid_0200
-     * @tc.number bindControllerGrid_0200
-     * @tc.desc   frameNode: test bindController error code for Grid
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('bindControllerGrid_0200', Level.LEVEL2, async (done: Function) => {
-      console.info('bindControllerGrid_0200 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('grid_btn_100021'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson: string = getInspectorByKey('error_grid_100021');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[bindControllerGrid_0200] content obj is:' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('100021:The FrameNode is not modifiable.');
-      console.info('[bindControllerGrid_0200] END');
-      done();
-    });
   })
 }

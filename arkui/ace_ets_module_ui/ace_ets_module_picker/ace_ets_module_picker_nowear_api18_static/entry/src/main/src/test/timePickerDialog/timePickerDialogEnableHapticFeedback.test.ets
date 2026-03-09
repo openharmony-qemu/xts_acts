@@ -41,7 +41,7 @@ export default function TimePickerDialogEnableHapticFeedbackTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get TimePickerDialogEnableHapticFeedback state pages:' + JSON.stringify(pages));
-        if (!('timePickerDialogEnableHpaticFeedback' == pages.name)) {
+        if (!('timePickerDialogEnableHapticFeedback' == pages.name)) {
           console.info('get TimePickerDialogEnableHapticFeedback pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
@@ -55,110 +55,111 @@ export default function TimePickerDialogEnableHapticFeedbackTest() {
     
 
      
-/**
+    /**
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_001
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_001
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_001
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerDialog_EnableHapticFeedback_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableHapticFeedback_static_001';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('TimePickerDialog1', 10, "")
-      await CommonFunc.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    it('TimePickerDialog_EnableHapticFeedback_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TimePickerDialog_EnableHapticFeedback_static_001 start ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TimePickerDialog1'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let timePicker1 = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableHapticFeedback_static_001] obj1 is: " + timePicker1);
-      console.info("[TimePickerDialog_EnableHapticFeedback_static_001] obj1 is: " + JSON.stringify(JSON.parseJsonElement(timePicker1).getElement('$attrs').getString('enableHapticFeedback')));
-      inspector.sendEventByKey('TimePickerDialog1', 10, "")
-      expect(JSON.parseJsonElement(timePicker1).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
+      console.info('TimePickerDialog_EnableHapticFeedback_static_001 getElement start');
+      let timePicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1];  
+      let enableHapticFeedbackVal = timePicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_001] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(true);
+      console.info('TimePickerDialog_EnableHapticFeedback_static_001 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
       done();
     });
-
     
-
-    
-/**
+    /**
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_002
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_002
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_002
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerDialog_EnableHapticFeedback_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableHapticFeedback_static_002';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('TimePickerDialog2', 10, "")
-      await CommonFunc.sleep(1000);
-      let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    it('TimePickerDialog_EnableHapticFeedback_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TimePickerDialog_EnableHapticFeedback_static_002 start ===========================');
+      await CommonFunc.sleep(1000); 
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TimePickerDialog2'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let timePicker2 = JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableHapticFeedback_static_002] obj2 is: " + timePicker2);
-      console.info("[TimePickerDialog_EnableHapticFeedback_static_002] obj2 is: " + JSON.stringify(JSON.parseJsonElement(timePicker2).getElement('$attrs').getString('enableHapticFeedback')));
-      inspector.sendEventByKey('TimePickerDialog2', 10, "")
-      expect(JSON.parseJsonElement(timePicker2).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(false);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
+      console.info('TimePickerDialog_EnableHapticFeedback_static_002 getElement start');
+      let timePicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1];        
+      let enableHapticFeedbackVal = timePicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_002] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(false);
+      console.info('TimePickerDialog_EnableHapticFeedback_static_002 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
       done();
     });
-
-    
-
-    
-/**
+  
+    /**
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_003
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_003
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_003
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerDialog_EnableHapticFeedback_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableHapticFeedback_static_003';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('TimePickerDialog3', 10, "")
-      await CommonFunc.sleep(1000);
-      let obj3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    it('TimePickerDialog_EnableHapticFeedback_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TimePickerDialog_EnableHapticFeedback_static_003 start ===========================');
+      await CommonFunc.sleep(1000); 
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TimePickerDialog3'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let timePicker3 = JSON.stringify(obj3.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableHapticFeedback_static_003] obj3 is: " + timePicker3);
-      console.info("[TimePickerDialog_EnableHapticFeedback_static_003] obj3 is: " + JSON.stringify(JSON.parseJsonElement(timePicker3).getElement('$attrs').getString('enableHapticFeedback')));
-      inspector.sendEventByKey('TimePickerDialog3', 10, "")
-      expect(JSON.parseJsonElement(timePicker3).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
+      console.info('TimePickerDialog_EnableHapticFeedback_static_003 getElement start');
+      let timePicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1];  
+      let enableHapticFeedbackVal = timePicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_003] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(true);
+      console.info('TimePickerDialog_EnableHapticFeedback_static_003 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
       done();
     });
-
     
-
-    
-/**
+    /**
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_004
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_004
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_004
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerDialog_EnableHapticFeedback_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableHapticFeedback_static_004';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('TimePickerDialog4', 10, "")
-      await CommonFunc.sleep(1000);
-      let obj4 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    it('TimePickerDialog_EnableHapticFeedback_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TimePickerDialog_EnableHapticFeedback_static_004 start ===========================');
+      await CommonFunc.sleep(1000); 
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TimePickerDialog4'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let timePicker4 = JSON.stringify(obj4.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableHapticFeedback_static_004] obj4 is: " + timePicker4);
-      console.info("[TimePickerDialog_EnableHapticFeedback_static_004] obj4 is: " + JSON.stringify(JSON.parseJsonElement(timePicker4).getElement('$attrs').getString('enableHapticFeedback')));
-      inspector.sendEventByKey('TimePickerDialog4', 10, "")
-      expect(JSON.parseJsonElement(timePicker4).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
+      console.info('TimePickerDialog_EnableHapticFeedback_static_004 getElement start');
+      let timePicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1];  
+      let enableHapticFeedbackVal = timePicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_004] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(true);
+      console.info('TimePickerDialog_EnableHapticFeedback_static_004 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
       done();
     });
-
-    })
+  })
 }

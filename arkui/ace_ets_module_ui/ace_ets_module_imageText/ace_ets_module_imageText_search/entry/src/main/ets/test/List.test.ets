@@ -59,6 +59,8 @@ import SearchCompressLeadingPunctuationModifier from './SearchTest/SearchCompres
 import SearchTextDirectionTest from './SearchApi23Test/SearchTextDirection.test';
 import SearchEnableKeyboardOnFocusTest from './SearchTest/SearchEnableKeyboardOnFocus.test';
 import SearchSelectionMenuHiddenTest from './SearchTest/SearchSelectionMenuHidden.test';
+import SearchPropertiesNullUndefinedTest from './SearchTest/SearchPropertiesNullUndefined.test';
+import SearchPropertiesNullUndefined02Test from './SearchTest/SearchPropertiesNullUndefined02.test';
 
 
 export default function testsuite() {
@@ -107,4 +109,6 @@ export default function testsuite() {
   SearchTextDirectionTest()      // Api23
   SearchEnableKeyboardOnFocusTest();
   SearchSelectionMenuHiddenTest();
+  SearchPropertiesNullUndefinedTest();
+  SearchPropertiesNullUndefined02Test();
 }

@@ -632,5 +632,53 @@ export default function AsyncCallback() {
       done();
     })
 
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_Backup_ErrTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Backup_ErrTest_0100
+     * @tc.desc   backup  with ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_SDK_Backup_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_Backup_ErrTest_0100 start *************");
+      try {
+        await rdbStore!.backup("");
+        console.info('backup success.');
+        expect(null).assertFail();
+        done();
+      } catch(err) {
+        expect(err.code).assertEqual(14800010);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_Backup_ErrTest_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Backup_ErrTest_0200
+     * @tc.desc   backup  with ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_Backup_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_Backup_ErrTest_0200 start *************");
+      try {
+         rdbStore!.backup("", (err: BusinessError | null) => {
+          if(err){
+            expect(err.code).assertEqual(14800010);
+            done();
+          }else{
+            console.info('backup success.');
+            expect(null).assertFail();
+            done();
+          }   
+         }); 
+      } catch(err) {
+        expect(err.code).assertEqual(14800010);
+        done();
+      }
+    })
+
   })
 }

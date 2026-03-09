@@ -276,7 +276,7 @@ export default function windowLayoutTest() {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           done();
         } else {
-          expect(false).assertFalse();
+          expect(true).assertFalse();
           done();
         }
       })
@@ -335,18 +335,17 @@ export default function windowLayoutTest() {
           await windowClass.destroyWindow()
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse();
             done();
           } else {
             console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertFalse();
+            expect(true).assertFalse();
             done();
           }
         })
       } catch (exception) {
         console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         // await mainwindowClass.setUIContent("testability/pages/Index");
-        expect(false).assertFalse();
+        expect(true).assertFalse();
         done();
       }
 
@@ -369,7 +368,6 @@ export default function windowLayoutTest() {
           windowClass.setResizeByDragEnabled(enabled, async (err) => {
             if (err.code == 801) {
               console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-              expect(false).assertFalse();
               done();
             } else if (err.code && err.code != 801) {
               console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
@@ -1537,7 +1535,6 @@ export default function windowLayoutTest() {
           await subWindow.destroyWindow();
           if (err.code == 801) {
             console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
-            expect(false).assertFalse();
             done();
           } else {
             expect().assertFail();
@@ -1648,7 +1645,11 @@ export default function windowLayoutTest() {
             }).catch((err: BusinessError) => {
               console.error(caseName + `Failed to set window draggable. Cause code: ${err.code}, message: ${err.message}`);
               console.error(caseName + `err.code == 1300002 || err.code == 801: ${err.code == 1300002 || err.code == 801}`);
-              expect(err.code == 1300002 || err.code == 801).assertTrue();
+              if (err.code === 801) {
+                expect(err.code).assertEqual(801);
+              } else {
+                expect(err.code).assertEqual(1300002);
+              }
               done();
             })
           } catch (exception) {

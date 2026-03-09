@@ -1548,4 +1548,192 @@ describe('fileio_stat', function () {
     }
     done();
   });
+
+  /**
+   * @tc.name   fileio_stat_promise_error_001
+   * @tc.number SUB_DF_FILEIO_STAT_PROMISE_ERROR_001
+   * @tc.desc   Test stat() interface with empty string path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stat_promise_error_001', Level.LEVEL2, async function () {
+    try {
+      await fileio.stat("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_stat_promise_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stat_promise_error_002
+   * @tc.number SUB_DF_FILEIO_STAT_PROMISE_ERROR_002
+   * @tc.desc   Test stat() interface with null path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stat_promise_error_002', Level.LEVEL2, async function () {
+    try {
+      await fileio.stat(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_stat_promise_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stat_promise_error_003
+   * @tc.number SUB_DF_FILEIO_STAT_PROMISE_ERROR_003
+   * @tc.desc   Test stat() interface with undefined path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stat_promise_error_003', Level.LEVEL2, async function () {
+    try {
+      await fileio.stat(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_stat_promise_error_003: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stat_callback_error_001
+   * @tc.number SUB_DF_FILEIO_STAT_CALLBACK_ERROR_001
+   * @tc.desc   Test stat() interface with empty string path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stat_callback_error_001', Level.LEVEL2, async function (done) {
+    try {
+      fileio.stat("", function (err) {
+        if (err) {
+          console.log('fileio_stat_callback_error_001: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'No such file or directory').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_stat_callback_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stat_callback_error_002
+   * @tc.number SUB_DF_FILEIO_STAT_CALLBACK_ERROR_002
+   * @tc.desc   Test stat() interface with null path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stat_callback_error_002', Level.LEVEL2, async function (done) {
+    try {
+      fileio.stat(null, function (err) {
+        if (err) {
+          console.log('fileio_stat_callback_error_002: ' + err.message + ', code: ' + err.code);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_stat_callback_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stat_callback_error_003
+   * @tc.number SUB_DF_FILEIO_STAT_CALLBACK_ERROR_003
+   * @tc.desc   Test stat() interface with undefined path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stat_callback_error_003', Level.LEVEL2, async function (done) {
+    try {
+      fileio.stat(undefined, function (err) {
+        if (err) {
+          console.log('fileio_stat_callback_error_003: ' + err.message + ', code: ' + err.code);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_stat_callback_error_003: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  // Test cases for statSync(path: string): Stat
+  /**
+   * @tc.name   fileio_stat_sync_error_001
+   * @tc.number SUB_DF_FILEIO_STAT_SYNC_ERROR_001
+   * @tc.desc   Test statSync() interface with empty string path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stat_sync_error_001', Level.LEVEL2, async function () {
+    try {
+      fileio.statSync("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_stat_sync_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stat_sync_error_002
+   * @tc.number SUB_DF_FILEIO_STAT_SYNC_ERROR_002
+   * @tc.desc   Test statSync() interface with null path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stat_sync_error_002', Level.LEVEL2, async function () {
+    try {
+      fileio.statSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_stat_sync_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'The first argument requires type string').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_stat_sync_error_003
+   * @tc.number SUB_DF_FILEIO_STAT_SYNC_ERROR_003
+   * @tc.desc   Test statSync() interface with undefined path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_stat_sync_error_003', Level.LEVEL2, async function () {
+    try {
+      fileio.statSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_stat_sync_error_003: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'The first argument requires type string').assertTrue();
+    }
+  });
 });}

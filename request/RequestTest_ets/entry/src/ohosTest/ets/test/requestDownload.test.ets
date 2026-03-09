@@ -234,6 +234,7 @@ export default function requestDownloadJSUnit() {
             }catch(err){
               console.error("====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0004 throw_error: " + err);
             }
+            expect(err === undefined).assertEqual(true);
             downloadTask.off('remove');
             fileio.unlinkSync(filePath);
             done();
@@ -442,6 +443,7 @@ export default function requestDownloadJSUnit() {
           expect(downloadTask != undefined).assertEqual(true);
           let removeProgress = () => {};
           downloadTask.on('remove', removeProgress);
+          expect(err === undefined).assertEqual(true);
           downloadTask.off('remove', removeProgress);
           await downloadTask.remove();
           fileio.unlinkSync(filePath);
@@ -680,6 +682,7 @@ export default function requestDownloadJSUnit() {
         try{
           expect(downloadTask != undefined).assertEqual(true);
           await downloadTask.resume();
+          expect(err === undefined).assertEqual(true);
           await downloadTask.remove();
           fileio.unlinkSync(filePath);
           done();

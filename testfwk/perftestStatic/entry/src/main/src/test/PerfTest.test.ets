@@ -81,9 +81,13 @@ export default function perfTestTest() {
             expect(res1.minimum).assertLargerOrEqual(0)
             expect(res1.roundValues.length).assertLargerOrEqual(1)
             expect(res2.average).assertLargerOrEqual(0)
+            expect(res2.metric).assertEqual(PerfMetric.CPU_LOAD)
             expect(res3.average).assertLargerOrEqual(0)
+            expect(res3.metric).assertEqual(PerfMetric.CPU_USAGE)
             expect(res4.average).assertLargerOrEqual(0)
+            expect(res4.metric).assertEqual(PerfMetric.MEMORY_RSS)
             expect(res5.average).assertLargerOrEqual(0)
+            expect(res5.metric).assertEqual(PerfMetric.MEMORY_PSS)
             hilog.info(domain, tag, `testPerfTestCalculate_static end`);
         })
 
@@ -128,6 +132,7 @@ export default function perfTestTest() {
             perfTest.destroy()
             hilog.info(domain, tag, `testPerfTestPageSwitch_static res1, ${JSON.stringify(res1)}`);
             expect(res1.average).assertLargerOrEqual(0)
+            expect(res1.metric).assertEqual(PerfMetric.PAGE_SWITCH_COMPLETE_TIME)
             await stopApplication('com.perftestScene.acts')
             hilog.info(domain, tag, `testPerfTestPageSwitch_static end`);
         })
@@ -185,6 +190,7 @@ export default function perfTestTest() {
             perfTest.destroy()
             hilog.info(domain, tag, `testPerfTestListSwipe_static res1, ${JSON.stringify(res1)}`);
             expect(res1.average).assertLargerOrEqual(0)
+            expect(res1.metric).assertEqual(PerfMetric.LIST_SWIPE_FPS)
             hilog.info(domain, tag, `testPerfTestListSwipe_static end`);
         })
 
@@ -360,7 +366,9 @@ export default function perfTestTest() {
             hilog.info(domain, tag, `testPerfTest_Start_static res7, ${JSON.stringify(res7.average)}`);
             expect(res1.average).assertLargerOrEqual(0)
             expect(res6.average).assertLargerOrEqual(0)
+            expect(res6.metric).assertEqual(PerfMetric.APP_START_RESPONSE_TIME)
             expect(res7.average).assertLargerOrEqual(0)
+            expect(res7.metric).assertEqual(PerfMetric.APP_START_COMPLETE_TIME)
             hilog.info(domain, tag, `testPerfTest_Start_static end`);
         })
 

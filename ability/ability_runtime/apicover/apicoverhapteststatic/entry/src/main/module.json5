@@ -18,6 +18,7 @@
     "name": "entry",
     "type": "entry",
     "description": "$string:module_desc",
+    "srcEntry": "./ets/myabilitystage/MyAbilityStage.ets",
     "mainElement": "EntryAbility",
     "deviceTypes": [],
     "deliveryWithInstall": true,
@@ -67,6 +68,16 @@
             ]
           }
         ]
+      },
+      {
+        "name": "EntryAbility3",
+        "srcEntry": "./ets/entryability/EntryAbility3.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "launchType": "specified"
       }
     ],
     "extensionAbilities": [
@@ -77,6 +88,11 @@
         "description": "service",
         "type": "service",
         "exported": true
+      }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.START_ABILITIES_FROM_BACKGROUND"
       }
     ]
   }

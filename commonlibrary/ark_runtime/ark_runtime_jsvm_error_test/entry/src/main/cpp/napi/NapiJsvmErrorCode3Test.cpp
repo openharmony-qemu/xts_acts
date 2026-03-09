@@ -330,6 +330,20 @@ napi_value TestGetSymbolSearchInvalid(napi_env env1, napi_callback_info info)
 
     JSVM_Status status = OH_JSVM_GetSymbolSearch(env, NULL);
     int32_t resValue = (status == JSVM_INVALID_ARG) ? 0 : 1;
+    JSVM_TraceCategory cat = JSVM_TRACE_VM;
+    resValue += (cat == JSVM_TRACE_VM) ? 0 : 1;
+    cat = JSVM_TRACE_COMPILE;
+    resValue += (cat == JSVM_TRACE_COMPILE) ? 0 : 1;
+    cat = JSVM_TRACE_EXECUTE;
+    resValue += (cat == JSVM_TRACE_EXECUTE) ? 0 : 1;
+    cat = JSVM_TRACE_RUNTIME;
+    resValue += (cat == JSVM_TRACE_RUNTIME) ? 0 : 1;
+    cat = JSVM_TRACE_STACK_TRACE;
+    resValue += (cat == JSVM_TRACE_STACK_TRACE) ? 0 : 1;
+    cat = JSVM_TRACE_WASM;
+    resValue += (cat == JSVM_TRACE_WASM) ? 0 : 1;
+    cat = JSVM_TRACE_WASM_DETAILED;
+    resValue += (cat == JSVM_TRACE_WASM_DETAILED) ? 0 : 1;
 
     OH_JSVM_CloseHandleScope(env, handlescope);
     OH_JSVM_CloseEnvScope(env, envScope);
@@ -393,6 +407,13 @@ napi_value TestGetSymbolSplitInvalid(napi_env env1, napi_callback_info info)
     return result;
 }
 
+bool OutputStream(const char *data, int size, void *streamData)
+{
+    std::string value(data, size);
+    *(std::string *)streamData = std::string(data, size);
+    return true;
+}
+
 napi_value TestGetSymbolToPrimitiveJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
@@ -409,6 +430,20 @@ napi_value TestGetSymbolToPrimitiveJSOK(napi_env env1, napi_callback_info info)
     JSVM_Value value;
     JSVM_Status status = OH_JSVM_GetSymbolToPrimitive(env, &value);
     int32_t resValue = (status == JSVM_OK) ? 0 : 1;
+    JSVM_Status status1 = OH_JSVM_SetMicrotaskPolicy(vm, JSVM_MicrotaskPolicy::JSVM_MICROTASK_EXPLICIT);
+    resValue += (status1 == JSVM_OK) ? 0 : 1;
+    JSVM_VM vm_ = nullptr;
+    JSVM_Status status11 = OH_JSVM_SetMicrotaskPolicy(vm_, JSVM_MicrotaskPolicy::JSVM_MICROTASK_EXPLICIT);
+    resValue += (status11 == JSVM_INVALID_ARG) ? 0 : 1;
+    JSVM_Status status2 = OH_JSVM_TraceStart(0, nullptr, "default", 0);
+    resValue += (status2 == JSVM_OK) ? 0 : 1;
+    JSVM_Status status22 = OH_JSVM_TraceStart(1, nullptr, "invalid", 0);
+    resValue += (status22 == JSVM_INVALID_ARG) ? 0 : 1;
+    std::string data;
+    JSVM_Status status3 = OH_JSVM_TraceStop(OutputStream, (void *)&data);
+    resValue += (status3 == JSVM_OK) ? 0 : 1;
+    JSVM_Status status33 = OH_JSVM_TraceStop(nullptr, (void *)&data);
+    resValue += (status33 == JSVM_INVALID_ARG) ? 0 : 1;
 
     OH_JSVM_CloseHandleScope(env, handlescope);
     OH_JSVM_CloseEnvScope(env, envScope);
@@ -419,6 +454,7 @@ napi_value TestGetSymbolToPrimitiveJSOK(napi_env env1, napi_callback_info info)
     NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
     return result;
 }
+
 napi_value TestGetSymbolToPrimitiveInvalid(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
@@ -471,6 +507,7 @@ napi_value TestGetSymbolUnscopablesJSOK(napi_env env1, napi_callback_info info)
     NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
     return result;
 }
+
 napi_value TestGetSymbolUnscopablesInvalid(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
@@ -539,8 +576,11 @@ napi_value TestGetSymbolToStringTagInvalid(napi_env env1, napi_callback_info inf
 
     JSVM_Value value;
     JSVM_Status status = OH_JSVM_GetSymbolToStringTag(NULL, &value);
-    int32_t resValue = (status == JSVM_INVALID_ARG) ? 0 : 1;
-
+    int32_t resValue = 0;
+    resValue = (status == JSVM_INVALID_ARG) ? 0 : 1;
+    JSVM_CompileProfile compile_profile = {nullptr, 0};
+    resValue += (compile_profile.profile == nullptr) ? 0 : 1;
+    resValue += (compile_profile.length == 0) ? 0 : 1;
     OH_JSVM_CloseHandleScope(env, handlescope);
     OH_JSVM_CloseEnvScope(env, envScope);
     OH_JSVM_DestroyEnv(env);
@@ -749,6 +789,12 @@ napi_value TestSetHandlerForFatalErrorInvalid(napi_env env1, napi_callback_info 
     JSVM_Status status = OH_JSVM_SetHandlerForFatalError(NULL, NULL);
     int32_t resValue = (status == JSVM_INVALID_ARG) ? 0 : 1;
 
+    JSVM_VMInfo resultt;
+    OH_JSVM_GetVMInfo(&resultt);
+    JSVM_Value version;
+    JSVM_Value* val;
+    auto ret = OH_JSVM_CreateStringUtf8(env, resultt.engine, 1, &version);
+    resValue += (resultt.apiVersion >= 0) ? 0 : 1;
     OH_JSVM_CloseHandleScope(env, handlescope);
     OH_JSVM_CloseEnvScope(env, envScope);
     OH_JSVM_DestroyEnv(env);
@@ -784,6 +830,19 @@ napi_value TestSetHandlerForPromiseRejectJSOK(napi_env env1, napi_callback_info 
     NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
     return result;
 }
+
+static JSVM_PropertyHandlerConfigurationStruct propertyCfg{
+    nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr
+};
+
+static JSVM_Value SetNamedPropertyCbInfo2(JSVM_Env env, JSVM_Value name, JSVM_Value property, JSVM_Value thisArg,
+    JSVM_Value data)
+{
+    return property;
+}
+
+static bool g_callAsFunctionFlag = false;
+
 napi_value TestSetHandlerForPromiseRejectInvalid(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
@@ -799,6 +858,24 @@ napi_value TestSetHandlerForPromiseRejectInvalid(napi_env env1, napi_callback_in
 
     JSVM_Status status = OH_JSVM_SetHandlerForPromiseReject(NULL, NULL);
     int32_t resValue = (status == JSVM_INVALID_ARG) ? 0 : 1;
+    resValue += (propertyCfg.namedPropertyData == nullptr) ? 0 : 1;
+    resValue += (propertyCfg.indexedPropertyData == nullptr) ? 0 : 1;
+    JSVM_DefineClassOptions subOptions[2];
+    JSVM_CallbackStruct *callAsFuncParam = new JSVM_CallbackStruct;
+    callAsFuncParam->data = nullptr;
+    callAsFuncParam->callback = [](JSVM_Env env, JSVM_CallbackInfo info) -> JSVM_Value {
+        JSVM_Value thisVar = nullptr;
+        g_callAsFunctionFlag = true;
+        OH_JSVM_GetCbInfo(env, info, nullptr, nullptr, &thisVar, nullptr);
+        return thisVar;
+    };
+    propertyCfg.genericNamedPropertySetterCallback = SetNamedPropertyCbInfo2;
+    JSVM_PropertyHandler propertyHandler = {
+        .propertyHandlerCfg = &propertyCfg,
+        .callAsFunctionCallback = callAsFuncParam,
+    };
+    resValue += (propertyHandler.propertyHandlerCfg != nullptr) ? 0 : 1;
+    resValue += (propertyHandler.callAsFunctionCallback != nullptr) ? 0 : 1;
 
     OH_JSVM_CloseHandleScope(env, handlescope);
     OH_JSVM_CloseEnvScope(env, envScope);

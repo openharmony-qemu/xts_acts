@@ -7845,6 +7845,47 @@ export default function audioFramework() {
         done();
     })
     /**
+     * @tc.name   AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1339
+     * @tc.number AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1339
+     * @tc.desc   isRecordingAvailable with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1339', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      try {
+        audioStreamManager.isRecordingAvailable(null);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1340
+     * @tc.number AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1340
+     * @tc.desc   isRecordingAvailable with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      try {
+        audioStreamManager.isRecordingAvailable(undefined);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_0300
      * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_0300
      * @tc.desc   AudioPrivacyType - PRIVACY_TYPE_SHARED
@@ -8160,5 +8201,941 @@ export default function audioFramework() {
       console.log(`AUDIOVOLUMEMODE_APP_INDIVIDUAL is: ${audio.AudioVolumeMode.APP_INDIVIDUAL}`);
       done();
     })
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETVOLUME_2900
+     * @tc.number AUDIO_MANAGER_SETVOLUME_2900
+     * @tc.desc   setVolume with null volume parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETVOLUME_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, null);
+        console.info(`${TagFrmwk}: setVolume with null volume: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setVolume with null volume: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETVOLUME_3000
+     * @tc.number AUDIO_MANAGER_SETVOLUME_3000
+     * @tc.desc   setVolume with undefined volume parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETVOLUME_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, undefined);
+        console.info(`${TagFrmwk}: setVolume with undefined volume: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setVolume with undefined volume: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETVOLUME_3100
+     * @tc.number AUDIO_MANAGER_SETVOLUME_3100
+     * @tc.desc   setVolume callback with null volume parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETVOLUME_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.setVolume(audio.AudioVolumeType.MEDIA, null, (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setVolume callback with null volume: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: setVolume callback with null volume: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETVOLUME_3200
+     * @tc.number AUDIO_MANAGER_SETVOLUME_3200
+     * @tc.desc   setVolume callback with undefined volume parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETVOLUME_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.setVolume(audio.AudioVolumeType.MEDIA, undefined, (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setVolume callback with undefined volume: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: setVolume callback with undefined volume: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_0100
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_0100
+     * @tc.desc   setAudioParameter with empty key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setAudioParameter('', 'testValue');
+        console.info(`${TagFrmwk}: setAudioParameter with empty key: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setAudioParameter with empty key: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_0200
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_0200
+     * @tc.desc   setAudioParameter with null key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setAudioParameter(null, 'testValue');
+        console.info(`${TagFrmwk}: setAudioParameter with null key: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setAudioParameter with null key: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_0300
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_0300
+     * @tc.desc   setAudioParameter with undefined key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setAudioParameter(undefined, 'testValue');
+        console.info(`${TagFrmwk}: setAudioParameter with undefined key: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setAudioParameter with undefined key: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_0400
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_0400
+     * @tc.desc   setAudioParameter with empty value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setAudioParameter('testKey', '');
+        console.info(`${TagFrmwk}: setAudioParameter with empty value: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setAudioParameter with empty value: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_0500
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_0500
+     * @tc.desc   setAudioParameter with null value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setAudioParameter('testKey', null);
+        console.info(`${TagFrmwk}: setAudioParameter with null value: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setAudioParameter with null value: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_0600
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_0600
+     * @tc.desc   setAudioParameter with undefined value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setAudioParameter('testKey', undefined);
+        console.info(`${TagFrmwk}: setAudioParameter with undefined value: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setAudioParameter with undefined value: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_0700
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_0700
+     * @tc.desc   setAudioParameter callback with empty key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.setAudioParameter('', 'testValue', (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setAudioParameter callback with empty key: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: setAudioParameter callback with empty key: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_0800
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_0800
+     * @tc.desc   setAudioParameter callback with null key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.setAudioParameter(null, 'testValue', (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setAudioParameter callback with null key: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: setAudioParameter callback with null key: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_0900
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_0900
+     * @tc.desc   setAudioParameter callback with undefined key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.setAudioParameter(undefined, 'testValue', (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setAudioParameter callback with undefined key: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: setAudioParameter callback with undefined key: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_1000
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_1000
+     * @tc.desc   setAudioParameter callback with empty value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.setAudioParameter('testKey', '', (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setAudioParameter callback with empty value: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: setAudioParameter callback with empty value: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_1100
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_1100
+     * @tc.desc   setAudioParameter callback with null value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.setAudioParameter('testKey', null, (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setAudioParameter callback with null value: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: setAudioParameter callback with null value: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_SETAUDIOPARAMETER_1200
+     * @tc.number AUDIO_MANAGER_SETAUDIOPARAMETER_1200
+     * @tc.desc   setAudioParameter callback with undefined value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_SETAUDIOPARAMETER_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.setAudioParameter('testKey', undefined, (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setAudioParameter callback with undefined value: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: setAudioParameter callback with undefined value: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_GETAUDIOPARAMETER_0100
+     * @tc.number AUDIO_MANAGER_GETAUDIOPARAMETER_0100
+     * @tc.desc   getAudioParameter with empty key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_GETAUDIOPARAMETER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.getAudioParameter('');
+        console.info(`${TagFrmwk}: getAudioParameter with empty key: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getAudioParameter with empty key: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_GETAUDIOPARAMETER_0200
+     * @tc.number AUDIO_MANAGER_GETAUDIOPARAMETER_0200
+     * @tc.desc   getAudioParameter with null key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_GETAUDIOPARAMETER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.getAudioParameter(null);
+        console.info(`${TagFrmwk}: getAudioParameter with null key: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getAudioParameter with null key: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_GETAUDIOPARAMETER_0300
+     * @tc.number AUDIO_MANAGER_GETAUDIOPARAMETER_0300
+     * @tc.desc   getAudioParameter with undefined key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_GETAUDIOPARAMETER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.getAudioParameter('');
+        console.info(`${TagFrmwk}: getAudioParameter with undefined key: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getAudioParameter with undefined key: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_GETAUDIOPARAMETER_0400
+     * @tc.number AUDIO_MANAGER_GETAUDIOPARAMETER_0400
+     * @tc.desc   getAudioParameter callback with empty key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_GETAUDIOPARAMETER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.getAudioParameter('', (err, value) => {
+        if (err) {
+          console.info(`${TagFrmwk}: getAudioParameter callback with empty key: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: getAudioParameter callback with empty key: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_GETAUDIOPARAMETER_0500
+     * @tc.number AUDIO_MANAGER_GETAUDIOPARAMETER_0500
+     * @tc.desc   getAudioParameter callback with null key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_GETAUDIOPARAMETER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.getAudioParameter(null, (err, value) => {
+        if (err) {
+          console.info(`${TagFrmwk}: getAudioParameter callback with null key: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: getAudioParameter callback with null key: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_GETAUDIOPARAMETER_0600
+     * @tc.number AUDIO_MANAGER_GETAUDIOPARAMETER_0600
+     * @tc.desc   getAudioParameter callback with undefined key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_GETAUDIOPARAMETER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioManager.getAudioParameter('', (err, value) => {
+        if (err) {
+          console.info(`${TagFrmwk}: getAudioParameter callback with undefined key: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: getAudioParameter callback with undefined key: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_ON_INTERRUPT_0100
+     * @tc.number AUDIO_MANAGER_ON_INTERRUPT_0100
+     * @tc.desc   on interrupt with null interrupt parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_ON_INTERRUPT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioInterrupt: audio.AudioInterrupt = {
+          streamUsage: audio.StreamUsage.STREAM_USAGE_MEDIA,
+          contentType: audio.ContentType.CONTENT_TYPE_MUSIC,
+          pauseWhenDucked: true
+        };
+        let callback = (interruptAction: audio.InterruptAction) => {
+          console.info(`${TagFrmwk}: interrupt callback called`);
+        };
+        audioManager.on('interrupt', null, callback);
+        console.info(`${TagFrmwk}: on interrupt with null interrupt: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: on interrupt with null interrupt: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_ON_INTERRUPT_0200
+     * @tc.number AUDIO_MANAGER_ON_INTERRUPT_0200
+     * @tc.desc   on interrupt with undefined interrupt parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_ON_INTERRUPT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback = (interruptAction: audio.InterruptAction) => {
+          console.info(`${TagFrmwk}: interrupt callback called`);
+        };
+        audioManager.on('interrupt', undefined, callback);
+        console.info(`${TagFrmwk}: on interrupt with undefined interrupt: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: on interrupt with undefined interrupt: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_OFF_INTERRUPT_0100
+     * @tc.number AUDIO_MANAGER_OFF_INTERRUPT_0100
+     * @tc.desc   off interrupt with null interrupt parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_OFF_INTERRUPT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioInterrupt: audio.AudioInterrupt = {
+          streamUsage: audio.StreamUsage.STREAM_USAGE_MEDIA,
+          contentType: audio.ContentType.CONTENT_TYPE_MUSIC,
+          pauseWhenDucked: true
+        };
+        let callback = (interruptAction: audio.InterruptAction) => {
+          console.info(`${TagFrmwk}: interrupt callback called`);
+        };
+        audioManager.off('interrupt', null, callback);
+        console.info(`${TagFrmwk}: off interrupt with null interrupt: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: off interrupt with null interrupt: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_MANAGER_OFF_INTERRUPT_0200
+     * @tc.number AUDIO_MANAGER_OFF_INTERRUPT_0200
+     * @tc.desc   off interrupt with undefined interrupt parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_MANAGER_OFF_INTERRUPT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback = (interruptAction: audio.InterruptAction) => {
+          console.info(`${TagFrmwk}: interrupt callback called`);
+        };
+        audioManager.off('interrupt', undefined, callback);
+        console.info(`${TagFrmwk}: off interrupt with undefined interrupt: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: off interrupt with undefined interrupt: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+    /**
+     * @tc.name   AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGER_1345
+     * @tc.number AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGER_1345
+     * @tc.desc   getVolumeGroupManager with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGER_1345', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager = audio.getAudioManager().getVolumeManager();
+      try {
+        audioVolumeManager.getVolumeGroupManager(null, (err, manager) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message},${err.code}`);
+            expect(Number((err as BusinessError).code)).assertEqual(6800101);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGER_1346
+     * @tc.number AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGER_1346
+     * @tc.desc   getVolumeGroupManager with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGER_1346', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager = audio.getAudioManager().getVolumeManager();
+      audioVolumeManager.getVolumeGroupManager(undefined, (err, manager) => {
+        if (err) {
+          console.info(`${TagFrmwk}: PASS :${err.message}`);
+          expect(Number((err as BusinessError).code)).assertEqual(6800101);
+        } else {
+          console.info(`${TagFrmwk}: FAIL`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGERSYNC_1347
+     * @tc.number AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGERSYNC_1347
+     * @tc.desc   getVolumeGroupManagerSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGERSYNC_1347', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager = audio.getAudioManager().getVolumeManager();
+      try {
+        audioVolumeManager.getVolumeGroupManagerSync(null);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGERSYNC_1348
+     * @tc.number AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGERSYNC_1348
+     * @tc.desc   getVolumeGroupManagerSync with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEMANAGER_GETVOLUMEGROUPMANAGERSYNC_1348', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager = audio.getAudioManager().getVolumeManager();
+      try {
+        audioVolumeManager.getVolumeGroupManagerSync(undefined);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEMANAGER_SETAPPVOLUMEPERCENTAGE_1349
+     * @tc.number AUDIOVOLUMEMANAGER_SETAPPVOLUMEPERCENTAGE_1349
+     * @tc.desc   setAppVolumePercentage with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEMANAGER_SETAPPVOLUMEPERCENTAGE_1349', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager = audio.getAudioManager().getVolumeManager();
+      try {
+        await audioVolumeManager.setAppVolumePercentage(null);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEMANAGER_SETAPPVOLUMEPERCENTAGE_1350
+     * @tc.number AUDIOVOLUMEMANAGER_SETAPPVOLUMEPERCENTAGE_1350
+     * @tc.desc   setAppVolumePercentage with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEMANAGER_SETAPPVOLUMEPERCENTAGE_1350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager = audio.getAudioManager().getVolumeManager();
+      try {
+        await audioVolumeManager.setAppVolumePercentage(undefined);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEMANAGER_GETVOLUMEINUNITOFDBBYSTREAM_1351
+     * @tc.number AUDIOVOLUMEMANAGER_GETVOLUMEINUNITOFDBBYSTREAM_1351
+     * @tc.desc   getVolumeInUnitOfDbByStream with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEMANAGER_GETVOLUMEINUNITOFDBBYSTREAM_1351', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager = audio.getAudioManager().getVolumeManager();
+      try {
+        audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_MEDIA, null, audio.DeviceType.SPEAKER);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEMANAGER_GETVOLUMEINUNITOFDBBYSTREAM_1352
+     * @tc.number AUDIOVOLUMEMANAGER_GETVOLUMEINUNITOFDBBYSTREAM_1352
+     * @tc.desc   getVolumeInUnitOfDbByStream with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEMANAGER_GETVOLUMEINUNITOFDBBYSTREAM_1352', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager = audio.getAudioManager().getVolumeManager();
+      try {
+        audioVolumeManager.getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_MEDIA, undefined, audio.DeviceType.SPEAKER);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1355
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1355
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1355', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.SPEAKER, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1356
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1356
+     * @tc.desc   getSystemVolumeInDb with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1356', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.SPEAKER, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1357
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1357
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1357', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.SPEAKER);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1358
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1358
+     * @tc.desc   getSystemVolumeInDb with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1358', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.SPEAKER);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1359
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1359
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1359', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.SPEAKER);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1360
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1360
+     * @tc.desc   getSystemVolumeInDbSync with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.SPEAKER);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFORINPUTDEVICE_1361
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFORINPUTDEVICE_1361
+     * @tc.desc   getMaxAmplitudeForInputDevice with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFORINPUTDEVICE_1361', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioVolumeGroupManager.getMaxAmplitudeForInputDevice(null);
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFORINPUTDEVICE_1362
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFORINPUTDEVICE_1362
+     * @tc.desc   getMaxAmplitudeForInputDevice with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFORINPUTDEVICE_1362', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioVolumeGroupManager.getMaxAmplitudeForInputDevice(undefined);
+        console.info(`${TagFrmwk}: PASS`);
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFOROUTPUTDEVICE_1363
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFOROUTPUTDEVICE_1363
+     * @tc.desc   getMaxAmplitudeForOutputDevice with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFOROUTPUTDEVICE_1363', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioVolumeGroupManager.getMaxAmplitudeForOutputDevice(null);
+        console.info(`${TagFrmwk}: FAIL`);
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFOROUTPUTDEVICE_1364
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFOROUTPUTDEVICE_1364
+     * @tc.desc   getMaxAmplitudeForOutputDevice with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETMAXAMPLITUDEFOROUTPUTDEVICE_1364', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioVolumeGroupManager.getMaxAmplitudeForOutputDevice(undefined);
+        console.info(`${TagFrmwk}: FAIL`);
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
   })
 }

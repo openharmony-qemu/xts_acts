@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { BusinessError } from '@ohos.base';
 import { Driver, ON } from "@ohos.UiTest"
 import window from '@ohos.window';
+import { uiExtension } from '@kit.ArkUI';
 import ohosWindow from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
@@ -1856,6 +1857,35 @@ export default function extensionWindowPropertiesTest() {
       } catch (exception) {
         console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
         await subWindowClass?.destroyWindow()
+        expect().assertFail()
+        done()
+      }
+
+
+    })
+
+    /**
+     * @tc.name   testEventFlagEnum
+     * @tc.number SUB_WMS_UEC_EVENTFLAG_ENUM_0100
+     * @tc.desc   testEventFlagEnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testEventFlagEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testEventFlagEnum';
+      console.log(caseName + 'start run');
+      try {
+        expect(uiExtension.EventFlag.EVENT_NONE).assertEqual(0x00000000)
+        expect(uiExtension.EventFlag.EVENT_PAN_GESTURE_LEFT).assertEqual(0x00000001)
+        expect(uiExtension.EventFlag.EVENT_PAN_GESTURE_RIGHT).assertEqual(0x00000002)
+        expect(uiExtension.EventFlag.EVENT_PAN_GESTURE_UP).assertEqual(0x00000004)
+        expect(uiExtension.EventFlag.EVENT_PAN_GESTURE_DOWN).assertEqual(0x00000008)
+        expect(uiExtension.EventFlag.EVENT_CLICK).assertEqual(0x00000100)
+        expect(uiExtension.EventFlag.EVENT_LONG_PRESS).assertEqual(0x00000200)
+        done()
+      } catch (exception) {
+        console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
         expect().assertFail()
         done()
       }

@@ -27,6 +27,7 @@
         "MainAbility/pages/PatternLock/PatternLock11Jsunit",
         "MainAbility/pages/PatternLock/PatternLockActivateCircleStyle1",
         "MainAbility/pages/PatternLock/PatternLockPage",
+        "MainAbility/pages/PatternLock/PatternLockPropertiesNullUndefined",
 
         "MainAbility/pages/QRCode/QRCodeApiTest",
         "MainAbility/pages/QRCode/QRCodeAttrTest",

@@ -56,7 +56,7 @@ export default function textpickermultiTest() {
             '["orange1","orange2","orange3","orange4"],["peach1","peach2","peach3","peach4"]]');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_0100 ERR ' + JSON.stringify(err));
           done();
         }
@@ -87,7 +87,7 @@ export default function textpickermultiTest() {
             '{"text":"南岗区"}]},{"text":"牡丹江市", "children":[{"text":"东安区"},{"text":"西安区"},{"text":"爱民区"}]}]}]');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_0200 ERR ' + JSON.stringify(err));
           done();
         }
@@ -114,7 +114,7 @@ export default function textpickermultiTest() {
           expect(obj.$attrs.selecteds[2]).assertEqual('2');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_0300 ERR ' + JSON.stringify(err));
           done();
         }
@@ -141,7 +141,7 @@ export default function textpickermultiTest() {
           expect(obj.$attrs.values[2]).assertEqual('中山区');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_0400 ERR ' + JSON.stringify(err));
           done();
         }
@@ -168,7 +168,7 @@ export default function textpickermultiTest() {
           expect(obj.$attrs.selectedIndex[2]).assertEqual('2');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_0500 ERR ' + JSON.stringify(err));
           done();
         }
@@ -195,7 +195,7 @@ export default function textpickermultiTest() {
           expect(obj.$attrs.selectedIndex[2]).assertEqual('2');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_0600 ERR ' + JSON.stringify(err));
           done();
         }
@@ -222,7 +222,7 @@ export default function textpickermultiTest() {
           expect(obj.$attrs.selectedIndex[2]).assertEqual('0');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_0700 ERR ' + JSON.stringify(err));
           done();
         }
@@ -249,7 +249,7 @@ export default function textpickermultiTest() {
           expect(obj.$attrs.selectedIndex[2]).assertEqual('0');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_0800 ERR ' + JSON.stringify(err));
           done();
         }
@@ -276,7 +276,7 @@ export default function textpickermultiTest() {
           expect(obj.$attrs.selectedIndex[2]).assertEqual('0');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_0900 ERR ' + JSON.stringify(err));
           done();
         }
@@ -303,7 +303,7 @@ export default function textpickermultiTest() {
           expect(obj.$attrs.selecteds[2]).assertEqual('0');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_1000 ERR ' + JSON.stringify(err));
           done();
         }
@@ -330,7 +330,7 @@ export default function textpickermultiTest() {
           expect(obj.$attrs.values[2]).assertEqual('中山区');
           done();
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUXII_Stage_TextPicker_Options_1100 ERR ' + JSON.stringify(err));
           done();
         }

@@ -317,10 +317,9 @@ export default function windowPCTest() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-          expect(false).assertFalse();
         } else {
           console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-          expect(false).assertFalse();
+          expect(true).assertFalse();
         }
         done();
       })
@@ -385,16 +384,15 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse();
           } else {
             console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertFalse();
+            expect(true).assertFalse();
           }
           done();
         })
       } catch (exception) {
         console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect(false).assertFalse();
+        expect(true).assertFalse();
         done();
       }
     })
@@ -449,16 +447,15 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse();
           } else {
             console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertFalse();
+            expect(true).assertFalse();
           }
           done();
         })
       } catch (exception) {
         console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect(false).assertFalse();
+        expect(true).assertFalse();
         done();
       }
     })
@@ -3360,11 +3357,14 @@ export default function windowPCTest() {
         done();
       }).catch(async (err: BusinessError) => {
         console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-        if (err.code == 801 || err.code == 1300002) {
+        if (err.code === 801) {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           done();
-        } else {
-          expect(false).assertFalse();
+        } else if(err.code === 1300002){
+          console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+          done();
+        }else {
+          expect(true).assertFalse();
           done();
         }
       })
@@ -3401,7 +3401,7 @@ export default function windowPCTest() {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           done();
         } else {
-          expect(false).assertFalse();
+          expect(false).assertTrue();
           done();
         }
       })
@@ -3438,7 +3438,7 @@ export default function windowPCTest() {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           done();
         } else {
-          expect(false).assertFalse();
+          expect(false).assertTrue();
           done();
         }
       })

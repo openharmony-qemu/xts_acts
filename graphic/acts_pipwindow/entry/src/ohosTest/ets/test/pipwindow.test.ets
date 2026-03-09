@@ -2494,7 +2494,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.info(`${message} Succeeded setPiPControlEnabled FAST_BACKWARD true`);
               pipController.setPiPControlEnabled(pipWindow.PiPControlType.FAST_BACKWARD, false)
               console.info(`${message} Succeeded setPiPControlEnabled FAST_BACKWARD false`);
-              expect(true).assertTrue();
+              
 
               done();
             } catch (error) {
@@ -2576,7 +2576,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.info(`${message} Succeeded setPiPControlEnabled CAMERA_SWITCH true`);
               pipController.setPiPControlEnabled(pipWindow.PiPControlType.CAMERA_SWITCH, true)
               console.info(`${message} Succeeded setPiPControlEnabled CAMERA_SWITCH true`);
-              expect(true).assertTrue();
+              
 
               done();
             } catch (error) {
@@ -5978,7 +5978,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       if (isPipWindowEnabled) {
         try {
           await pipWindow.create(config);
-          expect(true).assertTrue();
+          
           done();
         } catch (err) {
           console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
@@ -6010,7 +6010,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       if (isPipWindowEnabled) {
         try {
           await pipWindow.create(config);
-          expect(true).assertTrue();
+          
           done();
         } catch (err) {
           console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
@@ -6044,7 +6044,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         try {
           pipController = await pipWindow.create(config);
           pipController.setAutoStartEnabled(false);
-          expect(true).assertTrue();
+          
           done();
         } catch (err) {
           console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);

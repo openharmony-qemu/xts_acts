@@ -5248,5 +5248,300 @@ export default function audioCapturer() {
         done();
       }
     })
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIOCAPTURER_1301
+     * @tc.number AUDIO_CREATEAUDIOCAPTURER_1301
+     * @tc.desc   createAudioCapturer with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIOCAPTURER_1301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audio.createAudioCapturer(null, (err, capturer) => {
+          if (err) {
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: createAudioCapturer with null/undefined options: PASS :${err.message},${err.code}`);
+            expect(Number((err as BusinessError).code)).assertEqual(6800101);
+            done();
+          } else {
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: createAudioCapturer with null/undefined options: FAIL`);
+            expect(false).assertTrue();
+            done();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIOCAPTURER_1302
+     * @tc.number AUDIO_CREATEAUDIOCAPTURER_1302
+     * @tc.desc   createAudioCapturer with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIOCAPTURER_1302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audio.createAudioCapturer(undefined, (err, capturer) => {
+          if (err) {
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: createAudioCapturer with null/undefined options: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(6800101);
+          } else {
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1302: createAudioCapturer with null/undefined options: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1302: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIOCAPTURER_1303
+     * @tc.number AUDIO_CREATEAUDIOCAPTURER_1303
+     * @tc.desc   createAudioCapturer with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIOCAPTURER_1303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audio.createAudioCapturer(null);
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1303: createAudioCapturer with null/undefined options: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1303: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIOCAPTURER_1304
+     * @tc.number AUDIO_CREATEAUDIOCAPTURER_1304
+     * @tc.desc   createAudioCapturer with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIOCAPTURER_1304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audio.createAudioCapturer(undefined);
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1304: createAudioCapturer with null/undefined options: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1304: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_CAPTURER_READ_NULL_001
+     * @tc.number AUDIO_CAPTURER_READ_NULL_001
+     * @tc.desc   read null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_READ_NULL_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+
+      let audioCapturerOptions:audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer;
+
+      await audio.createAudioCapturer(audioCapturerOptions).then((data) => {
+        audioCapturer = data;
+        console.info('AUDIO_CAPTURER_READ_NULL_001 AudioCapturer Created : SUCCESS');
+        audioCapturer.read(null, false).then(() => {
+          console.info('AUDIO_CAPTURER_READ_NULL_001 Succeeded in doing read.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AUDIO_CAPTURER_READ_NULL_001 Failed to read. Code: ${err.code}, message: ${err.message}`);
+          expect(Number(err.code)).assertEqual(6800101);
+          done();
+        });
+        audioCapturer.release();
+      }).catch((err: BusinessError) => {
+        console.error(`AUDIO_CAPTURER_READ_NULL_001 AudioCapturer Created : ERROR : ${err}`);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_CAPTURER_READ_NULL_002
+     * @tc.number AUDIO_CAPTURER_READ_NULL_002
+     * @tc.desc   read undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_READ_NULL_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+
+      let audioCapturerOptions:audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer;
+
+      await audio.createAudioCapturer(audioCapturerOptions).then((data) => {
+        audioCapturer = data;
+        console.info('AUDIO_CAPTURER_READ_NULL_002 AudioCapturer Created : SUCCESS');
+        audioCapturer.read(undefined, false).then(() => {
+          console.info('AUDIO_CAPTURER_READ_NULL_002 Succeeded in doing read.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AUDIO_CAPTURER_READ_NULL_002 Failed to read. Code: ${err.code}, message: ${err.message}`);
+          expect(Number(err.code)).assertEqual(6800101);
+          done();
+        });
+        audioCapturer.release();
+      }).catch((err: BusinessError) => {
+        console.error(`AUDIO_CAPTURER_READ_NULL_002 AudioCapturer Created : ERROR : ${err}`);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_CAPTURER_READ_NULL_003
+     * @tc.number AUDIO_CAPTURER_READ_NULL_003
+     * @tc.desc   read null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_READ_NULL_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+
+      let audioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer;
+
+      audio.createAudioCapturer(audioCapturerOptions, (err, data) => {
+        if (err) {
+          console.error(`AUDIO_CAPTURER_READ_NULL_003 AudioCapturer Created : Error: ${err}`);
+          expect(false).assertTrue();
+          done();
+          return;
+        } else {
+          console.info('AUDIO_CAPTURER_READ_NULL_003 AudioCapturer Created : SUCCESS');
+          audioCapturer = data;
+          audioCapturer.read(null, false, (err: BusinessError, buffer: ArrayBuffer) => {
+            if (err) {
+              console.error(`AUDIO_CAPTURER_READ_NULL_003 Failed to read. Code: ${err.code}, message: ${err.message}`);
+              expect(Number(err.code)).assertEqual(6800101);
+              done();
+            } else {
+              console.info('AUDIO_CAPTURER_READ_NULL_003 Succeeded in doing read.');
+              expect(false).assertTrue();
+              done();
+            }          
+          });
+        }
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_CAPTURER_READ_NULL_004
+     * @tc.number AUDIO_CAPTURER_READ_NULL_004
+     * @tc.desc   read undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_READ_NULL_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+
+      let audioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer;
+
+      audio.createAudioCapturer(audioCapturerOptions, (err, data) => {
+        if (err) {
+          console.error(`AUDIO_CAPTURER_READ_NULL_004 AudioCapturer Created : Error: ${err}`);
+        } else {
+          console.info('AUDIO_CAPTURER_READ_NULL_004 AudioCapturer Created : SUCCESS');
+          audioCapturer = data;
+          audioCapturer.read(undefined, false, (err: BusinessError, buffer: ArrayBuffer) => {
+            if (err) {
+              console.error(`AUDIO_CAPTURER_READ_NULL_004 Failed to read. Code: ${err.code}, message: ${err.message}`);
+              expect(Number(err.code)).assertEqual(6800101);
+              done();
+            } else {
+              console.info('AUDIO_CAPTURER_READ_NULL_004 Succeeded in doing read.');
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        }
+      });
+      done();
+    })
   })
 }

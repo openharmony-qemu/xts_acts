@@ -421,7 +421,7 @@ export default function ImagCreatePixelMapTest() {
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_TEST_00001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_TEST_00001';
       try {
-        pixelMap = image.createPixelMapUsingAllocatorSync(null, image.AllocatorType.AUTO);
+        pixelMap = image.createPixelMapUsingAllocatorSync(null as ESObject as image.InitializationOptions, image.AllocatorType.AUTO);
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName, 'createPixelMapUsingAllocatorSync error', error.message, error.code);
@@ -443,7 +443,7 @@ export default function ImagCreatePixelMapTest() {
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_TEST_00002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_TEST_00002';
       try {
-        pixelMap = image.createPixelMapUsingAllocatorSync(undefined, image.AllocatorType.AUTO);
+        pixelMap = image.createPixelMapUsingAllocatorSync(undefined as ESObject as image.InitializationOptions, image.AllocatorType.AUTO);
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName, 'createPixelMapUsingAllocatorSync error', error.message, error.code);

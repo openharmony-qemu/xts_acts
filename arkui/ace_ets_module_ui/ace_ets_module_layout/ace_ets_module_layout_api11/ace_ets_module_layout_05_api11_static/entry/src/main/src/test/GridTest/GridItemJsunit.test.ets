@@ -178,7 +178,7 @@ it('GridItemJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise
       let bottom_y = Math.round(grid1.bottom / 2)
       let driver = Driver.create()
 
-      driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.resolveUIContext()!.vp2px(100))).toInt(), (bottom_y).toInt(), (Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.resolveUIContext()!.vp2px(120))).toInt(), (bottom_y).toInt());
+      await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.resolveUIContext()!.vp2px(100))).toInt(), (bottom_y).toInt(), (Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.resolveUIContext()!.vp2px(120))).toInt(), (bottom_y).toInt());
       await CommonFunc.sleep(500);
       let textComponent = await driver.findComponent(ON.id('onSelect'));
       let text = await (textComponent?.getText() as Promise<string>);
