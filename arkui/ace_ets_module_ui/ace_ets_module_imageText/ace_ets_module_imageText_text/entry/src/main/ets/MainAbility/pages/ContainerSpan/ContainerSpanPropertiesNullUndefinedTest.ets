@@ -18,7 +18,7 @@ import { ContainerSpanModifier } from '@kit.ArkUI';
 class MyContainerSpanModifier extends ContainerSpanModifier {
   applyNormalAttribute(instance: ContainerSpanAttribute): void {
     super.applyNormalAttribute?.(instance);
-    this.textBackgroundStyle({ color: "#7F007DFF", radius: "12vp" });
+    this.textBackgroundStyle({ color: '#7F007DFF', radius: '12vp' });
   }
 }
 

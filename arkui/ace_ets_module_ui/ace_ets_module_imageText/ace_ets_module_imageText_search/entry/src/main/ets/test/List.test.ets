@@ -61,6 +61,8 @@ import SearchEnableKeyboardOnFocusTest from './SearchTest/SearchEnableKeyboardOn
 import SearchSelectionMenuHiddenTest from './SearchTest/SearchSelectionMenuHidden.test';
 import SearchPropertiesNullUndefinedTest from './SearchTest/SearchPropertiesNullUndefined.test';
 import SearchPropertiesNullUndefined02Test from './SearchTest/SearchPropertiesNullUndefined02.test';
+import SearchPropertiesNullUndefined03Test from './SearchTest/SearchPropertiesNullUndefined03Test.test';
+import SearchControllerMethodsTest from './SearchTest/SearchControllerMethodsTest.test';
 
 
 export default function testsuite() {
@@ -111,4 +113,6 @@ export default function testsuite() {
   SearchSelectionMenuHiddenTest();
   SearchPropertiesNullUndefinedTest();
   SearchPropertiesNullUndefined02Test();
+  SearchPropertiesNullUndefined03Test();
+  SearchControllerMethodsTest();
 }
