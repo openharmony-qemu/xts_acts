@@ -575,5 +575,528 @@ export default function actsEmitterCovered() {
         done();
       }, 3000)
     })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_1400
+     * @tc.number Sub_Notification_Emitter_Capabilities_1400
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_1400', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_1400';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let eventData: emitter.GenericEventData<Sample> = {
+        data: new Sample()
+      };
+      let onCallback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+        if (eventData?.data instanceof Sample) {
+          eventData?.data?.printCount();
+        }
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.on("", onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit("",eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit("",option,eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.off('',onCallback)
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_1500
+     * @tc.number Sub_Notification_Emitter_Capabilities_1500
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_1500', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_1500';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let eventData: emitter.GenericEventData<Sample> = {
+        data: new Sample()
+      };
+      let onCallback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+        if (eventData?.data instanceof Sample) {
+          eventData?.data?.printCount();
+        }
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.on(null, onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit(null,eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit('event',option,null);
+        console.info(TAG+ ' emit event success');
+        emitter1.off(null,onCallback)
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_1600
+     * @tc.number Sub_Notification_Emitter_Capabilities_1600
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_1600', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_1600';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let eventData: emitter.GenericEventData<Sample> = {
+        data: new Sample()
+      };
+      let onCallback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+        if (eventData?.data instanceof Sample) {
+          eventData?.data?.printCount();
+        }
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.on(undefined, onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit(undefined,eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit('event',option,undefined);
+        console.info(TAG+ ' emit event success');
+        emitter1.off(undefined,onCallback)
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_1700
+     * @tc.number Sub_Notification_Emitter_Capabilities_1700
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_1700', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_1700';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.on('', onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit('',eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit('',option,eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.off('',onCallback)
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_1800
+     * @tc.number Sub_Notification_Emitter_Capabilities_1800
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_1800', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_1800';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.on(null, onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit(null,eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit(null,option,eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.off(null,onCallback)
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_1900
+     * @tc.number Sub_Notification_Emitter_Capabilities_1900
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_1900', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_1900';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.on(undefined, onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit(undefined,eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit(undefined,option,eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.off(undefined,onCallback)
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_2000
+     * @tc.number Sub_Notification_Emitter_Capabilities_2000
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_2000', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_2000';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.once('', onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit('event',eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit('event',option, eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.off('')
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_2100
+     * @tc.number Sub_Notification_Emitter_Capabilities_2100
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_2100', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_2100';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.once(null, onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit('event',null);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit('event',option,null);
+        console.info(TAG+ ' emit event success');
+        emitter1.off(null)
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_2200
+     * @tc.number Sub_Notification_Emitter_Capabilities_2200
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_2200', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_2200';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.once(undefined, onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit('event',undefined);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit('event',option,undefined);
+        console.info(TAG+ ' emit event success');
+        emitter1.off(undefined)
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_2300
+     * @tc.number Sub_Notification_Emitter_Capabilities_2300
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_2300', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_2300';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let onCallback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+        if (eventData?.data instanceof Sample) {
+          eventData?.data?.printCount();
+        }
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.once('', onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit('event',eventData);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit('event',option,eventData);
+        console.info(TAG+ ' emit event success');
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_2400
+     * @tc.number Sub_Notification_Emitter_Capabilities_2400
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_2400', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_2400';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let onCallback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+        if (eventData?.data instanceof Sample) {
+          eventData?.data?.printCount();
+        }
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.once(null, onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit('event',null);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit('event',option,null);
+        console.info(TAG+ ' emit event success');
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Emitter_Capabilities_2500
+     * @tc.number Sub_Notification_Emitter_Capabilities_2500
+     * @tc.desc   test  NEW EMITTER interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Emitter_Capabilities_2500', Level.LEVEL2, (done: Function) => {
+      const TAG = 'Sub_Notification_Emitter_Capabilities_2500';
+      let option: emitter.Options = {
+        priority: 0
+      }
+      let onCallback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
+        console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
+        if (eventData?.data instanceof Sample) {
+          eventData?.data?.printCount();
+        }
+      }
+      try {
+        console.info(TAG+ ' test case start');
+        emitter1.once(undefined, onCallback)
+      } catch (err) {
+        console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
+        expect(false).assertTrue();
+        console.info(TAG+ ' test case end');
+        done();
+      }
+      try{
+        emitter1.emit('event',undefined);
+        console.info(TAG+ ' emit event success');
+        emitter1.emit('event',option,undefined);
+        console.info(TAG+ ' emit event success');
+        done();
+      }catch(err){
+        console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG+ ' test case end');
+      done();
+    })
   })
 }
