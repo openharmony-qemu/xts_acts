@@ -243,7 +243,7 @@ export default function abilityTest() {
                     let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
                     expect(imageProcessor != null).assertTrue();
                     let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
-                        sourceImage, 2, videoProcessingEngine.QualityLevel.NONE);
+                        sourceImage, 2.0, videoProcessingEngine.QualityLevel.NONE);
                     expect(enhancedPixelmap != null).assertTrue();
                     done();
                 } catch (err) {
@@ -313,7 +313,7 @@ export default function abilityTest() {
                     let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
                     expect(imageProcessor != null).assertTrue();
                     let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
-                        sourceImage, 2, videoProcessingEngine.QualityLevel.NONE);
+                        sourceImage, 2.0, videoProcessingEngine.QualityLevel.NONE);
                     expect(enhancedPixelmap != null).assertTrue();
                     done();
                 } catch (err) {
