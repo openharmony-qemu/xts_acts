@@ -13,8 +13,27 @@
  * limitations under the License.
  */
 
+import deviceInfo from '@ohos.deviceInfo';
 import intelligentSceneJsunit from './IntelligentSceneUiJsunit.test'
 
+const deviceType = deviceInfo.deviceType;
+
+function isDevicePhone(): boolean {
+  return deviceType === 'phone';
+}
+
+function isDeviceTablet(): boolean {
+  return deviceType === 'tablet';
+}
+
+function isDeviceSupport(): boolean {
+  return isDevicePhone() || isDeviceTablet();
+}
+
 export default function testsuite() {
-  intelligentSceneJsunit()
+  if (isDeviceSupport()) {
+    intelligentSceneJsunit()
+  } else {
+    console.error("Current device does not support this test");
+  }
 }
