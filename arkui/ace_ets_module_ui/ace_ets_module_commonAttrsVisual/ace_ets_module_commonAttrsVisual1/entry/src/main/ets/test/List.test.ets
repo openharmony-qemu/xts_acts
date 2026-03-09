@@ -54,7 +54,9 @@ import LinearGradientBlurTest from './LinearGradientBlurTest.test'
 import ContrastTest from './ContrastTest.test'
 import RectShapePage from './RectShapePage.test'
 import MaterialFilter from './MaterialFilter.test'
-import TransitionEffectOpacity from './TransitionEffectOpacity.test'
+import TransitionEffectOpacity from './TransitionEffectOpacity.test',
+import CommonNullUndefined from './CommonNullUndefined.test';
+
 
 export default function testsuite() {
   rotateAngleOptionsTest()
@@ -96,4 +98,5 @@ export default function testsuite() {
   RectShapePage()
   MaterialFilter()
   TransitionEffectOpacity()
+  CommonNullUndefined()
 }
