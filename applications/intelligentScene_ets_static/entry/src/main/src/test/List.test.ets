@@ -15,6 +15,7 @@
 
 import deviceInfo from '@ohos.deviceInfo';
 import intelligentSceneJsunit from './IntelligentSceneUiJsunit.test'
+import canNotUse from './CanNotUse.test';
 
 const deviceType = deviceInfo.deviceType;
 
@@ -32,8 +33,9 @@ function isDeviceSupport(): boolean {
 
 export default function testsuite() {
   if (isDeviceSupport()) {
-    intelligentSceneJsunit()
+    intelligentSceneJsunit();
   } else {
-    console.error("Current device does not support this test");
+    console.info("Current device does not support this test");
+    canNotUse();
   }
 }
