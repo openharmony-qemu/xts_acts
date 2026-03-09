@@ -215,7 +215,7 @@ export default function WebDataBaseSaveHttpAuthCredentialsTest() {
         let tcName = 'testSaveHttpAuthCredentialsEmptyRealm';
         let isReturn = false;
         Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
-        Utils.registerEvent(tcName, "error", 20260246, () => {
+        Utils.registerEvent(tcName, "empty_realm", 20260246, () => {
           isReturn = true
         });
         Utils.waitAndClickComponent(driver, "saveHttpAuthCredentialsClick", tcName);
@@ -347,7 +347,7 @@ export default function WebDataBaseSaveHttpAuthCredentialsTest() {
         let tcName = 'testSaveHttpAuthCredentialsEmptyPassword';
         let isReturn = false;
         Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
-        Utils.registerEvent(tcName, "error", 20260252, () => {
+        Utils.registerEvent(tcName, "empty_password", 20260252, () => {
           isReturn = true
         });
         Utils.waitAndClickComponent(driver, "saveHttpAuthCredentialsClick", tcName);
