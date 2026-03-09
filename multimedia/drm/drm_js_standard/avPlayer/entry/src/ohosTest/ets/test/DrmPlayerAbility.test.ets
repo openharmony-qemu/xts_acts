@@ -3803,6 +3803,7 @@ export default function abilityTest() {
             done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_3900 failed", err.code);
+                expect().assertFail();
                 mediaKeySystem.destroy();
                 done();
             });
@@ -3824,6 +3825,7 @@ export default function abilityTest() {
             done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_4000 failed", err.code);
+                expect().assertFail();
                 mediaKeySystem.destroy();
                 done();
             });
@@ -3926,6 +3928,7 @@ export default function abilityTest() {
             done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_4500 failed", err.code);
+                expect().assertFail();
                 mediaKeySystem.destroy();
                 done();
             });
@@ -3948,6 +3951,7 @@ export default function abilityTest() {
             done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_4600 failed", err.code);
+                expect().assertFail();
                 mediaKeySystem.destroy();
                 done();
             });
@@ -3970,6 +3974,7 @@ export default function abilityTest() {
             done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_4700 failed", err.code);
+                expect().assertFail();
                 mediaKeySystem.destroy();
                 done();
             });
@@ -3992,6 +3997,7 @@ export default function abilityTest() {
             done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_4800 failed", err.code);
+                expect().assertFail();
                 mediaKeySystem.destroy();
                 done();
             });
@@ -4015,6 +4021,7 @@ export default function abilityTest() {
             done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_4900 failed", err.code);
+                expect().assertFail();
                 mediaKeySystem.destroy();
                 done();
             });
@@ -4038,6 +4045,7 @@ export default function abilityTest() {
             done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_5000 failed", err.code);
+                expect().assertFail();
                 mediaKeySystem.destroy();
                 done();
             });
@@ -4060,6 +4068,7 @@ export default function abilityTest() {
             done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_5100 failed", err.code);
+                expect().assertFail();
                 mediaKeySystem.destroy();
                 done();
             });
@@ -4082,6 +4091,7 @@ export default function abilityTest() {
             done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_5200 failed", err.code);
+                expect().assertFail();
                 mediaKeySystem.destroy();
                 done();
             });
@@ -4159,30 +4169,6 @@ export default function abilityTest() {
             }
         })
         /**
-         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_5500
-         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_5500
-         * @tc.desc   给maxSessionNum赋值1，创建两个会话
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_5500', Level.LEVEL1, (done:Function) => {
-            let mediaKeySystem:drm.MediaKeySystem;
-            mediaKeySystem = drm.createMediaKeySystem(systemName);
-            try {
-                mediaKeySystem.off(undefined, (eventInfo: drm.EventInfo) => {
-                console.info('keySystemRequired ' + 'extra: ' + eventInfo.extraInfo + 'data: ' + eventInfo.info);
-                });
-                mediaKeySystem.destroy();
-                done();
-            } catch (err) {
-                console.log("XX SET_GET_CONFIG_5500 failed", err.code);
-                expect(err.code).assertUndefined;
-                mediaKeySystem.destroy();
-                done();
-            }
-        })
-        /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_5600
          * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_5600
          * @tc.desc   给maxSessionNum赋值1，创建两个会话
@@ -4193,16 +4179,15 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_5600', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             mediaKeySystem = drm.createMediaKeySystem(systemName);
-            let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
             try {
-                mediaKeySession.on(null, (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
-                console.info('keysChange');
+                mediaKeySystem.off(undefined, (eventInfo: drm.EventInfo) => {
+                console.info('keySystemRequired ' + 'extra: ' + eventInfo.extraInfo + 'data: ' + eventInfo.info);
                 });
                 mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_5600 failed", err.code);
-                expect(err.code).assertEqual(401);
+                expect(err.code).assertUndefined;
                 mediaKeySystem.destroy();
                 done();
             }
@@ -4220,7 +4205,7 @@ export default function abilityTest() {
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
             try {
-                mediaKeySession.on(undefined, (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
+                mediaKeySession.on(null, (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
                 console.info('keysChange');
                 });
                 mediaKeySystem.destroy();
@@ -4245,14 +4230,14 @@ export default function abilityTest() {
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
             try {
-                mediaKeySession.off(null, (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
+                mediaKeySession.on(undefined, (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
                 console.info('keysChange');
                 });
                 mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_5800 failed", err.code);
-                expect(err.code).assertUndefined;
+                expect(err.code).assertEqual(401);
                 mediaKeySystem.destroy();
                 done();
             }
@@ -4270,13 +4255,38 @@ export default function abilityTest() {
             mediaKeySystem = drm.createMediaKeySystem(systemName);
             let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
             try {
-                mediaKeySession.off(undefined, (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
+                mediaKeySession.off(null, (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
                 console.info('keysChange');
                 });
                 mediaKeySystem.destroy();
                 done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_5900 failed", err.code);
+                expect(err.code).assertUndefined;
+                mediaKeySystem.destroy();
+                done();
+            }
+        })
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_6000
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_6000
+         * @tc.desc   给maxSessionNum赋值1，创建两个会话
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_6000', Level.LEVEL1, (done:Function) => {
+            let mediaKeySystem:drm.MediaKeySystem;
+            mediaKeySystem = drm.createMediaKeySystem(systemName);
+            let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
+            try {
+                mediaKeySession.off(undefined, (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
+                console.info('keysChange');
+                });
+                mediaKeySystem.destroy();
+                done();
+            } catch (err) {
+                console.log("XX SET_GET_CONFIG_6000 failed", err.code);
                 expect(err.code).assertUndefined;
                 mediaKeySystem.destroy();
                 done();

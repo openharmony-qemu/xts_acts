@@ -5655,7 +5655,7 @@ export default function AVRecorderTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AvRecorderNullUndefinedTest_010', Level.LEVEL2, async (done: Function) => {
+    it('AvRecorderNullUndefinedTest_009', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
       try {
             if (mAvRecord != null){

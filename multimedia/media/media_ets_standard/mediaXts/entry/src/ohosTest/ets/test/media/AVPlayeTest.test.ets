@@ -3701,7 +3701,7 @@ export default function AVPlayerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('avPlayerNullUndefinedTest_51', Level.LEVEL0,async (done: Function) => {
+    it('avPlayerNullUndefinedTest_051', Level.LEVEL0,async (done: Function) => {
       try {
             let avPlayer = await media.createAVPlayer();
             avPlayer.on('error', (error: BusinessError) => {
