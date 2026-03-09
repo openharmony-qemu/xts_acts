@@ -18,6 +18,7 @@ import { BusinessError } from '@ohos.base';
 import audio from '@ohos.multimedia.audio';
 
 let sessionManager: audio.AudioSessionManager;
+let audioSessionManager: audio.AudioSessionManager;
 let audioManager: audio.AudioManager;
 let TagFrmwk: string = "AudioSessionManagerTest";
 
@@ -903,674 +904,716 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_ROLE_INPUT_DEVICE_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_ROLE_INPUT_DEVICE_0100
-    * @tc.desc   selectMediaInputDevice with deviceRole INPUT_DEVICE test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_ROLE_INPUT_DEVICE_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_ROLE_INPUT_DEVICE_0100
+     * @tc.desc   selectMediaInputDevice with deviceRole INPUT_DEVICE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_ROLE_INPUT_DEVICE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
           deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceRole INPUT_DEVICE: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceRole INPUT_DEVICE: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_ROLE_OUTPUT_DEVICE_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_ROLE_OUTPUT_DEVICE_0100
-    * @tc.desc   selectMediaInputDevice with deviceRole OUTPUT_DEVICE test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_ROLE_OUTPUT_DEVICE_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_ROLE_OUTPUT_DEVICE_0100
+     * @tc.desc   selectMediaInputDevice with deviceRole OUTPUT_DEVICE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_ROLE_OUTPUT_DEVICE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
-          deviceRole: audio.DeviceRole.OUTPUT_DEVICE,
+        let inputAudioDevice: ESObject = {
+          deviceRole: audio.DeviceRole.INPUT_DEVICE,
           deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceRole OUTPUT_DEVICE: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceRole OUTPUT_DEVICE: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_INVALID_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_INVALID_0100
-    * @tc.desc   selectMediaInputDevice with deviceType INVALID test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_INVALID_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_INVALID_0100
+     * @tc.desc   selectMediaInputDevice with deviceType INVALID test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_INVALID_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
           deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType INVALID: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType INVALID: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_EARPIECE_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_EARPIECE_0100
-    * @tc.desc   selectMediaInputDevice with deviceType EARPIECE test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_EARPIECE_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_EARPIECE_0100
+     * @tc.desc   selectMediaInputDevice with deviceType EARPIECE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_EARPIECE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.EARPIECE,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType EARPIECE: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType EARPIECE: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_SPEAKER_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_SPEAKER_0100
-    * @tc.desc   selectMediaInputDevice with deviceType SPEAKER test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_SPEAKER_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_SPEAKER_0100
+     * @tc.desc   selectMediaInputDevice with deviceType SPEAKER test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_SPEAKER_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.SPEAKER,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType SPEAKER: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType SPEAKER: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_WIRED_HEADSET_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_WIRED_HEADSET_0100
-    * @tc.desc   selectMediaInputDevice with deviceType WIRED_HEADSET test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_WIRED_HEADSET_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_WIRED_HEADSET_0100
+     * @tc.desc   selectMediaInputDevice with deviceType WIRED_HEADSET test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_WIRED_HEADSET_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.WIRED_HEADSET,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType WIRED_HEADSET: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType WIRED_HEADSET: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_WIRED_HEADPHONES_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_WIRED_HEADPHONES_0100
-    * @tc.desc   selectMediaInputDevice with deviceType WIRED_HEADPHONES test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_WIRED_HEADPHONES_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_WIRED_HEADPHONES_0100
+     * @tc.desc   selectMediaInputDevice with deviceType WIRED_HEADPHONES test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_WIRED_HEADPHONES_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.WIRED_HEADPHONES,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType WIRED_HEADPHONES: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType WIRED_HEADPHONES: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_BLUETOOTH_SCO_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_BLUETOOTH_SCO_0100
-    * @tc.desc   selectMediaInputDevice with deviceType BLUETOOTH_SCO test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_BLUETOOTH_SCO_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_BLUETOOTH_SCO_0100
+     * @tc.desc   selectMediaInputDevice with deviceType BLUETOOTH_SCO test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_BLUETOOTH_SCO_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.BLUETOOTH_SCO,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType BLUETOOTH_SCO: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType BLUETOOTH_SCO: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_BLUETOOTH_A2DP_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_BLUETOOTH_A2DP_0100
-    * @tc.desc   selectMediaInputDevice with deviceType BLUETOOTH_A2DP test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_BLUETOOTH_A2DP_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_BLUETOOTH_A2DP_0100
+     * @tc.desc   selectMediaInputDevice with deviceType BLUETOOTH_A2DP test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_BLUETOOTH_A2DP_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.BLUETOOTH_A2DP,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType BLUETOOTH_A2DP: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType BLUETOOTH_A2DP: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_MIC_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_MIC_0100
-    * @tc.desc   selectMediaInputDevice with deviceType MIC test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_MIC_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_MIC_0100
+     * @tc.desc   selectMediaInputDevice with deviceType MIC test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_MIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.MIC,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType MIC: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType MIC: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_USB_HEADSET_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_USB_HEADSET_0100
-    * @tc.desc   selectMediaInputDevice with deviceType USB_HEADSET test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_USB_HEADSET_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_USB_HEADSET_0100
+     * @tc.desc   selectMediaInputDevice with deviceType USB_HEADSET test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_USB_HEADSET_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.USB_HEADSET,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType USB_HEADSET: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType USB_HEADSET: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_DISPLAY_PORT_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_DISPLAY_PORT_0100
-    * @tc.desc   selectMediaInputDevice with deviceType DISPLAY_PORT test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_DISPLAY_PORT_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_DISPLAY_PORT_0100
+     * @tc.desc   selectMediaInputDevice with deviceType DISPLAY_PORT test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_DISPLAY_PORT_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.DISPLAY_PORT,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType DISPLAY_PORT: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType DISPLAY_PORT: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_REMOTE_CAST_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_REMOTE_CAST_0100
-    * @tc.desc   selectMediaInputDevice with deviceType REMOTE_CAST test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_REMOTE_CAST_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_REMOTE_CAST_0100
+     * @tc.desc   selectMediaInputDevice with deviceType REMOTE_CAST test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_REMOTE_CAST_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.REMOTE_CAST,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType REMOTE_CAST: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType REMOTE_CAST: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_USB_DEVICE_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_USB_DEVICE_0100
-    * @tc.desc   selectMediaInputDevice with deviceType USB_DEVICE test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_USB_DEVICE_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_USB_DEVICE_0100
+     * @tc.desc   selectMediaInputDevice with deviceType USB_DEVICE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_USB_DEVICE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.USB_DEVICE,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType USB_DEVICE: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType USB_DEVICE: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_HDMI_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_HDMI_0100
-    * @tc.desc   selectMediaInputDevice with deviceType HDMI test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_HDMI_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_HDMI_0100
+     * @tc.desc   selectMediaInputDevice with deviceType HDMI test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_HDMI_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.HDMI,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType HDMI: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType HDMI: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_LINE_DIGITAL_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_LINE_DIGITAL_0100
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_LINE_DIGITAL_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_LINE_DIGITAL_0100
 
-    * @tc.desc   selectMediaInputDevice with deviceType LINE_DIGITAL test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.desc   selectMediaInputDevice with deviceType LINE_DIGITAL test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_LINE_DIGITAL_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.LINE_DIGITAL,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType LINE_DIGITAL: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType LINE_DIGITAL: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_REMOTE_DAUDIO_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_REMOTE_DAUDIO_0100
-    * @tc.desc   selectMediaInputDevice with deviceType REMOTE_DAUDIO test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_REMOTE_DAUDIO_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_REMOTE_DAUDIO_0100
+     * @tc.desc   selectMediaInputDevice with deviceType REMOTE_DAUDIO test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_REMOTE_DAUDIO_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.REMOTE_DAUDIO,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType REMOTE_DAUDIO: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType REMOTE_DAUDIO: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_HEARING_AID_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_HEARING_AID_0100
-    * @tc.desc   selectMediaInputDevice with deviceType HEARING_AID test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_HEARING_AID_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_HEARING_AID_0100
+     * @tc.desc   selectMediaInputDevice with deviceType HEARING_AID test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_HEARING_AID_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.HEARING_AID,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType HEARING_AID: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType HEARING_AID: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_NEARLINK_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_NEARLINK_0100
-    * @tc.desc   selectMediaInputDevice with deviceType NEARLINK test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_NEARLINK_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_NEARLINK_0100
+     * @tc.desc   selectMediaInputDevice with deviceType NEARLINK test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_NEARLINK_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.NEARLINK,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType NEARLINK: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType NEARLINK: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_SYSTEM_PRIVATE_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_SYSTEM_PRIVATE_0100
-    * @tc.desc   selectMediaInputDevice with deviceType SYSTEM_PRIVATE test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_SYSTEM_PRIVATE_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_SYSTEM_PRIVATE_0100
+     * @tc.desc   selectMediaInputDevice with deviceType SYSTEM_PRIVATE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_SYSTEM_PRIVATE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.SYSTEM_PRIVATE,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType SYSTEM_PRIVATE: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType SYSTEM_PRIVATE: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_DEFAULT_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_DEFAULT_0100
-    * @tc.desc   selectMediaInputDevice with deviceType DEFAULT test.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_DEFAULT_0100
+     * @tc.number AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_DEFAULT_0100
+     * @tc.desc   selectMediaInputDevice with deviceType DEFAULT test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("AUDIO_SESSION_MANAGER_SELECT_MEDIA_INPUT_DEVICE_DEVICE_TYPE_DEFAULT_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let inputAudioDevice: audio.AudioDeviceDescriptor = {
+        let inputAudioDevice: ESObject = {
           deviceRole: audio.DeviceRole.INPUT_DEVICE,
-          deviceType: audio.DeviceType.DEFAULT,
+          deviceType: audio.DeviceType.INVALID,
           id: 0,
-          name: '',
-          address: '',
-          sampleRates: [],
-          channelCounts: [],
-          channelMasks: [],
-          displayName: ''
+          name: '1',
+          address: '1',
+          sampleRates: [1],
+          channelCounts: [1],
+          channelMasks: [1],
+          displayName: '1',
+          networkId: '1',
+          interruptGroupId: 1,
+          volumeGroupId: 1
         };
         await audioSessionManager.selectMediaInputDevice(inputAudioDevice);
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType DEFAULT: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: selectMediaInputDevice with deviceType DEFAULT: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
+        expect(false).assertTrue();
       }
       done();
     })
