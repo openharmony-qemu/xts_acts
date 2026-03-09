@@ -1370,8 +1370,9 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_0100  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width ;
           let height: string = obj.$attrs.blockSize.height ;
-          expect(parseFloat(width)).assertEqual(12);
-          expect(parseFloat(height)).assertEqual(12);
+          expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+          expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+
           expect(width.substr(width.length-2, 2)).assertEqual("vp");
           expect(height.substr(height.length-2, 2)).assertEqual("vp");
           done();
@@ -1573,8 +1574,8 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_0800  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(parseFloat(width)).assertEqual(12);
-          expect(parseFloat(height)).assertEqual(12);
+          expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+          expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           expect(width.substr(width.length-2, 2)).assertEqual("vp");
           expect(height.substr(height.length-2, 2)).assertEqual("vp");
           done();
@@ -1602,8 +1603,8 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_0900  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(parseFloat(width)).assertEqual(12);
-          expect(parseFloat(height)).assertEqual(12);
+          expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+          expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           expect(width.substr(width.length-2, 2)).assertEqual("vp");
           expect(height.substr(height.length-2, 2)).assertEqual("vp");
           done();
@@ -1631,8 +1632,8 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_1000  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(parseFloat(width)).assertEqual(12);
-          expect(parseFloat(height)).assertEqual(12);
+          expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+          expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           expect(width.substr(width.length-2, 2)).assertEqual("vp");
           expect(height.substr(height.length-2, 2)).assertEqual("vp");
           done();
@@ -1660,8 +1661,8 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_1100  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(parseFloat(width)).assertEqual(12);
-          expect(parseFloat(height)).assertEqual(12);
+          expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+          expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           expect(width.substr(width.length-2, 2)).assertEqual("vp");
           expect(height.substr(height.length-2, 2)).assertEqual("vp");
           done();
@@ -1689,8 +1690,8 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_1200  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(parseFloat(width)).assertEqual(12);
-          expect(parseFloat(height)).assertEqual(12);
+          expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+          expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           expect(width.substr(width.length-2, 2)).assertEqual("vp");
           expect(height.substr(height.length-2, 2)).assertEqual("vp");
           done();
@@ -1718,8 +1719,8 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_1300  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(parseFloat(width)).assertEqual(12);
-          expect(parseFloat(height)).assertEqual(12);
+          expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
+          expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           expect(width.substr(width.length-2, 2)).assertEqual("vp");
           expect(height.substr(height.length-2, 2)).assertEqual("vp");
           done();
@@ -1759,7 +1760,7 @@ export default function sliderTest() {
           let height1: string = obj1.$attrs.blockSize.height;
           expect(width1).assertContain('vp');
           expect(height1).assertContain('vp');
-          done();          
+          done();
         } catch (err) {
           console.info('ArkUX_Stage_Slider_blockSize_1400 ERROR: ' + JSON.stringify(err));
           done();
@@ -2034,7 +2035,7 @@ export default function sliderTest() {
           let strJson = getInspectorByKey('ArkUX_Stage_Slider_stepSize_0700');
           let obj: Record<string, ESObject> = JSON.parse(strJson);
           console.info("----ArkUX_Stage_Slider_stepSize_0700 is" + JSON.stringify(obj.$attrs.stepSize));
-          expect(obj.$attrs.stepSize).assertEqual("4.00vp");
+          expect(obj.$attrs.stepSize).assertEqual(defaultStrokeWidth($r('sys.float.slider_outset_track_thickness')));
           done();
         } catch (err) {
           console.info('ArkUX_Stage_Slider_stepSize_0700 ERROR: ' + JSON.stringify(err));
@@ -2058,7 +2059,7 @@ export default function sliderTest() {
           let strJson = getInspectorByKey('ArkUX_Stage_Slider_stepSize_0800');
           let obj: Record<string, ESObject> = JSON.parse(strJson);
           console.info("----ArkUX_Stage_Slider_stepSize_0800 is" + JSON.stringify(obj.$attrs.stepSize));
-          expect(obj.$attrs.stepSize).assertEqual("4.00vp");
+          expect(obj.$attrs.stepSize).assertEqual(defaultStrokeWidth($r('sys.float.slider_outset_track_thickness')));
           done();
         } catch (err) {
           console.info('ArkUX_Stage_Slider_stepSize_0800 ERROR: ' + JSON.stringify(err));
@@ -2082,7 +2083,7 @@ export default function sliderTest() {
           let strJson = getInspectorByKey('ArkUX_Stage_Slider_stepSize_0900');
           let obj: Record<string, ESObject> = JSON.parse(strJson);
           console.info("----ArkUX_Stage_Slider_stepSize_0900 is" + JSON.stringify(obj.$attrs.stepSize));
-          expect(obj.$attrs.stepSize).assertEqual("4.00vp");
+          expect(obj.$attrs.stepSize).assertEqual(defaultStrokeWidth($r('sys.float.slider_outset_track_thickness')));
           done();
         } catch (err) {
           console.info('ArkUX_Stage_Slider_stepSize_0900 ERROR: ' + JSON.stringify(err));
@@ -2106,7 +2107,7 @@ export default function sliderTest() {
           let strJson = getInspectorByKey('ArkUX_Stage_Slider_stepSize_1000');
           let obj: Record<string, ESObject> = JSON.parse(strJson);
           console.info("----ArkUX_Stage_Slider_stepSize_1000 is" + JSON.stringify(obj.$attrs.stepSize));
-          expect(obj.$attrs.stepSize).assertEqual("4.00vp");
+          expect(obj.$attrs.stepSize).assertEqual(defaultStrokeWidth($r('sys.float.slider_outset_track_thickness')));
           done();
         } catch (err) {
           console.info('ArkUX_Stage_Slider_stepSize_1000 ERROR: ' + JSON.stringify(err));
@@ -2154,7 +2155,7 @@ export default function sliderTest() {
           let strJson = getInspectorByKey('ArkUX_Stage_Slider_stepSize_1200');
           let obj: Record<string, ESObject> = JSON.parse(strJson);
           console.info("----ArkUX_Stage_Slider_stepSize_1200 is" + JSON.stringify(obj.$attrs.stepSize));
-          expect(parseFloat(obj.$attrs.stepSize)).assertEqual(4);
+          expect(obj.$attrs.stepSize).assertEqual(defaultStrokeWidth($r('sys.float.slider_outset_track_thickness')));
           expect(obj.$attrs.stepSize.substr(obj.$attrs.stepSize.length-2, 2)).assertEqual("vp");
           done();
         } catch (err) {
@@ -2637,31 +2638,31 @@ export default function sliderTest() {
       }, 500)
     })
 
-        /**
-         * @tc.name   ArkUX_Stage_Slider_sliderInteractionMode_1103
-         * @tc.number ArkUX_Stage_Slider_sliderInteractionMode_1103
-         * @tc.desc   Set the sliderInteractionMode property attribute to incorrect number value
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it('ArkUX_Stage_Slider_sliderInteractionMode_1103', Level.LEVEL1, async (done: Function) => {
-          console.info('[ArkUX_Stage_Slider_sliderInteractionMode_1103] START');
-          setTimeout(() => {
-            try {
-              let strJson = getInspectorByKey('ArkUX_Stage_Slider_sliderInteractionMode_1103');
-              let obj: Record<string, ESObject> = JSON.parse(strJson);
-              console.info("----ArkUX_Stage_Slider_sliderInteractionMode_1103 is " + JSON.stringify(obj.$attrs.sliderInteractionMode));
-              expect(obj.$attrs.sliderInteractionMode).assertEqual("SliderInteraction.SLIDE_AND_CLICK");
-              done();
-            } catch (err) {
-              console.info('ArkUX_Stage_Slider_sliderInteractionMode_1103  ERROR: ' + JSON.stringify(err));
-              done();
-            }
-          }, 500)
-        })
+    /**
+     * @tc.name   ArkUX_Stage_Slider_sliderInteractionMode_1103
+     * @tc.number ArkUX_Stage_Slider_sliderInteractionMode_1103
+     * @tc.desc   Set the sliderInteractionMode property attribute to incorrect number value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArkUX_Stage_Slider_sliderInteractionMode_1103', Level.LEVEL1, async (done: Function) => {
+      console.info('[ArkUX_Stage_Slider_sliderInteractionMode_1103] START');
+      setTimeout(() => {
+        try {
+          let strJson = getInspectorByKey('ArkUX_Stage_Slider_sliderInteractionMode_1103');
+          let obj: Record<string, ESObject> = JSON.parse(strJson);
+          console.info("----ArkUX_Stage_Slider_sliderInteractionMode_1103 is " + JSON.stringify(obj.$attrs.sliderInteractionMode));
+          expect(obj.$attrs.sliderInteractionMode).assertEqual("SliderInteraction.SLIDE_AND_CLICK");
+          done();
+        } catch (err) {
+          console.info('ArkUX_Stage_Slider_sliderInteractionMode_1103  ERROR: ' + JSON.stringify(err));
+          done();
+        }
+      }, 500)
+    })
 
-   
+
 
     /**
      * @tc.name   ArkUX_Stage_Slider_sliderInteractionMode_1300
@@ -2830,6 +2831,6 @@ export default function sliderTest() {
         }
       }, 500)
     })
-    
+
   })
 }
