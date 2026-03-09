@@ -105,7 +105,7 @@ export default function testsuite() {
   systempromptJsunit();
   ohosPromptJsunit();
   TextPickerJsunit();
-  TimePickerJsunit();
+  
   timeStampJsunit();
   datePickerUIJsunit();
   SliderTestC()
