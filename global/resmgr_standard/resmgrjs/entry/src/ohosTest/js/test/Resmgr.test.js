@@ -1204,7 +1204,7 @@ describe('resMgrTest', function () {
             })
             let result = mgr.release();
             console.log('release_test_001 result:' + result);
-            expect(value).assertEqual(undefined);
+            expect(result).assertEqual(undefined);
         })
     })
 
