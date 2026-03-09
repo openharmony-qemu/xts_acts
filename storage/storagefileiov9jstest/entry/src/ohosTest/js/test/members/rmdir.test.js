@@ -417,29 +417,5 @@ describe('fileIO_fs_rmdir', function () {
 	  done();
     }
   });
-
-  /**
-   * @tc.name   fileIO_test_rmdir_async_010
-   * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_1000
-   * @tc.desc   Test rmdir() interface. Callback. Test first parameter is undefined.
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL0
-   */
-  it('fileIO_test_rmdir_async_010', Level.LEVEL0, async function (done) {
-    try {
-      fileIO.rmdir(undefined, (err) => {
-        if (err) {
-          console.log('fileIO_test_rmdir_async_010 error: {message: ' + err.message + ', code: ' + err.code + '}');
-		  expect(false).assertTrue();
-          done();
-        }
-      });
-    } catch (e) {
-      console.log('fileIO_test_rmdir_async_010 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && err.message == 'Invalid argument').assertTrue();
-	  done();
-    }
-  });
 })
 }

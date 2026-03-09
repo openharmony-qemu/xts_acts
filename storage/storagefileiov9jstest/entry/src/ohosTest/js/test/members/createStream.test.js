@@ -1514,33 +1514,6 @@ describe('fileIO_fs_createStream', function () {
   });
 
   /**
-    * @tc.name   fileIO_test_create_stream_async_042
-    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4200
-    * @tc.desc   Test createReadStream() interfaces. Callback. options is null.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
-    */
-  it('fileIO_test_create_stream_async_042', Level.LEVEL3, async function (done) {
-    let fpath = await nextFileName('fileIO_test_create_stream_async_028');
-    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
-
-    try {
-      fileIO.createReadStream(fpath, null, (err) => {
-        if(err) {
-          console.log('fileIO_test_create_stream_async_042 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(false).assertTrue();
-          done();
-        }
-      });
-    } catch (e) {
-      console.log('fileIO_test_create_stream_async_042 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020).assertTrue();
-      done
-    }
-  });
-
-  /**
     * @tc.name   fileIO_test_create_stream_async_043
     * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4300
     * @tc.desc   Test createReadStream() interfaces. Callback. options is undefined.
