@@ -168,7 +168,7 @@ export default function RdbStoreSqlInfoEnumTestEts() {
 
         /**
          * @tc.number testGetInsertSqlInfonull001
-         * @tc.name testGetInsertSqlInfoConflictResolutionIsON_CONFLICT_FAIL
+         * @tc.name testGetInsertSqlInfonull001
          * @tc.desc first param is null
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
