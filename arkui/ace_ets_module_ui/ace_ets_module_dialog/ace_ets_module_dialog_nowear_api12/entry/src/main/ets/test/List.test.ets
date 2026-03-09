@@ -33,11 +33,11 @@ import DateTimeOptions from './TimePickerDialogTest/DateTimeOptions.test';
 import primary from './AlertDialogTest/primary.test';
 
 export default function testsuite() {
+  CalendarPickerDialog();
   primary()
   TextPickerDialog();
   DatePickerDialog();
   TimePickerDialog();
-  CalendarPickerDialog();
   CalendarDialogCallback();
   DatePickerDialogCallback();
   TextPickerDialogCallback();
