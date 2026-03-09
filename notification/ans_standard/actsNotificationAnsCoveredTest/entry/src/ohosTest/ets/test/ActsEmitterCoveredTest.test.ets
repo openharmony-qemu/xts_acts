@@ -27,6 +27,7 @@ let eventData: emitter.EventData = {
   }
 };
 
+let emitter1 = new emitter.Emitter()
 const TAG = 'Notification';
 const TEST_SUITE_NAME = 'ActsEmitterTest'
 
@@ -421,6 +422,7 @@ export default function actsEmitterCovered() {
       try{
         emitter.emit('',option,eventData);
         console.info(TAG+ ' emit event success');
+        emitter.off('')
         done();
       }catch(err){
         console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
