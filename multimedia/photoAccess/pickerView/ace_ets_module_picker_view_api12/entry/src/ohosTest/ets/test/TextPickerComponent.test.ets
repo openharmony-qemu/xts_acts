@@ -3876,7 +3876,7 @@ export default function TextPicker() {
 
       for (let item of cases) {
         try {
-          let result = await phAccessHelper.createAssetWithShortTermPermissionEx(item as any);
+          let result = await phAccessHelper.createAssetWithShortTermPermissionEx(item);
           console.info("createAssetWithShortTermPermission, result=" + JSON.stringify(result));
           expect(result).assertTrue();
         } catch (error) {
