@@ -549,6 +549,35 @@ export default function XmlTest_04() {
       });
 
     /**
+     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1000
+     * @tc.name      ParseXmlTest0010
+     * @tc.desc      Empty Input Detection
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('ParseXmlTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'ParseXmlTest0010';
+        console.log(TAG + ' start');
+        const xmlStr = `<>`
+        let textEncoder = new util.TextEncoder();
+        let uint8 = textEncoder.encodeInto(xmlStr);
+
+        let options: xml.ParseOptions = {supportDoctype:false, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
+        let pullParser = new xml.XmlPullParser(uint8.buffer as object as ArrayBuffer);
+
+        try {
+          pullParser.parseXml(options)
+          expect().assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+        expect(str).assertContain(``);
+
+      });
+
+    /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1100
      * @tc.name      ParseXmlTest0011
      * @tc.desc      Large file parsing interrupted
@@ -643,6 +672,65 @@ export default function XmlTest_04() {
 
         pullParser.parseXml(options)
         expect(str).assertContain(``);
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1500
+     * @tc.name      ParseXmlTest0015
+     * @tc.desc      Invalid attribute value format
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('ParseXmlTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'ParseXmlTest0015';
+        console.log(TAG + ' start');
+
+        const xmlStr = `<node attr="value&invalid">`;
+
+        let textEncoder = new util.TextEncoder();
+        let uint8 = textEncoder.encodeInto(xmlStr);
+
+        let options: xml.ParseOptions = {supportDoctype:false, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
+        let pullParser = new xml.XmlPullParser(uint8.buffer as object as ArrayBuffer);
+
+        try {
+          pullParser.parseXml(options)
+          expect().assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+        expect(str).assertContain(`value&invalid`);
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1600
+     * @tc.name      ParseXmlTest0016
+     * @tc.desc      Unescaped reserved character
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('ParseXmlTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'ParseXmlTest0016';
+        console.log(TAG + ' start');
+        const xmlStr = `<text><></text>`;
+        let textEncoder = new util.TextEncoder();
+        let uint8 = textEncoder.encodeInto(xmlStr);
+        let options: xml.ParseOptions = {supportDoctype:false, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
+        let pullParser = new xml.XmlPullParser(uint8.buffer as object as ArrayBuffer);
+
+        try {
+          pullParser.parseXml(options)
+          expect().assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
 
       });
 
@@ -1363,6 +1451,41 @@ export default function XmlTest_04() {
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
           expect(String(err)).assertContain("TypeError")
+        }
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1400
+     * @tc.name      ParseTest0014
+     * @tc.desc      Test XML input with unclosed tags
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('ParseTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'ParseTest0014';
+        console.log(TAG + ' start');
+
+        str = "";
+        try {
+          let strXml =
+            '<root>' +
+              '<item id= "1" > nss' +
+              '</root>'
+
+          let testEncoder = new util.TextEncoder();
+          let arrBuffer = testEncoder.encodeInto(strXml);
+          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+
+          let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
+          testThat.parse(options);
+
+          expect().assertFail()
+
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });

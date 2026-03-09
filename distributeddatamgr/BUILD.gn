@@ -50,6 +50,7 @@ group("distributeddatamgr") {
       "preferencesjstest:preferences_js_test",
       "relationalStoretest:relationalStoretest",
       "relationalstoredatagroupidtest:ActsRelationalstoreDataGroupIdTest",
+      "RdbWithPermisionTestStatic:ActsRdbStorePermissionEtsStaticTest",
     ]
   } else {
     deps = [

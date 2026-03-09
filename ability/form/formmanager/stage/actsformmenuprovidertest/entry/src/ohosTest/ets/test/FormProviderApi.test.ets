@@ -135,6 +135,9 @@ export default function formProviderTest() {
       formProvider.getPublishedFormInfoById(formId).then((data: formInfo.FormInfo) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', 
         `${TAG} formProvider getPublishedFormInfoById success, data: ${JSON.stringify(data)}`);
+        expect(data.bundleName.length > 0).assertTrue();
+        expect(data.moduleName.length > 0).assertTrue();
+        expect(data.abilityName.length > 0).assertTrue();
         done();
       }).catch ((error: BusinessError) => {
         if (error.code === ERROR_CODE) {
@@ -572,5 +575,77 @@ export default function formProviderTest() {
       }
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1200
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1200
+     * @tc.desc   getPublishedRunningFormInfoById、getFormRect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+        it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+          let TAG = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1200';
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+          let formId: string = '12400633174999288';
+          try {
+            formProvider.getPublishedRunningFormInfoById(formId).then((data: formInfo.RunningFormInfo) => {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
+                `${TAG} getPublishedRunningFormInfoById success, data: ${JSON.stringify(data)}`);
+              expect(data.formId.length > 0).assertTrue();
+              expect(data.bundleName.length > 0).assertTrue();
+              expect(data.hostBundleName.length > 0).assertTrue();
+              expect(data.formLocation).assertEqual(formInfo.FormLocation.SCREEN_LOCK);
+              expect(data.visibilityType).assertEqual(formInfo.VisibilityType.FORM_VISIBLE);
+              expect(data.moduleName.length > 0).assertTrue();
+              expect(data.moduleName.length > 0).assertTrue();
+              expect(data.formName.length > 0).assertTrue();
+              expect(data.dimension > 0).assertTrue();
+              expect(data.formUsageState).assertEqual(formInfo.FormUsageState.USED);
+              expect(data.formDescription.length > 0).assertTrue();
+              expect(data.extraData).assertUndefined();
+              done();
+            }).catch ((error: BusinessError) => {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
+                `${TAG} getPublishedRunningFormInfoById error: ${JSON.stringify(error)}`);
+              if (error.code === ERROR_CODE) {
+                expect(error.code).assertEqual(ERROR_CODE);
+              } else if (error.code === ERROR_CODE2) {
+                expect(error.code).assertEqual(ERROR_CODE2);
+              } else if (error.code === ERROR_CODE8) {
+                expect(error.code).assertEqual(ERROR_CODE8);
+              } else {
+                expect().assertFail();
+              }
+              done();
+            });
+            formProvider.getFormRect(formId).then((data: formInfo.Rect) => {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', 
+              `${TAG} getFormRect success, data: ${JSON.stringify(data)}`);
+              expect(data.left >= 0).assertTrue();
+              expect(data.top >= 0).assertTrue();
+              expect(data.width >= 0).assertTrue();
+              expect(data.height >= 0).assertTrue();
+              done();
+            }).catch ((error: BusinessError) => {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
+                `${TAG} getFormRect error: ${JSON.stringify(error)}`);
+              if (error.code === ERROR_CODE) {
+                expect(error.code).assertEqual(ERROR_CODE);
+              } else if (error.code === ERROR_CODE2) {
+                expect(error.code).assertEqual(ERROR_CODE2);
+              } else if (error.code === ERROR_CODE8) {
+                expect(error.code).assertEqual(ERROR_CODE8);
+              } else {
+                expect().assertFail();
+              }
+              done();
+            });
+          } catch (error) {
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} error`);
+            done();
+          }
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+        });
   })
 }

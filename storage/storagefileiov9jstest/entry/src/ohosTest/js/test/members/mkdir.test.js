@@ -16,7 +16,7 @@
 import { 
   fileIO, nextFileName, describe, it, expect, prepareFile, FILE_CONTENT,
 } from '../Common';
-import { Level } from '@ohos/hypium';
+import { TestType, Size, Level } from '@ohos/hypium';
 
 export default function fileIOMkdir() {
 describe('fileIO_fs_mkdir', function () {
@@ -57,7 +57,7 @@ describe('fileIO_fs_mkdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_mkdir_sync_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900015 && e.message == 'File exists').assertTrue();
+      expect(e.code === 13900015 && e.message == 'File exists').assertTrue();
     }
   });
 
@@ -76,7 +76,7 @@ describe('fileIO_fs_mkdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_mkdir_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -97,7 +97,102 @@ describe('fileIO_fs_mkdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_mkdir_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900015 && e.message == 'File exists').assertTrue();
+      expect(e.code === 13900015 && e.message == 'File exists').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_sync_004
+   * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_0400
+   * @tc.desc   Test mkdirSync() interface. Path is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_sync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+    try {
+      fileIO.mkdirSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_sync_004 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_sync_005
+   * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_0500
+   * @tc.desc   Test mkdirSync() interface. Path is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_sync_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+    try {
+      fileIO.mkdirSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_sync_005 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_sync_006
+   * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_0600
+   * @tc.desc   Test mkdirSync() interface with recursion. Path is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_sync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+    try {
+      fileIO.mkdirSync("", true);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_sync_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900002);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_sync_007
+   * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_0700
+   * @tc.desc   Test mkdirSync() interface with recursion. Path is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_sync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+    try {
+      fileIO.mkdirSync(null, true);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_sync_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_sync_008
+   * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_0800
+   * @tc.desc   Test mkdirSync() interface with recursion. Path is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_sync_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+    try {
+      fileIO.mkdirSync(undefined, true);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_sync_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
     }
   });
 
@@ -165,7 +260,7 @@ describe('fileIO_fs_mkdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_mkdir_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -184,7 +279,7 @@ describe('fileIO_fs_mkdir', function () {
       fileIO.mkdir('/', (err) => {
         if(err) {
           console.log('fileIO_test_mkdir_async_003 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
+          expect(err.code === 13900015 && err.message == 'File exists').assertTrue();
           done();
         }
       });
@@ -212,7 +307,263 @@ describe('fileIO_fs_mkdir', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_mkdir_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900015 && e.message == 'File exists').assertTrue();
+      expect(e.code === 13900015 && e.message == 'File exists').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_005
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_0500
+   * @tc.desc   Test mkdir() interface. Promise. Path is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.mkdir("");
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_005 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900002);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_006
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_0600
+   * @tc.desc   Test mkdir() interface. Promise. Path is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.mkdir(null);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_007
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_0700
+   * @tc.desc   Test mkdir() interface. Promise. Path is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.mkdir(undefined);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_008
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_0800
+   * @tc.desc   Test mkdir() interface. Promise with recursion. Path is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.mkdir("", true);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900002);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_009
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_0900
+   * @tc.desc   Test mkdir() interface. Promise with recursion. Path is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.mkdir(null, true);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_009 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_010
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_1000
+   * @tc.desc   Test mkdir() interface. Promise with recursion. Path is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.mkdir(undefined, true);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_011
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_1100
+   * @tc.desc   Test mkdir() interface. Callback. Path is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.mkdir("", (err) => {
+      console.log('fileIO_test_mkdir_async_011 has err failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code).assertEqual(13900002);
+      done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_011 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_012
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_1200
+   * @tc.desc   Test mkdir() interface. Callback. Path is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.mkdir(null, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_012 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_013
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_1300
+   * @tc.desc   Test mkdir() interface. Callback. Path is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.mkdir(undefined, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_013 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_014
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_1400
+   * @tc.desc   Test mkdir() interface. Callback with recursion. Path is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.mkdir("", true, (err) => {
+      console.log('fileIO_test_mkdir_async_014 has err failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code).assertEqual(13900002);
+      done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_014 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_015
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_1500
+   * @tc.desc   Test mkdir() interface. Callback with recursion. Path is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.mkdir(null, true, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_015 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_016
+   * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_1600
+   * @tc.desc   Test mkdir() interface. Callback with recursion. Path is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.mkdir(undefined, true, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_016 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
     }
   });
 })

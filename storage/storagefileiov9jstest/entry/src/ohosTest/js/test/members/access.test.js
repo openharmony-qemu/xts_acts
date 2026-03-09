@@ -16,7 +16,7 @@
 import {
   fileIO, FILE_CONTENT, prepareFile, nextFileName, isIntNum, describe, it, expect,
 } from '../Common';
-import { Level } from '@ohos/hypium';
+import { TestType, Size, Level } from '@ohos/hypium';
 
 export default function fileIOAccess() {
 describe('fileIO_fs_access', function () {
@@ -82,7 +82,7 @@ describe('fileIO_fs_access', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('test_FileIO_Access_Sync_002 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       }
     });
 
@@ -252,10 +252,10 @@ describe('fileIO_fs_access', function () {
 
       try {
         fileIO.accessSync(undefined, fileIO.AccessModeType.WRITE);
-        expect().assertFail();
+        expect(false).assertTrue();
       } catch (e) {
         console.log('test_FileIO_Access_Sync_009 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       }
     });
 
@@ -271,10 +271,72 @@ describe('fileIO_fs_access', function () {
 
       try {
         fileIO.accessSync(null, fileIO.AccessModeType.READ);
-        expect().assertFail();
+        expect(false).assertTrue();
       } catch (e) {
         console.log('test_FileIO_Access_Sync_010 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_014
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_1400
+     * @tc.desc   Test accessSync() interface. Path is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+      try {
+        let res = fileIO.accessSync("");
+        if (res) {
+          console.log('test_FileIO_Access_Sync_014 file exists');
+        } else {
+          console.log('test_FileIO_Access_Sync_014 file not exists');
+          expect(res === false).assertTrue();
+        }
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_014 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_015
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_1500
+     * @tc.desc   Test accessSync() interface. Path is null without mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+      try {
+        fileIO.accessSync(null);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_015 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code).assertEqual(13900020);
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_016
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_1600
+     * @tc.desc   Test accessSync() interface. Path is undefined without mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_016', TestType.FUNCTION | Size.MEDIUMTEST | TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+      try {
+        fileIO.accessSync(undefined);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_016 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code).assertEqual(13900020);
       }
     });
 
@@ -356,6 +418,63 @@ describe('fileIO_fs_access', function () {
       } catch (e) {
         console.log('test_FileIO_Access_Sync_013 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_017
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_1700
+     * @tc.desc   Test accessSync() interface with 3 params. Path is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+      try {
+        let res = fileIO.accessSync("", fileIO.AccessModeType.EXIST, fileIO.AccessFlagType.LOCAL);
+        expect(res === false).assertTrue();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_017 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_018
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_1800
+     * @tc.desc   Test accessSync() interface with 3 params. Path is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+      try {
+        fileIO.accessSync(null, fileIO.AccessModeType.READ, fileIO.AccessFlagType.LOCAL);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_018 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code).assertEqual(13900020);
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_019
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_1900
+     * @tc.desc   Test accessSync() interface with 3 params. Path is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+      try {
+        fileIO.accessSync(undefined, fileIO.AccessModeType.WRITE, fileIO.AccessFlagType.LOCAL);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_019 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code).assertEqual(13900020);
       }
     });
 
@@ -482,7 +601,7 @@ describe('fileIO_fs_access', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('test_FileIO_Access_Async_004 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -503,7 +622,7 @@ describe('fileIO_fs_access', function () {
         });
       } catch (e) {
         console.log('test_FileIO_Access_Async_005 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -632,11 +751,11 @@ describe('fileIO_fs_access', function () {
 
       try {
         await fileIO.access(null, fileIO.AccessModeType.EXIST);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       } catch (e) {
         console.log('test_FileIO_Access_Async_010 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -653,11 +772,11 @@ describe('fileIO_fs_access', function () {
 
       try {
         await fileIO.access(undefined, fileIO.AccessModeType.READ_WRITE);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       } catch (e) {
         console.log('test_FileIO_Access_Async_011 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -678,7 +797,7 @@ describe('fileIO_fs_access', function () {
         });
       } catch (e) {
         console.log('test_FileIO_Access_Async_012 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -699,7 +818,96 @@ describe('fileIO_fs_access', function () {
         });
       } catch (e) {
         console.log('test_FileIO_Access_Async_013 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.name   test_FileIO_Access_Async_014
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_1400
+     * @tc.desc   Test access() interface. Promise. Path is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+      try {
+        let res = await fileIO.access("");
+        expect(res === false).assertTrue();
+        done();
+      } catch (e) {
+        console.log('test_FileIO_Access_Async_014 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_015
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_1500
+     * @tc.desc   Test access() interface. Promise. Path is null without mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+      try {
+        await fileIO.access(null);
+        expect(false).assertTrue();
+        done();
+      } catch (e) {
+        console.log('test_FileIO_Access_Async_015 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_016
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_1600
+     * @tc.desc   Test access() interface. Promise. Path is undefined without mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+      try {
+        await fileIO.access(undefined);
+        expect(false).assertTrue();
+        done();
+      } catch (e) {
+        console.log('test_FileIO_Access_Async_016 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_017
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_1700
+     * @tc.desc   Test access() interface. Callback. Path is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+      try {
+        fileIO.access("", (err, res) => {
+          if (err) {
+            console.log('test_FileIO_Access_Async_017 error ' + err);
+            done();
+          }
+          console.log('test_FileIO_Access_Async_017 res ' + res);
+          expect(res === false).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.log('test_FileIO_Access_Async_017 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code).assertEqual(401);
         done();
       }
     });

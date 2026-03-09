@@ -22,6 +22,7 @@ export const doblankless_ERR_KEY_NOT_MATCH: (webName:string) => number;
 export const doblankless_CONTROLLER_NOT_INITED: (webName:string) => number;
 export const doblankless_INVALID_ARGS: (webName:string) => number;
 export const doblankless_INVALID_ARGS_SET_ZERO: (webName:string) => number;
+export const doblankless_INVALID_ARGS_GET_ZERO2: (webName:string) => number;
 export const doblankless_INVALID_ARGS_SET_ONE: (webName:string) => number;
 export const doblankless_INVALID_ARGS_GET_ONE: (webName:string) => number;
 export const doblankless_INVALID_ARGS_SET_2048: (webName:string) => number;

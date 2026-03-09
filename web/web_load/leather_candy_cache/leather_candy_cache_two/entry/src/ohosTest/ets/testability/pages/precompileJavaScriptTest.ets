@@ -27,6 +27,7 @@ import { BusinessError } from '@ohos.base';
 @Component
 struct PrecompileJavaScriptTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  controller1: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ''
   @State javaScriptAccess: boolean = true;
@@ -85,6 +86,7 @@ struct PrecompileJavaScriptTest {
                 Utils.emitEvent(res, 148410)
               }).catch((err: number) => {
                 console.error(msg + ' precompile error: ' + err);
+                Utils.emitEvent(err, 148410)
               })
               break;
             }
@@ -101,8 +103,10 @@ struct PrecompileJavaScriptTest {
                   ]
                 }).then((res) => {
                   console.info(msg + ' precompile result: ' + res);
+                  Utils.emitEvent(res, 148420)
                 }).catch((err: number) => {
                   console.error(msg + ' precompile error: ' + err);
+                  Utils.emitEvent(err, 148420)
                 })
               } catch (error) {
                 console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -122,8 +126,10 @@ struct PrecompileJavaScriptTest {
                   ]
                 }).then((res) => {
                   console.info(msg + ' precompile result: ' + res);
+                  Utils.emitEvent(res, 148430)
                 }).catch((err: number) => {
                   console.error(msg + ' precompile error: ' + err);
+                  Utils.emitEvent(err, 148430)
                 })
               } catch (error) {
                 console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -138,7 +144,118 @@ struct PrecompileJavaScriptTest {
                 Utils.emitEvent(res, 148440)
               }).catch((err: number) => {
                 console.error(msg + ' precompile error: ' + err);
+                Utils.emitEvent(err, 148440)
               })
+              break;
+            }
+            case "testPrecompileJavaScript012": {
+              let msg = "testPrecompileJavaScript012"
+              try {
+                this.controller.precompileJavaScript("https://exmaple.com/example.js", 'hawe', {
+                  responseHeaders: []
+                }).then((res) => {
+                  console.info(msg + ' precompile result: ' + res);
+                  Utils.emitEvent(res, 148412)
+                }).catch((err: number) => {
+                  console.error(msg + ' precompile error: ' + err);
+                  Utils.emitEvent(err, 148412)
+                })
+              } catch (error) {
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 148412)
+              }
+              break;
+            }
+            case "testPrecompileJavaScript013": {
+              let msg = "testPrecompileJavaScript013"
+              try {
+                this.controller.precompileJavaScript("", 'hawe', {
+                  responseHeaders: [
+                    {
+                      headerKey: "E-Tag",
+                      headerValue: "68ZpTzuAFdm85xPNtr3EOzySP8Q"
+                    }
+                  ]
+                }).then((res) => {
+                  console.info(msg + ' precompile result: ' + res);
+                  Utils.emitEvent(res, 148413)
+                }).catch((err: number) => {
+                  console.error(msg + ' precompile error: ' + err);
+                  Utils.emitEvent(err, 148413)
+                })
+              } catch (error) {
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 148413)
+              }
+              break;
+            }
+            case "testPrecompileJavaScript014": {
+              let msg = "testPrecompileJavaScript014"
+              try {
+                this.controller.precompileJavaScript(null, 'hawe', {
+                  responseHeaders: [
+                    {
+                      headerKey: "E-Tag",
+                      headerValue: "68ZpTzuAFdm85xPNtr3EOzySP8Q"
+                    }
+                  ]
+                }).then((res) => {
+                  console.info(msg + ' precompile result: ' + res);
+                  Utils.emitEvent(res, 148414)
+                }).catch((err: number) => {
+                  console.error(msg + ' precompile error: ' + err);
+                  Utils.emitEvent(err, 148414)
+                })
+              } catch (error) {
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 148414)
+              }
+              break;
+            }
+            case "testPrecompileJavaScript015": {
+              let msg = "testPrecompileJavaScript015"
+              try {
+                this.controller.precompileJavaScript(undefined, 'hawe', {
+                  responseHeaders: [
+                    {
+                      headerKey: "E-Tag",
+                      headerValue: "68ZpTzuAFdm85xPNtr3EOzySP8Q"
+                    }
+                  ]
+                }).then((res) => {
+                  console.info(msg + ' precompile result: ' + res);
+                  Utils.emitEvent(res, 148415)
+                }).catch((err: number) => {
+                  console.error(msg + ' precompile error: ' + err);
+                  Utils.emitEvent(err, 148415)
+                })
+              } catch (error) {
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 148415)
+              }
+              break;
+            }
+            case "testPrecompileJavaScript016": {
+              let msg = "testPrecompileJavaScript016"
+              try {
+                this.controller1.precompileJavaScript("https://exmaple.com/example.js", 'hawe', {
+                  responseHeaders: [
+                    {
+                      headerKey: "E-Tag",
+                      headerValue: "68ZpTzuAFdm85xPNtr3EOzySP8Q"
+                    }
+                  ]
+                }).then((res) => {
+                  console.info(msg + ' precompile result: ' + res);
+                  Utils.emitEvent(res, 148416)
+                }).catch((err: number) => {
+                  console.error(msg + ' precompile error: ' + err);
+                  Utils.emitEvent(err, 148416)
+                })
+              } catch (error) {
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 148416)
+              }
               break;
             }
 

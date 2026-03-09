@@ -56,11 +56,11 @@ int NativeFontTestFontMeasureText015()
         OH_Drawing_CreateTypographyHandler(typoStyle, OH_Drawing_CreateFontCollection());
     OH_Drawing_Typography* typography = OH_Drawing_CreateTypography(handler);
     OH_Drawing_TextBox* textBox = OH_Drawing_TypographyGetRectsForPlaceholders(typography);
-    EXPECT_EQ(textBox == nullptr, false);
     OH_Drawing_DestroyTypographyStyle(typoStyle);
     OH_Drawing_DestroyTypographyHandler(handler);
     OH_Drawing_DestroyTypography(typography);
     OH_Drawing_TypographyDestroyTextBox(textBox);
+    EXPECT_EQ(textBox == nullptr, false);
     return TEST_SUCCESS_CODE;
 }
 

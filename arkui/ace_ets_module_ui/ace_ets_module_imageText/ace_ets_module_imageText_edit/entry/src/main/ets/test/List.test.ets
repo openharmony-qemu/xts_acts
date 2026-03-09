@@ -124,6 +124,8 @@ import TextInputEnableSelectedDataDetectorTest from './TextInputApi22Test/TextIn
 import TextInputSetStyledPlaceholderTest from './TextInputApi22Test/TextInputSetStyledPlaceholder.test';
 import TextInputOnWillAttachIMETest from './TextInputApi22Test/TextInputOnWillAttachIME.test';
 import TextInputTextDirectionTest from './TextInputApi23Test/TextInputTextDirection.test';
+import TextInputMethodsNullTest from './TextInputTest/TextInputMethodsNull.test';
+import TextInputControllerMethodsNullTest from './TextInputTest/TextInputControllerMethodsNull.test';
 
 import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressLeadingPunctuation.test';
 import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
@@ -268,4 +270,6 @@ export default function testsuite() {
   TextAreaPropertiesNullUndefined03Test();
   TextAreaMethodsNullTest();
   TextAreaControllerMethodsNullTest();
+  TextInputMethodsNullTest();
+  TextInputControllerMethodsNullTest();
 }

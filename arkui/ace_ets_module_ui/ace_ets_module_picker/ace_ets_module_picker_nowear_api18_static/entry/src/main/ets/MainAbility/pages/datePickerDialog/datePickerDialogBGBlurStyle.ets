@@ -19,11 +19,11 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct DatePickerDialogBGBlurStyle {
-  showDialog(style: BlurStyle | undefined | null | int) {
+  showDialog(style: BlurStyle | undefined) {
     this.getUIContext().showDatePickerDialog({
       start: new Date('2000-1-1'),
       end: new Date('2100-12-31'),
-      backgroundBlurStyle: (style as BlurStyle|undefined),
+      backgroundBlurStyle: (style as BlurStyle | undefined),
       dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
     })
   }
@@ -95,26 +95,11 @@ struct DatePickerDialogBGBlurStyle {
           this.showDialog(BlurStyle.COMPONENT_ULTRA_THICK)
         })
         .id('COMPONENT_ULTRA_THICK_ID')
-      Button('null')
-        .onClick((e: ClickEvent) => {
-          this.showDialog(null)
-        })
-        .id('nullID')
       Button('undefined')
         .onClick((e: ClickEvent) => {
           this.showDialog(undefined)
         })
         .id('undefinedID')
-      Button('100')
-        .onClick((e: ClickEvent) => {
-          this.showDialog(100)
-        })
-        .id('100ID')
-      Button('-100')
-        .onClick((e: ClickEvent) => {
-          this.showDialog(-100)
-        })
-        .id('-100ID')
     }.width('100%')
   }
 }

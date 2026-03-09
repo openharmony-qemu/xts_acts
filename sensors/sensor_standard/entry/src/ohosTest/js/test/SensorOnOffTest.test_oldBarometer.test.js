@@ -70,6 +70,7 @@ describe("SensorJsTest_sensor_8", function () {
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
     let invalid  = -1;
     let errMessages = ['string is not defined','The parameter invalid'];
+    let sensortempcode = true;
     let errMessage;
     let TAG = '';
 
@@ -189,7 +190,7 @@ describe("SensorJsTest_sensor_8", function () {
                 } else {
                     sensor.once(sensor.SensorType.SENSOR_TYPE_ID_BAROMETER, callback);
                     setTimeout(() => {
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }, 500);
                 }

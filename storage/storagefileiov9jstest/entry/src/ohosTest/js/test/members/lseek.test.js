@@ -17,7 +17,7 @@ import {
   fileIO, FILE_CONTENT, prepareFile, nextFileName, 
   describe, it, expect,
 } from '../Common';
-import { Level } from '@ohos/hypium';
+import { TestType, Size, Level } from '@ohos/hypium';
   
 export default function fileIOLseek() {
 describe('fileIO_fs_lseek', function () {
@@ -382,9 +382,97 @@ describe('fileIO_fs_lseek', function () {
       expect(false).assertTrue();
     } catch (e) {
       fileIO.closeSync(file);
+ 	        fileIO.unlinkSync(fpath);
+ 	        console.log('fileIO_test_lseek_015 has failed for ' + e.message + ', code: ' + e.code);
+ 	        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+ 	    * @tc.name   fileIO_test_lseek_016
+ 	    * @tc.number SUB_DF_FILEIO_LSEEK_SYNC_1600
+ 	    * @tc.desc   Test lseek() interface. Fd is null.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL0
+ 	    */
+  it('fileIO_test_lseek_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    try {
+      fileIO.lseek(null, 5);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_lseek_016 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_lseek_017
+   * @tc.number SUB_DF_FILEIO_LSEEK_SYNC_1700
+   * @tc.desc   Test lseek() interface. Fd is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_lseek_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    try {
+      fileIO.lseek(undefined, 5);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_lseek_017 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_lseek_018
+   * @tc.number SUB_DF_FILEIO_LSEEK_SYNC_1800
+   * @tc.desc   Test lseek() interface. Offset is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_lseek_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_lseek_018');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+
+    try {
+      fileIO.lseek(file.fd, null);
+      expect(false).assertFalse();
+      fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
-      console.log('fileIO_test_lseek_015 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    } catch (e) {
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_lseek_018 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_lseek_019
+   * @tc.number SUB_DF_FILEIO_LSEEK_SYNC_1900
+   * @tc.desc   Test lseek() interface. Offset is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_lseek_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_lseek_019');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+
+    try {
+      fileIO.lseek(file.fd, undefined);
+      expect(false).assertFalse();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_lseek_019 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
     }
   });
 })

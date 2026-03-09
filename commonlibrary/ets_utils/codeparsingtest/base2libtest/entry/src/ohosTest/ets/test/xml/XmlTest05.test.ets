@@ -79,6 +79,43 @@ export default function XmlTest_05() {
     })
 
     /**
+     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1600
+     * @tc.name      ParseTest0016
+     * @tc.desc      Test XML input with unescaped illegal characters in predefined entities (<, >, &, ", ')
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('ParseTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'ParseTest0016';
+        console.log(TAG + ' start');
+
+        str = "";
+        try{
+          let strXml = //All throw BusinessError
+            '<root>\n' +
+              '  <content>Price < 100 & Stock > 50</content>\n' +
+              '  <item name="John "Doe"" />\n' +
+              '  <user id=\'O\'Neil\' />\n' +
+              '</root>'
+
+          let testEncoder = new util.TextEncoder();
+          let arrBuffer = testEncoder.encodeInto(strXml);
+          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+
+          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
+          testThat.parse(options);
+
+          expect().assertFail()
+
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1700
      * @tc.name      ParseTest0017
      * @tc.desc      Test XML input containing control characters (non-printable characters like 0x00-0x08, 0x0B, 0x0C, 0x0E-0x1F)
@@ -108,6 +145,82 @@ export default function XmlTest_05() {
         expect(str).not().assertContain("&#x0B")
         expect(str).not().assertContain("&#x0C")
         expect(str).not().assertContain("&#x1F")
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1800
+     * @tc.name      ParseTest0018
+     * @tc.desc      Test element/attribute names containing illegal characters (spaces, special symbols, starting with numbers)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('ParseTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'ParseTest0018';
+        console.log(TAG + ' start');
+
+        str = "";
+        try{
+          let strXml = //Element and attribute names with illegal characters throw BusinessError
+            '<root>\n' +
+              '  <item name>Content</item>\n' +
+              '  <123element>Test</123element>\n' +
+              '  <user na&me="Alice" />\n' +
+              '</root>'
+
+          let testEncoder = new util.TextEncoder();
+          let arrBuffer = testEncoder.encodeInto(strXml);
+          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+
+          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
+          testThat.parse(options);
+
+          expect().assertFail()
+
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1900
+     * @tc.name      ParseTest0019
+     * @tc.desc      Test CDATA sections containing illegal end markers (]]>)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('ParseTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'ParseTest0019';
+        console.log(TAG + ' start');
+
+        str = "";
+        try{
+          let strXml =
+            '<root>\n' +
+              '  <code><![CDATA[\n' +
+              '    if (a > b) {\n' +
+              '      return "]]>";\n' +
+              '    }\n' +
+              '  ]]></code>\n' +
+              '</root>'
+
+          let testEncoder = new util.TextEncoder();
+          let arrBuffer = testEncoder.encodeInto(strXml);
+          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+
+          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
+          testThat.parse(options);
+
+          expect().assertFail()
+
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
 
       });
 
@@ -174,6 +287,43 @@ export default function XmlTest_05() {
         expect(str).assertContain("id demo")
         expect(str).assertContain("Test parsing comments")
         expect(str).assertContain("Nested Node Content")
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2200
+     * @tc.name      ParseTest0022
+     * @tc.desc      Test XML input with whitespace characters but unclosed tags to verify format error exception is triggered first
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('ParseTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'ParseTest0022';
+        console.log(TAG + ' start');
+
+        str = "";
+        try{
+          let strXml =
+            '<?xml version="1.0" encoding="UTF-8"?>\n' +
+              '<root  >  \n' +
+              '  <data>  Test  <![CDATA[<>&]]>  \n' +
+              '  <item  id="1"  >  Unclosed  \n' +
+              '</root>'
+
+          let testEncoder = new util.TextEncoder();
+          let arrBuffer = testEncoder.encodeInto(strXml);
+          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+
+          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
+          testThat.parse(options);
+
+          expect().assertFail()
+
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
 
       });
 

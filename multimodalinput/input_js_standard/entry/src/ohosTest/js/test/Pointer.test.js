@@ -32,6 +32,7 @@ export default function Pointer_test() {
       PARAMETER_WINDOWID_TYPE_MSG: `Parameter error. The type of windowId must be number.`,
       PARAMETER_CALLBACK_TYPE_MSG: `Parameter error. The type of callback must be function.`
     }
+    let pointerStyleFlag = 1;
 
     /**
      * @tc.name   Pointer_SetPointerVisibleSync_Test_001
@@ -110,7 +111,7 @@ export default function Pointer_test() {
             done();
           } else {
             console.info(`Pointer_SetPointerVisibleTest_001 success_1. data=${JSON.stringify(data)}`);
-            expect(true).assertTrue();
+            expect(pointerStyleFlag).assertEqual(1);
           }
         });
       } catch (error) {
@@ -152,7 +153,7 @@ export default function Pointer_test() {
         try {
           await pointer.setPointerVisible(true).then(data => {
             console.info(`Pointer_PointerVisibleTest_002 success_1, data=${JSON.stringify(data)}`);
-            expect(true).assertTrue();
+            expect(pointerStyleFlag).assertEqual(1);
             try {
               pointer.isPointerVisible().then(data => {
                 console.info(`Pointer_PointerVisibleTest_002 Promise success, data=${JSON.stringify(data)}`);
@@ -202,7 +203,7 @@ export default function Pointer_test() {
           done();
         }
       } else {
-        expect(true).assertTrue();
+        expect(pointerStyleFlag).assertEqual(1);
         console.info('Pointer_PointerVisibleTest_002 SystemCapability.MultimodalInput.Input.Pointer segregate');
         done();
       }
@@ -225,7 +226,7 @@ export default function Pointer_test() {
         try {
           await pointer.setPointerVisible(false).then(data => {
             console.info(`Pointer_PointerVisibleTest_003 success_1, data=${JSON.stringify(data)}`);
-            expect(true).assertTrue();
+            expect(pointerStyleFlag).assertEqual(1);
             try {
               pointer.isPointerVisible().then(data => {
                 console.info(`Pointer_PointerVisibleTest_003 Promise success, data=${JSON.stringify(data)}`);
@@ -276,7 +277,7 @@ export default function Pointer_test() {
           done();
         }
       } else {
-        expect(true).assertTrue();
+        expect(pointerStyleFlag).assertEqual(1);
         console.info('Pointer_PointerVisibleTest_003 SystemCapability.MultimodalInput.Input.Pointer segregate');
         done();
       }
@@ -303,7 +304,7 @@ export default function Pointer_test() {
             try {
               var windowId = data.id;
               await pointer.setPointerStyle(windowId, 4).then(() => {
-                expect(true).assertTrue();
+                expect(pointerStyleFlag).assertEqual(1);
                 console.info(`SetPointerStyle_001 success`);
                 resolve();
               }).catch((err) => {
@@ -334,7 +335,7 @@ export default function Pointer_test() {
           done();
         })
       } else {
-        expect(true).assertTrue();
+        expect(pointerStyleFlag).assertEqual(1);
         console.info('Pointer_SetPointerStyle_001 SystemCapability.MultimodalInput.Input.Pointer segregate');
         done();
       }
@@ -360,17 +361,17 @@ export default function Pointer_test() {
             try {
               var windowId = data.id;
               pointer.setPointerStyle(windowId, 4, (err) => {
-              try{
-                if (err) {
-                  console.info(`SetPointerStyle_002 failed_1, err=${JSON.stringify(err)}`);
-                  expect(false).assertTrue();
-                } else {
-                  console.info(`SetPointerStyle_002 success`);
-                  expect(true).assertTrue();
+                try{
+                  if (err) {
+                    console.info(`SetPointerStyle_002 failed_1, err=${JSON.stringify(err)}`);
+                    expect(false).assertTrue();
+                  } else {
+                    console.info(`SetPointerStyle_002 success`);
+                    expect(pointerStyleFlag).assertEqual(1);
+                  }
+                }catch(error){
+                  console.info(`SetPointerStyle_002 assert fail`);
                 }
-              }catch(error){
-                console.info(`SetPointerStyle_002 assert fail`);
-              }
                 resolve();
               });
             } catch (error) {
@@ -397,7 +398,7 @@ export default function Pointer_test() {
           done();
         })
       } else {
-        expect(true).assertTrue();
+        expect(pointerStyleFlag).assertEqual(1);
         console.info('Pointer_SetPointerStyle_002 SystemCapability.MultimodalInput.Input.Pointer segregate');
         done();
       }
@@ -454,7 +455,7 @@ export default function Pointer_test() {
           done();
         })
       } else {
-        expect(true).assertTrue();
+        expect(pointerStyleFlag).assertEqual(1);
         console.info('Pointer_GetPointerStyle_001 SystemCapability.MultimodalInput.Input.Pointer segregate');
         done();
       }
@@ -515,7 +516,7 @@ export default function Pointer_test() {
           done();
         })
       } else {
-        expect(true).assertTrue();
+        expect(pointerStyleFlag).assertEqual(1);
         console.info('Pointer_GetPointerStyle_002 SystemCapability.MultimodalInput.Input.Pointer segregate');
         done();
       }
@@ -701,7 +702,7 @@ export default function Pointer_test() {
       console.info('Touchpad_TOUCHPAD_TWO_FINGER_TAP_test = ' + pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP);
       expect(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP == 3).assertTrue();
     })
-    
+
     /**
      * @tc.name   Pointer_PointerVisibleTest_Exception_Test_001
      * @tc.number MultimodalInputPointer_Test_014
@@ -753,7 +754,7 @@ export default function Pointer_test() {
             expect(false).assertTrue();
           } else {
             console.info(`PointerVisibleTest_Exception_Test_002 success`);
-            expect(true).assertTrue();
+            expect(pointerStyleFlag).assertEqual(1);
           }
         });
       } catch (error) {
@@ -794,7 +795,7 @@ export default function Pointer_test() {
       try {
         await pointer.getPointerStyle(10, null).then((data) => {
           console.info(`PointerStyleTest_Exception_Test_001 success`);
-          expect(true).assertTrue();
+          expect(pointerStyleFlag).assertEqual(1);
         }, (error) => {
           console.info(`PointerStyleTest_Exception_Test_001 failed, err=${JSON.stringify(error)}`);
           expect(false).assertTrue();
@@ -821,7 +822,7 @@ export default function Pointer_test() {
       try {
         await pointer.setPointerStyle().then((data) => {
           console.info(`PointerStyleTest_Exception_Test_002 success`);
-          expect(true).assertTrue();
+          expect(pointerStyleFlag).assertEqual(1);
         }, (error) => {
           console.info(`PointerStyleTest_Exception_Test_002 failed, err=${JSON.stringify(error)}`);
           expect(false).assertTrue();

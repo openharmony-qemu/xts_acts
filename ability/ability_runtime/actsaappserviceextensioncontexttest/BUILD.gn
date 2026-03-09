@@ -20,6 +20,8 @@ group("ActsAAppServiceExtensionContextTest") {
       "actsaappserviceextensioncon:ActsAAppServiceExtensionConTest",
       "actsactsaappserviceextensionrely:ActsAAppServiceExtensionContextRelyTest",
       "actsactsaappserviceextensionrely2:ActsAAppServiceExtensionContextRelyTest2",
+      "actsappserviceextensioncontextstatic:ActsAAppServiceExtensionContextStaticTest",
+      "actsappserviceextensionrelystatic:ActsAAppServiceExtensionContextRelyStaticTest",
     ]
   }
 }

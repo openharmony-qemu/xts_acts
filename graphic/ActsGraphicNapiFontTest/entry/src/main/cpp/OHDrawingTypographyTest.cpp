@@ -1677,6 +1677,7 @@ int OHDrawingTypographyTest049()
     OH_Drawing_SetTypographyTextUseLineStyle(typoStyle, uselineStyle);
     bool linestyleOnly = false;
     OH_Drawing_SetTypographyTextLineStyleOnly(typoStyle, linestyleOnly);
+    EXPECT_NE(typoStyle, nullptr);
     return TEST_SUCCESS_CODE;
 }
 

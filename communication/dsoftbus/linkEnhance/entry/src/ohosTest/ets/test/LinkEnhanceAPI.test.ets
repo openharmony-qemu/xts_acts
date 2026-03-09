@@ -330,20 +330,14 @@ export default function LinkEnhanceAPI() {
     it('SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700----------------");
-      let flag = false;
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", "a");
         console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700 is" + connection);
+        expect(typeof(connection)).assertEqual('object');
       }catch (error) {
-        flag = true;
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700 error.code is " + error.code);
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700 error.message is " + error.message);
-      }finally {
-        if(flag == true){
-          console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700 createConnection success" +
-            ",ecpect fail");
-        }
-        expect(flag == false).assertTrue();
+        expect().assertFail();
       }
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700----------------");
     });
@@ -358,23 +352,17 @@ export default function LinkEnhanceAPI() {
     it('SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800----------------");
-      let flag = false;
       let name = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvw" +
         "xyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabc" +
         "defghijklmnopqrstuvwxyzabcdefghijklmnopqrstu";
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", name);
         console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800 is" + connection);
+        expect(typeof(connection)).assertEqual('object');
       }catch (error) {
-        flag = true;
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800 error.code is " + error.code);
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800 error.message is " + error.message);
-      }finally {
-        if(flag == true){
-          console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800 createConnection success" +
-            ",ecpect fail");
-        }
-        expect(flag == false).assertTrue();
+        expect().assertFail();
       }
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800----------------");
     });
@@ -1228,19 +1216,13 @@ export default function LinkEnhanceAPI() {
      */
     it('SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500----------------");
-      let flag = false;
       try {
         let server: linkEnhance.Server = linkEnhance.createServer("a");
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500 server is" + server);
+        expect(typeof(server)).assertEqual('object');
         }catch (error) {
-          flag = true;
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500 error.code is:" + error.code);
-        }finally {
-          if(flag == true){
-            console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500 createServer success,expect faile");
-          }
-          expect(flag == false).assertTrue();
-          console.info(logTag + "reclaim done");
+          expect().assertFail();
         }
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500----------------");
     });
@@ -1254,22 +1236,17 @@ export default function LinkEnhanceAPI() {
      */
     it('SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600----------------");
-      let flag = false;
+
       let name = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvw" +
         "xyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabc" +
         "defghijklmnopqrstuvwxyzabcdefghijklmnopqrstu";
       try {
         let server: linkEnhance.Server = linkEnhance.createServer(name);
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600 server is" + server);
+        expect(typeof(server)).assertEqual('object');
         }catch (error) {
-          flag = true;
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600 error.code is:" + error.code);
-        }finally {
-          if(flag == true){
-            console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600 createServer success,expect faile");
-          }
-          expect(flag == false).assertTrue();
-          console.info(logTag + "reclaim done");
+          expect().assertFail();
         }
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600----------------");
     });

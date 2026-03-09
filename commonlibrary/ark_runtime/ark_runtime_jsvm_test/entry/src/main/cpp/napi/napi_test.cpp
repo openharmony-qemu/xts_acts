@@ -7377,6 +7377,9 @@ static JSVM_Value GetHeapStatistics(JSVM_Env env, JSVM_CallbackInfo info)
     OH_JSVM_GetHeapStatistics(testVm, &result);
     JSVM_Value nativeContextsCnt = nullptr;
     OH_JSVM_CreateInt64(env, result.numberOfNativeContexts, &nativeContextsCnt);
+    if (result.numberOfNativeContexts < 0) {
+        OH_JSVM_ThrowError(env, nullptr, "Test JSVM OH_JSVM_GetHeapStatistics failed");
+    }
     return nativeContextsCnt;
 }
 
@@ -7694,6 +7697,12 @@ static JSVM_Value SetTypeTagToObject(JSVM_Env env, JSVM_CallbackInfo info)
     JSVM_Status status = OH_JSVM_TypeTagObject(env, args[0], &TagsData[index]);
     if (status != JSVM_OK) {
         OH_JSVM_ThrowError(env, "Reconnect error", "OH_JSVM_TypeTagObject failed");
+    }
+    if (TagsData[0].upper == 0) {
+        OH_JSVM_ThrowError(env, "Reconnect error", "A destroyed TagsData");
+    }
+    if (TagsData[0].lower == 0) {
+        OH_JSVM_ThrowError(env, "Reconnect error", "A destroyed TagsData");
     }
     JSVM_Value result = nullptr;
     OH_JSVM_GetBoolean(env, true, &result);

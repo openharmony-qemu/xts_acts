@@ -198,6 +198,34 @@ export default function JsvmEnumTest() {
     });
 
     /**
+     * @tc.name   JsvmCompileModeConsumeCodeTest001x
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeConsumeCodeTest001x
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('JsvmCompileModeConsumeCodeTest001x', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let rst: number = napitest.JsvmApiEnumStructTestCheck();
+      console.info('JsvmCompileModeConsumeCodeTest001x testString result is:' + JSON.stringify(rst));
+      expect(rst).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   JsvmCompileModeConsumeCodeTest002x
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeConsumeCodeTest002x
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('JsvmCompileModeConsumeCodeTest002x', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let rst: number = napitest.JsvmFixJSVMExpectedTest();
+      console.info('JsvmCompileModeConsumeCodeTest002x testString result is:' + JSON.stringify(rst));
+      expect(rst).assertEqual(0);
+    });
+
+    /**
      * @tc.name   JsvmCompileModeConsumeCodeTest001
      * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeConsumeCode_0001
      * @tc.desc   CreateVM,return JSVM_OK

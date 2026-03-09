@@ -70,7 +70,7 @@ describe('fileIO_randomAccessFile_setFilePointer', function () {
             console.info('fileIO_randomaccessfile_set_file_pointer_sync_001 has failed for ' + err);
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
         }
     });
 
@@ -92,8 +92,62 @@ describe('fileIO_randomAccessFile_setFilePointer', function () {
             console.info('fileIO_randomaccessfile_set_file_pointer_sync_002 has failed for ' + err);
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
         }
     });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_set_file_pointer_sync_003
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_SET_FILE_POINTER_SYNC_0300
+     * @tc.desc   Test setFilePointer() interface. null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_randomaccessfile_set_file_pointer_sync_003', Level.LEVEL3, async function () {
+        let fpath = await nextFileName('fileIO_randomaccessfile_set_file_pointer_sync_001');
+        let randomaccessfile = fileIO.createRandomAccessFileSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+        try {
+            let res = randomaccessfile.setFilePointer(null);
+            expect(res != null).assertTrue();
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_set_file_pointer_sync_003 has failed for ' + err);
+            randomaccessfile.close();
+            fileIO.unlinkSync(fpath);
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+        }
+    });    
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_set_file_pointer_sync_004
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_SET_FILE_POINTER_SYNC_0400
+     * @tc.desc   Test setFilePointer() interface. undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_randomaccessfile_set_file_pointer_sync_004', Level.LEVEL3, async function () {
+        let fpath = await nextFileName('fileIO_randomaccessfile_set_file_pointer_sync_001');
+        let randomaccessfile = fileIO.createRandomAccessFileSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+        try {
+            let res = randomaccessfile.setFilePointer(undefined);
+            expect(res != null).assertTrue();
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_set_file_pointer_sync_004 has failed for ' + err);
+            randomaccessfile.close();
+            fileIO.unlinkSync(fpath);
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+        }
+    });    
+
+
+
+
+
+
+
+
+
+
 })
 }

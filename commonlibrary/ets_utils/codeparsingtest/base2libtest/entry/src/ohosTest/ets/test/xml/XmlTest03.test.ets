@@ -86,6 +86,37 @@ export default function XmlTest_03() {
       });
 
     /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0300
+     * @tc.name      SetCDATATest0003
+     * @tc.desc      Test empty string input
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SetCDATATest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'SetCDATATest0003';
+        console.log(TAG + ' start');
+
+        try {
+          let testArrayBuffer = new ArrayBuffer(2048)
+          let testConstructor = new xml.XmlSerializer(testArrayBuffer, "utf-8")
+
+          testConstructor.startElement("root")
+          testConstructor.setCDATA("")  //Value cannot be empty
+          testConstructor.endElement()
+
+          let uint8 = new Uint8Array(testArrayBuffer)
+          let result = util.TextDecoder.create().decodeToString(uint8)
+
+          expect(result).assertFail()
+        }catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
      * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0400
      * @tc.name      SetCDATATest0004
      * @tc.desc      Test multi-language and emoji input

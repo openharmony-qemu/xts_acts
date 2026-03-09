@@ -75,5 +75,62 @@ export default function ActsGetMultiple() {
       }
       done()
     });
+
+    /**
+     * @tc.name   ActsOnlyOnePermissionTest_0100
+     * @tc.number ActsOnlyOnePermissionTest_0100
+     * @tc.desc   check getAllAccounts interface meeting ohos.permission.GET_ALL_APP_ACCOUNTS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsOnlyOnePermissionTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      let tag = "====>ActsOnlyOnePermissionTest_0100 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      let bundle = "com.example.actsaccountaccessiblefirst";
+      try {
+        appAccountManager.getAllAccounts(bundle, (err, data) => {
+          console.info("====>err: " + JSON.stringify(err));
+          console.info("====>data: " + JSON.stringify(data));
+          try {
+            expect(data).not().assertUndefined();
+          console.info("====>ActsOnlyOnePermissionTest_0100 end====");
+          } catch (e) {
+            console.info("====>Assert Fail:" + JSON.stringify(e));
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   ActsOnlyOnePermissionTest_0200
+     * @tc.number ActsOnlyOnePermissionTest_0200
+     * @tc.desc   check getAllAccounts interface meeting ohos.permission.GET_ALL_APP_ACCOUNTS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsOnlyOnePermissionTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      let tag = "====>ActsOnlyOnePermissionTest_0200 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      let bundle = "com.example.actsaccountaccessiblefirst";
+      try {
+        let data = await appAccountManager.getAllAccounts(bundle);
+        console.info(tag + "data: " + JSON.stringify(data));
+        expect(data).not().assertUndefined();
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

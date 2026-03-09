@@ -302,14 +302,189 @@ struct blankLessInfoWithKeyTest {
               }
               break;
             }
+            case 'testblankLessInfoWithKey009': {
+              let msg = 'testblankLessInfoWithKey009';
+              let key = undefined;
+              try {
+                let infoOne: webview.BlanklessInfo = this.controller.getBlanklessInfoWithKey(key);
+                console.log(msg, 'getBlanklessInfoWithKey info:' + JSON.stringify(infoOne));
+                if (infoOne.errCode === webview.WebBlanklessErrorCode.ERR_INVALID_PARAM) {
+                  Utils.emitEvent(infoOne.errCode, 148090)
+                  console.log(msg, `入参:${key}`,`返回值:${JSON.stringify(infoOne)}`,`预期值：401`,`实际值${infoOne.errCode}`);
+                } else {
+                  console.log(msg, 'getBlanklessInfoWithKey info err');
+                }
+              } catch (error) {
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(401, 148090)
+                } else {
+                  Utils.emitEvent(401, 148090)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testblankLessInfoWithKey010': {
+              let msg = 'testblankLessInfoWithKey010';
+              let key = undefined;
+              try {
+                let infoOne: webview.BlanklessInfo = this.controller.getBlanklessInfoWithKey(key);
+                console.log(msg, 'getBlanklessInfoWithKey info:' + JSON.stringify(infoOne));
+                if (infoOne.errCode === webview.WebBlanklessErrorCode.ERR_INVALID_PARAM) {
+                  console.log(msg, `get入参:${key}`,`返回值:${JSON.stringify(infoOne)}`,`预期值：401`,`实际值${infoOne.errCode}`);
+                  let infoSet: webview.WebBlanklessErrorCode = this.controller.setBlanklessLoadingWithKey(key, true);
+                  console.log(msg, `set入参:${key}`,`返回值:${JSON.stringify(infoOne)}`,`预期值：401`,`实际值${infoSet}`);
+                  Utils.emitEvent(infoSet, 148020)
+                } else {
+                  console.log(msg, 'getBlanklessInfoWithKey info err');
+                }
+              } catch (error) {
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(401, 148090)
+                } else {
+                  Utils.emitEvent(401, 148090)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testblankLessInfoWithKey011': {
+              let msg = 'testblankLessInfoWithKey011'
+              let key = 'blankLessInfoWithKey';
+              try {
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                console.log(msg, 'first loadUrl finish');
+                this.controller.getBlanklessInfoWithKey(key);
+                webView.WebviewController.clearBlanklessLoadingCache(null)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                console.log(msg, 'second loadUrl finish');
+                let infoOne = this.controller.getBlanklessInfoWithKey(key);
+                console.log(msg, 'getBlanklessInfoWithKey info:' + JSON.stringify(infoOne));
+                if (infoOne.errCode === webview.WebBlanklessErrorCode.SUCCESS) {
+                  let infoSet = this.controller.setBlanklessLoadingWithKey(key, true);
+                  console.log(msg, `入参:${key}`,`返回值:${JSON.stringify(infoOne)}`,`预期值：401`,`实际值${infoSet}`);
+                  Utils.emitEvent(infoSet, 148011)
+                }
+              } catch (error) {
+                console.log(msg, error)
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(401, 148011)
+                } else {
+                  Utils.emitEvent(401, 148011)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testblankLessInfoWithKey012': {
+              let msg = 'testblankLessInfoWithKey012'
+              let key = 'blankLessInfoWithKey';
+              try {
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                console.log(msg, 'first loadUrl finish');
+                this.controller.getBlanklessInfoWithKey(key);
+                webView.WebviewController.clearBlanklessLoadingCache(undefined)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                console.log(msg, 'second loadUrl finish');
+                let infoOne = this.controller.getBlanklessInfoWithKey(key);
+                console.log(msg, 'getBlanklessInfoWithKey info:' + JSON.stringify(infoOne));
+                if (infoOne.errCode === webview.WebBlanklessErrorCode.SUCCESS) {
+                  let infoSet = this.controller.setBlanklessLoadingWithKey(key, true);
+                  console.log(msg, `入参:${key}`,`返回值:${JSON.stringify(infoOne)}`,`预期值：401`,`实际值${infoSet}`);
+                  Utils.emitEvent(infoSet, 148012)
+                }
+              } catch (error) {
+                console.log(msg, error)
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(401, 148012)
+                } else {
+                  Utils.emitEvent(401, 148012)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testblankLessInfoWithKey013': {
+              let msg = 'testblankLessInfoWithKey013'
+              let key = 'blankLessInfoWithKey';
+              try {
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                console.log(msg, 'first loadUrl finish');
+                this.controller.getBlanklessInfoWithKey(key);
+                webView.WebviewController.clearBlanklessLoadingCache([])
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                console.log(msg, 'second loadUrl finish');
+                let infoOne = this.controller.getBlanklessInfoWithKey(key);
+                console.log(msg, 'getBlanklessInfoWithKey info:' + JSON.stringify(infoOne));
+                if (infoOne.errCode === webview.WebBlanklessErrorCode.SUCCESS) {
+                  let infoSet = this.controller.setBlanklessLoadingWithKey(key, true);
+                  console.log(msg, `入参:${key}`,`返回值:${JSON.stringify(infoOne)}`,`预期值：0`,`实际值${infoSet}`);
+                  Utils.emitEvent(infoSet, 148013)
+                }
+              } catch (error) {
+                console.log(msg, error)
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(0, 148013)
+                } else {
+                  Utils.emitEvent(401, 148013)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testblankLessInfoWithKey014': {
+              let msg = 'testblankLessInfoWithKey014'
+              let key = 'blankLessInfoWithKey';
+              try {
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                console.log(msg, 'first loadUrl finish');
+                this.controller.getBlanklessInfoWithKey(key);
+                webView.WebviewController.clearBlanklessLoadingCache()
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                console.log(msg, 'second loadUrl finish');
+                let infoOne = this.controller.getBlanklessInfoWithKey(key);
+                console.log(msg, 'getBlanklessInfoWithKey info:' + JSON.stringify(infoOne));
+                if (infoOne.errCode === webview.WebBlanklessErrorCode.SUCCESS) {
+                  let infoSet = this.controller.setBlanklessLoadingWithKey(key, true);
+                  console.log(msg, `入参:${key}`,`返回值:${JSON.stringify(infoOne)}`,`预期值：-5`,`实际值${infoSet}`);
+                  Utils.emitEvent(infoSet, 148014)
+                }
+              } catch (error) {
+                console.log(msg, error)
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(-5, 148014)
+                } else {
+                  Utils.emitEvent(401, 148014)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
           }
         })
       }
 
       Web({ src: $rawfile('indexPhoto.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
-        .onPageEnd(() => {
+        .onLoadIntercept((event) => {
           this.isPageEnd = 0
+          return false;
         })
     }
   }
