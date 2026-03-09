@@ -2045,8 +2045,12 @@ export default function DisplayTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-                expect(err.code == 801 || err.code == 401).assertTrue();
-                done();
+                if (err.code === 801) {
+                    done();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                    done();
+                }
             }
         });
         /**
@@ -2122,7 +2126,12 @@ export default function DisplayTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
-                expect(err.code == 401 || err.code == 801).assertTrue();
+                if (err.code === 801) {
+                    done();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                    done();
+                }
                 done();
             }
         });
@@ -2191,7 +2200,12 @@ export default function DisplayTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-                expect(err.code == 401 || err.code == 801).assertTrue()
+                if (err.code === 801) {
+                    done();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                    done();
+                }
                 done();
             }
         });
