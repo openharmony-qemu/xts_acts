@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 #include "include/FuncTest.h"
-#include "include/Videodec_api11_sample.h"
+#include "include/VideodecApi11Sample.h"
 #include <iostream>
 #include <string>
 #include <multimedia/player_framework/native_avcodec_base.h>
@@ -41,7 +41,7 @@ constexpr int32_t DEFAULT_FRAME_RATE = 30;
 }
 
 const char* const OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30 =
-    "/data/storage/el2/base/haps/entry_test/files/1920_1080_30.h265";
+    "/data/storage/el2/base/files/1920_1080_30.h265";
 
 void HevcSwdecFuncNdkTest::SetUpTestCase()
 {
@@ -127,14 +127,6 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
     return SUCCESS_CODE;
 }
 
-/**
- * @tc.name   VIDEO_DECODE_SYNC_SW265_FUNC_0010
- * @tc.number VIDEO_DECODE_SYNC_SW265_FUNC_0010
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VideoDecodeSyncSs265Func0010Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
@@ -161,15 +153,9 @@ int VideoDecodeSyncSs265Func0010Test()
         }
         return 0;
     }
+    return 0;
 }
-/**
- * @tc.name   VIDEO_DECODE_SYNC_SW265_FUNC_0020
- * @tc.number VIDEO_DECODE_SYNC_SW265_FUNC_0020
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
+
 int VideoDecodeSyncSs265Func0020Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
@@ -196,16 +182,9 @@ int VideoDecodeSyncSs265Func0020Test()
         }
         return 0;
     }
+    return 0;
 }
 
-/**
- * @tc.name   VIDEO_SWDEC_H265_BLANK_FRAME_0010
- * @tc.number VIDEO_SWDEC_H265_BLANK_FRAME_0010
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
 int VideoSwdecH265BlankFrame0010Test()
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
@@ -226,4 +205,5 @@ int VideoSwdecH265BlankFrame0010Test()
         }
         return 0;
     }
+    return 0;
 }

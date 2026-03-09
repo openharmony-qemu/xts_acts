@@ -16,7 +16,7 @@
 #include <filesystem>
 #include <sstream>
 #include <random>
-#include "Videodec_api11_sample.h"
+#include "include/VideodecApi11Sample.h"
 #include "include/SecurecTest.h"
 #include <native_image/native_image.h>
 #include <native_drawing/drawing_rect.h>
@@ -111,7 +111,7 @@ public:
     ConsumerListenerBuffer *consumerListenerBuffer[2] = {};
 };
 
-VDecAPI11Sample::VDecAPI11Sample()
+VDecAPI11Sample::VDecAPI11Sample() : signal_(nullptr)
 {
     this->impl = new Impl();
 }
@@ -253,7 +253,7 @@ std::vector<uint8_t> VDecAPI11Sample::LoadHashFile()
 {
     std::vector<uint8_t> ret;
     JsonWrapper jsonData;
-    if (!jsonData.LoadFromFile("/data/storage/el2/base/haps/entry_test/files/hash_val.json")) {
+    if (!jsonData.LoadFromFile("/data/storage/el2/base/files/hash_val.json")) {
         return ret;
     }
     std::__fs::filesystem::path filePath = inpDir;

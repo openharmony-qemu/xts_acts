@@ -54,9 +54,9 @@ public:
     ~VDecAPI11Sample() override;
     int32_t RunVideoDecSurface(std::string codeName = "");
     int32_t RunVideoDec(std::string codeName = "");
-    const char *inpDir = "/data/test/media/1920_1080_30.h265";
-    const char *outDir = "/data/test/media/VDecTest.yuv";
-    const char *outDir2 = "/data/test/media/VDecTest2.yuv";
+    const char *inpDir = "/data/storage/el2/base/files/1920_1080_30.h265";
+    const char *outDir = "/data/storage/el2/base/files/VDecTest.yuv";
+    const char *outDir2 = "/data/storage/el2/base/files/VDecTest2.yuv";
     bool sfOutput = false;
     bool transferFlag = false;
     bool nv21Flag = false;

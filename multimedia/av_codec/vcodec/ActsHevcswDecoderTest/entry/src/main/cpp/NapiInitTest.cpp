@@ -14,7 +14,7 @@
  */
 #include "napi/native_api.h"
 #include "include/FuncTest.h"
-#include "include/Videodec_api11_sample.h"
+#include "include/VideodecApi11Sample.h"
 #include <iostream>
 #include <vector>
 #include <functional>

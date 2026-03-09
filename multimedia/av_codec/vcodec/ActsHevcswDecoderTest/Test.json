@@ -19,8 +19,8 @@
    },{
      "type": "ShellKit",
      "run-command": [
-       "mkdir -p /data/app/el2/100/base/com.example.actshevcswdecodertest/haps/entry_test/files",
-       "chmod 777 -R /data/app/el2/100/base/com.example.actshevcswdecodertest/haps/entry_test",
+       "mkdir -p /data/app/el2/100/base/com.example.actshevcswdecodertest/files",
+       "chmod 777 -R /data/app/el2/100/base/com.example.actshevcswdecodertest/files",
        "power-shell wakeup",
        "power-shell setmode 602"
      ]
@@ -28,8 +28,8 @@
      "type": "PushKit",
      "pre-push": [],
      "push": [
-       "./resource/media/codec/video_decoder/1920_1080_30.h265 ->/data/app/el2/100/base/com.example.actshevcswdecodertest/haps/entry_test/files/",
-       "./resource/media/codec/video_decoder/hash_val.json ->/data/app/el2/100/base/com.example.actshevcswdecodertest/haps/entry_test/files/"
+       "./resource/media/codec/video_decoder/1920_1080_30.h265 ->/data/app/el2/100/base/com.example.actshevcswdecodertest/files",
+       "./resource/media/codec/video_decoder/hash_val.json ->/data/app/el2/100/base/com.example.actshevcswdecodertest/files"
      ]
    }
  ]
