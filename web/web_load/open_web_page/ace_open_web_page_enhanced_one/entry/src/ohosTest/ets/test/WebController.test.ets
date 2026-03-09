@@ -186,5 +186,244 @@ export default function webController() {
       await Utils.waitForExist(() => isReturn, 'testLoadUrl004' + '_returnCheck', true, 1000);
       done();
     })
+
+    /**
+     * @tc.name   testLoadData002
+     * @tc.number SUB_WEB_LOADDATA_0200
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData002", "\"LoadData\"", 200730, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData002' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData003
+     * @tc.number SUB_WEB_LOADDATA_0300
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData003", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData003", "\"LoadData\"", 200740, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData003' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData004
+     * @tc.number SUB_WEB_LOADDATA_0400
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData004", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData004", "\"LoadData\"", 200750, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData004' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData005
+     * @tc.number SUB_WEB_LOADDATA_0500
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData005", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData005", "\"LoadData\"", 200760, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData005' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData006
+     * @tc.number SUB_WEB_LOADDATA_0600
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData006", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData006", "\"LoadData\"", 200770, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData006' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData007
+     * @tc.number SUB_WEB_LOADDATA_0700
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData007", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData007", "\"LoadData\"", 200780, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData007' + '_returnCheck', false, 1000);
+      done();
+    })
+
+
+    /**
+     * @tc.name   testLoadData008
+     * @tc.number SUB_WEB_LOADDATA_0800
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData008", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData008", "\"LoadData\"", 200790, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData008' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData009
+     * @tc.number SUB_WEB_LOADDATA_0900
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData009", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData009", "\"LoadData\"", 200800, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData009' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData010
+     * @tc.number SUB_WEB_LOADDATA_1000
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData010", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData010", "\"LoadData\"", 200810, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData010' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData011
+     * @tc.number SUB_WEB_LOADDATA_1100
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData011", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData011", "\"LoadData\"", 200820, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData011' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData012
+     * @tc.number SUB_WEB_LOADDATA_1200
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData012", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData012", "\"LoadData\"", 200830, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData012' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData013
+     * @tc.number SUB_WEB_LOADDATA_1300
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData013", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData013", "\"LoadData\"", 200840, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData013' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData015
+     * @tc.number SUB_WEB_LOADDATA_1500
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData015", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData015", "\"LoadData\"", 200860, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData015' + '_returnCheck', false, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadData016
+     * @tc.number SUB_WEB_LOADDATA_1600
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadData016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadData016", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadData016", "\"LoadData\"", 200870, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitForExist(() => isReturn, 'testLoadData016' + '_returnCheck', false, 1000);
+      done();
+    })
   })
 }

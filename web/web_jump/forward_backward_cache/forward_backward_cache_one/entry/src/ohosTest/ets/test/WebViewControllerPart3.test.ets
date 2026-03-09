@@ -363,5 +363,33 @@ export default function webViewControllerPart3Test() {
       Utils.registerEvent('testForward003', 'index', 135270, done);
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
+
+    /**
+     * @tc.name   testAccessStep009
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0900
+     * @tc.desc   test accessStep(-1) when has backward history can return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAccessStep009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('testAccessStep009', 135050)
+      Utils.registerEvent('testAccessStep009', '401', 136010, done);
+      sendEventByKey('WebViewControllerTestButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testAccessStep010
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_1000
+     * @tc.desc   test accessStep(-1) when has backward history can return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAccessStep010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('testAccessStep010', 135050)
+      Utils.registerEvent('testAccessStep010', '401', 136020, done);
+      sendEventByKey('WebViewControllerTestButton', 10, '');
+    })
   })
 }
