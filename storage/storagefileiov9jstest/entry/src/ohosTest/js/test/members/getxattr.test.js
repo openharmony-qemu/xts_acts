@@ -64,7 +64,7 @@ it('test_FileIO_Getxattr_Sync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.
     expect(false).assertTrue();
   } catch (e) {
     console.log('test_FileIO_Getxattr_Sync_002 has failed for ' + e.message + ', code: ' + e.code);
-    expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
   }
 });
 
@@ -89,7 +89,7 @@ it('test_FileIO_Getxattr_Sync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.
   } catch (e) {
     fs.unlinkSync(fpath);
     console.log('test_FileIO_Getxattr_Sync_003 has failed for ' + e.message + ', code: ' + e.code);
-    expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
   }
 });
 
@@ -114,7 +114,7 @@ it('test_FileIO_Getxattr_Sync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.
   } catch (e) {
     fs.unlinkSync(fpath);
     console.log('test_FileIO_Getxattr_Sync_004 has failed for ' + e.message + ', code: ' + e.code);
-    expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
   }
 });
 
@@ -139,7 +139,7 @@ it('test_FileIO_Getxattr_Sync_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.
   } catch (e) {
     fs.unlinkSync(fpath);
     console.log('test_FileIO_Getxattr_Sync_005 has failed for ' + e.message + ', code: ' + e.code);
-    expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
   }
 });
 
@@ -164,7 +164,7 @@ it('test_FileIO_Getxattr_Sync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.
   } catch (e) {
     fs.unlinkSync(fpath);
     console.log('test_FileIO_Getxattr_Sync_006 has failed for ' + e.message + ', code: ' + e.code);
-    expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
   }
 });
 
@@ -340,7 +340,7 @@ it('test_FileIO_Getxattr_ASync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level
     });
   } catch (e) {
     console.log('test_FileIO_Getxattr_ASync_002 has failed for ' + e.message + ', code: ' + e.code);
-    expect(e.code == 13900020  && e.message == 'Invalid argument').assertTrue();
+    expect(e.code === 13900020  && e.message == 'Invalid argument').assertTrue();
     done();
   }
 });
@@ -366,7 +366,7 @@ it('test_FileIO_Getxattr_ASync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level
   } catch (e) {
     fs.unlinkSync(fpath);
     console.log('test_FileIO_Getxattr_ASync_003 has failed for ' + e.message + ', code: ' + e.code);
-    expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     done();
   }
 });
@@ -392,7 +392,7 @@ it('test_FileIO_Getxattr_ASync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level
   } catch (e) {
     fs.unlinkSync(fpath);
     console.log('test_FileIO_Getxattr_ASync_004 has failed for ' + e.message + ', code: ' + e.code);
-    expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     done();
   }
 });
@@ -418,7 +418,7 @@ it('test_FileIO_Getxattr_ASync_005', TestType.FUNCTION | Size.MEDIUMTEST | Level
   } catch (e) {
     fs.unlinkSync(fpath);
     console.log('test_FileIO_Getxattr_ASync_005 has failed for ' + e.message + ', code: ' + e.code);
-    expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     done();
   }
 });
@@ -444,7 +444,7 @@ it('test_FileIO_Getxattr_ASync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level
   } catch (e) {
     fs.unlinkSync(fpath);
     console.log('test_FileIO_Getxattr_ASync_006 has failed for ' + e.message + ', code: ' + e.code);
-    expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     done();
   }
 });

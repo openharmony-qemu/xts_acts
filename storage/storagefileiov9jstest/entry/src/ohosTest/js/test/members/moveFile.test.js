@@ -73,7 +73,7 @@ export default function fileIOMoveFile() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_moveFile_sync_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900015 && e.message == 'File exists').assertTrue();
+      expect(e.code === 13900015 && e.message == 'File exists').assertTrue();
     }
   });
 
@@ -99,7 +99,7 @@ export default function fileIOMoveFile() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_moveFile_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -122,7 +122,7 @@ export default function fileIOMoveFile() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_moveFile_sync_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -144,7 +144,7 @@ export default function fileIOMoveFile() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_moveFile_sync_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -292,7 +292,7 @@ export default function fileIOMoveFile() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_moveFile_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900015 && e.message == 'File exists').assertTrue();
+      expect(e.code === 13900015 && e.message == 'File exists').assertTrue();
       done();
     }
   });
@@ -320,7 +320,7 @@ export default function fileIOMoveFile() {
         if (err) {
           fileIO.rmdirSync(dpath);
           console.log('fileIO_test_moveFile_async_003 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
+          expect(err.code === 13900015 && err.message == 'File exists').assertTrue();
           done();
         }
       });
@@ -352,7 +352,7 @@ export default function fileIOMoveFile() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_moveFile_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -378,7 +378,7 @@ export default function fileIOMoveFile() {
         if (err) {
           fileIO.rmdirSync(dpath);
           console.log('fileIO_test_moveFile_async_005 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+          expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
           done();
         }
       });
@@ -407,7 +407,7 @@ export default function fileIOMoveFile() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_moveFile_async_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -435,7 +435,7 @@ export default function fileIOMoveFile() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_moveFile_async_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -458,7 +458,7 @@ export default function fileIOMoveFile() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_moveFile_async_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });

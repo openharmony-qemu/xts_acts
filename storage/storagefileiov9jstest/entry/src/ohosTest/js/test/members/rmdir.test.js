@@ -70,7 +70,7 @@ describe('fileIO_fs_rmdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rmdir_sync_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -89,7 +89,7 @@ describe('fileIO_fs_rmdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rmdir_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -108,7 +108,7 @@ describe('fileIO_fs_rmdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rmdir_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -148,7 +148,7 @@ describe('fileIO_fs_rmdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rmdir_sync_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -166,7 +166,7 @@ describe('fileIO_fs_rmdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rmdir_sync_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -259,7 +259,7 @@ describe('fileIO_fs_rmdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rmdir_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -279,7 +279,7 @@ describe('fileIO_fs_rmdir', function () {
       fileIO.rmdir(dpath, (err) => {
         if (err) {
           console.log('fileIO_test_rmdir_async_003 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+          expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
           done();
         }
       });
@@ -309,7 +309,7 @@ describe('fileIO_fs_rmdir', function () {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_rmdir_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -329,7 +329,7 @@ describe('fileIO_fs_rmdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rmdir_async_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -370,7 +370,7 @@ describe('fileIO_fs_rmdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rmdir_async_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -389,7 +389,7 @@ describe('fileIO_fs_rmdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rmdir_async_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });

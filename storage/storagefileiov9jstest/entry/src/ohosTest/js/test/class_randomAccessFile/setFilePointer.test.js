@@ -70,7 +70,7 @@ describe('fileIO_randomAccessFile_setFilePointer', function () {
             console.info('fileIO_randomaccessfile_set_file_pointer_sync_001 has failed for ' + err);
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
         }
     });
 
@@ -92,7 +92,7 @@ describe('fileIO_randomAccessFile_setFilePointer', function () {
             console.info('fileIO_randomaccessfile_set_file_pointer_sync_002 has failed for ' + err);
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
         }
     });
 
@@ -114,7 +114,7 @@ describe('fileIO_randomAccessFile_setFilePointer', function () {
             console.info('fileIO_randomaccessfile_set_file_pointer_sync_003 has failed for ' + err);
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
         }
     });    
 
@@ -136,7 +136,7 @@ describe('fileIO_randomAccessFile_setFilePointer', function () {
             console.info('fileIO_randomaccessfile_set_file_pointer_sync_004 has failed for ' + err);
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
-            expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
         }
     });    
 

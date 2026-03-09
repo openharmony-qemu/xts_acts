@@ -62,7 +62,7 @@ describe('fileIO_fs_symlink', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_symlink_sync_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -84,7 +84,7 @@ describe('fileIO_fs_symlink', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_symlink_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -106,7 +106,7 @@ describe('fileIO_fs_symlink', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_symlink_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -128,7 +128,7 @@ describe('fileIO_fs_symlink', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_symlink_sync_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -203,7 +203,7 @@ describe('fileIO_fs_symlink', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_symlink_async_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -226,7 +226,7 @@ describe('fileIO_fs_symlink', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_symlink_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -249,7 +249,7 @@ describe('fileIO_fs_symlink', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_symlink_async_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -272,7 +272,7 @@ describe('fileIO_fs_symlink', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_symlink_async_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -298,7 +298,7 @@ describe('fileIO_fs_symlink', function () {
       });
     } catch (e) {
       console.log('fileIO_test_symlink_async_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -324,7 +324,7 @@ describe('fileIO_fs_symlink', function () {
       });
     } catch (e) {
       console.log('fileIO_test_symlink_async_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -350,7 +350,7 @@ describe('fileIO_fs_symlink', function () {
       });
     } catch (e) {
       console.log('fileIO_test_symlink_async_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });

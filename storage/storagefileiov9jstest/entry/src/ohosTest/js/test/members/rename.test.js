@@ -61,7 +61,7 @@ describe('fileIO_fs_rename', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rename_sync_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -83,7 +83,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -105,7 +105,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -127,7 +127,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_sync_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -175,7 +175,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_sync_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900030 && e.message == 'File name too long').assertTrue();
+      expect(e.code === 13900030 && e.message == 'File name too long').assertTrue();
     }
   });
 
@@ -194,7 +194,7 @@ describe('fileIO_fs_rename', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rename_sync_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900012 && e.message == 'Permission denied').assertTrue();
+      expect(e.code === 13900012 && e.message == 'Permission denied').assertTrue();
     }
   });
   
@@ -217,7 +217,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_sync_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900016 && e.message == 'Cross-device link').assertTrue();
+      expect(e.code === 13900016 && e.message == 'Cross-device link').assertTrue();
     }
   });
 
@@ -261,7 +261,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_sync_010 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -334,7 +334,7 @@ describe('fileIO_fs_rename', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rename_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -382,7 +382,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -405,7 +405,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_async_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -428,7 +428,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_async_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -509,7 +509,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_async_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900030 && e.message == 'File name too long').assertTrue();
+      expect(e.code === 13900030 && e.message == 'File name too long').assertTrue();
       done();
     }
   });
@@ -557,7 +557,7 @@ describe('fileIO_fs_rename', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_rename_async_011 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900012 && e.message == 'Permission denied').assertTrue();
+      expect(e.code === 13900012 && e.message == 'Permission denied').assertTrue();
       done();
     }
   });
@@ -581,7 +581,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_async_012 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900016 && e.message == 'Cross-device link').assertTrue();
+      expect(e.code === 13900016 && e.message == 'Cross-device link').assertTrue();
       done();
     }
   });
@@ -632,7 +632,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_async_014 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -655,7 +655,7 @@ describe('fileIO_fs_rename', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_rename_async_015 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -681,7 +681,7 @@ describe('fileIO_fs_rename', function () {
       });
     } catch (e) {
       console.log('fileIO_test_rename_async_016 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });

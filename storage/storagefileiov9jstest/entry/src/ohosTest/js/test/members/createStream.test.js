@@ -43,7 +43,7 @@ describe('fileIO_fs_createStream', function () {
       sr.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_sync_000 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
     }
   });
 
@@ -63,7 +63,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_sync_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -108,7 +108,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -129,7 +129,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_sync_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       fileIO.unlinkSync(fpath);
     }
   });
@@ -150,7 +150,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_sync_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -176,7 +176,7 @@ describe('fileIO_fs_createStream', function () {
       sw.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_sync_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
     }
   });
 
@@ -353,7 +353,7 @@ describe('fileIO_fs_createStream', function () {
       sa.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_sync_013 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
     }
   });
 
@@ -560,7 +560,7 @@ describe('fileIO_fs_createStream', function () {
       sr.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_async_000 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
       done();
     }
   });
@@ -592,7 +592,7 @@ describe('fileIO_fs_createStream', function () {
             console.log(
               'fileIO_test_create_stream_async_001 error: {message: ' + err.message + ', code: ' + err.code + '}'
             );
-            expect(err.code == 13900005 && err.message == 'I/O error').assertTrue();
+            expect(err.code === 13900005 && err.message == 'I/O error').assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -621,7 +621,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -641,7 +641,7 @@ describe('fileIO_fs_createStream', function () {
       fileIO.createStream(fpath, 'r', (err) => {
         if (err) {
           console.log('fileIO_test_create_stream_async_003 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+          expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
           done();
         }
       });
@@ -724,7 +724,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_async_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -743,7 +743,7 @@ describe('fileIO_fs_createStream', function () {
     try {
       fileIO.createStream(fpath, 'r+', (err) => {
         console.log('fileIO_test_create_stream_async_007 error: {message: ' + err.message + ', code: ' + err.code + '}');
-        expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+        expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
         done();
       });
     } catch (e) {
@@ -768,7 +768,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_async_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -789,7 +789,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_async_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -845,7 +845,7 @@ describe('fileIO_fs_createStream', function () {
       sw.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_async_011 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
       done();
     }
   });
@@ -876,7 +876,7 @@ describe('fileIO_fs_createStream', function () {
             console.log(
               'fileIO_test_create_stream_async_012 error: {message: ' + err.message + ', code: ' + err.code + '}'
             );
-            expect(err.code == 13900005 && err.message == 'I/O error').assertTrue();
+            expect(err.code === 13900005 && err.message == 'I/O error').assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1021,7 +1021,7 @@ describe('fileIO_fs_createStream', function () {
       sa.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_async_017 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
       done();
     }
   });
@@ -1052,7 +1052,7 @@ describe('fileIO_fs_createStream', function () {
             console.log(
               'fileIO_test_create_stream_async_018 error: {message: ' + err.message + ', code: ' + err.code + '}'
               );
-            expect(err.code == 13900005 && err.message == 'I/O error').assertTrue();
+            expect(err.code === 13900005 && err.message == 'I/O error').assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1468,7 +1468,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_async_039 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -1488,7 +1488,7 @@ describe('fileIO_fs_createStream', function () {
       });
     } catch (e) {
       console.log('fileIO_test_create_stream_async_040 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -1508,7 +1508,7 @@ describe('fileIO_fs_createStream', function () {
       });
     } catch (e) {
       console.log('fileIO_test_create_stream_async_041 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -1628,7 +1628,7 @@ describe('fileIO_fs_createStream', function () {
       });
     } catch (e) {
       console.log('fileIO_test_create_stream_async_046 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -1648,7 +1648,7 @@ describe('fileIO_fs_createStream', function () {
       });
     } catch (e) {
       console.log('fileIO_test_create_stream_async_047 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -1721,7 +1721,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_async_050 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });  

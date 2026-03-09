@@ -131,7 +131,7 @@ describe('fileIO_fs_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_readtext_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -151,7 +151,7 @@ describe('fileIO_fs_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_readtext_sync_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -174,7 +174,7 @@ describe('fileIO_fs_readtext', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_readtext_sync_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -197,7 +197,7 @@ describe('fileIO_fs_readtext', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_readtext_sync_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -220,7 +220,7 @@ describe('fileIO_fs_readtext', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_readtext_sync_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -289,7 +289,7 @@ describe('fileIO_fs_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_readtext_sync_011 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
+      expect(e.code === 13900019 && e.message == 'Is a directory').assertTrue();
     }
   });
 
@@ -666,7 +666,7 @@ describe('fileIO_fs_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_readtext_async_011 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -715,7 +715,7 @@ describe('fileIO_fs_readtext', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_readtext_async_013 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -739,7 +739,7 @@ describe('fileIO_fs_readtext', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_readtext_async_014 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -763,7 +763,7 @@ describe('fileIO_fs_readtext', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_readtext_async_015 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -895,7 +895,7 @@ describe('fileIO_fs_readtext', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_readtext_async_020 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
+      expect(e.code === 13900019 && e.message == 'Is a directory').assertTrue();
       done();
     }
   });

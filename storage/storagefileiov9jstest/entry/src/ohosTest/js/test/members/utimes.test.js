@@ -112,7 +112,7 @@ export default function fileIOUtimes() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_utimes_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -133,7 +133,7 @@ export default function fileIOUtimes() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_utimes_async_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -154,7 +154,7 @@ export default function fileIOUtimes() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_utimes_async_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
   
@@ -173,7 +173,7 @@ export default function fileIOUtimes() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_utimes_async_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -192,7 +192,7 @@ export default function fileIOUtimes() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_utimes_async_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -214,7 +214,7 @@ export default function fileIOUtimes() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_utimes_async_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -236,7 +236,7 @@ export default function fileIOUtimes() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_utimes_async_010 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 });

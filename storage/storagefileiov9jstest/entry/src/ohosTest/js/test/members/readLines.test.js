@@ -94,7 +94,7 @@ describe('fileIO_fs_readLines', function () {
             expect(false).assertTrue();
         } catch (e) {
             console.log('fileIO_test_readLines_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -114,7 +114,7 @@ describe('fileIO_fs_readLines', function () {
             expect(false).assertTrue();
         } catch (e) {
             console.log('fileIO_test_readLines_sync_004 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+            expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         }
     });
 
@@ -192,7 +192,7 @@ describe('fileIO_fs_readLines', function () {
         } catch (e) {
             fileIO.unlinkSync(fpath);
             console.log('fileIO_test_readLines_sync_007 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -260,7 +260,7 @@ describe('fileIO_fs_readLines', function () {
             expect(false).assertTrue();
         } catch (e) {
             console.log('fileIO_test_readLines_sync_010 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -278,7 +278,7 @@ describe('fileIO_fs_readLines', function () {
             expect(false).assertTrue();
         } catch (e) {
             console.log('fileIO_test_readLines_sync_011 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         }
     });
 
@@ -473,7 +473,7 @@ describe('fileIO_fs_readLines', function () {
             expect(false).assertTrue();
         } catch (e) {
             console.log('fileIO_test_readLines_async_006 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();   
         }
     });
@@ -494,7 +494,7 @@ describe('fileIO_fs_readLines', function () {
             });
         } catch (e) {
             console.log('fileIO_copy_file_async_007 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -515,7 +515,7 @@ describe('fileIO_fs_readLines', function () {
             expect(false).assertTrue();
         } catch (e) {
             console.log('fileIO_test_readLines_async_008 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+            expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
             done();
         }
     });
@@ -535,7 +535,7 @@ describe('fileIO_fs_readLines', function () {
             fileIO.readLines(fpath, (err) => {
                 if (err) {
                     console.log('fileIO_test_readLines_async_009 error: {message:' + err.message + ', code: ' + err.code + '}');
-                    expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+                    expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
                     done();
                 }
             });
@@ -687,7 +687,7 @@ describe('fileIO_fs_readLines', function () {
         } catch (e) {
             fileIO.unlinkSync(fpath);
             console.log('fileIO_test_readLines_sync_014 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -713,7 +713,7 @@ describe('fileIO_fs_readLines', function () {
         } catch (e) {
             fileIO.unlinkSync(fpath);
             console.log('fileIO_test_readLines_sync_015 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -967,7 +967,7 @@ describe('fileIO_fs_readLines', function () {
             expect(false).assertTrue();
         } catch (e) {
             console.log('fileIO_test_readLines_async_024 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -986,7 +986,7 @@ describe('fileIO_fs_readLines', function () {
             expect(false).assertTrue();
         } catch (e) {
             console.log('fileIO_test_readLines_async_025 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -1030,7 +1030,7 @@ describe('fileIO_fs_readLines', function () {
             });
         } catch (e) {
             console.log('fileIO_test_readLines_async_027 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -1050,7 +1050,7 @@ describe('fileIO_fs_readLines', function () {
             });
         } catch (e) {
             console.log('fileIO_test_readLines_async_028 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -1103,7 +1103,7 @@ describe('fileIO_fs_readLines', function () {
         } catch (e) {
             fileIO.unlinkSync(fpath);
             console.log('fileIO_test_readLines_async_030 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -1125,7 +1125,7 @@ describe('fileIO_fs_readLines', function () {
             });
         } catch (e) {
             console.log('fileIO_test_readLines_async_031 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
@@ -1147,7 +1147,7 @@ describe('fileIO_fs_readLines', function () {
             });
         } catch (e) {
             console.log('fileIO_test_readLines_async_032 has failed for ' + e.message + ', code: ' + e.code);
-            expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
             done();
         }
     });
