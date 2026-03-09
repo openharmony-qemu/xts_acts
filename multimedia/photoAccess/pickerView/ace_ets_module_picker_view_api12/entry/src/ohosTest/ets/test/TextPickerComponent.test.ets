@@ -3560,7 +3560,6 @@ export default function TextPicker() {
       sheetPickerOptions.isOriginalSupported = true;
       sheetPickerOptions.subWindowName = 'xts_demo';
       sheetPickerOptions.isDestroyedWithNavigation = true;
-      sheetPickerOptions.isReturnToPhotoBrowserEnabled = true;
       sheetPickerOptions.contextRecoveryInfo = {
         albumUri: '',
         displayName: '',
@@ -3590,7 +3589,6 @@ export default function TextPicker() {
       sheetPickerOptions.isDestroyedWithNavigation = false;
       sheetPickerOptions.contextRecoveryInfo.gridLevel = photoAccessHelper.GridLevel.SPACIOUS;
 
-      sheetPickerOptions.isReturnToPhotoBrowserEnabled = false;
       try{
         let photoPicker = new photoAccessHelper.PhotoViewPicker();
         photoPicker.select(sheetPickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
@@ -4274,11 +4272,11 @@ export default function TextPicker() {
       }
 
       // false
-      pickerOptions.isReturnToPhotoBrowserEnabled = true;
-      pickerOptions.isEditSupported = true;
-      pickerOptions.isOriginalSupported = true;
+      pickerOptions.isReturnToPhotoBrowserEnabled = false;
+      pickerOptions.isEditSupported = false;
+      pickerOptions.isOriginalSupported = false;
       pickerOptions.subWindowName = '';
-      pickerOptions.isDestroyedWithNavigation = true;
+      pickerOptions.isDestroyedWithNavigation = false;
       pickerOptions.contextRecoveryInfo.gridLevel = photoAccessHelper.GridLevel.STANDARD;
       try {
         photoPicker.select(pickerOptions,
