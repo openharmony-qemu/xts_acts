@@ -62,10 +62,10 @@ export default class EntryFormAbility extends FormExtensionAbility {
   }
 
   onAcquireFormState(want: Want) {
-    if (want.parameters && want.parameters.includes('formState')) {
-      if (want.parameters['formState'] == -1) {
+    if (want.parameters && want.parameters?.formState) {
+      if (want.parameters?.formState == -1) {
         return formInfo.FormState.UNKNOWN;
-      } else if (want.parameters['formState'] == 0) {
+      } else if (want.parameters?.formState == 0) {
         return formInfo.FormState.DEFAULT;
       }
     }
