@@ -700,7 +700,7 @@ export default function uitestUiWindowErrorTest() {
 
     /**
      * @tc.name test_UiWindow_resize_401_static
-     * @tc.number uitestUiWindowErrorTest_00221
+     * @tc.number uitestUiWindowErrorTest_00351
      * @tc.desc resize 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

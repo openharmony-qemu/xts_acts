@@ -842,7 +842,7 @@ export default function uitestDriverErrorTest() {
 
     /**
      * @tc.name   test_driver_screenCapture_401_static
-     * @tc.number uitestDriverErrorTest_0211
+     * @tc.number uitestDriverErrorTest_0421
      * @tc.desc   mouseClick 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1633,7 +1633,7 @@ export default function uitestDriverErrorTest() {
 
     /**
      * @tc.name   test_driver_doubleClickAt_static
-     * @tc.number uitestDriverErrorTest_0351
+     * @tc.number uitestDriverErrorTest_0411
      * @tc.desc   doubleClickAt 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
