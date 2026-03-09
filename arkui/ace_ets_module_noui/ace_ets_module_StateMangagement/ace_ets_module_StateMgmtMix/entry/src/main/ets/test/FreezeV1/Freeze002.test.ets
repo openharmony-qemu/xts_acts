@@ -62,32 +62,28 @@ export default function FreezeV1Test02() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeTest001', Level.LEVEL0, async () => {
-      console.info('FreezeTest001 START');
-      let driver = await Driver.create();
-      let list1 = await driver.findComponent(ON.id('List'));
-      let center1 = await list1.getBoundsCenter();
-      await driver.mouseScroll(center1, false, 5, 2072, 0, 20);
+    it('FreezeTest001', Level.LEVEL0, async (done: Function) => {
+      console.info('FreezeV1Test02001 START');
+      await sleep(1)
+      let driver = await Driver.create()
       await sleep(1);
-
-      let changeMessage = await driver.findComponent(ON.id('changeMessage'));
-      await changeMessage.click();
+      let btnToBottom = await driver.findComponent(ON.id('btnToBottom'));
+      await btnToBottom.click();
       await sleep(1);
-
-      await driver.mouseScroll(center1, true, 5, 2072, 0, 20);
+      let btnChangeMsg = await driver.findComponent(ON.id('btnChangeMsg'));
+      await btnChangeMsg.click();
       await sleep(1);
-
-      let observer1 = await driver.createUIEventObserver();
-      let callback1 = (uiElementInfo: UIElementInfo) => {
-        try {
-          expect(uiElementInfo.text == `FreezeChild message callback func 1, index: 0`).assertTrue()
-          expect(uiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
-      console.info('FreezeTest001 END');
+      let tvCount = await (await driver.findComponent(ON.id('tvFreezeChangeCount'))).getText();
+      console.info('[FreezeV1Test02001] component tvCount: ' + tvCount);
+      expect(tvCount).assertEqual('count5')
+      let btnToTop = await driver.findComponent(ON.id('btnToTop'));
+      await btnToTop.click();
+      await sleep(1);
+      let tvCount1 = await (await driver.findComponent(ON.id('tvFreezeChangeCount'))).getText();
+      console.info('[FreezeV1Test02001] component tvCount1: ' + tvCount1);
+      expect(tvCount1).assertEqual('count8')
+      console.info('FreezeV1Test02001 END');
+      done();
     });
   })
 }
