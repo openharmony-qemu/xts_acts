@@ -153,7 +153,7 @@ export default function formApiCoverTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it(`SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0200';
       console.info(`${name} start`);
       try {
@@ -184,7 +184,7 @@ export default function formApiCoverTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it(`SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0300';
       console.info(`${name} start`);
       try {
