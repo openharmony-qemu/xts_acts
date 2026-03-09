@@ -75,7 +75,7 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
       hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
       let wantInfo: Want = {
         deviceId: '',
-        bundleName: BUNDLE_NAME,
+        bundleName: 'BUNDLE_NAMEerr',
         abilityName: 'ServiceExtensionAbility',
       };
       const options: common.ConnectOptions = {
@@ -132,7 +132,7 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
       let wantInfo: Want = {
         deviceId: '',
         bundleName: BUNDLE_NAME_RELY,
-        abilityName: 'ServiceExtensionAbility',
+        abilityName: 'ServiceExtAbility',
       };
       const options: common.ConnectOptions = {
         onConnect: (elementName: ElementName | null, remote: rpc.IRemoteObject) => {
@@ -161,6 +161,9 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
         deviceId: '',
         bundleName: BUNDLE_NAME,
         abilityName: 'ServiceExtensionAbility',
+        parameters: {
+          'keyFd': { 'type': 'FD', 'value': -1 }
+        }
       };
       const options: common.ConnectOptions = {
         onConnect: (elementName: ElementName | null, remote: rpc.IRemoteObject) => {
@@ -219,33 +222,15 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
         hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
         publishEvent(testCaseName, code);
       }
-    } else if(testCaseName === ('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_2300')) {
-      hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
-      let wantInfo: Want = {
-        deviceId: '',
-        bundleName: BUNDLE_NAME,
-        abilityName: 'AppServiceExtAbility',
-      };
-      try {
-        this.context.startAbility(wantInfo).then(() => {
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility success`);
-          publishEvent(testCaseName, SUCCESS_CODE);
-        }).catch((error: Error) => {
-          let code: int = (error as BusinessError).code;
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-          publishEvent(testCaseName, code);
-        });
-      } catch (error) {
-        let code: int = (error as BusinessError).code;
-        hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-        publishEvent(testCaseName, code);
-      }
     } else if(testCaseName === ('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_2400')) {
       hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
       let wantInfo: Want = {
         deviceId: '',
         bundleName: BUNDLE_NAME_RELY,
         abilityName: 'MyUIAbility2',
+        parameters: {
+          'keyFd': { 'type': 'FD', 'value': -1 }
+        }
       };
       try {
         this.context.startAbility(wantInfo).then(() => {
@@ -266,7 +251,7 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
       let wantInfo: Want = {
         deviceId: '',
         bundleName: BUNDLE_NAME_RELY,
-        abilityName: 'MyUIAbility3',
+        abilityName: 'AppServiceExtAbility3',
       };
       try {
         this.context.startAbility(wantInfo).then(() => {
@@ -286,7 +271,7 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
       hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
       let wantInfo: Want = {
         bundleName: BUNDLE_NAME,
-        abilityName: undefined
+        action: 'zzabc'
       };
       try {
         this.context.startAbility(wantInfo).then(() => {
@@ -306,7 +291,7 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
       hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
       let wantInfo: Want = {
         bundleName: BUNDLE_NAME_RELY,
-        abilityName: 'MyUIAbility'
+        abilityName: 'ServiceExtAbility'
       };
       try {
         this.context.startAbility(wantInfo).then(() => {
@@ -326,135 +311,8 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
       hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
       let wantInfo: Want = {
         bundleName: BUNDLE_NAME,
-        abilityName: 'MyUIAbility',
+        abilityName: 'MyUIAbility2',
         flags: -1
-      };
-      try {
-        this.context.startAbility(wantInfo).then(() => {
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility success`);
-          publishEvent(testCaseName, SUCCESS_CODE);
-        }).catch((error: Error) => {
-          let code: int = (error as BusinessError).code;
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-          publishEvent(testCaseName, code);
-        });
-      } catch (error) {
-        let code: int = (error as BusinessError).code;
-        hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-        publishEvent(testCaseName, code);
-      }
-    } else if(testCaseName === ('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3500')) {
-      hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
-      let params = {
-        'ohos.ability.params.createAppInstanceKey': { 'type': 'boolean', 'value': true
-        } as Record<string, RecordData>
-      } as Record<string, RecordData>
-      let wantInfo: Want = {
-        bundleName: BUNDLE_NAME,
-        abilityName: 'EntryAbility',
-        parameters: params
-      };
-      try {
-        this.context.startAbility(wantInfo).then(() => {
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility success`);
-          publishEvent(testCaseName, SUCCESS_CODE);
-        }).catch((error: Error) => {
-          let code: int = (error as BusinessError).code;
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-          publishEvent(testCaseName, code);
-        });
-      } catch (error) {
-        let code: int = (error as BusinessError).code;
-        hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-        publishEvent(testCaseName, code);
-      }
-    } else if(testCaseName === ('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3600')) {
-      hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
-      let params = {
-        'ohos.ability.params.appInstanceKey': { 'type': 'string', 'value': 'app_instance_100'
-        } as Record<string, RecordData>,
-        'ohos.ability.params.createAppInstanceKey': { 'type': 'boolean', 'value': true
-        } as Record<string, RecordData>
-      } as Record<string, RecordData>
-      let wantInfo: Want = {
-        bundleName: BUNDLE_NAME_RELY,
-        abilityName: 'MainAbility',
-        parameters: params
-      };
-      try {
-        this.context.startAbility(wantInfo).then(() => {
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility success`);
-          publishEvent(testCaseName, SUCCESS_CODE);
-        }).catch((error: Error) => {
-          let code: int = (error as BusinessError).code;
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-          publishEvent(testCaseName, code);
-        });
-      } catch (error) {
-        let code: int = (error as BusinessError).code;
-        hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-        publishEvent(testCaseName, code);
-      }
-    } else if(testCaseName === ('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3700')) {
-      hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
-      let params = {
-        'ohos.ability.params.appInstanceKey': { 'type': 'string', 'value': 'app_instance_0'
-        } as Record<string, RecordData>
-      } as Record<string, RecordData>
-      let wantInfo: Want = {
-        bundleName: 'com.acts.context.aappserviceextensionrely2.static',
-        abilityName: 'MainAbility',
-        parameters: params
-      };
-      try {
-        this.context.startAbility(wantInfo).then(() => {
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility success`);
-          publishEvent(testCaseName, SUCCESS_CODE);
-        }).catch((error: Error) => {
-          let code: int = (error as BusinessError).code;
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-          publishEvent(testCaseName, code);
-        });
-      } catch (error) {
-        let code: int = (error as BusinessError).code;
-        hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-        publishEvent(testCaseName, code);
-      }
-    } else if(testCaseName === ('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3900')) {
-      hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
-      let params = {
-        'ohos.ability.params.appInstanceKey': { 'type': 'string', 'value': 'app_instance_100'
-        } as Record<string, RecordData>
-      } as Record<string, RecordData>
-      let wantInfo: Want = {
-        bundleName: BUNDLE_NAME_RELY,
-        abilityName: 'MainAbility',
-        parameters: params
-      };
-      try {
-        this.context.startAbility(wantInfo).then(() => {
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility success`);
-          publishEvent(testCaseName, SUCCESS_CODE);
-        }).catch((error: Error) => {
-          let code: int = (error as BusinessError).code;
-          hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${error.code}`);
-          publishEvent(testCaseName, error.code);
-        });
-      } catch (error) {
-        let code: int = (error as BusinessError).code;
-        hilog.info(DOMAIN, TAG, `${testCaseName} startAbility failed: ${code}`);
-        publishEvent(testCaseName, code);
-      }
-    } else if(testCaseName === ('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_4000')) {
-      hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
-      let params = {
-        'ohos.ability.params.appCloneIndexKey': { 'type': 'number', 'value': 1001
-        } as Record<string, RecordData>
-      } as Record<string, RecordData>
-      let wantInfo: Want = {
-        bundleName: 'com.acts.context.aappserviceextensionrely2.static',
-        abilityName: 'MainAbility',
-        parameters: params
       };
       try {
         this.context.startAbility(wantInfo).then(() => {

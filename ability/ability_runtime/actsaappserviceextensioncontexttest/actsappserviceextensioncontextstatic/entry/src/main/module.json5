@@ -96,6 +96,9 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.SUPPORT_APP_SERVICE_EXTENSION"
+      },
+      {
+        "name": "ohos.permission.START_ABILITIES_FROM_BACKGROUND"
       }
     ]
   }
