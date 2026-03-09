@@ -57,7 +57,7 @@ describe('fileIO_fs_mkdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_mkdir_sync_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900015 && e.message == 'File exists').assertTrue();
+      expect(e.code === 13900015 && e.message == 'File exists').assertTrue();
     }
   });
 
@@ -76,7 +76,7 @@ describe('fileIO_fs_mkdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_mkdir_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -97,7 +97,7 @@ describe('fileIO_fs_mkdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_mkdir_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900015 && e.message == 'File exists').assertTrue();
+      expect(e.code === 13900015 && e.message == 'File exists').assertTrue();
     }
   });
 
@@ -260,7 +260,7 @@ describe('fileIO_fs_mkdir', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_mkdir_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -279,7 +279,7 @@ describe('fileIO_fs_mkdir', function () {
       fileIO.mkdir('/', (err) => {
         if(err) {
           console.log('fileIO_test_mkdir_async_003 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
+          expect(err.code === 13900015 && err.message == 'File exists').assertTrue();
           done();
         }
       });
@@ -307,7 +307,7 @@ describe('fileIO_fs_mkdir', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_mkdir_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900015 && e.message == 'File exists').assertTrue();
+      expect(e.code === 13900015 && e.message == 'File exists').assertTrue();
     }
   });
 
