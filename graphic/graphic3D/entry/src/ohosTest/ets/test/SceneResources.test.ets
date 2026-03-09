@@ -2504,8 +2504,7 @@ export default function sceneResourcesTest() {
         expect(thresholdHardValue).assertEqual(1);
 
         // Test 3: Set 'thresholdSoft' property value with undefined (should return true)
-        let dataUndefined:undefined;
-        let result3 = effect.setPropertyValue('thresholdSoft', dataUndefined);
+        let result3 = effect.setPropertyValue('thresholdSoft', undefined);
         console.info(msg + " set thresholdSoft with undefined result: " + result3);
         expect(result3).assertFalse();
         console.info(msg + " thresholdSoft property with undefined set successfully");
