@@ -76,6 +76,7 @@ export default function AVPlayerDrmTest() {
       } catch (err) {
         console.error(TAG, testName + ' drm createMediaKeySession failed.');
         drmMediaKeySystem!.destroy();
+        expect().assertFail();
         done();
       }
       let avPlayer: media.AVPlayer = await media.createAVPlayer();
