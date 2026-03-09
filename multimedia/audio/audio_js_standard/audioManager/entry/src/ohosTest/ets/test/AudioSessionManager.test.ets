@@ -29,6 +29,7 @@ async function getSessionManager() {
   expect(audioManager).not().assertNull();
   console.info('getAudioManager audioManager:' + audioManager);
   sessionManager = audioManager.getSessionManager();
+  audioSessionManager = audioManager.getSessionManager();
   expect(sessionManager).not().assertUndefined();
   expect(sessionManager).not().assertNull();
   console.info('getSessionManager sessionManager:' + sessionManager);
