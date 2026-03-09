@@ -148,7 +148,7 @@ async function clickUpdatablePickerButton(driver: Driver) {
     selectMode: SelectMode.MULTI_SELECT,
     singleSelectionMode: photoAccessHelper.SingleSelectionMode.SELECT_MODE,
     isRepeatSelectSupported: true,
-    preselectedUris: ['1'],
+    preselectedUris: undefined,
     photoBrowserBackgroundColorMode: PickerColorMode.LIGHT,
     uiComponentColorMode: PickerColorMode.LIGHT,
     isSlidingSupported: false,
@@ -1515,7 +1515,7 @@ export default function TextPicker() {
           .catch((error: Error) => {
             console.info('PhotoViewPicker select error, uri: ' + JSON.stringify(error));
           })
-          await closePickerModel(driver);
+        await closePickerModel(driver);
       }
 
       console.info("testPicker24 finish");
@@ -1523,7 +1523,7 @@ export default function TextPicker() {
     });
 
 
-    
+
     /**
      * @tc.name   testPicker_callback_24
      * @tc.number testPicker_callback_24
@@ -1549,8 +1549,8 @@ export default function TextPicker() {
         expect(photoSelectOptions.completeButtonText).assertEqual(textList[index]);
         photoPicker.select(photoSelectOptions, (err: BusinessError, result: photoAccessHelper.PhotoSelectResult) => {
           if (err) {
-          console.info('PhotoViewPicker select error, uri: ' + JSON.stringify(err));
-          return;
+            console.info('PhotoViewPicker select error, uri: ' + JSON.stringify(err));
+            return;
           }
           console.info('PhotoViewPicker select success, uri: ' + JSON.stringify(result));
         });
@@ -1724,26 +1724,29 @@ export default function TextPicker() {
           fileNameExtension: '.png',
           photoType: photoAccessHelper.PhotoType.IMAGE,
         }
-        pickerController.saveTrustedPhotoAssets([], () => {}, [config], undefined);
+        pickerController.saveTrustedPhotoAssets([], (err, arr) => {
+          if (err) {
+            console.error("testPicker28 saveTrustedPhotoAssets empty trustedUri fail");
+          }
+          expect(arr.length).assertEqual(0);
+        }, [config], undefined);
         pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, (a) => {
           if (!a) {
-            console.log("testPicker28 replacePhotoPickerPreview fail");
-            expect(false).assertTrue();
+            console.error("testPicker28 replacePhotoPickerPreview fail");
+            expect().assertFail();
           } else {
             console.log("testPicker28 replacePhotoPickerPreview success");
             pickerController.saveTrustedPhotoAssets([boxPath], (err, arr) => {
-              if (!err) {
-                console.log("testPicker28 saveTrustedPhotoAssets fail");
-                expect(false).assertTrue();
-              } else {
-                console.log("testPicker28 saveTrustedPhotoAssets success, save uris:" + arr);
+              if (err) {
+                console.error("testPicker28 saveTrustedPhotoAssets fail");
               }
+              expect(arr.length).assertLarger(0);
             }, undefined, SaveMode.SAVE_AS);
           }
         });
       } catch (error) {
-        console.log("testPicker28 error:" + JSON.stringify(error));
-        expect(false).assertTrue();
+        console.error("testPicker28 error:" + JSON.stringify(error));
+        expect().assertFail()
       }
       await CommonFunc.sleep(1000);
       console.log("testPicker28 btn click finish");
@@ -2413,7 +2416,7 @@ export default function TextPicker() {
       }
       const options: RecentPhotoOptions = new RecentPhotoOptions();
       options.period = 0;
-      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE; 
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
       options.photoSource = PhotoSource.ALL;
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
       try{
@@ -2427,7 +2430,7 @@ export default function TextPicker() {
       }
       await CommonFunc.sleep(1000);
 
-      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE; 
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
       options.photoSource = PhotoSource.SCREENSHOT;
       try{
         phAccessHelper.getRecentPhotoInfo(options).then((result : RecentPhotoInfo) => {
@@ -2440,7 +2443,7 @@ export default function TextPicker() {
       }
       await CommonFunc.sleep(1000);
 
-      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.VIDEO_TYPE; 
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.VIDEO_TYPE;
       options.photoSource = PhotoSource.CAMERA;
       try{
         phAccessHelper.getRecentPhotoInfo(options).then((result : RecentPhotoInfo) => {
@@ -2452,8 +2455,8 @@ export default function TextPicker() {
         expect(false).assertTrue();
       }
       await CommonFunc.sleep(1000);
-      
-      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.MOVING_PHOTO_IMAGE_TYPE; 
+
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.MOVING_PHOTO_IMAGE_TYPE;
       options.photoSource = PhotoSource.ALL;
       try{
         phAccessHelper.getRecentPhotoInfo(options).then((result : RecentPhotoInfo) => {

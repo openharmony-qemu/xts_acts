@@ -447,7 +447,7 @@ struct PickerComponent {
       Button('setPhotoBrowserItem with empty uri')
         .id('setPhotoBrowserItemWithEmptyURI')
         .onClick(() => {
-          this.pickerController.setPhotoBrowserItem('', PhotoBrowserRange.SELECTED_ONLY);
+          this.pickerController.setPhotoBrowserItem('', PhotoBrowserRange.ALL);
         })
     }
   }
