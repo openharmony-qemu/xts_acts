@@ -38,6 +38,8 @@ enum OH_AVErrCode {
   AV_ERR_INVALID_VAL = 3,
 
   AV_ERR_INVALID_STATE = 8,
+
+  AV_ERR_SUPER_RESOLUTION_NOT_ENABLED = 5410004,
 }
 const MAX_COUNT = 999999999;
 const VIDEO_RESOURCE_TRACK_COUNT = 2;
@@ -100,6 +102,7 @@ export default function OhAVPlayerNDKTest() {
       await fs.close(fileDescriptor.fd);
       await fs.close(twoAudioFileFd.fd);
     });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0001
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0001
@@ -110,12 +113,13 @@ export default function OhAVPlayerNDKTest() {
      * @tc.level  Level 0
      */
     it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0001', Level.LEVEL0,async (done: Function) => {
-      let testResult:avplayer.NdkAVPlayerResult = avplayer.testSetVideoSuperResolution(fileDescriptor, true);
+      let testResult:avplayer.NdkAVPlayerResult = avplayer.testSetVideoSuperResolution(fileDescriptor, true, true);
       expect(testResult.result).assertEqual(OH_AVErrCode.AV_ERR_OK);
       await sleep(2000);
       expect(avplayer.checkSuperResolutionState(testResult.userData, true)).assertEqual(OH_AVErrCode.AV_ERR_OK);
       done();
     });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0002
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0002
@@ -126,12 +130,13 @@ export default function OhAVPlayerNDKTest() {
      * @tc.level  Level 0
      */
     it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0002', Level.LEVEL0,async (done: Function) => {
-      let testResult:avplayer.NdkAVPlayerResult = avplayer.testSetVideoSuperResolution(fileDescriptor, false);
+      let testResult:avplayer.NdkAVPlayerResult = avplayer.testSetVideoSuperResolution(fileDescriptor, false, true);
       expect(testResult.result).assertEqual(OH_AVErrCode.AV_ERR_OK);
       await sleep(2000);
       expect(avplayer.checkSuperResolutionState(testResult.userData, false)).assertEqual(OH_AVErrCode.AV_ERR_OK);
       done();
     });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0003
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0003
@@ -146,6 +151,40 @@ export default function OhAVPlayerNDKTest() {
       expect(result).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
       done();
     });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0004
+     * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0004
+     * @tc.desc   Test OH_AVPlayer_SetVideoSuperResolutionEnable, input true, isEnable false
+     *            testOhAvPlayerNdkSetSuperResolution0004
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0004', Level.LEVEL0,async (done: Function) => {
+      let testResult:avplayer.NdkAVPlayerResult = avplayer.testSetVideoSuperResolution(fileDescriptor, false, false);
+      expect(testResult.result).assertEqual(OH_AVErrCode.AV_ERR_OK);
+      await sleep(2000);
+      expect(avplayer.checkSuperResolutionState(testResult.userData, false)).assertEqual(
+        OH_AVErrCode.AV_ERR_SUPER_RESOLUTION_NOT_ENABLED);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0005
+     * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0005
+     * @tc.desc   Test OH_AVPlayer_SetVideoSuperResolutionEnable, player's status is Idle
+     *            testOhAvPlayerNdkSetSuperResolution0005
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETSUPERRESOLUTION_0005', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.testSetVideoSuperResolutionForStatusIdle();
+      expect(result).assertEqual(OH_AVErrCode.AV_ERR_OPERATE_NOT_PERMIT);
+      done();
+    });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0001
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0001
@@ -156,12 +195,14 @@ export default function OhAVPlayerNDKTest() {
      * @tc.level  Level 0
      */
     it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0001', Level.LEVEL0, async (done: Function) => {
-      let testResult: avplayer.NdkAVPlayerResult = avplayer.testSetTargetVideoWindowSize(fileDescriptor, 320, 320);
+      let testResult: avplayer.NdkAVPlayerResult =
+        avplayer.testSetTargetVideoWindowSize(fileDescriptor, 320, 320, true);
       expect(testResult.result).assertEqual(OH_AVErrCode.AV_ERR_OK);
       await sleep(2000);
       expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(OH_AVErrCode.AV_ERR_OK);
       done();
     });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0002
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0002
@@ -172,12 +213,14 @@ export default function OhAVPlayerNDKTest() {
      * @tc.level  Level 0
      */
     it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0002', Level.LEVEL0, async (done: Function) => {
-      let testResult: avplayer.NdkAVPlayerResult = avplayer.testSetTargetVideoWindowSize(fileDescriptor, 720, 480);
+      let testResult: avplayer.NdkAVPlayerResult =
+        avplayer.testSetTargetVideoWindowSize(fileDescriptor, 720, 480, true);
       expect(testResult.result).assertEqual(OH_AVErrCode.AV_ERR_OK);
       await sleep(2000);
       expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(OH_AVErrCode.AV_ERR_OK);
       done();
     });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0003
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0003
@@ -188,12 +231,14 @@ export default function OhAVPlayerNDKTest() {
      * @tc.level  Level 0
      */
     it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0003', Level.LEVEL0, async (done: Function) => {
-      let testResult: avplayer.NdkAVPlayerResult = avplayer.testSetTargetVideoWindowSize(fileDescriptor, 1920, 1080);
+      let testResult: avplayer.NdkAVPlayerResult =
+        avplayer.testSetTargetVideoWindowSize(fileDescriptor, 1920, 1080, true);
       expect(testResult.result).assertEqual(OH_AVErrCode.AV_ERR_OK);
       await sleep(2000);
       expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(OH_AVErrCode.AV_ERR_OK);
       done();
     });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0004
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0004
@@ -204,11 +249,13 @@ export default function OhAVPlayerNDKTest() {
      * @tc.level  Level 0
      */
     it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0004', Level.LEVEL0, async (done: Function) => {
-      let testResult: avplayer.NdkAVPlayerResult = avplayer.testSetTargetVideoWindowSize(fileDescriptor, 240, 240);
+      let testResult: avplayer.NdkAVPlayerResult =
+        avplayer.testSetTargetVideoWindowSize(fileDescriptor, 240, 240, true);
       await sleep(2000);
       expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
       done();
     });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0005
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0005
@@ -219,11 +266,13 @@ export default function OhAVPlayerNDKTest() {
      * @tc.level  Level 0
      */
     it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0005', Level.LEVEL0, async (done: Function) => {
-      let testResult: avplayer.NdkAVPlayerResult = avplayer.testSetTargetVideoWindowSize(fileDescriptor, 8192, 8192);
+      let testResult: avplayer.NdkAVPlayerResult =
+        avplayer.testSetTargetVideoWindowSize(fileDescriptor, 8192, 8192, true);
       await sleep(2000);
       expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
       done();
     });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0007
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0007
@@ -234,11 +283,12 @@ export default function OhAVPlayerNDKTest() {
      * @tc.level  Level 0
      */
     it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0007', Level.LEVEL0, async (done: Function) => {
-      let testResult: avplayer.NdkAVPlayerResult = avplayer.testSetTargetVideoWindowSize(fileDescriptor, -1, -1);
+      let testResult: avplayer.NdkAVPlayerResult = avplayer.testSetTargetVideoWindowSize(fileDescriptor, -1, -1, true);
       await sleep(2000);
       expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
       done();
     });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0008
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0008
@@ -249,11 +299,12 @@ export default function OhAVPlayerNDKTest() {
      * @tc.level  Level 0
      */
     it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0008', Level.LEVEL0, async (done: Function) => {
-      let testResult: avplayer.NdkAVPlayerResult = avplayer.testSetTargetVideoWindowSize(fileDescriptor, 0, 0);
+      let testResult: avplayer.NdkAVPlayerResult = avplayer.testSetTargetVideoWindowSize(fileDescriptor, 0, 0, true);
       await sleep(2000);
       expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
       done();
     });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0009
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0009
@@ -268,6 +319,40 @@ export default function OhAVPlayerNDKTest() {
       expect(result).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
       done();
     });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0010
+     * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0010
+     * @tc.desc   Test OH_AVPlayer_SetTargetVideoWindowSize, avplayer's status is Idle
+     *            testOhAvPlayerNdkSetTargetVideoWindowSize0010
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0010', Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.testSetTargetVideoWindowSizeForStatusIdle();
+      expect(result).assertEqual(OH_AVErrCode.AV_ERR_OPERATE_NOT_PERMIT);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0011
+     * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0011
+     * @tc.desc   Test OH_AVPlayer_SetTargetVideoWindowSize, isEnable false
+     *            testOhAvPlayerNdkSetTargetVideoWindowSize0011
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0011', Level.LEVEL0, async (done: Function) => {
+      let testResult: avplayer.NdkAVPlayerResult =
+        avplayer.testSetTargetVideoWindowSize(fileDescriptor, 1920, 1080, false);
+      await sleep(2000);
+      expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(
+        OH_AVErrCode.AV_ERR_SUPER_RESOLUTION_NOT_ENABLED);
+      done();
+    });
+
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_GETPLAYBACKINFO_0001
      * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_GETPLAYBACKINFO_0001
@@ -1291,6 +1376,22 @@ export default function OhAVPlayerNDKTest() {
       await sleep(2000);
       expect(avplayer.checkErrorCode(player.userData)).assertEqual(0);
       console.info(`testOhAVPlayerSetPlaybackRange008 test end `);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlayerSetPlaybackRange009
+     * @tc.name   testOhAVPlayerSetPlaybackRange009
+     * @tc.desc   Set the Playback Range of player, Player's status is Idle.
+     *            testOhAVPlayerSetPlaybackRange009
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerSetPlaybackRange009', Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlayerSetPlaybackRange009 test start `);
+      let result: number = avplayer.OhAVPlayerSetPlaybackRangeError();
+      expect(result).assertEqual(OH_AVErrCode.AV_ERR_OPERATE_NOT_PERMIT);
       done();
     });
 
