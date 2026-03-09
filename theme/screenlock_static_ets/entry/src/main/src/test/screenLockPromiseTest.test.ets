@@ -28,7 +28,7 @@ export default function ScreenLockPromiseTest() {
  
     /*
      * @tc.number    SUB_MISC_screenLock_API_Promise_001
-     * @tc.name      Set to locked screen, query the lock screen state is locked state
+     * @tc.name      SUB_MISC_screenLock_API_Promise_001
      * @tc.desc      Test ScreenLock API functionality.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -52,7 +52,7 @@ export default function ScreenLockPromiseTest() {
  
     /*
      * @tc.number    SUB_MISC_screenLock_API_Promise_002
-     * @tc.name      Set to locked screen, query the lock screen state is locked state
+     * @tc.name      SUB_MISC_screenLock_API_Promise_002
      * @tc.desc      Test ScreenLock API functionality.
      * @tc.size      : MediumTest
      * @tc.type      : Function

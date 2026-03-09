@@ -29,7 +29,7 @@ export default function screenLockJSUnit() {
  
         /*
          * @tc.number    SUB_MISC_screenLock_API_0001
-         * @tc.name      Set to locked screen, query the lock screen state is locked state
+         * @tc.name      SUB_MISC_screenLock_API_0001
          * @tc.desc      Test ScreenLock API functionality.
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -64,7 +64,7 @@ export default function screenLockJSUnit() {
  
         /*
          * @tc.number    SUB_MISC_screenLock_API_0002
-         * @tc.name      Set to locked screen, query the lock screen state is locked state
+         * @tc.name      SUB_MISC_screenLock_API_0002
          * @tc.desc      Test ScreenLock API functionality.
          * @tc.size      : MediumTest
          * @tc.type      : Function
