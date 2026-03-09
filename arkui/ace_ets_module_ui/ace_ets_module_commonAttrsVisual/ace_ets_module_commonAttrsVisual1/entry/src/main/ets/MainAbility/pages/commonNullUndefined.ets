@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct commonNullUndefined {
+struct CommonNullUndefined {
   build() {
     Column() {
       Image($r('app.media.icon'))
