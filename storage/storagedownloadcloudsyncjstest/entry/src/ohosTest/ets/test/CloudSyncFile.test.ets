@@ -300,7 +300,7 @@ describe('cloud_file_test', () => {
     fileCache.on(null, callback);
     } catch (err) {
       console.log('Test_CloudFile_State_010 has failed for ' + err.message + ', code: ' + err.code);
-      expect(false).assertTrue();
+      expect(err.code === 13900020).assertTrue();
     }
     done();
   });
@@ -323,7 +323,7 @@ describe('cloud_file_test', () => {
     fileCache.on(undefined, callback);
     } catch (err) {
       console.log('Test_CloudFile_State_011 has failed for ' + err.message + ', code: ' + err.code);
-      expect(false).assertTrue();
+      expect(err.code === 13900020).assertTrue();
     }
     done();
   });
@@ -347,7 +347,7 @@ describe('cloud_file_test', () => {
       fileCache.off(null, callback);
      } catch (err) {
        console.log('Test_CloudFile_State_012 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
+       expect(err.code === 13900020).assertTrue();
      }
      done();
    });
@@ -371,7 +371,7 @@ describe('cloud_file_test', () => {
       fileCache.off(undefined, callback);
      } catch (err) {
        console.log('Test_CloudFile_State_013 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
+       expect(err.code === 13900020).assertTrue();
      }
      done();
    });
