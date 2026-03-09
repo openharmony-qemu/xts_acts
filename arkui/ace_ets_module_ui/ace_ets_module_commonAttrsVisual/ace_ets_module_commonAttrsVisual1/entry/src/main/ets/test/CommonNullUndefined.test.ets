@@ -31,9 +31,9 @@ import {
 import router from '@ohos.router';
 import CommonFunc from '../MainAbility/common/Common';
 
-export default function commonNullUndefined() {
+export default function CommonNullUndefined() {
 
-  describe('commonNullUndefined', () => {
+  describe('CommonNullUndefined', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/commonNullUndefined',
