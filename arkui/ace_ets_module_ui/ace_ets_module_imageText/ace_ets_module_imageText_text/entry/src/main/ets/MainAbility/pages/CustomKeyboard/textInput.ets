@@ -19,14 +19,14 @@ import { ComponentContent } from '@kit.ArkUI';
 function itemBuilder() {
   Row(){
     Button('delete')
-      .id('BtnDelete')
+      .id('TextInputBtnDelete')
       .width(100)
-      .height('5%')
+      .height('30%')
 
     Button('set')
       .id('BtnSet')
       .width(100)
-      .height('5%')
+      .height('30%')
   }
   .backgroundColor(Color.Gray)
   .height(undefined)
@@ -41,11 +41,8 @@ struct Page {
   build() {
     Row(){
       Column(){
-        Text('TextInput')
-          .height('5%')
-
         TextInput()
-          .id('textInput')
+          .id('textInputTest')
           .height('30%')
           .defaultFocus(true)
           .customKeyboard(this.builder)
