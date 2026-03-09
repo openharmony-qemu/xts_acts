@@ -112,6 +112,42 @@ async function createSoundPoolPromiseAbnormal(usage: audio.StreamUsage, maxStrea
   });
 }
 
+function createSoundPoolCallbackForContent(content: audio.ContentType, maxStreams: number, done: Function) {
+  audioRendererInfo.content = content;
+  console.info(TAG, `Start to createSoundPoolCallbackForContent.`);
+  media.createSoundPool(maxStreams, audioRendererInfo, (error, soundPool_: media.SoundPool) => {
+    if (error) {
+      console.error(TAG, `Failed to createSoundPool, error is: ${error} ,code is : ${error?.code}`);
+      expect().assertFail();
+    } else {
+      console.info(TAG, `Succeeded in creating SoundPool callback.`);
+      soundPool = soundPool_;
+      expect(true).assertTrue();
+    }
+    done();
+  });
+}
+
+async function createSoundPoolPromiseForContent(content: audio.ContentType, maxStreams: number, done: Function) {
+  audioRendererInfo.content = content;
+  console.info(TAG, `Start to createSoundPoolPromiseForContent.`);
+  await media.createSoundPool(maxStreams, audioRendererInfo).then((soundPool_: media.SoundPool) => {
+    if (soundPool_ != null) {
+      console.info(TAG, 'Succeeded in creating SoundPool promise.');
+      soundPool = soundPool_;
+      expect(true).assertTrue();
+    } else {
+      console.error(TAG, 'Failed to create SoundPool promise.');
+      expect().assertFail();
+    }
+    done();
+  }, (error: BusinessError) => {
+    console.error(TAG, `soundpool catchCallback, error message: ${error?.message}, code: ${error?.code}`);
+    expect().assertFail();
+    done();
+  });
+}
+
 function loadSoundPoolCallback(usage: audio.StreamUsage, maxStreams: number, done: Function) {
   audioRendererInfo.usage = usage;
   media.createSoundPool(maxStreams, audioRendererInfo, async (error: BusinessError, soundPool_: media.SoundPool) => {
@@ -5414,6 +5450,222 @@ export default function SoundPoolTest() {
     it('on_off_error_listen_normal_001', Level.LEVEL0, async (done: Function) => {
       let uri: string = 'invalid path';
       await errorListen(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, uri, done);
+    })
+
+    /**
+     * @tc.name   createSoundPool_callback_for_content_001
+     * @tc.number SOUND_POOL_FUNC_TEST_351
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_callback_for_content_001', Level.LEVEL0, async (done: Function) => {
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_001 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_callback_for_content_002
+     * @tc.number SOUND_POOL_FUNC_TEST_352
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_callback_for_content_002', Level.LEVEL0, async (done: Function) => {
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_002 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_callback_for_content_003
+     * @tc.number SOUND_POOL_FUNC_TEST_353
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_callback_for_content_003', Level.LEVEL0, async (done: Function) => {
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_003 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_callback_for_content_004
+     * @tc.number SOUND_POOL_FUNC_TEST_354
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_callback_for_content_004', Level.LEVEL0, async (done: Function) => {
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_004 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_callback_for_content_005
+     * @tc.number SOUND_POOL_FUNC_TEST_355
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_callback_for_content_005', Level.LEVEL0, async (done: Function) => {
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_005 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_callback_for_content_006
+     * @tc.number SOUND_POOL_FUNC_TEST_356
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_callback_for_content_006', Level.LEVEL0, async (done: Function) => {
+      try {
+        createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_content_006 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_promise_for_content_001
+     * @tc.number SOUND_POOL_FUNC_TEST_357
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_promise_for_content_001', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_001 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_promise_for_content_002
+     * @tc.number SOUND_POOL_FUNC_TEST_358
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_promise_for_content_002', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_002 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_promise_for_content_003
+     * @tc.number SOUND_POOL_FUNC_TEST_359
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_promise_for_content_003', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_003 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_promise_for_content_004
+     * @tc.number SOUND_POOL_FUNC_TEST_360
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_promise_for_content_004', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_004 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_promise_for_content_005
+     * @tc.number SOUND_POOL_FUNC_TEST_361
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_promise_for_content_005', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_005 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_promise_for_content_006
+     * @tc.number SOUND_POOL_FUNC_TEST_362
+     * @tc.desc   Test different content of AudioRendererInfo in create soundPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_promise_for_content_006', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_content_006 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
     })
   })
 }
