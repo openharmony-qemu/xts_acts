@@ -2132,7 +2132,6 @@ export default function DisplayTest() {
                     expect(err.code === 401).assertTrue();
                     done();
                 }
-                done();
             }
         });
         /**
@@ -2206,7 +2205,6 @@ export default function DisplayTest() {
                     expect(err.code === 401).assertTrue();
                     done();
                 }
-                done();
             }
         });
         /**
