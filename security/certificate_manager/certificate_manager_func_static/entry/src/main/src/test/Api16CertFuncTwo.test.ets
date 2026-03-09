@@ -320,6 +320,13 @@ export default function api16CertFuncTestTwoUnit() {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015 error.code: ${e.code}, message: ${e.message}`);
           expect(null).assertFail();
         }
+		try {
+          certManager.uninstallUserTrustedCertificateSync("");
+          hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015 uninstallUserTrustedCertificateSync success`);
+        } catch (e) {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015 error.code: ${e.code}, message: ${e.message}`);
+          expect(e.code).assertEqual(401);
+        }
       } catch (error) {
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015 error.code: ${error.code}, message: ${error.message}`);
         expect(null).assertFail();
@@ -548,6 +555,13 @@ export default function api16CertFuncTestTwoUnit() {
         } catch (err) {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015 error.code: ${err.code}, message: ${err.message}`);
           expect((err as BusinessError).code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_FAILED);
+        }
+		try {
+          await certManagerDialog.openUninstallCertificateDialog(context, certificateType, "")
+          expect(null).assertFail();
+        } catch (err) {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015 error.code: ${err.code}, message: ${err.message}`);
+          expect((err as BusinessError).code).assertEqual(401);
         }
       }
       done();
@@ -795,6 +809,20 @@ export default function api16CertFuncTestTwoUnit() {
           expect((err as BusinessError).code).assertEqual(17500001);
         }
       }
+	  try {
+        let result : certManager.CMResult = await certManager.getUkeyCertificate("", ukeyInfo);
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 credentialList is: ${result.credentialList}`)
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 credentialDetailList is: ${result.credentialDetailList}`)
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 credential is: ${credential.certPurpose}`)
+        expect(null).assertFail();
+      } catch (err) {
+        if (err.code == 801) {
+          done();
+        } else {
+          hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 error.code: ${err.code}, message: ${err.message}`);
+          expect((err as BusinessError).code).assertEqual(401);
+        }
+      }
       done();
     });
 
@@ -817,6 +845,8 @@ export default function api16CertFuncTestTwoUnit() {
 
       try {
         let result : certManagerDialog.CertReference = await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
+		expect(result.certType!=null).assertTrue()
+		expect(result.keyUri!=null).assertTrue();
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0400 certType is: ${result.certType}`)
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0400 keyUri is: ${result.keyUri}`)
         expect(null).assertFail();
