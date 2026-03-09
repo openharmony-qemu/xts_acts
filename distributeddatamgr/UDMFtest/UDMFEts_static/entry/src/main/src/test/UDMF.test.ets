@@ -2805,6 +2805,84 @@ export default function UDMFApiTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0800
+     * @tc.desc   removeAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0800';
+        hilog.info(domain, tag, TAG + ' start ');
+        try {
+          unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.MENU);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0900
+     * @tc.desc   removeAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0900';
+        hilog.info(domain, tag, TAG + ' start ');
+        try {
+          unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.SYSTEM_SHARE);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000
+     * @tc.desc   removeAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000';
+        hilog.info(domain, tag, TAG + ' start ');
+        try {
+          unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.PICKER);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7800
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7800
      * @tc.desc   unifiedDataChannel updateData callback interface test.
