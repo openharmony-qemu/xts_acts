@@ -28,6 +28,7 @@ import updateMenuTest from './UpdateMenuTest/updateMenuTest.test'
 import bindContextMenuTest from './BindContextMenuTest/bindContextMenuTest.test'
 import ContextMenuOptionsTest from './CommonTest/ContextMenuOptions.test'
 import PromptActionTest from './PromptActionTest/PromptAction.test'
+import MenuKeyboardAvoidModeTest from './CommonTest/MenuKeyboardAvoidMode.test'
 
 export default function testsuite() {
   maskTest();
@@ -45,4 +46,5 @@ export default function testsuite() {
   bindContextMenuTest();
   ContextMenuOptionsTest();
   PromptActionTest();
+  MenuKeyboardAvoidModeTest();
 }
