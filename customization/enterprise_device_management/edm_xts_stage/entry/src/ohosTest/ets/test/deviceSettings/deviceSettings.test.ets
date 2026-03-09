@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFHAPNAME, SELFWANT } from '../commom';
+import { ENTINFO1, SELFHAPNAME, SELFWANT, DEFAULT_USER_ID } from '../commom';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import deviceSettings from '@ohos.enterprise.deviceSettings';
@@ -1234,5 +1234,647 @@ export default function deviceSettingsTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   setValue_test_001
+     * @tc.number setValue_test_001
+     * @tc.desc   setValue with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValue_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValue_test_001  -------- START --------');
+      try {
+        deviceSettings.setValue(null, ITEM_DEFAULT_INPUT_METHOD, 'bundleName');
+        console.info(' --- setValue_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValue_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValue_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setValue_test_002
+     * @tc.number setValue_test_002
+     * @tc.desc   setValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValue_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValue_test_002  -------- START --------');
+      try {
+        deviceSettings.setValue(undefined, ITEM_DEFAULT_INPUT_METHOD, 'bundleName');
+        console.info(' --- setValue_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValue_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValue_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getValue_test_001
+     * @tc.number getValue_test_001
+     * @tc.desc   getValue with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValue_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValue_test_001  -------- START --------');
+      try {
+        deviceSettings.getValue(null, ITEM_EYE_COMFORT);
+        console.info(' --- getValue_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValue_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValue_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getValue_test_002
+     * @tc.number getValue_test_002
+     * @tc.desc   getValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValue_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValue_test_002  -------- START --------');
+      try {
+        deviceSettings.getValue(undefined, ITEM_EYE_COMFORT);
+        console.info(' --- getValue_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValue_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValue_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setHomeWallpaper_test_001
+     * @tc.number setHomeWallpaper_test_001
+     * @tc.desc   setHomeWallpaper with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setHomeWallpaper_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setHomeWallpaper_test_001  -------- START --------');
+      try {
+        deviceSettings.setHomeWallpaper(null, DEFAULT_USER_ID);
+        console.info(' --- setHomeWallpaper_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setHomeWallpaper_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setHomeWallpaper_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setHomeWallpaper_test_002
+     * @tc.number setHomeWallpaper_test_002
+     * @tc.desc   setHomeWallpaper with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setHomeWallpaper_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setHomeWallpaper_test_002  -------- START --------');
+      try {
+        deviceSettings.setHomeWallpaper(undefined, DEFAULT_USER_ID);
+        console.info(' --- setHomeWallpaper_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setHomeWallpaper_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setHomeWallpaper_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setHomeWallpaper_test_003
+     * @tc.number setHomeWallpaper_test_003
+     * @tc.desc   setHomeWallpaper with null parameter fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setHomeWallpaper_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setHomeWallpaper_test_003  -------- START --------');
+      try {
+        deviceSettings.setHomeWallpaper(SELFWANT, null);
+        console.info(' --- setHomeWallpaper_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setHomeWallpaper_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setHomeWallpaper_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setHomeWallpaper_test_004
+     * @tc.number setHomeWallpaper_test_004
+     * @tc.desc   setHomeWallpaper with undefined parameter fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setHomeWallpaper_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setHomeWallpaper_test_004  -------- START --------');
+      try {
+        deviceSettings.setHomeWallpaper(SELFWANT, undefined);
+        console.info(' --- setHomeWallpaper_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setHomeWallpaper_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setHomeWallpaper_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUnlockWallpaper_test_001
+     * @tc.number setUnlockWallpaper_test_001
+     * @tc.desc   setUnlockWallpaper with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUnlockWallpaper_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUnlockWallpaper_test_001  -------- START --------');
+      try {
+        deviceSettings.setUnlockWallpaper(null, DEFAULT_USER_ID);
+        console.info(' --- setUnlockWallpaper_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUnlockWallpaper_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUnlockWallpaper_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUnlockWallpaper_test_002
+     * @tc.number setUnlockWallpaper_test_002
+     * @tc.desc   setUnlockWallpaper with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUnlockWallpaper_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUnlockWallpaper_test_002  -------- START --------');
+      try {
+        deviceSettings.setUnlockWallpaper(undefined, DEFAULT_USER_ID);
+        console.info(' --- setUnlockWallpaper_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUnlockWallpaper_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUnlockWallpaper_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUnlockWallpaper_test_003
+     * @tc.number setUnlockWallpaper_test_003
+     * @tc.desc   setUnlockWallpaper with null parameter fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUnlockWallpaper_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUnlockWallpaper_test_003  -------- START --------');
+      try {
+        deviceSettings.setUnlockWallpaper(SELFWANT, null);
+        console.info(' --- setUnlockWallpaper_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUnlockWallpaper_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUnlockWallpaper_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUnlockWallpaper_test_004
+     * @tc.number setUnlockWallpaper_test_004
+     * @tc.desc   setUnlockWallpaper with undefined parameter fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUnlockWallpaper_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUnlockWallpaper_test_004  -------- START --------');
+      try {
+        deviceSettings.setUnlockWallpaper(SELFWANT, undefined);
+        console.info(' --- setUnlockWallpaper_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUnlockWallpaper_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUnlockWallpaper_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setValueForAccount_test_001
+     * @tc.number setValueForAccount_test_001
+     * @tc.desc   setValueForAccount with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_001  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(null, deviceSettings.SettingsItem.DEVICE_NAME, DEFAULT_USER_ID, 'deviceName');
+        console.info(' --- setValueForAccount_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setValueForAccount_test_002
+     * @tc.number setValueForAccount_test_002
+     * @tc.desc   setValueForAccount with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_002  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(undefined, deviceSettings.SettingsItem.DEVICE_NAME, DEFAULT_USER_ID, 'deviceName');
+        console.info(' --- setValueForAccount_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setValueForAccount_test_003
+     * @tc.number setValueForAccount_test_003
+     * @tc.desc   setValueForAccount with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_003  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, null, 'deviceName');
+        console.info(' --- setValueForAccount_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setValueForAccount_test_004
+     * @tc.number setValueForAccount_test_004
+     * @tc.desc   setValueForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_004  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, undefined, 'deviceName');
+        console.info(' --- setValueForAccount_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getValueForAccount_test_001
+     * @tc.number getValueForAccount_test_001
+     * @tc.desc   getValueForAccount with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValueForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValueForAccount_test_001  -------- START --------');
+      try {
+        deviceSettings.getValueForAccount(null, deviceSettings.SettingsItem.DEVICE_NAME, DEFAULT_USER_ID);
+        console.info(' --- getValueForAccount_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValueForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValueForAccount_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getValueForAccount_test_002
+     * @tc.number getValueForAccount_test_002
+     * @tc.desc   getValueForAccount with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValueForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValueForAccount_test_002  -------- START --------');
+      try {
+        deviceSettings.getValueForAccount(undefined, deviceSettings.SettingsItem.DEVICE_NAME, DEFAULT_USER_ID);
+        console.info(' --- getValueForAccount_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValueForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValueForAccount_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getValueForAccount_test_003
+     * @tc.number getValueForAccount_test_003
+     * @tc.desc   getValueForAccount with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValueForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValueForAccount_test_003  -------- START --------');
+      try {
+        deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, null);
+        console.info(' --- getValueForAccount_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValueForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValueForAccount_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getValueForAccount_test_004
+     * @tc.number getValueForAccount_test_004
+     * @tc.desc   getValueForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValueForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValueForAccount_test_004  -------- START --------');
+      try {
+        deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, undefined);
+        console.info(' --- getValueForAccount_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValueForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValueForAccount_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setHomeWallpaper_test_029
+     * @tc.number setHomeWallpaper_test_029
+     * @tc.desc   setHomeWallpaper with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setHomeWallpaper_test_029", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setHomeWallpaper_test_029  -------- START --------');
+      try {
+        deviceSettings.setHomeWallpaper(null, DEFAULT_USER_ID);
+        console.info(' --- setHomeWallpaper_test_029 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setHomeWallpaper_test_029 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setHomeWallpaper_test_029  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setHomeWallpaper_test_030
+     * @tc.number setHomeWallpaper_test_030
+     * @tc.desc   setHomeWallpaper with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setHomeWallpaper_test_030", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setHomeWallpaper_test_030  -------- START --------');
+      try {
+        deviceSettings.setHomeWallpaper(undefined, DEFAULT_USER_ID);
+        console.info(' --- setHomeWallpaper_test_030 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setHomeWallpaper_test_030 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setHomeWallpaper_test_030  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setHomeWallpaper_test_031
+     * @tc.number setHomeWallpaper_test_031
+     * @tc.desc   setHomeWallpaper with null parameter fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setHomeWallpaper_test_031", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setHomeWallpaper_test_031  -------- START --------');
+      try {
+        deviceSettings.setHomeWallpaper(SELFWANT, null);
+        console.info(' --- setHomeWallpaper_test_031 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setHomeWallpaper_test_031 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setHomeWallpaper_test_031  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setHomeWallpaper_test_032
+     * @tc.number setHomeWallpaper_test_032
+     * @tc.desc   setHomeWallpaper with undefined parameter fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setHomeWallpaper_test_032", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setHomeWallpaper_test_032  -------- START --------');
+      try {
+        deviceSettings.setHomeWallpaper(SELFWANT, undefined);
+        console.info(' --- setHomeWallpaper_test_032 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setHomeWallpaper_test_032 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setHomeWallpaper_test_032  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUnlockWallpaper_test_029
+     * @tc.number setUnlockWallpaper_test_029
+     * @tc.desc   setUnlockWallpaper with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUnlockWallpaper_test_029", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUnlockWallpaper_test_029  -------- START --------');
+      try {
+        deviceSettings.setUnlockWallpaper(null, DEFAULT_USER_ID);
+        console.info(' --- setUnlockWallpaper_test_029 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUnlockWallpaper_test_029 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUnlockWallpaper_test_029  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUnlockWallpaper_test_030
+     * @tc.number setUnlockWallpaper_test_030
+     * @tc.desc   setUnlockWallpaper with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUnlockWallpaper_test_030", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUnlockWallpaper_test_030  -------- START --------');
+      try {
+        deviceSettings.setUnlockWallpaper(undefined, DEFAULT_USER_ID);
+        console.info(' --- setUnlockWallpaper_test_030 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUnlockWallpaper_test_030 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUnlockWallpaper_test_030  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUnlockWallpaper_test_031
+     * @tc.number setUnlockWallpaper_test_031
+     * @tc.desc   setUnlockWallpaper with null parameter fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUnlockWallpaper_test_031", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUnlockWallpaper_test_031  -------- START --------');
+      try {
+        deviceSettings.setUnlockWallpaper(SELFWANT, null);
+        console.info(' --- setUnlockWallpaper_test_031 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUnlockWallpaper_test_031 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUnlockWallpaper_test_031  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUnlockWallpaper_test_032
+     * @tc.number setUnlockWallpaper_test_032
+     * @tc.desc   setUnlockWallpaper with undefined parameter fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUnlockWallpaper_test_032", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUnlockWallpaper_test_032  -------- START --------');
+      try {
+        deviceSettings.setUnlockWallpaper(SELFWANT, undefined);
+        console.info(' --- setUnlockWallpaper_test_032 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUnlockWallpaper_test_032 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUnlockWallpaper_test_032  -------- END --------');
+    })
   })
 }

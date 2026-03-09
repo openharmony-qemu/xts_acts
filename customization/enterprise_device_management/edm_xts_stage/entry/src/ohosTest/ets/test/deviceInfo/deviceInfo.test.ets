@@ -172,6 +172,28 @@ export default function deviceInfoTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-    });
+    })
+
+    /**
+     * @tc.name   getDeviceInfo_test_002
+     * @tc.number getDeviceInfo_test_002
+     * @tc.desc   getDeviceInfo with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDeviceInfo_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDeviceInfo_test_002  -------- START --------');
+      try {
+        deviceInfo.getDeviceInfo(undefined, LABEL_DEVICE_NAME);
+        console.info(' --- getDeviceInfo_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDeviceInfo_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDeviceInfo_test_002  -------- END --------');
+    })
   })
 }
