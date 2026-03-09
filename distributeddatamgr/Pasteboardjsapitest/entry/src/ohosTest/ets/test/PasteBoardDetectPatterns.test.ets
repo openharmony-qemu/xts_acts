@@ -822,8 +822,7 @@ export default function pasteboardDetectPatternsTest() {
      */
     it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2200 ---------start")
-      let textData = "https://gitcode.com/openharmony/docs/blob/master/" +
-      "zh-cn/application-dev/reference/apis-basic-services-kit/js-apis-pasteboard.md";
+      let textData = "https://www.baidu.com";
       let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
       await systemPasteboard.setData(pasteData);
       let res: boolean = await systemPasteboard.hasData();
