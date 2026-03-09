@@ -4323,7 +4323,7 @@ export default function audioCapturer() {
         let audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         const overflowCount = await audioCapPromise.getOverflowCount();
         expect(overflowCount).assertLargerOrEqual(0);
-        console.info(`${Tag}: getOverflowCount returned: ${OverflowCount}`);
+        console.info(`${Tag}: getOverflowCount returned: ${overflowCount}`);
         await audioCapPromise.release();
         done();
         } catch (err) {
