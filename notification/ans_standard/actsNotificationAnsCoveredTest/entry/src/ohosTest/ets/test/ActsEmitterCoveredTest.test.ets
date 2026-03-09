@@ -193,6 +193,7 @@ export default function actsEmitterCovered() {
       try{
         console.info(TAG+ 'off callback begin');
         emitter.off(null, onCallback05);
+        emitter.off(null)
         console.info(TAG+ 'off callback success');
       }catch(err){
         console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
