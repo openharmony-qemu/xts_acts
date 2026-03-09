@@ -732,7 +732,7 @@ export default function AudioRoutingManagerTest() {
  	      */
  	     it('AUDIO_ROUTING_MANAGER_GETDEVICESSYNC_ALLDEVICESFLAG_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
  	       try {
- 	         let devices = audioRoutingManager.getDevicesSync(audio.DeviceFlag.ALL_DEVICES_FLAG);
+ 	         let devices:ESObject = audioRoutingManager.getDevicesSync(audio.DeviceFlag.ALL_DEVICES_FLAG);
  	         console.info(`${Tag}: getDevicesSync with ALL_DEVICES_FLAG: PASS, device count: ${devices.length}`);
  	         done();
  	       } catch (err) {
