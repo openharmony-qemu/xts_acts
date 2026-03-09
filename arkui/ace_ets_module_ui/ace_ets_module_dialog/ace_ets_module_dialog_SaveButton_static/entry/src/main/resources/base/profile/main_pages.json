@@ -1,0 +1,7 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/popup/popup",
+    "MainAbility/pages/Popup/PopupIndex"
+  ]
+}
