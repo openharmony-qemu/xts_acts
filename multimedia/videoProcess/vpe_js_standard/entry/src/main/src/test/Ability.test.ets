@@ -3,34 +3,24 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import videoProcessingEngine from "@ohos.multimedia.videoProcessingEngine";
 import { image } from '@kit.ImageKit';
-import {fileIo as fs } from '@kit.CoreFileKit';
+import { fileIo as fs } from '@kit.CoreFileKit';
 import { common } from '@kit.AbilityKit';
-import AbilityDelegatorRegistry from '@ohos.app.ability.AbilityDelegatorRegistry';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-
-const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
-const context = delegator.getAppContext().getApplicationContext();
-
-const getFd = (): int => {
-    let filesDir = context.filesDir;
-    let filePath: string = fileDir + '/sample_image.png';
-    if (fs.accessSync(filePath)) {
-        hilog.info(0x0000, tag, "pxh image filePath:%{public}s", filePath);
-        const file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
-        let stat = fs.statSync(file.fd);
-        return file.fd as int;
-    }
-    return 0;
-}
 
 export default function abilityTest() {
 
     describe("abilityTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        let fd: int = getFd();
-        let imageSource: image.ImageSource = image.createImageSource(fd) as image.ImageSource;
+        let src: image.PixelMap | undefined = undefined;
+        await image.createPixelMap(new ArrayBuffer(512 * 512 * 4), {size: { height: 512, width: 512}}).then((
+            srcPixelMap: image.PixelMap) => {
+                src = srcPixelMap;
+            }
+        )
+        let targetWidth = 1024;
+        let targetHeight = 1024;
 
         /**
         * @tc.name   testVideoProcessTs001
@@ -71,25 +61,24 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             }
-            try {
-                let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
-                const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
-                let targetWidth = imageInfo.size.width * 2;
-                let targetHeight = imageInfo.size.height * 2;
-                let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-                expect(imageProcessor != null).assertTrue();
-                let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
-                    sourceImage, targetWidth, targetHeight);
-                expect(enhancedPixelmap != null).assertTrue();
-                done();
-            } catch (err) {
-                console.info('testVideoProcessTs002 failed, error is' + err.message);
-                if (err.code != undefined) {
-                    expect(false).assertTrue();
+            if (src != undefined) {
+                let sourceImage = src as image.PixelMap;
+                try {
+                    let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+                    expect(imageProcessor != null).assertTrue();
+                    let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
+                        sourceImage, targetWidth, targetHeight);
+                    expect(enhancedPixelmap != null).assertTrue();
+                    done();
+                } catch (err) {
+                    console.info('testVideoProcessTs002 failed, error is' + err.message);
+                    if (err.code != undefined) {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    expect(true).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -107,26 +96,25 @@ export default function abilityTest() {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
                 done();
-            }
-            try {
-                let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
-                const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
-                let targetWidth = imageInfo.size.width * 2;
-                let targetHeight = imageInfo.size.height * 2;
-                let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-                expect(imageProcessor != null).assertTrue();
-                let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
-                    sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.HIGH);
-                expect(enhancedPixelmap != null).assertTrue();
-                done();
-            } catch (err) {
-                console.info('testVideoProcessTs003 failed, error is' + err.message);
-                if (err.code != undefined) {
-                    expect(false).assertTrue();
+            }            
+            if (src != undefined) {
+                let sourceImage = src as image.PixelMap;
+                try {
+                    let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+                    expect(imageProcessor != null).assertTrue();
+                    let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
+                        sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.HIGH);
+                    expect(enhancedPixelmap != null).assertTrue();
+                    done();
+                } catch (err) {
+                    console.info('testVideoProcessTs003 failed, error is' + err.message);
+                    if (err.code != undefined) {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    expect(true).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -144,25 +132,24 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             }
-            try {
-                let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
-                const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
-                let targetWidth = imageInfo.size.width * 2;
-                let targetHeight = imageInfo.size.height * 2;
-                let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-                expect(imageProcessor != null).assertTrue();
-                let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
-                    sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.MEDIUM);
-                expect(enhancedPixelmap != null).assertTrue();
-                done();
-            } catch (err) {
-                console.info('testVideoProcessTs004 failed, error is' + err.message);
-                if (err.code != undefined) {
-                    expect(false).assertTrue();
+            if (src != undefined) {
+                let sourceImage = src as image.PixelMap;
+                try {
+                    let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+                    expect(imageProcessor != null).assertTrue();
+                    let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
+                        sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.MEDIUM);
+                    expect(enhancedPixelmap != null).assertTrue();
+                    done();
+                } catch (err) {
+                    console.info('testVideoProcessTs004 failed, error is' + err.message);
+                    if (err.code != undefined) {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    expect(true).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -180,25 +167,24 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             }
-            try {
-                let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
-                const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
-                let targetWidth = imageInfo.size.width * 2;
-                let targetHeight = imageInfo.size.height * 2;
-                let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-                expect(imageProcessor != null).assertTrue();
-                let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
-                    sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.LOW);
-                expect(enhancedPixelmap != null).assertTrue();
-                done();
-            } catch (err) {
-                console.info('testVideoProcessTs005 failed, error is' + err.message);
-                if (err.code != undefined) {
-                    expect(false).assertTrue();
+            if (src != undefined) {
+                let sourceImage = src as image.PixelMap;
+                try {
+                    let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+                    expect(imageProcessor != null).assertTrue();
+                    let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
+                        sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.LOW);
+                    expect(enhancedPixelmap != null).assertTrue();
+                    done();
+                } catch (err) {
+                    console.info('testVideoProcessTs005 failed, error is' + err.message);
+                    if (err.code != undefined) {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    expect(true).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -216,25 +202,24 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             }
-            try {
-                let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
-                const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
-                let targetWidth = imageInfo.size.width * 2;
-                let targetHeight = imageInfo.size.height * 2;
-                let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-                expect(imageProcessor != null).assertTrue();
-                let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
-                    sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.NONE);
-                expect(enhancedPixelmap != null).assertTrue();
-                done();
-            } catch (err) {
-                console.info('testVideoProcessTs006 failed, error is' + err.message);
-                if (err.code != undefined) {
-                    expect(false).assertTrue();
+            if (src != undefined) {
+                let sourceImage = src as image.PixelMap;
+                try {
+                    let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+                    expect(imageProcessor != null).assertTrue();
+                    let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
+                        sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.NONE);
+                    expect(enhancedPixelmap != null).assertTrue();
+                    done();
+                } catch (err) {
+                    console.info('testVideoProcessTs006 failed, error is' + err.message);
+                    if (err.code != undefined) {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    expect(true).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -252,22 +237,24 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             }
-            try {
-                let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
-                let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-                expect(imageProcessor != null).assertTrue();
-                let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
-                    sourceImage, 2, videoProcessingEngine.QualityLevel.NONE);
-                expect(enhancedPixelmap != null).assertTrue();
-                done();
-            } catch (err) {
-                console.info('testVideoProcessTs007 failed, error is' + err.message);
-                if (err.code != undefined) {
-                    expect(false).assertTrue();
+            if (src != undefined) {
+                let sourceImage = src as image.PixelMap;
+                try {
+                    let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+                    expect(imageProcessor != null).assertTrue();
+                    let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
+                        sourceImage, 2, videoProcessingEngine.QualityLevel.NONE);
+                    expect(enhancedPixelmap != null).assertTrue();
+                    done();
+                } catch (err) {
+                    console.info('testVideoProcessTs007 failed, error is' + err.message);
+                    if (err.code != undefined) {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    expect(true).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -285,25 +272,24 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             }
-            try {
-                let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
-                const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
-                let targetWidth = imageInfo.size.width * 2;
-                let targetHeight = imageInfo.size.height * 2;
-                let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-                expect(imageProcessor != null).assertTrue();
-                let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
-                    sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.NONE);
-                expect(enhancedPixelmap != null).assertTrue();
-                done();
-            } catch (err) {
-                console.info('testVideoProcessTs008 failed, error is' + err.message);
-                if (err.code != undefined) {
-                    expect(false).assertTrue();
+            if (src != undefined) {
+                let sourceImage = src as image.PixelMap;
+                try {
+                    let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+                    expect(imageProcessor != null).assertTrue();
+                    let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
+                        sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.NONE);
+                    expect(enhancedPixelmap != null).assertTrue();
+                    done();
+                } catch (err) {
+                    console.info('testVideoProcessTs008 failed, error is' + err.message);
+                    if (err.code != undefined) {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    expect(true).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -321,22 +307,24 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             }
-            try {
-                let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
-                let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-                expect(imageProcessor != null).assertTrue();
-                let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
-                    sourceImage, 2, videoProcessingEngine.QualityLevel.NONE);
-                expect(enhancedPixelmap != null).assertTrue();
-                done();
-            } catch (err) {
-                console.info('testVideoProcessTs009 failed, error is' + err.message);
-                if (err.code != undefined) {
-                    expect(false).assertTrue();
+            if (src != undefined) {
+                let sourceImage = src as image.PixelMap;
+                try {
+                    let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+                    expect(imageProcessor != null).assertTrue();
+                    let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
+                        sourceImage, 2, videoProcessingEngine.QualityLevel.NONE);
+                    expect(enhancedPixelmap != null).assertTrue();
+                    done();
+                } catch (err) {
+                    console.info('testVideoProcessTs009 failed, error is' + err.message);
+                    if (err.code != undefined) {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    expect(true).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
