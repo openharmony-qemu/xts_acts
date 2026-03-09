@@ -203,7 +203,7 @@ let OH_MD_SPEC: OH_MF_INFO[] = [
 ]
 
 class MdMap {
-  map: HashMap<string, number> = new HashMap<string, int>();
+  map: HashMap<string, int> = new HashMap<string, int>();
   constructor(isInit: boolean = true) {
     if (isInit) {
       this.map.set("SHA1", 20);

@@ -1771,15 +1771,15 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let encAlgName: string = "Blowfish|ECB|PKCS7"
         let dataLen: int = 16;
         for (let keyLen = 4; keyLen < 33; keyLen += 4) { // 密钥步长4字节
-          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
+          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen.toInt());
           let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
           let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
           let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
           cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, null);
-          let cipherData: cryptoFramework.DataBlob = await cipher1.doFinal(data);
+          let cipherData: cryptoFramework.DataBlob|null = await cipher1.doFinal(data);
           let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
           cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, null);
-          let plainText = await cipher2.doFinal(cipherData);
+          let plainText: cryptoFramework.DataBlob|null = await cipher2.doFinal(cipherData);
           let ret: boolean = commonUtils.compareDataBlob(data, plainText);
           expect(ret).assertTrue();
         }
@@ -1804,15 +1804,15 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let encAlgName: string = "Blowfish|ECB|PKCS5"
         let dataLen: int = 19;
         for (let keyLen = 4; keyLen < 33; keyLen += 4) { // 密钥步长4字节
-          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
+          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen.toInt());
           let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
           let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
           let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
           cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, null);
-          let cipherData: cryptoFramework.DataBlob = cipher1.doFinalSync(data);
+          let cipherData: cryptoFramework.DataBlob|null = cipher1.doFinalSync(data);
           let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
           cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, null);
-          let plainText = cipher2.doFinalSync(cipherData);
+          let plainText: cryptoFramework.DataBlob|null = cipher2.doFinalSync(cipherData);
           let ret: boolean = commonUtils.compareDataBlob(data, plainText);
           expect(ret).assertTrue();
         }
@@ -1837,15 +1837,15 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let encAlgName: string = "Blowfish|ECB|NoPadding"
         let dataLen: int = 16;
         for (let keyLen = 4; keyLen < 33; keyLen += 4) { // 密钥步长4字节
-          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
+          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen.toInt());
           let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
           let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
           let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
           cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, null);
-          let cipherData: cryptoFramework.DataBlob = cipher1.doFinalSync(data);
+          let cipherData: cryptoFramework.DataBlob|null = cipher1.doFinalSync(data);
           let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
           cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, null);
-          let plainText = cipher2.doFinalSync(cipherData);
+          let plainText: cryptoFramework.DataBlob|null = cipher2.doFinalSync(cipherData);
           let ret: boolean = commonUtils.compareDataBlob(data, plainText);
           expect(ret).assertTrue();
         }
@@ -1876,15 +1876,15 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             let algName: string = syncSymEncAndDecUtils.WEAK_SYM_CIPHER[index];
             let mode: string = syncSymEncAndDecUtils.WEAK_MODE_CIPHER[index];
             let encAlgName: string = algName + "|" + mode + "|NoPadding";
-            let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
+            let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen.toInt());
             let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
             let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
             let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
             cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
-            let cipherData: cryptoFramework.DataBlob = cipher1.doFinalSync(data);
+            let cipherData: cryptoFramework.DataBlob|null = cipher1.doFinalSync(data);
             let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
             cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
-            let plainText = cipher2.doFinalSync(cipherData);
+            let plainText: cryptoFramework.DataBlob|null = cipher2.doFinalSync(cipherData);
             let ret: boolean = commonUtils.compareDataBlob(data, plainText);
             expect(ret).assertTrue();
           }
@@ -1916,15 +1916,15 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             let algName: string = syncSymEncAndDecUtils.WEAK_SYM_CIPHER[index];
             let mode: string = syncSymEncAndDecUtils.WEAK_MODE_CIPHER[index];
             let encAlgName: string = algName + "|" + mode + "|PKCS7";
-            let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
+            let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen.toInt());
             let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
             let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
             let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
             cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
-            let cipherData: cryptoFramework.DataBlob = cipher1.doFinalSync(data);
+            let cipherData: cryptoFramework.DataBlob|null = cipher1.doFinalSync(data);
             let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
             cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
-            let plainText = cipher2.doFinalSync(cipherData);
+            let plainText: cryptoFramework.DataBlob|null = cipher2.doFinalSync(cipherData);
             let ret: boolean = commonUtils.compareDataBlob(data, plainText);
             expect(ret).assertTrue();
           }

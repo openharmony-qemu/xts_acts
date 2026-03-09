@@ -801,7 +801,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let algName: string = "RSA512";
         let signAlgName: string = "RSA512|PKCS1|MD5|OnlySign";
         let verifyAlgName: string = "RSA512|PKCS1|MD5|OnlyVerify";
-        let blockSize: number = 5;
+        let blockSize: int = 5;
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         signVerifySyncUtils.doVerifyWithUpdateSync(verifyAlgName, keyPair.pubKey, msg, dataSign, blockSize);
