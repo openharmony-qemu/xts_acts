@@ -86,7 +86,7 @@ namespace ArkUICapiTest {
     ArkUI_NumberValue height_value5[] = { {.i32 = ARKUI_TEXTPICKER_RANGETYPE_RANGE_CONTENT}};
     auto hande = OH_ArkUI_TextPickerRangeContentArray_Create(3);
     OH_ArkUI_TextPickerRangeContentArray_SetTextAtIndex(hande, "video", 0);
-    OH_ArkUI_TextPickerRangeContentArray_SetIconAtIndex(hande, "resource://base/media/icon.png", 0);
+    OH_ArkUI_TextPickerRangeContentArray_SetIconAtIndex(hande, "resource://base/media/startIcon.png", 0);
     OH_ArkUI_TextPickerRangeContentArray_SetTextAtIndex(hande, "test", 1);
     ArkUI_AttributeItem range_item_M5 = { height_value5, sizeof(height_value5) / sizeof(ArkUI_NumberValue)};
     range_item_M5.object = hande;

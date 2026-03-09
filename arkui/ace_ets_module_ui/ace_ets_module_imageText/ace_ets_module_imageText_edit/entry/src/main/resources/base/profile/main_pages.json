@@ -127,6 +127,8 @@
         "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined02",
         "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined03",
         "MainAbility/pages/TextArea/TextAreaMethodsNull",
-        "MainAbility/pages/TextArea/TextAreaControllerMethodsNull"
+        "MainAbility/pages/TextArea/TextAreaControllerMethodsNull",
+        "MainAbility/pages/TextInput/TextInputMethodsNull",
+        "MainAbility/pages/TextInput/TextInputControllerMethodsNull"
     ]
 }

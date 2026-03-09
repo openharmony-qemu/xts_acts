@@ -40,6 +40,7 @@ export default function animateToTest() {
     afterEach(async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info("animateToTest after each called");
+      done();
     });
     /**
      * @tc.name   animateToTest_001

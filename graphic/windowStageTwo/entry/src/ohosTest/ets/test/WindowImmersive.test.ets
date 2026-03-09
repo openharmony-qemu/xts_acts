@@ -2712,7 +2712,11 @@ export default function windowImmersiveTest() {
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
-              expect(err.code == 801 || err.code == 1300002).assertTrue();
+              if (err.code === 801) {
+                expect(err.code).assertEqual(801);
+             } else {
+                expect(err.code).assertEqual(1300002);
+             }
               done();
             })
           } catch (err) {
@@ -2763,7 +2767,11 @@ export default function windowImmersiveTest() {
               console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
               await subWindowClass?.destroyWindow();
               await sleep(1000);
-              expect(err.code == 801 || err.code == 1300004).assertTrue();
+              if (err.code === 801) {
+                expect(err.code).assertEqual(801);
+              } else {
+                expect(err.code).assertEqual(1300004);
+              }
               done();
             })
           } catch (err) {
@@ -2981,7 +2989,11 @@ export default function windowImmersiveTest() {
             await dialogWindowClass?.destroyWindow();
             console.info(`${message} after destroyWindow`);
             await sleep(1000);
-            expect(err.code == 801 || err.code == 1300004).assertTrue();
+            if (err.code === 801) {
+              expect(err.code).assertEqual(801);
+            } else {
+              expect(err.code).assertEqual(1300004);
+            }
             done();
           }
         }).catch((err: BusinessError) => {
@@ -3028,7 +3040,11 @@ export default function windowImmersiveTest() {
             done();
           } catch (err) {
             console.error(`${message} Failed to assert isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
-            expect(err.code == 801 || err.code == 1300002).assertTrue();
+            if (err.code === 801) {
+              expect(err.code).assertEqual(801);
+            } else {
+              expect(err.code).assertEqual(1300002);
+            }
             done();
           }
         }).catch((err: BusinessError) => {

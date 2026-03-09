@@ -374,6 +374,153 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_013
+   * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1300
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_write_sync_013', Level.LEVEL0, async function () {
+    try {
+      fileIO.writeSync(null, FILE_CONTENT, { offset: 0 });
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_sync_013 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_sync_014
+   * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1400
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_write_sync_014', Level.LEVEL0, async function () {
+    try {
+      fileIO.writeSync(undefined, FILE_CONTENT, { offset: 0 });
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_sync_014 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_sync_015
+   * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1500
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_write_sync_015', Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_write_sync_015');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      fileIO.writeSync(file.fd, null, { offset: 0 });
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_sync_015 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_sync_016
+   * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1600
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_write_sync_016', Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_write_sync_016');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      fileIO.writeSync(file.fd, undefined, { offset: 0 });
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_sync_016 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_sync_017
+   * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1700
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_write_sync_017', Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_write_sync_017');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      let bytesWritten = fileIO.writeSync(file.fd, FILE_CONTENT, null);
+      expect(bytesWritten == FILE_CONTENT.length).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_sync_017 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_sync_018
+   * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1800
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_write_sync_018', Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_write_sync_018');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      let bytesWritten = fileIO.writeSync(file.fd, FILE_CONTENT, undefined);
+      expect(bytesWritten == FILE_CONTENT.length).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_sync_018 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_sync_019
+   * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1900
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_write_sync_019', Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_write_sync_019');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      let bytesWritten = fileIO.writeSync(file.fd, "", { offset: 0 });
+      console.log('fileIO_test_write_sync_019 has bytesWritten ' + bytesWritten);
+      expect(bytesWritten === 0).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_sync_019 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
    * @tc.name   fileIO_test_write_async_000
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0000
    * @tc.desc   Test write() interfaces. Promise.
@@ -1156,5 +1303,521 @@ export default function fileIOWrite() {
       expect(false).assertTrue();
     }
   });
+
+  /**
+   * @tc.name   fileIO_test_write_async_025
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2500
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_025', Level.LEVEL3, async function (done) {
+    try {
+      await fileIO.write(null, FILE_CONTENT, { offset: 0 });
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_write_async_025 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_026
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2600
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_026', Level.LEVEL3, async function (done) {
+    try {
+      await fileIO.write(undefined, FILE_CONTENT, { offset: 0 });
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_write_async_026 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_027
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2700
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_027', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_024');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      await fileIO.write(file.fd, null, { offset: 0 });
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_write_async_027 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_028
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2800
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_028', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_028');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      await fileIO.write(file.fd, undefined, { offset: 0 });
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_write_async_028 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_029
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2900
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_029', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_029');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      let bytesWritten = await fileIO.write(file.fd, FILE_CONTENT, null);
+      expect(bytesWritten == FILE_CONTENT.length).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileIO_test_write_async_029 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_030
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_3000
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_030', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_030');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      let bytesWritten = await fileIO.write(file.fd, FILE_CONTENT, undefined);
+      expect(bytesWritten == FILE_CONTENT.length).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileIO_test_write_async_030 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_031
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_3100
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_031', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_031');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      let bytesWritten = await fileIO.write(file.fd, "", { offset: 0 });
+      console.log('fileIO_test_write_async_031 bytesWritten' + bytesWritten);
+      expect(bytesWritten === 0).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileIO_test_write_async_031 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_032
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_3200
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_032', Level.LEVEL3, async function (done) {
+    try {
+      fileIO.write(null, FILE_CONTENT, (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_032 err package1: ' + JSON.stringify(err));
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_032 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_033
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_3300
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_033', Level.LEVEL3, async function (done) {
+    try {
+      fileIO.write(undefined, FILE_CONTENT, (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_033 err package1: ' + JSON.stringify(err));
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_033 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_034
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_3400
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_034', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_034');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      fileIO.write(file.fd, null, (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_034 err package1: ' + JSON.stringify(err));
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_034 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_035
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_3500
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_035', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_035');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      fileIO.write(file.fd, undefined, (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_035 err package1: ' + JSON.stringify(err));
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_035 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_036
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_3600
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_036', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_036');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      fileIO.write(file.fd, "", (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_036 err package1: ' + JSON.stringify(err));
+          done();
+        }
+        expect(bytesWritten1 === 0).assertTrue();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_036 has failed for ' + e.message + ', code: ' + e.code);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_037
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_3700
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_037', Level.LEVEL3, async function (done) {
+    try {
+      fileIO.write(null, FILE_CONTENT, {
+        length: 5,
+        offset: 5,
+        encoding: 'utf-8',
+      }, (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_037 err package1: ' + JSON.stringify(err));
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_037 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_038
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_3800
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_038', Level.LEVEL3, async function (done) {
+    try {
+      fileIO.write(undefined, FILE_CONTENT, {
+        length: 5,
+        offset: 5,
+        encoding: 'utf-8',
+      }, (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_038 err package1: ' + JSON.stringify(err));
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_038 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_039
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_3900
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_039', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_036');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      fileIO.write(file.fd, null, {
+        length: 5,
+        offset: 5,
+        encoding: 'utf-8',
+      }, (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_039 err package1: ' + JSON.stringify(err));
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_039 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_040
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_4000
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_040', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_040');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      fileIO.write(file.fd, undefined, {
+        length: 5,
+        offset: 5,
+        encoding: 'utf-8',
+      }, (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_040 err package1: ' + JSON.stringify(err));
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_040 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_041
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_4100
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_041', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_041');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      fileIO.write(file.fd, FILE_CONTENT, null, (err, bytesWritten) => {
+        if (err) {
+          console.log('fileIO_test_write_async_041 err package1: ' + JSON.stringify(err));
+          done();
+        }
+        expect(bytesWritten == FILE_CONTENT.length).assertTrue();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_041 has failed for ' + e.message + ', code: ' + e.code);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_042
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_4200
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_042', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_042');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      fileIO.write(file.fd, FILE_CONTENT, undefined, (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_042 err package1: ' + JSON.stringify(err));
+          done();
+        }
+        expect(bytesWritten1 == FILE_CONTENT.length).assertTrue();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_042 has failed for ' + e.message + ', code: ' + e.code);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_write_async_043
+   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_4300
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_write_async_043', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_write_async_043');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+    expect(isIntNum(file.fd)).assertTrue();
+    try {
+      fileIO.write(file.fd, "", {
+        length: 5,
+        offset: 5,
+        encoding: 'utf-8',
+      }, (err, bytesWritten1) => {
+        if (err) {
+          console.log('fileIO_test_write_async_043 err package1: ' + JSON.stringify(err));
+          done();
+        }
+        console.log('fileIO_test_write_async_043 err bytesWritten1: ' + bytesWritten1);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_write_async_043 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.unlinkSync(fpath);
+      done();
+    }
+  });
+
 })
 }

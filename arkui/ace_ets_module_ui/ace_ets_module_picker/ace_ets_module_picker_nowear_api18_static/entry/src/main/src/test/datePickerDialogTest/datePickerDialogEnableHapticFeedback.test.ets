@@ -24,15 +24,15 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils'
 
-export default function EnableHapticFeedback() {
-  describe('EnableHapticFeedback', () => {
+export default function DatePickerDialogEnableHapticFeedbackTest() {
+  describe('DatePickerDialogEnableHapticFeedbackTest', () => {
     beforeAll(async (): Promise<void> => {
-      console.info("EnableHapticFeedback beforeAll start");
+      console.info("DatePickerDialogEnableHapticFeedbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
     });
 
     beforeEach(async () => {
-      console.info('EnableHapticFeedback beforeEach start');
+      console.info('DatePickerDialogEnableHapticFeedbackTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerDialog/datePickerDialogEnableHapticFeedback',
       }
@@ -40,122 +40,120 @@ export default function EnableHapticFeedback() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info('get EnableHapticFeedback state pages:' + JSON.stringify(pages));
+        console.info('get DatePickerDialogEnableHapticFeedbackTest state pages:' + JSON.stringify(pages));
         if (!('datePickerDialogEnableHapticFeedback' == pages.name)) {
-          console.info('get EnableHapticFeedback pages.name:' + JSON.stringify(pages.name));
+          console.info('get DatePickerDialogEnableHapticFeedbackTest pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error('push EnableHapticFeedback page error:' + err);
+        console.error('push DatePickerDialogEnableHapticFeedbackTest page error:' + err);
       }
-      console.info('EnableHapticFeedback beforeEach end');
+      console.info('DatePickerDialogEnableHapticFeedbackTest beforeEach end');
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info('EnableHapticFeedback after each called');
+      console.info('DatePickerDialogEnableHapticFeedbackTest after each called');
     });
     
     
-/**
+    /**
      * @tc.number   DatePickerDialog_EnableHapticFeedback_static_001
      * @tc.name     DatePickerDialog_EnableHapticFeedback_static_001
      * @tc.desc     DatePickerDialog_EnableHapticFeedback_static_001
      * @tc.level    Level.LEVEL1
      */
-it('DatePickerDialog_EnableHapticFeedback_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'DatePickerDialog_EnableHapticFeedback_static_001';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('DatePickerDialog1', 10, '')
-      await CommonFunc.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    it('DatePickerDialog_EnableHapticFeedback_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('DatePickerDialog_EnableHapticFeedback_static_001 start ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('DatePickerDialog1'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let datePicker1 = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-      console.info('[DatePickerDialog_EnableHapticFeedback_static_001] obj1 is: ' + datePicker1);
-      console.info('[DatePickerDialog_EnableHapticFeedback_static_001] obj1 is: ' + JSON.stringify(JSON.parseJsonElement(datePicker1).getElement('$attrs').getString('enableHapticFeedback')));
-      inspector.sendEventByKey('DatePickerDialog1', 10, '')
-      expect(JSON.parseJsonElement(datePicker1).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
+      console.info('DatePickerDialog_EnableHapticFeedback_static_001 getElement start');
+      let datePicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0];  
+      let enableHapticFeedbackVal = datePicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[DatePickerDialog_EnableHapticFeedback_static_001] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(true);
+      console.info('DatePickerDialog_EnableHapticFeedback_static_001 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
       done();
     });
-
-    
-    
-/**
+ 
+    /**
      * @tc.number   DatePickerDialog_EnableHapticFeedback_static_002
      * @tc.name     DatePickerDialog_EnableHapticFeedback_static_002
      * @tc.desc     DatePickerDialog_EnableHapticFeedback_static_002
      * @tc.level    Level.LEVEL1
      */
-it('DatePickerDialog_EnableHapticFeedback_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'DatePickerDialog_EnableHapticFeedback_static_002';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('DatePickerDialog2', 10, '')
-      await CommonFunc.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    it('DatePickerDialog_EnableHapticFeedback_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('DatePickerDialog_EnableHapticFeedback_static_002 start ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('DatePickerDialog2'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let datePicker1 = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-      console.info('[DatePickerDialog_EnableHapticFeedback_static_002] obj1 is: ' + datePicker1);
-      console.info('[DatePickerDialog_EnableHapticFeedback_static_002] obj1 is: ' + JSON.stringify(JSON.parseJsonElement(datePicker1).getElement('$attrs').getString('enableHapticFeedback')));
-      inspector.sendEventByKey('DatePickerDialog2', 10, '')
-      expect(JSON.parseJsonElement(datePicker1).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(false);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
+      console.info('DatePickerDialog_EnableHapticFeedback_static_002 getElement start');
+      let datePicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0];  
+      let enableHapticFeedbackVal = datePicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[DatePickerDialog_EnableHapticFeedback_static_002] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(false);
+      console.info('DatePickerDialog_EnableHapticFeedback_static_002 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
       done();
     });
-
-    
-    
-/**
+  
+    /**
      * @tc.number   DatePickerDialog_EnableHapticFeedback_static_003
      * @tc.name     DatePickerDialog_EnableHapticFeedback_static_003
      * @tc.desc     DatePickerDialog_EnableHapticFeedback_static_003
      * @tc.level    Level.LEVEL1
      */
-it('DatePickerDialog_EnableHapticFeedback_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'DatePickerDialog_EnableHapticFeedback_static_003';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('DatePickerDialog3', 10, '')
-      await CommonFunc.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    it('DatePickerDialog_EnableHapticFeedback_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('DatePickerDialog_EnableHapticFeedback_static_003 start ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('DatePickerDialog3'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let datePicker1 = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-      console.info('[DatePickerDialog_EnableHapticFeedback_static_003] obj1 is: ' + datePicker1);
-      console.info('[DatePickerDialog_EnableHapticFeedback_static_003] obj1 is: ' + JSON.stringify(JSON.parseJsonElement(datePicker1).getElement('$attrs').getString('enableHapticFeedback')));
-      inspector.sendEventByKey('DatePickerDialog3', 10, '')
-      expect(JSON.parseJsonElement(datePicker1).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
-      console.info('[' + tagName + '] END ==========================='); 
-      await CommonFunc.sleep(2000);
+      console.info('DatePickerDialog_EnableHapticFeedback_static_003 getElement start');
+      let datePicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0];  
+      let enableHapticFeedbackVal = datePicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[DatePickerDialog_EnableHapticFeedback_static_003] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(true);
+      console.info('DatePickerDialog_EnableHapticFeedback_static_003 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
       done();
     });
-    
-    
-    
-/**
+      
+    /**
      * @tc.number   DatePickerDialog_EnableHapticFeedback_static_004
      * @tc.name     DatePickerDialog_EnableHapticFeedback_static_004
      * @tc.desc     DatePickerDialog_EnableHapticFeedback_static_004
      * @tc.level    Level.LEVEL1
      */
-it('DatePickerDialog_EnableHapticFeedback_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'DatePickerDialog_EnableHapticFeedback_static_004';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('DatePickerDialog4', 10, '')
-      await CommonFunc.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    it('DatePickerDialog_EnableHapticFeedback_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('DatePickerDialog_EnableHapticFeedback_static_004 start ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('DatePickerDialog4'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let datePicker1 = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0])
-      console.info('[DatePickerDialog_EnableHapticFeedback_static_004] obj1 is: ' + datePicker1);
-      console.info('[DatePickerDialog_EnableHapticFeedback_static_004] obj1 is: ' + JSON.stringify(JSON.parseJsonElement(datePicker1).getElement('$attrs').getString('enableHapticFeedback')));
-      inspector.sendEventByKey('DatePickerDialog4', 10, '')
-      expect(JSON.parseJsonElement(datePicker1).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
+      console.info('DatePickerDialog_EnableHapticFeedback_static_004 getElement start');
+      let datePicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0];  
+      let enableHapticFeedbackVal = datePicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[DatePickerDialog_EnableHapticFeedback_static_004] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(true);
+      console.info('DatePickerDialog_EnableHapticFeedback_static_004 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
       done();
     });
   })

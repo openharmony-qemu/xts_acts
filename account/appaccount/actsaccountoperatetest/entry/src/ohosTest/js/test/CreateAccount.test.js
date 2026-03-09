@@ -226,6 +226,7 @@ export default function ActsAccountCreateAccount() {
       var appAccountManager = account.createAppAccountManager();
       try {
         await appAccountManager.createAccount(limitAccountName, createAccountOptions);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {

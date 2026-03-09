@@ -433,6 +433,36 @@ export default function ActsAccountAuthTokenStatic() {
       });
 
     /**
+     * @tc.number     ActsAccountAuthToken_7201
+     * @tc.name       ActsAccountAuthToken_7201
+     * @tc.desc       test getAuthList promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('ActsAccountAuthToken_7201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>7201 start====");
+        try {
+          await accountManager.createAccount("account_tokenTest_name");
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_7201 setAuthToken start====");
+          await accountManager.setAuthToken("account_tokenTest_name","authType","test_token");
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_7201 getAuthList start====");
+          let dataArray: Array<string> = await accountManager.getAuthList("account_tokenTest_name","authType");
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_7201 getAuthList dataArray:" + JSON.stringify(dataArray));
+          expect(dataArray.length).assertEqual(0);
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_7201 removeAccount start====");
+          await accountManager.removeAccount("account_tokenTest_name");
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_7201 end====");
+          done();
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_7201 err:" + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
      * @tc.number     ActsAccountAuthToken_7300
      * @tc.name       ActsAccountAuthToken_7300
      * @tc.desc       appAccount authToken scene testcases
@@ -984,6 +1014,33 @@ export default function ActsAccountAuthTokenStatic() {
       });
 
     /**
+     * @tc.number     ActsAccountAuthToken_8401
+     * @tc.name       ActsAccountAuthToken_8401
+     * @tc.desc       getAllAuthTokens promise test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('ActsAccountAuthToken_8401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>8401 start====");
+        hilog.info(0x0000, tag, "====>8401 createAccount start====");
+        try {
+          await accountManager.createAccount("acount_no_setToken");
+          let ArrayData: Array<account.AuthTokenInfo> = await accountManager.getAllAuthTokens("acount_no_setToken", OWNERSELF);
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_8401 getAllAuthTokens ArrayData:" + JSON.stringify(ArrayData));
+          expect(ArrayData.length).assertEqual(0);
+          await accountManager.removeAccount("acount_no_setToken");
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_8401 end====");
+          done();
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_8401 err:" + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
      * @tc.number     ActsAccountAuthToken_8500
      * @tc.name       ActsAccountAuthToken_8500
      * @tc.desc       appAccount authToken scene testcases
@@ -1034,6 +1091,36 @@ export default function ActsAccountAuthTokenStatic() {
               });
           });
         });
+      });
+
+    /**
+     * @tc.number     ActsAccountAuthToken_8501
+     * @tc.name       ActsAccountAuthToken_8501
+     * @tc.desc       appAccount authToken scene testcases
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('ActsAccountAuthToken_8501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>8501 start====");
+        console.info("====>ActsAccountAuthToken_8501 createAccount start");
+        try {
+          await accountManager.createAccount("acount_no_setToken");
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_8501 setAuthToken start");
+          await accountManager.setAuthToken("acount_no_setToken","authType","test_token");
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_8501 getAllAuthTokens start");
+          let ArrayData: Array<account.AuthTokenInfo> = await accountManager.getAllAuthTokens("acount_no_setToken", OWNERSELF);
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_8501 getAllAuthTokens ArrayData:" + JSON.stringify(ArrayData));
+          expect(ArrayData.length > 0).assertTrue();
+          await accountManager.removeAccount("acount_no_setToken");
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_8501 end====");
+          done();
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>ActsAccountAuthToken_8501 err:" + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
       });
 
     /**
@@ -1334,6 +1421,9 @@ export default function ActsAccountAuthTokenStatic() {
           let data1: string = await accountManager.getAuthToken("promise_normal", OWNERSELF, "authType");
           hilog.info(0x0000, tag, "====>getAuthToken 0200 data: " + data1);
           expect(data1).assertEqual("promise_normal_token");
+          let state0: boolean = await accountManager.checkAuthTokenVisibility("promise_normal","authType","test_bundleName");
+          hilog.info(0x0000, tag, "====>checkOAuthTokenVisibility ActsAccountOAuthToken_0200 state: " + state0);
+          expect(state0).assertFalse();
           hilog.info(0x0000, tag, "====>0200 checkAuthTokenVisibility start====");
           let state: boolean = await accountManager.checkAuthTokenVisibility("promise_normal", "authType", OWNERSELF);
           hilog.info(0x0000, tag, "====>checkAuthTokenVisibility ActsAccountAuthToken_0200 state: " + state);
@@ -4458,6 +4548,39 @@ export default function ActsAccountAuthTokenStatic() {
                 });
             });
         });
+      });
+
+    /**
+     * @tc.number     ActsAccountAuthToken_10301
+     * @tc.name       ActsAccountAuthToken_10301
+     * @tc.desc       test getAuthList promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('ActsAccountAuthToken_10301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>10301 start====");
+        try {
+          await accountManager.createAccount("account_setAuthTokenVisibility_name");
+          console.info("====>ActsAccountAuthToken_10301 createAccount success");
+          await accountManager.setAuthToken("account_setAuthTokenVisibility_name","authType","test_token");
+          console.info("====>ActsAccountAuthToken_10301 setAuthToken success");
+          await accountManager.setAuthTokenVisibility("account_setAuthTokenVisibility_name", "authType", " ", true);
+          console.info("====>ActsAccountAuthToken_10301 setAuthTokenVisibility success");
+          let dataArray: Array<string> = await accountManager.getAuthList("account_setAuthTokenVisibility_name","authType");
+          console.info("====>ActsAccountAuthToken_10301 getAuthList dataArray:" + JSON.stringify(dataArray));
+          expect(dataArray.length > 0).assertTrue();
+          expect(dataArray.length).assertEqual(1);
+          await accountManager.removeAccount("account_setAuthTokenVisibility_name");
+          console.info("====>ActsAccountAuthToken_10301 removeAccount success");
+          console.info("====>ActsAccountAuthToken_10301 end====");
+          done();
+        } catch (err) {
+          console.info("====>ActsAccountAuthToken_10301 err:" + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
       });
 
     /**

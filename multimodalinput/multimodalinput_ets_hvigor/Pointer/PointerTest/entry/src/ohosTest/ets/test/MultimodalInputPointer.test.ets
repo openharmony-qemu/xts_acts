@@ -742,9 +742,6 @@ export default function MultimodalInputPointerTest() {
           } else {
             try {
               for (let pointerStyle = pointer.PointerStyle.DEFAULT; pointerStyle <= pointer.PointerStyle.LASER_CURSOR_DOT_RED; pointerStyle++) {
-                if (pointerStyle == (pointer.PointerStyle.MIDDLE_BTN_EAST_WEST + 1)) {
-                  pointerStyle = pointer.PointerStyle.RUNNING_LEFT;
-                }
                 pointer.setPointerStyle(windowId, pointerStyle, error => {
                   console.info(`${caseName} Set pointer style success`);
                 });
@@ -766,6 +763,77 @@ export default function MultimodalInputPointerTest() {
       }
       console.info(`${caseName} exit`);
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0700
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0700
+     * @tc.desc   Test promise setPointerStyle interface to set the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0700";
+      console.info(`${caseName} enter`);
+      try {
+        let ifSetPointerStyleSuccess = 0;
+        window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+          let windowId = win.getWindowProperties().id;
+          if (error.code) {
+            console.info(`${caseName} Failed to obtain the top window. Cause: ${JSON.stringify(error)}`);
+            expect().assertFail();
+            done();
+          } else if (windowId < 0) {
+            console.info(`${caseName} Invalid windowId`);
+            expect().assertFail();
+            done();
+          } else {
+            try {
+              for (let pointerStyle = pointer.PointerStyle.DEFAULT; pointerStyle <= pointer.PointerStyle.LASER_CURSOR_DOT_RED; pointerStyle++) {
+                pointer.setPointerStyle(windowId, pointerStyle).then(() => {
+                  console.info(`${caseName} Set pointer style success`);
+                });
+                ifSetPointerStyleSuccess++;
+              }
+              expect(ifSetPointerStyleSuccess).assertEqual(52);
+              done();
+            } catch (error) {
+              console.info(`${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect().assertFail();
+              done();
+            }
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} Get last window failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    }); 
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0800
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0800
+     * @tc.desc   Test promise setPointerStyle interface to set undefined value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0800";
+      try {
+        pointer.setPointerStyle(10, undefined).then(() => {
+          console.info(`${caseName} set pointer style success`);
+          expect().assertFail();
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });  
 
     /**
      * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0100
@@ -874,9 +942,6 @@ export default function MultimodalInputPointerTest() {
           } else {
             try {
               for (let pointerStyle = pointer.PointerStyle.DEFAULT; pointerStyle <= pointer.PointerStyle.LASER_CURSOR_DOT_RED; pointerStyle++) {
-                if (pointerStyle == (pointer.PointerStyle.MIDDLE_BTN_EAST_WEST + 1)) {
-                  pointerStyle = pointer.PointerStyle.RUNNING_LEFT;
-                }
                 pointer.setPointerStyleSync(windowId, pointerStyle);
                 ifSetPointerStyleSyncSuccess++;
                 console.info(`${caseName} Set pointer style success:${ifSetPointerStyleSyncSuccess}`);
@@ -897,6 +962,43 @@ export default function MultimodalInputPointerTest() {
       }
       console.info(`${caseName} exit`);
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0500
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0500
+     * @tc.desc   Test setPointerStyleSync interface to set DEVELOPER_DEFINED_ICON mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0500";
+      let ifSetPointerStyleSyncSuccess = 0;
+      window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+        let windowId = win.getWindowProperties().id;
+        if (error.code) {
+          console.info(`${caseName} Failed to obtain the top window. Cause: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        } else if (windowId < 0) {
+          console.info(`${caseName} Invalid windowId`);
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            pointer.setPointerStyleSync(windowId, pointer.PointerStyle.DEVELOPER_DEFINED_ICON);
+            console.info(`${caseName} Set pointer style success`);
+            ifSetPointerStyleSyncSuccess++;
+            expect(ifSetPointerStyleSyncSuccess).assertEqual(1);
+            done();
+          } catch (error) {
+            console.info(`${caseName} getPointerSize failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            expect().assertFail();
+            done();
+          }
+        }
+      });
+    });    
 
     /**
      * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0100
@@ -2064,6 +2166,72 @@ export default function MultimodalInputPointerTest() {
         });
       });
       console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_3000
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_3000
+     * @tc.desc   Test promise setCustomCursor interface to set the focusY as null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursor_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_3000";
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try {
+              pointer.setCustomCursor(windowId, pixelMap, 25, null).then(() => {
+                console.info(`${caseName} setCustomCursor success`);
+                expect().assertFail();
+                done();
+              });
+            } catch (error) {
+              console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401)
+              done();
+            }
+          });
+        });
+      });
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_3100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_3100
+     * @tc.desc   Test promise setCustomCursor interface to set the focusY as undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursor_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_3100";
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try {
+              pointer.setCustomCursor(windowId, pixelMap, 25, undefined).then(() => {
+                console.info(`${caseName} setCustomCursor success`);
+                expect().assertFail();
+                done();
+              });
+            } catch (error) {
+              console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401)
+              done();
+            }
+          });
+        });
+      });
     });
 
     /**

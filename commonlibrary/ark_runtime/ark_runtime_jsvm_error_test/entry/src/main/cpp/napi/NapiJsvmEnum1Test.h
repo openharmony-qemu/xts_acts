@@ -28,6 +28,8 @@ napi_value JsvmJspropertyNoReceiverlCheckCode(napi_env env1, napi_callback_info 
 napi_value JsvmKeyAllPropertiesCode(napi_env env1, napi_callback_info info);
 napi_value JsvmKeySkipStringsCode(napi_env env1, napi_callback_info info);
 napi_value JsvmCompileModeDefaultCode(napi_env env1, napi_callback_info info);
+napi_value JsvmFixJSVMExpectedTest(napi_env env1, napi_callback_info info);
+napi_value JsvmApiEnumStructTestCheck(napi_env env1, napi_callback_info info);
 napi_value JsvmCompileModeConsumeCodeCode(napi_env env1, napi_callback_info info);
 napi_value JsvmCompileModeProduceCompileProfileCode(napi_env env1, napi_callback_info info);
 napi_value JsvmCompileModeConsumeCompileProfileCode(napi_env env1, napi_callback_info info);

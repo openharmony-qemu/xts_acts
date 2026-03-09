@@ -274,6 +274,8 @@ export default function GraphicTextEnum() {
         expect('0').assertEqual(text.EllipsisMode.START + '');
         expect('1').assertEqual(text.EllipsisMode.MIDDLE + '');
         expect('2').assertEqual(text.EllipsisMode.END + '');
+        expect('3').assertEqual(text.EllipsisMode.MULTILINE_START + '');
+        expect('4').assertEqual(text.EllipsisMode.MULTILINE_MIDDLE + '');
         done();
       } catch (err) {
         console.info(msg + 'test enum value of EllipsisMode error ' + JSON.stringify(err));

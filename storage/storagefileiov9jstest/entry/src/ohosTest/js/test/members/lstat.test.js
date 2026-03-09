@@ -17,7 +17,7 @@ import {
   fileIO, FILE_CONTENT, prepareFile, nextFileName, isIntNum, isBigInt,
   describe, it, expect,
 } from '../Common';
-import { Level } from '@ohos/hypium';
+import { TestType, Size, Level } from '@ohos/hypium';
 
 export default function fileIOLstat() {
 describe('fileIO_fs_lstat', function () {
@@ -1572,6 +1572,191 @@ describe('fileIO_fs_lstat', function () {
     } catch (e) {
       console.log('fileIO_test_append_file_sync_000 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_lstat_async_015
+   * @tc.number SUB_DF_FILEIO_LSTAT_ASYNC_1500
+   * @tc.desc   Test lstat() interface. Promise. Path is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_lstat_async_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.lstat("");
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_lstat_async_015 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900002);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_lstat_async_016
+   * @tc.number SUB_DF_FILEIO_LSTAT_ASYNC_1600
+   * @tc.desc   Test lstat() interface. Promise. Path is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_lstat_async_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.lstat(null);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_lstat_async_016 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_lstat_async_017
+   * @tc.number SUB_DF_FILEIO_LSTAT_ASYNC_1700
+   * @tc.desc   Test lstat() interface. Promise. Path is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_lstat_async_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.lstat(undefined);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_lstat_async_017 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_lstat_async_018
+   * @tc.number SUB_DF_FILEIO_LSTAT_ASYNC_1800
+   * @tc.desc   Test lstat() interface. Callback. Path is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_lstat_async_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.lstat("", (err) => {
+      console.log('fileIO_lstat_async_018 has err for ' + err.message + ', code: ' + err.code);
+      expect(err.code).assertEqual(13900002);
+      done();
+      });
+    } catch (e) {
+      console.log('fileIO_lstat_async_018 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_lstat_async_019
+   * @tc.number SUB_DF_FILEIO_LSTAT_ASYNC_1900
+   * @tc.desc   Test lstat() interface. Callback. Path is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_lstat_async_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.lstat(null, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_lstat_async_019 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_lstat_async_020
+   * @tc.number SUB_DF_FILEIO_LSTAT_ASYNC_2000
+   * @tc.desc   Test lstat() interface. Callback. Path is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_lstat_async_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.lstat(undefined, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_lstat_async_020 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_lstat_sync_014
+   * @tc.number SUB_DF_FILEIO_LSTAT_SYNC_1400
+   * @tc.desc   Test lstatSync() interface. Path is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_lstat_sync_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+    try {
+      fileIO.lstatSync("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_lstat_sync_014 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900002);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_lstat_sync_015
+   * @tc.number SUB_DF_FILEIO_LSTAT_SYNC_1500
+   * @tc.desc   Test lstatSync() interface. Path is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_lstat_sync_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+    try {
+      fileIO.lstatSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_lstat_sync_015 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_lstat_sync_016
+   * @tc.number SUB_DF_FILEIO_LSTAT_SYNC_1600
+   * @tc.desc   Test lstatSync() interface. Path is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_lstat_sync_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+
+    try {
+      fileIO.lstatSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_lstat_sync_016 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
     }
   });
 })

@@ -14,7 +14,7 @@
  */
 
 import { fileIO, nextFileName, describe, it, expect } from '../Common';
-import { Level } from '@ohos/hypium';
+import { TestType, Size, Level } from '@ohos/hypium';
 
 export default function fileIOMkdtemp() {
 describe('fileIO_fs_mkdtemp', function () {
@@ -193,6 +193,272 @@ describe('fileIO_fs_mkdtemp', function () {
     } catch (e) {
       console.log('fileIO_test_mkdtemp_async_004 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_async_005
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_0500
+   * @tc.desc   Test mkdtemp() interface. Callback, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_async_005', Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_mkdtemp_async_005');
+
+    try {
+      fileIO.mkdtemp("", (err, res) => {
+        if (err) {
+          console.log('fileIO_test_mkdtemp_async_005 error package: ' + JSON.stringify(err));
+          expect(err.code === 13900020).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_async_005 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_async_006
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_0600
+   * @tc.desc   Test mkdtemp() interface. Callback, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_async_006', Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_mkdtemp_async_006');
+
+    try {
+      fileIO.mkdtemp(null, (err, res) => {
+        if (err) {
+          console.log('fileIO_test_mkdtemp_async_006 error package: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_async_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_async_007
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_0700
+   * @tc.desc   Test mkdtemp() interface. Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_async_007', Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_mkdtemp_async_007');
+
+    try {
+      fileIO.mkdtemp(undefined, (err, res) => {
+        if (err) {
+          console.log('fileIO_test_mkdtemp_async_007 error package: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_async_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_sync_003
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_SYNC_0300
+   * @tc.desc   Test mkdtempSync() interface,parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_sync_003', Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_mkdtemp_sync_003');
+
+    try {
+      let res = fileIO.mkdtempSync("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_sync_003 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_sync_004
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_SYNC_0400
+   * @tc.desc   Test mkdtempSync() interface,parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_sync_004', Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_mkdtemp_sync_004');
+
+    try {
+      let res = fileIO.mkdtempSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_sync_004 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_sync_005
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_SYNC_0500
+   * @tc.desc   Test mkdtempSync() interface,parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_sync_005', Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_mkdtemp_sync_005');
+
+    try {
+      let res = fileIO.mkdtempSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_sync_005 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_async_Promise_005
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_Promise_0500
+   * @tc.desc   Test mkdtemp() interface. Promise. Prefix is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_async_Promise_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.mkdtemp("");
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_async_Promise_005 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_async_Promise_006
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_Promise_0600
+   * @tc.desc   Test mkdtemp() interface. Promise. Prefix is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_async_Promise_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.mkdtemp(null);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_async_Promise_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_async_Promise_007
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_Promise_0700
+   * @tc.desc   Test mkdtemp() interface. Promise. Prefix is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_async_Promise_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.mkdtemp(undefined);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_async_Promise_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_async_008
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_0800
+   * @tc.desc   Test mkdtemp() interface. Callback. Prefix is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_async_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.mkdtemp("", (err) => {
+      console.log('fileIO_test_mkdtemp_async_008 has err failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code).assertEqual(13900020);
+      done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_async_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_async_009
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_0900
+   * @tc.desc   Test mkdtemp() interface. Callback. Prefix is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_async_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.mkdtemp(null, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_async_009 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdtemp_async_010
+   * @tc.number SUB_DF_FILEIO_MKDTEMP_ASYNC_1000
+   * @tc.desc   Test mkdtemp() interface. Callback. Prefix is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdtemp_async_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.mkdtemp(undefined, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdtemp_async_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
       done();
     }
   });

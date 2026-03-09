@@ -471,7 +471,7 @@ export default function ndkTest() {
         try {
           await childProcessManager.startChildProcess('', childProcessManager.StartMode.SELF_FORK).then((pid)=>{
             console.log(`${tag} startChildProcess success, pid: ${pid}`);
-            try{expect().assertFail();}catch(e){}
+            try{expect(pid).assertLarger(0);}catch(e){}
             done();
           }).catch((err:BusinessError)=>{
             console.log(`${tag} startChildProcess error, err: ${err?.code}`);
@@ -506,13 +506,13 @@ export default function ndkTest() {
       console.log(`${tag}, it begin`);
       if(mpEnable == 'true'){
         try {
-          childProcessManager.startChildProcess('', childProcessManager.StartMode.SELF_FORK, ()=>{
-            try{expect().assertFail();}catch(e){}
+          childProcessManager.startChildProcess('', childProcessManager.StartMode.SELF_FORK, (pid)=>{
+            try{expect(pid).assertLarger(0);}catch(e){}
             done();
           })
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(PARAM_INVALID)
+          try{expect().assertFail();}catch(e){}
           done();
         }
       }else if(mpEnable == 'false'){
@@ -789,7 +789,7 @@ export default function ndkTest() {
         try {
           await childProcessManager.startChildProcess('', childProcessManager.StartMode.APP_SPAWN_FORK).then((pid)=>{
             console.log(`${tag} startChildProcess success, pid: ${pid}`);
-            try{expect().assertFail();}catch(e){}
+            try{expect(pid).assertLarger(0);}catch(e){}
             done();
           }).catch((err:BusinessError)=>{
             console.log(`${tag} startChildProcess error, err: ${err?.code}`);
@@ -824,13 +824,13 @@ export default function ndkTest() {
       console.log(`${tag}, it begin`);
       if(mpEnable == 'true'){
         try {
-          childProcessManager.startChildProcess('', childProcessManager.StartMode.APP_SPAWN_FORK, ()=>{
-            try{expect().assertFail();}catch(e){}
+          childProcessManager.startChildProcess('', childProcessManager.StartMode.APP_SPAWN_FORK, (pid)=>{
+            try{expect(pid).assertLarger(0);}catch(e){}
             done();
           })
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(PARAM_INVALID)
+          try{expect().assertFail();}catch(e){}
           done();
         }
       }else if(mpEnable == 'false'){

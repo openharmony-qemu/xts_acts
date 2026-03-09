@@ -1761,5 +1761,190 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
 
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_ListenerStatus_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_ListenerStatus_0100
+     * @tc.desc   OH_UdmfData_Udmf_ListenerStatus_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_ListenerStatus_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0100', ' begin');
+      let result = testNapi.OH_UdmfData_Udmf_ListenerStatus_0001();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0100 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_ListenerStatus_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_ListenerStatus_0200
+     * @tc.desc   OH_UdmfData_Udmf_ListenerStatus_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_ListenerStatus_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0200', ' begin');
+      let result = testNapi.OH_UdmfData_Udmf_ListenerStatus_0002();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0200 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_ListenerStatus_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_ListenerStatus_0300
+     * @tc.desc   OH_UdmfData_Udmf_ListenerStatus_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_ListenerStatus_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0300', ' begin');
+      let result = testNapi.OH_UdmfData_Udmf_ListenerStatus_0003();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0300 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_ListenerStatus_0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_ListenerStatus_0400
+     * @tc.desc   OH_UdmfData_Udmf_ListenerStatus_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_ListenerStatus_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0400', ' begin');
+      let result = testNapi.OH_UdmfData_Udmf_ListenerStatus_0004();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0400 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_ListenerStatus_0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_ListenerStatus_0500
+     * @tc.desc   OH_UdmfData_Udmf_ListenerStatus_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_ListenerStatus_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0500', ' begin');
+      let result = testNapi.OH_UdmfData_Udmf_ListenerStatus_0005();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0500 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_ListenerStatus_0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_ListenerStatus_0600
+     * @tc.desc   OH_UdmfData_Udmf_ListenerStatus_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_ListenerStatus_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0600', ' begin');
+      let result = testNapi.OH_UdmfData_Udmf_ListenerStatus_0006();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0600 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_ListenerStatus_0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_ListenerStatus_0700
+     * @tc.desc   OH_UdmfData_Udmf_ListenerStatus_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_ListenerStatus_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0700', ' begin');
+      let result = testNapi.OH_UdmfData_Udmf_ListenerStatus_0007();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0700 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_ListenerStatus_0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_ListenerStatus_0800
+     * @tc.desc   OH_UdmfData_Udmf_ListenerStatus_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_ListenerStatus_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0800', ' begin');
+      let result = testNapi.OH_UdmfData_Udmf_ListenerStatus_0008();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_ListenerStatus_0800 key is : ' + result, 'aa');
+    });
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_AddRecord_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_AddRecord_0100
+     * @tc.desc   OH_UdmfData_AddRecord_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_AddRecord_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_AddRecord_0100', ' begin');
+      let result = testNapi.OH_UdmfData_AddRecord_001();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_AddRecord_0100 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_AddRecord_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_AddRecord_0200
+     * @tc.desc   OH_UdmfData_AddRecord_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_AddRecord_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_AddRecord_0200', ' begin');
+      let result = testNapi.OH_UdmfData_AddRecord_002();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_AddRecord_0200 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_AddRecord_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_AddRecord_0300
+     * @tc.desc   OH_UdmfData_AddRecord_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_AddRecord_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_AddRecord_0300', ' begin');
+      let result = testNapi.OH_UdmfData_AddRecord_003();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_AddRecord_0300 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UdmfProgressInfo_GetProgress_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UdmfProgressInfo_GetProgress_0100
+     * @tc.desc   OH_UdmfData_UdmfProgressInfo_GetProgress_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UdmfProgressInfo_GetProgress_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UdmfProgressInfo_GetProgress_0100', ' begin');
+      let result = testNapi.OH_UdmfData_UdmfProgressInfo_GetProgress_001();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UdmfProgressInfo_GetProgress_0100 key is : ' + result, 'aa');
+    });
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UdmfProgressInfo_GetStatus_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UdmfProgressInfo_GetStatus_0100
+     * @tc.desc   OH_UdmfData_UdmfProgressInfo_GetStatus_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UdmfProgressInfo_GetStatus_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UdmfProgressInfo_GetStatus_0100', ' begin');
+      let result = testNapi.OH_UdmfData_UdmfProgressInfo_GetStatus_001();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UdmfProgressInfo_GetStatus_0100 key is : ' + result, 'aa');
+    });
+
   })
 }
