@@ -202,7 +202,6 @@ export default function audioRendererTest() {
       try {
         await audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_DEFAULT)
         console.info(`${Tag}: setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag} setChannelBlendMode : error ${error.message}, ${error.code}`);
@@ -223,7 +222,6 @@ export default function audioRendererTest() {
       try {
         await audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_BLEND_LR)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag}  setChannelBlendMode : error ${error.message}, ${error.code}`);
@@ -244,7 +242,6 @@ export default function audioRendererTest() {
       try {
         await audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_ALL_LEFT)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag}  setChannelBlendMode : error ${error.message}, ${error.code}`);
@@ -265,7 +262,6 @@ export default function audioRendererTest() {
       try {
         await audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_ALL_RIGHT)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag}  setChannelBlendMode : error ${error.message}, ${error.code}`);
@@ -394,7 +390,6 @@ export default function audioRendererTest() {
           }
           await sleep(20);
         }
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag} setChannelBlendMode : error ${error.message}, ${error.code}`);
@@ -416,7 +411,6 @@ export default function audioRendererTest() {
         await audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_BLEND_LR)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         await renderPlay();
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(`${Tag}  setChannelBlendMode : error ${error.message}, ${error.code}`);
