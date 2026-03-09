@@ -545,6 +545,121 @@ export default function abilityTest() {
             done();
             console.info(`${name} end`);
         });
+
+        /**
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0400
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0400
+         * @tc.desc   getFormsInfo(filter, callback) where filter = null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0400';
+            console.info(`${name} start`);
+            try {
+                formProvider.getFormsInfo(null, async (err, value) =>  {
+                    console.info(`${name}` + "formProvider::GetFormsInfoTest: " + JSON.stringify(err));
+                    console.info(`${name}` + "formProvider::GetFormsInfoTest: " + JSON.stringify(value));
+                    expect(err).assertEqual(null);
+                    expect(value.length).assertEqual(2);
+                    checkResultArray(name, expectResult, value);
+                    await sleep(2000);
+                    done();
+                });
+              } catch (error) {
+                console.error(`${name}  formProvider::GetFormsInfoTest catch error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message})`);
+                expect(error.code).assertEqual(ERROR_CODE1);
+                done();
+              }
+            console.info(`${name} end`);
+        });
+        /**
+             * @tc.name   SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5200
+             * @tc.number SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5200
+             * @tc.desc   createFormBindingData test.
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL0
+             */
+            it('SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+              const itName = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5200';
+              hilog.info(domain, tag, `${itName} start`);
+              try {
+                let formImagesParam: Record<string, number> = {
+                  'image': 100
+                };
+                let createFormBindingDataParam: Record<string, string | Record<string, number>> = {
+                  'name': '21°',
+                  'imgSrc': 'image',
+                  'formImages': formImagesParam
+                };
+        
+                hilog.info(domain, tag, `${itName} createFormBindingData`);
+                let bindingData = formBindingData.createFormBindingData(createFormBindingDataParam);
+                hilog.info(domain, tag, `${itName} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+                let data = JSON.parse(bindingData.data as string) as Record<string, string | Record<string, number>>;
+                expect(data.name === '21°').assertTrue();
+                expect(data.imgSrc === 'image').assertTrue();
+                expect((data.formImages as Record<string, number>).image === 100).assertTrue();
+                done();
+              } catch(error) {
+                hilog.info(domain, tag, `${itName} createFormBindingData fail. error code: ${error?.code}`);
+                expect(error.code).assertEqual(ERROR_CODE1);
+                done();
+              }
+              hilog.info(domain, tag, `${itName} end`);
+            });
+
+        /**
+             * @tc.name   SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5300
+             * @tc.number SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5300
+             * @tc.desc   createFormBindingData test.
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL0
+             */
+        it('SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const itName = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5300';
+            hilog.info(domain, tag, `${itName} start`);
+            try {
+              hilog.info(domain, tag, `${itName} createFormBindingData`);
+              let bindingData = formBindingData.createFormBindingData(null);
+              hilog.info(domain, tag, `${itName} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+              expect(bindingData === undefined).assertTrue();
+              done();
+            } catch(error) {
+              hilog.info(domain, tag, `${itName} createFormBindingData fail. error code: ${error?.code}`);
+              expect(error.code).assertEqual(ERROR_CODE1);
+              done();
+            }
+            hilog.info(domain, tag, `${itName} end`);
+          });
+
+        /**
+             * @tc.name   SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5400
+             * @tc.number SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5400
+             * @tc.desc   createFormBindingData test.
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL0
+             */
+        it('SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const itName = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5400';
+            hilog.info(domain, tag, `${itName} start`);
+            try {
+              hilog.info(domain, tag, `${itName} createFormBindingData`);
+              let bindingData = formBindingData.createFormBindingData(undefined);
+              hilog.info(domain, tag, `${itName} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+              expect(bindingData === undefined).assertTrue();
+              done();
+            } catch(error) {
+              hilog.info(domain, tag, `${itName} createFormBindingData fail. error code: ${error?.code}`);
+              expect(error.code).assertEqual(ERROR_CODE1);
+              done();
+            }
+            hilog.info(domain, tag, `${itName} end`);
+          });
     })
 
     let checkResultArray = (name: string, expectInfos: Array<formInfo.FormInfo>, result:Array<formInfo.FormInfo>) => {

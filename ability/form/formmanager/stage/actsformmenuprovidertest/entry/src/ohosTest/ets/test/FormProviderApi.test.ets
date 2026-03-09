@@ -647,5 +647,560 @@ export default function formProviderTest() {
           }
           hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
         });
+
+      /**
+         * @tc.name   UpdateFormTest005
+         * @tc.number UpdateFormTest005
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest005 start');
+    
+          let ProxyDatasEmpty: formBindingData.ProxyData[] = [];
+          let bindingData: formBindingData.FormBindingData = {
+              data: "com.example.test123",
+              proxies: ProxyDatasEmpty
+          }
+          try {
+            formProvider.updateForm("123", bindingData).then(() => {
+              hilog.info(DOMAIN, TAG, `UpdateFormTest005 success`);
+              expect().assertFail();
+            }).catch((error: BusinessError) => {
+              hilog.error(DOMAIN, TAG, `UpdateFormTest005 error, code: ${error?.code}, message: ${error?.message}`);
+              expect(error?.code).assertEqual(401);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest005 error, code: ${error?.code}, message: ${error?.message}`);
+            expect().assertFail();
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest005 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest0051
+         * @tc.number UpdateFormTest0051
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0051 start');
+    
+          let ProxyDatasEmpty: formBindingData.ProxyData[] = [];
+          let bindingData: formBindingData.FormBindingData = {
+              data: "com.example.test123",
+              proxies: ProxyDatasEmpty
+          }
+          try {
+            formProvider.updateForm("123", bindingData, (error: BusinessError) => {
+              if (error) {
+                hilog.info(DOMAIN, TAG, `UpdateFormTest0051 success`);
+                return;
+              }
+              hilog.error(DOMAIN, TAG, `UpdateFormTest0051 error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+              expect((error as BusinessError).code).assertEqual(401);
+            });
+          } catch (err) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest0051 error, code: ${err?.code}, message: ${err?.message}`);
+            expect().assertFail();
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0051 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest006
+         * @tc.number UpdateFormTest006
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest006 start');
+    
+          let ProxyDataA: formBindingData.ProxyData = {
+            key: "123456789",
+            subscriberId: "123456789"
+          }
+          let ProxyDataB: formBindingData.ProxyData = {
+            key: "abc",
+          }
+          let ProxyDatas: formBindingData.ProxyData[] = [];
+          ProxyDatas.push(ProxyDataA);
+          ProxyDatas.push(ProxyDataB);
+          let bindingData: formBindingData.FormBindingData = {
+              data: "com.example.test123",
+              proxies: ProxyDatas
+          }
+          try {
+            formProvider.updateForm("123456", bindingData).then(() => {
+              hilog.info(DOMAIN, TAG, `UpdateFormTest006 success`);
+              expect().assertFail();
+            }).catch((error: BusinessError) => {
+              hilog.error(DOMAIN, TAG, `UpdateFormTest006 error, code: ${error?.code}, message: ${error?.message}`);
+              expect(error?.code).assertEqual(16501001);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest006 error, code: ${error?.code}, message: ${error?.message}`);
+            expect().assertFail();
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest006 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest0061
+         * @tc.number UpdateFormTest0061
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0061 start');
+    
+          let ProxyDataA: formBindingData.ProxyData = {
+            key: "123456789",
+            subscriberId: "123456789"
+          }
+          let ProxyDataB: formBindingData.ProxyData = {
+            key: "abc",
+          }
+          let ProxyDatas: formBindingData.ProxyData[] = [];
+          ProxyDatas.push(ProxyDataA);
+          ProxyDatas.push(ProxyDataB);
+          let bindingData: formBindingData.FormBindingData = {
+              data: "com.example.test123",
+              proxies: ProxyDatas
+          }
+          try {
+            formProvider.updateForm("123456", bindingData, (error: BusinessError) => {
+              if (error) {
+                hilog.info(DOMAIN, TAG, `UpdateFormTest0061 success`);
+                return;
+              }
+              hilog.error(DOMAIN, TAG, `UpdateFormTest0061 error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+              expect((error as BusinessError).code).assertEqual(16501001);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest0061 error, code: ${error?.code}, message: ${error?.message}`);
+            expect().assertFail();
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0061 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest007
+         * @tc.number UpdateFormTest007
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest007 start');
+    
+          let ProxyDataA: formBindingData.ProxyData = {
+            key: "",
+            subscriberId: ""
+          }
+          let ProxyDatas: formBindingData.ProxyData[] = [];
+          ProxyDatas.push(ProxyDataA);
+          let bindingData: formBindingData.FormBindingData = {
+              data: "com.example.test123",
+              proxies: ProxyDatas
+          }
+          try {
+            formProvider.updateForm("123456", bindingData).then(() => {
+              hilog.info(DOMAIN, TAG, `UpdateFormTest007 success`);
+              expect().assertFail();
+            }).catch((error: BusinessError) => {
+              hilog.error(DOMAIN, TAG, `UpdateFormTest007 error, code: ${error?.code}, message: ${error?.message}`);
+              expect(error?.code).assertEqual(16501001);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest007 error, code: ${error?.code}, message: ${error?.message}`);
+            expect().assertFail();
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest007 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest0071
+         * @tc.number UpdateFormTest0071
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0071 start');
+    
+          let ProxyDataA: formBindingData.ProxyData = {
+            key: "",
+            subscriberId: ""
+          }
+          let ProxyDatas: formBindingData.ProxyData[] = [];
+          ProxyDatas.push(ProxyDataA);
+          let bindingData: formBindingData.FormBindingData = {
+              data: "com.example.test123",
+              proxies: ProxyDatas
+          }
+          try {
+            formProvider.updateForm("123456", bindingData, (error: BusinessError) => {
+              if (error) {
+                hilog.info(DOMAIN, TAG, `UpdateFormTest0071 success`);
+                return;
+              }
+              hilog.error(DOMAIN, TAG, `UpdateFormTest0071 error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+              expect((error as BusinessError).code).assertEqual(16501001);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest0071 error, code: ${error?.code}, message: ${error?.message}`);
+            expect().assertFail();
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0071 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest008
+         * @tc.number UpdateFormTest008
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest008 start');
+    
+          try {
+            formProvider.updateForm("", null).then(() => {
+              hilog.info(DOMAIN, TAG, `UpdateFormTest008 success`);
+              expect().assertFail();
+            }).catch((error: BusinessError) => {
+              hilog.error(DOMAIN, TAG, `UpdateFormTest008 error, code: ${error?.code}, message: ${error?.message}`);
+              expect(error?.code).assertEqual(401);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest008 error, code: ${error?.code}, message: ${error?.message}`);
+            expect(error?.code).assertEqual(401);
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest008 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest0081
+         * @tc.number UpdateFormTest0081
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0081 start');
+    
+          try {
+            formProvider.updateForm("", null, (error: BusinessError) => {
+              if (error) {
+                hilog.info(DOMAIN, TAG, `UpdateFormTest0081 success`);
+                return;
+              }
+              hilog.error(DOMAIN, TAG, `UpdateFormTest0081 error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+              expect((error as BusinessError).code).assertEqual(401);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest0081 error, code: ${error?.code}, message: ${error?.message}`);
+            expect(error?.code).assertEqual(401);
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0081 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest009
+         * @tc.number UpdateFormTest009
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest009 start');
+    
+          try {
+            formProvider.updateForm(null, undefined).then(() => {
+              hilog.info(DOMAIN, TAG, `UpdateFormTest009 success`);
+              expect().assertFail();
+            }).catch((error: BusinessError) => {
+              hilog.error(DOMAIN, TAG, `UpdateFormTest009 error, code: ${error?.code}, message: ${error?.message}`);
+              expect(error?.code).assertEqual(401);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest009 error, code: ${error?.code}, message: ${error?.message}`);
+            expect(error?.code).assertEqual(401);
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest009 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest0091
+         * @tc.number UpdateFormTest0091
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0091 start');
+    
+          try {
+            formProvider.updateForm(null, undefined, (error: BusinessError) => {
+              if (error) {
+                hilog.info(DOMAIN, TAG, `UpdateFormTest0091 success`);
+                return;
+              }
+              hilog.error(DOMAIN, TAG, `UpdateFormTest0091 error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+              expect((error as BusinessError).code).assertEqual(401);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest0091 error, code: ${error?.code}, message: ${error?.message}`);
+            expect(error?.code).assertEqual(401);
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0091 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest010
+         * @tc.number UpdateFormTest010
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest010 start');
+    
+          try {
+            formProvider.updateForm(undefined, undefined).then(() => {
+              hilog.info(DOMAIN, TAG, `UpdateFormTest010 success`);
+              expect().assertFail();
+            }).catch((error: BusinessError) => {
+              hilog.error(DOMAIN, TAG, `UpdateFormTest010 error, code: ${error?.code}, message: ${error?.message}`);
+              expect(error?.code).assertEqual(401);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest010 error, code: ${error?.code}, message: ${error?.message}`);
+            expect(error?.code).assertEqual(401);
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest010 end');
+        })
+    
+        /**
+         * @tc.name   UpdateFormTest0101
+         * @tc.number UpdateFormTest0101
+         * @tc.desc   check UpdateForm
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('UpdateFormTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0101 start');
+    
+          try {
+            formProvider.updateForm(undefined, undefined, (error: BusinessError) => {
+              if (error) {
+                hilog.info(DOMAIN, TAG, `UpdateFormTest0101 success`);
+                return;
+              }
+              hilog.error(DOMAIN, TAG, `UpdateFormTest0101 error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+              expect((error as BusinessError).code).assertEqual(401);
+            });
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `UpdateFormTest0101 error, code: ${error?.code}, message: ${error?.message}`);
+            expect(error?.code).assertEqual(401);
+          }
+    
+          done();
+          hilog.info(DOMAIN, TAG, 'UpdateFormTest0101 end');
+        })
+
+        /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0902
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0902
+     * @tc.desc   Close the card EditAbility page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0902', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let TAG = 'SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0902';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        formProvider.closeFormEditAbility(true);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider closeFormEditAbility success`);
+        done();
+      } catch (error) {
+        if (error.code === ERROR_CODE) {
+          expect(error.code).assertEqual(ERROR_CODE);
+        } else if (error.code === ERROR_CODE3) {
+          expect(error.code).assertEqual(ERROR_CODE3);
+        } else if (error.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
+        } else if (error.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
+            `${TAG} formProvider closeFormEditAbility, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        }
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    }); 
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0901
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0901
+     * @tc.desc   Open the card EditAbility page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+        it('SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+          let TAG = 'SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0901';
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+          try {
+            formProvider.openFormEditAbility("", "");
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormEditAbility success`);
+            expect().assertFail();
+          } catch (error) {
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormEditAbility, error: ${JSON.stringify(error)}`);
+            expect(error.code).assertEqual(ERROR_CODE1);
+            done();
+          }
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+        });
+    
+        /**
+         * @tc.name   SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0902
+         * @tc.number SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0902
+         * @tc.desc   Open the card EditAbility page
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+         it('SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0902', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+          let TAG = 'SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0902';
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+          try {
+            formProvider.openFormEditAbility(null, null, false);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormEditAbility success`);
+            expect().assertFail();
+          } catch (error) {
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormEditAbility, error: ${JSON.stringify(error)}`);
+            expect(error.code).assertEqual(ERROR_CODE1);
+            done();
+          }
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+        });
+    
+        /**
+         * @tc.name   SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0903
+         * @tc.number SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0903
+         * @tc.desc   Open the card EditAbility page
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+         it('SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0903', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+          let TAG = 'SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0903';
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+          try {
+            formProvider.openFormEditAbility(undefined, undefined, true);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormEditAbility success`);
+            expect().assertFail();
+          } catch (error) {
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormEditAbility, error: ${JSON.stringify(error)}`);
+            expect(error.code).assertEqual(ERROR_CODE1);
+            done();
+          }
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+        });
+    
+        /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0500
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0500
+     * @tc.desc   Open the card management page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let TAG = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0500';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        formProvider.openFormManager(null);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormManager success`);
+        expect().assertFail();
+      } catch (error) {
+        let businessError: BusinessError = error as BusinessError;
+        hilog.error(DOMAIN, COMMON_TAG, '%{public}s',
+          `${TAG} formProvider openFormManager, catch error, 
+          code: ${businessError.code}, message: ${businessError.message})`);
+        expect(businessError.code).assertEqual(ERROR_CODE1);     
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    })
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0600
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0600
+     * @tc.desc   Open the card management page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let TAG = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0600';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        formProvider.openFormManager(undefined);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormManager success`);
+        expect().assertFail();
+      } catch (error) {
+        let businessError: BusinessError = error as BusinessError;
+        hilog.error(DOMAIN, COMMON_TAG, '%{public}s',
+          `${TAG} formProvider openFormManager, catch error, 
+          code: ${businessError.code}, message: ${businessError.message})`);
+          expect(businessError.code).assertEqual(ERROR_CODE1);      
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    })
   })
 }
