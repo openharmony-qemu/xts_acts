@@ -30,7 +30,6 @@ console.info(`${TagFrmwk}: Create AudioManger Object JS Framework`);
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 let audioManager: audio.AudioManager;
 let streamManager: audio.AudioStreamManager;
-let audioVolumeManager = audioManager.getVolumeManager();
 let audioMedia = 3;
 let minVol = 0;
 let maxVol = 15;
@@ -50,6 +49,7 @@ let voice = call.hasVoiceCapability()
 
 function getAudioManager() {
   audioManager = audio.getAudioManager();
+  audioVolumeManager = audioManager.getVolumeManager();
   if (audioManager != null) {
     console.info(`${TagFrmwk}: getAudioManger : PASS`);
   } else {
