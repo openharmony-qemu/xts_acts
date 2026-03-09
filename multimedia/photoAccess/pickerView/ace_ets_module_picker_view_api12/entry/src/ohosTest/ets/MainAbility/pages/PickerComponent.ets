@@ -202,6 +202,10 @@ struct PickerComponent {
     this.sendEvent(albumInfo, EventType.ALBUM_INFO);
     if (albumInfo?.uri) {
       this.pickerController.setData(DataType.SET_ALBUM_URI, albumInfo.uri);
+      await CommonFunc.sleep(500);
+      this.pickerController.addData(DataType.SET_ALBUM_URI, albumInfo.uri);
+      await CommonFunc.sleep(500);
+      this.pickerController.deleteData(DataType.SET_ALBUM_URI, albumInfo.uri);
       console.info('onALbumClick' + JSON.stringify(albumInfo.uri));
     }
     return true;
@@ -327,6 +331,11 @@ struct PickerComponent {
           this.isShowVideo = false;
           this.isShowPhoto = false;
           this.pickerController.setData(DataType.SET_SELECTED_URIS, this.selectedUris);
+          await CommonFunc.sleep(500);
+          this.pickerController.addData(DataType.SET_SELECTED_URIS, this.selectedUris);
+          await CommonFunc.sleep(500);
+          this.pickerController.deleteData(DataType.SET_SELECTED_URIS, this.selectedUris);
+          await CommonFunc.sleep(500);
         })
       Button('全部相册').width('50%').height('5%')
         .onClick(() => {

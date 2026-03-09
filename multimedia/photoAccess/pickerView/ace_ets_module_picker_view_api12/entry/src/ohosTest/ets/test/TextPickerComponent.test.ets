@@ -2630,11 +2630,11 @@ export default function TextPicker() {
       await CommonFunc.sleep(1000);
       pickerController.deleteData(DataType.SET_BADGE_CONFIGS, uris);
       await CommonFunc.sleep(1000);
-      pickerController.setData(DataType.SET_BADGE_CONFIGS, []);
+      pickerController.setData(DataType.SET_BADGE_CONFIGS, undefined);
       await CommonFunc.sleep(1000);
-      pickerController.addData(DataType.SET_BADGE_CONFIGS, []);
+      pickerController.addData(DataType.SET_BADGE_CONFIGS, undefined);
       await CommonFunc.sleep(1000);
-      pickerController.deleteData(DataType.SET_BADGE_CONFIGS, []);
+      pickerController.deleteData(DataType.SET_BADGE_CONFIGS, undefined);
       let code: number = EventType.PHOTO_PICKER_INFO;
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
@@ -2898,6 +2898,10 @@ export default function TextPicker() {
 
       await routeToUrl(options);
 
+      await CommonFunc.sleep(2000);
+      pickerController.addData(DataType.SET_SELECTED_INFO, preselectedInfos);
+      await CommonFunc.sleep(2000);
+      pickerController.deleteData(DataType.SET_SELECTED_INFO, preselectedInfos);
       // Set DataType.SET_SELECTED_INFO
       pickerController.setData(DataType.SET_SELECTED_INFO, preselectedInfos);
 
@@ -3866,6 +3870,11 @@ export default function TextPicker() {
         } as ClickResult];
 
         pickerController.addData(DataType.SET_ITEM_CLICK_RESULT, clickResult);
+        await CommonFunc.sleep(2000);
+        pickerController.deleteData(DataType.SET_ITEM_CLICK_RESULT, clickResult);
+        await CommonFunc.sleep(2000);
+        pickerController.setData(DataType.SET_ITEM_CLICK_RESULT, clickResult);
+        await CommonFunc.sleep(2000);
       }
 
       let event: events_emitter.InnerEvent = {
