@@ -716,47 +716,6 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name   test_driver_flingWithIdSpeed_401_static
-     * @tc.number uitestDriverErrorTest_019
-     * @tc.desc   fling 401 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("test_driver_flingWithIdSpeed_401_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static start`);
-      let driver: Driver = Driver.create();
-      try {
-        await driver.fling(UiDirection.DOWN, -1, 0);
-        expect().assertFail();
-      } catch (e) {
-        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static speed = -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
-      }
-      try {
-        await driver.fling(UiDirection.DOWN, 199, 0);
-      } catch (e) {
-        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static speed = 199 is, ${JSON.stringify(e)}`);
-        expect().assertFail();
-      }
-      try {
-        await driver.fling(UiDirection.DOWN, 41000, 0);
-      } catch (e) {
-        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static speed = 41000 is, ${JSON.stringify(e)}`);
-        expect().assertFail();
-      }
-      try {
-        await driver.fling(UiDirection.DOWN, 200, -1);
-        expect().assertFail();
-      } catch (e) {
-        hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static id = -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
-      }
-      hilog.info(domain, tag, `test_driver_flingWithIdSpeed_401_static end`);
-    })
-
-
-    /**
      * @tc.name   test_driver_mouseClick_401_static
      * @tc.number uitestDriverErrorTest_020
      * @tc.desc   mouseClick 401 test.
@@ -883,7 +842,7 @@ export default function uitestDriverErrorTest() {
 
     /**
      * @tc.name   test_driver_screenCapture_401_static
-     * @tc.number uitestDriverErrorTest_021
+     * @tc.number uitestDriverErrorTest_0211
      * @tc.desc   mouseClick 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1208,7 +1167,7 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name   test_driver_mouseDrag_401_static
+     * @tc.name   test_driver_inputText_401_static
      * @tc.number uitestDriverErrorTest_026
      * @tc.desc   mouseDrag 401 test.
      * @tc.type   FUNCTION
@@ -1334,7 +1293,7 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name   test_driver_penClick_static
+     * @tc.name   test_driver_penLongClick_static
      * @tc.number uitestDriverErrorTest_029
      * @tc.desc   penLongClick 401 test.
      * @tc.type   FUNCTION
@@ -1376,7 +1335,7 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name   test_driver_penClick_static
+     * @tc.name   test_driver_penDoubleClick_static
      * @tc.number uitestDriverErrorTest_030
      * @tc.desc   penDoubleClick 401 test.
      * @tc.type   FUNCTION
@@ -1674,7 +1633,7 @@ export default function uitestDriverErrorTest() {
 
     /**
      * @tc.name   test_driver_doubleClickAt_static
-     * @tc.number uitestDriverErrorTest_035
+     * @tc.number uitestDriverErrorTest_0351
      * @tc.desc   doubleClickAt 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
