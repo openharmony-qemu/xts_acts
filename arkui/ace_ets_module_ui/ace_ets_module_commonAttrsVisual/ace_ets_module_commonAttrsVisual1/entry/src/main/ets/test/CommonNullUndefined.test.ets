@@ -36,7 +36,7 @@ export default function CommonNullUndefined() {
   describe('CommonNullUndefined', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/commonNullUndefined',
+        url: 'MainAbility/pages/CommonNullUndefined',
       }
       try {
         router.clear();
