@@ -22,10 +22,14 @@ interface NdkAVPlayerResult {
     result: number;
 }
 
-export const testSetVideoSuperResolution: (fdSrc: media.AVFileDescriptor, isEnableSuperResolution: boolean) => NdkAVPlayerResult;
+export const testSetVideoSuperResolution:
+    (fdSrc: media.AVFileDescriptor, isEnableSuperResolution: boolean, isEnable: boolean) => NdkAVPlayerResult;
+export const testSetVideoSuperResolutionForStatusIdle:() => number;
 export const testSetVideoSuperResolutionError: () => number;
-export const testSetTargetVideoWindowSize: (fdSrc: media.AVFileDescriptor, width: number, height: number) => NdkAVPlayerResult;
+export const testSetTargetVideoWindowSize:
+    (fdSrc: media.AVFileDescriptor, width: number, height: number, isEnable: boolean) => NdkAVPlayerResult;
 export const testSetTargetVideoWindowSizeError: () => number;
+export const testSetTargetVideoWindowSizeForStatusIdle:() => number;
 export const testSetDataSource: (filePath: string, fileSize: number) => NdkAVPlayerResult;
 export const testGetPlaybackInfo: (fdSrc: media.AVFileDescriptor) => NdkAVPlayerResult;
 export const checkPlaybackInfo: (userData: NdkAVPlayerUser) => Record<string, object>;
@@ -62,6 +66,7 @@ export const testAVMediaSourceLoaderSetSourceCloseCallback: (a: number) => numbe
 export const testAVMediaSourceLoadingRequestGetHttpHeaderError: () => number;
 
 export const OhAVPlayerSetPlaybackRange: (fd: media.AVFileDescriptor, a : number, b : number, c : boolean) => NdkAVPlayerResult;
+export const OhAVPlayerSetPlaybackRangeError: () => number;
 export const OhAVPlayerSetMediaMuted: (a : number, b : boolean, fd: media.AVFileDescriptor) => NdkAVPlayerResult;
 export const OhAVPlayerAddURLSubtitleSource: (a : string, fd: media.AVFileDescriptor) => NdkAVPlayerResult;
 export const OhAVPlayerAddFDSubtitleSource: (fd: media.AVFileDescriptor, subtitleFd: media.AVFileDescriptor) => NdkAVPlayerResult;
