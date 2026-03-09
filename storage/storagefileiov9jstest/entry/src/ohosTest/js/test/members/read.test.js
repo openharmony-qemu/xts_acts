@@ -1125,7 +1125,7 @@ export default function fileIORead() {
 
   /**
    * @tc.name   fileIO_test_read_async_025
-   * @tc. number SUB_DF_FILEIO_READ_ASYNC_2500
+   * @tc.number SUB_DF_FILEIO_READ_ASYNC_2500
    * @tc.desc   Test read() interfaces. Callback. fd is null.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
@@ -1322,7 +1322,7 @@ export default function fileIORead() {
 
   /**
    * @tc.name   fileIO_test_read_async_033
-   *.tc.number SUB_DF_FILEIO_READ_ASYNC_3300
+   * @tc.number SUB_DF_FILEIO_READ_ASYNC_3300
    * @tc.desc   Test read() interfaces. Callback. options is null.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST

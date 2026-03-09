@@ -376,7 +376,7 @@ describe('fileIO_fs_symlink', function () {
       });
     } catch (e) {
       console.log('fileIO_test_symlink_async_010 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });

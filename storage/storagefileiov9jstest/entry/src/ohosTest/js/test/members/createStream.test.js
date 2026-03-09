@@ -1474,25 +1474,6 @@ describe('fileIO_fs_createStream', function () {
   });
 
   /**
-    * @tc.name   fileIO_test_create_stream_async_039
-    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3900
-    * @tc.desc   Test createReadStream() interfaces. Promise. path is undefined.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
-    */
-  it('fileIO_test_create_stream_async_039', Level.LEVEL3, async function (done) {
-    try {
-      await fileIO.createReadStream(undefined);
-      expect(false).assertTrue();
-    } catch (e) {
-      console.log('fileIO_test_create_stream_async_039 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
-      done();
-    }
-  });
-
-  /**
     * @tc.name   fileIO_test_create_stream_async_040
     * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4000
     * @tc.desc   Test createReadStream() interfaces. Callback. path is null.
@@ -1725,5 +1706,24 @@ describe('fileIO_fs_createStream', function () {
       done();
     }
   });
+  
+  /**
+    * @tc.name   fileIO_test_create_stream_async_050
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_5000
+    * @tc.desc   Test createReadStream() interfaces. Promise. path is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_050', Level.LEVEL3, async function (done) {
+    try {
+      await fileIO.createReadStream(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_050 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });  
 });
 }
