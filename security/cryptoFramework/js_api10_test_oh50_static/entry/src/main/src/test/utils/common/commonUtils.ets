@@ -219,7 +219,12 @@ class MdMap {
     }
   }
   getMdSize(algName: string): int {
-    return this.map.get(algName)
+    let keySize: int| undefined = this.map.get(algName);
+    if (keySize === undefined) {
+      return 0;
+    } else {
+      return keySize.toInt();
+    }
   }
 }
 
