@@ -3521,7 +3521,7 @@ export default function btBleManagerTest() {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_ADD_1200"
       try {
         gattC.writeDescriptorValue(undefined, WriteDC);
-        expect(false).assertFalse();
+        expect().assertFail();
         done();
       } catch (err) {
         console.error(`${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
@@ -3531,8 +3531,9 @@ export default function btBleManagerTest() {
         } else {
           expect(Number(err.code)).assertEqual(401);
         }
-        done();
+      
       }
+      done();
     })
 
     /**
