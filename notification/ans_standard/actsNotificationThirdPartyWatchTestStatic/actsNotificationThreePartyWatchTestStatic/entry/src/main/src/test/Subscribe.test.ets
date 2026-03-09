@@ -120,9 +120,9 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
       * @tc.desc   verify the promise function
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
+      * @tc.level  LEVEL0
       */
-    it('Sub_Notification_Ans_ThreePartyWatch_Static_1011_884', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ans_ThreePartyWatch_Static_1011_884', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       // 定义当前测试用例的日志标签
       let TAG = "Sub_Notification_Ans_ThreePartyWatch_Static_1011_884 ";
@@ -132,7 +132,8 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
         console.info(TAG+"subscribe success222");
         expect().assertFail();
         done()
-      }).catch((err: BusinessError) :void=> {
+      }).catch((e: Error) => {
+        let err = e as BusinessError;
         console.error(TAG+`subscribe fail: ${JSON.stringify(err.code)}`);
         expect(err.code).assertEqual(401);
         done();
