@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 import { FrameNode, NodeController, typeNode, UIContext } from '@kit.ArkUI';
 import router from '@ohos.router';
@@ -44,8 +44,8 @@ export default function TypeNodeTest() {
     let uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
 
     /**
-     * @tc.name   SUB_ARKUI_TEXT_CREATNODE_CONTEXT_NULL_001
-     * @tc.number SUB_ARKUI_TEXT_CREATNODE_CONTEXT_NULL_001
+     * @tc.name   Text_createNode_context_null
+     * @tc.number Text_createNode_context_null
      * @tc.desc   测试 Text createNode 属性参数 context为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,8 +61,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXT_CREATNODE_CONTEXT_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXT_CREATNODE_CONTEXT_UNDEFINED_001
+     * @tc.name   Text_createNode_context_undefined
+     * @tc.number Text_createNode_context_undefined
      * @tc.desc   测试 Text createNode 属性参数 context为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -78,8 +78,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_PROGRESS_CREATNODE_CONTEXT_NULL_001
-     * @tc.number SUB_ARKUI_PROGRESS_CREATNODE_CONTEXT_NULL_001
+     * @tc.name   Progress_createNode_context_null
+     * @tc.number Progress_createNode_context_null
      * @tc.desc   测试 Progress createNode 属性参数 context为 NULL 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,8 +95,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_PROGRESS_CREATNODE_CONTEXT_UNDEFINED_001
-     * @tc.number SUB_ARKUI_PROGRESS_CREATNODE_CONTEXT_UNDEFINED_001
+     * @tc.name   Progress_createNode_context_undefined
+     * @tc.number Progress_createNode_context_undefined
      * @tc.desc   测试 Progress createNode 属性参数 context为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -112,8 +112,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_LOADINGPROGRESS_CREATNODE_CONTEXT_NULL_001
-     * @tc.number SUB_ARKUI_LOADINGPROGRESS_CREATNODE_CONTEXT_NULL_001
+     * @tc.name   LoadingProgress_createNode_context_null
+     * @tc.number LoadingProgress_createNode_context_null
      * @tc.desc   测试 LoadingProgress createNode 属性参数 context为 NULL 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -129,8 +129,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_LOADINGPROGRESS_CREATNODE_CONTEXT_UNDEFINED_001
-     * @tc.number SUB_ARKUI_LOADINGPROGRESS_CREATNODE_CONTEXT_UNDEFINED_001
+     * @tc.name   LoadingProgress_createNode_context_undefined
+     * @tc.number LoadingProgress_createNode_context_undefined
      * @tc.desc   测试 LoadingProgress createNode 属性参数 context为 UNDEFINED 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -146,8 +146,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_CREATNODE_CONTEXT_NULL_001
-     * @tc.number SUB_ARKUI_TEXTINPUT_CREATNODE_CONTEXT_NULL_001
+     * @tc.name   TextInput_createNode_context_null
+     * @tc.number TextInput_createNode_context_null
      * @tc.desc   测试 TextInput createNode 属性参数 context为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -163,8 +163,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_CREATNODE_CONTEXT_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXTINPUT_CREATNODE_CONTEXT_UNDEFINED_001
+     * @tc.name   TextInput_createNode_context_undefined
+     * @tc.number TextInput_createNode_context_undefined
      * @tc.desc   测试 TextInput createNode 属性参数 context为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,8 +180,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTAREA_CREATNODE_CONTEXT_NULL_001
-     * @tc.number SUB_ARKUI_TEXTAREA_CREATNODE_CONTEXT_NULL_001
+     * @tc.name   TextArea_createNode_context_null
+     * @tc.number TextArea_createNode_context_null
      * @tc.desc   测试 TextArea createNode 属性参数 context为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,8 +197,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTAREA_CREATNODE_CONTEXT_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXTAREA_CREATNODE_CONTEXT_UNDEFINED_001
+     * @tc.name   TextArea_createNode_context_undefined
+     * @tc.number TextArea_createNode_context_undefined
      * @tc.desc   测试 TextArea createNode 属性参数 context为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -214,8 +214,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXT_GETATTRIBUTE_NODE_NULL_001
-     * @tc.number SUB_ARKUI_TEXT_GETATTRIBUTE_NODE_NULL_001
+     * @tc.name   Text_getAttribute_node_null
+     * @tc.number Text_getAttribute_node_null
      * @tc.desc   测试 Text getAttribute 属性参数 node为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -227,8 +227,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXT_GETATTRIBUTE_NODE_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXT_GETATTRIBUTE_NODE_UNDEFINED_001
+     * @tc.name   Text_getAttribute_node_undefined
+     * @tc.number Text_getAttribute_node_undefined
      * @tc.desc   测试 Text getAttribute 属性参数 node为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -240,8 +240,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_PROGRESS_GETATTRIBUTE_NODE_NULL_001
-     * @tc.number SUB_ARKUI_PROGRESS_GETATTRIBUTE_NODE_NULL_001
+     * @tc.name   Progress_getAttribute_node_null
+     * @tc.number Progress_getAttribute_node_null
      * @tc.desc   测试 Progress getAttribute 属性参数 node为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -253,8 +253,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_PROGRESS_GETATTRIBUTE_NODE_UNDEFINED_001
-     * @tc.number SUB_ARKUI_PROGRESS_GETATTRIBUTE_NODE_UNDEFINED_001
+     * @tc.name   Progress_getAttribute_node_undefined
+     * @tc.number Progress_getAttribute_node_undefined
      * @tc.desc   测试 Progress getAttribute 属性参数 node为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -266,8 +266,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_LOADINGPROGRESS_GETATTRIBUTE_NODE_NULL_001
-     * @tc.number SUB_ARKUI_LOADINGPROGRESS_GETATTRIBUTE_NODE_NULL_001
+     * @tc.name   LoadingProgress_getAttribute_node_null
+     * @tc.number LoadingProgress_getAttribute_node_null
      * @tc.desc   测试 LoadingProgress getAttribute 属性参数 node为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -279,8 +279,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_LOADINGPROGRESS_GETATTRIBUTE_NODE_UNDEFINED_001
-     * @tc.number SUB_ARKUI_LOADINGPROGRESS_GETATTRIBUTE_NODE_UNDEFINED_001
+     * @tc.name   LoadingProgress_getAttribute_node_undefined
+     * @tc.number LoadingProgress_getAttribute_node_undefined
      * @tc.desc   测试 LoadingProgress getAttribute 属性参数 node为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,8 +292,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_GETATTRIBUTE_NODE_NULL_001
-     * @tc.number SUB_ARKUI_TEXTINPUT_GETATTRIBUTE_NODE_NULL_001
+     * @tc.name   TextInput_getAttribute_node_null
+     * @tc.number TextInput_getAttribute_node_null
      * @tc.desc   测试 TextInput getAttribute 属性参数 node为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -305,8 +305,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_GETATTRIBUTE_NODE_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXTINPUT_GETATTRIBUTE_NODE_UNDEFINED_001
+     * @tc.name   TextInput_getAttribute_node_undefined
+     * @tc.number TextInput_getAttribute_node_undefined
      * @tc.desc   测试 TextInput getAttribute 属性参数 node为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -318,8 +318,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTAREA_GETATTRIBUTE_NODE_NULL_001
-     * @tc.number SUB_ARKUI_TEXTAREA_GETATTRIBUTE_NODE_NULL_001
+     * @tc.name   TextArea_getAttribute_node_null
+     * @tc.number TextArea_getAttribute_node_null
      * @tc.desc   测试 TextArea getAttribute 属性参数 node为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -331,8 +331,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTAREA_GETATTRIBUTE_NODE_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXTAREA_GETATTRIBUTE_NODE_UNDEFINED_001
+     * @tc.name   TextArea_getAttribute_node_undefined
+     * @tc.number TextArea_getAttribute_node_undefined
      * @tc.desc   测试 TextArea getAttribute 属性参数 node为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -344,8 +344,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXT_BINDCONTROLLER_NODE_NULL_001
-     * @tc.number SUB_ARKUI_TEXT_BINDCONTROLLER_NODE_NULL_001
+     * @tc.name   Text_bindController_node_null
+     * @tc.number Text_bindController_node_null
      * @tc.desc   测试 Text bindController 属性参数 node为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -362,8 +362,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXT_BINDCONTROLLER_NODE_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXT_BINDCONTROLLER_NODE_UNDEFINED_001
+     * @tc.name   Text_bindController_node_undefined
+     * @tc.number Text_bindController_node_undefined
      * @tc.desc   测试 Text bindController 属性参数 node为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -380,8 +380,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXT_BINDCONTROLLER_CONTROLLER_NULL_001
-     * @tc.number SUB_ARKUI_TEXT_BINDCONTROLLER_CONTROLLER_NULL_001
+     * @tc.name   Text_bindController_controller_null
+     * @tc.number Text_bindController_controller_null
      * @tc.desc   测试 Text bindController 属性参数 controller为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -398,8 +398,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXT_BINDCONTROLLER_CONTROLLER_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXT_BINDCONTROLLER_CONTROLLER_UNDEFINED_001
+     * @tc.name   Text_bindController_controller_undefined
+     * @tc.number Text_bindController_controller_undefined
      * @tc.desc   测试 Text bindController 属性参数 controller为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -416,8 +416,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_BINDCONTROLLER_NODE_NULL_001
-     * @tc.number SUB_ARKUI_TEXTINPUT_BINDCONTROLLER_NODE_NULL_001
+     * @tc.name   TextInput_bindController_node_null
+     * @tc.number TextInput_bindController_node_null
      * @tc.desc   测试 TextInput bindController 属性参数 node为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -434,8 +434,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_BINDCONTROLLER_NODE_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXTINPUT_BINDCONTROLLER_NODE_UNDEFINED_001
+     * @tc.name   TextInput_bindController_node_undefined
+     * @tc.number TextInput_bindController_node_undefined
      * @tc.desc   测试 TextInput bindController 属性参数 node为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -452,8 +452,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_BINDCONTROLLER_CONTROLLER_NULL_001
-     * @tc.number SUB_ARKUI_TEXTINPUT_BINDCONTROLLER_CONTROLLER_NULL_001
+     * @tc.name   TextInput_bindController_controller_null
+     * @tc.number TextInput_bindController_controller_null
      * @tc.desc   测试 TextInput bindController 属性参数 controller为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -470,8 +470,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_BINDCONTROLLER_CONTROLLER_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXTINPUT_BINDCONTROLLER_CONTROLLER_UNDEFINED_001
+     * @tc.name   TextInput_bindController_controller_undefined
+     * @tc.number TextInput_bindController_controller_undefined
      * @tc.desc   测试 TextInput bindController 属性参数 controller为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -488,8 +488,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTAREA_BINDCONTROLLER_NODE_NULL_001
-     * @tc.number SUB_ARKUI_TEXTAREA_BINDCONTROLLER_NODE_NULL_001
+     * @tc.name   TextArea_bindController_node_null
+     * @tc.number TextArea_bindController_node_null
      * @tc.desc   测试 TextArea bindController 属性参数 node为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -506,8 +506,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTAREA_BINDCONTROLLER_NODE_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXTAREA_BINDCONTROLLER_NODE_UNDEFINED_001
+     * @tc.name   TextArea_bindController_node_undefined
+     * @tc.number TextArea_bindController_node_undefined
      * @tc.desc   测试 TextArea bindController 属性参数 node为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -524,8 +524,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTAREA_BINDCONTROLLER_CONTROLLER_NULL_001
-     * @tc.number SUB_ARKUI_TEXTAREA_BINDCONTROLLER_CONTROLLER_NULL_001
+     * @tc.name   TextArea_bindController_controller_null
+     * @tc.number TextArea_bindController_controller_null
      * @tc.desc   测试 TextArea bindController 属性参数 controller为 null 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -542,8 +542,8 @@ export default function TypeNodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTAREA_BINDCONTROLLER_CONTROLLER_UNDEFINED_001
-     * @tc.number SUB_ARKUI_TEXTAREA_BINDCONTROLLER_CONTROLLER_UNDEFINED_001
+     * @tc.name   TextArea_bindController_controller_undefined
+     * @tc.number TextArea_bindController_controller_undefined
      * @tc.desc   测试 TextArea bindController 属性参数 controller为 undefined 的情况
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
