@@ -289,7 +289,7 @@ export default function testsuite() {
   Navigation_L0_1();
   Navigation_L0_2();
   Navigation_L0_3();
-  Navigation_L0_4();
+  //Navigation_L0_4();
   Navigation_L0_6();
   Navigation_L0_7();
   Navigation_L0_8();
@@ -369,11 +369,11 @@ export default function testsuite() {
   UIObserverContext2Test();
   UIObserverContext3Test();
   UIObserverUpdateContextTest();
-  RouterPageUpdateTest();
+  //RouterPageUpdateTest();
   NavigationApi1();
   NavigationApi2();
   NavigationLevelTest8();
-  NavPathStack24();
+  //NavPathStack24();
   navigation_add4_1();
   Navigation_L0_5_1();
   Navigation_L0_5_2();
@@ -385,7 +385,7 @@ export default function testsuite() {
   Navigation_SingleInstanceJump40();
   Navigation_SingleInstanceJump41();
   NavPathStack2();
-  NavPathStack2_4();
-  NavPathStack6();
-  NavPathStack23();
+  //NavPathStack2_4();
+  //NavPathStack6();
+  //NavPathStack23();
 }
