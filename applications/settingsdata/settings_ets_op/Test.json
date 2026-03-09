@@ -4,13 +4,13 @@
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
         "shell-timeout": "600000",
-        "bundle-name": "com.open.harmony.settings",
+        "bundle-name": "com.open.harmony.settings.op",
         "module-name": "phone"
     },
     "kits": [
         {
             "test-file-name": [
-              "ActsSettingsEtsTest.hap"
+              "ActsSettingsEtsOpTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
