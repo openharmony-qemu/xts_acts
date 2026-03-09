@@ -15863,5 +15863,466 @@ export default function audioRendererTest() {
       }
       done();
     });
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_AUDIO_EFFECT_MODE_EFFECT_DEFAULT_0100
+    * @tc.number AUDIO_RENDERER_SET_AUDIO_EFFECT_MODE_EFFECT_DEFAULT_0100
+    * @tc.desc   setAudioEffectMode with EFFECT_DEFAULT test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_AUDIO_EFFECT_MODE_EFFECT_DEFAULT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT, (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setAudioEffectMode with EFFECT_DEFAULT: FAIL :${err.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: setAudioEffectMode with EFFECT_DEFAULT: PASS`);
+          done();
+        }
+        done();
+      })
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_NORMAL_0100
+    * @tc.number AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_NORMAL_0100
+    * @tc.desc   setRenderRate with RENDER_RATE_NORMAL test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_NORMAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_NORMAL, (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setRenderRate with RENDER_RATE_NORMAL: FAIL :${err.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: setRenderRate with RENDER_RATE_NORMAL: PASS`);
+          done();
+        }
+        done();
+      })
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_HALF_0100
+    * @tc.number AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_HALF_0100
+    * @tc.desc   setRenderRate with RENDER_RATE_HALF test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_HALF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_HALF, (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setRenderRate with RENDER_RATE_HALF: FAIL :${err.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: setRenderRate with RENDER_RATE_HALF: PASS`);
+          done();
+        }
+        done();
+      })
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_INTERRUPT_MODE_SYNC_INDEPENDENT_MODE_0100
+    * @tc.number AUDIO_RENDERER_SET_INTERRUPT_MODE_SYNC_INDEPENDENT_MODE_0100
+    * @tc.desc   setInterruptModeSync with INDEPENDENT_MODE test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_INTERRUPT_MODE_SYNC_INDEPENDENT_MODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRenderer.setInterruptModeSync(audio.InterruptMode.INDEPENDENT_MODE);
+        console.info(`${TagFrmwk}: setInterruptModeSync with INDEPENDENT_MODE: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setInterruptModeSync with INDEPENDENT_MODE: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_INVALID_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_INVALID_0100
+    * @tc.desc   setDefaultOutputDevice with INVALID test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_INVALID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with INVALID: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with INVALID: PASS :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_SPEAKER_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_SPEAKER_0100
+    * @tc.desc   setDefaultOutputDevice with SPEAKER test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_SPEAKER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.SPEAKER);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with SPEAKER: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with SPEAKER: PASS :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800103);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADSET_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADSET_0100
+    * @tc.desc   setDefaultOutputDevice with WIRED_HEADSET test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADSET_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.WIRED_HEADSET);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with WIRED_HEADSET: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with WIRED_HEADSET: PASS :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADPHONES_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADPHONES_0100
+    * @tc.desc   setDefaultOutputDevice with WIRED_HEADPHONES test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADPHONES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.WIRED_HEADPHONES);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with WIRED_HEADPHONES: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with WIRED_HEADPHONES: PASS :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_BLUETOOTH_SCO_0100
+      * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_BLUETOOTH_SCO_0100
+      * @tc.desc   setDefaultOutputDevice with BLUETOOTH_SCO test.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_BLUETOOTH_SCO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.BLUETOOTH_SCO);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with BLUETOOTH_SCO: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with BLUETOOTH_SCO: PASS :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_BLUETOOTH_A2DP_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_BLUETOOTH_A2DP_0100
+    * @tc.desc   setDefaultOutputDevice with BLUETOOTH_A2DP test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_BLUETOOTH_A2DP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.BLUETOOTH_A2DP);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with BLUETOOTH_A2DP: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with BLUETOOTH_A2DP: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_MIC_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_MIC_0100
+    * @tc.desc   setDefaultOutputDevice with MIC test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_MIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.MIC);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with MIC: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with MIC: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_USB_HEADSET_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_USB_HEADSET_0100
+    * @tc.desc   setDefaultOutputDevice with USB_HEADSET test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_USB_HEADSET_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.USB_HEADSET);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with USB_HEADSET: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with USB_HEADSET: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_DISPLAY_PORT_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_DISPLAY_PORT_0100
+    * @tc.desc   setDefaultOutputDevice with DISPLAY_PORT test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_DISPLAY_PORT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.DISPLAY_PORT);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with DISPLAY_PORT: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with DISPLAY_PORT: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_REMOTE_CAST_0100
+      * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_REMOTE_CAST_0100
+      * @tc.desc   setDefaultOutputDevice with REMOTE_CAST test.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_REMOTE_CAST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.REMOTE_CAST);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with REMOTE_CAST: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with REMOTE_CAST: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_USB_DEVICE_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_USB_DEVICE_0100
+    * @tc.desc   setDefaultOutputDevice with USB_DEVICE test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_USB_DEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.USB_DEVICE);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with USB_DEVICE: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with USB_DEVICE: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_HDMI_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_HDMI_0100
+    * @tc.desc   setDefaultOutputDevice with HDMI test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_HDMI_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.HDMI);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with HDMI: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with HDMI: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_LINE_DIGITAL_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_LINE_DIGITAL_0100
+    * @tc.desc   setDefaultOutputDevice with LINE_DIGITAL test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_LINE_DIGITAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.LINE_DIGITAL);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with LINE_DIGITAL: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with LINE_DIGITAL: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_REMOTE_DAUDIO_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_REMOTE_DAUDIO_0100
+    * @tc.desc   setDefaultOutputDevice with REMOTE_DAUDIO test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_REMOTE_DAUDIO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.REMOTE_DAUDIO);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with REMOTE_DAUDIO: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with REMOTE_DAUDIO: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_HEARING_AID_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_HEARING_AID_0100
+    * @tc.desc   setDefaultOutputDevice with HEARING_AID test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_HEARING_AID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.HEARING_AID);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with HEARING_AID: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with HEARING_AID: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_NEARLINK_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_NEARLINK_0100
+    * @tc.desc   setDefaultOutputDevice with NEARLINK test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_NEARLINK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.NEARLINK);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with NEARLINK: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with NEARLINK: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_SYSTEM_PRIVATE_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_SYSTEM_PRIVATE_0100
+    * @tc.desc   setDefaultOutputDevice with SYSTEM_PRIVATE test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_SYSTEM_PRIVATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.SYSTEM_PRIVATE);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with SYSTEM_PRIVATE: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with SYSTEM_PRIVATE: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
+    * @tc.number AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
+    * @tc.desc   setDefaultOutputDevice with DEFAULT test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.DEFAULT);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with DEFAULT: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with DEFAULT: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(6800103);
+        done();
+      }
+      done();
+    })
   })
 }
