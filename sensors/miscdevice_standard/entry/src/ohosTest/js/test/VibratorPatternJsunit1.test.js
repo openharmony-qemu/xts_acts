@@ -19,6 +19,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 
 export default function VibratorJsTest_misc_10() {
     let isAvailable;
+    let sensortempcode = true;
     const ABILITYJUDGMENT = canIUse('SystemCapability.Sensors.MiscDevice');
     describe("VibratorJsTest_misc_10", function () {
         beforeAll(async function (done) {
@@ -750,7 +751,7 @@ export default function VibratorJsTest_misc_10() {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' startVibration success');
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                     }
                     done();
                 })
@@ -795,7 +796,7 @@ export default function VibratorJsTest_misc_10() {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' startVibration success');
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                     }
                     done();
                 })
@@ -845,7 +846,7 @@ export default function VibratorJsTest_misc_10() {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' startVibration success');
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                     }
                     done();
                 })
