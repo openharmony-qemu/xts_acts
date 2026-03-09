@@ -33,7 +33,8 @@ async function pictureCreatImageSource(done: Function, testName: string,pathUri:
       console.info(TAG, testName,'creat imageSource Success.',imageSource);
       let pixelMap: image.PixelMap = await imageSource.createPixelMap();
       console.info(TAG, testName,'creat pixelMap Success.',pixelMap);
-      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+      let targetPath = `file://${testContext.filesDir}/${testName}`;
+      let file = fs.openSync(targetPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       callback(file,pixelMap);
     }
   } catch (err) {
