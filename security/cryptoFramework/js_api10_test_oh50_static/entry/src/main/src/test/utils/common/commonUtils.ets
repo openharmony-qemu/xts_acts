@@ -15,6 +15,7 @@
 import { BusinessError } from '@ohos.base';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import buffer from '@ohos.buffer';
+import HashMap from '@ohos.util.HashMap';
 
 enum asyncType {
   TYPE_IS_SYNC = 0,

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import cryptoFramework from '@ohos.security.cryptoFramework';
-import { buffer } from '@kit.ArkTS';
+import { buffer, HashMap } from '@kit.ArkTS';
 
 enum asyncType {
   TYPE_IS_SYNC = 0,
