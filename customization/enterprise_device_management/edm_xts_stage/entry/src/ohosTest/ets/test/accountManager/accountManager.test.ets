@@ -1104,5 +1104,372 @@ export default function accountManagerTest() {
       done();
       console.info(' --- getDomainAccountPolicy_test_003  -------- END --------');
     })
+
+    /**
+     * @tc.name   disallowOsAccountAddition_test_074
+     * @tc.number disallowOsAccountAddition_test_074
+     * @tc.desc   disallowOsAccountAddition with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("disallowOsAccountAddition_test_074", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- disallowOsAccountAddition_test_074  -------- START --------');
+      try {
+        accountManager.disallowOsAccountAddition(null, true);
+        console.info(' --- disallowOsAccountAddition_test_074 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- disallowOsAccountAddition_test_074 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- disallowOsAccountAddition_test_074  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   disallowOsAccountAddition_test_075
+     * @tc.number disallowOsAccountAddition_test_075
+     * @tc.desc   disallowOsAccountAddition with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("disallowOsAccountAddition_test_075", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- disallowOsAccountAddition_test_075  -------- START --------');
+      try {
+        accountManager.disallowOsAccountAddition(undefined, true);
+        console.info(' --- disallowOsAccountAddition_test_075 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- disallowOsAccountAddition_test_075 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- disallowOsAccountAddition_test_075  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   disallowOsAccountAddition_test_076
+     * @tc.number disallowOsAccountAddition_test_076
+     * @tc.desc   disallowOsAccountAddition with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("disallowOsAccountAddition_test_076", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- disallowOsAccountAddition_test_076  -------- START --------');
+      try {
+        accountManager.disallowOsAccountAddition(SELFWANT, true, null);
+        console.info(' --- disallowOsAccountAddition_test_076 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- disallowOsAccountAddition_test_076 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- disallowOsAccountAddition_test_076  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   disallowOsAccountAddition_test_077
+     * @tc.number disallowOsAccountAddition_test_077
+     * @tc.desc   disallowOsAccountAddition with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("disallowOsAccountAddition_test_077", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- disallowOsAccountAddition_test_077  -------- START --------');
+      try {
+        accountManager.disallowOsAccountAddition(SELFWANT, true, undefined);
+        console.info(' --- disallowOsAccountAddition_test_077 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- disallowOsAccountAddition_test_077 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- disallowOsAccountAddition_test_077  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_044
+     * @tc.number isOsAccountAdditionDisallowed_test_044
+     * @tc.desc   isOsAccountAdditionDisallowed with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isOsAccountAdditionDisallowed_test_044", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isOsAccountAdditionDisallowed_test_044  -------- START --------');
+      try {
+        accountManager.isOsAccountAdditionDisallowed(undefined);
+        console.info(' --- isOsAccountAdditionDisallowed_test_044 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isOsAccountAdditionDisallowed_test_044 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isOsAccountAdditionDisallowed_test_044  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_045
+     * @tc.number isOsAccountAdditionDisallowed_test_045
+     * @tc.desc   isOsAccountAdditionDisallowed with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isOsAccountAdditionDisallowed_test_045", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isOsAccountAdditionDisallowed_test_045  -------- START --------');
+      try {
+        accountManager.isOsAccountAdditionDisallowed(SELFWANT, null);
+        console.info(' --- isOsAccountAdditionDisallowed_test_045 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isOsAccountAdditionDisallowed_test_045 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isOsAccountAdditionDisallowed_test_045  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_046
+     * @tc.number isOsAccountAdditionDisallowed_test_046
+     * @tc.desc   isOsAccountAdditionDisallowed with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isOsAccountAdditionDisallowed_test_046", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isOsAccountAdditionDisallowed_test_046  -------- START --------');
+      try {
+        accountManager.isOsAccountAdditionDisallowed(SELFWANT, undefined);
+        console.info(' --- isOsAccountAdditionDisallowed_test_046 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isOsAccountAdditionDisallowed_test_046 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isOsAccountAdditionDisallowed_test_046  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addOsAccountAsync_test_060
+     * @tc.number addOsAccountAsync_test_060
+     * @tc.desc   addOsAccountAsync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addOsAccountAsync_test_060", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addOsAccountAsync_test_060  -------- START --------');
+      try {
+        accountManager.addOsAccountAsync(null, 'accountName', osAccount.OsAccountType.GUEST);
+        console.info(' --- addOsAccountAsync_test_060 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addOsAccountAsync_test_060 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addOsAccountAsync_test_060  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addOsAccountAsync_test_061
+     * @tc.number addOsAccountAsync_test_061
+     * @tc.desc   addOsAccountAsync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addOsAccountAsync_test_061", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addOsAccountAsync_test_061  -------- START --------');
+      try {
+        accountManager.addOsAccountAsync(undefined, 'accountName', osAccount.OsAccountType.GUEST);
+        console.info(' --- addOsAccountAsync_test_061 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addOsAccountAsync_test_061 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addOsAccountAsync_test_061  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   disallowOsAccountAddition_test_102
+     * @tc.number disallowOsAccountAddition_test_102
+     * @tc.desc   disallowOsAccountAddition with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("disallowOsAccountAddition_test_102", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- disallowOsAccountAddition_test_102  -------- START --------');
+      try {
+        accountManager.disallowOsAccountAddition(null, true);
+        console.info(' --- disallowOsAccountAddition_test_102 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- disallowOsAccountAddition_test_102 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- disallowOsAccountAddition_test_102  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   disallowOsAccountAddition_test_103
+     * @tc.number disallowOsAccountAddition_test_103
+     * @tc.desc   disallowOsAccountAddition with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("disallowOsAccountAddition_test_103", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- disallowOsAccountAddition_test_103  -------- START --------');
+      try {
+        accountManager.disallowOsAccountAddition(undefined, true);
+        console.info(' --- disallowOsAccountAddition_test_103 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- disallowOsAccountAddition_test_103 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- disallowOsAccountAddition_test_103  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   disallowOsAccountAddition_test_104
+     * @tc.number disallowOsAccountAddition_test_104
+     * @tc.desc   disallowOsAccountAddition with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("disallowOsAccountAddition_test_104", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- disallowOsAccountAddition_test_104  -------- START --------');
+      try {
+        accountManager.disallowOsAccountAddition(SELFWANT, true, null);
+        console.info(' --- disallowOsAccountAddition_test_104 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- disallowOsAccountAddition_test_104 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- disallowOsAccountAddition_test_104  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   disallowOsAccountAddition_test_105
+     * @tc.number disallowOsAccountAddition_test_105
+     * @tc.desc   disallowOsAccountAddition with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("disallowOsAccountAddition_test_105", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- disallowOsAccountAddition_test_105  -------- START --------');
+      try {
+        accountManager.disallowOsAccountAddition(SELFWANT, true, undefined);
+        console.info(' --- disallowOsAccountAddition_test_105 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- disallowOsAccountAddition_test_105 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- disallowOsAccountAddition_test_105  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_072
+     * @tc.number isOsAccountAdditionDisallowed_test_072
+     * @tc.desc   isOsAccountAdditionDisallowed with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isOsAccountAdditionDisallowed_test_072", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isOsAccountAdditionDisallowed_test_072  -------- START --------');
+      try {
+        accountManager.isOsAccountAdditionDisallowed(undefined);
+        console.info(' --- isOsAccountAdditionDisallowed_test_072 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isOsAccountAdditionDisallowed_test_072 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isOsAccountAdditionDisallowed_test_072  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_073
+     * @tc.number isOsAccountAdditionDisallowed_test_073
+     * @tc.desc   isOsAccountAdditionDisallowed with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isOsAccountAdditionDisallowed_test_073", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isOsAccountAdditionDisallowed_test_073  -------- START --------');
+      try {
+        accountManager.isOsAccountAdditionDisallowed(SELFWANT, null);
+        console.info(' --- isOsAccountAdditionDisallowed_test_073 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isOsAccountAdditionDisallowed_test_073 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isOsAccountAdditionDisallowed_test_073  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_074
+     * @tc.number isOsAccountAdditionDisallowed_test_074
+     * @tc.desc   isOsAccountAdditionDisallowed with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isOsAccountAdditionDisallowed_test_074", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isOsAccountAdditionDisallowed_test_074  -------- START --------');
+      try {
+        accountManager.isOsAccountAdditionDisallowed(SELFWANT, undefined);
+        console.info(' --- isOsAccountAdditionDisallowed_test_074 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isOsAccountAdditionDisallowed_test_074 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isOsAccountAdditionDisallowed_test_074  -------- END --------');
+    })
   })
 }
