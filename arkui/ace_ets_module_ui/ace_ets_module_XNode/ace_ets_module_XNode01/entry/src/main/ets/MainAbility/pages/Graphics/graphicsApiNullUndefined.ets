@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { RenderNode, FrameNode, NodeController, ShapeMask, edgeColors, edgeWidths, borderStyles,
+import { RenderNode, FrameNode, NodeController, ShapeMask, ShapeClip, edgeColors, edgeWidths, borderStyles,
   borderRadiuses,
   LengthMetrics,ColorMetrics} from '@kit.ArkUI';
 
@@ -26,11 +26,6 @@ class MyNodeController extends NodeController {
     const mask = new ShapeMask();
     mask.fillColor = 0X55FF0000;
 
-    mask.setRectShape(null);
-    mask.setRoundRectShape(null);
-    mask.setCircleShape(null);
-    mask.setOvalShape(null);
-    mask.setCommandPath(null);
     mask.setRectShape(null);
     mask.setRoundRectShape(null);
     mask.setCircleShape(null);
@@ -56,7 +51,7 @@ class MyNodeController extends NodeController {
   }
 }
 
-class MyNodeController1 extends NodeController {
+class MyNodeController2 extends NodeController {
   private rootNode1: FrameNode | null = null;
 
   makeNode(uiContext1: UIContext): FrameNode | null {
@@ -65,16 +60,11 @@ class MyNodeController1 extends NodeController {
     const mask1 = new ShapeMask();
     mask1.fillColor = 0X55FF0000;
 
-    mask1.setRectShape(null);
-    mask1.setRoundRectShape(null);
-    mask1.setCircleShape(null);
-    mask1.setOvalShape(null);
-    mask1.setCommandPath(null);
-    mask1.setRectShape(null);
-    mask1.setRoundRectShape(null);
-    mask1.setCircleShape(null);
-    mask1.setOvalShape(null);
-    mask1.setCommandPath(null);
+    mask1.setRectShape(undefined);
+    mask1.setRoundRectShape(undefined);
+    mask1.setCircleShape(undefined);
+    mask1.setOvalShape(undefined);
+    mask1.setCommandPath(undefined);
 
     const renderNode1 = new RenderNode();
     renderNode1.frame = { x: 0, y: 0, width: 100, height: 100 };
@@ -94,14 +84,78 @@ class MyNodeController1 extends NodeController {
   }
 }
 
+class MyNodeController3 extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.rootNode = new FrameNode(uiContext);
+
+    const clip = new ShapeClip();
+    clip.setRectShape(null);
+    clip.setRoundRectShape(null);
+    clip.setCircleShape(null);
+    clip.setOvalShape(null);
+    clip.setCommandPath(null);
+    const renderNode = new RenderNode();
+    renderNode.frame = {
+      x: 0,
+      y: 0,
+      width: 100,
+      height: 100
+    };
+    renderNode.backgroundColor = 0XFF00FF00;
+    renderNode.shapeClip = clip;
+
+    const rootRenderNode = this.rootNode.getRenderNode();
+    if (rootRenderNode !== null) {
+      rootRenderNode.appendChild(renderNode);
+    }
+
+    return this.rootNode;
+  }
+}
+
+class MyNodeController4 extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.rootNode = new FrameNode(uiContext);
+
+    const clip = new ShapeClip();
+    clip.setRectShape(undefined);
+    clip.setRoundRectShape(undefined);
+    clip.setCircleShape(undefined);
+    clip.setOvalShape(undefined);
+    clip.setCommandPath(undefined);
+    const renderNode = new RenderNode();
+    renderNode.frame = {
+      x: 0,
+      y: 0,
+      width: 100,
+      height: 100
+    };
+    renderNode.backgroundColor = 0XFF00FF00;
+    renderNode.shapeClip = clip;
+
+    const rootRenderNode = this.rootNode.getRenderNode();
+    if (rootRenderNode !== null) {
+      rootRenderNode.appendChild(renderNode);
+    }
+
+    return this.rootNode;
+  }
+}
+
 @Entry
 @Component
 struct graphicsApiNullUndefined {
   private myNodeController: MyNodeController = new MyNodeController();
-  private myNodeController1: MyNodeController1 = new MyNodeController1();
+  private myNodeController2: MyNodeController2 = new MyNodeController2();
+  private myNodeController3: MyNodeController3 = new MyNodeController3();
+  private myNodeController4: MyNodeController4 = new MyNodeController4();
 
   build() {
-    Column() {
+    Column({space:3}) {
       Row({space:3}){
         NodeContainer(this.myNodeController)
           .id('graphicsApiNullUndefinedFirst')
@@ -109,12 +163,19 @@ struct graphicsApiNullUndefined {
             top: LengthMetrics.percent(null),
           })
           .backgroundColor(ColorMetrics.numeric(null))
-        NodeContainer(this.myNodeController1)
+        NodeContainer(this.myNodeController2)
           .id('graphicsApiNullUndefinedSecond')
           .margin({
             top: LengthMetrics.percent(undefined),
           })
           .backgroundColor(ColorMetrics.numeric(undefined))
+      }
+
+      Row({space:3}){
+        NodeContainer(this.myNodeController3)
+          .id('graphicsApiShapeClipNullUndefinedFirst')
+        NodeContainer(this.myNodeController4)
+          .id('graphicsApiShapeClipNullUndefinedSecond')
       }
     }.width('100%').height('100%')
   }
