@@ -3,6 +3,7 @@
         "MainAbility/pages/index/index",
 		"MainAbility/pages/Preset/InputPreset",
         "MainAbility/pages/TextControllerTest/TextControllerTest",
+        "MainAbility/pages/TextControllerTest/TextContentControllerBaseMethodsTest",
         "MainAbility/pages/Font/APIgetUIFontConfig",
         "MainAbility/pages/Font/Font",
         "MainAbility/pages/Font/FontJsunit",
