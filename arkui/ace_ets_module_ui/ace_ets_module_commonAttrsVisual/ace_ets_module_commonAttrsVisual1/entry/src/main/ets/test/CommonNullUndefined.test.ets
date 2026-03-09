@@ -42,7 +42,7 @@ export default function CommonNullUndefined() {
         router.clear();
         let pages = router.getState();
         console.info('get commonNullUndefined state pages: ' + JSON.stringify(pages));
-        if (!('commonNullUndefined' == pages.name)) {
+        if (!('CommonNullUndefined' == pages.name)) {
           console.info('get commonNullUndefined state pages.name: ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
