@@ -35,7 +35,7 @@ struct SystemRouterB {
   onPageShow() {
     let params = this.getUIContext().getRouter().getParams() as JsonObj1;
     if (params && params.data) {
-      console.info("[SystemRouterB] getParams result: " + params.data);
+      console.info('[SystemRouterB] getParams result: ' + params.data);
       this.getRouterParams(params.data!);
     }
   }
