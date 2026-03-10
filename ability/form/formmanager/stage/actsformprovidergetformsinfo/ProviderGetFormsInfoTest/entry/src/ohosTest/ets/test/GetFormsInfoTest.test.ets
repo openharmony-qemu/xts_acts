@@ -17,6 +17,11 @@ import formProvider from '@ohos.app.form.formProvider';
 import formInfo from '@ohos.app.form.formInfo';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
+import formBindingData from '@ohos.application.formBindingData';
+import hilog from '@ohos.hilog';
+
+const tag: string = 'testTag';
+const domain: number = 0xF811;
 
 let module1Want: Want = {
     deviceId: "",
