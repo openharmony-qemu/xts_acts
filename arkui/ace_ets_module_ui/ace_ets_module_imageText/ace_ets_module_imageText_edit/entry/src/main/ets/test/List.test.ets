@@ -140,6 +140,7 @@ import TextInputInputTypeNullUndefinedTest from './TextInputTest/TextInputInputT
 import TextInputSelectAllNullUndefinedTest from './TextInputTest/TextInputSelectAllNullUndefined.test';
 import TextInputSelectionMenuHiddenNullUndefinedTest from './TextInputTest/TextInputSelectionMenuHiddenNullUndefined.test';
 import TextInputTypeParamTest from './TextInputTest/TextInputTypeParam.test';
+import TextInputContentTypeParamTest from './TextInputTest/TextInputContentTypeParam.test';
 
 import TextAreaPropertiesNullUndefinedTest from './TextAreaTest/TextAreaPropertiesNullUndefined.test';
 import TextAreaPropertiesNullUndefined02Test from './TextAreaTest/TextAreaPropertiesNullUndefined02.test';
@@ -282,4 +283,5 @@ export default function testsuite() {
   TextInputInputTypeNullUndefinedTest();
   TextInputSelectAllNullUndefinedTest();
   TextInputSelectionMenuHiddenNullUndefinedTest();
+  TextInputContentTypeParamTest();
 }
