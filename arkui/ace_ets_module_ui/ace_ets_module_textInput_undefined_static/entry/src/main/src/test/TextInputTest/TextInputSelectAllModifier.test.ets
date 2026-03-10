@@ -22,19 +22,20 @@ import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
+import { inputMethod } from '@kit.IMEKit';
 
 
-export default function TextInputSelectAllTest() {
-  describe('TextInputSelectAllTest', () => {
+export default function TextInputSelectAllModifierTest() {
+  describe('TextInputSelectAllModifierTest', () => {
     beforeAll(async (): Promise<void> => {
-      console.info("TextInputSelectAllTest beforeAll start");
+      console.info("TextInputSelectAllModifierTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {
-      console.info("TextInputSelectAllTest beforeEach start");
+      console.info("TextInputSelectAllModifierTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/TextInput/TextInputSelectAllModifier',
       }
@@ -42,14 +43,14 @@ export default function TextInputSelectAllTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get TextInputSelectAllTest state pages: " + JSON.stringify(pages));
-        if (!("TextInputSelectAll" == pages.name)) {
-          console.info("get TextInputSelectAllTest state pages.name: " + JSON.stringify(pages.name));
+        console.info("get TextInputSelectAllModifierTest state pages: " + JSON.stringify(pages));
+        if (!("TextInputSelectAllModifier" == pages.name)) {
+          console.info("get TextInputSelectAllModifierTest state pages.name: " + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextInputSelectAllTest page error: " + err);
+        console.error("push TextInputSelectAllModifierTest page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,7 +76,7 @@ export default function TextInputSelectAllTest() {
       let result = obj.getElement('$attrs').getBoolean('selectAll');
       expect(result).assertEqual(false);
       await CommonFunc.sleep(1000);
-      driver.pressBack();
+      await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(1000);
 
       await button.click();
@@ -87,7 +88,7 @@ export default function TextInputSelectAllTest() {
       result = obj.getElement('$attrs').getBoolean('selectAll');
       expect(result).assertEqual(true);
       await CommonFunc.sleep(1000);
-      driver.pressBack();
+      await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(1000);
 
       await button.click();

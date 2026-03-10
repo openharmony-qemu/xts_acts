@@ -1,11 +1,11 @@
 {
   "src": [
     "testability/pages/Index",
+	"testability/pages/WebViewNativeMediaPlayerHandler5",
     "testability/pages/WebViewNativeMediaPlayerEnableFalse",
     "testability/pages/WebViewNativeMediaPlayerHandlerEnhanced",
     "testability/pages/WebViewNativeMediaPlayerHandler4",
     "testability/pages/WebViewNativeMediaUpdateRect",
-    "testability/pages/WebViewNativeMediaPlayerHandler5",
     "testability/pages/WebViewNativeMediaPlayerHandler6",
     "testability/pages/WebViewNativeMediaPlayerHandler7",
     "testability/pages/WebViewNativeMediaPlayerHandler8",

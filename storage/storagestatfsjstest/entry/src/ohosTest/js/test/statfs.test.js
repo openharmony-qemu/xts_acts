@@ -117,6 +117,30 @@ describe('statfs_test', function () {
     }
   });
 
+  /**
+   * @tc.name   statfs_test_get_free_bytes_async_005
+   * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0050
+   * @tc.desc   Test getFreeBytes() interfaces, When the path is dev, callback way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('statfs_test_get_free_bytes_async_005', Level.LEVEL0, async function (done) {
+    try {
+      statfs.getFreeBytes("",(err,number)=>{
+        if (err) {
+          console.info('statfs_test_get_free_bytes_async_005 err: ' + err);
+          expect(err.message == "No such file or directory").assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.info('statfs_test_get_free_bytes_async_005 has failed for ' + e);
+      expect(null).assertFail();
+      done();
+    }
+  });
+
      /**
       * @tc.name   statfs_test_get_total_bytes_async_000
       * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0000
@@ -216,7 +240,7 @@ describe('statfs_test', function () {
 
     /**
       * @tc.name   statfs_test_get_free_bytes_callback_005
-      * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0050
+      * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_CALLBACK_0050
       * @tc.desc   Test getFreeBytes() callback interfaces, When the path is null.
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
@@ -330,6 +354,28 @@ describe('statfs_test', function () {
         } catch (e) {
           console.info('statfs_test_get_total_bytes_callback_006 has failed for ' + e);
           expect(e.message == "Invalid path").assertTrue();
+          done();
+        }
+      });
+
+      /**
+      * @tc.name   statfs_test_get_total_bytes_callback_007
+      * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0070
+      * @tc.desc   Test getTotalBytes() callback interfaces, When the path is undefined.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('statfs_test_get_total_bytes_callback_007', Level.LEVEL0, async function (done) {
+        try {
+          statfs.getTotalBytes("", (err, number) => {
+            console.info('statfs_test_get_total_bytes_callback_007 err:' + err);
+            expect(err.message == "No such file or directory").assertTrue();
+            done();
+          });
+        } catch (e) {
+          console.info('statfs_test_get_total_bytes_callback_007 has failed for ' + e);
+          expect(e.message == "No such file or directory").assertTrue();
           done();
         }
       });

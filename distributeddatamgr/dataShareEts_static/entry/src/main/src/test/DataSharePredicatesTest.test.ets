@@ -730,5 +730,27 @@ export default function dataSharePredicatesTest() {
       }
     });
 
+    /**
+     * @tc.name   testChangeTypeValueTest0001
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0350
+     * @tc.desc   testChangeTypeValueTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testChangeTypeValueTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      try{
+        let changeType0 = dataShare.ChangeType.INSERT;
+        let changeType1 = dataShare.ChangeType.DELETE;
+        let changeType2 = dataShare.ChangeType.UPDATE;
+        expect(changeType0).assertEqual(0);
+        expect(changeType1).assertEqual(1);
+        expect(changeType2).assertEqual(2);
+      }catch (e) {
+        expect().assertFail()
+        console.error(tag + "testChangeTypeValueTest0001 error " + e.code + "  " + e.message);
+      }
+    });
+
   })
 }

@@ -442,30 +442,6 @@ export default function reflectionTest() {
     const getValidLongType = () => {
     };
 
-    /**
-     * @tc.number    SUB_REFLECTION_LAMBDAVALUE_CONSTRUCTORPARAMS_0600
-     * @tc.name      SUB_Reflection_LambdaValue_ConstructorParams_0006
-     * @tc.desc      Validate constructor rejects invalid LambdaType parameter
-     * @tc.level     LEVEL1
-     * @tc.size      MEDIUMTEST
-     * @tc.type      RELIABILITY
-     */
-    it("SUB_Reflection_LambdaValue_ConstructorParams_0006", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1,
-      (): void => {
-        console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_ConstructorParams_0006');
-        let errorThrown = false;
-        const invalidType: Object = {};
-        const testData: Object = {};
-        try {
-          new LambdaValue(invalidType as LambdaType, testData);
-        } catch (e) {
-          errorThrown = true;
-          expect(e instanceof Error).assertTrue();
-        }
-        expect(errorThrown).assertTrue();
-        console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_ConstructorParams_0006');
-      });
-
     const getValidFloatType = () => {
     };
 

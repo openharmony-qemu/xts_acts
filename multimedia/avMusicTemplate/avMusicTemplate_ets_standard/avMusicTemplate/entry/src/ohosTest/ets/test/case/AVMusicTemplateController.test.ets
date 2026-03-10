@@ -19,8 +19,6 @@ import { AVMusicTemplateUtil } from '../utils/AVMusicTemplateUtil.test';
 import { CommonUtils } from '../utils/CommonUtil.test';
 import { FakerDataUtil } from '../utils/FakerDataUtil.test';
 import { CommonConstants } from '../constants/CommonConstants.test';
-import assertFalse from '@ohos/hypium/src/main/module/assert/assertFalse';
-import assertFail from '@ohos/hypium/src/main/module/assert/assertFail';
 
 const TAG = 'avMusicTemplateControllerTest';
 
@@ -2418,7 +2416,6 @@ export default function avMusicTemplateControllerTest() {
         let controller: avMusicTemplate.AVMusicTemplateController =
           avMusicTemplate.createAVMusicTemplateController(sid);
         await controller.destroy();
-        // expect().assertFail();
         done();
       } catch (err) {
         CommonUtils.logError(TAG, "DESTROY_THROWS_ERROR_4800 catch err: " + CommonUtils.getError(err));

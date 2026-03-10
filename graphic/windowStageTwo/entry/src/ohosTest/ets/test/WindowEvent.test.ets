@@ -1022,6 +1022,51 @@ export default function windowEventTest() {
 
 
     })
+    /**
+     * @tc.name   testSetWindowMask_subWindow
+     * @tc.number testSetWindowMask_0100
+     * @tc.desc   testSetWindowMask_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMask_subWindow', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testSetWindowMask_subWindow";
+      let subWindow = await windowStage.createSubWindow('testSetWindowMask_subWindow');
+      await subWindow.setUIContent('testability/pages/Index1');
+      await subWindow.showWindow();
+      await sleep(300);
+      let windowMask = [];
+      try {
+        let promise = subWindow.setWindowMask(windowMask);
+        promise.then(() => {
+          console.info(caseName + ' Succeeded in setting the window mask.');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if (err.code === 801) {
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        if (err.code ===401) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+
+      }
+
+    })
 
 
 

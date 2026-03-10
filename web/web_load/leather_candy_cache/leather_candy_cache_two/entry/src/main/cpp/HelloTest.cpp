@@ -21,8 +21,7 @@
 #include <string>
 using namespace std;
 constexpr unsigned int LOG_PRINT_DOMAIN = 0xFF00;
-const char *g_tag = "YB";
-const char *g_doblanklessGetInfoValue2048Key = "";
+const char *g_tag = "TEST LOG";
 const char *g_doblanklessGetInfoValueWithKey = "GetBlanklessInfoWithKey";
 const char *g_doblanklessINVALID_ARGS = "\0";
 const char *g_doblanklessINVALID_ARGS_LENGTH1 = "y\0";
@@ -50,12 +49,12 @@ static napi_value Doblankless_Success(napi_env env, napi_callback_info info)
     ArkWeb_BlanklessInfo blanklessInfo =
         OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessGetInfoValueWithKey);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
         if (blanklessInfo.similarity >= g_similarity) {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                         "mmx2 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
+                         "similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
                          blanklessInfo.similarity, blanklessInfo.loadingTime, blanklessInfo.errCode);
             ArkWeb_BlanklessErrorCode err =
                 OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessGetInfoValueWithKey, true);
@@ -64,7 +63,7 @@ static napi_value Doblankless_Success(napi_env env, napi_callback_info info)
             ArkWeb_BlanklessErrorCode err =
                 OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessGetInfoValueWithKey, true);
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                         "mmx3 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
+                         "similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
                          blanklessInfo.similarity, blanklessInfo.loadingTime, err);
             napi_create_double(env, err, &Capacity);
         }
@@ -90,21 +89,21 @@ static napi_value Doblankless_Success100(napi_env env, napi_callback_info info)
     ArkWeb_BlanklessInfo blanklessInfo =
         OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, "a_99");
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
         if (blanklessInfo.similarity >= g_similarity) {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                         "mmx2 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
+                         "similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
                          blanklessInfo.similarity, blanklessInfo.loadingTime, blanklessInfo.errCode);
             ArkWeb_BlanklessErrorCode err =
                 OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, "a_99", true);
-            napi_create_double(env, blanklessInfo.errCode, &Capacity);
+            napi_create_double(env, err, &Capacity);
         } else {
             ArkWeb_BlanklessErrorCode err =
                 OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, "a_99", true);
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                         "mmx3 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
+                         "similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
                          blanklessInfo.similarity, blanklessInfo.loadingTime, err);
             napi_create_double(env, err, &Capacity);
         }
@@ -182,15 +181,15 @@ static napi_value Doblankless_ERR_KEY_NOT_MATCH(napi_env env, napi_callback_info
     ArkWeb_BlanklessInfo blanklessInfo =
         OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessGetInfoValueWithKey);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "mmx similarity:%{public}f,loadingTime:%{public}d",
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "similarity:%{public}f,loadingTime:%{public}d",
                      blanklessInfo.similarity, blanklessInfo.loadingTime);
         ArkWeb_BlanklessErrorCode err =
             OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_setBlanklessLoadingWithKey, true);
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                     "mmx2 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d", blanklessInfo.similarity,
+                     "similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d", blanklessInfo.similarity,
                      blanklessInfo.loadingTime, err);
         if (err == ARKWEB_BLANKLESS_ERR_KEY_NOT_MATCH) {
             napi_create_double(env, err, &Capacity);
@@ -218,10 +217,10 @@ static napi_value Doblankless_CONTROLLER_NOT_INITED(napi_env env, napi_callback_
     napi_value Capacity;
     ArkWeb_BlanklessInfo blanklessInfo = OH_NativeArkWeb_GetBlanklessInfoWithKey("", g_doblanklessGetInfoValueWithKey);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     if (blanklessInfo.errCode == ARKWEB_BLANKLESS_ERR_CONTROLLER_NOT_INITED) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "mmx similarity:%{public}f,loadingTime:%{public}d",
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "similarity:%{public}f,loadingTime:%{public}d",
                      blanklessInfo.similarity, blanklessInfo.loadingTime);
         napi_create_double(env, blanklessInfo.errCode, &Capacity);
     } else if (blanklessInfo.errCode == g_errCode) {
@@ -248,10 +247,10 @@ static napi_value Doblankless_INVALID_ARGS(napi_env env, napi_callback_info info
     ArkWeb_BlanklessInfo blanklessInfo =
         OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     if (blanklessInfo.errCode == ARKWEB_BLANKLESS_ERR_INVALID_ARGS) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "mmx similarity:%{public}f,loadingTime:%{public}d",
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "similarity:%{public}f,loadingTime:%{public}d",
                      blanklessInfo.similarity, blanklessInfo.loadingTime);
         napi_create_double(env, blanklessInfo.errCode, &Capacity);
     } else if (blanklessInfo.errCode == g_errCode) {
@@ -276,11 +275,34 @@ static napi_value Doblankless_INVALID_ARGS_SET_ZERO(napi_env env, napi_callback_
     ArkWeb_BlanklessInfo blanklessInfo =
         OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
-            ArkWeb_BlanklessErrorCode err =
+    ArkWeb_BlanklessErrorCode err =
                 OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS, true);
-            napi_create_double(env, err, &Capacity);
+    napi_create_double(env, err, &Capacity);
+    return Capacity;
+}
+static napi_value Doblankless_INVALID_ARGS_GET_ZERO(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+
+    napi_value Capacity;
+    ArkWeb_BlanklessInfo blanklessInfo =
+        OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 blanklessInfo.loadingTime, blanklessInfo.errCode);
+    napi_create_double(env, blanklessInfo.errCode, &Capacity);
     return Capacity;
 }
 static napi_value Doblankless_INVALID_ARGS_SET_ONE(napi_env env, napi_callback_info info)
@@ -300,7 +322,7 @@ static napi_value Doblankless_INVALID_ARGS_SET_ONE(napi_env env, napi_callback_i
     ArkWeb_BlanklessInfo blanklessInfo =
         OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH1);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
             ArkWeb_BlanklessErrorCode err =
@@ -331,11 +353,7 @@ static napi_value Doblankless_INVALID_ARGS_GET_ONE(napi_env env, napi_callback_i
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
                  "Doblankless_INVALID_ARGS_GET_ONE similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
-    if (blanklessInfo.errCode == ARKWEB_BLANKLESS_ERR_INVALID_ARGS) {
-        napi_create_double(env, blanklessInfo.errCode, &Capacity);
-    } else if (blanklessInfo.errCode == g_errCode) {
-        napi_create_double(env, blanklessInfo.errCode, &Capacity);
-    }
+    napi_create_double(env, blanklessInfo.errCode, &Capacity);
     return Capacity;
 }
 static napi_value Doblankless_INVALID_ARGS_SET_2048(napi_env env, napi_callback_info info)
@@ -355,7 +373,7 @@ static napi_value Doblankless_INVALID_ARGS_SET_2048(napi_env env, napi_callback_
     ArkWeb_BlanklessInfo blanklessInfo =
         OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2048);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
             ArkWeb_BlanklessErrorCode err =
@@ -383,22 +401,22 @@ static napi_value Doblankless_INVALID_ARGS_GET_2048(napi_env env, napi_callback_
     ArkWeb_BlanklessInfo blanklessInfo =
         OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2048);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     napi_create_double(env, blanklessInfo.errCode, &Capacity);
     if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
         if (blanklessInfo.similarity >= g_similarity) {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                         "mmx2 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
+                         "similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
                          blanklessInfo.similarity, blanklessInfo.loadingTime, blanklessInfo.errCode);
             ArkWeb_BlanklessErrorCode err =
                 OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2048, true);
             napi_create_double(env, err, &Capacity);
         } else {
             ArkWeb_BlanklessErrorCode err =
-                OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessGetInfoValueWithKey, true);
+                OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2048, true);
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                         "mmx3 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
+                         "similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
                          blanklessInfo.similarity, blanklessInfo.loadingTime, err);
             napi_create_double(env, err, &Capacity);
         }
@@ -424,11 +442,11 @@ static napi_value Doblankless_INVALID_ARGS_SET_2049(napi_env env, napi_callback_
     ArkWeb_BlanklessInfo blanklessInfo =
         OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2049);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
-            ArkWeb_BlanklessErrorCode err =
-                OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2049, true);
-            napi_create_double(env, err, &Capacity);
+    ArkWeb_BlanklessErrorCode err =
+        OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2049, true);
+    napi_create_double(env, err, &Capacity);
     return Capacity;
 }
 static napi_value Doblankless_INVALID_ARGS_GET_2049(napi_env env, napi_callback_info info)
@@ -448,7 +466,7 @@ static napi_value Doblankless_INVALID_ARGS_GET_2049(napi_env env, napi_callback_
     ArkWeb_BlanklessInfo blanklessInfo =
         OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2049);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     napi_create_double(env, blanklessInfo.errCode, &Capacity);
     return Capacity;
@@ -584,6 +602,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"doblankless_INVALID_ARGS_SET_ZERO", nullptr, Doblankless_INVALID_ARGS_SET_ZERO, nullptr, nullptr, nullptr, napi_default,
          nullptr},
+        {"doblankless_INVALID_ARGS_GET_ZERO", nullptr, Doblankless_INVALID_ARGS_GET_ZERO, nullptr, nullptr, nullptr, 
+            napi_default, nullptr},
         {"doblankless_INVALID_ARGS_SET_ONE", nullptr, Doblankless_INVALID_ARGS_SET_ONE, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"doblankless_INVALID_ARGS_GET_ONE", nullptr, Doblankless_INVALID_ARGS_GET_ONE, nullptr, nullptr, nullptr, napi_default,

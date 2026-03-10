@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, Level, beforeAll } from "../../../hypium/index";
+import { describe, beforeAll, it, expect, Level, beforeAll, afterEach } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import childProcessManager from '@ohos.app.ability.childProcessManager';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
@@ -51,7 +51,7 @@ export default function StartChildProcessTestStatic() {
         try {
           childProcessManager.startChildProcess('', childProcessManager.StartMode.SELF_FORK).then((pid)=>{
             console.log(`${tag} startChildProcess success, pid: ${pid}`);
-            try{expect().assertFail();}catch(e){}
+            expect(pid > 0).assertTrue();
             done();
           }).catch((err: Error) => {
             console.log(`${tag} startChildProcess error, err: ${err?.code}`);
@@ -60,7 +60,7 @@ export default function StartChildProcessTestStatic() {
           });
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(PARAM_INVALID)
+          try{expect().assertFail();}catch(e){}
           done();
         }
       }else if(mpEnable === 'false'){
@@ -99,13 +99,21 @@ export default function StartChildProcessTestStatic() {
       console.log(`${tag}, it begin`);
       if(mpEnable === 'true'){
         try {
-          childProcessManager.startChildProcess('', childProcessManager.StartMode.SELF_FORK, ()=>{
-            try{expect().assertFail();}catch(e){}
-            done();
+          childProcessManager.startChildProcess('', childProcessManager.StartMode.SELF_FORK, (err, data)=>{
+            if(err?.code){
+              console.log(`${tag} startChildProcess error, err: ${err?.code}`);
+              try{expect().assertFail();}catch(e){}
+              done();
+            }else{
+              let pid = data as int
+              console.log(`${tag} startChildProcess success, pid: ${pid}`);
+              expect(pid > 0).assertTrue();
+              done();
+            }
           })
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(PARAM_INVALID)
+          try{expect().assertFail();}catch(e){}
           done();
         }
       }else if(mpEnable === 'false'){
@@ -151,12 +159,12 @@ export default function StartChildProcessTestStatic() {
             done();
           }).catch((err: Error) => {
             console.log(`${tag} startChildProcess error, err: ${err?.code}`);
-            try{expect().assertFail();}catch(e){}
+            expect(err?.code).assertEqual(16000050)
             done();
           });
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(PARAM_INVALID)
+          try{expect().assertFail();}catch(e){}
           done();
         }
       }else if(mpEnable === 'false'){
@@ -195,13 +203,19 @@ export default function StartChildProcessTestStatic() {
       console.log(`${tag}, it begin`);
       if(mpEnable === 'true'){
         try {
-          childProcessManager.startChildProcess('', childProcessManager.StartMode.APP_SPAWN_FORK, ()=>{
-            try{expect().assertFail();}catch(e){}
-            done();
+          childProcessManager.startChildProcess('', childProcessManager.StartMode.APP_SPAWN_FORK, (err, data)=>{
+            if(err?.code){
+              console.log(`${tag} startChildProcess error, err: ${err?.code}`);
+              expect(err?.code).assertEqual(16000050)
+              done();
+            }else{
+              try{expect().assertFail();}catch(e){}
+              done();
+            }
           })
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(PARAM_INVALID)
+          try{expect().assertFail();}catch(e){}
           done();
         }
       }else if(mpEnable === 'false'){

@@ -19,6 +19,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 
 export default function VibratorJsTest_misc_11() {
     let isAvailable;
+    let sensortempcode = true;
     const ABILITYJUDGMENT = canIUse('SystemCapability.Sensors.MiscDevice');
     describe("VibratorJsTest_misc_11", function () {
         beforeAll(async function (done) {
@@ -796,7 +797,7 @@ export default function VibratorJsTest_misc_11() {
                     frequency:50
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -845,7 +846,7 @@ export default function VibratorJsTest_misc_11() {
                     index:0
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -869,7 +870,7 @@ export default function VibratorJsTest_misc_11() {
                     intensity:0
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -894,7 +895,7 @@ export default function VibratorJsTest_misc_11() {
                     frequency:50
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -967,7 +968,7 @@ export default function VibratorJsTest_misc_11() {
                     index:0
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -993,7 +994,7 @@ export default function VibratorJsTest_misc_11() {
                     index:1
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1019,7 +1020,7 @@ export default function VibratorJsTest_misc_11() {
                     index:0
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1045,7 +1046,7 @@ export default function VibratorJsTest_misc_11() {
                     index:0
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1071,7 +1072,7 @@ export default function VibratorJsTest_misc_11() {
                     index:1
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1096,7 +1097,7 @@ export default function VibratorJsTest_misc_11() {
                     frequency:50
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1122,7 +1123,7 @@ export default function VibratorJsTest_misc_11() {
                     index:1
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1148,7 +1149,7 @@ export default function VibratorJsTest_misc_11() {
                     index:0
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1174,7 +1175,7 @@ export default function VibratorJsTest_misc_11() {
                     index:0
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1200,7 +1201,7 @@ export default function VibratorJsTest_misc_11() {
                     index:1
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1224,7 +1225,7 @@ export default function VibratorJsTest_misc_11() {
                     intensity:101
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1250,7 +1251,7 @@ export default function VibratorJsTest_misc_11() {
                     index:1
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1275,7 +1276,7 @@ export default function VibratorJsTest_misc_11() {
                     frequency:50
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1301,7 +1302,7 @@ export default function VibratorJsTest_misc_11() {
                     index:0
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1327,7 +1328,7 @@ export default function VibratorJsTest_misc_11() {
                     index:1
                 }
                 console.info(TAG + ` param is ${JSON.stringify(param)}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error){
                 console.info(TAG + ` param error: ${JSON.stringify(error)}`);
@@ -1406,7 +1407,7 @@ export default function VibratorJsTest_misc_11() {
                     expect(false).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error) {
                 if (error && !isAvailable) {
@@ -1499,7 +1500,7 @@ export default function VibratorJsTest_misc_11() {
                     expect(false).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
             } catch (error) {
                 if (error && !isAvailable) {
                     console.info(TAG + ` first isAvailable is false error: ${JSON.stringify(error.code)}`);
@@ -1522,7 +1523,7 @@ export default function VibratorJsTest_misc_11() {
                 } else {
                     await vibrator.startVibration({ type:"pattern", pattern:builder1.build() }, { usage: "unknown" });
                     console.info(TAG + ` startVibration second success`);
-                    expect(true).assertTrue();
+                    expect(sensortempcode).assertTrue();
                     done();
                 }
             } catch (error) {
@@ -1597,7 +1598,7 @@ export default function VibratorJsTest_misc_11() {
                     expect(false).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error) {
                 if (error && !isAvailable) {
@@ -1736,7 +1737,7 @@ export default function VibratorJsTest_misc_11() {
                     expect(false).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }catch (error) {
                 if (error && !isAvailable) {

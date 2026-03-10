@@ -150,12 +150,152 @@ export default function MultimodalInputDeviceTest() {
             expect(deviceData.isLocal).assertInstanceOf("Boolean");
             done();
           });
-        });        
+        });
       } catch (error) {
         console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
         expect().assertFail();
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceInfo_0300
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceInfo_0300
+     * @tc.desc   Test callback getDeviceInfo interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDeviceInfo_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfo_0300";
+      console.info(`${caseName} enter`);
+      try {
+        await inputDevice.getDeviceList().then((data) => {
+          console.info(`${caseName} Device List: ${JSON.stringify(data)}`);
+          expect(data).assertInstanceOf("Array");
+          if (data.length <= 0) {
+            return;
+          }
+          inputDevice.getDeviceInfo(null, (error: Error, deviceData: inputDevice.InputDeviceData) => {
+            if (error) {
+              console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect().assertFail();
+              done();
+            } else {
+              console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+              expect().assertFail();
+              done();
+            }
+          });
+        })
+      } catch (error) {
+        console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceInfo_0400
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceInfo_0400
+     * @tc.desc   Test callback getDeviceInfo interface when the deviceId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDeviceInfo_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfo_0400";
+      console.info(`${caseName} enter`);
+      try {
+        await inputDevice.getDeviceList().then((data) => {
+          console.info(`${caseName} Device List: ${JSON.stringify(data)}`);
+          expect(data).assertInstanceOf("Array");
+          if (data.length <= 0) {
+            return;
+          }
+          inputDevice.getDeviceInfo(undefined, (error: Error, deviceData: inputDevice.InputDeviceData) => {
+            if (error) {
+              console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect().assertFail();
+              done();
+            } else {
+              console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+              expect().assertFail();
+              done();
+            }
+          });
+        })
+      } catch (error) {
+        console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceInfo_0500
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceInfo_0500
+     * @tc.desc   Test promise getDeviceInfo interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDeviceInfo_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfo_0500";
+      console.info(`${caseName} enter`);
+      try {
+        await inputDevice.getDeviceList().then((data) => {
+          console.info(`${caseName} Device List: ${JSON.stringify(data)}`);
+          expect(data).assertInstanceOf("Array");
+          if (data.length <= 0) {
+            return;
+          }
+          inputDevice.getDeviceInfo(null).then((deviceData: inputDevice.InputDeviceData) => {
+            console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+            expect().assertFail();
+            done();
+          });
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceInfo_0600
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceInfo_0600
+     * @tc.desc   Test promise getDeviceInfo interface when the deviceId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDeviceInfo_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfo_0600";
+      console.info(`${caseName} enter`);
+      try {
+        await inputDevice.getDeviceList().then((data) => {
+          console.info(`${caseName} Device List: ${JSON.stringify(data)}`);
+          expect(data).assertInstanceOf("Array");
+          if (data.length <= 0) {
+            return;
+          }
+          inputDevice.getDeviceInfo(undefined).then((deviceData: inputDevice.InputDeviceData) => {
+            console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+            expect().assertFail();
+            done();
+          });
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
     });
 
     /**
@@ -208,6 +348,68 @@ export default function MultimodalInputDeviceTest() {
         ExpectTrue(error.code == 401);
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0300
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0300
+     * @tc.desc   Test getDeviceInfoSync interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0300";
+      console.info(`${caseName} enter`);
+      try {
+        await inputDevice.getDeviceList().then((data) => {
+          console.info(`${caseName} Device List: ${JSON.stringify(data)}`);
+          expect(data).assertInstanceOf("Array");
+          if (data.length <= 0) {
+            return;
+          }
+          let deviceData: inputDevice.InputDeviceData = inputDevice.getDeviceInfoSync(null);
+          console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0400
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0400
+     * @tc.desc   Test getDeviceInfoSync interface when the deviceId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0400";
+      console.info(`${caseName} enter`);
+      try {
+        await inputDevice.getDeviceList().then((data) => {
+          console.info(`${caseName} Device List: ${JSON.stringify(data)}`);
+          expect(data).assertInstanceOf("Array");
+          if (data.length <= 0) {
+            return;
+          }
+          let deviceData: inputDevice.InputDeviceData = inputDevice.getDeviceInfoSync(undefined);
+          console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
     });
 
     /**
@@ -386,6 +588,171 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDevice_0300
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDevice_0300
+     * @tc.desc   Test callback getDevice interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDevice_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDevice_0300";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.getDevice(null, (error: Error, deviceData: inputDevice.InputDeviceData) => {
+          if (error) {
+            console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.message).assertEqual("GetDevice: \"The first parameter type is wrong\"");
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDevice_0400
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDevice_0400
+     * @tc.desc   Test callback getDevice interface when the deviceId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDevice_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDevice_0400";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.getDevice(undefined, (error: Error, deviceData: inputDevice.InputDeviceData) => {
+          if (error) {
+            console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.message).assertEqual("GetDevice: \"The first parameter type is wrong\"");
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDevice_0500
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDevice_0500
+     * @tc.desc   Test promise getDevice interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDevice_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDevice_0500";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.getDevice(null).then((deviceData: inputDevice.InputDeviceData) => {
+          console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.message).assertEqual("GetDevice: \"The first parameter type is wrong\"");
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDevice_0600
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDevice_0600
+     * @tc.desc   Test promise getDevice interface when the deviceId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDevice_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDevice_0600";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.getDevice(undefined).then((deviceData: inputDevice.InputDeviceData) => {
+          console.info(`${caseName} bailu--Device info: ${JSON.stringify(deviceData)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} bailu--Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.message).assertEqual("GetDevice: \"The first parameter type is wrong\"");
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getDevice_0700
+     * @tc.number SUB_MMI_Input_Api_IptDev_getDevice_0700
+     * @tc.desc   Test promise getDevice interface to obtain the data type for retrieving information about the specified input device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDevice_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDevice_0700";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.getDevice(1).then((deviceData: inputDevice.InputDeviceData) => {
+          console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+          expect(deviceData.id).assertInstanceOf('Number');
+          expect(deviceData.name).assertInstanceOf('String');
+          expect(deviceData.sources).assertInstanceOf('Array');
+          expect(deviceData.axisRanges).assertInstanceOf('Array');
+          expect(deviceData.bus).assertInstanceOf('Number');
+          expect(deviceData.product).assertInstanceOf('Number');
+          expect(deviceData.vendor).assertInstanceOf('Number');
+          expect(deviceData.version).assertInstanceOf('Number');
+          expect(deviceData.phys).assertInstanceOf('String');
+          expect(deviceData.uniq).assertInstanceOf('String');
+          expect(deviceData).assertInstanceOf('Object');
+          console.info(`InputDevice_getDevice_test_02  getDevice expect res`);
+          for (let j = 0; j < deviceData.axisRanges.length; j++) {
+            expect(deviceData.axisRanges[j].source == 'keyboard' || deviceData.axisRanges[j].source == 'mouse' ||
+              deviceData.axisRanges[j].source == 'touchpad' || deviceData.axisRanges[j].source == 'touchscreen' ||
+              deviceData.axisRanges[j].source == 'joystick' ||
+              deviceData.axisRanges[j].source == 'trackball').assertTrue();
+            expect(deviceData.axisRanges[j].axis == 'touchmajor' || deviceData.axisRanges[j].axis == 'touchminor' ||
+              deviceData.axisRanges[j].axis == 'orientation' || deviceData.axisRanges[j].axis == 'x' ||
+              deviceData.axisRanges[j].axis == 'y' || deviceData.axisRanges[j].axis == 'pressure' ||
+              deviceData.axisRanges[j].axis == 'toolminor' || deviceData.axisRanges[j].axis == 'toolmajor' ||
+              deviceData.axisRanges[j].axis == 'null').assertTrue();
+            expect(deviceData.axisRanges[j].max).assertInstanceOf('Number');
+            expect(deviceData.axisRanges[j]).assertInstanceOf('Object');
+            expect(deviceData.axisRanges[j].min).assertInstanceOf('Number');
+            expect(deviceData.axisRanges[j].fuzz).assertInstanceOf('Number');
+            expect(deviceData.axisRanges[j].flat).assertInstanceOf('Number');
+            expect(deviceData.axisRanges[j].resolution).assertInstanceOf('Number');
+          }
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_0100
      * @tc.desc   Test callback supportKeys interface to get whether the input device supports the specified key code value.
@@ -455,6 +822,256 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_0400
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_0400
+     * @tc.desc   Test callback supportKeys interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_0400";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.supportKeys(null, [17, 22, 2055], (error: Error, supportResult: Array<Boolean>) => {
+          console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_0500
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_0500
+     * @tc.desc   Test callback supportKeys interface when the deviceId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_0500";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.supportKeys(undefined, [17, 22, 2055], (error: Error, supportResult: Array<Boolean>) => {
+          console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_0600
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_0600
+     * @tc.desc   Test callback supportKeys interface when the keys is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_0600";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.supportKeys(1, null, (error: Error, supportResult: Array<Boolean>) => {
+          console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_0700
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_0700
+     * @tc.desc   Test callback supportKeys interface when the keys is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_0700";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.supportKeys(1, undefined, (error: Error, supportResult: Array<Boolean>) => {
+          console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_0800
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_0800
+     * @tc.desc   Test callback supportKeys interface when the keys is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_0800";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.supportKeys(1, [], (error: Error, supportResult: Array<Boolean>) => {
+          console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_0900
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_0900
+     * @tc.desc   Test promise supportKeys interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_0900";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.supportKeys(null, [17, 22, 2055]).then((supportResult: Array<Boolean>) => {
+          console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_1000
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_1000
+     * @tc.desc   Test promise supportKeys interface when the deviceId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_1000";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.supportKeys(undefined, [17, 22, 2055]).then((supportResult: Array<Boolean>) => {
+          console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_1100
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_1100
+     * @tc.desc   Test promise supportKeys interface when the keys is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_1100";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.supportKeys(1, null).then((supportResult: Array<Boolean>) => {
+          console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_1200
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_1200
+     * @tc.desc   Test promise supportKeys interface when the keys is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_1200";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.supportKeys(1, undefined).then((supportResult: Array<Boolean>) => {
+          console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_1300
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_1300
+     * @tc.desc   Test promise supportKeys interface when the keys is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_1300";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.supportKeys(1, []).then((supportResult: Array<Boolean>) => {
+          console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeysSync_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_supportKeysSync_0100
      * @tc.desc   Test supportKeysSync interface to get whether the input device supports the specified key code value.
@@ -474,6 +1091,126 @@ export default function MultimodalInputDeviceTest() {
         ExpectFalse(true);
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeysSync_0200
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeysSync_0200
+     * @tc.desc   Test supportKeysSync interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeysSync_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeysSync_0200";
+      console.info(`${caseName} enter`);
+      try {
+        let supportResult: Array<Boolean> = inputDevice.supportKeysSync(null, [17, 22, 2055]);
+        console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeysSync_0300
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeysSync_0300
+     * @tc.desc   Test supportKeysSync interface when the deviceId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeysSync_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeysSync_0300";
+      console.info(`${caseName} enter`);
+      try {
+        let supportResult: Array<Boolean> = inputDevice.supportKeysSync(undefined, [17, 22, 2055]);
+        console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeysSync_0400
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeysSync_0400
+     * @tc.desc   Test supportKeysSync interface when the keys is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeysSync_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeysSync_0400";
+      console.info(`${caseName} enter`);
+      try {
+        let supportResult: Array<Boolean> = inputDevice.supportKeysSync(1, null);
+        console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeysSync_0500
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeysSync_0500
+     * @tc.desc   Test supportKeysSync interface when the keys is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeysSync_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeysSync_0500";
+      console.info(`${caseName} enter`);
+      try {
+        let supportResult: Array<Boolean> = inputDevice.supportKeysSync(1, undefined);
+        console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeysSync_0600
+     * @tc.number SUB_MMI_Input_Api_IptDev_supportKeysSync_0600
+     * @tc.desc   Test supportKeysSync interface when the keys is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeysSync_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_supportKeysSync_0600";
+      console.info(`${caseName} enter`);
+      try {
+        let supportResult: Array<Boolean> = inputDevice.supportKeysSync(1, []);
+        console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
     });
 
     /**
@@ -499,8 +1236,7 @@ export default function MultimodalInputDeviceTest() {
               type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD ||
               type == inputDevice.KeyboardType.DIGITAL_KEYBOARD ||
               type == inputDevice.KeyboardType.HANDWRITING_PEN ||
-              type == inputDevice.KeyboardType.REMOTE_CONTROL)
-              .assertTrue;
+              type == inputDevice.KeyboardType.REMOTE_CONTROL).assertTrue;
             done();
           }
         });
@@ -529,8 +1265,7 @@ export default function MultimodalInputDeviceTest() {
             type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD ||
             type == inputDevice.KeyboardType.DIGITAL_KEYBOARD ||
             type == inputDevice.KeyboardType.HANDWRITING_PEN ||
-            type == inputDevice.KeyboardType.REMOTE_CONTROL)
-            .assertTrue;
+            type == inputDevice.KeyboardType.REMOTE_CONTROL).assertTrue;
           done();
         });
       } catch (error) {
@@ -538,6 +1273,118 @@ export default function MultimodalInputDeviceTest() {
         ExpectFalse(true);
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getKeyboardType_0300
+     * @tc.number SUB_MMI_Input_Api_IptDev_getKeyboardType_0300
+     * @tc.desc   Test callback getKeyboardType interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getKeyboardType_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getKeyboardType_0300";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.getKeyboardType(null, (error: Error, type: Number) => {
+          if (error) {
+            console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getKeyboardType_0400
+     * @tc.number SUB_MMI_Input_Api_IptDev_getKeyboardType_0400
+     * @tc.desc   Test callback getKeyboardType interface when the deviceId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getKeyboardType_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getKeyboardType_0400";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.getKeyboardType(undefined, (error: Error, type: Number) => {
+          if (error) {
+            console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getKeyboardType_0500
+     * @tc.number SUB_MMI_Input_Api_IptDev_getKeyboardType_0500
+     * @tc.desc   Test promise getKeyboardType interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getKeyboardType_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getKeyboardType_0500";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.getKeyboardType(null).then((type: Number) => {
+          console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getKeyboardType_0600
+     * @tc.number SUB_MMI_Input_Api_IptDev_getKeyboardType_0600
+     * @tc.desc   Test promise getKeyboardType interface when the deviceId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getKeyboardType_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getKeyboardType_0600";
+      console.info(`${caseName} enter`);
+      try {
+        inputDevice.getKeyboardType(undefined).then((type: Number) => {
+          console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
     });
 
     /**
@@ -558,8 +1405,7 @@ export default function MultimodalInputDeviceTest() {
           type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD ||
           type == inputDevice.KeyboardType.DIGITAL_KEYBOARD ||
           type == inputDevice.KeyboardType.HANDWRITING_PEN ||
-          type == inputDevice.KeyboardType.REMOTE_CONTROL)
-          .assertTrue;
+          type == inputDevice.KeyboardType.REMOTE_CONTROL).assertTrue;
         done();
       } catch (error) {
         console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -584,9 +1430,33 @@ export default function MultimodalInputDeviceTest() {
         done();
       } catch (error) {
         console.info(`${caseName} Failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-        ExpectTrue(error.code == 401);
+        expect(error.code).assertEqual(401);
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_getKeyboardTypeSync_0300
+     * @tc.number SUB_MMI_Input_Api_IptDev_getKeyboardTypeSync_0300
+     * @tc.desc   Test getKeyboardTypeSync interface when the deviceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_getKeyboardTypeSync_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getKeyboardTypeSync_0300";
+      console.info(`${caseName} enter`);
+      try {
+        let type: number = inputDevice.getKeyboardTypeSync(null);
+        console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
     });
 
     /**

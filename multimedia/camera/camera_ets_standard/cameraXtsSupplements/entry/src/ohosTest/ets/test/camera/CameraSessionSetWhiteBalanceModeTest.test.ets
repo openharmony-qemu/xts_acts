@@ -1197,5 +1197,46 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
         done();
       }
     })
+    /**
+     * @tc.name   CAMERA_SESSION_SET_WHITE_BALANCE_MODE_011
+     * @tc.number CAMERA_SESSION_SET_WHITE_BALANCE_MODE_011
+     * @tc.desc   setWhiteBalanceMode camera WhiteBalanceMode LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CAMERA_SESSION_SET_WHITE_BALANCE_MODE_011', Level.LEVEL0, async (done: Function) => {
+      const testName = 'CAMERA_SESSION_SET_WHITE_BALANCE_MODE_011';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let PMode: camera.WhiteBalanceMode = camera.WhiteBalanceMode.LOCKED;
+          let status = mVideoSession.isWhiteBalanceModeSupported(PMode);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported :", status);
+          if (status) {
+            let mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            mVideoSession.setWhiteBalanceMode(camera.WhiteBalanceMode.MANUAL);
+            mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            mVideoSession.setWhiteBalanceMode(camera.WhiteBalanceMode.LOCKED);
+            mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.MANUAL);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
   })
 }

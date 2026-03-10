@@ -15,7 +15,8 @@
  */
 
 import GetWindowWidthAndHeightTest from './window/GetWindowWidthAndHeight.test';
-
+import getUIContextStatic from './uicontext/getUIContextStatic.test';
 export default function testsuite() {
   GetWindowWidthAndHeightTest();
+  getUIContextStatic();
 }

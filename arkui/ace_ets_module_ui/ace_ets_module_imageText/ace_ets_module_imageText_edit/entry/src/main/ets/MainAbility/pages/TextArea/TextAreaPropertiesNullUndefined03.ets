@@ -140,14 +140,14 @@ struct TextAreaPropertiesNullUndefined03Test {
               .width('30%')
               .height('5%')
               .id('TextArea_maxLines_null')
-              .maxLines(null)
+              .maxLines(null,null)
 
             // Undefined
             TextArea({ placeholder: 'maxLines undefined', text: 'Hello World' })
               .width('30%')
               .height('5%')
               .id('TextArea_maxLines_undefined')
-              .maxLines(undefined)
+              .maxLines(undefined,undefined)
           }
           .width('100%')
 

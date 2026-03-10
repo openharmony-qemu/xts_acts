@@ -331,7 +331,6 @@ export default function abilityTest() {
                 expect(receivedParam['lyrics'] == UPDATE_LYRICS_WANT_PARAMS['lyrics']).assertTrue();
                 expect(receivedString2 == UPDATE_LYRICS_EVENT).assertTrue();
                 expect(receivedParam2['lyrics'] == UPDATE_LYRICS_WANT_PARAMS['lyrics']).assertTrue();
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0200 Session event change event not received");
                 expect(true).assertFalse();
@@ -367,7 +366,6 @@ export default function abilityTest() {
                 console.log(TAG + "Received session event change event");
                 expect(receivedString == UPDATE_LYRICS_EVENT).assertTrue();
                 expect(receivedParam['lyrics'] == UPDATE_LYRICS_WANT_PARAMS['lyrics']).assertTrue();
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "Session event change event not received");
                 expect(true).assertFalse();
@@ -402,7 +400,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "Received session event change event");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "Session event change event not received");
                 expect(true).assertFalse();
@@ -434,7 +431,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "Received session event change event");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "Session event change event not received");
                 expect(true).assertFalse();
@@ -460,7 +456,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -638,7 +633,6 @@ export default function abilityTest() {
             if (receivedCallback && !receivedCallback2) {
                 console.log(TAG + "Received extras change event");
                 expect(receivedExtras['extrasKey'] == CUSTOM_EXTRAS['extrasKey']).assertTrue();
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0100 Extras change event not received");
                 expect(true).assertFalse();
@@ -672,7 +666,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200 Success, not received extras change event");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200 failed, extras change event received");
                 expect(true).assertFalse();
@@ -703,7 +696,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300 Success, not received extras change event");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300 failed, extras change event received");
                 expect(true).assertFalse();
@@ -733,7 +725,6 @@ export default function abilityTest() {
             Utils.msSleep(200).then(() => {
                 if (receivedCallback) {
                     console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100 Received queue items change");
-                    expect(true).assertTrue();
                 } else {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100 Session queue items change  not received");
                     expect(true).assertFalse();
@@ -765,7 +756,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (receivedCallback && receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200 Received queue items change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200 Session queue items change  not received");
                 expect(true).assertFalse();
@@ -796,7 +786,6 @@ export default function abilityTest() {
             Utils.msSleep(200).then(() => {
                 if (receivedCallback) {
                     console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100 Received queue Title change");
-                    expect(true).assertTrue();
                 } else {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100 Session queue Title change  not received");
                     expect(true).assertFalse();
@@ -828,7 +817,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (receivedCallback && receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200 Received queue Title change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200 Session queue Title change  not received");
                 expect(true).assertFalse();
@@ -861,7 +849,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100 Received queue items change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100 Session queue items change  not received");
                 expect(true).assertFalse();
@@ -894,7 +881,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200 Received queue items change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200 Session queue items change  not received");
                 expect(true).assertFalse();
@@ -926,7 +912,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300 Received queue items change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300 Session queue items change  not received");
                 expect(true).assertFalse();
@@ -958,7 +943,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100 Received queue Title change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100 Session queue Title change  not received");
                 expect(true).assertFalse();
@@ -992,7 +976,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200 Received queue Title change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200 Session queue Title change  not received");
                 expect(true).assertFalse();
@@ -1025,7 +1008,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300 Received queue Title change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300 Session queue Title change  not received");
                 expect(true).assertFalse();
@@ -1184,7 +1166,6 @@ export default function abilityTest() {
             await Utils.msSleep(200)
             if (receivedCallback) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100 Received skipToQueueItem ");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100 skipToQueueItem not received");
                 expect(true).assertFalse();
@@ -1215,7 +1196,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (receivedCallback && receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200 Received skipToQueueItem ");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200skipToQueueItem not received");
                 expect(true).assertFalse();

@@ -1019,45 +1019,49 @@ export default function GraphicImageCreatePixelMap02() {
      */
     it('createPremultipliedPixelMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-      try {
-        // Create source pixel map with isEditable: true
-        const srcOpts: image.InitializationOptions = {
-          size: { width: 4, height: 6 },
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          editable: true,
-          alphaType: image.AlphaType.PREMUL
-        };
-        const srcPixelMap = image.createPixelMapUsingAllocatorSync(srcOpts);
-        
-        // Create destination pixel map with isEditable: true
-        const dstOpts: image.InitializationOptions = {
-          size: { width: 4, height: 6 },
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          editable: true,
-          alphaType: image.AlphaType.UNPREMUL
-        };
-        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstOpts);
-        
-        console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
-        console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
-        
-        expect(srcPixelMap.isEditable).assertEqual(true);
-        expect(dstPixelMap.isEditable).assertEqual(true);
-        
-        // Test createPremultipliedPixelMap with Promise
-        await image.createPremultipliedPixelMap(dstPixelMap, srcPixelMap);
-        
-        console.info(`${LOG_PREFIX} createPremultipliedPixelMap001 success`);
-        done();
-      } catch (error) {
-        const err = error as BusinessError;
-        console.error(`${LOG_PREFIX} createPremultipliedPixelMap001 error: ${error}, code: ${err.code}`);
-        expect(false).assertTrue();
-        done();
-      }
-    });
+        try {
+          // Create source pixel map with isEditable: true
+          const srcOpts: image.InitializationOptions = {
+            size: { width: 4, height: 6 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            editable: true,
+            alphaType: image.AlphaType.PREMUL
+          };
+          const srcPixelMap = image.createPixelMapUsingAllocatorSync(srcOpts, image.AllocatorType.DMA);
+
+          // Create destination pixel map with isEditable: true
+          const dstOpts: image.InitializationOptions = {
+            size: { width: 4, height: 6 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            editable: true,
+            alphaType: image.AlphaType.UNPREMUL
+          };
+          const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstOpts, image.AllocatorType.DMA);
+
+          console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
+          console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
+          console.info(`${LOG_PREFIX} srcPixelMap isStrideAlignment: ${srcPixelMap.isStrideAlignment}`);
+          console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
+
+          expect(srcPixelMap.isEditable).assertTrue();
+          expect(dstPixelMap.isEditable).assertTrue();
+          expect(srcPixelMap.isStrideAlignment).assertTrue();
+          expect(dstPixelMap.isStrideAlignment).assertTrue();
+
+          // Test createPremultipliedPixelMap with Promise
+          await image.createPremultipliedPixelMap(dstPixelMap, srcPixelMap);
+
+          console.info(`${LOG_PREFIX} createPremultipliedPixelMap001 success`);
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.error(`${LOG_PREFIX} createPremultipliedPixelMap001 error: ${error}, code: ${err.code}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
 
     /**
      * @tc.name    createPremultipliedPixelMap002
@@ -1078,7 +1082,7 @@ export default function GraphicImageCreatePixelMap02() {
           alphaType: image.AlphaType.PREMUL
         };
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(srcOpts);
-        
+
         // Create destination pixel map with isEditable: false
         const dstOpts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1088,16 +1092,20 @@ export default function GraphicImageCreatePixelMap02() {
           alphaType: image.AlphaType.UNPREMUL
         };
         const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstOpts);
-        
+
         console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
-        
-        expect(srcPixelMap.isEditable).assertEqual(false);
-        expect(dstPixelMap.isEditable).assertEqual(false);
-        
+        console.info(`${LOG_PREFIX} srcPixelMap isStrideAlignment: ${srcPixelMap.isStrideAlignment}`);
+        console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
+
+        expect(srcPixelMap.isEditable).assertFalse();
+        expect(dstPixelMap.isEditable).assertFalse();
+        expect(srcPixelMap.isStrideAlignment).assertFalse();
+        expect(dstPixelMap.isStrideAlignment).assertFalse();
+
         // Test createPremultipliedPixelMap with Promise
         await image.createPremultipliedPixelMap(dstPixelMap, srcPixelMap);
-        
+
         console.info(`${LOG_PREFIX} createPremultipliedPixelMap002 success`);
         done();
       } catch (error) {
@@ -1448,8 +1456,8 @@ export default function GraphicImageCreatePixelMap02() {
           editable: true,
           alphaType: image.AlphaType.PREMUL
         };
-        const srcPixelMap = image.createPixelMapUsingAllocatorSync(srcOpts);
-        
+        const srcPixelMap = image.createPixelMapUsingAllocatorSync(srcOpts, image.AllocatorType.DMA);
+
         // Create destination pixel map with isEditable: true
         const dstOpts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1458,14 +1466,18 @@ export default function GraphicImageCreatePixelMap02() {
           editable: true,
           alphaType: image.AlphaType.UNPREMUL
         };
-        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstOpts);
-        
+        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstOpts, image.AllocatorType.DMA);
+
         console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
-        
-        expect(srcPixelMap.isEditable).assertEqual(true);
-        expect(dstPixelMap.isEditable).assertEqual(true);
-        
+        console.info(`${LOG_PREFIX} srcPixelMap isStrideAlignment: ${srcPixelMap.isStrideAlignment}`);
+        console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
+
+        expect(srcPixelMap.isEditable).assertTrue();
+        expect(dstPixelMap.isEditable).assertTrue();
+        expect(srcPixelMap.isStrideAlignment).assertTrue();
+        expect(dstPixelMap.isStrideAlignment).assertTrue();
+
         // Test createPremultipliedPixelMap with AsyncCallback
         image.createPremultipliedPixelMap(dstPixelMap, srcPixelMap, (err) => {
           if (err) {
@@ -1474,7 +1486,6 @@ export default function GraphicImageCreatePixelMap02() {
             done();
             return;
           }
-          
           console.info(`${LOG_PREFIX} createPremultipliedPixelMap011 success`);
           done();
         });
@@ -1505,7 +1516,7 @@ export default function GraphicImageCreatePixelMap02() {
           alphaType: image.AlphaType.PREMUL
         };
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(srcOpts);
-        
+
         // Create destination pixel map with isEditable: false
         const dstOpts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1515,13 +1526,17 @@ export default function GraphicImageCreatePixelMap02() {
           alphaType: image.AlphaType.UNPREMUL
         };
         const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstOpts);
-        
+
         console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
-        
-        expect(srcPixelMap.isEditable).assertEqual(false);
-        expect(dstPixelMap.isEditable).assertEqual(false);
-        
+        console.info(`${LOG_PREFIX} srcPixelMap isStrideAlignment: ${srcPixelMap.isStrideAlignment}`);
+        console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
+
+        expect(srcPixelMap.isEditable).assertFalse();
+        expect(dstPixelMap.isEditable).assertFalse();
+        expect(srcPixelMap.isStrideAlignment).assertFalse();
+        expect(dstPixelMap.isStrideAlignment).assertFalse();
+
         // Test createPremultipliedPixelMap with AsyncCallback
         image.createPremultipliedPixelMap(dstPixelMap, srcPixelMap, (err) => {
           if (err) {

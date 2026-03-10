@@ -218,6 +218,7 @@ public:
     Camera_ErrorCode MetadataOutputStop(void);
     Camera_ErrorCode MetadataOutputRelease(void);
     Camera_ErrorCode MetadataOutputRemoveMetadataObjectTypes();
+    bool IsMetadataObjectTypeValid();
  	Camera_ErrorCode MetadataOutputAddMetadataObjectTypes();
 
     Camera_ErrorCode SessionAddInput(void);

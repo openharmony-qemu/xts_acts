@@ -729,5 +729,44 @@ Core business data: 10001
 
 
       });
+
+    /**
+     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_1200
+     * @tc.name getAttributeCountTest0012
+     * @tc.desc Correct analysis and incorrect analysis mixed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('getAttributeCountTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      
+        const TAG = 'getAttributeCountTest0012';
+        console.log(TAG + ' start');
+        const xmlStr = `
+<root>
+<valid a="1" b="2"></valid> <!-- Correct -->
+<invalid a="1" = "3"></invalid> <!-- Error: Empty attribute name -->
+</root>
+`;
+        let textEncoder = new util.TextEncoder();
+        let arrBuffer = textEncoder.encodeInto(xmlStr);
+        let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+        let str = "";
+        try {
+          let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
+          that.parseXml(options);
+          expect().assertFail();
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+        expect(xmlStr).assertContain('1')
+        expect(xmlStr).assertContain('2')
+        expect(xmlStr).assertContain('1')
+        expect(xmlStr).assertContain('3')
+
+
+      });
   })
 }

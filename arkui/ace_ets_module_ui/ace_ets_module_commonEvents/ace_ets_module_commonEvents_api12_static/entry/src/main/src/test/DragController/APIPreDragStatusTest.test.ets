@@ -48,6 +48,7 @@ export default function APIPreDragStatusTest() {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
+      await CommonFunc.sleep(4000);
       
     });
     beforeEach(async (): Promise<void> => {

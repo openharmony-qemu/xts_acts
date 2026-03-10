@@ -498,7 +498,7 @@ export default function ArrayPopTest() {
      * @tc.level Level 1
      */
     it('testArrayPop0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: number[] = Array<number>(100).fill(1);
+      const arr: number[] = Array.create<number>(100, 1);
       arr.pop();
       expect(arr.length).assertEqual(99);
     });

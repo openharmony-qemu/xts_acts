@@ -3373,5 +3373,131 @@ export default function fileIOTest() {
         fileio.unlinkSync(fpath);
       });
     });
+	
+	    /**
+     * @tc.name   fileio_test_rename_sync_010
+     * @tc.number SUB_STORAGE_FileIO_RenameSync_1000
+     * @tc.desc   Function of API, renameSync. The first parameter is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rename_sync_010', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_rename_sync_010');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fileio.renameSync("", fpath);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info('fileio_test_rename_sync_010 has failed for ' + err);
+        expect(err.message == "No such file or directory").assertTrue();
+      }
+      fileio.unlinkSync(fpath);
+    });
+  
+    /**
+     * @tc.name   fileio_test_rename_sync_011
+     * @tc.number SUB_STORAGE_FileIO_RenameSync_1100
+     * @tc.desc   Function of API, renameSync. The first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rename_sync_011', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_rename_sync_011');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fileio.renameSync(null, fpath);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info('fileio_test_rename_sync_011 has failed for ' + err);
+        expect(err.message == "Invalid src").assertTrue();
+      }
+      fileio.unlinkSync(fpath);
+    });
+  
+    /**
+     * @tc.name   fileio_test_rename_sync_012
+     * @tc.number SUB_STORAGE_FileIO_RenameSync_1200
+     * @tc.desc   Function of API, renameSync. The first parameter is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rename_sync_012', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_rename_sync_012');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fileio.renameSync(undefined, fpath);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info('fileio_test_rename_sync_012 has failed for ' + err);
+        expect(err.message == "Invalid src").assertTrue();
+      }
+      fileio.unlinkSync(fpath);
+    });
+  
+    /**
+     * @tc.name   fileio_test_rename_sync_013
+     * @tc.number SUB_STORAGE_FileIO_RenameSync_1300
+     * @tc.desc   Function of API, renameSync. The second parameter is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rename_sync_013', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_rename_sync_013');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fileio.renameSync(fpath, "");
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info('fileio_test_rename_sync_013 has failed for ' + err);
+        expect(err.message == "No such file or directory").assertTrue();
+      }
+      fileio.unlinkSync(fpath);
+    });
+  
+    /**
+     * @tc.name   fileio_test_rename_sync_014
+     * @tc.number SUB_STORAGE_FileIO_RenameSync_1400
+     * @tc.desc   Function of API, renameSync. The second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rename_sync_014', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_rename_sync_014');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fileio.renameSync(fpath, null);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info('fileio_test_rename_sync_014 has failed for ' + err);
+        expect(err.message == "Invalid dest").assertTrue();
+      }
+      fileio.unlinkSync(fpath);
+    });
+  
+    /**
+     * @tc.name   fileio_test_rename_sync_015
+     * @tc.number SUB_STORAGE_FileIO_RenameSync_1500
+     * @tc.desc   Function of API, renameSync. The second parameter is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('fileio_test_rename_sync_015', Level.LEVEL2, async function () {
+      let fpath = await nextFileName('fileio_test_rename_sync_015');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fileio.renameSync(fpath, undefined);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info('fileio_test_rename_sync_015 has failed for ' + err);
+        expect(err.message == "Invalid dest").assertTrue();
+      }
+      fileio.unlinkSync(fpath);
+    });
   });
 }

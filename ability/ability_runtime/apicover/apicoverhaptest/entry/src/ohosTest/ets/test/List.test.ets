@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import UIContextWindowStageTest from './UIContextWindowStage.test';
 import Enumeration from './Enumeration.test';
 import apiCoverAbility from './ApiCoverAbility.test';
+import formDimensionMultiDeviceTest from './FormDimensionMultiDevice.test';
 
 export default function List() {
   apiCoverAbility();
@@ -28,4 +29,5 @@ export default function List() {
   contextEnvironmentTest(AppStorage.get<common.ApplicationContext>("applicationContext")!);
   UIContextWindowStageTest();
   Enumeration();
+  formDimensionMultiDeviceTest();
 }

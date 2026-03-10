@@ -20,9 +20,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Component
 struct TestComponent {
   build() {
-    Scroll() {
-      Text('This is a BuilderNode.')
-        .fontSize(16)
+    Swiper() {
+      Text('Swiper')
+        .fontSize(18)
         .fontWeight(FontWeight.Bold)
     }
     .width('100%')
@@ -41,6 +41,7 @@ class MyNodeController extends NodeController {
   public childrenCount: number = 0;
   private uiContext: UIContext | null = null;
   private scroller: Scroller = new Scroller();
+  private swiperController: SwiperController = new SwiperController();
 
   makeNode(uiContext: UIContext): FrameNode | null {
     this.uiContext = uiContext;
@@ -71,7 +72,7 @@ class MyNodeController extends NodeController {
   builderNodeBindController100021(): string {
     let errorStr100021: string = '';
     try {
-      typeNode.bindController(this.builderNode?.getFrameNode()?.getFirstChild(), this.scroller, 'Scroll');
+      typeNode.bindController(this.builderNode?.getFrameNode()?.getFirstChild(), this.swiperController, 'Swiper');
     } catch (e) {
       errorStr100021 = (e as BusinessError).code + ':' + (e as BusinessError).message;
     }

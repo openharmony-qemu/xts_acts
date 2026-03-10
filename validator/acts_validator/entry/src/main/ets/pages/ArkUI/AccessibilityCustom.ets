@@ -158,7 +158,6 @@ struct AccessibilityCustom {
         Row() {
           Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({top:20})
         }
-        .height('5%')
         Row() {
           Column() {
             Button(`不支持`)

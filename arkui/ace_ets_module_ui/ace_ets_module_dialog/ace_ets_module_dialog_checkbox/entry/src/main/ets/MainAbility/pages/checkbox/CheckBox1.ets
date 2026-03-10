@@ -75,7 +75,7 @@ struct checkBoxTest {
 
             Checkbox({name: 'checkbox6',  group: 'checkboxGroup2'})
               .key("ArkUX_Stage_Checkbox_unselectedColor_0600")
-              .backgroundColor($r("sys.color.ohos_id_color_switch_outline_off"))
+              .backgroundColor($r("sys.color.checkbox_bg_border_color_unchecked"))
               .select(false)
               .selectedColor(0xed6f21)
               .unselectedColor("")
@@ -85,7 +85,7 @@ struct checkBoxTest {
 
             Checkbox({name: 'checkbox7',  group: 'checkboxGroup3'})
               .key("ArkUX_Stage_Checkbox_unselectedColor_0700")
-              .backgroundColor($r("sys.color.ohos_id_color_switch_outline_off"))
+              .backgroundColor($r("sys.color.checkbox_bg_border_color_unchecked"))
               .select(false)
               .selectedColor(0xed6f21)
               .unselectedColor(null)
@@ -95,7 +95,7 @@ struct checkBoxTest {
 
             Checkbox({name: 'checkbox8',  group: 'checkboxGroup3'})
               .key("ArkUX_Stage_Checkbox_unselectedColor_0800")
-              .backgroundColor($r("sys.color.ohos_id_color_switch_outline_off"))
+              .backgroundColor($r("sys.color.checkbox_bg_border_color_unchecked"))
               .select(false)
               .selectedColor(0xed6f21)
               .unselectedColor(undefined)
@@ -115,7 +115,7 @@ struct checkBoxTest {
 
             Checkbox({name: 'checkbox10',  group: 'checkboxGroup13'})
               .key("ArkUX_Stage_Checkbox_unselectedColor_1000")
-              .backgroundColor($r("sys.color.ohos_id_color_switch_outline_off"))
+              .backgroundColor($r("sys.color.checkbox_bg_border_color_unchecked"))
               .select(false)
               .selectedColor(0xed6f21)
               .unselectedColor(Color.Pink)
@@ -126,7 +126,7 @@ struct checkBoxTest {
 
             Checkbox({name: 'checkbox11',  group: 'checkboxGroup13'})
               .key("ArkUX_Stage_Checkbox_unselectedColor_1100")
-              .backgroundColor($r("sys.color.ohos_id_color_switch_outline_off"))
+              .backgroundColor($r("sys.color.checkbox_bg_border_color_unchecked"))
               .select(false)
               .selectedColor(0xed6f21)
               .unselectedColor('bgr(138,43,226)')
@@ -191,7 +191,7 @@ struct checkBoxTest {
 
             Checkbox({name: 'checkbox18',  group: 'checkboxGroup15'})
               .key("ArkUX_Stage_Checkbox_CheckMarkColor_0600")
-              .backgroundColor($r("sys.color.ohos_id_color_foreground_contrary"))
+              .backgroundColor($r("sys.color.checkbox_fg_color_checked"))
               .select(true)
               .selectedColor(0xed6f21)
               .mark({strokeColor:""})
@@ -201,7 +201,7 @@ struct checkBoxTest {
 
             Checkbox({name: 'checkbox19',  group: 'checkboxGroup25'})
               .key("ArkUX_Stage_Checkbox_CheckMarkColor_0700")
-              .backgroundColor($r("sys.color.ohos_id_color_foreground_contrary"))
+              .backgroundColor($r("sys.color.checkbox_fg_color_checked"))
               .select(true)
               .selectedColor(0xed6f21)
               .mark({strokeColor:null})
@@ -211,7 +211,7 @@ struct checkBoxTest {
 
             Checkbox({name: 'checkbox20',  group: 'checkboxGroup25'})
               .key("ArkUX_Stage_Checkbox_CheckMarkColor_0800")
-              .backgroundColor($r("sys.color.ohos_id_color_foreground_contrary"))
+              .backgroundColor($r("sys.color.checkbox_fg_color_checked"))
               .select(true)
               .selectedColor(0xed6f21)
               .mark({strokeColor:undefined})
@@ -231,7 +231,7 @@ struct checkBoxTest {
 
             Checkbox({name: 'checkbox22',  group: 'checkboxGroup26'})
               .key("ArkUX_Stage_Checkbox_CheckMarkColor_1000")
-              .backgroundColor($r("sys.color.ohos_id_color_foreground_contrary"))
+              .backgroundColor($r("sys.color.checkbox_fg_color_checked"))
               .select(true)
               .selectedColor(0xed6f21)
               .mark({strokeColor:Color.Pink})
@@ -242,7 +242,7 @@ struct checkBoxTest {
 
             Checkbox({name: 'checkbox23',  group: 'checkboxGroup26'})
               .key("ArkUX_Stage_Checkbox_CheckMarkColor_1100")
-              .backgroundColor($r("sys.color.ohos_id_color_foreground_contrary"))
+              .backgroundColor($r("sys.color.checkbox_fg_color_checked"))
               .select(true)
               .selectedColor(0xed6f21)
               .mark({strokeColor:'bgr(138,43,226)'})

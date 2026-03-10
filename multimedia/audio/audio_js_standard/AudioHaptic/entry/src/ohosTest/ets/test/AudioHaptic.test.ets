@@ -70,6 +70,8 @@ export default function AudioHapticTest() {
     let AudioHapticPlayer: audioHaptic.AudioHapticPlayer;
     let sourceId_Notification = 0;
     let sourceId_Ringtone = 0;
+    let TagFrmwk: string = "AudioHapticTest";
+ 	  let audioHapticManager: audioHaptic.AudioHapticManager;
 
     let driveFn = async () => {
       let dr = Driver.create();
@@ -137,7 +139,6 @@ export default function AudioHapticTest() {
         await AudioHapticManager.registerSource(Ringtone_Audio_Uri, Ringtone_Haptic_Uri).then((data: ESObject) => {
           console.log(`${tag} registerSource success: Ringtone_Audio_Uri: ${JSON.stringify(Ringtone_Audio_Uri)}, Ringtone_Haptic_Uri:${Ringtone_Haptic_Uri}`);
           console.log(`${tag} registerSource success: sourceId: ${JSON.stringify(data)}`);
-          expect(true).assertTrue();
           done()
         }).catch((err: BusinessError) => {
           console.log(`${tag} registerSource fail: Ringtone_Audio_Uri: ${JSON.stringify(err)}, ${err.code}`);
@@ -166,7 +167,6 @@ export default function AudioHapticTest() {
           .then((data: ESObject) => {
             console.log(`${tag} registerSource success: Notification_Audio_Uri: ${JSON.stringify(Notification_Audio_Uri)}, Notificatio_Haptic_Uri:${Notificatio_Haptic_Uri}`);
             console.log(`${tag} registerSource success: sourceId: ${JSON.stringify(data)}`);
-            expect(true).assertTrue();
             done()
           })
           .catch((err: BusinessError) => {
@@ -253,7 +253,6 @@ export default function AudioHapticTest() {
             console.log(`${tag} registerSource success: sourceId: ${JSON.stringify(sourceId)}`);
             await AudioHapticManager.unregisterSource(sourceId).then(() => {
               console.log(`${tag} unregisterSource success: sourceId: ${JSON.stringify(sourceId)}`);
-              expect(true).assertTrue();
               done()
             }).catch((err: BusinessError) => {
               console.log(`${tag} unregisterSource fail: sourceId: ${JSON.stringify(sourceId)}, ${err.code}`);
@@ -291,7 +290,6 @@ export default function AudioHapticTest() {
             console.log(`${tag} registerSource success: sourceId: ${JSON.stringify(sourceId)}`);
             await AudioHapticManager.unregisterSource(sourceId).then(() => {
               console.log(`${tag} unregisterSource success: sourceId: ${JSON.stringify(sourceId)}`);
-              expect(true).assertTrue();
               done()
             }).catch((err: BusinessError) => {
               console.log(`${tag} unregisterSource fail: sourceId: ${JSON.stringify(sourceId)}, ${err.code}`);
@@ -379,7 +377,6 @@ export default function AudioHapticTest() {
         let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
         AudioHapticManager.setAudioLatencyMode(sourceId_Notification, AudioLatencyMode);
         console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setAudioLatencyMode fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -400,7 +397,6 @@ export default function AudioHapticTest() {
         let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
         AudioHapticManager.setAudioLatencyMode(sourceId_Notification, AudioLatencyMode);
         console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setAudioLatencyMode fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -422,7 +418,6 @@ export default function AudioHapticTest() {
         let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
         AudioHapticManager.setAudioLatencyMode(sourceId_Ringtone, AudioLatencyMode);
         console.log(`${tag} setAudioLatencyMode success: sourceId: ${JSON.stringify(AudioLatencyMode)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setAudioLatencyMode fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -443,7 +438,6 @@ export default function AudioHapticTest() {
         let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
         AudioHapticManager.setAudioLatencyMode(sourceId_Ringtone, AudioLatencyMode);
         console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setAudioLatencyMode fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -526,7 +520,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -568,7 +561,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -589,7 +581,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -611,7 +602,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -632,7 +622,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -653,7 +642,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -674,7 +662,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -695,7 +682,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success:  ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -716,7 +702,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -737,7 +722,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success:  ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -758,7 +742,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success:  ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -779,7 +762,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success:  ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -800,7 +782,6 @@ export default function AudioHapticTest() {
       try {
         AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
-        expect(true).assertTrue();
         done()
       } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -892,13 +873,11 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
             console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
             if (err.code === 5400106) {
-              expect(true).assertTrue();
               done();
             } else {
               expect(false).assertTrue();
@@ -999,7 +978,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag} isMuted fail222222: ${JSON.stringify(err)}, ${err.code}`);
@@ -1010,7 +988,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1046,7 +1023,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1057,7 +1033,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1093,7 +1068,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1105,7 +1079,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1141,7 +1114,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1152,7 +1124,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1189,7 +1160,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1201,7 +1171,6 @@ export default function AudioHapticTest() {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
 
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1237,7 +1206,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1248,7 +1216,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1284,7 +1251,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1295,7 +1261,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1331,7 +1296,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1342,7 +1306,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1387,7 +1350,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done()
           } else {
             expect(false).assertTrue();
@@ -1432,7 +1394,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done()
           } else {
             expect(false).assertTrue();
@@ -1477,7 +1438,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done()
           } else {
             expect(false).assertTrue();
@@ -1514,7 +1474,6 @@ export default function AudioHapticTest() {
             await sleep(1000);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1525,7 +1484,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1566,7 +1524,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1577,7 +1534,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1614,7 +1570,6 @@ export default function AudioHapticTest() {
             await sleep(1000);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1625,7 +1580,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1666,7 +1620,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1677,7 +1630,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1715,7 +1667,6 @@ export default function AudioHapticTest() {
             await sleep(1000);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1726,7 +1677,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1767,7 +1717,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1778,7 +1727,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1815,7 +1763,6 @@ export default function AudioHapticTest() {
             await sleep(1000);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1826,7 +1773,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1867,7 +1813,6 @@ export default function AudioHapticTest() {
             await sleep(100);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1878,7 +1823,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1919,7 +1863,6 @@ export default function AudioHapticTest() {
             AudioHapticPlayer.off('endOfStream');
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1930,7 +1873,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1974,7 +1916,6 @@ export default function AudioHapticTest() {
             console.log(`${tag} AudioHapticPlayer stop success`);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -1985,7 +1926,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -2026,7 +1966,6 @@ export default function AudioHapticTest() {
             await sleep(1000);
             await AudioHapticPlayer.release();
             console.log(`${tag} AudioHapticPlayer release success`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -2037,7 +1976,6 @@ export default function AudioHapticTest() {
         .catch((err: BusinessError) => {
           console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
           if (err.code === 5400106) {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -2183,6 +2121,284 @@ export default function AudioHapticTest() {
           console.error(`fail to start playing, ${err}`);
           expect(false).assertTrue();
       });
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0300
+     * @tc.number AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0300
+     * @tc.desc   registerSourceFromFd - null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0300", TestType.Function | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let id = 0;
+        let audioFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
+        let hapticFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
+        let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+        let testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
+        audioFd = testContext.resourceManager.getRawFdSync('notification.ogg')
+        hapticFd = testContext.resourceManager.getRawFdSync('notification.json')
+        await audioHapticManager.registerSourceFromFd(audioFd, null).then((value:number)=>{
+          console.info(`REGISTERSOURCEFROMFD_0300 Promise returned to indicate that th id of registerSource`);
+          id = value;
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+            console.error(`REGISTERSOURCEFROMFD_0300 fail to register source` + err + err.code);
+            expect(Number(err.code)).assertEqual(401);
+        });
+      }
+      catch (Error){
+        console.info(`REGISTERSOURCEFROMFD_0300 fail ERROR:` + Error + Error.code);
+        expect(Number(Error.code)).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0400
+     * @tc.number AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0400
+     * @tc.desc   registerSourceFromFd - underfined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0400", TestType.Function | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let id = 0;
+        let audioFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
+        let hapticFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
+        let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+        let testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
+        audioFd = testContext.resourceManager.getRawFdSync('notification.ogg')
+        hapticFd = testContext.resourceManager.getRawFdSync('notification.json')
+        await audioHapticManager.registerSourceFromFd(audioFd, undefined).then((value:number)=>{
+          console.info(`REGISTERSOURCEFROMFD_0400 Promise returned to indicate that th id of registerSource`);
+          id = value;
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+            console.error(`REGISTERSOURCEFROMFD_0400 fail to register source` + err + err.code);
+            expect(Number(err.code)).assertEqual(401);
+        });
+      }
+      catch (Error){
+        console.info(`REGISTERSOURCEFROMFD_0400 fail ERROR:` + Error + Error.code);
+        expect(Number(Error.code)).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1415
+     * @tc.number AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1415
+     * @tc.desc   unregisterSource with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1415', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        await audioHapticManager.unregisterSource(null);
+        console.info(`AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1415: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1415: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1416
+     * @tc.number AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1416
+     * @tc.desc   unregisterSource with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1416', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        await audioHapticManager.unregisterSource(undefined);
+        console.info(`AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1416: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOHAPTICMANAGER_UNREGISTERSOURCE_1416: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1417
+     * @tc.number AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1417
+     * @tc.desc   setAudioLatencyMode with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1417', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        audioHapticManager.setAudioLatencyMode(null, audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL);
+        console.info(`AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1417: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1417: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1418
+     * @tc.number AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1418
+     * @tc.desc   setAudioLatencyMode with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1418', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        audioHapticManager.setAudioLatencyMode(undefined, audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL);
+        console.info(`AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1418: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOHAPTICMANAGER_SETAUDIOLATENCYMODE_1418: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1419
+     * @tc.number AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1419
+     * @tc.desc   setStreamUsage with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1419', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        audioHapticManager.setStreamUsage(null, audio.StreamUsage.STREAM_USAGE_MEDIA);
+        console.info(`AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1419: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1419: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1420
+     * @tc.number AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1420
+     * @tc.desc   setStreamUsage with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        audioHapticManager.setStreamUsage(undefined, audio.StreamUsage.STREAM_USAGE_MEDIA);
+        console.info(`AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1420: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOHAPTICMANAGER_SETSTREAMUSAGE_1420: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOHAPTICMANAGER_CREATEPLAYER_1421
+     * @tc.number AUDIOHAPTICMANAGER_CREATEPLAYER_1421
+     * @tc.desc   createPlayer with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOHAPTICMANAGER_CREATEPLAYER_1421', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        await audioHapticManager.createPlayer(1, null);
+        console.info(`AUDIOHAPTICMANAGER_CREATEPLAYER_1421: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOHAPTICMANAGER_CREATEPLAYER_1421: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOHAPTICMANAGER_CREATEPLAYER_1422
+     * @tc.number AUDIOHAPTICMANAGER_CREATEPLAYER_1422
+     * @tc.desc   createPlayer with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOHAPTICMANAGER_CREATEPLAYER_1422', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        await audioHapticManager.createPlayer(1, undefined);
+        console.info(`AUDIOHAPTICMANAGER_CREATEPLAYER_1422: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOHAPTICMANAGER_CREATEPLAYER_1422: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100
+    * @tc.number AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100
+    * @tc.desc   setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100
+    * @tc.number AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100
+    * @tc.desc   setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
       done();
     })
   })

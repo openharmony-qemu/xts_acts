@@ -984,7 +984,7 @@ export default function CameraErrorCodeUsecaseTest() {
         done();
       } else {
         try {
-          let metadataObjectTypes:Array<cameraObj.MetadataObjectType> = [1];
+          let metadataObjectTypes:Array<cameraObj.MetadataObjectType> = [-1];
           let metadataoutput = mCameraManager.createMetadataOutput(metadataObjectTypes);
           expect().assertFail();
           done();

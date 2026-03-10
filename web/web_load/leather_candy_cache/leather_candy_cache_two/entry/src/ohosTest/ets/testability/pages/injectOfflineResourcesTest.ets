@@ -143,7 +143,7 @@ struct injectOfflineResourcesTest {
                 this.controller.injectOfflineResources(await getData(['xxxx']));
               } catch (err) {
                 console.error(msg + 'injectOfflineResources error: ' + err.code + ' message ' + err.message);
-                Utils.emitEvent(err.code + err.message, 148390)
+                Utils.emitEvent(err.code, 148390)
               }
               break;
             }
@@ -154,6 +154,17 @@ struct injectOfflineResourcesTest {
               } catch (err) {
                 console.error(msg + 'injectOfflineResources error: ' + err.code + ' message ' + err.message);
                 Utils.emitEvent(err.code, 148400)
+              }
+              break;
+            }
+            case "testInjectOfflineResources006": {
+              let msg = "testInjectOfflineResources006"
+              try {
+                this.controller.injectOfflineResources([]);
+                Utils.emitEvent(true, 148406)
+              } catch (err) {
+                console.error(msg + 'injectOfflineResources error: ' + err.code + ' message ' + err.message);
+                Utils.emitEvent(err.code, 148406)
               }
               break;
             }

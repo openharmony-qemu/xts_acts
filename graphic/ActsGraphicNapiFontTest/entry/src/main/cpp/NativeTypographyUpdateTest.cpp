@@ -66,6 +66,7 @@ int OHDrawingSetTypographyTextTrailingSpaceOptimized001()
     OH_Drawing_SetTypographyTextTrailingSpaceOptimized(ctx.fTypoStyle, true);
     OH_Drawing_SetTypographyTextTrailingSpaceOptimized(ctx.fTypoStyle, false);
     ctx.PrepareWorkForAlignmentTest();
+    EXPECT_NE(ctx.fTypoStyle, nullptr);
     return TEST_SUCCESS_CODE;
 }
 

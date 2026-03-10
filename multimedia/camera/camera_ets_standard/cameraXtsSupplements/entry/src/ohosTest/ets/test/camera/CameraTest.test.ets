@@ -37,6 +37,7 @@ let mCameraDeviceArray: Array<camera.CameraDevice>;
 let mSupportedModes: Array<camera.SceneMode>;
 let mCameraInput: camera.CameraInput;
 let mPreviewOutput: camera.PreviewOutput;
+let mPreviewProfile: camera.Profile;
 let mPhotoOutput: camera.PhotoOutput;
 let mVideoOutput: camera.VideoOutput;
 let mVideoSurfaceId: string;
@@ -137,6 +138,7 @@ function createPhotoOutput() {
   }
   console.log(TAG, 'photoProfile: w: ' + photoProfile.size.width + 'h: ' + photoProfile.size.height);
   console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
+  mPreviewProfile = previewProfile;
   mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
   mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
 }
@@ -686,8 +688,9 @@ export default function CameraTest() {
         createPhotoOutput()
         let newProfile = mPreviewOutput.getActiveProfile();
         console.info(TAG, 'newProfile', JSON.stringify(newProfile))
-        expect(newProfile.format == camera.CameraFormat.CAMERA_FORMAT_RGBA_8888).assertTrue();
-        expect(isEmpty(newProfile.size)).assertFalse();
+        expect(newProfile.format == mPreviewProfile.format).assertTrue();
+        expect(newProfile.size.width).assertEqual(mPreviewProfile.size.width);
+        expect(newProfile.size.height).assertEqual(mPreviewProfile.size.height);
         done();
       } catch (err) {
         console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)

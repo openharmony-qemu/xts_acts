@@ -66,16 +66,16 @@ struct ListItemExample43 {
   @Builder
   itemEnd() {
     Row() {
-      Button("Delete").margin("4vp")
-      Button("Set").margin("4vp")
+      Button("Delete").margin("4vp").width('5%')
+      Button("Set").margin("4vp").width('5%')
     }.padding("4vp").justifyContent(FlexAlign.SpaceEvenly)
   }
 
   @Builder
   itemStart() {
     Row() {
-      Button("StartDelete").margin("4vp")
-      Button("StartSet").margin("4vp")
+      Button("StartDelete").margin("4vp").width('5%')
+      Button("StartSet").margin("4vp").width('5%')
     }.padding("4vp").justifyContent(FlexAlign.SpaceEvenly)
   }
 
@@ -126,6 +126,7 @@ struct ListItemExample43 {
           .key('lSwipe43Action' + item)
         }, (item: number) => item.toString())
       }
+      .width('80%')
 
       Text(this.swipeActionState).fontSize(20).margin({ top: 20 } as Margin).key('swipe43State')
       Text("value is " + this.closeCount).fontSize(20).margin({ top: 20 } as Margin).key('swipe43Finish')

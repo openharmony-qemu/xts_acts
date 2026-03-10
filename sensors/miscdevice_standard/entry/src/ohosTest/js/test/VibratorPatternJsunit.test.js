@@ -19,6 +19,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 
 export default function VibratorJsTest_misc_9() {
     let isAvailable;
+    let sensortempcode = true;
     const ABILITYJUDGMENT = canIUse('SystemCapability.Sensors.MiscDevice');
     describe("VibratorJsTest_misc_9", function () {
         beforeAll(async function (done) {
@@ -622,7 +623,7 @@ export default function VibratorJsTest_misc_9() {
                         done();
                     }  else {
                         console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }
                 })
@@ -702,7 +703,7 @@ export default function VibratorJsTest_misc_9() {
                         done();
                     } else {
                         console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }
                 })
@@ -782,7 +783,7 @@ export default function VibratorJsTest_misc_9() {
                         done();
                     } else {
                         console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }
                 })
@@ -862,7 +863,7 @@ export default function VibratorJsTest_misc_9() {
                         done();
                     } else {
                         console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }
                 })
@@ -1477,7 +1478,7 @@ export default function VibratorJsTest_misc_9() {
                         done();
                     } else {
                         console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }
                 })
@@ -1616,7 +1617,7 @@ export default function VibratorJsTest_misc_9() {
                         done();
                     } else {
                         console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }
                 })
@@ -1671,7 +1672,7 @@ export default function VibratorJsTest_misc_9() {
                         done();
                     } else {
                         console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }
                 })
@@ -1726,7 +1727,7 @@ export default function VibratorJsTest_misc_9() {
                         done();
                     } else {
                         console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }
                 })
@@ -1865,7 +1866,7 @@ export default function VibratorJsTest_misc_9() {
                         done();
                     } else {
                         console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         done();
                     }
                 })

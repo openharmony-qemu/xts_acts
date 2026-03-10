@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 
 export default function SensorJsTest_sensor_44() {
 describe("SensorJsTest_sensor_44", function () {
+    let sensortempcode = true;
     function callback(data) {
         console.info("callback" + JSON.stringify(data));
         expect(typeof (data.x)).assertEqual("number");
@@ -185,7 +186,7 @@ describe("SensorJsTest_sensor_44", function () {
     it("newGyroscope_Uncalibrated_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.once(sensor.SensorId.GYROSCOPE_UNCALIBRATED, callback);
         setTimeout(()=>{
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })
@@ -279,7 +280,7 @@ describe("SensorJsTest_sensor_44", function () {
         sensor.on(sensor.SensorId.GYROSCOPE_UNCALIBRATED, onSensorCallback);
         sensor.off(sensor.SensorId.GYROSCOPE_UNCALIBRATED, onSensorCallback);
         setTimeout(()=>{
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })

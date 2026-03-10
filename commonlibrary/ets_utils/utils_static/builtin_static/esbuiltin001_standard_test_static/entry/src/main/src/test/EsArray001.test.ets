@@ -441,7 +441,7 @@ export default function EsArrayTest001(){
         it('ESBuiltinsArrayTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void): Promise<void> => {
             const caseName = 'ESBuiltinsArrayTest0015';
             console.info(`${caseName}, test start`);
-            let x = Array<number>(101);
+            let x = Array.create<number>(101, 0.0);
             x[100] = 1;
             expect(x.length).assertEqual(101);
             let threw = false;

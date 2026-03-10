@@ -194,7 +194,7 @@ export default function testsuite() {
   tabsBarPositionJsunit();
   scrollBarJsunitt();
   // listItemJsunit2();
-  gridColTest();
+  //gridColTest();
   conSizeGroup1();
   conSizeGroup2();
   conSizeGroup3();

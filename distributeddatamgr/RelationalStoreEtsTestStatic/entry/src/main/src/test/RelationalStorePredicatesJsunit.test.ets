@@ -161,7 +161,8 @@ export default function relationalStorePredicatesTest() {
         console.info(tag + "************* testEqualTo0001 start *************");
         let predicates = new relationalStore.RdbPredicates("AllDataType");
         {
-          predicates.equalTo("booleanValue", true);
+          let pr = predicates.equalTo("booleanValue", true);
+          expect(typeof(pr) === "object").assertTrue();
           let result = await rdbStore!.query(predicates);
           expect(1).assertEqual(result.rowCount);
           result.close();
@@ -332,7 +333,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testNotEqualTo0001 start *************");
       {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
-        predicates.notEqualTo("booleanValue", true);
+        let pr = predicates.notEqualTo("booleanValue", true);
+        expect(typeof(pr) === "object").assertTrue();
         let result = await rdbStore!.query(predicates);
         expect(2).assertEqual(result.rowCount);
         result.close();
@@ -500,7 +502,8 @@ export default function relationalStorePredicatesTest() {
     it('testIsNull0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(tag + "************* testIsNull001 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.isNull("primLongValue");
+      let pr = predicates.isNull("primLongValue");
+      expect(typeof(pr) === "object").assertTrue();
       let result =  await rdbStore!.query(predicates);
       expect(3).assertEqual(result?.rowCount);
       result.close();
@@ -576,7 +579,8 @@ export default function relationalStorePredicatesTest() {
     it('testIsNotNull0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(tag + "************* testIsNotNull0001 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.isNotNull("primLongValue");
+      let pr = predicates.isNotNull("primLongValue");
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(0).assertEqual(result?.rowCount);
       result.close();
@@ -653,7 +657,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testGreaterThan0001 start *************");
       {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
-        predicates.greaterThan("stringValue", "ABC");
+        let pr = predicates.greaterThan("stringValue", "ABC");
+        expect(typeof(pr) === "object").assertTrue();
         let result = await rdbStore!.query(predicates);
         expect(3).assertEqual(result?.rowCount);
         result.close();
@@ -821,7 +826,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testGreaterThanOrEqualTo0001 start *************");
       {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
-        predicates.greaterThanOrEqualTo("stringValue", "ABC");
+        let pr = predicates.greaterThanOrEqualTo("stringValue", "ABC");
+        expect(typeof(pr) === "object").assertTrue();
         let result = await rdbStore!.query(predicates);
         expect(3).assertEqual(result.rowCount);
         result.close();
@@ -905,7 +911,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testLessThan0001 start *************");
       {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
-        predicates.lessThan("stringValue", "ABD");
+        let pr = predicates.lessThan("stringValue", "ABD");
+        expect(typeof(pr) === "object").assertTrue();
         let result = await rdbStore!.query(predicates);
         expect(3).assertEqual(result?.rowCount);
         result.close();
@@ -1073,7 +1080,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testLessThanOrEqualTo0001 start *************");
       {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
-        predicates.lessThanOrEqualTo("stringValue", "ABD");
+        let pr = predicates.lessThanOrEqualTo("stringValue", "ABD");
+        expect(typeof(pr) === "object").assertTrue();
         let result = await rdbStore!.query(predicates);
         expect(3).assertEqual(result?.rowCount);
         result.close();
@@ -1157,7 +1165,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testBetween0001 start *************");
       {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
-        predicates.between("stringValue", "ABB", "ABD");
+        let pr = predicates.between("stringValue", "ABB", "ABD");
+        expect(typeof(pr) === "object").assertTrue();
         let result = await rdbStore!.query(predicates);
         expect(3).assertEqual(result?.rowCount);
         result.close();
@@ -1325,7 +1334,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testNotBetween0001 start *************");
       {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
-        predicates.notBetween("stringValue", "ABB", "ABD");
+        let pr = predicates.notBetween("stringValue", "ABB", "ABD");
+        expect(typeof(pr) === "object").assertTrue();
         let result = await rdbStore!.query(predicates);
         expect(0).assertEqual(result?.rowCount);
         result.close();
@@ -1409,7 +1419,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testGlob0001 start *************");
       {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
-        predicates.glob("stringValue", "ABC*");
+        let pr = predicates.glob("stringValue", "ABC*");
+        expect(typeof(pr) === "object").assertTrue();
         let result = await rdbStore!.query(predicates);
         expect(3).assertEqual(result?.rowCount);
         result.close();
@@ -1430,7 +1441,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testGlob0002 start *************");
       {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
-        predicates.glob("stringValue", "*LMN");
+        let pr = predicates.glob("stringValue", "*LMN");
+        expect(typeof(pr) === "object").assertTrue();
         let result = await rdbStore!.query(predicates);
         expect(3).assertEqual(result?.rowCount);
         result.close();
@@ -1534,7 +1546,8 @@ export default function relationalStorePredicatesTest() {
     it('testContains0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(tag + "************* testContains0001 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.contains("stringValue", "DEF");
+      let pr = predicates.contains("stringValue", "DEF");
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(3).assertEqual(result?.rowCount);
       result.close();
@@ -1610,7 +1623,8 @@ export default function relationalStorePredicatesTest() {
     it('testBeginsWith0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(tag + "************* testBeginsWith0001 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.beginsWith("stringValue", "ABC");
+      let pr = predicates.beginsWith("stringValue", "ABC");
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(3).assertEqual(result?.rowCount);
       result.close();
@@ -1686,7 +1700,8 @@ export default function relationalStorePredicatesTest() {
     it('testEndsWith0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(tag + "************* testEndsWith0001 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.endsWith("stringValue", "LMN");
+      let pr = predicates.endsWith("stringValue", "LMN");
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(3).assertEqual(result?.rowCount);
       result.close();
@@ -1762,7 +1777,8 @@ export default function relationalStorePredicatesTest() {
     it('testLike0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(tag + "************* testLike0001 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.like("stringValue", "%LMN%");
+      let pr = predicates.like("stringValue", "%LMN%");
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(3).assertEqual(result?.rowCount);
       result.close();
@@ -1839,12 +1855,13 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testBeginWrap0001 start *************");
       {
         let predicates = new relationalStore.RdbPredicates("AllDataType");
-        predicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
+        let pr = predicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
           .beginWrap()
           .equalTo("integerValue", 1 as long)
           .or()
           .equalTo("integerValue", 2147483647 as long)
           .endWrap();
+        expect(typeof(pr) === "object").assertTrue();
         let result = await rdbStore!.query(predicates);
         expect(2).assertEqual(result?.rowCount);
         result.close();
@@ -1959,9 +1976,10 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testAnd0001 start *************");
 
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
+      let pr = predicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
         .and()
         .equalTo("integerValue", 1 as long);
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(1).assertEqual(result?.rowCount);
       result.close();
@@ -2047,7 +2065,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testOrder0001 start *************");
 
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.equalTo("stringValue", "ABCDEFGHIJKLMN").orderByAsc("integerValue").distinct();
+      let pr = predicates.equalTo("stringValue", "ABCDEFGHIJKLMN").orderByAsc("integerValue").distinct();
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(3).assertEqual(result?.rowCount);
       expect(true).assertEqual(result.goToFirstRow())
@@ -2136,7 +2155,8 @@ export default function relationalStorePredicatesTest() {
     it('testLimit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:()=>void) : Promise<void> =>   {
       console.info(tag + "************* testLimit0001 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.like("stringValue", "ABCDEFGHIJKLMN").limitAs(1);
+      let pr = predicates.like("stringValue", "ABCDEFGHIJKLMN").limitAs(1);
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(1).assertEqual(result?.rowCount);
       result.close();
@@ -2956,7 +2976,8 @@ export default function relationalStorePredicatesTest() {
     it('testNotLike0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.log(tag + "************* testNotLike0011 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.notLike("characterValue", "#");
+      let pr = predicates.notLike("characterValue", "#");
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(2).assertEqual(result?.rowCount);
       result.close();
@@ -3262,7 +3283,8 @@ export default function relationalStorePredicatesTest() {
     it('testNotContains0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.log(tag + "************* testNotContains0010 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.notContains("characterValue", "#");
+      let pr = predicates.notContains("characterValue", "#");
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(2).assertEqual(result?.rowCount);
       result.close()

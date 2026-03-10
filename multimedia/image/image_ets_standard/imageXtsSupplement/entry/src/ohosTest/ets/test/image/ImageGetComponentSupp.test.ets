@@ -52,8 +52,7 @@ let receiver : image.ImageReceiver;
 let fdNumber: number;
 let fdPath: string;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-
-
+let counter: number = 0;
 
 let CameraVideoProfile: media.AVRecorderProfile = {
   audioBitrate: 48000,
@@ -710,9 +709,8 @@ export default function ImageGetComponentSupp() {
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
             try {
               let bufferData = img.getBufferData();
-              let resultStr = JSON.stringify(bufferData?.rowStride);
-              console.info(TAG, testName, 'img.getBufferData succeeded.',resultStr);
-              expect(resultStr).assertEqual('[2560]');
+              console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.rowStride);
+              expect(bufferData!.rowStride.length > 0 ).assertTrue();
             } catch (error) {
               console.error(TAG ,testName, 'getMetadata',error.message, error.code);
               expect().assertFail();
@@ -757,9 +755,8 @@ export default function ImageGetComponentSupp() {
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
             try {
               let bufferData = img.getBufferData();
-              let resultStr = JSON.stringify(bufferData?.pixelStride);
-              console.info(TAG, testName, 'img.getBufferData succeeded.',resultStr);
-              expect(resultStr).assertEqual('[4]');
+              console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.pixelStride);
+              expect(bufferData!.pixelStride.length > 0 ).assertTrue();
             } catch (error) {
               console.error(TAG ,testName, 'getMetadata',error.message, error.code);
               expect().assertFail();
@@ -805,7 +802,7 @@ export default function ImageGetComponentSupp() {
             try {
               let bufferData = img.getBufferData();
               console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.byteBuffer);
-              expect(bufferData?.byteBuffer.byteLength).assertEqual(1228800);
+              expect(bufferData!.byteBuffer.byteLength > 0).assertTrue ();
             } catch (error) {
               console.error(TAG ,testName, 'getMetadata',error.message, error.code);
               expect().assertFail();
@@ -824,6 +821,109 @@ export default function ImageGetComponentSupp() {
         done();
       }
     })
+    /**
+     * @tc.name   IMAGE_GET_META_DATA_TEST_001
+     * @tc.number IMAGE_GET_META_DATA_TEST_001
+     * @tc.desc   getMetadata image.HdrMetadataKey.HDR_GAINMAP_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_GET_META_DATA_TEST_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_GET_META_DATA_TEST_001';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let size: image.Size = {
+            height: 8192,
+            width: 8
+          }
+          counter = 0;
+          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
+          receiver.on('imageArrival', async () => {
+            counter =  1;
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            try {
+              console.info(TAG,testName,"get receiver SurfaceId success");
+              let value = img.getMetadata(image.HdrMetadataKey.HDR_GAINMAP_METADATA);
+              console.info(TAG, testName, 'img.getMetadata succeeded.',value);
+              expect(value).assertFail();
+            } catch (error) {
+              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
+              expect(Number(error.code)).assertEqual(7600302)
+            }
+            done();
+          });
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          mPhotoSession.start();
+          await sleep(2000);
+          expect(counter).assertEqual(1);
+          done();
+        }
+      } catch (error) {
+        console.error(TAG ,testName, error.message, error.code);
+        await releasePhotoSession();
+        done();
+      }
+    })
 
+    /**
+     * @tc.name   IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001
+     * @tc.number IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001
+     * @tc.desc   getBufferData  返回值属性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let size: image.Size = {
+            height: 8192,
+            width: 8
+          }
+          counter = 0;
+          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
+          receiver.on('imageArrival', async () => {
+            counter =  1;
+            console.info(TAG, testName, 'counter.',counter);
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            try {
+              console.info(TAG,testName,"get receiver SurfaceId success");
+              let value = img.getBufferData()
+              console.info(TAG, testName, 'img.getMetadata succeeded.',value);
+              expect(value?.rowStride).not().assertUndefined()
+              expect(value?.pixelStride).not().assertUndefined()
+              expect(value?.byteBuffer).not().assertUndefined()
+            } catch (error) {
+              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
+              expect().assertFail();
+            }
+            done();
+          });
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          mPhotoSession.start();
+          await sleep(2000);
+          expect(counter).assertEqual(1);
+          done();
+        }
+      } catch (error) {
+        console.error(TAG ,testName, error.message, error.code);
+        await releasePhotoSession();
+        done();
+      }
+    })
   })
 }

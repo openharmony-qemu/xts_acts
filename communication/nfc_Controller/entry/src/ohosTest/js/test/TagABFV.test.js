@@ -24,6 +24,8 @@ function sleep(delay) {
 function readerModeCb(err, tagInfo) {
     if (!err) {
         console.info("offCallback: tag found tagInfo = ", JSON.stringify(tagInfo));
+        expect(tagInfo.uid.length > 0).assertTrue();
+        expect(tagInfo.technology.length > 0).assertTrue();
     } else {
         console.error("offCallback err: " + err.message);
         return;
@@ -39,7 +41,7 @@ let aTag = {
         },
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 let aTag1 = {
@@ -51,19 +53,7 @@ let aTag1 = {
         },
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
-};
-
-let aTag2 = {
-    "uid": [],
-    "technology": [],
-    "extrasData": [
-        {
-            "Sak": 0x08, "Atqa": "",
-        },
-    ],
-    "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 let bTag = {
@@ -75,6 +65,7 @@ let bTag = {
         }
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let bTag1 = {
@@ -86,6 +77,7 @@ let bTag1 = {
         }
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let bTag2 = {
@@ -97,7 +89,7 @@ let bTag2 = {
         }
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 let fTag = {
@@ -109,6 +101,7 @@ let fTag = {
         }
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let fTag1 = {
@@ -120,6 +113,7 @@ let fTag1 = {
         }
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let fTag2 = {
@@ -131,7 +125,7 @@ let fTag2 = {
         }
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 let vTag = {
@@ -143,6 +137,7 @@ let vTag = {
         }
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let vTag1 = {
@@ -154,7 +149,7 @@ let vTag1 = {
         }
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 var Want = {
@@ -182,7 +177,7 @@ let isoDepTaginfo = {
             "HistoricalBytes": "4D54000500308693695B", "HiLayerResponse": "",
         },
     ],
-    "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let isoDepTaginfo1 = {
@@ -197,7 +192,7 @@ let isoDepTaginfo1 = {
         },
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 let NDEFTaginfo = {
@@ -212,6 +207,7 @@ let NDEFTaginfo = {
         },
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let NDEFTaginfo1 = {
@@ -226,7 +222,7 @@ let NDEFTaginfo1 = {
         },
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 let mifareclassicTaginfo = {
@@ -241,6 +237,7 @@ let mifareclassicTaginfo = {
         },
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let mifareclassicTaginfo1 = {
@@ -255,7 +252,7 @@ let mifareclassicTaginfo1 = {
         },
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 let mifareUltralightTaginfo = {
@@ -270,6 +267,7 @@ let mifareUltralightTaginfo = {
         },
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let mifareUltralightTaginfo1 = {
@@ -284,7 +282,7 @@ let mifareUltralightTaginfo1 = {
         },
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 let NdefFormatableTag = {
@@ -299,6 +297,7 @@ let NdefFormatableTag = {
         },
     ],
     "tagRfDiscId": 1,
+    "supportedProfiles": [1],
 };
 
 let NdefFormatableTag1 = {
@@ -313,7 +312,7 @@ let NdefFormatableTag1 = {
         },
     ],
     "tagRfDiscId": 1,
-    "supportedProfiles": 1,
+    "supportedProfiles": [1],
 };
 
 export default function nfcTagABFVTest() {
@@ -885,6 +884,34 @@ export default function nfcTagABFVTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_1303
+         * @tc.number SUB_Communication_NFC_nfctage_js_1303
+         * @tc.desc   Obtains the DsfId value of the taginfo.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_1303', Level.LEVEL0, function ()  {
+            let getTagtest ;
+            try {
+                getTagtest = tag.getTagInfo(Want);
+                console.info('[NFC_test] tag13 Nfcget tagABFV gettaginfo is: ' + getTagtest)
+                expect(tagInfo.uid.length > 0).assertTrue();
+                expect(tagInfo.technology.length > 0).assertTrue();
+                expect(getTagtest instanceof Object).assertTrue();
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
+                    expect().assertFail();
+                }
+            }
+            console.info('[NFC_test] tag13 test TagInfo data>:' + getTagtest);
+        })
+
+        /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_1400
          * @tc.number SUB_Communication_NFC_nfctage_js_1400
          * @tc.desc   This interface is used to obtain the NFC A tag object.
@@ -1099,6 +1126,8 @@ export default function nfcTagABFVTest() {
             try {
                 let recvNfcTagFunc = tagInfo => {
                     console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                    expect(tagInfo.uid.length > 0).assertTrue();
+                    expect(tagInfo.technology.length > 0).assertTrue();
                     expect(tagInfo != null).assertTrue();
                 }
                 tag.registerForegroundDispatch(elementName, discTech, recvNfcTagFunc);
@@ -1201,7 +1230,7 @@ export default function nfcTagABFVTest() {
             let cTag = {
                 "uid": [0x01, 0x02, 0x03, 0x04],
                 "technology": [10],
-                "supportedProfiles": 1,
+                "supportedProfiles": [1],
             };
             try {
                 let data = tag.getBarcodeTag(cTag);
@@ -1225,7 +1254,7 @@ export default function nfcTagABFVTest() {
             let dTag = {
                 "uid": [0x01, 0x02, 0x03, 0x04],
                 "technology": [10],
-                "supportedProfiles": 1,
+                "supportedProfiles": [1],
             };
             await tag.getBarcodeTag(dTag).getBarcode().then((BarcodeTag) => {
                 console.info("[NFC_test]25 getBarcodedata is " + BarcodeTag + " json: " + JSON.stringify(BarcodeTag));
@@ -1285,6 +1314,8 @@ export default function nfcTagABFVTest() {
             };
             let recvNfcTagFunc = tagInfo => {
                 console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                expect(tagInfo.uid.length > 0).assertTrue();
+                expect(tagInfo.technology.length > 0).assertTrue();
                 expect(tagInfo != null).assertTrue();
             }
             let discTech = [1, 2, 4];
@@ -1350,6 +1381,8 @@ export default function nfcTagABFVTest() {
             };
             let recvNfcTagFunc = tagInfo => {
                 console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                expect(tagInfo.uid.length > 0).assertTrue();
+                expect(tagInfo.technology.length > 0).assertTrue();
                 expect(tagInfo != null).assertTrue();
             }
 
@@ -1702,7 +1735,7 @@ export default function nfcTagABFVTest() {
                 "uid": [],
                 "technology": [],
                 "tagRfDiscId": 1,
-                "supportedProfiles": 1,
+                "supportedProfiles": [1],
             };
             try {
                 let getBarcodeTag = tag.getBarcodeTag(bTag);

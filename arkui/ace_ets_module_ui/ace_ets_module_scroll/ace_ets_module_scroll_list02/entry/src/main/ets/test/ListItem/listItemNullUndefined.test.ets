@@ -297,6 +297,27 @@ export default function listItemNullUndefinedTest() {
       console.info('[listItemSelectedNullUndefined_0300] END');
     })
 
+    /**
+     * @tc.name   listItemSelectedNullUndefined_0400
+     * @tc.number listItemSelectedNullUndefined_0400
+     * @tc.desc   Test ListItem selected property with false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('listItemSelectedNullUndefined_0400', Level.LEVEL0, async () => {
+      console.info('[listItemSelectedNullUndefined_0400] START');
+      let strJson: string = getInspectorByKey('listItem_selected_false');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+      console.info("[listItemSelectedNullUndefined_0400] type: " + JSON.stringify(obj.$type));
+      console.info("[listItemSelectedNullUndefined_0400] false obj is: " + JSON.stringify(obj.$attrs.selected));
+
+      // ListItem selected 设置false
+      expect(obj.$attrs.selected).assertEqual(false);
+      console.info('[listItemSelectedNullUndefined_0400] END');
+    })
+
     // ========== swipeAction tests (SwipeActionOptions) ==========
     /**
      * @tc.name   listItemSwipeActionNullUndefined_0100

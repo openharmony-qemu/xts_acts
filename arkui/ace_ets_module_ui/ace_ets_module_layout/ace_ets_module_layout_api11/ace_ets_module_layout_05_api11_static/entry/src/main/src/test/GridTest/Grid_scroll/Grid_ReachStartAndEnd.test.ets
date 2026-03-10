@@ -88,7 +88,7 @@ it('Grid_ReachStartAndEnd_static_0100', Level.LEVEL0, async (done: () => void): 
       console.info('[Grid_ReachStartAndEnd_static_0100] START');
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ReachStartAndEnd_grid')
       let driver = Driver.create()
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
@@ -102,7 +102,7 @@ it('Grid_ReachStartAndEnd_static_0100', Level.LEVEL0, async (done: () => void): 
   console.info("[Grid_ReachStartAndEnd_static_0100] obj1 content is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('onReachEnd');
 
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),

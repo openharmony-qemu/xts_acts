@@ -4,6 +4,13 @@ import onFailedParameterTest from './OnFailedParameter.test';
 import connectNativeParameterTest from './ConnectNativeParameter.test';
 import OnDisconnectParameter from './OnDisconnectParameter.test'
 import DisconnectNativeParameter from './DisconnectNativeParameter.test'
+import ConnectNativeErrorCode from './ConnectNativeErrorCode.test'
+import DisconnectNativeErrorCode from './DisconnectNativeErrorCode.test'
+import webExtensionConnectionCallbackOnConnectParameterTest from './WebExtensionConnectionCallbackOnConnectParameter.test'
+import webExtensionConnectionCallbackOnDisconnectParameterTest from './WebExtensionConnectionCallbackOnDisconnectParameter.test'
+import webExtensionConnectionCallbackOnFailedParameterTest from './WebExtensionConnectionCallbackOnFailedParameter.test'
+import connectNativeNullUndefinedParameterTest from './ConnectNativeNullUndefinedParameter.test'
+import disconnectNativeNullUndefinedParameterTest from './DisconnectNativeNullUndefinedParameter.test'
 
 export default function testsuite() {
   abilityTest();
@@ -12,4 +19,11 @@ export default function testsuite() {
   connectNativeParameterTest();
   OnDisconnectParameter()
   DisconnectNativeParameter()
+  ConnectNativeErrorCode()
+  DisconnectNativeErrorCode()
+  webExtensionConnectionCallbackOnConnectParameterTest()
+  webExtensionConnectionCallbackOnDisconnectParameterTest()
+  webExtensionConnectionCallbackOnFailedParameterTest()
+  connectNativeNullUndefinedParameterTest()
+  disconnectNativeNullUndefinedParameterTest()
 }

@@ -43,22 +43,22 @@ struct DatePickerUIExample {
   @State isLunar: boolean = false
   @State message: string = 'touch'
   private selectedDate: Date = new Date('2021-08-08')
-    @State options:DatePickerOptions = {
-      start: new Date('1970-1-1'),
-      end: new Date('2100-1-1'),
-      selected: this.selectedDate
+  @State options:DatePickerOptions = {
+    start: new Date('1970-1-1'),
+    end: new Date('2100-1-1'),
+    selected: this.selectedDate
   } as DatePickerOptions
   messageManager:MessageManager = new MessageManager()
-   onPageShow() {
+  onPageShow() {
     console.info('Checkbox onPageShow')
     AppStorage.setOrCreate('messageManager', this.messageManager)
     let callback:Callback = (message: Message) => {
       if (message.name == 'isLunar') {
         console.log('message.value',message.value)
-          this.isLunar = message.value as boolean
+        this.isLunar = message.value as boolean
       }
       if (message.name == 'options') {
-          this.options = message.value as DatePickerOptions
+        this.options = message.value as DatePickerOptions
       }
 
     }
@@ -73,14 +73,7 @@ struct DatePickerUIExample {
         .onClick((e:ClickEvent) => {
           this.isLunar = !this.isLunar
         })
-      Text(this.message)
-        .fontSize(14)
-        .lineHeight(20)
-        .fontColor('#182431')
-        .fontWeight(500)
-        .margin({ top: 20 } as Margin)
-        .key('dptouch')
-        .id('dptouch')
+        .id('changeLunarbtn')
       DatePicker(this.options)
         .lunar(this.isLunar)
         .onDateChange((value: Date) => {

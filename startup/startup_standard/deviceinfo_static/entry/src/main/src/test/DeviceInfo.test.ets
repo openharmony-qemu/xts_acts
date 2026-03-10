@@ -962,5 +962,31 @@ export default function DeviceInfoTest() {
 
       console.info('deviceinfo_test_static_3900 : end');
     })
+
+    /**
+     * @tc.name   deviceinfo_test_static_4000
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4000
+     * @tc.desc   Get the hardwareProfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_4000 start');
+      let hardwareProfile = deviceinfo.hardwareProfile;
+      console.info('the value of the hardwareProfile is :' + hardwareProfile);
+      
+      if (hardwareProfile != "" && hardwareProfile != null && hardwareProfile != undefined) {
+        console.info('the value of the hardwareProfile is :' + hardwareProfile);
+        expect(hardwareProfile).assertInstanceOf('String');
+        done();
+      }
+      else {
+        console.info('the return value hardwareProfile is null or incorrect.');
+        expect().assertFail();
+        done();
+      }
+      console.info('deviceinfo_test_static_4000 : end');
+    })
   })
 }

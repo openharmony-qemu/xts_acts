@@ -32,6 +32,7 @@ export default function audioRoutingManager() {
   const stringParameter: ESObject = 'stringParameter';
   const params: ESObject = '';
   const numberParameter = 12345678;
+  let audioRoutingManager = audio.getAudioManager().getRoutingManager();
 
   describe("AudioRoutingManagerJsTest", () => {
 
@@ -465,7 +466,6 @@ export default function audioRoutingManager() {
         let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0100 SUCCESS` +
         JSON.stringify(data));
-        expect(true).assertTrue();
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0100 ERROR: ${e.message}`);
@@ -496,7 +496,6 @@ export default function audioRoutingManager() {
           done();
         }
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0200 check no parameter PASS`);
-        expect(true).assertTrue();
       }
       done();
     })
@@ -558,7 +557,6 @@ export default function audioRoutingManager() {
           done();
         }
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0400 check string parameter PASS`);
-        expect(true).assertTrue();
       }
       done();
     })
@@ -585,7 +583,6 @@ export default function audioRoutingManager() {
           done();
         }
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0500 SUCCESS`);
-        expect(true).assertTrue();
         done();
       });
     })
@@ -653,7 +650,6 @@ export default function audioRoutingManager() {
           done();
         }
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_0700 check string parameter PASS,${error.code}`);
-        expect(true).assertTrue();
         done();
       }
 
@@ -820,7 +816,6 @@ export default function audioRoutingManager() {
         routingManager.off('preferOutputDeviceChangeForRendererInfo', (data) => {
         });
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0100 SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0100 ERROR: ${e.message}`);
@@ -963,7 +958,6 @@ export default function audioRoutingManager() {
         let data: ESObject = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(2);
         expect(data[0].networkId).assertEqual("LocalDevice");
-        expect(true).assertTrue();
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_0500 ERROR: ${e.message},ErrorCode:${e.code}`);
@@ -1246,5 +1240,398 @@ export default function audioRoutingManager() {
       expect(flag).assertTrue();
       done();
     })
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_OFF_DEVICECHANGE_1310
+     * @tc.number AUDIOROUTINGMANAGER_OFF_DEVICECHANGE_1310
+     * @tc.desc   off_deviceChange with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_OFF_DEVICECHANGE_1310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.off('deviceChange', undefined);
+        console.info(`AUDIOROUTINGMANAGER_OFF_DEVICECHANGE_1310: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_OFF_DEVICECHANGE_1310: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_OFF_AVAILABLEDEVICECHANGE_1312
+     * @tc.number AUDIOROUTINGMANAGER_OFF_AVAILABLEDEVICECHANGE_1312
+     * @tc.desc   off_availableDeviceChange with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_OFF_AVAILABLEDEVICECHANGE_1312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.off('availableDeviceChange', undefined);
+        console.info(`AUDIOROUTINGMANAGER_OFF_AVAILABLEDEVICECHANGE_1312: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_OFF_AVAILABLEDEVICECHANGE_1312: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1313
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1313
+     * @tc.desc   getPreferOutputDeviceForRendererInfo with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1313', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.getPreferOutputDeviceForRendererInfo(null, (err, device) => {
+          if (err) {
+            console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1313: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1313: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1313: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1314
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1314
+     * @tc.desc   getPreferOutputDeviceForRendererInfo with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.getPreferOutputDeviceForRendererInfo(undefined, (err, device) => {
+          if (err) {
+            console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1314: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1314: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1314: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1315
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1315
+     * @tc.desc   getPreferOutputDeviceForRendererInfo with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1315', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRoutingManager.getPreferOutputDeviceForRendererInfo(null);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1315: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1315: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1316
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1316
+     * @tc.desc   getPreferOutputDeviceForRendererInfo with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1316', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRoutingManager.getPreferOutputDeviceForRendererInfo(undefined);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1316: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFEROUTPUTDEVICEFORRENDERERINFO_1316: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1317
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1317
+     * @tc.desc   getPreferredOutputDeviceForRendererInfoSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1317', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(null);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1317: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1317: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1318
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1318
+     * @tc.desc   getPreferredOutputDeviceForRendererInfoSync with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1318', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(undefined);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1318: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_1318: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_OFF_PREFEROUTPUTDEVICECHANGEFORRENDERERINFO_1322
+     * @tc.number AUDIOROUTINGMANAGER_OFF_PREFEROUTPUTDEVICECHANGEFORRENDERERINFO_1322
+     * @tc.desc   off_preferOutputDeviceChangeForRendererInfo with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_OFF_PREFEROUTPUTDEVICECHANGEFORRENDERERINFO_1322', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.off('preferOutputDeviceChangeForRendererInfo', undefined);
+        console.info(`AUDIOROUTINGMANAGER_OFF_PREFEROUTPUTDEVICECHANGEFORRENDERERINFO_1322: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_OFF_PREFEROUTPUTDEVICECHANGEFORRENDERERINFO_1322: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1323
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1323
+     * @tc.desc   getPreferredInputDeviceForCapturerInfo with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1323', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.getPreferredInputDeviceForCapturerInfo(null, (err, device) => {
+          if (err) {
+            console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1323: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1323: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1323: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1324
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1324
+     * @tc.desc   getPreferredInputDeviceForCapturerInfo with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1324', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.getPreferredInputDeviceForCapturerInfo(undefined, (err, device) => {
+          if (err) {
+            console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1324: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1324: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1324: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1325
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1325
+     * @tc.desc   getPreferredInputDeviceForCapturerInfo with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1325', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(null);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1325: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1325: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1326
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1326
+     * @tc.desc   getPreferredInputDeviceForCapturerInfo with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1326', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(undefined);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1326: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFO_1326: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1327
+     * @tc.number AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1327
+     * @tc.desc   on_preferredInputDeviceChangeForCapturerInfo with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1327', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback = (audioDeviceDescriptors: audio.AudioDeviceDescriptors) => {
+          console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1327: callback called`);
+        };
+        audioRoutingManager.on('preferredInputDeviceChangeForCapturerInfo', null, callback);
+        console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1327: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1327: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1328
+     * @tc.number AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1328
+     * @tc.desc   on_preferredInputDeviceChangeForCapturerInfo with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1328', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback = (audioDeviceDescriptors: audio.AudioDeviceDescriptors) => {
+          console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1328: callback called`);
+        };
+        audioRoutingManager.on('preferredInputDeviceChangeForCapturerInfo', undefined, callback);
+        console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1328: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_ON_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1328: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1330
+     * @tc.number AUDIOROUTINGMANAGER_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1330
+     * @tc.desc   off_preferredInputDeviceChangeForCapturerInfo with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.off('preferredInputDeviceChangeForCapturerInfo', undefined);
+        console.info(`AUDIOROUTINGMANAGER_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1330: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_1330: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1331
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1331
+     * @tc.desc   getPreferredInputDeviceForCapturerInfoSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1331', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(null);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1331: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1331: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1332
+     * @tc.number AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1332
+     * @tc.desc   getPreferredInputDeviceForCapturerInfoSync with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1332', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(undefined);
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1332: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIOROUTINGMANAGER_GETPREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_1332: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
   })
 }

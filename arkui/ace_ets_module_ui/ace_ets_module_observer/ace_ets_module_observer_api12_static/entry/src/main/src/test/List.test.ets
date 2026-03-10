@@ -20,7 +20,7 @@ import ObserverApi1 from './observerTest/ObserverApi1.test'
 import ObserverNavDestinationId from './observerTest/ObserverNavDestinationId.test'
 import ObserverNavDestinationState from './observerTest/ObserverNavDestinationState.test'
 import ObserverPageId from './observerTest/ObserverPageId.test'
-import observerScroll from './observerTest/observerScroll.test'
+import observerScrollTest from './observerTest/observerScroll.test'
 import observeTabJsunit from './observerTest/observeTabJsunit.test'
 import onTabUpdate from './observerTest/onTabUpdate.test'
 import tabContentState from './observerTest/tabContentState.test'
@@ -29,18 +29,18 @@ import uiScrollEvent from './observerTest/uiScrollEvent.test'
 import uiTabUpdate from './observerTest/uiTabUpdate.test'
 
 export default function testsuite() {
-  observerScroll()
+  observerScrollTest()
   DensityInfo()
   idScrollEvent()
+  uiScrollEvent()
   ObserverApi1()
   tabContentState()
   ObserverNavDestinationId()
   ObserverNavDestinationState()
-  ObserverPageId()
   onTabUpdate()
   uiIdUpdate()
   uiTabUpdate()
   indexTabs()
   observeTabJsunit()
-  uiScrollEvent()
+  ObserverPageId()
 }

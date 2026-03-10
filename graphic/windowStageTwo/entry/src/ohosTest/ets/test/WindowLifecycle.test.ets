@@ -2752,6 +2752,7 @@ export default function WindowLifecycle() {
         done();
       }
     });
+    
 
     /**
      * @tc.name   testGetMainWindowSnapshot_0500
@@ -3037,6 +3038,43 @@ export default function WindowLifecycle() {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           expect().assertFail();
           done();
+        }
+      } else {
+        done();
+      }
+    });
+    /**
+     * @tc.name   testGetMainWindowSnapshot_1300
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_1300
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参[]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "testGetMainWindowSnapshot_1300";
+      console.log(caseName + " begin");
+      if (deviceType === '2in1') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(windowIdArray, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       } else {
         done();

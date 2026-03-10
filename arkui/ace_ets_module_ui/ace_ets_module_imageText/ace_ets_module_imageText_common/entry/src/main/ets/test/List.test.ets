@@ -19,6 +19,7 @@ import FontJsunit from './FontTest/FontJsunit.test';
 import StageFontTest from './FontTest/StageFontTest.test';
 import UIFontAliasInfo from './FontTest/UIFontAliasInfo.test';
 import UIfontTest from './FontTest/UIfontTest.test';
+import FontNullUndefinedTest from './FontTest/FontNullUndefined.test';
 
 import ContextGetMeasureUtils from './MeasureTest/ContextGetMeasureUtils.test';
 import GetLayoutTest from './MeasureTest/GetLayoutTest.test';
@@ -57,18 +58,22 @@ import SearchDeleteTest from './TextDeleteTest/SearchDelete.test';
 import TextAreaDeleteTest from './TextDeleteTest/TextAreaDelete.test';
 import TextInputDelete from './TextDeleteTest/TextInputDelete.test';
 import TextControllerTest from './TextControllerTest/TextControllerTest.test';
+import TextContentControllerBaseMethodsTest from './TextControllerTest/TextContentControllerBaseMethodsTest.test';
 import SelectedDragPreviewStyleTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest.test';
 import SetTextSelectionTest from './SetTextSelectionTest/SetTextSelectionTest.test';
+import TypeNodeTest from './TypeNode.test';
 
 export default function testsuite() {
   TextControllerTest();
+  TextContentControllerBaseMethodsTest()
   InputPresetTest() 
   // FontTest 
   APIgetUIFontConfigJsunit() 
   FontJsunit() 
   StageFontTest() 
   UIFontAliasInfo() 
-  UIfontTest() 
+  UIfontTest()
+  FontNullUndefinedTest()
   // MeasureTest 
   ContextGetMeasureUtils() 
   GetLayoutTest() 
@@ -105,4 +110,5 @@ export default function testsuite() {
   SelectedDragPreviewStyleTest();
   SetTextSelectionTest()
   CustomKeyboardContinueTest();
+  TypeNodeTest();
 }

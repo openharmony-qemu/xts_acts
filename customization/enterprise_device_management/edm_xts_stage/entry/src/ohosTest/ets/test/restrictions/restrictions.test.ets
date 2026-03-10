@@ -1693,7 +1693,834 @@ function testSetDisallowedPolicy() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-    });
+    })
+
+    /**
+     * @tc.name   setDisallowedPolicy_test_001
+     * @tc.number setDisallowedPolicy_test_001
+     * @tc.desc   setDisallowedPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDisallowedPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDisallowedPolicy_test_001  -------- START --------');
+      try {
+        restrictions.setDisallowedPolicy(null, LABEL_VIRTUAL_SERVICE, true);
+        console.info(' --- setDisallowedPolicy_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDisallowedPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setDisallowedPolicy_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setDisallowedPolicy_test_002
+     * @tc.number setDisallowedPolicy_test_002
+     * @tc.desc   setDisallowedPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDisallowedPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDisallowedPolicy_test_002  -------- START --------');
+      try {
+        restrictions.setDisallowedPolicy(undefined, LABEL_VIRTUAL_SERVICE, true);
+        console.info(' --- setDisallowedPolicy_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDisallowedPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setDisallowedPolicy_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedPolicy_test_002
+     * @tc.number getDisallowedPolicy_test_002
+     * @tc.desc   getDisallowedPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedPolicy_test_002  -------- START --------');
+      try {
+        restrictions.getDisallowedPolicy(undefined, LABEL_VIRTUAL_SERVICE);
+        console.info(' --- getDisallowedPolicy_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedPolicy_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setDisallowedPolicyForAccount_test_001
+     * @tc.number setDisallowedPolicyForAccount_test_001
+     * @tc.desc   setDisallowedPolicyForAccount with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDisallowedPolicyForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDisallowedPolicyForAccount_test_001  -------- START --------');
+      try {
+        restrictions.setDisallowedPolicyForAccount(null, LABEL_FINGER_PRINT, true, DEFAULT_USER_ID);
+        console.info(' --- setDisallowedPolicyForAccount_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDisallowedPolicyForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setDisallowedPolicyForAccount_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setDisallowedPolicyForAccount_test_002
+     * @tc.number setDisallowedPolicyForAccount_test_002
+     * @tc.desc   setDisallowedPolicyForAccount with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDisallowedPolicyForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDisallowedPolicyForAccount_test_002  -------- START --------');
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, LABEL_FINGER_PRINT, true, DEFAULT_USER_ID);
+        console.info(' --- setDisallowedPolicyForAccount_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDisallowedPolicyForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setDisallowedPolicyForAccount_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setDisallowedPolicyForAccount_test_003
+     * @tc.number setDisallowedPolicyForAccount_test_003
+     * @tc.desc   setDisallowedPolicyForAccount with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDisallowedPolicyForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDisallowedPolicyForAccount_test_003  -------- START --------');
+      try {
+        restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, true, null);
+        console.info(' --- setDisallowedPolicyForAccount_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDisallowedPolicyForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setDisallowedPolicyForAccount_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setDisallowedPolicyForAccount_test_004
+     * @tc.number setDisallowedPolicyForAccount_test_004
+     * @tc.desc   setDisallowedPolicyForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDisallowedPolicyForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDisallowedPolicyForAccount_test_004  -------- START --------');
+      try {
+        restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, true, undefined);
+        console.info(' --- setDisallowedPolicyForAccount_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDisallowedPolicyForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setDisallowedPolicyForAccount_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedPolicyForAccount_test_002
+     * @tc.number getDisallowedPolicyForAccount_test_002
+     * @tc.desc   getDisallowedPolicyForAccount with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedPolicyForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedPolicyForAccount_test_002  -------- START --------');
+      try {
+        restrictions.getDisallowedPolicyForAccount(undefined, LABEL_FINGER_PRINT, DEFAULT_USER_ID);
+        console.info(' --- getDisallowedPolicyForAccount_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedPolicyForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedPolicyForAccount_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedPolicyForAccount_test_003
+     * @tc.number getDisallowedPolicyForAccount_test_003
+     * @tc.desc   getDisallowedPolicyForAccount with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedPolicyForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedPolicyForAccount_test_003  -------- START --------');
+      try {
+        restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, null);
+        console.info(' --- getDisallowedPolicyForAccount_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedPolicyForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedPolicyForAccount_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedPolicyForAccount_test_004
+     * @tc.number getDisallowedPolicyForAccount_test_004
+     * @tc.desc   getDisallowedPolicyForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedPolicyForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedPolicyForAccount_test_004  -------- START --------');
+      try {
+        restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, undefined);
+        console.info(' --- getDisallowedPolicyForAccount_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedPolicyForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedPolicyForAccount_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedListForAccount_test_001
+     * @tc.number addDisallowedListForAccount_test_001
+     * @tc.desc   addDisallowedListForAccount with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedListForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedListForAccount_test_001  -------- START --------');
+      try {
+        restrictions.addDisallowedListForAccount(null, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- addDisallowedListForAccount_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedListForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedListForAccount_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedListForAccount_test_002
+     * @tc.number addDisallowedListForAccount_test_002
+     * @tc.desc   addDisallowedListForAccount with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedListForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedListForAccount_test_002  -------- START --------');
+      try {
+        restrictions.addDisallowedListForAccount(undefined, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- addDisallowedListForAccount_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedListForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedListForAccount_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedListForAccount_test_003
+     * @tc.number addDisallowedListForAccount_test_003
+     * @tc.desc   addDisallowedListForAccount with null parameter list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedListForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedListForAccount_test_003  -------- START --------');
+      try {
+        restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, null, DEFAULT_USER_ID);
+        console.info(' --- addDisallowedListForAccount_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedListForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedListForAccount_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedListForAccount_test_004
+     * @tc.number addDisallowedListForAccount_test_004
+     * @tc.desc   addDisallowedListForAccount with undefined parameter list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedListForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedListForAccount_test_004  -------- START --------');
+      try {
+        restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, undefined, DEFAULT_USER_ID);
+        console.info(' --- addDisallowedListForAccount_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedListForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedListForAccount_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedListForAccount_test_005
+     * @tc.number addDisallowedListForAccount_test_005
+     * @tc.desc   addDisallowedListForAccount with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedListForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedListForAccount_test_005  -------- START --------');
+      try {
+        restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, null);
+        console.info(' --- addDisallowedListForAccount_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedListForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedListForAccount_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedListForAccount_test_006
+     * @tc.number addDisallowedListForAccount_test_006
+     * @tc.desc   addDisallowedListForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedListForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedListForAccount_test_006  -------- START --------');
+      try {
+        restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, undefined);
+        console.info(' --- addDisallowedListForAccount_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedListForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedListForAccount_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedListForAccount_test_001
+     * @tc.number removeDisallowedListForAccount_test_001
+     * @tc.desc   removeDisallowedListForAccount with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedListForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedListForAccount_test_001  -------- START --------');
+      try {
+        restrictions.removeDisallowedListForAccount(null, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- removeDisallowedListForAccount_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedListForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedListForAccount_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedListForAccount_test_002
+     * @tc.number removeDisallowedListForAccount_test_002
+     * @tc.desc   removeDisallowedListForAccount with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedListForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedListForAccount_test_002  -------- START --------');
+      try {
+        restrictions.removeDisallowedListForAccount(undefined, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- removeDisallowedListForAccount_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedListForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedListForAccount_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedListForAccount_test_003
+     * @tc.number removeDisallowedListForAccount_test_003
+     * @tc.desc   removeDisallowedListForAccount with null parameter list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedListForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedListForAccount_test_003  -------- START --------');
+      try {
+        restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, null, DEFAULT_USER_ID);
+        console.info(' --- removeDisallowedListForAccount_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedListForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedListForAccount_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedListForAccount_test_004
+     * @tc.number removeDisallowedListForAccount_test_004
+     * @tc.desc   removeDisallowedListForAccount with undefined parameter list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedListForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedListForAccount_test_004  -------- START --------');
+      try {
+        restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, undefined, DEFAULT_USER_ID);
+        console.info(' --- removeDisallowedListForAccount_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedListForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedListForAccount_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedListForAccount_test_005
+     * @tc.number removeDisallowedListForAccount_test_005
+     * @tc.desc   removeDisallowedListForAccount with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedListForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedListForAccount_test_005  -------- START --------');
+      try {
+        restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, null);
+        console.info(' --- removeDisallowedListForAccount_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedListForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedListForAccount_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedListForAccount_test_006
+     * @tc.number removeDisallowedListForAccount_test_006
+     * @tc.desc   removeDisallowedListForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedListForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedListForAccount_test_006  -------- START --------');
+      try {
+        restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, undefined);
+        console.info(' --- removeDisallowedListForAccount_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedListForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedListForAccount_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedListForAccount_test_001
+     * @tc.number getDisallowedListForAccount_test_001
+     * @tc.desc   getDisallowedListForAccount with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedListForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedListForAccount_test_001  -------- START --------');
+      try {
+        restrictions.getDisallowedListForAccount(null, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, DEFAULT_USER_ID);
+        console.info(' --- getDisallowedListForAccount_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedListForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedListForAccount_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedListForAccount_test_002
+     * @tc.number getDisallowedListForAccount_test_002
+     * @tc.desc   getDisallowedListForAccount with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedListForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedListForAccount_test_002  -------- START --------');
+      try {
+        restrictions.getDisallowedListForAccount(undefined, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, DEFAULT_USER_ID);
+        console.info(' --- getDisallowedListForAccount_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedListForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedListForAccount_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedListForAccount_test_003
+     * @tc.number getDisallowedListForAccount_test_003
+     * @tc.desc   getDisallowedListForAccount with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedListForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedListForAccount_test_003  -------- START --------');
+      try {
+        restrictions.getDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, null);
+        console.info(' --- getDisallowedListForAccount_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedListForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedListForAccount_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedListForAccount_test_004
+     * @tc.number getDisallowedListForAccount_test_004
+     * @tc.desc   getDisallowedListForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedListForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedListForAccount_test_004  -------- START --------');
+      try {
+        restrictions.getDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, undefined);
+        console.info(' --- getDisallowedListForAccount_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedListForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedListForAccount_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUserRestriction_test_001
+     * @tc.number setUserRestriction_test_001
+     * @tc.desc   setUserRestriction with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUserRestriction_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUserRestriction_test_001  -------- START --------');
+      try {
+        restrictions.setUserRestriction(null, LABEL_SET_APN, true);
+        console.info(' --- setUserRestriction_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUserRestriction_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUserRestriction_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUserRestriction_test_002
+     * @tc.number setUserRestriction_test_002
+     * @tc.desc   setUserRestriction with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUserRestriction_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUserRestriction_test_002  -------- START --------');
+      try {
+        restrictions.setUserRestriction(undefined, LABEL_SET_APN, true);
+        console.info(' --- setUserRestriction_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUserRestriction_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUserRestriction_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserRestricted_test_002
+     * @tc.number getUserRestricted_test_002
+     * @tc.desc   getUserRestricted with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserRestricted_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserRestricted_test_002  -------- START --------');
+      try {
+        restrictions.getUserRestricted(undefined, LABEL_SET_ETHERNET_IP);
+        console.info(' --- getUserRestricted_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserRestricted_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserRestricted_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUserRestrictionForAccount_test_001
+     * @tc.number setUserRestrictionForAccount_test_001
+     * @tc.desc   setUserRestrictionForAccount with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUserRestrictionForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUserRestrictionForAccount_test_001  -------- START --------');
+      try {
+        restrictions.setUserRestrictionForAccount(null, LABEL_MODIFY_WALLPAPER, 100, true);
+        console.info(' --- setUserRestrictionForAccount_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUserRestrictionForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUserRestrictionForAccount_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUserRestrictionForAccount_test_002
+     * @tc.number setUserRestrictionForAccount_test_002
+     * @tc.desc   setUserRestrictionForAccount with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUserRestrictionForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUserRestrictionForAccount_test_002  -------- START --------');
+      try {
+        restrictions.setUserRestrictionForAccount(undefined, LABEL_MODIFY_WALLPAPER, 100, true);
+        console.info(' --- setUserRestrictionForAccount_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUserRestrictionForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUserRestrictionForAccount_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUserRestrictionForAccount_test_003
+     * @tc.number setUserRestrictionForAccount_test_003
+     * @tc.desc   setUserRestrictionForAccount with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUserRestrictionForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUserRestrictionForAccount_test_003  -------- START --------');
+      try {
+        restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, null, true);
+        console.info(' --- setUserRestrictionForAccount_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUserRestrictionForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUserRestrictionForAccount_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUserRestrictionForAccount_test_004
+     * @tc.number setUserRestrictionForAccount_test_004
+     * @tc.desc   setUserRestrictionForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUserRestrictionForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUserRestrictionForAccount_test_004  -------- START --------');
+      try {
+        restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, undefined, true);
+        console.info(' --- setUserRestrictionForAccount_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUserRestrictionForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUserRestrictionForAccount_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserRestrictedForAccount_test_002
+     * @tc.number getUserRestrictedForAccount_test_002
+     * @tc.desc   getUserRestrictedForAccount with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserRestrictedForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserRestrictedForAccount_test_002  -------- START --------');
+      try {
+        restrictions.getUserRestrictedForAccount(undefined, LABEL_MODIFY_WALLPAPER, 100);
+        console.info(' --- getUserRestrictedForAccount_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserRestrictedForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserRestrictedForAccount_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserRestrictedForAccount_test_003
+     * @tc.number getUserRestrictedForAccount_test_003
+     * @tc.desc   getUserRestrictedForAccount with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserRestrictedForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserRestrictedForAccount_test_003  -------- START --------');
+      try {
+        restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, null);
+        console.info(' --- getUserRestrictedForAccount_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserRestrictedForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserRestrictedForAccount_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserRestrictedForAccount_test_004
+     * @tc.number getUserRestrictedForAccount_test_004
+     * @tc.desc   getUserRestrictedForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserRestrictedForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserRestrictedForAccount_test_004  -------- START --------');
+      try {
+        restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, undefined);
+        console.info(' --- getUserRestrictedForAccount_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserRestrictedForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserRestrictedForAccount_test_004  -------- END --------');
+    })
 
   /**
    * @tc.name   test_set_disallowed_policy_0177

@@ -1018,5 +1018,26 @@ export default function SystemBrightnessTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SystemBrightnessTest_3800
+     * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0380
+     * @tc.desc   gatValue when option parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SystemBrightnessTest_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'SystemBrightnessTest_3800';
+      try {
+        brightness.getValue();
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
   })
 }

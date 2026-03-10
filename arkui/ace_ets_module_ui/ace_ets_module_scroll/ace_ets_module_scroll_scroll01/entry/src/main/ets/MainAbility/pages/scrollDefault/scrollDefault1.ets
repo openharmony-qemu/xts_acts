@@ -356,7 +356,7 @@ struct ScrollNullUndefinedTest1 {
         .id('scroll_scrollBarColor_default')
         .scrollBar(BarState.On)
         .scrollBarWidth(10)
-        .width('23%')
+        .width('20%')
         .height('100%')
         .backgroundColor(0xF0F0F0)
 
@@ -377,7 +377,7 @@ struct ScrollNullUndefinedTest1 {
         .scrollBarColor(null)
         .scrollBar(BarState.On)
         .scrollBarWidth(10)
-        .width('23%')
+        .width('20%')
         .height('100%')
         .backgroundColor(0xF0F0F0)
 
@@ -398,7 +398,7 @@ struct ScrollNullUndefinedTest1 {
         .scrollBarColor(undefined)
         .scrollBar(BarState.On)
         .scrollBarWidth(10)
-        .width('23%')
+        .width('20%')
         .height('100%')
         .backgroundColor(0xF0F0F0)
 
@@ -419,7 +419,28 @@ struct ScrollNullUndefinedTest1 {
         .scrollBarColor('')
         .scrollBar(BarState.On)
         .scrollBarWidth(10)
-        .width('23%')
+        .width('20%')
+        .height('100%')
+        .backgroundColor(0xF0F0F0)
+
+        // Test scrollBarColor with number
+        Scroll() {
+          Column() {
+            ForEach([1, 2, 3], (item: number) => {
+              Text('' + item)
+                .width('90%')
+                .height('30%')
+                .fontSize(14)
+                .textAlign(TextAlign.Center)
+                .backgroundColor(0xF9CF93)
+            }, (item: number) => item.toString())
+          }
+        }
+        .id('scroll_scrollBarColor_number')
+        .scrollBarColor(0xFFF000)
+        .scrollBar(BarState.On)
+        .scrollBarWidth(10)
+        .width('20%')
         .height('100%')
         .backgroundColor(0xF0F0F0)
       }
