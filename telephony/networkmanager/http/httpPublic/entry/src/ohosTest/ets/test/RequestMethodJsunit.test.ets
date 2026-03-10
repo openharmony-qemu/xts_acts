@@ -1079,7 +1079,7 @@ export default function requestMethodJsunit() {
     });
     /**
      * @tc.name   testNetworkMgrHttpHttpRequestMethodCONNECT0400
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_CONNECT_0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_CONNECT_0400
      * @tc.desc   Test Test HttpRequestMethod property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
