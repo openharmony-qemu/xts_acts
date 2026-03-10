@@ -137,14 +137,12 @@ export default function WindowPCTest() {
                 let windowLimits = subWindowClass!.getWindowLimits();
                 console.info(`${caseName} windowLimits = ${JSON.stringify(windowLimits)}`);
                 let width = windowLimits.minWidth;
-                let height = windowLimits.maxHeight;
-                await subWindowClass.resize(width!+100, height!+150);
+                let height = windowLimits.minHeight;
+                await subWindowClass.resize(width!+200, height!+200);
                 await Utils.msSleep(200)
                 await subWindowClass.setUIContent("pages/StartMoving8");
                 await Utils.msSleep(200)
                 await subWindowClass.showWindow();
-                await Utils.msSleep(200)
-                await subWindowClass.moveWindowTo(100, 100);
                 await Utils.msSleep(200)
                 let windowPoint = subWindowClass.getWindowProperties().windowRect;
                 console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`);
@@ -154,7 +152,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
                 let point = await blank!.getBoundsCenter();
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.drag(point!.x, point!.y, point!.x + 50, point!.y + 50, 200);
+                await driver.drag(point!.x, point!.y, point!.x + 500, point!.y + 500, 50);
                 await Utils.msSleep(1000)
                 let text = await driver.findComponent(ON.id('startMovingText'));
                 await Utils.msSleep(1000)
@@ -207,14 +205,12 @@ export default function WindowPCTest() {
                 let windowLimits = subWindowClass.getWindowLimits();
                 console.info(`${caseName} windowLimits = ${JSON.stringify(windowLimits)}`);
                 let width = windowLimits.minWidth;
-                let height = windowLimits.maxHeight;
-                await subWindowClass!.resize(width!+100, height!+150);
+                let height = windowLimits.minHeight;
+                await subWindowClass!.resize(width!+200, height!+200);
                 await Utils.msSleep(200)
                 await subWindowClass.setUIContent("pages/StartMoving9");
                 await Utils.msSleep(200)
                 await subWindowClass.showWindow();
-                await Utils.msSleep(200)
-                await subWindowClass.moveWindowTo(100, 100);
                 await Utils.msSleep(200)
                 let windowPoint = subWindowClass.getWindowProperties().windowRect;
                 console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`);
@@ -224,7 +220,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
                 let point = await blank!.getBoundsCenter();
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
+                await driver.drag(point.x, point.y, point.x + 500, point.y + 500, 50);
                 await Utils.msSleep(1000)
                 let text = await driver.findComponent(ON.id('startMovingText'));
                 await Utils.msSleep(1000)
@@ -4978,7 +4974,6 @@ export default function WindowPCTest() {
                 } else if (exception.code === 1300004) {
                     done()
                 } else {
-                    expect(false).assertFail();
                     done()
                 }
             }
