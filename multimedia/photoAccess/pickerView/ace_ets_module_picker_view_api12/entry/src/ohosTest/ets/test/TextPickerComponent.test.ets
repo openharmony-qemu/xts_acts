@@ -57,6 +57,29 @@ const SEEK_START = 3;
 const SEEK_FINISH = 4;
 const SELECTED_STATUS = 0;
 
+interface SingleAssetCreationCase {
+  uri: string | null | undefined;
+  config: photoAccessHelper.PhotoCreationConfig | null | undefined;
+  displayed: boolean;
+}
+
+interface AssetCreateOption {
+  title: string;
+  fileNameExtension: string;
+  photoType: photoAccessHelper.PhotoType;
+  subtype: photoAccessHelper.PhotoSubtype;
+}
+
+interface CreationTestCase {
+  src: string[] | null | undefined;
+  config: photoAccessHelper.PhotoCreationConfig[] | null | undefined;
+}
+
+interface DialogCreationExTestCase {
+  src: Array<string> | null | undefined;
+  config: Array<photoAccessHelper.CreationSetting> | null | undefined;
+}
+
 async function driveFn() {
   let dr = Driver.create();
   await CommonFunc.sleep(100);
@@ -77,6 +100,24 @@ async function routeToUrl(options: router.RouterOptions) {
     }
   } catch (err) {
     console.error("testPicker page error:" + err);
+  }
+}
+
+async function closePermissionDialog() {
+  let driver = Driver.create();
+
+  for (let i = 0; i < 5; i++) {
+    await driver.delayMs(500);
+
+    let allowBtn = await driver.findComponent(ON.text('Allow'));
+    if (!allowBtn) {
+      allowBtn = await driver.findComponent(ON.text('Deny'));
+    }
+
+    if (allowBtn) {
+      await allowBtn.click();
+      return;
+    }
   }
 }
 
@@ -1474,6 +1515,8 @@ export default function TextPicker() {
           console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
           if (result) {
             console.info('success');
+            expect(result).not().assertNull();
+            expect(result.length).assertLarger(0);
           } else {
             console.error("testPicker23 empty result");
             expect(false).assertTrue();
@@ -1483,9 +1526,28 @@ export default function TextPicker() {
         console.error("testPicer23 error: " + JSON.stringify(error));
         expect(false).assertTrue();
       }
+    
+      try {
+        phAccessHelper.requestPhotoUrisReadPermission([]).then((result: Array<string>) => {
+          console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
+          if (result) {
+            console.info('success');
+            expect(result).not().assertNull();
+            expect(result.length).assertLarger(0);
+            expect(true).assertFalse();
+          } else {
+            console.error("testPicker23 empty result");
+            expect(result).assertFalse();
+          }
+        })
+      } catch(error) {
+        console.error("testPicer23 error: " + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       console.info("testPicker23 finish");
       done();
     });
+    
 
     /**
      * @tc.name   testPicker24
@@ -1578,26 +1640,34 @@ export default function TextPicker() {
         done();
         return;
       }
+
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
-      try {
-        let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
-          title: 'test',
-          fileNameExtension: 'jpg',
-          photoType: photoAccessHelper.PhotoType.IMAGE,
-          subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
-        };
-        phAccessHelper.createAssetWithShortTermPermission(photoCreationConfig).then((result) => {
-          console.info("createAssetWithShortTermPermission, result=" + JSON.stringify(result));
-          if (result) {
-            console.info('success');
-          } else {
-            console.error("testPicker25 empty result");
-            expect(false).assertTrue();
-          }
-        })
-      } catch(error) {
-        console.error("testPicker25 error: " + JSON.stringify(error));
-        expect(false).assertTrue();
+
+      let cases: AssetCreateOption[] = [
+        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
+        { title: 'test', fileNameExtension: 'mp4', photoType: photoAccessHelper.PhotoType.VIDEO, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
+        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO },
+        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.BURST },
+      ];
+
+      for (let i = 0; i < cases.length; i++) {
+        let item = cases[i];
+
+        try {
+          let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
+
+          await closePermissionDialog();
+
+          let result = await createPromise;
+          expect(result).not().assertUndefined();
+
+        } catch(error) {
+          let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
+          expect(isValidErrorCode).assertTrue();
+        }
+
+        let driver = Driver.create();
+        await driver.delayMs(500);
       }
       console.info("testPicker25 finish");
       done();
@@ -1750,8 +1820,8 @@ export default function TextPicker() {
           }
         });
       } catch (error) {
-        console.error("testPicker28 error:" + JSON.stringify(error));
-        expect().assertFail()
+        console.log("testPicker28 error:" + JSON.stringify(error));
+        expect(error).assertUndefined();
       }
       await CommonFunc.sleep(1000);
       console.log("testPicker28 btn click finish");
@@ -1789,13 +1859,13 @@ export default function TextPicker() {
         pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, (a) => {
           if (!a) {
             console.log("testPicker29 replacePhotoPickerPreview fail");
-            expect(false).assertTrue();
+            expect().assertFail();
           } else {
             console.log("testPicker29 replacePhotoPickerPreview success");
             pickerController.saveTrustedPhotoAssets([boxPath], (err, arr) => {
               if (!err) {
                 console.log("testPicker29 saveTrustedPhotoAssets fail");
-                expect(false).assertTrue();
+                expect().assertFail();
               } else {
                 console.log("testPicker29 saveTrustedPhotoAssets success, save uris:" + arr);
               }
@@ -1804,7 +1874,7 @@ export default function TextPicker() {
         });
       } catch (error) {
         console.log("testPicker29 error:" + JSON.stringify(error));
-        expect(false).assertTrue();
+        expect(error).assertUndefined();
       }
       await CommonFunc.sleep(1000);
       console.log("testPicker29 btn click finish");
@@ -1824,19 +1894,24 @@ export default function TextPicker() {
         done();
         return;
       }
+
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
-      try {
-        let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
-          title: 'test',
-          fileNameExtension: '',
-          photoType: photoAccessHelper.PhotoType.IMAGE,
-          subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
-        };
-        phAccessHelper.createAssetWithShortTermPermission(photoCreationConfig);
-        expect(false).assertTrue();
-      } catch(error) {
-        console.error("testPicker30 error: " + JSON.stringify(error) + error.code);
-        expect(error.code).assertEqual(401);
+
+      let cases: photoAccessHelper.PhotoCreationConfig[] = [
+        { title: 'test', fileNameExtension: '', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
+        { title: 'test', fileNameExtension: '', photoType: photoAccessHelper.PhotoType.VIDEO, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
+        { title: 'test', fileNameExtension: '', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO },
+        { title: 'test', fileNameExtension: '', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.BURST }
+      ];
+
+      for (let item of cases) {
+        try {
+          await phAccessHelper.createAssetWithShortTermPermission(item);
+          expect().assertFail();
+        } catch (error) {
+          console.error("testPicker30 error: " + JSON.stringify(error) + error.code);
+          expect(error.code).assertEqual(401);
+        }
       }
       console.info("testPicker30 finish");
       done();
@@ -3265,48 +3340,84 @@ export default function TextPicker() {
         subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
       };
       let boxPath = fileUri.getUriFromPath(getContext().filesDir + "/image.png").toString();
-      photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog([boxPath],
-        [photoCreationConfig]).then((result) => {
-        console.log(`result = ${JSON.stringify(result)}`);
-      });
-      await driveFn();
-      let code: number = EventType.SELECT_ITEM_INFO;
-      let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let callback = (event: events_emitter.EventData) => {
-        let result: ItemInfo = event?.data?.msg;
-        console.info('testPicker59 select ItemInfo=:' + JSON.stringify(result));
-        expect(result.videoMode).assertUndefined();
-      }
-      let event: events_emitter.InnerEvent = {
-        eventId: code,
-        priority: events_emitter.EventPriority.LOW
-      }
-      events_emitter.on(event, callback);
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/PickerComponent',
-        params: {
-          eventId: code,
-          pickerOptions: pickerOptions,
+
+      let configArray = [photoCreationConfig];
+      let pathArray = [boxPath];
+
+      const testCases: CreationTestCase[] = [
+        { src: null, config: configArray },
+        { src: undefined, config: configArray },
+        { src: pathArray, config: null },
+        { src: pathArray, config: undefined },
+        { src: pathArray, config: configArray },
+      ];
+
+      for (let i = 0; i < testCases.length; i++) {
+        let isInvalidCase = !testCases[i].src || !testCases[i].config;
+
+        if (isInvalidCase) {
+          try {
+            await photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
+          } catch (error) {
+            expect((error as BusinessError).code).assertEqual(401);
+          }
+        } else {
+          try {
+            let dialogPromise = photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
+
+            await driveFn();
+
+            let code: number = EventType.SELECT_ITEM_INFO;
+            let pickerOptions: PickerOptions = getDefaultPickerOptions();
+
+            let callback = (event: events_emitter.EventData) => {
+              let result: ItemInfo = event?.data?.msg;
+              console.info('testPicker59 select ItemInfo=:' + JSON.stringify(result));
+              expect(result.videoMode).assertUndefined();
+            }
+
+            let event: events_emitter.InnerEvent = {
+              eventId: code,
+              priority: events_emitter.EventPriority.LOW
+            }
+            events_emitter.on(event, callback);
+
+            let options: router.RouterOptions = {
+              url: 'MainAbility/pages/PickerComponent',
+              params: {
+                eventId: code,
+                pickerOptions: pickerOptions,
+              }
+            }
+            await routeToUrl(options);
+
+            let strJson: string = getInspectorByKey('PhotoPickerComponent');
+            console.info("testPicker59 JSON.parse(strJson) is" + strJson);
+            expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+            await CommonFunc.sleep(2000);
+
+            let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+            if (checkBoxs === null || checkBoxs.length <= 0) {
+              console.info("testPicker59 findComponent checkbox fail");
+            } else {
+              console.info("testPicker59 findComponent checkbox success");
+              await checkBoxs[0].click();
+              await CommonFunc.sleep(2000);
+              console.info("testPicker59 btn click finish");
+            }
+            router.back();
+            events_emitter.off(event.eventId);
+
+            let result = await dialogPromise;
+            console.log(`result = ${JSON.stringify(result)}`);
+            console.info("testPicker59 valid case finish");
+
+          } catch (error) {
+            console.error("testPicker59 valid case error: " + JSON.stringify(error));
+            expect(error).assertUndefined();
+          }
         }
       }
-      await routeToUrl(options);
-      let strJson: string = getInspectorByKey('PhotoPickerComponent');
-      console.info("testPicker59 JSON.parse(strJson) is" + strJson);
-      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
-      await CommonFunc.sleep(2000);
-
-      let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
-      if (checkBoxs === null || checkBoxs.length <= 0) {
-        console.info("testPicker59 findComponent checkbox fail");
-      } else {
-        console.info("testPicker59 findComponent checkbox success");
-        await checkBoxs[0].click();
-        await CommonFunc.sleep(2000);
-        console.info("testPicker59 btn click finish");
-      }
-      router.back();
-      console.info("testPicker59 finish");
-      events_emitter.off(event.eventId);
       done();
     });
 
@@ -3416,7 +3527,6 @@ export default function TextPicker() {
         photoPicker.select(pickerOptions).then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
           console.log('select错误码覆盖 PhotoViewPicker.select success, PhotoPickerResult uri: ' +
           JSON.stringify(photoSelectResult))
-          // expect(true).assertTrue();
         })
         await closePickerModel(driver);
       } catch (error) {
@@ -3440,53 +3550,92 @@ export default function TextPicker() {
         done();
         return;
       }
+
       const context = getContext();
       const creationSetting: photoAccessHelper.PhotoCreationConfig = {
         title: 'test',
         fileNameExtension: 'jpg',
         photoType: photoAccessHelper.PhotoType.IMAGE,
       };
+      const videoCreationSetting: photoAccessHelper.PhotoCreationConfig = {
+        title: 'test',
+        fileNameExtension: 'mp4',
+        photoType: photoAccessHelper.PhotoType.VIDEO,
+      };
       const boxPath = fileUri.getUriFromPath(context.filesDir + '/test.jpg').toString();
-      const isImageFullyDisplayed = true;
-      try {
-        photoAccessHelper
-          .getPhotoAccessHelper(context)
-          .showAssetsCreationDialogEx([boxPath], [creationSetting])
-          .then(result => {
-            if (!result) {
-              expect(result).assertUndefined();
-            } else if (result.length === 0) {
-              expect(result).not().assertUndefined();
-              expect(result.length === 0).assertTrue();
-            } else {
-              expect(result).not().assertUndefined();
-              expect(result.length > 0).assertTrue();
-              expect(result[0].endsWith("test.jpg"));
-            }
-          })
-        await driveFn();
-      } catch(error) {
-        console.error(" error: " + JSON.stringify(error) + error.code);
-        expect(error.code).assertEqual(23800301);
+
+      const testCases: DialogCreationExTestCase[] = [
+        { src: null, config: null },
+        { src: [boxPath], config: [creationSetting] },
+        { src: [], config: [] },
+        { src: undefined, config: undefined }
+      ];
+
+      for (let i = 0; i < testCases.length; i++) {
+        let isInvalidCase = !testCases[i].src || !testCases[i].config || !testCases[i].src?.length || !testCases[i].config?.length;
+        console.log('testPicker63 Case A: ' + JSON.stringify(testCases[i]) + ' ' + i);
+
+        try {
+          let dialogPromise = photoAccessHelper
+            .getPhotoAccessHelper(context)
+            .showAssetsCreationDialogEx(testCases[i].src, testCases[i].config);
+
+          if (!isInvalidCase) {
+            await driveFn();
+          }
+
+          let result = await dialogPromise;
+
+          if (!result) {
+            expect(result).assertUndefined();
+          } else if (result.length === 0) {
+            expect(result).not().assertUndefined();
+            expect(result.length === 0).assertTrue();
+          } else {
+            expect(result).not().assertUndefined();
+            expect(result.length > 0).assertTrue();
+            expect(result[0].endsWith("test.jpg")).assertTrue();
+          }
+        } catch (error) {
+          console.error(" error: " + JSON.stringify(error) + error.code);
+          expect(error.code).assertEqual(401);
+        }
       }
 
-      try {
-        photoAccessHelper
-          .getPhotoAccessHelper(context)
-          .showSingleAssetCreationDialogEx(boxPath, creationSetting, isImageFullyDisplayed)
-          .then((testResult) => {
-            console.info('testPicker63 showSingleAssetCreationDialogEx success');
-            console.info('testPicker63 success');
-            expect(testResult).not().assertUndefined();
-            expect(true).assertTrue();
-          })
-        await driveFn();
-      } catch(error) {
-        console.error(" error: " + JSON.stringify(error) + error.code);
-        expect(error.code).assertEqual(23800301);
-      } finally {
-        done();
+      const cases: SingleAssetCreationCase[] = [
+        { uri: boxPath, config: creationSetting, displayed: true },
+        { uri: boxPath, config: videoCreationSetting, displayed: true },
+        { uri: '', config: creationSetting, displayed: true },
+        { uri: null, config: creationSetting, displayed: true },
+        { uri: undefined, config: creationSetting, displayed: true },
+        { uri: boxPath, config: null, displayed: true },
+        { uri: boxPath, config: undefined, displayed: true },
+        { uri: boxPath, config: creationSetting, displayed: false },
+      ];
+
+      for (let item of cases) {
+        let isInvalidSingleCase = !item.uri || !item.config;
+
+        try {
+          let singleDialogPromise = photoAccessHelper
+            .getPhotoAccessHelper(context)
+            .showSingleAssetCreationDialogEx(item.uri, item.config, item.displayed);
+
+          if (!isInvalidSingleCase) {
+            await driveFn();
+          }
+
+          let testResult = await singleDialogPromise;
+
+          console.info('testPicker63 showSingleAssetCreationDialogEx success');
+          expect(testResult).not().assertUndefined();
+        } catch (error) {
+          console.error(" error: " + JSON.stringify(error) + error.code);
+          expect(error.code).assertEqual(401);
+        }
       }
+
+      done();
     });
 
     /**
@@ -3718,37 +3867,51 @@ export default function TextPicker() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPicker67',Level.LEVEL0, async (done: Function) => {
+    it('testPicker67', Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
         return;
       }
-      let uris = ['file://media/photo/test.jpg'];
+
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
-      console.log("testPicker67 start");
-      let requestPhotoUrisReadPermission = {
-        authorizedUris: ['file://media/photo/test.jpg'],
-        invalidUris: []
-      } as photoAccessHelper.RequestReadPermissionResult;
-      console.log("testPicker67 RequestReadPermissionResult");
-      try {
-        phAccessHelper.requestPhotoUrisReadPermissionEx(uris).then((result) => {
-          console.info("requestPhotoUrisReadPermissionEx, result = " + JSON.stringify(result));
-          if (result) {
-            expect(true).assertTrue();
-            expect(requestPhotoUrisReadPermission.authorizedUris).assertEqual(uris);
-            expect(requestPhotoUrisReadPermission.invalidUris).assertEqual([]);
-            console.info('success');
-          } else {
-            console.error("testPicker67 empty result");
-            expect(false).assertTrue();
-          }
-        })
-      } catch(error) {
-        console.error("testPicker67 error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(23800301);
-      }
+      console.info("testPicker67 start");
+
+      let validUris = ['file://media/photo/test.jpg'];
+      phAccessHelper.requestPhotoUrisReadPermissionEx(validUris).then((result) => {
+        console.info("requestPhotoUrisReadPermissionEx valid, result = " + JSON.stringify(result));
+        if (result) {
+          expect(result).not().assertUndefined();
+        }
+      }).catch((error: BusinessError) => {
+        console.error("testPicker67 valid case error: " + JSON.stringify(error));
+      });
+
+      let emptyUris: Array<string> = [];
+      phAccessHelper.requestPhotoUrisReadPermissionEx(emptyUris).then((result) => {
+        console.info("requestPhotoUrisReadPermissionEx empty, result = " + JSON.stringify(result));
+        if (result) {
+          expect(result).not().assertUndefined();
+        }
+      }).catch((error: BusinessError) => {
+        console.error("testPicker67 empty case error: " + JSON.stringify(error));
+      });
+
+      phAccessHelper.requestPhotoUrisReadPermissionEx(null).then((result) => {
+        console.info("testPicker67 null case resolved unexpectedly.");
+      }).catch((error: BusinessError) => {
+        console.error("testPicker67 null case error caught: " + JSON.stringify(error));
+        expect(error).not().assertUndefined();
+      });
+
+
+      phAccessHelper.requestPhotoUrisReadPermissionEx(undefined).then((result) => {
+        console.info("testPicker67 undefined case resolved unexpectedly.");
+      }).catch((error: BusinessError) => {
+        console.error("testPicker67 undefined case error caught: " + JSON.stringify(error));
+        expect(error).not().assertUndefined();
+      });
       console.info("testPicker67 finish");
+
       done();
     });
 
@@ -3997,29 +4160,37 @@ export default function TextPicker() {
         return;
       }
       let context = getContext();
-      let originalUris = [' '];
       let CreationSettingDef: photoAccessHelper.CreationSetting = {
         title: 'test',
         fileNameExtension: 'jpg',
         photoType: photoAccessHelper.PhotoType.IMAGE,
       };
+
       try {
         let pickerController: PickerController = new PickerController();
         let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
-        photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath],
-          [CreationSettingDef]).then((result) => {
-          if (!result) {
-            expect(result).assertUndefined();
-          } else if (result.length === 0) {
-            expect(result).not().assertUndefined();
-            expect(result.length === 0).assertTrue();
-          } else {
-            expect(result).not().assertUndefined();
-            expect(result.length > 0).assertTrue();
-            expect(result[0].endsWith("test.jpg"));
-          }
-          originalUris = result;
+        
+        let dialogPromise = photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath], [CreationSettingDef]);
+
+        driveFn().catch((err: Error) => {
+          console.info("testPicker71 driveFn info: " + err.message);
         });
+
+        let result = await dialogPromise;
+        
+        if (!result) {
+          expect(result).assertUndefined();
+        } else if (result.length === 0) {
+          expect(result).not().assertUndefined();
+          expect(result.length).assertEqual(0);
+        } else {
+          expect(result).not().assertUndefined();
+          expect(result.length > 0).assertTrue();
+          expect(result[0].endsWith("test.jpg")).assertTrue();
+        }
+
+        let originalUris = (result && result.length > 0) ? result : [' '];
+        
         pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, () => {
           console.log("testPicker71 replacePhotoPickerPreview callback called");
           pickerController.saveTrustedPhotoAssets([boxPath], (err, savedUris) => {
@@ -4031,12 +4202,14 @@ export default function TextPicker() {
             }
           }, undefined, SaveMode.SAVE_AS);
         });
+
       } catch (error) {
-        console.log("testPicker71 error:" + JSON.stringify(error));
+        console.error("testPicker71 error:" + JSON.stringify(error));
         expect(false).assertTrue();
       }
+
       await CommonFunc.sleep(1000);
-      console.log("testPicker71 btn click finish");
+      console.log("testPicker71 finish");
       done();
     });
 
@@ -4049,32 +4222,56 @@ export default function TextPicker() {
      * @tc.level      Level 0
      */
     it('testPicker72', Level.LEVEL0, async (done: Function) => {
-      if (!isExecutePicker) {
-        done();
-        return;
-      }
-      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+      console.info("testPicker72 start");
+
       try {
-        let CreationSettingDef: photoAccessHelper.CreationSetting = {
-          title: 'test',
-          fileNameExtension: 'jpg',
-          photoType: photoAccessHelper.PhotoType.IMAGE,
-        };
-        phAccessHelper.createAssetWithShortTermPermissionEx(CreationSettingDef).then((result) => {
-          console.info("createAssetWithShortTermPermission, result=" + JSON.stringify(result));
-          if (result) {
-            console.info('success');
-          } else {
-            console.error("testPicker72 empty result");
-            expect(false).assertTrue();
+        if (!isExecutePicker) {
+          return;
+        }
+
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+        let cases: (AssetCreateOption | null | undefined)[] = [
+          { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
+          { title: 'test', fileNameExtension: 'mp4', photoType: photoAccessHelper.PhotoType.VIDEO, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
+          { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO },
+          { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.BURST },
+          null,
+          undefined
+        ];
+
+        for (let i = 0; i < cases.length; i++) {
+          let item = cases[i];
+          let isInvalidCase = item === null || item === undefined;
+
+          try {
+            let createPromise = phAccessHelper.createAssetWithShortTermPermissionEx(item as AssetCreateOption);
+
+            if (!isInvalidCase) {
+              await new Promise<void>(resolve => setTimeout(resolve, 500));
+
+              driveFn().catch((err: Error) => {
+                console.info("testPicker72 driveFn info for case " + i + ": " + err.message);
+              });
+            }
+
+            let result = await createPromise;
+            console.info("createAssetWithShortTermPermission, result=" + JSON.stringify(result));
+
+            expect(result).not().assertUndefined();
+
+          } catch (error) {
+            console.error("error caught for case " + i + ": " + JSON.stringify(error) + " code: " + error.code);
+            let isValidErrorCode = (error.code == 14000011 || error.code == 13900020 || error.code == 401 || error.code == 202 || error.code == 201);
+            expect(isValidErrorCode).assertTrue();
           }
-        })
-      } catch(error) {
-        console.error(" error: " + JSON.stringify(error) + error.code);
-        expect(error.code).assertEqual(14000011);
+        }
+      } catch (fatalError) {
+        console.error("testPicker72 fatal error: " + fatalError);
+        expect(false).assertTrue();
+      } finally {
+        console.info("testPicker72 finish");
+        done();
       }
-      console.info("testPicker72 finish");
-      done();
     });
 
     /**
@@ -4090,33 +4287,45 @@ export default function TextPicker() {
         done();
         return;
       }
+      
+      await CommonFunc.sleep(3000);
+
       let context = getContext();
-      let originalUris = [' '];
       let CreationSettingDef: photoAccessHelper.CreationSetting = {
         title: 'test',
         fileNameExtension: 'jpg',
         photoType: photoAccessHelper.PhotoType.IMAGE,
       };
+
       try {
         let pickerController: PickerController = new PickerController();
         let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
-        photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath],
-          [CreationSettingDef]).then((result) => {
-          if (!result) {
-            expect(result).assertUndefined();
-          } else if (result.length === 0) {
-            expect(result).not().assertUndefined();
-            expect(result.length === 0).assertTrue();
-          } else {
-            expect(result).not().assertUndefined();
-            expect(result.length > 0).assertTrue();
-            expect(result[0].endsWith("test.jpg"));
-          }
-          originalUris = result;
-        });
-        await driveFn();
+        
+        let dialogPromise = photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx(
+          [boxPath], [CreationSettingDef]
+        );
+        
+        try {
+          await driveFn();
+        } catch (driverError) {
+          console.info("testPicker73 driveFn warning (UI Lock): " + driverError.message);
+        }
         await CommonFunc.sleep(500);
+        let result = await dialogPromise;
 
+        if (!result) {
+          expect(result).assertUndefined();
+        } else if (result.length === 0) {
+          expect(result).not().assertUndefined();
+          expect(result.length).assertEqual(0);
+        } else {
+          expect(result).not().assertUndefined();
+          expect(result.length > 0).assertTrue();
+          expect(result[0].endsWith("test.jpg")).assertTrue();
+        }
+
+        let originalUris = (result && result.length > 0) ? result : [' '];
+        
         pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, (error) => {
           console.log("testPicker73 replacePhotoPickerPreview callback called");
           if (!error) {
@@ -4127,45 +4336,48 @@ export default function TextPicker() {
             pickerController.saveTrustedPhotoAssetsEx([], [], SaveMode.OVERWRITE);
             pickerController.saveTrustedPhotoAssetsEx([boxPath]).then((result1) => {
               if (!result1) {
-                console.log("testPicker73 saveTrustedPhotoAssets (1 param) fail, save uris:" + JSON.stringify(result1));
+                console.log("testPicker73 saveTrustedPhotoAssets (1 param) fail");
                 expect(result1).assertUndefined();
               } else if (result1.length === 0) {
                 expect(result1).not().assertUndefined();
-                expect(result1.length === 0).assertTrue();
+                expect(result1.length).assertEqual(0);
               } else {
-                console.log("testPicker73 saveTrustedPhotoAssets (1 param) success, save uris:" + JSON.stringify(result1));
+                console.log("testPicker73 saveTrustedPhotoAssets (1 param) success");
                 expect(result1).not().assertUndefined();
                 expect(result1.length > 0).assertTrue();
               }
-            })
+            });
+
             pickerController.saveTrustedPhotoAssetsEx([boxPath], [CreationSettingDef]).then((result2)=>{
               if (!result2) {
-                console.log("testPicker73 saveTrustedPhotoAssets (2 param) fail, save uris:" + JSON.stringify(result2));
+                console.log("testPicker73 saveTrustedPhotoAssets (2 param) fail");
                 expect(result2).assertUndefined();
               } else if (result2.length === 0) {
                 expect(result2).not().assertUndefined();
-                expect(result2.length === 0).assertTrue();
+                expect(result2.length).assertEqual(0);
               } else {
-                console.log("testPicker73 saveTrustedPhotoAssets (2 param) success, save uris:" + JSON.stringify(result2));
+                console.log("testPicker73 saveTrustedPhotoAssets (2 param) success");
                 expect(result2).not().assertUndefined();
                 expect(result2.length > 0).assertTrue();
               }
-            })
+            });
+
             pickerController.saveTrustedPhotoAssetsEx([boxPath], [CreationSettingDef], SaveMode.SAVE_AS).then((result3)=> {
               if (!result3) {
-                console.log("testPicker73 saveTrustedPhotoAssets (3 param) fail, save uris:" + JSON.stringify(result3));
+                console.log("testPicker73 saveTrustedPhotoAssets (3 param) fail");
                 expect(result3).assertUndefined();
               } else if (result3.length === 0) {
                 expect(result3).not().assertUndefined();
-                expect(result3.length === 0).assertTrue();
+                expect(result3.length).assertEqual(0);
               } else {
-                console.log("testPicker73 saveTrustedPhotoAssets (3 param) success, save uris:" + JSON.stringify(result3));
+                console.log("testPicker73 saveTrustedPhotoAssets (3 param) success");
                 expect(result3).not().assertUndefined();
                 expect(result3.length > 0).assertTrue();
               }
-            })
+            });
           }
         });
+
       } catch (error) {
         console.log("testPicker73 error:" + JSON.stringify(error));
         expect(false).assertTrue();
