@@ -22,6 +22,8 @@ group("arkcompiler") {
       "arkts_ani_test_static_group2:ActsArktsAniGroup2StaticTest",
       "arkts_ani_test_static_group3:ActsArktsAniGroup3StaticTest",
       "arkts_ani_test_static_group4:ActsArktsAniGroup4StaticTest",
+      "arkts_ani_test_static_group5:ActsArktsAniGroup5StaticTest",
+      "arkts_ani_test_static_group6:ActsArktsAniGroup6StaticTest",
       "arkts_module_normalized_test:ActsArktsModuleNormalizedTest",
       "arkts_module_test:ActsArktsModuleTest",
       "ecmanewfeatures:ActsEcmaNewFeaturesTest",
