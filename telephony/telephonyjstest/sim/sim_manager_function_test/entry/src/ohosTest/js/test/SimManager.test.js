@@ -575,7 +575,7 @@ export default function SimManagerTest() {
       sim.getSimAccountInfo(0, (err, data) => {
         if(err){
           console.info("Telephony_Sim_getSimAccountInfo_CallBack_0100 err = " + JSON.stringify(err));
-          expect(true).assertTrue();
+          expect().assertFalse();
           done();
           return;
         }
@@ -610,7 +610,7 @@ export default function SimManagerTest() {
         });
       }).catch(err => {
         console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 err = " + JSON.stringify(err));
-        expect(true).assertTrue();
+        expect().assertFalse();
         done();
       });
     });
@@ -626,7 +626,7 @@ export default function SimManagerTest() {
       sim.getActiveSimAccountInfoList((err, data) => {
         if(err){
           console.info("Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100 err = " + JSON.stringify(err));
-          expect(true).assertTrue();
+          expect().assertFalse();
           done();
           return;
         }
@@ -657,7 +657,7 @@ export default function SimManagerTest() {
         });
       }).catch(err => {
         console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 err = " + JSON.stringify(err));
-        expect(true).assertTrue();
+        expect().assertFalse();
         done();
       });
     });
