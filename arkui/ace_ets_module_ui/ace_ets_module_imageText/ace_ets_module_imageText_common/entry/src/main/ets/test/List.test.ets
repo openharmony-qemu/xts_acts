@@ -58,12 +58,14 @@ import SearchDeleteTest from './TextDeleteTest/SearchDelete.test';
 import TextAreaDeleteTest from './TextDeleteTest/TextAreaDelete.test';
 import TextInputDelete from './TextDeleteTest/TextInputDelete.test';
 import TextControllerTest from './TextControllerTest/TextControllerTest.test';
+import TextContentControllerBaseMethodsTest from './TextControllerTest/TextContentControllerBaseMethodsTest.test';
 import SelectedDragPreviewStyleTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest.test';
 import SetTextSelectionTest from './SetTextSelectionTest/SetTextSelectionTest.test';
 import TypeNodeTest from './TypeNode.test';
 
 export default function testsuite() {
   TextControllerTest();
+  TextContentControllerBaseMethodsTest()
   InputPresetTest() 
   // FontTest 
   APIgetUIFontConfigJsunit() 
