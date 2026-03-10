@@ -374,6 +374,197 @@ export default function rdbStoreAttachErrorTest() {
         })
 
         /**
+         * @tc.name   testRdbStoreAttach0037
+         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachErrorAPITest_0400
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testRdbStoreAttach0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+            console.log(TAG + "************* testRdbStoreAttach0037 start *************");
+            let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+            await store.executeSql(CREATE_TABLE_TEST);
+           
+            try{
+            let number = await store.attach(context, null, "attachDB", 1);
+            expect(1).assertEqual(number);
+            }catch(e) {
+                if(e.code === "801"){
+                    console.log("testRdbStoreAttach0037 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("801");
+                }else{
+                    console.log("testRdbStoreAttach0037 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("401");
+                }
+            }
+
+            try{
+                let number = await store.attach(context, undefined, "attachDB", 1);
+                expect(1).assertEqual(number);
+                }catch(e) {
+                    if(e.code === "801"){
+                        console.log("testRdbStoreAttach0037 err: failed, err: code=" + e.code + " message=" + e.message);
+                        expect(e.code).assertEqual("801");
+                    }else{
+                        console.log("testRdbStoreAttach0037 err: failed, err: code=" + e.code + " message=" + e.message);
+                        expect(e.code).assertEqual("401");
+                    }
+                }
+            await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+
+            console.log(TAG + "************* testRdbStoreAttach0037 end *************");
+                  
+        })
+
+        /**
+         * @tc.name   testRdbStoreAttach0038
+         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachErrorAPITest_0500
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testRdbStoreAttach0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+            console.log(TAG + "************* testRdbStoreAttach0038 start *************");
+            let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+            await store.executeSql(CREATE_TABLE_TEST);
+           
+            try{
+            let number = await store.attach(context, STORE_CONFIG, "attachDB", undefined);
+            expect(1).assertEqual(number);
+            }catch(e) {
+                if(e.code === "801"){
+                    console.log("testRdbStoreAttach0038 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("801");
+                }else{
+                    console.log("testRdbStoreAttach0038 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("401");
+                }
+            }
+
+            try{
+                let number = await store.attach(context, STORE_CONFIG, "attachDB", null);
+                expect(1).assertEqual(number);
+                }catch(e) {
+                    if(e.code === "801"){
+                        console.log("testRdbStoreAttach0038 err: failed, err: code=" + e.code + " message=" + e.message);
+                        expect(e.code).assertEqual("801");
+                    }else{
+                        console.log("testRdbStoreAttach0038 err: failed, err: code=" + e.code + " message=" + e.message);
+                        expect(e.code).assertEqual("401");
+                    }
+                }
+            await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+
+            console.log(TAG + "************* testRdbStoreAttach0038 end *************");
+                  
+        })
+
+          /**
+         * @tc.name   testRdbStoreAttach0039
+         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachErrorAPITest_0600
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+          it('testRdbStoreAttach0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+            console.log(TAG + "************* testRdbStoreAttach0039 start *************");
+            let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+            await store.executeSql(CREATE_TABLE_TEST);
+           
+            try{
+            let number = await store.attach(null, STORE_CONFIG, "attachDB", 1);
+            expect(1).assertEqual(number);
+            }catch(e) {
+                if(e.code === "801"){
+                    console.log("testRdbStoreAttach0039 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("801");
+                }else{
+                    console.log("testRdbStoreAttach0039 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("401");
+                }
+            }
+
+            try{
+                let number = await store.attach(undefined, STORE_CONFIG, "attachDB", 1);
+                expect(1).assertEqual(number);
+                }catch(e) {
+                    if(e.code === "801"){
+                        console.log("testRdbStoreAttach0039 err: failed, err: code=" + e.code + " message=" + e.message);
+                        expect(e.code).assertEqual("801");
+                    }else{
+                        console.log("testRdbStoreAttach0039 err: failed, err: code=" + e.code + " message=" + e.message);
+                        expect(e.code).assertEqual("401");
+                    }
+                }
+            await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+
+            console.log(TAG + "************* testRdbStoreAttach0039 end *************");
+                  
+        })
+
+         /**
+         * @tc.name   testRdbStoreAttach0040
+         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachErrorAPITest_0700
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('testRdbStoreAttach0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+            console.log(TAG + "************* testRdbStoreAttach0040 start *************");
+            let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+            await store.executeSql(CREATE_TABLE_TEST);
+           
+            try{
+            let number = await store.attach(context, STORE_CONFIG, "", 1);
+            expect(1).assertEqual(number);
+            }catch(e) {
+                if(e.code === "801"){
+                    console.log("testRdbStoreAttach0040 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("801");
+                }else{
+                    console.log("testRdbStoreAttach0040 err: failed, err: code=" + e.code + " message=" + e.message);
+                    expect(e.code).assertEqual("401");
+                }
+            }
+
+            try{
+                let number = await store.attach(context, STORE_CONFIG, null, 1);
+                expect(1).assertEqual(number);
+                }catch(e) {
+                    if(e.code === "801"){
+                        console.log("testRdbStoreAttach0040 err: failed, err: code=" + e.code + " message=" + e.message);
+                        expect(e.code).assertEqual("801");
+                    }else{
+                        console.log("testRdbStoreAttach0040 err: failed, err: code=" + e.code + " message=" + e.message);
+                        expect(e.code).assertEqual("401");
+                    }
+                }
+
+                
+            try{
+                let number = await store.attach(context, STORE_CONFIG, undefined, 1);
+                expect(1).assertEqual(number);
+                }catch(e) {
+                    if(e.code === "801"){
+                        console.log("testRdbStoreAttach0040 err: failed, err: code=" + e.code + " message=" + e.message);
+                        expect(e.code).assertEqual("801");
+                    }else{
+                        console.log("testRdbStoreAttach0040 err: failed, err: code=" + e.code + " message=" + e.message);
+                        expect(e.code).assertEqual("401");
+                    }
+                }
+            await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+
+            console.log(TAG + "************* testRdbStoreAttach0040 end *************");
+                  
+        })
+
+
+        /**
          * @tc.name   testRdbStoreDetach0001
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_DetachErrorAPITest_0100
          * @tc.desc   detach attachName with null or undefined
