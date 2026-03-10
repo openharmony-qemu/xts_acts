@@ -43,7 +43,13 @@ let serverAuthentication: http.ServerAuthentication ={
   },
   authenticationType: "basic"
 }
-
+let serverAuthentication1: http.ServerAuthentication ={
+  credential: {
+    username: "",
+    password: ""
+  },
+  authenticationType: "basic"
+}
 export default function HttpErrorCodeTest() {
   describe('HttpErrorCodeTest',  () => {
     /**
@@ -1331,7 +1337,7 @@ export default function HttpErrorCodeTest() {
       }
       console.info(`${caseName}---End `);
     });
-    
+
     /**
      * @tc.name   testHttpRequestMethodErrorCode3500
      * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3500
@@ -1557,5 +1563,1006 @@ export default function HttpErrorCodeTest() {
       }
       console.info(`${caseName} test End`);
     });
-})
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode4100
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_4100
+     * @tc.desc   test http request(url, options, Promise) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode4100";
+      console.info(`${caseName} test Start`);
+
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            const url = 'https://www.baidu.com';
+            const options: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+            };
+
+            httpRequest.request(url, options)
+              .then((data: http.HttpResponse) => {
+                console.info('Result:' + data.result);
+                httpRequest.destroy();
+                done();
+              })
+              .catch((err: BusinessError) => {
+                console.info('error:' + JSON.stringify(err));
+                ExpectTrue(err.code === 401);
+                httpRequest.destroy();
+                done();
+              });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode4200
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_4200
+     * @tc.desc   test http request(url, callback) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode4200";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            let promise = httpRequest.request(null, {
+              method: http.RequestMethod.GET,
+            });
+            promise.then((data:http.HttpResponse) => {
+              console.info('Result:' + data.result);
+            }).catch((err: BusinessError) => {
+              console.info('error:' + JSON.stringify(err));
+              ExpectTrue(err.code == 401);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest4300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4300
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest4300';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let remoteValidation_system: http.RemoteValidation = 'system'
+
+            let httpRequestOptions: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+              resumeFrom: 9999,
+              resumeTo: 333,
+              remoteValidation: remoteValidation_system,
+              tlsOptions: tlsOptions_system,
+              serverAuthentication: undefined
+            }
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request('https://www.baidu.com', httpRequestOptions,
+              (err: BusinessError, data: http.HttpResponse) => {
+                console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+                ExpectTrue(data.responseCode == 200);
+                httpRequest.destroy();
+                done();
+              });
+          }
+        });
+      }catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest4400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4400
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest4400';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let remoteValidation_system :http.RemoteValidation = 'system'
+
+            let httpRequestOptions: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+              resumeFrom: 9999,
+              resumeTo: 333,
+              remoteValidation: remoteValidation_system,
+              tlsOptions: tlsOptions_system,
+              serverAuthentication: undefined
+            }
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request('https://www.baidu.com', httpRequestOptions).then((data: http.HttpResponse) => {
+              console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
+              ExpectTrue(data.responseCode == 200);
+              httpRequest.destroy();
+              done();
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
+              ExpectTrue(false);
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest4500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4500
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest4500';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let remoteValidation_system :http.RemoteValidation = 'system'
+
+            let httpRequestOptions: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+              resumeFrom: 9999,
+              resumeTo: 333,
+              remoteValidation: remoteValidation_system,
+              tlsOptions: tlsOptions_system,
+              serverAuthentication:serverAuthentication1
+            }
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request('https://www.baidu.com', httpRequestOptions,
+              (err: BusinessError, data: http.HttpResponse) => {
+                console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+                ExpectTrue(data.responseCode == 200);
+                httpRequest.destroy();
+                done();
+              });
+          }
+        });
+      }catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest4600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4600
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest4600';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let remoteValidation_system :http.RemoteValidation = 'system'
+
+            let httpRequestOptions: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+              resumeFrom: 9999,
+              resumeTo: 333,
+              remoteValidation: remoteValidation_system,
+              tlsOptions: tlsOptions_system,
+              serverAuthentication:serverAuthentication1
+            }
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request('https://www.baidu.com', httpRequestOptions).then((data: http.HttpResponse) => {
+              console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
+              ExpectTrue(data.responseCode == 200);
+              httpRequest.destroy();
+              done();
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
+              ExpectTrue(false);
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode4700
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_4700
+     * @tc.desc   test http request(url, options, Promise) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode4700";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request(null, {method: http.RequestMethod.POST}, (err: BusinessError, data: http.HttpResponse) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+              ExpectTrue(err.code == 401);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode4800
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_4800
+     * @tc.desc   test http request(url, options, Promise) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode4800";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request(undefined,{method: http.RequestMethod.POST}, (err: BusinessError, data: http.HttpResponse) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+              ExpectTrue(err.code == 401);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode4900
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_4900
+     * @tc.desc   test http request(url, options, Promise) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode4900";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request('https://www.baidu.com',null, (err: BusinessError, data: http.HttpResponse) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+              ExpectTrue(err.code == 401);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode5000
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_5000
+     * @tc.desc   test http request(url, options, Promise) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode5000";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request('https://www.baidu.com',null, (err: BusinessError, data: http.HttpResponse) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+              ExpectTrue(err.code == 401);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode5100
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_5100
+     * @tc.desc   test http request(url, options, Promise) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode5100";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request(null, {method: http.RequestMethod.POST}).then((res) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(res)}`);
+              ExpectTrue(res.responseCode === 401);
+              httpRequest.destroy();
+              done();
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} error: ${JSON.stringify(err)}`);
+              ExpectTrue(true);
+              done();
+            });
+
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode5200
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_5200
+     * @tc.desc   test http request(url, options, Promise) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode5200";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request(undefined, {method: http.RequestMethod.POST}).then((res) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(res)}`);
+              ExpectTrue(res.responseCode === 401);
+              httpRequest.destroy();
+              done();
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} error: ${JSON.stringify(err)}`);
+              ExpectTrue(true);
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode5300
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_5300
+     * @tc.desc   test http requestInStream(url, options, callback) with request error code 2300023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode5300";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.requestInStream("www.baidu.com", {method: http.RequestMethod.GET}, (err: BusinessError, data: number) => {
+              if (err) {
+                console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+                ExpectTrue(err.code == 2300023);
+                done();
+              } else{
+                console.info(`${caseName} data: ${JSON.stringify(data)}`);
+                ExpectTrue(false);
+                done();
+              }
+            });
+            httpRequest.destroy();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode5400
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2400
+     * @tc.desc   test http requestInStream(url, options, callback) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode5400";
+      console.info(`${caseName} test Start`);
+
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId === 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            const options: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+            };
+
+            httpRequest.requestInStream("www.baidu.com", options, (err: BusinessError, data: number) => {
+              if (err) {
+                console.info('error:' + JSON.stringify(err));
+                ExpectTrue(err.code === 401);
+              } else {
+                console.info(`${caseName} data: ${JSON.stringify(data)}`);
+              }
+
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode5500
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_5500
+     * @tc.desc   test http requestInStream(url, options, Promise) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode5500";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            const options: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+            };
+            httpRequest.requestInStream("www.baidu.com", options)
+              .then((data: number) => {
+                console.info(`${caseName} data: ${JSON.stringify(data)}`);
+                httpRequest.destroy();
+                done();
+              })
+              .catch((err: BusinessError) => {
+                console.info('error:' + JSON.stringify(err));
+                ExpectTrue(err.code === 401);
+                httpRequest.destroy();
+                done();
+              });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode5600
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_5600
+     * @tc.desc   test http requestInStream(url, callback) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestMethodErrorCode5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpRequestMethodErrorCode5600";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.requestInStream(null, (err: BusinessError, data: number) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+              ExpectTrue(err.code == 401);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest5700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_5700
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest5700';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let remoteValidation_system :http.RemoteValidation = 'system';
+
+            let httpRequestOptions: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+              resumeFrom: 9999,
+              resumeTo: 333,
+              remoteValidation: remoteValidation_system,
+              tlsOptions: tlsOptions_system,
+              serverAuthentication: serverAuthentication1
+            };
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.requestInStream('https://www.baidu.com', httpRequestOptions, (err: BusinessError, data: number) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+              ExpectTrue(data == 200);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest5800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_5800
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest5800';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let remoteValidation_system :http.RemoteValidation = 'system'
+
+            let httpRequestOptions: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+              resumeFrom: 9999,
+              resumeTo: 333,
+              remoteValidation: remoteValidation_system,
+              tlsOptions: tlsOptions_system,
+              serverAuthentication:serverAuthentication1
+            }
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.requestInStream('https://www.baidu.com', httpRequestOptions).then((data: number) => {
+              console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
+              ExpectTrue(data == 200);
+              httpRequest.destroy();
+              done();
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
+              ExpectTrue(false);
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest5900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_5900
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest5900';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let remoteValidation_system :http.RemoteValidation = 'system';
+
+            let httpRequestOptions: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+              resumeFrom: 9999,
+              resumeTo: 333,
+              remoteValidation: remoteValidation_system,
+              tlsOptions: tlsOptions_system,
+              serverAuthentication: serverAuthentication
+            };
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.requestInStream(null, httpRequestOptions, (err: BusinessError, data: number) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+              ExpectTrue(err.code == 401);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest6000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_6000
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest6000';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let remoteValidation_system :http.RemoteValidation = 'system'
+
+            let httpRequestOptions: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+              resumeFrom: 9999,
+              resumeTo: 333,
+              remoteValidation: remoteValidation_system,
+              tlsOptions: tlsOptions_system,
+              serverAuthentication:serverAuthentication
+            }
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.requestInStream(null, httpRequestOptions).then((err) => {
+              console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
+              ExpectTrue(err.code === 401);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest6100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_6100
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest6100';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let remoteValidation_system :http.RemoteValidation = 'system';
+
+            let httpRequestOptions: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+              resumeFrom: 9999,
+              resumeTo: 333,
+              remoteValidation: remoteValidation_system,
+              tlsOptions: tlsOptions_system,
+              serverAuthentication: serverAuthentication
+            };
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.requestInStream('https://www.baidu.com', null, (err: BusinessError, data: number) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+              ExpectTrue(err.code == 401);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
+    });
+
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode5900
+     * @tc.number SUB_Http_RequestMethod_Error_Code_5900
+     * @tc.desc   Test Test httpRequest property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHttpRequestMethodErrorCode5900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testHttpRequestMethodErrorCode5900";
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions_string: http.HttpRequestOptions = {
+          method: http.RequestMethod.POST,
+          header: { "Content-type": "multipart/form-data" },
+          customMethod: ''
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.request("https://www.baidu.com", httpRequestOptions_string, (err, data) => {
+          console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
+          ExpectTrue(data.responseCode == 200);
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log("testHttpRequestMethodErrorCode7300 : error = " + error);
+        ExpectTrue(false);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode6000
+     * @tc.number SUB_Http_RequestMethod_Error_Code_6000
+     * @tc.desc   Test Test httpRequest property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHttpRequestMethodErrorCode6000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testHttpRequestMethodErrorCode6000";
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions_string: http.HttpRequestOptions = {
+          method: http.RequestMethod.POST,
+          header: { "Content-type": "multipart/form-data" },
+          multiFormDataList: [],
+          usingCache : false
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.request("https://www.baidu.com", httpRequestOptions_string, (err, data) => {
+          console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
+          ExpectTrue(data.responseCode == 200);
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log("testHttpRequestMethodErrorCode7200 : error = " + error);
+        ExpectTrue(false);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode6100
+     * @tc.number SUB_Http_RequestMethod_Error_Code_6100
+     * @tc.desc   Test Test httpRequest property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHttpRequestMethodErrorCode6100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testHttpRequestMethodErrorCode6100";
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions_string: http.HttpRequestOptions = {
+          method: http.RequestMethod.POST,
+          header: { "Content-type": "multipart/form-data" },
+          multiFormDataList: [],
+          clientCert : {
+            certPath : '',
+            keyPath : '',
+            keyPassword : ''
+          }
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.request("https://www.baidu.com", httpRequestOptions_string, (err, data) => {
+          console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
+          ExpectTrue(data.responseCode == 200);
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log("testHttpRequestMethodErrorCode7200 : error = " + error);
+        ExpectTrue(false);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+  });
 }
