@@ -58,12 +58,12 @@ export default function typefaceTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0100
-     * @tc.name      : testTypefaceArgumentsConstructorNormalStatic
-     * @tc.desc      : Test for testTypefaceArgumentsConstructorNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name      testTypefaceArgumentsConstructorNormalStatic
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0100
+     * @tc.desc      Test for testTypefaceArgumentsConstructorNormalStatic.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('testTypefaceArgumentsConstructorNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testTypefaceArgumentsConstructorNormalStatic';
@@ -76,12 +76,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0101
-     * @tc.name      : testTypefaceArgumentsConstructorMultipleCallsStatic
-     * @tc.desc      : Test for testTypefaceArgumentsConstructorMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name      testTypefaceArgumentsConstructorMultipleCallsStatic
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0101
+     * @tc.desc      Test for testTypefaceArgumentsConstructorMultipleCallsStatic.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 3
      */
     it('testTypefaceArgumentsConstructorMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypefaceArgumentsConstructorMultipleCallsStatic';
@@ -96,12 +96,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0200
-     * @tc.name      : testTypefaceArgumentsAddVariationNormalStatic
-     * @tc.desc      : Test for testTypefaceArgumentsAddVariationNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name      testTypefaceArgumentsAddVariationNormalStatic
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0200
+     * @tc.desc      Test for testTypefaceArgumentsAddVariationNormalStatic.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
     it('testTypefaceArgumentsAddVariationNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testTypefaceArgumentsAddVariationNormalStatic';
@@ -207,12 +207,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0201
-     * @tc.name      : testTypefaceArgumentsAddVariationCallsStatic
-     * @tc.desc      : Test for testTypefaceArgumentsAddVariationCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name      testTypefaceArgumentsAddVariationCallsStatic
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0201
+     * @tc.desc      Test for testTypefaceArgumentsAddVariationCallsStatic.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 3
      */
     it('testTypefaceArgumentsAddVariationCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypefaceArgumentsAddVariationCallsStatic';
@@ -232,12 +232,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0202
-     * @tc.name      : testTypefaceArgumentsAddVariationAbnormalStatic
-     * @tc.desc      : testTypefaceArgumentsAddVariationAbnormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name      testTypefaceArgumentsAddVariationAbnormalStatic
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0202
+     * @tc.desc      testTypefaceArgumentsAddVariationAbnormalStatic
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 3
      */
     it('testTypefaceArgumentsAddVariationAbnormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypefaceArgumentsAddVariationAbnormalStatic';
