@@ -684,8 +684,8 @@ export default function HttpMultiFormDataListTest() {
       console.info(`${caseName} test End`);
     });
     /**
-     * @tc.name   testHttpMultiFormDataList1300
-     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_1300
+     * @tc.name   testHttpMultiFormDataList1200
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_1200
      * @tc.desc   test multiFormDataList with  filePath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
