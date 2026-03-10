@@ -2071,7 +2071,7 @@ export default function SocketErrorCodeTest01() {
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == 2301111);
+        expectTrue(err.code === 2301111);
         done();
       }
       console.info(`${caseName} test end`);
