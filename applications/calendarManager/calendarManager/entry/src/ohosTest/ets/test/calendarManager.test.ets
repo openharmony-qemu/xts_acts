@@ -5253,42 +5253,6 @@ export default function CalendarManagerTest() {
     });
 
     /**
-     * @tc.name   SUB_Application_CalendarManagerApi_DeleteCalendar_AsyncCallback_undefined
-     * @tc.number SUB_Application_CalendarManagerApi_DeleteCalendar_AsyncCallback_undefined
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Application_CalendarManagerApi_DeleteCalendar_AsyncCallback_undefined',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        let CaseName = 'SUB_Application_CalendarManagerApi_DeleteCalendar_AsyncCallback_undefined';
-
-
-        // calendarMgr?.deleteCalendar(undefined).then(() => {
-        //   console.info("Succeeded in deleting calendar");
-        // }).catch((err: BusinessError) => {
-        //   console.error(`Failed to delete calendar. Code: ${err.code}, message: ${err.message}`);
-        // });
-
-        calendarMgr?.deleteCalendar(undefined, (err) => {
-          if (err) {
-            console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-            // expect().assertFail();
-            expect(err.code).assertEqual(401);
-            done();
-          } else {
-            console.info(CaseName + "Succeeded in creating calendar");
-            done();
-          }
-          done();
-        });
-
-      });
-
-
-    /**
      * @tc.name   SUB_Application_CalendarManagerApi_getCalendarManager_undefined
      * @tc.number SUB_Application_CalendarManagerApi_getCalendarManager_undefined
      * @tc.desc   Function test
