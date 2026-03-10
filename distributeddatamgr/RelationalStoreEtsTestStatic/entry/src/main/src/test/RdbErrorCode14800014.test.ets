@@ -3364,10 +3364,16 @@ export default function RdbErrorCode14800014() {
     it('RdbcommittxId14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void) => {
         console.log(TAG + "************* RdbcommittxId14800014_001 start *************");
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
+        console.info(TAG + "deleteRdbStore success");
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
+        console.info(TAG + "getRdbStore success");
         let txId :long;
         try {
           txId = await rdbStore!.beginTrans();
           console.info(TAG +`beginTrans successful`+txId);
+          expect(txId).assertEqual(1);
+          await rdbStore!.close();
           await rdbStore!.commit(txId);
           await rdbStore!.commit(txId);
           console.error(TAG + "RdbcommittxId14800014_001 success");
@@ -3377,8 +3383,214 @@ export default function RdbErrorCode14800014() {
           expect(14800014).assertEqual(err.code);
         }
         console.log(TAG + "************* RdbcommittxId14800014_001 end *************");
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
+        console.info(TAG + "deleteRdbStore1 success");
         done();
       });
+
+    /**
+     * @tc.name   RdbrollbacktxId14800014_001
+     * @tc.number RdbrollbacktxId14800014_001
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('RdbrollbacktxId14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(TAG + "************* RdbrollbacktxId14800014_001 start *************");
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
+        console.info(TAG + "deleteRdbStore success");
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
+        console.info(TAG + "getRdbStore success");
+        let txId :long;
+        try {
+          txId = await rdbStore!.beginTrans();
+          console.info(TAG +`beginTrans successful`+txId);
+          expect(txId).assertEqual(1);
+          await rdbStore!.close();
+          await rdbStore!.rollback(txId);
+          console.error(TAG + "RdbrollbacktxId14800014_001 success");
+          expect(true).assertFail();
+        } catch (err) {
+          console.error(TAG + "RdbrollbacktxId14800014_001 failed. " + err);
+          expect(14800014).assertEqual(err.code);
+        }
+        console.log(TAG + "************* RdbrollbacktxId14800014_001 end *************");
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
+        console.info(TAG + "deleteRdbStore1 success");
+        done();
+      });
+
+    /**
+     * @tc.name       RdbBatchInsert14800014_callback_001
+     * @tc.number     RdbBatchInsert14800014_callback_001
+     * @tc.desc       Transaction getLong
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('RdbBatchInsert14800014_callback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, '%{public}s', '************* RdbBatchInsert14800014_callback_001 start *************');
+        await rdbStore!.close();
+        if (rdbStore!= undefined) {
+          rdbStore!.batchInsert("test", vbs, (err, rowId) => {
+            if (err) {
+              console.error(TAG +`Insert is failed, code is ${err.code}, message is ${err.message}`);
+              expect(err.code).assertEqual(14800014);
+              done();
+            }else{
+              console.info(TAG +`Insert is successful, rowId = ${rowId}`);
+              expect(true).assertFail();
+              done();
+            }
+          });
+        }
+        hilog.info(domain, TAG, '%{public}s', '************* RdbBatchInsert14800014_callback_001 end *************');
+      })
+
+    /**
+     * @tc.name       RdbUpdate14800014_callback_001
+     * @tc.number     RdbUpdate14800014_callback_001
+     * @tc.desc       Transaction getLong
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('RdbUpdate14800014_callback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, '%{public}s', '************* RdbUpdate14800014_callback_001 start *************');
+        let num = await rdbStore!.insert("test", valueBucket0);
+        let predicates = new relationalStore.RdbPredicates("test");
+        predicates.equalTo("data1", "hello");
+        await rdbStore!.close();
+        rdbStore!.update(valueBucket3, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE, (err, rows) => {
+          if (err) {
+            console.error(TAG +`Updated failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(14800014);
+            done();
+          }
+          console.info(TAG +`Updated row count: ${rows}`);
+          done();
+        });
+
+        hilog.info(domain, TAG, '%{public}s', '************* RdbUpdate14800014_callback_001 end *************');
+      })
+
+    /**
+     * @tc.name       RdbDelete14800014_callback_001
+     * @tc.number     RdbDelete14800014_callback_001
+     * @tc.desc       Transaction getLong
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('RdbDelete14800014_callback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, '%{public}s', '************* RdbDelete14800014_callback_001 start *************');
+        let num = await rdbStore!.insert("test", valueBucket0);
+        let predicates = new relationalStore.RdbPredicates("test");
+        predicates.equalTo("data1", "hello");
+        await rdbStore!.close();
+        rdbStore!.delete(predicates, (err, rows) => {
+          if (err) {
+            console.error(TAG +`delete failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(14800014);
+            done();
+          }else{
+            console.info(TAG +`delete succsee: ${rows}`);
+            done();
+          }
+        })
+        hilog.info(domain, TAG, '%{public}s', '************* RdbDelete14800014_callback_001 end *************');
+      })
+
+    /**
+     * @tc.name       RdbQuery14800014_callback_001
+     * @tc.number     RdbQuery14800014_callback_001
+     * @tc.desc       Transaction getLong
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('RdbQuery14800014_callback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, '%{public}s', '************* RdbQuery14800014_callback_001 start *************');
+        let num = await rdbStore!.insert("test", valueBucket0);
+        let predicates = new relationalStore.RdbPredicates("test");
+        predicates.equalTo("data1", "hello");
+        await rdbStore!.close();
+        rdbStore!.query(predicates, ["data1"], (err, resultSet) => {
+          if (err) {
+            console.error(TAG +`Query failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(14800014);
+            done();
+          }else{
+            console.info(TAG +`query succsee: ${resultSet}`);
+            done();
+          }
+        })
+        hilog.info(domain, TAG, '%{public}s', '************* RdbQuery14800014_callback_001 end *************');
+      })
+
+    /**
+     * @tc.name       RdbQuerySql14800014_callback_001
+     * @tc.number     RdbQuerySql14800014_callback_001
+     * @tc.desc       Transaction getLong
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('RdbQuerySql14800014_callback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, '%{public}s', '************* RdbQuerySql14800014_callback_001 start *************');
+        let num = await rdbStore!.insert("test", valueBucket0);
+        let predicates = new relationalStore.RdbPredicates("test");
+        predicates.equalTo("data1", "hello");
+        await rdbStore!.close();
+        rdbStore!.querySql("SELECT * FROM test where data1 = ?", ['hello'], (err, resultSet) => {
+          if (err) {
+            console.error(TAG +`Query failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(14800014);
+            done();
+          }else{
+            console.info(TAG +`query succsee: ${resultSet}`);
+            done();
+          }
+        })
+        hilog.info(domain, TAG, '%{public}s', '************* RdbQuerySql14800014_001 end *************');
+      })
+
+    /**
+     * @tc.name       Rdbrekey14800014_001
+     * @tc.number     Rdbrekey14800014_001
+     * @tc.desc       Transaction getLong
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('Rdbrekey14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, '%{public}s', '************* Rdbrekey14800014_001 start *************');
+        try{
+          let cryptoParam2: relationalStore.CryptoParam = {
+            encryptionKey: new Uint8Array([6, 5, 4, 3, 2, 1]),
+            iterationCount: 1000,
+            encryptionAlgo: relationalStore.EncryptionAlgo.AES_256_GCM,
+            hmacAlgo: relationalStore.HmacAlgo.SHA256,
+            kdfAlgo: relationalStore.KdfAlgo.KDF_SHA256,
+            cryptoPageSize: 1024
+          };
+          await rdbStore!.close();
+          await rdbStore!.rekey(cryptoParam2);
+        } catch (err) {
+          console.error(TAG + "Rdbrekey14800014_001 failed. " + err);
+          expect(14800014).assertEqual(err.code);
+        }
+        done()
+        hilog.info(domain, TAG, '%{public}s', '************* Rdbrekey14800014_001 end *************');
+      })
 
   })
 }
