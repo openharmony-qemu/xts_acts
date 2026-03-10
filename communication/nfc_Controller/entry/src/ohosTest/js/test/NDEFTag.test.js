@@ -964,7 +964,7 @@ export default function nfcNDEFTagTest() {
                     } else if (code === 401) {
                         console.info("[NFC_test]ndef12 setReadOnly1 err: " + err);
                         expect(401).assertEqual(code);
-                    }else if (code === 3100201) {
+                    } else if (code === 3100201) {
                         console.info("[NFC_test]ndef12 setReadOnly1 err: " + err);
                         expect(3100201).assertEqual(code);
                     } else if (code === 3100204) {
@@ -1136,7 +1136,7 @@ export default function nfcNDEFTagTest() {
                         console.info("[NFC_test]ndef15 Formatable format1 err: " + err + err.code);
                         expect(3100201).assertEqual(code);
                     } else if (code === 3100204) {
-                        console.info("[NFC_test]ndef15 wFormatable format1 err: " + err + err.code);
+                        console.info("[NFC_test]ndef15 Formatable format1 err: " + err + err.code);
                         expect(3100204).assertEqual(code);
                     } else {
                         console.info("[NFC_test]ndef15 Formatable format1 err: " + err + err.code);
@@ -1478,7 +1478,7 @@ export default function nfcNDEFTagTest() {
                         expect(3100201).assertEqual(code);
                     } else if (code === 3100204) {
                         console.info("[NFC_test]ndef18 Formatable formatReadOnly1 err: " + err);
-                        expect(3100201).assertEqual(code);
+                        expect(3100204).assertEqual(code);
                     } else {
                         console.info("[NFC_test]ndef18 Formatable formatReadOnly1 err: " + err);
                         expect().assertFail();

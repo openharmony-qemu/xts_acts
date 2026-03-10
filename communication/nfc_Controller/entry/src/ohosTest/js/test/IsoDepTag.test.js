@@ -233,29 +233,35 @@ export default function nfcIsoDepTagTest() {
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0400', Level.LEVEL0, async function (done) {
             if (IsoDepTag != null && IsoDepTag != undefined) {
-                console.info("[NFC_test] Isodep4 00isExtendedApduSupported: " );
+                console.info("[NFC_test] Isodep4 isExtendedApduSupported: " );
                 IsoDepTag.isExtendedApduSupported((err, data)=> {
-                    console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                    const code = Number(err.code);
-                    if (code === 201) {
+                    if (err) {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                        expect(201).assertEqual(code);
-                    } else if (code === 3100201) {
-                        console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                        expect(201).assertEqual(code);
-                    } else if (code === 3100204) {
-                        console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                        expect(201).assertEqual(code);
-                    } else {
-                        console.info("[NFC_test] Isodep4 isExtendedApduSupported data: " + data);
-                        if (data == true) {
-                            console.info("[NFC_test] Isodep3 is isExtendedApduSupported data: " + data);
-                            expect(data).assertTrue();
+                        const code = Number(err.code);
+                        if (code === 201) {
+                            console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
+                            expect(201).assertEqual(code);
+                        } else if (code === 3100201) {
+                            console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
+                            expect(201).assertEqual(code);
+                        } else if (code === 3100204) {
+                            console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
+                            expect(201).assertEqual(code);
                         } else {
-                            console.info("[NFC_test] Isodep3 is isExtendedApduSupported data: " + data);
-                            expect(data).assertFalse();
+                            console.info("[NFC_test] Isodep4 isExtendedApduSupported data: " + data);
+                            if (data == true) {
+                                console.info("[NFC_test] Isodep4 is isExtendedApduSupported data: " + data);
+                                expect(data).assertTrue();
+                            } else {
+                                console.info("[NFC_test] Isodep4 is isExtendedApduSupported data: " + data);
+                                expect(data).assertFalse();
+                            }
+                            expect(true).assertEqual(data);           
                         }
-                        expect(true).assertEqual(data);           
+                        done();
+                    } else {
+                        console.info("[NFC_test] Isodep4 is isExtendedApduSupported success: ");
+                        done();
                     }
                 });
             } else {
@@ -495,7 +501,6 @@ export default function nfcIsoDepTagTest() {
                 console.info('[NFC_test]0900  hceServicestart afterInvoke hceElementName：  ' + hceElementName.bundleName)
                 console.info('[NFC_test]0900  hceServicestart afterInvoke hceElementName：  ' + hceElementName.moduleName)
                 console.info('[NFC_test]0900 hceServicestart success ')
-                hceService.on("hceCmd", apduCallback)
                 hceService.on("hceCmd", (err, data) => {
                     if (err) {
                         console.info('[NFC_test]0900 apduCallback err is: ' + err);

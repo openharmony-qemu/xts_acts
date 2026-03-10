@@ -466,19 +466,19 @@ export default function nfcATagSessionTest() {
                     console.info("[NFC_test] tagsession11 nfcAtage transmit err: " + err);
                     expect(201).assertEqual(code);
                     done();
-                } else if (err.code === 401) {
+                } else if (code === 401) {
                     console.info("[NFC_test] tagsession11 nfcAtage transmit err: " + err);
                     expect(401).assertEqual(code);
                     done();
-                } else if (err.code === 801) {
+                } else if (code === 801) {
                     console.info("[NFC_test] tagsession11 nfcAtage transmit err: " + err);
                     expect(801).assertEqual(code);
                     done();
-                } else if (err.code === 3100201) {
+                } else if (code === 3100201) {
                     console.info("[NFC_test] tagsession11 nfcAtage transmit err: " + err);
                     expect(3100201).assertEqual(code);
                     done();
-                } else if (err.code === 3100204) {
+                } else if (code === 3100204) {
                     console.info("[NFC_test] tagsession11 nfcAtage transmit err: " + err);
                     expect(3100204).assertEqual(code);
                     done();

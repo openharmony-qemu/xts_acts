@@ -96,12 +96,12 @@ export default function nfcMifareClassicTag() {
                     if (code === 201) {
                         console.info("[NFC_test] MifareClassicTag1 authenticateSector1 err: " + err + err.code);
                         expect(201).assertEqual(code);
-                    } else if (err.code === 3100201) {
+                    } else if (code === 3100201) {
                         console.info("[NFC_test] MifareClassicTag1 authenticateSector1 err: " + err + err.code);
-                        expect(201).assertEqual(code);
-                    } else if (err.code === 3100204) {
+                        expect(3100201).assertEqual(code);
+                    } else if (code === 3100204) {
                         console.info("[NFC_test] MifareClassicTag1 authenticateSector1 err: " + err + err.code);
-                        expect(201).assertEqual(code);
+                        expect(3100204).assertEqual(code);
                     } else {
                         console.info("[NFC_test] MifareClassicTag1 authenticateSector1 err: " + err + err.code);
                         expect().assertFail();
@@ -410,7 +410,7 @@ export default function nfcMifareClassicTag() {
                         expect(3100204).assertEqual(code);
                     } else {
                         console.info("[NFC_test] MifareClassicTag3 readSingleBlock1 err: " + err);
-                        expect(201).assertEqual(code);
+                        expect().assertFail();
                     }
                     done();
                 });
@@ -630,10 +630,10 @@ export default function nfcMifareClassicTag() {
                         expect(201).assertEqual(code);
                     } else if (code === 3100201) {
                         console.info("[NFC_test] MifareClassicTag5 writeSingleBlock1 err: " + err);
-                        expect(201).assertEqual(code);
+                        expect(3100201).assertEqual(code);
                     } else if (code === 3100204) {
                         console.info("[NFC_test] MifareClassicTag5 writeSingleBlock1 err: " + err);
-                        expect(201).assertEqual(code);
+                        expect(3100204).assertEqual(code);
                     } else {
                         console.info("[NFC_test] MifareClassicTag5 writeSingleBlock1 err: " + err);
                         expect().assertFail();
