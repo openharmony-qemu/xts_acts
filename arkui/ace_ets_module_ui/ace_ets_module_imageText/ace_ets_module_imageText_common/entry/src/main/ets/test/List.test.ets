@@ -60,6 +60,7 @@ import TextInputDelete from './TextDeleteTest/TextInputDelete.test';
 import TextControllerTest from './TextControllerTest/TextControllerTest.test';
 import SelectedDragPreviewStyleTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest.test';
 import SetTextSelectionTest from './SetTextSelectionTest/SetTextSelectionTest.test';
+import TypeNodeTest from './TypeNode.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -107,4 +108,5 @@ export default function testsuite() {
   SelectedDragPreviewStyleTest();
   SetTextSelectionTest()
   CustomKeyboardContinueTest();
+  TypeNodeTest();
 }
