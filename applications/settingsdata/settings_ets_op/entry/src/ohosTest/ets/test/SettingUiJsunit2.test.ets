@@ -78,7 +78,7 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_sync_no_domain] error = " + err);
-          expect(result).assertFail();
+          expect().assertFail();
           done();
         }
       });
@@ -102,7 +102,7 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_sync_domain_system] error = " + err);
-          expect(result).assertFail();
+          expect().assertFail();
           done();
         }
       });
@@ -126,7 +126,7 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_sync_domain_secure] error = " + err);
-          expect(result).assertFail();
+          expect().assertFail();
           done();
         }
       });
@@ -150,7 +150,7 @@ export default function settingUiJsunit() {
           });
         } catch (err) {
           console.error("[settings_set_value_callback_no_domain] error = " + err);
-          expect(result).assertFail();
+          expect().assertFail();
           done();
         }
       });
@@ -173,7 +173,7 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_no_domain] error = " + err);
-          expect(result).assertFail();
+          expect().assertFail();
           done();
         }
       });
@@ -197,7 +197,7 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_domain_system] error = " + err);
-          expect(result).assertFail();
+          expect().assertFail();
           done();
         }
       });
@@ -221,7 +221,7 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_domain_secure] error = " + err);
-          expect(result).assertFail();
+          expect().assertFail();
           done();
         }
       });
