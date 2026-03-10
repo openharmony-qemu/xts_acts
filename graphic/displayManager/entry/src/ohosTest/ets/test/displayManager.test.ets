@@ -3828,7 +3828,7 @@ export default function displayTest() {
       }
       try {
         display.onChangeWithAttribute([], callback);
-        display.offChangeWithAttribute();
+        display.off('change');
         console.log(caseName + ' success1');
         done();
       } catch (e) {
