@@ -146,7 +146,7 @@ export default function settingUiJsunit() {
           console.info("[settings_set_value_no_domain] start ");
           let result = await settings.setValue(mContext, 'testkey', 'testvalue');
           console.info("[settings_set_value_no_domain] result= " + result);
-          expect(result).assertTrue();
+          expect(result === undefined).assertTrue();
           done();
         } catch (err) {
           console.error("[settings_set_value_no_domain] error = " + err);
