@@ -2435,10 +2435,10 @@ export default function AudioHapticTest() {
       try {
         audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
         console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: PASS`);
-        expect(false).assertTrue();
+        done();
       } catch (err) {
         console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(5400102);
+        expect(false).assertTrue();
         done();
       }
       done();
