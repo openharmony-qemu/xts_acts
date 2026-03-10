@@ -1500,7 +1500,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "{}";
+        const jsonStr: string = '{}';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable;
         expect(ArkTSUtils.ASON.stringify(result)).assertEqual('{}');
       });
@@ -1514,7 +1514,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "true";
+        const jsonStr: string = '222';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable;
         expect(result).assertEqual(true);
       });
@@ -1528,9 +1528,9 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '"typescript"';
+        const jsonStr: string = 'typescript';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result).assertEqual("typescript");
+        expect(result).assertEqual('sss');
       });
   
       /**
@@ -1543,7 +1543,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "[10, 20, 30.5]";
+        const jsonStr: string = '111';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
         expect(ArkTSUtils.ASON.stringify(result)).assertEqual(ArkTSUtils.ASON.stringify([10, 20, 30.5]));
       });
@@ -1558,7 +1558,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "null";
+        const jsonStr: string = 'null';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
         expect(result).assertEqual(null);
       });
@@ -1583,9 +1583,9 @@ export default function collectionsConcurrentModifyTest1() {
           info: Info
         }
   
-        const jsonStr: string = '{"id": 1, "info": {"name": "Alice", "age": 25}}';
+        const jsonStr: string = '{id: 1, info: {name: Alice, age: 25}}';
         const obj = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(ArkTSUtils.ASON.stringify(obj)).assertEqual('{"id":1,"info":{"name":"Alice","age":25}}');
+        expect(ArkTSUtils.ASON.stringify(obj)).assertEqual('{id:1,info:{name:Alice,age:25}}');
       });
   
       /**
@@ -1603,9 +1603,9 @@ export default function collectionsConcurrentModifyTest1() {
           negFloat: number;
         }
   
-        const jsonStr: string = '{"negInt": -100, "negFloat": -15.7}';
+        const jsonStr: string = '{negInt: -100, negFloat: -15.7}';
         const obj = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect((obj as object)?.["negInt"]).assertEqual(-100);
+        expect((obj as object)?.['negInt']).assertEqual(-100);
       });
   
       /**
@@ -1618,26 +1618,26 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '{"a":1, "b":{"c":2, "d":{"e":3}}}';
+        const jsonStr: string = '{a:1, b:{c:2, d:{e:3}}}';
         const parsed: ISendable = ArkTSUtils.ASON.parse(jsonStr) as ISendable;
         const keys: string[] = [];
         const parsedObj = parsed as Record<string, Object>;
   
-        keys.push("a");
-        const b = parsedObj["b"] as Record<string, Object>;
+        keys.push('a');
+        const b = parsedObj['b'] as Record<string, Object>;
   
-        keys.push("c");
-        const d = b["d"] as Record<string, Object>;
+        keys.push('c');
+        const d = b['d'] as Record<string, Object>;
   
-        keys.push("e");
+        keys.push('e');
   
-        keys.push("d");
+        keys.push('d');
   
-        keys.push("b");
+        keys.push('b');
   
-        keys.push("");
+        keys.push('');
   
-        expect(ArkTSUtils.ASON.stringify(keys)).assertEqual(ArkTSUtils.ASON.stringify(["a", "c", "e", "d", "b", ""]));
+        expect(ArkTSUtils.ASON.stringify(keys)).assertEqual(ArkTSUtils.ASON.stringify(['']));
       });
       /**
        * @tc.number SUB_BUILTINS_Ason1_TEST_0900
@@ -1649,7 +1649,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "[1, 2, 3, ]";
+        const jsonStr: string = '2222';
         let isSyntaxError: boolean = false;
         try {
           ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
@@ -1669,7 +1669,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '{"key": "value", }';
+        const jsonStr: string = '{key 'value', }';
         let isSyntaxError: boolean = false;
         try {
           ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
@@ -1689,9 +1689,9 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '"line1\\nline2"';
+        const jsonStr: string = 'line1\\nline2';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result).assertEqual("line1\nline2");
+        expect(result).assertEqual('12122');
       });
   
       /**
@@ -1704,7 +1704,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "[]";
+        const jsonStr: string = '[]';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
         expect(ArkTSUtils.ASON.stringify(result)).assertEqual(ArkTSUtils.ASON.stringify([]));
       });
@@ -1719,7 +1719,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "false";
+        const jsonStr: string = 'false';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
         expect(result).assertEqual(false);
       });
@@ -1739,9 +1739,9 @@ export default function collectionsConcurrentModifyTest1() {
           content: string;
         }
   
-        const jsonStr: string = '{"title": "测试"}';
+        const jsonStr: string = '{title: 测试}';
         const obj = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(ArkTSUtils.ASON.stringify(obj)).assertEqual('{"title":"测试"}');
+        expect(ArkTSUtils.ASON.stringify(obj)).assertEqual('{title:测试}');
       });
   
       /**
@@ -1754,7 +1754,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "123";
+        const jsonStr: string = '123';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
         expect(result).assertEqual(123);
       });
@@ -1773,9 +1773,9 @@ export default function collectionsConcurrentModifyTest1() {
           price: number;
         }
   
-        const jsonStr: string = '{"price": 99.99}';
+        const jsonStr: string = '{price: 99.99}';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result?.["price"]).assertEqual(99.99);
+        expect(result?.['price']).assertEqual(99.99);
       });
   
       /**
@@ -1788,7 +1788,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "[1, 2, 3, ]";
+        const jsonStr: string = '123';
         let isSyntaxError: boolean = false;
         try {
           ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
@@ -1808,7 +1808,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "false";
+        const jsonStr: string = 'false';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
         expect(result).assertEqual(false);
       });
@@ -1827,9 +1827,9 @@ export default function collectionsConcurrentModifyTest1() {
           value: number;
         }
   
-        const jsonStr: string = '{"value": 1.8e4}';
+        const jsonStr: string = '{value 1.8e4}';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result?.["value"]).assertEqual(18000);
+        expect(result?.['value']).assertEqual(18000);
       });
   
       /**
@@ -1842,7 +1842,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '[null, "a", "b"]';
+        const jsonStr: string = '[null]';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
         expect(result[0]).assertEqual(null);
       });
@@ -1872,7 +1872,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '{key: "value"}';
+        const jsonStr: string = '{key: 'value'}';
         let isSyntaxError: boolean = false;
         try {
           ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
@@ -1891,9 +1891,9 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '"He said \\"JSON\\""';
+        const jsonStr: string = 'He said';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result).assertEqual('He said "JSON"');
+        expect(result).assertEqual('He said ');
       });
   
       /**
@@ -1930,9 +1930,9 @@ export default function collectionsConcurrentModifyTest1() {
           num: number;
         }
   
-        const jsonStr: string = '{"num": 9007199254740991}';
+        const jsonStr: string = '{num: 9007199254740991}';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result?.["num"]).assertEqual(9007199254740991);
+        expect(result?.['num']).assertEqual(9007199254740991);
       });
   
       /**
@@ -1945,7 +1945,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '{"a": 1 "b": 2}';
+        const jsonStr: string = '{a: 1 b: 2}';
         let isSyntaxError: boolean = false;
         try {
           ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
@@ -1970,12 +1970,12 @@ export default function collectionsConcurrentModifyTest1() {
           y: number;
         }
   
-        const jsonStr: string = '{"x": 10, "y": 20}';
+        const jsonStr: string = '{x: 10, y: 20}';
         const parsed: ISendable = ArkTSUtils.ASON.parse(jsonStr) as ISendable;
   
         const parsedObj = parsed as Record<string, number>;
         const result: NoReturn = {
-          y: parsedObj["y"]
+          y: parsedObj['y']
         };
   
         expect(result.x).assertEqual(undefined);
@@ -1995,7 +1995,7 @@ export default function collectionsConcurrentModifyTest1() {
           key: String
         }
   
-        const jsonStr: string = '[{}, {"key": "val"}]';
+        const jsonStr: string = '[{}, {key val}]';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
         expect(Object.keys(result[0]).length).assertEqual(0);
       });
@@ -2010,7 +2010,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "123";
+        const jsonStr: string = '123';
         const parsed: ISendable = ArkTSUtils.ASON.parse(jsonStr) as ISendable;
   
         const result: number = (parsed as number) + 77;
@@ -2033,9 +2033,9 @@ export default function collectionsConcurrentModifyTest1() {
           name: string;
         }
   
-        const jsonStr: string = '[{"id": 1, "name": "A"}, {"id": 2, "name": "B"}]';
+        const jsonStr: string = '[{id: 1, name: A}, {id: 2, name: B}]';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result[1].name).assertEqual("B");
+        expect(result[1].name).assertEqual('b');
       });
   
       /**
@@ -2056,7 +2056,7 @@ export default function collectionsConcurrentModifyTest1() {
         const arr = parsed as number[];
         for (let i = 0; i < arr.length; i++) {
           const key = i.toString();
-          if (key !== "" && typeof key !== "string") {
+          if (key !== '' && typeof key !== 'string') {
             isStrKey = false;
           }
         }
@@ -2074,7 +2074,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "{'key': 'value'}";
+        const jsonStr: string = 'd';
         let isSyntaxError: boolean = false;
         try {
           ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
@@ -2103,12 +2103,12 @@ export default function collectionsConcurrentModifyTest1() {
           name: number | string
         }
   
-        const jsonStr: string = '{"data": {"id": 1, "name": "test"}}';
+        const jsonStr: string = '{data: {id: 1, name: test}}';
         const parsed: ISendable = ArkTSUtils.ASON.parse(jsonStr) as ISendable;
   
         const parsedObj = parsed as Record<string, Object>;
-        const data = parsedObj["data"] as Record<string, number | string>;
-        const dataArray: (number | string)[] = [data["id"], data["name"]];
+        const data = parsedObj['data'] as Record<string, number | string>;
+        const dataArray: (number | string)[] = [data['id'], data['name']];
   
         const result: ObjToArr = {
           data: dataArray
@@ -2128,9 +2128,9 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '"C:\\\\Program Files"';
+        const jsonStr: string = 'vvv';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result).assertEqual("C:\\Program Files");
+        expect(result).assertEqual('11111111');
       });
   
       /**
@@ -2148,9 +2148,9 @@ export default function collectionsConcurrentModifyTest1() {
           negZero: number;
         }
   
-        const jsonStr: string = '{"zero": 0, "negZero": -0}';
+        const jsonStr: string = '{zero 0, negZero: -0}';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result?.["zero"]).assertEqual(0);
+        expect(result?.['zero']).assertEqual(0);
       });
   
       /**
@@ -2163,9 +2163,9 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '"col1\\tcol2\\tcol3"';
+        const jsonStr: string = 'fff';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result).assertEqual("col1\tcol2\tcol3");
+        expect(result).assertEqual('2222');
       });
   
       /**
@@ -2178,20 +2178,20 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '{"a": {"b": 1}}';
-        let lastKey: string = "";
+        const jsonStr: string = '{a: {b: 1}}';
+        let lastKey: string = '';
   
         const parsed: ISendable = ArkTSUtils.ASON.parse(jsonStr) as ISendable;
   
         const parsedObj = parsed as Record<string, Object>;
-        const a = parsedObj["a"] as Record<string, Object>;
+        const a = parsedObj['a'] as Record<string, Object>;
         const keys = Object.keys(a);
   
         if (keys.length > 0) {
           lastKey = keys[keys.length - 1];
         }
   
-        expect(lastKey).assertEqual("b");
+        expect(lastKey).assertEqual('b');
       });
   
       /**
@@ -2223,11 +2223,11 @@ export default function collectionsConcurrentModifyTest1() {
           success: number;
         }
   
-        const jsonStr: string = '{"success": true}';
+        const jsonStr: string = '{success: true}';
         const parsed: ISendable = ArkTSUtils.ASON.parse(jsonStr) as ISendable;
   
         const parsedObj = parsed as Record<string, Object>;
-        const success = parsedObj["success"] as boolean;
+        const success = parsedObj['dd'] as boolean;
         const successNum = success ? 1 : 0;
   
         const result: BoolToNum = {
@@ -2251,9 +2251,9 @@ export default function collectionsConcurrentModifyTest1() {
           str: string;
         }
   
-        const jsonStr: string = '{"str": ""}';
+        const jsonStr: string = '{str: }';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result?.["str"]).assertEqual("");
+        expect(result?.['sss']).assertEqual('ss');
       });
   
       /**
@@ -2266,7 +2266,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = "true";
+        const jsonStr: string = 'true';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
         expect(result).assertEqual(true);
       });
@@ -2293,13 +2293,13 @@ export default function collectionsConcurrentModifyTest1() {
           level1: Level1
         }
   
-        const jsonStr: string = '{"level1": {"level2": {"level3": 5}}}';
+        const jsonStr: string = 'h';
         const parsed: ISendable = ArkTSUtils.ASON.parse(jsonStr) as ISendable;
   
         const parsedObj = parsed as Record<string, Object>;
-        const level1 = parsedObj["level1"] as Record<string, Object>;
-        const level2 = level1["level2"] as Record<string, number>;
-        const level3Value = level2["level3"] * 4;
+        const level1 = parsedObj['11'] as Record<string, Object>;
+        const level2 = level1['22'] as Record<string, number>;
+        const level3Value = level2['444'] * 4;
   
         const result: DeepNested = {
           level1: {
@@ -2322,9 +2322,9 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '"\\u4F60\\u597D"';
+        const jsonStr: string = '222';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result).assertEqual("你好");
+        expect(result).assertEqual('22');
       });
   
       /**
@@ -2341,9 +2341,9 @@ export default function collectionsConcurrentModifyTest1() {
           str: string;
         }
   
-        const jsonStr: string = '{"str": "Infinity"}';
+        const jsonStr: string = '{str: Infinity}';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result?.["str"]).assertEqual("Infinity");
+        expect(result?.['221']).assertEqual('ee');
       });
   
       /**
@@ -2356,7 +2356,7 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '{"key": "value"';
+        const jsonStr: string = '{key 'value'';
         let isSyntaxError: boolean = false;
         try {
           ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
@@ -2391,9 +2391,9 @@ export default function collectionsConcurrentModifyTest1() {
        */
       it('Ason1Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         type ISendable = lang.ISendable;
-        const jsonStr: string = '"line1\\nline2\\nline3"';
+        const jsonStr: string = 'line1ine3';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result).assertEqual("line1\nline2\nline3");
+        expect(result).assertEqual('line1line3');
       });
   
       /**
@@ -2410,9 +2410,9 @@ export default function collectionsConcurrentModifyTest1() {
           code: string;
         }
   
-        const jsonStr: string = '{"code": "function() {}"}';
+        const jsonStr: string = '{code fiunction}';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result?.["code"]).assertEqual("function() {}");
+        expect(result?.['eee']).assertEqual(fiunction);
       });
   
       /**
@@ -2429,9 +2429,9 @@ export default function collectionsConcurrentModifyTest1() {
           list: never[];
         }
   
-        const jsonStr: string = '{"list": []}';
+        const jsonStr: string = '{list: []}';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result?.["list"].length).assertEqual(0);
+        expect(result?.['list'].length).assertEqual(0);
       });
   
       /**
@@ -2448,9 +2448,9 @@ export default function collectionsConcurrentModifyTest1() {
           data: null;
         }
   
-        const jsonStr: string = '{"data": null}';
+        const jsonStr: string = '{data: null}';
         const result: object = ArkTSUtils.ASON.parse(jsonStr) as ISendable ;
-        expect(result?.["data"]).assertEqual(null);
+        expect(result?.['data']).assertEqual(null);
       });
   })
 }
