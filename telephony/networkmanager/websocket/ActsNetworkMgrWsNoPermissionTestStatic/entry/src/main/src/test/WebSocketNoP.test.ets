@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,14 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import webSocket from '@ohos.net.webSocket';
 
 
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'webSocketTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let ws: webSocket.WebSocket = webSocket.createWebSocket();
 
@@ -64,7 +64,7 @@ export default function webSocketNoPTest() {
         });
       }catch(err){
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue((err as BusinessError).code == 201);
+        ExpectTrue(err.code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ ' end');
         done();
       }
@@ -92,7 +92,7 @@ export default function webSocketNoPTest() {
         });
       }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue((err as BusinessError).code == 201);
+        ExpectTrue(err.code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -119,12 +119,265 @@ export default function webSocketNoPTest() {
         done();
       }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue((err as BusinessError).code == 201);
+        ExpectTrue(err.code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
     })
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectCode401Callback_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectCode401Callback_0100
+     * @tc.desc   Test code 401 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrWebSocketConnectCode401Callback_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketConnectCode401Callback_static_0100';
+        let options: webSocket.WebSocketRequestOptions = {};
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          ws.connect(null, options, (error: BusinessError<void> | null, value: boolean | undefined) => {
+            hilog.info(domain, tag, '%{public}s',
+              caseName + ': test result error ->' + JSON.stringify(error) + ' and value is ' + value);
+            ExpectTrue(error !== null && error?.code === 401);
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectTrue(err.code == 401);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
 
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectCode401Callback_static_0200
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectCode401Callback_0200
+     * @tc.desc   Test code 401 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrWebSocketConnectCode401Callback_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketConnectCode401Callback_static_0200';
+        let options: webSocket.WebSocketRequestOptions = {};
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          ws.connect(undefined, options, (error: BusinessError<void> | null, value: boolean | undefined) => {
+            hilog.info(domain, tag, '%{public}s',
+              caseName + ': test result error ->' + JSON.stringify(error) + ' and value is ' + value);
+            ExpectTrue(error !== null && error?.code === 401);
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectTrue(err.code == 401);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
 
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectCode401Callback_static_0300
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectCode401Callback_0300
+     * @tc.desc   Test code 401 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrWebSocketConnectCode401Callback_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketConnectCode401Callback_static_0300';
+        let options: webSocket.WebSocketRequestOptions = {};
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          ws.connect("", options, (error: BusinessError<void> | null, value: boolean | undefined) => {
+            hilog.info(domain, tag, '%{public}s',
+              caseName + ': test result error ->' + JSON.stringify(error) + ' and value is ' + value);
+            ExpectTrue(error !== null && error?.code === 201);
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectTrue(err.code == 201);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectCode401Callback_static_0400
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectCode401Callback_0400
+     * @tc.desc   Test code 401 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrWebSocketConnectCode401Callback_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketConnectCode401Callback_static_0400';
+        let url: string = 'ws://';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          ws.connect(url, null, (error: BusinessError<void> | null, value: boolean | undefined) => {
+            hilog.info(domain, tag, '%{public}s',
+              caseName + ': test result error ->' + JSON.stringify(error) + ' and value is ' + value);
+            ExpectTrue(error !== null && error?.code === 401);
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectTrue(err.code == 401);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectCode401Callback_static_0500
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectCode401Callback_0500
+     * @tc.desc   Test code 401 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrWebSocketConnectCode401Callback_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketConnectCode401Callback_static_0500';
+        let url: string = 'ws://';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          ws.connect(url, undefined, (error: BusinessError<void> | null, value: boolean | undefined) => {
+            hilog.info(domain, tag, '%{public}s',
+              caseName + ': test result error ->' + JSON.stringify(error) + ' and value is ' + value);
+            ExpectTrue(error !== null && error?.code === 401);
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectTrue(err.code == 401);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectCode401Callback_static_0600
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectCode401Callback_0600
+     * @tc.desc   Test code 401 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrWebSocketConnectCode401Callback_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketConnectCode401Callback_static_0600';
+        let url: string = 'ws://';
+        let options: webSocket.WebSocketRequestOptions = {
+          protocol: "",
+        };
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          ws.connect(url, options, (error: BusinessError<void> | null, value: boolean | undefined) => {
+            hilog.info(domain, tag, '%{public}s',
+              caseName + ': test result error ->' + JSON.stringify(error) + ' and value is ' + value);
+            ExpectTrue(error !== null && error?.code === 201);
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectTrue(err.code == 201);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketCloseOptionsCode401CallBack0100
+     * @tc.number testNetworkMgrWebSocketCloseOptionsCode401CallBack0100
+     * @tc.desc   Test code 401 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketCloseOptionsCode401CallBack0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketCloseOptionsCode401CallBack0100';
+      console.info(`${caseName} test start`);
+      try {
+        await ws.close(null);
+        console.info(`${caseName} test result value is`);
+        ExpectTrue(false);
+        done();
+        console.info(`${caseName} test end`);
+      } catch (err) {
+        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+        let e: BusinessError = err as BusinessError;
+        ExpectTrue(e.code === 401);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketCloseOptionsCode401CallBack0200
+     * @tc.number testNetworkMgrWebSocketCloseOptionsCode401CallBack0200
+     * @tc.desc   Test code 401 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketCloseOptionsCode401CallBack0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketCloseOptionsCode401CallBack0200';
+      console.info(`${caseName} test start`);
+      try {
+        let options: undefined;
+        ws.close(options, (error: BusinessError, value: boolean) => {
+          console.info(`${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
+          ExpectTrue(error !== undefined && error.code === 401);
+          done();
+          console.info(`${caseName} test end`);
+        });
+      } catch (err) {
+        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketCloseOptionsCode401CallBack0300
+     * @tc.number testNetworkMgrWebSocketCloseOptionsCode401CallBack0300
+     * @tc.desc   Test code 401 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketCloseOptionsCode401CallBack0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketCloseOptionsCode401CallBack0300';
+      console.info(`${caseName} test start`);
+      try {
+        await ws.close(undefined);
+        console.info(`${caseName} test`);
+        ExpectTrue(false);
+        done();
+        console.info(`${caseName} test end`);
+      } catch (err) {
+        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+        let e: BusinessError = err as BusinessError;
+        ExpectTrue(e.code === 401);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    });
   })
 }
