@@ -1061,7 +1061,7 @@ export default function NetworkManagerHttpEnhanceTest() {
       }
     });
     /**
-     * @tc.name   testNetworkMgrHttpQUICXtsPromise0500
+     * @tc.name   testNetworkMgrHTTPRequestDnsServers0500
      * @tc.number SUB_NetworkMgr_HTTP_Request_DnsServers_0500
      * @tc.desc   Test request property.
      * @tc.type   FUNCTION
