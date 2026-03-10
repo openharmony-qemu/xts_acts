@@ -904,7 +904,7 @@ export default function SniTest() {
     });
     /**
      * @tc.name    testRequestWithSni2100
-     * @tc.number  SUB_Request_WITH_SNI_2000
+     * @tc.number  SUB_Request_WITH_SNI_2100
      * @tc.desc    Test parameters '.',TLSv1.1.
      * @tc.size    MediumTest
      * @tc.type    Function
