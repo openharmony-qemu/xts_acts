@@ -19,7 +19,7 @@ import rdbStoreReadOnlyEtsTest from './relationalStoreReadOnly.test';
 import MemoryDbEtsTest from './RelationalStoreMemoryDb.test';
 import rdbResultSetSyncTest from './RelationalStoreResultSetSync.test';
 import rdbResultSetSJsTest from './resultsetJsunit.test';
-import relationalStoreTransactionErrTest from './relationalStoreTransactionErr.test';
+import relationalStoreTransactionErrTest from './RelationalStoreTransactionErr.test';
 
 export default function testsuite() {
   relationalStoreEtsTest();
