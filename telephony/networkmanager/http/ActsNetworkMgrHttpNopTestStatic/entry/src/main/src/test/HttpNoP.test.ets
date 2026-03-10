@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,13 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import http from '@ohos.net.http';
 
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'HttpTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let httpRequest = http.createHttp();
 
@@ -136,7 +136,6 @@ export default function httpNoPTest() {
           done();
         });
       }catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
         ExpectTrue(err.code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -169,13 +168,109 @@ export default function httpNoPTest() {
           done();
         });
       }catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
         ExpectTrue(err.code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
     })
-
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode5700
+     * @tc.number SUB_Http_RequestMethod_Error_Code_5700
+     * @tc.desc   Test HTTP response status code 201.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHttpRequestMethodErrorCode5700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = 'testHttpRequestMethodErrorCode5700';
+      console.info(`${caseName}---Start`);
+      try {
+        // 创建HTTP请求实例
+        let httpRequest = http.createHttp();
+        httpRequest.request("", (err, data) => {
+          console.log(caseName + " err: " + JSON.stringify(err) + " data: " + JSON.stringify(data));
+          ExpectTrue(err.code === 201);
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log("testHttpRequestMethodErrorCode5700 : error = " + error);
+        ExpectTrue(false);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode5800
+     * @tc.number SUB_Http_RequestMethod_Error_Code_5800
+     * @tc.desc   Test Test httpRequest property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHttpRequestMethodErrorCode5800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testHttpRequestMethodErrorCode5800";
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions:http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          header: "content-type': 'application/json",
+          readTimeout: 10000,
+          connectTimeout: 10000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.request("https://www.baidu.com", httpRequestOptions, (err, data) => {
+          console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
+          ExpectTrue(err.code === 201);
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log("testHttpRequestMethodErrorCode6500 : error = " + error);
+        ExpectTrue(false);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode6200
+     * @tc.number SUB_Http_RequestMethod_Error_Code_6200
+     * @tc.desc   Test Test httpRequest property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHttpRequestMethodErrorCode6200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testHttpRequestMethodErrorCode6200";
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions:http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          header: "content-type': 'application/json",
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.request("https://www.baidu.com/", httpRequestOptions).then(data => {
+          console.log(caseName + JSON.stringify(data));
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error:BusinessError) => {
+          console.info('testHttpRequestMethodErrorCode7500 asyncCallback error : ' + JSON.stringify(error));
+          ExpectTrue(error.code == 201);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log("testHttpRequestMethodErrorCode7500 : error = " + error);
+        ExpectTrue(false);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
   })
 }
