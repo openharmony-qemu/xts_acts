@@ -451,13 +451,13 @@ export default function uitestDriverErrorTest() {
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.dragBetween({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 199, 1500);
+        await driver!.dragBetween({x: 100, y: 100}, {x: 100, y: 100}, 199, 1500);
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static,speed = 199 is: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
       try {
-        await driver!.dragBetween({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 40001, 1500);
+        await driver!.dragBetween({x: 100, y: 100}, {x: 100, y: 100}, 40001, 1500);
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static,speed = 40001 is: ${JSON.stringify(e)}`);
         expect().assertFail();
