@@ -363,6 +363,37 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimGetSimStateSync1000
+     * @tc.number SUB_Telephony_Sim_GetSimStateSync_1000
+     * @tc.desc   SIMCard required Get the SIM card status of the specified slot. Use promise for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimGetSimStateSync1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySimGetSimStateSync1000';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError | null, data: boolean | undefined) => {
+        if (data) {
+          console.info(`${caseName} success has card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          sim.getSimStatesync(0, (err: BusinessError| null, data: sim.SimState | undefined) => {
+            const simStateAry: number[] = [
+              sim.SimState.SIM_STATE_UNKNOWN,
+              sim.SimState.SIM_STATE_LOCKED,
+              sim.SimState.SIM_STATE_NOT_PRESENT,
+              sim.SimState.SIM_STATE_NOT_READY,
+              sim.SimState.SIM_STATE_LOADED,
+              sim.SimState.SIM_STATE_READY
+            ]
+            expect(data).assertEqual(simStateAry[4]);
+            console.info(`${caseName} test end `);
+            done();
+          });
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimHasSimCard0100
      * @tc.number SUB_Telephony_Sim_HasSimCard_0100
      * @tc.desc   Obtain whether the SIM card in the specified slot is inserted. Use callback for asynchronous callback.
@@ -1097,6 +1128,65 @@ export default function Sim2Public() {
         }
         hilog.info(domain, tag, `${caseName} test end`);
         done();
+      });
+
+    /**
+     * @tc.name   testTelephonySimGetSimCardType_static_0300
+     * @tc.number SUB_Telephony_Sim_GetSimCardType_0300
+     * @tc.desc   SIMCard required Obtain the SIM card type for the specified slot. Use callback for asynchronous callback..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimGetSimCardType_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonySimGetSimCardType_static_0300';
+        hilog.info(domain, tag, `${caseName} test start `);
+        try {
+          sim.hasSimCard(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
+            if (data) {
+              hilog.info(domain, tag,
+                `${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+              sim.getCardType(0, (err: BusinessError<void> | null, data: sim.CardType | undefined) => {
+                const simStateAry: sim.CardType[] = [
+                  sim.CardType.UNKNOWN_CARD,
+                  sim.CardType.SINGLE_MODE_SIM_CARD,
+                  sim.CardType.SINGLE_MODE_USIM_CARD,
+                  sim.CardType.SINGLE_MODE_RUIM_CARD,
+                  sim.CardType.DUAL_MODE_CG_CARD,
+                  sim.CardType.CT_NATIONAL_ROAMING_CARD,
+                  sim.CardType.CU_DUAL_MODE_CARD,
+                  sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+                  sim.CardType.DUAL_MODE_UG_CARD,
+                  sim.CardType.SINGLE_MODE_ISIM_CARD
+                ];
+                if (err?.code === 0) {
+                  ExpectTrue(simStateAry.includes(data));
+                  hilog.info(domain, tag, `${caseName} getCardType true test end `);
+                  done();
+                } else {
+                  ExpectFail();
+                  hilog.info(domain, tag, `${caseName} getCardType else test end `);
+                  done();
+                }
+              });
+            } else {
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName} test end `);
+              done();
+            }
+          });
+        } catch (err) {
+          let error = err as BusinessError;
+          hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
+          if (error?.code === PERMISSION_DENIED_CODE) {
+            expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+          } else {
+            expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+          }
+          hilog.info(domain, tag, `${caseName} test end `);
+          done();
+        }
       });
 
     /**

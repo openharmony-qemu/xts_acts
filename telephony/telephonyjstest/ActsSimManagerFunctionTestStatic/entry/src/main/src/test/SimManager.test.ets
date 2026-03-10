@@ -325,7 +325,7 @@ export default function SimManagerTest() {
       sim.getSimAccountInfo(0, (err: BusinessError | null, data: sim.IccAccountInfo | undefined) => {
         if(err){
           console.info("Telephony_Sim_getSimAccountInfo_CallBack_0100 err = " + JSON.stringify(err));
-          expect(true).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
@@ -360,7 +360,7 @@ export default function SimManagerTest() {
         });
       }).catch((err: Error) => {
         console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 err = " + err);
-        expect(true).assertTrue();
+        expect().assertFail();
         done();
       });
     });
@@ -376,7 +376,7 @@ export default function SimManagerTest() {
       sim.getActiveSimAccountInfoList((err: BusinessError | null, data: Array<sim.IccAccountInfo> | undefined) => {
         if(err){
           console.info("Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100 err = " + JSON.stringify(err));
-          expect(true).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
@@ -407,7 +407,7 @@ export default function SimManagerTest() {
         });
       }).catch((err: Error) => {
         console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 err = " + err);
-        expect(true).assertTrue();
+        expect().assertFail();
         done();
       });
     });
@@ -426,7 +426,7 @@ export default function SimManagerTest() {
         sim.getOpName(0, (err: BusinessError<void>|null, data: string|undefined) => {
           hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err) + " data = " + JSON.stringify(data));
           if(err?.code === 0){
-            expect(true).assertTrue();
+            expect(!err?.code).assertTrue();
             done();
           } else {
             expect(err?.code).assertEqual(-1);
@@ -484,7 +484,7 @@ export default function SimManagerTest() {
         sim.getOpKey(0, (err: BusinessError<void>|null, data: string|undefined) => {
           hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err) + " data = " + JSON.stringify(data));
           if(err?.code === 0){
-            expect(true).assertTrue();
+            expect(!err?.code).assertTrue();
             done();
           } else {
             expect(err?.code).assertEqual(-1);
