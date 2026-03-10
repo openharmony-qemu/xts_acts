@@ -1191,15 +1191,15 @@ export default function HttpErrorCodeTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest3200
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3200
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest9500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_9500
      * @tc.desc   Test HttpRequestOptions property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpRequestOptionsTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest3200';
+    it('testNetworkMgrHttpHttpRequestOptionsTest9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest9500';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
@@ -1241,15 +1241,15 @@ export default function HttpErrorCodeTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest3300
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3300
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest9600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_9600
      * @tc.desc   Test HttpRequestOptions property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpRequestOptionsTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest3300';
+    it('testNetworkMgrHttpHttpRequestOptionsTest9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest9600';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
@@ -1290,15 +1290,15 @@ export default function HttpErrorCodeTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest3400
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3400
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest9700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_9700
      * @tc.desc   Test HttpRequestOptions property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpRequestOptionsTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest3400';
+    it('testNetworkMgrHttpHttpRequestOptionsTest9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest9700';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
@@ -1652,15 +1652,15 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
     /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest4300
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4300
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest9800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_9800
      * @tc.desc   Test HttpRequestOptions property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpRequestOptionsTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest4300';
+    it('testNetworkMgrHttpHttpRequestOptionsTest9800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest9800';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
@@ -1747,15 +1747,15 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName}---End `);
     });
     /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest6300
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_6300
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest9900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_9900
      * @tc.desc   Test HttpRequestOptions property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpRequestOptionsTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest6300';
+    it('testNetworkMgrHttpHttpRequestOptionsTest9900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest9900';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
@@ -1794,15 +1794,15 @@ export default function HttpErrorCodeTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest4600
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4600
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest10000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_10000
      * @tc.desc   Test HttpRequestOptions property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpRequestOptionsTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest4600';
+    it('testNetworkMgrHttpHttpRequestOptionsTest10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest10000';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
@@ -2229,15 +2229,15 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
     /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest5700
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_5700
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest9200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_9200
      * @tc.desc   Test HttpRequestOptions property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpRequestOptionsTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest5700';
+    it('testNetworkMgrHttpHttpRequestOptionsTest9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest9200';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
@@ -2370,15 +2370,15 @@ export default function HttpErrorCodeTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest6000
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_6000
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest9000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_9000
      * @tc.desc   Test HttpRequestOptions property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpRequestOptionsTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest6000';
+    it('testNetworkMgrHttpHttpRequestOptionsTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest9000';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
@@ -2417,15 +2417,15 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName}---End `);
     });
     /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest6100
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_6100
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest9100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_9100
      * @tc.desc   Test HttpRequestOptions property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpRequestOptionsTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest6100';
+    it('testNetworkMgrHttpHttpRequestOptionsTest9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest9100';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
