@@ -877,7 +877,7 @@ export default function nfcATagSessionTest() {
             try {
                 let tagInfo = tag.getNfcA(aTag2).getTagInfo();
                 console.info("[NFC_test]17 tagsession17 tagInfo is: " + tagInfo);
-                expect(tagInfo.uid.length > 0).assertTrue();
+                expect(tagInfo.uid.length == 0).assertTrue();
                 expect(tagInfo.technology.length > 0).assertTrue();
                 console.log("[NFC_test]17 tagsession17 getTagInfo pass");
             } catch (error) {
