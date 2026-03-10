@@ -995,10 +995,9 @@ export default function drawingTsCanvasPart7Test() {
       try {
         canvas.drawSingleCharacterWithFeatures("你", font, 100, 100, []);
         console.info(msg + `drawSingleCharacterWithFeatures 3 success `);
-        expect().assertFail();
       } catch (e) {
         console.info(msg + `drawSingleCharacterWithFeatures 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect().assertFail();
       }
     })
   })
