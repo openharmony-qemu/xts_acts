@@ -931,7 +931,7 @@ export default function OhAVPlayerNDKTest() {
      */
     it('SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0005', Level.LEVEL0, async (done: Function) => {
       let testResult = avplayer.testMediaSourceSetMimeType(0, 3);
-      expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_UNSPPORTED_FORMAT);
+      expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_UNSUPPORTED_FORMAT);
       done();
     });
     /**
