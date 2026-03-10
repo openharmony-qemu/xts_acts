@@ -1698,15 +1698,15 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName}---End `);
     });
     /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest4400
-     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4400
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest6200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_6200
      * @tc.desc   Test HttpRequestOptions property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpRequestOptionsTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest4400';
+    it('testNetworkMgrHttpHttpRequestOptionsTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest6200';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
