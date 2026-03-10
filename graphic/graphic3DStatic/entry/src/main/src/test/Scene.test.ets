@@ -15,10 +15,13 @@
 import {
   Camera,
   CustomGeometry,
+  Effect,
+  EffectParameters,
   GeometryType,
   Image,
   Light,
   LightType,
+  Mat4x4,
   MeshResource,
   Node,
   NodeType,
@@ -29,6 +32,7 @@ import {
   Rect,
   RenderParameters,
   RenderResourceFactory,
+  RenderingPipelineType,
   Rotation3,
   Sampler,
   SamplerAddressMode,
@@ -795,6 +799,169 @@ export default function sceneTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testGetComponent " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateCamera
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1060
+     * @tc.desc   Test SceneResourceFactory.createCamera method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateCamera', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateCamera";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        
+        let camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
+        expect(camera.name).assertEqual("TestCamera");
+        expect(camera.nodeType).assertEqual(NodeType.CAMERA);
+        console.info(msg + " createCamera success");
+        
+        // Test with CameraParameters
+        let camera2 = await rf.createCamera(
+          { name: "TestCamera2" }, 
+          { renderingPipeline: RenderingPipelineType.FORWARD }
+        );
+        expect(camera2 != null).assertTrue();
+        expect(camera2.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD);
+        console.info(msg + " createCamera with parameters success");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateEffect
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1070
+     * @tc.desc   Test SceneResourceFactory.createEffect method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateEffect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateEffect";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        
+        let effectParams: EffectParameters = { effectId: "test-effect-id" };
+        let effect: Effect = await rf.createEffect(effectParams);
+        expect(effect != null).assertTrue();
+        expect(effect.effectId).assertEqual("test-effect-id");
+        console.info(msg + " createEffect success");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCameraGetViewMatrix
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1080
+     * @tc.desc   Test Camera.getViewMatrix method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraGetViewMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetViewMatrix";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
+        
+        let viewMatrix: Mat4x4 = camera.getViewMatrix();
+        expect(viewMatrix != null).assertTrue();
+        expect(viewMatrix.x).assertDefined();
+        expect(viewMatrix.y).assertDefined();
+        expect(viewMatrix.z).assertDefined();
+        expect(viewMatrix.w).assertDefined();
+        console.info(msg + " getViewMatrix success");
+        
+        // Verify matrix structure
+        expect(viewMatrix.x.x).assertEqual(1);
+        expect(viewMatrix.y.y).assertEqual(1);
+        expect(viewMatrix.z.z).assertEqual(1);
+        expect(viewMatrix.w.w).assertEqual(1);
+        console.info(msg + " view matrix structure verified");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCameraGetProjectionMatrix
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1090
+     * @tc.desc   Test Camera.getProjectionMatrix method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraGetProjectionMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetProjectionMatrix";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
+        
+        let projMatrix: Mat4x4 = camera.getProjectionMatrix();
+        expect(projMatrix != null).assertTrue();
+        expect(projMatrix.x).assertDefined();
+        expect(projMatrix.y).assertDefined();
+        expect(projMatrix.z).assertDefined();
+        expect(projMatrix.w).assertDefined();
+        console.info(msg + " getProjectionMatrix success");
+        
+        // Verify matrix structure (should be perspective projection)
+        expect(projMatrix.x.x).assertEqual(1);
+        expect(projMatrix.w.w).assertEqual(1);
+        console.info(msg + " projection matrix structure verified");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
         expect().assertFail();
         done();
       }
