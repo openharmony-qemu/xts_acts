@@ -72,6 +72,27 @@ function createSoundPoolCallbackAbnormal(usage: audio.StreamUsage, maxStreams: n
   });
 }
 
+function createSoundPoolCallbackNull(maxStreams: number, done: Function) {
+  console.info(TAG, `Start to createSoundPoolCallbackNull.`);
+  try {
+    media.createSoundPool(maxStreams, null, (error, soundPool_: media.SoundPool) => {
+      if (error) {
+        console.error(TAG, `Failed to createSoundPool, error is: ${error} ,code is : ${error?.code}`);
+        expect(true).assertTrue();
+      } else {
+        console.info(TAG, `Succeeded in creating SoundPool callback.`);
+        soundPool = soundPool_;
+        expect().assertFail();
+      }
+      done();
+    });
+  } catch (error0) {
+    console.info(TAG, 'Succeeded on raising an exception');
+    expect(true).assertTrue();
+    done();
+  }
+}
+
 async function createSoundPoolPromiseNormal(usage: audio.StreamUsage, maxStreams: number, done: Function) {
   audioRendererInfo.usage = usage;
   console.info(TAG, `Start to createSoundPoolPromiseNormal.`);
@@ -112,6 +133,31 @@ async function createSoundPoolPromiseAbnormal(usage: audio.StreamUsage, maxStrea
   });
 }
 
+async function createSoundPoolPromiseNull(maxStreams: number, done: Function) {
+  console.info(TAG, `Start to createSoundPoolPromiseAbnormal.`);
+  try {
+    await media.createSoundPool(maxStreams, null).then((soundPool_: media.SoundPool) => {
+      if (soundPool_ != null) {
+        console.info(TAG, 'Succeeded in creating SoundPool promise.');
+        soundPool = soundPool_;
+        expect().assertFail();
+      } else {
+        console.error(TAG, 'Failed to create SoundPool promise.');
+        expect(true).assertTrue();
+      }
+      done();
+    }, (error: BusinessError) => {
+      console.error(TAG, `soundpool catchCallback, error message:${error?.message}, code：${error?.code}`);
+      expect(true).assertTrue();
+      done();
+    });
+  } catch (error0) {
+    console.info(TAG, 'Succeeded on raising an exception');
+    expect(true).assertTrue();
+    done();
+  }
+}
+
 function createSoundPoolCallbackForContent(content: audio.ContentType, maxStreams: number, done: Function) {
   audioRendererInfo.content = content;
   console.info(TAG, `Start to createSoundPoolCallbackForContent.`);
@@ -143,6 +189,42 @@ async function createSoundPoolPromiseForContent(content: audio.ContentType, maxS
     done();
   }, (error: BusinessError) => {
     console.error(TAG, `soundpool catchCallback, error message: ${error?.message}, code: ${error?.code}`);
+    expect().assertFail();
+    done();
+  });
+}
+
+function createSoundPoolCallbackForVolumeMode(volumeMode: audio.AudioVolumeMode, maxStreams: number, done: Function) {
+  audioRendererInfo.volumeMode = volumeMode;
+  console.info(TAG, `Start to createSoundPoolCallbackForVolumeMode.`);
+  media.createSoundPool(maxStreams, audioRendererInfo, (error, soundPool_: media.SoundPool) => {
+    if (error) {
+      console.error(TAG, `Failed to createSoundPool, error is: ${error} ,code is : ${error?.code}`);
+      expect().assertFail();
+    } else {
+      console.info(TAG, `Succeeded in creating SoundPool callback.`);
+      soundPool = soundPool_;
+      expect(true).assertTrue();
+    }
+    done();
+  });
+}
+
+async function createSoundPoolPromiseForVolumeMode(volumeMode: audio.AudioVolumeMode, maxStreams: number, done: Function) {
+  audioRendererInfo.volumeMode = volumeMode;
+  console.info(TAG, `Start to createSoundPoolPromiseForVolumeMode.`);
+  await media.createSoundPool(maxStreams, audioRendererInfo).then((soundPool_: media.SoundPool) => {
+    if (soundPool_ != null) {
+      console.info(TAG, 'Succeeded in creating SoundPool promise.');
+      soundPool = soundPool_;
+      expect(true).assertTrue();
+    } else {
+      console.error(TAG, 'Failed to create SoundPool promise.');
+      expect().assertFail();
+    }
+    done();
+  }, (error: BusinessError) => {
+    console.error(TAG, `soundpool catchCallback, error message:${error?.message}, code：${error?.code}`);
     expect().assertFail();
     done();
   });
@@ -5663,6 +5745,114 @@ export default function SoundPoolTest() {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_006 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_callback_for_volume_mode_001
+     * @tc.number SOUND_POOL_FUNC_TEST_363
+     * @tc.desc   Test normal scene of create soundPool callback when set volume mode param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_callback_for_volume_mode_001', Level.LEVEL0, async (done: Function) => {
+      try {
+        createSoundPoolCallbackForVolumeMode(audio.AudioVolumeMode.SYSTEM_GLOBAL, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_volume_mode_001 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_callback_for_volume_mode_002
+     * @tc.number SOUND_POOL_FUNC_TEST_364
+     * @tc.desc   Test normal scene of create soundPool callback when set volume mode param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_callback_for_volume_mode_002', Level.LEVEL0, async (done: Function) => {
+      try {
+        createSoundPoolCallbackForVolumeMode(audio.AudioVolumeMode.APP_INDIVIDUAL, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_for_volume_mode_002 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_promise_for_volume_mode_001
+     * @tc.number SOUND_POOL_FUNC_TEST_365
+     * @tc.desc   Test normal scene of create soundPool promise when set volume mode param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_promise_for_volume_mode_001', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPoolPromiseForVolumeMode(audio.AudioVolumeMode.SYSTEM_GLOBAL, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_volume_mode_001 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_promise_for_volume_mode_002
+     * @tc.number SOUND_POOL_FUNC_TEST_366
+     * @tc.desc   Test normal scene of create soundPool promise when set volume mode param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createSoundPool_promise_for_volume_mode_002', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPoolPromiseForVolumeMode(audio.AudioVolumeMode.APP_INDIVIDUAL, 1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_promise_for_volume_mode_002 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_callback_null_001
+     * @tc.number SOUND_POOL_FUNC_TEST_367
+     * @tc.desc   Test abnormal scene of create soundPool callback when set null param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('createSoundPool_callback_null_001', Level.LEVEL2, async (done: Function) => {
+      try {
+        createSoundPoolCallbackNull(-1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_null_001 error: ${error}`);
+        done();
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   createSoundPool_callback_null_002
+     * @tc.number SOUND_POOL_FUNC_TEST_368
+     * @tc.desc   Test abnormal scene of create soundPool promise when set null param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('createSoundPool_callback_null_002', Level.LEVEL2, async (done: Function) => {
+      try {
+        await createSoundPoolPromiseNull(-1, done);
+      } catch (error) {
+        console.error(TAG, `createSoundPool_callback_null_002 error: ${error}`);
         done();
         expect(false).assertEqual(true);
       }
