@@ -275,6 +275,21 @@ function setWifiState(WifiState: boolean){
   WIFI_STATE = WifiState;
 }
 
+function getErrorCode(err: BusinessError): number | undefined {
+  if (err && typeof err === 'object') {
+    if (err && err.code) {
+      const code = err.code;
+      if (typeof code === 'string' && !isNaN(Number(code))) {
+        return Number(code);
+      }
+      if (typeof code === 'number') {
+        return code;
+      }
+    }
+  }
+  return undefined;
+}
+
 export {
   BUNDLENAME1, ENTINFO1, SELFWANT, AUTOSTARTAPP1, AUTOSTARTAPP2, SELFHAPNAME, COMPANYNAME2, DESCRIPTION2,
   ENTINFO2, NETWORK_ETH_LOCAL, NETWORK_ETH_INVALID, DEFAULT_USER_ID, INVALID_USER_ID,
@@ -289,5 +304,5 @@ export {
   TEST_PERMISSION_MANAGED_STATE_DENIED, TEST_PERMISSION_MANAGED_STATE_DEFAULT, TEST_APP_INSTANCE,
   TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, TEST_INVALID_APP_INSTANCE, APP_IDS_AND_IDENTIFIER_1,
   OTHER_WANT, NOT_EXIST_WANT, MARKET_APPS, ERROR_MARKET_APPS, BLUETOOTH_STATE, WIFI_STATE,
-  getBluetoothState, setBluetoothState, getWifiState, setWifiState
+  getBluetoothState, setBluetoothState, getWifiState, setWifiState, getErrorCode
 }

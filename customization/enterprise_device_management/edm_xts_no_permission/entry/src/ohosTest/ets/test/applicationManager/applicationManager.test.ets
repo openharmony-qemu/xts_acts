@@ -653,6 +653,8 @@ export default function applicationManagerTest() {
         let kioskFeatures: Array<applicationManager.KioskFeature> = [];
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_NOTIFICATION_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_CONTROL_CENTER);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_GESTURE_CONTROL);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
         applicationManager.setKioskFeatures(SELFWANT, kioskFeatures);
         expect(false).assertTrue();
       } catch (error) {
