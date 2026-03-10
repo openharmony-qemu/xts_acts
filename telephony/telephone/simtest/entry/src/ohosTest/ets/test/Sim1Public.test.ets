@@ -397,7 +397,7 @@ export default function Sim1Public() {
         if (err.code == 401) {
           console.info(`${caseName} successfully: Parameter error and return 401`);
           ExpectTrue(true);
-          console.info(`${caseName} 01 test end`);
+          console.info(`${caseName} test end`);
           done();
         } else {
           console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
