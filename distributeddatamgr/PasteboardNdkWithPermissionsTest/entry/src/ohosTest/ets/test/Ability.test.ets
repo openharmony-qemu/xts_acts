@@ -66,7 +66,7 @@ let drivenFn = async () => {
     } else if(button2 !== null) {
       console.info('button2 is ${JSON.stringify(button)}');
       await sleep(1000);
-      await button1.click();
+      await button2.click();
       await  sleep(1000);
     } else {
       console.info("No control matches the clipboard pop-up");
