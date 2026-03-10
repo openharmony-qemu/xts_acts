@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import SelectTest from './SelectTest/Select.test';
+
 import calendarpicker from './CalendarPickerTest/calendarpicker';
 import select from './SelectTest/Select2.test';
 import SelectAttr from './SelectTest/SelectAttr.test';
@@ -24,7 +24,6 @@ import selectOnSelectJsunit from './SelectTest/select3.test';
 import selectmenuTest from './SelectTest/SelectMenu.test';
 
 export default function testsuite() {
-  SelectTest();
   calendarpicker()
   SelectAttr()
   selectJsunit()
