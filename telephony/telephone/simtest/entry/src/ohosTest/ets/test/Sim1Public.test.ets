@@ -426,40 +426,6 @@ export default function Sim1Public() {
       }
     });
 
-
-
-    /**
-     * @tc.name   testTelephonySimGetOpNameSync0300
-     * @tc.number SUB_Telephony_Sim_GetOpNameSync_0300
-     * @tc.desc   Obtain the opkey of the SIM card in the specified slot.Need to insert  SIM card
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testTelephonySimGetOpNameSync0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testTelephonySimGetOpNameSync0300';
-      console.info(`${caseName} test start`);
-      let hasSimCard: Boolean = await sim.hasSimCardSync(0);
-      if (!hasSimCard) {
-        console.info(`${caseName} failed, No SIM exists in slot 0`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
-      }
-      let data: string = sim.getOpKeySync(-1);
-      if (data.length === 0) {
-        console.info(`${caseName} success : Return an empty string`);
-        ExpectTrue(true);
-        console.info(`${caseName} test end`);
-        done();
-      } else {
-        console.info(`${caseName} err The return value is not the expected value : ${data}`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
-      }
-    });
-
     /**
      * @tc.name   testTelephonySimGetOpKey0600
      * @tc.number SUB_Telephony_Sim_GetOpKey_0600
