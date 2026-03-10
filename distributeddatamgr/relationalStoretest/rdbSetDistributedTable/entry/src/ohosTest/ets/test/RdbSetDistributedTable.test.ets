@@ -1315,7 +1315,7 @@ export default function RdbSetDistributedTable() {
     })
 
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_3200
+     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_3300
      * @tc.name   setObtainDistributedTableName0002
      * @tc.desc    obtainDistributedTableName 14800014 callback
      * @tc.type   FUNCTION
