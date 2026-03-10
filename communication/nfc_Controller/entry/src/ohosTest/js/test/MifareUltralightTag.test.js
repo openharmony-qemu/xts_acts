@@ -398,6 +398,39 @@ export default function nfcMifareUltralightTag() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0303
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0303
+         * @tc.desc   Test writeSinglePage api by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0303', Level.LEVEL0, async function (done) {
+            let array = [];
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                try {
+                    await MifareUltralightTag.writeSinglePage(null, array).then((data) => {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 data: " + data + "json1:" + JSON.stringify(data));
+                        expect(data != 0).assertTrue();
+                        done();
+                    });
+                } catch (err) {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            } else {
+                console.info("[NFC_test]mifareUltralight3 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
          * @tc.name   SUB_Communication_NFC_mifareUltralight_0400
          * @tc.number SUB_Communication_NFC_mifareUltralight_0400
          * @tc.desc   Test writeSinglePage api by callback.
