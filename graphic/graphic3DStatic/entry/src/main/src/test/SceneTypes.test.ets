@@ -82,13 +82,13 @@ export default function sceneTypesTest() {
         
         // Verify distinct from other types
         expect(SceneResourceType.EFFECT != SceneResourceType.NODE).assertTrue();
-        expect(SceneResourceType.EFFECT != SceneResourceType.GEOMETRY).assertTrue();
+        expect(SceneResourceType.EFFECT != SceneResourceType.MESH_RESOURCE).assertTrue();
         expect(SceneResourceType.EFFECT != SceneResourceType.MATERIAL).assertTrue();
         expect(SceneResourceType.EFFECT != SceneResourceType.SHADER).assertTrue();
         console.info(msg + " SceneResourceType.EFFECT distinct from other types");
         
         // Verify value is in correct range (higher than standard types)
-        expect(SceneResourceType.EFFECT > SceneResourceType.MESH).assertTrue();
+        expect(SceneResourceType.EFFECT > SceneResourceType.MESH_RESOURCE).assertTrue();
         console.info(msg + " SceneResourceType.EFFECT value range verified");
         
         console.info(msg + " test completed successfully");

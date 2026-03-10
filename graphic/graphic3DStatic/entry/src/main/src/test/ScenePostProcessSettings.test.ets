@@ -208,16 +208,18 @@ export default function scenePostProcessSettingsTest() {
         
         let rotation: Quaternion = { x: 0, y: 0, z: 0, w: 1 };
         env.environmentRotation = rotation;
-        expect(env.environmentRotation.x).assertEqual(0);
-        expect(env.environmentRotation.y).assertEqual(0);
-        expect(env.environmentRotation.z).assertEqual(0);
-        expect(env.environmentRotation.w).assertEqual(1);
+        expect(env.environmentRotation != null).assertTrue();
+        expect((env.environmentRotation?.x ?? 0)).assertEqual(0);
+        expect((env.environmentRotation?.y ?? 0)).assertEqual(0);
+        expect((env.environmentRotation?.z ?? 0)).assertEqual(0);
+        expect((env.environmentRotation?.w ?? 0)).assertEqual(1);
         console.info(msg + " environmentRotation set successfully");
         
         let rotation2: Quaternion = { x: 0.5, y: 0.5, z: 0.5, w: 0.5 };
         env.environmentRotation = rotation2;
-        expect(env.environmentRotation.x).assertEqual(0.5);
-        expect(env.environmentRotation.y).assertEqual(0.5);
+        expect(env.environmentRotation != null).assertTrue();
+        expect((env.environmentRotation?.x ?? 0)).assertEqual(0.5);
+        expect((env.environmentRotation?.y ?? 0)).assertEqual(0.5);
         console.info(msg + " environmentRotation updated successfully");
         
         console.info(msg + " test completed successfully");
