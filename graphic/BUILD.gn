@@ -60,7 +60,6 @@ group("graphic") {
       "graphicUiEffectStatic:ActsGraphicUiEffectStaticTest",
       "graphicnapidrawingtest:ActsGraphicNapiDrawingTest",
       "graphics2DTestApi20:ActsGraphics2DApi20Test",
-      "graphicvulkannapitest:ActsGraphicVulkanTest",
       "graphicImageNdk:image_ndk_hap",
       "nativeColorSpaceNdk:ActsNativeColorSpaceTest",
       "nativeDisplaySoloistNdk:ActsNativeDisplaySoloistTest",
