@@ -64,7 +64,7 @@ export default function webSocketNoPTest() {
         });
       }catch(err){
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue(err.code === 201);
         hilog.info(domain, tag, '%{public}s', caseName+ ' end');
         done();
       }
@@ -92,7 +92,7 @@ export default function webSocketNoPTest() {
         });
       }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue(err.code === 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -119,7 +119,7 @@ export default function webSocketNoPTest() {
         done();
       }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue(err.code === 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -147,7 +147,7 @@ export default function webSocketNoPTest() {
           });
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
-          ExpectTrue(err.code == 401);
+          ExpectTrue(err.code === 401);
           hilog.info(domain, tag, '%{public}s', caseName + ' end');
           done();
         }
@@ -176,7 +176,7 @@ export default function webSocketNoPTest() {
           });
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
-          ExpectTrue(err.code == 401);
+          ExpectTrue(err.code === 401);
           hilog.info(domain, tag, '%{public}s', caseName + ' end');
           done();
         }
@@ -234,7 +234,7 @@ export default function webSocketNoPTest() {
           });
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
-          ExpectTrue(err.code == 401);
+          ExpectTrue(err.code === 401);
           hilog.info(domain, tag, '%{public}s', caseName + ' end');
           done();
         }
@@ -263,7 +263,7 @@ export default function webSocketNoPTest() {
           });
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
-          ExpectTrue(err.code == 401);
+          ExpectTrue(err.code === 401);
           hilog.info(domain, tag, '%{public}s', caseName + ' end');
           done();
         }
