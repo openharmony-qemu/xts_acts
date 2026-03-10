@@ -72,7 +72,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           console.info("[settings_set_value_sync_no_domain] start ");
-          let result: boolean = settings.setValueSync(mContext, 'testkey', 'testvalue');
+          let result = settings.setValueSync(mContext, 'testkey', 'testvalue');
           console.info("[settings_set_value_sync_no_domain] result= " + result);
           expect(result).assertTrue();
           done();
@@ -95,7 +95,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           console.info("[settings_set_value_sync_domain_system] start ");
-          let result: boolean =
+          let result =
             settings.setValueSync(mContext, 'testkey', 'testvalue', settings.domainName.USER_PROPERTY);
           console.info("[settings_set_value_sync_domain_system] result= " + result);
           expect(result).assertTrue();
@@ -119,7 +119,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           console.info("[settings_set_value_sync_domain_secure] start ");
-          let result: boolean =
+          let result =
             settings.setValueSync(mContext, 'testkey', 'testvalue', settings.domainName.USER_SECURITY);
           console.info("[settings_set_value_sync_domain_secure] result= " + result);
           expect(result).assertTrue();
@@ -167,7 +167,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           console.info("[settings_set_value_no_domain] start ");
-          let result: boolean = await settings.setValue(mContext, 'testkey', 'testvalue');
+          let result = await settings.setValue(mContext, 'testkey', 'testvalue');
           console.info("[settings_set_value_no_domain] result= " + result);
           expect(result).assertTrue();
           done();
@@ -190,7 +190,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           console.info("[settings_set_value_domain_system] start ");
-          let result: boolean =
+          let result =
             await settings.setValue(mContext, 'testkey', 'testvalue', settings.domainName.USER_PROPERTY);
           console.info("[settings_set_value_domain_system] result= " + result);
           expect(result).assertTrue();
@@ -214,7 +214,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           console.info("[settings_set_value_domain_secure] start ");
-          let result: boolean =
+          let result =
             await settings.setValue(mContext, 'testkey', 'testvalue', settings.domainName.USER_SECURITY);
           console.info("[settings_set_value_domain_secure] result= " + result);
           expect(result).assertTrue();
