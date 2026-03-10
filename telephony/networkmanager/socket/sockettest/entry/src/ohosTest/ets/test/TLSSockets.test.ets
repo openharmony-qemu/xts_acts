@@ -1564,15 +1564,15 @@ export default function TLSSocketsTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrSocketTLSSocketBind1300
-     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_1300
+     * @tc.name   testNetworkMgrSocketTLSSocketBind2000
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_2000
      * @tc.desc   Bind IP address and port
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketTLSSocketBind1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketTLSSocketBind1300';
+    it('testNetworkMgrSocketTLSSocketBind2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketBind2000';
       console.info(`${caseName} test start`);
       try {
         let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
