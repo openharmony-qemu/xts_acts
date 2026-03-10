@@ -100,6 +100,7 @@
     "MainAbility/pages/promptAction/showDialogBackgroundEffect2",
     "MainAbility/pages/customDialog/customdialog4",
     "MainAbility/pages/promptAction/closeToastTest2",
-    "MainAbility/pages/prompt/PromptActionShowActionMenuNullTest"
+    "MainAbility/pages/prompt/PromptActionShowActionMenuNullTest",
+    "MainAbility/pages/prompt/promptNullUndefined"
   ]
 }

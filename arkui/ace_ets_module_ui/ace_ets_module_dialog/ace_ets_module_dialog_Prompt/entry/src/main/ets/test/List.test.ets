@@ -123,6 +123,7 @@ import showDialogCallbackBlurStyleOptionsTest from './promptActionTest/showDialo
 import customDialogGetstateTest from './customDialogTest/customdialog4.test';
 import closeToastTest from './promptActionTest/closeToastTest2.test';
 import PromptActionShowActionMenuNullTest from './prompt/PromptActionShowActionMenuNull.test';
+import promptNullUndefined from './prompt/promptNullUndefined.test'
 
 export default function testsuite() {
 	showAlertDialogBackgroundEffectTest()
@@ -223,4 +224,5 @@ export default function testsuite() {
 	closeToastTest()
 	getDialogControllerReturnTest()
 	PromptActionShowActionMenuNullTest()
+	promptNullUndefined()
 }
