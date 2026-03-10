@@ -63,6 +63,7 @@ import SetTextSelectionTest from './SetTextSelectionTest/SetTextSelectionTest.te
 import TypeNodeTest from './TypeNode.test';
 import MagnifierTest from './Magnifier.test';
 import MeasureUtilsTest from './MeasureUtils.test';
+import TextMenuControllerTest from './TextMenuController.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -113,4 +114,5 @@ export default function testsuite() {
   TypeNodeTest();
   MagnifierTest();
   MeasureUtilsTest();
+  TextMenuControllerTest();
 }
