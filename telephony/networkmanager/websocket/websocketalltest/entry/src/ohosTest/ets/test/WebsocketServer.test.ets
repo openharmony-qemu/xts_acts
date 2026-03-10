@@ -2560,7 +2560,7 @@ export default function WebsocketServerTest() {
         })
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code === 401);
         done();
         console.info(`${caseName} test end`);
       }
