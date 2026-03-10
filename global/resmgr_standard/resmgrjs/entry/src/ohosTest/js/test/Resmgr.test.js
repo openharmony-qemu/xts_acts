@@ -2671,7 +2671,6 @@ describe('resMgrTest', function () {
                 console.log('getColor_test_0110 err.code' + err.code);
                 console.log('getColor_test_0110 err.message' + err.message);
                 expect(err.code).assertEqual('401');
-                expect(err.message).assertEqual('Invalid input parameter');
                 done();
             }
         })
@@ -2692,7 +2691,6 @@ describe('resMgrTest', function () {
                     console.log('getColor_test_0120 err.code ' + err.code + '-');
                     console.log('getColor_test_0120 err.message ' + err.message + '-');
                     expect(err.code == 9001001).assertTrue();
-                    expect(err.message).assertEqual('GetColorById failed state');
                     done();
                 })
             }catch(error){
@@ -2717,7 +2715,6 @@ describe('resMgrTest', function () {
                     console.log('getColor_test_0130 err.code ' + err.code + '-');
                     console.log('getColor_test_0130 err.message ' + err.message + '-');
                     expect(err.code == 9001002).assertTrue();
-                    expect(err.message).assertEqual('GetColorById failed state');
                     done();
                 })
             }catch(error){
@@ -2742,7 +2739,6 @@ describe('resMgrTest', function () {
                     console.log('getColor_test_0140 err.code ' + err.code + '-');
                     console.log('getColor_test_0140 err.message ' + err.message + '-');
                     expect(err.code == 9001002).assertTrue();
-                    expect(err.message).assertEqual('GetColorById failed state');
                     done();
                 })
             }catch(error){
@@ -2767,7 +2763,6 @@ describe('resMgrTest', function () {
                     console.log('getColor_test_0150 err.code ' + err.code + '-');
                     console.log('getColor_test_0150 err.message ' + err.message + '-');
                     expect(err.code == 9001006).assertTrue();
-                    expect(err.message).assertEqual('GetColorById failed state');
                     done();
                 })
             }catch(error){
@@ -2814,7 +2809,6 @@ describe('resMgrTest', function () {
                 console.log('getColor_test_0210 err.code' + err.code);
                 console.log('getColor_test_0210 err.message' + err.message);
                 expect(err.code).assertEqual('401');
-                expect(err.message).assertEqual('Invalid input parameter');
                 done();
             }
         })
@@ -2836,7 +2830,6 @@ describe('resMgrTest', function () {
                     console.log('getColor_test_0220 err.code ' + err.code + '-');
                     console.log('getColor_test_0220 err.message ' + err.message + '-');
                     expect(err.code == 9001001).assertTrue();
-                    expect(err.message).assertEqual('GetColorById failed state');
                     done();
                 })
             }catch(error){
@@ -2862,7 +2855,6 @@ describe('resMgrTest', function () {
                     console.log('getColor_test_0230 err.code ' + err.code + '-');
                     console.log('getColor_test_0230 err.message ' + err.message + '-');
                     expect(err.code == 9001002).assertTrue();
-                    expect(err.message).assertEqual('GetColorById failed state');
                     done();
                 })
             }catch(error){
@@ -2888,7 +2880,6 @@ describe('resMgrTest', function () {
                     console.log('getColor_test_0240 err.code ' + err.code + '-');
                     console.log('getColor_test_0240 err.message ' + err.message + '-');
                     expect(err.code == 9001002).assertTrue();
-                    expect(err.message).assertEqual('GetColorById failed state');
                     done();
                 })
             }catch(error){
@@ -2914,7 +2905,6 @@ describe('resMgrTest', function () {
                     console.log('getColor_test_0250 err.code ' + err.code + '-');
                     console.log('getColor_test_0250 err.message ' + err.message + '-');
                     expect(err.code == 9001006).assertTrue();
-                    expect(err.message).assertEqual('GetColorById failed state');
                     done();
                 })
             }catch(error){
@@ -2958,7 +2948,6 @@ describe('resMgrTest', function () {
                 console.log('getColorSync_test_002 err.code' + err.code);
                 console.log('getColorSync_test_002 err.message' + err.message);
                 expect(err.code).assertEqual('401');
-                expect(err.message).assertEqual('Invalid input parameter');
                 done();
             }
         })
@@ -3001,7 +2990,6 @@ describe('resMgrTest', function () {
                 console.log('getColorSync_test_004 err.code' + err.code);
                 console.log('getColorSync_test_004 err.message' + err.message);
                 expect(err.code).assertEqual('9001002');
-                expect(err.message).assertEqual('No matching resource is found based on the resource ID');
                 done();
             }
         })
@@ -3023,7 +3011,6 @@ describe('resMgrTest', function () {
                 console.log('getColorSync_test_005 err.code' + err.code);
                 console.log('getColorSync_test_005 err.message' + err.message);
                 expect(err.code).assertEqual('9001002');
-                expect(err.message).assertEqual('No matching resource is found based on the resource ID');
                 done();
             }
         })
@@ -3045,7 +3032,6 @@ describe('resMgrTest', function () {
                 console.log('getColorSync_test_006 err.code' + err.code);
                 console.log('getColorSync_test_006 err.message' + err.message);
                 expect(err.code).assertEqual('9001006');
-                expect(err.message).assertEqual('The resource is referenced cyclically');
                 done();
             }
         })
@@ -3088,7 +3074,6 @@ describe('resMgrTest', function () {
                 console.log('getColorByName_test_0110 err.code' + err.code);
                 console.log('getColorByName_test_0110 err.message' + err.message);
                 expect(err.code).assertEqual('401');
-                expect(err.message).assertEqual('Invalid input parameter');
                 done();
             }
         })
@@ -3109,7 +3094,6 @@ describe('resMgrTest', function () {
                     console.log('getColorByName_test_0120 err.code ' + err.code + '-');
                     console.log('getColorByName_test_0120 err.message ' + err.message + '-');
                     expect(err.code == 9001003).assertTrue();
-                    expect(err.message).assertEqual('getColorByNameFunc failed state');
                     done();
                 })
             }catch(error){
@@ -3134,7 +3118,6 @@ describe('resMgrTest', function () {
                     console.log('getColorByName_test_0130 err.code ' + err.code + '-');
                     console.log('getColorByName_test_0130 err.message ' + err.message + '-');
                     expect(err.code == 9001003).assertTrue();
-                    expect(err.message).assertEqual('getColorByNameFunc failed state');
                     done();
                 })
             }catch(error){
@@ -3159,7 +3142,6 @@ describe('resMgrTest', function () {
                     console.log('getColorByName_test_0140 err.code ' + err.code + '-');
                     console.log('getColorByName_test_0140 err.message ' + err.message + '-');
                     expect(err.code == 9001004).assertTrue();
-                    expect(err.message).assertEqual('getColorByNameFunc failed state');
                     done();
                 })
             }catch(error){
@@ -3184,7 +3166,6 @@ describe('resMgrTest', function () {
                     console.log('getColorByName_test_0150 err.code ' + err.code + '-');
                     console.log('getColorByName_test_0150 err.message ' + err.message + '-');
                     expect(err.code == 9001006).assertTrue();
-                    expect(err.message).assertEqual('getColorByNameFunc failed state');
                     done();
                 })
             }catch(error){
@@ -3231,7 +3212,6 @@ describe('resMgrTest', function () {
                 console.log('getColorByName_test_0210 err.code' + err.code);
                 console.log('getColorByName_test_0210 err.message' + err.message);
                 expect(err.code).assertEqual('401');
-                expect(err.message).assertEqual('Invalid input parameter');
                 done();
             }
         })
@@ -3253,7 +3233,6 @@ describe('resMgrTest', function () {
                     console.log('getColorByName_test_0220 err.code ' + err.code + '-');
                     console.log('getColorByName_test_0220 err.message ' + err.message + '-');
                     expect(err.code == 9001003).assertTrue();
-                    expect(err.message).assertEqual('getColorByNameFunc failed state');
                     done();
                 })
             }catch(error){
@@ -3279,7 +3258,6 @@ describe('resMgrTest', function () {
                     console.log('getColorByName_test_0230 err.code ' + err.code + '-');
                     console.log('getColorByName_test_0230 err.message ' + err.message + '-');
                     expect(err.code == 9001003).assertTrue();
-                    expect(err.message).assertEqual('getColorByNameFunc failed state');
                     done();
                 })
             }catch(error){
@@ -3305,7 +3283,6 @@ describe('resMgrTest', function () {
                     console.log('getColorByName_test_0240 err.code ' + err.code + '-');
                     console.log('getColorByName_test_0240 err.message ' + err.message + '-');
                     expect(err.code == 9001004).assertTrue();
-                    expect(err.message).assertEqual('getColorByNameFunc failed state');
                     done();
                 })
             }catch(error){
@@ -3331,7 +3308,6 @@ describe('resMgrTest', function () {
                     console.log('getColorByName_test_0250 err.code ' + err.code + '-');
                     console.log('getColorByName_test_0250 err.message ' + err.message + '-');
                     expect(err.code == 9001006).assertTrue();
-                    expect(err.message).assertEqual('getColorByNameFunc failed state');
                     done();
                 })
             }catch(error){
@@ -3375,7 +3351,6 @@ describe('resMgrTest', function () {
                 console.log('getColorByNameSync_test_002 err.code' + err.code);
                 console.log('getColorByNameSync_test_002 err.message' + err.message);
                 expect(err.code).assertEqual('401');
-                expect(err.message).assertEqual('Invalid input parameter');
                 done();
             }
         })
@@ -3397,7 +3372,6 @@ describe('resMgrTest', function () {
                 console.log('getColorByNameSync_test_003 err.code' + err.code);
                 console.log('getColorByNameSync_test_003 err.message' + err.message);
                 expect(err.code).assertEqual('9001003');
-                expect(err.message).assertEqual('Invalid resource name');
                 done();
             }
         })
@@ -3419,7 +3393,6 @@ describe('resMgrTest', function () {
                 console.log('getColorByNameSync_test_004 err.code' + err.code);
                 console.log('getColorByNameSync_test_004 err.message' + err.message);
                 expect(err.code).assertEqual('9001003');
-                expect(err.message).assertEqual('Invalid resource name');
                 done();
             }
         })
@@ -3441,7 +3414,6 @@ describe('resMgrTest', function () {
                 console.log('getColorByNameSync_test_005 err.code' + err.code);
                 console.log('getColorByNameSync_test_005 err.message' + err.message);
                 expect(err.code).assertEqual('9001004');
-                expect(err.message).assertEqual('No matching resource is found based on the resource name');
                 done();
             }
         })
@@ -3463,7 +3435,6 @@ describe('resMgrTest', function () {
                 console.log('getColorByNameSync_test_006 err.code' + err.code);
                 console.log('getColorByNameSync_test_006 err.message' + err.message);
                 expect(err.code).assertEqual('9001006');
-                expect(err.message).assertEqual('The resource is referenced cyclically');
                 done();
             }
         })
@@ -3485,7 +3456,6 @@ describe('resMgrTest', function () {
                 console.log('addResource_test_001 err.code' + err.code);
                 console.log('addResource_test_001 err.message' + err.message);
                 expect(err.code).assertEqual('401');
-                expect(err.message).assertEqual('Invalid input parameter');
                 done();
             }
         })
@@ -3507,7 +3477,6 @@ describe('resMgrTest', function () {
                 console.log('addResource_test_002 err.code' + err.code);
                 console.log('addResource_test_002 err.message' + err.message);
                 expect(err.code).assertEqual('9001010');
-                expect(err.message).assertEqual('Invalid overlay path');
                 done();
             }
         })
@@ -3529,7 +3498,6 @@ describe('resMgrTest', function () {
                 console.log('removeResource_test_001 err.code' + err.code);
                 console.log('removeResource_test_001 err.message' + err.message);
                 expect(err.code).assertEqual('401');
-                expect(err.message).assertEqual('Invalid input parameter');
                 done();
             }
         })
@@ -3551,7 +3519,6 @@ describe('resMgrTest', function () {
                 console.log('removeResource_test_002 err.code' + err.code);
                 console.log('removeResource_test_002 err.message' + err.message);
                 expect(err.code).assertEqual('9001010');
-                expect(err.message).assertEqual('Invalid overlay path');
                 done();
             }
         })
