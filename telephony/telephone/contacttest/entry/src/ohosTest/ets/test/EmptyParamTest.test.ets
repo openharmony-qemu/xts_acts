@@ -982,6 +982,105 @@ export default function EmptyParamTest() {
     });
 
     /**
+     * @tc.name   contactsApi_query_empty_test_3200
+     * @tc.number contactsApi_query_empty_test_3200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const testCaseName: string = 'contactsApi_query_empty_test_3200';
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            const email: string = '';
+            const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
+            contact.queryContactsByEmail(null, email, holder, (err: BusinessError, contacts: contact.Contact[]) => {
+                if (err) {
+                    console.error(`${testCaseName}: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info(`${testCaseName} : query success: ${contacts.length}`);
+                    expect().assertFail();
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(`${testCaseName} : contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_3300
+     * @tc.number contactsApi_query_empty_test_3300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const testCaseName: string = 'contactsApi_query_empty_test_3300';
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            const email: string = '';
+            const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
+            contact.queryContactsByEmail(null, email, attr, (err: BusinessError, contacts: contact.Contact[]) => {
+                if (err) {
+                    console.error(`${testCaseName}: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info(`${testCaseName} : query success: ${contacts.length}`);
+                    expect().assertFail();
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(`${testCaseName} : contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_3400
+     * @tc.number contactsApi_query_empty_test_3400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const testCaseName: string = 'contactsApi_query_empty_test_3400';
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            const email: string = '';
+            const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
+            const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
+            contact.queryContactsByEmail(null, email, holder, attr, (err: BusinessError, contacts: contact.Contact[]) => {
+                if (err) {
+                    console.error(`${testCaseName}: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info(`${testCaseName} : query success: ${contacts.length}`);
+                    expect().assertFail();
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(`${testCaseName} : contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+    /**
      * @tc.name   contactsApi_query_empty_test_3500
      * @tc.number contactsApi_query_empty_test_3500
      * @tc.desc   Function test
@@ -990,22 +1089,26 @@ export default function EmptyParamTest() {
      * @tc.level  LEVEL0
      */
     it("contactsApi_query_empty_test_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const testCaseName: string = 'contactsApi_query_empty_test_3500';
         try {
-            let context: Context = AppStorage.get('null') as Context;
-            const key: string = '';
-            contact.queryContact(context, key, null, (err: BusinessError) => {
+            let context: Context = AppStorage.get('context') as Context;
+            const email: string = '';
+            let contactAttributes: contact.ContactAttributes = {
+                attributes: []
+            };
+            contact.queryContactsByEmail(null, email, contactAttributes, (err: BusinessError, contacts: contact.Contact[]) => {
                 if (err) {
-                    console.error(`contactsApi_query_empty_test_3500: contact query err = ${err.code}, ${err.message}`);
+                    console.error(`${testCaseName}: contact query err = ${err.code}, ${err.message}`);
                     expect(err.code === 201).assertTrue();
                     done();
                 } else {
-                    console.info("contactsApi_query_empty_test_3500: query success");
+                    console.info(`${testCaseName} : query success: ${contacts.length}`);
                     expect().assertFail();
                     done();
                 }
             });
         } catch (error) {
-            console.info(`contactsApi_query_empty_test_3500: contact query error = ${error.code}, ${error.message}`);
+            console.info(`${testCaseName} : contact query error = ${error.code}, ${error.message}`);
             expect(error.code === 201).assertTrue();
             done();
         }
@@ -1020,24 +1123,27 @@ export default function EmptyParamTest() {
      * @tc.level  LEVEL0
      */
     it("contactsApi_query_empty_test_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const testCaseName: string = 'contactsApi_query_empty_test_3600';
         try {
             let context: Context = AppStorage.get('context') as Context;
+            const email: string = '';
+            const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
             let contactAttributes: contact.ContactAttributes = {
                 attributes: []
             };
-            contact.queryContact(null, null, contactAttributes, (err: BusinessError) => {
+            contact.queryContactsByEmail(null, email, holder, contactAttributes, (err: BusinessError, contacts: contact.Contact[]) => {
                 if (err) {
-                    console.error(`contactsApi_query_empty_test_3600: contact query err = ${err.code}, ${err.message}`);
+                    console.error(`${testCaseName}: contact query err = ${err.code}, ${err.message}`);
                     expect(err.code === 201).assertTrue();
                     done();
                 } else {
-                    console.info("contactsApi_query_empty_test_3600: query success");
+                    console.info(`${testCaseName} : query success: ${contacts.length}`);
                     expect().assertFail();
                     done();
                 }
             });
         } catch (error) {
-            console.info(`contactsApi_query_empty_test_3600: contact query error = ${error.code}, ${error.message}`);
+            console.info(`${testCaseName} : contact query error = ${error.code}, ${error.message}`);
             expect(error.code === 201).assertTrue();
             done();
         }
@@ -1052,21 +1158,24 @@ export default function EmptyParamTest() {
      * @tc.level  LEVEL0
      */
     it("contactsApi_query_empty_test_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const testCaseName: string = 'contactsApi_query_empty_test_3700';
         try {
             let context: Context = AppStorage.get('context') as Context;
-            contact.queryContact(null, null, null, (err: BusinessError) => {
+            const phoneNumber: string = '';
+            const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
+            contact.queryContactsByPhoneNumber(null, phoneNumber, holder, (err: BusinessError, contacts: contact.Contact[]) => {
                 if (err) {
-                    console.error(`contactsApi_query_empty_test_3700: contact query err = ${err.code}, ${err.message}`);
+                    console.error(`${testCaseName}: contact query err = ${err.code}, ${err.message}`);
                     expect(err.code === 201).assertTrue();
                     done();
                 } else {
-                    console.info("contactsApi_query_empty_test_3700: query success");
+                    console.info(`${testCaseName} : query success: ${contacts.length}`);
                     expect().assertFail();
                     done();
                 }
             });
         } catch (error) {
-            console.info(`contactsApi_query_empty_test_3700: contact query error = ${error.code}, ${error.message}`);
+            console.info(`${testCaseName} : contact query error = ${error.code}, ${error.message}`);
             expect(error.code === 201).assertTrue();
             done();
         }
@@ -1081,199 +1190,25 @@ export default function EmptyParamTest() {
      * @tc.level  LEVEL0
      */
     it("contactsApi_query_empty_test_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const testCaseName: string = 'contactsApi_query_empty_test_3800';
         try {
             let context: Context = AppStorage.get('context') as Context;
-            contact.queryContact(null, null, null, null, (err: BusinessError) => {
+            const phoneNumber: string = '';
+            const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
+            const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
+            contact.queryContactsByPhoneNumber(null, phoneNumber, holder, attr, (err: BusinessError, contacts: contact.Contact[]) => {
                 if (err) {
-                    console.error(`contactsApi_query_empty_test_3800: contact query err = ${err.code}, ${err.message}`);
+                    console.error(`${testCaseName}: contact query err = ${err.code}, ${err.message}`);
                     expect(err.code === 201).assertTrue();
                     done();
                 } else {
-                    console.info("contactsApi_query_empty_test_3800: query success");
+                    console.info(`${testCaseName} : query success: ${contacts.length}`);
                     expect().assertFail();
                     done();
                 }
             });
         } catch (error) {
-            console.info(`contactsApi_query_empty_test_3800: contact query error = ${error.code}, ${error.message}`);
-            expect(error.code === 201).assertTrue();
-            done();
-        }
-    });
-
-    /**
-     * @tc.name   contactsApi_query_empty_test_3900
-     * @tc.number contactsApi_query_empty_test_3900
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("contactsApi_query_empty_test_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        try {
-            let context: Context = AppStorage.get('context') as Context;
-            let contactAttributes: contact.ContactAttributes = {
-                attributes: []
-            };
-            contact.queryContact(null, null, null, contactAttributes, (err: BusinessError) => {
-                if (err) {
-                    console.error(`contactsApi_query_empty_test_3900: contact query err = ${err.code}, ${err.message}`);
-                    expect(err.code === 201).assertTrue();
-                    done();
-                } else {
-                    console.info("contactsApi_query_empty_test_3900: query success");
-                    expect().assertFail();
-                    done();
-                }
-            });
-        } catch (error) {
-            console.info(`contactsApi_query_empty_test_3900: contact query error = ${error.code}, ${error.message}`);
-            expect(error.code === 201).assertTrue();
-            done();
-        }
-    });
-
-    /**
-     * @tc.name   contactsApi_query_empty_test_4000
-     * @tc.number contactsApi_query_empty_test_4000
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("contactsApi_query_empty_test_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        try {
-            let context: Context = AppStorage.get('null') as Context;
-            let promise = contact.queryContact(context, '', null, null);
-            promise.then((data) => {
-                console.info("contactsApi_query_empty_test_4000: query success");
-                done();
-            }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_4000: contact query error: ${error.code}, ${error.message}`);
-                expect(error).assertTrue();
-                done();
-            });
-        } catch (error) {
-            console.info(`contactsApi_query_empty_test_4000: contact query error = ${error.code}, ${error.message}`);
-            expect(error).assertTrue();
-            done();
-        }
-    });
-
-    /**
-     * @tc.name   contactsApi_query_empty_test_4100
-     * @tc.number contactsApi_query_empty_test_4100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("contactsApi_query_empty_test_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        try {
-            let context: Context = AppStorage.get('null') as Context;
-            let contactAttributes: contact.ContactAttributes = {
-                attributes: []
-            };
-            await contact.queryContact(context, null, null, contactAttributes).then(() => {
-                console.info("contactsApi_query_empty_test_4100: query success");
-                done();
-            }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_4100: contact query error: ${error.code}, ${error.message}`);
-                expect(error).assertTrue();
-                done();
-            });
-        } catch (error) {
-            console.info(`contactsApi_query_empty_test_4100: contact query error = ${error.code}, ${error.message}`);
-            expect(error).assertTrue();
-            done();
-        }
-    });
-
-    /**
-     * @tc.name   contactsApi_query_empty_test_4200
-     * @tc.number contactsApi_query_empty_test_4200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("contactsApi_query_empty_test_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        try {
-            let context: Context = AppStorage.get('context') as Context;
-            contact.queryContacts(null, null, (err: BusinessError, contacts: contact.Contact[]) => {
-                if (err) {
-                    console.error(`contactsApi_query_empty_test_4200: contact query err = ${err.code}, ${err.message}`);
-                    expect(err.code === 201).assertTrue();
-                    done();
-                } else {
-                    console.info("contactsApi_query_empty_test_4200: query success");
-                    expect().assertFail();
-                    done();
-                }
-            });
-        } catch (error) {
-            console.info(`contactsApi_query_empty_test_4200: contact query error = ${error.code}, ${error.message}`);
-            expect(error.code === 201).assertTrue();
-            done();
-        }
-    });
-
-    /**
-     * @tc.name   contactsApi_query_empty_test_4300
-     * @tc.number contactsApi_query_empty_test_4300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("contactsApi_query_empty_test_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        try {
-            let context: Context = AppStorage.get('context') as Context;
-            contact.queryContacts(null, null, (err: BusinessError, contacts: contact.Contact[]) => {
-                if (err) {
-                    console.error(`contactsApi_query_empty_test_4300: contact query err = ${err.code}, ${err.message}`);
-                    expect(err.code === 201).assertTrue();
-                    done();
-                } else {
-                    console.info("contactsApi_query_empty_test_4300: query success");
-                    expect().assertFail();
-                    done();
-                }
-            });
-        } catch (error) {
-            console.info(`contactsApi_query_empty_test_4300: contact query error = ${error.code}, ${error.message}`);
-            expect(error.code === 201).assertTrue();
-            done();
-        }
-    });
-
-    /**
-     * @tc.name   contactsApi_query_empty_test_4400
-     * @tc.number contactsApi_query_empty_test_4400
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("contactsApi_query_empty_test_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        try {
-            let context: Context = AppStorage.get('context') as Context;
-            let contactAttributes: contact.ContactAttributes = {
-                attributes: []
-            };
-            contact.queryContacts(null, contactAttributes, (err: BusinessError, contacts: contact.Contact[]) => {
-                if (err) {
-                    console.error(`contactsApi_query_empty_test_4400: contact query err = ${err.code}, ${err.message}`);
-                    expect(err.code === 201).assertTrue();
-                    done();
-                } else {
-                    console.info("contactsApi_query_empty_test_4400: query success");
-                    expect().assertFail();
-                    done();
-                }
-            });
-        } catch (error) {
-            console.info(`contactsApi_query_empty_test_4400: contact query error = ${error.code}, ${error.message}`);
+            console.info(`${testCaseName} : contact query error = ${error.code}, ${error.message}`);
             expect(error.code === 201).assertTrue();
             done();
         }
@@ -1289,8 +1224,9 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-            let context: Context = AppStorage.get('context') as Context;
-            contact.queryContacts(null, null, null, (err: BusinessError, contacts: contact.Contact[]) => {
+            let context: Context = AppStorage.get('null') as Context;
+            const key: string = '';
+            contact.queryContact(context, key, null, (err: BusinessError) => {
                 if (err) {
                     console.error(`contactsApi_query_empty_test_4500: contact query err = ${err.code}, ${err.message}`);
                     expect(err.code === 201).assertTrue();
@@ -1318,18 +1254,20 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-            let context: Context = AppStorage.get('null') as Context;
+            let context: Context = AppStorage.get('context') as Context;
             let contactAttributes: contact.ContactAttributes = {
                 attributes: []
             };
-            let promise = contact.queryContacts(context, null, contactAttributes);
-            promise.then((data) => {
-                console.info("contactsApi_query_empty_test_4600: query success");
-                done();
-            }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_4600: contact query error: ${error.code}, ${error.message}`);
-                expect(error.code === 201).assertTrue();
-                done();
+            contact.queryContact(null, null, contactAttributes, (err: BusinessError) => {
+                if (err) {
+                    console.error(`contactsApi_query_empty_test_4600: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info("contactsApi_query_empty_test_4600: query success");
+                    expect().assertFail();
+                    done();
+                }
             });
         } catch (error) {
             console.info(`contactsApi_query_empty_test_4600: contact query error = ${error.code}, ${error.message}`);
@@ -1337,7 +1275,6 @@ export default function EmptyParamTest() {
             done();
         }
     });
-
 
     /**
      * @tc.name   contactsApi_query_empty_test_4700
@@ -1349,15 +1286,17 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-            let context: Context = AppStorage.get('null') as Context;
-            let promise = contact.queryContacts(context, {holderId:1,bundleName:"",displayName:""}, null);
-            promise.then((data) => {
-                console.info("contactsApi_query_empty_test_4700: query success");
-                done();
-            }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_empty_test_4700: contact query error: ${error.code}, ${error.message}`);
-                expect(error.code === 201).assertTrue();
-                done();
+            let context: Context = AppStorage.get('context') as Context;
+            contact.queryContact(null, null, null, (err: BusinessError) => {
+                if (err) {
+                    console.error(`contactsApi_query_empty_test_4700: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info("contactsApi_query_empty_test_4700: query success");
+                    expect().assertFail();
+                    done();
+                }
             });
         } catch (error) {
             console.info(`contactsApi_query_empty_test_4700: contact query error = ${error.code}, ${error.message}`);
@@ -1367,52 +1306,349 @@ export default function EmptyParamTest() {
     });
 
     /**
-     * @tc.name   contactsApi_query_code_test_4800
-     * @tc.number contactsApi_query_code_test_4800
+     * @tc.name   contactsApi_query_empty_test_4800
+     * @tc.number contactsApi_query_empty_test_4800
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("contactsApi_query_code_test_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("contactsApi_query_empty_test_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('context') as Context;
-            await contact.queryContact(context, null, null).then(() => {
-                console.info("contactsApi_query_code_test_4800: query success");
+            contact.queryContact(null, null, null, null, (err: BusinessError) => {
+                if (err) {
+                    console.error(`contactsApi_query_empty_test_4800: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info("contactsApi_query_empty_test_4800: query success");
+                    expect().assertFail();
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(`contactsApi_query_empty_test_4800: contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_4900
+     * @tc.number contactsApi_query_empty_test_4900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            let contactAttributes: contact.ContactAttributes = {
+                attributes: []
+            };
+            contact.queryContact(null, null, null, contactAttributes, (err: BusinessError) => {
+                if (err) {
+                    console.error(`contactsApi_query_empty_test_4900: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info("contactsApi_query_empty_test_4900: query success");
+                    expect().assertFail();
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(`contactsApi_query_empty_test_4900: contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_5000
+     * @tc.number contactsApi_query_empty_test_5000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('null') as Context;
+            let promise = contact.queryContact(context, '', null, null);
+            promise.then((data) => {
+                console.info("contactsApi_query_empty_test_5000: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_code_test_4800: contact query error: ${error.code}, ${error.message}`);
+                console.info(`contactsApi_query_empty_test_5000: contact query error: ${error.code}, ${error.message}`);
+                expect(error).assertTrue();
+                done();
+            });
+        } catch (error) {
+            console.info(`contactsApi_query_empty_test_5000: contact query error = ${error.code}, ${error.message}`);
+            expect(error).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_5100
+     * @tc.number contactsApi_query_empty_test_5100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_5100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('null') as Context;
+            let contactAttributes: contact.ContactAttributes = {
+                attributes: []
+            };
+            await contact.queryContact(context, null, null, contactAttributes).then(() => {
+                console.info("contactsApi_query_empty_test_5100: query success");
+                done();
+            }).catch((error: BusinessError) => {
+                console.info(`contactsApi_query_empty_test_5100: contact query error: ${error.code}, ${error.message}`);
+                expect(error).assertTrue();
+                done();
+            });
+        } catch (error) {
+            console.info(`contactsApi_query_empty_test_5100: contact query error = ${error.code}, ${error.message}`);
+            expect(error).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_5200
+     * @tc.number contactsApi_query_empty_test_5200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_5200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            contact.queryContacts(null, null, (err: BusinessError, contacts: contact.Contact[]) => {
+                if (err) {
+                    console.error(`contactsApi_query_empty_test_5200: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info("contactsApi_query_empty_test_5200: query success");
+                    expect().assertFail();
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(`contactsApi_query_empty_test_5200: contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_5300
+     * @tc.number contactsApi_query_empty_test_5300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_5300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            contact.queryContacts(null, null, (err: BusinessError, contacts: contact.Contact[]) => {
+                if (err) {
+                    console.error(`contactsApi_query_empty_test_5300: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info("contactsApi_query_empty_test_5300: query success");
+                    expect().assertFail();
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(`contactsApi_query_empty_test_5300: contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_5400
+     * @tc.number contactsApi_query_empty_test_5400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_5400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            let contactAttributes: contact.ContactAttributes = {
+                attributes: []
+            };
+            contact.queryContacts(null, contactAttributes, (err: BusinessError, contacts: contact.Contact[]) => {
+                if (err) {
+                    console.error(`contactsApi_query_empty_test_5400: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info("contactsApi_query_empty_test_5400: query success");
+                    expect().assertFail();
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(`contactsApi_query_empty_test_5400: contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_5500
+     * @tc.number contactsApi_query_empty_test_5500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_5500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            contact.queryContacts(null, null, null, (err: BusinessError, contacts: contact.Contact[]) => {
+                if (err) {
+                    console.error(`contactsApi_query_empty_test_5500: contact query err = ${err.code}, ${err.message}`);
+                    expect(err.code === 201).assertTrue();
+                    done();
+                } else {
+                    console.info("contactsApi_query_empty_test_5500: query success");
+                    expect().assertFail();
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(`contactsApi_query_empty_test_5500: contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_5600
+     * @tc.number contactsApi_query_empty_test_5600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_5600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('null') as Context;
+            let contactAttributes: contact.ContactAttributes = {
+                attributes: []
+            };
+            let promise = contact.queryContacts(context, null, contactAttributes);
+            promise.then((data) => {
+                console.info("contactsApi_query_empty_test_5600: query success");
+                done();
+            }).catch((error: BusinessError) => {
+                console.info(`contactsApi_query_empty_test_5600: contact query error: ${error.code}, ${error.message}`);
+                expect(error.code === 201).assertTrue();
+                done();
+            });
+        } catch (error) {
+            console.info(`contactsApi_query_empty_test_5600: contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+
+    /**
+     * @tc.name   contactsApi_query_empty_test_5700
+     * @tc.number contactsApi_query_empty_test_5700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_empty_test_5700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('null') as Context;
+            const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
+            let promise = contact.queryContacts(context, {holderId:1,bundleName:"",displayName:""}, attr);
+            promise.then((data) => {
+                console.info("contactsApi_query_empty_test_5700: query success");
+                done();
+            }).catch((error: BusinessError) => {
+                console.info(`contactsApi_query_empty_test_5700: contact query error: ${error.code}, ${error.message}`);
+                expect(error.code === 201).assertTrue();
+                done();
+            });
+        } catch (error) {
+            console.info(`contactsApi_query_empty_test_5700: contact query error = ${error.code}, ${error.message}`);
+            expect(error.code === 201).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_query_code_test_5800
+     * @tc.number contactsApi_query_code_test_5800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_query_code_test_5800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
+            await contact.queryContact(context, '', attr).then(() => {
+                console.info("contactsApi_query_code_test_5800: query success");
+                done();
+            }).catch((error: BusinessError) => {
+                console.info(`contactsApi_query_code_test_5800: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
         } catch (error) {
-            console.info(`contactsApi_query_code_test_4800: contact query error = ${error.code}, ${error.message}`);
+            console.info(`contactsApi_query_code_test_5800: contact query error = ${error.code}, ${error.message}`);
             expect(error.code === 401).assertTrue();
             done();
         }
     });
 
     /**
-     * @tc.name   contactsApi_query_code_test_5000
-     * @tc.number contactsApi_query_code_test_5000
+     * @tc.name   contactsApi_query_code_test_5900
+     * @tc.number contactsApi_query_code_test_5900
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("contactsApi_query_code_test_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("contactsApi_query_code_test_5900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('context') as Context;
-            const card = await contact.queryMyCard(context, null).then(() => {
-                console.info("contactsApi_query_code_test_5000: query success");
+            const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
+            const card = await contact.queryMyCard(context, attr).then(() => {
+                console.info("contactsApi_query_code_test_5900: query success");
                 done();
             }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_code_test_5000: contact query error: ${error.code}, ${error.message}`);
+                console.info(`contactsApi_query_code_test_5900: contact query error: ${error.code}, ${error.message}`);
                 expect(error.code === 401).assertTrue();
                 done();
             });
         } catch (error) {
-            console.info(`contactsApi_query_code_test_5000: query error = ${error.code}, ${error.message}`);
+            console.info(`contactsApi_query_code_test_5900: query error = ${error.code}, ${error.message}`);
             expect(error.code === 401).assertTrue();
             done();
         }
