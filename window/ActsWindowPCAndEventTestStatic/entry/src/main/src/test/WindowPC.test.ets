@@ -546,7 +546,7 @@ export default function WindowPCTest() {
                     if (err.code === 801) {
                         done();
                     } else {
-                        expect(false).assertFalse();
+                        expect().assertFail();
                         done();
                     }
                 })
