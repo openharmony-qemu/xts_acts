@@ -588,7 +588,7 @@ export default function WindowLifeCycleTest() {
                 // expect(1).assertEqual(window.WindowType.TYPE_SYSTEM_ALERT);
                 expect(8).assertEqual(window.WindowType.TYPE_FLOAT);
                 expect(16).assertEqual(window.WindowType.TYPE_DIALOG);
-                // expect(32).assertEqual(window.WindowType.TYPE_MAIN);
+                expect(32).assertEqual(window.WindowType.TYPE_MAIN);
                 done();
             } catch (error) {
                 hilog.info(0x0000, '[ANI]','test Enum value of windowType error ' + JSON.stringify(error));
@@ -4083,10 +4083,11 @@ export default function WindowLifeCycleTest() {
                 await Utils.msSleep(1000);
                 await terminateAbility(caseName);
                 await Utils.msSleep(2000);
-                let windowStageEventTypeArray: Array<window.WindowStageEventType> =
-                    AppStorage.get<Array<window.WindowStageEventType>>('windowStageEventTypeArray') as Array<window.WindowStageEventType>;
+                let windowStageEventTypeArray: window.WindowStageEventType[] =
+                    AppStorage.get<window.WindowStageEventType[]>('windowStageEventTypeArray') as window.WindowStageEventType[];
                 hilog.info(0x0000, '[ANI]',
                     `${msgStr} windowStageEventTypeArray get. ${JSON.stringify(windowStageEventTypeArray)}`);
+                expect(windowStageEventTypeArray.length).assertEqual(4);
                 expect(windowStageEventTypeArray[0]).assertEqual(window.WindowStageEventType.SHOWN);
                 expect(windowStageEventTypeArray[1]).assertEqual(window.WindowStageEventType.ACTIVE);
                 expect(windowStageEventTypeArray[2]).assertEqual(window.WindowStageEventType.INACTIVE);
@@ -4583,6 +4584,155 @@ export default function WindowLifeCycleTest() {
                 }
             });
 
+        /**
+         * @tc.number testGetSubWindow_CallBack_1300002_static_0100
+         * @tc.name testGetSubWindow_CallBack_1300002_static_0100
+         * @tc.desc testGetSubWindow_CallBack_1300002_static_0100
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 3
+         */
+        it('testGetSubWindow_CallBack_1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testGetSubWindow_CallBack_1300002_static_0100';
+                let msgStr: string = 'jsunittest ' + caseName + ' ';
+                hilog.info(domain, tag, msgStr + 'begin.');
+                let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+                await terminateAbility(caseName);
+                try {
+                    windowStageStart!.getSubWindow((err: BusinessError | null, data: Array<window.Window> | undefined) => {
+                        const errCode: number = err!.code;
+                        if (errCode) {
+                            console.error(caseName +
+                                `Failed to obtain the subwindow. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(errCode).assertEqual(1300002)
+                            expect(err!.message != null).assertTrue();
+                            done();
+                            return;
+                        }
+                        hilog.info(0x0000, '[ANI]', msgStr + 'obtain the subwindow.');
+                        expect(false).assertTrue();
+                        done();
+                    });
+                } catch (exception) {
+                    hilog.error(0x0000, '[ANI]',
+                        msgStr +
+                            `Failed to getSubWindow. Cause code: ${exception!.code}, message: ${exception!.message}`);
+                    expect(true).assertFail();
+                    done()
+                }
+            });
+
+        /**
+         * @tc.number      testGetSubWindow_Promise_1300002_static_0100
+         * @tc.name        testGetSubWindow_Promise_1300002_static_0100
+         * @tc.desc        testGetSubWindow_Promise_1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testGetSubWindow_Promise_1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testGetSubWindow_Promise_1300002_static_0100';
+                let msgStr: string = 'jsunittest ' + caseName + ' ';
+                hilog.info(domain, tag, msgStr + 'begin.');
+                let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+                await terminateAbility(caseName);
+                try {
+                    windowStageStart!.getSubWindow().then((data) => {
+                        hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in loading the content.');
+                        expect(false).assertTrue();
+                        done();
+                    }).catch((err: Error): PromiseLike<void> | undefined => {
+                        hilog.error(0x0000, '[ANI]',
+                            msgStr + `windowStage Failed to getSubWindow. Cause code: ${err.code}, message: ${err.message}`);
+                        expect(err.code).assertEqual(1300002);
+                        done();
+                    });
+                } catch (exception) {
+                    hilog.error(0x0000, '[ANI]',
+                        msgStr +
+                            `Failed to getSubWindow. Cause code: ${exception!.code}, message: ${exception!.message}`);
+                    expect(true).assertFail();
+                    done()
+                }
+            });
+
+        /**
+         * @tc.name   testGetMainWindowSnapshot_EmptyArray_static_0400
+         * @tc.number testGetMainWindowSnapshot_EmptyArray_static_0400
+         * @tc.desc   testGetMainWindowSnapshot_EmptyArray_static_0400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testGetMainWindowSnapshot_EmptyArray_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = "testGetMainWindowSnapshot_EmptyArray_static_0400";
+                console.log(caseName + " begin");
+                if (isPCStatus !== '') {
+                    try {
+                        let windowClass: window.Window = windowStage!.getMainWindowSync();
+                        let windowId: int = windowClass.getWindowProperties().id;
+                        console.info(caseName + ' windowId: ' + windowId);
+                        let windowIdArray: Array<int> = [];
+                        let configs: window.WindowSnapshotConfiguration = {
+                            useCache: false
+                        }
+                        await window.getMainWindowSnapshot(windowIdArray, configs)
+                        expect(true).assertFail();
+                        done()
+                    } catch (err) {
+                        err = err as BusinessError;
+                        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+                        if (err.code == 401) {
+                            done();
+                        } else {
+                            expect(true).assertFail();
+                            done();
+                        }
+                    }
+                } else {
+                    done();
+                }
+            });
+
+        /**
+         * @tc.name   testGetMainWindowSnapshot_NormalArray_static_0400
+         * @tc.number testGetMainWindowSnapshot_NormalArray_static_0400
+         * @tc.desc   testGetMainWindowSnapshot_NormalArray_static_0400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testGetMainWindowSnapshot_NormalArray_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = "testGetMainWindowSnapshot_NormalArray_static_0400";
+                console.log(caseName + " begin");
+                if (isPCStatus !== '') {
+                    try {
+                        let windowClass: window.Window = windowStage!.getMainWindowSync();
+                        let windowId: int = windowClass.getWindowProperties().id;
+                        console.info(caseName + ' windowId: ' + windowId);
+                        let windowIdArray: Array<int> = [windowId];
+                        let configs: window.WindowSnapshotConfiguration = {
+                            useCache: false
+                        }
+                        let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
+                        console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+                        console.info(caseName + ' pixelMapArray.length: ' + pixelMapArray.length);
+                        expect(pixelMapArray.length).assertEqual(1);
+                        done()
+                    } catch (err) {
+                        err = err as BusinessError;
+                        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+                        expect(true).assertFail();
+                        done();
+                    }
+                } else {
+                    done();
+                }
+            });
     })
 
 }
