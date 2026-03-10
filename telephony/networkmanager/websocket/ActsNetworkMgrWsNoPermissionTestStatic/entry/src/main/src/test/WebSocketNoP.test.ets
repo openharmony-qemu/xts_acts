@@ -348,7 +348,7 @@ export default function webSocketNoPTest() {
         });
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 401);
+        ExpectTrue(err.code === 401);
         done();
         console.info(`${caseName} test end`);
       }
