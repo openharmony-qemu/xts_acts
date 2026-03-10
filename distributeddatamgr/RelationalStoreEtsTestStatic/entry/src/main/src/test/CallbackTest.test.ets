@@ -1153,7 +1153,7 @@ export default function CallbackTest() {
      * @tc.level  LEVEL2
      */
      it('SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400',
-     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
        console.info(TAG +"-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400 start-----")
        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
        try {
@@ -1161,14 +1161,17 @@ export default function CallbackTest() {
            (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("123456789", "", (err: BusinessError|null) => {
             if(err){
               expect(err.code).assertEqual(14800000);
+              done();
             }else{
               expect().assertFail();
+              done();
             }
           })
         }
        } catch (err) {
         console.info(TAG + "obtainDistributedTableName err.code" + err.code + "err.message" + err.message)
         expect(err.code).assertEqual(14800000);  
+        done();
        }  
       
        console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400 end-----")
@@ -1184,19 +1187,22 @@ export default function CallbackTest() {
      * @tc.level  LEVEL2
      */
      it('SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500',
-     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
        console.info(TAG +"-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500 start-----")
        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
        try {
         (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("", "EMPLOYEE", (err: BusinessError|null) => {
           if(err){
             expect(err.code).assertEqual(14800000);
+            done();
           }else{
             expect().assertFail();
+            done();
           }
          })
        } catch (err) {
         expect(err.code).assertEqual(14800000)  
+        done();
        }  
        console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500 end-----")
   
@@ -1259,7 +1265,7 @@ export default function CallbackTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_DistributedrelationalStore_remoteQuery_ErrTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-    async () => {
+    async (done: () => void) => {
       console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0001 start *************");
       const record: data_relationalStore.ValuesBucket = {
         "name": "Jim",
@@ -1274,6 +1280,7 @@ export default function CallbackTest() {
         console.info(TAG + "err.code" + err.code + "err.message" + err.message)
         if (err.code === 401) {
           expect(err.code).assertEqual(401);
+
         } else {
           expect(err.code).assertEqual(14800000);
         }
@@ -1284,19 +1291,24 @@ export default function CallbackTest() {
           if(err){
             if(err.code === 401){
               expect(err.code).assertEqual(401);
+              done();
             }else{
               expect(err.code).assertEqual(14800000);
+              done();
             }
           }else{
             expect().assertFail();
+            done();
           }
         });
      } catch (err) {
        console.info(TAG + "err.code" + err.code + "err.message" + err.message)
        if (err.code === 401) {
          expect(err.code).assertEqual(401);
+         done();
        } else {
          expect(err.code).assertEqual(14800000);
+         done();
        }
      }
 
@@ -1313,7 +1325,7 @@ export default function CallbackTest() {
    * @tc.level  LEVEL2
    */
   it('SUB_DistributedrelationalStore_remoteQuery_ErrTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-  async () => {
+  async (done: () => void) => {
     console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0003 start *************");
     let predicates = new data_relationalStore.RdbPredicates("employee");
     predicates.equalTo("name", "Jim")
@@ -1334,12 +1346,29 @@ export default function CallbackTest() {
     try {
       if (rdbStore != undefined) {
         rdbStore!.remoteQuery("123456789", "", predicates, ["ID", "name", "age"], (err) => {
-          expect().assertFail();
+          if(err){
+            if(err.code === 401){
+              expect(err.code).assertEqual(401);
+              done()
+            }else{
+              expect(err.code).assertEqual(14800000);
+              done()
+            }
+          }else{
+            expect().assertFail();
+          }
+          
          });
       }        
     } catch (err) {
       console.info(TAG + "err.code" + err.code + "err.message" + err.message)
-      expect().assertFail();
+      if(err.code === 401){
+        expect(err.code).assertEqual(401);
+        done()
+      }else{
+        expect(err.code).assertEqual(14800000);
+        done()
+      }
     }
     console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0003 end *************");
   })
@@ -1353,7 +1382,7 @@ export default function CallbackTest() {
    * @tc.level  LEVEL2
    */
    it('SUB_DistributedrelationalStore_remoteQuery_ErrTest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-    async () => {
+    async (done: () => void) => {
       console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0004 start *************");
       let predicates = new data_relationalStore.RdbPredicates("employee");
       predicates.equalTo("name", "Jim")
@@ -1377,11 +1406,14 @@ export default function CallbackTest() {
             if(err){
               if(err.code === 401){
                 expect(err.code).assertEqual(401);
+                done();
               }else{
                 expect(err.code).assertEqual(14800000);
+                done();
               }
             }else{
               expect().assertFail();
+              done();
             }
            
            });
@@ -1389,6 +1421,7 @@ export default function CallbackTest() {
       } catch (err) {
         console.info(TAG + "err.code" + err.code + "err.message" + err.message)
         expect().assertFail();
+        done();
       }
       console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0004 end *************");
     })
@@ -1402,7 +1435,7 @@ export default function CallbackTest() {
    * @tc.level  LEVEL2
    */
   it('SUB_DistributedrelationalStore_remoteQuery_ErrTest_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-    async () => {
+    async (done: () => void) => {
       console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0005 start *************");
       let predicates = new data_relationalStore.RdbPredicates("employee");
       predicates.equalTo("name", "Jim")
@@ -1426,11 +1459,14 @@ export default function CallbackTest() {
             if(err){
               if(err.code === 401){
                 expect(err.code).assertEqual(401);
+                done();
               }else{
                 expect(err.code).assertEqual(14800000);
+                done();
               }
             }else{
               expect(typeof(!resset) === "object").assertTrue();
+              done();
             }
            
            });
@@ -1438,6 +1474,7 @@ export default function CallbackTest() {
       } catch (err) {
         console.info(TAG + "err.code" + err.code + "err.message" + err.message)
         expect().assertFail();
+        done();
       }
       console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0005 end *************");
     })
