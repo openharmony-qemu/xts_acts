@@ -37,6 +37,7 @@ group("concurrency_static") {
       "timer_test_static:ActsTimerStaticTest",
       "asyncRunner_test_static:ActsAsyncRunnerStaticTest",
       "lock_test_static:ActsLockStaticTest",
+      "atomics2_test_static:ActsAtomics2StaticTest",
       "workerLocal_test_static:ActsWorkerLocalStaticTest",
     ]
 
