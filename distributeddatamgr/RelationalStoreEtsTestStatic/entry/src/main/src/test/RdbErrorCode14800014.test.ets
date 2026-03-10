@@ -3370,6 +3370,11 @@ export default function RdbErrorCode14800014() {
     it('RdbcommittxId14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void) => {
         console.log(TAG + "************* RdbcommittxId14800014_001 start *************");
+        const supported = relationalStore.isVectorSupported();
+        if (!supported) {
+          console.info(TAG + `Vector not supported`);
+          done();
+        }
         context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         console.info(TAG + "deleteRdbStore success");
@@ -3406,6 +3411,11 @@ export default function RdbErrorCode14800014() {
     it('RdbrollbacktxId14800014_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void) => {
         console.log(TAG + "************* RdbrollbacktxId14800014_001 start *************");
+        const supported = relationalStore.isVectorSupported();
+        if (!supported) {
+          console.info(TAG + `Vector not supported`);
+          done();
+        }
         context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         console.info(TAG + "deleteRdbStore success");
