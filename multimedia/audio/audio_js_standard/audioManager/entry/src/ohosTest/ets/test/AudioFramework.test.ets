@@ -175,7 +175,6 @@ export default function audioFramework() {
         let data = audioVolumeGroupManager.getVolumeSync(audioMedia);
         if (data == lowVol) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
@@ -243,7 +242,6 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager.getVolumeSync(audio.AudioVolumeType.RINGTONE);
         console.info(`${TagFrmwk}: Media getVolumeSync : success :${data}`);
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log(`err : ${err.message},Code:${err.code}`);
@@ -286,7 +284,6 @@ export default function audioFramework() {
         let data = audioVolumeGroupManager.getMinVolumeSync(audio.AudioVolumeType.MEDIA);
         if (data == 0) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
@@ -355,7 +352,6 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager.getMinVolumeSync(AudioVolumeType);
         console.log('getMinVolumeSync success');
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.cod);
@@ -377,7 +373,6 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager.getMinVolumeSync(audio.AudioVolumeType.RINGTONE);
         console.log('getMinVolumeSync success');
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.cod);
@@ -399,7 +394,6 @@ export default function audioFramework() {
         let data = audioVolumeGroupManager.getMaxVolumeSync(audio.AudioVolumeType.MEDIA);
         if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
           expect(false).assertTrue();
@@ -468,7 +462,6 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager.getMaxVolumeSync(audio.AudioVolumeType.ALARM);
         console.log('getMaxVolumeSync success');
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.cod);
@@ -490,7 +483,6 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager.getMaxVolumeSync(AudioVolumeType);
         console.log('getMaxVolumeSync success');
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.cod);
@@ -514,7 +506,6 @@ export default function audioFramework() {
         let data = audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.MEDIA);
         if (data == true) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
@@ -582,7 +573,6 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.ACCESSIBILITY);
         console.log('isMuteSync success');
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.cod);
@@ -626,7 +616,6 @@ export default function audioFramework() {
         let data = audioVolumeGroupManager.getRingerModeSync();
         if (data != null) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
@@ -657,7 +646,6 @@ export default function audioFramework() {
         let data = audioVolumeGroupManager.isMicrophoneMuteSync();
         if (data == true) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
@@ -688,7 +676,6 @@ export default function audioFramework() {
         let data = audioVolumeGroupManager.isMicrophoneMuteSync();
         if (data == false) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
@@ -748,7 +735,6 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audioMedia);
         if (data == lowVol) {
           console.info(`${TagFrmwk}: Media getVolume Promise: PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getVolume Promise: FAIL :${data}`);
           expect(false).assertTrue();
@@ -775,7 +761,6 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audioMedia);
         if (data == lowVol) {
           console.info(`${TagFrmwk}: Media getVolume Promise: PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getVolume Promise: FAIL :${data}`);
           expect(false).assertTrue();
@@ -801,10 +786,8 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audioMedia);
         if (data == maxVol) {
           console.info(`${TagFrmwk}: Media getVolume Promise: PASS :${data}`);
-          expect(true).assertTrue();
         } else if (data == maxVolPc) {
           console.info(`${TagFrmwk}: Media getVolume Promise: PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getVolume Promise: FAIL :${data}`);
           expect(false).assertTrue();
@@ -830,7 +813,6 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audioMedia);
         if (data == minVol) {
           console.info(`${TagFrmwk}: Media getVolume Promise: PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getVolume Promise: FAIL :${data}`);
           expect(false).assertTrue();
@@ -856,7 +838,6 @@ export default function audioFramework() {
         expect(false).assertTrue();
       }).catch((err: BusinessError) => {
         console.info(`${TagFrmwk}: Media setVolume Promise:Out of range: PASS :${err.message}`);
-        expect(true).assertTrue();
       });
       done();
     })
@@ -883,7 +864,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == highVol) {
               console.info(`${TagFrmwk}: callback : Media getVolume: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: callback : Media getVolume: FAIL :${value}`);
               expect(false).assertTrue();
@@ -916,10 +896,8 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == maxVol) {
               console.info(`${TagFrmwk}: callback : Media getVolume: PASS :${value}`);
-              expect(true).assertTrue();
             } else if (value == maxVolPc) {
               console.info(`${TagFrmwk}: callback : Media getVolume: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: callback : Media getVolume: FAIL :${value}`);
               expect(false).assertTrue();
@@ -952,7 +930,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == minVol) {
               console.info(`${TagFrmwk}: callback : Media getVolume: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: callback : Media getVolume: FAIL :${value}`);
               expect(false).assertTrue();
@@ -975,7 +952,6 @@ export default function audioFramework() {
       audioManager.setVolume(audioMedia, outOfRangeVol, (err) => {
         if (err) {
           console.error(`${TagFrmwk}: setVolume: Out of range: Callback: PASS:  ${err.message}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: setVolume: callback : Media Out of range: FAIL`);
           expect(false).assertTrue();
@@ -998,7 +974,6 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audioRingtone);
         if (data == lowVol) {
           console.info(`${TagFrmwk}: Ringtone getVolume Promise: PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Ringtone getVolume Promise: FAIL :${data}`);
           expect(false).assertTrue();
@@ -1024,10 +999,8 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audioRingtone);
         if (data == maxVol) {
           console.info(`${TagFrmwk}: Ringtone getVolume Promise: PASS :${data}`);
-          expect(true).assertTrue();
         } else if (data == maxVolPc) {
           console.info(`${TagFrmwk}: Ringtone getVolume Promise: PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Ringtone getVolume Promise: FAIL :${data}`);
           expect(false).assertTrue();
@@ -1053,7 +1026,6 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audioRingtone);
         if (data == minVol) {
           console.info(`${TagFrmwk}: Ringtone getVolume Promise: PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Ringtone getVolume Promise: FAIL :${data}`);
           expect(false).assertTrue();
@@ -1080,7 +1052,6 @@ export default function audioFramework() {
         expect(false).assertTrue();
       }).catch((err: BusinessError) => {
         console.info(`${TagFrmwk}: Ringtone setVolume Promise:Out of range: PASS : ${err.message}`);
-        expect(true).assertTrue();
       });
       done();
     })
@@ -1107,7 +1078,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == highVol) {
               console.info(`${TagFrmwk}: callback : Ringtone getVolume: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: callback : Ringtone getVolume: FAIL :${value}`);
               expect(false).assertTrue();
@@ -1140,10 +1110,8 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == maxVol) {
               console.info(`${TagFrmwk}: callback : Ringtone getVolume: PASS :${value}`);
-              expect(true).assertTrue();
             } else if (value == maxVolPc) {
               console.info(`${TagFrmwk}: callback : Ringtone getVolume: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: callback : Ringtone getVolume: FAIL :${value}`);
               expect(false).assertTrue();
@@ -1176,7 +1144,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == minVol) {
               console.info(`${TagFrmwk}: callback : Ringtone getVolume: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: callback : Ringtone getVolume: FAIL :${value}`);
               expect(false).assertTrue();
@@ -1199,7 +1166,6 @@ export default function audioFramework() {
       audioManager.setVolume(audioRingtone, outOfRangeVol, (err) => {
         if (err) {
           console.error(`${TagFrmwk}: Out of range Volume: Callback:  ${err.message}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Out of range Volume: callback : Ringtone set volume: FAIL`);
           expect(false).assertTrue();
@@ -1224,7 +1190,6 @@ export default function audioFramework() {
         expect(false).assertTrue();
       }).catch((err: BusinessError) => {
         console.info(`${TagFrmwk}: Media setVolume Promise:Negative: PASS :  ${err.message}`);
-        expect(true).assertTrue();
       });
       done();
     })
@@ -1242,7 +1207,6 @@ export default function audioFramework() {
         // Setting negative audio volume for error Scenario
         if (err) {
           console.error(`${TagFrmwk}: setVolume Callback: Negative: PASS: ${err.message}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: setVolume callback : Media Negative: FAIL`);
           expect(false).assertTrue();
@@ -1267,7 +1231,6 @@ export default function audioFramework() {
         expect(false).assertTrue();
       }).catch((err: BusinessError) => {
         console.info(`${TagFrmwk}: Ringtone setVolume Promise:Negative: PASS : ${err.message}`);
-        expect(true).assertTrue();
       });
       done();
     })
@@ -1285,7 +1248,6 @@ export default function audioFramework() {
         // Setting negative audio volume for error Scenario
         if (err) {
           console.error(`${TagFrmwk}:Ringtone setVolume Callback:Negative: PASS : ${err.message}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: setVolume: Negative: callback : Ringtone set volume: FAIL`);
           expect(false).assertTrue();
@@ -1308,7 +1270,6 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audio.AudioVolumeType.MEDIA);
         if (data == lowVol) {
           console.info(`${TagFrmwk}: Media getVolume Promise: ENAME : PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getVolume Promise: ENAME : FAIL :${data}`);
           expect(false).assertTrue();
@@ -1342,7 +1303,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == highVol) {
               console.info(`${TagFrmwk}: callback : Media getVolume: ENAME : PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: callback : Media getVolume: ENAME : FAIL :${value}`);
               expect(false).assertTrue();
@@ -1367,7 +1327,6 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audio.AudioVolumeType.RINGTONE);
         if (data == highVol) {
           console.info(`${TagFrmwk}: RINGTONE getVolume Promise: ENAME : PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: RINGTONE getVolume Promise: ENAME : FAIL :${data}`);
           expect(false).assertTrue();
@@ -1401,7 +1360,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == lowVol) {
               console.info(`${TagFrmwk}: callback : Ringtone getVolume: ENAME: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: callback : Ringtone getVolume: ENAME: FAIL :${value}`);
               expect(false).assertTrue();
@@ -1429,7 +1387,6 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audio.AudioVolumeType.MEDIA);
         if (data == lowVol) {
           console.info(`${TagFrmwk}: Media getVolume Promise: ENAME : PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getVolume Promise: ENAME : FAIL :${data}`);
           expect(false).assertTrue();
@@ -1469,7 +1426,6 @@ export default function audioFramework() {
                   expect(false).assertTrue();
                 } else if (value == highVol) {
                   console.info(`${TagFrmwk}: callback : Media getVolume: ENAME : PASS :${value}`);
-                  expect(true).assertTrue();
                 } else {
                   console.info(`${TagFrmwk}: callback : Media getVolume: ENAME : FAIL :${value}`);
                   expect(false).assertTrue();
@@ -1498,7 +1454,6 @@ export default function audioFramework() {
         let data = await audioManager.getVolume(audio.AudioVolumeType.RINGTONE);
         if (data == highVol) {
           console.info(`${TagFrmwk}: Ringtone getVolume Promise: ENAME: PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Ringtone getVolume Promise: ENAME: FAIL :${data}`);
           expect(false).assertTrue();
@@ -1538,7 +1493,6 @@ export default function audioFramework() {
                   expect(false).assertTrue();
                 } else if (value == lowVol) {
                   console.info(`${TagFrmwk}: callback : Ringtone getVolume: ENAME: PASS :${value}`);
-                  expect(true).assertTrue();
                 } else {
                   console.info(`${TagFrmwk}: callback : Ringtone getVolume: ENAME: FAIL :${value}`);
                   expect(false).assertTrue();
@@ -1564,7 +1518,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1590,7 +1543,6 @@ export default function audioFramework() {
           expect(false).assertTrue();
         } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -1612,7 +1564,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1641,7 +1592,6 @@ export default function audioFramework() {
           done();
         } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : FAIL: ${value}`);
@@ -1667,7 +1617,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1695,7 +1644,6 @@ export default function audioFramework() {
         let data = await audioManager.getMaxVolume(audioRingtone);
         if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1723,7 +1671,6 @@ export default function audioFramework() {
           expect(false).assertTrue();
         } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -1748,7 +1695,6 @@ export default function audioFramework() {
           expect(false).assertTrue();
         } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -1771,7 +1717,6 @@ export default function audioFramework() {
         let data = await audioManager.getMaxVolume(audioMedia);
         if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1797,7 +1742,6 @@ export default function audioFramework() {
         let data = await audioManager.getMaxVolume(audioRingtone);
         if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1825,7 +1769,6 @@ export default function audioFramework() {
           expect(false).assertTrue();
         } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -1850,7 +1793,6 @@ export default function audioFramework() {
           expect(false).assertTrue();
         } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -1872,7 +1814,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (data == minVol) {
           console.info(`${TagFrmwk}: Media getMinVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getMinVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1900,7 +1841,6 @@ export default function audioFramework() {
           expect().assertFail();
         } else if (value == minVol) {
           console.info(`${TagFrmwk}: callback : Media:  getMinVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Media:  getMinVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -1922,7 +1862,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (data == minVol) {
           console.info(`${TagFrmwk}: Ringtone getMinVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Ringtone getMinVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1950,7 +1889,6 @@ export default function audioFramework() {
           expect().assertFail();
         } else if (value == minVol) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMinVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMinVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -1979,7 +1917,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (data == minVol) {
           console.info(`${TagFrmwk}: Media getMinVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getMinVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -2014,7 +1951,6 @@ export default function audioFramework() {
           expect().assertFail();
         } else if (value == minVol) {
           console.info(`${TagFrmwk}: callback : Media:  getMinVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Media:  getMinVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -2043,7 +1979,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (data == minVol) {
           console.info(`${TagFrmwk}: Ringtone getMinVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Ringtone getMinVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -2078,7 +2013,6 @@ export default function audioFramework() {
           expect().assertFail();
         } else if (value == minVol) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMinVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMinVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -2107,7 +2041,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (data == minVol) {
           console.info(`${TagFrmwk}: Media getMinVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getMinVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -2142,7 +2075,6 @@ export default function audioFramework() {
           expect().assertFail();
         } else if (value == minVol) {
           console.info(`${TagFrmwk}: callback : Media:  getMinVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Media:  getMinVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -2171,7 +2103,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (data == minVol) {
           console.info(`${TagFrmwk}: Ringtone getMinVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Ringtone getMinVolume promise : FAIL: ${data}`);
           expect(false).assertTrue();
@@ -2206,7 +2137,6 @@ export default function audioFramework() {
           expect().assertFail();
         } else if (value == minVol) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMinVolume : PASS:${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMinVolume : FAIL: ${value}`);
           expect(false).assertTrue();
@@ -2231,7 +2161,6 @@ export default function audioFramework() {
         value.forEach(displayDeviceProp);
         if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
           console.info(`${TagFrmwk}: Promise: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
           expect(false).assertTrue();
@@ -2260,7 +2189,6 @@ export default function audioFramework() {
         value.forEach(displayDeviceProp);
         if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
           console.info(`${TagFrmwk}: Promise: getDevices : INPUT_DEVICES_FLAG :  PASS`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getDevices : INPUT_DEVICES_FLAG :  FAIL`);
           expect(false).assertTrue();
@@ -2289,7 +2217,6 @@ export default function audioFramework() {
         value.forEach(displayDeviceProp);
         if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
           console.info(`${TagFrmwk}: Promise: getDevices : ALL_DEVICES_FLAG :  PASS`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getDevices : ALL_DEVICES_FLAG :  FAIL`);
           expect(false).assertTrue();
@@ -2322,7 +2249,6 @@ export default function audioFramework() {
 
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
             expect(false).assertTrue();
@@ -2352,7 +2278,6 @@ export default function audioFramework() {
           value.forEach(displayDeviceProp);
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -2383,7 +2308,6 @@ export default function audioFramework() {
 
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -2408,7 +2332,6 @@ export default function audioFramework() {
         value.forEach(displayDeviceProp);
         if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
           console.info(`${TagFrmwk}: Promise: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
           expect(false).assertTrue();
@@ -2436,7 +2359,6 @@ export default function audioFramework() {
         value.forEach(displayDeviceProp);
         if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
           console.info(`${TagFrmwk}: Promise: getDevices : INPUT_DEVICES_FLAG :  PASS`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getDevices : INPUT_DEVICES_FLAG :  FAIL`);
           expect(false).assertTrue();
@@ -2465,7 +2387,6 @@ export default function audioFramework() {
 
         if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
           console.info(`${TagFrmwk}: Promise: getDevices : ALL_DEVICES_FLAG :  PASS`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getDevices : ALL_DEVICES_FLAG :  FAIL`);
           expect(false).assertTrue();
@@ -2497,7 +2418,6 @@ export default function audioFramework() {
           value.forEach(displayDeviceProp);
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
             expect(false).assertTrue();
@@ -2526,7 +2446,6 @@ export default function audioFramework() {
           value.forEach(displayDeviceProp);
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -2555,7 +2474,6 @@ export default function audioFramework() {
           value.forEach(displayDeviceProp);
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null && cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -2579,7 +2497,6 @@ export default function audioFramework() {
         let value = await audioManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
           expect(false).assertTrue();
@@ -2605,7 +2522,6 @@ export default function audioFramework() {
         let value = await audioManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_SILENT: FAIL :${value}`);
           expect(false).assertTrue();
@@ -2631,7 +2547,6 @@ export default function audioFramework() {
         let value = await audioManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_VIBRATE: FAIL :${value}`);
           expect(false).assertTrue();
@@ -2665,7 +2580,6 @@ export default function audioFramework() {
               expect().assertFail();
             } else if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
               console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
               expect(false).assertTrue();
@@ -2698,7 +2612,6 @@ export default function audioFramework() {
               expect().assertFail();
             } else if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
               console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_SILENT: FAIL :${value}`);
               expect(false).assertTrue();
@@ -2731,7 +2644,6 @@ export default function audioFramework() {
               expect().assertFail();
             } else if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
               console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_VIBRATE: FAIL :${value}`);
               expect(false).assertTrue();
@@ -2755,15 +2667,12 @@ export default function audioFramework() {
         let data = await audioVolumeGroupManager.getRingerMode();
         if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
           console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
           console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : FAIL :${data}`);
@@ -2799,15 +2708,12 @@ export default function audioFramework() {
               expect().assertFail();
             } else if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
               console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
-              expect(true).assertTrue();
               done();
             } else if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
               console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
-              expect(true).assertTrue();
               done();
             } else if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
               console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
-              expect(true).assertTrue();
               done();
             } else {
               console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode : FAIL :${value}`);
@@ -2833,15 +2739,12 @@ export default function audioFramework() {
         if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
         let data = audioVolumeGroupManager.getRingerModeSync();
           console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
           console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : FAIL :${data}`);
@@ -2869,7 +2772,6 @@ export default function audioFramework() {
         let value = await audioManager.getRingerMode();
         if (value == 2) {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
           expect(false).assertTrue();
@@ -2895,7 +2797,6 @@ export default function audioFramework() {
         let value = await audioManager.getRingerMode();
         if (value == 0) {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_SILENT: PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_SILENT: FAIL :${value}`);
           expect(false).assertTrue();
@@ -2921,7 +2822,6 @@ export default function audioFramework() {
         let value = await audioManager.getRingerMode();
         if (value == 1) {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_VIBRATE: FAIL :${value}`);
           expect(false).assertTrue();
@@ -2956,7 +2856,6 @@ export default function audioFramework() {
               expect().assertFail();
             } else if (value == 2) {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
               expect(false).assertTrue();
@@ -2991,7 +2890,6 @@ export default function audioFramework() {
             }
             if (value == 0) {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_SILENT: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_SILENT: FAIL :${value}`);
               expect(false).assertTrue();
@@ -3026,7 +2924,6 @@ export default function audioFramework() {
             }
             if (value == 1) {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_VIBRATE: FAIL :${value}`);
               expect(false).assertTrue();
@@ -3051,7 +2948,6 @@ export default function audioFramework() {
         let value = await audioManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
           expect(false).assertTrue();
@@ -3077,7 +2973,6 @@ export default function audioFramework() {
         let value = await audioManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_SILENT: PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_SILENT: FAIL :${value}`);
           expect(false).assertTrue();
@@ -3103,7 +2998,6 @@ export default function audioFramework() {
         let value = await audioManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_VIBRATE: FAIL :${value}`);
           expect(false).assertTrue();
@@ -3137,7 +3031,6 @@ export default function audioFramework() {
               expect().assertFail();
             } else if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
               expect(false).assertTrue();
@@ -3171,7 +3064,6 @@ export default function audioFramework() {
             }
             if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_SILENT: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_SILENT: FAIL :${value}`);
               expect(false).assertTrue();
@@ -3205,7 +3097,6 @@ export default function audioFramework() {
             }
             if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: setRingerMode RINGER_MODE_VIBRATE: FAIL :${value}`);
               expect(false).assertTrue();
@@ -3252,7 +3143,6 @@ export default function audioFramework() {
                     expect().assertFail();
                   } else if (data == false) {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${data}`);
-                    expect(true).assertTrue();
                   } else {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: FAIL: ${data}`);
                     expect(false).assertTrue();
@@ -3288,14 +3178,13 @@ export default function audioFramework() {
         let value = await audioManager.getVolume(audioMedia)
         console.info("AudioFrameworkTest: value is " + value);
         if (value == lowVol) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
         let data = await audioManager.isMute(audioMedia)
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute Media: FALSE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute Media: FALSE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -3343,7 +3232,6 @@ export default function audioFramework() {
                     expect().assertFail();
                   } else if (data == false) {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${data}`);
-                    expect(true).assertTrue();
                   } else {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: FAIL: ${data}`);
                     expect(false).assertTrue();
@@ -3378,14 +3266,14 @@ export default function audioFramework() {
         let value = await audioManager.getVolume(audioRingtone);
         console.info("AudioFrameworkTest: value is " + value);
         if (value == lowVol) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
         let data = await audioManager.isMute(audioRingtone);
         console.info("AudioFrameworkTest: value is " + value);
         if (value == lowVol) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
@@ -3432,7 +3320,6 @@ export default function audioFramework() {
                     expect().assertFail();
                   } else if (data == false) {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${data}`);
-                    expect(true).assertTrue();
                   } else {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: FAIL: ${data}`);
                     expect(false).assertTrue();
@@ -3467,14 +3354,13 @@ export default function audioFramework() {
         let value = await audioManager.getVolume(audio.AudioVolumeType.MEDIA);
         console.info("AudioFrameworkTest: value is " + value);
         if (value == lowVol) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
         let data = await audioManager.isMute(audio.AudioVolumeType.MEDIA);
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute Media: FALSE: PASS:${data}`);
-          expect(true).assertTrue();
         }
       } catch (err) {
         console.info('err:' + JSON.stringify(err));
@@ -3519,7 +3405,6 @@ export default function audioFramework() {
                     expect().assertFail();
                   } else if (data == false) {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${data}`);
-                    expect(true).assertTrue();
                   } else {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: FAIL: ${data}`);
                     expect(false).assertTrue();
@@ -3554,14 +3439,13 @@ export default function audioFramework() {
         let value = await audioManager.getVolume(audio.AudioVolumeType.RINGTONE);
         console.info("AudioFrameworkTest: value is " + value);
         if (value == lowVol) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
         let data = await audioManager.isMute(audio.AudioVolumeType.RINGTONE)
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute Ringtone: FALSE: PASS:${data}`);
-          expect(true).assertTrue();
         }
       } catch (err) {
         console.info('err:' + JSON.stringify(err));
@@ -3606,7 +3490,6 @@ export default function audioFramework() {
                     expect().assertFail();
                   } else if (data == false) {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute VOICE_CALL: FALSE: PASS: ${data}`);
-                    expect(true).assertTrue();
                   } else {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute VOICE_CALL: FALSE: FAIL: ${data}`);
                     expect(false).assertTrue();
@@ -3641,14 +3524,13 @@ export default function audioFramework() {
         let value = await audioManager.getVolume(audio.AudioVolumeType.VOICE_CALL);
         console.info("AudioFrameworkTest: value is " + value);
         if (value > 0) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
         let data = await audioManager.isMute(audio.AudioVolumeType.VOICE_CALL);
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute VOICE_CALL: FALSE: PASS:${data}`);
-          expect(true).assertTrue();
         }
       } catch (err) {
         console.info('err:' + JSON.stringify(err));
@@ -3693,7 +3575,6 @@ export default function audioFramework() {
                     expect().assertFail();
                   } else if (data == false) {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute VOICE_ASSISTANT: FALSE: PASS: ${data}`);
-                    expect(true).assertTrue();
                   } else {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute VOICE_ASSISTANT: FALSE: FAIL: ${data}`);
                     expect(false).assertTrue();
@@ -3728,14 +3609,13 @@ export default function audioFramework() {
         let value = await audioManager.getVolume(audio.AudioVolumeType.VOICE_ASSISTANT);
         console.info("AudioFrameworkTest: value is " + value);
         if (value == lowVol) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
         let data = await audioManager.isMute(audio.AudioVolumeType.VOICE_ASSISTANT);
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute VOICE_ASSISTANT: FALSE: PASS:${data}`);
-          expect(true).assertTrue();
         }
       } catch (err) {
         console.info('err :' + JSON.stringify(err));
@@ -3759,7 +3639,7 @@ export default function audioFramework() {
         let value = await audioManager.getVolume(audioMedia);
         console.info("AudioFrameworkTest: value is " + value);
         if (value == 0) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
@@ -3767,7 +3647,6 @@ export default function audioFramework() {
         let data = await audioManager.isMute(audioMedia);
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute Media: SetVolume: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute Media: SetVolume: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -3815,7 +3694,6 @@ export default function audioFramework() {
                     expect().assertFail();
                   } else if (data == false) {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: SetVolume: PASS: ${data}`);
-                    expect(true).assertTrue();
                   } else {
                     console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: SetVolume: FAIL: ${data}`);
                     expect(false).assertTrue();
@@ -3849,7 +3727,7 @@ export default function audioFramework() {
         let value = await audioManager.getVolume(audioRingtone);
         console.info("AudioFrameworkTest: value is " + value);
         if (value == 0) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
@@ -3857,7 +3735,6 @@ export default function audioFramework() {
         let data = await audioManager.isMute(audioRingtone);
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute Ringtone: SetVolume: PASS:${data}`);
-          expect(true).assertTrue();
         }
       } catch (err) {
         console.info('err :' + JSON.stringify(err));
@@ -3896,7 +3773,6 @@ export default function audioFramework() {
                   expect().assertFail();
                 } else if (data == false) {
                   console.log(`${TagFrmwk}: Callback : Is Stream Mute Ringtone: SetVolume: PASS: ${data}`);
-                  expect(true).assertTrue();
                 } else {
                   console.log(`${TagFrmwk}: Callback : Is Stream Mute Ringtone: SetVolume: FAIL: ${data}`);
                   expect(false).assertTrue();
@@ -3928,7 +3804,7 @@ export default function audioFramework() {
         let value = await audioManager.getVolume(audio.AudioVolumeType.VOICE_CALL)
         console.info("AudioFrameworkTest: value is " + value);
         if (value == highVol) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
@@ -3936,7 +3812,6 @@ export default function audioFramework() {
         let data = await audioManager.isMute(audio.AudioVolumeType.VOICE_CALL);
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute VOICE_CALL: SetVolume: PASS:${data}`);
-          expect(true).assertTrue();
         }
       } catch (err) {
         console.info('err:' + JSON.stringify(err));
@@ -3989,7 +3864,6 @@ export default function audioFramework() {
                   expect().assertFail();
                 } else if (data == false) {
                   console.log(`${TagFrmwk}: Callback : Is Stream Mute VOICE_CALL: SetVolume: PASS: ${data}`);
-                  expect(true).assertTrue();
                 } else {
                   console.log(`${TagFrmwk}: Callback : Is Stream Mute VOICE_CALL: SetVolume: FAIL: ${data}`);
                   expect(false).assertTrue();
@@ -4023,7 +3897,7 @@ export default function audioFramework() {
         let value = await audioManager.getVolume(audio.AudioVolumeType.VOICE_ASSISTANT);
         console.info("AudioFrameworkTest: value is " + value);
         if (value == 0) {
-          expect(true).assertTrue();
+          console.info("AudioFrameworkTest: value is " + value);
         } else {
           expect(false).assertTrue();
         }
@@ -4031,7 +3905,6 @@ export default function audioFramework() {
         let data = await audioManager.isMute(audio.AudioVolumeType.VOICE_ASSISTANT);
         if (data == true) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute VOICE_ASSISTANT: SetVolume: PASS:${data}`);
-          expect(true).assertTrue();
         }
       } catch (err) {
         console.info('err :' + JSON.stringify(err));
@@ -4068,7 +3941,6 @@ export default function audioFramework() {
             let value = await audioManager.getVolume(audio.AudioVolumeType.VOICE_ASSISTANT);
             if (value == 0) {
               console.info("AudioFrameworkTest: value is " + value);
-              expect(true).assertTrue();
             } else {
               expect(false).assertTrue();
             }
@@ -4085,7 +3957,6 @@ export default function audioFramework() {
               expect().assertFail();
             } else if (data == false) {
               console.log(`${TagFrmwk}: Callback : Is Stream Mute VOICE_ASSISTANT: SetVolume: PASS: ${data}`);
-              expect(true).assertTrue();
             } else {
               console.log(`${TagFrmwk}: Callback : Is Stream Mute VOICE_ASSISTANT: SetVolume: FAIL: ${data}`);
               expect(false).assertTrue();
@@ -4095,7 +3966,7 @@ export default function audioFramework() {
         }
       });
     })
-    
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0001
      * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0001
@@ -4111,7 +3982,6 @@ export default function audioFramework() {
         let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA);
         if (data == true) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: True: PASS:${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: True: FAILED:${data}`);
@@ -4140,7 +4010,6 @@ export default function audioFramework() {
         let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA);
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: false: PASS:${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: false: FAILED:${data}`);
@@ -4175,7 +4044,6 @@ export default function audioFramework() {
         } else {
           if (data === muteValue){
             console.log(`${TagFrmwk}: isMute check PASS : expected=${muteValue}, actual=${data}`);
-            expect(true).assertTrue();
             done();
           } else {
             console.log(`${TagFrmwk}: isMute check FAILED : expected=${muteValue}, actual=${data}`);
@@ -4207,7 +4075,6 @@ export default function audioFramework() {
         } else {
           if (data === muteValue){
             console.log(`${TagFrmwk}: isMute check PASS : expected=${muteValue}, actual=${data}`);
-            expect(true).assertTrue();
             done();
           } else {
             console.log(`${TagFrmwk}: isMute check FAILED : expected=${muteValue}, actual=${data}`);
@@ -4869,7 +4736,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: isActive: Ringtone: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: isActive: Ringtone: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -4898,7 +4764,6 @@ export default function audioFramework() {
           expect().assertFail();
         } else if (data == false) {
           console.log(`${TagFrmwk}: Callback: isActive: Ringtone: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Callback: isActive: Ringtone: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -4980,7 +4845,6 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: isActive: Ringtone: ENAME: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: isActive: Ringtone: ENAME: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -5009,7 +4873,6 @@ export default function audioFramework() {
           expect().assertFail();
         } else if (data == false) {
           console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -5030,12 +4893,11 @@ export default function audioFramework() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device => 
+      const detecteDevice = outputDeviceDescription.some(device =>
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -5044,7 +4906,6 @@ export default function audioFramework() {
         let data = await audioManager.isMicrophoneMute();
         if (data == true) {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -5068,12 +4929,11 @@ export default function audioFramework() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device => 
+      const detecteDevice = outputDeviceDescription.some(device =>
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -5082,7 +4942,6 @@ export default function audioFramework() {
         let data = await audioManager.isMicrophoneMute();
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: FALSE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: FALSE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -5106,12 +4965,11 @@ export default function audioFramework() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device => 
+      const detecteDevice = outputDeviceDescription.some(device =>
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -5128,7 +4986,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (data == true) {
               console.log(`${TagFrmwk}: Callback : isMicrophoneMute: TRUE: PASS: ${data}`);
-              expect(true).assertTrue();
             } else {
               console.log(`${TagFrmwk}: Callback : isMicrophoneMute: TRUE: FAIL: ${data}`);
               expect(false).assertTrue();
@@ -5151,12 +5008,11 @@ export default function audioFramework() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0400 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device => 
+      const detecteDevice = outputDeviceDescription.some(device =>
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -5173,7 +5029,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (data == false) {
               console.log(`${TagFrmwk}: Callback : isMicrophoneMute: FALSE: PASS: ${data}`);
-              expect(true).assertTrue();
             } else {
               console.log(`${TagFrmwk}: Callback : isMicrophoneMute: FALSE: FAIL: ${data}`);
               expect(false).assertTrue();
@@ -5196,12 +5051,11 @@ export default function audioFramework() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device => 
+      const detecteDevice = outputDeviceDescription.some(device =>
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -5222,10 +5076,8 @@ export default function audioFramework() {
           console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0100 isDeviceActive : SPEAKER: Deactivate : value is ${flag}`);
           if (flag == true && value == true) {
             console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0100 isDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-            expect(true).assertTrue();
           } else if (flag == false && value == true) {
             console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0100 isDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-            expect(true).assertTrue();
           } else {
             console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0100 isDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
             expect(false).assertTrue();
@@ -5253,12 +5105,11 @@ export default function audioFramework() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device => 
+      const detecteDevice = outputDeviceDescription.some(device =>
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -5268,7 +5119,6 @@ export default function audioFramework() {
         let value = await audioManager.isDeviceActive(2);
         if (value == true) {
           console.info(`${TagFrmwk}: Device Test: Promise : isDeviceActive : SPEAKER: Activate : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Device Test: Promise : isDeviceActive : SPEAKER: Activate : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5294,12 +5144,11 @@ export default function audioFramework() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG)
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device => 
+      const detecteDevice = outputDeviceDescription.some(device =>
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -5325,10 +5174,8 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == true && flag == true) {
               console.info(`${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-              expect(true).assertTrue();
             } else if (value == true && flag == false) {
               console.info(`${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-              expect(true).assertTrue();
             } else {
               console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0300 ${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate : FAIL :${value} flag is ${flag}`);
               expect(false).assertTrue();
@@ -5351,12 +5198,11 @@ export default function audioFramework() {
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0400 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
-      const detecteDevice = outputDeviceDescription.some(device => 
+      const detecteDevice = outputDeviceDescription.some(device =>
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -5374,7 +5220,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == true) {
               console.info(`${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Active : PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Active : FAIL :${value}`);
               expect(false).assertTrue();
@@ -5400,7 +5245,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == '8 bit') {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: Bits per sample : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : Bits per sample : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5427,7 +5271,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == '4800') {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5454,7 +5297,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == longValue) {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5481,7 +5323,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == '10.000000234324324324') {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5507,7 +5348,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == 'PPNumber') {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5534,7 +5374,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == '[]\:"<>?,./~!@#$%^*()_+-={}|') {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5568,7 +5407,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == '16 bit') {
               console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
               expect(false).assertTrue();
@@ -5601,7 +5439,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == '~!@#$%^*()_+-={}|[]\:"<>?,./') {
               console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
               expect(false).assertTrue();
@@ -5634,7 +5471,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == '10000.21321432432432') {
               console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
               expect(false).assertTrue();
@@ -5667,7 +5503,6 @@ export default function audioFramework() {
               expect(false).assertTrue();
             } else if (value == '5454') {
               console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
               expect(false).assertTrue();
@@ -5700,7 +5535,6 @@ export default function audioFramework() {
             expect(false).assertTrue();
           } else if (value == longValue) {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
             expect(false).assertTrue();
@@ -5732,7 +5566,6 @@ export default function audioFramework() {
             expect(false).assertTrue();
           } else if (value == 'xyza') {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
             expect(false).assertTrue();
@@ -5756,7 +5589,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == '8 bit') {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5783,7 +5615,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == '4800') {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5809,7 +5640,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == longValue) {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5835,7 +5665,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == '10.0000000000234') {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5861,7 +5690,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == 'PPNumber') {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5888,7 +5716,6 @@ export default function audioFramework() {
         let value = await audioManager.getAudioParameter('VOICE_PHONE_STATUS');
         if (value == '[]\:"<>?,./~!@#$%^*()_+-={}|') {
           console.info(`${TagFrmwk}: Promise: getAudioParameter: VOICE_PHONE_STATUS : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getAudioParameter : VOICE_PHONE_STATUS : FAIL :${value}`);
           expect(false).assertTrue();
@@ -5923,7 +5750,6 @@ export default function audioFramework() {
             expect(false).assertTrue();
           } else if (value == '16 bit') {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
             expect(false).assertTrue();
@@ -5956,7 +5782,6 @@ export default function audioFramework() {
             expect(false).assertTrue();
           } else if (value == '~!@#$%^*()_+-={}|[]\:"<>?,./') {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
             expect(false).assertTrue();
@@ -5989,7 +5814,6 @@ export default function audioFramework() {
             expect(false).assertTrue();
           } else if (value == '10000.21321432432432') {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
             expect(false).assertTrue();
@@ -6022,7 +5846,6 @@ export default function audioFramework() {
             expect(false).assertTrue();
           } else if (value == '5454') {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
             expect(false).assertTrue();
@@ -6055,7 +5878,6 @@ export default function audioFramework() {
             expect(false).assertTrue();
           } else if (value == longValue) {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
             expect(false).assertTrue();
@@ -6090,7 +5912,6 @@ export default function audioFramework() {
             expect(false).assertTrue();
           } else if (value == 'xyza') {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: PASS :${value}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getAudioParameter: VOICE_PHONE_STATUS: FAIL :${value}`);
             expect(false).assertTrue();
@@ -6545,7 +6366,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
             expect(false).assertTrue();
@@ -6577,7 +6397,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null
             && cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -6610,7 +6429,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -6641,7 +6459,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
             expect(false).assertTrue();
@@ -6672,7 +6489,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -6703,7 +6519,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -6729,7 +6544,6 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : PASS`);
-        expect(true).assertTrue();
       } else {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : FAIL`);
         expect(false).assertTrue();
@@ -6753,7 +6567,6 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-        expect(true).assertTrue();
       } else {
         console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
         expect(false).assertTrue();
@@ -6776,7 +6589,6 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-        expect(true).assertTrue();
       } else {
         console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
         expect(false).assertTrue();
@@ -6829,7 +6641,6 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : PASS`);
-        expect(true).assertTrue();
       } else {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : FAIL`);
         expect(false).assertTrue();
@@ -6891,7 +6702,6 @@ export default function audioFramework() {
       try {
         let value = AudioRoutingManager.getDevicesSync(audio.DeviceFlag.INPUT_DEVICES_FLAG);
         console.info(`${TagFrmwk}: getDevicesSync Success,value: ${value}`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${TagFrmwk}: getDevicesSync Fail,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -7195,7 +7005,6 @@ export default function audioFramework() {
       } catch (error) {
         if(Number.isNaN(error.code)  || error.code == 6800301 )
         console.info(`${TagFrmwk}: on('deviceChange') Fail,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
-        expect(true).assertTrue();
         done();
       }
     })
@@ -7490,7 +7299,6 @@ export default function audioFramework() {
         console.info(`Fail, error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
         expect(false).assertTrue();
       }
-      expect(true).assertTrue();
       done();
     })
 
@@ -7619,7 +7427,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     (done: Function) => {
         let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
         let flag: boolean = false;
@@ -7643,7 +7451,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     (done: Function) => {
         let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
         let flag: boolean = false;
@@ -7668,7 +7476,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     (done: Function) => {
         let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
         try {
@@ -7690,7 +7498,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     (done: Function) => {
         let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
         try {
@@ -7702,11 +7510,11 @@ export default function audioFramework() {
           } else {
               console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
               expect(isSupportAEC).assertEqual(false);
-          } 
+          }
         } catch (err) {
           let error = err as BusinessError;
           console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
-          expect(false).assertTrue();        
+          expect(false).assertTrue();
         }
         done();
     })
@@ -7920,13 +7728,10 @@ export default function audioFramework() {
               expect().assertFail();
             } else if (value == true) {
               console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${value}`);
-              expect(true).assertTrue();
             } else if (value == false) {
               console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${value}`);
-              expect(true).assertTrue();
             }else{
               console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: FAIL: ${value}`);
-              expect(true).assertTrue();
             }
             done();
           });
@@ -7944,19 +7749,11 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try{
         await audioManager.setVolume(audio.AudioVolumeType.MEDIA, 14);
-        audioManager.mute(audio.AudioVolumeType.MEDIA, true);
+        await audioManager.mute(audio.AudioVolumeType.MEDIA, true);
         console.log(`${TagFrmwk}: Promise returned to indicate that the stream is  muted`);
-        audioManager.isMute(audio.AudioVolumeType.MEDIA).then((data: boolean) => {
-          if (data == true) {
-              console.log(`${TagFrmwk}: Promise: Is Stream Mute Ringtone: FALSE: PASS:${data}`);
-              expect(true).assertTrue();
-            } else if (data == false) {
-              console.log(`${TagFrmwk}: Promise: Is Stream Mute Ringtone: FALSE: PASS:${data}`);
-              expect(true).assertTrue();
-            } else {
-              console.log(`${TagFrmwk}: Promise: Is Stream Mute Ringtone: FALSE: PASS:${data}`);
-              expect(true).assertTrue();
-           }
+        await audioManager.isMute(audio.AudioVolumeType.MEDIA).then((data: boolean) => {
+            console.log(`${TagFrmwk}: Promise: Is Stream Mute Ringtone: FALSE: PASS:${data}`);
+            expect(data).assertEqual(true);
         });
       } catch (err) {
         console.log('err :' + JSON.stringify(err));
@@ -7980,10 +7777,8 @@ export default function audioFramework() {
           expect().assertFail();
         } else if (data == false) {
           console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else if (data == true){
           console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: PASS: ${data}`);
-          expect(true).assertTrue();
         } else{
           console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -8005,10 +7800,8 @@ export default function audioFramework() {
       PROMISE.then((data) => {
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: isActive: Ringtone: ENAME: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else if (data == true){
           console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: PASS: ${data}`);
-          expect(true).assertTrue();
         } else{
           console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -8036,7 +7829,6 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -8045,10 +7837,8 @@ export default function audioFramework() {
         let data = await audioManager.isMicrophoneMute();
         if (data == true) {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else if (data == false){
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS: ${data}`);
-          expect(true).assertTrue();
         } else{
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -8073,13 +7863,10 @@ export default function audioFramework() {
         let value = await audioManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
-          expect(true).assertTrue();
         } else if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
-          expect(true).assertTrue();
         } else if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
           expect(false).assertTrue();
@@ -8108,7 +7895,6 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -8134,10 +7920,8 @@ export default function audioFramework() {
            expect(false).assertTrue();
          } else if (value == true) {
            console.info(`${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate : PASS :${value}`);
-           expect(true).assertTrue();
          } else if (value == false) {
            console.info(`${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate : PASS :${value}`);
-           expect(true).assertTrue();
          } else {
            console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0100 ${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate : FAIL :${value} flag is ${flag}`);
            expect(false).assertTrue();
@@ -8162,7 +7946,6 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
           done();
           return;
       }
@@ -8172,10 +7955,8 @@ export default function audioFramework() {
         let value = await audioManager.isDeviceActive(2);
         if (value == true) {
           console.info(`${TagFrmwk}: Device Test: Promise : isDeviceActive : SPEAKER: Activate : PASS :${value}`);
-          expect(true).assertTrue();
         } else if (value == false) {
           console.info(`${TagFrmwk}: Device Test: Promise : isDeviceActive : SPEAKER: Activate : PASS :${value}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Device Test: Promise : isDeviceActive : SPEAKER: Activate : FAIL :${value}`);
           expect(false).assertTrue();
