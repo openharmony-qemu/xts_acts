@@ -2431,13 +2431,14 @@ export default function AudioHapticTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       try {
         audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
         console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: PASS`);
         expect(false).assertTrue();
       } catch (err) {
         console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: FAIL :${(err as BusinessError).message}`);
-        expect(Number(err.code)).assertEqual(401);
+        expect(Number(err.code)).assertEqual(5400102);
         done();
       }
       done();
@@ -2452,6 +2453,7 @@ export default function AudioHapticTest() {
     * @tc.level  LEVEL2
     */
     it('AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       try {
         audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
         console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION: PASS`);
