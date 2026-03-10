@@ -93,8 +93,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0101 Failed to get private certificate. Code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(401);
       }
-	  let uri: string = '';
-	  let cmResult3 = certManager.CMResult;
+	  let cmResult3:certManager.CMResult;
       try {
         cmResult3 = await new Promise<certManager.CMResult>((resolve, reject) => {
           certManager.getPrivateCertificate("", (err: BusinessError<void> | null, CMResult: certManager.CMResult | undefined) => {
