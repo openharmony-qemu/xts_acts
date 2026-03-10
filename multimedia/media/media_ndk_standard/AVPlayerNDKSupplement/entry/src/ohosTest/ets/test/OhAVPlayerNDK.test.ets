@@ -922,6 +922,19 @@ export default function OhAVPlayerNDKTest() {
       done();
     });
     /**
+     * @tc.number SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0005
+     * @tc.name   SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0005
+     * @tc.desc   Test OH_MediaSource_SetMimeType
+     *            testOhAvMediaSourceSetMimeType0005
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0005', Level.LEVEL0, async (done: Function) => {
+      let testResult = avplayer.testMediaSourceSetMimeType(0, 3);
+      expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_UNSPPORTED_FORMAT);
+      done();
+    });
+    /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMEDIASOURCE_0001
      * @tc.name   SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMEDIASOURCE_0001
      * @tc.desc   Test OH_AVPlayer_SetMediaSource, input null avplayer

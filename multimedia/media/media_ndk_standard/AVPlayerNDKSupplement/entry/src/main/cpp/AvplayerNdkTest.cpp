@@ -1553,6 +1553,8 @@ static napi_value NAPI_TestMediaSourceSetMimeType(napi_env env, napi_callback_in
         errorCode = OH_AVMediaSource_SetMimeType(mediaSource, "");
     } else if (stringType == PARAM_2) {
         errorCode = OH_AVMediaSource_SetMimeType(mediaSource, nullptr);
+    } else if (stringType == PARAM_3) {
+        errorCode = OH_AVMediaSource_SetMimeType(mediaSource, "application");
     } else {
         errorCode = OH_AVMediaSource_SetMimeType(mediaSource, "application/m3u8");
     }
