@@ -465,6 +465,8 @@ export default function WindowEventStatic() {
                 await subWindow.destroyWindow();
                 hilog.info(domain, tag, caseName + ' destroyWindow success');
 
+                await Utils.msSleep(1000);
+
                 subWindow.offNoInteractionDetected();
                 hilog.info(domain, tag, caseName + ' offNoInteractionDetected success');
 
