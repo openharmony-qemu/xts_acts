@@ -1370,7 +1370,7 @@ export default function RdbSetDistributedTable() {
         try {
           rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, null, (err) => {
             if(err){
-              expect(err.code).assertEqual("401");
+              expect(err.code).assertEqual(14800000);
             }else{
               expect().assertFail();
             }
@@ -1384,7 +1384,7 @@ export default function RdbSetDistributedTable() {
         try {
           await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, undefined, (err) =>{
             if(err){
-              expect(err.code).assertEqual("401");
+              expect(err.code).assertEqual(14800000);
             }else{
               expect().assertFail();
             }
