@@ -398,18 +398,18 @@ export default function RdbSetDistributedTable() {
      */
      it('setDistributedTableTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* setDistributedTableTest0006 start *************");
-      if(rdbStore1== undefined) {
+      if(rdbStore== undefined) {
         expect(null).assertFail();
       } else {
         try {
-          await rdbStore1.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
         } catch (e) {
           console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
           expect(null).assertFail();
         }
         console.info(`setDistributedTables EMPLOYEE begin`);
         try {
-          await rdbStore1.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_INVALID);
+          await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_INVALID);
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
           expect(null).assertFail();
         } catch (err) {
