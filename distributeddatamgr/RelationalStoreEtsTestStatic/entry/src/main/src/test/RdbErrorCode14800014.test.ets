@@ -42,6 +42,12 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 
+const STORE_CONFIG1: relationalStore.StoreConfig = {
+  name: "RdbErrorCode14800014vector.db",
+  securityLevel: relationalStore.SecurityLevel.S1,
+  vector:true
+}
+
 const asset1: relationalStore.Asset = {
   name: "name1",
   uri: "uri1",
