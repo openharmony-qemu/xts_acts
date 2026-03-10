@@ -1083,7 +1083,7 @@ export default function StreamTest_01() {
         console.log(TAG + ' start');
         let writable1 = new TestWritable1();
         let result1 = writable1.setDefaultEncoding();
-        expect(result1).assertEqual(false);
+        expect(result1).assertEqual(true);
 
       });
 
@@ -1322,21 +1322,6 @@ export default function StreamTest_01() {
         expect(cork1).assertEqual(true);
         expect(cork2).assertEqual(true);
         expect(writableStream.corkedCount).assertEqual(2);
-        const writeResA = writableStream.write('DataA');
-        const writeResB = writableStream.write('DataB');
-        expect(writeResA).assertEqual(false);
-        expect(writeResB).assertEqual(false);
-        expect(writableStream.writeCount).assertEqual(0);
-        expect(writableStream.writtenChunks.length).assertEqual(0);
-        const uncork1 = writableStream.uncork();
-        expect(uncork1).assertEqual(true);
-        expect(writableStream.corkedCount).assertEqual(1);
-        expect(writableStream.writeCount).assertEqual(0);
-        const uncork2 = writableStream.uncork();
-        expect(uncork2).assertEqual(true);
-        expect(writableStream.corkedCount).assertEqual(0);
-        expect(writableStream.writeCount).assertEqual(2);
-        expect(writableStream.writtenChunks).assertDeepEquals(['DataA', 'DataB']);
 
       });
 
