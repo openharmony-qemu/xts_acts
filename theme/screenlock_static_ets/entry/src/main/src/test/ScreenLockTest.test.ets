@@ -27,9 +27,9 @@ export default function screenLockJSUnit() {
             done();
         });
  
-        /*
-         * @tc.number SUB_MISC_screenLock_API_0001
+        /**
          * @tc.name   SUB_MISC_screenLock_API_0001
+         * @tc.number SUB_MISC_screenLock_API_0001
          * @tc.desc   Test ScreenLock API functionality.
          * @tc.size   MediumTest
          * @tc.type   Function
@@ -62,9 +62,9 @@ export default function screenLockJSUnit() {
             }            
         });
  
-        /*
-         * @tc.number SUB_MISC_screenLock_API_0002
+        /**
          * @tc.name   SUB_MISC_screenLock_API_0002
+         * @tc.number SUB_MISC_screenLock_API_0002
          * @tc.desc   Test ScreenLock API functionality.
          * @tc.size   MediumTest
          * @tc.type   Function
