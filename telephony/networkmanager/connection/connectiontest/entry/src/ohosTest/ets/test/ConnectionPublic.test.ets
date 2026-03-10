@@ -6350,6 +6350,71 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressesByName1900
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_1900
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionNetHandleGetAddressesByName1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressesByName1900';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          let host: string = "";
+          netHandle.getAddressesByName(host, (error: BusinessError, data: connection.NetAddress[]) => {
+            if (error) {
+              console.info(`${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
+              ExpectTrue(error.code == 2100001);
+              console.info(`${caseName}---End`);
+              done();
+            } else {
+              console.info(`${caseName} data: ${JSON.stringify(data)}`);
+              ExpectFail();
+              console.info(`${caseName}---End`);
+              done();
+            }
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressesByName2000
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_2000
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionNetHandleGetAddressesByName2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressesByName2000';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          let host: string = "";
+          netHandle.getAddressesByName(host).then().catch((error: BusinessError) => {
+            console.info(`${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
+            ExpectTrue(error.code == 2100001);
+            console.info(`${caseName}---End`);
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionGetAddressesByNameCallback0100
      * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNameCallback_0100
      * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
