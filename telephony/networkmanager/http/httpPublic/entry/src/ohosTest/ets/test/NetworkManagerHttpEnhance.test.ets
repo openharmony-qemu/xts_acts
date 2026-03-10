@@ -203,6 +203,7 @@ let httpRequestOptions_dnsServers_null: http.HttpRequestOptions = {
   connectTimeout: 60000,
 };
 
+
 function dataSendProgress_on_callback(data: http.DataSendProgressInfo) {
   console.log("dataSendProgress_on_callback receive data: " + JSON.stringify(data));
   let sendSize = data.sendSize;
@@ -220,11 +221,11 @@ function expectFalse() {
 };
 
 function expectTrue(data : boolean){
-    try {
-        expect(data).assertTrue();
-    } catch (err){
-        console.info('assertion failure');    
-    }
+  try {
+    expect(data).assertTrue();
+  } catch (err){
+    console.info('assertion failure');
+  }
 };
 
 export default function NetworkManagerHttpEnhanceTest() {
@@ -266,8 +267,8 @@ export default function NetworkManagerHttpEnhanceTest() {
         expectFalse();
         console.info(`${caseName}---End`);
         done();
-        }
-      });
+      }
+    });
 
     /**
      * @tc.name   testNetworkMgrHTTPOnDataSendProgress0200
@@ -858,6 +859,75 @@ export default function NetworkManagerHttpEnhanceTest() {
         done();
       }
     });
+    /**
+     * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0500
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0500
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHTTPRequestDnsOverHttps0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrHTTPRequestDnsOverHttps0500';
+      console.info(`${caseName}---Start`);
+      try {
+        const httpRequest = http.createHttp();
+        const options: http.HttpRequestOptions = httpRequestOptions_dnsOverHttps_emptyStr;
+        httpRequest.requestInStream(address_baidu2, options, (err: BusinessError | null, responseCode: number) => {
+          if (err) {
+            console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.log(`${caseName} request success, responseCode: ${responseCode}`);
+            expectTrue(responseCode === 200);
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+
+      } catch (error) {
+        console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0600
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0600
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHTTPRequestDnsOverHttps0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrHTTPRequestDnsOverHttps0600';
+      console.info(`${caseName}---Start`);
+      try {
+        const httpRequest = http.createHttp();
+        const options: http.HttpRequestOptions = httpRequestOptions_dnsOverHttps_emptyStr;
+        httpRequest.requestInStream(address_baidu2, options).then(data => {
+          console.log(caseName + JSON.stringify(data));
+          expectTrue(data == 200);
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(caseName + 'errocode' + JSON.stringify(error));
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      }
+      catch (error) {
+        console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNetworkMgrHTTPRequestDnsServers0100
@@ -986,6 +1056,70 @@ export default function NetworkManagerHttpEnhanceTest() {
       }catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
         expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpQUICXtsPromise0500
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsServers_0500
+     * @tc.desc   Test request property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrHTTPRequestDnsServers0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function)=> {
+      let caseName: string = "testNetworkMgrHTTPRequestDnsServers0500";
+      console.info(`${caseName}---Start`);
+
+      try {
+        httpRequest.requestInStream(address_baidu, httpRequestOptions_dnsServers_emptyArr, (err: BusinessError | null, responseCode: number) => {
+          if (err) {
+            console.info(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+            expectTrue(false);
+          } else {
+            console.info(`${caseName} request success, responseCode: ${responseCode}`);
+            expectTrue(responseCode === 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+
+      } catch (error) {
+        console.info(`${caseName} catch error: ${JSON.stringify(error)}`);
+        expectTrue(false);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHTTPRequestDnsServers0600
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsServers_0600
+     * @tc.desc   Test request property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrHTTPRequestDnsServers0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function)=> {
+      let caseName: string = "SUB_NetworkMgr_HTTP_Request_DnsServers_0600";
+      console.info(`${caseName}---Start`);
+
+      try {
+        httpRequest.requestInStream(address_baidu, httpRequestOptions_dnsServers_emptyArr).then((data) => {
+          console.log(`${caseName} request succeed, data: ${JSON.stringify(data)}`);
+          expectTrue(data === 200);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} catch error: ${JSON.stringify(error)}`);
+        expectTrue(false);
         console.info(`${caseName}---End`);
         done();
       }
