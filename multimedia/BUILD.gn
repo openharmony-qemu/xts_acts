@@ -33,7 +33,6 @@ group("multimedia") {
   }
   if (is_standard_system) {
     deps += [
-      "audio/audio_cpp_standard:ActsOpenslesNdkTest",
       "audio/audio_js_standard/ActsAudioCPPStandardTest:ActsAudioCPPStandardTest",
       "audio/audio_js_standard/AudioCapturer:audio_capturer_js_hap",
       "audio/audio_js_standard/AudioCapturerChangeInfo:audio_capturerchangeInfo_js_hap",
@@ -66,10 +65,8 @@ group("multimedia") {
       "audio/audio_js_standard/audio_c_cover_test:ActsAudioCCoverTest",
       "audio/audio_js_standard/AudioSuiteEngine:ActsAudioSuiteEngineTest",
       "audio/audio_js_standard/AudioStreamBuilderHap:ActsAudioStreamBuilderHapTest",
-      "audio/audio_ohndk_test:ActsAudioNdkTest",
       "audio/ActsAudioOHndkTest:ActsAudioOHndkTest",
       "audio_ndk/oh_audio_render_test:ActsAudioRenderTest",
-      "audio_ndk/oh_audio_stream_builder_test:ActsAudioStreamBuildeTest",
       "av_codec/audio_decoder:ActsAvbufferDecoderTest",
       "av_codec/audio_encoder:ActsAvbufferEncoderTest",
       "av_codec/audio_test:ActsAvAudioEncoderCapiNdkTest",
