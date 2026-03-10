@@ -5342,7 +5342,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0100", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0100", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0100';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5405,7 +5405,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0200", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0200", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0200';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5505,7 +5505,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0300", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0300", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0300';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5558,7 +5558,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0400", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0400", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0400';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5611,7 +5611,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0500", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0500", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0500';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5664,7 +5664,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0600", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0600", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0600';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5717,7 +5717,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0700", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0700", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0700';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5770,7 +5770,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0900", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0900", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0900';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5823,7 +5823,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0800", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0800", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0800';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5876,7 +5876,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_undefined", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_undefined", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_undefined';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5905,7 +5905,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0100", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0100", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0100';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5992,7 +5992,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0200", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0200", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0200';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6114,7 +6114,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0300", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0300", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0300';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6236,7 +6236,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0400", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0400", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0400';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6358,7 +6358,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0500", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0500", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0500';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6481,7 +6481,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0600", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0600", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0600';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6550,7 +6550,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0700", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0700", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_test_Promise_0700';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6617,7 +6617,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0900", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0900", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0900';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6686,7 +6686,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0800", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0800", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0800';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6756,7 +6756,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_undefined", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_undefined", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_undefined';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6808,7 +6808,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvents_test_undefined", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvents_test_undefined", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvents_test_undefined';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6860,7 +6860,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvents_test_empty", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvents_test_empty", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvents_test_empty';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6912,7 +6912,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_DeleteEvent_test_undefined", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_DeleteEvent_test_undefined", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_DeleteEvent_test_undefined';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6964,7 +6964,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_DeleteEvents_test_undefined", 0, async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_DeleteEvents_test_undefined", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_DeleteEvents_test_undefined';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -7018,7 +7018,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_DeleteEvents_test_empty", 0,  async (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_DeleteEvents_test_empty", Level.LEVEL0, async (done: Function) => {
       let CaseName = 'SUB_Application_CalendarManagerApi_DeleteEvents_test_empty';
 
       let CalendarAccounts: calendarManager.CalendarAccount = {
