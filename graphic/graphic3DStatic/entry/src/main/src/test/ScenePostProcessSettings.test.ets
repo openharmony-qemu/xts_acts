@@ -24,7 +24,10 @@ import {
   SceneResourceFactory,
   NodeType,
   LightType,
-  MaterialType
+  MaterialType,
+  VignetteSettings,
+  ColorFringeSettings,
+  PostProcessSettings
 } from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
 import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index'
@@ -221,6 +224,212 @@ export default function scenePostProcessSettingsTest() {
         expect((env.environmentRotation?.x ?? 0)).assertEqual(0.5);
         expect((env.environmentRotation?.y ?? 0)).assertEqual(0.5);
         console.info(msg + " environmentRotation updated successfully");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testVignetteRoundness
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1270
+     * @tc.desc   Test VignetteSettings.roundness property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testVignetteRoundness', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testVignetteRoundness";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let renderConfig = scene.renderConfiguration;
+        expect(renderConfig != null).assertTrue();
+        
+        let postProcessSettings: PostProcessSettings = renderConfig.postProcessSettings;
+        expect(postProcessSettings != null).assertTrue();
+        
+        let vignette: VignetteSettings = postProcessSettings.vignette;
+        expect(vignette != null).assertTrue();
+        
+        vignette.roundness = 0.5;
+        expect(vignette.roundness).assertEqual(0.5);
+        console.info(msg + " roundness set to 0.5 successfully");
+        
+        vignette.roundness = 1.0;
+        expect(vignette.roundness).assertEqual(1.0);
+        console.info(msg + " roundness set to 1.0 successfully");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testVignetteIntensity
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1280
+     * @tc.desc   Test VignetteSettings.intensity property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testVignetteIntensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testVignetteIntensity";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let renderConfig = scene.renderConfiguration;
+        expect(renderConfig != null).assertTrue();
+        
+        let postProcessSettings: PostProcessSettings = renderConfig.postProcessSettings;
+        expect(postProcessSettings != null).assertTrue();
+        
+        let vignette: VignetteSettings = postProcessSettings.vignette;
+        expect(vignette != null).assertTrue();
+        
+        vignette.intensity = 0.3;
+        expect(vignette.intensity).assertEqual(0.3);
+        console.info(msg + " intensity set to 0.3 successfully");
+        
+        vignette.intensity = 0.7;
+        expect(vignette.intensity).assertEqual(0.7);
+        console.info(msg + " intensity set to 0.7 successfully");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testColorFringeIntensity
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1290
+     * @tc.desc   Test ColorFringeSettings.intensity property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testColorFringeIntensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testColorFringeIntensity";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let renderConfig = scene.renderConfiguration;
+        expect(renderConfig != null).assertTrue();
+        
+        let postProcessSettings: PostProcessSettings = renderConfig.postProcessSettings;
+        expect(postProcessSettings != null).assertTrue();
+        
+        let colorFringe: ColorFringeSettings = postProcessSettings.colorFringe;
+        expect(colorFringe != null).assertTrue();
+        
+        colorFringe.intensity = 1.0;
+        expect(colorFringe.intensity).assertEqual(1.0);
+        console.info(msg + " intensity set to 1.0 successfully");
+        
+        colorFringe.intensity = 2.0;
+        expect(colorFringe.intensity).assertEqual(2.0);
+        console.info(msg + " intensity set to 2.0 successfully");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPostProcessSettingsVignette
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1300
+     * @tc.desc   Test PostProcessSettings.vignette property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPostProcessSettingsVignette', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testPostProcessSettingsVignette";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let renderConfig = scene.renderConfiguration;
+        expect(renderConfig != null).assertTrue();
+        
+        let postProcessSettings: PostProcessSettings = renderConfig.postProcessSettings;
+        expect(postProcessSettings != null).assertTrue();
+        
+        let vignette: VignetteSettings = postProcessSettings.vignette;
+        expect(vignette != null).assertTrue();
+        console.info(msg + " vignette getter succeeded");
+        
+        let newVignette: VignetteSettings = { roundness: 0.8, intensity: 0.5 };
+        postProcessSettings.vignette = newVignette;
+        expect(postProcessSettings.vignette != null).assertTrue();
+        console.info(msg + " vignette setter succeeded");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPostProcessSettingsColorFringe
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1310
+     * @tc.desc   Test PostProcessSettings.colorFringe property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPostProcessSettingsColorFringe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testPostProcessSettingsColorFringe";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let renderConfig = scene.renderConfiguration;
+        expect(renderConfig != null).assertTrue();
+        
+        let postProcessSettings: PostProcessSettings = renderConfig.postProcessSettings;
+        expect(postProcessSettings != null).assertTrue();
+        
+        let colorFringe: ColorFringeSettings = postProcessSettings.colorFringe;
+        expect(colorFringe != null).assertTrue();
+        console.info(msg + " colorFringe getter succeeded");
+        
+        let newColorFringe: ColorFringeSettings = { intensity: 1.5 };
+        postProcessSettings.colorFringe = newColorFringe;
+        expect(postProcessSettings.colorFringe != null).assertTrue();
+        console.info(msg + " colorFringe setter succeeded");
         
         console.info(msg + " test completed successfully");
         done();
