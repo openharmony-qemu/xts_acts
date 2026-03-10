@@ -3429,7 +3429,7 @@ export default function DisplayTest() {
 
     /**
      * @tc.number SUB_WMS_DMS_CHANGE_SETPERFERORIENTATION_JUST_STATIC_0100
-     * @tc.name   estonChangeWithAttribute_setPreferOrientation_static_just_0100
+     * @tc.name   testonChangeWithAttribute_setPreferOrientation_static_just_0100
      * @tc.desc   旋转后屏幕改变监听
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
