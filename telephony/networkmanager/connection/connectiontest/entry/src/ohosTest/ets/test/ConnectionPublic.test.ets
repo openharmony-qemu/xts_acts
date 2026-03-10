@@ -6386,15 +6386,15 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressesByName2000
-     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_2000
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressesByName2100
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_2100
      * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrConnectionNetHandleGetAddressesByName2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressesByName2000';
+    it('testNetworkMgrConnectionNetHandleGetAddressesByName2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressesByName2100';
       console.info(`${caseName}---Start`);
       try {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
