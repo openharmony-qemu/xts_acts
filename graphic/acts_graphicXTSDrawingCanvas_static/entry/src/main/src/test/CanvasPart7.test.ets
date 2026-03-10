@@ -775,5 +775,230 @@ export default function drawingTsCanvasPart7Test() {
         expect().assertFail();
       }
     })
+    /**
+     * @tc.name   testCanvasDrawSingleCharacterWithFeaturesNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5300
+     * @tc.desc   testCanvasDrawSingleCharacterWithFeaturesNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCanvasDrawSingleCharacterWithFeaturesNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawSingleCharacterWithFeaturesNormalStatic';
+      const font = new drawing.Font();
+      let canvas = new drawing.Canvas(pixel!);
+      font.setSize(20);
+      let fontFeatures : Array<drawing.FontFeature> = [];
+      try {
+        canvas.drawSingleCharacterWithFeatures("你", font, 100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 1 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("(", font, 100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 2 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("<", font, 100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 3 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("1", font, 100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 4 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      fontFeatures.push({name: 'calt', value: 0});
+      try {
+        canvas.drawSingleCharacterWithFeatures("你", font, 0, 0, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 5 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("（", font, 100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 6 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("<", font, 100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 7 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 7 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("1", font, 100.25, 100.25, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 8 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 8 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      font.setSize(30.55);
+      fontFeatures.push({name: 'calt', value: 42});
+      fontFeatures.push({name: 'ccmp', value:12});
+      fontFeatures.push({name: 'frac', value:21});
+      try {
+        canvas.drawSingleCharacterWithFeatures("你", font, 100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 9 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 9 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("(", font, -100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 10 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 10 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("<", font, 100, -100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 11 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 11 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("1", font, -100, -100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 12 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("a", font, 100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 13 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 13 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("F", font, 100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 14 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 14 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      let fontFeatures1 : Array<drawing.FontFeature> = [];
+      fontFeatures1.push({name: 'Azzz', value: 42});
+      try {
+        canvas.drawSingleCharacterWithFeatures("你", font, 100, 100, fontFeatures1);
+        console.info(msg + `drawSingleCharacterWithFeatures 15 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 15 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      fontFeatures1.push({name: 'aaa', value: 42});
+      try {
+        canvas.drawSingleCharacterWithFeatures("你", font, 100, 100, fontFeatures1);
+        console.info(msg + `drawSingleCharacterWithFeatures 16 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 16 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      fontFeatures1.push({name: 'aaa11', value: 42});
+      try {
+        canvas.drawSingleCharacterWithFeatures("你", font, 100, 100, fontFeatures1);
+        console.info(msg + `drawSingleCharacterWithFeatures 17 success `);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawSingleCharacterWithFeatures 17 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.name   testCanvasDrawSingleCharacterWithFeaturesMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5302
+     * @tc.desc   testCanvasDrawSingleCharacterWithFeaturesMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasDrawSingleCharacterWithFeaturesMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawSingleCharacterWithFeaturesMultipleCallsStatic';
+      const font = new drawing.Font();
+      let canvas = new drawing.Canvas(pixel!);
+      for(let i = 0; i < 20; i++) {
+        font.setSize(Math.random() * 10);
+        let fontFeatures : Array<drawing.FontFeature> = [];
+        fontFeatures.push({name: 'calt', value: Math.random() * 100});
+        try {
+          canvas.drawSingleCharacterWithFeatures("你", font, Math.random() * 100, Math.random() * 100, fontFeatures);
+          console.info(msg + `drawSingleCharacterWithFeatures step: ${i} success `);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `drawSingleCharacterWithFeatures  errorCode is:  ${e.code} + errormsg is: ${e.message} step: ${i}`);
+          expect().assertFail();
+        }
+      }
+    })
+    /**
+     * @tc.name   testCanvasDrawSingleCharacterWithFeaturesAbnormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5303
+     * @tc.desc   testCanvasDrawSingleCharacterWithFeaturesAbnormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasDrawSingleCharacterWithFeaturesAbnormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawSingleCharacterWithFeaturesAbnormalStatic';
+      const font = new drawing.Font();
+      let canvas = new drawing.Canvas(pixel!);
+      font.setSize(50);
+      let fontFeatures : Array<drawing.FontFeature> = [];
+      fontFeatures.push({name: 'calt', value: 42});
+      try {
+        canvas.drawSingleCharacterWithFeatures("", font, 0, 0, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 1 success `);
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `drawSingleCharacterWithFeatures 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(25900001);
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("As", font, 100, 100, fontFeatures);
+        console.info(msg + `drawSingleCharacterWithFeatures 2 success `);
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `drawSingleCharacterWithFeatures 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(25900001);
+      }
+      try {
+        canvas.drawSingleCharacterWithFeatures("你", font, 100, 100, []);
+        console.info(msg + `drawSingleCharacterWithFeatures 3 success `);
+      } catch (e) {
+        console.info(msg + `drawSingleCharacterWithFeatures 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
   })
 }
