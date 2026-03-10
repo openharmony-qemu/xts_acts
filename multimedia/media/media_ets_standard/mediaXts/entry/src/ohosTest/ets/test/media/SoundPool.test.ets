@@ -89,8 +89,8 @@ function createSoundPoolCallbackNull(maxStreams: number, done: Function) {
   } catch (error0) {
     console.info(TAG, 'Succeeded on raising an exception');
     expect(true).assertTrue();
-    done();
   }
+  done();
 }
 
 async function createSoundPoolPromiseNormal(usage: audio.StreamUsage, maxStreams: number, done: Function) {
@@ -107,7 +107,7 @@ async function createSoundPoolPromiseNormal(usage: audio.StreamUsage, maxStreams
     }
     done();
   }, (error: BusinessError) => {
-    console.error(TAG, `soundpool catchCallback, error message:${error?.message}, code：${error?.code}`);
+    console.error(TAG, `soundpool catchCallback, error message:${error?.message}, code: ${error?.code}`);
     expect().assertFail();
     done();
   });
@@ -127,7 +127,7 @@ async function createSoundPoolPromiseAbnormal(usage: audio.StreamUsage, maxStrea
     }
     done();
   }, (error: BusinessError) => {
-    console.error(TAG, `soundpool catchCallback, error message:${error?.message}, code：${error?.code}`);
+    console.error(TAG, `soundpool catchCallback, error message:${error?.message}, code: ${error?.code}`);
     expect(error?.code).assertEqual(MediaErrorCode.NO_MEMORY);
     done();
   });
@@ -147,15 +147,15 @@ async function createSoundPoolPromiseNull(maxStreams: number, done: Function) {
       }
       done();
     }, (error: BusinessError) => {
-      console.error(TAG, `soundpool catchCallback, error message:${error?.message}, code：${error?.code}`);
+      console.error(TAG, `soundpool catchCallback, error message:${error?.message}, code: ${error?.code}`);
       expect(true).assertTrue();
       done();
     });
   } catch (error0) {
     console.info(TAG, 'Succeeded on raising an exception');
     expect(true).assertTrue();
-    done();
   }
+  done();
 }
 
 function createSoundPoolCallbackForContent(content: audio.ContentType, maxStreams: number, done: Function) {
