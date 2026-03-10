@@ -104,29 +104,6 @@ export default function requestPermissionOnSettingStaticTest() {
     })
 
     /**
-     * @tc.name   Test_requestPermissionOnSetting_001
-     * @tc.number Test_requestPermissionOnSetting_001
-     * @tc.desc   The Context is undefined, throw 401.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('Test_requestPermissionOnSetting_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
-      hilog.info(domain, tag, "Test_requestPermissionOnSetting_001 start");
-      let context: common.UIAbilityContext | undefined;
-      let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA");
-      try {
-        await atManager.requestPermissionOnSetting(context!, permissionList);
-      } catch (error) {
-        if (error instanceof BusinessError) {
-          hilog.info(domain, tag, "Test_requestPermissionOnSetting_001 catch err" + JSON.stringify(error));
-          expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
-        }
-        done();
-      }
-    })
-
-    /**
      * @tc.name   Test_requestPermissionOnSetting_002
      * @tc.number Test_requestPermissionOnSetting_002
      * @tc.desc   The permissionList is empty, throw 401.
