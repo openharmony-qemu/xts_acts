@@ -39,6 +39,14 @@ async function getPermissions() {
   console.info('getPermission end');
 }
 
+function sleep(ms: ESObject = 66): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('')
+    }, ms)
+  })
+}
+
 async function getComponent(driver: Driver, onType: On) {
     let item:Component = await driver.findComponent(onType);
     if(!item) {
@@ -992,6 +1000,8 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const testCaseName: string = 'contactsApi_query_empty_test_3200';
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_3200 test start");
             let context: Context = AppStorage.get('context') as Context;
             const email: string = '';
             const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
@@ -1024,6 +1034,8 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const testCaseName: string = 'contactsApi_query_empty_test_3300';
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_3300 test start");
             let context: Context = AppStorage.get('context') as Context;
             const email: string = '';
             const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
@@ -1058,6 +1070,8 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const testCaseName: string = 'contactsApi_query_empty_test_3400';
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_3400 test start");
             let context: Context = AppStorage.get('context') as Context;
             const email: string = '';
             const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
@@ -1091,6 +1105,8 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const testCaseName: string = 'contactsApi_query_empty_test_3500';
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_3500 test start");
             let context: Context = AppStorage.get('context') as Context;
             const email: string = '';
             let contactAttributes: contact.ContactAttributes = {
@@ -1125,6 +1141,8 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const testCaseName: string = 'contactsApi_query_empty_test_3600';
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_3600 test start");
             let context: Context = AppStorage.get('context') as Context;
             const email: string = '';
             const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
@@ -1160,6 +1178,8 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const testCaseName: string = 'contactsApi_query_empty_test_3700';
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_3700 test start");
             let context: Context = AppStorage.get('context') as Context;
             const phoneNumber: string = '';
             const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
@@ -1192,6 +1212,8 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const testCaseName: string = 'contactsApi_query_empty_test_3800';
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_3800 test start");
             let context: Context = AppStorage.get('context') as Context;
             const phoneNumber: string = '';
             const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
@@ -1224,6 +1246,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_4500 test start");
             let context: Context = AppStorage.get('null') as Context;
             const key: string = '';
             contact.queryContact(context, key, null, (err: BusinessError) => {
@@ -1254,6 +1278,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_4600 test start");
             let context: Context = AppStorage.get('context') as Context;
             let contactAttributes: contact.ContactAttributes = {
                 attributes: []
@@ -1286,6 +1312,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_4700 test start");
             let context: Context = AppStorage.get('context') as Context;
             contact.queryContact(null, null, null, (err: BusinessError) => {
                 if (err) {
@@ -1315,6 +1343,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_4800 test start");
             let context: Context = AppStorage.get('context') as Context;
             contact.queryContact(null, null, null, null, (err: BusinessError) => {
                 if (err) {
@@ -1344,6 +1374,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_4900 test start");
             let context: Context = AppStorage.get('context') as Context;
             let contactAttributes: contact.ContactAttributes = {
                 attributes: []
@@ -1376,6 +1408,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_5000 test start");
             let context: Context = AppStorage.get('null') as Context;
             const holder: contact.Holder = AppStorage.get('null') as contact.Holder;
             const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
@@ -1405,6 +1439,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_5100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_5100 test start");
             let context: Context = AppStorage.get('null') as Context;
             let contactAttributes: contact.ContactAttributes = {
                 attributes: []
@@ -1434,6 +1470,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_5200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_5200 test start");
             let context: Context = AppStorage.get('context') as Context;
             contact.queryContacts(null, null, (err: BusinessError, contacts: contact.Contact[]) => {
                 if (err) {
@@ -1463,6 +1501,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_5300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_5300 test start");
             let context: Context = AppStorage.get('context') as Context;
             contact.queryContacts(null, null, (err: BusinessError, contacts: contact.Contact[]) => {
                 if (err) {
@@ -1492,6 +1532,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_5400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_5400 test start");
             let context: Context = AppStorage.get('context') as Context;
             let contactAttributes: contact.ContactAttributes = {
                 attributes: []
@@ -1524,6 +1566,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_5500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_5500 test start");
             let context: Context = AppStorage.get('context') as Context;
             contact.queryContacts(null, null, null, (err: BusinessError, contacts: contact.Contact[]) => {
                 if (err) {
@@ -1553,6 +1597,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_5600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_5600 test start");
             let context: Context = AppStorage.get('null') as Context;
             let contactAttributes: contact.ContactAttributes = {
                 attributes: []
@@ -1584,6 +1630,8 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_5700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_empty_test_5700 test start");
             let context: Context = AppStorage.get('null') as Context;
             const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
             let promise = contact.queryContacts(context, {holderId:1,bundleName:"",displayName:""}, attr);
@@ -1612,15 +1660,16 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_code_test_5800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_code_test_5800 test start");
             let context: Context = AppStorage.get('context') as Context;
             const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
-            await contact.queryContact(context, '', attr, (err: BusinessError) => {
-                console.info("contactsApi_query_code_test_5800: query success");
-                done();
-            }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_code_test_5800: contact query error: ${error.code}, ${error.message}`);
-                expect(error.code === 401).assertTrue();
-                done();
+            contact.queryContact(context, '', attr, (err: BusinessError，data) => {
+                if (!err) {
+                    console.info(`contactsApi_query_code_test_5800: data->${JSON.stringify(data)}`);
+                    expect(data !== undefined).assertFail();
+                    done();
+                }
             });
         } catch (error) {
             console.info(`contactsApi_query_code_test_5800: contact query error = ${error.code}, ${error.message}`);
@@ -1639,15 +1688,16 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_code_test_5900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
+            sleep(500);
+            console.info("contactsApi_query_code_test_5900 test start");
             let context: Context = AppStorage.get('context') as Context;
             const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
-            const card = await contact.queryMyCard(context, attr, (err: BusinessError) => {
-                console.info("contactsApi_query_code_test_5900: query success");
-                done();
-            }).catch((error: BusinessError) => {
-                console.info(`contactsApi_query_code_test_5900: contact query error: ${error.code}, ${error.message}`);
-                expect(error.code === 401).assertTrue();
-                done();
+            contact.queryMyCard(context, attr, (err: BusinessError, data) => {
+                if (!err) {
+                    console.info(`contactsApi_query_code_test_5900: data->${JSON.stringify(data)}`);
+                    expect(data !== undefined).assertFail();
+                    done();
+                }
             });
         } catch (error) {
             console.info(`contactsApi_query_code_test_5900: query error = ${error.code}, ${error.message}`);
