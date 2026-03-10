@@ -22,6 +22,7 @@ import {
   GeometryType,
   Light,
   LightType,
+  Mat4x4,
   Morpher,
   Node,
   NodeType,
@@ -987,6 +988,190 @@ export default function sceneNodeTest() {
         expect().assertFail();
         done();
       }
+    });
+
+    /**
+     * @tc.name   testLightIntensity
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1160
+     * @tc.desc   Test Light.intensity property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLightIntensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testLightIntensity";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let light: Light = await rf.createLight({ name: "TestLight" }, LightType.DIRECTIONAL);
+        expect(light != null).assertTrue();
+
+        light.intensity = 1000.0;
+        expect(light.intensity).assertEqual(1000.0);
+        console.info(msg + " intensity set to 1000.0 successfully");
+
+        light.intensity = 0.0;
+        expect(light.intensity).assertEqual(0.0);
+        console.info(msg + " intensity set to 0.0 successfully");
+
+        light.intensity = 500.5;
+        expect(light.intensity).assertEqual(500.5);
+        console.info(msg + " intensity set to 500.5 successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testSpotLightInnerAngle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1170
+     * @tc.desc   Test SpotLight.innerAngle property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSpotLightInnerAngle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testSpotLightInnerAngle";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let spotLight: SpotLight = await rf.createLight({ name: "TestSpotLight" }, LightType.SPOT) as SpotLight;
+        expect(spotLight != null).assertTrue();
+
+        spotLight.innerAngle = 30.0;
+        expect(spotLight.innerAngle).assertEqual(30.0);
+        console.info(msg + " innerAngle set to 30.0 successfully");
+
+        spotLight.innerAngle = 45.0;
+        expect(spotLight.innerAngle).assertEqual(45.0);
+        console.info(msg + " innerAngle set to 45.0 successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testSpotLightOuterAngle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1180
+     * @tc.desc   Test SpotLight.outerAngle property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSpotLightOuterAngle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testSpotLightOuterAngle";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $raw("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let spotLight: SpotLight = await rf.createLight({ name: "TestSpotLight" }, LightType.SPOT) as SpotLight;
+        expect(spotLight != null).assertTrue();
+
+        spotLight.outerAngle = 60.0;
+        expect(spotLight.outerAngle).assertEqual(60.0);
+        console.info(msg + " outerAngle set to 60.0 successfully");
+
+        spotLight.outerAngle = 90.0;
+        expect(spotLight.outerAngle).assertEqual(90.0);
+        console.info(msg + " outerAngle set to 90.0 successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testCameraGetViewMatrix
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1420
+     * @tc.desc   Test Camera.getViewMatrix method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraGetViewMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetViewMatrix";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $raw("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
+
+        let viewMatrix: Mat4x4 = camera.getViewMatrix();
+        expect(viewMatrix != null).assertTrue();
+        console.info(msg + " getViewMatrix returned Mat4x4 successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testCameraGetProjectionMatrix
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1430
+     * @tc.desc   Test Camera.getProjectionMatrix method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraGetProjectionMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetProjectionMatrix";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $raw("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
+
+        let projectionMatrix: Mat4x4 = camera.getProjectionMatrix();
+        expect(projectionMatrix != null).assertTrue();
+        console.info(msg + " getProjectionMatrix returned Mat4x4 successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+  })
+}
     });
   })
 }
