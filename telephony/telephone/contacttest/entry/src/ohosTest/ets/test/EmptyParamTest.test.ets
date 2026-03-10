@@ -39,12 +39,11 @@ async function getPermissions() {
   console.info('getPermission end');
 }
 
-function sleep(ms: ESObject = 66): Promise<string> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve('')
-    }, ms)
-  })
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
 }
 
 async function getComponent(driver: Driver, onType: On) {
@@ -1664,7 +1663,7 @@ export default function EmptyParamTest() {
             console.info("contactsApi_query_code_test_5800 test start");
             let context: Context = AppStorage.get('context') as Context;
             const attr: contact.ContactAttributes = AppStorage.get('null') as contact.ContactAttributes;
-            contact.queryContact(context, '', attr, (err: BusinessError，data) => {
+            contact.queryContact(context, '', attr, (err: BusinessError, data) => {
                 if (!err) {
                     console.info(`contactsApi_query_code_test_5800: data->${JSON.stringify(data)}`);
                     expect(data !== undefined).assertFail();
