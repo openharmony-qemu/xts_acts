@@ -31,6 +31,7 @@ import PromptActionTest from './PromptActionTest/PromptAction.test'
 import MenuKeyboardAvoidModeTest from './CommonTest/MenuKeyboardAvoidMode.test'
 import MenuTest from './menuExpandSymbol/Menu.test'
 import GetStateTest from './GetStateTest/GetState.test'
+import SheetTest from './SheetTest/Sheet.test'
 
 export default function testsuite() {
   maskTest();
@@ -51,4 +52,5 @@ export default function testsuite() {
   MenuKeyboardAvoidModeTest();
   MenuTest();
   GetStateTest();
+  SheetTest();
 }

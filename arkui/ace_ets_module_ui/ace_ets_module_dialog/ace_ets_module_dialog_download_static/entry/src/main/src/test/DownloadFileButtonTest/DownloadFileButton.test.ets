@@ -53,7 +53,7 @@ export default function DownloadFileButtonTest(): void {
   describe('DownloadFileButtonTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.info('DownloadFileButtonTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.dialog.button.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.dialog.download.static', 'EntryAbility');
 
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/DownloadFileButton/DownloadFileButtonIndex',

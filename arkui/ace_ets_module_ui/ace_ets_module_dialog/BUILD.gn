@@ -64,6 +64,7 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_dialog_toggle:ActsAceEtsModuleDialogToggleTest",
       "ace_ets_module_dialog_radio:ActsAceEtsModuleDialogRadioTest",
       "ace_ets_module_dialog_checkbox:ActsAceEtsModuleDialogCheckBoxTest",
+      "ace_ets_module_dialog_download_static:ActsAceEtsModuleDialogDownloadStaticTest",
       "ace_ets_module_dialog_ActionSheet:ActsAceEtsModuleSheetTest",
       "ace_ets_module_dialog_AlertDalog:ActsAceEtsModuleAlertDialogTest",
       "ace_ets_module_dialog_NoWear:ActsAceEtsModuleNoWearTest",
@@ -72,8 +73,11 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_menu_static:ActsAceEtsModuleMenuStaticTest",
       "ace_ets_module_dialog_Prompt:ActsAceEtsModulePromptTest",
       "ace_ets_module_dialog_Rating:ActsAceEtsModuleRatingTest",
+      "ace_ets_module_dialog_SaveButton_static:ActsAceEtsModuleDialogSaveButtonStaticTest",
       "ace_ets_module_dialog_Select:ActsAceEtsModuleSelectTest",
+      "ace_ets_module_dialog_Select_static:ActsAceEtsModuleDialogSelectStaticTest",
       "ace_ets_module_dialog_Slider:ActsAceEtsModuleSliderTest",
+      "ace_ets_module_dialog_Slider_static:ActsAceEtsModuleSliderStaticTest"
       "ace_ets_module_dialog_nowear_api11_static:ActsAceEtsModuleDialogNoWearApi11StaticTest",
       #"ace_ets_module_dialog_nowear_api12_static:ActsAceEtsModuleDialogNoWearApi12StaticTest",
       "ace_ets_module_dialog_nowear_api15_static:ActsAceEtsModuleDialogNoWearApi15StaticTest",
@@ -86,7 +90,6 @@ group("ActsAceEtsModuleDialogTest") {
       #"ace_ets_module_dialog_api16_static:ActsAceEtsModuleDialogApi16StaticTest",
       #"ace_ets_module_dialog_api18_static:ActsAceEtsModuleDialogApi18StaticTest",
       #"ace_ets_module_dialog_api19_static:ActsAceEtsModuleDialogApi19StaticTest",
-      "ace_ets_module_dialog_Slider_static:ActsAceEtsModuleSliderStaticTest"
 
     ]
   }

@@ -15,9 +15,11 @@
 import trackColorMetricsTest from './slider/trackColorMetrics.test';
 import SliderTest from './slider/slider.test';
 import SliderCustomContentOptionsTest from './slider/sliderCustomContentOptions.test';
+import ArcSliderEnumTest from './slider/ArcSliderEnum.test';
 
 export default function testsuite() {
     trackColorMetricsTest();
     SliderTest();
     SliderCustomContentOptionsTest();
+    ArcSliderEnumTest();
 }
