@@ -27,7 +27,7 @@ struct TextMenuControllerTestPage {
         .fontSize(20).height('3%')
         .fontWeight(FontWeight.Bold)
 
-      Row({ space: 10 }) {
+      Row({ space: 1 }) {
         Button('setMenuOptions null')
           .id('button_setMenuOptions_null')
           .onClick(() => {
@@ -53,7 +53,7 @@ struct TextMenuControllerTestPage {
           })
       }.height('3%')
 
-      Row({ space: 10 }) {
+      Row({ space: 1 }) {
         Button('disableMenuItems null')
           .id('button_disableMenuItems_null')
           .onClick(() => {
@@ -109,14 +109,14 @@ struct TextMenuControllerTestPage {
           }
         })
 
-      TextInput({ text: "这是一个TextInput，长按弹出文本选择菜单" })
+      TextInput({ text: '这是一个TextInput，长按弹出文本选择菜单' })
         .height('3%')
         .fontStyle(FontStyle.Italic)
         .fontWeight(FontWeight.Bold)
         .textAlign(TextAlign.Center)
         .caretStyle({ width: '4vp' })
 
-      Text("这是一个Text，长按弹出文本选择菜单")
+      Text('这是一个Text，长按弹出文本选择菜单')
         .height('3%')
         .copyOption(CopyOptions.InApp)
         .fontStyle(FontStyle.Italic)
