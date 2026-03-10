@@ -51,7 +51,7 @@ export default function tabsSec() {
         if (!("IndexSec" == pages.name)) {
           console.info("get IndexSec state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
-          routerAlp.pushUrl(options)
+          routerAlp.replaceUrl(options)
           // console.info("push IndexSec page success " + JSON.stringify(result));
         }
       } catch (err) {
