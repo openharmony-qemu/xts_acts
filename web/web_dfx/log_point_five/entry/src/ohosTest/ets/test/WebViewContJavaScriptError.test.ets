@@ -256,8 +256,8 @@ export default function webViewContJavaScriptError() {
     })
 
     /**
-     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_3900
-     * @tc.name     testRegisterJavaScriptProxyPermissionNull
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_4000
+     * @tc.name     testRegisterJavaScriptProxyPermissionUndefined
      * @tc.desc     test interface of registerJavaScriptProxy with not been associated with specific Web Components
      * @tc.size     MediumTest
      * @tc.type     Function
@@ -271,7 +271,7 @@ export default function webViewContJavaScriptError() {
     })
 
     /**
-     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_4000
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_4100
      * @tc.name     testDeleteJavaScriptRegisterEmpty
      * @tc.desc     test interface of deleteJavaScriptRegister with not been associated with specific Web Components
      * @tc.size     MediumTest
@@ -286,7 +286,7 @@ export default function webViewContJavaScriptError() {
     })
 
     /**
-     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_4100
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_4200
      * @tc.name     testDeleteJavaScriptRegisterNull
      * @tc.desc     test interface of deleteJavaScriptRegister with not been associated with specific Web Components
      * @tc.size     MediumTest
@@ -301,7 +301,7 @@ export default function webViewContJavaScriptError() {
     })
 
     /**
-     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_4100
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWERROR_4300
      * @tc.name     testDeleteJavaScriptRegisterUndefined
      * @tc.desc     test interface of deleteJavaScriptRegister with not been associated with specific Web Components
      * @tc.size     MediumTest
