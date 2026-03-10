@@ -5545,7 +5545,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_callback_for_content_001', Level.LEVEL0, async (done: Function) => {
       try {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_001 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5564,7 +5563,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_callback_for_content_002', Level.LEVEL0, async (done: Function) => {
       try {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_002 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5583,7 +5581,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_callback_for_content_003', Level.LEVEL0, async (done: Function) => {
       try {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_003 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5602,7 +5599,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_callback_for_content_004', Level.LEVEL0, async (done: Function) => {
       try {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_004 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5621,7 +5617,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_callback_for_content_005', Level.LEVEL0, async (done: Function) => {
       try {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_005 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5640,7 +5635,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_callback_for_content_006', Level.LEVEL0, async (done: Function) => {
       try {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_006 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5659,7 +5653,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_promise_for_content_001', Level.LEVEL0, async (done: Function) => {
       try {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_001 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5678,7 +5671,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_promise_for_content_002', Level.LEVEL0, async (done: Function) => {
       try {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_002 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5697,7 +5689,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_promise_for_content_003', Level.LEVEL0, async (done: Function) => {
       try {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_003 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5716,7 +5707,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_promise_for_content_004', Level.LEVEL0, async (done: Function) => {
       try {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_004 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5735,7 +5725,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_promise_for_content_005', Level.LEVEL0, async (done: Function) => {
       try {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_005 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5754,7 +5743,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_promise_for_content_006', Level.LEVEL0, async (done: Function) => {
       try {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_006 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5773,7 +5761,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_callback_for_volume_mode_001', Level.LEVEL0, async (done: Function) => {
       try {
         createSoundPoolCallbackForVolumeMode(audio.AudioVolumeMode.SYSTEM_GLOBAL, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_volume_mode_001 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5792,7 +5779,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_callback_for_volume_mode_002', Level.LEVEL0, async (done: Function) => {
       try {
         createSoundPoolCallbackForVolumeMode(audio.AudioVolumeMode.APP_INDIVIDUAL, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_volume_mode_002 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5811,7 +5797,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_promise_for_volume_mode_001', Level.LEVEL0, async (done: Function) => {
       try {
         await createSoundPoolPromiseForVolumeMode(audio.AudioVolumeMode.SYSTEM_GLOBAL, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_volume_mode_001 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5830,7 +5815,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_promise_for_volume_mode_002', Level.LEVEL0, async (done: Function) => {
       try {
         await createSoundPoolPromiseForVolumeMode(audio.AudioVolumeMode.APP_INDIVIDUAL, 1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_volume_mode_002 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5849,7 +5833,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_callback_null_001', Level.LEVEL2, async (done: Function) => {
       try {
         createSoundPoolCallbackNull(-1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_null_001 error: ${error}`);
         expect(false).assertEqual(true);
@@ -5868,7 +5851,6 @@ export default function SoundPoolTest() {
     it('createSoundPool_callback_null_002', Level.LEVEL2, async (done: Function) => {
       try {
         await createSoundPoolPromiseNull(-1, done);
-        done();
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_null_002 error: ${error}`);
         expect(false).assertEqual(true);
