@@ -1144,7 +1144,8 @@ export default function EmptyParamTest() {
     it("contactsApi_query_empty_test_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
             let context: Context = AppStorage.get('null') as Context;
-            await contact.queryContact(context, null, null, null).then(() => {
+            let promise = contact.queryContact(context, null, null, null);
+            promise.then((data) => {
                 console.info("contactsApi_query_empty_test_4000: query success");
                 done();
             }).catch((error: BusinessError) => {
@@ -1317,8 +1318,9 @@ export default function EmptyParamTest() {
      */
     it("contactsApi_query_empty_test_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-            let context: Context = AppStorage.get('context') as Context;
-            await contact.queryContacts(null, null, null).then((contacts: contact.Contact[]) => {
+            let context: Context = AppStorage.get('null') as Context;
+            let promise = contact.queryContacts(context, null, null);
+            promise.then((data) => {
                 console.info("contactsApi_query_empty_test_4600: query success");
                 done();
             }).catch((error: BusinessError) => {
