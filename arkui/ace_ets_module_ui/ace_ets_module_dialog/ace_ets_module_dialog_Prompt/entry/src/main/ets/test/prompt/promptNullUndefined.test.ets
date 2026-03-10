@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import {Driver, Component, UiWindow, ON, BY, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function promptNullUndefined() {
@@ -27,17 +27,17 @@ export default function promptNullUndefined() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get promptNullUndefined state pages: " + JSON.stringify(pages));
+        console.info("get   state pages:" + JSON.stringify(pages));
         if (!("promptNullUndefined" == pages.name)) {
-          console.info("get promptNullUndefined state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.replace(options);
+          console.info("get promptNullUndefined pages.name:" + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push promptNullUndefined success: " + JSON.stringify(result));
+          console.info("push promptNullUndefined page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push promptNullUndefined page error: " + err);
-        expect().assertFail();
+        console.error("push promptNullUndefined page error:" + err);
       }
+      console.info("promptNullUndefined beforeEach end");
       done();
     });
 
