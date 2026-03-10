@@ -295,7 +295,7 @@ export default function webSocketNoPTest() {
           });
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
-          ExpectTrue(err.code == 201);
+          ExpectTrue(err.code === 201);
           hilog.info(domain, tag, '%{public}s', caseName + ' end');
           done();
         }
