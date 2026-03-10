@@ -1512,7 +1512,7 @@ export default function relationalStoreTransactionErrTest() {
       let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
       console.info(TAG + 'testExecuteErrTest001 end createTransaction');
       try {
-        let result: number = await transaction.execute("DELETE FROM test");
+        let result: relationalStore.ValueType = await transaction.execute("DELETE FROM test");
         console.info(TAG + 'execute success' + JSON.stringify(result));
         expect(result).assertEqual(0);
         await transaction.rollback();
@@ -1559,7 +1559,7 @@ export default function relationalStoreTransactionErrTest() {
         expect(err.code).assertEqual(14800000);
       }
       try {
-        let result: number = await transaction.execute("DELETE FROM test", []);
+        let result: relationalStore.ValueType = await transaction.execute("DELETE FROM test", []);
         console.info(TAG + 'execute success' + JSON.stringify(result));
         expect(result).assertEqual(0);
       } catch (err) {
@@ -1567,7 +1567,7 @@ export default function relationalStoreTransactionErrTest() {
         expect().assertFail();
       }
       try {
-        let result: number = await transaction.execute("DELETE FROM test", null);
+        let result: relationalStore.ValueType = await transaction.execute("DELETE FROM test", null);
         console.info(TAG + 'execute success' + JSON.stringify(result));
         expect(result).assertEqual(0);
       } catch (err) {
@@ -1575,7 +1575,7 @@ export default function relationalStoreTransactionErrTest() {
         expect().assertFail();
       }
       try {
-        let result: number = await transaction.execute("DELETE FROM test", undefined);
+        let result: relationalStore.ValueType = await transaction.execute("DELETE FROM test", undefined);
         console.info(TAG + 'execute success' + JSON.stringify(result));
         expect(result).assertEqual(0);
         await transaction.rollback();
@@ -1598,7 +1598,7 @@ export default function relationalStoreTransactionErrTest() {
       let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
       console.info(TAG + 'testExecuteErrTest003 end createTransaction');
       try {
-        let result: number = transaction.executeSync("DELETE FROM test");
+        let result: relationalStore.ValueType = transaction.executeSync("DELETE FROM test");
         console.info(TAG + 'executeSync success' + JSON.stringify(result));
         expect(result).assertEqual(0);
         await transaction.rollback();
@@ -1645,7 +1645,7 @@ export default function relationalStoreTransactionErrTest() {
         expect(err.code).assertEqual(14800000);
       }
       try {
-        let result: number = transaction.executeSync("DELETE FROM test", []);
+        let result: relationalStore.ValueType = transaction.executeSync("DELETE FROM test", []);
         console.info(TAG + 'executeSync success' + JSON.stringify(result));
         expect(result).assertEqual(0);
       } catch (err) {
@@ -1653,7 +1653,7 @@ export default function relationalStoreTransactionErrTest() {
         expect().assertFail();
       }
       try {
-        let result: number = transaction.executeSync("DELETE FROM test", null);
+        let result: relationalStore.ValueType = transaction.executeSync("DELETE FROM test", null);
         console.info(TAG + 'executeSync success' + JSON.stringify(result));
         expect(result).assertEqual(0);
       } catch (err) {
@@ -1661,7 +1661,7 @@ export default function relationalStoreTransactionErrTest() {
         expect().assertFail();
       }
       try {
-        let result: number = transaction.executeSync("DELETE FROM test", undefined);
+        let result: relationalStore.ValueType = transaction.executeSync("DELETE FROM test", undefined);
         console.info(TAG + 'executeSync success' + JSON.stringify(result));
         expect(result).assertEqual(0);
         await transaction.rollback();
