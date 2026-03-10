@@ -689,6 +689,67 @@ export default function extensionWindowPropertiesTest() {
       }
       done()
     })
+    /**
+     * @tc.name   testUIExtensionHostOffAvoidAreaChange_ErrorCode401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_AVOIDAREA_ERRORCODE_JS_API_0300
+     * @tc.desc   testUIExtensionHostOnAvoidAreaChange_ErrorCode401 when got callback with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUIExtensionHostOffAvoidAreaChange_ErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUIExtensionHostOffAvoidAreaChange_ErrorCode401 ';
+      console.log(caseName + 'start run');
+      try {
+        let options: window.SubWindowOptions = {
+          title: 'subWindow',
+          decorEnabled: true
+        }
+        console.log(caseName + 'start run')
+        await windowStage.createSubWindowWithOptions('subWindowOccupyEvents', options).then(async (subWindowClass) => {
+          await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentErrorCodePage')
+          subWindowClass.resizeAsync(1000, 1200)
+          subWindowClass.moveWindowToAsync(300, 200)
+          await subWindowClass.showWindow()
+
+          console.log(caseName + 'after createSubWindow')
+
+          await sleep(1000)
+          // 设置独占事件
+          let btn = await driver.findComponent(ON.id('offAvoidAreaChange'))
+          console.log(caseName + ' btn : ' + btn);
+          // 只针对pc设备
+          if (btn == undefined) {
+            console.log(caseName + 'device not support')
+          } else {
+            // 点击执行extensionWindow?.on('avoidAreaChange', null)
+            await btn.click()
+            await sleep(1000)
+
+            // 获取接口返回信息
+            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessageText = await errorMessage.getText()
+            console.log(caseName + 'errorMessageText : ' + errorMessageText)
+            expect(errorMessageText == 'success').assertTrue()
+            await subWindowClass.destroyWindow()
+          }
+        }).catch((error: BusinessError) => {
+          console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+          if (error.code == 1300002) {
+            console.log(caseName + 'device not support')
+
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.log(caseName + 'Failed ' + JSON.stringify(exception))
+        expect().assertFail()
+      }
+      done()
+    })
 
     /**
      * @tc.name   testUIExtensionHostOnWindowSizeChange_ErrorCode401
