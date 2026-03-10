@@ -107,6 +107,30 @@ export default function settingUiJsunit() {
         }
       });
 
+    /**
+     * @tc.name   settings_set_value_sync_domain_secure
+     * @tc.number settings_set_value_sync_domain_secure
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_domain_secure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          console.info("[settings_set_value_sync_domain_secure] start ");
+          let result =
+            settings.setValueSync(mContext, 'testkey2', 'testvalue2', settings.domainName.USER_SECURITY);
+          console.info("[settings_set_value_sync_domain_secure] result= " + result);
+          expect(result).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_sync_domain_secure] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
 
     /**
      * @tc.name   settings_set_value_callback_no_domain
@@ -122,7 +146,7 @@ export default function settingUiJsunit() {
           console.info("[settings_set_value_callback_no_domain] start ");
           settings.setValue(mContext, 'testkey', 'testvalue', (result) => {
             console.info("[settings_set_value_callback_no_domain] result= " + result);
-            expect(result).assertTrue();
+            expect(result === undefined).assertTrue();
             done();
           });
         } catch (err) {
@@ -146,7 +170,7 @@ export default function settingUiJsunit() {
           console.info("[settings_set_value_no_domain] start ");
           let result = await settings.setValue(mContext, 'testkey', 'testvalue');
           console.info("[settings_set_value_no_domain] result= " + result);
-          expect(result === undefined).assertTrue();
+          expect(result).assertTrue();
           done();
         } catch (err) {
           console.error("[settings_set_value_no_domain] error = " + err);
@@ -174,6 +198,30 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_domain_system] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_domain_security
+     * @tc.number settings_set_value_domain_security
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_domain_security', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          console.info("[settings_set_value_domain_security] start ");
+          let result =
+            await settings.setValue(mContext, 'testkey', 'testvalue', settings.domainName.USER_SECURITY);
+          console.info("[settings_set_value_domain_security] result= " + result);
+          expect(result).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_domain_security] error = " + err);
           expect().assertFail();
           done();
         }
