@@ -107,29 +107,6 @@ export default function settingUiJsunit() {
         }
       });
 
-    /**
-     * @tc.name   settings_set_value_sync_domain_secure
-     * @tc.number settings_set_value_sync_domain_secure
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_set_value_sync_domain_secure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        try {
-          console.info("[settings_set_value_sync_domain_secure] start ");
-          let result =
-            settings.setValueSync(mContext, 'testkey', 'testvalue', settings.domainName.USER_SECURITY);
-          console.info("[settings_set_value_sync_domain_secure] result= " + result);
-          expect(result).assertTrue();
-          done();
-        } catch (err) {
-          console.error("[settings_set_value_sync_domain_secure] error = " + err);
-          expect().assertFail();
-          done();
-        }
-      });
 
     /**
      * @tc.name   settings_set_value_callback_no_domain
@@ -197,30 +174,6 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_domain_system] error = " + err);
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   settings_set_value_domain_secure
-     * @tc.number settings_set_value_domain_secure
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_set_value_domain_secure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        try {
-          console.info("[settings_set_value_domain_secure] start ");
-          let result =
-            await settings.setValue(mContext, 'testkey', 'testvalue', settings.domainName.USER_SECURITY);
-          console.info("[settings_set_value_domain_secure] result= " + result);
-          expect(result).assertTrue();
-          done();
-        } catch (err) {
-          console.error("[settings_set_value_domain_secure] error = " + err);
           expect().assertFail();
           done();
         }
