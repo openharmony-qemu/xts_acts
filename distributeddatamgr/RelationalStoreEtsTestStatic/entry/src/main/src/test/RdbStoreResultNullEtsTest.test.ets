@@ -2398,7 +2398,7 @@ export default function RdbStoreResultNullEtsTest() {
 
     /**
      * @tc.name   testsqueryWithoutRowCount001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_4000
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_6000
      * @tc.desc   testTransqueryWithoutRowCount
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2427,7 +2427,7 @@ export default function RdbStoreResultNullEtsTest() {
 
     /**
      * @tc.name   testquerySqlWithoutRowCountreturn001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_5500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_6100
      * @tc.desc   querySqlWithoutRowCount sec param is not kong
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2456,5 +2456,235 @@ export default function RdbStoreResultNullEtsTest() {
         console.log(tag + "************* testquerySqlWithoutRowCountreturn001 end *************");
       });
 
+          /**
+     * @tc.name   testRdbGetColumnTypeSync14800033
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_6200
+     * @tc.desc   getColumnTypeSync errcode is 14800033
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbGetColumnTypeSync14800033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+      console.log(tag + "************* testRdbGetColumnTypeSync14800033 start *************");
+      try {
+        const valueBucket: data_relationalStore.ValuesBucket = {
+          "data1": null,
+          "data2": null,
+          "data3": null,
+          "data4": null,
+          "data5": null,
+          "data6": null,
+          "data7": null,
+          "data8": null
+        };
+        let row = await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
+        console.log(tag + "row is " + row);
+      } catch (err) {
+        console.error(tag + "testRdbGetColumnTypeSync14800033 insert failed " + err);
+        expect().assertFail();
+      }
+      try {
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        resultSet!.goToFirstRow();
+        let type = data_relationalStore.ColumnType.NULL;
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("id"));
+        expect(type).assertEqual(data_relationalStore.ColumnType.INTEGER);
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data1"));
+        expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data2"));
+        expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data3"));
+        expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data4"));
+        expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data5"));
+        expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data6"));
+        expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data7"));
+        expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data8"));
+        expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+        resultSet?.close();
+        done();
+      } catch (err) {
+        console.error(tag + "testRdbGetColumnTypeSync14800033  failed " + err.code + err.message);
+        expect(14800033).assertEqual(err.code);
+        done();
+      }
+      done();
+      console.log(tag + "************* testRdbGetColumnTypeSync14800033 end *************");
+    });
+
+    /**
+     * @tc.name   testRdbGetColumnTypeSync14800027
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_6300
+     * @tc.desc   getColumnTypeSync errcode is 14800027
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbGetColumnTypeSync14800027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(tag + "************* testRdbGetColumnTypeSync14800027 start *************");
+        try {
+          const valueBucket: data_relationalStore.ValuesBucket = {
+            "data1": null,
+            "data2": null,
+            "data3": null,
+            "data4": null,
+            "data5": null,
+            "data6": null,
+            "data7": null,
+            "data8": null
+          };
+          let row = await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
+          console.log(tag + "row is " + row);
+        } catch (err) {
+          console.error(tag + "testRdbGetColumnTypeSync14800027 insert failed " + err);
+          expect().assertFail();
+        }
+        try {
+          let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+          resultSet!.goToFirstRow();
+          let type = data_relationalStore.ColumnType.NULL;
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("id"));
+          expect(type).assertEqual(data_relationalStore.ColumnType.INTEGER);
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data1"));
+          expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data2"));
+          expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data3"));
+          expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data4"));
+          expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data5"));
+          expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data6"));
+          expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data7"));
+          expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data8"));
+          expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
+          resultSet?.close();
+          done();
+        } catch (err) {
+          console.error(tag + "testRdbGetColumnTypeSync14800027  failed " + err.code + err.message);
+          expect(14800027).assertEqual(err.code);
+          done();
+        }
+        done();
+        console.log(tag + "************* testRdbGetColumnTypeSync14800027 end *************");
+      });
+
+    /**
+     * @tc.name   RelationalRdbStorequery_callback
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_6400
+     * @tc.desc   the test of query
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('RelationalRdbStorequery_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
+      console.info(domain, tag + '************* RelationalRdbStorequery_callback start *************');
+      let predicates = new data_relationalStore.RdbPredicates("test");
+      predicates.equalTo("data1", "zhangsan");
+      let resultSet: data_relationalStore.ResultSet | undefined;
+      rdbStore!.query(predicates, ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8"], (err, resultSet) => {
+        if (err) {
+          console.error(tag +`Query failed, code is ${err.code}, message is ${err.message}`);
+          expect(true).assertFail();
+        }else{
+          console.info(tag +`query succsee: ${resultSet}`);
+          expect(resultSet!==undefined).assertTrue();
+          console.info(domain, tag  +`ResultSet column names: ${resultSet!.columnNames}`);
+          expect(resultSet!.columnNames.length > 0).assertTrue();
+          console.info(domain, tag  +`ResultSet column count: ${resultSet!.columnCount}`);
+          expect(resultSet!.columnCount == 8).assertTrue();
+          console.info(domain, tag  +`ResultSet rowIndex:${resultSet!.rowIndex}`);
+          expect(resultSet!.rowIndex == -1).assertTrue();
+          console.info(domain, tag  +`ResultSet isAtFirstRow: ${resultSet!.isAtFirstRow}`);
+          expect(resultSet!.isAtFirstRow).assertEqual(false);
+          console.info(domain, tag  +`ResultSet isAtLastRow: ${resultSet!.isAtLastRow}`);
+          expect(resultSet!.isAtLastRow).assertEqual(true);
+          console.info(domain, tag  +`ResultSet isEnded:${resultSet!.isEnded}`);
+          expect(resultSet!.isEnded).assertEqual(true);
+          console.info(domain, tag  +`ResultSet isStarted: ${resultSet!.isStarted}`);
+          expect(resultSet!.isStarted).assertEqual(false);
+          console.info(domain, tag  +`ResultSet isClosed: ${resultSet!.isClosed}`);
+          expect(resultSet!.isClosed).assertEqual(false);
+          console.info(domain, tag  +`ResultSet rowCount:${resultSet!.rowCount}`);
+          expect(resultSet!.rowCount == 0).assertTrue();
+        }
+      })
+      console.info(domain, tag  + '************* RelationalRdbStorequery_callback end *************');
+    })
+
+    /**
+     * @tc.name   RelationalRdbStorequerysql_callback
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_6500
+     * @tc.desc   the test of query
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('RelationalRdbStorequerysql_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
+      console.info(domain, tag + '************* RelationalRdbStorequerysql_callback start *************');
+      let resultSet: data_relationalStore.ResultSet | undefined;
+      rdbStore!.querySql("SELECT * FROM test where data1 = ?", ['hello'], (err, resultSet) => {
+        if (err) {
+          console.error(tag +`Query failed, code is ${err.code}, message is ${err.message}`);
+          expect(true).assertFail();
+        }else{
+          console.info(tag +`query succsee: ${resultSet}`);
+          expect(resultSet!==undefined).assertTrue();
+          console.info(domain, tag  +`ResultSet column names: ${resultSet!.columnNames}`);
+          expect(resultSet!.columnNames.length > 0).assertTrue();
+          console.info(domain, tag  +`ResultSet column count: ${resultSet!.columnCount}`);
+          expect(resultSet!.columnCount == 9).assertTrue();
+          console.info(domain, tag  +`ResultSet rowIndex:${resultSet!.rowIndex}`);
+          expect(resultSet!.rowIndex == -1).assertTrue();
+          console.info(domain, tag  +`ResultSet isAtFirstRow: ${resultSet!.isAtFirstRow}`);
+          expect(resultSet!.isAtFirstRow).assertEqual(false);
+          console.info(domain, tag  +`ResultSet isAtLastRow: ${resultSet!.isAtLastRow}`);
+          expect(resultSet!.isAtLastRow).assertEqual(true);
+          console.info(domain, tag  +`ResultSet isEnded:${resultSet!.isEnded}`);
+          expect(resultSet!.isEnded).assertEqual(true);
+          console.info(domain, tag  +`ResultSet isStarted: ${resultSet!.isStarted}`);
+          expect(resultSet!.isStarted).assertEqual(false);
+          console.info(domain, tag  +`ResultSet isClosed: ${resultSet!.isClosed}`);
+          expect(resultSet!.isClosed).assertEqual(false);
+          console.info(domain, tag  +`ResultSet rowCount:${resultSet!.rowCount}`);
+          expect(resultSet!.rowCount == 0).assertTrue();
+        }
+      })
+      console.info(domain, tag  + '************* RelationalRdbStorequerysql_callback end *************');
+    })
+
+    /**
+     * @tc.name   testbeginTransaction14800033
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_6600
+     * @tc.desc   beginTrans normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testbeginTransaction14800033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void) => {
+        console.log(tag + "************* testbeginTransaction14800033 start *************");
+        if (rdbStore!= undefined) {
+          let txId :long;
+          try{
+            rdbStore!.beginTransaction();
+            console.info(tag +`beginTransaction successful`);
+          }catch (e) {
+            console.error(tag + `beginTrans failed. code is ${e.code}, message is ${e.message}`);
+            expect(14800033).assertEqual(e.code);
+          }
+        }
+        done()
+        console.log(tag + "************* testbeginTransaction14800033 end *************");
+      });
   })
 }
