@@ -50,6 +50,8 @@
         "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest",
         "MainAbility/pages/SetTextSelectionTest/SetTextSelectionTest",
         "MainAbility/pages/CustomKeyboardContinueTest",
-        "MainAbility/pages/TypeNodeTestPage"
+        "MainAbility/pages/TypeNodeTestPage",
+        "MainAbility/pages/MagnifierTestPage",
+        "MainAbility/pages/MeasureUtilsTestPage"
     ]
 }
