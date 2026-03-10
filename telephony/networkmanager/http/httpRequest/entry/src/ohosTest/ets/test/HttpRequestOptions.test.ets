@@ -2606,7 +2606,7 @@ export default function HttpRequestOptionsTest() {
         });
         /**
          * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest6900
-         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_6400
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_6900
          * @tc.desc   Test HttpRequestOptions property.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
