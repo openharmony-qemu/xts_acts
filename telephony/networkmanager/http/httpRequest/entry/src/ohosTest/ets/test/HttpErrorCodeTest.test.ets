@@ -2104,7 +2104,7 @@ export default function HttpErrorCodeTest() {
     });
     /**
      * @tc.name   testHttpRequestMethodErrorCode5400
-     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2400
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_5400
      * @tc.desc   test http requestInStream(url, options, callback) with request error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
