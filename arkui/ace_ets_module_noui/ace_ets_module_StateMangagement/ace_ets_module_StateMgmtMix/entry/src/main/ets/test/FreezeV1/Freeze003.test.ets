@@ -75,7 +75,7 @@ export default function FreezeV1Test03() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeTest001', Level.LEVEL1, async () => {
+        it('FreezeTest001', Level.LEVEL1, async () => {
       console.info('FreezeTest001 START');
       let driver = await Driver.create();
 
@@ -86,18 +86,9 @@ export default function FreezeV1Test03() {
       await nextPage0.click();
       await sleep(1);
       await changeMessage.click();
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'NavigationContent message:2 index:1 logNumber:1').assertTrue()
-          expect(UiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
-
+      await sleep(1);
+      let text1 = await (await driver.findComponent(ON.id('freezeV1003_infos'))).getText();
+      expect(text1).assertEqual('NavigationContent message:2 index:1 logNumber:1')
       console.info('FreezeTest001 END');
     });
 
@@ -118,18 +109,9 @@ export default function FreezeV1Test03() {
 
       let changeMessage = await driver.findComponent(ON.id('changeMessage'));
       await changeMessage.click();
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'NavigationContent message:3 index:2 logNumber:2').assertTrue()
-          expect(UiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
-
+      await sleep(1);
+      let text1 = await (await driver.findComponent(ON.id('freezeV1003_infos'))).getText();
+      expect(text1).assertEqual('NavigationContent message:3 index:2 logNumber:2')
       console.info('FreezeTest002 END');
     });
 
@@ -150,18 +132,9 @@ export default function FreezeV1Test03() {
 
       let changeMessage = await driver.findComponent(ON.id('changeMessage'));
       await changeMessage.click();
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'NavigationContent message:4 index:3 logNumber:3').assertTrue()
-          expect(UiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
-
+      await sleep(1);
+      let text1 = await (await driver.findComponent(ON.id('freezeV1003_infos'))).getText();
+      expect(text1).assertEqual('NavigationContent message:4 index:3 logNumber:3')
       console.info('FreezeTest003 END');
     });
 
@@ -179,18 +152,8 @@ export default function FreezeV1Test03() {
       let backPage3 = await driver.findComponent(ON.id('BackPage3'));
       await backPage3.click();
       await sleep(1);
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'NavigationContent message:4 index:2 logNumber:4').assertTrue()
-          expect(UiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
-
+      let text1 = await (await driver.findComponent(ON.id('freezeV1003_infos'))).getText();
+      expect(text1).assertEqual('NavigationContent message:4 index:2 logNumber:4')
       console.info('FreezeTest004 END');
     });
 
@@ -208,17 +171,9 @@ export default function FreezeV1Test03() {
       let backPage2 = await driver.findComponent(ON.id('BackPage2'));
       await backPage2.click();
       await sleep(1);
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'NavigationContent message:4 index:1 logNumber:5').assertTrue()
-          expect(UiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1);
+      await sleep(1);
+      let text1 = await (await driver.findComponent(ON.id('freezeV1003_infos'))).getText();
+      expect(text1).assertEqual('NavigationContent message:4 index:1 logNumber:5')
       console.info('FreezeTest005 END');
     });
   })
