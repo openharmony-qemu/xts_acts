@@ -1,23 +1,18 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-//002 测试自定义组件冻结V1  LazyForEach
 
-// Basic implementation of IDataSource to handle data listener
-import prompt from '@system.prompt';
+Copyright (c) 2024 Huawei Device Co., Ltd.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
 
-class BasicDataSource implements IDataSource {
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+class BasicDataSource02 implements IDataSource {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
 
@@ -75,7 +70,7 @@ class BasicDataSource implements IDataSource {
   }
 }
 
-class MyDataSource extends BasicDataSource {
+class MyDataSource02 extends BasicDataSource02 {
   private dataArray: string[] = [];
 
   public totalCount(): number {
@@ -99,64 +94,82 @@ class MyDataSource extends BasicDataSource {
 
 @Entry
 @Component
-struct LForEachTest {
-  private data: MyDataSource = new MyDataSource();
-  @State @Watch('onMessageUpdated') message: number = 0;
-
-  onMessageUpdated() {
-    console.info(`LazyforEach message callback func ${this.message}`)
-  }
+struct LForEachTest02 {
+  private data: MyDataSource02 = new MyDataSource02();
+  @Provide count: number = 0;
+  private scroller: ListScroller = new ListScroller();
+  @Provide freezeChangeCount: number = 0
 
   aboutToAppear() {
-    for (let i = 0; i <= 20; i++) {
-      this.data.pushData(`Hello ${i}`)
+    for (let i = 0; i < 8; i++) {
+      this.data.pushData(`Hello${i}`)
     }
   }
 
   build() {
     Column() {
-      Button('change message').onClick(() => {
-        this.message++
-      })
-        .key('changeMessage')
-        .height('5%')
-      List() {
+      Column() {
+        Text(`count${this.freezeChangeCount}`)
+          .id('tvFreezeChangeCount')
+          .height('5%')
+        Row() {
+          Button('change message')
+            .id('btnChangeMsg')
+            .width('30%')
+            .height('5%')
+            .onClick(() => {
+              this.count++
+            })
+          Button('ScrollerToBottom')
+            .id('btnToBottom')
+            .width('30%')
+            .height('5%')
+            .onClick(() => {
+              this.scroller.scrollEdge(Edge.Bottom, { velocity: 2000 })
+            })
+          Button('ScrollerToTop')
+            .id('btnToTop')
+            .width('30%')
+            .height('5%')
+            .onClick(() => {
+              this.scroller.scrollEdge(Edge.Top, { velocity: 2000 })
+            })
+        }
+      }
+
+      List({ scroller: this.scroller }) {
         LazyForEach(this.data, (item: string) => {
           ListItem() {
-            FreezeChild({ message: this.message, index: item })
+            FreezeChild02({
+              item: item
+            })
           }
+          .height('20%')
         }, (item: string) => item)
-      }.cachedCount(5).height(500)
-      .id('List')
+      }
+      .layoutWeight(1)
+      .cachedCount(5)
+
+      Blank().height('5%')
     }
 
   }
 }
 
 @Component({ freezeWhenInactive: true })
-struct FreezeChild {
-  @Link @Watch('onMessageUpdated') message: number;
-  private index: string = '';
+struct FreezeChild02 {
+  @Consume @Watch('onMessageUpdated02') count: number;
+  @Consume freezeChangeCount: number
+  private item: string = '';
 
-  aboutToAppear() {
-    console.info(`FreezeChild aboutToAppear index: ${this.index}`)
-  }
-
-  onMessageUpdated() {
-    prompt.showToast({
-      message: `FreezeChild message callback func ${this.message}, index: ${this.index}`,
-      duration: 500
-    })
+  onMessageUpdated02() {
+    // 用于计数触发了几次解冻回调
+    this.freezeChangeCount++
+    console.info(`${this.count}${this.item}`)
   }
 
   build() {
-    Text('message' + `${this.message}, index: ${this.index}`)
-      .width('90%')
-      // .height(160)
-      .height('5%')
-      .backgroundColor(0xAFEEEE)
-      .textAlign(TextAlign.Center)
-      .fontSize(9)
-      .fontWeight(FontWeight.Bold)
+    Text(`${this.count}${this.item}`)
+      .height('100%')
   }
 }

@@ -55,64 +55,33 @@ export default function FreezeV1Test() {
     });
 
     /**
-     * @tc.name   FreezeTest001
-     * @tc.number Freeze001_001
+     * @tc.name   FreezeV1Test01001
+     * @tc.number FreezeV1Test01001
      * @tc.desc   aceEtsTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeTest001', Level.LEVEL0, async () => {
-      console.info('FreezeTest001 START');
+    it('FreezeV1Test01001', Level.LEVEL0, async (done: Function) => {
+      console.info('FreezeV1Test01001 START');
       let driver = await Driver.create()
-      let changeIndex = await driver.findComponent(ON.id('changeIndex'));
-      await changeIndex.click();
+      let tvTab1 = await driver.findComponent(ON.text('tab1'));
+      await tvTab1.click();
       await sleep(0.5)
-
-      let changeMessage = await driver.findComponent(ON.id('changeMessage'));
-      await changeMessage.click();
+      let btnChangeCount = await driver.findComponent(ON.id('btnChangeCount'));
+      await btnChangeCount.click();
       await sleep(0.5)
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (uiElementInfo: UIElementInfo) => {
-        try {
-          expect(uiElementInfo.text == 'FreezeChild message callback func 1, index: 1').assertTrue()
-          expect(uiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
-      console.info('FreezeTest001 END');
-    });
-
-
-    /**
-     * @tc.name   FreezeTest002
-     * @tc.number Freeze001_002
-     * @tc.desc   aceEtsTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('FreezeTest002', Level.LEVEL0, async () => {
-      console.info('FreezeTest002 START');
-      let driver = await Driver.create()
-      let changeIndex0 = await driver.findComponent(ON.id('changeIndex0'));
-      await changeIndex0.click();
+      let tvCount = await (await driver.findComponent(ON.id('tvFreezeChangeCount01'))).getText();
+      console.info('[FreezeV1Test01001] component tvCount: ' + tvCount);
+      expect(tvCount).assertEqual('count1')
+      let tvTab0 = await driver.findComponent(ON.text('tab0'));
+      await tvTab0.click();
       await sleep(0.5)
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (uiElementInfo: UIElementInfo) => {
-        try {
-          expect(uiElementInfo.text == 'TabContent message callback func 1').assertTrue()
-          expect(uiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
-      console.info('FreezeTest002 END');
+      let tvCount1 = await (await driver.findComponent(ON.id('tvFreezeChangeCount01'))).getText();
+      console.info('[FreezeV1Test01001] component tvCount1: ' + tvCount1);
+      expect(tvCount1).assertEqual('count2')
+      console.info('FreezeV1Test01001 END');
+      done();
     });
   })
 }
