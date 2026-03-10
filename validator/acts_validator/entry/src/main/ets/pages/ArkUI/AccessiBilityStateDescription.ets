@@ -152,7 +152,7 @@ struct OnAccessibilityActionIntercept {
   }
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       Column() {
         Row() {
           Button() {
@@ -290,7 +290,7 @@ struct OnAccessibilityActionIntercept {
           .width('80%')
         }
       }
-      .height('90%')
+      .height('70%')
 
 
       Row() {
@@ -320,7 +320,7 @@ struct OnAccessibilityActionIntercept {
         this.FailBtn($r('app.string.btn_fullscreen'), true);
       }
       // .padding(20)
-      .height('10%')
+      .height('30%')
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
