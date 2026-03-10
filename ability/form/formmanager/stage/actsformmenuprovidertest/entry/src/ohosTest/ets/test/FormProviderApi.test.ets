@@ -25,6 +25,7 @@ import formBindingData from '@ohos.app.form.formBindingData';
 const COMMON_TAG = 'FormProviderApi';
 const DOMAIN = 0xF811;
 const PUBLISH_BUNDLE_NAME = 'com.example.menuprovider';
+const TAG: string = 'testTag formProviderTest';
 const ERROR_CODE = 16501000;
 const ERROR_CODE1 = 401;
 const ERROR_CODE2 = 16500100;
