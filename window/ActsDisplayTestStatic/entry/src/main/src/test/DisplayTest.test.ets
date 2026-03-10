@@ -1886,10 +1886,17 @@ export default function DisplayTest() {
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync ScreenShape: ' + displayClass!.screenShape);
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync x: ' + displayClass!.x);
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync y: ' + displayClass!.y);
-        expect(sourceMode !=null ).assertTrue();
+        expect(sourceMode).assertEqual(1);
         expect(displayClass!.screenShape !=null ).assertTrue();
+        if (displayClass!.x != undefined) {
+            expect(displayClass!.x).assertLargerOrEqual(0);
+        }
+        if (displayClass!.y != undefined) {
+            expect(displayClass!.y).assertLargerOrEqual(0);
+        }
         done();
       });
+
       /**
          * @tc.number    SUB_BASIC_DMS_JS_0200
          * @tc.name      test_getPrimaryDisplaySync_static_0100
@@ -3030,8 +3037,8 @@ export default function DisplayTest() {
             index2++;
             console.info(caseName + ' callback2 index2: ' + index2);
         }
-        display.onChangeWithAttribute(['width'], callback1);
-        display.onChangeWithAttribute(['height'], callback2);
+        display.onChange(callback1);
+        display.onChange(callback2);
         await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
         await Utils.msSleep(3000);
         console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
@@ -3419,6 +3426,55 @@ export default function DisplayTest() {
         }
         };
     })
+
+    /**
+     * @tc.number SUB_WMS_DMS_CHANGE_SETPERFERORIENTATION_JUST_STATIC_0100
+     * @tc.name   estonChangeWithAttribute_setPreferOrientation_static_just_0100
+     * @tc.desc   旋转后屏幕改变监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testonChangeWithAttribute_setPreferOrientation_static_just_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testonChangeWithAttribute_setPreferOrientation_static_just_0100';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let windowClass:window.Window = windowStage!.getMainWindowSync();
+        try {
+            if(isSupportRotate === true){
+                let index = 0;
+                const callback = (res: long)=>{
+                    console.info(caseName + ' callback res: ' + res);
+                    index++;
+                    console.info(caseName + ' callback index: ' + index);
+                }
+                display.onChangeWithAttribute([], callback);
+                await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+                await Utils.msSleep(3000);
+                console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index);
+                expect(index).assertEqual(0);
+                display.offChange(callback);
+                await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                await Utils.msSleep(3000);
+                console.info(caseName + ' setOrientation index1: ' + index);
+                expect(index).assertEqual(0);
+                done();
+            }else{
+                done();
+            }
+
+        } catch (e) {
+            console.error(`${caseName} Failed. Cause: ` + e!.code);
+            if (e.code === 801) {
+                done();
+            } else {
+                expect().assertFail();
+                done();
+            }
+        }
+    });
+
+
 
 
 
