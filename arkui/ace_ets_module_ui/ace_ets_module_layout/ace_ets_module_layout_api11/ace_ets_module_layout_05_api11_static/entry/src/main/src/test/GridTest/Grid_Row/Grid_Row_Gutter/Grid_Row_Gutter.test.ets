@@ -97,29 +97,29 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0100', Level.LEVEL0, async (done: () => 
       console.log('----- ' + Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right))
       console.log('----- ' + Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right))
       expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
+      Math.round(UIContext.resolveUIContext()!.vp2px(-10))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
+      Math.round(UIContext.resolveUIContext()!.vp2px(-10))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
+      Math.round(UIContext.resolveUIContext()!.vp2px(-10))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
+      Math.round(UIContext.resolveUIContext()!.vp2px(-10))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
+      Math.round(UIContext.resolveUIContext()!.vp2px(-10))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
+      Math.round(UIContext.resolveUIContext()!.vp2px(-10))) <= 1)
         .assertTrue();
 
       expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
+      Math.round(UIContext.resolveUIContext()!.vp2px(-10))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
+      Math.round(UIContext.resolveUIContext()!.vp2px(-10))) <= 1)
         .assertTrue();
 
 
