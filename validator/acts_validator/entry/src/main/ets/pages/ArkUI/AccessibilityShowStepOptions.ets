@@ -237,56 +237,62 @@ struct AccessibilityShowStepOptionsExample {
           }
         }.height('10%')
 
-        Column({ space: 2 }) {
-          Text('slider 设置刻度点播报内容').fontSize(15).fontColor(0xCCCCCC).width('90%').margin(15)
-          Text(JSON.stringify(this.checkList))
-          Row(){
-            Slider({
-              value: this.outSetValueOne,
-              min: 0,
-              max: 5,
-              style: SliderStyle.InSet
-            })
-              .showSteps(true, { stepsAccessibility: this.currentOptionMap })
-              .width('85%')
-              .onChange((value: number) => {
-                this.checkList = this.checkList.filter(item => item !== value);
-                this.outSetValueOne = value;
-              })
-          }
-          Button('检查所有点是否都点过:' + this.isCheck1)
-            .onClick(() => {
-              if (this.checkList.length === 0) {
-                this.isCheck1 = true;
+        Flex({ justifyContent: FlexAlign.SpaceEvenly, alignItems: ItemAlign.Center }) {
+          Scroll(){
+            Column({ space: 2 }) {
+              Text('slider 设置刻度点播报内容').fontSize(15).fontColor(0xCCCCCC).width('90%').margin(15)
+              Text(JSON.stringify(this.checkList))
+              Row(){
+                Slider({
+                  value: this.outSetValueOne,
+                  min: 0,
+                  max: 5,
+                  style: SliderStyle.InSet
+                })
+                  .showSteps(true, { stepsAccessibility: this.currentOptionMap })
+                  .width('85%')
+                  .onChange((value: number) => {
+                    this.checkList = this.checkList.filter(item => item !== value);
+                    this.outSetValueOne = value;
+                  })
               }
-            })
-          Button('重新校验')
-            .onClick(() => {
-              this.checkList = [0, 1, 2, 3, 4, 5];
-            })
-          Text('modifier-slider 设置刻度点播报内容')
-            .fontSize(15).fontColor(0xCCCCCC).width('90%').margin(15);
-          Row() {
-            Slider({
-              value: this.outSetValueTwo,
-              min: 0,
-              max: 5,
-              style: SliderStyle.InSet,
-            })
-              .attributeModifier(this.slider)
-              .width('85%')
-              .onChange((value: number) => {
-                this.checkList = this.checkList.filter(item => item !== value);
-                this.outSetValueTwo = value;
-              })
-          }
-          Button('检查所有点是否都点过:' + this.isCheck2)
-            .onClick(() => {
-              if (this.checkList.length === 0) {
-                this.isCheck2 = true;
+              Button('检查所有点是否都点过:' + this.isCheck1)
+                .onClick(() => {
+                  if (this.checkList.length === 0) {
+                    this.isCheck1 = true;
+                  }
+                })
+              Button('重新校验')
+                .onClick(() => {
+                  this.checkList = [0, 1, 2, 3, 4, 5];
+                })
+              Text('modifier-slider 设置刻度点播报内容')
+                .fontSize(15).fontColor(0xCCCCCC).width('90%').margin(15);
+              Row() {
+                Slider({
+                  value: this.outSetValueTwo,
+                  min: 0,
+                  max: 5,
+                  style: SliderStyle.InSet,
+                })
+                  .attributeModifier(this.slider)
+                  .width('85%')
+                  .onChange((value: number) => {
+                    this.checkList = this.checkList.filter(item => item !== value);
+                    this.outSetValueTwo = value;
+                  })
               }
-            })
+              Button('检查所有点是否都点过:' + this.isCheck2)
+                .onClick(() => {
+                  if (this.checkList.length === 0) {
+                    this.isCheck2 = true;
+                  }
+                })
+            }
+          }
         }
+
+
       }.height('70%')
       .width('100%')
       .backgroundColor(Color.White)
