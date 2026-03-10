@@ -590,5 +590,62 @@ export default function cameraTorchTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_0200
+     * @tc.desc   IsTorchLevelControlSupported(); 手电筒是否支持亮度等级调节 IsTorchLevelControlSupported()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_0200', Level.LEVEL2, async (done: Function) => {
+      if (mCameraNum == 0) {
+        console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_0200 FAILED with NoCamera`);
+        expect().assertFail();
+        done();
+      } else {
+        try {
+          let isSupported = mCameraManager.IsTorchLevelControlSupported();
+          console.info(`${TAG} IsTorchLevelControlSupported: ${isSupported}`);
+        } catch (error) {
+          console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_0200 err` + error.code);
+          expect(error.code == camera.CameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue()
+        }
+      }
+      done();
+    })
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200
+     * @tc.desc   setTorchMode(); 设置手电筒亮度等级 setTorchMode(float level)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200', Level.LEVEL2, async (done: Function) => {
+      if (mCameraNum == 0) {
+        console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200 FAILED with NoCamera`);
+        expect().assertFail();
+        done();
+      } else {
+        try {
+          let isTorchSupportedStatus = mCameraManager.IsTorchLevelControlSupported();
+          console.info(`${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
+          if (isTorchSupportedStatus) {
+            let level = 0.5;
+            let ret = mCameraManager.SetTorchModeOnWithLevel(level);
+            console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200 ret` + ret);
+            expect(ret == 0).assertTrue();
+          }
+ 
+        } catch (error) {
+          console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200 err` + error.code);
+          expect(error.code == camera.CameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue()
+        }
+      }
+      done();
+    })
+
   })
 }
