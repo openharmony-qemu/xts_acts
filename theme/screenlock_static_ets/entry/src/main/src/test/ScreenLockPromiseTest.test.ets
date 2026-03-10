@@ -27,12 +27,12 @@ export default function ScreenLockPromiseTest() {
     });   
  
     /*
-     * @tc.number    SUB_MISC_screenLock_API_Promise_001
-     * @tc.name      SUB_MISC_screenLock_API_Promise_001
-     * @tc.desc      Test ScreenLock API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_MISC_screenLock_API_Promise_001
+     * @tc.name   SUB_MISC_screenLock_API_Promise_001
+     * @tc.desc   Test ScreenLock API functionality.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it("SUB_MISC_screenLock_API_Promise_001", Level.LEVEL2, async (done: () => void) => {
       console.info("------------------start SUB_MISC_screenLock_API_Promise_001-------------------");
@@ -51,12 +51,12 @@ export default function ScreenLockPromiseTest() {
     });
  
     /*
-     * @tc.number    SUB_MISC_screenLock_API_Promise_002
-     * @tc.name      SUB_MISC_screenLock_API_Promise_002
-     * @tc.desc      Test ScreenLock API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_MISC_screenLock_API_Promise_002
+     * @tc.name   SUB_MISC_screenLock_API_Promise_002
+     * @tc.desc   Test ScreenLock API functionality.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it("SUB_MISC_screenLock_API_Promise_002", Level.LEVEL2, async (done: () => void) => {
       console.info("------------------start SUB_MISC_screenLock_API_Promise_002-------------------");

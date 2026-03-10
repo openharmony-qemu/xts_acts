@@ -28,12 +28,12 @@ export default function screenLockJSUnit() {
         });
  
         /*
-         * @tc.number    SUB_MISC_screenLock_API_0001
-         * @tc.name      SUB_MISC_screenLock_API_0001
-         * @tc.desc      Test ScreenLock API functionality.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.number SUB_MISC_screenLock_API_0001
+         * @tc.name   SUB_MISC_screenLock_API_0001
+         * @tc.desc   Test ScreenLock API functionality.
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 0
          */
         it("SUB_MISC_screenLock_API_0001", Level.LEVEL0, async (done: () => void) => {
             console.info("====>------------------start SUB_MISC_screenLock_API_0001-------------------");
@@ -63,12 +63,12 @@ export default function screenLockJSUnit() {
         });
  
         /*
-         * @tc.number    SUB_MISC_screenLock_API_0002
-         * @tc.name      SUB_MISC_screenLock_API_0002
-         * @tc.desc      Test ScreenLock API functionality.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.number SUB_MISC_screenLock_API_0002
+         * @tc.name   SUB_MISC_screenLock_API_0002
+         * @tc.desc   Test ScreenLock API functionality.
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 0
          */
         it("SUB_MISC_screenLock_API_0002", Level.LEVEL2, async (done: () => void) => {
             console.info("====>------------------start SUB_MISC_screenLock_API_0002-------------------");
