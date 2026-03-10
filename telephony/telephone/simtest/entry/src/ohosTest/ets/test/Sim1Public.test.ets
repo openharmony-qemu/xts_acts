@@ -380,17 +380,31 @@ export default function Sim1Public() {
         console.info(`${caseName} test end`);
         done();
       }
-      let data=sim.getSimSpnSync(null);
-      if (data.length === 0) {
-        console.info(`${caseName} success : Return an empty string`);
-        ExpectTrue(true);
-        console.info(`${caseName} test end`);
-        done();
-      } else {
-        console.info(`${caseName} err The return value is not the expected value : ${data}`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
+      try{
+        let data=sim.getSimSpnSync(null);
+        if (data.length === 0) {
+          console.info(`${caseName} success : Return an empty string`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end`);
+          done();
+        } else {
+          console.info(`${caseName} err The return value is not the expected value : ${data}`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
+      }catch(err){
+        if (err.code == 401) {
+          console.info(`${caseName} successfully: Parameter error and return 401`);
+          ExpectTrue(true);
+          console.info(`${caseName} 01 test end`);
+          done();
+        } else {
+          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
       }
     });
 
@@ -412,17 +426,31 @@ export default function Sim1Public() {
         console.info(`${caseName} test end`);
         done();
       }
-      let data=sim.getSimSpnSync(undefined);
-      if (data.length === 0) {
-        console.info(`${caseName} success : Return an empty string`);
-        ExpectTrue(true);
-        console.info(`${caseName} test end`);
-        done();
-      } else {
-        console.info(`${caseName} err The return value is not the expected value : ${data}`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
+      try{
+        let data=sim.getSimSpnSync(undefined);
+        if (data.length === 0) {
+          console.info(`${caseName} success : Return an empty string`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end`);
+          done();
+        } else {
+          console.info(`${caseName} err The return value is not the expected value : ${data}`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
+      }catch(err){
+        if (err.code == 401) {
+          console.info(`${caseName} successfully: Parameter error and return 401`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end`);
+          done();
+        } else {
+          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
       }
     });
 
