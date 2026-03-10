@@ -5547,8 +5547,8 @@ export default function SoundPoolTest() {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_001 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5565,8 +5565,8 @@ export default function SoundPoolTest() {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_002 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5583,8 +5583,8 @@ export default function SoundPoolTest() {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_003 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5601,8 +5601,8 @@ export default function SoundPoolTest() {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_004 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5619,8 +5619,8 @@ export default function SoundPoolTest() {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_005 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5637,8 +5637,8 @@ export default function SoundPoolTest() {
         createSoundPoolCallbackForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_content_006 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5655,8 +5655,8 @@ export default function SoundPoolTest() {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_UNKNOWN, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_001 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5673,8 +5673,8 @@ export default function SoundPoolTest() {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SPEECH, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_002 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5691,8 +5691,8 @@ export default function SoundPoolTest() {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MUSIC, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_003 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5709,8 +5709,8 @@ export default function SoundPoolTest() {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_MOVIE, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_004 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5727,8 +5727,8 @@ export default function SoundPoolTest() {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_SONIFICATION, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_005 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5745,8 +5745,8 @@ export default function SoundPoolTest() {
         await createSoundPoolPromiseForContent(audio.ContentType.CONTENT_TYPE_RINGTONE, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_content_006 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5763,8 +5763,8 @@ export default function SoundPoolTest() {
         createSoundPoolCallbackForVolumeMode(audio.AudioVolumeMode.SYSTEM_GLOBAL, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_volume_mode_001 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5781,8 +5781,8 @@ export default function SoundPoolTest() {
         createSoundPoolCallbackForVolumeMode(audio.AudioVolumeMode.APP_INDIVIDUAL, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_for_volume_mode_002 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5799,8 +5799,8 @@ export default function SoundPoolTest() {
         await createSoundPoolPromiseForVolumeMode(audio.AudioVolumeMode.SYSTEM_GLOBAL, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_volume_mode_001 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5817,8 +5817,8 @@ export default function SoundPoolTest() {
         await createSoundPoolPromiseForVolumeMode(audio.AudioVolumeMode.APP_INDIVIDUAL, 1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_promise_for_volume_mode_002 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5835,8 +5835,8 @@ export default function SoundPoolTest() {
         createSoundPoolCallbackNull(-1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_null_001 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
 
@@ -5853,8 +5853,8 @@ export default function SoundPoolTest() {
         await createSoundPoolPromiseNull(-1, done);
       } catch (error) {
         console.error(TAG, `createSoundPool_callback_null_002 error: ${error}`);
-        done();
         expect(false).assertEqual(true);
+        done();
       }
     })
   })
