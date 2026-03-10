@@ -526,49 +526,49 @@ export default function uitestDriverErrorTest() {
       hilog.info(domain, tag, `test_driver_fling_401_static start`);
       let driver: Driver = Driver.create();
       try {
-        await driver.fling({x: -1, y: 100}, {x: 100, y: 100}, 100, 200);
+        await driver.fling({x: -1, y: 100}, {x: 500, y: 500}, 5, 200);
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_fling_401_static from.x = -1 is, ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.fling({x: 100, y: -1}, {x: 100, y: 100}, 100, 200);
+        await driver.fling({x: 100, y: -1}, {x: 500, y: 500}, 5, 200);
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_fling_401_static from.y = -1 is, ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.fling({x: 100, y: 100, displayId: -1}, {x: 100, y: 100}, 100, 200);
+        await driver.fling({x: 100, y: 100, displayId: -1}, {x: 500, y: 500}, 5, 200);
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_fling_401_static from.id = -1 is, ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.fling({x: 100, y: 100, displayId: 0}, {x: -1, y: 100}, 100, 200);
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: -1, y: 100}, 5, 200);
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_fling_401_static to.x = -1 is, ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: -1}, 100, 200);
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: -1}, 5, 200);
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_fling_401_static to.y = -1 is, ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: -1}, 100, 200);
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: -1}, 5, 200);
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_fling_401_static to.id = -1 is, ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 100, 200);
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 5, 200);
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_fling_401_static diff.id = -1 is, ${JSON.stringify(e)}`);
@@ -589,13 +589,13 @@ export default function uitestDriverErrorTest() {
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, 100, 199);
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 500, y: 500, displayId: 0}, 5, 199);
       } catch (e) {
         hilog.info(domain, tag, `test_driver_fling_401_static speed = 199 is, ${JSON.stringify(e)}`);
         expect().assertFail();
       }
       try {
-        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, 100, 41000);
+        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 500, y: 500, displayId: 0}, 5, 41000);
       } catch (e) {
         hilog.info(domain, tag, `test_driver_fling_401_static speed = 41000 is, ${JSON.stringify(e)}`);
         expect().assertFail();
