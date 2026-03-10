@@ -72,6 +72,11 @@
         "MainAbility/pages/Tabs/observer/withoutId",
         "MainAbility/pages/Tabs/nestedScroll/nestedScroll",
         "MainAbility/pages/Tabs/nestedScroll/nestedScroll01",
-        "MainAbility/pages/Tabs/nestedScroll/nestedScroll_Combined"
+        "MainAbility/pages/Tabs/nestedScroll/nestedScroll_Combined",
+        "MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStyleBoardNullUndefined",
+        "MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStyleIdNullUndefined",
+        "MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStyleIndicatorNullUndefined",
+        "MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStyleLabelStyleNullUndefined",
+        "MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStylePaddingNullUndefined"
     ]
 }
