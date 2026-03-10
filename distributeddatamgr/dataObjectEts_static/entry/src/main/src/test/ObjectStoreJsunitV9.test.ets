@@ -1040,6 +1040,35 @@ export default function objectStoreTestV9() {
     })
 
     /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setSessionId_0101
+     * @tc.name SUB_DDM_SKV_ObjectNull_setSessionId_0101
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject setSessionId(sessionId: string, callback: AsyncCallback): void;  err=401
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_setSessionId_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_setSessionId_0101 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        console.info(TAG + 'g_object=' + g_object);
+        expect(g_object == undefined).assertEqual(false);
+
+        g_object.setSessionId('123456@#123', (err)=>{
+          console.info(TAG + "join session, err=" + err!);
+          expect(err!.code).assertEqual(401);
+          done();
+        });
+      } catch (err) {
+          console.error(TAG + 'catch failed. Code: ' + err.code + ',message: ' + err.message);
+          expect().assertFail();
+          done();
+      }
+    })
+
+    /**
      * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setSessionId_Promise_0100
      * @tc.name SUB_DDM_SKV_ObjectNull_setSessionId_Promise_0100
      * @tc.type FUNC
@@ -1072,6 +1101,38 @@ export default function objectStoreTestV9() {
       }
 
     })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setSessionId_Promise_0101
+     * @tc.name SUB_DDM_SKV_ObjectNull_setSessionId_Promise_0101
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject setSessionId(sessionId?: string): Promise; err=401
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_setSessionId_Promise_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_setSessionId_Promise_0101 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        console.info(TAG + 'g_object=' + g_object);
+        expect(g_object == undefined).assertEqual(false);
+
+        await g_object.setSessionId('123456@#123').then(() => {
+          console.info(TAG + "join session");
+          expect().assertFail();
+          done();
+        });
+
+      } catch (err) {
+          console.error(TAG + 'Permission verification failed. Code: ' + err.code + ',message: ' + err.message);
+          expect(err.code).assertEqual(401);
+          done();
+      }
+
+    })
+
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_save_0100
