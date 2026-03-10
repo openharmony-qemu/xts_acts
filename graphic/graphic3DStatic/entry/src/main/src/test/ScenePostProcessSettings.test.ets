@@ -250,13 +250,14 @@ export default function scenePostProcessSettingsTest() {
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
         
-        let renderConfig = scene.renderConfiguration;
-        expect(renderConfig != null).assertTrue();
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
         
-        let postProcessSettings: PostProcessSettings = renderConfig.postProcessSettings;
-        expect(postProcessSettings != null).assertTrue();
+        camera.postProcess = { vignette: { roundness: 0.5, intensity: 0.5 } };
+        expect(camera.postProcess != null).assertTrue();
         
-        let vignette: VignetteSettings = postProcessSettings.vignette;
+        let vignette: VignetteSettings = camera.postProcess!.vignette!;
         expect(vignette != null).assertTrue();
         
         vignette.roundness = 0.5;
@@ -292,13 +293,14 @@ export default function scenePostProcessSettingsTest() {
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
         
-        let renderConfig = scene.renderConfiguration;
-        expect(renderConfig != null).assertTrue();
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
         
-        let postProcessSettings: PostProcessSettings = renderConfig.postProcessSettings;
-        expect(postProcessSettings != null).assertTrue();
+        camera.postProcess = { vignette: { roundness: 0.5, intensity: 0.3 } };
+        expect(camera.postProcess != null).assertTrue();
         
-        let vignette: VignetteSettings = postProcessSettings.vignette;
+        let vignette: VignetteSettings = camera.postProcess!.vignette!;
         expect(vignette != null).assertTrue();
         
         vignette.intensity = 0.3;
@@ -334,13 +336,14 @@ export default function scenePostProcessSettingsTest() {
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
         
-        let renderConfig = scene.renderConfiguration;
-        expect(renderConfig != null).assertTrue();
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
         
-        let postProcessSettings: PostProcessSettings = renderConfig.postProcessSettings;
-        expect(postProcessSettings != null).assertTrue();
+        camera.postProcess = { colorFringe: { intensity: 1.0 } };
+        expect(camera.postProcess != null).assertTrue();
         
-        let colorFringe: ColorFringeSettings = postProcessSettings.colorFringe;
+        let colorFringe: ColorFringeSettings = camera.postProcess!.colorFringe!;
         expect(colorFringe != null).assertTrue();
         
         colorFringe.intensity = 1.0;
@@ -376,18 +379,19 @@ export default function scenePostProcessSettingsTest() {
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
         
-        let renderConfig = scene.renderConfiguration;
-        expect(renderConfig != null).assertTrue();
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
         
-        let postProcessSettings: PostProcessSettings = renderConfig.postProcessSettings;
-        expect(postProcessSettings != null).assertTrue();
+        camera.postProcess = { vignette: { roundness: 0.5, intensity: 0.5 } };
+        expect(camera.postProcess != null).assertTrue();
         
-        let vignette: VignetteSettings = postProcessSettings.vignette;
+        let vignette: VignetteSettings = camera.postProcess!.vignette!;
         expect(vignette != null).assertTrue();
         console.info(msg + " vignette getter succeeded");
         
         let newVignette: VignetteSettings = { roundness: 0.8, intensity: 0.5 };
-        postProcessSettings.vignette = newVignette;
+        camera.postProcess!.vignette = newVignette;
         expect(postProcessSettings.vignette != null).assertTrue();
         console.info(msg + " vignette setter succeeded");
         
@@ -416,18 +420,19 @@ export default function scenePostProcessSettingsTest() {
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
         
-        let renderConfig = scene.renderConfiguration;
-        expect(renderConfig != null).assertTrue();
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
         
-        let postProcessSettings: PostProcessSettings = renderConfig.postProcessSettings;
-        expect(postProcessSettings != null).assertTrue();
+        camera.postProcess = { colorFringe: { intensity: 1.0 } };
+        expect(camera.postProcess != null).assertTrue();
         
-        let colorFringe: ColorFringeSettings = postProcessSettings.colorFringe;
+        let colorFringe: ColorFringeSettings = camera.postProcess!.colorFringe!;
         expect(colorFringe != null).assertTrue();
         console.info(msg + " colorFringe getter succeeded");
         
         let newColorFringe: ColorFringeSettings = { intensity: 1.5 };
-        postProcessSettings.colorFringe = newColorFringe;
+        camera.postProcess!.colorFringe = newColorFringe;
         expect(postProcessSettings.colorFringe != null).assertTrue();
         console.info(msg + " colorFringe setter succeeded");
         

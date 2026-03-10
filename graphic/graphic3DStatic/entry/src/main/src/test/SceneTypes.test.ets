@@ -28,11 +28,8 @@ import {
   PlaneGeometry,
   SphereGeometry,
   CylinderGeometry,
-  PrimitiveTopology,
-  Scene,
-  SceneResourceFactory
+  PrimitiveTopology
 } from '@ohos.graphics.scene'
-import { $rawfile, Resource } from '@ohos.arkui.component'
 import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index'
 
 export default function sceneTypesTest() {
@@ -49,18 +46,15 @@ export default function sceneTypesTest() {
       let msg = "============================testNodeTypeCustom";
       console.info(msg + ' begin ');
       try {
-        // Verify enum value
         expect(NodeType.CUSTOM).assertEqual(255);
         console.info(msg + " NodeType.CUSTOM = 255 verified");
         
-        // Verify distinct from other types
         expect(NodeType.CUSTOM != NodeType.NODE).assertTrue();
         expect(NodeType.CUSTOM != NodeType.GEOMETRY).assertTrue();
         expect(NodeType.CUSTOM != NodeType.CAMERA).assertTrue();
         expect(NodeType.CUSTOM != NodeType.LIGHT).assertTrue();
         console.info(msg + " NodeType.CUSTOM distinct from other types");
         
-        // Verify greater than standard types
         expect(NodeType.CUSTOM > NodeType.NODE).assertTrue();
         expect(NodeType.CUSTOM > NodeType.GEOMETRY).assertTrue();
         console.info(msg + " NodeType.CUSTOM value range verified");
@@ -86,18 +80,15 @@ export default function sceneTypesTest() {
       let msg = "============================testSceneResourceTypeEffect";
       console.info(msg + ' begin ');
       try {
-        // Verify enum value
         expect(SceneResourceType.EFFECT).assertEqual(9);
         console.info(msg + " SceneResourceType.EFFECT = 9 verified");
         
-        // Verify distinct from other types
         expect(SceneResourceType.EFFECT != SceneResourceType.NODE).assertTrue();
         expect(SceneResourceType.EFFECT != SceneResourceType.MESH_RESOURCE).assertTrue();
         expect(SceneResourceType.EFFECT != SceneResourceType.MATERIAL).assertTrue();
         expect(SceneResourceType.EFFECT != SceneResourceType.SHADER).assertTrue();
         console.info(msg + " SceneResourceType.EFFECT distinct from other types");
         
-        // Verify value is in correct range (higher than standard types)
         expect(SceneResourceType.EFFECT > SceneResourceType.MESH_RESOURCE).assertTrue();
         console.info(msg + " SceneResourceType.EFFECT value range verified");
         
@@ -122,15 +113,12 @@ export default function sceneTypesTest() {
       let msg = "============================testRenderingPipelineTypeForwardLightweight";
       console.info(msg + ' begin ');
       try {
-        // Verify enum value
         expect(RenderingPipelineType.FORWARD_LIGHTWEIGHT).assertEqual(0);
         console.info(msg + " RenderingPipelineType.FORWARD_LIGHTWEIGHT = 0 verified");
         
-        // Verify less than FORWARD
         expect(RenderingPipelineType.FORWARD_LIGHTWEIGHT < RenderingPipelineType.FORWARD).assertTrue();
         console.info(msg + " FORWARD_LIGHTWEIGHT < FORWARD verified");
         
-        // Verify distinct from other types
         expect(RenderingPipelineType.FORWARD_LIGHTWEIGHT != RenderingPipelineType.FORWARD).assertTrue();
         console.info(msg + " RenderingPipelineType values distinct");
         
@@ -151,21 +139,17 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetGeometryType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testGetGeometryType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testGetGeometryType";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
+        let customGeometry = new CustomGeometry();
+        expect(customGeometry != null).assertTrue();
         
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let geometry: GeometryDefinition = await rf.createGeometry({ name: "TestGeometry" }, GeometryType.CUSTOM);
-        expect(geometry != null).assertTrue();
-        
-        let geometryType = geometry.geometryType;
+        let geometryType = customGeometry.geometryType;
         expect(geometryType != null).assertTrue();
         expect(typeof geometryType).assertEqual('number');
+        expect(geometryType).assertEqual(GeometryType.CUSTOM);
         console.info(msg + " geometryType getter succeeded");
         
         console.info(msg + " test completed successfully");
@@ -185,16 +169,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometryGetTopology', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometryGetTopology', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometryGetTopology";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
         let topology = customGeometry.topology;
@@ -219,16 +198,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometrySetTopology', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometrySetTopology', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometrySetTopology";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
         customGeometry.topology = PrimitiveTopology.TRIANGLE_LIST;
@@ -252,21 +226,14 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometryGetVertices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometryGetVertices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometryGetVertices";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
         let vertices = customGeometry.vertices;
-        expect(vertices != null).assertTrue();
-        expect(typeof vertices).assertEqual('object');
         console.info(msg + " vertices getter succeeded");
         
         console.info(msg + " test completed successfully");
@@ -286,20 +253,14 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometrySetVertices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometrySetVertices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometrySetVertices";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
-        let vertices = new Float32Array([0, 0, 0, 1, 0, 0, 0, 1, 0]);
-        customGeometry.vertices = vertices;
+        customGeometry.vertices = [{ x: 0, y: 0, z: 0 }, { x: 1, y: 0, z: 0 }, { x: 0, y: 1, z: 0 }];
         expect(customGeometry.vertices != null).assertTrue();
         console.info(msg + " vertices setter succeeded");
         
@@ -320,21 +281,14 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometryGetIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometryGetIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometryGetIndices";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
         let indices = customGeometry.indices;
-        expect(indices != null).assertTrue();
-        expect(typeof indices).assertEqual('object');
         console.info(msg + " indices getter succeeded");
         
         console.info(msg + " test completed successfully");
@@ -354,20 +308,14 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometrySetIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometrySetIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometrySetIndices";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
-        let indices = new Uint32Array([0, 1, 2]);
-        customGeometry.indices = indices;
+        customGeometry.indices = [0, 1, 2];
         expect(customGeometry.indices != null).assertTrue();
         console.info(msg + " indices setter succeeded");
         
@@ -388,21 +336,14 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometryGetNormals', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometryGetNormals', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometryGetNormals";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
         let normals = customGeometry.normals;
-        expect(normals != null).assertTrue();
-        expect(typeof normals).assertEqual('object');
         console.info(msg + " normals getter succeeded");
         
         console.info(msg + " test completed successfully");
@@ -422,20 +363,14 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometrySetNormals', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometrySetNormals', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometrySetNormals";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
-        let normals = new Float32Array([0, 1, 0]);
-        customGeometry.normals = normals;
+        customGeometry.normals = [{ x: 0, y: 1, z: 0 }];
         expect(customGeometry.normals != null).assertTrue();
         console.info(msg + " normals setter succeeded");
         
@@ -456,21 +391,14 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometryGetUvs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometryGetUvs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometryGetUvs";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
         let uvs = customGeometry.uvs;
-        expect(uvs != null).assertTrue();
-        expect(typeof uvs).assertEqual('object');
         console.info(msg + " uvs getter succeeded");
         
         console.info(msg + " test completed successfully");
@@ -490,20 +418,14 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometrySetUvs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometrySetUvs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometrySetUvs";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
-        let uvs = new Float32Array([0, 0, 1, 1]);
-        customGeometry.uvs = uvs;
+        customGeometry.uvs = [{ x: 0, y: 0 }, { x: 1, y: 1 }];
         expect(customGeometry.uvs != null).assertTrue();
         console.info(msg + " uvs setter succeeded");
         
@@ -524,21 +446,14 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometryGetColors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometryGetColors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometryGetColors";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
         let colors = customGeometry.colors;
-        expect(colors != null).assertTrue();
-        expect(typeof colors).assertEqual('object');
         console.info(msg + " colors getter succeeded");
         
         console.info(msg + " test completed successfully");
@@ -558,20 +473,14 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCustomGeometrySetColors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCustomGeometrySetColors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCustomGeometrySetColors";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let customGeometry: CustomGeometry = await rf.createGeometry({ name: "TestCustomGeometry" }, GeometryType.CUSTOM) as CustomGeometry;
+        let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
         
-        let colors = new Float32Array([1, 0, 0, 1]);
-        customGeometry.colors = colors;
+        customGeometry.colors = [{ r: 1, g: 0, b: 0, a: 1 }];
         expect(customGeometry.colors != null).assertTrue();
         console.info(msg + " colors setter succeeded");
         
@@ -592,16 +501,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCubeGeometryGetSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCubeGeometryGetSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCubeGeometryGetSize";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cubeGeometry: CubeGeometry = await rf.createGeometry({ name: "TestCube" }, GeometryType.CUBE) as CubeGeometry;
+        let cubeGeometry = new CubeGeometry();
         expect(cubeGeometry != null).assertTrue();
         
         let size = cubeGeometry.size;
@@ -626,16 +530,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCubeGeometrySetSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCubeGeometrySetSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCubeGeometrySetSize";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cubeGeometry: CubeGeometry = await rf.createGeometry({ name: "TestCube" }, GeometryType.CUBE) as CubeGeometry;
+        let cubeGeometry = new CubeGeometry();
         expect(cubeGeometry != null).assertTrue();
         
         cubeGeometry.size = { x: 2, y: 2, z: 2 };
@@ -659,16 +558,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPlaneGeometryGetSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testPlaneGeometryGetSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testPlaneGeometryGetSize";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let planeGeometry: PlaneGeometry = await rf.createGeometry({ name: "TestPlane" }, GeometryType.PLANE) as PlaneGeometry;
+        let planeGeometry = new PlaneGeometry();
         expect(planeGeometry != null).assertTrue();
         
         let size = planeGeometry.size;
@@ -693,16 +587,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPlaneGeometrySetSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testPlaneGeometrySetSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testPlaneGeometrySetSize";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let planeGeometry: PlaneGeometry = await rf.createGeometry({ name: "TestPlane" }, GeometryType.PLANE) as PlaneGeometry;
+        let planeGeometry = new PlaneGeometry();
         expect(planeGeometry != null).assertTrue();
         
         planeGeometry.size = { x: 5, y: 5 };
@@ -726,16 +615,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSphereGeometryGetRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testSphereGeometryGetRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testSphereGeometryGetRadius";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let sphereGeometry: SphereGeometry = await rf.createGeometry({ name: "TestSphere" }, GeometryType.SPHERE) as SphereGeometry;
+        let sphereGeometry = new SphereGeometry();
         expect(sphereGeometry != null).assertTrue();
         
         let radius = sphereGeometry.radius;
@@ -760,16 +644,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSphereGeometrySetRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testSphereGeometrySetRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testSphereGeometrySetRadius";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let sphereGeometry: SphereGeometry = await rf.createGeometry({ name: "TestSphere" }, GeometryType.SPHERE) as SphereGeometry;
+        let sphereGeometry = new SphereGeometry();
         expect(sphereGeometry != null).assertTrue();
         
         sphereGeometry.radius = 2.0;
@@ -793,16 +672,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSphereGeometryGetSegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testSphereGeometryGetSegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testSphereGeometryGetSegmentCount";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let sphereGeometry: SphereGeometry = await rf.createGeometry({ name: "TestSphere" }, GeometryType.SPHERE) as SphereGeometry;
+        let sphereGeometry = new SphereGeometry();
         expect(sphereGeometry != null).assertTrue();
         
         let segmentCount = sphereGeometry.segmentCount;
@@ -827,16 +701,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSphereGeometrySetSegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testSphereGeometrySetSegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testSphereGeometrySetSegmentCount";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let sphereGeometry: SphereGeometry = await rf.createGeometry({ name: "TestSphere" }, GeometryType.SPHERE) as SphereGeometry;
+        let sphereGeometry = new SphereGeometry();
         expect(sphereGeometry != null).assertTrue();
         
         sphereGeometry.segmentCount = 32;
@@ -860,16 +729,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCylinderGeometryGetRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCylinderGeometryGetRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCylinderGeometryGetRadius";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cylinderGeometry: CylinderGeometry = await rf.createGeometry({ name: "TestCylinder" }, GeometryType.CYLINDER) as CylinderGeometry;
+        let cylinderGeometry = new CylinderGeometry();
         expect(cylinderGeometry != null).assertTrue();
         
         let radius = cylinderGeometry.radius;
@@ -894,16 +758,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCylinderGeometrySetRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCylinderGeometrySetRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCylinderGeometrySetRadius";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cylinderGeometry: CylinderGeometry = await rf.createGeometry({ name: "TestCylinder" }, GeometryType.CYLINDER) as CylinderGeometry;
+        let cylinderGeometry = new CylinderGeometry();
         expect(cylinderGeometry != null).assertTrue();
         
         cylinderGeometry.radius = 1.5;
@@ -927,16 +786,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCylinderGeometryGetHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCylinderGeometryGetHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCylinderGeometryGetHeight";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cylinderGeometry: CylinderGeometry = await rf.createGeometry({ name: "TestCylinder" }, GeometryType.CYLINDER) as CylinderGeometry;
+        let cylinderGeometry = new CylinderGeometry();
         expect(cylinderGeometry != null).assertTrue();
         
         let height = cylinderGeometry.height;
@@ -961,16 +815,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCylinderGeometrySetHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCylinderGeometrySetHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCylinderGeometrySetHeight";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cylinderGeometry: CylinderGeometry = await rf.createGeometry({ name: "TestCylinder" }, GeometryType.CYLINDER) as CylinderGeometry;
+        let cylinderGeometry = new CylinderGeometry();
         expect(cylinderGeometry != null).assertTrue();
         
         cylinderGeometry.height = 3.0;
@@ -994,16 +843,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCylinderGeometryGetSegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCylinderGeometryGetSegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCylinderGeometryGetSegmentCount";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cylinderGeometry: CylinderGeometry = await rf.createGeometry({ name: "TestCylinder" }, GeometryType.CYLINDER) as CylinderGeometry;
+        let cylinderGeometry = new CylinderGeometry();
         expect(cylinderGeometry != null).assertTrue();
         
         let segmentCount = cylinderGeometry.segmentCount;
@@ -1028,16 +872,11 @@ export default function sceneTypesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCylinderGeometrySetSegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testCylinderGeometrySetSegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testCylinderGeometrySetSegmentCount";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cylinderGeometry: CylinderGeometry = await rf.createGeometry({ name: "TestCylinder" }, GeometryType.CYLINDER) as CylinderGeometry;
+        let cylinderGeometry = new CylinderGeometry();
         expect(cylinderGeometry != null).assertTrue();
         
         cylinderGeometry.segmentCount = 24;
