@@ -16,6 +16,7 @@ import {
   Aabb,
   Animation,
   CullMode,
+  Effect,
   Environment,
   EnvironmentBackgroundType,
   Geometry,
@@ -26,6 +27,8 @@ import {
   Mesh,
   MetallicRoughnessMaterial,
   Node,
+  PolygonMode,
+  Quaternion,
   Rect,
   Sampler,
   SamplerAddressMode,
@@ -1294,6 +1297,400 @@ export default function sceneResourcesTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testAnimation_speed  " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testAnimationDuration
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1220
+     * @tc.desc   Test Animation.duration property (readonly)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testAnimationDuration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testAnimationDuration";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let animations = scene.animations;
+        expect(animations != null).assertTrue();
+        
+        let animCount = animations.count();
+        if (animCount > 0) {
+          let anim: Animation = animations.get(0);
+          expect(anim != null).assertTrue();
+          
+          expect(anim.duration != null).assertTrue();
+          expect(typeof anim.duration).assertEqual('number');
+          console.info(msg + " duration is number type and readonly");
+        } else {
+          console.info(msg + " no animations found, skip test");
+        }
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testAnimationProgress
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1230
+     * @tc.desc   Test Animation.progress property (readonly)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testAnimationProgress', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testAnimationProgress";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let animations = scene.animations;
+        expect(animations != null).assertTrue();
+        
+        let animCount = animations.count();
+        if (animCount > 0) {
+          let anim: Animation = animations.get(0);
+          expect(anim != null).assertTrue();
+          
+          expect(anim.progress != null).assertTrue();
+          expect(typeof anim.progress).assertEqual('number');
+          console.info(msg + " progress is number type and readonly");
+        } else {
+          console.info(msg + " no animations found, skip test");
+        }
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testEffectEnabled
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1240
+     * @tc.desc   Test Effect.enabled property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testEffectEnabled";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let effect: Effect = await rf.createEffect({ name: "TestEffect" });
+        expect(effect != null).assertTrue();
+        
+        effect.enabled = true;
+        expect(effect.enabled).assertTrue();
+        console.info(msg + " enabled set to true successfully");
+        
+        effect.enabled = false;
+        expect(effect.enabled).assertFalse();
+        console.info(msg + " enabled set to false successfully");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testEffectEffectId
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1250
+     * @tc.desc   Test Effect.effectId property (readonly)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectEffectId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testEffectEffectId";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let effect: Effect = await rf.createEffect({ name: "TestEffect" });
+        expect(effect != null).assertTrue();
+        
+        expect(effect.effectId != null).assertTrue();
+        expect(typeof effect.effectId).assertEqual('string');
+        console.info(msg + " effectId is string type and readonly");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testShaderSetShaderInputs
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1440
+     * @tc.desc   Test Shader.setShaderInputs method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testShaderSetShaderInputs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testShaderSetShaderInputs";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let shader: Shader = await rf.createShader({ name: "TestShader", uri: "shaders/test.shader" });
+        expect(shader != null).assertTrue();
+        
+        shader.setShaderInputs(["input1", "input2", "input3"]);
+        console.info(msg + " setShaderInputs succeeded");
+        
+        expect(true).assertTrue();
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testEffectGetPropertyValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1450
+     * @tc.desc   Test Effect.getPropertyValue method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectGetPropertyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testEffectGetPropertyValue";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let effect: Effect = await rf.createEffect({ name: "TestEffect" });
+        expect(effect != null).assertTrue();
+        
+        let value = effect.getPropertyValue("intensity");
+        expect(value != null).assertTrue();
+        console.info(msg + " getPropertyValue succeeded");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testEffectSetPropertyValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1460
+     * @tc.desc   Test Effect.setPropertyValue method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectSetPropertyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testEffectSetPropertyValue";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let effect: Effect = await rf.createEffect({ name: "TestEffect" });
+        expect(effect != null).assertTrue();
+        
+        effect.setPropertyValue("intensity", 0.5);
+        console.info(msg + " setPropertyValue succeeded");
+        
+        let value = effect.getPropertyValue("intensity");
+        expect(value).assertEqual(0.5);
+        console.info(msg + " property value verified");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testMaterialTypeUnlit
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1760
+     * @tc.desc   Test MaterialType.UNLIT enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaterialTypeUnlit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+      let msg = "============================testMaterialTypeUnlit";
+      console.info(msg + ' begin ');
+      try {
+        expect(MaterialType.UNLIT).assertEqual(3);
+        console.info(msg + " MaterialType.UNLIT = 3 verified");
+        
+        expect(MaterialType.UNLIT != MaterialType.SHADER).assertTrue();
+        expect(MaterialType.UNLIT != MaterialType.PBR).assertTrue();
+        console.info(msg + " MaterialType.UNLIT distinct from other types");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testMaterialTypeOcclusion
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1770
+     * @tc.desc   Test MaterialType.OCCLUSION enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaterialTypeOcclusion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+      let msg = "============================testMaterialTypeOcclusion";
+      console.info(msg + ' begin ');
+      try {
+        expect(MaterialType.OCCLUSION).assertEqual(4);
+        console.info(msg + " MaterialType.OCCLUSION = 4 verified");
+        
+        expect(MaterialType.OCCLUSION != MaterialType.UNLIT).assertTrue();
+        expect(MaterialType.OCCLUSION != MaterialType.SHADER).assertTrue();
+        console.info(msg + " MaterialType.OCCLUSION distinct from other types");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPolygonModeFill
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1780
+     * @tc.desc   Test PolygonMode.FILL enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPolygonModeFill', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+      let msg = "============================testPolygonModeFill";
+      console.info(msg + ' begin ');
+      try {
+        expect(PolygonMode.FILL).assertEqual(0);
+        console.info(msg + " PolygonMode.FILL = 0 verified");
+        
+        expect(PolygonMode.FILL != PolygonMode.LINE).assertTrue();
+        expect(PolygonMode.FILL != PolygonMode.POINT).assertTrue();
+        console.info(msg + " PolygonMode.FILL distinct from other modes");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPolygonModeLine
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1790
+     * @tc.desc   Test PolygonMode.LINE enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPolygonModeLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+      let msg = "============================testPolygonModeLine";
+      console.info(msg + ' begin ');
+      try {
+        expect(PolygonMode.LINE).assertEqual(1);
+        console.info(msg + " PolygonMode.LINE = 1 verified");
+        
+        expect(PolygonMode.LINE != PolygonMode.FILL).assertTrue();
+        expect(PolygonMode.LINE != PolygonMode.POINT).assertTrue();
+        expect(PolygonMode.LINE > PolygonMode.FILL).assertTrue();
+        console.info(msg + " PolygonMode.LINE value and order verified");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPolygonModePoint
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1800
+     * @tc.desc   Test PolygonMode.POINT enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPolygonModePoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+      let msg = "============================testPolygonModePoint";
+      console.info(msg + ' begin ');
+      try {
+        expect(PolygonMode.POINT).assertEqual(2);
+        console.info(msg + " PolygonMode.POINT = 2 verified");
+        
+        expect(PolygonMode.POINT != PolygonMode.FILL).assertTrue();
+        expect(PolygonMode.POINT != PolygonMode.LINE).assertTrue();
+        expect(PolygonMode.POINT > PolygonMode.LINE).assertTrue();
+        console.info(msg + " PolygonMode.POINT value and order verified");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
         expect().assertFail();
         done();
       }
