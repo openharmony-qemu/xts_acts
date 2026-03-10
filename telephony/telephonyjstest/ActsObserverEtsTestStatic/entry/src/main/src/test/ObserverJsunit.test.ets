@@ -107,7 +107,7 @@ export default function ObserverJsunit() {
         observer.onCallStateChange(options, callback);
       } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'Telephony_observer_observer_on_callStateChange_0300 on callStateChange, err:'+JSON.stringify(err));
-        expect(err.code == 8300001).assertTrue();
+        expect(Number(err.code)).assertEqual(8300001);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_on_callStateChange_0300 Test end *************');
@@ -223,7 +223,7 @@ export default function ObserverJsunit() {
         observer.onCallStateChangeEx(callback,options);
       } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'Telephony_observer_observer_on_callStateChangeEx_0300 on callStateChangeEx, err:'+JSON.stringify(err));
-        expect(err.code == 8800001).assertTrue();
+        expect(Number(err.code)).assertEqual(8800001);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_on_callStateChangeEx_0300 Test end *************');
