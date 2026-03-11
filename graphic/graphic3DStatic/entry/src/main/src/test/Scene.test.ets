@@ -1402,5 +1402,41 @@ export default function sceneTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testCloneNodeEmptyStringAndNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1411
+     * @tc.desc   Test Scene.cloneNode with empty string name and null return
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCloneNodeEmptyStringAndNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCloneNodeEmptyStringAndNull";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let node = scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514');
+        expect(node != null).assertTrue();
+        
+        let resultEmptyName = scene.cloneNode(node!, scene.root!, "");
+        console.info(msg + " cloneNode with empty string name: " + JSON.stringify(resultEmptyName));
+        expect(resultEmptyName != null).assertTrue();
+        
+        let resultNullNode = scene.cloneNode(null, scene.root!, "testNode");
+        expect(resultNullNode).assertNull();
+        console.info(msg + " cloneNode with null node returns null");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }
