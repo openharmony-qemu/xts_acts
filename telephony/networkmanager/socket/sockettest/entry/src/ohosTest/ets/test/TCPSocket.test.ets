@@ -8355,20 +8355,20 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
       }
     });
          /**
-     * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions9600
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_9600
+     * @tc.name   testNetworkMgrSocketTCPSocketConnect9600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_9600
      * @tc.desc   Unsubscribe from the closing event of TCPSocket,After Subscribing multiple times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-         it('testNetworkMgrSocketTCPSocketSetExtraOptions9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions9600';
+         it('testNetworkMgrSocketTCPSocketConnect9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+          let caseName: string = 'testNetworkMgrSocketTCPSocketConnect9600';
           try {
             console.info(`${caseName} test start`);
             let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
             expect(tcp).assertInstanceOf('Object');
-            let bindAddress: socket.NetAddress = {
+            let listenAddress: socket.NetAddress = {
               address: '127.0.0.1',
               port: 4017
             };
