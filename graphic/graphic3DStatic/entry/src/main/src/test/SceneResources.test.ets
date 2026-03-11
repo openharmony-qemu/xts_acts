@@ -1304,14 +1304,14 @@ export default function sceneResourcesTest() {
     })
 
     /**
-     * @tc.name   testAnimationDuration
+     * @tc.name   testAnimationDuration2
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1220
      * @tc.desc   Test Animation.duration property (readonly)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAnimationDuration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('testAnimationDuration2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let msg = "============================testAnimationDuration";
       console.info(msg + ' begin ');
       try {
@@ -1475,8 +1475,9 @@ export default function sceneResourcesTest() {
         
         shader.setShaderInputs({ "input1": 1.0, "input2": { x: 1, y: 1, z: 1 }, "input3": { x: 1, y: 1, z: 1, w: 1 } });
         console.info(msg + " setShaderInputs succeeded");
-        
-        expect(true).assertTrue();
+
+        let inputs = shader.getShaderInputs();
+        expect(inputs["input1"]).assertEqual(1.0);
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {

@@ -1159,10 +1159,15 @@ export default function sceneTest() {
       console.info(msg + ' begin ');
       try {
         let rc: RenderContext | null = Scene.getDefaultRenderContext();
-        rc?.registerResourcePath("custom", "resources/");
+        let result = false;
+        if (rc != null) {
+          result = rc.registerResourcePath("custom", "resources/");
+        } else {
+          console.info(msg + " registerResourcePath fail, rc != null.");
+          expect().assertFail();
+        }
         console.info(msg + " registerResourcePath succeeded");
-        
-        expect(true).assertTrue();
+        expect(result).assertTrue();
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -1173,7 +1178,7 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.name   test: add empty string and boolean tests for registerResourcePath
+     * @tc.name   testRegisterResourcePathEmptyString
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1351
      * @tc.desc   Test RenderContext.registerResourcePath with empty string and boolean returns
      * @tc.type   FUNCTION
