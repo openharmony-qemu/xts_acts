@@ -540,7 +540,215 @@ export default function HttpRequestDataCATest() {
         done();
       }
     });
-
+     /**
+     * @tc.name   testNetworkMgrHttpCAData0700
+     * @tc.number SUB_NetworkMgr_Http_CAData_0700
+     * @tc.desc   Verification failed when the certificate is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("testNetworkMgrHttpCAData0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = "testNetworkMgrHttpCAData0700";
+      console.info(`${caseName}---Start`);
+      let port = 9000+Math.round(Math.random()*5000);
+      let tlsSocketServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+      try{
+        let tlsConnOptions = getWrongTlsConnOptions(port, 0);
+        await tlsSocketServer.listen(tlsConnOptions).then( async ()=> {
+          let listenAddr: socket.NetAddress =  await tlsSocketServer.getLocalAddress();
+          console.info(`${caseName} tlsSocketServer listen address: `+JSON.stringify(listenAddr.address) +' port: '+JSON.stringify(listenAddr.port));
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} get err is `+JSON.stringify(err));
+          ExpectFail();
+          done();
+        })
+        tlsSocketServer.on('connect', async (clientSocket: socket.TLSSocketConnection)=>{
+          console.info(`${caseName}-----tlsSocketServer on connect `);
+          let clientAddr: socket.NetAddress = await clientSocket.getRemoteAddress();
+          console.info(`${caseName}----------`+JSON.stringify(clientAddr));
+          clientSocket.on('message', (msgInfo: socket.SocketMessageInfo) => {
+            let data: string = "HTTP/1.1 200 OK\n" +
+              "Server: Tengine\n" +
+              "Date: Sun\n" +
+              "Content-Type: application/json;charset=UTF-8\n" +
+              "Content-Length: 0\n" +
+              "X-Powered-By: ring/1.0.0\n" +
+              "sc: 0.013\n" +
+              "\n" +
+              "{\"status\":\"1\",\"count\":\"2\",\"info\":\"OK\",\"infocode\":\"10000\",\"lives\":[]}"
+            clientSocket.send(data);
+          })
+        });
+        let httpRequest = http.createHttp();
+        let options: http.HttpRequestOptions = {
+          method: http.RequestMethod.POST,
+          expectDataType: http.HttpDataType.STRING,
+          readTimeout: 200000,
+          usingProtocol: http.HttpProtocol.HTTP2,
+          priority: 1,
+          caData: ""
+        };
+        httpRequest.request("https://localhost:"+ port, options).then((data) => {
+          console.info(`${caseName} request success data is`+JSON.stringify(data));
+          console.error(`${caseName} Unexpected success: should have failed due to missing caData`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} request failed,err: ${JSON.stringify(err)}`);
+          if (err.code === 2300060) {
+            console.info(`${caseName} request failed with expected err code 2300060`);
+            done();
+          } else {
+            console.error(`${caseName} request failed with unexpected error code: ${err.code}`);
+            ExpectFail();
+            done();
+          }
+        })
+      }catch(error) {
+        console.log(`${caseName} request failed,error: ${JSON.stringify(error)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+     /**
+     * @tc.name   testNetworkMgrHttpCAData0800
+     * @tc.number SUB_NetworkMgr_Http_CAData_0800
+     * @tc.desc   Verification failed when the certificate is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testNetworkMgrHttpCAData0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = "testNetworkMgrHttpCAData0800";
+      console.info(`${caseName}---Start`);
+      let port = 9000+Math.round(Math.random()*5000);
+      let tlsSocketServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+      try{
+        let tlsConnOptions = getWrongTlsConnOptions(port, 0);
+        await tlsSocketServer.listen(tlsConnOptions).then( async ()=> {
+          let listenAddr: socket.NetAddress =  await tlsSocketServer.getLocalAddress();
+          console.info(`${caseName} tlsSocketServer listen address: `+JSON.stringify(listenAddr.address) +' port: '+JSON.stringify(listenAddr.port));
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} get err is `+JSON.stringify(err));
+          ExpectFail();
+          done();
+        })
+        tlsSocketServer.on('connect', async (clientSocket: socket.TLSSocketConnection)=>{
+          console.info(`${caseName}-----tlsSocketServer on connect `);
+          let clientAddr: socket.NetAddress = await clientSocket.getRemoteAddress();
+          console.info(`${caseName}----------`+JSON.stringify(clientAddr));
+          clientSocket.on('message', (msgInfo: socket.SocketMessageInfo) => {
+            let data: string = "HTTP/1.1 200 OK\n" +
+              "Server: Tengine\n" +
+              "Date: Sun\n" +
+              "Content-Type: application/json;charset=UTF-8\n" +
+              "Content-Length: 0\n" +
+              "X-Powered-By: ring/1.0.0\n" +
+              "sc: 0.013\n" +
+              "\n" +
+              "{\"status\":\"1\",\"count\":\"2\",\"info\":\"OK\",\"infocode\":\"10000\",\"lives\":[]}"
+            clientSocket.send(data);
+          })
+        });
+        let httpRequest = http.createHttp();
+        let options: http.HttpRequestOptions = {
+          method: http.RequestMethod.POST,
+          expectDataType: http.HttpDataType.STRING,
+          readTimeout: 200000,
+          usingProtocol: http.HttpProtocol.HTTP2,
+          priority: 1,
+          caData: ""
+        };
+        httpRequest.request("https://localhost:"+ port, options, (err: BusinessError, responseCode: number) => {
+          if (!err) {
+            console.info(`${caseName} request success,responseCode is `+ responseCode);
+            ExpectFail();
+            done();
+          } else {
+            console.error(`${caseName} request err is `+JSON.stringify(err));
+            ExpectTrue(err.code === 2300060);
+            done();
+          }
+        })
+      }catch(err) {
+        console.error(`${caseName} catch err is` + JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpCAData0900
+     * @tc.number SUB_NetworkMgr_Http_CAData_0900
+     * @tc.desc   Verification failed when the certificate is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testNetworkMgrHttpCAData0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = "testNetworkMgrHttpCAData0900";
+      console.info(`${caseName}---Start`);
+      let port = 9000+Math.round(Math.random()*5000);
+      let tlsSocketServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+      try{
+        let tlsConnOptions = getWrongTlsConnOptions(port, 0);
+        await tlsSocketServer.listen(tlsConnOptions).then( async ()=> {
+          let listenAddr: socket.NetAddress =  await tlsSocketServer.getLocalAddress();
+          console.info(`${caseName} tlsSocketServer listen address: `+JSON.stringify(listenAddr.address) +' port: '+JSON.stringify(listenAddr.port));
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} get err is `+JSON.stringify(err));
+          ExpectFail();
+          done();
+        })
+        tlsSocketServer.on('connect', async (clientSocket: socket.TLSSocketConnection)=>{
+          console.info(`${caseName}-----tlsSocketServer on connect `);
+          let clientAddr: socket.NetAddress = await clientSocket.getRemoteAddress();
+          console.info(`${caseName}----------`+JSON.stringify(clientAddr));
+          clientSocket.on('message', (msgInfo: socket.SocketMessageInfo) => {
+            let data: string = "HTTP/1.1 200 OK\n" +
+              "Server: Tengine\n" +
+              "Date: Sun\n" +
+              "Content-Type: application/json;charset=UTF-8\n" +
+              "Content-Length: 0\n" +
+              "X-Powered-By: ring/1.0.0\n" +
+              "sc: 0.013\n" +
+              "\n" +
+              "{\"status\":\"1\",\"count\":\"2\",\"info\":\"OK\",\"infocode\":\"10000\",\"lives\":[]}"
+            clientSocket.send(data);
+          })
+        });
+        let httpRequest = http.createHttp();
+        let options: http.HttpRequestOptions = {
+          method: http.RequestMethod.POST,
+          expectDataType: http.HttpDataType.STRING,
+          readTimeout: 200000,
+          usingProtocol: http.HttpProtocol.HTTP2,
+          priority: 1,
+          caData: ""
+        };
+        httpRequest.request("https://localhost:"+ port, options).then((data)  => {
+            console.info(`${caseName} request success data  is `+ JSON.stringify(data));
+            console.error(`${caseName} Unexpected success: should have failed due to missing caData `);
+            done();
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} request err is `+JSON.stringify(err));
+          if (err.code === 2300060) {
+            console.error(`${caseName} request failed with expected error code 2300060`);
+            done();
+          } else {
+            console.error(`${caseName} request failed with unexpected error code: ${err.code}`);
+            ExpectFail();
+            done();
+          }
+        })
+      }catch(err) {
+        console.error(`${caseName} catch err is` + JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
   });
 }
 
