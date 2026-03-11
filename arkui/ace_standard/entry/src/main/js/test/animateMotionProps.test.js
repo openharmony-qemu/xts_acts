@@ -18,7 +18,7 @@ import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
 export default function undo() {
-    describe('toolbarPropsJsTest3', function() {
+    describe('toolbarPropsJsTest3Adapt001', function() {
 
         var name = 'animateMotion',
             nameA = 'AnimateMotion',

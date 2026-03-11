@@ -34,7 +34,7 @@ import {
 } from '@ohos.UiTest';
 
 export default function swiperItemPadMar() {
-  describe('swiperItemPadMarTest', () => {
+  describe('swiperItemPadMarTestAdapt002', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Swiper/Swiper_ItemChange/swiperItemPadMar',

@@ -34,7 +34,7 @@ import {
 } from '@ohos.UiTest';
 
 export default function swiperAutoPlay_2() {
-  describe('swiperAutoPlayTest', () => {
+  describe('swiperAutoPlayTestAdapt003', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Swiper/Swiper_ParmsChange/swiperAutoPlay_2',

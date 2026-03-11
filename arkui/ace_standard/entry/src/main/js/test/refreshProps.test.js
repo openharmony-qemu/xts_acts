@@ -17,7 +17,7 @@ import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
 export default function undo() {
-    describe('refreshPropsJsTest', function() {
+    describe('refreshPropsJsTestAdapt001', function() {
 
         async function sleep(time) {
             return new Promise((resolve, reject) => {

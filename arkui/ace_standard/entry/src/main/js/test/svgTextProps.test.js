@@ -18,7 +18,7 @@ import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
 export default function undo() {
-    describe('toolbarPropsJsTest6', function() {
+    describe('toolbarPropsJsTest6Adapt001', function() {
 
         var name = 'svgText',
             nameA = 'Toolbar',
