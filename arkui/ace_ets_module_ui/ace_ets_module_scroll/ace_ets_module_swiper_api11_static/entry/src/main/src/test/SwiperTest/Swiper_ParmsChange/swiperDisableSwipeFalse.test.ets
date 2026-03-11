@@ -54,7 +54,7 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function swiperDisableSwipeFalse() {
-  describe('swiperDisableSwipeTest', () => {
+  describe('swiperDisableSwipeTestAdapt001', () => {
     beforeAll(async (): Promise<void> => {
       console.info("swiperDisableSwipeFalse beforeAll start");
 

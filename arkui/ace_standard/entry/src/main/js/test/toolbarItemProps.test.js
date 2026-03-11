@@ -18,7 +18,7 @@ import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
 export default function undo() {
-    describe('toolbarPropsJsTest5', function() {
+    describe('toolbarPropsJsTest5Adapt001', function() {
 
         var name = 'toolbarItem',
             nameA = 'ToolbarItem',
