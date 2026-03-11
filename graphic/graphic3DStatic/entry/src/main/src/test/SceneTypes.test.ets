@@ -147,6 +147,7 @@ export default function sceneTypesTest() {
         expect(customGeometry != null).assertTrue();
         
         let geometryType = customGeometry.geometryType;
+        expect(geometryType != undefined).assertTrue();
         expect(geometryType != null).assertTrue();
         expect(typeof geometryType).assertEqual('number');
         expect(geometryType).assertEqual(GeometryType.CUSTOM);
