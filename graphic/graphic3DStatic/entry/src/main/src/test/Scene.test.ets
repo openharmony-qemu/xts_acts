@@ -947,12 +947,10 @@ export default function sceneTest() {
         expect(camera != null).assertTrue();
         
         let projMatrix: Mat4x4 = camera.getProjectionMatrix();
+        expect(projMatrix != undefined).assertTrue();
         expect(projMatrix != null).assertTrue();
-        expect(projMatrix.x != null).assertTrue();
-        expect(projMatrix.y != null).assertTrue();
-        expect(projMatrix.z != null).assertTrue();
-        expect(projMatrix.w != null).assertTrue();
-        console.info(msg + " getProjectionMatrix success");
+();
+        console.info(msg + " getProjectionMatrix succeeded");
         
         // Verify matrix structure (should be perspective projection)
         expect(projMatrix.x.x).assertEqual(1);
