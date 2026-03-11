@@ -446,6 +446,37 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
+     /**
+     * @tc.name   testTelephonyObserverCallStateChangeOff0500
+     * @tc.number SUB_Telephony_Observer_CallStateChangeOff_0500
+     * @tc.desc   Unsubscribe to call status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('testTelephonyObserverCallStateChangeOff0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverCallStateChangeOff0500';
+      console.info(`${caseName} test start `);
+      try {
+        // Indicates that there is no call in progress
+        class Value {
+          state: call.CallState = call.CallState.CALL_STATE_UNKNOWN
+          number: string = ""
+        };
+        let callback: (value: Value) => void = (value: Value) => {
+          console.info(`${caseName} data ${JSON.stringify(value)}}`);
+          ExpectTrue(value !== null);
+        };
+        observer.on('callStateChange', callback);
+        observer.off(undefined, callback);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
 
     /**
      * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOn0500
