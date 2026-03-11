@@ -30,9 +30,9 @@ export default function grp1NdkTest() {
      * @tc.desc   test getgrnam_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslGrpGetGrNamR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslGrpGetGrNamR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = grp.getGrNamR();
       expect(data).assertEqual(-1);
       done()
@@ -44,9 +44,9 @@ export default function grp1NdkTest() {
      * @tc.desc   test getgrouplist
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslGrpGetGroupList002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslGrpGetGroupList002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = grp.getGroupList();
       expect(data).assertEqual(-1);
       done()
@@ -58,9 +58,9 @@ export default function grp1NdkTest() {
      * @tc.desc   test getgrgid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslGrpGetgrgid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslGrpGetgrgid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = grp.getgrgid();
       expect(result).assertEqual(-1);
       done()
@@ -72,9 +72,9 @@ export default function grp1NdkTest() {
      * @tc.desc   test getgrgid_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslGrpGetgrgidR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslGrpGetgrgidR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = grp.getgrgidR();
       expect(result).assertEqual(-1);
       done()
@@ -86,9 +86,9 @@ export default function grp1NdkTest() {
      * @tc.desc   test getgrnam
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslGrpGetgrnam002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslGrpGetgrnam002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = grp.getgrnam();
       expect(result).assertEqual(-1);
       done()

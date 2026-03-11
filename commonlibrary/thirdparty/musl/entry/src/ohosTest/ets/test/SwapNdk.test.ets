@@ -30,9 +30,9 @@ export default function swapNdkTest() {
      * @tc.desc   test swapon
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSwapSwapOn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSwapSwapOn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(swapndk.swapon()).assertEqual(0);
       done()
     });
@@ -43,9 +43,9 @@ export default function swapNdkTest() {
      * @tc.desc   test swapoff
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSwapSwapOff001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSwapSwapOff001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(swapndk.swapoff()).assertEqual(0);
       done()
     });

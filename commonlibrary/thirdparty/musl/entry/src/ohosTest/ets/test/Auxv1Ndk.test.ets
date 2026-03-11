@@ -30,9 +30,9 @@ export default function auxv1NdkTest() {
      * @tc.desc   test getauxval
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslAuxvGetauxval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslAuxvGetauxval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = auxv.getauxval(0);
       expect(result).assertEqual(1);
       done()
@@ -44,9 +44,9 @@ export default function auxv1NdkTest() {
      * @tc.desc   test getauxval
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslAuxvGetauxval002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslAuxvGetauxval002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = auxv.getauxval(-1);
       expect(result).assertEqual(-1);
       done()

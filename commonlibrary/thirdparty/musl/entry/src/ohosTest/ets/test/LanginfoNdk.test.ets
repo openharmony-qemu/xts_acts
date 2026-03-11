@@ -29,9 +29,9 @@ export default function langInfoNdkTest() {
      * @tc.desc   test nl_langinfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslLanginfoNlLanginfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslLanginfoNlLanginfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = langinfo.nlLanginfo();
       expect(a).assertEqual('Monday');
       done()
@@ -43,9 +43,9 @@ export default function langInfoNdkTest() {
      * @tc.desc   nl_langinfo_l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslLanginfoNlLanginfoL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslLanginfoNlLanginfoL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = langinfo.nlLanginfoL();
       expect(a).assertEqual('ASCII');
       done()

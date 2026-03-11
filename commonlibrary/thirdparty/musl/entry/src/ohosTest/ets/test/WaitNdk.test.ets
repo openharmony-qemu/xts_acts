@@ -31,9 +31,9 @@ export default function muslWaitNdkTest() {
      * @tc.desc   test wait
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWaitWait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWaitWait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number= waitndk.wait();
       expect(data).assertEqual(1);
       done()
@@ -44,9 +44,9 @@ export default function muslWaitNdkTest() {
      * @tc.desc   test wait3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWaitWait3001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWaitWait3001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = waitndk.wait3();
       expect(data).assertEqual(1);
       done()
@@ -57,9 +57,9 @@ export default function muslWaitNdkTest() {
      * @tc.desc   test wait4
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWaitWait4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWaitWait4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = waitndk.wait4();
       expect(data).assertEqual(1);
       done()
@@ -70,9 +70,9 @@ export default function muslWaitNdkTest() {
      * @tc.desc   test waitid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWaitWaitid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWaitWaitid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = waitndk.waitid();
       expect(data).assertEqual(1);
       done()
@@ -83,9 +83,9 @@ export default function muslWaitNdkTest() {
      * @tc.desc   test waitpid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWaitWaitpid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWaitWaitpid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = waitndk.waitpid();
       expect(data).assertEqual(1);
       done()

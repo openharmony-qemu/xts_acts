@@ -30,9 +30,9 @@ export default function muslNameserNdkTest() {
      * @tc.desc   ns_get16
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNameserNsGet16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNameserNsGet16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = nameser.nsGet16();
       expect(a).assertEqual(0);
       done()
@@ -44,9 +44,9 @@ export default function muslNameserNdkTest() {
      * @tc.desc   ns_get32
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNameserNsGet32001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNameserNsGet32001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = nameser.nsGet32();
       expect(a).assertEqual(0);
       done()
@@ -58,9 +58,9 @@ export default function muslNameserNdkTest() {
      * @tc.desc   ns_put16
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNameserNsPut16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNameserNsPut16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = nameser.nsPut16();
       expect(a).assertEqual(0);
       done()
@@ -72,9 +72,9 @@ export default function muslNameserNdkTest() {
      * @tc.desc   ns_initparse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNameserNsInitParse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNameserNsInitParse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = nameser.nsInitParse();
       expect(a).assertEqual(0);
       done()
@@ -86,9 +86,9 @@ export default function muslNameserNdkTest() {
      * @tc.desc   ns_nameuncompress
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNameserNsNameUnCompress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNameserNsNameUnCompress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = nameser.nsNameUnCompress();
       expect(a).assertEqual(0);
       done()
