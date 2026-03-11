@@ -161,7 +161,7 @@ export default function NativeCopyStyleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OHDrawingCopyTypographyStyle004', Level.LEVEL0, () => {
+    it('OHDrawingCopyTypographyStyle005', Level.LEVEL0, () => {
       const result = libGraphicDrawing.OHDrawingCopyTypographyStyle(4);
       expect(result).assertEqual(0);
     })
