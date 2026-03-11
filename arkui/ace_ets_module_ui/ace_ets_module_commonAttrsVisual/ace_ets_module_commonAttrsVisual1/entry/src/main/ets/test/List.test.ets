@@ -69,6 +69,7 @@ import SwiperContentUpdateNullTest from './ParamsNull/SwiperContentUpdateNullTes
 import UnbindTabsFromNestedScrollableNullTest from './ParamsNull/UnbindTabsFromNestedScrollableNullTest.test';
 import UnbindTabsFromScrollableNullTest from './ParamsNull/UnbindTabsFromScrollableNullTest.test';
 import GetNodePropertyValueNullTest from './ParamsNull/GetNodePropertyValueNullTest.test';
+import BindControllerNullTest from './ParamsNull/BindControllerNullTest.test';
 
 export default function testsuite() {
   rotateAngleOptionsTest()
@@ -124,4 +125,5 @@ export default function testsuite() {
   UnbindTabsFromNestedScrollableNullTest();
   UnbindTabsFromScrollableNullTest();
   GetNodePropertyValueNullTest();
+  BindControllerNullTest();
 }
