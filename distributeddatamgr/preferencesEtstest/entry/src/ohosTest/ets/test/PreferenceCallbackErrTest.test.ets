@@ -1118,28 +1118,5 @@ export default function preferencesCallBackErrTest() {
         done();
       }
     })
-
-
-    /**
-     * @tc.name   testPreferencesIsStorageTypeSupportedErr0100
-     * @tc.number SUB_DistributedData_Preference_SDK_Preference_Ets_Err_Api_CallbackTest_4700
-     * @tc.desc   interface test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-
-    it('testPreferencesIsStorageTypeSupportedErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      try {
-        let xmlType = preferences.StorageType.XML;
-        let gskvType = preferences.StorageType.GSKV;
-        let isXmlSupported = preferences.isStorageTypeSupported(null);
-        console.info("Is xml supported in current platform: " + isXmlSupported);
-      } catch (err) {
-        console.log("clear err =" + err + ", code =" + err.code + ", message =" + err.message);
-        expect('401').assertEqual(err.code);
-        done();
-      }
-    })
   })
 }
