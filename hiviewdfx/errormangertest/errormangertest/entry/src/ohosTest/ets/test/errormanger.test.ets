@@ -713,14 +713,79 @@ export default function ErrormangerTest() {
     })
 
     /**
-      * @tc.name   testErrorManger_2200
-      * @tc.number SUB_DFX_DFR_Errormanger_Ets_2200
-      * @tc.desc   在主线程注册errormanager.on接口,不支持捕获其他线程,第1个参数缺少null/undefined覆盖;
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL0
-      */
-    it('testErrorManger_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+     * @tc.name   testErrorManger_2200_on_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2200_on_null
+     * @tc.desc   在主线程注册errormanager.on接口,不支持捕获其他线程,第1个参数缺少null覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2200_on_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let observer: errorManager.ErrorObserver = {
+        onUnhandledException(errorMsg) {
+          console.log('onUnhandledException, errorMsg: ', errorMsg);
+        },
+        onException(errorObj) {
+          console.log('onException, name: ', errorObj.name);
+          console.log('onException, message: ', errorObj.message);
+          if (typeof(errorObj.stack) === 'string') {
+            console.log('onException, stack: ', errorObj.stack);
+          }
+        }
+      };
+      let observerId = -1;
+      try {
+        errorManager.on(null, observer);
+        console.info("====>testErrorManger_2200_on_null error end 01 " + observerId.toString());
+      } catch (err) {
+        console.error(`====>testErrorManger_2200_on_null error catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testErrorManger_2200_off_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2200_off_null
+     * @tc.desc   在主线程注册errormanager.off接口,不支持捕获其他线程,第1个参数缺少null覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2200_off_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let observer: errorManager.ErrorObserver = {
+        onUnhandledException(errorMsg) {
+          console.log('onUnhandledException, errorMsg: ', errorMsg);
+        },
+        onException(errorObj) {
+          console.log('onException, name: ', errorObj.name);
+          console.log('onException, message: ', errorObj.message);
+          if (typeof(errorObj.stack) === 'string') {
+            console.log('onException, stack: ', errorObj.stack);
+          }
+        }
+      };
+      let observerId = -1;
+      try {
+        console.info("====>testErrorManger_2200_off_null error start");
+        errorManager.off(null,observerId);
+        console.info("====>testErrorManger_2200_off_null error end 01 " + observerId.toString());
+      } catch (err) {
+        console.error(`====>testErrorManger_2200_off_null error catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2200_on_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2200_on_undefined
+     * @tc.desc   在主线程注册errormanager.on接口,不支持捕获其他线程,第1个参数缺少undefined覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2200_on_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let observer: errorManager.ErrorObserver = {
         onUnhandledException(errorMsg) {
           console.log('onUnhandledException, errorMsg: ', errorMsg);
@@ -736,47 +801,112 @@ export default function ErrormangerTest() {
       let error = undefined;
       let observerId = -1;
       try {
-        console.info("====>testErrorManger_2200 error start");
+        console.info("====>testErrorManger_2200_on_undefined error start");
         errorManager.on(error, observer);
-        console.info("====>testErrorManger_2200 error end 01 " + observerId.toString());
-        errorManager.off(error,observerId);
-        console.info("====>testErrorManger_2200 error end 02 " + observerId.toString());
-        errorManager.on(null, observer);
-        console.info("====>testErrorManger_2200 error end 01 " + observerId.toString());
-        errorManager.off(null,observerId);
-        console.info("====>testErrorManger_2200 error end 02 " + observerId.toString());
+        console.info("====>testErrorManger_2200_on_undefined error end 01 " + observerId.toString());
       } catch (err) {
-        console.error(`====>testErrorManger_2200 error catch > error code: ${err.code}, error msg: ${err.message}`)
+        console.error(`====>testErrorManger_2200_on_undefined error catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2200_off_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2200_off_undefined
+     * @tc.desc   在主线程注册errormanager.off接口,不支持捕获其他线程,第1个参数缺少undefined覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2200_off_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let observer: errorManager.ErrorObserver = {
+        onUnhandledException(errorMsg) {
+          console.log('onUnhandledException, errorMsg: ', errorMsg);
+        },
+        onException(errorObj) {
+          console.log('onException, name: ', errorObj.name);
+          console.log('onException, message: ', errorObj.message);
+          if (typeof(errorObj.stack) === 'string') {
+            console.log('onException, stack: ', errorObj.stack);
+          }
+        }
+      };
+      let error = undefined;
+      let observerId = -1;
+      try {
+        errorManager.off(error,observerId);
+        console.info("====>testErrorManger_2200_off_undefined error end 01 " + observerId.toString());
+      } catch (err) {
+        console.error(`====>testErrorManger_2200_off_undefined error catch > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 401).assertTrue()
         done();
       }
     })
 
     /**
-     * @tc.name   testErrorManger_2300
-     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2300
+     * @tc.name   testErrorManger_2300_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2300_null
      * @tc.desc   验证errorManager.off（），使用callback异步返回,第1个参数缺少null/undefined覆盖;第2个参数缺少null/undefined覆盖;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testErrorManger_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      let error = undefined;
+    it('testErrorManger_2300_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
-        console.info("====>testErrorManger_2300 error start");
-        errorManager.off(error, undefined, unregisterErrorObserverCallback);
-        console.info("====>testErrorManger_2300 error end 01");
+        console.info("====>testErrorManger_2300_null error start");
         errorManager.off(null, null, unregisterErrorObserverCallback);
-        console.info("====>testErrorManger_2300 error end 02");
+        console.info("====>testErrorManger_2300_null error end 01");
       } catch (err) {
-        console.error(`====>testErrorManger_2300 error catch > error code: ${err.code}, error msg: ${err.message}`)
+        console.error(`====>testErrorManger_2300_null error catch > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 401).assertTrue()
         done();
       }
     })
     /**
-     * @tc.name   testErrorManger_2400
-     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2400
+     * @tc.name   testErrorManger_2300_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2300_undefined
+     * @tc.desc   验证errorManager.off（），使用callback异步返回,第1个参数缺少undefined覆盖;第2个参数缺少undefined覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2300_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_2300_undefined error start");
+        errorManager.off(undefined, undefined, unregisterErrorObserverCallback);
+        console.info("====>testErrorManger_2300_undefined error end 01");
+      } catch (err) {
+        console.error(`====>testErrorManger_2300_undefined error catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testErrorManger_2400_on_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2400_on_null
+     * @tc.desc   验证errorManager.on("loopObserver", 1, observer),第1个参数缺少null/undefined覆盖;第2个参数缺少null/undefined覆盖;第3个参数缺少null/undefined覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2400_on_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_2400_on_null loopObserver start");
+        errorManager.on(null, null, null)
+        console.info("====>testErrorManger_2400_on_null loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_2400_on_null loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_2400_on_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2400_on_undefined
      * @tc.desc   验证errorManager.on("loopObserver", 1, observer),第1个参数缺少null/undefined覆盖;第2个参数缺少null/undefined覆盖;第3个参数缺少null/undefined覆盖;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -786,129 +916,382 @@ export default function ErrormangerTest() {
 
       let loopObserver = undefined;
       try {
-        console.info("====>testErrorManger_2400 loopObserver start");
-        errorManager.on(null, null, null)
-        console.info("====>testErrorManger_2400 loopObserver end 01");
+        console.info("====>testErrorManger_2400_on_undefined loopObserver start");
         errorManager.on(loopObserver, undefined, undefined)
-        console.info("====>testErrorManger_2400 loopObserver end 02");
-        errorManager.off(null, null)
-        console.info("====>testErrorManger_2400 loopObserver end 03");
-        errorManager.off(loopObserver, undefined)
-        console.info("====>testErrorManger_2400 loopObserver end 04");
+        console.info("====>testErrorManger_2400_on_undefined loopObserver end 01");
         done();
       } catch (err) {
-        console.error(`====>testErrorManger_2400 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
-        done();
-      }
-    })
-    /**
-     * @tc.name   testErrorManger_2500
-     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2500
-     * @tc.desc   验证errorManager.on('unhandledRejection', observerId),第1个参数缺少null/undefined覆盖;第2个参数缺少null/undefined覆盖;
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testErrorManger_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      let unhandledRejection = undefined;
-      try {
-        console.info("====>testErrorManger_2500 unhandledRejection start");
-        errorManager.on(null, null);
-        console.info("====>testErrorManger_2500 unhandledRejection end 01");
-        errorManager.on(unhandledRejection, undefined);
-        console.info("====>testErrorManger_2500 unhandledRejection end 02");
-        errorManager.off(null, null);
-        console.info("====>testErrorManger_2500 unhandledRejection end 03");
-        errorManager.off(unhandledRejection, undefined);
-        console.info("====>testErrorManger_2500 unhandledRejection end 04");
-        done();
-      } catch (err) {
-        console.error(`testErrorManger_2500 unhandledRejection catch > error code: ${err.code}, error msg: ${err.message}`)
+        console.error(`====>testErrorManger_2400_on_undefined loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 401).assertTrue()
         done();
       }
     })
 
     /**
-     * @tc.name   testErrorManger_2600
-     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2600
-     * @tc.desc   验证errorManager.on('globalErrorOccurred', errorFunc),第1个参数设置值为null/undefined,第二个参数设置值为null/undefined
+     * @tc.name   testErrorManger_2400_off_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2400_off_null
+     * @tc.desc   验证errorManager.on("loopObserver", 1, observer),第1个参数缺少null/undefined覆盖;第2个参数缺少null/undefined覆盖;第3个参数缺少null/undefined覆盖;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testErrorManger_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      let globalErrorOccurred = undefined;
-      // errorFunc
+    it('testErrorManger_2400_off_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
-        console.info("====> testErrorManger_2600 globalErrorOccurred start");
+        console.info("====>testErrorManger_2400_off_null loopObserver start");
+        errorManager.off(null, null)
+        console.info("====>testErrorManger_2400_off_null loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_2400_off_null loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_2400_off_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2400_off_undefined
+     * @tc.desc   验证errorManager.on("loopObserver", 1, observer),第1个参数缺少null/undefined覆盖;第2个参数缺少null/undefined覆盖;第3个参数缺少null/undefined覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2400_off_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+
+      let loopObserver = undefined;
+      try {
+        console.info("====>testErrorManger_2400_off_undefined loopObserver start");
+        errorManager.off(loopObserver, undefined)
+        console.info("====>testErrorManger_2400_off_undefined loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_2400_off_undefined loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2500_on_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2500_on_null
+     * @tc.desc   验证errorManager.on('unhandledRejection', observerId),第1个参数缺少null覆盖;第2个参数缺少null覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2500_on_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_2500_on_null unhandledRejection start");
+        errorManager.on(null, null);
+        console.info("====>testErrorManger_2500_on_null unhandledRejection end 01");
+        done();
+      } catch (err) {
+        console.error(`testErrorManger_2500_on_null unhandledRejection catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2500_on_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2500_on_undefined
+     * @tc.desc   验证errorManager.on('unhandledRejection', observerId),第1个参数缺少undefined覆盖;第2个参数缺少undefined覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2500_on_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let unhandledRejection = undefined;
+      try {
+        console.info("====>testErrorManger_2500_on_undefined unhandledRejection start");
+        errorManager.on(unhandledRejection, undefined);
+        console.info("====>testErrorManger_2500_on_undefined unhandledRejection end 02");
+        done();
+      } catch (err) {
+        console.error(`testErrorManger_2500_on_undefined unhandledRejection catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2500_off_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2500_off_null
+     * @tc.desc   验证errorManager.on('unhandledRejection', observerId),第1个参数缺少null覆盖;第2个参数缺少null覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2500_off_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let unhandledRejection = undefined;
+      try {
+        console.info("====>testErrorManger_2500_off_null unhandledRejection start");
+        errorManager.off(null, null);
+        console.info("====>testErrorManger_2500_off_null unhandledRejection end 01");
+        done();
+      } catch (err) {
+        console.error(`testErrorManger_2500_off_null unhandledRejection catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2500_off_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2500_off_undefined
+     * @tc.desc   验证errorManager.on('unhandledRejection', observerId),第1个参数缺少undefined覆盖;第2个参数缺少undefined覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2500_off_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let unhandledRejection = undefined;
+      try {
+        console.info("====>testErrorManger_2500_off_undefined unhandledRejection start");
+        errorManager.off(unhandledRejection, undefined);
+        console.info("====>testErrorManger_2500_off_undefined unhandledRejection end 01");
+        done();
+      } catch (err) {
+        console.error(`testErrorManger_2500_off_undefined unhandledRejection catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testErrorManger_2600_on_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2600_on_null
+     * @tc.desc   验证errorManager.on('globalErrorOccurred', errorFunc),第1个参数设置值为null,第二个参数设置值为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2600_on_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_2600_on_null globalErrorOccurred start");
         errorManager.on(null, null)
-        console.info(" ====> testErrorManger_2600 globalErrorOccurred end 01");
-        errorManager.off(null, null);
-        console.info(" ====> testErrorManger_2600 globalErrorOccurred end 02");
-        errorManager.on(globalErrorOccurred, undefined)
-        console.info(" ====> testErrorManger_2600 globalErrorOccurred end 03");
-        errorManager.off(globalErrorOccurred, undefined);
-        console.info(" ====> testErrorManger_2600 globalErrorOccurred end 04");
+        console.info(" ====> testErrorManger_2600_on_null globalErrorOccurred end 01");
         done();
       } catch (err) {
-        console.error(`====>testErrorManger_2600 globalErrorOccurred catch > error code: ${err.code}, error msg: ${err.message}`)
+        console.error(`====>testErrorManger_2600_on_null globalErrorOccurred catch > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 401).assertTrue();
         done();
       }
     })
     /**
-     * @tc.name   testErrorManger_2700
-     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2700
-     * @tc.desc   验证errorManager.on("freeze", freezeCallback),第1个参数设置值为null/undefined,第二个参数设置值为null/undefined
+     * @tc.name   testErrorManger_2600_off_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2600_off_null
+     * @tc.desc   验证errorManager.on('globalErrorOccurred', errorFunc),第1个参数设置值为null,第二个参数设置值为null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testErrorManger_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let freeze = undefined;
+    it('testErrorManger_2600_off_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
-        console.info("====> testErrorManger_2700 freeze start");
-        errorManager.on(freeze, undefined);
-        console.info("====> testErrorManger_2700 freeze end 01");
-        errorManager.on(null, null);
-        console.info("====> testErrorManger_2700 freeze end 02");
-        errorManager.off(freeze, undefined);
-        console.info("====> testErrorManger_2700 freeze end 03");
+        console.info("====> testErrorManger_2600_off_null globalErrorOccurred start");
         errorManager.off(null, null);
-        console.info("====> testErrorManger_2700 freeze end 04");
+        console.info(" ====> testErrorManger_2600_off_null globalErrorOccurred end 01");
         done();
       } catch (err) {
-        console.info("====> testErrorManger_2700 freeze catch: " + JSON.stringify(err));
+        console.error(`====>testErrorManger_2600_off_null globalErrorOccurred catch > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 401).assertTrue();
         done();
       }
     })
     /**
-     * @tc.name   testErrorManger_2800
-     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2800
-     * @tc.desc   验证在进程中任一线程注册被拒绝promise监听器，注册后可以捕获到当前进程中未被捕获到的promise rejection，第1个参数设置值为null/undefined,第二个参数设置值为null/undefined
+     * @tc.name   testErrorManger_2600_on_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2600_on_undefined
+     * @tc.desc   验证errorManager.on('globalErrorOccurred', errorFunc),第1个参数设置值为undefined,第二个参数设置值为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2600_on_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_2600_on_undefined globalErrorOccurred start");
+        errorManager.on(undefined, undefined)
+        console.info(" ====> testErrorManger_2600_on_undefined globalErrorOccurred end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_2600_on_undefined globalErrorOccurred catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2600_off_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2600_off_undefined
+     * @tc.desc   验证errorManager.on('globalErrorOccurred', errorFunc),第1个参数设置值为undefined,第二个参数设置值为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2600_off_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_2600_off_undefined globalErrorOccurred start");
+        errorManager.off(undefined, undefined);
+        console.info(" ====> testErrorManger_2600_off_undefined globalErrorOccurred end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_2600_off_undefined globalErrorOccurred catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2700_on_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2700_on_null
+     * @tc.desc   验证errorManager.on("freeze", freezeCallback),第1个参数设置值为null,第二个参数设置值为null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testErrorManger_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      let globalUnhandledRejectionDetected = undefined;
+    it('testErrorManger_2700_on_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       try {
-        console.info("====> testErrorManger_2800 globalUnhandledRejectionDetected start");
+        console.info("====> testErrorManger_2700_on_null freeze start");
         errorManager.on(null, null);
-        console.info("====> testErrorManger_2800 globalUnhandledRejectionDetected end 01");
-        errorManager.on(globalUnhandledRejectionDetected, undefined);
-        console.info("====> testErrorManger_2800 globalUnhandledRejectionDetected end 02");
-        errorManager.off(null, null);
-        console.info("====> testErrorManger_2800 globalUnhandledRejectionDetected end 03");
-        errorManager.off(globalUnhandledRejectionDetected, undefined);
-        console.info("====> testErrorManger_2800 globalUnhandledRejectionDetected end 03");
+        console.info("====> testErrorManger_2700_on_null freeze end 01");
         done();
       } catch (err) {
-        console.info("====> testErrorManger_2800 globalUnhandledRejectionDetected catch: " + JSON.stringify(err));
+        console.info("====> testErrorManger_2700_on_null freeze catch: " + JSON.stringify(err));
         expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2700_on_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2700_on_undefined
+     * @tc.desc   验证errorManager.on("freeze", freezeCallback),第1个参数设置值为undefined,第二个参数设置值为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2700_on_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_2700_on_undefined freeze start");
+        errorManager.on(undefined, undefined);
+        console.info("====> testErrorManger_2700_on_undefined freeze end 01");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_2700_on_undefined freeze catch: " + JSON.stringify(err));
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2700_off_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2700_off_null
+     * @tc.desc   验证errorManager.on("freeze", freezeCallback),第1个参数设置值为null,第二个参数设置值为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2700_off_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_2700_off_null freeze start");
+        errorManager.off(null, null);
+        console.info("====> testErrorManger_2700_off_null freeze end 01");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_2700_off_null freeze catch: " + JSON.stringify(err));
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2700_off_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2700_off_undefined
+     * @tc.desc   验证errorManager.on("freeze", freezeCallback),第1个参数设置值为undefined,第二个参数设置值为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2700_off_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_2700_off_undefined freeze start");
+        errorManager.off(undefined, undefined);
+        console.info("====> testErrorManger_2700_off_undefined freeze end 01");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_2700_off_undefined freeze catch: " + JSON.stringify(err));
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2800_on_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2800_on_null
+     * @tc.desc   验证在进程中任一线程注册被拒绝promise监听器，注册后可以捕获到当前进程中未被捕获到的promise rejection，第1个参数设置值为null,第二个参数设置值为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2800_on_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_2800_on_null globalUnhandledRejectionDetected start");
+        errorManager.on(null, null);
+        console.info("====> testErrorManger_2800_on_null globalUnhandledRejectionDetected end 01");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_2800_on_null globalUnhandledRejectionDetected catch: " + JSON.stringify(err));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2800_on_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2800_on_undefined
+     * @tc.desc   验证在进程中任一线程注册被拒绝promise监听器，注册后可以捕获到当前进程中未被捕获到的promise rejection，第1个参数设置值为undefined,第二个参数设置值为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2800_on_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_2800_on_undefined globalUnhandledRejectionDetected start");
+        errorManager.on(undefined, undefined);
+        console.info("====> testErrorManger_2800_on_undefined globalUnhandledRejectionDetected end 01");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_2800_on_undefined globalUnhandledRejectionDetected catch: " + JSON.stringify(err));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2800_off_null
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2800_off_null
+     * @tc.desc   验证在进程中任一线程注册被拒绝promise监听器，注册后可以捕获到当前进程中未被捕获到的promise rejection，第1个参数设置值为null,第二个参数设置值为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2800_off_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_2800_off_null globalUnhandledRejectionDetected start");
+        errorManager.off(null, null);
+        console.info("====> testErrorManger_2800_off_null globalUnhandledRejectionDetected end 01");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_2800_off_null globalUnhandledRejectionDetected catch: " + JSON.stringify(err));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testErrorManger_2800_off_undefined
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2800_off_undefined
+     * @tc.desc   验证在进程中任一线程注册被拒绝promise监听器，注册后可以捕获到当前进程中未被捕获到的promise rejection，第1个参数设置值为undefined,第二个参数设置值为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_2800_off_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_2800_off_undefined globalUnhandledRejectionDetected start");
+        errorManager.off(undefined, undefined);
+        console.info("====> testErrorManger_2800_off_undefined globalUnhandledRejectionDetected end 01");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_2800_off_undefined globalUnhandledRejectionDetected catch: " + JSON.stringify(err));
+        expect(err.code === 401).assertTrue();
         done();
       }
     })

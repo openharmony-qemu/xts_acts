@@ -41,40 +41,138 @@ export default function HitraceMeterTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   testHitraceMeter_0001
-     * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0001
+     * @tc.name   testHitraceMeter_0001_start
+     * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0001_start
+     * @tc.desc   验证HitraceMeter.startTrace() & HitraceMeter.finishTrace(),参数依次输入参数输入' ' ;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHitraceMeter_0001_start", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.info("testHitraceMeter_0001_start start");
+      try{
+        hiTraceMeter.startTrace("", null);
+        console.info("====> testHitraceMeter_0001_start startTrace undefined end 01");
+        done();
+      }catch(err){
+        console.error(`====>testHitraceMeter_0001_start finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+      console.info("testHitraceMeter_0001_start end");
+    })
+    /**
+     * @tc.name   testHitraceMeter_0001_finish
+     * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0001_finish
+     * @tc.desc   验证HitraceMeter.startTrace() & HitraceMeter.finishTrace(),参数依次输入参数输入' ';
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHitraceMeter_0001_finish", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.info("testHitraceMeter_0001_finish start");
+      try{
+        hiTraceMeter.finishTrace("",null);
+        console.info("====> testHitraceMeter_0001_finish finishTrace undefined end 01");
+        done();
+      }catch(err){
+        console.error(`====>testHitraceMeter_0001_finish finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+      console.info("testHitraceMeter_0001_finish end");
+    })
+
+    /**
+     * @tc.name   testHitraceMeter_0001_start_null
+     * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0001_start_null
      * @tc.desc   验证HitraceMeter.startTrace() & HitraceMeter.finishTrace(),参数依次输入参数输入undefined/null;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("testHitraceMeter_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      console.info("testHitraceMeter_0001 start");
+    it("testHitraceMeter_0001_start_null", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.info("testHitraceMeter_0001_start_null start");
       try{
-        hiTraceMeter.startTrace(undefined, undefined);
-        console.info("====> testHitraceMeter_0001 startTrace undefined end 01");
-        hiTraceMeter.finishTrace(undefined,undefined);
-        console.info("====> testHitraceMeter_0001 finishTrace undefined end 02");
         hiTraceMeter.startTrace(null, null);
-        console.info("====> testHitraceMeter_0001 startTrace undefined end 03");
-        hiTraceMeter.finishTrace(null,null);
-        console.info("====> testHitraceMeter_0001 finishTrace undefined end 04");
-        hiTraceMeter.startTrace("", null);
-        console.info("====> testHitraceMeter_0001 startTrace undefined end 03");
-        hiTraceMeter.finishTrace("",null);
-        console.info("====> testHitraceMeter_0001 finishTrace undefined end 04");
+        console.info("====> testHitraceMeter_0001_start_null startTrace undefined end 01");
         done();
       }catch(err){
-        console.error(`====>testHitraceMeter_0001 finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
+        console.error(`====>testHitraceMeter_0001_start_null finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 401).assertTrue();
         done();
       }
-      console.info("testHitraceMeter_0001 end");
+      console.info("testHitraceMeter_0001_start_null end");
+    })
+
+    /**
+     * @tc.name   testHitraceMeter_0001_finish_null
+     * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0001_finish_null
+     * @tc.desc   验证HitraceMeter.startTrace() & HitraceMeter.finishTrace(),参数依次输入参数输入undefined/null;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHitraceMeter_0001_finish_null", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.info("testHitraceMeter_0001_finish_null start");
+      try{
+        hiTraceMeter.finishTrace(null,null);
+        console.info("====> testHitraceMeter_0001_finish_null finishTrace undefined end 01");
+        done();
+      }catch(err){
+        console.error(`====>testHitraceMeter_0001_finish_null finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+      console.info("testHitraceMeter_0001_finish_null end");
+    })
+
+    /**
+     * @tc.name   testHitraceMeter_0001_start_undefined
+     * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0001_start_undefined
+     * @tc.desc   验证HitraceMeter.startTrace() & HitraceMeter.finishTrace(),参数依次输入参数输入undefined;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHitraceMeter_0001_start_undefined", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.info("testHitraceMeter_0001_start_undefined start");
+      try{
+        hiTraceMeter.startTrace(undefined, undefined);
+        console.info("====> testHitraceMeter_0001_start_undefined startTrace undefined end 01");
+        done();
+      }catch(err){
+        console.error(`====>testHitraceMeter_0001_start_undefined finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+      console.info("testHitraceMeter_0001_start_undefined end");
+    })
+    /**
+     * @tc.name   testHitraceMeter_0001_finish_undefined
+     * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0001_finish_undefined
+     * @tc.desc   验证HitraceMeter.startTrace() & HitraceMeter.finishTrace(),参数依次输入参数输入undefined;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHitraceMeter_0001_finish_undefined", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.info("testHitraceMeter_0001_finish_undefined start");
+      try{
+        hiTraceMeter.finishTrace(undefined,undefined);
+        console.info("====> testHitraceMeter_0001_finish_undefined startTrace undefined end 01");
+        done();
+      }catch(err){
+        console.error(`====>testHitraceMeter_0001_finish_undefined finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+      console.info("testHitraceMeter_0001_finish_undefined end");
     })
     /**
      * @tc.name   testHitraceMeter_0002
      * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0002
-     * @tc.desc   验证HitraceMeter.startTrace(),参数依次输入参数输入undefined/null/”“;
+     * @tc.desc   验证HitraceMeter.startTrace(),参数依次输入参数输入”“;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -82,12 +180,8 @@ export default function HitraceMeterTest() {
     it("testHitraceMeter_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("testHitraceMeter_0002 start");
       try{
-        hiTraceMeter.traceByValue(undefined, undefined);
-        console.info("====> testHitraceMeter_0002 traceByValue undefined end 01");
-        hiTraceMeter.traceByValue(null, null);
-        console.info("====> testHitraceMeter_0002 traceByValue undefined end 02");
         hiTraceMeter.traceByValue("", null);
-        console.info("====> testHitraceMeter_0002 traceByValue undefined end 03");
+        console.info("====> testHitraceMeter_0002 traceByValue undefined end 01");
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0002 traceByValue undefined catch > error code: ${err.code}, error msg: ${err.message}`)
@@ -95,6 +189,48 @@ export default function HitraceMeterTest() {
         done();
       }
       console.info("testHitraceMeter_0002 end");
+    })
+    /**
+     * @tc.name   testHitraceMeter_0002_null
+     * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0002_null
+     * @tc.desc   验证HitraceMeter.startTrace(),参数依次输入参数输入null;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHitraceMeter_0002_null", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.info("testHitraceMeter_0002_null start");
+      try{
+        hiTraceMeter.traceByValue(null, null);
+        console.info("====> testHitraceMeter_0002_null traceByValue undefined end 01");
+        done();
+      }catch(err){
+        console.error(`====>testHitraceMeter_0002_null traceByValue undefined catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+      console.info("testHitraceMeter_0002_null end");
+    })
+    /**
+     * @tc.name   testHitraceMeter_0002_undefined
+     * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0002_undefined
+     * @tc.desc   验证HitraceMeter.startTrace(),参数依次输入参数输入undefined;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHitraceMeter_0002_undefined", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.info("testHitraceMeter_0002_undefined start");
+      try{
+        hiTraceMeter.traceByValue(undefined, undefined);
+        console.info("====> testHitraceMeter_0002_undefined traceByValue undefined end 01");
+        done();
+      }catch(err){
+        console.error(`====>testHitraceMeter_0002_undefined traceByValue undefined catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+      console.info("testHitraceMeter_0002_undefined end");
     })
     /**
      * @tc.name   testHitraceMeter_0003

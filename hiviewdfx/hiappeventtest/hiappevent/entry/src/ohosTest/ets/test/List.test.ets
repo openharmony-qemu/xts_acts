@@ -25,7 +25,6 @@ import HitraceMeterTest from './hitracemeter.test'
 import HiAppEvent from './HiAppEvent.test';
 import Hichecker from './hichecker.test';
 import Hilog from'./hilog.test'
-import  HiAppEvent1 from './HiAppEventDFX.test';
 import ErrorObserver from './ErrorObserver.test';
 import jsLeakWatcher from './jsLeakWatcher.test'
 
@@ -42,7 +41,6 @@ export default function testsuite() {
   HiAppEvent();
   Hichecker();
   Hilog();
-  HiAppEvent1();
   ErrorObserver();
   jsLeakWatcher();
 }
