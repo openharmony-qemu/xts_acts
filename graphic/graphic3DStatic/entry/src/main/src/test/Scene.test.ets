@@ -900,10 +900,17 @@ export default function sceneTest() {
         expect(rf != null).assertTrue();
 
         let effectParams: EffectParameters = { effectId: "89b83608-c910-433e-9fd8-22f3ef64eabd" };
-        console.info(msg + ' rf.createEffect(effectParams) start.');
         let effect: Effect = await rf.createEffect(effectParams);
-        console.info(msg + ' rf.createEffect(effectParams) end.');
         expect(effect != null).assertTrue();
+        
+        effect.enabled = true;
+        expect(effect.enabled).assertTrue();
+        console.info(msg + " enabled set to true successfully");
+        
+        effect.enabled = false;
+        expect(effect.enabled).assertFalse();
+        console.info(msg + " enabled set to false successfully");
+        
         expect(effect.effectId).assertEqual("89b83608-c910-433e-9fd8-22f3ef64eabd");
         console.info(msg + " createEffect success");
 
@@ -1025,40 +1032,6 @@ export default function sceneTest() {
         let camera2 = await rf.createCamera({ name: "TestCamera" }, cameraParams);
         expect(camera2.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD_LIGHTWEIGHT);
         console.info(msg + " renderingPipeline set to FORWARD_LIGHTWEIGHT successfully");
-        
-        console.info(msg + " test completed successfully");
-        done();
-      } catch (err) {
-        console.info(msg + ' Failed: ' + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   testEffectParametersEffectId
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1150
-     * @tc.desc   Test EffectParameters.effectId property (readonly)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testEffectParametersEffectId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testEffectParametersEffectId";
-      console.info(msg + ' begin ');
-      try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effectParams: EffectParameters = { effectId: "TestEffect" };
-        let effect = await rf.createEffect(effectParams);
-        expect(effect != null).assertTrue();
-        
-        expect(effect.effectId != null).assertTrue();
-        expect(typeof effect.effectId).assertEqual('string');
-        console.info(msg + " effectId exists and is string type");
         
         console.info(msg + " test completed successfully");
         done();

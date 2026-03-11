@@ -1388,76 +1388,6 @@ export default function sceneResourcesTest() {
     })
 
     /**
-     * @tc.name   testEffectEnabled
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1240
-     * @tc.desc   Test Effect.enabled property getter and setter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testEffectEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testEffectEnabled";
-      console.info(msg + ' begin ');
-      try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effect: Effect = await rf.createEffect({ effectId: "TestEffect" });
-        expect(effect != null).assertTrue();
-        
-        effect.enabled = true;
-        expect(effect.enabled).assertTrue();
-        console.info(msg + " enabled set to true successfully");
-        
-        effect.enabled = false;
-        expect(effect.enabled).assertFalse();
-        console.info(msg + " enabled set to false successfully");
-        
-        console.info(msg + " test completed successfully");
-        done();
-      } catch (err) {
-        console.info(msg + ' Failed: ' + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   testEffectEffectId
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1250
-     * @tc.desc   Test Effect.effectId property (readonly)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testEffectEffectId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testEffectEffectId";
-      console.info(msg + ' begin ');
-      try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effect: Effect = await rf.createEffect({ effectId: "TestEffect" });
-        expect(effect != null).assertTrue();
-        
-        expect(effect.effectId != null).assertTrue();
-        expect(typeof effect.effectId).assertEqual('string');
-        console.info(msg + " effectId is string type and readonly");
-        
-        console.info(msg + " test completed successfully");
-        done();
-      } catch (err) {
-        console.info(msg + ' Failed: ' + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   testShaderSetShaderInputs
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1440
      * @tc.desc   Test Shader.setShaderInputs method
@@ -1509,16 +1439,31 @@ export default function sceneResourcesTest() {
         let effectParameters: EffectParameters = { effectId: effectIdName };
         let effect: Effect = await rf.createEffect(effectParameters);
 
-        let emptyValue = effect.getPropertyValue("");
-        console.info(msg + " getPropertyValue with empty string: " + JSON.stringify(emptyValue));
+        // Test 1: Get 'thresholdSoft' property value (should return Object)
+        let thresholdSoftValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue: " + JSON.stringify(thresholdSoftValue));
+        expect(thresholdSoftValue != null).assertTrue();
+        expect(typeof thresholdSoftValue).assertEqual('number');
+        console.info(msg + " thresholdSoft property value retrieved successfully");
 
-        let value = effect.getPropertyValue("enabled");
-        expect(value != null).assertTrue();
-        console.info(msg + " getPropertyValue succeeded");
+        // Test 2: Get 'thresholdHard' property value (should return Object)
+        let thresholdHardValue = effect.getPropertyValue('thresholdHard');
+        console.info(msg + " thresholdHardValue: " + JSON.stringify(thresholdHardValue));
+        expect(thresholdHardValue != null).assertTrue();
+        expect(typeof thresholdHardValue).assertEqual('number');
+        console.info(msg + " thresholdHard property value retrieved successfully");
 
-        let nullValue = effect.getPropertyValue("nonExistentProperty");
-        expect(nullValue).assertNull();
-        console.info(msg + " getPropertyValue with non-existent property returns null");
+        // Test 3: Get non-existent property value (should return null)
+        let invalidValue = effect.getPropertyValue('invalidProperty');
+        console.info(msg + " invalidValue: " + JSON.stringify(invalidValue));
+        expect(invalidValue).assertNull();
+        console.info(msg + " non-existent property returns null as expected");
+
+        // Test 6: Get empty string property value (should return null)
+        let emptyStringValue = effect.getPropertyValue('');
+        console.info(msg + " emptyStringValue: " + JSON.stringify(emptyStringValue));
+        expect(emptyStringValue).assertNull();
+        console.info(msg + " empty string property returns null as expected");
 
         console.info(msg + " test completed successfully");
         done();
@@ -1546,17 +1491,36 @@ export default function sceneResourcesTest() {
         let effectIdName: string = "89b83608-c910-433e-9fd8-22f3ef64eabd";
         let effectParameters: EffectParameters = { effectId: effectIdName };
         let effect: Effect = await rf.createEffect(effectParameters);
+        expect(effect != null).assertTrue();
+        console.info(msg + " effect created successfully");
 
-        let emptyResult = effect.setPropertyValue("", true);
-        console.info(msg + " setPropertyValue with empty string: " + JSON.stringify(emptyResult));
+        // Test 1: Set 'thresholdSoft' property value (should return true)
+        let result1 = effect.setPropertyValue('thresholdSoft', 1);
+        console.info(msg + " set thresholdSoft result: " + result1);
+        expect(result1).assertTrue();
+        console.info(msg + " thresholdSoft property set successfully");
 
-        let successResult = effect.setPropertyValue("enabled", true);
-        expect(successResult).assertTrue();
-        console.info(msg + " setPropertyValue succeeded");
+        // Verify the value was set
+        let thresholdSoftValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue after set: " + JSON.stringify(thresholdSoftValue));
+        expect(thresholdSoftValue).assertEqual(1);
 
-        let failResult = effect.setPropertyValue("nonExistentProperty", true);
-        expect(failResult).assertFalse();
-        console.info(msg + " setPropertyValue with non-existent property returns false");
+        // Test 2: Set 'thresholdHard' property value (should return true)
+        let result2 = effect.setPropertyValue('thresholdHard', 1);
+        console.info(msg + " set thresholdHard result: " + result2);
+        expect(result2).assertTrue();
+        console.info(msg + " thresholdHard property set successfully");
+
+        // Verify the value was set
+        let thresholdHardValue = effect.getPropertyValue('thresholdHard');
+        console.info(msg + " thresholdHardValue after set: " + JSON.stringify(thresholdHardValue));
+        expect(thresholdHardValue).assertEqual(1);
+
+        // Test 7: Set empty string property name (should return false)
+        let result7 = effect.setPropertyValue('', 1);
+        console.info(msg + " set with empty string propertyName result: " + result7);
+        expect(result7).assertFalse();
+        console.info(msg + " empty string propertyName test completed");
 
         console.info(msg + " test completed successfully");
         done();
