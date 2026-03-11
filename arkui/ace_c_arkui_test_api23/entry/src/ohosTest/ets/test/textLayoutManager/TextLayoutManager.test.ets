@@ -43,8 +43,8 @@ export default function TextLayoutManagerTest() {
     });
 
     /**
-     * @tc.name   TextInputCompressLeadingPunctuationTest_0020
-     * @tc.number TextInputCompressLeadingPunctuationTest_0020
+     * @tc.name   TextLayoutManagerTest002
+     * @tc.number TextLayoutManagerTest002
      * @tc.desc   test CompressLeadingPunctuationTest is true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
