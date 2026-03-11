@@ -1617,5 +1617,156 @@ export default function HttpRequestInterceptor() {
         }
         hilog.info(0x0000, 'testTag', `${caseName} test End`);
       });
+          /**
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions2400
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2400
+     * @tc.desc   test chain.getChain() type catch Internal error error 2300801 HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: Function) => {
+      const caseName: string = "testNetworkMgrHttpRequestInterceptorHttpRequestOptions2400";
+      hilog.info(0x0000, 'testTag', `${caseName} test Start`);
+      try {
+        let httpRequest: http.HttpRequest = http.createHttp();
+        hilog.info(0x0000, 'testTag', `${caseName} chain apply`);
+        let chain: http.HttpInterceptorChain = new http.HttpInterceptorChain();
+        let c1 = new TestHttpInterceptor(InterceptorType.INITIAL_REQUEST, true);
+        chain.addChain(null)
+        let cs : http.HttpInterceptor[] = chain.getChain();
+        hilog.info(0x0000, 'testTag', `${caseName} cs: ${JSON.stringify(cs)}`);
+        cahin.apply(httpRequest)
+        let options: http.HttpRequestOptions = {
+          method: http.RequestMethod.POST,
+          header: HEADER,
+          extraData: BODY_NO_CHANGE,
+        };
+        httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpRequest) => {
+          if (err) {
+            hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+            httpRequest.destory();
+            ExpectFail();
+            done();
+          } else {
+            hilog.info(0x0000, 'testTag', `${caseName} res: ${JSON.stringify(res)}`);
+            hilog.info(0x0000, 'testTag', `${caseName} finallyResponse: ${JSON.stringify(finallyResponse)}`);
+            httpRequest.destory();
+            ExpectTrue(finallyResponse.responseCode === res.responseCode)
+            ExpectTrue(finallyResponse.cookies === res.cookies)
+            ExpectTrue(JSON.stringify(finallyResponse.header) === JSON.stringify(res.header))
+            done();
+          }
+        });
+      } catch (error) {
+        const err: BusinessError = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 2300801)
+        ExpectTrue(err.message === "Parameter type not supported by the interceptor");
+        done();
+      }
+      hilog.info(0x0000, 'testTag', `${caseName} test End`);
+    });
+  /**
+   * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions2500
+   * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2500
+   * @tc.desc   test chain.getChain() type catch Internal error error 2300801 HttpRequestInterceptor
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: Function) => {
+      const caseName: string = "testNetworkMgrHttpRequestInterceptorHttpRequestOptions2500";
+      hilog.info(0x0000, 'testTag', `${caseName} test Start`);
+      try {
+        let httpRequest: http.HttpRequest = http.createHttp();
+        hilog.info(0x0000, 'testTag', `${caseName} chain apply`);
+        let chain: http.HttpInterceptorChain = new http.HttpInterceptorChain();
+        chain.addChain([]);
+        let cs :  http.HttpInterceptor[] = chain.getChain();
+        hilog.info(0x0000, 'testTag', `${caseName} cs: ${JSON.stringify(cs)}`);
+        cahin.apply(httpRequest)
+        let options: http.HttpRequestOptions = {
+          method: http.RequestMethod.POST,
+          header: HEADER,
+          extraData: BODY_NO_CHANGE,
+        };
+        httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpRequest) => {
+          if (err) {
+            hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+            httpRequest.destory();
+            ExpectFail();
+            done();
+          } else {
+            hilog.info(0x0000, 'testTag', `${caseName} res: ${JSON.stringify(res)}`);
+            hilog.info(0x0000, 'testTag', `${caseName} finallyResponse: ${JSON.stringify(finallyResponse)}`);
+            httpRequest.destory();
+            done();
+          }
+        });
+      } catch (error) {
+        const err: BusinessError = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 2300801)
+        ExpectTrue(err.message === "Parameter type not supported by the interceptor");
+        done();
+      }
+      hilog.info(0x0000, 'testTag', `${caseName} test End`);
+    });
+    /**
+   * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions2600
+   * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2600
+   * @tc.desc   test chain.getChain() type catch Internal error error 2300801 HttpRequestInterceptor
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: Function) => {
+      const caseName: string = "testNetworkMgrHttpRequestInterceptorHttpRequestOptions2600";
+      hilog.info(0x0000, 'testTag', `${caseName} test Start`);
+      try {
+        let httpRequest: http.HttpRequest = http.createHttp();
+        hilog.info(0x0000, 'testTag', `${caseName} chain apply`);
+        let chain: http.HttpInterceptorChain = new http.HttpInterceptorChain();
+        let c1 = new TestHttpInterceptor(InterceptorType.INITIAL_REQUEST, true);
+        chain.addChain([
+          c1
+          ]);
+        let cs :  http.HttpInterceptor[] = chain.getChain();
+        hilog.info(0x0000, 'testTag', `${caseName} cs: ${JSON.stringify(cs)}`);
+        cahin.apply(null);
+        let options: http.HttpRequestOptions = {
+          method: http.RequestMethod.POST,
+          header: HEADER,
+          extraData: BODY_NO_CHANGE,
+        };
+        httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpRequest) => {
+          if (err) {
+            hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+            httpRequest.destory();
+            ExpectFail();
+            done();
+          } else {
+            hilog.info(0x0000, 'testTag', `${caseName} res: ${JSON.stringify(res)}`);
+            hilog.info(0x0000, 'testTag', `${caseName} finallyResponse: ${JSON.stringify(finallyResponse)}`);
+            httpRequest.destory();
+            ExpectTrue(finallyResponse.responseCode === res.responseCode)
+            ExpectTrue(finallyResponse.cookies === res.cookies)
+            ExpectTrue(JSON.stringify(finallyResponse.header) === JSON.stringify(res.header))
+            done();
+          }
+        });
+      } catch (error) {
+        const err: BusinessError = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 2300801)
+        ExpectTrue(err.message === "Parameter type not supported by the interceptor");
+        done();
+      }
+      hilog.info(0x0000, 'testTag', `${caseName} test End`);
+    });
   });
 }
