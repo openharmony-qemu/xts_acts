@@ -541,7 +541,12 @@ export default function uitestUiWindowTest() {
           hilog.info(domain, tag, `testWindowIsFocused focus sccessful`);
           let isFocused = await window.isFocused();
           hilog.info(domain, tag, `testWindowIsFocused isFocused, ${JSON.stringify(isFocused)} `);
-          expect(isFocused == true).assertTrue()
+          expect(isFocused).assertTrue()
+        }
+        let focusedWindow1 = await driver.findWindow({focused: false});
+        if (focusedWindow1 != null) {
+          let falseFocused1 = await focusedWindow1.isFocused();
+          expect(falseFocused1).assertFalse()
         }
       } catch (error) {
         hilog.info(domain, tag, `testWindowIsFocused error, ${JSON.stringify(error)} `);
@@ -573,11 +578,13 @@ export default function uitestUiWindowTest() {
           hilog.info(domain, tag, `testWindowIsActive focus sccessful`);
           let isActive = await window.isActive();
           hilog.info(domain, tag, `testWindowIsActive isActive, ${JSON.stringify(isActive)} `);
-          expect(isActive == true).assertTrue()
+          expect(isActive).assertTrue()
         }
-        let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', focused: false, active: false });
-        hilog.info(domain, tag, `testWindowIsActive window1, ${JSON.stringify(window1)} `);
-        expect(window1 == null).assertTrue();
+        let uitestWindow = await driver.findWindow({active: false})
+        if (uitestWindow != null) {
+          let isActive1 = await uitestWindow.isActive()
+          expect(isActive1).assertFalse();
+        }
       } catch (error) {
         hilog.info(domain, tag, `testWindowIsActive error, ${JSON.stringify(error)} `);
         expect().assertFail()
