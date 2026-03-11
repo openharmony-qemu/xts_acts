@@ -80,6 +80,7 @@ import scrollReachJsunit from './ScrollTest/scrollReachJsunit.test';
 import alphabetAlignStyle from './AlphabetIndexerTest/alphabetAlignStyle.test';
 import outliersAlphabet from './AlphabetIndexerTest/outliersAlphabet.test';
 import valueAlphabet from './AlphabetIndexerTest/valueAlphabet.test';
+import nullAlphabet from './AlphabetIndexerTest/nullAlphabet.test';
 import tabsCallBack1 from './TabsTest/tabsCallBack1.test';
 import tabsCallBack2 from './TabsTest/tabsCallBack2.test';
 import tabsCallBack3 from './TabsTest/tabsCallBack3.test';
@@ -199,6 +200,7 @@ export default function testsuite() {
   alphabetAlignStyle()
   outliersAlphabet()
   valueAlphabet()
+  nullAlphabet()
   tabsCallBack1()
   tabsCallBack2()
   tabsCallBack3()
