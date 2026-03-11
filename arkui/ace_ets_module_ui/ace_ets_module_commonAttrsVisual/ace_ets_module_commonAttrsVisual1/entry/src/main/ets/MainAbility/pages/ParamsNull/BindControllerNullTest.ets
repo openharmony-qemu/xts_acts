@@ -17,7 +17,7 @@ import { FrameNode, NodeController, typeNode } from '@kit.ArkUI';
 
 // 继承NodeController实现自定义Swiper控制器
 class MySwiperController extends NodeController {
-  swiperController: SwiperController = new SwiperController()
+  public swiperController: SwiperController = new SwiperController()
 
   makeNode(uiContext: UIContext): FrameNode | null {
     // 创建Swiper
@@ -25,7 +25,7 @@ class MySwiperController extends NodeController {
 
     // 创建Text
     let text0 = typeNode.createNode(uiContext, 'Text')
-    text0.initialize("0")
+    text0.initialize('0')
       .width('100%')
       .height('100%')
       .textAlign(TextAlign.Center)
@@ -33,7 +33,7 @@ class MySwiperController extends NodeController {
     swiperNode.appendChild(text0)
     // 创建另一个Text用于切换
     let text1 = typeNode.createNode(uiContext, 'Text')
-    text1.initialize("1")
+    text1.initialize('1')
       .width('100%')
       .height('100%')
       .textAlign(TextAlign.Center)
