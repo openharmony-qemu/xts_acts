@@ -29,7 +29,7 @@ let mifareUltralightTaginfo = {
             "Sak": 0x08, "Atqa": "B000",
         },
         {
-            "MifareUltralightC": "ture",
+            "MifareUltralightC": "true",
         },
     ],
     "tagRfDiscId": 1,
@@ -49,7 +49,7 @@ let mifareUltralightTaginfo1 = {
             "Sak": 0x00, "Atqa": "B000",
         },
         {
-            "MifareUltralightC": "ture",
+            "MifareUltralightC": "true",
         },
     ],
     "tagRfDiscId": 1,
