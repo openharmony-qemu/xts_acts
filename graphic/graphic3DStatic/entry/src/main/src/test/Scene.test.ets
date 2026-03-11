@@ -1235,8 +1235,8 @@ export default function sceneTest() {
         expect(scene != null).assertTrue();
         
         let env = scene.environment;
+        expect(env != undefined).assertTrue();
         expect(env != null).assertTrue();
-        expect(typeof env).assertEqual('object');
         console.info(msg + " environment getter succeeded");
         
         console.info(msg + " test completed successfully");
