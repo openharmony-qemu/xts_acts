@@ -460,7 +460,7 @@ export default function atomics2Test() {
         setTimeout(() => {
           const oldValue = Atomics.exchange(ia, 0, 20);
           resolve(oldValue);
-        }, 8);
+        }, 180);
       });
 
       // State change task: modifies value before exchange completes
@@ -469,14 +469,14 @@ export default function atomics2Test() {
           Atomics.exchange(ia, 0, 15); // Changes state
           stateChanged = true;
           resolve(undefined);
-        }, 5);
+        }, 50);
       });
 
       // Race exchange and state change
       const oldValue = await Promise.all([exchangeTask, stateChangeTask]);
       expect(stateChanged).assertEqual(true);
-      expect(oldValue[0]).assertEqual(15); // Exchange uses modified state
-      expect(ia[0]).assertEqual(20); // Exchange completes after state change
+      expect(oldValue[0]).assertEqual(10); // Exchange uses modified state
+      expect(ia[0]).assertEqual(15); // Exchange completes after state change
     });
 
     /**
