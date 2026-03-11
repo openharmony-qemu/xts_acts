@@ -31,19 +31,19 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function XComponentSliderTest() {
-  describe('XComponentSliderTest', () => {
+export default function ColumnSliderTest() {
+  describe('ColumnSliderTest', () => {
 
     beforeAll(async (): Promise<void> => {
-      console.info("XComponentSliderTest beforeAll start");
+      console.info("ColumnSliderTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 
-      console.info("XComponentSliderTest beforeAll end");
+      console.info("ColumnSliderTest beforeAll end");
     });
 
     const routerPush = async (target:string) => {
       let options:router.RouterOptions = {
-        url: `MainAbility/pages/Slider/XcomponentSlider/${target}`,
+        url: `MainAbility/pages/Slider/ColumnSlider/${target}`,
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -77,7 +77,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_021', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider01")
+      await routerPush("ColumnSlider01")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -97,7 +97,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_022', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider02")
+      await routerPush("ColumnSlider02")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -117,7 +117,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_023', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider03")
+      await routerPush("ColumnSlider03")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -137,7 +137,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_024', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider04")
+      await routerPush("ColumnSlider04")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -157,7 +157,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_025', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider05")
+      await routerPush("ColumnSlider05")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -177,7 +177,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_026', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider06")
+      await routerPush("ColumnSlider06")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -197,7 +197,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_027', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider07")
+      await routerPush("ColumnSlider07")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -217,7 +217,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_033', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider08")
+      await routerPush("ColumnSlider08")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -237,7 +237,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_034', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider09")
+      await routerPush("ColumnSlider09")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -257,7 +257,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_035', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider10")
+      await routerPush("ColumnSlider10")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -277,7 +277,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_036', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider11")
+      await routerPush("ColumnSlider11")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -297,7 +297,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_037', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider12")
+      await routerPush("ColumnSlider12")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -317,7 +317,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_038', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider13")
+      await routerPush("ColumnSlider13")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -337,7 +337,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_039', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider14")
+      await routerPush("ColumnSlider14")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -357,7 +357,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_040', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider15")
+      await routerPush("ColumnSlider15")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -377,7 +377,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_041', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider16")
+      await routerPush("ColumnSlider16")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -423,7 +423,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_042', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider17")
+      await routerPush("ColumnSlider17")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -465,7 +465,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0010', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider18")
+      await routerPush("ColumnSlider18")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -488,7 +488,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0020', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider19")
+      await routerPush("ColumnSlider19")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -511,7 +511,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0030', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider20")
+      await routerPush("ColumnSlider20")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -534,7 +534,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0040', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider21")
+      await routerPush("ColumnSlider21")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -557,7 +557,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0050', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider22")
+      await routerPush("ColumnSlider22")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -580,7 +580,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0060', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider23")
+      await routerPush("ColumnSlider23")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -603,7 +603,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0070', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider24")
+      await routerPush("ColumnSlider24")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -626,7 +626,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0090', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider25")
+      await routerPush("ColumnSlider25")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -651,7 +651,7 @@ export default function XComponentSliderTest() {
      * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await routerPush("XcomponentSlider26")
+      await routerPush("ColumnSlider26")
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
