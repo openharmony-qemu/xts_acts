@@ -17,6 +17,8 @@ import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import connection from '@ohos.net.connection';
 import { BusinessError } from '@ohos.base';
 import socket from '@ohos.net.socket';
+import {common } from '@kit.AbilityKit';
+import {policy } from '@kit.AbilityKit';
 
 const ExpectFail: () => void = () => {
   try {
@@ -9286,6 +9288,68 @@ export default function ConnectionPublicTest() {
           ExpectTrue(err.code == 201);
           console.info(`${caseName}---End`);
           done();
+        }
+      });
+
+      /**
+    * @tc.name   testNetworkMgrPolicyShowAppNetPolicySetting0100
+    * @tc.number SUB_NetworkMgr_Policy_ShowAppNetPolicySetting_0100
+    * @tc.desc   Test ShowAppNetPolicySetting undefined
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+      it("testNetworkMgrPolicyShowAppNetPolicySetting0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName: string = "testNetworkMgrPolicyShowAppNetPolicySetting0100";
+        console.info(`${caseName}---Start`);
+        try{
+          let context:common.UIAbilityContext = getContext() as common.UIAbilityContext;
+          policy.showAppNetPolicySettings(undefined).then(() => {
+            console.info(`${caseName} showAppNetPolicySettings success`);
+            ExpectFail();
+            done();
+          }).catch((error: BusinessError)=>{
+            console.info(`${caseName} showAppNetPolicySettings failed, error:${JSON.stringify(error)}`);
+            console.info(`${caseName} fail, errInfo ->${JSON.stringify(error)}`);
+            ExpectTrue(error == null);
+            done();
+          })
+        }catch (err){
+          console.info(`${caseName} catch err ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+          console.info(`${caseName}---End`);
+        }
+      });
+
+   /**
+    * @tc.name   testNetworkMgrPolicyShowAppNetPolicySetting0200
+    * @tc.number SUB_NetworkMgr_Policy_ShowAppNetPolicySetting_0200
+    * @tc.desc   Test ShowAppNetPolicySetting null
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+      it("testNetworkMgrPolicyShowAppNetPolicySetting0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName: string = "testNetworkMgrPolicyShowAppNetPolicySetting0200";
+        console.info(`${caseName}---Start`);
+        try{
+          let context:common.UIAbilityContext = getContext() as common.UIAbilityContext;
+          policy.showAppNetPolicySettings(null).then(() => {
+            console.info(`${caseName} showAppNetPolicySettings success`);
+            ExpectFail();
+            done();
+          }).catch((error: BusinessError)=>{
+            console.info(`${caseName} showAppNetPolicySettings failed, error:${JSON.stringify(error)}`);
+            console.info(`${caseName} fail, errInfo ->${JSON.stringify(error)}`);
+            ExpectTrue(error == null);
+            done();
+          })
+        }catch (err){
+          console.info(`${caseName} catch err ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+          console.info(`${caseName}---End`);
         }
       });
   });
