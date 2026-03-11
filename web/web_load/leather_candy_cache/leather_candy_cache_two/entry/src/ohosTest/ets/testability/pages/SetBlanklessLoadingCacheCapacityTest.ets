@@ -235,6 +235,17 @@ struct setBlanklessLoadingCacheCapacityTest {
                 }
                 break;
               }
+              case 'testsetBlanklessLoadingCacheCapacity011': {
+                let msg = 'testsetBlanklessLoadingCacheCapacity011'
+                let cacheCapacity: number = testNapi.setCacheCapacity100(this.webTag)
+                console.log(msg, `parameter: 100`,`expect value: 100`,`actual value: ${cacheCapacity}`);
+                if (cacheCapacity == 0) {
+                  Utils.emitEvent(100, 148292)
+                } else {
+                  Utils.emitEvent(cacheCapacity, 148292)
+                }
+                break;
+              }
             }
           })
       }

@@ -2157,5 +2157,133 @@ export default function RdbErrorCode14800033() {
     console.log(TAG + "************* testRdbStoreExecuteSq0200 end *************");
     })
 
+  /**
+   * @tc.name testRdbInsert14800033_callback_001
+   * @tc.number testRdbInsert14800033_callback_001
+   * @tc.desc testRdbInsert14800033_callback_001
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 2
+   */
+    it('testRdbInsert14800033_callback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info(TAG + "************* testRdbInsert14800033_callback_001 start *************");
+        const valueBucket: relationalStore.ValuesBucket = {
+          "id": "abc",
+          "name": "Jim",
+          "age": 30 as long,
+          "salary": 2000.1
+        }
+        if (rdbStore!= undefined) {
+          rdbStore!.insert("employee1", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK,
+            (err, rowId) => {
+              if (err) {
+                console.error(tag +`Insert is failed, code is ${err.code}, message is ${err.message}`);
+                expect(14800033).assertEqual(err.code);
+                done();
+              }else{
+                console.info(tag +`Insert is successful, rowId = ${rowId}`);
+                expect(true).assertFail();
+                done();
+              }
+            });
+        }
+
+        console.info(TAG + "************* testRdbInsert14800033_callback_001 end *************");
+      })
+
+    /**
+     * @tc.name testRdbBatchInsert14800033_callback_001
+     * @tc.number testRdbBatchInsert14800033_callback_001
+     * @tc.desc testRdbBatchInsert14800033_callback_001
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testRdbBatchInsert14800033_callback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info(TAG + "************* testRdbBatchInsert14800033_callback_001 start *************");
+        let values: Array<relationalStore.ValuesBucket> = new Array<relationalStore.ValuesBucket>();
+        const valueBucket: relationalStore.ValuesBucket = {
+          "id": "abc",
+          "name": "Jim",
+          "age": 30 as long,
+          "salary": 2000.1
+        }
+        values.push(valueBucket);
+        if (rdbStore!= undefined) {
+          rdbStore!.batchInsert("employee1", values, (err, rowId) => {
+            if (err) {
+              console.error(TAG +`Insert is failed, code is ${err.code}, message is ${err.message}`);
+              expect(err.code).assertEqual(14800033);
+              done();
+            }else{
+              console.info(TAG +`Insert is successful, rowId = ${rowId}`);
+              done();
+            }
+          });
+        }
+
+        console.info(TAG + "************* testRdbBatchInsert14800033_callback_001 end *************");
+      })
+
+    /**
+     * @tc.name testRdbUpdate14800033_callback_001
+     * @tc.number testRdbUpdate14800033_callback_001
+     * @tc.desc update success callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testRdbUpdate14800033_callback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info(TAG + "************* testRdbUpdate14800033_callback_001 start *************");
+        const valueBucket: relationalStore.ValuesBucket = {
+          "id": "abc",
+          "name": "Jim",
+          "age": 30 as long,
+          "salary": 2000.1
+        }
+        let predicates = new relationalStore.RdbPredicates("employee1");
+        predicates.equalTo("name", "Jim");
+        rdbStore!.update(valueBucket, predicates, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK, (err, rows) => {
+          if (err) {
+            console.error(TAG +`Updated failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(14800033);
+            done();
+          }
+          console.info(TAG +`Updated row count: ${rows}`);
+          done();
+        });
+
+        console.info(TAG + "************* testRdbUpdate14800033_callback_001 end *************");
+      })
+
+    /**
+     * @tc.name testRdbDelete14800033_callback_001
+     * @tc.number testRdbDelete14800033_callback_001
+     * @tc.desc delete success callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testRdbDelete14800033_callback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info(TAG + "************* testRdbDelete14800033_callback_001 start *************");
+        let predicates = new relationalStore.RdbPredicates("employee1");
+        predicates.equalTo("name", "Jim");
+        rdbStore!.delete(predicates, (err, rows) => {
+          if (err) {
+            console.error(TAG +`delete failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(14800033);
+            done();
+          }else{
+            console.info(TAG +`delete succsee: ${rows}`);
+            done();
+          }
+        })
+        console.info(TAG + "************* testRdbDelete14800033_callback_001 end *************");
+      })
+
   })
 }

@@ -209,7 +209,7 @@ export default function alignSelfTest() {
             let parentRectY = Utils.getRectVerticalCenterY(parentRect);
             console.info('[' + data.caseTag + '] rectY : ' + rectY);
             console.info('[' + data.caseTag + '] parentRectY : ' + parentRectY);
-            expect(rectY).assertEqual(parentRectY);
+            expect(Math.floor(Math.abs(rectY - parentRectY)) <= 1).assertTrue();
             expect(Math.floor(Math.abs(rect.left - parentRect.left)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End

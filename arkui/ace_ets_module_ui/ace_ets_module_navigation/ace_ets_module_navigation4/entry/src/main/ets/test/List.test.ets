@@ -22,6 +22,7 @@ import NavigatorAttributeNullUndefinedTest from './navigator/NavigatorAttributeN
 import NavDestinationAttributeNullUndefinedTest from './navDestination/NavDestinationAttributeNullUndefined.test';
 import TabsControllerNullUndefined from './TabsNullUndefined/TabsControllerNullUndefined.test';
 import TabsAttributeNullUndefined from './TabsNullUndefined/TabsAttributeNullUndefined.test';
+import AlphabetIndexerPropertiesNullUndefined from './AlphabetIndexNullUndefined/AlphabetIndexerPropertiesNullUndefined.test';
 
 export default function testsuite() {
   GetStackSize()
@@ -34,4 +35,5 @@ export default function testsuite() {
   NavDestinationAttributeNullUndefinedTest()
   TabsControllerNullUndefined()
   TabsAttributeNullUndefined()
+  AlphabetIndexerPropertiesNullUndefined()
 }

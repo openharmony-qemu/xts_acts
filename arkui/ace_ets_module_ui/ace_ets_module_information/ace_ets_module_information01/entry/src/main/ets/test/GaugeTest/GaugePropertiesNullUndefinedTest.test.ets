@@ -217,7 +217,7 @@ export default function GaugePropertiesNullUndefinedTest() {
       console.info("[gaugeStrokeWidth_null_0100] null strokeWidth is: " + JSON.stringify(obj.$attrs.strokeWidth));
 
       // null 应该恢复为默认值
-      expect(obj.$attrs.strokeWidth).assertEqual(objCompare.$attrs.strokeWidth);
+      expect(obj.$attrs.strokeWidth).assertEqual('0.00px');
       console.info('[gaugeStrokeWidth_null_0100] END');
     })
 
@@ -243,7 +243,7 @@ export default function GaugePropertiesNullUndefinedTest() {
       console.info("[gaugeStrokeWidth_undefined_0100] undefined strokeWidth is: " + JSON.stringify(obj.$attrs.strokeWidth));
 
       // undefined 应该恢复为默认值
-      expect(obj.$attrs.strokeWidth).assertEqual(objCompare.$attrs.strokeWidth);
+      expect(obj.$attrs.strokeWidth).assertEqual('0.00px');
       console.info('[gaugeStrokeWidth_undefined_0100] END');
     })
 

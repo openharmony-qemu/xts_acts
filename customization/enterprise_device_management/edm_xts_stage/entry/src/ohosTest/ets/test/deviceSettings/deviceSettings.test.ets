@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFHAPNAME, SELFWANT, DEFAULT_USER_ID } from '../commom';
+import { ENTINFO1, SELFHAPNAME, SELFWANT, DEFAULT_USER_ID, getErrorCode } from '../commom';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import deviceSettings from '@ohos.enterprise.deviceSettings';
@@ -1002,10 +1002,10 @@ export default function deviceSettingsTest() {
     it("test_device_settings_get_value_for_account_0500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        deviceSettings.getValueForAccount(null, deviceSettings.SettingsItem.DEVICE_NAME, -1);
+        deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, -1);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code == 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1023,8 +1023,8 @@ export default function deviceSettingsTest() {
     it("test_device_settings_get_value_for_account_0600", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        let result: string = deviceSettings.getValueForAccount(null, deviceSettings.SettingsItem.DEVICE_NAME, 0);
-        expect(result).not().assertUndefined();
+        let result: string = deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, 0);
+        expect(result.length == 0).assertTrue();
       } catch (error) {
         expect().assertFail();
       } finally {
@@ -1128,7 +1128,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, -1, 'deviceName');
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code == 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1876,5 +1876,178 @@ export default function deviceSettingsTest() {
       done();
       console.info(' --- setUnlockWallpaper_test_032  -------- END --------');
     })
+
+    /**
+ 	      * @tc.name   test_device_settings_get_floating_navigation_0100
+ 	      * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_FLOATING_NAVIGATION_JS_0100
+ 	      * @tc.desc   test deviceSettings getFloatingNavigatio without admin
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+    it("test_device_settings_get_floating_navigation_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100);
+        expect(false).assertTrue();
+      } catch (err) {
+        const errorCode = getErrorCode(err);
+        expect(errorCode === 9200001 || errorCode === 801).assertTrue();
+      }
+      done();
+    });
+    
+    /**
+     * @tc.name   test_device_settings_get_floating_navigation_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_FLOATING_NAVIGATION_JS_0200
+     * @tc.desc   test deviceSettings getFloatingNavigatio with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_get_floating_navigation_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100);
+        expect(false).assertTrue();
+      } catch (err) {
+        const errorCode = getErrorCode(err);
+        expect(errorCode === 9200002 || errorCode === 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_get_floating_navigation_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_FLOATING_NAVIGATION_JS_0300
+     * @tc.desc   test deviceSettings getFloatingNavigation with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_get_floating_navigation_0300", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.getValueForAccount(null, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100);
+        expect(false).assertTrue();
+      } catch (err) {
+        const errorCode = getErrorCode(err);
+        expect(errorCode === 401 || errorCode === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+    
+    /**
+     * @tc.name   test_device_settings_set_floating_navigation_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0100
+     * @tc.desc   test deviceSettings setFloatingNavigation without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_floating_navigation_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '0');
+        expect(false).assertTrue();
+      } catch (err) {
+        const errorCode = getErrorCode(err);
+        expect(errorCode === 9200001 || errorCode === 801).assertTrue();
+      }
+      done();
+    });
+    
+    /**
+     * @tc.name   test_device_settings_set_floating_navigation_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0200
+     * @tc.desc   test deviceSettings setFloatingNavigation with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_floating_navigation_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '0');
+        expect(false).assertTrue();
+      } catch (err) {
+        const errorCode = getErrorCode(err);
+        expect(errorCode === 9200002 || errorCode === 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+    
+    /**
+     * @tc.name   test_device_settings_set_floating_navigation_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0300
+     * @tc.desc   test deviceSettings setFloatingNavigation, Incorrect parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_floating_navigation_0300", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '2');
+        expect(false).assertTrue();
+      } catch (err) {
+        const errorCode = getErrorCode(err);
+        expect(errorCode === 9200012 || errorCode === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+    
+    /**
+     * @tc.name   test_device_settings_set_floating_navigation_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0400
+     * @tc.desc   test deviceSettings setFloatingNavigation with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_floating_navigation_0400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setValueForAccount(null, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '0');
+        expect(false).assertTrue();
+      } catch (err) {
+        const errorCode = getErrorCode(err);
+        expect(errorCode === 401 || errorCode === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_floating_navigation_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_FLOATING_NAVIGATION_JS_0500
+     * @tc.desc   test deviceSettings setFloatingNavigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_floating_navigation_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '0');
+        let result: string = deviceSettings.getValueForAccount(SELFWANT,
+          deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100);
+        expect(result).assertEqual('0');
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '1');
+      } catch (err) {
+        const errorCode = getErrorCode(err);
+        expect(errorCode === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
   })
 }

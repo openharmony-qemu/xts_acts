@@ -155,14 +155,14 @@ struct TextAreaPropertiesNullUndefined02Test {
               .width('30%')
               .height('5%')
               .id('TextArea_lineSpacing_null')
-              .lineSpacing(null)
+              .lineSpacing(null,null)
 
             // Undefined
             TextArea({ placeholder: 'lineSpacing undefined', text: 'Hello World' })
               .width('30%')
               .height('5%')
               .id('TextArea_lineSpacing_undefined')
-              .lineSpacing(undefined)
+              .lineSpacing(undefined,undefined)
           }
           .width('100%')
 

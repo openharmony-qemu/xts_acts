@@ -513,6 +513,27 @@ export default function scrollDefaultTest1() {
       console.info('[scrollScrollBarColorNullUndefined_0300] END');
     })
 
+    /**
+     * @tc.name   scrollScrollBarColorNullUndefined_0400
+     * @tc.number scrollScrollBarColorNullUndefined_0400
+     * @tc.desc   Test scroll scrollBarColor property with number
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('scrollScrollBarColorNullUndefined_0400', Level.LEVEL0, async () => {
+      console.info('[scrollScrollBarColorNullUndefined_0400] START');
+      let strJson: string = getInspectorByKey('scroll_scrollBarColor_number');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+      console.info("[scrollScrollBarColorNullUndefined_0400] type: " + JSON.stringify(obj.$type));
+      console.info("[scrollScrollBarColorNullUndefined_0400] number is: " + JSON.stringify(obj.$attrs.scrollBarColor));
+
+      // scroll scrollBarColor 设置number
+      expect(obj.$attrs.scrollBarColor).assertEqual("#FFFFF000");
+      console.info('[scrollScrollBarColorNullUndefined_0400] END');
+    })
+
     // ========== scrollBarWidth tests (number|string) ==========
     /**
      * @tc.name   scrollScrollBarWidthNullUndefined_0100

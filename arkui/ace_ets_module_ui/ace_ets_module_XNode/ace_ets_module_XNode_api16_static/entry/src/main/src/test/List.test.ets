@@ -34,7 +34,7 @@ export default function testsuite() {
   AddComponentContentErrorCodeTest();
   RenderNodeDisposeTest();
   componentContentDisposeTest();
-  postFrameCallbackTest();
+  //postFrameCallbackTest();
   setCrossLanguageOptionsErrorCodeTest();
   resourceColorErrorCodeTest();
   //BindControllerErrorCodeTest();

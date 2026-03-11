@@ -636,6 +636,7 @@ export default function WindowZindexTest() {
             await subWin.showWindow();
             await Utils.msSleep(300);
             await subWin.destroyWindow();
+            await Utils.msSleep(300);
             try {
                 subWin.setWindowTopmost(true).then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowTopmost.');

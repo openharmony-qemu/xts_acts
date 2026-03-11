@@ -614,7 +614,7 @@ export default function WindowLayoutTest() {
                 let promise = mainWindow.startMoving(100, 50)
                 promise.then(() => {
                     hilog.info(0x0000, '[ANI]',`${caseName} :Succeeded startMoving ` );
-                    expect(true).assertTrue();
+                    
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',`${caseName} :Failed to startMoving. Cause code: ${err.code}, message: ${err.message}`);
@@ -852,7 +852,7 @@ export default function WindowLayoutTest() {
                             hilog.info(domain, tag,`${message} succeed setSystemAvoidAreaEnabled`);
                             await dialogWindowClass.destroyWindow();
                             await Utils.msSleep(1000);
-                            expect(true).assertTrue();
+                            
                             done();
                         }).catch((err: Error):PromiseLike<void>|undefined => {
                             hilog.error(domain, tag,`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
@@ -1583,7 +1583,7 @@ export default function WindowLayoutTest() {
                     console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
                     if (err.code == 801 || err.code == 1300002) {
                         expect(err.message != null).assertTrue();
-                        expect(true).assertTrue();
+                        
                         console.error(`The device not support createSubWindowWithOptions`);
                         done();
 
@@ -1684,7 +1684,6 @@ export default function WindowLayoutTest() {
                     console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + JSON.stringify(err));
                     if (err.code === 801) {
                         expect(err.message != null).assertTrue();
-                        expect(true).assertTrue()
                     } else {
                         expect(err.code).assertEqual(1300002)
                     }
@@ -1780,7 +1779,6 @@ export default function WindowLayoutTest() {
                     console.error(caseName + 'Failed to call setReceiveDragEventEnabled. Cause: ' + JSON.stringify(err));
                     if (err.code === 801) {
                         expect(err.message != null).assertTrue();
-                        expect(true).assertTrue()
                     } else {
                         expect(err.code).assertEqual(1300002)
                     }
@@ -2218,7 +2216,7 @@ export default function WindowLayoutTest() {
                 });
                 windowClass.offWindowRectChange();
                 console.log(msgStr + 'Succeeded to off the windowRectChange');
-                expect(true).assertTrue();
+                
                 done();
             } catch (error) {
                 error = error as BusinessError;
@@ -2301,7 +2299,7 @@ export default function WindowLayoutTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined  => {
                     console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
                     if (err.code == 1300002 || err.code == 801) {
-                        expect(true).assertTrue();
+                        
                     } else {
                         expect(true).assertFail();
                     }

@@ -38,6 +38,7 @@ group("concurrency_static") {
       "asyncRunner_test_static:ActsAsyncRunnerStaticTest",
       "lock_test_static:ActsLockStaticTest",
       "workerLocal_test_static:ActsWorkerLocalStaticTest",
+      "promise_third_test_static:ActsPromiseThirdStaticTest",
     ]
 
   }

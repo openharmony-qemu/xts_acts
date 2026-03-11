@@ -95,7 +95,7 @@ struct SwipeGestureExample03 {
         .key('SwipeGestureExample03_Click')
         .translate({ x: this.offsetX, y: this.offsetY, z: 0 })
         .gesture(
-          SwipeGesture({ direction: (SwipeDirection.All | SwipeDirection.Vertical | SwipeDirection.Horizontal) as SwipeDirection })
+          SwipeGesture({fingers:2, direction: (SwipeDirection.All | SwipeDirection.Vertical | SwipeDirection.Horizontal) as SwipeDirection })
             .onAction((event: GestureEvent) => {
               if (event) {
                 this.time = Date.now()
