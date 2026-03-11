@@ -576,7 +576,230 @@ export default function LocalSocketServerCloseTest() {
         done();
       }
     });
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose1000
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_1000
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketServerClose1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose1000';
+      console.info(`${caseName} test start`);
+      try {
+        let localServer: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let localClient: socket.LocalSocket = socket.constructLocalSocketInstance();
+        let context = getContext();
+        let sandboxPath: string = context.filesDir +  `/testSocket01`;
+        let listenAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        localServer.on('connect', async (localSocketConnection: socket.localSocketConnection) => {
+          console.info(`${caseName} localServer on  connect`);
+          localServer.close().then(()=>{
+            console.info(`${caseName} localServer close success`);
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((err: BusinessError)=>{
+            console.info(`${caseName} get err is `+JSON.stringify(err));
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          })
+        });
+        await localServer.listen(listenAddr).then(() => {
+          console.info(`${caseName} localServer listen success`);
+          localServer.getState().then((options: socket.SocketStateBase) => {
+            console.info(`options `+JSON.stringify(options));
+            ExpectTrue(options.isBound != null);
+            ExpectTrue(options.isClose != null);
+            ExpectTrue(options.isConnected != null);
+          }).catch((err: Object) => {
+            console.error(`getExtraOptions fail: ` + JSON.stringify(err));
+          });
+        }).catch((err: Object) => {
+          console.info(`${caseName} catch listen err is ` + JSON.stringify(err));
+          ExpectFail();
+          console.info(`${caseName}---End`);
+        });
 
+        let localAddress : socket.LocalAddress = {
+          address: sandboxPath
+        }
+        let connectOpt: socket.LocalConnectOptions = {
+          address: LocalAddress,
+        }
+        await localClient.connect(connectOpt).then(() => {
+          console.info(`${caseName} localClient connect success`);
+          localClient.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
+            console.info(`options `+JSON.stringify(options));
+            ExpectTrue(options.receiveBufferSize != null);
+            ExpectTrue(options.sendBufferSize != null);
+            ExpectTrue(options.socketTimeout != null);
+          }).catch((err: Object) => {
+            console.error(`getExtraOptions fail: ` + JSON.stringify(err));
+          });
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} localClient Connect fail, err is ` + JSON.stringify(err));
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+     /**
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose1100
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_1100
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketServerClose1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose1100';
+      console.info(`${caseName} test start`);
+      try {
+        let localServer: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let localClient: socket.LocalSocket = socket.constructLocalSocketInstance();
+        let context = getContext();
+        let sandboxPath: string = context.filesDir +  `/testSocket01`;
+        let listenAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        localServer.on('connect', async (localSocketConnection: socket.localSocketConnection) => {
+          console.info(`${caseName} localServer on  connect`);
+          localServer.close().then(()=>{
+            console.info(`${caseName} localServer close success`);
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((err: BusinessError)=>{
+            console.info(`${caseName} get err is `+JSON.stringify(err));
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          })
+        });
+        await localServer.listen(listenAddr).then(() => {
+          console.info(`${caseName} localServer listen success`);
+          localServer.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
+            console.info(`options `+JSON.stringify(options));
+            ExpectTrue(options.isBound != null);
+            ExpectTrue(options.isClose != null);
+            ExpectTrue(options.isConnected == null);
+          }).catch((err: Object) => {
+            console.error(`getExtraOptions fail: ` + JSON.stringify(err));
+          });
+        }).catch((err: Object) => {
+          console.info(`${caseName} catch listen err is ` + JSON.stringify(err));
+          ExpectFail();
+          console.info(`${caseName}---End`);
+        });
+
+        let localAddress : socket.LocalAddress = {
+          address: sandboxPath
+        }
+        let connectOpt: socket.LocalConnectOptions = {
+          address: LocalAddress,
+        }
+        await localClient.connect(connectOpt).then(() => {
+          console.info(`${caseName} localClient connect success`);
+          localClient.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
+            console.info(`options `+JSON.stringify(options));
+            ExpectTrue(options.receiveBufferSize != null);
+            ExpectTrue(options.sendBufferSize != null);
+            ExpectTrue(options.reuseAddress != null);
+            ExpectTrue(options.socketTimeout == null);
+          }).catch((err: Object) => {
+            console.error(`getExtraOptions fail: ` + JSON.stringify(err));
+          });
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} localClient Connect fail, err is ` + JSON.stringify(err));
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+     /**
+     * @tc.name   testNetworkMgrSocketLocalSocketServerClose1200
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_Close_1200
+     * @tc.desc   check whether the close interface takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketServerClose1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose1200';
+      console.info(`${caseName} test start`);
+      try {
+        let localServer: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let localClient: socket.LocalSocket = socket.constructLocalSocketInstance();
+        let context = getContext();
+        let sandboxPath: string = context.filesDir +  `/testSocket01`;
+        let listenAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        localServer.on('connect', async (localSocketConnection: socket.localSocketConnection) => {
+          console.info(`${caseName} localServer on  connect`);
+          localServer.close().then(()=>{
+            console.info(`${caseName} localServer close success`);
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((err: BusinessError)=>{
+            console.info(`${caseName} get err is `+JSON.stringify(err));
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          })
+        });
+        await localServer.listen(listenAddr).then(() => {
+          console.info(`${caseName} localServer listen success`);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} catch listen err is ` + JSON.stringify(err));
+          ExpectFail();
+          console.info(`${caseName}---End`);
+        })
+        let localAddress : socket.LocalAddress = {
+          address: sandboxPath
+        }
+        let connectOpt: socket.LocalConnectOptions = {
+          address: LocalAddress,
+        }
+        await localClient.connect(connectOpt).then(() => {
+          console.info(`${caseName} localClient connect success`);
+          localClient.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
+            console.info(`options `+JSON.stringify(options));
+            ExpectTrue(options.receiveBufferSize != null);
+            ExpectTrue(options.sendBufferSize != null);
+            ExpectTrue(options.reuseAddress != null);
+            ExpectTrue(options.socketTimeout == null);
+          }).catch((err: Object) => {
+            console.error(`getExtraOptions fail: ` + JSON.stringify(err));
+          });
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} localClient Connect fail, err is ` + JSON.stringify(err));
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
   });
 }
 
