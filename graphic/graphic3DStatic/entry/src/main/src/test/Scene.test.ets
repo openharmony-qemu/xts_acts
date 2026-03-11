@@ -1179,6 +1179,46 @@ export default function sceneTest() {
     })
 
     /**
+     * @tc.name   test: add empty string and boolean tests for registerResourcePath
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1351
+     * @tc.desc   Test RenderContext.registerResourcePath with empty string and boolean returns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRegisterResourcePathEmptyString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testRegisterResourcePathEmptyString";
+      console.info(msg + ' begin ');
+      try {
+        let rc: RenderContext | null = Scene.getDefaultRenderContext();
+        expect(rc != null).assertTrue();
+
+        if (rc != null) {
+          let renderContext = rc;
+
+          let registerEmptyProtocol = renderContext.registerResourcePath("", "OhosRawFile://shaders/custom_shader");
+          console.info(msg + ' protocol "" registration result:', registerEmptyProtocol);
+          expect(registerEmptyProtocol).assertFalse();
+
+          let registerEmptyUri = renderContext.registerResourcePath("shaders_test2", "");
+          console.info(msg + ' uri "" registration result:', registerEmptyUri);
+          expect(registerEmptyUri).assertFalse();
+
+          let registerSuccess = renderContext.registerResourcePath("shaders_test_success", "OhosRawFile://shaders/custom_shader");
+          console.info(msg + ' successful registration result:', registerSuccess);
+          expect(registerSuccess).assertTrue();
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testGetEnvironment
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1360
      * @tc.desc   Test Scene.environment getter
