@@ -66,5 +66,21 @@ export default function BindControllerNullTest() {
       console.info('[BindControllerNullTest_0100] END');
       done();
     });
+
+    /**
+     * @tc.name   BindControllerNullTest_0200
+     * @tc.number BindControllerNullTest_0200
+     * @tc.desc   bindController null test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('BindControllerNullTest_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('BindControllerNullTest_0200 START');
+      let driver = await Driver.create()
+      expect(RelateType.FILL).assertEqual(0);
+      console.info('[BindControllerNullTest_0200] END');
+      done();
+    });
   })
 }
