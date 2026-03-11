@@ -5303,8 +5303,7 @@ export default function CalendarManagerTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Application_CalendarManagerApi_DeleteCalendar_AsyncCallback_undefined',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,() => {
         let CaseName = 'SUB_Application_CalendarManagerApi_DeleteCalendar_AsyncCallback_undefined';
 
 
@@ -5317,12 +5316,9 @@ export default function CalendarManagerTest() {
         calendarMgr?.deleteCalendar(undefined, (err) => {
           if (err) {
             console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-            // 
             expect(err.code).assertEqual(401);
-            done();
           } else {
             console.info(CaseName + "Succeeded in creating calendar");
-            done();
           }
         });
 
@@ -5336,7 +5332,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0100", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0100", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0100';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5385,10 +5381,8 @@ export default function CalendarManagerTest() {
       try {
         let eventId = calendarMgr?.editEvent(Schedule);
         expect(eventId != null).assertTrue();
-        done();
       } catch (err) {
         console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
-        done();
       }
 
     });
@@ -5401,7 +5395,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0200", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0200", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0200';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5487,10 +5481,8 @@ export default function CalendarManagerTest() {
       try {
         let eventId = calendarMgr?.editEvent(Schedule);
         expect(eventId != null).assertTrue();
-        done();
       } catch (err) {
         console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
-        done();
       }
     });
 
@@ -5502,7 +5494,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0300", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0300", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0300';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5541,10 +5533,8 @@ export default function CalendarManagerTest() {
       try {
         let eventId = calendarMgr?.editEvent(Schedule);
         expect(eventId != null).assertTrue();
-        done();
       } catch (err) {
         console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
-        done();
       }
     });
 
@@ -5556,7 +5546,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0400", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0400", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0400';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5595,10 +5585,8 @@ export default function CalendarManagerTest() {
       try {
         let eventId = calendarMgr?.editEvent(Schedule);
         expect(eventId != null).assertTrue();
-        done();
       } catch (err) {
         console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
-        done();
       }
 
     });
@@ -5611,7 +5599,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0500", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0500", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0500';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5650,10 +5638,8 @@ export default function CalendarManagerTest() {
       try {
         let eventId = calendarMgr?.editEvent(Schedule);
         expect(eventId != null).assertTrue();
-        done();
       } catch (err) {
         console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
-        done();
       }
     });
 
@@ -5665,7 +5651,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0600", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0600", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0600';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5704,10 +5690,8 @@ export default function CalendarManagerTest() {
       try {
         let eventId = calendarMgr?.editEvent(Schedule);
         expect(eventId != null).assertTrue();
-        done();
       } catch (err) {
         console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
-        done();
       }
     });
 
@@ -5719,7 +5703,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0700", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0700", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0700';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5758,10 +5742,8 @@ export default function CalendarManagerTest() {
       try {
         let eventId = calendarMgr?.editEvent(Schedule);
         expect(eventId != null).assertTrue();
-        done();
       } catch (err) {
         console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
-        done();
       }
     });
 
@@ -5773,7 +5755,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0900", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0900", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0900';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5812,10 +5794,8 @@ export default function CalendarManagerTest() {
       try {
         let eventId = calendarMgr?.editEvent(Schedule);
         expect(eventId != null).assertTrue();
-        done();
       } catch (err) {
         console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
-        done();
       }
 
     });
@@ -5828,7 +5808,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_0800", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0800", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0800';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5867,10 +5847,8 @@ export default function CalendarManagerTest() {
       try {
         let eventId = calendarMgr?.editEvent(Schedule);
         expect(eventId != null).assertTrue();
-        done();
       } catch (err) {
         console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
-        done();
       }
     });
 
@@ -5882,7 +5860,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_EditEvent_test_undefined", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_undefined", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_undefined';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5897,10 +5875,8 @@ export default function CalendarManagerTest() {
       try {
         let eventId = calendarMgr?.editEvent(undefined);
         expect(eventId != null).assertTrue();
-        done();
       } catch (err) {
         console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
-        done();
       }
     });
 
@@ -5912,7 +5888,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0100", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0100", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0100';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -5981,17 +5957,14 @@ export default function CalendarManagerTest() {
           if (err) {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
             
-            done();
           } else {
             expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
         
-        done();
       });
     });
 
@@ -6003,7 +5976,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0200", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0200", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0200';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6107,17 +6080,14 @@ export default function CalendarManagerTest() {
           if (err) {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
             
-            done();
           } else {
             expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
         
-        done();
       });
     });
 
@@ -6129,7 +6099,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0300", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0300", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0300';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6233,17 +6203,14 @@ export default function CalendarManagerTest() {
           if (err) {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
             
-            done();
           } else {
             expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
         
-        done();
       });
     });
 
@@ -6255,7 +6222,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0400", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0400", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0400';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6357,16 +6324,13 @@ export default function CalendarManagerTest() {
         Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
           if (err) {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
-            done();
           } else {
             expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        done();
         
       });
       
@@ -6380,7 +6344,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0500", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0500", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0500';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6483,16 +6447,13 @@ export default function CalendarManagerTest() {
         Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
           if (err) {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
-            done();
           } else {
             expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        done();
       });
     });
 
@@ -6505,7 +6466,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0600", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0600", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0600';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6555,16 +6516,13 @@ export default function CalendarManagerTest() {
         Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
           if (err) {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
-            done();
           } else {
             expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        done();
       });
     });
 
@@ -6576,7 +6534,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0700", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0700", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_test_Promise_0700';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6626,16 +6584,13 @@ export default function CalendarManagerTest() {
         Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
           if (err) {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
-            done();
           } else {
             expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        done();
       });
 
     });
@@ -6648,7 +6603,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0900", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0900", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0900';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6698,16 +6653,13 @@ export default function CalendarManagerTest() {
         Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
           if (err) {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
-            done();
           } else {
             expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        done();
       });
     });
 
@@ -6719,7 +6671,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_0800", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0800", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0800';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6769,16 +6721,13 @@ export default function CalendarManagerTest() {
         Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
           if (err) {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
-            done();
           } else {
             expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        done();
       });
     });
 
@@ -6791,7 +6740,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvent_test_undefined", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_undefined", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_undefined';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6823,15 +6772,12 @@ export default function CalendarManagerTest() {
           if (err) {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
             expect(err?.code).assertEqual(401);
-            done();
           } else {
             console.info(`Succeeded in adding event, id -> ${data}`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        done();
       });
     });
 
@@ -6843,7 +6789,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvents_test_undefined", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvents_test_undefined", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvents_test_undefined';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6875,15 +6821,12 @@ export default function CalendarManagerTest() {
           if (err) {
             console.error(`Failed to addEvents. Code: ${err.code}, message: ${err.message}`);
             expect(err?.code).assertEqual(401);
-            done();
           } else {
             console.info(`Succeeded in adding event`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        done();
       });
     });
 
@@ -6895,7 +6838,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_AddEvents_test_empty", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_AddEvents_test_empty", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_AddEvents_test_empty';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6927,15 +6870,12 @@ export default function CalendarManagerTest() {
           if (err) {
             console.error(`Failed to addEvents. Code: ${err.code}, message: ${err.message}`);
             expect(err?.code).assertEqual(23900001);
-            done();
           } else {
             console.info(`Succeeded in adding event`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        done();
       });
     });
 
@@ -6947,7 +6887,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_DeleteEvent_test_undefined", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_DeleteEvent_test_undefined", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_DeleteEvent_test_undefined';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -6978,15 +6918,12 @@ export default function CalendarManagerTest() {
           if (err) {
             console.error(`Failed to deleteEvent. Code: ${err.code}, message: ${err.message}`);
             expect(err?.code).assertEqual(401);
-            done();
           } else {
             console.info(`Succeeded in deleteEvent`);
-            done();
           }
         });
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        done();
       });
     });
 
@@ -6998,7 +6935,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_DeleteEvents_test_undefined", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_DeleteEvents_test_undefined", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_DeleteEvents_test_undefined';
       let TimeZone = '';
       systemDateTime.getTimezone((error, data) => {
@@ -7031,18 +6968,14 @@ export default function CalendarManagerTest() {
           if (err) {
             console.error(`Failed to deleteEvents. Code: ${err.code}, message: ${err.message}`);
             expect(err?.code).assertEqual(401);
-            done();
             
           } else {
             console.info(`Succeeded in deleteEvents`);
-            done();
           }
         });
 
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-       // 
-        done();
       });
 
     });
@@ -7055,7 +6988,7 @@ export default function CalendarManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Application_CalendarManagerApi_DeleteEvents_test_empty", Level.LEVEL0, (done: Function) => {
+    it("SUB_Application_CalendarManagerApi_DeleteEvents_test_empty", Level.LEVEL0, () => {
       let CaseName = 'SUB_Application_CalendarManagerApi_DeleteEvents_test_empty';
 
       let CalendarAccounts: calendarManager.CalendarAccount = {
@@ -7077,18 +7010,14 @@ export default function CalendarManagerTest() {
           if (err) {
             console.error(`Failed to deleteEvents. Code: ${err.code}, message: ${err.message}`);
             expect(err?.code).assertEqual(23900001);
-            done();
 
           } else {
             console.info(`Succeeded in deleteEvents`);
-            done();
           }
         });
 
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-        //
-        done();
       });
 
     });
