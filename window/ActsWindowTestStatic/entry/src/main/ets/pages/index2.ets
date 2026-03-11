@@ -26,6 +26,8 @@ struct Index2 {
    build() {
            Column() {
              Text(this.message)
+             TextInput({ placeholder: 'input your word...', })
+                .id('textInput')
              Button('next page') {
                Text('next page')
              }
