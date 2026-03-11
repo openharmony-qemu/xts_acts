@@ -176,12 +176,41 @@ export default function sceneTypesTest() {
       try {
         let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
-        
+
         let topology = customGeometry.topology;
+        expect(topology != undefined).assertTrue();
         expect(topology != null).assertTrue();
         expect(typeof topology).assertEqual('number');
         console.info(msg + " topology getter succeeded");
-        
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCustomGeometryGetTopologyUndefined
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1481
+     * @tc.desc   Test CustomGeometry.topology can be undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCustomGeometryGetTopologyUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+      let msg = "============================testCustomGeometryGetTopologyUndefined";
+      console.info(msg + ' begin ');
+      try {
+        let customGeometry = new CustomGeometry();
+        customGeometry.topology = undefined;
+
+        let topology = customGeometry.topology;
+        expect(topology).assertUndefined();
+        console.info(msg + " topology can be undefined");
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
