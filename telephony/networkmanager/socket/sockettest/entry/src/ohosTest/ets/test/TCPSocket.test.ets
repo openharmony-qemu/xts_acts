@@ -8305,14 +8305,6 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    /**
-     * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions9500
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_9500
-     * @tc.desc   Unsubscribe from the closing event of TCPSocket,After Subscribing multiple times
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions9500';
       console.info(`${caseName} test start`);
