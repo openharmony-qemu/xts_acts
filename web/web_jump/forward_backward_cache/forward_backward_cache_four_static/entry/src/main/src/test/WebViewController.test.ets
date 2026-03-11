@@ -54,7 +54,282 @@ export default function webViewControllerJsunit() {
     beforeEach(async () => {
       console.info("web beforeEach start");
     })
-    
+
+    /**
+     * @tc.name   testWebViewClearAllCookiesSyncIncognitoStatic
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_0005
+     * @tc.desc   test clearAllCookiesSync incognito
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewClearAllCookiesSyncIncognitoStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('emitWebViewIncognitoMode05', 10);
+      await Utils.msSleep(3000);
+      Utils.registerEvent('emitWebViewIncognitoMode05', 'success', 134210, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncIncognitoErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_FETCHCOOKIESYNC_INCOGNITO_0100
+     * @tc.desc   test fetchCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncIncognitoErrorStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testFetchCookieSyncIncognitoError001", 10);
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testFetchCookieSyncIncognitoError001', '17100002URL error. No valid cookie found for the specified URL.', 123210, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncIncognitoErrorStatic002
+     * @tc.number SUB_WEB_ERRORCODE_FETCHCOOKIESYNC_INCOGNITO_0200
+     * @tc.desc   test fetchCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncIncognitoErrorStatic002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testFetchCookieSyncIncognitoError002", 10);
+      await Utils.msSleep(3000);
+      Utils.registerEvent("testFetchCookieSyncIncognitoError002",'', 123211, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testExistCookieStatic012
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_1200
+     * @tc.desc   test existCookie
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExistCookieStatic012',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('testExistCookie012', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testExistCookie012', false, 100312, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncIncognitoErrorStatic003
+     * @tc.number SUB_WEB_ERRORCODE_FETCHCOOKIESYNC_INCOGNITO_0300
+     * @tc.desc   test fetchCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncIncognitoErrorStatic003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testFetchCookieSyncIncognitoError003", 10);
+      await Utils.msSleep(3000);
+      Utils.registerEvent("testFetchCookieSyncIncognitoError003",'no error happened', 123212, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncIncognitoErrorStatic004
+     * @tc.number SUB_WEB_ERRORCODE_FETCHCOOKIESYNC_INCOGNITO_0400
+     * @tc.desc   test fetchCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncIncognitoErrorStatic004',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testFetchCookieSyncIncognitoError004", 10);
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testFetchCookieSyncIncognitoError004', '17100002URL error. No valid cookie found for the specified URL.', 123213, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncIncognitoErrorStatic005
+     * @tc.number SUB_WEB_ERRORCODE_FETCHCOOKIESYNC_INCOGNITO_0500
+     * @tc.desc   test fetchCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncIncognitoErrorStatic005',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testFetchCookieSyncIncognitoError005", 10);
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testFetchCookieSyncIncognitoError005', 'no error happened', 123214, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncIncognitoErrorStatic006
+     * @tc.number SUB_WEB_ERRORCODE_FETCHCOOKIESYNC_INCOGNITO_0600
+     * @tc.desc   test fetchCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncIncognitoErrorStatic006',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testFetchCookieSyncIncognitoError006", 10);
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testFetchCookieSyncIncognitoError006', 'ccs=bbc', 123215, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieIncognitoErrorStatic007
+     * @tc.number SUB_WEB_ERRORCODE_FETCHCOOKIESYNC_INCOGNITO_0700
+     * @tc.desc   test fetchCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieIncognitoErrorStatic007',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testFetchCookieIncognitoError007", 10);
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testFetchCookieIncognitoError007', 'no error happened', 123216, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieIncognitoErrorStatic008
+     * @tc.number SUB_WEB_ERRORCODE_FETCHCOOKIESYNC_INCOGNITO_0800
+     * @tc.desc   test fetchCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieIncognitoErrorStatic008',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testFetchCookieIncognitoError008", 10);
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testFetchCookieIncognitoError008', 'no error happened', 123217, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookiePromiseStatic001
+     * @tc.number SUB_ACE_BASIC_ETS_API_1200
+     * @tc.desc   test for FetchCookiePromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookiePromiseStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      emitKey="emitFetchCookiePromise001";
+      Utils.emitEvent(emitKey,10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent("emitFetchCookiePromise001","17100002URL error. No valid cookie found for the specified URL.",131,done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(8000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookiePromiseStatic002
+     * @tc.number SUB_ACE_BASIC_ETS_API_1100
+     * @tc.desc   test for FetchCookiePromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookiePromiseStatic002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      emitKey="emitFetchCookiePromise002";
+      Utils.emitEvent(emitKey,10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent("emitFetchCookiePromise002","a=d",132,done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(8000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookiePromiseStatic003
+     * @tc.number SUB_ACE_BASIC_ETS_API_1300
+     * @tc.desc   test for FetchCookiePromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookiePromiseStatic003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      emitKey="emitFetchCookiePromise003";
+      Utils.emitEvent(emitKey,10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent("emitFetchCookiePromise003","17100002URL error. No valid cookie found for the specified URL.",133,done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(8000);
+      done();
+    })
+
+    /**
+     * @tc.name   testSaveCookieAsyncStatic001
+     * @tc.number SUB_WEB_SAVECOOKIEASYNC_0100
+     * @tc.desc   test saveCookieAsync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSaveCookieAsyncStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      emitKey="testSaveCookieAsync001";
+      Utils.emitEvent(emitKey, 10)
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      Utils.registerEvent('testSaveCookieAsync001', 'done', 134760, done);
+      await Utils.msSleep(4000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testSaveCookieAsyncStatic002
+     * @tc.number SUB_WEB_SAVECOOKIEASYNC_0200
+     * @tc.desc   test saveCookieAsync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSaveCookieAsyncStatic002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('testSaveCookieAsync002', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSaveCookieAsync002', 'done', 134761, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    })
+
     /**
      * @tc.name   testConfigCookieCallbackStatic
      * @tc.number SUB_ACE_BASIC_ETS_API_1700
@@ -87,7 +362,7 @@ export default function webViewControllerJsunit() {
       emitKey="emitFetchCookieCallback";
       Utils.emitEvent(emitKey,10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testFetchCookieSync","a=c",128,done);
+      Utils.registerEvent("testFetchCookieSync","a=c",111,done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webcomponent',10,'');
       await Utils.msSleep(6000);
@@ -124,7 +399,7 @@ export default function webViewControllerJsunit() {
       emitKey="emitConfigCookieSync";
       Utils.emitEvent(emitKey,10)
       await Utils.msSleep(3000);
-      Utils.registerEvent("testConfigCookieSync","a=e",132,done);
+      Utils.registerEvent("testConfigCookieSync","a=e",112,done);
       await Utils.msSleep(3000);
       inspector.sendEventByKey('webcomponent',10,'');
       await Utils.msSleep(3000);

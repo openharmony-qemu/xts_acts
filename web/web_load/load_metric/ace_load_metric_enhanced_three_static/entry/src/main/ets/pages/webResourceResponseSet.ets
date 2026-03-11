@@ -46,6 +46,9 @@ struct webResourceResponseSet {
   stringObj: StringFields = new StringFields();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   responseWeb: WebResourceResponse = new WebResourceResponse()
+  heads: Header[] = new Array<Header>()
+  @State userAgent: string = "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 " +
+    "(KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   webData: string = "<!DOCTYPE html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -124,10 +127,10 @@ struct webResourceResponseSet {
               try {
                 this.onHttpErrorReceive = true
                 this.controller.loadUrl('http://1.1.1.123/index.html');
+                console.log("rooki get setResponseEncodeing = ", this.getResponseEncodingValue);
                 setTimeout(() => {
                   Utils.emitEvent(this.getResponseEncodingValue, 36011);
                 }, 3000)
-
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -211,6 +214,23 @@ struct webResourceResponseSet {
               break;
             }
 
+            case "testSetResponseIsReady002": {
+              try {
+                this.onHttpErrorReceive = true
+                this.setResponseIsReady = true
+                this.onTitleReceive = true
+                this.setResponseCode = 200
+                this.controller.loadUrl('http://1.1.1.123/index.html');
+                setTimeout(() => {
+                  Utils.emitEvent(this.title, 36017);
+                }, 5000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
           }
         })
       }
@@ -218,6 +238,29 @@ struct webResourceResponseSet {
 
       Web({ src: 'resource://rawfile/index.html', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
+        .onInterceptRequest((event) => {
+          if (event) {
+            console.log('url:' + event.request.getRequestUrl())
+            let head1: Header = {
+              headerKey: "Connection",
+              headerValue: "keep-alive"
+            }
+            let head2: Header = {
+              headerKey: "Cache-Control",
+              headerValue: "no-cache"
+            }
+            this.heads.push(head1)
+            this.heads.push(head2)
+            this.responseWeb.setResponseHeader(this.heads)
+            this.responseWeb.setResponseData(this.webData)
+            this.responseWeb.setResponseEncoding('utf-8')
+            this.responseWeb.setResponseMimeType('text/html')
+            this.responseWeb.setResponseCode(this.setResponseCode)
+            this.responseWeb.setReasonMessage('OK')
+            this.responseWeb.setResponseIsReady(this.setResponseIsReady)
+          }
+          return this.responseWeb
+        })
         .onHttpErrorReceive((event) => {
           if (event) {
             if (this.onHttpErrorReceive) {
