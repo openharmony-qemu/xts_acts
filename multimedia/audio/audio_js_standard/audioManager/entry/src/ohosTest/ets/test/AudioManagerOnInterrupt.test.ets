@@ -37,6 +37,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 
@@ -68,6 +69,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 
@@ -99,6 +101,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 
@@ -130,6 +133,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 
@@ -160,6 +164,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 
@@ -190,6 +195,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 
@@ -223,6 +229,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 
@@ -254,6 +261,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 
@@ -285,6 +293,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 
@@ -315,6 +324,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 
@@ -346,6 +356,7 @@ export default function audioManagerOnInterrupt() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
 }
