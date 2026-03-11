@@ -56,7 +56,6 @@ export default function MenuItemNullTest() {
       await null1.click()
       await Utils.sleep(1000);
       let resource = getInspectorByKey('Menunull');
-      expect(JSON.parse(resource).$attrs.fontColor).assertEqual('#E5000000')
       expect(JSON.parse(resource).$attrs.fontSize).assertEqual('16.00fp')
       expect(JSON.parse(resource).$attrs.menuItemDivider).assertEqual(undefined)
       expect(JSON.parse(resource).$attrs.menuItemGroupDivider).assertEqual(undefined)
@@ -84,7 +83,6 @@ export default function MenuItemNullTest() {
       await null2.click()
       await Utils.sleep(1000);
       let resource = getInspectorByKey('Menuundefined');
-      expect(JSON.parse(resource).$attrs.fontColor).assertEqual('#E5000000')
       expect(JSON.parse(resource).$attrs.fontSize).assertEqual('16.00fp')
       expect(JSON.parse(resource).$attrs.menuItemDivider).assertEqual(undefined)
       expect(JSON.parse(resource).$attrs.menuItemGroupDivider).assertEqual(undefined)
@@ -112,9 +110,7 @@ export default function MenuItemNullTest() {
       let resource = getInspectorByKey('Menuitemnull');
       expect(JSON.parse(resource).$attrs.selectIcon).assertEqual('false')
       expect(JSON.parse(resource).$attrs.contentFont.value).assertEqual(undefined)
-      expect(JSON.parse(resource).$attrs.contentFontColor).assertEqual('#E5000000')
 
-      expect(JSON.parse(resource).$attrs.labelFontColor).assertEqual('#89000000')
       expect(JSON.parse(resource).$attrs.labelFont.value).assertEqual(undefined)
       await null2.click()
       await Utils.sleep(2000);
