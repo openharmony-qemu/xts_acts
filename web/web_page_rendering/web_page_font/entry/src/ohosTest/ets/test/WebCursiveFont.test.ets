@@ -63,8 +63,8 @@ export default function webCursiveFont() {
      * @tc.level  LEVEL1
      */
     it('testWebCursiveFontCursive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebCursiveFontCursive001", 150200)
-      Utils.registerEvent("testWebCursiveFontCursive001", '\"sans-serif\"', 150210, done);
+      Utils.emitEvent("testWebCursiveFontCursive001", 150204)
+      Utils.registerEvent("testWebCursiveFontCursive001", '\"sans-serif\"', 20260311, done);
       let component = await driver.findComponent(ON.id("WebCursiveFontButton"));
       await component.click();
     })
@@ -78,8 +78,8 @@ export default function webCursiveFont() {
      * @tc.level  LEVEL1
      */
     it('testWebCursiveFontFantasy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebCursiveFontFantasy002", 150200)
-      Utils.registerEvent("testWebCursiveFontFantasy002", '\"sans-serif\"', 150220, done);
+      Utils.emitEvent("testWebCursiveFontFantasy002", 150204)
+      Utils.registerEvent("testWebCursiveFontFantasy002", '\"sans-serif\"', 20260312, done);
       let component = await driver.findComponent(ON.id("WebCursiveFontButton"));
       await component.click();
     })
@@ -93,8 +93,8 @@ export default function webCursiveFont() {
      * @tc.level  LEVEL1
      */
     it('testWebCursiveFontCustom003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebCursiveFontCustom003", 150200)
-      Utils.registerEvent("testWebCursiveFontCustom003", '\"sans-serif\"', 150230, done);
+      Utils.emitEvent("testWebCursiveFontCustom003", 150204)
+      Utils.registerEvent("testWebCursiveFontCustom003", '\"sans-serif\"', 20260313, done);
       let component = await driver.findComponent(ON.id("WebCursiveFontButton"));
       await component.click();
     })
@@ -108,8 +108,8 @@ export default function webCursiveFont() {
      * @tc.level  LEVEL1
      */
     it('testWebCursiveFontEmpty004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebCursiveFontEmpty004", 150200)
-      Utils.registerEvent("testWebCursiveFontEmpty004", "default", 150240, done);
+      Utils.emitEvent("testWebCursiveFontEmpty004", 150204)
+      Utils.registerEvent("testWebCursiveFontEmpty004", "default", 20260314, done);
       let component = await driver.findComponent(ON.id("WebCursiveFontButton"));
       await component.click();
     })
@@ -123,8 +123,8 @@ export default function webCursiveFont() {
      * @tc.level  LEVEL1
      */
     it('testWebCursiveFontInvalid005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebCursiveFontInvalid005", 150200)
-      Utils.registerEvent("testWebCursiveFontInvalid005", "default", 150250, done);
+      Utils.emitEvent("testWebCursiveFontInvalid005", 150204)
+      Utils.registerEvent("testWebCursiveFontInvalid005", "default", 20260315, done);
       let component = await driver.findComponent(ON.id("WebCursiveFontButton"));
       await component.click();
     })
@@ -138,8 +138,8 @@ export default function webCursiveFont() {
      * @tc.level  LEVEL1
      */
     it('testWebCursiveFontSerif006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebCursiveFontSerif006", 150200)
-      Utils.registerEvent("testWebCursiveFontSerif006", '\"sans-serif\"', 150260, done);
+      Utils.emitEvent("testWebCursiveFontSerif006", 150204)
+      Utils.registerEvent("testWebCursiveFontSerif006", '\"sans-serif\"', 20260316, done);
       let component = await driver.findComponent(ON.id("WebCursiveFontButton"));
       await component.click();
     })

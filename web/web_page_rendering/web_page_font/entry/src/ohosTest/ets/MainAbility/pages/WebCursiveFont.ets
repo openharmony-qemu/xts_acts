@@ -31,14 +31,14 @@ struct webViewDefaultFontSizeWithMinLogical {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 150200,
+      eventId: 150204,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(150200)
+    events_emitter.off(150204)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -81,16 +81,16 @@ struct webViewDefaultFontSizeWithMinLogical {
                 this.controller.runJavaScript("getFontFamily()", (error, result) => {
                   if (error) {
                     console.info('getFontFamily() return error: ' + error)
-                    Utils.emitEvent('default', 150210)
+                    Utils.emitEvent('default', 20260311)
                   }
                   if (result) {
                     console.info('getFontFamily() return result: ' + result)
-                    Utils.emitEvent(result, 150210)
+                    Utils.emitEvent(result, 20260311)
                   }
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent('default', 150210)
+                Utils.emitEvent('default', 20260311)
               }
               break;
             }
@@ -107,16 +107,16 @@ struct webViewDefaultFontSizeWithMinLogical {
                 this.controller.runJavaScript("getFontFamily()", (error, result) => {
                   if (error) {
                     console.info('getFontFamily() return error: ' + error)
-                    Utils.emitEvent('default', 150220)
+                    Utils.emitEvent('default', 20260312)
                   }
                   if (result) {
                     console.info('getFontFamily() return result: ' + result)
-                    Utils.emitEvent(result, 150220)
+                    Utils.emitEvent(result, 20260312)
                   }
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent('default', 150220)
+                Utils.emitEvent('default', 20260312)
               }
               break;
             }
@@ -133,16 +133,16 @@ struct webViewDefaultFontSizeWithMinLogical {
                 this.controller.runJavaScript("getFontFamily()", (error, result) => {
                   if (error) {
                     console.info('getFontFamily() return error: ' + error)
-                    Utils.emitEvent('default', 150230)
+                    Utils.emitEvent('default', 20260313)
                   }
                   if (result) {
                     console.info('getFontFamily() return result: ' + result)
-                    Utils.emitEvent(result, 150230)
+                    Utils.emitEvent(result, 20260313)
                   }
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent('default', 150230)
+                Utils.emitEvent('default', 20260313)
               }
               break;
             }
@@ -159,17 +159,17 @@ struct webViewDefaultFontSizeWithMinLogical {
                 this.controller.runJavaScript("getFontFamily()", (error, result) => {
                   if (error) {
                     console.info('getFontFamily() return error: ' + error)
-                    Utils.emitEvent('default', 150240)
+                    Utils.emitEvent('default', 20260314)
                   }
                   if (result) {
                     console.info('getFontFamily() return result: ' + result)
                     // Empty string should result in default font
-                    Utils.emitEvent('default', 150240)
+                    Utils.emitEvent('default', 20260314)
                   }
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent('default', 150240)
+                Utils.emitEvent('default', 20260314)
               }
               break;
             }
@@ -186,17 +186,17 @@ struct webViewDefaultFontSizeWithMinLogical {
                 this.controller.runJavaScript("getFontFamily()", (error, result) => {
                   if (error) {
                     console.info('getFontFamily() return error: ' + error)
-                    Utils.emitEvent('default', 150250)
+                    Utils.emitEvent('default', 20260315)
                   }
                   if (result) {
                     console.info('getFontFamily() return result: ' + result)
                     // Invalid font should result in default font
-                    Utils.emitEvent('default', 150250)
+                    Utils.emitEvent('default', 20260315)
                   }
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent('default', 150250)
+                Utils.emitEvent('default', 20260315)
               }
               break;
             }
@@ -213,23 +213,17 @@ struct webViewDefaultFontSizeWithMinLogical {
                 this.controller.runJavaScript("getFontFamily()", (error, result) => {
                   if (error) {
                     console.info('getFontFamily() return error: ' + error)
-                    Utils.emitEvent('default', 150260)
+                    Utils.emitEvent('default', 20260316)
                   }
                   if (result) {
                     console.info('getFontFamily() return result: ' + result)
-                    Utils.emitEvent(result, 150260)
+                    Utils.emitEvent(result, 20260316)
                   }
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent('default', 150260)
+                Utils.emitEvent('default', 20260316)
               }
-              break;
-            }
-
-            default: {
-              console.error("webCursiveFont: Unknown test case: " + this.str);
-              Utils.emitEvent('default', 150210)
               break;
             }
           }
