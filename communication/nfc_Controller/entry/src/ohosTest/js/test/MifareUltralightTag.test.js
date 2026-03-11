@@ -35,6 +35,12 @@ let mifareUltralightTaginfo = {
     "tagRfDiscId": 1,
 };
 
+let MifareUltralightType = {
+    TYPE_UNKOWN : 0,
+    TYPE_ULTRALIGHT : 1,
+    TYPE_ULTRALIGHT_C : 2,
+}
+
 let mifareUltralightTaginfo1 = {
     "uid": [0x04],
     "technology": [1, 9],
@@ -48,12 +54,6 @@ let mifareUltralightTaginfo1 = {
     ],
     "tagRfDiscId": 1,
 };
-
-let MifareUltralightType = {
-    TYPE_UNKOWN : 0,
-    TYPE_ULTRALIGHT : 1,
-    TYPE_ULTRALIGHT_C : 2,
-}
 
 let MifareUltralightTag = null;
 
