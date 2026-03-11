@@ -83,9 +83,9 @@ export default function bluetoothProfilesTest() {
                
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "createA2dpSrcProfile get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code === 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
+                    expect(err.code === 801).assertTrue();
                 } else {
                     expect().assertFail();
                 }
@@ -109,9 +109,9 @@ export default function bluetoothProfilesTest() {
                
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "createHfpAgProfile get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code === 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
+                    expect(err.code === 801).assertTrue();
                 } else {
                     expect().assertFail();
                 }
@@ -135,9 +135,9 @@ export default function bluetoothProfilesTest() {
                
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "createHidHostProfile get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code === 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
+                    expect(err.code === 801).assertTrue();
                 } else {
                     expect().assertFail();
                 }
@@ -167,9 +167,9 @@ export default function bluetoothProfilesTest() {
             }catch(err){
                
                 hilog.info(domain, tag, "connectionStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code === 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
+                    expect(err.code === 801).assertTrue();
                 } else {
                     expect().assertFail();
                 }
@@ -182,9 +182,9 @@ export default function bluetoothProfilesTest() {
             }catch(err){
                
                 hilog.info(domain, tag, "connectionStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code === 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
+                    expect(err.code === 801).assertTrue();
                 } else {
                     expect().assertFail();
                 }
@@ -212,9 +212,9 @@ export default function bluetoothProfilesTest() {
             }catch(err){
                
                 hilog.info(domain, tag, "connectionStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code === 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
+                    expect(err.code === 801).assertTrue();
                 } else {
                     expect().assertFail();
                 }
@@ -229,7 +229,7 @@ export default function bluetoothProfilesTest() {
                 hilog.info(domain, tag, "connectionStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(err.code == 801).assertTrue();
+                    expect(err.code === 801).assertTrue();
                 } else {
                     expect().assertFail();
                 }
