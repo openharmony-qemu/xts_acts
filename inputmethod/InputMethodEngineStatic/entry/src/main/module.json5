@@ -48,7 +48,7 @@
       {
         "description": "NewEventDemo",
         "icon": "$media:startIcon",
-        "name": "InputMethodService",
+        "name": "InputMethodControlService",
         "srcEntry": "./src/InputMethodEngineStatic/InputMethodService.ets",
         "type": "inputMethod",
         "visible": true
