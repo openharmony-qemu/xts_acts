@@ -1152,15 +1152,15 @@ export default function sceneNodeTest() {
     });
 
     /**
-     * @tc.name   testCameraGetProjectionMatrixBasic
+     * @tc.name   testCameraGetProjectionMatrix
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1430
      * @tc.desc   Test Camera.getProjectionMatrix method returns valid Mat4x4
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCameraGetProjectionMatrixBasic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testCameraGetProjectionMatrixBasic";
+    it('testCameraGetProjectionMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetProjectionMatrix";
       console.info(msg + ' begin ');
       try {
         let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");

@@ -958,45 +958,6 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.name   testCameraGetProjectionMatrixWithStructure
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1090
-     * @tc.desc   Test Camera.getProjectionMatrix method and verify matrix structure
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCameraGetProjectionMatrixWithStructure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testCameraGetProjectionMatrixWithStructure";
-      console.info(msg + ' begin ');
-      try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
-        expect(camera != null).assertTrue();
-
-        let projMatrix: Mat4x4 = camera.getProjectionMatrix();
-        expect(projMatrix != undefined).assertTrue();
-        expect(projMatrix != null).assertTrue();
-        console.info(msg + " getProjectionMatrix succeeded");
-
-        // Verify matrix structure (should be perspective projection)
-        expect(projMatrix.x.x).assertEqual(1);
-        expect(projMatrix.w.w).assertEqual(1);
-        console.info(msg + " projection matrix structure verified");
-
-        console.info(msg + " test completed successfully");
-        done();
-      } catch (err) {
-        console.info(msg + ' Failed: ' + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   testCameraParametersMsaa
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1130
      * @tc.desc   Test CameraParameters.msaa property getter and setter
