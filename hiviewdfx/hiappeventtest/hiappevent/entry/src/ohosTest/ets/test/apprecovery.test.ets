@@ -118,7 +118,7 @@ export default function AppRecoveryTest() {
         done();
       }catch(err){
         console.error(`====>testapprecovery_0003 saveAppState undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testapprecovery_0003 end");

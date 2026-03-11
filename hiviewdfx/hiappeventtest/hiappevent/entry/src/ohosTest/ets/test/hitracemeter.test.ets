@@ -185,7 +185,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0005 traceByValue undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0005 end");

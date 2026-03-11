@@ -1,106 +1,237 @@
 import { BusinessError } from '@kit.BasicServicesKit';
-import { describe, it, Level } from '@ohos/hypium'
+import { describe, expect, it, Level } from '@ohos/hypium'
 import hichecker from '@ohos.hichecker';
 
 export default function Hichecker() {
   describe('Hichecker', () => {
     /**
-     * @tc.name   Hichecker-null
-     * @tc.number SUB_Hichecker-null
-     * @tc.desc   addRule&contains&removeRule函数覆盖null
+     * @tc.name   HicheckernulladdRule
+     * @tc.number SUB_HicheckernulladdRule
+     * @tc.desc   addRule函数覆盖null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Hichecker-null', Level.LEVEL0, async (done: Function) => {
+    it('HicheckernulladdRule', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>Hichecke-rnull  start")
+        console.info("====>Hicheckernull  start")
         hichecker.addRule(null);
-        console.info("====>Hichecke-rnull  end 01");
+        done();
+      }catch (err) {
+        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   Hicheckernullcontains
+     * @tc.number SUB_Hicheckernullcontains
+     * @tc.desc   contains函数覆盖null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Hicheckernullcontains', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>Hicheckernullcontains  start")
         hichecker.contains(null);
-        console.info("====>Hichecker-null  end 02");
+        done();
+      }catch (err) {
+        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   HicheckernullremoveRule
+     * @tc.number SUB_HicheckernullremoveRule
+     * @tc.desc   removeRule函数覆盖null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('HicheckernullremoveRule', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>HicheckernullremoveRule  start")
         hichecker.removeRule(null);
-        console.info("====>Hichecker-null  end 03");
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
         done();
       }
     })
     /**
-     * @tc.name   Hichecker-undefind
-     * @tc.number SUB_Hichecker-undefind
-     * @tc.desc   addRule&contains&removeRule函数覆盖undefined
+     * @tc.name   HicheckerundefinedaddRule
+     * @tc.number SUB_HicheckerundefinedaddRule
+     * @tc.desc   addRule函数覆盖undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('Hichecker-undefind', Level.LEVEL2, async (done: Function) => {
+    it('HicheckerundefinedaddRule', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>Hichecker-undefind  start")
+        console.info("====>Hicheckerundefined  start")
         hichecker.addRule(undefined);
-        console.info("====>Hichecker-undefind  end 01");
-        hichecker.contains(undefined);
-        console.info("====>Hichecker-undefind  end 02");
-        hichecker.removeRule(undefined);
-        console.info("====>Hichecker-undefind  end 03");
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
         done();
       }
     })
     /**
-     * @tc.name   Hichecker01-unll
-     * @tc.number SUB_Hichecker01-unll
-     * @tc.desc   addCheckRule&removeCheckRule函数覆盖null
+     * @tc.name   Hicheckerundefinedcontains
+     * @tc.number SUB_Hicheckerundefinedcontains
+     * @tc.desc   contains函数覆盖undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Hicheckerundefinedcontains', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>Hicheckerundefinedcontains  start")
+        hichecker.contains(null);
+        done();
+      }catch (err) {
+        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   HicheckerundefinedremoveRule
+     * @tc.number SUB_HicheckerundefinedremoveRule
+     * @tc.desc   removeRule函数覆盖undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('HicheckerundefinedremoveRule', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>HicheckernullremoveRule  start")
+        hichecker.removeRule(undefined);
+        done();
+      }catch (err) {
+        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   Hichecker01unlladdCheckRule
+     * @tc.number SUB_Hichecker01unlladdCheckRule
+     * @tc.desc   addCheckRule函数覆盖null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
 
-    it('Hichecker01', Level.LEVEL2, async (done: Function) => {
-
+    it('Hichecker01nulladdCheckRule', Level.LEVEL2, async (done: Function) => {
 
       try {
-        console.info("====>Hichecker01  start");
+        console.info("====>Hichecker01addCheckRule  start");
         hichecker.addCheckRule(null);
-        console.info("====>Hichecker01 end 01");
-        hichecker.getRule();
-        console.info("====>Hichecker01  end 02");
-        hichecker.removeCheckRule(null);
-        console.info("====>Hichecker01  end 03");
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
         done();
       }
 
     })
     /**
-     * @tc.name   Hichecker01-undefined
-     * @tc.number SUB_Hichecker01-undefined
-     * @tc.desc   addCheckRule&removeCheckRule函数覆盖undefined
+     * @tc.name   Hichecker01unllremoveCheckRule
+     * @tc.number SUB_Hichecker01unllremoveCheckRule
+     * @tc.desc   removeCheckRule函数覆盖null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
 
-    it('Hichecker01-undefined', Level.LEVEL2, async (done: Function) => {
+    it('Hichecker01nullremoveCheckRule', Level.LEVEL2, async (done: Function) => {
+
+
       try {
-        console.info("====>Hichecker01-undefined  start");
-        hichecker.addCheckRule(undefined);
-        console.info("====>Hichecker01-undefined end 01");
-        hichecker.removeCheckRule(undefined);
-        console.info("====>Hichecker01-undefined  end 02");
+        console.info("====>Hichecker01removeCheckRule  start");
+        hichecker.removeCheckRule(null);
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
         done();
       }
 
     })
+    /**
+     * @tc.name   Hichecker01getRule
+     * @tc.number SUB_Hichecker01getRule
+     * @tc.desc   removeCheckRule函数覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
 
+    it('Hichecker01getRule', Level.LEVEL2, async (done: Function) => {
+
+
+      try {
+        console.info("====>Hichecker01getRule  start");
+        hichecker.getRule();
+        done();
+      } catch (err) {
+        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+
+    })
+    /**
+     * @tc.name   Hichecker01undefinedaddCheckRule
+     * @tc.number SUB_Hichecker01undefinedaddCheckRule
+     * @tc.desc   addCheckRule函数覆盖undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+
+    it('Hichecker01undefinedaddCheckRule', Level.LEVEL2, async (done: Function) => {
+
+
+      try {
+        console.info("====>Hichecker01addCheckRule  start");
+        hichecker.addCheckRule(undefined);
+        done();
+      } catch (err) {
+        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+
+    })
+    /**
+     * @tc.name   Hichecker01undefinedremoveCheckRule
+     * @tc.number SUB_Hichecker01undefinedremoveCheckRule
+     * @tc.desc   removeCheckRule函数覆盖undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+
+    it('Hichecker01undefinedremoveCheckRule', Level.LEVEL2, async (done: Function) => {
+
+
+      try {
+        console.info("====>Hichecker01removeCheckRule  start");
+        hichecker.removeCheckRule(undefined);
+        done();
+      } catch (err) {
+        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+
+    })
     /**
      * @tc.name   Hichecker02
      * @tc.number SUB_Hichecker02
@@ -117,29 +248,45 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
         done();
       }
     })
     /**
-     * @tc.name   Hichecker03
-     * @tc.number SUB_Hichecker03
-     * @tc.desc  containsCheckRule函数覆盖 null/undefined
+     * @tc.name   Hichecker03null
+     * @tc.number SUB_Hichecker03null
+     * @tc.desc  containsCheckRule函数覆盖 null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Hichecker03', Level.LEVEL2, async (done: Function) => {
+    it('Hichecker03null', Level.LEVEL2, async (done: Function) => {
       try {
-        console.info("====>Hichecker03  start")
-        hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS);
-        console.info("====>Hichecker03  end 01");
+        console.info("====>Hichecker03null  start")
         hichecker.containsCheckRule(null);
-        console.info("====>Hichecker03  end 01");
-        hichecker.containsCheckRule(undefined);
-        console.info("====>Hichecker03  end 01");
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   Hichecker03undefined
+     * @tc.number SUB_Hichecker03undefined
+     * @tc.desc  containsCheckRule函数覆盖 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Hichecker03undefined', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>Hichecker03undefined  start")
+        hichecker.containsCheckRule(undefined);
+        done();
+      } catch (err) {
+        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(err.code == 401).assertTrue();
         done();
       }
     })

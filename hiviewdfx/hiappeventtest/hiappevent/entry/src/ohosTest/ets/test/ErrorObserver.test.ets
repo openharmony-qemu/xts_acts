@@ -25,6 +25,7 @@ export default function ErrorObserver() {
         done();
       } catch (error) {
         console.error(`registerErrorObserver failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
+        expect(error.code == 401).assertTrue();
         done();
       }
     })
@@ -58,18 +59,19 @@ export default function ErrorObserver() {
         done();
       } catch (error) {
         console.error(`registerErrorObserver failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
+        expect(error == 401).assertTrue();
         done();
       }
     })
     /**
-     * @tc.name   ErrorObserver01
-     * @tc.number SUB_ErrorObserver01
+     * @tc.name   ErrorObserver02
+     * @tc.number SUB_ErrorObserver02
      * @tc.desc   onUnhandledException函数异常值覆盖undefined；onException函数异常值覆盖undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ErrorObserver03', Level.LEVEL2, async (done: Function) => {
+    it('ErrorObserver02', Level.LEVEL2, async (done: Function) => {
       let  errorMsg = undefined;
       let  errorObj = undefined;
       let observer: errorManager.ErrorObserver = {
@@ -90,6 +92,7 @@ export default function ErrorObserver() {
         done();
       } catch (error) {
         console.error(`registerErrorObserver failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
+        expect(error == 401).assertTrue();
         done();
       }
     })

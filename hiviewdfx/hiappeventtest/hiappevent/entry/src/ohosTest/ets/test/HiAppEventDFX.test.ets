@@ -1,18 +1,19 @@
 import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, it, expect, Level } from '@ohos/hypium'
 import hiAppEventdfx from '@ohos.hiviewdfx.hiAppEvent';
+import { ErrorCode } from '@ohos.ability.errorCode';
 
 export default function HiAppEvent1() {
   describe('HiAppEventdfx', () => {
     /**
-     * @tc.name   hiAppEventdfx1
-     * @tc.number SUB_hiAppEventdfx1
-     * @tc.desc   addWatcher&removeWatcher函数异常值覆盖，null/undefined
+     * @tc.name   hiAppEventdfx_addWatcher_null_1
+     * @tc.number SUB_hiAppEventdfx_addWatcher_null_1
+     * @tc.desc   addWatcher函数异常值覆盖，null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('hiAppEventdfx1', Level.LEVEL0, async (done: Function) => {
+    it('hiAppEventdfx_addWatcher_null_1', Level.LEVEL0, async (done: Function) => {
       let watcher: hiAppEventdfx.Watcher = {
         name: " ",
       }
@@ -20,12 +21,75 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx1 error start");
         hiAppEvent.addWatcher(null);
         console.info("====>hiAppEventdfx1 error end 02");
+        done();
+      }catch (err) {
+        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx_removeWatcher_null_1
+     * @tc.number SUB_hiAppEventdfx_removeWatcher_null_1
+     * @tc.desc   removeWatcher函数异常值覆盖，null
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+
+    it('hiAppEventdfx_removeWatcher_null_1', Level.LEVEL0, async (done: Function) => {
+      let watcher: hiAppEventdfx.Watcher = {
+        name: " ",
+      }
+      try{
+        console.info("====>hiAppEventdfx1 error end 02");
         hiAppEvent.removeWatcher(null);
         console.info("====>hiAppEventdfx1 error end 03");
+        done();
+      }catch (err) {
+        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx_addWatcher_undefined_1
+     * @tc.number SUB_hiAppEventdfx_addWatcher_undefined_1
+     * @tc.desc   addWatcher函数异常值覆盖，undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx_addWatcher_undefined_1', Level.LEVEL0, async (done: Function) => {
+      let watcher: hiAppEventdfx.Watcher = {
+        name: " ",
+      }
+      try{
+        console.info("====>hiAppEventdfx1 error start");
         hiAppEvent.addWatcher(undefined);
         console.info("====>hiAppEventdfx1 error end 04");
+        done();
+      }catch (err) {
+        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx_removeWatcher_undefined_1
+     * @tc.number SUB_hiAppEventdfx_removeWatcher_undefined_1
+     * @tc.desc   removeWatcher函数异常值覆盖undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx_removeWatcher_undefined_1', Level.LEVEL0, async (done: Function) => {
+      let watcher: hiAppEventdfx.Watcher = {
+        name: " ",
+      }
+      try{
+        console.info("====>hiAppEventdfx1 error start");
         hiAppEvent.removeWatcher(undefined);
-        console.info("====>hiAppEventdfx1 error end 05");
+        console.info("====>hiAppEventdfx1 error end 02");
         done();
       }catch (err) {
         hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
@@ -42,14 +106,14 @@ export default function HiAppEvent1() {
      * @tc.level  LEVEL1
      */
     it('hiAppEventdfx2', Level.LEVEL2, async (done: Function) => {
-      let ret = hiAppEvent.clearData();;
+      let ret = hiAppEvent.clearData();
       console.error("====>hiAppEventdfx2 err: " + ret)
       done()
     })
     /**
      * @tc.name   hiAppEventdfx3
      * @tc.number SUB_hiAppEventdfx3
-     * @tc.desc   setUserId函数的异常值覆盖，' '/null/undefined
+     * @tc.desc   setUserId函数的异常值覆盖，' '
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -58,21 +122,55 @@ export default function HiAppEvent1() {
       try {
         console.info("====>hiAppEventdfx3 error start");
         hiAppEvent.setUserId(' ', ' ');
-        console.info("====>hiAppEventdfx3 error end 02");
-        hiAppEvent.setUserId(null, null);
-        console.info("====>hiAppEventdfx3 error end 03");
-        hiAppEvent.setUserId(undefined, undefined);
-        console.info("====>hiAppEventdfx3 error end 04");
         done();
       } catch (error) {
         hilog.error(0x0000, 'hiAppEventdfx3', `failed to setUserId event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   iAppEventdfx3_null
+     * @tc.number SUB_iAppEventdfx3_null
+     * @tc.desc   setUserId函数的异常值覆盖，null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx3_null', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>iAppEventdfx3_null error start");
+        hiAppEvent.setUserId(null, null);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'iAppEventdfx3_null', `failed to setUserId event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx3_undefined
+     * @tc.number SUB_hiAppEventdfx3_undefined
+     * @tc.desc   setUserId函数的异常值覆盖，undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx3_undefined', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>hiAppEventdfx3_undefined error start");
+        hiAppEvent.setUserId(undefined, undefined);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEventdfx3_undefined', `failed to setUserId event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
         done();
       }
     })
     /**
      * @tc.name   hiAppEventdfx4
      * @tc.number SUB_hiAppEventdfx4
-     * @tc.desc   getUserId函数的异常值覆盖，' '/null/undefined
+     * @tc.desc   getUserId函数的异常值覆盖，' '
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -83,16 +181,55 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx4 error start");
         let value: string = hiAppEvent.getUserId(' ');
         console.info("====>hiAppEventdfx4 error end 01");
-        let value1: string = hiAppEvent.getUserId(null);
-        console.info("====>hiAppEventdfx4 error end 02");
-        let value2: string = hiAppEvent.getUserId(undefined);
-        console.info("====>hiAppEventdfx4 error end 03");
         hilog.info(0x0000, 'hiAppEvent', `getUserId event was successful, userId=${value}`);
-        hilog.info(0x0000, 'hiAppEvent', `getUserId event was successful, userId=${value1}`);
-        hilog.info(0x0000, 'hiAppEvent', `getUserId event was successful, userId=${value2}`);
         done();
       } catch (error) {
         hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx4_null
+     * @tc.number SUB_hiAppEventdfx4_null
+     * @tc.desc   getUserId函数的异常值覆盖，null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx4_null', Level.LEVEL2, async (done: Function) => {
+      hiAppEvent.setUserId('key', 'value');
+      try {
+        console.info("====>hiAppEventdfx4_null error start");
+        let value: string = hiAppEvent.getUserId(null);
+        console.info("====>hiAppEventdfx4_null error end 01");
+        hilog.info(0x0000, 'hiAppEvent', `getUserId event was successful, userId=${value}`);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx4_undefined
+     * @tc.number SUB_hiAppEventdfx4_undefined
+     * @tc.desc   getUserId函数的异常值覆盖，undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx4_undefined', Level.LEVEL2, async (done: Function) => {
+      hiAppEvent.setUserId('key', 'value');
+      try {
+        console.info("====>hiAppEventdfx4_undefined error start");
+        let value: string = hiAppEvent.getUserId(undefined);
+        console.info("====>hiAppEventdfx4_undefined error end 01");
+        hilog.info(0x0000, 'hiAppEvent', `getUserId event was successful, userId=${value}`);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
         done();
       }
     })
@@ -109,20 +246,58 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx5 error start");
         hiAppEvent.setUserProperty(' ', ' ');
         console.info("====>hiAppEventdfx5 error end 02");
-        hiAppEvent.setUserProperty(null, null);
-        console.info("====>hiAppEventdfx5 error end 02");
-        hiAppEvent.setUserProperty(undefined, undefined);
-        console.info("====>hiAppEventdfx5 error end 02");
         done();
       } catch (error) {
         hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   hiAppEventdfx5_null
+     * @tc.number SUB_hiAppEventdfx5_null
+     * @tc.desc   setUserProperty函数的异常值覆盖，' '/null/undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx5_null', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>hiAppEventdfx5_null error start");
+        hiAppEvent.setUserProperty(null, null);
+        console.info("====>hiAppEventdfx5_null error end 02");
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx5_undefined
+     * @tc.number SUB_hiAppEventdfx5_undefined
+     * @tc.desc   setUserProperty函数的异常值覆盖，undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx5_undefined', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>hiAppEventdfx5_undefined error start");
+        hiAppEvent.setUserProperty(undefined, undefined);
+        console.info("====>hiAppEventdfx5_undefined error end 02");
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
         done();
       }
     })
     /**
      * @tc.name   hiAppEventdfx6
      * @tc.number SUB_hiAppEventdfx6
-     * @tc.desc   getUserProperty函数的异常值覆盖，' '/null/undefined
+     * @tc.desc   getUserProperty函数的异常值覆盖，' '
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -133,38 +308,132 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx6 error start");
         let value: string = hiAppEvent.getUserProperty(' ');
         console.info("====>hiAppEventdfx6 error end 01");
-        let value1: string = hiAppEvent.getUserProperty(null);
-        console.info("====>hiAppEventdfx6 error end 01");
-        let value2: string = hiAppEvent.getUserProperty(undefined);
-        console.info("====>hiAppEventdfx6 error end 01");
         hilog.info(0x0000, 'hiAppEvent', `getUserProperty event was successful, userProperty=${value}`);
-        hilog.info(0x0000, 'hiAppEvent', `getUserProperty event was successful, userProperty=${value1}`);
-        hilog.info(0x0000, 'hiAppEvent', `getUserProperty event was successful, userProperty=${value2}`);
         done();
       } catch (error) {
         hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
         done();
       }
     })
     /**
-     * @tc.name   hiAppEventdfx7
-     * @tc.number SUB_hiAppEventdfx7
-     * @tc.desc   addProcessor&removeProcessor函数的异常值覆盖,unll/undefined.
+     * @tc.name   hiAppEventdfx6_null
+     * @tc.number SUB_hiAppEventdfx6_null
+     * @tc.desc   getUserProperty函数的异常值覆盖，null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('hiAppEventdfx7', Level.LEVEL2, async (done: Function) => {
+    it('hiAppEventdfx6_null', Level.LEVEL2, async (done: Function) => {
+      hiAppEvent.setUserProperty('key', 'value');
       try {
-        console.info("====>hiAppEventdfx7 error start");
-        let id: number = hiAppEvent.addProcessor(null);
-        hiAppEvent.removeProcessor(null);
+        console.info("====>hiAppEventdfx6 error start");
+        let value: string = hiAppEvent.getUserProperty(null);
         console.info("====>hiAppEventdfx6 error end 01");
+        hilog.info(0x0000, 'hiAppEvent', `getUserProperty event was successful, userProperty=${value}`);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   hiAppEventdfx6_undefined
+     * @tc.number SUB_hiAppEventdfx6_undefined
+     * @tc.desc   getUserProperty函数的异常值覆盖，undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx6_undefined', Level.LEVEL2, async (done: Function) => {
+      hiAppEvent.setUserProperty('key', 'value');
+      try {
+        console.info("====>hiAppEventdfx6_undefined error start");
+        let value: string = hiAppEvent.getUserProperty(undefined);
+        console.info("====>hiAppEventdfx6_undefined error end 01");
+        hilog.info(0x0000, 'hiAppEvent', `getUserProperty event was successful, userProperty=${value}`);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx7_add_null
+     * @tc.number SUB_hiAppEventdfx7_add_null
+     * @tc.desc   addProcessor函数的异常值覆盖,unll.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx7_add_null', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>hiAppEventdfx7_add_null error start");
+        let id: number = hiAppEvent.addProcessor(null);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx7_add_undefined
+     * @tc.number SUB_hiAppEventdfx7_add_undefined
+     * @tc.desc   addProcessor函数的异常值覆盖,undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx7_add_undefined', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>hiAppEventdfx7_add_undefined error start");
         let id1: number = hiAppEvent.addProcessor(undefined);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx7_rme_null
+     * @tc.number SUB_hiAppEventdfx7_rme_null
+     * @tc.desc   removeProcessor函数的异常值覆盖,unll.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx7_rme_null', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>hiAppEventdfx7_rme_null error start");
+        hiAppEvent.removeProcessor(null);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx7_rme_undefined
+     * @tc.number SUB_hiAppEventdfx7_rme_undefined
+     * @tc.desc   removeProcessor函数的异常值覆盖,undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx7_rme_undefined', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>hiAppEventdfx7_rme_undefined error start");
         hiAppEvent.removeProcessor(undefined);
         done();
       } catch (error) {
         hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${error.code}`);
+        expect(error.code == 401).assertTrue()
         done();
       }
     })
@@ -186,6 +455,7 @@ export default function HiAppEvent1() {
         done();
       });
       }catch (err) {
+        expect(err.code == 401).assertTrue()
         done();
       }
     })
@@ -197,7 +467,7 @@ export default function HiAppEvent1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('hiAppEventdfx8-test1', Level.LEVEL2, async (done: Function) => {
+    it('hiAppEventdfx8test1', Level.LEVEL2, async (done: Function) => {
       try {
         hiAppEvent.addProcessorFromConfig(undefined).then((processorId) => {
           hilog.info(0x0000, 'hiAppEvent', `Succeeded in adding processor from config, processorId=${processorId}`);
@@ -207,6 +477,7 @@ export default function HiAppEvent1() {
           done();
         });
       }catch (err) {
+        expect(err.code == 401).assertTrue()
         done();
       }
     })
@@ -234,6 +505,7 @@ export default function HiAppEvent1() {
         done();
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'hiAppEvent', `Failed to set main thread jank event policy. Code: ${err?.code}, message: ${err?.message}`);
+        expect(err.code == 401).assertTrue()
         done();
       });
     })
@@ -245,7 +517,7 @@ export default function HiAppEvent1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('hiAppEventdfx9-test1', Level.LEVEL2, async (done:Function) => {
+    it('hiAppEventdfx9test1', Level.LEVEL2, async (done:Function) => {
       let policy: hiAppEvent.EventPolicy = {
         "mainThreadJankPolicy":{
           "logType": 1,
@@ -261,72 +533,152 @@ export default function HiAppEvent1() {
         done();
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'hiAppEvent', `Failed to set main thread jank event policy. Code: ${err?.code}, message: ${err?.message}`);
+        expect(err.code == 401).assertTrue()
         done();
       });
     })
     /**
-     * @tc.name   hiAppEventdfx10
-     * @tc.number SUB_hiAppEventdfx10
-     * @tc.desc   setsize&setRow函数的异常值覆盖,/null/undefined覆盖
+     * @tc.name   hiAppEventdfx10_size_null
+     * @tc.number SUB_hiAppEventdfx10_size_null
+     * @tc.desc   setsize函数的异常值覆盖,null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('hiAppEventdfx10', Level.LEVEL2, async (done:Function) => {
-      console.info('hiAppEventdfx10 start')
+    it('hiAppEventdfx10_size_null', Level.LEVEL2, async (done:Function) => {
+      console.info('hiAppEventdfx10_size_null start')
       let holder2: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
-      let holder3: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
-      let holder4: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
-      let holder5: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
       try {
         holder2.setSize(null);
-        console.info("====> hiAppEventdfx10 write undefined end 01");
-        holder3.setRow(null);
-        console.info("====> hiAppEventdfx10 write undefined end 02");
-        holder4.setSize(undefined);
-        console.info("====> hiAppEventdfx10 write undefined end 03");
-        holder5.setRow(undefined);
-        console.info("====> hiAppEventdfx10 write undefined end 04");
+        console.info("====> hiAppEventdfx10_size_null write undefined end 01");
         done();
 
       }catch(err){
-        console.error(`====>hiAppEventdfx10 setId write catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        console.error(`====>hiAppEventdfx10_size_null setId write catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertFalse();
         done();
       }
     })
     /**
-     * @tc.name   HiAppEventTest
-     * @tc.number hiAppEventdfx11
-     * @tc.desc   configure函数的异常值覆盖,/null/undefined覆盖
+     * @tc.name   hiAppEventdfx10_size_undefined
+     * @tc.number SUB_hiAppEventdfx10_size_undefined
+     * @tc.desc   setsize函数的异常值覆盖,undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('hiAppEventdfx11', Level.LEVEL2, async (done:Function) => {
-      console.info("hiAppEventdfx11 start");
-      try{
-        hiAppEvent.configure(undefined);
-        console.info("====> hiAppEventdfx11 configure undefined ");
-        hiAppEvent.configure(null);
-        console.info("====> hiAppEventdfx11 configure null ");
+    it('hiAppEventdfx10_size_undefined', Level.LEVEL2, async (done:Function) => {
+      console.info('hiAppEventdfx10_size_undefined start')
+      let holder2: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
+      try {
+        holder2.setSize(undefined);
+        console.info("====> hiAppEventdfx10_size_undefined write undefined end 01");
         done();
+
       }catch(err){
-        console.error(`====>hiAppEventdfx11 configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        console.error(`====>hiAppEventdfx10_size_undefined setId write catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertFalse();
         done();
       }
-      console.info("hiAppEventdfx11 end");
+    })
+    /**
+     * @tc.name   hiAppEventdfx10_row_null
+     * @tc.number SUB_hiAppEventdfx10_row_null
+     * @tc.desc   setRow函数的异常值覆盖,null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx10_row_null', Level.LEVEL2, async (done:Function) => {
+      console.info('hiAppEventdfx10_row_null start')
+      let holder2: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
+      try {
+        holder2. setRow(null);
+        console.info("====> hiAppEventdfx10_row_null write undefined end 01");
+        done();
+
+      }catch(err){
+        console.error(`====>hiAppEventdfx10_row_null setId write catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   hiAppEventdfx10_row_undefined
+     * @tc.number SUB_hiAppEventdfx10_row_undefined
+     * @tc.desc   setRow函数的异常值覆盖,undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx10_row_undefined', Level.LEVEL2, async (done:Function) => {
+      console.info('hiAppEventdfx10_row_undefined start')
+      let holder2: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
+      try {
+        holder2. setRow(undefined);
+        console.info("====> hiAppEventdfx10_row_undefined write undefined end 01");
+        done();
+
+      }catch(err){
+        console.error(`====>hiAppEventdfx10_row_undefined setId write catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertFalse();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   hiAppEventdfx11_null
+     * @tc.number hiAppEventdfx11_null
+     * @tc.desc   configure函数的异常值覆盖,null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('hiAppEventdfx11_null', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx11_null start");
+      try{
+        hiAppEvent.configure(null);
+        console.info("====> hiAppEventdfx11_null configure null ");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx11_null configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx11_null end");
     });
     /**
-     * @tc.name   HiAppEventTest
-     * @tc.number hiAppEventdfx12
-     * @tc.desc   write函数的异常值覆盖,/null/undefined覆盖
+     * @tc.name   HiAppEventTest_undefined
+     * @tc.number HiAppEventTest_undefined
+     * @tc.desc   configure函数的异常值覆盖,undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('HiAppEventTest_undefined', Level.LEVEL2, async (done:Function) => {
+      console.info("HiAppEventTest_undefined start");
+      try{
+        hiAppEvent.configure(undefined);
+        console.info("====> HiAppEventTest_undefined configure undefined ");
+        done();
+      }catch(err){
+        console.error(`====>HiAppEventTest_undefined configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("HiAppEventTest_undefined end");
+    });
+
+    /**
+     * @tc.name   hiAppEventdfx12test
+     * @tc.number hiAppEventdfx12test
+     * @tc.desc   write函数的异常值覆盖枚举STATISTIC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('hiAppEventdfx12', Level.LEVEL2, async (done:Function) => {
-      console.info("hiAppEventdfx12 start");
+    it('hiAppEventdfx12test', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx12test start");
       try{
         let eventParams: Record<string, number> = {'clickTime': 100};
         let eventInfo: hiAppEvent.AppEventInfo = {
@@ -340,72 +692,244 @@ export default function HiAppEvent1() {
           params: eventParams,
         };
         hiAppEvent.write(eventInfo);
-        console.info("====> hiAppEventdfx12 write STATISTIC ");
+        console.info("====> hiAppEventdfx12test write STATISTIC ");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx12test configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx12test end");
+    });
+    /**
+     * @tc.name   hiAppEventdfx12test1
+     * @tc.number hiAppEventdfx12test1
+     * @tc.desc   write函数的异常值覆盖枚举SECURITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx12test1', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx12test1 start");
+      try{
+        let eventParams: Record<string, number> = {'clickTime': 100};
+        let eventInfo: hiAppEvent.AppEventInfo = {
+          // Define the event domain.
+          domain: 'button',
+          // Define the event name.
+          name: 'click',
+          // Define the event type.
+          eventType: hiAppEvent.EventType.STATISTIC,
+          // Define the event parameters.
+          params: eventParams,
+        };
         eventInfo.eventType = hiAppEvent.EventType.SECURITY;
         hiAppEvent.write(eventInfo);
-        console.info("====> hiAppEventdfx12 write SECURITY ");
+        console.info("====> hiAppEventdfx12test1 write SECURITY ");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx12test1 configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx12test1 end");
+    });
+    /**
+     * @tc.name   hiAppEventdfx12test2
+     * @tc.number hiAppEventdfx12test2
+     * @tc.desc   write函数的异常值覆盖枚举BEHAVIOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx12test2', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx12test2 start");
+      try{
+        let eventParams: Record<string, number> = {'clickTime': 100};
+        let eventInfo: hiAppEvent.AppEventInfo = {
+          // Define the event domain.
+          domain: 'button',
+          // Define the event name.
+          name: 'click',
+          // Define the event type.
+          eventType: hiAppEvent.EventType.STATISTIC,
+          // Define the event parameters.
+          params: eventParams,
+        };
         eventInfo.eventType = hiAppEvent.EventType.BEHAVIOR;
         hiAppEvent.write(eventInfo);
-        console.info("====> hiAppEventdfx12 write BEHAVIOR ");
-        hiAppEvent.write(null);
-        console.info("====> hiAppEventdfx12 write null ");
-        hiAppEvent.write(undefined);
-        console.info("====> hiAppEventdfx12 write undefined ");
+        console.info("====> hiAppEventdfx12test2 write BEHAVIOR ");
         done();
       }catch(err){
-        console.error(`====>hiAppEventdfx12 configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        console.error(`====>hiAppEventdfx12test2 configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
         done();
       }
-      console.info("hiAppEventdfx12 end");
+      console.info("hiAppEventdfx12test2 end");
     });
+
+
     /**
-     * @tc.name   HiAppEventTest
-     * @tc.number hiAppEventdfx13
-     * @tc.desc   write函数的异常值覆盖,第一个参数异常值/null/undefined覆盖
+     * @tc.name   hiAppEventdfx12_null
+     * @tc.number hiAppEventdfx12_null
+     * @tc.desc   write函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('hiAppEventdfx13', Level.LEVEL2, async (done:Function) => {
-      console.info("hiAppEventdfx13 start");
+    it('hiAppEventdfx12_null', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx12_null start");
+      try{
+        let eventParams: Record<string, number> = {'clickTime': 100};
+        let eventInfo: hiAppEvent.AppEventInfo = {
+          // Define the event domain.
+          domain: 'button',
+          // Define the event name.
+          name: 'click',
+          // Define the event type.
+          eventType: hiAppEvent.EventType.STATISTIC,
+          // Define the event parameters.
+          params: eventParams,
+        };
+        hiAppEvent.write(null);
+        console.info("====> hiAppEventdfx12_null write null ");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx12_null configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx12_null end");
+    });
+
+
+
+    /**
+     * @tc.name   hiAppEventdfx12_undefined
+     * @tc.number hiAppEventdfx12_undefined
+     * @tc.desc   write函数的异常值覆盖,undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx12_undefined', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx12_undefined start");
+      try{
+        let eventParams: Record<string, number> = {'clickTime': 100};
+        let eventInfo: hiAppEvent.AppEventInfo = {
+          // Define the event domain.
+          domain: 'button',
+          // Define the event name.
+          name: 'click',
+          // Define the event type.
+          eventType: hiAppEvent.EventType.STATISTIC,
+          // Define the event parameters.
+          params: eventParams,
+        };
+        hiAppEvent.write(undefined);
+        console.info("====> hiAppEventdfx12_undefined write undefined ");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx12_undefined configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx12_undefined end");
+    });
+
+    /**
+     * @tc.name   hiAppEventdfx13_unll
+     * @tc.number hiAppEventdfx13_unll
+     * @tc.desc   write函数的异常值覆盖,第一个参数异常值null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx13_unll', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx13_unll start");
       try{
         hiAppEvent.write(null, null);
-        console.info("====> hiAppEventdfx13 write null ");
-        hiAppEvent.write(undefined, undefined);
-        console.info("====> hiAppEventdfx13 write undefined ");
+        console.info("====> hiAppEventdfx13_unll write null ");
         done();
       }catch(err){
-        console.error(`====>hiAppEventdfx13 configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        console.error(`====>hiAppEventdfx13_unll configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
         done();
       }
-      console.info("hiAppEventdfx13 end");
+      console.info("hiAppEventdfx13_unll end");
     });
+
+
     /**
-     * @tc.name   HiAppEventTest
-     * @tc.number hiAppEventdfx14
-     * @tc.desc   setEventParam函数的异常值覆盖,第一个参数异常值/null/undefined覆盖
+     * @tc.name   hiAppEventdfx13_undefined
+     * @tc.number hiAppEventdfx13_undefined
+     * @tc.desc   write函数的异常值覆盖,第一个参数异常值undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('hiAppEventdfx14', Level.LEVEL2, async (done:Function) => {
-      console.info("hiAppEventdfx14 start");
+    it('hiAppEventdfx13_undefined', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx13_undefined start");
       try{
-        hiAppEvent.setEventParam(null, "test_domain", "test_name");
-        console.info("====> hiAppEventdfx14 setEventParam null ");
-        hiAppEvent.setEventParam(undefined, "test_domain", "test_name");
-        console.info("====> hiAppEventdfx14 setEventParam undefined ");
+        hiAppEvent.write(undefined, undefined);
+        console.info("====> hiAppEventdfx13_undefined write undefined ");
         done();
       }catch(err){
-        console.error(`====>hiAppEventdfx14 setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        console.error(`====>hiAppEventdfx13_undefined configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
         done();
       }
-      console.info("hiAppEventdfx14 end");
+      console.info("hiAppEventdfx13_undefined end");
     });
+
     /**
-     * @tc.name   HiAppEventTest
+     * @tc.name   hiAppEventdfx14_null
+     * @tc.number hiAppEventdfx14_null
+     * @tc.desc   setEventParam函数的异常值覆盖,第一个参数异常值null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx14_null', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx14_null start");
+      try{
+        hiAppEvent.setEventParam(null, "test_domain", "test_name");
+        console.info("====> hiAppEventdfx14_null setEventParam null ");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx14_null setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx14_null end");
+    });
+
+    /**
+     * @tc.name   hiAppEventdfx14_undefined
+     * @tc.number hiAppEventdfx14_undefined
+     * @tc.desc   setEventParam函数的异常值覆盖,第一个参数异常值undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx14_undefined', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx14_undefined start");
+      try{
+        hiAppEvent.setEventParam(undefined, "test_domain", "test_name");
+        console.info("====> hiAppEventdfx14_undefined setEventParam undefined ");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx14_undefined setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx14_undefined end");
+    });
+
+    /**
+     * @tc.name   hiAppEventdfx15
      * @tc.number hiAppEventdfx15
-     * @tc.desc   setEventParam函数的异常值覆盖,第2个参数异常值空值""/null/undefined覆盖
+     * @tc.desc   setEventParam函数的异常值覆盖,第2个参数异常值空值""覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -416,23 +940,72 @@ export default function HiAppEvent1() {
         let eventParams: Record<string, hiAppEvent.ParamType> = {
           "123test_param": true,
         };
-        hiAppEvent.setEventParam(eventParams, null, "test_name");
-        console.info("====> hiAppEventdfx15 setEventParam null");
-        hiAppEvent.setEventParam(eventParams, undefined, "test_name");
-        console.info("====> hiAppEventdfx15 setEventParam undefined");
         hiAppEvent.setEventParam(eventParams, "", "test_name");
         console.info("====> hiAppEventdfx15 setEventParam empty");
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx15 setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx15 end");
     });
+
     /**
-     * @tc.name   HiAppEventTest
+     * @tc.name   hiAppEventdfx15_null
+     * @tc.number hiAppEventdfx15_null
+     * @tc.desc   setEventParam函数的异常值覆盖,第2个参数异常值null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx15_null', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx15_null start");
+      try{
+        let eventParams: Record<string, hiAppEvent.ParamType> = {
+          "123test_param": true,
+        };
+        hiAppEvent.setEventParam(eventParams, null, "test_name");
+        console.info("====> hiAppEventdfx15_null setEventParam null");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx15_null setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx15_null end");
+    });
+
+
+
+    /**
+     * @tc.name   hiAppEventdfx15_undefined
+     * @tc.number hiAppEventdfx15_undefined
+     * @tc.desc   setEventParam函数的异常值覆盖,第2个参数异常值undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx15_undefined', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx15_undefined start");
+      try{
+        let eventParams: Record<string, hiAppEvent.ParamType> = {
+          "123test_param": true,
+        };
+        hiAppEvent.setEventParam(eventParams, undefined, "test_name");
+        console.info("====> hiAppEventdfx15_undefined setEventParam undefined");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx15_undefined setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx15_undefined end");
+    });
+    /**
+     * @tc.name   hiAppEventdfx16
      * @tc.number hiAppEventdfx16
-     * @tc.desc   setEventParam函数的异常值覆盖,第3个参数异常值空值""/null/undefined覆盖
+     * @tc.desc   setEventParam函数的异常值覆盖,第3个参数异常值空值""覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -443,23 +1016,69 @@ export default function HiAppEvent1() {
         let eventParams: Record<string, hiAppEvent.ParamType> = {
           "123test_param": true,
         };
-        hiAppEvent.setEventParam(eventParams, "test_domain", null);
-        console.info("====> hiAppEventdfx16 setEventParam null");
-        hiAppEvent.setEventParam(eventParams, "test_domain", undefined);
-        console.info("====> hiAppEventdfx16 setEventParam undefined");
         hiAppEvent.setEventParam(eventParams, "test_domain", "");
         console.info("====> hiAppEventdfx16 setEventParam empty");
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx16 setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx16 end");
     });
     /**
-     * @tc.name   HiAppEventTest
-     * @tc.number hiAppEventdfx177
-     * @tc.desc   setEventConfig函数的异常值覆盖,第1个参数异常值空值""/null/undefined覆盖
+     * @tc.name   hiAppEventdfx16_null
+     * @tc.number hiAppEventdfx16_null
+     * @tc.desc   setEventParam函数的异常值覆盖,第3个参数异常值null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx16_null', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx16_null start");
+      try{
+        let eventParams: Record<string, hiAppEvent.ParamType> = {
+          "123test_param": true,
+        };
+        hiAppEvent.setEventParam(eventParams, "test_domain", null);
+        console.info("====> hiAppEventdfx16_null setEventParam null");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx16_null setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx16_null end");
+    });
+
+    /**
+     * @tc.name   hiAppEventdfx16_undefined
+     * @tc.number hiAppEventdfx16_undefined
+     * @tc.desc   setEventParam函数的异常值覆盖,第3个参数异常值undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx16_undefined', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx16_undefined start");
+      try{
+        let eventParams: Record<string, hiAppEvent.ParamType> = {
+          "123test_param": true,
+        };
+        hiAppEvent.setEventParam(eventParams, "test_domain", undefined);
+        console.info("====> hiAppEventdfx16_undefined setEventParam undefined");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx16_undefined setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx16_undefined end");
+    });
+    /**
+     * @tc.name   hiAppEventdfx17
+     * @tc.number hiAppEventdfx17
+     * @tc.desc   setEventConfig函数的异常值覆盖,第1个参数异常值空值""覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -470,40 +1089,109 @@ export default function HiAppEvent1() {
         let eventParams: Record<string, hiAppEvent.ParamType> = {
           "123test_param": true,
         };
-        hiAppEvent.setEventConfig(null,eventParams);
-        console.info("====> hiAppEventdfx17 setEventConfig null");
-        hiAppEvent.setEventConfig(undefined,eventParams);
-        console.info("====> hiAppEventdfx17 setEventConfig undefined");
         hiAppEvent.setEventConfig("",eventParams);
         console.info("====> hiAppEventdfx17 setEventConfig empty");
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx17 setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx17 end");
     });
+
     /**
-     * @tc.name   HiAppEventTest
-     * @tc.number hiAppEventdfx18
-     * @tc.desc   setEventConfig函数的异常值覆盖,第2个参数异常值空值""/null/undefined覆盖
+     * @tc.name   hiAppEventdfx17_null
+     * @tc.number hiAppEventdfx17_null
+     * @tc.desc   setEventConfig函数的异常值覆盖,第1个参数异常值空值null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('hiAppEventdfx18', Level.LEVEL2, async (done:Function) => {
-      console.info("hiAppEventdfx18 start");
+    it('hiAppEventdfx17_null', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx17_null start");
       try{
-        hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT,null);
-        console.info("====> hiAppEventdfx18 setEventConfig null");
-        hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT,undefined);
-        console.info("====> hiAppEventdfx18 setEventConfig undefined");
+        let eventParams: Record<string, hiAppEvent.ParamType> = {
+          "123test_param": true,
+        };
+        hiAppEvent.setEventConfig(null,eventParams);
+        console.info("====> hiAppEventdfx17_null setEventConfig null");
         done();
       }catch(err){
-        console.error(`====>hiAppEventdfx18 setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        console.error(`====>hiAppEventdfx17_null setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
         done();
       }
-      console.info("hiAppEventdfx18 end");
+      console.info("hiAppEventdfx17_null end");
+    });
+    /**
+     * @tc.name   hiAppEventdfx17_undefined
+     * @tc.number hiAppEventdfx17_undefined
+     * @tc.desc   setEventConfig函数的异常值覆盖,第1个参数异常值空值undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx17_undefined', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx17_undefined start");
+      try{
+        let eventParams: Record<string, hiAppEvent.ParamType> = {
+          "123test_param": true,
+        };
+        hiAppEvent.setEventConfig(undefined,eventParams);
+        console.info("====> hiAppEventdfx17_undefined setEventConfig undefined");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx17_undefined setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx17_undefined end");
+    });
+    /**
+     * @tc.name   hiAppEventdfx18_null
+     * @tc.number hiAppEventdfx18_null
+     * @tc.desc   setEventConfig函数的异常值覆盖,第2个参数null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx18_null', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx18_null start");
+      try{
+        hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT,null);
+        console.info("====> hiAppEventdfx18_null setEventConfig null");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx18_null setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx18_null end");
+    })
+
+
+
+    /**
+     * @tc.name   hiAppEventdfx18_undefined
+     * @tc.number hiAppEventdfx18_undefined
+     * @tc.desc   setEventConfig函数的异常值覆盖,第2个参数异常值undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('hiAppEventdfx18_undefined', Level.LEVEL2, async (done:Function) => {
+      console.info("hiAppEventdfx18_undefined start");
+      try{
+        hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT,undefined);
+        console.info("====> hiAppEventdfx18_undefined setEventConfig undefined");
+        done();
+      }catch(err){
+        console.error(`====>hiAppEventdfx18_undefined setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info("hiAppEventdfx18_undefined end");
     })
 
   })

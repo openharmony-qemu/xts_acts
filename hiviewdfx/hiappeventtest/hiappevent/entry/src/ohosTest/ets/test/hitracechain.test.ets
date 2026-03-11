@@ -236,7 +236,7 @@ export default function hiTraceChainTest() {
         done();
       }catch(err){
         console.error(`====>testhiTraceChain_0007 enableFlag undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testhiTraceChain_0007 end");

@@ -3,8 +3,8 @@ import { describe, it, expect, Level } from '@ohos/hypium'
 export default function jsLeakWatcher1() {
   describe('jsLeakWatcher', () => {
     /**
-     * @tc.name   hiAppEventdfx1
-     * @tc.number SUB_hiAppEventdfx1
+     * @tc.name   jsLeakWatcher
+     * @tc.number SUB_jsLeakWatcher
      * @tc.desc   enableLeakWatcher函数异常值覆盖，null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -22,7 +22,7 @@ export default function jsLeakWatcher1() {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcher_Interface_1000 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1000 end");
