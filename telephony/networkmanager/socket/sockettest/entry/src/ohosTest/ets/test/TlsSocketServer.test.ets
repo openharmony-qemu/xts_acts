@@ -2845,7 +2845,7 @@ export default function TLSSocketServerTest() {
           console.info(`${caseName} test start `);
           try {
             let port: number = Math.round(1024 + Math.random() *5000 + Math.random() * 4000);
-             let NetAddress: socket.NetAddress = {
+             let netAddress: socket.NetAddress = {
               address: '127.0.0.1',
               port: port
             }
@@ -3068,7 +3068,7 @@ export default function TLSSocketServerTest() {
                 useRemoteCipherPrefer: true,
                 signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
                 cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthention : true
+                isBidirectionalAuthentication : true
               },
               ALPNProtocols: ["spdy/1", "http/1.1"]
             };
@@ -3108,7 +3108,7 @@ export default function TLSSocketServerTest() {
                 useRemoteCipherPrefer: true,
                 signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
                 cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthention : false
+                isBidirectionalAuthentication : false
               },
               ALPNProtocols: ["spdy/1", "http/1.1"]
             };
@@ -3148,7 +3148,7 @@ export default function TLSSocketServerTest() {
                 useRemoteCipherPrefer: true,
                 signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
                 cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthention : false
+                isBidirectionalAuthentication : false
               },
               ALPNProtocols: []
             };
@@ -3188,7 +3188,7 @@ export default function TLSSocketServerTest() {
                 useRemoteCipherPrefer: true,
                 signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
                 cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthention : false
+                isBidirectionalAuthentication : false
               },
               ALPNProtocols: [],
               skipRemoteValidation : true
@@ -3229,7 +3229,7 @@ export default function TLSSocketServerTest() {
                 useRemoteCipherPrefer: true,
                 signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
                 cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthention : false
+                isBidirectionalAuthentication : false
               },
               ALPNProtocols: [],
               skipRemoteValidation : false
@@ -3260,7 +3260,7 @@ export default function TLSSocketServerTest() {
           console.info(`${caseName} test start `);
           try {
             let port: number = Math.round(1024 + Math.random() *5000 + Math.random() * 4000);
-             let NetAddress: socket.NetAddress = {
+             let netAddress: socket.NetAddress = {
               address: '127.0.0.1',
               port: port
             }
@@ -3275,7 +3275,7 @@ export default function TLSSocketServerTest() {
                 useRemoteCipherPrefer: true,
                 signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
                 cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthention : false
+                isBidirectionalAuthentication : false
               },
               ALPNProtocols: [],
               skipRemoteValidation : false,
@@ -3364,7 +3364,7 @@ export default function TLSSocketServerTest() {
               address: '',
               port: 0
             };
-            let tcpConnectOptions8: socket.TCPConnectOptions = {
+            let tlsConnectOptions8: socket.TLSConnectOptions = {
               address: addr,
               secureOptions: {
                 ca: ca_common3,
