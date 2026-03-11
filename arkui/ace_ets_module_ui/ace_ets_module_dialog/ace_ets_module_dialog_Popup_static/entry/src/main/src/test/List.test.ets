@@ -15,6 +15,9 @@
  */
 
 import popupTest from './PopupTest/popupTest.test';
+import TipsOptionsTest from './TipsOptionsTest/TipsOptions.test';
+
 export default function testsuite() {
   popupTest();
+  TipsOptionsTest();
 }

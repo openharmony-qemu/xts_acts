@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/popup/popup"
+    "MainAbility/pages/popup/popup",
+    "MainAbility/pages/TipsOptions/TipsOptions"
   ]
 }
