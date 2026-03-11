@@ -2775,7 +2775,11 @@ function testSetGlobalProxyForAccount() {
       networkManager.setGlobalProxyForAccount(SELFWANT, HTTP_PROXY, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -2798,7 +2802,11 @@ function testSetGlobalProxyForAccount() {
       networkManager.setGlobalProxyForAccount(SELFWANT, HTTP_PROXY, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2823,7 +2831,11 @@ function testSetGlobalProxyForAccount() {
       networkManager.setGlobalProxyForAccount(INVALID_WANT, HTTP_PROXY, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2848,7 +2860,11 @@ function testSetGlobalProxyForAccount() {
       networkManager.setGlobalProxyForAccount(SELFWANT, HTTP_PROXY, INVALID_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200007 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200007).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2904,7 +2920,11 @@ function testGetGlobalProxyForAccount() {
       networkManager.getGlobalProxyForAccount(SELFWANT, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -2927,7 +2947,11 @@ function testGetGlobalProxyForAccount() {
       networkManager.getGlobalProxyForAccount(SELFWANT, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2952,7 +2976,11 @@ function testGetGlobalProxyForAccount() {
       networkManager.getGlobalProxyForAccount(INVALID_WANT, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2974,7 +3002,11 @@ function testTurnOnMobileData() {
       networkManager.turnOnMobileData(SELFWANT, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -2992,7 +3024,11 @@ function testTurnOnMobileData() {
       networkManager.turnOnMobileData(SELFWANT, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -3011,7 +3047,11 @@ function testTurnOnMobileData() {
       networkManager.turnOnMobileData(SELFWANT, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3032,7 +3072,11 @@ function testTurnOnMobileData() {
       networkManager.turnOnMobileData(SELFWANT, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3055,7 +3099,11 @@ function testTurnOnMobileData() {
       expect(info == "force_open").assertTrue();
       networkManager.turnOnMobileData(SELFWANT, false);
     } catch (error) {
-      expect(error.code == 9200007 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200007).assertTrue();
+      }
     } finally {
        await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3076,7 +3124,11 @@ function testTurnOnMobileData() {
       networkManager.turnOnMobileData(null, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3097,7 +3149,11 @@ function testTurnOnMobileData() {
       networkManager.turnOnMobileData(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3119,7 +3175,11 @@ function testTurnOnMobileData() {
       let info: string = systemParameterEnhance.getSync("persist.edm.mobile_data_policy", "");
       expect(info == "none").assertTrue();
     } catch (error) {
-      expect(error.code == 9200007 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200007).assertTrue();
+      }
     } finally {
        await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3141,7 +3201,11 @@ function testTurnOffMobileData() {
       networkManager.turnOffMobileData(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -3160,7 +3224,11 @@ function testTurnOffMobileData() {
       networkManager.turnOffMobileData(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3181,7 +3249,11 @@ function testTurnOffMobileData() {
       networkManager.turnOffMobileData(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3204,7 +3276,11 @@ function testTurnOffMobileData() {
       expect(info == "none").assertTrue();
       networkManager.turnOnMobileData(SELFWANT, false);
     } catch (error) {
-      expect(error.code == 9200007 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200007).assertTrue();
+      }
     } finally {
        await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3227,7 +3303,11 @@ function testAddApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_add_apn_0001 error 9200001 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -3247,7 +3327,11 @@ function testAddApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_add_apn_with_byod error 9200002 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3269,7 +3353,11 @@ function testAddApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_add_apn_0003 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3291,7 +3379,11 @@ function testAddApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_add_apn_0004 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3351,7 +3443,11 @@ function testDeleteApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_delete_apn_0001 error 9200001 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -3371,7 +3467,11 @@ function testDeleteApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_delete_apn_0002 error 9200002 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3393,7 +3493,11 @@ function testDeleteApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_delete_apn_0003 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3415,7 +3519,11 @@ function testDeleteApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_delete_apn_0004 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3438,7 +3546,11 @@ function testUpdateApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_update_apn_0001 error 9200001 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -3458,7 +3570,11 @@ function testUpdateApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_update_apn_0002 error 9200002 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3480,7 +3596,11 @@ function testUpdateApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_update_apn_0003 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3502,7 +3622,11 @@ function testUpdateApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_update_apn_0004 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3524,7 +3648,11 @@ function testUpdateApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_update_apn_0005 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3547,7 +3675,11 @@ function testSetPreferredApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_preferred_apn_0001 error 9200001 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -3567,7 +3699,11 @@ function testSetPreferredApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_preferred_apn_0002 error 9200002 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3589,7 +3725,11 @@ function testSetPreferredApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_preferred_apn_0003 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3611,7 +3751,11 @@ function testSetPreferredApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_preferred_apn_0004 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3634,7 +3778,11 @@ function testQueryApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_query_apn_0001 error 9200001 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -3653,7 +3801,11 @@ function testQueryApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_query_apn_0002 error 9200001 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -3673,7 +3825,11 @@ function testQueryApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_query_apn_0003 error 9200002 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3695,7 +3851,11 @@ function testQueryApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_query_apn_0004 error 9200002 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3717,7 +3877,11 @@ function testQueryApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_query_apn_0005 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3739,7 +3903,11 @@ function testQueryApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_query_apn_0006 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3761,7 +3929,11 @@ function testQueryApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_query_apn_0007 error 401 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3783,7 +3955,11 @@ function testSetEthernetConfig() {
       networkManager.setEthernetConfig(SELFWANT, "eth0", INTERFACE_DHCP_CONFIG);
       expect(false).assertTrue();
     } catch (error) {
-      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -3801,7 +3977,11 @@ function testSetEthernetConfig() {
       networkManager.setEthernetConfig(SELFWANT, "eth0", INTERFACE_STATIC_CONFIG);
       expect(false).assertTrue();
     } catch (error) {
-      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -3820,7 +4000,11 @@ function testSetEthernetConfig() {
       networkManager.setEthernetConfig(SELFWANT, "eth0", INTERFACE_DHCP_CONFIG);
       expect(false).assertTrue();
     } catch (error) {
-      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3841,7 +4025,11 @@ function testSetEthernetConfig() {
       networkManager.setEthernetConfig(SELFWANT, "eth0", INTERFACE_STATIC_CONFIG);
       expect(false).assertTrue();
     } catch (error) {
-      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3862,7 +4050,11 @@ function testSetEthernetConfig() {
       networkManager.setEthernetConfig(null, "eth0", INTERFACE_STATIC_CONFIG);
       expect(false).assertTrue();
     } catch (error) {
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3883,7 +4075,11 @@ function testSetEthernetConfig() {
       networkManager.setEthernetConfig(SELFWANT, "", INTERFACE_STATIC_CONFIG);
       expect(false).assertTrue();
     } catch (error) {
-      expect((error.code == 401) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3904,7 +4100,11 @@ function testSetEthernetConfig() {
       networkManager.setEthernetConfig(SELFWANT, "eth0", INTERFACE_INVALID_CONFIG);
       expect(false).assertTrue();
     } catch (error) {
-      expect((error.code == 9200012) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3925,7 +4125,11 @@ function testSetEthernetConfig() {
       networkManager.setEthernetConfig(SELFWANT, "eth123", INTERFACE_STATIC_CONFIG);
       expect(false).assertTrue();
     } catch (error) {
-      expect((error.code == 9201010) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9201010).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
