@@ -57,6 +57,18 @@ import MaterialFilter from './MaterialFilter.test'
 import TransitionEffectOpacity from './TransitionEffectOpacity.test'
 import CommonNullUndefined from './CommonNullUndefined.test'
 
+import AnimateToImmediatelyNullTest from './ParamsNull/AnimateToImmediatelyNullTest.test';
+import AnimateToNullTest from './ParamsNull/AnimateToNullTest.test';
+import BindTabsToNestedScrollableNullTest from './ParamsNull/BindTabsToNestedScrollableNullTest.test';
+import BindTabsToScrollableNullTest from './ParamsNull/BindTabsToScrollableNullTest.test';
+import CreateAnimatorNullTest from './ParamsNull/CreateAnimatorNullTest.test';
+import GetNavigationInfoByUniqueIdNullTest from './ParamsNull/GetNavigationInfoByUniqueIdNullTest.test';
+import KeyframeAnimateToNullTest from './ParamsNull/KeyframeAnimateToNullTest.test';
+import SetFrameRateRangeNullTest from './ParamsNull/SetFrameRateRangeNullTest.test';
+import SwiperContentUpdateNullTest from './ParamsNull/SwiperContentUpdateNullTest.test';
+import UnbindTabsFromNestedScrollableNullTest from './ParamsNull/UnbindTabsFromNestedScrollableNullTest.test';
+import UnbindTabsFromScrollableNullTest from './ParamsNull/UnbindTabsFromScrollableNullTest.test';
+import GetNodePropertyValueNullTest from './ParamsNull/GetNodePropertyValueNullTest.test';
 
 export default function testsuite() {
   rotateAngleOptionsTest()
@@ -99,4 +111,17 @@ export default function testsuite() {
   MaterialFilter()
   TransitionEffectOpacity()
   CommonNullUndefined()
+
+  AnimateToImmediatelyNullTest();
+  AnimateToNullTest();
+  BindTabsToNestedScrollableNullTest();
+  BindTabsToScrollableNullTest();
+  CreateAnimatorNullTest();
+  GetNavigationInfoByUniqueIdNullTest();
+  KeyframeAnimateToNullTest();
+  SetFrameRateRangeNullTest();
+  SwiperContentUpdateNullTest();
+  UnbindTabsFromNestedScrollableNullTest();
+  UnbindTabsFromScrollableNullTest();
+  GetNodePropertyValueNullTest();
 }
