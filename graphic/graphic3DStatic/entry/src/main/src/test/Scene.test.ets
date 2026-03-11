@@ -906,12 +906,9 @@ export default function sceneTest() {
         expect(camera != null).assertTrue();
         
         let viewMatrix: Mat4x4 = camera.getViewMatrix();
+        expect(viewMatrix != undefined).assertTrue();
         expect(viewMatrix != null).assertTrue();
-        expect(viewMatrix.x != null).assertTrue();
-        expect(viewMatrix.y != null).assertTrue();
-        expect(viewMatrix.z != null).assertTrue();
-        expect(viewMatrix.w != null).assertTrue();
-        console.info(msg + " getViewMatrix success");
+        console.info(msg + " getViewMatrix succeeded");
         
         // Verify matrix structure
         expect(viewMatrix.x.x).assertEqual(1);
