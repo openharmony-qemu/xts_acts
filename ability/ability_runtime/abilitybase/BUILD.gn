@@ -25,6 +25,7 @@ group("abilitybase") {
       "actsmultiinstaceerrcodetest:ActsMultiInstancEerrCodeTest",
       "actsUIExtensionContentSessionStatic:ActsUIExtensionContentSessionStaticTest",
       "uiextensioncontext:ActsUIExtensionErrocodeTest",
+      "uiextensioncontextstatic:ActsUIExtensionContextMethodStaticTest",
     ]
   }
 }
