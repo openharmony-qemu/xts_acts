@@ -136,10 +136,6 @@ struct setMeasuredSize1 {
   @State uiContext:UIContext = this.getUIContext()
   @State drawContext:DrawContext | null= null
 
-  onPageShow(){
-    this.nodeController.makeNode(this.uiContext)
-  }
-
   build() {
     Row() {
       Column() {
