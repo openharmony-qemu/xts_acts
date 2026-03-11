@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -80,12 +80,12 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  createA2dpSrcProfileTest
-         * @tc.name    createA2dpSrcProfileTest
-         * @tc.desc    Test createA2dpSrcProfileTest API functionality
-         * @tc.level   Level 0
-         * @tc.type    Function
-         * @tc.size    MEDIUMTEST
+         * @tc.name   createA2dpSrcProfileTest
+         * @tc.number createA2dpSrcProfileTest
+         * @tc.desc   Test createA2dpSrcProfileTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("createA2dpSrcProfileTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -150,12 +150,12 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  createHfpAgProfileTest
-         * @tc.name    createHfpAgProfileTest
-         * @tc.desc    Test createHfpAgProfileTest API functionality
-         * @tc.level   Level 0
-         * @tc.type    Function
-         * @tc.size    MEDIUMTEST
+         * @tc.name   createHfpAgProfileTest
+         * @tc.number createHfpAgProfileTest
+         * @tc.desc   Test createHfpAgProfileTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("createHfpAgProfileTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -224,12 +224,12 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  createHidHostProfileTest
-         * @tc.name    createHidHostProfileTest
-         * @tc.desc    Test createHidHostProfileTest API functionality
-         * @tc.level   Level 0
-         * @tc.type    Function
-         * @tc.size    MEDIUMTEST
+         * @tc.name   createHidHostProfileTest
+         * @tc.number createHidHostProfileTest
+         * @tc.desc   Test createHidHostProfileTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("createHidHostProfileTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -248,7 +248,97 @@ export default function bluetoothProfilesTest() {
             }
             done();
         })
+        /**
+         * @tc.name   connectionStateChangeTest
+         * @tc.number connectionStateChangeTest
+         * @tc.desc   Test connectionStateChangeTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("connectionStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: baseProfile.StateChangeParam) => void = (changeInfo: baseProfile.StateChangeParam) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo connectionStateChange:" + changeInfo);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo connectionStateChange deviceId:" + changeInfo.deviceId);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo connectionStateChange state:" + changeInfo.state);
+            }
 
+            try{
+                a2dp.createA2dpSrcProfile().onConnectionStateChange(onReceiveEvent);
+                hfp.createHfpAgProfile().onConnectionStateChange(onReceiveEvent);
+                hid.createHidHostProfile().onConnectionStateChange(onReceiveEvent);
+            }catch(err){
+                err = err as BusinessError;
+                hilog.info(domain, tag, "connectionStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                a2dp.createA2dpSrcProfile().offConnectionStateChange(onReceiveEvent);
+                hfp.createHfpAgProfile().offConnectionStateChange(onReceiveEvent);
+                hid.createHidHostProfile().offConnectionStateChange(onReceiveEvent);
+            }catch(err){
+                err = err as BusinessError;
+                hilog.info(domain, tag, "connectionStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   connectionStateChangeTest2
+         * @tc.number connectionStateChangeTest2
+         * @tc.desc   Test connectionStateChangeTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("connectionStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: baseProfile.StateChangeParam) => void = (changeInfo: baseProfile.StateChangeParam) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo connectionStateChange:" + changeInfo);
+            }
+
+            try{
+                a2dp.createA2dpSrcProfile().onConnectionStateChange(onReceiveEvent);
+                hfp.createHfpAgProfile().onConnectionStateChange(onReceiveEvent);
+                hid.createHidHostProfile().onConnectionStateChange(onReceiveEvent);
+            }catch(err){
+                err = err as BusinessError;
+                hilog.info(domain, tag, "connectionStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                a2dp.createA2dpSrcProfile().offConnectionStateChange();
+                hfp.createHfpAgProfile().offConnectionStateChange();
+                hid.createHidHostProfile().offConnectionStateChange();
+            }catch(err){
+                err = err as BusinessError;
+                hilog.info(domain, tag, "connectionStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
         /**
          * @tc.number  getConnectedDevicesTest_002
          * @tc.name    getConnectedDevicesTest_002
