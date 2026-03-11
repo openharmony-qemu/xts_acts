@@ -17,6 +17,7 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { Foo } from '../ets/Index'
+import {hidebug} from '@kit.PerformanceAnalysisKit'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -30,6 +31,8 @@ export default function globalAndLocalReferencesTest() {
       console.log('loadFailed', e.message);
     }
 
+    let vmMemory1: hidebug.VMMemoryInfo = hidebug.getAppVMMemoryInfo();
+    console.info(`testTag heapUsed globalAndLocalReferencesTest begin: ${vmMemory1.heapUsed}`)
     /**
      * @tc.number      GlobalReference_Create_0100
      * @tc.name        GlobalReference_Create_0100
@@ -124,5 +127,10 @@ export default function globalAndLocalReferencesTest() {
         done();
         console.log('EnsureEnoughReferences_0100 end');
       })
+
+    let vmMemory2: hidebug.VMMemoryInfo = hidebug.getAppVMMemoryInfo();
+    console.info(`testTag heapUsed globalAndLocalReferencesTest end: ${vmMemory2.heapUsed}`)
+    let sum = vmMemory2.heapUsed - vmMemory1.heapUsed;
+    console.info(`testTag heapUsed globalAndLocalReferencesTest total: ${sum}`)
   })
 }

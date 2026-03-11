@@ -52,8 +52,8 @@ ani_int test_Object_Call_Method_Boolean_A([[maybe_unused]] ani_env *env, [[maybe
     GetMethodAndObject(env, &paramObjOperation, &object, &method);
 
     ani_value args[2];  // NOLINT(modernize-avoid-c-arrays)
-    ani_int arg1 = VAL1;
-    ani_int arg2 = VAL2;
+    ani_int arg1 = 6;
+    ani_int arg2 = 7;
     args[0].i = arg1;
     args[1].i = arg2;
     ani_boolean res = ANI_FALSE;
@@ -73,8 +73,8 @@ ani_int test_Object_Call_Method_Boolean_01([[maybe_unused]] ani_env *env, [[mayb
     GetMethodAndObject(env, &paramObjOperation, &object, &method);
 
     ani_boolean res = ANI_FALSE;
-    ani_int arg1 = VAL1;
-    ani_int arg2 = VAL2;
+    ani_int arg1 = 6;
+    ani_int arg2 = 7;
     // Call the method using variadic arguments and verify the return value.
     // NOLINTNEXTLINE(cppcoreguidelines-pro-type-vararg)
     ASSERT_EQ(env->Object_CallMethod_Boolean(object, method, &res, arg1, arg2), ANI_OK);
@@ -92,8 +92,8 @@ ani_int test_Object_Call_Method_Boolean_02([[maybe_unused]] ani_env *env, [[mayb
     GetMethodAndObject(env, &paramObjOperation, &object, &method);
 
     ani_boolean res = ANI_FALSE;
-    ani_int arg1 = VAL1;
-    ani_int arg2 = VAL2;
+    ani_int arg1 = 6;
+    ani_int arg2 = 7;
     // Call the method and verify the return value.
     // NOLINTNEXTLINE(cppcoreguidelines-pro-type-vararg)
     ASSERT_EQ(env->c_api->Object_CallMethod_Boolean(env, object, method, &res, arg1, arg2), ANI_OK);
@@ -111,8 +111,8 @@ ani_int test_Object_Call_Method_Boolean_03([[maybe_unused]] ani_env *env, [[mayb
     GetMethodAndObject(env, &paramObjOperation, &object, &method);
 
     ani_boolean res = ANI_FALSE;
-    ani_int arg1 = VAL1;
-    ani_int arg2 = VAL2;
+    ani_int arg1 = 6;
+    ani_int arg2 = 7;
     // Call the method using variadic arguments and verify the return value.
     // NOLINTNEXTLINE(cppcoreguidelines-pro-type-vararg)
     ASSERT_EQ(env->Object_CallMethod_Boolean(object, method, &res, arg1, arg2), ANI_OK);
@@ -299,8 +299,8 @@ ani_int test_Object_Call_Method_Boolean_12([[maybe_unused]] ani_env *env, [[mayb
 
     ani_boolean result = ANI_FALSE;
     ani_value args[2U] = {};
-    ani_int arg1 = VAL1;
-    ani_int arg2 = VAL2;
+    ani_int arg1 = 6;
+    ani_int arg2 = 7;
     args[0U].i = arg1;
     args[1U].i = arg2;
     ASSERT_EQ(env->Object_CallMethod_Boolean(object, method, &result, arg1, arg2), ANI_OK);
@@ -8244,7 +8244,7 @@ ani_int test_Object_Call_Method_Short_By_Name_15([[maybe_unused]] ani_env *env, 
     ASSERT_EQ(sum, result);
 
     ani_value args[1U];
-    args[0U].i = VAL1;
+    args[0U].i = 5;
     ASSERT_EQ(env->Object_CallMethodByName_Short_A(obj, "recursiveMethod", "i:s", &sum, args), ANI_OK);
     ASSERT_EQ(sum, result);
     return ANI_TRUE;
@@ -9417,7 +9417,6 @@ ani_int test_Object_InstanceOf([[maybe_unused]] ani_env *env, [[maybe_unused]] a
     ASSERT_NE(result, nullptr);
 
     ani_type type {};
-    ani_boolean res = ANI_FALSE;
     ASSERT_EQ(env->Object_GetType(result, &type), ANI_OK);
     return ANI_TRUE;
 }
@@ -9483,8 +9482,7 @@ ani_int test_Array_New([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_objec
 {
     ani_ref undefinedRef {};
     ASSERT_EQ(env->GetUndefined(&undefinedRef), ANI_OK);
-
-    ani_array array = nullptr;
+    
     ASSERT_EQ(env->Array_New(LENGTH_5, undefinedRef, nullptr), ANI_INVALID_ARGS);
     return ANI_TRUE;
 }
