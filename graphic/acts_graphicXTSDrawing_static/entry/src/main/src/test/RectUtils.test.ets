@@ -1190,14 +1190,15 @@ export default function rectUtilsTest() {
      */
     it('testRectUtilsIntersectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsIntersectNormalStatic';
-      let rect = drawing.RectUtils.makeEmpty();
-      let rect2 = drawing.RectUtils.makeCopy(rect!);
+      let rect: common2D.Rect | undefined = drawing.RectUtils.makeEmpty();
+      let rect2: common2D.Rect | undefined = drawing.RectUtils.makeCopy(rect!);
       try {
         let isIntersect = drawing.RectUtils.intersect(rect!, rect2!);
         console.info(msg + ' RectUtils intersect 1 successed rect: ' + JSON.stringify(rect!));
         expect(rect!.left == 0 && rect!.top == 0 && rect!.right == 0 && rect!.bottom == 0).assertEqual(true);
         expect(isIntersect).assertEqual(false);
       } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` RectUtils intersect 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -1213,6 +1214,236 @@ export default function rectUtilsTest() {
         top: 0,
         bottom: 0
       };
+      try {
+        let isIntersect2 = drawing.RectUtils.intersect(rect, rect2);
+        console.info(msg + ' RectUtils intersect isIntersect2 successed rect: ' + JSON.stringify(rect));
+        expect(rect.left == 0 && rect.top == 0 && rect.right == 0 && rect.bottom == 0).assertEqual(true);
+        expect(isIntersect2).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect2 = {
+        left: 100,
+        right: 100,
+        top: 200,
+        bottom: 200
+      };
+      rect = {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0
+      };
+      try {
+        let isIntersect3 = drawing.RectUtils.intersect(rect, rect2);
+        console.info(msg + ' RectUtils intersect isIntersect3 successed rect: ' + JSON.stringify(rect));
+        expect(rect.left == 0 && rect.top == 0 && rect.right == 0 && rect.bottom == 0).assertEqual(true);
+        expect(isIntersect3).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(10, 20, 20, 20);
+      rect2 = {
+        left: 15,
+        right: 18,
+        top: 20,
+        bottom: 20
+      };
+      try {
+        let isIntersect4 = drawing.RectUtils.intersect(rect!, rect2);
+        console.info(msg + ' RectUtils intersect isIntersect4 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 10 && rect!.top == 20 && rect!.right == 20 && rect!.bottom == 20).assertEqual(true);
+        expect(isIntersect4).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(10, 10, 10, 20);
+      rect2 = drawing.RectUtils.makeLtrb(10, 0, 10, 15);
+      try {
+        let isIntersect5 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect5 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 10 && rect!.top == 10 && rect!.right == 10 && rect!.bottom == 20).assertEqual(true);
+        expect(isIntersect5).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(10, 10, 10, 10);
+      rect2 = drawing.RectUtils.makeCopy(rect!);
+      try {
+        let isIntersect6 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect6 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 10 && rect!.top == 10 && rect!.right == 10 && rect!.bottom == 10).assertEqual(true);
+        expect(isIntersect6).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(0, 0, 100, 100);
+      try {
+        let isIntersect7 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect7 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 0 && rect!.top == 0 && rect!.right == 100 && rect!.bottom == 100).assertEqual(true);
+        expect(isIntersect7).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect7 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect2 = {
+        left: 0,
+        right: 100,
+        top: 0,
+        bottom: 100
+      };
+      try {
+        let isIntersect8 = drawing.RectUtils.intersect(rect!, rect2);
+        console.info(msg + ' RectUtils intersect isIntersect8 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 0 && rect!.top == 0 && rect!.right == 100 && rect!.bottom == 100).assertEqual(true);
+        expect(isIntersect8).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect8 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect2 = drawing.RectUtils.makeLtrb(10, 10, 20, 20);
+      try {
+        let isIntersect9 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect9 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 10 && rect!.top == 10 && rect!.right == 20 && rect!.bottom == 20).assertEqual(true);
+        expect(isIntersect9).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect9 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(0, 0, 100, 100);
+      rect2 = drawing.RectUtils.makeLtrb(0, 0, 90, 90);
+      try {
+        let isIntersect10 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect10 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 0 && rect!.top == 0 && rect!.right == 90 && rect!.bottom == 90).assertEqual(true);
+        expect(isIntersect10).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect10 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(10, 10, 60.365, 60.28);
+      rect2 = drawing.RectUtils.makeLtrb(-1, -1, 101.36, 101.36);
+      try {
+        let isIntersect11 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect11 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 10 && rect!.top == 10 && rect!.right == 60.3650016784668 && rect!.bottom == 60.279998779296875)
+          .assertEqual(true);
+        expect(isIntersect11).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect11 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(0, 0, 101.36, 101.36);
+      try {
+        let isIntersect12 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect12 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 0 && rect!.top == 0 && rect!.right == 101.36000061035156 && rect!.bottom == 101.36000061035156)
+          .assertEqual(true);
+        expect(isIntersect12).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(0, 0, 100, 100);
+      rect2 = drawing.RectUtils.makeLtrb(50, 50, 150, 150);
+      try {
+        let isIntersect13 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect13 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 50 && rect!.top == 50 && rect!.right == 100 && rect!.bottom == 100).assertEqual(true);
+        expect(isIntersect13).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect13 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(50, 50, 150, 150);
+      rect2 = drawing.RectUtils.makeLtrb(0, 75, 200, 125);
+      try {
+        let isIntersect14 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect14 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 50 && rect!.top == 75 && rect!.right == 150 && rect!.bottom == 125).assertEqual(true);
+        expect(isIntersect14).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect14 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(0, 0, 100, 100);
+      rect2 = drawing.RectUtils.makeLtrb(100, 50, 200, 150);
+      try {
+        let isIntersect15 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect15 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 0 && rect!.top == 0 && rect!.right == 100 && rect!.bottom == 100).assertEqual(true);
+        expect(isIntersect15).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect15 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect2 = drawing.RectUtils.makeLtrb(100, 100, 200, 200);
+      try {
+        let isIntersect16 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect16 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 0 && rect!.top == 0 && rect!.right == 100 && rect!.bottom == 100).assertEqual(true);
+        expect(isIntersect16).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect16 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect2 = drawing.RectUtils.makeLtrb(200, 200, 300, 300);
+      try {
+        let isIntersect17 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect17 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 0 && rect!.top == 0 && rect!.right == 100 && rect!.bottom == 100).assertEqual(true);
+        expect(isIntersect17).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect17 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(0, 10.2632, 100.25474, 100.2884);
+      rect2 = drawing.RectUtils.makeLtrb(0, 10, 100, 100.6884);
+      try {
+        let isIntersect18 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect18 successed rect: ' + JSON.stringify(rect!));
+        expect(rect!.left == 0 && rect!.top == 10.263199806213379 && rect!.right == 100 &&
+          rect!.bottom == 100.28839874267578).assertEqual(true);
+        expect(isIntersect18).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect18 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      rect = drawing.RectUtils.makeLtrb(Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE + 1, Number.MAX_VALUE + 1);
+      rect2 =
+        drawing.RectUtils.makeLtrb(Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE + 1, Number.MAX_VALUE + 1);
+      try {
+        let isIntersect19 = drawing.RectUtils.intersect(rect!, rect2!);
+        console.info(msg + ' RectUtils intersect isIntersect19 successed rect: ' + JSON.stringify(rect!));
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` RectUtils intersect isIntersect19 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
     });
     /**
      * @tc.name   testRectUtilsIsIntersectNormalStatic
