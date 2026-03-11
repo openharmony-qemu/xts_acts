@@ -35,7 +35,7 @@ export default function commonAttrsFocusOnTouchTest() {
      * @tc.level  LEVEL1
      */
     it('testCommonAttrsFocusOnTouch001', Level.LEVEL1, async (done: Function) => {
-      await Utils.pushPage(`commonattrs/CommonAttrsFocusOnTouchTest`, done);
+      await Utils.pushPage(`commonattrs/CommonAttrsFocusOnTouchTest`);
       await Utils.sleep(2000)
       expect(Utils.getComponentInfoByKey('btnFocusOnTouch').$attrs.backgroundColor).assertEqual('#0xFF00FF00')
       done()
