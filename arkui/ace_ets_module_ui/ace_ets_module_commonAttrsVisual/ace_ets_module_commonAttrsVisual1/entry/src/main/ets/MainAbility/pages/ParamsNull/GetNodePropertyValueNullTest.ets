@@ -57,11 +57,11 @@ class MyNodeController extends NodeController {
 
       let ret1: number[] = this.rootNode.getNodePropertyValue(null);
       console.info('getNodePropertyValue null 2 success：' + ret1.length);
-      AppStorage.SetOrCreate('getNodePropertyValueNull', ret.length);
+      AppStorage.SetOrCreate('getNodePropertyValueNull', ret1.length);
 
       let ret2: number[] = this.rootNode.getNodePropertyValue(undefined);
       console.info('getNodePropertyValue undefined 3 success：' + ret2.length);
-      AppStorage.SetOrCreate('getNodePropertyValueUndefined', ret.length);
+      AppStorage.SetOrCreate('getNodePropertyValueUndefined', ret2.length);
     }
   }
 
