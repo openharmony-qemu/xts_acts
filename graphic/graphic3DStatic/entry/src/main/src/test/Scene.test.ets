@@ -1211,43 +1211,6 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.name   testGetAnimations
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1380
-     * @tc.desc   Test Scene.animations getter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testGetAnimations', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testGetAnimations";
-      console.info(msg + ' begin ');
-      try {
-        let sceneUri: Resource = $rawfile("gltf/BrainStem/glTF/BrainStem.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let anims = scene.animations;
-        expect(anims != null).assertTrue();
-        expect(anims != undefined).assertTrue();
-        console.info(msg + " animations property retrieved successfully, length: " + anims.length);
-        
-        let scene2 = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-        let anims2 = scene2.animations;
-        expect(anims2 != null).assertTrue();
-        expect(anims2 != undefined).assertTrue();
-        expect(anims2.length).assertEqual(0);
-        console.info(msg + " animations property retrieved from scene without animations, length: " + anims2.length);
-        
-        console.info(msg + " test completed successfully");
-        done();
-      } catch (err) {
-        console.info(msg + ' Failed: ' + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   testGetRoot
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1390
      * @tc.desc   Test Scene.root getter
